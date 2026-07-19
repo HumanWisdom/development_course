@@ -506,6 +506,10 @@ export class CommonService {
     return this.http.get(this.path + `/GetDailyPractiseBreath`)
   }
 
+  getTodayDailyPractise(programId: number): Observable<any> {
+    return this.http.get(this.path + `/GetTodayDailyPractise/${programId}`);
+  }
+
   getDailypractiseQuestionmeditation(): Observable<any> {
     return this.http.get(this.path + `/GetDailyPractise_Med`)
   }

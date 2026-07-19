@@ -2,8 +2,8 @@
 <html lang="en">
 
   <head>
-    <meta property="og:title" id="tag1" content="HappierMe: For a happier life" />
-    <meta property="og:description" content="Master your mind and be happier" />
+    <meta property="og:title" id="tag1" content="Student Wellbeing and Life Skills | HappierMe">
+    <meta property="og:description" content="Improve student wellbeing and build life skills with HappierMe. Develop emotional intelligence, confidence and stronger relationships.">
     <meta property="og:image" content="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/imgs/website_share.jpg" />
     <meta property="og:image:alt" content="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/imgs/website_share.jpg" />
     <meta property="og:image:width" content="414" />

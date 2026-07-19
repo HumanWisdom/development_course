@@ -65,9 +65,9 @@ const routes: Routes = [
     path: 'key-ideas',
     loadChildren: () => import('../teenagers/key-ideas/key-ideas.module').then(m => m.KeyIdeasModule)
   },
-    {
+  {
     path: 'home',
-    redirectTo: 'explore',
+    redirectTo: 'today',
     pathMatch: 'full'
   },
   {

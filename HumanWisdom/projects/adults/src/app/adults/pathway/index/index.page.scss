@@ -33,3 +33,43 @@
   background-color: #f6d1b7;
   border-radius: 10px;
 }
+
+/* Keep intro play icon centered on the thumbnail (wrapper prevents wide-column drift) */
+.pathway-intro-media {
+  position: relative !important;
+  display: inline-block;
+  max-width: 100%;
+  vertical-align: top;
+}
+
+.pathway-intro-media .session_img_play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  margin: 0 !important;
+  width: 24px;
+  height: 24px;
+  max-width: 24px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+@media (min-width: 1200px) {
+  .pathway-intro-media {
+    width: 114px;
+    height: 76px;
+    display: block;
+  }
+
+  .pathway-intro-media .session_img {
+    width: 114px !important;
+    height: 76px !important;
+    display: block;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+}

@@ -38,11 +38,11 @@
     }
 
     .expert-guidance-text {
-      color: #000000BF;
+      color: #00000080;
     }
 
     .olly-different-link, .olly-bottom-link {
-      color: #D7586B; // Adults coral link
+      color: #000000; // Adults coral link
       text-decoration: underline;
     }
   }
@@ -69,7 +69,7 @@
     }
 
     .olly-different-link, .olly-bottom-link {
-      color: #EE9596; // Teens coral link
+      color: #ffffff; // Teens coral link
       text-decoration: underline;
 
     }
@@ -82,7 +82,7 @@
     background-color: transparent !important;
     
     .suggestion-link-wrapper {
-      margin-bottom: 20px;
+      margin-bottom: 50px;
     }
     
     &.questions-mode {
@@ -310,8 +310,8 @@
 
 .olly-different-link {
   font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 12px;
+  font-weight: 400;
   cursor: pointer;
 }
 
@@ -893,4 +893,43 @@
   border: none !important;
   box-shadow: none !important;
   background: transparent !important;
+}
+
+// Streak badge — logged-in teenagers
+.streak-badge-row {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 8px;
+}
+
+.streak-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #F5C842; // warm yellow matching Figma
+  border-radius: 45px;
+  padding: 6px 14px;
+  min-width: 128px;
+  height: 34px;
+  box-sizing: border-box;
+
+  .streak-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  .streak-label {
+    font-family: 'Poppins', 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: #000000;
+    white-space: nowrap;
+
+    strong {
+      font-weight: 700;
+    }
+  }
 }

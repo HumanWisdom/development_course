@@ -1,0 +1,33 @@
+/* Anchor play to photo on wide screens only; mobile keeps prior layout */
+.coach-photo {
+  position: relative !important;
+  display: inline-block;
+  max-width: 100%;
+  vertical-align: top;
+}
+
+@media (min-width: 1200px) {
+  .coach-photo {
+    width: 88px;
+    height: 76px;
+    display: block;
+  }
+
+  .coach-photo .tile {
+    width: 88px;
+    height: 76px;
+    display: block;
+    object-fit: cover;
+  }
+
+  .coach-photo .play {
+    position: absolute;
+    right: 4px;
+    bottom: 4px;
+    left: auto;
+    top: auto;
+    margin: 0;
+    width: 24px;
+    height: 24px;
+  }
+}

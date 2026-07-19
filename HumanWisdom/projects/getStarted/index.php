@@ -7,9 +7,9 @@ require_once('./includes/security_config.php');
 <html lang="en">
  <head>
   <title>HappierMe: For Teens & Adults</title>
-  <meta name="title" content="Boost Your Emotional Intelligence and Mental Well Being with HappierMe">
+  <meta name="title" content="Mental Wellbeing, Self-awareness and Life Skills | HappierMe">
   <meta name="description"
-    content="Struggling with stress or relationships? HappierMe empowers teens and adults to master emotional intelligence, mental health, and life skills for real change.">
+    content="Build mental wellbeing through self-awareness with HappierMe. Develop emotional intelligence and life skills to reduce stress and strengthen relationships.">
   <meta name="keywords"
     content="Stress,Breathing,Anger,Anxiety,Love,Manage,Meditation,Relaxation,Motivation,Mood,Relief,Mind,Calm">
   <meta property="og:title" content="HappierMe: For Teens & Adults">
@@ -153,7 +153,7 @@ require_once('./includes/security_config.php');
                 <div class="frame-wrapper-2">
                   <div class="div-4">
                     <div class="div-65">
-                     <p class="p" style="color:#ffffff !important;text-align: left;line-height: 1.3;" >Think better.<br><span class="scrolling-words"><span class="scrolling-word">Live</span><span class="scrolling-word ">Feel</span><span class="scrolling-word">Sleep</span><span class="scrolling-word">Love</span><span class="scrolling-word">Work</span></span><span style="color:#ED7D6F"> better.</span></p>
+                     <p class="p" style="color:rgba(255, 247, 230, 1) !important;text-align: left;line-height: 1.3;" >Think better.<br><span class="scrolling-words"><span class="scrolling-word">Live</span><span class="scrolling-word ">Feel</span><span class="scrolling-word">Sleep</span><span class="scrolling-word">Love</span><span class="scrolling-word">Work</span></span><span style="color:#ED7D6F"> better.</span></p>
                      
                     </div>
                     <p class="text-wrapper-4" id="hw-website-subtitle">
@@ -209,36 +209,6 @@ require_once('./includes/security_config.php');
         </div>
       </div>
 
-      <!-- ===== OLLY AI ===== -->
-      <div class="frame-wrapper-3 index-lazy-section" id="olly-ai-section">
-        <div class="div-11">
-          <!-- <img class="group-3" src="https://d1tenzemoxuh75.cloudfront.net/website/secowly.svg" alt="Olly AI" /> -->
-          <video
-            id="olly-ai-video"
-            class="group-3"
-            muted
-            playsinline
-            webkit-playsinline
-            preload="metadata"
-                      aria-label="Olly AI">
-            <source data-src="https://d1tenzemoxuh75.cloudfront.net/onboarding/olly_AI.mp4" type="video/mp4">
-          </video>
-          <div class="div-12">
-            <div class="div-5">
-              <p class="introducing-olly-AI">Meet Olly AI,<br />your personal guide.</p>
-              <p class="text-wrapper-8">
-               Talk to Olly about what's on your mind. Stress, anxiety, relationships, habits, parenting, or work. Olly listens without judgment and guides you to trusted, expert-backed resources.
-              </p>
-            </div>
-            <a href="https://happierme.app/adults/chat-bot" id="OllyChatBtn">
-              <div class="start-your-free-wrapper-2">
-                <div class="text-wrapper-5">Chat with Olly now</div>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-
       <!-- ===== VIDEO ===== -->
       <div class="div-13 index-lazy-section">
         <p class="text-wrapper-a">Discover HappierMe in just 1 minute</p>
@@ -276,26 +246,131 @@ require_once('./includes/security_config.php');
       </div>
 
 
-   <div class="div-new_1 index-lazy-section">
-    <p class="text-wrapper-6"> Findings from a survey of 1,000 HappierMe app users</p>      
-  </div>
+      <!-- ===== WHY HAPPIERME IS DIFFERENT ===== -->
+      <section class="why-different-section index-lazy-section" aria-labelledby="why-different-title">
+        <div class="why-different-inner">
+          <div class="why-different-header">
+            <h2 class="why-different-title" id="why-different-title">Why HappierMe is different</h2>
+            <p class="why-different-subtitle">Most apps help you cope.<br class="why-different-subtitle-br"> We help you change.</p>
+          </div>
+          <div class="why-different-cards">
+            <article class="why-different-card">
+              <div class="why-different-card-icon why-different-card-icon--prevention">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/Prevention.svg" alt="" width="66" height="66"  class="display_m_none" />
+                                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/preventation_mob.svg" alt="" width="66" height="66" class="display_d_none" />
 
-  <!-- section end -->
+              </div>
+              <div class="why-different-card-body">
+                <h3 class="why-different-card-title">Prevention</h3>
+                <p class="why-different-card-desc">Deal with problems early, before they escalate</p>
+              </div>
+            </article>
+            <article class="why-different-card">
+              <div class="why-different-card-icon why-different-card-icon--root-cause">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/root.svg" alt="" width="66" height="66"  class="display_m_none" />
+                                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/route_mob.svg" alt="" width="66" height="66" class="display_d_none" />
 
- <div class="div-new index-lazy-section">
-    <div class="scroller-container div_new1">
-      <div>
-        <img src="https://d1tenzemoxuh75.cloudfront.net/website/desktop_circle.svg"
-          class="img-responsive d-wider w100p" alt="modules" loading="lazy">
+              </div>
+              <div class="why-different-card-body">
+                <h3 class="why-different-card-title">Root cause focus</h3>
+                <p class="why-different-card-desc">Understand your own mind, so change can last</p>
+              </div>
+            </article>
+            <article class="why-different-card">
+              <div class="why-different-card-icon why-different-card-icon--inner-skills">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/build.svg" alt="" width="66" height="66"  class="display_m_none" />
+                                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/skills_mob.svg" alt="" width="66" height="66" class="display_d_none" />
 
-        <img src="https://d1tenzemoxuh75.cloudfront.net/website/mobile_circle.svg"
-          class="img-responsive circle-mobile ml-mobile" alt="modules" loading="lazy">
+              </div>
+              <div class="why-different-card-body">
+                <h3 class="why-different-card-title">Build inner skills</h3>
+                <p class="why-different-card-desc">Self-awareness, emotional intelligence and healthier habits</p>
+              </div>
+            </article>
+            <article class="why-different-card">
+              <div class="why-different-card-icon why-different-card-icon--whole-life">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/life.svg" alt="" width="66" height="66"  class="display_m_none" />
+                                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/life_mob.svg" alt="" width="66" height="66" class="display_d_none" />
 
-        <img src="https://d1tenzemoxuh75.cloudfront.net/website/wide_circle.svg" class="happy-wide-img"
-          alt="happy user" loading="lazy">
+              </div>
+              <div class="why-different-card-body">
+                <h3 class="why-different-card-title">Whole-life approach</h3>
+                <p class="why-different-card-desc">Mental health, relationships and work skills, all in one place</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== OLLY AI ===== -->
+      <div class="frame-wrapper-3 index-lazy-section" id="olly-ai-section">
+        <div class="div-11">
+          <!-- <img class="group-3" src="https://d1tenzemoxuh75.cloudfront.net/website/secowly.svg" alt="Olly AI" /> -->
+          <video
+            id="olly-ai-video"
+            class="group-3"
+            muted
+            playsinline
+            webkit-playsinline
+            preload="metadata"
+                      aria-label="Olly AI">
+            <source data-src="https://d1tenzemoxuh75.cloudfront.net/onboarding/olly_AI.mp4" type="video/mp4">
+          </video>
+          <div class="div-12">
+            <div class="div-5">
+              <p class="introducing-olly-AI">Meet Olly AI,<br />your personal guide.</p>
+              <p class="text-wrapper-8">
+               Talk to Olly about what's on your mind. Stress, anxiety, relationships, habits, parenting, or work. Olly listens without judgment and guides you to trusted, expert-backed resources.
+              </p>
+            </div>
+            <a href="https://happierme.app/adults/chat-bot" id="OllyChatBtn">
+              <div class="start-your-free-wrapper-2">
+                <div class="text-wrapper-5">Chat with Olly now</div>
+              </div>
+            </a>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>              
+
+      <!-- ===== FIND SUPPORT & CONNECTION ===== -->
+      <div class="div-20 index-lazy-section">
+        <picture>
+          <source media="(max-width: 768px)" srcset="https://d1tenzemoxuh75.cloudfront.net/website/webp/mobile/find_support_mob.webp" />
+          <img class="design" src="https://d1tenzemoxuh75.cloudfront.net/website/webp/Find_Support.webp" alt="Find support and connection" />
+        </picture>
+        <div class="div-21">
+          <div class="frame-wrapper-6">
+            <div class="div-22">
+              <p class="text-wrapper-14">Find support and <br class="mobile-br">connection</p>
+              <p class="text-wrapper-8">Join a supportive community of people on their wellness journey. Share experiences, celebrate wins, and grow together.</p>
+            </div>
+          </div>
+          <div class="support-features">
+            <div class="support-feature-item">
+              <div class="support-feature-heading">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/communityforum.svg" alt="Community forum" class="support-feature-icon" />
+                <a href="https://happierme.app/adults/forum" id="supportCommunityForum" class="support-feature-title">Community forum</a>
+              </div>
+              <p class="support-feature-desc">Connect with others and ask questions anonymously</p>
+            </div>
+            <div class="support-feature-item">
+              <div class="support-feature-heading">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/live_events.svg" alt="Live Events" class="support-feature-icon" />
+                <a href="https://happierme.app/adults/events" id="supportLiveEvents" class="support-feature-title">Live Events</a>
+              </div>
+              <p class="support-feature-desc">Join live discussions with experts and community members</p>
+            </div>
+            <div class="support-feature-item">
+              <div class="support-feature-heading">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/coaching.svg" alt="Expert Coaching" class="support-feature-icon" />
+                <a href="https://happierme.app/adults/coach" id="supportExpertCoaching" class="support-feature-title">Expert Coaching</a>
+              </div>
+              <p class="support-feature-desc">Get personalized 1-on-1 support from trained coaches</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- ===== TESTIMONIALS ===== -->
       <div class="div-14 index-lazy-section">
         <div class="text-wrapper-user">Users love HappierMe</div>
@@ -367,93 +442,26 @@ require_once('./includes/security_config.php');
         </div>
       </div>
 
-      <!-- ===== WHY HAPPIERME IS DIFFERENT ===== -->
-      <section class="why-different-section index-lazy-section" aria-labelledby="why-different-title">
-        <div class="why-different-inner">
-          <div class="why-different-header">
-            <h2 class="why-different-title" id="why-different-title">Why HappierMe is different</h2>
-            <p class="why-different-subtitle">Most apps help you cope. We help you change.</p>
-          </div>
-          <div class="why-different-cards">
-            <article class="why-different-card">
-              <div class="why-different-card-icon why-different-card-icon--prevention">
-                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/Prevention.svg" alt="" width="66" height="66" />
-              </div>
-              <div class="why-different-card-body">
-                <h3 class="why-different-card-title">Prevention</h3>
-                <p class="why-different-card-desc">Deal with problems early, before they escalate</p>
-              </div>
-            </article>
-            <article class="why-different-card">
-              <div class="why-different-card-icon why-different-card-icon--root-cause">
-                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/root.svg" alt="" width="66" height="66" />
-              </div>
-              <div class="why-different-card-body">
-                <h3 class="why-different-card-title">Root cause focus</h3>
-                <p class="why-different-card-desc">Understand your own mind, so change can last</p>
-              </div>
-            </article>
-            <article class="why-different-card">
-              <div class="why-different-card-icon why-different-card-icon--inner-skills">
-                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/build.svg" alt="" width="66" height="66" />
-              </div>
-              <div class="why-different-card-body">
-                <h3 class="why-different-card-title">Build inner skills</h3>
-                <p class="why-different-card-desc">Self-awareness, emotional intelligence and healthier habits</p>
-              </div>
-            </article>
-            <article class="why-different-card">
-              <div class="why-different-card-icon why-different-card-icon--whole-life">
-                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/life.svg" alt="" width="66" height="66" />
-              </div>
-              <div class="why-different-card-body">
-                <h3 class="why-different-card-title">Whole-life approach</h3>
-                <p class="why-different-card-desc">Mental health, relationships and work skills, all in one place</p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
+   <div class="div-new_1 index-lazy-section">
+    <p class="text-wrapper-6"> Findings from a survey of 1,000 HappierMe app users</p>      
+  </div>
 
-      <!-- ===== FIND SUPPORT & CONNECTION ===== -->
-      <div class="div-20 index-lazy-section">
-        <picture>
-          <source media="(max-width: 768px)" srcset="https://d1tenzemoxuh75.cloudfront.net/website/webp/mobile/find_support_mob.webp" />
-          <img class="design" src="https://d1tenzemoxuh75.cloudfront.net/website/webp/Find_Support.webp" alt="Find support and connection" />
-        </picture>
-        <div class="div-21">
-          <div class="frame-wrapper-6">
-            <div class="div-22">
-              <p class="text-wrapper-14">Find support and <br class="mobile-br">connection</p>
-              <p class="text-wrapper-8">Join a supportive community of people on their wellness journey. Share experiences, celebrate wins, and grow together.</p>
-            </div>
-          </div>
-          <div class="support-features">
-            <div class="support-feature-item">
-              <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/communityforum.svg" alt="Community forum" class="support-feature-icon" />
-              <div class="support-feature-content">
-                <a href="https://happierme.app/adults/forum" id="supportCommunityForum" class="support-feature-title">Community forum</a>
-                <p class="support-feature-desc">Connect with others and ask questions anonymously</p>
-              </div>
-            </div>
-            <div class="support-feature-item">
-              <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/live_events.svg" alt="Live Events" class="support-feature-icon" />
-              <div class="support-feature-content">
-                <a href="https://happierme.app/adults/events" id="supportLiveEvents" class="support-feature-title">Live Events</a>
-                <p class="support-feature-desc">Join live discussions with experts and community members</p>
-              </div>
-            </div>
-            <div class="support-feature-item">
-              <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/coaching.svg" alt="Expert Coaching" class="support-feature-icon" />
-              <div class="support-feature-content">
-                <a href="https://happierme.app/adults/coach" id="supportExpertCoaching" class="support-feature-title">Expert Coaching</a>
-                <p class="support-feature-desc">Get personalized 1-on-1 support from trained coaches</p>
-              </div>
-            </div>
-          </div>
-        </div>
+  <!-- section end -->
+
+ <div class="div-new index-lazy-section">
+    <div class="scroller-container div_new1">
+      <div>
+        <img src="https://d1tenzemoxuh75.cloudfront.net/website/desktop_circle.svg"
+          class="img-responsive d-wider w100p" alt="modules" loading="lazy">
+
+        <img src="https://d1tenzemoxuh75.cloudfront.net/website/mobile_circle.svg"
+          class="img-responsive circle-mobile ml-mobile" alt="modules" loading="lazy">
+
+        <img src="https://d1tenzemoxuh75.cloudfront.net/website/wide_circle.svg" class="happy-wide-img"
+          alt="happy user" loading="lazy">
       </div>
-
+    </div>
+  </div>              
       <!-- ===== ORGANISATION ===== -->
       <div class="div-23 index-lazy-section">
         <p class="text-wrapper-6 pb0px text-wrapper-6_mobile">Find out how HappierMe can help your organisation</p>
@@ -1424,6 +1432,7 @@ require_once('./includes/security_config.php');
 
         playBtn.addEventListener('click', function() {
           video.controls = true;
+          playBtn.hidden = true;
           var playPromise = video.play();
           if (playPromise && typeof playPromise.catch === 'function') {
             playPromise.catch(function() {});
@@ -1435,11 +1444,12 @@ require_once('./includes/security_config.php');
           playBtn.hidden = true;
         });
 
+        // Mid-playback pause: keep native controls only — do not re-show the custom
+        // overlay (it stacks an audio/play icon on top of the browser play button).
         video.addEventListener('pause', function() {
+          if (video.ended) return;
           video.controls = true;
-          if (video.currentTime < video.duration) {
-            playBtn.hidden = false;
-          }
+          playBtn.hidden = true;
         });
 
         video.addEventListener('ended', function() {
@@ -1544,13 +1554,20 @@ require_once('./includes/security_config.php');
 
     <!-- Human Skills modal -->
     <div class="modal fade" id="humanSkillsModal" tabindex="-1" aria-labelledby="humanSkillsModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-dialog modal-dialog-centered human-skills-dialog">
         <div class="modal-content human-skills-modal">
-          <div class="human-skills-modal-header">
-            <h2 class="human-skills-modal-title" id="humanSkillsModalLabel">Life skills</h2>
-            <p class="human-skills-modal-subtitle">Feel better. Do better.</p>
+          <div class="human-skills-modal-close-row">
+            <button type="button" class="human-skills-modal-close" data-bs-dismiss="modal" aria-label="Close">
+              <svg width="9" height="9" viewBox="0 0 9 9" aria-hidden="true" focusable="false">
+                <path d="M1 1l7 7M8 1L1 8" stroke="rgba(215, 88, 107, 1)" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </button>
           </div>
-          <div class="human-skills-modal-body">
+          <div class="human-skills-modal-inner">
+            <div class="human-skills-modal-header">
+              <h2 class="human-skills-modal-title" id="humanSkillsModalLabel">Life skills</h2>
+              <p class="human-skills-modal-subtitle">Feel better. Do better.</p>
+            </div>
             <ul class="human-skills-list">
               <li>Self-awareness</li>
               <li>Emotional intelligence</li>
@@ -1560,8 +1577,8 @@ require_once('./includes/security_config.php');
               <li>Resilience</li>
               <li>Confidence</li>
               <li>Decision-making</li>
+              <li>Self-regulation</li>
             </ul>
-            <button type="button" class="human-skills-close-btn" data-bs-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
