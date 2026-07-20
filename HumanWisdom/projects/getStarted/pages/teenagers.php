@@ -6,7 +6,11 @@
   <meta property="title" content="Teen Mental Health, Wellbeing & Life Skills | HappierMe">
   <meta property="description"
     content="Help teenagers build confidence, manage stress and strengthen relationships with HappierMe. Selected by Mind and ORCHA certified.">
-  <meta name="keywords" content="Steenagers, mental health app, development, growth, acceptance, love, school">
+  <meta name="keywords" content="teen mental health
+mental wellness for teenagers
+emotional wellness for teens
+stress management for teens
+">
   <meta property="og:title" content="HappierMe:For Teens & Adults">
   <meta property="og:site_name" content="HappierMe">
   <meta property="og:url" content="https://happierme.app/">
