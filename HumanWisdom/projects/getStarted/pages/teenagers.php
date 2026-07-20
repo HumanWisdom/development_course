@@ -21,8 +21,9 @@
   <!-- vendor_header -->
   <?php include('../includes/vendor_header.php'); ?>
 
-  <link rel="stylesheet" href="../assets/css/teenagers.css" />
   <?php hw_defer_stylesheet('../assets/css/index-inline.css'); ?>
+  <?php /* Load last so mobile title/video overrides beat deferred index/responsive */ ?>
+  <?php hw_defer_stylesheet('../assets/css/teenagers.css'); ?>
 </head>
 
 <body class="page-teenagers">
@@ -246,14 +247,29 @@
               class="img-responsive teens-app-img " loading="lazy" alt="Feel calm">
           </div>
 
-          <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col-12 pr0px tleft ta_lc w-384px mt0px" data-aos="fade-up" data-aos-delay="200">
-            <h2 class="mtb0px fs_24px fw_600 lh_150p teen-calm-title">
-              Feel calm, capable, and better everyday, with HappierMe!
+          <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col-12 pr0px tleft ta_lc w-384px mt0px teen-calm-copy" data-aos="fade-up" data-aos-delay="200">
+            <h2 class="mtb0px fs_24px fw_600 lh_140p teen-calm-title">
+              <span class="teen-calm-title-desktop">Feel calm, capable,<br>
+              and better everyday,<br>
+              with HappierMe!</span>
+              <span class="teen-calm-title-mobile">
+                <span class="teen-calm-line">Feel calm, capable, and</span>
+                <span class="teen-calm-line">better everyday, with</span>
+                <span class="teen-calm-line">HappierMe!</span>
+              </span>
             </h2>
 
-            <h5 class="mt15px mb10px fs_15px fw_400 lh_150p fc_000000">
-              The app helps you not only to feel better now , but also to understand why you think, feel and behave as
-              you do so you can be in charge of your emotions, habits and mental health. </h5>
+            <h5 class="mtb0px fw_400 lh_150p fc_000000 teen-calm-subtitle">
+              <span class="teen-calm-subtitle-desktop">The app helps you not only to feel better now, but<br>
+              also to understand your own mind, so you can be<br>
+              in charge of your emotions, habits and mental<br>
+              health.</span>
+              <span class="teen-calm-subtitle-mobile">
+                <span class="teen-calm-line">The app helps you not only to feel better now, but also</span>
+                <span class="teen-calm-line">to understand your own mind, so you can be in charge</span>
+                <span class="teen-calm-line">of your emotions, habits and mental health.</span>
+              </span>
+            </h5>
           </div>
         </div>
       </div>

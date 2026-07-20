@@ -2000,11 +2000,27 @@ function initIndexLazySections() {
 function initCarouselWheelPassthrough(el) {
     if (!el || el.getAttribute("data-wheel-passthrough") === "1") return;
     el.setAttribute("data-wheel-passthrough", "1");
-    el.addEventListener("wheel", function (e) {
-        if (Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return;
-        e.preventDefault();
-        window.scrollBy({ top: e.deltaY, behavior: "auto" });
-    }, { passive: false });
+    el.addEventListener(
+        "wheel",
+        function (e) {
+            // Shift+wheel or primarily-horizontal trackpad → keep carousel scroll
+            if (e.shiftKey || Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return;
+            if (!e.deltaY) return;
+            e.preventDefault();
+            var dy = e.deltaY;
+            if (e.deltaMode === 1) dy *= 16;
+            else if (e.deltaMode === 2) dy *= window.innerHeight || 800;
+            var root = document.scrollingElement || document.documentElement;
+            var html = document.documentElement;
+            // Bypass :root { scroll-behavior: smooth } — otherwise every wheel tick animates and feels very slow
+            html.style.scrollBehavior = "auto";
+            root.scrollTop += dy;
+            requestAnimationFrame(function () {
+                html.style.scrollBehavior = "";
+            });
+        },
+        { passive: false, capture: true }
+    );
 }
 
 /** Index-only: org cards, coaches/blog, blog section view, footer/social (matches webpage event list). */
@@ -2121,6 +2137,9 @@ function initIndexPageGa() {
 document.addEventListener("DOMContentLoaded", () => {
     initIndexLazySections();
     initIndexPageGa();
+    // Belt-and-suspenders: ensure carousel wheel passthrough even if GA init path changes
+    initCarouselWheelPassthrough(document.getElementById("blog-scroll"));
+    initCarouselWheelPassthrough(document.getElementById("coaches-scroll"));
     // Convert existing accordion to Bootstrap 5.3
     convertAccordionToBootstrap53();
     
