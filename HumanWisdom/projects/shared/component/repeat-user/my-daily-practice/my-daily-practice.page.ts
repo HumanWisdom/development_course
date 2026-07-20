@@ -74,14 +74,46 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
     public  logeventservice: LogEventService,
     private router: Router,
     private adultService: AdultsService,
-    private teenService: TeenagersService) { 
+    private teenService: TeenagersService,
+    private route: ActivatedRoute) { 
     this.guest = localStorage.getItem('guest') === 'T' ? true : false;
      this.isFirstLogin = SharedService.isRoutedFromLogin;
+  }
+
+  checkBanner() {
+    const ban = localStorage.getItem('enablebanner');
+    return (ban === null || ban === 'T');
   }
 
   ngOnInit() {
     // Hide footer owl until the user scrolls past the in-page Olly
     this.commonService.setFooterOwlVisible(false);
+
+    this.route.queryParams.subscribe(params => {
+      const authtoken = params?.authtoken;
+      if (authtoken) {
+        this.commonService.verifytoken(authtoken).subscribe((res) => {
+          if (res) {
+            this.commonService.loginadult(res);
+            this.guest = res['Email'] === "guest@humanwisdom.me";
+            this.isloggedIn = !this.guest;
+            this.userId = res['UserId'];
+            this.isSubscriber = res['Subscriber'] === '1' || res['Subscriber'] === 1;
+            this.streak = res['Streak'] || 0;
+            if (res['Name']) {
+              let namedata = res['Name'].split(' ');
+              this.userName = namedata[0];
+              if (this.userName) {
+                this.userName = this.userName.charAt(0).toUpperCase() + this.userName.slice(1).toLowerCase();
+              }
+            } else {
+              this.userName = '';
+            }
+            this.getLastvisitedScr();
+          }
+        });
+      }
+    });
 
     try{
 

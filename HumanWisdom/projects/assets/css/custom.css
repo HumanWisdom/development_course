@@ -23971,6 +23971,7 @@ ul.dh_ul li:last-child {
   width: 82px;
   height: 82px;
   position: relative;
+  border: 5px solid #FFE8BB;
   overflow: hidden;
   border-radius: 50%;
   object-fit: cover;
@@ -34534,18 +34535,19 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
 
 
 .btn_ctdout {
-    height: 50px;
-    width: 100%;
-    margin: 0;
-    border: 0;
-    border-radius: 100px;
-    /* background: #ED7D6F !important; */
-    background: #FFD889 !important;
-    color: #000 !important;
-    font-size: 15px;
-    font-weight: 600;
-    line-height: 150%;
+  height: 50px;
+  width: 100%;
+  margin: 0;
+  border: 0;
+  border-radius: 100px;
+  /* background: #ED7D6F !important; */
+  background: #FFD889 !important;
+  color: #000 !important;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 150%;
 }
+
 .btn_ctd {
   height: 50px;
   width: 100%;
@@ -38008,6 +38010,9 @@ div.contentdiv p {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+.continue-arrow-new {
+  color: black !important;
+}
 
 .resource-item {
   background: #FFFFFF;
