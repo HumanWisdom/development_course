@@ -8,7 +8,16 @@
   <meta property="description"
     content="Explore expert articles on mental wellbeing, self-awareness, emotional intelligence, relationships and life skills from HappierMe.">
   <meta property="keyword"
-    content="Personal growth blog, Self-improvement blog, Inspirational blog, Life lessons blog, Mindfulness blog, Adult development blog">
+    content="Mental wellbeing articles
+, self-awareness blog
+emotional intelligence
+life skills
+personal growth
+mental health articles
+resilience
+relationships
+stress management
+">
 
   <!-- vendor_header -->
   <?php Template::vendorHeader(); ?>

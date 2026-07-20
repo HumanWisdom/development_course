@@ -7,9 +7,17 @@
   <meta property="description"
     content="Help teenagers build confidence, manage stress and strengthen relationships with HappierMe. Selected by Mind and ORCHA certified.">
   <meta name="keywords" content="teen mental health
-mental wellness for teenagers
-emotional wellness for teens
+teen wellbeing
+teenage mental health
+emotional wellbeing for teens
 stress management for teens
+anxiety in teenagers
+self-awareness for teenagers
+emotional intelligence for teens
+confidence for teenagers
+resilience for teenagers
+life skills for teenagers
+
 ">
   <meta property="og:title" content="HappierMe:For Teens & Adults">
   <meta property="og:site_name" content="HappierMe">
