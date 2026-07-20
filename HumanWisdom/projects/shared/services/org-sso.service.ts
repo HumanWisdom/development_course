@@ -30,11 +30,13 @@ export class OrgSsoService {
     const domain = normalizedEmail.split('@')[1];
 
     return activeOrgs.find((item) => {
-      if (item.AllowedEmails?.length) {
-        return item.AllowedEmails.some((allowedEmail) => allowedEmail.toLowerCase() === normalizedEmail);
-      }
-
-      return item.EmailDomains.some((emailDomain) => emailDomain.toLowerCase() === domain);
+      const emailAllowed = item.AllowedEmails?.some(
+        (allowedEmail) => allowedEmail.toLowerCase() === normalizedEmail
+      );
+      const domainAllowed = item.EmailDomains.some(
+        (emailDomain) => emailDomain.toLowerCase() === domain
+      );
+      return emailAllowed || domainAllowed;
     });
   }
 
