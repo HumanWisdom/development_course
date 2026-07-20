@@ -5,6 +5,18 @@
   <meta property="og:title" id="tag1" content="About HappierMe | Reduce suffering and build happier lives">
   <meta property="og:type" content="website" />
   <meta property="og:description" content="Learn about HappierMe's mission to reduce suffering and help people lead happier lives. Founded by former surgeon Dr Manoj Krishna and selected by Mind.">
+ 
+ <meta name="keywords" content="HappierMe
+self-awareness
+emotional intelligence
+life skills
+prevention-first wellbeing
+mental wellbeing
+personal growth
+
+
+
+">
   <meta property="og:image" content="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/imgs/website_share.jpg" />
   <meta property="og:image:alt"
     content="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/imgs/website_share.jpg" />
