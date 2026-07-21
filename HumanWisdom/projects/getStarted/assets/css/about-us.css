@@ -9,6 +9,11 @@
       color: rgba(215, 88, 107, 1);
     }
 
+    .clink:hover,
+    a:hover .clink {
+      color: #803358;
+    }
+
     .section-description {
       justify-content: center;
       display: flex;
@@ -214,7 +219,10 @@
       color: #803358 !important;
     }
 
-    /* Founder book links: keep hover in the same purple */
+    /* Founder book links: hover to brand purple */
+    #main a[href*="amazon"]:hover .clink,
+    #main a:hover .clink,
+    #main .clink:hover,
     #main a[href*="amazon"]:hover .fc_cb6171,
     #main a:hover .fc_cb6171,
     #main .fc_cb6171:hover {
@@ -236,6 +244,13 @@
     .div_inspire a:hover h5 {
       color: #120f40 !important;
       text-decoration: none !important;
+    }
+
+    /* Content Experts name links: override global h6:hover (#cb6171) */
+    #main .div_inspire a:hover h6,
+    #main .div_inspire a h6:hover,
+    #main .div_inspire h6:hover {
+      color: #803358 !important;
     }
 
     /* Hero banner: clear fixed/dual nav so image top matches Figma */
