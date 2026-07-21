@@ -39,7 +39,7 @@
             <!-- v1.1 -->
             <div *ngIf="!isQuestionsViewActive">
               <!-- CONTINUE WHERE YOU LEFT - moved first per Figma -->
-              <div class="row" *ngIf="isloggedIn && resumeLastvisited.length !== 0"
+              <div class="row" *ngIf="isloggedIn && resumeLastvisited.length !== 0 && !isLastVisitedGuidedJourney"
                 style="margin-left: 0; margin-right: 0;">
                 <h4 class="continue-section-label mb10px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"
                   style="letter-spacing: 0.5px;">
@@ -134,7 +134,12 @@
                         A step-by-step daily guide to lasting change,<br>not just a quick fix.
                       </p>
                       <button class="guided-journey-btn-new">
-                        Begin a new journey
+                        <ng-container *ngIf="isLastVisitedGuidedJourney; else beginNew">
+                          Continue where you left
+                        </ng-container>
+                        <ng-template #beginNew>
+                          Begin a new journey
+                        </ng-template>
                       </button>
                     </div>
                   </div>
