@@ -98,6 +98,7 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    SharedService.setDataInLocalStorage('NaviagtedFrom', this.router.url);
     // Hide footer owl until the user scrolls past the in-page Olly
     this.commonService.setFooterOwlVisible(false);
 
@@ -460,6 +461,7 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
   routePracticeItem(item: any): void {
     const isLocked = item && (item.isFree === '0' || item.isFree === 0);
     if (!this.isSubscriber && isLocked) {
+      SharedService.setDataInLocalStorage('NaviagtedFrom', this.router.url);
       this.logeventservice.logEvent('click_locked_content');
       this.showModal = true;
       return;
@@ -620,21 +622,34 @@ routeActiveExercise() {
     this.logeventservice.logEvent('click_proceed_to_home' );    
     this.router.navigate([SharedService.getDashboardUrls()]);
   }
+  get isLastVisitedGuidedJourney(): boolean {
+    if (this.resumeLastvisited && this.resumeLastvisited.length > 0) {
+      const url = this.resumeLastvisited[0].ModuleUrl || '';
+      return url.includes('/guided-journeys') || url.includes('/guided-journey');
+    }
+    return false;
+  }
 
   routeToGuidedJourneys(): void {
     this.logeventservice.logEvent('click_guided_journeys');
-    const prefix = SharedService.getprogramName();
-    this.router.navigate([`${prefix}/guided-journeys`]);
+    if (this.isLastVisitedGuidedJourney) {
+      this.routeResume();
+    } else {
+      const prefix = SharedService.getprogramName();
+      this.router.navigate([`${prefix}/guided-journeys`]);
+    }
   }
 
   goToSubscribe(): void {
     const prefix = SharedService.getprogramName();
+    SharedService.setDataInLocalStorage('NaviagtedFrom', this.router.url);
     this.router.navigate([prefix, 'subscription', 'start-your-free-trial']);
   }
 
   onModalClose(event: string) {
     this.showModal = false;
     if (event === 'ok') {
+      SharedService.setDataInLocalStorage('NaviagtedFrom', this.router.url);
       this.router.navigate([SharedService.getprogramName(), 'subscription', 'start-your-free-trial']);
     }
   }
