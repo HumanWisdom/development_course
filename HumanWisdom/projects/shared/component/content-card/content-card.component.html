@@ -4,10 +4,15 @@
  <div class="status-icons position-absolute bottom-5 end-10 p-2 top-0">
       <!-- Tick Icon - Show when isRead is "1" -->
       <div *ngIf="shouldShowTickIcon()" class="status-icon tick-icon">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg" 
+        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"  
              alt="Read icon" 
              class="tick-icon-img"
-             style="width: 16px; height: 16px;">
+             style="width: 16px; height: 16px;" *ngIf="isAdults">
+
+             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isread_teen.svg"  
+             alt="Read icon" 
+             class="tick-icon-img"
+             style="width: 16px; height: 16px;" *ngIf="!isAdults">
       </div>
       </div>
 
