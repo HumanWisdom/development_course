@@ -530,6 +530,24 @@
 </div>
 <!-- /page content -->
 
+<!-- Explore Popup -->
+<div class="explore-popup-overlay" *ngIf="showExplorePopup" (click)="closeExplorePopup()">
+  <div class="explore-popup-container col-lg-4 col-md-6 col-sm-6 col-xs-12 col_cw" (click)="$event.stopPropagation()">
+    <div class="explore-popup-card">
+      <div class="explore-popup-header">
+        <h2 class="explore-popup-title">Explore</h2>
+      </div>
+      <div class="explore-popup-content">
+        <h3 class="explore-popup-subtitle">Practical support for every part of your life.</h3>
+        <p class="explore-popup-body">
+          Life can be complex. Explore 10 topics, including mental well-being, relationships, work, parenting and more, to find what you need, or discover something you didn't know you needed.
+        </p>
+        <button class="explore-popup-close-btn" (click)="closeExplorePopup()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <app-modal *ngIf="showModal" [title]="modalTitle" [content]="modalContent" [okText]="'Start your free trial'"
   [cancelText]="'Cancel'" [enableCancel]="true" [isFreeTrialEnable]="true"
   (closeEvent)="onModalClose($event)"></app-modal>

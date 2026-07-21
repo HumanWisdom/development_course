@@ -152,6 +152,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   private playstoreBannerObserver: MutationObserver | null = null;
   preference = '';  
   isHeaderHidden: boolean = false;
+  showExplorePopup: boolean = false;
   constructor(
     private router: Router,
     private commonService: CommonService,
@@ -320,6 +321,25 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
     // Initialize wisdom exercise as hidden
    // this.showWisdomExercise = false;
+
+    // Show Explore popup only on first visit after signup
+    const userId = localStorage.getItem('userId') || '';
+    const key = userId ? `hasSeenExplorePopup_${userId}` : 'hasSeenExplorePopup';
+    const hasSeen = localStorage.getItem(key) === 'true';
+
+    if (!hasSeen) {
+      this.showExplorePopup = true;
+      localStorage.setItem(key, 'true');
+    } else {
+      this.showExplorePopup = false;
+    }
+  }
+
+  closeExplorePopup(): void {
+    this.showExplorePopup = false;
+    const userId = localStorage.getItem('userId') || '';
+    const key = userId ? `hasSeenExplorePopup_${userId}` : 'hasSeenExplorePopup';
+    localStorage.setItem(key, 'true');
   }
 
 
