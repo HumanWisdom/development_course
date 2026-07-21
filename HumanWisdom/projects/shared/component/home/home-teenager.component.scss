@@ -708,6 +708,37 @@
             padding-top: 40px !important;
         }
     }
+
+    /* ====== Explore Popup Teenager Theme ====== */
+    .explore-popup-overlay {
+        background-color: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+    }
+
+    .explore-popup-header {
+        background: #0C2B5F;
+    }
+
+    .explore-popup-title {
+        color: #ffffff;
+    }
+
+    .explore-popup-content {
+        background: #183C79;
+    }
+
+    .explore-popup-subtitle {
+        color: #ffffff;
+    }
+
+    .explore-popup-body {
+        color: #ffffff;
+    }
+
+    .explore-popup-close-btn {
+        background: linear-gradient(180deg, #EE9596 0%, #F17071 100%);
+    }
 }
 .fc_ffffff_0_7 {
     color: rgba(255, 255, 255, 0.7) !important;

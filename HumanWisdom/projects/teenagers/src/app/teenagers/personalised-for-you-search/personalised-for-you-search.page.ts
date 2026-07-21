@@ -107,6 +107,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
   public enableAlert:any=false;
   public isSearchActive: boolean = false;
   public isFreeTrialEnable: boolean = false;
+  public showLearnPopup: boolean = false;
 
 
   constructor(private route: Router, public router: Router, private aservice: TeenagersService,
@@ -163,13 +164,24 @@ export class PersonalisedForYouSearchPage implements OnInit {
     this.loadMicrolearningPreview();
     this.loadGuidedJourneyPreview();
     this.isSubscribe = SharedService.isSubscriber();
-    let closetour = localStorage.getItem('closeTour');
+    const userId = localStorage.getItem('userId') || '';
+    const key = userId ? `hasSeenLearnPopup_${userId}` : 'hasSeenLearnPopup';
+    const hasSeen = localStorage.getItem(key) === 'true';
 
-   /*  if(!closetour && !localStorage.getItem('firstTimeSearchTour')) {
-      this.continueTour();
-    } */
+    if (!hasSeen) {
+      this.showLearnPopup = true;
+      localStorage.setItem(key, 'true');
+    } else {
+      this.showLearnPopup = false;
+    }
   }
 
+  closeLearnPopup() {
+    this.showLearnPopup = false;
+    const userId = localStorage.getItem('userId') || '';
+    const key = userId ? `hasSeenLearnPopup_${userId}` : 'hasSeenLearnPopup';
+    localStorage.setItem(key, 'true');
+  }
 
   toggleAccordion() {
     this.isExpanded = !this.isExpanded;

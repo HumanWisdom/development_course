@@ -465,3 +465,39 @@
 <app-modal *ngIf="enableAlert" [modalid]="'logout'" [enableCancel]="true" (closeEvent)="getAlertcloseEvent($event)"
   [okText]="'Ok'" [content]="'Start your free trial to activate this feature'"
   [isFreeTrialEnable]="isFreeTrialEnable"></app-modal>
+
+<!-- Learn Popup -->
+<div class="learn-popup-overlay" *ngIf="showLearnPopup" (click)="closeLearnPopup()">
+  <div class="learn-popup-container col-lg-4 col-md-6 col-sm-6 col-xs-12 col_cw" (click)="$event.stopPropagation()">
+    <div class="learn-popup-card">
+      <div class="learn-popup-header">
+        <h2 class="learn-popup-title">Learn</h2>
+      </div>
+      <div class="learn-popup-content">
+        <h3 class="learn-popup-subtitle">Build inner skills for a richer life.</h3>
+        <p class="learn-popup-grow-text">Grow step by step with:</p>
+
+        <ol class="learn-popup-list">
+          <li>
+            <span class="list-item-title">PATHWAY</span>
+            <div class="list-item-desc">for personal growth</div>
+          </li>
+          <li>
+            <span class="list-item-title">Guided Journeys</span>
+            <div class="list-item-desc">to reach a specific goal</div>
+          </li>
+          <li>
+            <span class="list-item-title">Find inspiration</span>
+            <div class="list-item-desc">by browsing our content library</div>
+          </li>
+          <li>
+            <span class="list-item-title">Support from coaches</span>
+            <div class="list-item-desc">when you need it</div>
+          </li>
+        </ol>
+
+        <button class="learn-popup-close-btn" (click)="closeLearnPopup()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
