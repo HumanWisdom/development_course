@@ -364,6 +364,142 @@ body.page-teenagers .owl_testimonials .teen-testimonials-footer .owl-nav {
     margin-left: 0 !important;
     max-width: 100% !important;
   }
+
+  /* Feel calm — mobile only (desktop unchanged): Figma 3-line centered subtitle */
+  body.page-teenagers .flex_block.w-1245px {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    box-sizing: border-box !important;
+  }
+
+  body.page-teenagers .flex_block.w-1245px > [class*="col-"]:not(.teen-calm-copy) {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  body.page-teenagers .flex_block .col-lg-5.w-384px.teen-calm-copy,
+  body.page-teenagers .flex_block .w-384px.teen-calm-copy,
+  body.page-teenagers .flex_block .teen-calm-copy,
+  body.page-teenagers .col-lg-5.w-384px.teen-calm-copy,
+  body.page-teenagers .teen-calm-copy {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 auto !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 30px !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+  }
+
+  body.page-teenagers .teen-calm-title-desktop,
+  body.page-teenagers .teen-calm-subtitle-desktop {
+    display: none !important;
+  }
+
+  body.page-teenagers .teen-calm-title-mobile {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: min(335px, 100%) !important;
+    max-width: 335px !important;
+    margin: 0 auto !important;
+    gap: 0 !important;
+  }
+
+  body.page-teenagers .teen-calm-title-mobile .teen-calm-line {
+    display: block !important;
+    width: auto !important;
+    max-width: none !important;
+    text-align: center !important;
+    line-height: 140% !important;
+    white-space: nowrap !important;
+  }
+
+  body.page-teenagers .teen-calm-subtitle-mobile {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: min(335px, 100%) !important;
+    max-width: 335px !important;
+    margin: 0 auto !important;
+    gap: 0 !important;
+  }
+
+  body.page-teenagers .teen-calm-subtitle-mobile .teen-calm-line {
+    display: block !important;
+    width: auto !important;
+    max-width: none !important;
+    text-align: center !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    line-height: 150% !important;
+    white-space: nowrap !important;
+  }
+
+  body.page-teenagers main#main .flex_block .teen-calm-title,
+  body.page-teenagers main#main h2.teen-calm-title,
+  body.page-teenagers section.hpt120px ~ main#main section h2.fs_24px.teen-calm-title,
+  body.page-teenagers section.hpt120px ~ main#main section h2.teen-calm-title {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 140% !important;
+    text-align: center !important;
+    color: rgba(0, 0, 0, 1) !important;
+    width: 100% !important;
+    max-width: 335px !important;
+    margin: 0 auto !important;
+  }
+
+  body.page-teenagers .flex_block .teen-calm-copy .teen-calm-title + h5,
+  body.page-teenagers .flex_block .teen-calm-subtitle,
+  body.page-teenagers main#main .flex_block .teen-calm-subtitle {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    line-height: 150% !important;
+    text-align: center !important;
+    color: rgba(0, 0, 0, 1) !important;
+    width: min(335px, 100%) !important;
+    max-width: 335px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  body.page-teenagers .flex_block .teen-calm-copy.ta_lc h2,
+  body.page-teenagers .flex_block .teen-calm-copy.ta_lc h5,
+  body.page-teenagers .flex_block .teen-calm-copy h2,
+  body.page-teenagers .flex_block .teen-calm-copy h5 {
+    text-align: center !important;
+  }
+
+  /* Beat About-Us mobile span{12px} on nested calm lines */
+  body.page-teenagers main#main .teen-calm-title .teen-calm-line,
+  body.page-teenagers section.hpt120px ~ main#main section .teen-calm-title span.teen-calm-line {
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 140% !important;
+    font-family: 'Poppins', sans-serif !important;
+    white-space: nowrap !important;
+  }
+
+  body.page-teenagers main#main .teen-calm-subtitle .teen-calm-line,
+  body.page-teenagers section.hpt120px ~ main#main section .teen-calm-subtitle span.teen-calm-line {
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    line-height: 150% !important;
+    font-family: 'Poppins', sans-serif !important;
+    white-space: nowrap !important;
+  }
 }
 
 body.page-teenagers main#main > section:has(.teen-topics-bubbles-band) {
@@ -380,9 +516,37 @@ body.page-teenagers .teen-support-title {
   margin-bottom: 0 !important;
 }
 
-/* "Feel calm…" — Figma: 24px between title and subtitle */
-body.page-teenagers .flex_block .teen-calm-title + h5 {
-  margin-top: 24px !important;
+/* "Feel calm…" — Figma: 384×241, vertical, gap 30px between title & subtitle */
+body.page-teenagers .flex_block .col-lg-5.w-384px.teen-calm-copy,
+body.page-teenagers .flex_block .w-384px.teen-calm-copy,
+body.page-teenagers .teen-calm-copy {
+  width: 384px !important;
+  max-width: 384px !important;
+  flex: 0 0 384px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 30px !important;
+  box-sizing: border-box !important;
+  /* Override .ta_lc { text-align: -webkit-center } which shrink-wraps children */
+  text-align: left !important;
+}
+
+/* Mobile title/subtitle variants hidden on desktop */
+body.page-teenagers .teen-calm-title-mobile,
+body.page-teenagers .teen-calm-subtitle-mobile {
+  display: none !important;
+}
+body.page-teenagers .teen-calm-title-desktop,
+body.page-teenagers .teen-calm-subtitle-desktop {
+  display: inline !important;
+}
+
+body.page-teenagers .teen-calm-copy .teen-calm-title,
+body.page-teenagers .teen-calm-copy .teen-calm-subtitle,
+body.page-teenagers .flex_block .teen-calm-title + h5,
+body.page-teenagers .flex_block .teen-calm-subtitle {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
 }
 
 body.page-teenagers .teen-topics-bubbles-band img {
@@ -872,23 +1036,124 @@ body.page-teenagers #div_subscription.frame-wrapper-9 {
     order: 2 !important;
   }
 
-  /* "Feel calm…" copy — full width (index.css col-lg-5 = 41.67% below 1600px) */
+  /* "Feel calm…" — Figma mobile: centered, exact 3-line breaks */
   body.page-teenagers .flex_block.w-1245px {
     width: 100% !important;
     max-width: 100% !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
     box-sizing: border-box !important;
   }
 
-  body.page-teenagers .flex_block.w-1245px > [class*="col-"],
-  body.page-teenagers .flex_block .col-lg-5.w-384px,
-  body.page-teenagers .flex_block .w-384px {
+  body.page-teenagers .flex_block.w-1245px > [class*="col-"]:not(.teen-calm-copy) {
     width: 100% !important;
     max-width: 100% !important;
     flex: 0 0 100% !important;
   }
 
-  body.page-teenagers .flex_block .ta_lc h2,
-  body.page-teenagers .flex_block .ta_lc h5 {
+  body.page-teenagers .flex_block .col-lg-5.w-384px.teen-calm-copy,
+  body.page-teenagers .flex_block .w-384px.teen-calm-copy,
+  body.page-teenagers .flex_block .teen-calm-copy,
+  body.page-teenagers .col-lg-5.w-384px.teen-calm-copy,
+  body.page-teenagers .teen-calm-copy {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 auto !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 30px !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+  }
+
+  body.page-teenagers .teen-calm-title-desktop,
+  body.page-teenagers .teen-calm-subtitle-desktop {
+    display: none !important;
+  }
+
+  body.page-teenagers .teen-calm-title-mobile {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: min(335px, 100%) !important;
+    max-width: 335px !important;
+    margin: 0 auto !important;
+    gap: 0 !important;
+  }
+
+  body.page-teenagers .teen-calm-title-mobile .teen-calm-line {
+    display: block !important;
+    width: auto !important;
+    max-width: none !important;
+    text-align: center !important;
+    line-height: 140% !important;
+    white-space: nowrap !important;
+  }
+
+  body.page-teenagers .teen-calm-subtitle-mobile {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: min(335px, 100%) !important;
+    max-width: 335px !important;
+    margin: 0 auto !important;
+    gap: 0 !important;
+  }
+
+  body.page-teenagers .teen-calm-subtitle-mobile .teen-calm-line {
+    display: block !important;
+    width: auto !important;
+    max-width: none !important;
+    text-align: center !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    line-height: 150% !important;
+    white-space: nowrap !important;
+  }
+
+  body.page-teenagers main#main .flex_block .teen-calm-title,
+  body.page-teenagers main#main h2.teen-calm-title,
+  body.page-teenagers section.hpt120px ~ main#main section h2.fs_24px.teen-calm-title,
+  body.page-teenagers section.hpt120px ~ main#main section h2.teen-calm-title {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 140% !important;
+    text-align: center !important;
+    color: rgba(0, 0, 0, 1) !important;
+    width: 100% !important;
+    max-width: 335px !important;
+    margin: 0 auto !important;
+  }
+
+  body.page-teenagers .flex_block .teen-calm-copy .teen-calm-title + h5,
+  body.page-teenagers .flex_block .teen-calm-subtitle {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    line-height: 150% !important;
+    text-align: center !important;
+    color: rgba(0, 0, 0, 1) !important;
+    width: min(335px, 100%) !important;
+    max-width: 335px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  body.page-teenagers .flex_block .teen-calm-copy.ta_lc h2,
+  body.page-teenagers .flex_block .teen-calm-copy.ta_lc h5,
+  body.page-teenagers .flex_block .teen-calm-copy h2,
+  body.page-teenagers .flex_block .teen-calm-copy h5 {
+    text-align: center !important;
+  }
+
+  body.page-teenagers .flex_block .ta_lc:not(.teen-calm-copy) h2,
+  body.page-teenagers .flex_block .ta_lc:not(.teen-calm-copy) h5 {
     text-align: center !important;
   }
 
@@ -917,9 +1182,9 @@ body.page-teenagers #div_subscription.frame-wrapper-9 {
     padding-bottom: 24px !important;
   }
 
+  /* Video title — Figma mobile: Poppins 600 / 24px / 140% / center / 335px */
   body.page-teenagers main#main .teen-video-title,
   body.page-teenagers main#main .teen-support-title,
-  body.page-teenagers main#main .teen-calm-title,
   body.page-teenagers main#main .teen-dykt-title,
   body.page-teenagers main#main .teen-inspire-title,
   body.page-teenagers main#main .teen-testimonials-title,
@@ -928,17 +1193,19 @@ body.page-teenagers #div_subscription.frame-wrapper-9 {
   body.page-teenagers section.hpt120px ~ main#main section h2.teen-video-title,
   body.page-teenagers section.hpt120px ~ main#main section h2.fs_24px.teen-support-title,
   body.page-teenagers section.hpt120px ~ main#main section h2.teen-support-title,
-  body.page-teenagers section.hpt120px ~ main#main section h2.fs_24px.teen-calm-title,
-  body.page-teenagers section.hpt120px ~ main#main section h2.teen-calm-title,
   body.page-teenagers section.hpt120px ~ main#main section h2.fs_24px.teen-dykt-title,
   body.page-teenagers section.hpt120px ~ main#main section h2.teen-dykt-title,
   body.page-teenagers section.hpt120px ~ main#main section h2.fs_24px.teen-inspire-title,
   body.page-teenagers section.hpt120px ~ main#main section h2.teen-inspire-title,
   body.page-teenagers section.hpt120px ~ main#main section h2.fs_24px.teen-testimonials-title,
-  body.page-teenagers section.hpt120px ~ main#main section h2.teen-testimonials-title {
+  body.page-teenagers section.hpt120px ~ main#main section h2.teen-testimonials-title,
+  body.page-teenagers main#main .section-header-teen h2.fs_24px.teen-video-title,
+  body.page-teenagers main#main h2.mtb0px.fs_24px.fw_600.lh_140p.teen-video-title {
+    font-family: 'Poppins', sans-serif !important;
     font-size: 24px !important;
     font-weight: 600 !important;
     line-height: 140% !important;
+    text-align: center !important;
     color: rgba(0, 0, 0, 1) !important;
   }
 
@@ -979,47 +1246,117 @@ body.page-teenagers #div_subscription.frame-wrapper-9 {
     margin-top: 0 !important;
   }
 
-  body.page-teenagers main#main .flex_block .teen-calm-title + h5 {
-    margin-top: 24px !important;
+  /* Gap handled by .teen-calm-copy { gap: 30px } — do not add extra margin */
+  body.page-teenagers main#main .flex_block .teen-calm-title + h5,
+  body.page-teenagers main#main .flex_block .teen-calm-subtitle {
+    margin-top: 0 !important;
   }
 
-  /* Video — full width on mobile */
+  /* Re-assert calm title/subtitle after other section-title rules */
+  body.page-teenagers main#main .flex_block .teen-calm-title,
+  body.page-teenagers main#main h2.teen-calm-title,
+  body.page-teenagers section.hpt120px ~ main#main section h2.fs_24px.teen-calm-title,
+  body.page-teenagers section.hpt120px ~ main#main section h2.teen-calm-title {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 140% !important;
+    text-align: center !important;
+    color: rgba(0, 0, 0, 1) !important;
+    max-width: 335px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  body.page-teenagers main#main .flex_block .teen-calm-subtitle {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    line-height: 150% !important;
+    text-align: center !important;
+    color: rgba(0, 0, 0, 1) !important;
+    width: min(335px, 100%) !important;
+    max-width: 335px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* Beat About-Us mobile span{12px} rule on nested .teen-calm-line spans */
+  body.page-teenagers main#main .teen-calm-title .teen-calm-title-mobile,
+  body.page-teenagers main#main .teen-calm-title .teen-calm-line,
+  body.page-teenagers section.hpt120px ~ main#main section .teen-calm-title .teen-calm-line,
+  body.page-teenagers section.hpt120px ~ main#main section .teen-calm-title span.teen-calm-line {
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 140% !important;
+    font-family: 'Poppins', sans-serif !important;
+    white-space: nowrap !important;
+  }
+
+  body.page-teenagers main#main .teen-calm-title .teen-calm-title-mobile {
+    white-space: normal !important;
+  }
+
+  body.page-teenagers main#main .teen-calm-subtitle .teen-calm-subtitle-mobile,
+  body.page-teenagers main#main .teen-calm-subtitle .teen-calm-line,
+  body.page-teenagers section.hpt120px ~ main#main section .teen-calm-subtitle .teen-calm-line,
+  body.page-teenagers section.hpt120px ~ main#main section .teen-calm-subtitle span.teen-calm-line {
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    line-height: 150% !important;
+    font-family: 'Poppins', sans-serif !important;
+    white-space: nowrap !important;
+  }
+
+  body.page-teenagers main#main .teen-calm-subtitle .teen-calm-subtitle-mobile {
+    white-space: normal !important;
+    width: min(335px, 100%) !important;
+  }
+
+  /* Video — Figma mobile: 335 × 214, 20px side inset (scales down under 375px) */
   body.page-teenagers .row.center_flex > .teen-video-wrap,
   body.page-teenagers .teen-video-wrap.col-lg-6.w-980px,
+  body.page-teenagers .teen-video-wrap.col-lg-6.col-md-6.col-sm-10.col-xs-10.col-10.p0.w-980px,
   body.page-teenagers .teen-video-wrap {
-    width: 100% !important;
-    max-width: 100% !important;
-    flex: 0 0 100% !important;
+    width: min(335px, calc(100vw - 40px)) !important;
+    max-width: min(335px, calc(100vw - 40px)) !important;
+    min-width: 0 !important;
+    flex: 0 0 auto !important;
     margin-left: auto !important;
     margin-right: auto !important;
     display: flex !important;
     justify-content: center !important;
-    padding-left: 16px !important;
-    padding-right: 16px !important;
+    align-items: center !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
     box-sizing: border-box !important;
   }
 
   body.page-teenagers .teen-video-wrap .teen-youtube-player,
   body.page-teenagers .teen-video-wrap .youtube-player {
     width: 100% !important;
-    max-width: 100% !important;
-    min-width: 100% !important;
-    min-height: 100% !important;
-    aspect-ratio: 16 / 9;
+    max-width: 335px !important;
+    min-width: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    aspect-ratio: 335 / 214;
     margin: 0 !important;
     padding: 0 !important;
     border: 0 !important;
     display: block !important;
+    position: relative !important;
+    overflow: hidden !important;
   }
 
   body.page-teenagers .teen-video-wrap .youtube-player .yt-embed,
   body.page-teenagers .teen-video-wrap .yt-embed {
-    position: absolute;
-    inset: 0;
+    position: absolute !important;
+    inset: 0 !important;
     width: 100% !important;
     height: 100% !important;
-    min-width: 100% !important;
-    min-height: 100% !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
     max-width: none !important;
     max-height: none !important;
     aspect-ratio: unset !important;
@@ -1096,6 +1433,97 @@ body.page-teenagers #div_subscription.frame-wrapper-9 {
   body.page-teenagers .sap h4 {
     text-align: center !important;
     margin: 0 auto !important;
+  }
+
+  /* FINAL: beat About-Us span{12px}; keep Figma 3 lines at 24px (no soft-wrap) */
+  body.page-teenagers main#main .teen-calm-title .teen-calm-title-mobile,
+  body.page-teenagers main#main .teen-calm-title .teen-calm-line,
+  body.page-teenagers section.hpt120px ~ main#main section .teen-calm-title span.teen-calm-line {
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 140% !important;
+    font-family: 'Poppins', sans-serif !important;
+    white-space: nowrap !important;
+  }
+
+  body.page-teenagers main#main .teen-calm-title .teen-calm-title-mobile {
+    white-space: normal !important;
+    width: min(335px, 100%) !important;
+  }
+
+  body.page-teenagers main#main .teen-calm-subtitle .teen-calm-line,
+  body.page-teenagers section.hpt120px ~ main#main section .teen-calm-subtitle span.teen-calm-line {
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    line-height: 150% !important;
+    font-family: 'Poppins', sans-serif !important;
+    white-space: nowrap !important;
+  }
+}
+
+/* Calm subtitle mobile — last word so DevTools shows 12px (not .fs_15px) */
+@media (max-width: 768px) {
+  body.page-teenagers main#main h5.teen-calm-subtitle,
+  body.page-teenagers main#main h5.teen-calm-subtitle .teen-calm-subtitle-mobile,
+  body.page-teenagers main#main .teen-calm-subtitle span.teen-calm-line,
+  body.page-teenagers main#main h5.teen-calm-subtitle span.teen-calm-line {
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    line-height: 150% !important;
+    font-family: 'Poppins', sans-serif !important;
+  }
+
+  body.page-teenagers main#main h5.teen-calm-subtitle span.teen-calm-line {
+    white-space: nowrap !important;
+  }
+}
+
+/* Desktop — restore original calm copy (do not use mobile 335px / 12px / nowrap) */
+@media (min-width: 769px) {
+  body.page-teenagers .flex_block .col-lg-5.w-384px.teen-calm-copy,
+  body.page-teenagers .flex_block .w-384px.teen-calm-copy,
+  body.page-teenagers .teen-calm-copy {
+    width: 384px !important;
+    max-width: 384px !important;
+    flex: 0 0 384px !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
+
+  body.page-teenagers .teen-calm-title-mobile,
+  body.page-teenagers .teen-calm-subtitle-mobile {
+    display: none !important;
+  }
+
+  body.page-teenagers .teen-calm-title-desktop,
+  body.page-teenagers .teen-calm-subtitle-desktop {
+    display: inline !important;
+    white-space: normal !important;
+  }
+
+  body.page-teenagers main#main h2.teen-calm-title,
+  body.page-teenagers .teen-calm-title {
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 140% !important;
+    text-align: left !important;
+    width: 100% !important;
+    max-width: 384px !important;
+    margin: 0 !important;
+  }
+
+  body.page-teenagers main#main h5.teen-calm-subtitle,
+  body.page-teenagers .teen-calm-subtitle,
+  body.page-teenagers .teen-calm-subtitle-desktop {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 400 !important;
+    line-height: 150% !important;
+    text-align: left !important;
+    width: 100% !important;
+    max-width: 384px !important;
+    margin: 0 !important;
+    white-space: normal !important;
   }
 }
 

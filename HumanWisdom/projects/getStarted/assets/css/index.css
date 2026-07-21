@@ -113,28 +113,30 @@ body {
 }
 
 /*
- * Teenagers "Learn the skills you need to succeed in life" — Figma: 810 × 544.63, centered.
- * (col-lg-6 + w-980px was 50% wide below 1600px, which left the iframe small and off-center.)
+ * Teenagers "Learn the skills you need to succeed in life" — Figma desktop: 810 × 544.63, centered.
+ * Mobile sizes live in teenagers.css (335 × 214). Keep desktop dimensions off mobile.
  */
-body.page-teenagers .teen-video-wrap {
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  width: 100% !important;
-  max-width: min(810px, calc(100% - 40px)) !important;
-  flex: 0 1 810px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
+@media (min-width: 768px) {
+  body.page-teenagers .teen-video-wrap {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: min(810px, calc(100% - 40px)) !important;
+    flex: 0 1 810px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
 
-body.page-teenagers .teen-video-wrap .yt-embed {
-  display: block !important;
-  width: 100% !important;
-  max-width: 810px !important;
-  height: 544.63px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  border: 0;
+  body.page-teenagers .teen-video-wrap .yt-embed {
+    display: block !important;
+    width: 100% !important;
+    max-width: 810px !important;
+    height: 544.63px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    border: 0;
+  }
 }
 
 
@@ -481,12 +483,6 @@ body.page-healthcare .healthcare-hero-shell .wide-screen-only {
     width: 50% !important;
     max-width: 50% !important;
     flex: 0 0 50% !important;
-  }
-
-  body.page-teenagers .col-lg-5.w-384px {
-    width: 41.66666667% !important;
-    max-width: 41.66666667% !important;
-    flex: 0 0 41.66666667% !important;
   }
 
   body.page-work .email-w980px,

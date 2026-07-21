@@ -182,7 +182,7 @@
             </a>
 
             <a href="https://twitter.com/happiermeapp" target="_blank">
-              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/web_twitter.svg" class="img-responsive" alt="twitter">
+              <img src="https://d1tenzemoxuh75.cloudfront.net/website/x-icon.svg" class="img-responsive" alt="X">
             </a>
 
             <a href="https://www.youtube.com/channel/UCdNujB6X0slYKxLSdWuqCrA" target="_blank">
@@ -426,7 +426,7 @@
       </a>
 
       <a href="https://twitter.com/happiermeapp">
-        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/web_twitter.svg" class="img-responsive" alt="twitter">
+        <img src="https://d1tenzemoxuh75.cloudfront.net/website/x-icon.svg" class="img-responsive" alt="X">
       </a>
 
       <a href="https://www.youtube.com/channel/UCdNujB6X0slYKxLSdWuqCrA">

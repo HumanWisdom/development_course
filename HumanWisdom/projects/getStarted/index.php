@@ -167,8 +167,7 @@ personal growth
                      
                     </div>
                     <p class="text-wrapper-4" id="hw-website-subtitle">
-                      Feel calmer. Strengthen your relationships.<br>
-                      Build <a href="#" class="human-skills-link" data-bs-toggle="modal" data-bs-target="#humanSkillsModal" role="button" aria-haspopup="dialog" id="lifeskills">these skills</a> to thrive at home and at work.
+                      Feel calmer. Strengthen your <br class="subtitle-br-m">relationships.<br class="subtitle-br-d"> Build <a href="#" class="human-skills-link" data-bs-toggle="modal" data-bs-target="#humanSkillsModal" role="button" aria-haspopup="dialog" id="lifeskills">these skills</a><br class="subtitle-br-m"> to thrive at home and at work.
                     </p>
                   </div>
                 </div>
@@ -1569,7 +1568,7 @@ personal growth
           <div class="human-skills-modal-close-row">
             <button type="button" class="human-skills-modal-close" data-bs-dismiss="modal" aria-label="Close">
               <svg width="9" height="9" viewBox="0 0 9 9" aria-hidden="true" focusable="false">
-                <path d="M1 1l7 7M8 1L1 8" stroke="rgba(215, 88, 107, 1)" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M2 2l5 5M7 2L2 7" stroke="rgba(215, 88, 107, 1)" stroke-width="1.5" stroke-linecap="round"/>
               </svg>
             </button>
           </div>
