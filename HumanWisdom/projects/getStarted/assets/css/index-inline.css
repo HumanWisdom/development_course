@@ -58,6 +58,8 @@ img { max-width: 100%; display: block; }
   color: rgba(255, 247, 230, 1);
   margin: 0;
 }
+.frame-wrapper.web_home_divlanding #hw-website-subtitle .subtitle-br-m { display: none; }
+.frame-wrapper.web_home_divlanding #hw-website-subtitle .subtitle-br-d { display: inline; }
 .frame-wrapper.web_home_divlanding #hw-website-subtitle:hover {
   color: rgba(255, 247, 230, 1) !important;
 }
@@ -106,27 +108,52 @@ img { max-width: 100%; display: block; }
   flex-shrink: 0;
 }
 .human-skills-modal-close {
-  position: static;
+  position: relative;
   width: 30px;
   height: 30px;
-  padding: 0;
+  padding: 0 !important;
+  margin: 0;
   border: none;
-  border-radius: 20px;
-  background: rgba(238, 161, 112, 0.2);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  border-radius: 50%;
+  background: rgba(238, 161, 112, 0.2) !important;
+  display: block;
   cursor: pointer;
-  line-height: 0;
+  line-height: 0 !important;
+  font-size: 0 !important;
+  color: rgba(215, 88, 107, 1) !important;
   flex-shrink: 0;
+  box-sizing: border-box;
+  overflow: hidden;
 }
-.human-skills-modal-close:hover {
-  background: rgba(238, 161, 112, 0.35);
+.human-skills-modal-close:hover,
+.human-skills-modal-close:focus,
+.human-skills-modal-close:active,
+.human-skills-modal-close:focus-visible {
+  background: rgba(238, 161, 112, 0.2) !important;
+  color: rgba(215, 88, 107, 1) !important;
+  outline: none;
+  box-shadow: none;
 }
 .human-skills-modal-close svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
   width: 9px;
   height: 9px;
+  margin: 0;
+  padding: 0;
+  transform: translate(-50%, -50%);
   display: block;
+  flex-shrink: 0;
+  pointer-events: none;
+  overflow: visible;
+}
+.human-skills-modal-close svg path,
+.human-skills-modal-close:hover svg path,
+.human-skills-modal-close:focus svg path,
+.human-skills-modal-close:active svg path {
+  stroke: rgba(215, 88, 107, 1) !important;
+  fill: none !important;
 }
 .human-skills-modal-inner {
   display: flex;
@@ -693,7 +720,7 @@ header a[href*="splash_options.php"] * {
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 20px 20px 60px;
+  padding: 20px 20px 80px;
   box-sizing: border-box;
 }
 .why-different-inner {
@@ -892,7 +919,7 @@ header a[href*="splash_options.php"] * {
 /* ========================================
    FIND SUPPORT & CONNECTION
 ======================================== */
-.div-20 { width: 100%; background: rgba(255, 247, 230, 1); display: flex; align-items: center; justify-content: center; gap: 80px; padding: 0; flex-wrap: wrap; margin-top: 55px; overflow: hidden; }
+.div-20 { width: 100%; background: rgba(255, 247, 230, 1); display: flex; align-items: center; justify-content: center; gap: 80px; padding: 0; flex-wrap: wrap; margin-top: 80px; overflow: hidden; }
 .div-20 picture { flex-shrink: 0; line-height: 0; }
 .design { width: 744px; height: 670px; object-fit: cover; display: block; }
 .div-21 { display: flex; flex-direction: column; gap: 24px; max-width: 385px; padding: 60px 0; }
@@ -1701,10 +1728,11 @@ header a[href*="splash_options.php"] * {
   display: flex;
   gap: 20px;
   overflow-x: auto;
+  overscroll-behavior-x: contain;
   overscroll-behavior-y: auto;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-  touch-action: auto;
+  touch-action: pan-x pan-y;
   flex: 1;
   width: 100%;
   /* hide scrollbar on all browsers */
@@ -1836,10 +1864,13 @@ header a[href*="splash_options.php"] * {
   padding-bottom: 4px;
   overflow-x: auto;
   overflow-y: hidden;
+  /* Contain horizontal overscroll; allow vertical wheel to chain to the page */
+  overscroll-behavior-x: contain;
   overscroll-behavior-y: auto;
   scroll-behavior: smooth;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  touch-action: pan-x pan-y;
   width: 100vw;
   margin-left: calc(50% - 50vw);
   height:370px;
@@ -2146,15 +2177,43 @@ header a[href*="splash_options.php"] * {
   }
 
   .text-wrapper-blog {
-    font-size: 18px !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 24px !important;
     font-weight: 600 !important;
+    line-height: 140% !important;
+    text-align: center !important;
+    color: rgba(0, 0, 0, 1) !important;
+    margin: 0 !important;
   }
 
+  /* Explore our blog — Figma mobile: 24px title; 24px gap title→cards→footer */
+  #exploreBlogSection.div-13,
+  .div-13:has(#blog-scroll) {
+    gap: 24px !important;
+  }
+  #exploreBlogSection .blog-outer,
+  .div-13:has(#blog-scroll) .blog-outer {
+    gap: 24px !important;
+  }
+
+  /* Figma mobile CTA: full-bleed cream, padding 40/20, gap 40 (375 artboard) */
   .transform-cta-section {
-    padding: 40px 20px;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    padding: 40px 20px !important;
+    box-sizing: border-box;
+    background: rgba(255, 247, 230, 1);
   }
   .transform-cta-inner {
-    gap: 20px;
+    gap: 40px;
+    width: 100%;
+    max-width: 100%;
+  }
+  .transform-cta-text {
+    gap: 40px;
+    max-width: 100%;
   }
   .transform-cta-heading {
     font-size: 24px;
@@ -2163,6 +2222,7 @@ header a[href*="splash_options.php"] * {
   .transform-cta-heading .mobile-br { display: inline; }
   .transform-cta-sub {
     font-size: 14px;
+    line-height: 140%;
   }
   .transform-cta-btn,
   .transform-cta-btn-outline {
@@ -2240,8 +2300,9 @@ header a[href*="splash_options.php"] * {
     overflow-y: visible;
     align-items: center;
     margin-top: -18px;
-    touch-action: auto;
+    touch-action: pan-x pan-y;
     overscroll-behavior-x: contain;
+    overscroll-behavior-y: auto;
     padding-right: 0;
   }
   .blog-scroll .blog-card:first-child {
@@ -2463,6 +2524,18 @@ header a[href*="splash_options.php"] * {
     max-width: 100%;
     overflow-x: hidden;
     box-sizing: border-box;
+    gap: 30px !important;
+  }
+  .tools-section > .text-wrapper-6 {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 140% !important;
+    text-align: center !important;
+    color: rgba(0, 0, 0, 1) !important;
+    max-width: 335px;
+    margin: 0 auto !important;
+    padding: 0 !important;
   }
   .tools-tabs {
     position: absolute !important;
@@ -2550,7 +2623,15 @@ header a[href*="splash_options.php"] * {
     padding-right: 0;
     padding-top: 24px;
     padding-bottom: 60px;
-    gap: 40px;
+    gap: 30px !important;
+  }
+  .tools-section > .text-wrapper-6 {
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 140% !important;
+    max-width: 335px;
+    margin: 0 auto !important;
+    padding: 0 !important;
   }
   .tools-content-wrap {
     width: 100% !important;
@@ -2632,14 +2713,15 @@ header a[href*="splash_options.php"] * {
   /* Hero */
   /* Mobile hero banner layout (image first, then content) */
   .frame-wrapper.web_home_divlanding {
-    width: 375px;
+    width: 100%;
     max-width: 100%;
-    height: 755px;
+    height: auto;
+    min-height: 0;
     padding-top: 40px;
     padding-bottom: 40px;
     padding-left: 0 !important;
     padding-right: 0 !important;
-    margin: 0 auto;
+    margin: 0;
   }
 
   .div-2 {
@@ -2695,7 +2777,14 @@ header a[href*="splash_options.php"] * {
   .frame-wrapper.web_home_divlanding #hw-website-subtitle {
     font-size: 18px !important;
     line-height: 1.5 !important;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    max-width: 295px;
   }
+  .frame-wrapper.web_home_divlanding #hw-website-subtitle .subtitle-br-m { display: inline; }
+  .frame-wrapper.web_home_divlanding #hw-website-subtitle .subtitle-br-d { display: none; }
   .text-wrapper-4 { font-size: 12px; font-weight: 400; line-height: 1.5; }
   .text-wrapper-5 { font-size: 16px; }
   .start-your-free-wrapper,
@@ -2721,14 +2810,88 @@ header a[href*="splash_options.php"] * {
   .orcha-strip-orcha span { font-size: 12px;font-weight: 500; text-align: left; line-height: 1.3;margin-bottom: 24px; }
   .orcha-strip-mind span { font-size: 12px; font-weight: 500; text-align: left; line-height: 1.3; }
 
-  /* Topics */
-  .div-7 { padding: 40px 20px; gap: 10px; }
-  .div-8 { gap: 10px; }
-  .div-9 { gap: 10px; }
+  /* Topics — Figma mobile: title 24px / 140%; list width 335, item gap 10px */
+  .div-7 {
+    padding: 40px 20px;
+    gap: 24px;
+    align-items: center;
+  }
+  .div-7 .div-wrapper-2 {
+    width: 100%;
+    max-width: 335px;
+  }
+  .div-7 .text-wrapper-a {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 140% !important;
+    text-align: center !important;
+    color: #000 !important;
+    max-width: 335px;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+  .div-8 {
+    gap: 10px;
+    width: 100%;
+    max-width: 335px;
+  }
+  .div-9 {
+    gap: 10px;
+    flex-direction: column;
+  }
   .text-wrapper-6 { font-size: 22px; }
   .text-wrapper-6_mobile{padding-bottom: 0px !important;}
-  .div-9 { flex-direction: column; }
   .div-10 { min-width: unset; width: 100%; height: auto; min-height: 60px; }
+
+  /* Survey findings — Figma mobile: title 24px / 140%; 335px; 24px gap to charts */
+  .div-new_1 {
+    padding: 40px 20px 0 !important;
+    display: flex;
+    justify-content: center;
+  }
+  .div-new_1 .text-wrapper-6 {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 140% !important;
+    text-align: center !important;
+    color: rgba(0, 0, 0, 1) !important;
+    width: 100%;
+    max-width: 335px;
+    margin: 0 auto !important;
+    padding-bottom: 24px !important;
+  }
+  .div-new {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  /* Video — Figma mobile: title 24px / 140%; 335px column; 18px gap to player */
+  .div-13:has(.youtube-player) {
+    padding: 40px 20px;
+    gap: 18px !important;
+    align-items: center;
+    max-width: 100%;
+  }
+  .div-13:has(.youtube-player) .text-wrapper-a {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 140% !important;
+    text-align: center !important;
+    color: rgba(0, 0, 0, 1) !important;
+    width: 100%;
+    max-width: 335px;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+  .div-13:has(.youtube-player) .youtube-player {
+    width: min(335px, calc(100vw - 40px)) !important;
+    max-width: 335px !important;
+    aspect-ratio: 335 / 214;
+    margin: 0 auto;
+  }
 
   /* Olly */
   .frame-wrapper-3 {
@@ -2827,18 +2990,45 @@ header a[href*="splash_options.php"] * {
     box-sizing: border-box;
   }
 
-  /* Find support & connection */
+  /* Find support & connection — Figma mobile: title 24px / 140%; title↔sub gap 8px; 335px */
   .div-20 { flex-direction: column; align-items: center; padding: 0; text-align: center; gap: 0; }
   .div-20 picture { width: 100%; }
   .design { width: 100%; height: 338px; object-fit: cover; }
-  .div-21 { max-width: 100%; width: 100%; padding: 40px 20px; gap: 24px; }
+  .div-21 { max-width: 100%; width: 100%; padding: 40px 20px; gap: 24px; align-items: center; }
   .div-21 .frame-wrapper-6,
-  .div-21 .div-22 { width: 100%; text-align: center; }
+  .div-21 .div-22 {
+    width: 100%;
+    max-width: 335px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .div-21 .div-22 {
+    display: flex;
+    flex-direction: column;
+    gap: 8px !important;
+  }
   .div-21 .text-wrapper-14,
   .div-21 .text-wrapper-8 { text-align: center; }
   .div-21 .text-wrapper-14 .mobile-br { display: inline; }
-  .text-wrapper-14 { font-size: 24px; line-height: 140%; }
-  .support-features { text-align: left; gap: 16px; width: 100%; }
+  .div-21 .text-wrapper-14,
+  .text-wrapper-14 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 140% !important;
+    color: rgba(0, 0, 0, 1);
+    margin: 0;
+  }
+  .div-21 .text-wrapper-8 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 150%;
+    color: rgba(0, 0, 0, 1);
+    margin: 0;
+  }
+  .support-features { text-align: left; gap: 16px; width: 100%; max-width: 335px; }
   .support-feature-item { gap: 3px; }
   .support-feature-heading { gap: 18px; }
   .support-feature-item:nth-child(1) .support-feature-icon { width: 24px; height: 24px; }
@@ -2847,8 +3037,26 @@ header a[href*="splash_options.php"] * {
   .support-feature-title { font-size: 18px; line-height: 1.2; }
   .support-feature-desc { font-size: 12px; padding-left: calc(24px + 18px); }
 
-  /* Org cards - horizontal swipe */
-  .div-23 { padding: 40px 0 !important; gap: 20px; }
+  /* Org cards — Figma mobile: title 24px / 140%; 335px; 30px gap to cards */
+  .div-23 {
+    padding: 40px 0 !important;
+    gap: 30px !important;
+    align-items: center;
+  }
+  .div-23 > .text-wrapper-6,
+  .div-23 > .text-wrapper-6_mobile {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 140% !important;
+    text-align: center !important;
+    color: rgba(0, 0, 0, 1) !important;
+    width: 100%;
+    max-width: 335px;
+    margin: 0 auto !important;
+    padding: 0 20px !important;
+    box-sizing: border-box;
+  }
   .div-24 {
     flex-direction: row !important;
     flex-wrap: nowrap !important;
@@ -2889,11 +3097,19 @@ header a[href*="splash_options.php"] * {
   .div-31 .div-34 { display: contents; }
   .div-31 .div-35 { display: contents; }
 
-  .div-31 .text-wrapper-18 { font-size: 18px !important; font-weight: 600; color: #000 !important; text-align: center; order: 1; }
-  .div-31 .teenage-app-copy { order: 2; }
+  .div-31 .text-wrapper-18 {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    line-height: 140% !important;
+    color: rgba(128, 51, 88, 1) !important;
+    text-align: center;
+    order: 2;
+  }
+  .div-31 .teenage-app-copy { order: 1; }
   .div-31 .text-wrapper-19 { display: none !important; }
   .div-31 .text-wrapper-20 { display: none !important; }
-  .div-31 .text-wrapper-19-mobile { display: block !important; font-size: 18px !important; font-weight: 500; color: #000 !important; text-align: center; line-height: 1.6; margin: 0; order: 3; }
+  .div-31 .text-wrapper-19-mobile { display: block !important; font-size: 24px !important; font-weight: 500; color: #000 !important; text-align: center; line-height: 1.6; margin: 0; order: 3; }
   .div-31 .text-wrapper-20-mobile { display: block !important; font-size: 12px !important; font-weight: 400; color: #000 !important; line-height: 1.6; margin: 0; text-align: center; order: 4; }
   .div-31 .div-28 {
     display: flex !important;
@@ -2968,7 +3184,14 @@ header a[href*="splash_options.php"] * {
   .img-2 { width: 100px; right: 16px; }
 
   /* Headings */
-  .text-wrapper-21 { font-size: 20px; }
+  .text-wrapper-21 {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 140% !important;
+    text-align: center !important;
+    color: rgba(0, 0, 0, 1) !important;
+  }
   .text-wrapper-14 { font-size: 24px; }
   .text-wrapper-19 { font-size: 28px; }
 
@@ -2976,6 +3199,20 @@ header a[href*="splash_options.php"] * {
     font-size: 18px;
     padding: 2px;
     margin-top: 0px;
+  }
+  /* Topics title stays 24px (do not inherit generic text-wrapper-a 18px) */
+  .div-7 .text-wrapper-a {
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 140% !important;
+    padding: 0 !important;
+  }
+  /* Video title stays 24px */
+  .div-13:has(.youtube-player) .text-wrapper-a {
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 140% !important;
+    padding: 0 !important;
   }
   .div-6 {
     justify-content: center;
@@ -2992,7 +3229,14 @@ header a[href*="splash_options.php"] * {
     padding-left: 20px;
   }
   .text-wrapper-6-1 {
-    font-size: 18px;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 140% !important;
+    text-align: center !important;
+    max-width: 335px;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
   .coaches-outer {
     padding-left: 0 !important;
@@ -3057,6 +3301,95 @@ header a[href*="splash_options.php"] * {
   /* Hide bottom scroll buttons (mobile) */
   .coaches-nav-btns,
   .coaches-nav-btns * { display: none !important; }
+
+  /*
+   * FINAL (768): Figma page gap = 60px total between sections.
+   * Use adjacent-sibling margin (not flex gap) so spacing is reliable with colored bands.
+   * Zero section/title vertical padding so it does not stack on top of the 60px.
+   */
+  #main.frame {
+    gap: 0 !important;
+  }
+  #main.frame > * {
+    margin-bottom: 0 !important;
+  }
+  #main.frame > * + * {
+    margin-top: 60px !important;
+  }
+  /* Hero + ORCHA are one Figma block — no white gap between purple and cream */
+  #main.frame > .frame-wrapper.web_home_divlanding + .orcha-strip {
+    margin-top: 0 !important;
+  }
+  /* Survey title + charts = one Figma block */
+  #main.frame > .div-new_1 + .div-new {
+    margin-top: 24px !important;
+  }
+  #main.frame > .div-7,
+  #main.frame > .div-13,
+  #main.frame > .div-14,
+  #main.frame > .div-23,
+  #main.frame > .div-31,
+  #main.frame > .div-54,
+  #main.frame > .tools-section,
+  #main.frame > .coaches-section,
+  #main.frame > .why-different-section,
+  #main.frame > .div-new_1,
+  #main.frame > .div-new,
+  #main.frame > .row.center_flex {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  /* Transform CTA: Figma padding 40px / 20px (keep inside cream band) */
+  #main.frame > .transform-cta-section {
+    padding: 40px 20px !important;
+    margin-bottom: 0 !important;
+  }
+  /* ORCHA: flush under hero; padding only inside cream */
+  #main.frame > .orcha-strip {
+    width: 100% !important;
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+    box-sizing: border-box;
+  }
+  /* Hero: full-bleed so it meets ORCHA edge-to-edge */
+  #main.frame > .frame-wrapper.web_home_divlanding {
+    width: 100% !important;
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-bottom: 40px !important;
+    margin-bottom: 0 !important;
+  }
+  #main.frame .text-wrapper-user,
+  #main.frame > .coaches-section > .text-wrapper-6-1,
+  #main.frame > .div-23 > .text-wrapper-6,
+  #main.frame > .div-23 > .text-wrapper-6_mobile,
+  #main.frame > .div-new_1 .text-wrapper-6,
+  #main.frame > .tools-section > .text-wrapper-6,
+  #main.frame > .div-13 > .text-wrapper-a,
+  #main.frame > #exploreBlogSection > .text-wrapper-blog,
+  #main.frame > .div-54 > .text-wrapper-21,
+  #main.frame > .div-7 .text-wrapper-a {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+  #main.frame > .div-new_1 .text-wrapper-6,
+  #main.frame > .div-23 > .text-wrapper-6,
+  #main.frame > .tools-section > .text-wrapper-6 {
+    padding-bottom: 0 !important;
+  }
+  #main.frame > .div-20 .div-21 {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+  #main.frame > .frame-wrapper-3,
+  #main.frame > .frame-wrapper-9 {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
 }
 
 /* ── 480 px: phone ── */
@@ -3077,15 +3410,24 @@ header a[href*="splash_options.php"] * {
   }
 
   /* Orcha */
-  .orcha-strip { padding: 12px 16px;height:269.74px }
+  .orcha-strip { padding: 12px 16px; }
 
   /* Organisation cards: horizontal swipe (same as 768px) */
   .div-23 .text-wrapper-16 { display: none !important; }
   .div-23 .div-28 { display: none !important; }
 
-  /* Topics */
-  .div-7 { padding: 40px 16px; gap: 10px; }
-  .div-8 { gap: 10px; }
+  /* Topics — Figma: 335px column, 10px item gaps */
+  .div-7 { padding: 40px 20px; gap: 24px; align-items: center; }
+  .div-7 .div-wrapper-2 { width: 100%; max-width: 335px; }
+  .div-7 .text-wrapper-a {
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 140% !important;
+    max-width: 335px;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+  .div-8 { gap: 10px; width: 100%; max-width: 335px; }
   .div-9 { gap: 10px; }
   .text-wrapper-7 { font-size: 15px; }
   .frame-wrapper-3 .introducing-olly-AI {
@@ -3093,10 +3435,41 @@ header a[href*="splash_options.php"] * {
     font-weight: 600;
   }
 
-  /* Video */
-  .div-13 {padding: 40px 16px;
-        gap: 40px;
-        padding-left: 16px; }
+  /* Video — Figma: 18px gap, 24px title (not 40px section gap) */
+  .div-13 { padding: 40px 16px; gap: 40px; }
+  .div-13:has(.youtube-player) {
+    gap: 18px !important;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .div-13:has(.youtube-player) .text-wrapper-a {
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 140% !important;
+    max-width: 335px;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+  .div-13:has(.youtube-player) .youtube-player {
+    width: min(335px, calc(100vw - 40px)) !important;
+    max-width: 335px !important;
+    aspect-ratio: 335 / 214;
+  }
+  /* Blog — keep Figma 24px title / 24px gap */
+  #exploreBlogSection.div-13,
+  .div-13:has(#blog-scroll) {
+    gap: 24px !important;
+  }
+  #exploreBlogSection .text-wrapper-blog,
+  .div-13:has(#blog-scroll) .text-wrapper-blog {
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 140% !important;
+  }
+  #exploreBlogSection .blog-outer,
+  .div-13:has(#blog-scroll) .blog-outer {
+    gap: 24px !important;
+  }
 
   /* Coaches / blog: when carousel is scrolled, title + footer use 16px to match narrow layout */
   .coaches-section:has(.coaches-outer.is-scrolled) .text-wrapper-6-1,
@@ -3110,8 +3483,17 @@ header a[href*="splash_options.php"] * {
     padding-right: 16px !important;
   }
 
-  /* Find support */
-  .text-wrapper-14 { font-size: 20px; }
+  /* Find support — keep Figma 24px (do not drop to 20px) */
+  .div-21 .text-wrapper-14,
+  .text-wrapper-14 {
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 140% !important;
+  }
+  .div-21 .div-22 {
+    gap: 8px !important;
+    max-width: 335px;
+  }
 
   /* Org cards */
   .div-25 { flex: 0 0 315px; min-width: 315px; max-width: 315px; }
@@ -3120,10 +3502,15 @@ header a[href*="splash_options.php"] * {
 
   /* Teenagers */
   .div-31 { padding: 40px 16px 80px; }
-  .div-31 .text-wrapper-18 { font-size: 18px !important; font-weight: 600; color: #000 !important; }
+  .div-31 .text-wrapper-18 {
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    line-height: 140% !important;
+    color: rgba(128, 51, 88, 1) !important;
+  }
   .div-31 .text-wrapper-19 { display: none !important; }
   .div-31 .text-wrapper-20 { display: none !important; }
-  .div-31 .text-wrapper-19-mobile { display: block !important; font-size: 18px !important; font-weight: 500; color: #000 !important; text-align: center; line-height: 1.6; margin: 0; }
+  .div-31 .text-wrapper-19-mobile { display: block !important; font-size: 24px !important; font-weight: 500; color: #000 !important; text-align: center; line-height: 1.6; margin: 0; }
   .div-31 .text-wrapper-20-mobile { display: block !important; font-size: 12px !important; font-weight: 400; color: #000 !important; line-height: 1.6; margin: 0; text-align: center; }
   .div-31 a[href*="teenagers/intro-carousel"] {
     width: 335px;
@@ -3173,9 +3560,39 @@ header a[href*="splash_options.php"] * {
 
   /* Section headings */
   .text-wrapper-6 { font-size: 18px; padding-bottom: 40px; }
-  .tools-section > .text-wrapper-6 { padding-bottom: 0; }
-  .div-new_1 .text-wrapper-6 { padding-bottom: 40px; }
-  .text-wrapper-21 { font-size: 18px; }
+  .tools-section > .text-wrapper-6 {
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 140% !important;
+    padding-bottom: 0 !important;
+  }
+  /* Survey title stays 24px / 24px gap (do not inherit generic 18px / 40px) */
+  .div-new_1 .text-wrapper-6 {
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 140% !important;
+    max-width: 335px;
+    margin: 0 auto !important;
+    padding-bottom: 24px !important;
+  }
+  /* Org title stays 24px / 30px gap */
+  .div-23 > .text-wrapper-6,
+  .div-23 > .text-wrapper-6_mobile {
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 140% !important;
+    max-width: 335px;
+    margin: 0 auto !important;
+    padding: 0 20px !important;
+  }
+  .div-23 {
+    gap: 30px !important;
+  }
+  .text-wrapper-21 {
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 140% !important;
+  }
   .text-wrapper-user {
     font-size: 24px;
     text-align: center;
@@ -3195,6 +3612,78 @@ header a[href*="splash_options.php"] * {
   /* Hide bottom scroll buttons (mobile) */
   .coaches-nav-btns,
   .coaches-nav-btns * { display: none !important; }
+
+  /*
+   * FINAL (480): total inter-section space = 60px only
+   */
+  #main.frame {
+    gap: 0 !important;
+  }
+  #main.frame > * {
+    margin-bottom: 0 !important;
+  }
+  #main.frame > * + * {
+    margin-top: 60px !important;
+  }
+  #main.frame > .frame-wrapper.web_home_divlanding + .orcha-strip {
+    margin-top: 0 !important;
+  }
+  #main.frame > .div-new_1 + .div-new {
+    margin-top: 24px !important;
+  }
+  #main.frame > .div-7,
+  #main.frame > .div-13,
+  #main.frame > .div-14,
+  #main.frame > .div-23,
+  #main.frame > .div-31,
+  #main.frame > .div-54,
+  #main.frame > .tools-section,
+  #main.frame > .coaches-section,
+  #main.frame > .why-different-section,
+  #main.frame > .div-new_1,
+  #main.frame > .div-new,
+  #main.frame > .row.center_flex {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  #main.frame > .transform-cta-section {
+    padding: 40px 20px !important;
+    margin-bottom: 0 !important;
+  }
+  #main.frame > .orcha-strip {
+    width: 100% !important;
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+    box-sizing: border-box;
+  }
+  #main.frame > .frame-wrapper.web_home_divlanding {
+    width: 100% !important;
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-bottom: 40px !important;
+    margin-bottom: 0 !important;
+  }
+  #main.frame .text-wrapper-user,
+  #main.frame > .coaches-section > .text-wrapper-6-1,
+  #main.frame > .div-23 > .text-wrapper-6,
+  #main.frame > .div-new_1 .text-wrapper-6,
+  #main.frame > .tools-section > .text-wrapper-6 {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  #main.frame > .div-20 .div-21 {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+  #main.frame > .frame-wrapper-3,
+  #main.frame > .frame-wrapper-9 {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
 }
 
 /* Scroll lazy sections: fade in/out on scroll */
