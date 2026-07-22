@@ -311,7 +311,11 @@
                               <img *ngIf="item?.isRead === '1'"
                                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
                                 [ngClass]="{'ws-status-both': item?.isRead === '1' && !isSubscriber && item.isFree === '0'}"
-                                class="img-responsive ws-read-icon" />
+                                class="img-responsive ws-read-icon" *ngIf="isAdults">
+                                 <img *ngIf="item?.isRead === '1'"
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isread_teen.svg"
+                                [ngClass]="{'ws-status-both': item?.isRead === '1' && !isSubscriber && item.isFree === '0'}"
+                                class="img-responsive ws-read-icon" *ngIf="!isAdults">
 
                               <!-- NON-SUBSCRIBER BLOCK -->
                               <ng-container *ngIf="!isSubscriber">
@@ -1224,7 +1228,12 @@
                               <img *ngIf="item?.isRead === '1'"
                                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
                                 [ngClass]="{'ws-status-both': item?.isRead === '1' && !isSubscriber && item.isFree === '0'}"
-                                class="img-responsive ws-read-icon" />
+                                class="img-responsive ws-read-icon" *ngIf="isAdults">
+
+                                 <img *ngIf="item?.isRead === '1'"
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isread_teen.svg"
+                                [ngClass]="{'ws-status-both': item?.isRead === '1' && !isSubscriber && item.isFree === '0'}"
+                                class="img-responsive ws-read-icon" *ngIf="!isAdults">
 
                               <!-- NON-SUBSCRIBER BLOCK -->
                               <ng-container *ngIf="!isSubscriber">

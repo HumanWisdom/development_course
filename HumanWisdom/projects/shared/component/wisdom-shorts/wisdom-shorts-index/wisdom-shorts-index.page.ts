@@ -26,8 +26,9 @@ export class WisdomShortsIndexPage implements OnInit {
   allwisdomshorts = [];
   isSubscriber = false;
   searchedText:any='';
-  isAdults = true;
+  // isAdults = true;
   prefData:any;
+   isAdults = false;
   showModal = false;
   modalTitle = 'The best is yet to come';
   modalContent = 'Unlock the full experience and continue your journey to live your best life';

@@ -58,7 +58,10 @@
                             <!-- READ icon (top-right) – only when read -->
                             <img *ngIf="item.isRead === '1' && isLoggedIn"
                               src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
-                              class="mtb0px fs_15px fw_600 lh_150p blog_tick ml5px" alt="read" />
+                              class="mtb0px fs_15px fw_600 lh_150p blog_tick ml5px" alt="read" *ngIf="isAdults">
+                              <img *ngIf="item.isRead === '1' && isLoggedIn"
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isread_teen.svg"
+                              class="mtb0px fs_15px fw_600 lh_150p blog_tick ml5px" alt="read" *ngIf="!isAdults">
                           </div>
                         </div>
                       </div>

@@ -148,7 +148,10 @@ src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_bord
                         *ngIf="!isSubscriber && item.RowID <= 1">
                         <img *ngIf="item?.isRead === '1'"
                           src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
-                          class="img-responsive ws-read-icon" />
+                          class="img-responsive ws-read-icon" *ngIf="isAdults>
+                          <img *ngIf="item?.isRead === '1'"
+                          src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isread_teen.svg"
+                          class="img-responsive ws-read-icon" *ngIf="!isAdults>
                       </div>
 
                       <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isSubscriber">

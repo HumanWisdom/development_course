@@ -117,7 +117,10 @@
                       <!-- READ icon (top) -->
                       <img *ngIf="s.isRead === '1'"
                         src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
-                        class="img-responsive ws-read-icon" />
+                        class="img-responsive ws-read-icon" *ngIf="isAdults">
+                         <img *ngIf="s.isRead === '1'"
+                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isread_teen.svg"
+                        class="img-responsive ws-read-icon" *ngIf="!isAdults">
 
                       <!-- LOCK icon (bottom) -->
                       <img *ngIf="!isSubscriber && s.ExclFromChild === '0'"
