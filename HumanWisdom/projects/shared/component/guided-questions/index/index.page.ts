@@ -43,6 +43,7 @@ export class IndexPage implements OnInit, AfterViewInit, OnChanges {
   dailyCheckIn:any;
   isFreeTrialEnable = false;
   isLoading: boolean = false;
+  showJournalPopup: boolean = false;
 
   constructor(
     private router: Router,
@@ -94,6 +95,24 @@ if (SharedService.ProgramId == ProgramType.Adults) {
       this.isGuidedQueestionsTab = true;
       this.isDiary = false;
     }
+
+    const userId = localStorage.getItem('userId') || '';
+    const key = userId ? `hasSeenJournalPopup_${userId}` : 'hasSeenJournalPopup';
+    const hasSeen = localStorage.getItem(key) === 'true';
+
+    if (!hasSeen) {
+      this.showJournalPopup = true;
+      localStorage.setItem(key, 'true');
+    } else {
+      this.showJournalPopup = false;
+    }
+  }
+
+  closeJournalPopup() {
+    this.showJournalPopup = false;
+    const userId = localStorage.getItem('userId') || '';
+    const key = userId ? `hasSeenJournalPopup_${userId}` : 'hasSeenJournalPopup';
+    localStorage.setItem(key, 'true');
   }
 
   viewJournalAndReflections() {
