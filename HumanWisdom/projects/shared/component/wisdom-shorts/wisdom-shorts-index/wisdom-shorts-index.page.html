@@ -114,22 +114,22 @@
 
                         <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright"
                           *ngIf="!isSubscriber && data['RowID']<=2">
-                          <img *ngIf="data?.isRead === '1'"
+                          <img *ngIf="isAdults && data?.isRead === '1'"
                             src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
-                            class="img-responsive ws-read-icon" *ngIf="isAdults">
+                            class="img-responsive ws-read-icon" >
 
-                            <img *ngIf="data?.isRead === '1'"
+                            <img *ngIf="!isAdults &&data?.isRead === '1'"
                             src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isread_teen.svg"
-                            class="img-responsive ws-read-icon" *ngIf="isAdults">
+                            class="img-responsive ws-read-icon"  >
                         </div>
 
                         <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isSubscriber">
-                          <img *ngIf="data?.isRead === '1'"
+                          <img *ngIf="isAdults && data?.isRead === '1'"
                             src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
-                            class="img-responsive ws-read-icon" *ngIf="isAdults">
-                             <img *ngIf="data?.isRead === '1'"
+                            class="img-responsive ws-read-icon">
+                             <img *ngIf="!isAdults && data?.isRead === '1'"
                             src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isread_teen.svg"
-                            class="img-responsive ws-read-icon" *ngIf="!isAdults">
+                            class="img-responsive ws-read-icon">
                         </div>
 
                         <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright"
