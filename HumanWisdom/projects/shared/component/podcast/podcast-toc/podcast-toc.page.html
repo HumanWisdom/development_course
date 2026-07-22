@@ -242,7 +242,9 @@
         </div>
 
         <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright" *ngIf="isSubscriber">
-          <img *ngIf="data.isRead === '1'" src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/isRead.svg"
+          <img *ngIf="data.isRead === '1'"  && !isAdults src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/isRead.svg"
+            class="ws-read-icon" alt="read">
+             <img *ngIf="data.isRead === '1'"  && isAdults src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isread_teen.svg"
             class="ws-read-icon" alt="read">
         </div>
 

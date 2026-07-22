@@ -233,10 +233,10 @@ nav
 //     margin-left: 7%;
 // }
 
-li:hover,
-li:hover:before {
-  background: #93dfd7;
-}
+// li:hover,
+// li:hover:before {
+//   background: #93dfd7;
+// }
 
 .circular-player-container
 {
@@ -553,7 +553,7 @@ li:hover:before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.65);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   z-index: 9999;
@@ -610,7 +610,7 @@ li:hover:before {
 .learn-popup-content {
   background: #183C79;
   padding: 30px;
-  height: 400px;
+  height: 380px;
 }
 
 .learn-popup-subtitle {
@@ -628,7 +628,7 @@ li:hover:before {
   font-weight: 400;
   font-size: 14px;
   line-height: 150%;
-  color: rgba(255, 255, 255, 0.85);
+  color:#FFFFFFBF;
   margin: 0 0 6px;
 }
 
@@ -640,7 +640,7 @@ li:hover:before {
   li {
     font-family: 'Poppins', sans-serif;
     margin-bottom: 6px;
-    color: #ffffff;
+    color: #FFFFFFBF;
     font-weight: 600;
 
     &:last-child {
@@ -648,19 +648,19 @@ li:hover:before {
     }
 
     .list-item-title {
-      font-family: 'Poppins', sans-serif;
+      margin-left: 5px;
       font-weight: 600;
       font-size: 15px;
       line-height: 140%;
-      color: #ffffff;
+      color: #FFFFFFBF;
     }
 
     .list-item-desc {
-      font-family: 'Poppins', sans-serif;
+      margin-left: 5px;
       font-weight: 400;
       font-size: 14px;
       line-height: 140%;
-      color: rgba(255, 255, 255, 0.85);
+      color: #FFFFFFBF;
       margin-top: 1px;
     }
   }
