@@ -557,7 +557,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     }
     if (section.isVerticalCards)
     {
-      return Math.min(2, totalCards);
+      return Math.min(this.DEFAULT_VerticalVISIBLE_CARD_COUNT, totalCards);
+    
     }
     else
       return Math.min(this.DEFAULT_VISIBLE_CARD_COUNT, totalCards);
@@ -572,11 +573,11 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     if (this.showAllCards[section.id]) {
       return totalCards;
     }
-
+/* looks like not working right 
     const storedCount = this.visibleCardCount[section.id];
     if (storedCount) {
       return Math.min(storedCount, totalCards);
-    }
+    } */
 
     const defaultCount = this.getDefaultVisibleCount(section);
     this.visibleCardCount[section.id] = defaultCount;
