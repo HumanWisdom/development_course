@@ -391,6 +391,7 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   private fetchUserPreferenceFromApi(topicMap: { [id: string]: { name: string; displayName: string; fragment: string } }): void {
+    const defaultTopicKey = this.isAdults ? '1' : '17';
     this.commonService.getUserpreference().subscribe({
       next: (res) => {
         if (res) {
@@ -400,15 +401,15 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
             this.selectedTopic = topicMap[preferenceId];
             localStorage.setItem('userPreference', preferenceId);
           } else {
-            this.selectedTopic = null;
+            this.selectedTopic = topicMap[defaultTopicKey] || null;
           }
         } else {
-          this.selectedTopic = null;
+          this.selectedTopic = topicMap[defaultTopicKey] || null;
         }
       },
       error: (err) => {
         console.warn('Failed to fetch user preference from API:', err);
-        this.selectedTopic = null;
+        this.selectedTopic = topicMap[defaultTopicKey] || null;
       }
     });
   }

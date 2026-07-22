@@ -558,7 +558,7 @@ nav {
   line-height: 150%;
   letter-spacing: 0%;
   text-align: center;
-  color: #1A1A1A;
+  color: #000000;
   margin: 0;
 }
 
@@ -574,7 +574,7 @@ nav {
   font-size: 18px;
   line-height: 150%;
   letter-spacing: 0%;
-  color: #1A1A1A;
+  color: #000000BF;
   margin: 0 0 6px;
 }
 
@@ -583,7 +583,7 @@ nav {
   font-weight: 400;
   font-size: 14px;
   line-height: 150%;
-  color: #4A4A4A;
+  color: #000000BF;
   margin: 0 0 10px;
 }
 
@@ -593,9 +593,8 @@ nav {
   list-style-type: decimal;
 
   li {
-    font-family: 'Poppins', sans-serif;
     margin-bottom: 5px;
-    color: #1A1A1A;
+    color: #000000BF;
     font-weight: 600;
 
     &:last-child {
@@ -603,19 +602,19 @@ nav {
     }
 
     .list-item-title {
-      font-family: 'Poppins', sans-serif;
+      margin-left: 5px;
       font-weight: 600;
       font-size: 15px;
       line-height: 140%;
-      color: #1A1A1A;
+      color: #000000BF;
     }
 
     .list-item-desc {
-      font-family: 'Poppins', sans-serif;
+      margin-left: 5px;
       font-weight: 400;
       font-size: 14px;
       line-height: 140%;
-      color: #4A4A4A;
+      color: #000000BF;
       margin-top: 1px;
     }
   }
