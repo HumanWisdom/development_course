@@ -31883,11 +31883,11 @@ input[type="search"].hide_search::-webkit-search-cancel-button {
 .hamburger_sociali {
   display: flex;
   align-items: center;
-  /* justify-content: center; */
+   justify-content: center; 
 }
 
 .hamburger_sociali a {
-  margin: 0 15px;
+  margin: 0 10px;
 }
 
 .btn_subscription_options[disabled] {
