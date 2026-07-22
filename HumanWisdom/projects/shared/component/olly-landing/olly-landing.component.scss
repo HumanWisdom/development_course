@@ -82,7 +82,13 @@
     background-color: transparent !important;
     
     .suggestion-link-wrapper {
-      margin-bottom: 50px;
+      margin-bottom: 20px;
+    }
+
+    .bottom-suggestion-wrapper {
+      margin-top: 0;
+      padding-top: 0;
+      padding-bottom: 25px;
     }
     
     &.questions-mode {

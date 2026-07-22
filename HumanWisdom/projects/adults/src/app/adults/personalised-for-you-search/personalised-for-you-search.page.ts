@@ -122,6 +122,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
   showSearchBox: boolean = true;
   isAdults: boolean = false;
   isSearchActive: boolean = false;
+  showLearnPopup: boolean = false;
 
 
   //static progress mapping
@@ -206,9 +207,23 @@ export class PersonalisedForYouSearchPage implements OnInit {
     }
     let closetour = localStorage.getItem('closeTour');
 
-    // if(!closetour && !localStorage.getItem('firstTimeSearchTour')) {
-    //   this.continueTour();
-    // }
+    const userId = localStorage.getItem('userId') || '';
+    const key = userId ? `hasSeenLearnPopup_${userId}` : 'hasSeenLearnPopup';
+    const hasSeen = localStorage.getItem(key) === 'true';
+
+    if (!hasSeen) {
+      this.showLearnPopup = true;
+      localStorage.setItem(key, 'true');
+    } else {
+      this.showLearnPopup = false;
+    }
+  }
+
+  closeLearnPopup() {
+    this.showLearnPopup = false;
+    const userId = localStorage.getItem('userId') || '';
+    const key = userId ? `hasSeenLearnPopup_${userId}` : 'hasSeenLearnPopup';
+    localStorage.setItem(key, 'true');
   }
 
   closeTour(){

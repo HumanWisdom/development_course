@@ -18,7 +18,7 @@
                     [ngClass]="isAdults ? 'mdp-streak-badge--adults' : 'mdp-streak-badge--teens'">
                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/streak_teenn.svg"
                       alt="streak" class="mdp-streak-icon" />
-                    <span class="mdp-streak-label">Streak: <strong>{{ streak }}</strong> days</span>
+                    <span class="mdp-streak-label">Streak: <strong>{{ streak }}</strong> {{ streak == 1 ? 'day' : 'days' }}</span>
                   </div>
                 </div>
                 <h4 class="mb5px fw_600 fs_24px lh_140p"
@@ -39,7 +39,7 @@
             <!-- v1.1 -->
             <div *ngIf="!isQuestionsViewActive">
               <!-- CONTINUE WHERE YOU LEFT - moved first per Figma -->
-              <div class="row" *ngIf="isloggedIn && resumeLastvisited.length !== 0"
+              <div class="row" *ngIf="isloggedIn && resumeLastvisited.length !== 0 && !isLastVisitedGuidedJourney"
                 style="margin-left: 0; margin-right: 0;">
                 <h4 class="continue-section-label mb10px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"
                   style="letter-spacing: 0.5px;">
@@ -82,15 +82,10 @@
                 <div class="mood-card-new" (click)="routeToDailyCheckIn()">
                   <!-- Smiley icon -->
                   <div class="mood-icon-wrap">
-                    <svg width="44" height="44" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <circle cx="24" cy="24" r="20" fill="#FFAE9E" />
-                      <circle cx="17.5" cy="21.5" r="2.5" fill="#000000" />
-                      <circle cx="30.5" cy="21.5" r="2.5" fill="#000000" />
-                      <circle cx="14" cy="26" r="3.5" fill="#FF7868" opacity="0.6" />
-                      <circle cx="34" cy="26" r="3.5" fill="#FF7868" opacity="0.6" />
-                      <path d="M18 28.5C18 28.5 21 32 24 32C27 32 30 28.5 30 28.5" stroke="#000000" stroke-width="2.5"
-                        stroke-linecap="round" />
-                    </svg>
+                    <img *ngIf="isAdults" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/emojis/1.svg"
+                      alt="Daily mood" width="44" height="44" />
+                    <img *ngIf="!isAdults" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/emojis/1.svg"
+                      alt="Daily mood" width="44" height="44" />
                   </div>
                   <h4 class="mood-title">Daily mood</h4>
                   <p class="mood-sub">Check-in</p>
@@ -134,7 +129,12 @@
                         A step-by-step daily guide to lasting change,<br>not just a quick fix.
                       </p>
                       <button class="guided-journey-btn-new">
-                        Begin a new journey
+                        <ng-container *ngIf="isLastVisitedGuidedJourney; else beginNew">
+                          Continue where you left
+                        </ng-container>
+                        <ng-template #beginNew>
+                          Begin a new journey
+                        </ng-template>
                       </button>
                     </div>
                   </div>
@@ -208,6 +208,11 @@
                         </ng-container>
                       </span>
                     </div>
+                    <!-- Lock icon on Card (Bottom right) -->
+                    <div *ngIf="!isSubscriber && (item.isFree === '0' || item.isFree === 0)" class="practice-lock-icon">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section1.svg" alt="Lock icon" *ngIf="isAdults">
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg" alt="Lock icon" *ngIf="!isAdults">
+                    </div>
                   </a>
 
                   <!-- Horizontal Card Layout (other cards) -->
@@ -236,6 +241,11 @@
                         </ng-container>
                       </span>
                     </div>
+                    <!-- Lock icon on Card (Bottom right) -->
+                    <div *ngIf="!isSubscriber && (item.isFree === '0' || item.isFree === 0)" class="practice-lock-icon">
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section1.svg" alt="Lock icon" *ngIf="isAdults">
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg" alt="Lock icon" *ngIf="!isAdults">
+                    </div>
                   </a>
                 </ng-container>
 
@@ -256,7 +266,7 @@
                   <div class="row">
                     <!-- hr -->
                     <div class="row">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-10px">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-10px p0">
                         <hr class="hr_style_v3_15">
                       </div>
                     </div>
@@ -293,7 +303,7 @@
 
                   <!-- hr -->
                   <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-10px">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-10px p0">
                       <hr class="hr_style_v3_02">
                     </div>
                   </div>
@@ -355,7 +365,7 @@
 
                   <!-- hr -->
                   <div class="row" *ngIf="dailyqus">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-10px">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-10px p0">
                       <hr class="hr_style_v3_02">
                     </div>
                   </div>
@@ -424,5 +434,9 @@
 
     <app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Continue'"
       [content]="content"></app-modal>
+
+    <app-modal *ngIf="showModal" [title]="modalTitle" [content]="modalContent" [okText]="'Start your free trial'"
+      [cancelText]="'Cancel'" [enableCancel]="true" [isFreeTrialEnable]="true"
+      (closeEvent)="onModalClose($event)"></app-modal>
 
     <!-- footer is provided by the app shell (app.component.html), same as the Home page -->

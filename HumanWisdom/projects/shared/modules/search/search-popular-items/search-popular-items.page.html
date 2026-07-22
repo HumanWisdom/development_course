@@ -308,10 +308,14 @@
                             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
 
                               <!-- TICK for subscriber OR non-subscriber -->
-                              <img *ngIf="item?.isRead === '1'"
+                              <img *ngIf="isAdults && item?.isRead === '1'"
                                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
                                 [ngClass]="{'ws-status-both': item?.isRead === '1' && !isSubscriber && item.isFree === '0'}"
-                                class="img-responsive ws-read-icon" />
+                                class="img-responsive ws-read-icon" >
+                                 <img *ngIf="!isAdults && item?.isRead === '1'"
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isread_teen.svg"
+                                [ngClass]="{'ws-status-both': item?.isRead === '1' && !isSubscriber && item.isFree === '0'}"
+                                class="img-responsive ws-read-icon" >
 
                               <!-- NON-SUBSCRIBER BLOCK -->
                               <ng-container *ngIf="!isSubscriber">
@@ -1221,10 +1225,15 @@
                             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
 
                               <!-- TICK for subscriber OR non-subscriber -->
-                              <img *ngIf="item?.isRead === '1'"
+                              <img *ngIf="isAdults &&item?.isRead === '1'"
                                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
                                 [ngClass]="{'ws-status-both': item?.isRead === '1' && !isSubscriber && item.isFree === '0'}"
-                                class="img-responsive ws-read-icon" />
+                                class="img-responsive ws-read-icon" >
+
+                                 <img *ngIf="!isAdults && item?.isRead === '1'"
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isread_teen.svg"
+                                [ngClass]="{'ws-status-both': item?.isRead === '1' && !isSubscriber && item.isFree === '0'}"
+                                class="img-responsive ws-read-icon" >
 
                               <!-- NON-SUBSCRIBER BLOCK -->
                               <ng-container *ngIf="!isSubscriber">

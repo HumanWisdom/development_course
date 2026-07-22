@@ -132,6 +132,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   // Track visible card count per section (View More functionality)
   visibleCardCount: { [sectionId: string]: number } = {};
   private readonly DEFAULT_VISIBLE_CARD_COUNT = 5;
+    private readonly DEFAULT_VerticalVISIBLE_CARD_COUNT = 2;
+
   private readonly VIEW_MORE_INCREMENT = 5;
   mainheader: string = '';
   searchinp: string = '';
@@ -152,6 +154,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   private playstoreBannerObserver: MutationObserver | null = null;
   preference = '';  
   isHeaderHidden: boolean = false;
+  showExplorePopup: boolean = false;
   constructor(
     private router: Router,
     private commonService: CommonService,
@@ -320,6 +323,25 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
     // Initialize wisdom exercise as hidden
    // this.showWisdomExercise = false;
+
+    // Show Explore popup only on first visit after signup
+    const userId = localStorage.getItem('userId') || '';
+    const key = userId ? `hasSeenExplorePopup_${userId}` : 'hasSeenExplorePopup';
+    const hasSeen = localStorage.getItem(key) === 'true';
+
+    if (!hasSeen) {
+      this.showExplorePopup = true;
+      localStorage.setItem(key, 'true');
+    } else {
+      this.showExplorePopup = false;
+    }
+  }
+
+  closeExplorePopup(): void {
+    this.showExplorePopup = false;
+    const userId = localStorage.getItem('userId') || '';
+    const key = userId ? `hasSeenExplorePopup_${userId}` : 'hasSeenExplorePopup';
+    localStorage.setItem(key, 'true');
   }
 
 
@@ -533,7 +555,13 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     if (!totalCards) {
       return 0;
     }
-    return Math.min(this.DEFAULT_VISIBLE_CARD_COUNT, totalCards);
+    if (section.isVerticalCards)
+    {
+      return Math.min(this.DEFAULT_VerticalVISIBLE_CARD_COUNT, totalCards);
+    
+    }
+    else
+      return Math.min(this.DEFAULT_VISIBLE_CARD_COUNT, totalCards);
   }
 
   private getVisibleCount(section: ContentSection): number {
@@ -545,11 +573,11 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     if (this.showAllCards[section.id]) {
       return totalCards;
     }
-
+/* looks like not working right 
     const storedCount = this.visibleCardCount[section.id];
     if (storedCount) {
       return Math.min(storedCount, totalCards);
-    }
+    } */
 
     const defaultCount = this.getDefaultVisibleCount(section);
     this.visibleCardCount[section.id] = defaultCount;
@@ -1360,7 +1388,11 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     const totalCards = section.cards?.length || 0;
-    if (totalCards <= this.DEFAULT_VISIBLE_CARD_COUNT) {
+
+    if (section.isVerticalCards &&( totalCards <= this.DEFAULT_VerticalVISIBLE_CARD_COUNT)) {
+      return false;
+    }
+    if (!section.isVerticalCards &&( totalCards <= this.DEFAULT_VISIBLE_CARD_COUNT)) {
       return false;
     }
 
@@ -1379,7 +1411,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     const totalCards = section.cards?.length || 0;
-    if (totalCards <= this.DEFAULT_VISIBLE_CARD_COUNT) {
+     if (totalCards <= this.DEFAULT_VISIBLE_CARD_COUNT) {
       return false;
     }
 

@@ -552,6 +552,7 @@
 
 /* Dynamic Practice Cards Redesign */
 .practice-card-new {
+  position: relative !important;
   background: #FFE8BB !important;
   border-radius: 12px !important;
   text-decoration: none !important;
@@ -667,6 +668,22 @@
   justify-content: center !important;
   cursor: pointer;
   z-index: 2;
+}
+
+/* Lock Icon on Practice Cards (Bottom Right) */
+.practice-lock-icon {
+  position: absolute !important;
+  bottom: 12px !important;
+  right: 14px !important;
+  z-index: 5 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  img {
+    width: 20px !important;
+    height: 20px !important;
+  }
 }
 
 .play-icon-overlay-large {

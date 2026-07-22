@@ -68,6 +68,9 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
   showSearchBox: boolean = true;
   isSearchActive: boolean = false;
   isQuestionsViewActive: boolean = false;
+  showModal = false;
+  modalTitle = 'The best is yet to come';
+  modalContent = 'Unlock the full experience and continue your journey to live your best life';
 
   constructor(
     private commonService: CommonService,
@@ -85,7 +88,17 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
     return (ban === null || ban === 'T');
   }
 
+  getFormattedUrl(url: string, prefix: string): string {
+    if (!url) return '';
+    let target = url.startsWith('/') ? url : '/' + url;
+    if (!target.startsWith('/' + prefix + '/') && !target.startsWith('/adults/') && !target.startsWith('/teenagers/')) {
+      target = '/' + prefix + target;
+    }
+    return target;
+  }
+
   ngOnInit() {
+    SharedService.setDataInLocalStorage('NaviagtedFrom', this.router.url);
     // Hide footer owl until the user scrolls past the in-page Olly
     this.commonService.setFooterOwlVisible(false);
 
@@ -140,7 +153,6 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
       this.isAdults = false;
     }
     this.getdailyquestion();
-    this.getdailyques();
     if (localStorage.getItem("Subscriber") && localStorage.getItem("Subscriber") === '1') {
       this.isSubscriber = true;
     }
@@ -238,7 +250,14 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
           this.trythistoday = challengeItem.Text_URL;
         }
 
-        // 4. Alternating Cards logic
+        // 4. Question of the day (type 10)
+        const questionItem = res.find(item => item.dailyPractTypeID === '10' || item.DailyPractise?.toLowerCase() === 'question of the day');
+        if (questionItem) {
+          this.dailyqus = questionItem.Text_URL;
+          this.dailyqusrefid = questionItem.id;
+        }
+
+        // 5. Alternating Cards logic
         if (this.isAdults) {
           const breathingItem = res.find(item => item.dailyPractTypeID === '1');
           const meditationItem = res.find(item => item.dailyPractTypeID === '3');
@@ -342,6 +361,7 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
           const typeId = item.dailyPractTypeID;
           if (type === 'quote of the day' || typeId === '2') return false;
           if (type === 'try this today' || typeId === '4') return false;
+          if (type === 'question of the day' || typeId === '10') return false;
           if (excludedShortTypeId && typeId === excludedShortTypeId) return false;
           if (excludedExerciseTypeId && typeId === excludedExerciseTypeId) return false;
           return true;
@@ -439,6 +459,14 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
   }
 
   routePracticeItem(item: any): void {
+    const isLocked = item && (item.isFree === '0' || item.isFree === 0);
+    if (!this.isSubscriber && isLocked) {
+      SharedService.setDataInLocalStorage('NaviagtedFrom', this.router.url);
+      this.logeventservice.logEvent('click_locked_content');
+      this.showModal = true;
+      return;
+    }
+
     const type = item.DailyPractise?.toLowerCase();
     const typeId = item.dailyPractTypeID;
     const apiUrl: string = item.url || '';
@@ -481,7 +509,7 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
           localStorage.setItem(key, String(hits + 1));
         }
         this.logeventservice.logEvent('click_daily_meditation');
-        const urlPath = apiUrl.startsWith('/') ? apiUrl : `/${apiUrl}`;
+        const urlPath = this.getFormattedUrl(apiUrl, prefix);
         this.router.navigate([urlPath]);
       } else {
         this.routeDailyPractice(4);
@@ -509,7 +537,7 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
 
       // The url field from the API is a relative path starting with /
       // Route: parse query params if any, otherwise navigate directly
-      const urlPath = apiUrl.startsWith('/') ? apiUrl : `/${apiUrl}`;
+      const urlPath = this.getFormattedUrl(apiUrl, prefix);
       if (urlPath.includes('?')) {
         const [path, queryString] = urlPath.split('?');
         const params = new URLSearchParams(queryString);
@@ -594,16 +622,36 @@ routeActiveExercise() {
     this.logeventservice.logEvent('click_proceed_to_home' );    
     this.router.navigate([SharedService.getDashboardUrls()]);
   }
+  get isLastVisitedGuidedJourney(): boolean {
+    if (this.resumeLastvisited && this.resumeLastvisited.length > 0) {
+      const url = this.resumeLastvisited[0].ModuleUrl || '';
+      return url.includes('/guided-journeys') || url.includes('/guided-journey');
+    }
+    return false;
+  }
 
   routeToGuidedJourneys(): void {
     this.logeventservice.logEvent('click_guided_journeys');
-    const prefix = SharedService.getprogramName();
-    this.router.navigate([`${prefix}/guided-journeys`]);
+    if (this.isLastVisitedGuidedJourney) {
+      this.routeResume();
+    } else {
+      const prefix = SharedService.getprogramName();
+      this.router.navigate([`${prefix}/guided-journeys`]);
+    }
   }
 
   goToSubscribe(): void {
     const prefix = SharedService.getprogramName();
+    SharedService.setDataInLocalStorage('NaviagtedFrom', this.router.url);
     this.router.navigate([prefix, 'subscription', 'start-your-free-trial']);
+  }
+
+  onModalClose(event: string) {
+    this.showModal = false;
+    if (event === 'ok') {
+      SharedService.setDataInLocalStorage('NaviagtedFrom', this.router.url);
+      this.router.navigate([SharedService.getprogramName(), 'subscription', 'start-your-free-trial']);
+    }
   }
 
 

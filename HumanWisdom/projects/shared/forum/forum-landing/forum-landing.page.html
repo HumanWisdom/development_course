@@ -374,7 +374,8 @@
                           <button [ngStyle]="{'cursor': !isLoggedIn ? 'pointer' : 'pointer'}" type="button"
                             class="btn fs_12px fw_400 lh_140p " [ngClass]="isAdults ? 'fc_000000' : 'fc_EE9596'"
                             [disabled]="DisabledComment(item)" (click)="reportpost(item,'comment')">
-                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/comment_teen.svg"
+                            <img
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/comment_teen.svg"
                               class="img-responsive mr5px" *ngIf="!isAdults">
                             <img
                               src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/forum_comment.svg"
@@ -423,15 +424,15 @@
                     </div>
 
                     <div class="col-md-12 col-sm-12 col-xs-12   mt10px p0" *ngIf="isLoggedIn && actionType=='comment'">
-                      <button  type="submit" class="btn btn-warning btn_post" (click)="postreport(item,actionType)"
+                      <button type="submit" class="btn btn-warning btn_post" (click)="postreport(item,actionType)"
                         [disabled]="isProcessing" [class.loading]="isProcessing">
                         Comment
                       </button>
                     </div>
                     <!-- <div class="row" >  -->
                     <div class="col-md-12 col-sm-12 col-xs-12 mtb10px p0" *ngIf="isLoggedIn && actionType=='report'">
-                      <button   style="color:#fff;" type="button"  class="btn btn-warning btn_post" (click)="postreport(item,actionType)"
-                        [disabled]="isProcessing" [class.loading]="isProcessing">
+                      <button style="color:#fff;" type="button" class="btn btn-warning btn_post"
+                        (click)="postreport(item,actionType)" [disabled]="isProcessing" [class.loading]="isProcessing">
                         Submit
                       </button>
                     </div>
@@ -1327,4 +1328,23 @@
     </div>
   </div>
 
+</div>
+
+<!-- Forum Popup -->
+<div class="forum-popup-overlay" *ngIf="showForumPopup" (click)="closeForumPopup()">
+  <div class="forum-popup-container col-lg-4 col-md-6 col-sm-6 col-xs-12 col_cw" (click)="$event.stopPropagation()">
+    <div class="forum-popup-card" [ngClass]="{'popup-teens': !isAdults}">
+      <div class="forum-popup-header">
+        <h2 class="forum-popup-title">Forum</h2>
+      </div>
+      <div class="forum-popup-content">
+        <h3 class="forum-popup-subtitle">You're not alone.</h3>
+        <p class="forum-popup-body">
+          Join a welcoming community. Share what's on your mind, learn from others' experiences, and get support from
+          coaches whenever you need a little extra help.
+        </p>
+        <button class="forum-popup-close-btn" (click)="closeForumPopup()">Close</button>
+      </div>
+    </div>
+  </div>
 </div>
