@@ -128,8 +128,8 @@
                           </div>
                         </div>
                         <div class="p20px">
-                              <h6 class="mb-0  section-title-inline">{{ section.title }}</h6>
-                           <small class="text-muted" *ngIf="section.subtitle">{{ section.subtitle }}</small>
+                          <h6 class="mb-0  section-title-inline">{{ section.title }}</h6>
+                          <small class="text-muted" *ngIf="section.subtitle">{{ section.subtitle }}</small>
                         </div>
                         <div>
                           <!-- Horizontal vs Vertical card layout based on section.isVerticalCards flag -->
@@ -226,11 +226,9 @@
                                           alt="Lock icon" class="quick-answer-lock-icon"
                                           style="width: 20px; height: 20px;">
 
-                                            <img *ngIf="(card.isFree === '0' || card.isFree === 0) && !isAdults"
-                                             src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg" 
-                                             alt="Lock icon" 
-                                             class="lock-icon-img"
-                                             style="width: 20px; height: 20px;"> 
+                                        <img *ngIf="(card.isFree === '0' || card.isFree === 0) && !isAdults"
+                                          src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg"
+                                          alt="Lock icon" class="lock-icon-img" style="width: 20px; height: 20px;">
                                         <span *ngIf="card.isFree !== '0' && card.isFree !== 0" class="fs15"> > </span>
                                       </ng-template>
 
@@ -292,8 +290,11 @@
                           [attr.aria-expanded]="section.isExpanded" [attr.aria-controls]="'section-' + section.id">
                           <!-- [class.quick-answers-header]="section.rawSectionType === 3" -->
                           <div class="d-flex flex-column">
-                            <h5 *ngIf="section.title ==='Begin here'" class="mb-0 section-title" [id]="'section-title-' + section.id">{{ isSubscriber ? section.title : section.title + ' (free)' }}</h5>
-                            <h5 *ngIf="section.title !=='Begin here'" class="mb-0 section-title" [id]="'section-title-' + section.id">{{ section.title }}</h5>
+                            <h5 *ngIf="section.title ==='Begin here'" class="mb-0 section-title"
+                              [id]="'section-title-' + section.id">{{ isSubscriber ? section.title : section.title + '
+                              (free)' }}</h5>
+                            <h5 *ngIf="section.title !=='Begin here'" class="mb-0 section-title"
+                              [id]="'section-title-' + section.id">{{ section.title }}</h5>
 
                             <span class="text-muted" *ngIf="section.subtitle">{{
                               section.subtitle }}</span>
@@ -375,10 +376,8 @@
                                             src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg"
                                             alt="Lock icon" class="lock-icon-img" style="width: 20px; height: 20px;">
                                           <img *ngIf="!isAdults"
-                                             src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg" 
-                                             alt="Lock icon" 
-                                             class="lock-icon-img"
-                                             style="width: 20px; height: 20px;">
+                                            src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg"
+                                            alt="Lock icon" class="lock-icon-img" style="width: 20px; height: 20px;">
                                         </div>
                                       </div>
                                       <div class="me-3" style="flex-shrink: 0; position: relative;">
@@ -413,11 +412,9 @@
                                             alt="Lock icon" class="quick-answer-lock-icon"
                                             style="width: 20px; height: 20px;">
 
-                                             <img *ngIf="(card.isFree === '0' || card.isFree === 0) && !isAdults"
-                                             src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg" 
-                                             alt="Lock icon" 
-                                             class="lock-icon-img"
-                                             style="width: 20px; height: 20px;"> 
+                                          <img *ngIf="(card.isFree === '0' || card.isFree === 0) && !isAdults"
+                                            src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg"
+                                            alt="Lock icon" class="lock-icon-img" style="width: 20px; height: 20px;">
                                           <span *ngIf="card.isFree !== '0' && card.isFree !== 0" class="fs15"> > </span>
                                         </ng-template>
                                       </div>
@@ -557,7 +554,8 @@
       <div class="explore-popup-content">
         <h3 class="explore-popup-subtitle">Practical support for every part of your life.</h3>
         <p class="explore-popup-body">
-          Life can be complex. Explore 10 topics, including mental well-being, relationships, work, parenting and more, to find what you need, or discover something you didn't know you needed.
+          Life can be complex. Explore 10 topics, <br> including mental well-being, <br> relationships, work, parenting
+          and more, <br> to find what you need, or discover <br> something you didn't know you needed.
         </p>
         <button class="explore-popup-close-btn" (click)="closeExplorePopup()">Close</button>
       </div>

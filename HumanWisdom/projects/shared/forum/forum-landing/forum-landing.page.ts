@@ -95,6 +95,7 @@ export class ForumLandingPage implements OnInit, OnChanges {
   mediaPercent: any
   freeScreens = []
   isWelcomePopup = false;
+  showForumPopup: boolean = false;
   public isSubscribe = false
   public modaldata = {}
   public x = []
@@ -191,6 +192,24 @@ export class ForumLandingPage implements OnInit, OnChanges {
 
     SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
     this.isSubscribe = localStorage.getItem('Subscriber') === '1' ? true : false;
+
+    const userId = localStorage.getItem('userId') || '';
+    const key = userId ? `hasSeenForumPopup_${userId}` : 'hasSeenForumPopup';
+    const hasSeen = localStorage.getItem(key) === 'true';
+
+    if (!hasSeen) {
+      this.showForumPopup = true;
+      localStorage.setItem(key, 'true');
+    } else {
+      this.showForumPopup = false;
+    }
+  }
+
+  closeForumPopup() {
+    this.showForumPopup = false;
+    const userId = localStorage.getItem('userId') || '';
+    const key = userId ? `hasSeenForumPopup_${userId}` : 'hasSeenForumPopup';
+    localStorage.setItem(key, 'true');
   }
 
   ngOnChanges(changes: SimpleChanges) {
