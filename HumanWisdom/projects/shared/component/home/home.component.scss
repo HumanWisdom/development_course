@@ -350,6 +350,7 @@ background: #FFF7E6;/* Ensure proper stacking context */
 /* Animation styles for accordion sections */
 .rounded-bottom {
   transition: all 0.3s ease-in-out;
+  padding-top:10px;
 }
 
 /* Ensure smooth animation for nested sections */
@@ -675,8 +676,7 @@ background: #FFF7E6;/* Ensure proper stacking context */
 .hr_style_v4 {
   border: 1px solid #000000;
   opacity: 0.1;
-  margin: 10px 0;
-  margin: 0 0 0 0;
+  margin: 0 0 10px 0;
   //filter: brightness(0) invert(0.5); /* Makes the SVG grey */
 }
 
@@ -792,4 +792,107 @@ background: #FFF7E6;/* Ensure proper stacking context */
   .sticky-nav-container{
     margin-top: 0px !important;
   }
+}
+
+/* ====== Explore Popup ====== */
+.explore-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.45);
+  z-index: 9999;
+  animation: exploreOverlayFadeIn 0.6s ease-out;
+}
+
+@keyframes exploreOverlayFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.explore-popup-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  padding: 0;
+  z-index: 10000;
+  animation: exploreCardSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes exploreCardSlideUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+.explore-popup-card {
+  border-radius: 10px 10px 0 0;
+  width: 100%;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.explore-popup-header {
+  background: #FFE8BB;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.explore-popup-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 21px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #1A1A1A;
+  margin: 0;
+}
+
+.explore-popup-content {
+  background: #FFF7E6;
+  padding: 30px;
+  height: 315px;
+}
+
+.explore-popup-subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  color: #1A1A1A;
+  margin: 0 0 12px;
+}
+
+.explore-popup-body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  color: #4A4A4A;
+  margin: 0 0 24px;
+  text-align: left;
+}
+
+.explore-popup-close-btn {
+  display: block;
+  width: 100%;
+  padding: 14px 0;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 150%;
+  cursor: pointer;
+  margin: 0;
+  transition: opacity 0.2s ease, transform 0.15s ease;
 }
