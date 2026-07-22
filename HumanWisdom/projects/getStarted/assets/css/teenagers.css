@@ -318,10 +318,32 @@ body.page-teenagers .owl_testimonials .teen-testimonials-footer .owl-nav {
 
 
 @media (max-width: 768px) {
-  body.page-teenagers .teen-blog-wrap {
-    padding: 40px 16px;
+  body.page-teenagers .teen-blog-wrap,
+  body.page-teenagers .div-13.teen-blog-wrap,
+  body.page-teenagers #teenBlogSection.teen-blog-wrap,
+  body.page-teenagers .teen-blog-wrap:has(#blog-scroll) {
+    padding-top: 0 !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
     align-items: stretch;
     gap: 24px !important;
+  }
+
+  body.page-teenagers .teen-blog-section {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-top: 60px !important; /* Figma page gap after pricing */
+  }
+
+  /* Blog → footer: drop the global 100px footer top margin on mobile */
+  body.page-teenagers .dfooter {
+    margin-top: 40px !important;
+  }
+
+  /* Inspire modules → pricing: Figma 60px page gap */
+  body.page-teenagers #div_subscription.frame-wrapper-9 {
+    margin-top: 60px !important;
+    margin-bottom: 0 !important;
   }
 
   body.page-teenagers main#main .teen-blog-wrap .text-wrapper-blog,
@@ -342,8 +364,6 @@ body.page-teenagers .owl_testimonials .teen-testimonials-footer .owl-nav {
 
   /* Keep title/footer fixed while blog carousel scrolls */
   body.page-teenagers .teen-blog-wrap:has(#blog-scroll) {
-    padding-left: 16px !important;
-    padding-right: 16px !important;
     overflow-x: hidden;
   }
 
@@ -516,7 +536,7 @@ body.page-teenagers .teen-support-title {
   margin-bottom: 0 !important;
 }
 
-/* "Feel calm…" — Figma: 384×241, vertical, gap 30px between title & subtitle */
+/* "Feel calm…" — Figma desktop: 384×241, vertical, gap 16px between title & subtitle */
 body.page-teenagers .flex_block .col-lg-5.w-384px.teen-calm-copy,
 body.page-teenagers .flex_block .w-384px.teen-calm-copy,
 body.page-teenagers .teen-calm-copy {
@@ -525,7 +545,7 @@ body.page-teenagers .teen-calm-copy {
   flex: 0 0 384px !important;
   display: flex !important;
   flex-direction: column !important;
-  gap: 30px !important;
+  gap: 16px !important;
   box-sizing: border-box !important;
   /* Override .ta_lc { text-align: -webkit-center } which shrink-wraps children */
   text-align: left !important;
@@ -1157,7 +1177,7 @@ body.page-teenagers #div_subscription.frame-wrapper-9 {
     text-align: center !important;
   }
 
-  /* Figma mobile spacing: 60px between sections, 18px title → content */
+  /* Figma mobile spacing: 60px between sections only (kill responsive.css section padding) */
   body.page-teenagers main#main > section {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
@@ -1174,7 +1194,16 @@ body.page-teenagers #div_subscription.frame-wrapper-9 {
   body.page-teenagers .section-header-teen,
   body.page-teenagers main#main .section-header,
   body.page-teenagers main#main .section-header-teen {
+    padding-top: 0 !important;
     padding-bottom: 12px !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* Support title: no extra h2 margin from responsive.css */
+  body.page-teenagers main#main .teen-support-title,
+  body.page-teenagers main#main .section-header .teen-support-title {
+    margin-top: 0 !important;
     margin-bottom: 0 !important;
   }
 
@@ -1220,8 +1249,17 @@ body.page-teenagers #div_subscription.frame-wrapper-9 {
     padding-right: 0 !important;
   }
 
+  /* Video → support title: Figma 60px page gap (was 40px + stacked padding) */
   body.page-teenagers main#main > section:has(.teen-video-wrap) + section {
-    margin-top: 40px !important;
+    margin-top: 60px !important;
+    padding-top: 0 !important;
+  }
+
+  /* Pricing → blog: Figma 60px page gap */
+  body.page-teenagers main#main > #div_subscription + .teen-blog-section,
+  body.page-teenagers main#main > .frame-wrapper-9 + .teen-blog-section {
+    margin-top: 60px !important;
+    padding-top: 0 !important;
   }
 
   body.page-teenagers main#main .section-header.teen-dykt-header {
@@ -1246,7 +1284,7 @@ body.page-teenagers #div_subscription.frame-wrapper-9 {
     margin-top: 0 !important;
   }
 
-  /* Gap handled by .teen-calm-copy { gap: 30px } — do not add extra margin */
+  /* Gap handled by .teen-calm-copy { gap: 16px desktop / 30px mobile } — do not add extra margin */
   body.page-teenagers main#main .flex_block .teen-calm-title + h5,
   body.page-teenagers main#main .flex_block .teen-calm-subtitle {
     margin-top: 0 !important;
@@ -1488,6 +1526,7 @@ body.page-teenagers #div_subscription.frame-wrapper-9 {
     flex: 0 0 384px !important;
     align-items: flex-start !important;
     text-align: left !important;
+    gap: 16px !important;
   }
 
   body.page-teenagers .teen-calm-title-mobile,
