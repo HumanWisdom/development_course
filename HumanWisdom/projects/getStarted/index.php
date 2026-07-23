@@ -542,7 +542,7 @@ personal growth
               <div class="text-wrapper-18">HappierMe for Teenagers</div>
               <div class="div-35">
                 <p class="text-wrapper-19">Help teenagers feel happier and succeed in life</p>
-                <p class="text-wrapper-19-mobile">Guiding teenagers to flourish in life</p>
+                <p class="text-wrapper-19-mobile">Help teenagers feel<br>happier and succeed in life</p>
                 <p class="text-wrapper-20">
                   The HappierMe app for teens has been designed to help them manage their emotions, build better
                   friendships, navigate the challenges of social media, anxiety and peer pressure, and develop their
