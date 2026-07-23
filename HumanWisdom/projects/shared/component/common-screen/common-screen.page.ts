@@ -28,7 +28,7 @@ export class CommonScreenPage implements OnInit {
   allData = [];
   isSubscriber = false;
   searchedText:any='';
-  isAdults = true;
+  isAdults = false;
   prefData:any;
   showModal = false;
   modalTitle = 'The best is yet to come';
