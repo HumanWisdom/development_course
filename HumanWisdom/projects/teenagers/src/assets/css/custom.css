@@ -34278,6 +34278,7 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
 }
 .tag-nuggets-inspiration { background: #EE9596; color: #FFFFFF !important; }
 
+.tag-ask-coach { background: #4267A5; color: #FFFFFF !important; }
 
 .btn_ctdout {
   height: 50px;
