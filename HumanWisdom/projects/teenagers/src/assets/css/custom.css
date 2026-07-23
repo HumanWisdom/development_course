@@ -34276,6 +34276,7 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   text-align: left;
   padding: 12px 10px;
 }
+.tag-nuggets-inspiration { background: #EE9596; color: #FFFFFF !important; }
 
 
 .btn_ctdout {
