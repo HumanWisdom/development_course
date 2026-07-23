@@ -132,7 +132,7 @@
 
   strong {
     font-weight: 600;
-    color: #000000;
+    color: rgba(0, 0, 0, 0.75);
   }
 }
 
@@ -171,7 +171,7 @@
     color: rgba(255, 255, 255, 0.75);
 
     strong {
-      color: #ffffff;
+      color: rgba(255, 255, 255, 0.75);
     }
   }
   .journal-popup-close-btn {
