@@ -41,9 +41,14 @@
       color: #00000080;
     }
 
-    .olly-different-link, .olly-bottom-link {
-      color: #000000; // Adults coral link
+    .olly-different-link {
+      color: #000000;
       text-decoration: underline;
+    }
+
+    .explore-topic-tile {
+      background-color: #FFE8BB;
+      color: #000000;
     }
   }
 
@@ -68,10 +73,14 @@
       color: rgba(255, 255, 255, 0.8);
     }
 
-    .olly-different-link, .olly-bottom-link {
-      color: #ffffff; // Teens coral link
+    .olly-different-link {
+      color: #ffffff;
       text-decoration: underline;
+    }
 
+    .explore-topic-tile {
+      background-color: #0C2B5F;
+      color: #ffffff;
     }
   }
 
@@ -82,13 +91,12 @@
     background-color: transparent !important;
     
     .suggestion-link-wrapper {
-      margin-bottom: 20px;
+      margin-bottom: 50px;
     }
 
     .bottom-suggestion-wrapper {
       margin-top: 0;
-      padding-top: 0;
-      padding-bottom: 25px;
+      padding: 0;
     }
     
     &.questions-mode {
@@ -322,19 +330,48 @@
 }
 
 .bottom-suggestion-wrapper {
-  margin-top: auto; // Pushes link to the bottom above navigation footer
-  padding-top: 40px;
+  margin-top: auto;
+  padding-top: 20px;
   padding-bottom: 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.olly-bottom-link {
+.explore-topic-tile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 15px 20px;
+  border-radius: 12px;
   font-family: 'Inter', sans-serif;
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 400;
+  text-decoration: none;
   cursor: pointer;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+  text-align: left;
 
   strong {
-    font-weight: 700;
+    font-weight: 600;
+  }
+}
+
+.explore-topic-text {
+  flex: 1;
+  text-align: left;
+}
+
+.continue-arrow-new {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  i {
+    font-size: 13px;
+    color: inherit !important;
   }
 }
 

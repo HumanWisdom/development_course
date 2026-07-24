@@ -55,10 +55,15 @@
                   </a>
                 </div>
 
-                <!-- Suggestion link 2 (bottom link) -->
+                <!-- Suggestion link 2 (bottom link) - Explore tile -->
                 <div class="bottom-suggestion-wrapper" *ngIf="selectedTopic">
-                  <a href="javascript:void(0)" (click)="onTopicLinkClick()" class="olly-bottom-link">
-                    More on '<strong>{{ selectedTopic.displayName }}</strong>'
+                  <a href="javascript:void(0)" (click)="onTopicLinkClick()" class="explore-topic-tile">
+                    <span class="explore-topic-text">
+                      Explore <strong>{{ selectedTopic.displayName }}</strong>
+                    </span>
+                    <div class="continue-arrow-new">
+                      <i class="fa fa-angle-right"></i>
+                    </div>
                   </a>
                 </div>
 
