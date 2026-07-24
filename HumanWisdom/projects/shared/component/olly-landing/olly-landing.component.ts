@@ -15,6 +15,7 @@ import { AdultsService } from '../../../adults/src/app/adults/adults.service';
 export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
   @Input() isIntegrated: boolean = false;
   @Input() startInQuestionsView: boolean = false;
+  @Input() hideExploreTopic: boolean = false;
   @Output() startChat = new EventEmitter<string>();
   @Output() viewChanged = new EventEmitter<boolean>();
   
@@ -245,7 +246,8 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
     // Resolve topicId with multiple fallbacks:
     // 1. From router navigation state (set in constructor)
     // 2. From window.history.state (Angular persists router state here)
-    // 3. From GetUserPreference API call (works even when login is from native app)
+    // 3. From localStorage (synchronizes dynamic tab switches immediately)
+    // 4. From GetUserPreference API call (works even when login is from native app)
     let topicId = this.topicIdFromNav;
 
     if (!topicId) {
@@ -256,10 +258,18 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
       }
     }
 
+    if (!topicId) {
+      // Fallback: localStorage stores the most recently set preference
+      const storedPref = localStorage.getItem('userPreference');
+      if (storedPref) {
+        topicId = storedPref;
+      }
+    }
+
     const topicMap = this.isAdults ? this.adultTopics : this.teenTopics;
 
     if (topicId && topicMap[topicId]) {
-      // Topic came from navigation state — use it directly
+      // Topic came from navigation state or localStorage — use it directly
       this.selectedTopic = topicMap[topicId];
     } else {
       this.selectedTopic = null;
@@ -417,7 +427,7 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
   onTopicLinkClick(): void {
     if (this.selectedTopic) {
       const program = this.isAdults ? 'adults' : 'teenagers';
-      this.router.navigate([`/${program}/home`], { fragment: this.selectedTopic.fragment });
+      this.router.navigate([`/${program}/explore`], { fragment: this.selectedTopic.fragment });
     }
   }
 

@@ -978,6 +978,9 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
   update(id) {
     console.log("update")
+    if (id) {
+      localStorage.setItem('userPreference', id.toString());
+    }
     this.commonService.AddUserPreference(id).subscribe(res => {
       if (res) {
         console.log(res)

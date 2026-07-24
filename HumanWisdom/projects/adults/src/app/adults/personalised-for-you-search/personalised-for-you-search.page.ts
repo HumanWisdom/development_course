@@ -477,7 +477,7 @@ toggleAccordion() {
       case "self awareness":
       case "self-awareness":
         {
-        this.route.navigate(['/adults/home'], { fragment: 'self-awareness', state: { source: 'search' } });
+        this.route.navigate(['/adults/explore'], { fragment: 'self-awareness', state: { source: 'search' } });
         return;
       }
       case "forum":{

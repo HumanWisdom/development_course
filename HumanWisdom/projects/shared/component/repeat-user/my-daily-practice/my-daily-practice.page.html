@@ -34,7 +34,7 @@
               </div>
             </div>
 
-            <app-olly-landing [isIntegrated]="true" (viewChanged)="onOllyViewChanged($event)"></app-olly-landing>
+            <app-olly-landing [isIntegrated]="true" [hideExploreTopic]="isContinueCardSelfAwareness" (viewChanged)="onOllyViewChanged($event)"></app-olly-landing>
 
             <!-- hr -->
             <div class="row">
@@ -62,7 +62,7 @@
 
                   <!-- Middle Text -->
                   <div class="continue-text-new">
-                    <span class="continue-tag">PATHWAY</span>
+                    <span class="continue-tag">{{resumeLastvisited[0]['feature']}}</span>
                     <h4 class="continue-title">
                       {{resumeLastvisited[0]['ModuleName']}}
                     </h4>
@@ -139,7 +139,7 @@
                       </p>
                       <button class="guided-journey-btn-new">
                         <ng-container *ngIf="isLastVisitedGuidedJourney; else beginNew">
-                          Continue where you left
+                          Continue
                         </ng-container>
                         <ng-template #beginNew>
                           Begin a new journey
@@ -306,7 +306,7 @@
                             </div>
 
                             <div class="col-1 p0 tright">
-                              <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+                              <i class="fa fa-angle-right fs_20px" [ngClass]="isAdults ? 'fc_ffffff' : 'fc_0C2B5F'"></i>
                             </div>
                           </div>
                         </a>
@@ -390,7 +390,7 @@
                   <a (click)="routeToForum()" class="forum-card-new">
                     <div class="forum-icon-wrap">
                       <img
-                        [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/forum_ad.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/foram_tenn.webp'"
+                        [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/forum_ad.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/foram_tenn.svg'"
                         alt="Forum chat bubbles" class="forum-icon">
                     </div>
                     <div class="forum-text-wrap">
