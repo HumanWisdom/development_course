@@ -31717,7 +31717,7 @@ input[type="search"].hide_search::-webkit-search-cancel-button {
 }
 
 .hamburger_sociali a {
-  margin: 0 15px;
+  margin: 0 10px;
 }
 
 .btn_subscription_options[disabled] {
@@ -34276,7 +34276,9 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   text-align: left;
   padding: 12px 10px;
 }
+.tag-nuggets-inspiration { background: #EE9596; color: #FFFFFF !important; }
 
+.tag-ask-coach { background: #4267A5; color: #FFFFFF !important; }
 
 .btn_ctdout {
   height: 50px;
