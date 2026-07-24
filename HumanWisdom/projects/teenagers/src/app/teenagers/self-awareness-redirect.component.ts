@@ -10,6 +10,6 @@ export class SelfAwarenessRedirectComponent implements OnInit {
   ngOnInit(): void {
     const program = SharedService.getprogramName();
     // Segments must be separate; one string '/teenagers/home' is a single segment and breaks fragment handling (NG04002).
-    this.router.navigate(['/', program, 'home'], { fragment: 'self-awareness', replaceUrl: true });
+    this.router.navigate(['/', program, 'explore'], { fragment: 'self-awareness', replaceUrl: true });
   }
 }
