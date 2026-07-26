@@ -185,7 +185,7 @@
 
 
 /* Teenager overrides */
-.v1_3_bg_splash_teens {
+.bg_stake {
   .td_points_box {
     background: linear-gradient(180deg, #EE9596 0%, #D47172 100%);
   }
@@ -281,7 +281,7 @@
 .ftray {
   box-shadow: 0px -1px 2px rgba(0, 0, 0, 0.2);
 }
-.v1_3_bg_splash_teens .mfooter {
+.bg_stake .mfooter {
   border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
@@ -297,7 +297,7 @@
   transition: 0.3s;
 }
 
-.v1_3_bg_splash_teens .mdp_add_to_journal {
+.bg_stake .mdp_add_to_journal {
   background: linear-gradient(180deg, #EE9596 0%, #D47172 100%);
 }
 
@@ -326,7 +326,7 @@
 }
 
 /* Teens variant: dark card bg */
-.v1_3_bg_splash_teens .continue-card-new {
+.bg_stake .continue-card-new {
   background: #0C2B5F !important;
 
   .continue-tag {
@@ -387,7 +387,7 @@
   }
 }
 
-.v1_3_bg_splash_teens .continue-arrow-new i {
+.bg_stake .continue-arrow-new i {
   color: #ffffff !important;
 }
 
@@ -1035,11 +1035,11 @@
 
 
 /* ============================================================
-   TEENS THEME OVERRIDES (.v1_3_bg_splash_teens)
+   TEENS THEME OVERRIDES (.bg_stake)
    Blue palette — all new card components
    ============================================================ */
 
-.v1_3_bg_splash_teens {
+.bg_stake {
 
   /* ---- Practice cards ---- */
   .practice-card-new {
@@ -1121,7 +1121,7 @@
 
   /* ---- Contact a coach (box_v3_01) ---- */
   .box_v3_01 {
-    background: linear-gradient(180deg, #6183BE 0%, #4267A5 100%) !important;
+    background: linear-gradient(180deg, #FAC768 0%, #F1AC5E 100%) !important;
     border-radius: 12px !important;
     border: none !important;
   }
@@ -1203,8 +1203,9 @@
   }
 
   /* ---- HR dividers ---- */
-  .hr_style_v3_02 {
-    border-color: rgba(255, 255, 255, 0.15) !important;
+  .hr_style_v3_02, .hr_style_v3_15 {
+    border: 1px solid #FFFFFF !important;
+    opacity: 0.1 !important;
   }
 }
 
@@ -1256,8 +1257,4 @@
   }
 }
 
-.v1_3_bg_splash_teens {
-  .hr_style_v3_02, .hr_style_v3_15 {
-    border: 1px solid #FFFFFF1A;
-  }
-}
+

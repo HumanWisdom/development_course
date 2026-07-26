@@ -570,7 +570,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       return 0;
     }
 
-    if (this.showAllCards[section.id]) {
+    if (this.showAllCards[this.getScopedSectionId(section.id)]) {
       return totalCards;
     }
 /* looks like not working right 
@@ -978,6 +978,9 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
   update(id) {
     console.log("update")
+    if (id) {
+      localStorage.setItem('userPreference', id.toString());
+    }
     this.commonService.AddUserPreference(id).subscribe(res => {
       if (res) {
         console.log(res)
@@ -1430,13 +1433,14 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     const currentVisible = this.getVisibleCount(section);
-    const newVisibleCount = Math.min(currentVisible + this.VIEW_MORE_INCREMENT, totalCards);
+    // const newVisibleCount = Math.min(currentVisible + this.VIEW_MORE_INCREMENT, totalCards);
+    const newVisibleCount = totalCards; // Show all cards on "View More" click
 
     this.visibleCardCount[section.id] = newVisibleCount;
 
     const reachedEnd = newVisibleCount >= totalCards;
-    this.showAllCards[section.id] = reachedEnd;
-    this.homeStateService.setShowAllCards(section.id, reachedEnd);
+    this.showAllCards[this.getScopedSectionId(section.id)] = reachedEnd;
+    this.homeStateService.setShowAllCards(this.getScopedSectionId(section.id), reachedEnd);
 
     // Save state to store if needed (optional, for persistence)
     // this.homeStateService.setVisibleCardCount(section.id, newVisibleCount);

@@ -630,6 +630,26 @@ routeActiveExercise() {
     return false;
   }
 
+  /**
+   * True when the "Continue where you left" card is visible AND its content
+   * belongs to the self-awareness topic. In that case the Explore Self-awareness
+   * tile in the Olly landing section is redundant and should be hidden.
+   */
+  get isContinueCardSelfAwareness(): boolean {
+    if (
+      this.isloggedIn &&
+      this.resumeLastvisited &&
+      this.resumeLastvisited.length > 0 &&
+      !this.isLastVisitedGuidedJourney
+    ) {
+      const url = (this.resumeLastvisited[0].ModuleUrl || '').toLowerCase();
+      const feature = (this.resumeLastvisited[0].feature || '').toLowerCase();
+      return url.includes('self-awareness') || url.includes('self_awareness') || url.includes('selfawareness')
+          || feature.includes('self-awareness') || feature.includes('self awareness');
+    }
+    return false;
+  }
+
   routeToGuidedJourneys(): void {
     this.logeventservice.logEvent('click_guided_journeys');
     if (this.isLastVisitedGuidedJourney) {
@@ -796,7 +816,7 @@ routeActiveExercise() {
       case "awareness exercises":
       case "self awareness":
       case "self-awareness": {
-        url = `/${SharedService.getprogramName()}/home`;
+        url = `/${SharedService.getprogramName()}/explore`;
         fragment = "self-awareness";
         break;
       }

@@ -26,7 +26,7 @@ export class CuratedRedirectComponent implements OnInit {
         const fragment = this.mapping[currentUrl];
 
         if (fragment) {
-            this.router.navigate(['/teenagers/home'], { fragment: fragment });
+            this.router.navigate(['/teenagers/explore'], { fragment: fragment });
         }
     }
 

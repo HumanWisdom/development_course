@@ -610,11 +610,9 @@ nav
 .learn-popup-content {
   background: #183C79;
   padding: 30px;
-  height: 380px;
 }
 
 .learn-popup-subtitle {
-  font-family: 'Poppins', sans-serif;
   font-weight: 600;
   font-size: 18px;
   line-height: 150%;
@@ -624,12 +622,11 @@ nav
 }
 
 .learn-popup-grow-text {
-  font-family: 'Poppins', sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 150%;
-  color:#FFFFFFBF;
-  margin: 0 0 6px;
+  color:rgba(255, 255, 255, 0.75);
+  margin: 0 0 10px;
 }
 
 .learn-popup-list {
@@ -639,8 +636,8 @@ nav
 
   li {
     font-family: 'Poppins', sans-serif;
-    margin-bottom: 6px;
-    color: #FFFFFFBF;
+    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 0.75);
     font-weight: 600;
 
     &:last-child {
@@ -652,7 +649,7 @@ nav
       font-weight: 600;
       font-size: 15px;
       line-height: 140%;
-      color: #FFFFFFBF;
+      color: rgba(255, 255, 255, 0.75);
     }
 
     .list-item-desc {
@@ -660,7 +657,7 @@ nav
       font-weight: 400;
       font-size: 14px;
       line-height: 140%;
-      color: #FFFFFFBF;
+      color: rgba(255, 255, 255, 0.75);
       margin-top: 1px;
     }
   }
