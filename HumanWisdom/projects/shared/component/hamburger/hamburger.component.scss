@@ -80,7 +80,7 @@ nav
         top: 0;
         right: 0;
         max-width: 450px;
-        width: calc(100vw - 75px);
+        width: calc(100vw - 60px);
         height: 100%;
         @include transform(translate3d(450px, 0px,0px));
         @include transition(transform 0.35s);
@@ -90,7 +90,7 @@ nav
         //   background-color: #fff;
         // background: #292D56;
         box-shadow: unset;
-        padding: 20px;
+        padding: 15px;
         border-radius: 16px 0 0 16px;
 
         &__overlay
