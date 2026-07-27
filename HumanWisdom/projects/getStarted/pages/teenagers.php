@@ -202,19 +202,24 @@ life skills for teenagers
       <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
         <div class="col-lg-6 col-md-6 col-sm-10 col-xs-10 col-10 p0 w-980px teen-video-wrap">
           <div class="youtube-player teen-youtube-player">
-            <iframe class="yt-embed" src="https://www.youtube.com/embed/HJ4Rkc1bX70?si=eAi7g7vzur-h1IBb"
-              title="YouTube video player" frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            <button
+              id="teenYoutubeCover"
+              type="button"
+              aria-label="Play HappierMe for Teens video">
+              <img
+                src="https://d1tenzemoxuh75.cloudfront.net/website/yt-player.png"
+                alt="HappierMe for Teens video cover" />
+            </button>
+            <iframe
+              id="teenYoutube"
+              class="yt-embed"
+              src="about:blank"
+              data-src="https://www.youtube-nocookie.com/embed/HJ4Rkc1bX70?autoplay=1&rel=0&modestbranding=1&playsinline=1"
+              title="HappierMe for Teens"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
               allowfullscreen>
             </iframe>
           </div>
-          <!-- <video id="teenagerVideo" controls playinline class="w100p"
-              poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teens_poster.webp"
-              controlsList="nodownload">
-              <source
-                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/videos/teenagers.mp4"
-                type="video/mp4">
-            </video> -->
         </div>
       </div>
     </section>
@@ -1128,6 +1133,20 @@ life skills for teenagers
     document.addEventListener('DOMContentLoaded', initTeenTestimonialsCarousel);
     window.addEventListener('load', initTeenTestimonialsCarousel);
     window.addEventListener('resize', initTeenTestimonialsCarousel);
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var introFrame = document.getElementById('teenYoutube');
+      var introCover = document.getElementById('teenYoutubeCover');
+      if (!introFrame || !introCover) return;
+      introCover.addEventListener('click', function () {
+        if (!introFrame.src || introFrame.src === 'about:blank') {
+          introFrame.src = introFrame.getAttribute('data-src');
+        }
+        introCover.style.display = 'none';
+      });
+    });
   </script>
 
 </body>

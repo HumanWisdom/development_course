@@ -529,7 +529,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
       case "self awareness":
       case "self-awareness":
         {
-        this.route.navigate(['/teenagers/home'], { fragment: 'self-awareness', state: { source: 'search' } });
+        this.route.navigate(['/teenagers/explore'], { fragment: 'self-awareness', state: { source: 'search' } });
         return;
       }
       case "forum":{

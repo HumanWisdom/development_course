@@ -29,7 +29,7 @@ export class CuratedRedirectComponent implements OnInit {
         const fragment = this.mapping[currentUrl];
 
         if (fragment) {
-            this.router.navigate(['/adults/home'], { fragment: fragment });
+            this.router.navigate(['/adults/explore'], { fragment: fragment });
         }
     }
 
