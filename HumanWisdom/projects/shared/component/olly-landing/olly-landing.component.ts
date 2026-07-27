@@ -260,8 +260,11 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
 
     if (!topicId) {
       // Fallback: localStorage stores the most recently set preference
+      // Only use it if the user is actually logged in
+      const isLoggedIn = localStorage.getItem('isloggedin') === 'T';
+      const isGuest = localStorage.getItem('guest') === 'T';
       const storedPref = localStorage.getItem('userPreference');
-      if (storedPref) {
+      if (storedPref && isLoggedIn && !isGuest) {
         topicId = storedPref;
       }
     }
@@ -401,7 +404,15 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   private fetchUserPreferenceFromApi(topicMap: { [id: string]: { name: string; displayName: string; fragment: string } }): void {
-    const defaultTopicKey = this.isAdults ? '1' : '17';
+    const isLoggedIn = localStorage.getItem('isloggedin') === 'T';
+    const isGuest = localStorage.getItem('guest') === 'T';
+
+    // Don't show the Explore tile for guest / not-logged-in users
+    if (!isLoggedIn || isGuest) {
+      this.selectedTopic = null;
+      return;
+    }
+
     this.commonService.getUserpreference().subscribe({
       next: (res) => {
         if (res) {
@@ -411,15 +422,17 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
             this.selectedTopic = topicMap[preferenceId];
             localStorage.setItem('userPreference', preferenceId);
           } else {
-            this.selectedTopic = topicMap[defaultTopicKey] || null;
+            // API returned empty/0 — no preference set, hide the tile
+            this.selectedTopic = null;
           }
         } else {
-          this.selectedTopic = topicMap[defaultTopicKey] || null;
+          // No response — hide the tile
+          this.selectedTopic = null;
         }
       },
       error: (err) => {
         console.warn('Failed to fetch user preference from API:', err);
-        this.selectedTopic = topicMap[defaultTopicKey] || null;
+        this.selectedTopic = null;
       }
     });
   }
