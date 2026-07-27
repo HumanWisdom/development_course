@@ -34,15 +34,15 @@
               </div>
             </div>
 
-            <app-olly-landing [isIntegrated]="true" [hideExploreTopic]="isContinueCardSelfAwareness" (viewChanged)="onOllyViewChanged($event)"></app-olly-landing>
+            <app-olly-landing [isIntegrated]="true" [hideExploreTopic]="isContinueCardSelfAwareness"
+              (viewChanged)="onOllyViewChanged($event)"></app-olly-landing>
 
-            <!-- hr -->
-            <div class="row">
+            <!-- hr - only show when explore topic tile is visible (logged-in, non-guest users) -->
+            <div class="row" *ngIf="isloggedIn && !guest">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_v3_02">
               </div>
             </div>
-            <!-- /hr -->
             <!-- v1.1 -->
             <div *ngIf="!isQuestionsViewActive">
               <!-- CONTINUE WHERE YOU LEFT - moved first per Figma -->
@@ -350,10 +350,10 @@
                   <div class="question-card-new" *ngIf="dailyqus">
                     <div class="question-illustration">
                       <img
-                        [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/question_ad.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/question_teenn.svg'"
-                        alt="Question of the day">
+                        [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/good_thing_adu.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/good_thing_teena.svg'"
+                        alt="One good thing">
                     </div>
-                    <h4 class="question-title">Question of the day</h4>
+                    <h4 class="question-title">One good thing</h4>
                     <p class="question-text">{{dailyqus}}</p>
 
                     <div class="question-input-wrap">
