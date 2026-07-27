@@ -49,6 +49,8 @@
     transition:         $transition;
 }
 
+
+
 /* reset */
 *
 {
@@ -79,8 +81,8 @@ nav
         position: fixed;
         top: 0;
         right: 0;
-        max-width: 450px;
-        width: calc(100vw - 60px);
+        max-width: 380px;
+        width: calc(100vw - 75px);
         height: 100%;
         @include transform(translate3d(450px, 0px,0px));
         @include transition(transform 0.35s);
@@ -374,4 +376,13 @@ ul.dh_ul li:last-child
   
 .img_profile {
     object-fit: cover;
+}
+@media (max-width: 480px) {
+  .m-menu {
+      width: 80% !important;
+        // width: calc(100vw - 60px);
+  }
+  .hamburger_sociali a {
+    margin: 0 5px;
+}
 }

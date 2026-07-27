@@ -15731,6 +15731,10 @@ input[type="number"] {
   top: 25%;
 }
 
+
+  .hamburger_sociali a {
+     margin: 0 5px;
+}
 .t1_bg {
   background: #D68844;
 }
@@ -16523,6 +16527,8 @@ input[type="number"] {
   .owl_img {
     width: 25%;
   }
+
+  
 
   .owl_progress {
     width: 85%;
