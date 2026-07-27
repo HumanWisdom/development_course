@@ -47,10 +47,15 @@ stress management
       border: none;
       cursor: pointer;
       font-size: 18px;
+      font-weight: 500;
+      color: #d7586b;
+      text-decoration: underline;
     }
 
-    #toggle:hover {
-      text-decoration: underline;
+    #toggle:hover,
+    #toggle:focus {
+      color: #803358 !important;
+      text-decoration: underline !important;
     }
 
     /* Hero: clear stacked fixed headers */
@@ -1296,7 +1301,7 @@ stress management
             <div class="clearfix"></div>
 
           <div class="btn-container">
-            <button type="button" id="toggle" style="text-decoration:underline;">View More</button>
+            <button type="button" id="toggle">View More</button>
           </div>
           <!-- <view less> -->
         </div>
