@@ -628,21 +628,15 @@ personal growth
       </div>
 
       <div class="row center_flex" data-aos="fade-up" data-aos-delay="300">
-        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0 tcenter au-founder-copy">
+        <div class="p0 tcenter au-founder-copy">
           <h3 class="mtb10px fs_24px fw_500 lh_160p fc_000000">
             Dr Manoj Krishna
           </h3>
           <h4 class="mtb0px fs_18px fw_400 lh_160p fc_000000 au-founder-bio">
-            <span class="au-founder-bio-line">Dr Manoj Krishna, previously a spine surgeon in the UK, left his
-              medical career and, along with other professionals, started the HappierMe Project to help reduce
-              suffering and help people lead happier lives. He has authored two books,
-              <a href="https://www.amazon.co.uk/Understanding-Me-You-enquiry-being/dp/0995683301"><span
-                  class="fw_500 clink td_underline">Understanding Me Understanding You</span></a>
-              and
-              <a href="https://www.amazon.co.uk/Stress-Free-Understand-yourself-Discover-ebook/dp/B0B2KM7SMJ"><span
-                  class="fw_500 clink td_underline">Stress-free</span></a>.
-              He is also a public </span><span class="au-founder-bio-line">speaker and has spoken at more than 50
-              institutions.</span>
+            <span class="au-founder-bio-dline">Dr Manoj Krishna, previously a spine surgeon in the UK, left his medical career and, along with other</span>
+            <span class="au-founder-bio-dline">professionals, started the HappierMe Project to help reduce suffering and help people lead happier lives. He</span>
+            <span class="au-founder-bio-dline">has authored two books, <a href="https://www.amazon.co.uk/Understanding-Me-You-enquiry-being/dp/0995683301"><span class="fw_500 clink td_underline">Understanding Me Understanding You</span></a>, and <a href="https://www.amazon.co.uk/Stress-Free-Understand-yourself-Discover-ebook/dp/B0B2KM7SMJ"><span class="fw_500 clink td_underline">Stress-free</span></a>. He is also a public speaker</span>
+            <span class="au-founder-bio-dline">and has spoken at more than 50 institutions.</span>
           </h4>
         </div>
       </div>

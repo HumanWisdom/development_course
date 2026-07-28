@@ -367,6 +367,1160 @@ body {
   width: 384px !important;
 }
 
+/* Work / Healthcare / Education description copy — Figma: 384×Hug, Poppins 600 / 30 / 140%, black, left-aligned */
+@media screen and (min-width: 768px) {
+  body.page-work .flex_block .work-desc-copy,
+  body.page-healthcare .flex_block .hc-desc-copy {
+    width: 384px !important;
+    max-width: 384px !important;
+    flex: 0 0 384px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    box-sizing: border-box !important;
+    text-align: left !important;
+    margin-left: 0 !important;
+  }
+
+  /* Education — Figma gap 30px between title & subtitle */
+  body.page-education .flex_block .edu-desc-copy {
+    width: 384px !important;
+    max-width: 384px !important;
+    flex: 0 0 384px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 30px !important;
+    box-sizing: border-box !important;
+    text-align: left !important;
+    margin-left: 0 !important;
+  }
+
+  body.page-work .flex_block .work-desc-title,
+  body.page-healthcare .flex_block .hc-desc-title,
+  body.page-education .flex_block .edu-desc-title,
+  body.page-work section.hpt120px ~ main#main .flex_block .work-desc-title,
+  body.page-healthcare section.hpt120px ~ main#main .flex_block .hc-desc-title,
+  body.page-education section.hpt120px ~ main#main .flex_block .edu-desc-title {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 30px !important;
+    font-weight: 600 !important;
+    line-height: 140% !important;
+    color: rgba(0, 0, 0, 1) !important;
+    text-align: left !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 384px !important;
+  }
+
+  body.page-work .flex_block .work-desc-subtitle,
+  body.page-healthcare .flex_block .hc-desc-subtitle,
+  body.page-education .flex_block .edu-desc-subtitle {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 400 !important;
+    line-height: 150% !important;
+    color: rgba(0, 0, 0, 1) !important;
+    text-align: left !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    width: 100% !important;
+    max-width: 384px !important;
+  }
+}
+
+/* Work — Did you know? (Figma: black title 30/600/150%, gap 40px, bg rgba(255,247,230,1)) */
+body.page-work .work-dyk-section .work-dyk-header,
+body.page-work main#main .section-header.work-dyk-header {
+  padding-bottom: 40px !important;
+  margin-bottom: 0 !important;
+}
+
+body.page-work .work-dyk-title,
+body.page-work main#main .work-dyk-header .work-dyk-title,
+body.page-work section.hpt120px ~ main#main .work-dyk-header h2.work-dyk-title {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 30px !important;
+  font-weight: 600 !important;
+  line-height: 150% !important;
+  color: rgba(0, 0, 0, 1) !important;
+  text-align: center !important;
+  margin: 0 !important;
+}
+
+body.page-work .div_dyk.work-dyk-band,
+body.page-work .work-dyk-band {
+  background: rgba(255, 247, 230, 1) !important;
+}
+
+/* Education — Did you know? (Figma: black title 30/600/150%, gap 40px, bg rgba(255,247,230,1)) */
+body.page-education .edu-dyk-section .edu-dyk-header,
+body.page-education main#main .section-header.edu-dyk-header {
+  padding-bottom: 40px !important;
+  margin-bottom: 0 !important;
+}
+
+body.page-education .edu-dyk-title,
+body.page-education main#main .edu-dyk-header .edu-dyk-title,
+body.page-education section.hpt120px ~ main#main .edu-dyk-header h2.edu-dyk-title {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 30px !important;
+  font-weight: 600 !important;
+  line-height: 150% !important;
+  color: rgba(0, 0, 0, 1) !important;
+  text-align: center !important;
+  margin: 0 !important;
+}
+
+body.page-education .div_dyk.edu-dyk-band,
+body.page-education .edu-dyk-band {
+  background: rgba(255, 247, 230, 1) !important;
+}
+
+/* Work — testimonials (Figma: title 30/600/120% black, gap 40px; cards 426.67×282, r20, p36, gap 30px, bg cream) */
+body.page-work .work-testimonials-section .work-testimonials-header,
+body.page-work main#main .section-header.work-testimonials-header {
+  padding-bottom: 40px !important;
+  margin-bottom: 0 !important;
+}
+
+body.page-work .work-testimonials-title,
+body.page-work main#main .work-testimonials-header .work-testimonials-title,
+body.page-work section.hpt120px ~ main#main .work-testimonials-header h2.work-testimonials-title {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 30px !important;
+  font-weight: 600 !important;
+  line-height: 120% !important;
+  color: rgba(0, 0, 0, 1) !important;
+  text-align: center !important;
+  margin: 0 auto !important;
+  max-width: 676px;
+}
+
+body.page-work .work-testimonials-wrap {
+  max-width: 1340px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;
+  padding-right: 0;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1380px) {
+  body.page-work .work-testimonials-wrap {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+body.page-work .owl_testimonials {
+  --work-testimonial-row-width: 1340px;
+  --work-testimonial-gap: 30px;
+  --work-testimonial-card-width: calc((var(--work-testimonial-row-width) - 2 * var(--work-testimonial-gap)) / 3);
+  width: 100%;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: visible;
+}
+
+body.page-work .owl_testimonials .div_testimonials.work-testimonial-card {
+  background: rgba(255, 247, 230, 1) !important;
+  background-image: none !important;
+  border-radius: 20px !important;
+  padding: 36px !important;
+  width: var(--work-testimonial-card-width) !important;
+  height: 282px !important;
+  max-width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+body.page-work .owl_testimonials .owl-carousel:not(.work-testimonials-native) .owl-item .item {
+  width: var(--work-testimonial-card-width);
+  height: 282px;
+}
+
+body.page-work .owl_testimonials .owl-carousel .owl-item .item,
+body.page-work .owl_testimonials .owl-carousel.work-testimonials-native > .item {
+  display: block !important;
+  text-decoration: none;
+  cursor: default;
+}
+
+body.page-work .owl_testimonials .owl-carousel .owl-item .item:hover,
+body.page-work .owl_testimonials .owl-carousel.work-testimonials-native > .item:hover,
+body.page-work .owl_testimonials .owl-carousel .owl-item .item:hover .work-testimonial-name,
+body.page-work .owl_testimonials .owl-carousel.work-testimonials-native > .item:hover .work-testimonial-name,
+body.page-work .owl_testimonials .owl-carousel .owl-item .item:hover .work-testimonial-role,
+body.page-work .owl_testimonials .owl-carousel.work-testimonials-native > .item:hover .work-testimonial-role,
+body.page-work .owl_testimonials .owl-carousel .owl-item .item:hover .work-testimonial-quote,
+body.page-work .owl_testimonials .owl-carousel.work-testimonials-native > .item:hover .work-testimonial-quote {
+  text-decoration: none !important;
+  color: rgba(0, 0, 0, 1) !important;
+}
+
+body.page-work .owl_testimonials .work-testimonial-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  min-height: 80px;
+}
+
+body.page-work .owl_testimonials .work-testimonial-avatar {
+  width: 80px;
+  height: 80px;
+  min-width: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+body.page-work .owl_testimonials .work-testimonial-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-width: 0;
+}
+
+body.page-work .owl_testimonials .work-testimonial-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 150%;
+  color: rgba(0, 0, 0, 1);
+  margin: 0;
+  text-align: left;
+}
+
+body.page-work .owl_testimonials .work-testimonial-role {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 150%;
+  color: rgba(0, 0, 0, 1);
+  margin: 0;
+  text-align: left;
+}
+
+body.page-work .owl_testimonials .work-testimonial-quote {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 150%;
+  color: rgba(0, 0, 0, 1);
+  margin: 0;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  text-align: left;
+}
+
+body.page-work .owl_testimonials .owl-carousel .owl-stage {
+  left: 0 !important;
+  display: flex;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+body.page-work .owl_testimonials > .owl-carousel {
+  width: 100%;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+
+body.page-work .owl_testimonials > .owl-carousel > .owl-stage-outer {
+  width: 100% !important;
+  max-width: 100%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  overflow: hidden !important;
+}
+
+body.page-work .owl_testimonials .owl-carousel .owl-item {
+  margin-right: var(--work-testimonial-gap) !important;
+  width: var(--work-testimonial-card-width) !important;
+}
+
+body.page-work .owl_testimonials .work-testimonials-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-top: 20px;
+  min-height: 40px;
+  padding-bottom: 6px;
+  overflow: visible;
+  width: 100%;
+}
+
+body.page-work .owl_testimonials .work-testimonials-footer .work-testimonials-nav {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+body.page-work .owl_testimonials .work-testimonials-footer .sap {
+  margin: 0;
+}
+
+/* Hide testimonials nav + view-all (Figma: no footer controls) */
+body.page-work .owl_testimonials .work-testimonials-footer,
+body.page-work .owl_testimonials .owl-nav,
+body.page-work .owl_testimonials .owl-nav-w,
+body.page-work .owl_testimonials .owl-controls {
+  display: none !important;
+}
+
+/* Education — testimonials (Figma: title 30/600/120% black, gap 40px; cards 426.67×305, r20, p36, gap 30px, bg cream) */
+body.page-education .edu-testimonials-section .edu-testimonials-header,
+body.page-education main#main .section-header.edu-testimonials-header {
+  padding-bottom: 40px !important;
+  margin-bottom: 0 !important;
+}
+
+body.page-education .edu-testimonials-title,
+body.page-education main#main .edu-testimonials-header .edu-testimonials-title,
+body.page-education section.hpt120px ~ main#main .edu-testimonials-header h2.edu-testimonials-title {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 30px !important;
+  font-weight: 600 !important;
+  line-height: 120% !important;
+  color: rgba(0, 0, 0, 1) !important;
+  text-align: center !important;
+  margin: 0 auto !important;
+  max-width: 676px;
+}
+
+body.page-education .edu-testimonials-wrap {
+  max-width: 1340px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;
+  padding-right: 0;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1380px) {
+  body.page-education .edu-testimonials-wrap {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+body.page-education .owl_testimonials {
+  --edu-testimonial-row-width: 1340px;
+  --edu-testimonial-gap: 30px;
+  --edu-testimonial-card-width: calc((var(--edu-testimonial-row-width) - 2 * var(--edu-testimonial-gap)) / 3);
+  width: 100%;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: visible;
+}
+
+body.page-education .owl_testimonials .div_testimonials.edu-testimonial-card {
+  background: rgba(255, 247, 230, 1) !important;
+  background-image: none !important;
+  border-radius: 20px !important;
+  padding: 36px !important;
+  width: var(--edu-testimonial-card-width) !important;
+  height: auto !important;
+  min-height: 305px;
+  max-height: none !important;
+  max-width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  overflow: visible !important;
+}
+
+body.page-education .owl_testimonials .owl-carousel:not(.edu-testimonials-native) .owl-item .item {
+  width: var(--edu-testimonial-card-width);
+  height: auto !important;
+}
+
+body.page-education .owl_testimonials .owl-carousel .owl-item .item,
+body.page-education .owl_testimonials .owl-carousel.edu-testimonials-native > .item {
+  display: block !important;
+  text-decoration: none;
+  cursor: default;
+}
+
+body.page-education .owl_testimonials .owl-carousel .owl-item .item:hover,
+body.page-education .owl_testimonials .owl-carousel.edu-testimonials-native > .item:hover,
+body.page-education .owl_testimonials .owl-carousel .owl-item .item:hover .edu-testimonial-name,
+body.page-education .owl_testimonials .owl-carousel.edu-testimonials-native > .item:hover .edu-testimonial-name,
+body.page-education .owl_testimonials .owl-carousel .owl-item .item:hover .edu-testimonial-role,
+body.page-education .owl_testimonials .owl-carousel.edu-testimonials-native > .item:hover .edu-testimonial-role,
+body.page-education .owl_testimonials .owl-carousel .owl-item .item:hover .edu-testimonial-quote,
+body.page-education .owl_testimonials .owl-carousel.edu-testimonials-native > .item:hover .edu-testimonial-quote {
+  text-decoration: none !important;
+  color: rgba(0, 0, 0, 1) !important;
+}
+
+body.page-education .owl_testimonials .edu-testimonial-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  min-height: 80px;
+  flex-shrink: 0;
+}
+
+body.page-education .owl_testimonials .edu-testimonial-avatar {
+  width: 80px;
+  height: 80px;
+  min-width: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+body.page-education .owl_testimonials .edu-testimonial-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-width: 0;
+}
+
+body.page-education .owl_testimonials .edu-testimonial-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 150%;
+  color: rgba(0, 0, 0, 1);
+  margin: 0;
+  text-align: left;
+}
+
+body.page-education .owl_testimonials .edu-testimonial-role {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 150%;
+  color: rgba(0, 0, 0, 1);
+  margin: 0;
+  text-align: left;
+}
+
+body.page-education .owl_testimonials .edu-testimonial-quote {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 150%;
+  color: rgba(0, 0, 0, 1);
+  margin: 0;
+  flex: 0 0 auto;
+  overflow: visible;
+  text-align: left;
+}
+
+body.page-education .owl_testimonials .owl-carousel .owl-stage {
+  left: 0 !important;
+  display: flex;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+body.page-education .owl_testimonials > .owl-carousel {
+  width: 100%;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+
+body.page-education .owl_testimonials > .owl-carousel > .owl-stage-outer {
+  width: 100% !important;
+  max-width: 100%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  overflow: hidden !important;
+}
+
+body.page-education .owl_testimonials .owl-carousel .owl-item {
+  margin-right: var(--edu-testimonial-gap) !important;
+  width: var(--edu-testimonial-card-width) !important;
+  height: auto !important;
+}
+
+body.page-education .owl_testimonials .owl-nav,
+body.page-education .owl_testimonials .owl-nav-w,
+body.page-education .owl_testimonials .owl-controls,
+body.page-education .owl_testimonials + .owl-theme,
+body.page-education .edu-testimonials-wrap .sap {
+  display: none !important;
+}
+
+@media (max-width: 767px) {
+  body.page-education .edu-testimonials-wrap {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  body.page-education .owl_testimonials {
+    --edu-testimonial-card-width: 315px;
+    --edu-testimonial-gap: 20px;
+  }
+
+  body.page-education .owl_testimonials .div_testimonials.edu-testimonial-card {
+    height: auto !important;
+    min-height: 260px;
+    padding: 24px !important;
+    gap: 20px;
+  }
+
+  body.page-education main#main .section-header.edu-testimonials-header {
+    padding-bottom: 40px !important;
+  }
+
+  body.page-education section.hpt120px ~ main#main .edu-testimonials-header h2.edu-testimonials-title,
+  body.page-education main#main .edu-testimonials-title {
+    font-size: 18px !important;
+    line-height: 140% !important;
+    color: rgba(0, 0, 0, 1) !important;
+    max-width: 100%;
+  }
+
+  body.page-education .owl_testimonials .owl-carousel.edu-testimonials-native {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  body.page-education .owl_testimonials .owl-carousel.edu-testimonials-native > .item {
+    width: 100% !important;
+  }
+
+  body.page-education .owl_testimonials .owl-carousel.edu-testimonials-native .edu-testimonial-card {
+    width: 100% !important;
+  }
+}
+
+/* Work — Inspiring fresh ways of thinking (Figma: black 30/600/120%, gap 40px) */
+body.page-work .work-inspire-section .work-inspire-header,
+body.page-work main#main .section-header.work-inspire-header {
+  padding-bottom: 40px !important;
+  margin-bottom: 0 !important;
+}
+
+body.page-work .work-inspire-title,
+body.page-work main#main .work-inspire-header .work-inspire-title,
+body.page-work section.hpt120px ~ main#main .work-inspire-header h2.work-inspire-title {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 30px !important;
+  font-weight: 600 !important;
+  line-height: 120% !important;
+  color: rgba(0, 0, 0, 1) !important;
+  text-align: center !important;
+  margin: 0 auto !important;
+}
+
+/* Inspire body text stays black; coral links hover like index (#803358) */
+body.page-work .div_inspire h3,
+body.page-work .div_inspire h3:hover,
+body.page-work .div_inspire h5,
+body.page-work .div_inspire h5:hover {
+  color: rgba(0, 0, 0, 1) !important;
+  text-decoration: none !important;
+}
+
+body.page-work .div_inspire a.fc_cb6171 {
+  color: #CB6171 !important;
+  text-decoration: underline;
+  text-decoration-color: #CB6171;
+}
+
+body.page-work .div_inspire a.fc_cb6171:hover,
+body.page-work .div_inspire a:hover.fc_cb6171 {
+  color: #803358 !important;
+  text-decoration-color: #803358;
+}
+
+/* Education — Inspiring fresh ways of thinking (Figma: black 30/600/140%, gap 60px) */
+body.page-education .edu-inspire-section .edu-inspire-header,
+body.page-education main#main .section-header.edu-inspire-header {
+  padding-bottom: 60px !important;
+  margin-bottom: 0 !important;
+}
+
+body.page-education .edu-inspire-title,
+body.page-education main#main .edu-inspire-header .edu-inspire-title,
+body.page-education section.hpt120px ~ main#main .edu-inspire-header h2.edu-inspire-title {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 30px !important;
+  font-weight: 600 !important;
+  line-height: 140% !important;
+  color: rgba(0, 0, 0, 1) !important;
+  text-align: center !important;
+  margin: 0 auto !important;
+}
+
+body.page-education .div_inspire h3,
+body.page-education .div_inspire h3:hover,
+body.page-education .div_inspire h5,
+body.page-education .div_inspire h5:hover {
+  color: rgba(0, 0, 0, 1) !important;
+  text-decoration: none !important;
+}
+
+body.page-education .div_inspire a.fc_cb6171 {
+  color: #CB6171 !important;
+  text-decoration: underline;
+  text-decoration-color: #CB6171;
+}
+
+body.page-education .div_inspire a.fc_cb6171:hover,
+body.page-education .div_inspire a:hover.fc_cb6171 {
+  color: #803358 !important;
+  text-decoration-color: #803358;
+}
+
+@media (max-width: 767px) {
+  body.page-work .work-testimonials-wrap {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  body.page-work .owl_testimonials {
+    --work-testimonial-card-width: 315px;
+    --work-testimonial-gap: 20px;
+  }
+
+  body.page-work .owl_testimonials .div_testimonials.work-testimonial-card {
+    height: auto !important;
+    min-height: 260px;
+    padding: 24px !important;
+  }
+
+  body.page-work main#main .section-header.work-testimonials-header,
+  body.page-work main#main .section-header.work-inspire-header {
+    padding-bottom: 40px !important;
+  }
+
+  body.page-education main#main .section-header.edu-inspire-header {
+    padding-bottom: 60px !important;
+  }
+
+  body.page-work section.hpt120px ~ main#main .work-testimonials-header h2.work-testimonials-title,
+  body.page-work main#main .work-testimonials-title,
+  body.page-work section.hpt120px ~ main#main .work-inspire-header h2.work-inspire-title,
+  body.page-work main#main .work-inspire-title {
+    font-size: 18px !important;
+    line-height: 140% !important;
+    color: rgba(0, 0, 0, 1) !important;
+    max-width: 100%;
+  }
+
+  body.page-work .owl_testimonials .owl-carousel.work-testimonials-native {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  body.page-work .owl_testimonials .owl-carousel.work-testimonials-native > .item {
+    width: 100% !important;
+  }
+
+  body.page-work .owl_testimonials .owl-carousel.work-testimonials-native .work-testimonial-card {
+    width: 100% !important;
+  }
+
+  body.page-work .owl_testimonials .work-testimonials-footer .work-testimonials-nav {
+    display: none !important;
+  }
+}
+
+/* Work / Education / Healthcare — Bring HappierMe demo form (Figma blue band) */
+body.page-work #bring_happierme,
+body.page-education #bring_happierme,
+body.page-healthcare #bring_happierme {
+  width: 100%;
+}
+
+body.page-work #bring_happierme .work-demo-band,
+body.page-education #bring_happierme .work-demo-band,
+body.page-healthcare #bring_happierme .work-demo-band,
+body.page-work #bring_happierme .div_subscription.work-demo-band,
+body.page-education #bring_happierme .div_subscription.work-demo-band,
+body.page-healthcare #bring_happierme .div_subscription.work-demo-band {
+  background: linear-gradient(180deg, rgba(66, 103, 165, 1) 0%, rgba(24, 60, 121, 1) 100%) !important;
+  padding: 80px 20px !important;
+  margin: 0 !important;
+  text-align: center;
+}
+
+body.page-work #bring_happierme .work-demo-inner,
+body.page-education #bring_happierme .work-demo-inner,
+body.page-healthcare #bring_happierme .work-demo-inner {
+  width: 980px !important;
+  max-width: calc(100% - 40px) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 40px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+body.page-work #bring_happierme .work-demo-copy,
+body.page-education #bring_happierme .work-demo-copy,
+body.page-healthcare #bring_happierme .work-demo-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+body.page-work #bring_happierme .work-demo-title,
+body.page-education #bring_happierme .work-demo-title,
+body.page-healthcare #bring_happierme .work-demo-title,
+body.page-work section.hpt120px ~ main#main #bring_happierme .work-demo-title,
+body.page-education section.hpt120px ~ main#main #bring_happierme .work-demo-title,
+body.page-healthcare section.hpt120px ~ main#main #bring_happierme .work-demo-title {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 30px !important;
+  font-weight: 600 !important;
+  line-height: 120% !important;
+  color: rgba(255, 255, 255, 1) !important;
+  text-align: center !important;
+  margin: 0 !important;
+  max-width: 570px;
+}
+
+body.page-work #bring_happierme .work-demo-subtitle,
+body.page-education #bring_happierme .work-demo-subtitle,
+body.page-healthcare #bring_happierme .work-demo-subtitle {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 400 !important;
+  line-height: 160% !important;
+  color: rgba(255, 255, 255, 1) !important;
+  text-align: center !important;
+  margin: 0 !important;
+  max-width: 980px;
+}
+
+body.page-work #bring_happierme .work-demo-form-wrap,
+body.page-education #bring_happierme .work-demo-form-wrap,
+body.page-healthcare #bring_happierme .work-demo-form-wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+body.page-work #bring_happierme .work-demo-form-wrap form,
+body.page-education #bring_happierme .work-demo-form-wrap form,
+body.page-healthcare #bring_happierme .work-demo-form-wrap form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+body.page-work #bring_happierme .work-demo-fields,
+body.page-education #bring_happierme .work-demo-fields,
+body.page-healthcare #bring_happierme .work-demo-fields {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  width: 100%;
+  max-width: 980px;
+}
+
+body.page-work #bring_happierme .work-demo-col,
+body.page-education #bring_happierme .work-demo-col,
+body.page-healthcare #bring_happierme .work-demo-col {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+body.page-work #bring_happierme .work-demo-col .div_input,
+body.page-education #bring_happierme .work-demo-col .div_input,
+body.page-healthcare #bring_happierme .work-demo-col .div_input {
+  width: 100%;
+  margin: 0 !important;
+}
+
+body.page-work #bring_happierme .work-demo-col .fc_01,
+body.page-education #bring_happierme .work-demo-col .fc_01,
+body.page-healthcare #bring_happierme .work-demo-col .fc_01 {
+  width: 100%;
+  height: 52px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background: #fff;
+  text-align: left;
+}
+
+body.page-work #bring_happierme .work-demo-cta,
+body.page-education #bring_happierme .work-demo-cta,
+body.page-healthcare #bring_happierme .work-demo-cta {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+body.page-work #bring_happierme #Request-Demo,
+body.page-work #bring_happierme #Request-Demo:focus,
+body.page-education #bring_happierme #Request-Demo,
+body.page-education #bring_happierme #Request-Demo:focus,
+body.page-healthcare #bring_happierme #Request-Demo,
+body.page-healthcare #bring_happierme #Request-Demo:focus,
+body.page-work #bring_happierme .work-demo-btn,
+body.page-education #bring_happierme .work-demo-btn,
+body.page-healthcare #bring_happierme .work-demo-btn {
+  width: 205px !important;
+  max-width: 205px !important;
+  height: 47px !important;
+  padding: 13px 40px !important;
+  border-radius: 24px !important;
+  border: none !important;
+  background: linear-gradient(180deg, rgba(237, 125, 111, 1) 0%, rgba(215, 88, 107, 1) 100%) !important;
+  color: #fff !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+body.page-work #bring_happierme #Request-Demo:hover,
+body.page-work #bring_happierme #Request-Demo:active,
+body.page-education #bring_happierme #Request-Demo:hover,
+body.page-education #bring_happierme #Request-Demo:active,
+body.page-healthcare #bring_happierme #Request-Demo:hover,
+body.page-healthcare #bring_happierme #Request-Demo:active {
+  background: linear-gradient(180deg, #da7d71 0%, #bf5061 100%) !important;
+  color: #fff !important;
+}
+
+@media (max-width: 767px) {
+  body.page-work #bring_happierme .work-demo-band,
+  body.page-education #bring_happierme .work-demo-band,
+  body.page-healthcare #bring_happierme .work-demo-band {
+    padding: 40px 20px !important;
+  }
+
+  body.page-work #bring_happierme .work-demo-inner,
+  body.page-education #bring_happierme .work-demo-inner,
+  body.page-healthcare #bring_happierme .work-demo-inner,
+  body.page-work #bring_happierme .work-demo-form-wrap form,
+  body.page-education #bring_happierme .work-demo-form-wrap form,
+  body.page-healthcare #bring_happierme .work-demo-form-wrap form {
+    gap: 24px !important;
+  }
+
+  body.page-work #bring_happierme .work-demo-title,
+  body.page-education #bring_happierme .work-demo-title,
+  body.page-healthcare #bring_happierme .work-demo-title,
+  body.page-work section.hpt120px ~ main#main #bring_happierme .work-demo-title,
+  body.page-education section.hpt120px ~ main#main #bring_happierme .work-demo-title,
+  body.page-healthcare section.hpt120px ~ main#main #bring_happierme .work-demo-title {
+    font-size: 18px !important;
+    line-height: 140% !important;
+    color: rgba(255, 255, 255, 1) !important;
+    max-width: 100%;
+  }
+
+  body.page-work #bring_happierme .work-demo-fields,
+  body.page-education #bring_happierme .work-demo-fields,
+  body.page-healthcare #bring_happierme .work-demo-fields {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+/* Work — Explore our blog (Figma: black title 30/600/120%, gap 60px; link #d7586b → hover #803358) */
+body.page-work .work-blog-section {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 60px;
+}
+
+body.page-work .work-blog-section .work-blog-header,
+body.page-work main#main .section-header.work-blog-header {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+  width: 100%;
+}
+
+body.page-work .work-blog-title,
+body.page-work main#main .work-blog-header .work-blog-title,
+body.page-work section.hpt120px ~ main#main .work-blog-header h2.work-blog-title {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 30px !important;
+  font-weight: 600 !important;
+  line-height: 120% !important;
+  color: rgba(0, 0, 0, 1) !important;
+  text-align: center !important;
+  margin: 0 auto !important;
+}
+
+body.page-work .work-blog-section > .row.center_flex {
+  width: 100%;
+  margin: 0 !important;
+}
+
+/* Keep original carousel width so 3 cards show (do not constrain to 980px) */
+body.page-work .work-blog-wrap,
+body.page-work .work-blog-section .owl_blog {
+  width: 100%;
+  max-width: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Footer: "See all posts" centered; arrows aligned to end of 2nd card (470+40+470) */
+body.page-work .work-blog-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-top: 40px;
+  margin-left: 0;
+  margin-right: 0;
+  min-height: 40px;
+  width: 100%;
+}
+
+body.page-work .work-blog-footer .sap.work-blog-more {
+  position: static !important;
+  width: auto !important;
+  right: auto !important;
+  margin: 0 !important;
+}
+
+/* Nudge arrows right to align with end of 2nd card */
+body.page-work .work-blog-footer .work-blog-nav {
+  position: absolute;
+  left: calc(50px + 980px + 80px);
+  right: auto;
+  top: 50%;
+  transform: translate(-100%, -50%);
+  z-index: 2;
+}
+
+body.page-work .work-blog-footer .work-blog-nav .owl-controls,
+body.page-work .work-blog-footer .work-blog-nav .owl-nav,
+body.page-work .work-blog-footer .work-blog-nav .owl-nav-w,
+body.page-work .owl_blog .work-blog-footer .owl-controls,
+body.page-work .owl_blog .work-blog-footer .owl-nav,
+body.page-work .owl_blog .work-blog-footer .owl-nav-w {
+  display: flex !important;
+  visibility: visible !important;
+  position: static !important;
+  opacity: 1 !important;
+}
+
+body.page-work .work-blog-more,
+body.page-work .work-blog-more h4 {
+  color: #d7586b !important;
+  text-decoration: underline;
+  margin: 0 !important;
+}
+
+body.page-work .work-blog-more:hover,
+body.page-work .work-blog-more:hover h4,
+body.page-work .work-blog-more:active,
+body.page-work .work-blog-more:active h4 {
+  color: #803358 !important;
+}
+
+@media (max-width: 767px) {
+  body.page-work .work-blog-section {
+    gap: 40px;
+  }
+
+  body.page-work main#main .section-header.work-blog-header {
+    padding-bottom: 0 !important;
+  }
+
+  body.page-work section.hpt120px ~ main#main .work-blog-header h2.work-blog-title,
+  body.page-work main#main .work-blog-title {
+    font-size: 18px !important;
+    line-height: 140% !important;
+    color: rgba(0, 0, 0, 1) !important;
+  }
+
+  body.page-work .work-blog-footer {
+    margin-top: 40px;
+    margin-left: 20px;
+    width: 100%;
+    max-width: calc(100% - 40px);
+  }
+
+  body.page-work .work-blog-footer .work-blog-nav {
+    display: none !important;
+  }
+}
+
+/* Education — Explore our blog (Figma: black title 30/600/120%, gap 60px; link #d7586b → hover #803358) */
+body.page-education .edu-blog-section {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 60px;
+}
+
+body.page-education .edu-blog-section .edu-blog-header,
+body.page-education main#main .section-header.edu-blog-header {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+  width: 100%;
+}
+
+body.page-education .edu-blog-title,
+body.page-education main#main .edu-blog-header .edu-blog-title,
+body.page-education section.hpt120px ~ main#main .edu-blog-header h2.edu-blog-title {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 30px !important;
+  font-weight: 600 !important;
+  line-height: 120% !important;
+  color: rgba(0, 0, 0, 1) !important;
+  text-align: center !important;
+  margin: 0 auto !important;
+}
+
+body.page-education .edu-blog-section > .row.center_flex {
+  width: 100%;
+  margin: 0 !important;
+}
+
+body.page-education .edu-blog-wrap,
+body.page-education .edu-blog-section .owl_blog {
+  width: 100%;
+  max-width: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body.page-education .edu-blog-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-top: 40px;
+  margin-left: 0;
+  margin-right: 0;
+  min-height: 40px;
+  width: 100%;
+}
+
+body.page-education .edu-blog-footer .sap.edu-blog-more {
+  position: static !important;
+  width: auto !important;
+  right: auto !important;
+  margin: 0 !important;
+}
+
+body.page-education .edu-blog-footer .edu-blog-nav {
+  position: absolute;
+  left: calc(50px + 980px + 80px);
+  right: auto;
+  top: 50%;
+  transform: translate(-100%, -50%);
+  z-index: 2;
+}
+
+body.page-education .edu-blog-footer .edu-blog-nav .owl-controls,
+body.page-education .edu-blog-footer .edu-blog-nav .owl-nav,
+body.page-education .edu-blog-footer .edu-blog-nav .owl-nav-w,
+body.page-education .owl_blog .edu-blog-footer .owl-controls,
+body.page-education .owl_blog .edu-blog-footer .owl-nav,
+body.page-education .owl_blog .edu-blog-footer .owl-nav-w {
+  display: flex !important;
+  visibility: visible !important;
+  position: static !important;
+  opacity: 1 !important;
+}
+
+body.page-education .edu-blog-more,
+body.page-education .edu-blog-more h4 {
+  color: #d7586b !important;
+  text-decoration: underline;
+  margin: 0 !important;
+}
+
+body.page-education .edu-blog-more:hover,
+body.page-education .edu-blog-more:hover h4,
+body.page-education .edu-blog-more:active,
+body.page-education .edu-blog-more:active h4 {
+  color: #803358 !important;
+}
+
+@media (max-width: 767px) {
+  body.page-education .edu-blog-section {
+    gap: 40px;
+  }
+
+  body.page-education main#main .section-header.edu-blog-header {
+    padding-bottom: 0 !important;
+  }
+
+  body.page-education section.hpt120px ~ main#main .edu-blog-header h2.edu-blog-title,
+  body.page-education main#main .edu-blog-title {
+    font-size: 18px !important;
+    line-height: 140% !important;
+    color: rgba(0, 0, 0, 1) !important;
+  }
+
+  body.page-education .edu-blog-footer {
+    margin-top: 40px;
+    margin-left: 20px;
+    width: 100%;
+    max-width: calc(100% - 40px);
+  }
+
+  body.page-education .edu-blog-footer .edu-blog-nav {
+    display: none !important;
+  }
+}
+
+/* Education hero — Figma: black title 36/600/140%, left-aligned, ~383px */
+@media screen and (min-width: 768px) {
+  body.page-education .healthcare-hero-shell .absolute_desc_m > .edu-hero-copy,
+  body.page-education .healthcare-hero-shell .absolute_desc > .edu-hero-copy {
+    max-width: 383px !important;
+    width: 383px !important;
+    flex: 0 0 383px !important;
+    text-align: left !important;
+  }
+
+  body.page-education section.hpt120px .absolute_desc_m .edu-hero-title,
+  body.page-education section.hpt120px .absolute_desc_m h1.edu-hero-title,
+  body.page-education .edu-hero-title {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 36px !important;
+    font-weight: 600 !important;
+    line-height: 140% !important;
+    color: rgba(0, 0, 0, 1) !important;
+    text-align: left !important;
+  }
+
+  body.page-education .edu-hero-subtitle,
+  body.page-education section.hpt120px .absolute_desc_m .edu-hero-subtitle {
+    color: rgba(0, 0, 0, 1) !important;
+    text-align: left !important;
+  }
+}
+
 .gap_40px {
   gap: 40px;
 }
@@ -483,6 +1637,15 @@ body.page-healthcare .healthcare-hero-shell .wide-screen-only {
     width: 50% !important;
     max-width: 50% !important;
     flex: 0 0 50% !important;
+  }
+
+  /* Keep Figma 384px copy column (do not stretch to 50%) */
+  body.page-work .flex_block .col-lg-6.w-384px.work-desc-copy,
+  body.page-healthcare .flex_block .col-lg-6.w-384px.hc-desc-copy,
+  body.page-education .flex_block .col-lg-6.w-384px.edu-desc-copy {
+    width: 384px !important;
+    max-width: 384px !important;
+    flex: 0 0 384px !important;
   }
 
   body.page-work .email-w980px,
@@ -2008,6 +3171,47 @@ body.page-healthcare .healthcare-hero-shell .wide-screen-only {
     text-align: center !important;
   }
 
+  /* Description copy — black title, left-aligned with subtitle on mobile too */
+  body.page-work .flex_block .work-desc-copy,
+  body.page-healthcare .flex_block .hc-desc-copy {
+    align-items: flex-start !important;
+    gap: 16px !important;
+    text-align: left !important;
+  }
+
+  body.page-education .flex_block .edu-desc-copy {
+    align-items: flex-start !important;
+    gap: 30px !important;
+    text-align: left !important;
+  }
+
+  body.page-work .flex_block .work-desc-copy h2,
+  body.page-work .flex_block .work-desc-copy h5,
+  body.page-work .flex_block .work-desc-title,
+  body.page-work .flex_block .work-desc-subtitle,
+  body.page-healthcare .flex_block .hc-desc-copy h2,
+  body.page-healthcare .flex_block .hc-desc-copy h5,
+  body.page-healthcare .flex_block .hc-desc-title,
+  body.page-healthcare .flex_block .hc-desc-subtitle,
+  body.page-healthcare .hc-desc-heading-mobile h2,
+  body.page-education .flex_block .edu-desc-copy h2,
+  body.page-education .flex_block .edu-desc-copy h5,
+  body.page-education .flex_block .edu-desc-title,
+  body.page-education .flex_block .edu-desc-subtitle {
+    text-align: left !important;
+    color: rgba(0, 0, 0, 1) !important;
+  }
+
+  body.page-work section.hpt120px ~ main#main .flex_block .work-desc-title,
+  body.page-healthcare section.hpt120px ~ main#main .flex_block .hc-desc-title,
+  body.page-healthcare section.hpt120px ~ main#main .hc-desc-heading-mobile h2,
+  body.page-education section.hpt120px ~ main#main .flex_block .edu-desc-title {
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    line-height: 140% !important;
+    color: rgba(0, 0, 0, 1) !important;
+  }
+
   /* Work / education / healthcare — mobile org landing (blogs, testimonials, typography) */
   body.page-work .owl_blog .owl-controls,
   body.page-work .owl_testimonials .owl-controls,
@@ -2129,16 +3333,41 @@ body.page-healthcare .healthcare-hero-shell .wide-screen-only {
   body.page-work section.hpt120px .absolute_desc_m h1.fs_36px,
   body.page-education section.hpt120px .absolute_desc_m h1,
   body.page-education section.hpt120px .absolute_desc_m h1.fs_36px,
+  body.page-education section.hpt120px .absolute_desc_m h1.edu-hero-title,
   body.page-healthcare section.hpt120px .absolute_desc_m h1,
   body.page-healthcare section.hpt120px .absolute_desc_m h1.fs_36px {
     font-size: 27px !important;
     line-height: 140% !important;
   }
 
+  body.page-education section.hpt120px .absolute_desc_m h1.edu-hero-title {
+    color: rgba(0, 0, 0, 1) !important;
+  }
+
   body.page-work main#main .section-header,
   body.page-education main#main .section-header,
   body.page-healthcare main#main .section-header {
     padding-bottom: 24px !important;
+    margin-bottom: 0 !important;
+  }
+
+  body.page-work main#main .section-header.work-dyk-header,
+  body.page-work main#main .section-header.work-testimonials-header,
+  body.page-work main#main .section-header.work-inspire-header,
+  body.page-education main#main .section-header.edu-dyk-header,
+  body.page-education main#main .section-header.edu-testimonials-header {
+    padding-bottom: 40px !important;
+    margin-bottom: 0 !important;
+  }
+
+  body.page-education main#main .section-header.edu-inspire-header {
+    padding-bottom: 60px !important;
+    margin-bottom: 0 !important;
+  }
+
+  body.page-work main#main .section-header.work-blog-header,
+  body.page-education main#main .section-header.edu-blog-header {
+    padding-bottom: 0 !important;
     margin-bottom: 0 !important;
   }
 
@@ -2149,10 +3378,41 @@ body.page-healthcare .healthcare-hero-shell .wide-screen-only {
     margin-bottom: 0 !important;
   }
 
+  body.page-work section.hpt120px ~ main#main .work-dyk-header h2.work-dyk-title,
+  body.page-work main#main .work-dyk-title,
+  body.page-work section.hpt120px ~ main#main .work-inspire-header h2.work-inspire-title,
+  body.page-work main#main .work-inspire-title,
+  body.page-education section.hpt120px ~ main#main .edu-dyk-header h2.edu-dyk-title,
+  body.page-education main#main .edu-dyk-title,
+  body.page-education section.hpt120px ~ main#main .edu-testimonials-header h2.edu-testimonials-title,
+  body.page-education main#main .edu-testimonials-title,
+  body.page-education section.hpt120px ~ main#main .edu-inspire-header h2.edu-inspire-title,
+  body.page-education main#main .edu-inspire-title,
+  body.page-education section.hpt120px ~ main#main .edu-blog-header h2.edu-blog-title,
+  body.page-education main#main .edu-blog-title {
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    line-height: 140% !important;
+    color: rgba(0, 0, 0, 1) !important;
+  }
+
+  body.page-work .div_dyk.work-dyk-band,
+  body.page-work .work-dyk-band,
+  body.page-education .div_dyk.edu-dyk-band,
+  body.page-education .edu-dyk-band {
+    background: rgba(255, 247, 230, 1) !important;
+  }
+
   body.page-work section.hpt120px ~ main#main .flex_block h2,
   body.page-education section.hpt120px ~ main#main .flex_block h2,
   body.page-healthcare section.hpt120px ~ main#main .flex_block h2 {
     margin-bottom: 24px !important;
+  }
+
+  body.page-work section.hpt120px ~ main#main .flex_block .work-desc-title,
+  body.page-healthcare section.hpt120px ~ main#main .flex_block .hc-desc-title,
+  body.page-education section.hpt120px ~ main#main .flex_block .edu-desc-title {
+    margin-bottom: 0 !important;
   }
 }
 
@@ -2259,6 +3519,13 @@ body.page-healthcare .healthcare-hero-shell .wide-screen-only {
   }
   .owl-controls{
     visibility: hidden;
+  }
+
+  body.page-work .owl_blog .work-blog-footer .owl-controls,
+  body.page-work .work-blog-footer .work-blog-nav .owl-controls,
+  body.page-education .owl_blog .edu-blog-footer .owl-controls,
+  body.page-education .edu-blog-footer .edu-blog-nav .owl-controls {
+    visibility: visible !important;
   }
 
   body.page-work .owl_blog > .owl-carousel > .owl-stage-outer,
