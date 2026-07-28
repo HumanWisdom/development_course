@@ -6,16 +6,14 @@
   <meta property="title" content="Teen Mental Health, Wellbeing & Life Skills | HappierMe">
   <meta property="description"
     content="Help teenagers build confidence, manage stress and strengthen relationships with HappierMe. Selected by Mind and ORCHA certified.">
-  <meta name="keywords" content="teen mental health
-teen wellbeing
-teenage mental health
-emotional wellbeing for teens
-stress management for teens
-anxiety in teenagers
-self-awareness for teenagers
-emotional intelligence for teens
-confidence for teenagers
-resilience for teenagers
+  <meta name="keywords" content="teen mental health,teen wellbeing,teenage mental health,
+emotional wellbeing for teens,
+stress management for teens,
+anxiety in teenagers,
+self-awareness for teenagers,
+emotional intelligence for teens,
+confidence for teenagers,
+resilience for teenagers,
 life skills for teenagers
 
 ">
