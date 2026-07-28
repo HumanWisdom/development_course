@@ -26,6 +26,10 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
   fromImNotSure: boolean = false;
   fromBasicAccessSignup: boolean = false;
   
+  get isExploreTopicVisible(): boolean {
+    return !!(this.selectedTopic && !this.hideExploreTopic);
+  }
+  
   showQuestionsView: boolean = false;
   topicsList: OllyTopic[] = [];
   expandedTopics: { [fragment: string]: boolean } = {};
