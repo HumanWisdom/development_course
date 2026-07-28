@@ -11,14 +11,11 @@ require_once('./includes/security_config.php');
   <meta name="description"
     content="Build mental wellbeing through self-awareness with HappierMe. Develop emotional intelligence and life skills to reduce stress and strengthen relationships.">
   <meta name="keywords"
-    content="mental wellbeing
-
-emotional intelligence
-self-awareness
-life skills
+    content="mental wellbeing,emotional intelligence,self-awareness,
+life skills,
 mindfulness
-stress management
-resilience
+stress management,
+resilience,
 personal growth
 
 ">

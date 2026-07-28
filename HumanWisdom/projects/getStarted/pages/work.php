@@ -5,17 +5,15 @@
     <meta property="og:title" id="tag1" content="Employee Wellbeing, Life Skills & Leadership | HappierMe">
     <meta property="og:type" content="website" />
     <meta property="og:description" content="Improve employee wellbeing and build life skills with HappierMe. Develop emotional intelligence, communication and stronger workplace relationships.">
-    <meta name="keywords" content="employee wellbeing
-
-workplace wellbeing
-workplace mental health
-emotional intelligence at work
-leadership skills
-communication skills
-resilience at work
-employee resilience
-workplace culture
-stress management at work
+    <meta name="keywords" content="employee wellbeing,workplace wellbeing,
+workplace mental health,
+emotional intelligence at work,
+leadership skills,
+communication skills,
+resilience at work,
+employee resilience,
+workplace culture,
+stress management at work,
 life skills for work
 
 
