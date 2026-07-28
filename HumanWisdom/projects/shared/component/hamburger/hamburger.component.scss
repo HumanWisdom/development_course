@@ -83,7 +83,7 @@ nav
         right: 0;
         max-width: 380px;
         width: calc(100vw - 75px);
-         height: 95%;
+         height: 100%;
         // margin-bottom: 100px !important;
         @include transform(translate3d(450px, 0px,0px));
         @include transition(transform 0.35s);
