@@ -5951,7 +5951,23 @@ export class TeenagersService {
       },
         () => {
           if (lastVisitedurl !== '' && indexUrl !== '') {
-            if (pgResume && pgResume !== '') {
+            const isSelfAwareness = id.toString() === '75' || id.toString() === '157' || lastVisitedurl.includes('self-awareness') || indexUrl.includes('self-awareness');
+            if (isSelfAwareness) {
+              let scr = pgResume ? pgResume.replace('s', '') : '';
+              if (!scr) {
+                const match = indexUrl.match(/(75\d{3}|157\d{3})/) || lastVisitedurl.match(/(75\d{3}|157\d{3})/);
+                if (match) scr = match[0];
+              }
+              if (scr) {
+                const exerciseId = scr.split('p')[0];
+                const program = SharedService.getprogramName();
+                this.router.navigate([`/${program}/self-awareness/s${exerciseId}`]);
+              } else {
+                const program = SharedService.getprogramName();
+                const defaultExercise = id.toString() === '157' ? 's157002' : 's75001';
+                this.router.navigate([`/${program}/self-awareness/${defaultExercise}`]);
+              }
+            } else if (pgResume && pgResume !== '') {
               this.router.navigate([`${lastVisitedurl}/${pgResume}`])
             } else {
               this.router.navigate([`${indexUrl}`])
