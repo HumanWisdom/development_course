@@ -49,6 +49,8 @@
     transition:         $transition;
 }
 
+
+
 /* reset */
 *
 {
@@ -79,9 +81,10 @@ nav
         position: fixed;
         top: 0;
         right: 0;
-        max-width: 450px;
+        max-width: 380px;
         width: calc(100vw - 75px);
-        height: 100%;
+         height: 95%;
+        // margin-bottom: 100px !important;
         @include transform(translate3d(450px, 0px,0px));
         @include transition(transform 0.35s);
         z-index: 10000 !important;
@@ -90,7 +93,7 @@ nav
         //   background-color: #fff;
         // background: #292D56;
         box-shadow: unset;
-        padding: 20px;
+        padding: 15px;
         border-radius: 16px 0 0 16px;
 
         &__overlay
@@ -374,4 +377,13 @@ ul.dh_ul li:last-child
   
 .img_profile {
     object-fit: cover;
+}
+@media (max-width: 480px) {
+  .m-menu {
+      width: 80% !important;
+        // width: calc(100vw - 60px);
+  }
+  .hamburger_sociali a {
+    margin: 0 5px;
+}
 }
