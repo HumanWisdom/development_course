@@ -436,13 +436,19 @@ export class AdultsService {
             if (isSelfAwareness) {
               let scr = pgResume ? pgResume.replace('s', '') : '';
               if (!scr) {
-                const match = indexUrl.match(/(75\d{3}|157\d{3})/) || lastVisitedurl.match(/(75\d{3}|157\d{3})/);
+                const match = indexUrl.match(/(75\d{3}|157\d{3})(?:p\d+)?/) || lastVisitedurl.match(/(75\d{3}|157\d{3})(?:p\d+)?/);
                 if (match) scr = match[0];
               }
               if (scr) {
                 const exerciseId = scr.split('p')[0];
+                const dayMatch = scr.match(/p(\d+)/);
+                const day = dayMatch ? dayMatch[1] : null;
                 const program = SharedService.getprogramName();
-                this.router.navigate([`/${program}/self-awareness/s${exerciseId}`]);
+                if (day !== null) {
+                  this.router.navigate([`/${program}/self-awareness/s${exerciseId}`], { state: { day: day } });
+                } else {
+                  this.router.navigate([`/${program}/self-awareness/s${exerciseId}`]);
+                }
               } else {
                 const program = SharedService.getprogramName();
                 const defaultExercise = id.toString() === '157' ? 's157002' : 's75001';
