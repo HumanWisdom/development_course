@@ -1,8 +1,15 @@
 
 
+/* Override the global .mc_03 overflow:hidden so the login/signup page can scroll */
+.right_col.mc_03 {
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
+
 .myGooglebtn .abcRioButtonBlue .abcRioButtonIcon {
   background: #120F40 !important;
 }
+
 
 
 /* Using Attribute Selector */
