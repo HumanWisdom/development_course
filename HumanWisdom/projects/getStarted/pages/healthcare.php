@@ -6,7 +6,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:description" content="Support healthier staff and patients with HappierMe. ORCHA approved, our prevention-first approach builds self-awareness, stronger relationships and resilience.">
    
-   <meta name="keywords" content="workplace wellbeing
+   <meta name="keywords" content="Healthcare wellbeing,
 healthcare staff wellbeing
 patient self-management
 burnout prevention
