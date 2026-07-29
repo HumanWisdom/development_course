@@ -612,6 +612,7 @@ life skills for teenagers
                 <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
                   View all Success stories
                 </h4>
+                <span class="chevron-pink"><span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span>
               </a>
               <div class="owl-theme mt10px teen-testimonials-nav">
                 <div class="owl-controls">
