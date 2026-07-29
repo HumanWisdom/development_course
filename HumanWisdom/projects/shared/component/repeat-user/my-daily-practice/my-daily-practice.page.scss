@@ -319,10 +319,10 @@
   padding: 15px !important;
   display: flex !important;
   align-items: center !important;
-  gap: 1 !important;
+  gap: 14px !important;
   cursor: pointer !important;
   text-decoration: none !important;
-  box-shadow: 0  12px rgba(0,0,0,0.04);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
 }
 
 /* Teens variant: dark card bg */
@@ -367,7 +367,7 @@
     letter-spacing: 0% !important;
     vertical-align: middle !important;
     color: #000000 !important;
-    margin-bottom:  !important;
+    margin-bottom: 4px !important;
     text-transform: uppercase !important;
   }
 
@@ -414,8 +414,8 @@
   transition: transform 0.2s ease;
 
   .mood-icon-wrap {
-    width: 4;
-    height: 4;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -499,7 +499,7 @@
   overflow: hidden !important;
   margin-bottom: 20px !important;
   cursor: pointer !important;
-  box-shadow: 0  12px rgba(0,0,0,0.04);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
 
   .guided-journey-img-wrap-new {
     width: 100% !important;
@@ -540,7 +540,7 @@
       background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%) !important;
       border: none !important;
       border-radius: 30px !important;
-      padding: 1 30px !important;
+      padding: 14px 30px !important;
       color: #ffffff !important;
       font-size: 15px !important;
       font-weight: 600 !important;
@@ -559,7 +559,7 @@
   cursor: pointer !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
   display: flex !important;
-  gap: 1 !important;
+  gap: 14px !important;
   margin-bottom: 20px !important;
 
 
@@ -595,7 +595,7 @@
         font-size: 15px !important;
         font-weight: 500 !important;
         color: #000000 !important;
-        margin: 0 0  0 !important;
+        margin: 0 0 4px 0 !important;
         line-height: 1.25 !important;
       }
 
@@ -630,10 +630,10 @@
     }
 
     .practice-text-new.vertical-text {
-      padding:  6px !important;
+      padding: 4px 6px !important;
       display: flex !important;
       flex-direction: column !important;
-      gap:  !important;
+      gap: 4px !important;
 
       .practice-title-text {
         font-size: 15px !important;
@@ -674,7 +674,7 @@
 .practice-lock-icon {
   position: absolute !important;
   bottom: 12px !important;
-  right: 1 !important;
+  right: 14px !important;
   z-index: 5 !important;
   display: flex !important;
   align-items: center !important;
@@ -732,7 +732,7 @@
   gap: 16px !important;
   text-decoration: none !important;
   cursor: pointer !important;
-  box-shadow: 0  12px rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
 
 
   .coach-icon-wrap {
@@ -746,7 +746,7 @@
     flex-grow: 1 !important;
     display: flex !important;
     flex-direction: column !important;
-    gap:  !important;
+    gap: 4px !important;
 
     .coach-title {
       font-size: 18px !important;
@@ -779,7 +779,7 @@
 /* Quote of the Day Card */
 .quote-card-new {
   background: #FFE8BB !important;
-  
+
   border-radius: 12px !important;
   padding: 40px 30px !important;
   margin-bottom: 20px !important;
@@ -800,8 +800,8 @@
     background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%) !important;
     border: 1.5px solid #FFD4A0 !important;
     border-radius: 20px 20px 20px 0px !important;
-    padding: 10px 2 !important;
-    box-shadow: 0  8px rgba(0, 0, 0, 0.1) !important;
+    padding: 10px 24px !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
     display: inline-block !important;
   }
 
@@ -816,14 +816,14 @@
     position: absolute !important;
     bottom: -13px !important;
     left: -1.5px !important;
-    width: 2 !important;
-    height: 1 !important;
+    width: 24px !important;
+    height: 14px !important;
     background-image: repeating-linear-gradient(
       -45deg,
       #FFD4A0,
       #FFD4A0 2px,
       #ED7D6F 2px,
-      #ED7D6F 
+      #ED7D6F 4px
     ) !important;
     clip-path: polygon(0 0, 100% 0, 40% 100%, 0 0) !important;
     border-left: 1.5px solid #FFD4A0 !important;
@@ -855,7 +855,7 @@
 /* Daily Challenge Card */
 .challenge-card-new {
   background: #FFE8BB !important;
-  
+
   border-radius: 12px !important;
   padding: 40px 30px !important;
   margin-bottom: 20px !important;
@@ -871,8 +871,8 @@
     justify-content: center !important;
 
     .challenge-icon {
-      width: 4 !important;
-      height: 4 !important;
+      width: 44px !important;
+      height: 44px !important;
     }
   }
 
@@ -898,7 +898,7 @@
 /* Question of the Day Card */
 .question-card-new {
   background: #FFE8BB !important;
-  
+
   border-radius: 12px !important;
   padding: 30px 20px !important;
   // margin-bottom: 15px !important;
@@ -908,7 +908,7 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
 
   .question-illustration {
-    margin-bottom: 1 !important;
+    margin-bottom: 14px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -943,7 +943,7 @@
       border: 1px solid #FFE3C0 !important;
       border-radius: 12px !important;
       padding: 12px 16px !important;
-      font-size: 1 !important;
+      font-size: 14px !important;
       color: #000000 !important;
       resize: none !important;
       outline: none !important;
@@ -965,9 +965,9 @@
     background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%) !important;
     border: none !important;
     border-radius: 30px !important;
-    padding: 10px 2 !important;
+    padding: 10px 24px !important;
     color: #ffffff !important;
-    font-size: 1 !important;
+    font-size: 14px !important;
     font-weight: 600 !important;
     margin-bottom: 12px !important;
   }
@@ -1012,7 +1012,7 @@
     flex-grow: 1 !important;
     display: flex !important;
     flex-direction: column !important;
-    gap:  !important;
+    gap: 4px !important;
 
     .forum-title {
       font-size: 18px !important;
@@ -1221,8 +1221,8 @@
   align-items: center;
   gap: 6px;
   border-radius: 45px;
-  padding: 6px 1;
-  height: 3;
+  padding: 6px 14px;
+  height: 34px;
   box-sizing: border-box;
 
   &--adults {
