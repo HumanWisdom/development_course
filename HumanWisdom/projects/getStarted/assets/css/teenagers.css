@@ -142,9 +142,16 @@ body.page-teenagers .teen-blog-more:hover .chevron-pink {
 }
 
 /* Match index "View all success stories" hover (#803358) */
+body.page-teenagers .teen-testimonials-more,
+body.page-teenagers .teen-testimonials-more .chevron-pink {
+  color: rgba(203, 97, 113, 1) !important;
+}
+
 body.page-teenagers .teen-testimonials-more:hover,
 body.page-teenagers .teen-testimonials-more:hover h4,
-body.page-teenagers .teen-testimonials-more:hover .fc_cb6171 {
+body.page-teenagers .teen-testimonials-more:hover .fc_cb6171,
+body.page-teenagers .teen-testimonials-more:hover .chevron-pink,
+body.page-teenagers .teen-testimonials-more:hover .chevron-pink .bi {
   color: #803358 !important;
 }
 
