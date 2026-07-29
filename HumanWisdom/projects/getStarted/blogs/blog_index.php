@@ -8,14 +8,13 @@
   <meta property="description"
     content="Explore expert articles on mental wellbeing, self-awareness, emotional intelligence, relationships and life skills from HappierMe.">
   <meta property="keyword"
-    content="Mental wellbeing articles
-, self-awareness blog
-emotional intelligence
-life skills
-personal growth
-mental health articles
-resilience
-relationships
+    content="Mental wellbeing articles,self-awareness blog,
+emotional intelligence,
+life skills,
+personal growth,
+mental health articles,
+resilience,
+relationships,
 stress management
 ">
 

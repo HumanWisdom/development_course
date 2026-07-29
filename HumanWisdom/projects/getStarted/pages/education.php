@@ -4,15 +4,15 @@
   <head>
     <meta property="og:title" id="tag1" content="Student Wellbeing and Life Skills | HappierMe">
     <meta property="og:description" content="Improve student wellbeing and build life skills with HappierMe. Develop emotional intelligence, confidence and stronger relationships.">
-     <meta name="keywords" content="workplace wellbeing
-student mental health
-social emotional learning
-emotional intelligence for students
-life skills for students
-resilience for students
-self-awareness for students
-school wellbeing
-emotional wellbeing in schools
+     <meta name="keywords" content="student wellbeing
+,student mental health,
+social emotional learning,
+emotional intelligence for students,
+life skills for students,
+resilience for students,
+self-awareness for students,
+school wellbeing,
+emotional wellbeing in schools,
 student resilience
 
 
