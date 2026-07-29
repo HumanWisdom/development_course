@@ -210,12 +210,12 @@ export class PersonalisedForYouSearchPage implements OnInit {
   loadMicrolearningPreview() {
     this.commonService.GetMicrolearningList(SharedService.ProgramId).subscribe((res: any) => {
       if (res && res.length) {
-        const pageCounts = [8, 7, 8];
-        this.microlearningPreview = res.slice(0, 3).map((item, i) => ({
+        // const pageCounts = [8, 7, 8];
+        this.microlearningPreview = res.slice(0, 6).map((item, i) => ({
           id: item.microlearningID,
           title: item.Title,
           imgUrl: item.ImageUrl,
-          pages: pageCounts[i]
+          pages: item.ScreenCnt
         }));
       }
     });
@@ -227,7 +227,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
       if (res) {
         const data = Array.isArray(res) ? res :
           (res.Data || res.data || res.DataList || res.GuidedJourneys || res.Guided_Journeys || res.list || []);
-        this.guidedJourneyPreview = data.slice(0, 3).map(item => ({
+        this.guidedJourneyPreview = data.slice(0, 2).map(item => ({
           id: item.GuidedJourneyID || item.JourneyID || item.journeyID || item.Id || item.id || item.RowID,
           title: item.Title || item.title || item.JourneyName || item.Name,
           subtitle: (item.Days || item.days) > 0 ? `${item.Days || item.days} days` : (item.Subtitle || item.subtitle || ''),
@@ -874,9 +874,11 @@ export class PersonalisedForYouSearchPage implements OnInit {
 
   toggleBodyScroll(lock: boolean): void {
     if (lock) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.setProperty('overflow', 'hidden', 'important');
+      document.documentElement.style.setProperty('overflow', 'hidden', 'important');
     } else {
-      document.body.style.overflow = '';
+      document.body.style.removeProperty('overflow');
+      document.documentElement.style.removeProperty('overflow');
     }
   }
 
