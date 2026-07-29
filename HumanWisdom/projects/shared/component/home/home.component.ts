@@ -1722,6 +1722,9 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    // Always release any scroll lock set by search box or other interactions
+    document.body.style.removeProperty('overflow');
+    document.documentElement.style.removeProperty('overflow');
     // Restore header visibility when leaving home page
     const dtnEl = document.querySelector('.dtn') as HTMLElement;
     if (dtnEl) { dtnEl.style.display = 'block'; }
@@ -2131,9 +2134,11 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
   toggleBodyScroll(lock: boolean): void {
     if (lock) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.setProperty('overflow', 'hidden', 'important');
+      document.documentElement.style.setProperty('overflow', 'hidden', 'important');
     } else {
-      document.body.style.overflow = '';
+      document.body.style.removeProperty('overflow');
+      document.documentElement.style.removeProperty('overflow');
     }
   }
 
