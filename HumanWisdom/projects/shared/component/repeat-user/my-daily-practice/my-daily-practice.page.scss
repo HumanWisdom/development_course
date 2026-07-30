@@ -1271,6 +1271,12 @@
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
+  animation: tourOverlayFadeIn 0.3s ease forwards;
+}
+
+@keyframes tourOverlayFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 .tour-popup-container {
@@ -1295,12 +1301,18 @@
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
-  animation: tourPopupZoomIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation: tourPopupSlideUp 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
-@keyframes tourPopupZoomIn {
-  from { transform: scale(0.85); opacity: 0; }
-  to   { transform: scale(1); opacity: 1; }
+@keyframes tourPopupSlideUp {
+  from {
+    transform: translateY(80px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .tour-popup-image-container {
@@ -1383,6 +1395,32 @@
 
 .tour-popup-skip:hover {
   opacity: 0.8;
+}
+
+/* ====== Teenagers theme overrides for Tour Popup ====== */
+.tour-popup-card--teens {
+  background: #183C79;
+}
+
+.tour-popup-title--teens {
+  color: #FFFFFF;
+}
+
+.tour-popup-body--teens {
+  color: rgba(255, 255, 255, 0.75); // #FFFFFFBF
+}
+
+.tour-body-content--teens {
+  color: rgba(255, 255, 255, 0.75); // #FFFFFFBF
+}
+
+.tour-popup-btn--teens {
+  background: linear-gradient(180deg, #EE9596 0%, #F17071 100%);
+  box-shadow: 0 4px 15px rgba(241, 112, 113, 0.3);
+}
+
+.tour-popup-skip--teens {
+  color: rgba(255, 255, 255, 0.75); // #FFFFFFBF
 }
 
 
