@@ -1385,4 +1385,30 @@
   opacity: 0.8;
 }
 
+/* ====== Teenagers theme overrides for Tour Popup ====== */
+.tour-popup-card--teens {
+  background: #183C79;
+}
+
+.tour-popup-title--teens {
+  color: #FFFFFF;
+}
+
+.tour-popup-body--teens {
+  color: rgba(255, 255, 255, 0.75); // #FFFFFFBF
+}
+
+.tour-body-content--teens {
+  color: rgba(255, 255, 255, 0.75); // #FFFFFFBF
+}
+
+.tour-popup-btn--teens {
+  background: linear-gradient(180deg, #EE9596 0%, #F17071 100%);
+  box-shadow: 0 4px 15px rgba(241, 112, 113, 0.3);
+}
+
+.tour-popup-skip--teens {
+  color: rgba(255, 255, 255, 0.75); // #FFFFFFBF
+}
+
 
