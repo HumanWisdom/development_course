@@ -368,9 +368,13 @@
                                       <!-- Tick Icon - Top Right Corner of Card -->
                                       <div class="position-absolute" style="top: 8px; right: 8px; z-index: 10;">
                                         <div *ngIf="shouldShowTickIcon(card)" class="status-icon tick-icon">
-                                          <img
+                                          <img *ngIf=" isAdults"
                                             src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
                                             alt="Read icon" class="tick-icon-img" style="width: 20px; height: 20px;">
+                                             <img *ngIf=" !isAdults"
+                                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isread_teen.svg"
+                                            alt="Read icon" class="tick-icon-img" style="width: 20px; height: 20px;">
+
                                         </div>
                                       </div>
                                       <!-- Lock Icon - Bottom Right Corner of Card -->
