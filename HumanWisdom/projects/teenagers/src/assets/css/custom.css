@@ -32323,6 +32323,14 @@ body * {
   padding: 20px;
 }
 
+
+ /* ---- Contact a coach (box_v3_01) ---- */
+  .box_v3_01 {
+    background: linear-gradient(180deg, #FAC768 0%, #F1AC5E 100%) !important;
+    border-radius: 12px !important;
+    border: none !important;
+  }
+
 .box_v3_01 {
   background: #65BFC2;
   border: 1px solid rgba(255, 255, 255, 0.25);
@@ -33609,7 +33617,7 @@ body * {
 /* /progress tab */
 .div_qod {
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  /* border: 1px solid rgba(255, 255, 255, 0.25); */
   background: #0C2B5F;
   padding: 24px;
   margin-top: 30px;

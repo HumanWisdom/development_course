@@ -98,10 +98,20 @@
                     class="rtextarea v3_reflection_ta" name="message" rows="10" [placeholder]="placeholder"
                     [(ngModel)]="reflectionData" [readonly]="enableReadonly"></textarea>
                 </div>
+                
+              </div>
+              <div class="row pt20px">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <h5 class="mlr20px fs_12px fw_400 lh_140p  tcenter"
+                  [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
+                  Journaling can help you find clarity and calm. This online journal is private to you.
+                 
+                  </h5>
+                </div>
               </div>
 
               <!-- condition 1 -->
-              <div *ngIf="!shared && !confirmed">
+             <!--  <div *ngIf="!shared && !confirmed">
                 <div class="row mt20px mb20px">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0">
                     <a class="">
@@ -125,9 +135,9 @@
                 <h5 class="mlr20px fs_12px fw_400 lh_140p  tcenter"
                   [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
                   Journaling can help you find clarity and calm. This online journal is private to you.
-                  <!-- All posts are encrypted and can only be seen by you, unless shared by you. The posts shared on the forum are moderated. -->
+                 
                 </h5>
-              </div>
+              </div> -->
               <!-- /condition 1 -->
 
               <!-- condition 2 -->

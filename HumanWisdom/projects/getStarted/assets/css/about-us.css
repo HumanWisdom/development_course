@@ -430,8 +430,10 @@
         padding-top: 60px !important;
       }
 
-      /* Partner program → The Founder: exactly 60px on mobile */
-      section.p_100px .div_inspire > [class^="col-"]:last-child {
+      /* Partner program → The Founder: exactly 60px on mobile.
+         Only the last card of the last inspire row — not every row’s last-child
+         (that removed spacing between Life stories and Journal). */
+      section.p_100px > .row:last-child .div_inspire > [class^="col-"]:last-child {
         margin-bottom: 0 !important;
       }
 

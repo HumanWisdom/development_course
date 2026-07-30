@@ -153,16 +153,15 @@
   background: rgba(0, 0, 0, 0.6);
 }
 
-/* Tablet styles */
+/* Tablet / mobile — Figma "Owl wings down": 65.73 × 72.58 */
 @media (max-width: 768px) {
 
   .owl-video,
   .owl-gif {
-    width: 140px;
-    /* Match static owl size */
-    /* height: 140px;        */
-    max-width: 140px;
-    max-height: 140px;
+    width: 65.73px;
+    height: 72.58px;
+    max-width: 65.73px;
+    max-height: 72.58px;
   }
 
   :host {
@@ -175,11 +174,10 @@
 
   .owl-video,
   .owl-gif {
-    width: 140px;
-    /* Match static owl size */
-    /* height: 140px;         */
-    max-width: 140px;
-    max-height: 140px;
+    width: 65.73px;
+    height: 72.58px;
+    max-width: 65.73px;
+    max-height: 72.58px;
   }
 
   :host {
@@ -192,11 +190,10 @@
 
   .owl-video,
   .owl-gif {
-    width: 120px;
-    /* Match static owl size */
-    /* height: 120px;        */
-    max-width: 120px;
-    max-height: 120px;
+    width: 65.73px;
+    height: 72.58px;
+    max-width: 65.73px;
+    max-height: 72.58px;
   }
 
   :host {
@@ -209,11 +206,10 @@
 
   .owl-video,
   .owl-gif {
-    width: 100px;
-    /* Match static owl size */
-    /* height: 100px;       */
-    max-width: 100px;
-    max-height: 100px;
+    width: 65.73px;
+    height: 72.58px;
+    max-width: 65.73px;
+    max-height: 72.58px;
   }
 
   :host {
@@ -387,8 +383,13 @@ body:has(#menu:checked) .owl-animation-wrapper {
     filter: contrast(1.1) brightness(1.05);
   }
 
+  /* Figma mobile: Owl wings down 65.73 × 72.58 (adults + teens) */
   .static-owl-image {
-    max-width: 160px;
+    width: 65.73px;
+    height: 72.58px;
+    max-width: 65.73px;
+    transform: none;
+    object-fit: contain;
   }
 
   .owl-cloud-container {
@@ -408,7 +409,7 @@ body:has(#menu:checked) .owl-animation-wrapper {
 
 }
 
-/* Teenagers sizing tweaks (position comes from :host nested in Forum) */
+/* Teenagers: same Figma mobile size as adults (65.73 × 72.58) */
 @media (max-width: 1024px) {
   :host(.teenager-theme) .static-owl-container {
     align-items: center;
@@ -417,14 +418,19 @@ body:has(#menu:checked) .owl-animation-wrapper {
 
   :host(.teenager-theme) .static-owl-image {
     transform-origin: bottom center;
-    height: 80px;
-    width: auto;
-    max-width: min(80px, 22vw);
-    transform: scale(0.68);
+    width: 65.73px;
+    height: 72.58px;
+    max-width: 65.73px;
+    transform: none;
+    object-fit: contain;
   }
 
   :host(.teenager-theme) .owl-gif {
     margin-right: 0;
+    width: 65.73px;
+    height: 72.58px;
+    max-width: 65.73px;
+    max-height: 72.58px;
   }
 
   :host(.teenager-theme) .owl-cloud-container {
@@ -437,21 +443,5 @@ body:has(#menu:checked) .owl-animation-wrapper {
   :host(.teenager-theme) .cloud-image {
     width: 128px;
     max-width: 128px;
-  }
-}
-
-@media (max-width: 480px) {
-  :host(.teenager-theme) .static-owl-image {
-    height: 72px;
-    max-width: min(72px, 20vw);
-    transform: scale(0.64);
-  }
-}
-
-@media (max-width: 360px) {
-  :host(.teenager-theme) .static-owl-image {
-    height: 68px;
-    max-width: min(68px, 18vw);
-    transform: scale(0.6);
   }
 }
