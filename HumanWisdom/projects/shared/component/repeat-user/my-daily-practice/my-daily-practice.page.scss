@@ -1296,7 +1296,7 @@
 
 .tour-popup-card {
   background: #FFF8E7;
-  border-radius: 20px;
+  border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
   width: 100%;
@@ -1306,12 +1306,12 @@
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
-  animation: tourPopupSlideUp 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  animation: tourPopupSlideUp 0.28s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
 }
 
 @keyframes tourPopupSlideUp {
   from {
-    transform: translateY(80px);
+    transform: translateY(100vh);
     opacity: 0;
   }
   to {
