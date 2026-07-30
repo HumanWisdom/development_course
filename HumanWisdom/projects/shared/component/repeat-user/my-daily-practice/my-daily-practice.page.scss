@@ -298,7 +298,7 @@
 }
 
 .bg_stake .mdp_add_to_journal {
-  background: linear-gradient(180deg, #EE9596 0%, #D47172 100%);
+  background: linear-gradient(180deg, #EE9596 0%, #F17071 100%) !important;
 }
 
 /* Premium Figma Redesign Card Styles */
@@ -982,6 +982,11 @@
   }
 }
 
+/* Teenagers override: Add to journal button inside question card */
+.bg_stake .question-card-new .mdp_add_to_journal {
+  background: linear-gradient(180deg, #EE9596 0%, #F17071 100%) !important;
+}
+
 /* Community Forum Card */
 .forum-card-new {
   background: linear-gradient(42.42deg, #FFACA2 23.99%, #FFCAA9 76.24%) !important;
@@ -1357,6 +1362,7 @@
 }
 
 .tour-body-content{
+  margin-top: 3px;
   color: #00000080;
   padding: 0 20px;
 }
@@ -1393,10 +1399,6 @@
   transition: opacity 0.2s ease;
 }
 
-.tour-popup-skip:hover {
-  opacity: 0.8;
-}
-
 /* ====== Teenagers theme overrides for Tour Popup ====== */
 .tour-popup-card--teens {
   background: #183C79;
@@ -1407,10 +1409,11 @@
 }
 
 .tour-popup-body--teens {
-  color: rgba(255, 255, 255, 0.75); // #FFFFFFBF
+  color: #ffffff;
 }
 
 .tour-body-content--teens {
+  margin-top: 3px;
   color: rgba(255, 255, 255, 0.75); // #FFFFFFBF
 }
 
