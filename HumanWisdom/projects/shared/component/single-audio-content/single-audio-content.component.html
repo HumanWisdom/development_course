@@ -48,6 +48,16 @@
 
               <div class="row" *ngIf="enableTextContent">
                 <!-- <p class="txt1 mt40px mb30px"> -->
+                    <div class="row tcenter" (click)="readText('Back To Audio')"
+                (keydown.enter)="readText('Back To Audio')" tabindex="0"
+                *ngIf="audioLink !== '' && textContent !== ''">
+                <!-- <p class="txt1 mt40px mb30px"> -->
+                <a class="">
+                  <h6 class="fs_15px fw_400 lh_140p  underline mtb10px" [ngClass]="isAdults ? 'fc_D7586B' : 'fc_ee9596'">
+                    {{'Back To Audio' }} </h6>
+                </a>
+                <!-- </p> -->
+              </div>
                 <h3 class="transcript_txt" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" [innerHTML]="textContent">
                 </h3>
                 <!-- </p> -->
@@ -74,13 +84,13 @@
 
                 </div>
               </div>
-              <div class="row tcenter" (click)="readText(!enableTextContent ? 'Read text' : 'Back To Audio')"
-                (keydown.enter)="readText(!enableTextContent ? 'Read text' : 'Back To Audio')" tabindex="0"
+              <div class="row tcenter" (click)="readText('Read text')"
+                (keydown.enter)="readText( 'Read text')" tabindex="0"
                 *ngIf="audioLink !== '' && textContent !== ''">
                 <!-- <p class="txt1 mt40px mb30px"> -->
                 <a class="">
-                  <h6 class="fs_15px fw_400 lh_140p fc_D7586B underline mtb10px">
-                    {{!enableTextContent ? 'Read text' : 'Back To Audio' }} </h6>
+                  <h6 class="fs_15px fw_400 lh_140p underline mtb10px" [ngClass]="isAdults ? 'fc_D7586B' : 'fc_ee9596'">
+                    {{'Read text'}} </h6>
                 </a>
                 <!-- </p> -->
               </div>
