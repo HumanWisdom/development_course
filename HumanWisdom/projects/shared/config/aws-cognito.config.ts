@@ -1,6 +1,6 @@
 import { environment } from '../../environments/environment';
 
-/** Set localStorage enableAwsSsoLogin = 'F' to hide the Cognito SSO button. */
+/** Set localStorage enableAwsSsoLogin = 'T' to show the Cognito SSO button (hidden by default). */
 export const AWS_SSO_LOGIN_STORAGE_KEY = 'enableAwsSsoLogin';
 
 export const AWS_COGNITO_OIDC_CONFIG_IDS = ['aws-cognito-adults', 'aws-cognito-teenagers'] as const;
@@ -9,7 +9,7 @@ export function isAwsSsoLoginVisible(): boolean {
   if (typeof window === 'undefined') {
     return false;
   }
-  return localStorage.getItem(AWS_SSO_LOGIN_STORAGE_KEY) !== 'F';
+  return localStorage.getItem(AWS_SSO_LOGIN_STORAGE_KEY) === 'T';
 }
 
 function getHostedUiBaseUrl(): string {
