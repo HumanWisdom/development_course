@@ -18,6 +18,7 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
   @Input() hideExploreTopic: boolean = false;
   @Output() startChat = new EventEmitter<string>();
   @Output() viewChanged = new EventEmitter<boolean>();
+  @Output() bubbleComplete = new EventEmitter<void>();
   
   username: string = '';
   isAdults: boolean = true;
@@ -330,6 +331,8 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
       return;
     }
     if (localStorage.getItem(this.getIntroShownKey()) === 'true') {
+      // Intro already seen — emit immediately so parent doesn't wait
+      this.bubbleComplete.emit();
       return;
     }
     this.gifLoadedOnce = true;
@@ -341,6 +344,8 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
       return;
     }
     if (localStorage.getItem(this.getDialogueShownKey()) === 'true') {
+      // Bubble already shown before — notify parent immediately so it doesn't wait forever
+      this.bubbleComplete.emit();
       return;
     }
     this.cloudSequenceStarted = true;
@@ -382,6 +387,8 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
       localStorage.setItem(this.getIntroShownKey(), 'true');
       // Ensure the footer owl dialogue does not re-appear after the in-page Olly dialogue.
       localStorage.setItem(this.OWL_DIALOGUE_SHOWN_KEY, 'true');
+      // Notify parent that the bubble sequence has fully completed
+      this.bubbleComplete.emit();
     }, 600);
   }
 
