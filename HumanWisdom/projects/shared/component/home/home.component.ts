@@ -2286,4 +2286,11 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     }
     return card.isFree === "0" || card.isFree === 0;
   }
+
+  routeToCoach(){
+    this.logeventservice.logEvent("click_contact_a_coach");
+      this.router.navigate([SharedService.getprogramName(), 'coach']);
+
+
+  }
 }

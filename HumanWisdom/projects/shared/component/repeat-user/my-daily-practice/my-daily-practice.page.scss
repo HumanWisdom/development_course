@@ -298,7 +298,7 @@
 }
 
 .bg_stake .mdp_add_to_journal {
-  background: linear-gradient(180deg, #EE9596 0%, #D47172 100%);
+  background: linear-gradient(180deg, #EE9596 0%, #F17071 100%) !important;
 }
 
 /* Premium Figma Redesign Card Styles */
@@ -970,6 +970,7 @@
     font-size: 14px !important;
     font-weight: 600 !important;
     margin-bottom: 12px !important;
+    width: 100% !important;
   }
 
   .question-footer {
@@ -979,6 +980,11 @@
     text-align: center !important;
     margin: 0 !important;
   }
+}
+
+/* Teenagers override: Add to journal button inside question card */
+.bg_stake .question-card-new .mdp_add_to_journal {
+  background: linear-gradient(180deg, #EE9596 0%, #F17071 100%) !important;
 }
 
 /* Community Forum Card */
@@ -1255,6 +1261,169 @@
   .hr_style_v3_02, .hr_style_v3_15{
     border: 1px solid #0000001A;
   }
+}
+
+/* ====== Guide to HappierMe Centered Tour Popup ====== */
+.tour-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 99999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  animation: tourOverlayFadeIn 0.3s ease forwards;
+}
+
+@keyframes tourOverlayFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.tour-popup-container {
+  position: relative;
+  width: 90%;
+  max-width: 365px;
+  margin: 0 auto;
+  padding: 0;
+  z-index: 100000;
+  box-sizing: border-box;
+}
+
+.tour-popup-card {
+  background: #FFF8E7;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+  width: 100%;
+  max-width: 365px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  animation: tourPopupSlideUp 0.28s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}
+
+@keyframes tourPopupSlideUp {
+  from {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.tour-popup-image-container {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.tour-popup-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.tour-popup-content {
+  padding: 30px;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tour-popup-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 140%;
+  color: #000000;
+  margin: 0 0 12px 0;
+}
+
+.tour-popup-body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  color: #000000;
+  margin: 0 0 24px 0;
+  padding: 0 10px;
+}
+
+.tour-body-content{
+  margin-top: 3px;
+  color: #00000080;
+  padding: 0 20px;
+}
+
+.tour-popup-btn {
+  width: 85%;
+  max-width: 280px;
+  padding: 12px 0;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 150%;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(215, 88, 107, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-bottom: 24px;
+}
+
+.tour-popup-btn:active {
+  transform: scale(0.98);
+}
+
+.tour-popup-skip {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #000000;
+  text-decoration: underline !important;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+/* ====== Teenagers theme overrides for Tour Popup ====== */
+.tour-popup-card--teens {
+  background: #183C79;
+}
+
+.tour-popup-title--teens {
+  color: #FFFFFF;
+}
+
+.tour-popup-body--teens {
+  color: #ffffff;
+}
+
+.tour-body-content--teens {
+  margin-top: 3px;
+  color: rgba(255, 255, 255, 0.75); // #FFFFFFBF
+}
+
+.tour-popup-btn--teens {
+  background: linear-gradient(180deg, #EE9596 0%, #F17071 100%);
+  box-shadow: 0 4px 15px rgba(241, 112, 113, 0.3);
+}
+
+.tour-popup-skip--teens {
+  color: rgba(255, 255, 255, 0.75); // #FFFFFFBF
 }
 
 
