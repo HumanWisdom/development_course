@@ -5,6 +5,22 @@
     <meta property="og:title" id="tag1" content="Healthcare Staff and Patient Wellbeing | HappierMe">
     <meta property="og:type" content="website" />
     <meta property="og:description" content="Support healthier staff and patients with HappierMe. ORCHA approved, our prevention-first approach builds self-awareness, stronger relationships and resilience.">
+   
+   <meta name="keywords" content="Healthcare wellbeing,
+healthcare staff wellbeing,
+patient self-management,
+burnout prevention,
+population health
+healthcare mental health,
+clinician wellbeing,
+emotional intelligence in healthcare,
+preventive healthcare,
+workforce wellbeing,
+digital mental health,
+
+
+
+">
     <meta property="og:image" content="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/imgs/website_share.jpg" />
     <meta property="og:image:alt" content="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/imgs/website_share.jpg" />
     <meta property="og:image:width" content="414" />
@@ -206,7 +222,7 @@
           <div class="p0 flex_block w-1245px gap_40px gap_m24px" >
             <!-- Mobile-only heading: shows above image on mobile -->
             <div class="col-12 p0 tcenter display_d_none hc-desc-heading-mobile" data-aos="fade-up" data-aos-delay="100">
-              <h2 class="mtb0px fs_18px fw_600 lh_150p" style="color: rgba(128, 51, 88, 1);">
+              <h2 class="mtb0px fs_18px fw_600 lh_140p fc_000000">
                 Take charge of your mental health, habits and emotions.
               </h2>
             </div>
@@ -215,17 +231,19 @@
               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/healthcare_app.webp" class="img-responsive" alt="Take charge of your mental health, habits and emotions.">
             </div>
 
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12  col-12 pr0px tleft ta_lc mt_m24px w-384px mt0px" data-aos="fade-up" data-aos-delay="200" style="display:flex;flex-direction:column;gap:16px;">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12  col-12 pr0px tleft w-384px mt0px hc-desc-copy" data-aos="fade-up" data-aos-delay="200">
               <!-- Desktop heading: hidden on mobile (mobile uses the div above) -->
-              <h2 class="mtb0px fs_24px fw_600 lh_150p display_m_none" style="color: rgba(128, 51, 88, 1);">
-                Take charge of your mental health, habits and emotions.
+              <h2 class="mtb0px fs_30px fw_600 lh_140p fc_000000 display_m_none hc-desc-title">
+                Take charge of your<br>
+                mental health, habits<br>
+                and emotions.
               </h2>
 
-              <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000">
+              <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000 hc-desc-subtitle">
                 Reduce the demand for healthcare by helping patients self-regulate their habits and manage their own mental health.
               </h5>
 
-              <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000">
+              <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000 hc-desc-subtitle">
                 Reduce burnout, boost retention and productivity by supporting staff to develop a positive attitude, have healthy relationships, and be happier.
               </h5>
             </div>

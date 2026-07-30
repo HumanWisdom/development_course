@@ -2402,6 +2402,10 @@ a {
   margin-bottom: 20px;
 }
 
+.mb35px {
+  margin-bottom: 35px;
+}
+
 .mb40px {
   margin-bottom: 40px;
 }
@@ -3425,17 +3429,15 @@ audio::-webkit-media-controls-enclosure {
 
 .btn_blogp {
   margin: 4px;
-  padding: 4px 16px;
+  padding: 4px 20px;
   height: 30px;
   border-radius: 21px;
-  background: rgba(238, 161, 112, 0.2);
-
-  /* background: rgba(232, 168, 128, 0.20); */
+  background: rgba(255, 247, 230, 1);
+  color: rgba(128, 51, 88, 1) !important;
   border: 0;
   text-align: center;
-    text-transform: uppercase;
-
-  cursor: auo;
+  text-transform: uppercase;
+  cursor: auto;
 }
 
 .img_blogs {

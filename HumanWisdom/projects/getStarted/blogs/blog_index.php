@@ -8,7 +8,15 @@
   <meta property="description"
     content="Explore expert articles on mental wellbeing, self-awareness, emotional intelligence, relationships and life skills from HappierMe.">
   <meta property="keyword"
-    content="Personal growth blog, Self-improvement blog, Inspirational blog, Life lessons blog, Mindfulness blog, Adult development blog">
+    content="Mental wellbeing articles,self-awareness blog,
+emotional intelligence,
+life skills,
+personal growth,
+mental health articles,
+resilience,
+relationships,
+stress management
+">
 
   <!-- vendor_header -->
   <?php Template::vendorHeader(); ?>
@@ -38,10 +46,15 @@
       border: none;
       cursor: pointer;
       font-size: 18px;
+      font-weight: 500;
+      color: #d7586b;
+      text-decoration: underline;
     }
 
-    #toggle:hover {
-      text-decoration: underline;
+    #toggle:hover,
+    #toggle:focus {
+      color: #803358 !important;
+      text-decoration: underline !important;
     }
 
     /* Hero: clear stacked fixed headers */
@@ -1287,7 +1300,7 @@
             <div class="clearfix"></div>
 
           <div class="btn-container">
-            <button type="button" id="toggle" style="text-decoration:underline;">View More</button>
+            <button type="button" id="toggle">View More</button>
           </div>
           <!-- <view less> -->
         </div>

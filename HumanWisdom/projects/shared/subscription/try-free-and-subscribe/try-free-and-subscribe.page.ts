@@ -280,8 +280,11 @@ export class TryFreeAndSubscribePage implements OnInit, OnDestroy {
   }
 
   routeToDashboard() {
-    const redirectUrl = sessionStorage.getItem('subscriptionRedirectUrl');
+    let redirectUrl = sessionStorage.getItem('subscriptionRedirectUrl');
     const redirectStateStr = sessionStorage.getItem('subscriptionRedirectState');
+    if (redirectUrl && redirectUrl.includes('olly-landing')) {
+      redirectUrl = `/${SharedService.getprogramName()}/today`;
+    }
     if (redirectUrl) {
       sessionStorage.removeItem('subscriptionRedirectUrl');
       sessionStorage.removeItem('subscriptionRedirectState');
@@ -296,10 +299,13 @@ export class TryFreeAndSubscribePage implements OnInit, OnDestroy {
   }
 
   routeToOllyLanding() {
-    const redirectUrl = sessionStorage.getItem('subscriptionRedirectUrl');
+    let redirectUrl = sessionStorage.getItem('subscriptionRedirectUrl');
     const redirectStateStr = sessionStorage.getItem('subscriptionRedirectState');
     // Flag that the user arrived via the basic-access sign-up path
     sessionStorage.setItem('fromBasicAccessSignup', 'T');
+    if (redirectUrl && redirectUrl.includes('olly-landing')) {
+      redirectUrl = `/${SharedService.getprogramName()}/today`;
+    }
     if (redirectUrl) {
       sessionStorage.removeItem('subscriptionRedirectUrl');
       sessionStorage.removeItem('subscriptionRedirectState');
@@ -309,7 +315,7 @@ export class TryFreeAndSubscribePage implements OnInit, OnDestroy {
       }
       this.router.navigate([redirectUrl], extras);
     } else {
-      this.router.navigateByUrl(`/${SharedService.getprogramName()}/olly-landing`);
+      this.router.navigateByUrl(`/${SharedService.getprogramName()}/today`);
     }
   }
 

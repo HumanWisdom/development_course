@@ -122,6 +122,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
   showSearchBox: boolean = true;
   isAdults: boolean = false;
   isSearchActive: boolean = false;
+  showLearnPopup: boolean = false;
 
 
   //static progress mapping
@@ -206,9 +207,23 @@ export class PersonalisedForYouSearchPage implements OnInit {
     }
     let closetour = localStorage.getItem('closeTour');
 
-    // if(!closetour && !localStorage.getItem('firstTimeSearchTour')) {
-    //   this.continueTour();
-    // }
+    const userId = localStorage.getItem('userId') || '';
+    const key = userId ? `hasSeenLearnPopup_${userId}` : 'hasSeenLearnPopup';
+    const hasSeen = localStorage.getItem(key) === 'true';
+
+    if (!hasSeen) {
+      this.showLearnPopup = true;
+      localStorage.setItem(key, 'true');
+    } else {
+      this.showLearnPopup = false;
+    }
+  }
+
+  closeLearnPopup() {
+    this.showLearnPopup = false;
+    const userId = localStorage.getItem('userId') || '';
+    const key = userId ? `hasSeenLearnPopup_${userId}` : 'hasSeenLearnPopup';
+    localStorage.setItem(key, 'true');
   }
 
   closeTour(){
@@ -339,12 +354,11 @@ toggleAccordion() {
   loadMicrolearningPreview() {
     this.commonService.GetMicrolearningList(SharedService.ProgramId).subscribe((res: any) => {
       if (res && res.length) {
-        const pageCounts = [8, 7, 8];
-        this.microlearningPreview = res.slice(0, 3).map((item, i) => ({
+        this.microlearningPreview = res.slice(0, 6).map((item, i) => ({
           id: item.microlearningID,
           title: item.Title,
           imgUrl: item.ImageUrl,
-          pages: pageCounts[i]
+          pages: item.ScreenCnt
         }));
       }
     });
@@ -356,7 +370,7 @@ toggleAccordion() {
       if (res) {
         const data = Array.isArray(res) ? res :
           (res.Data || res.data || res.DataList || res.GuidedJourneys || res.Guided_Journeys || res.list || []);
-        this.guidedJourneyPreview = data.slice(0, 3).map(item => ({
+        this.guidedJourneyPreview = data.slice(0, 2).map(item => ({
           id: item.GuidedJourneyID || item.JourneyID || item.journeyID || item.Id || item.id || item.RowID,
           title: item.Title || item.title || item.JourneyName || item.Name,
           subtitle: (item.Days || item.days) > 0 ? `${item.Days || item.days} days` : (item.Subtitle || item.subtitle || ''),
@@ -462,7 +476,7 @@ toggleAccordion() {
       case "self awareness":
       case "self-awareness":
         {
-        this.route.navigate(['/adults/home'], { fragment: 'self-awareness', state: { source: 'search' } });
+        this.route.navigate(['/adults/explore'], { fragment: 'self-awareness', state: { source: 'search' } });
         return;
       }
       case "forum":{
@@ -821,9 +835,11 @@ toggleAccordion() {
 
   toggleBodyScroll(lock: boolean): void {
     if (lock) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.setProperty('overflow', 'hidden', 'important');
+      document.documentElement.style.setProperty('overflow', 'hidden', 'important');
     } else {
-      document.body.style.overflow = '';
+      document.body.style.removeProperty('overflow');
+      document.documentElement.style.removeProperty('overflow');
     }
   }
 

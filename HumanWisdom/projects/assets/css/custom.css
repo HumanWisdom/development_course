@@ -13343,6 +13343,16 @@ margin-top:0;
   /* color: #1092A7; */
 }
 
+
+.tag-nuggets-inspiration
+ { 
+  background: #D7586B; 
+  color: #FFFFFF !important; 
+}
+
+.tag-ask-coach { background: #ED7D6F; color: #FFFFFF !important; }
+
+
 .prelative {
   position: relative !important;
 }
@@ -15721,6 +15731,10 @@ input[type="number"] {
   top: 25%;
 }
 
+
+  .hamburger_sociali a {
+     margin: 0 5px;
+}
 .t1_bg {
   background: #D68844;
 }
@@ -16513,6 +16527,8 @@ input[type="number"] {
   .owl_img {
     width: 25%;
   }
+
+  
 
   .owl_progress {
     width: 85%;
@@ -31883,11 +31899,11 @@ input[type="search"].hide_search::-webkit-search-cancel-button {
 .hamburger_sociali {
   display: flex;
   align-items: center;
-  /* justify-content: center; */
+  justify-content: center;
 }
 
 .hamburger_sociali a {
-  margin: 0 15px;
+  margin: 0 10px;
 }
 
 .btn_subscription_options[disabled] {
@@ -32489,7 +32505,7 @@ body * {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100px;
+  /* height: 100px; */
   padding: 20px;
 }
 

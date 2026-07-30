@@ -23935,6 +23935,7 @@ ul.dh_ul li:last-child {
   height: 82px;
   position: relative;
   overflow: hidden;
+  border: 5px solid #10326B;
   border-radius: 50%;
 }
 
@@ -31717,7 +31718,7 @@ input[type="search"].hide_search::-webkit-search-cancel-button {
 }
 
 .hamburger_sociali a {
-  margin: 0 15px;
+  margin: 0 10px;
 }
 
 .btn_subscription_options[disabled] {
@@ -32322,6 +32323,14 @@ body * {
   padding: 20px;
 }
 
+
+ /* ---- Contact a coach (box_v3_01) ---- */
+  .box_v3_01 {
+    background: linear-gradient(180deg, #FAC768 0%, #F1AC5E 100%) !important;
+    border-radius: 12px !important;
+    border: none !important;
+  }
+
 .box_v3_01 {
   background: #65BFC2;
   border: 1px solid rgba(255, 255, 255, 0.25);
@@ -32329,7 +32338,7 @@ body * {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100px;
+  /* height: 100px; */
   padding: 20px;
 }
 
@@ -33608,7 +33617,7 @@ body * {
 /* /progress tab */
 .div_qod {
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  /* border: 1px solid rgba(255, 255, 255, 0.25); */
   background: #0C2B5F;
   padding: 24px;
   margin-top: 30px;
@@ -34276,7 +34285,9 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   text-align: left;
   padding: 12px 10px;
 }
+.tag-nuggets-inspiration { background: #EE9596; color: #FFFFFF !important; }
 
+.tag-ask-coach { background: #4267A5; color: #FFFFFF !important; }
 
 .btn_ctdout {
   height: 50px;
@@ -34284,7 +34295,7 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   margin: 0;
   border: 0;
   border-radius: 100px;
-  background: linear-gradient(180deg, #EE9596 0%, #F17071 100%) !important;
+  background: #0C2B5F !important;
   color: #fff !important;
   font-size: 15px;
   font-weight: 600;

@@ -6,7 +6,7 @@
   <div class="cw100p">
     <div class="row center_flex">
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01  col_cw "
-        [ngClass]="isAdults ? 'v1_3_bg_splashnew' : 'v1_3_bg_splash_teens'" [class.search-active]="isSearchActive">
+        [ngClass]="isAdults ? 'v1_3_bg_splashnew' : 'bg_stake'" [class.search-active]="isSearchActive">
 
 
         <div class="x_panel p0">
@@ -18,7 +18,8 @@
                     [ngClass]="isAdults ? 'mdp-streak-badge--adults' : 'mdp-streak-badge--teens'">
                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/streak_teenn.svg"
                       alt="streak" class="mdp-streak-icon" />
-                    <span class="mdp-streak-label">Streak: <strong>{{ streak }}</strong> days</span>
+                    <span class="mdp-streak-label">Streak: <strong>{{ streak }}</strong> {{ streak == 1 ? 'day' : 'days'
+                      }}</span>
                   </div>
                 </div>
                 <h4 class="mb5px fw_600 fs_24px lh_140p"
@@ -33,13 +34,19 @@
               </div>
             </div>
 
-            <app-olly-landing [isIntegrated]="true" (viewChanged)="onOllyViewChanged($event)"></app-olly-landing>
+            <app-olly-landing #ollyLanding [isIntegrated]="true" [hideExploreTopic]="isContinueCardSelfAwareness"
+              (viewChanged)="onOllyViewChanged($event)" (bubbleComplete)="onOllyBubbleComplete()"></app-olly-landing>
 
-
+            <!-- hr - only show when explore topic tile is actually visible (logged-in, non-guest, explore topic tile rendered) -->
+            <div class="row" *ngIf="isloggedIn && !guest && ollyLanding.isExploreTopicVisible">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_v3_02">
+              </div>
+            </div>
             <!-- v1.1 -->
             <div *ngIf="!isQuestionsViewActive">
               <!-- CONTINUE WHERE YOU LEFT - moved first per Figma -->
-              <div class="row" *ngIf="isloggedIn && resumeLastvisited.length !== 0"
+              <div class="row" *ngIf="isloggedIn && resumeLastvisited.length !== 0 && !isLastVisitedGuidedJourney"
                 style="margin-left: 0; margin-right: 0;">
                 <h4 class="continue-section-label mb10px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"
                   style="letter-spacing: 0.5px;">
@@ -55,7 +62,7 @@
 
                   <!-- Middle Text -->
                   <div class="continue-text-new">
-                    <span class="continue-tag">PATHWAY</span>
+                    <span class="continue-tag">{{resumeLastvisited[0]['feature']}}</span>
                     <h4 class="continue-title">
                       {{resumeLastvisited[0]['ModuleName']}}
                     </h4>
@@ -82,15 +89,12 @@
                 <div class="mood-card-new" (click)="routeToDailyCheckIn()">
                   <!-- Smiley icon -->
                   <div class="mood-icon-wrap">
-                    <svg width="44" height="44" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <circle cx="24" cy="24" r="20" fill="#FFAE9E" />
-                      <circle cx="17.5" cy="21.5" r="2.5" fill="#000000" />
-                      <circle cx="30.5" cy="21.5" r="2.5" fill="#000000" />
-                      <circle cx="14" cy="26" r="3.5" fill="#FF7868" opacity="0.6" />
-                      <circle cx="34" cy="26" r="3.5" fill="#FF7868" opacity="0.6" />
-                      <path d="M18 28.5C18 28.5 21 32 24 32C27 32 30 28.5 30 28.5" stroke="#000000" stroke-width="2.5"
-                        stroke-linecap="round" />
-                    </svg>
+                    <img *ngIf="isAdults"
+                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/emojis/1.svg"
+                      alt="Daily mood" width="44" height="44" />
+                    <img *ngIf="!isAdults"
+                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/emojis/1.svg"
+                      alt="Daily mood" width="44" height="44" />
                   </div>
                   <h4 class="mood-title">Daily mood</h4>
                   <p class="mood-sub">Check-in</p>
@@ -124,7 +128,7 @@
                   <div class="guided-journey-card-new" (click)="routeToGuidedJourneys()">
                     <!-- Full-width footprints beach image -->
                     <div class="guided-journey-img-wrap-new">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/resume/29.png"
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/guided_journeys/guided_journalnew.webp"
                         alt="Guided Journeys">
                     </div>
                     <!-- Text + CTA below image -->
@@ -134,7 +138,12 @@
                         A step-by-step daily guide to lasting change,<br>not just a quick fix.
                       </p>
                       <button class="guided-journey-btn-new">
-                        Begin a new journey
+                        <ng-container *ngIf="isLastVisitedGuidedJourney; else beginNew">
+                          Continue
+                        </ng-container>
+                        <ng-template #beginNew>
+                          Begin a new journey
+                        </ng-template>
                       </button>
                     </div>
                   </div>
@@ -208,6 +217,13 @@
                         </ng-container>
                       </span>
                     </div>
+                    <!-- Lock icon on Card (Bottom right) -->
+                    <div *ngIf="!isSubscriber && (item.isFree === '0' || item.isFree === 0)" class="practice-lock-icon">
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg"
+                        alt="Lock icon" *ngIf="isAdults">
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg" alt="Lock icon"
+                        *ngIf="!isAdults">
+                    </div>
                   </a>
 
                   <!-- Horizontal Card Layout (other cards) -->
@@ -236,6 +252,13 @@
                         </ng-container>
                       </span>
                     </div>
+                    <!-- Lock icon on Card (Bottom right) -->
+                    <div *ngIf="!isSubscriber && (item.isFree === '0' || item.isFree === 0)" class="practice-lock-icon">
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg"
+                        alt="Lock icon" *ngIf="isAdults">
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg" alt="Lock icon"
+                        *ngIf="!isAdults">
+                    </div>
                   </a>
                 </ng-container>
 
@@ -255,33 +278,35 @@
                 <div class="box_journalmy">
                   <div class="row">
                     <!-- hr -->
-                    <div class="row">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-10px">
+                    <div class="row p0">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-10px p0">
                         <hr class="hr_style_v3_15">
                       </div>
                     </div>
                     <!-- /hr -->
                     <!-- contact a coach button -->
-                    <div class="row">
+                    <div class="row p0">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <a routerLink="" (click)="routeToCoach()">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_01">
-                            <div class="col-2 p0 mb8px text-center">
+                            <div class="col-3 p0 mb8px text-center">
                               <img
-                                [src]="isAdults ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/coach.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/coach_tenn.svg'">
+                                [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/coach_adu.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/coach_teen.svg'">
                             </div>
 
-                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0 pl15px">
-                              <h4 class="mtb0px fc_ffffff fs_18px fw_600 lh_140p">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 pl15px">
+                              <h4 class="mtb0px fs_18px fw_600 lh_140p"
+                                [ngClass]="isAdults ? 'fc_ffffff' : 'fc_0C2B5F'">
                                 Contact a coach
                               </h4>
-                              <h4 class="mtb0px fc_ffffff_0_7 fs_12px fw_400 lh_140p">
+                              <h4 class="mtb0px fs_12px fw_400 lh_140p"
+                                [ngClass]="isAdults ? 'fc_ffffff_0_7' : 'fc_0C2B5F'">
                                 Contact our experienced coaches for personalised support
                               </h4>
                             </div>
 
                             <div class="col-1 p0 tright">
-                              <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
+                              <i class="fa fa-angle-right fs_20px" [ngClass]="isAdults ? 'fc_ffffff' : 'fc_0C2B5F'"></i>
                             </div>
                           </div>
                         </a>
@@ -293,7 +318,7 @@
 
                   <!-- hr -->
                   <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-10px">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-10px p0">
                       <hr class="hr_style_v3_02">
                     </div>
                   </div>
@@ -317,7 +342,7 @@
                         [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/daily_challengad.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/daily_teenn.svg'"
                         alt="Challenge Icon">
                     </div>
-                    <h4 class="challenge-title">Daily Challenge</h4>
+                    <h4 class="challenge-title">Try this today</h4>
                     <p class="challenge-text">{{trythistoday}}</p>
                   </div>
 
@@ -325,10 +350,10 @@
                   <div class="question-card-new" *ngIf="dailyqus">
                     <div class="question-illustration">
                       <img
-                        [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/question_ad.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/question_teenn.svg'"
-                        alt="Question of the day">
+                        [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/good_thing_adu.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/good_thing_teena.svg'"
+                        alt="One good thing">
                     </div>
-                    <h4 class="question-title">Question of the day</h4>
+                    <h4 class="question-title">One good thing</h4>
                     <p class="question-text">{{dailyqus}}</p>
 
                     <div class="question-input-wrap">
@@ -340,13 +365,10 @@
                         class="question-input-field disabled-field"></textarea>
                     </div>
 
-                    <div class="row mt15px" *ngIf="isSubscriber && questext && questext !== ''">
-                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                        <button type="submit" class="btn mdp_add_to_journal" (click)="subdailyques()">
-                          Add to journal
-                        </button>
-                      </div>
-                    </div>
+                    <button type="submit" class="btn mdp_add_to_journal" (click)="subdailyques()"
+                      *ngIf="isSubscriber && questext && questext !== ''">
+                      Add to journal
+                    </button>
 
                     <p class="question-footer">
                       Your online journal is secure and private to you.
@@ -355,7 +377,7 @@
 
                   <!-- hr -->
                   <div class="row" *ngIf="dailyqus">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-10px">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-10px p0">
                       <hr class="hr_style_v3_02">
                     </div>
                   </div>
@@ -365,7 +387,7 @@
                   <a (click)="routeToForum()" class="forum-card-new">
                     <div class="forum-icon-wrap">
                       <img
-                        [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/forum_ad.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/foram_tenn.webp'"
+                        [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/forum_ad.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/foram_tenn.svg'"
                         alt="Forum chat bubbles" class="forum-icon">
                     </div>
                     <div class="forum-text-wrap">
@@ -424,5 +446,32 @@
 
     <app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Continue'"
       [content]="content"></app-modal>
+
+    <app-modal *ngIf="showModal" [title]="modalTitle" [content]="modalContent" [okText]="'Start your free trial'"
+      [cancelText]="'Cancel'" [enableCancel]="true" [isFreeTrialEnable]="true"
+      (closeEvent)="onModalClose($event)"></app-modal>
+
+    <!-- Guide to HappierMe Popup -->
+    <div class="tour-popup-overlay" *ngIf="showTourPopup" (click)="closeTourPopup()">
+      <div class="tour-popup-container" (click)="$event.stopPropagation()">
+        <div class="tour-popup-card" [class.tour-popup-card--teens]="!isAdults">
+          <div class="tour-popup-image-container">
+            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/take_a_tourad.svg"
+              class="tour-popup-image" alt="Guide to HappierMe">
+          </div>
+          <div class="tour-popup-content">
+            <h3 class="tour-popup-title" [class.tour-popup-title--teens]="!isAdults">Guide to HappierMe</h3>
+            <p class="tour-popup-body" [class.tour-popup-body--teens]="!isAdults">
+              Get to know the HappierMe app, its features, and explore the key ideas behind it. <br />
+              <span class="tour-body-content" [class.tour-body-content--teens]="!isAdults">You can also access the guide
+                from the main menu.</span>
+            </p>
+            <button class="tour-popup-btn" [class.tour-popup-btn--teens]="!isAdults" (click)="goToTour()">Take a
+              tour</button>
+            <a class="tour-popup-skip" [class.tour-popup-skip--teens]="!isAdults" (click)="closeTourPopup()">Skip</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- footer is provided by the app shell (app.component.html), same as the Home page -->

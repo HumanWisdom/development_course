@@ -1139,10 +1139,14 @@
   /* Teenagers page — section titles stay 24px per Figma (not global fs_24px → 18px) */
   body.page-teenagers h2.fs_24px.teen-video-title,
   body.page-teenagers h2.fs_24px.teen-support-title,
-  body.page-teenagers h2.fs_24px.teen-calm-title,
   body.page-teenagers h2.fs_24px.teen-dykt-title,
   body.page-teenagers h2.fs_24px.teen-inspire-title,
   body.page-teenagers h2.fs_24px.teen-testimonials-title {
+    font-size: 24px !important;
+    line-height: 140% !important;
+  }
+
+  body.page-teenagers h2.fs_24px.teen-calm-title {
     font-size: 24px !important;
     line-height: 140% !important;
   }
@@ -1680,8 +1684,6 @@
   body.page-teenagers section.hpt120px ~ main#main section h2.teen-video-title,
   body.page-teenagers section.hpt120px ~ main#main section h2.fs_24px.teen-support-title,
   body.page-teenagers section.hpt120px ~ main#main section h2.teen-support-title,
-  body.page-teenagers section.hpt120px ~ main#main section h2.fs_24px.teen-calm-title,
-  body.page-teenagers section.hpt120px ~ main#main section h2.teen-calm-title,
   body.page-teenagers section.hpt120px ~ main#main section h2.fs_24px.teen-dykt-title,
   body.page-teenagers section.hpt120px ~ main#main section h2.teen-dykt-title,
   body.page-teenagers section.hpt120px ~ main#main section h2.fs_24px.teen-inspire-title,
@@ -1689,6 +1691,13 @@
   body.page-teenagers section.hpt120px ~ main#main section h2.fs_24px.teen-testimonials-title,
   body.page-teenagers section.hpt120px ~ main#main section h2.teen-testimonials-title,
   body.page-teenagers section.hpt120px ~ main#main .section-header-teen h2 {
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 140% !important;
+  }
+
+  body.page-teenagers section.hpt120px ~ main#main section h2.fs_24px.teen-calm-title,
+  body.page-teenagers section.hpt120px ~ main#main section h2.teen-calm-title {
     font-size: 24px !important;
     font-weight: 600 !important;
     line-height: 140% !important;

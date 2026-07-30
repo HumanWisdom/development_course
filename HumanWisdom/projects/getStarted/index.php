@@ -11,7 +11,14 @@ require_once('./includes/security_config.php');
   <meta name="description"
     content="Build mental wellbeing through self-awareness with HappierMe. Develop emotional intelligence and life skills to reduce stress and strengthen relationships.">
   <meta name="keywords"
-    content="Stress,Breathing,Anger,Anxiety,Love,Manage,Meditation,Relaxation,Motivation,Mood,Relief,Mind,Calm">
+    content="mental wellbeing,emotional intelligence,self-awareness,
+life skills,
+mindfulness
+stress management,
+resilience,
+personal growth
+
+">
   <meta property="og:title" content="HappierMe: For Teens & Adults">
   <meta property="og:description"
     content="Struggling with stress or relationships? HappierMe empowers teens and adults to master emotional intelligence, mental health, and life skills for real change.">
@@ -157,8 +164,7 @@ require_once('./includes/security_config.php');
                      
                     </div>
                     <p class="text-wrapper-4" id="hw-website-subtitle">
-                      Feel calmer. Strengthen your relationships.<br>
-                      Build <a href="#" class="human-skills-link" data-bs-toggle="modal" data-bs-target="#humanSkillsModal" role="button" aria-haspopup="dialog" id="lifeskills">these skills</a> to thrive at home and at work.
+                      Feel calmer. Strengthen your <br class="subtitle-br-m">relationships.<br class="subtitle-br-d"> Build <a href="#" class="human-skills-link" data-bs-toggle="modal" data-bs-target="#humanSkillsModal" role="button" aria-haspopup="dialog" id="lifeskills">these skills</a><br class="subtitle-br-m"> to thrive at home and at work.
                     </p>
                   </div>
                 </div>
@@ -173,11 +179,15 @@ require_once('./includes/security_config.php');
         </div>
       </div>
 
-      <!-- ===== ORCHA / Mind BANNER ===== -->
+      <!-- ===== ORCHA / Macmillan / Mind BANNER ===== -->
       <div class="orcha-strip index-lazy-section">
         <div class="orcha-strip-item orcha-strip-orcha">
           <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/orcha_certifie.svg" alt="ORCHA Certified" height="60" width="60"/>
           <span>ORCHA approved for use in healthcare</span>
+        </div>
+        <div class="orcha-strip-item orcha-strip-macmillan">
+          <img src="https://d1tenzemoxuh75.cloudfront.net/website/macmillansupport.svg" alt="Macmillan Cancer Support" width="120" height="36"/>
+          <span>Featured in Macmillan&rsquo;s<br>cancer support app library</span>
         </div>
         <div class="orcha-strip-item orcha-strip-mind">
           <img src="https://d1tenzemoxuh75.cloudfront.net/website/working_with_mind.svg" alt="Working with Mind" width="120" height="54"/>
@@ -533,7 +543,7 @@ require_once('./includes/security_config.php');
               <div class="text-wrapper-18">HappierMe for Teenagers</div>
               <div class="div-35">
                 <p class="text-wrapper-19">Help teenagers feel happier and succeed in life</p>
-                <p class="text-wrapper-19-mobile">Guiding teenagers to flourish in life</p>
+                <p class="text-wrapper-19-mobile">Help teenagers feel<br>happier and succeed in life</p>
                 <p class="text-wrapper-20">
                   The HappierMe app for teens has been designed to help them manage their emotions, build better
                   friendships, navigate the challenges of social media, anxiety and peer pressure, and develop their
@@ -1559,7 +1569,7 @@ require_once('./includes/security_config.php');
           <div class="human-skills-modal-close-row">
             <button type="button" class="human-skills-modal-close" data-bs-dismiss="modal" aria-label="Close">
               <svg width="9" height="9" viewBox="0 0 9 9" aria-hidden="true" focusable="false">
-                <path d="M1 1l7 7M8 1L1 8" stroke="rgba(215, 88, 107, 1)" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M2 2l5 5M7 2L2 7" stroke="rgba(215, 88, 107, 1)" stroke-width="1.5" stroke-linecap="round"/>
               </svg>
             </button>
           </div>

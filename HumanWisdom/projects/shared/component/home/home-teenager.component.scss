@@ -323,6 +323,7 @@
     /* Animation styles for accordion sections */
     .rounded-bottom {
         transition: all 0.3s ease-in-out;
+        padding-top:10px
     }
 
     /* Ensure smooth animation for nested sections */
@@ -366,9 +367,10 @@
     }
 
     .section-header {
-        height: 60px;
-          padding-left: 20px;
-  padding-right: 20px;  
+        // height: 60px;
+        padding-top: 10px;
+        padding-left: 20px;
+        padding-right: 20px;  
         width: auto;
     }
 
@@ -591,8 +593,8 @@
     .hr_style_v4 {
         border: 1px solid white;
         opacity: 0.1;
-        margin: 10px 0;
-        margin: 0 0 0 0;
+        margin: 0 0 10px 0;
+   
         //filter: brightness(0) invert(0.5); /* Makes the SVG grey */
     }
 
@@ -706,6 +708,37 @@
         .home-content {
             padding-top: 40px !important;
         }
+    }
+
+    /* ====== Explore Popup Teenager Theme ====== */
+    .explore-popup-overlay {
+        background-color: rgba(0, 0, 0, 0.65);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+    }
+
+    .explore-popup-header {
+        background: #0C2B5F;
+    }
+
+    .explore-popup-title {
+        color: #ffffff;
+    }
+
+    .explore-popup-content {
+        background: #183C79;
+    }
+
+    .explore-popup-subtitle {
+        color: #ffffff;
+    }
+
+    .explore-popup-body {
+        color: rgba(255, 255, 255, 0.75);
+    }
+
+    .explore-popup-close-btn {
+        background: linear-gradient(180deg, #EE9596 0%, #F17071 100%);
     }
 }
 .fc_ffffff_0_7 {

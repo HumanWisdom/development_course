@@ -9,7 +9,7 @@
 
 
 .fc_000000 {
-    color: #000000;
+    color: #000000 !important;
 }
 
 .fc_000000_i {
@@ -125,6 +125,10 @@
 
 .fc_a0a3bd {
     color: #A0A3BD;
+}
+
+.fc_0C2B5F {
+    color: #0C2B5F;
 }
 
 .fc_ee9596 {

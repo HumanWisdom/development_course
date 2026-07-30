@@ -37,7 +37,7 @@
                     </div>
                   </div>
                   <div class="search-input-wrapper">
-                    <input type="text" placeholder="How can I help today?" [(ngModel)]="searchQuery"
+                    <input type="text" placeholder="How can I help?" [(ngModel)]="searchQuery"
                       (click)="toggleQuestionsView(true)" (focus)="toggleQuestionsView(true)" readonly
                       class="olly-search-input" />
                   </div>
@@ -55,10 +55,16 @@
                   </a>
                 </div>
 
-                <!-- Suggestion link 2 (bottom link) -->
-                <div class="bottom-suggestion-wrapper" *ngIf="selectedTopic && !isIntegrated && !fromImNotSure && !fromBasicAccessSignup">
-                  <a href="javascript:void(0)" (click)="onTopicLinkClick()" class="olly-bottom-link">
-                    More on '<strong>{{ selectedTopic.displayName }}</strong>'
+                <!-- Suggestion link 2 (bottom link) - Explore tile -->
+                <!-- Hidden when the "Continue where you left" card on the Today page already covers the same topic (e.g. Self-awareness) -->
+                <div class="bottom-suggestion-wrapper" *ngIf="selectedTopic && !hideExploreTopic">
+                  <a href="javascript:void(0)" (click)="onTopicLinkClick()" class="explore-topic-tile">
+                    <span class="explore-topic-text">
+                      Explore <strong>{{ selectedTopic.displayName }}</strong>
+                    </span>
+                    <div class="continue-arrow-new">
+                      <i class="fa fa-angle-right"></i>
+                    </div>
                   </a>
                 </div>
 
@@ -74,7 +80,7 @@
                     </svg>
                   </button>
                   <input type="text" [(ngModel)]="searchQuery" (keydown.enter)="onSearch()"
-                    placeholder="How can I help today?" class="questions-search-input" />
+                    placeholder="How can I help?" class="questions-search-input" />
                   <button class="submit-btn" (click)="onSearch()" [disabled]="!searchQuery.trim()">
                     <div class="submit-circle">
                       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

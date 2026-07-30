@@ -5,6 +5,18 @@
   <meta property="og:title" id="tag1" content="About HappierMe | Reduce suffering and build happier lives">
   <meta property="og:type" content="website" />
   <meta property="og:description" content="Learn about HappierMe's mission to reduce suffering and help people lead happier lives. Founded by former surgeon Dr Manoj Krishna and selected by Mind.">
+ 
+ <meta name="keywords" content=" About HappierMe,HappierMe
+self-awareness,
+emotional intelligence,
+life skills,
+prevention-first wellbeing,
+mental wellbeing,
+personal growth
+
+
+
+">
   <meta property="og:image" content="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/imgs/website_share.jpg" />
   <meta property="og:image:alt"
     content="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/imgs/website_share.jpg" />
@@ -29,7 +41,6 @@
   "@type": "Person",
   "name": "Manoj Krishna",
   "url": "https://happierme.app/",
-  "image": "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/au_manoj_krishna.webp",
   "sameAs": "linkedin.com/in/humanwisdom",
   "jobTitle": "Founder",
   "worksFor": {
@@ -77,19 +88,17 @@
     </div>
 
     <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
-      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0 tcenter w-980px" style=" width: 980px !important;">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 mt_d100px_m24px">
-          <h1 class="mtb0px fs_36px fw_600 lh_120p fc_000000">
+      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0 tcenter w-980px au-welcome-wrap" style=" width: 980px !important;">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 mt_d100px_m24px au-welcome-title-wrap">
+          <h1 class="mtb0px fs_36px fw_600 lh_120p fc_000000 au-welcome-title">
             Welcome to HappierMe
           </h1>
         </div>
 
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 mt20px mb0px">
-          <h4 class="mtb0px fs_18px fw_400 lh_160p fc_000000">
-            Here you will find easy to use tools to manage your emotions and mental health, build fulfilling
-            relationships and live a happier life, in peace with yourself and others. We support you to feel better, and
-            then go deeper to understand yourself and the root cause of problems for lasting change. Our mission is to
-            reduce suffering, help people lead happier lives, and make the world a better place. </h4>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 mt20px mb0px au-welcome-body-wrap">
+          <h4 class="mtb0px fs_18px fw_400 lh_160p fc_000000 au-welcome-body">
+            HappierMe aims to bring human beings together to explore our shared humanity and live with wisdom. We are here to reduce suffering, help people lead happier lives, and make the world a better place.
+          </h4>
         </div>
       </div>
     </div>
@@ -125,8 +134,7 @@
 
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                <h3 class="mt20px mb10px fs_21px fw_600 lh_150p fc_834b66 m-black"
-                  style="color: rgba(128, 51, 88, 1) !important;">
+                <h3 class="mt20px mb10px fs_21px fw_600 lh_150p fc_000000 m-black">
                   75+ modules
                 </h3>
               </div>
@@ -152,8 +160,7 @@
 
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                <h3 class="mt20px mb10px fs_21px fw_600 lh_150p fc_834b66 m-black"
-                  style="color: rgba(128, 51, 88, 1) !important;">
+                <h3 class="mt20px mb10px fs_21px fw_600 lh_150p fc_000000 m-black">
                   Not just a band-aid
                 </h3>
               </div>
@@ -179,8 +186,7 @@
 
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                <h3 class="mt20px mb10px fs_21px fw_600 lh_150p fc_834b66 m-black"
-                  style="color: rgba(128, 51, 88, 1) !important;">
+                <h3 class="mt20px mb10px fs_21px fw_600 lh_150p fc_000000 m-black">
                   Caters to all ages
                 </h3>
               </div>
@@ -259,44 +265,13 @@
     </section>
     <!-- /our_how -->
 
-    <!-- inspiration / video -->
-    <section>
-      <div class="section-header">
-        <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
-          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
-            <h2 class="mtb0px fs_30px fw_600 lh_120p fc_000000">
-              The inspiration behind HappierMe
-            </h2>
-          </div>
-        </div>
-      </div>
-
-      <div class="row center_flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
-        <div class="w-810px">
-          <!-- <video id="homeVideo" controls playinline class="w100p"
-          poster="https://d1tenzemoxuh75.cloudfront.net/website/webp/intro_happierme.webp"
-          controlsList="nodownload">
-          <source
-            src="https://d1tenzemoxuh75.cloudfront.net/website/videos/adults_intro.mp4"
-            type="video/mp4">
-        </video> -->
-
-          <iframe id="youtubeIntro" loading="lazy" title="youtubeIntro"
-            src="https://www.youtube.com/embed/qcOZnwQ3jxM?si=h1vq4zHtZwaPYq8E" class="cvideo_b yt-embed"
-            allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen
-            onclick="return logevent('click_play_video_home', 'about_us.php')"></iframe>
-        </div>
-      </div>
-    </section>
-    <!-- /inspiration / video -->
-
     <!-- content -->
     <section class="p_100px">
       <div class="section-header">
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
             <h1 class="mtb0px fs_36px fw_600 lh_160p fc_000000 m-txt">
-              Watch. Read. Listen. Interact. Or just be.
+              Watch. Read. Listen.<br class="mobile-br"> Interact. Or just be.
             </h1>
 
             <h2 class="mtb0px fs_24px fw_600 lh_160p fc_000000 au-inspire-subtitle">
@@ -635,59 +610,36 @@
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 mt20px">
-              <h1 class="mtb60px fs_36px fw_600 lh_120p fc_000000 au-founder-heading">
-                The Founder </h1>
+              <h1 class="mtb0px fs_36px fw_600 lh_120p fc_000000 au-founder-heading">
+                The Founder
+              </h1>
             </div>
-            <div class="row center_flex">
-              <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 col-11  flex_block" style=" width: 1240px; gap:40px">
-                <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 pr0px tleft ta_lc mb20px display_d_none" data-aos="fade-up" data-aos-delay="200">
-                  <h2 class="mtb0px fs_36px fw_600 lh_120p fc_834b66">
-                      The Founder                  </h2>
-                </div>  
-                -->
-                <!-- <h1 class="mtb0px fs_36px fw_600 lh_120p fc_834b66 tcenter">
-              The Founder
-            </h1> -->
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 col-4 plr20px cpr_a founder-image-container profile-img"
-                  data-aos="fade-up" data-aos-delay="100">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/au_manoj_krishna.webp"
-                    class="img-responsive founder-image" alt="Dr Manoj Krishna" style="width:300px;">
-                </div>
-
-                <!-- <div class="row center_flex mtb40px" data-aos="fade-up" data-aos-delay="200">
-          <div class="col-lg-2 col-md-2 col-sm-4 col-xs-4 col-4 p0">
-            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/au_manoj_krishna.webp" class="img-responsive" alt="Dr Manoj Krishna">
           </div>
         </div>
-   -->
-                <!-- <div class="row center_flex" data-aos="fade-up" data-aos-delay="300">
-          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0 tcenter">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-              <h3 class="mtb0px fs_21px fw_500 lh_160p fc_000000">
-                Dr Manoj Krishna
-              </h3>
-            </div> -->
+      </div>
 
-                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 col-9 pr0px tleft ta_lc mt_m24px"
-                  data-aos="fade-up" data-aos-delay="200">
-                  <h3 class="mtb10px fs_24px fw_500 lh_160p fc_000000">
-                    Dr Manoj Krishna
-                  </h3>
-                  <h4 class="mtb0px fs_18px fw_400 lh_160p fc_000000 au-founder-bio">
-                    <span class="au-founder-bio-line">Dr Manoj Krishna, previously a spine surgeon in the UK, left his
-                      medical career and, along with other professionals, started the HappierMe Project to help reduce
-                      suffering and help people lead happier lives. He has authored two books, 
-                      <a href="https://www.amazon.co.uk/Understanding-Me-You-enquiry-being/dp/0995683301"><span
-                          class="fw_500 clink td_underline">Understanding Me Understanding You</span></a>
-                      and
-                      <a href="https://www.amazon.co.uk/Stress-Free-Understand-yourself-Discover-ebook/dp/B0B2KM7SMJ"><span
-                          class="fw_500 clink td_underline">Stress-free</span></a>.
-                      He is also a public </span><span class="au-founder-bio-line">speaker and has spoken at more than 50
-                      institutions.</span>
-                  </h4>
-                </div>
-              </div>
-            </div>
+      <div class="row center_flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
+        <div class="w-810px au-founder-video">
+          <iframe id="youtubeIntro" loading="lazy" title="The one insight that can transform your happiness"
+            src="https://www.youtube.com/embed/qcOZnwQ3jxM?si=h1vq4zHtZwaPYq8E" class="cvideo_b yt-embed"
+            allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen
+            onclick="return logevent('click_play_video_founder', 'about_us.php')"></iframe>
+        </div>
+      </div>
+
+      <div class="row center_flex" data-aos="fade-up" data-aos-delay="300">
+        <div class="p0 tcenter au-founder-copy">
+          <h3 class="mtb10px fs_24px fw_500 lh_160p fc_000000">
+            Dr Manoj Krishna
+          </h3>
+          <h4 class="mtb0px fs_18px fw_400 lh_160p fc_000000 au-founder-bio">
+            <span class="au-founder-bio-dline">Dr Manoj Krishna, previously a spine surgeon in the UK, left his medical career and, along with other</span>
+            <span class="au-founder-bio-dline">professionals, started the HappierMe Project to help reduce suffering and help people lead happier lives. He</span>
+            <span class="au-founder-bio-dline">has authored two books, <a href="https://www.amazon.co.uk/Understanding-Me-You-enquiry-being/dp/0995683301"><span class="fw_500 clink td_underline">Understanding Me Understanding You</span></a>, and <a href="https://www.amazon.co.uk/Stress-Free-Understand-yourself-Discover-ebook/dp/B0B2KM7SMJ"><span class="fw_500 clink td_underline">Stress-free</span></a>. He is also a public speaker</span>
+            <span class="au-founder-bio-dline">and has spoken at more than 50 institutions.</span>
+          </h4>
+        </div>
+      </div>
     </section>
 
 

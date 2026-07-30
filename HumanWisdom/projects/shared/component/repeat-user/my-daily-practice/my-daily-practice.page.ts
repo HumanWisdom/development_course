@@ -68,6 +68,10 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
   showSearchBox: boolean = true;
   isSearchActive: boolean = false;
   isQuestionsViewActive: boolean = false;
+  showModal = false;
+  modalTitle = 'The best is yet to come';
+  modalContent = 'Unlock the full experience and continue your journey to live your best life';
+  showTourPopup = false;
 
   constructor(
     private commonService: CommonService,
@@ -85,7 +89,17 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
     return (ban === null || ban === 'T');
   }
 
+  getFormattedUrl(url: string, prefix: string): string {
+    if (!url) return '';
+    let target = url.startsWith('/') ? url : '/' + url;
+    if (!target.startsWith('/' + prefix + '/') && !target.startsWith('/adults/') && !target.startsWith('/teenagers/')) {
+      target = '/' + prefix + target;
+    }
+    return target;
+  }
+
   ngOnInit() {
+    SharedService.setDataInLocalStorage('NaviagtedFrom', this.router.url);
     // Hide footer owl until the user scrolls past the in-page Olly
     this.commonService.setFooterOwlVisible(false);
 
@@ -140,7 +154,6 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
       this.isAdults = false;
     }
     this.getdailyquestion();
-    this.getdailyques();
     if (localStorage.getItem("Subscriber") && localStorage.getItem("Subscriber") === '1') {
       this.isSubscriber = true;
     }
@@ -158,6 +171,14 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
     this.getLastvisitedScr(); 
 
     this.journalHits = +(localStorage.getItem('journalHits') || 0);
+
+    const userIdKey = localStorage.getItem('userId') || localStorage.getItem('userID') || '';
+    const key = userIdKey ? `hasSeenTourPopup_${userIdKey}` : 'hasSeenTourPopup';
+    const hasSeen = localStorage.getItem(key) === 'true';
+    if (hasSeen) {
+      this.showTourPopup = false;
+    }
+    // showTourPopup is triggered via (bubbleComplete) on the olly-landing component in the template
   }
 
   private getLastvisitedScr(): void {
@@ -172,6 +193,32 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
 
     if (localStorage.getItem("Subscriber") && localStorage.getItem("Subscriber") === '1') {
       this.isSubscriber = true;
+    }
+  }
+
+  onOllyBubbleComplete(): void {
+    // Only show the tour popup if user hasn't seen it before
+    const userIdKey = localStorage.getItem('userId') || localStorage.getItem('userID') || '';
+    const key = userIdKey ? `hasSeenTourPopup_${userIdKey}` : 'hasSeenTourPopup';
+    const hasSeen = localStorage.getItem(key) === 'true';
+    if (!hasSeen) {
+      this.showTourPopup = true;
+    }
+  }
+
+  closeTourPopup(): void {
+    this.showTourPopup = false;
+    const userId = localStorage.getItem('userId') || localStorage.getItem('userID') || '';
+    const key = userId ? `hasSeenTourPopup_${userId}` : 'hasSeenTourPopup';
+    localStorage.setItem(key, 'true');
+  }
+
+  goToTour(): void {
+    this.closeTourPopup();
+    if (this.isAdults) {
+      this.router.navigate(['/adults/intro-happierme']);
+    } else {
+      this.router.navigate(['/teenagers/intro-happierme']);
     }
   }
 
@@ -207,10 +254,10 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
         const isOdd = date % 2 !== 0;
 
         // 1. Daily Inspiration / Short video (type 5 & 6)
-        const shortVideos = res.filter(item => item.dailyPractTypeID === '5' || item.dailyPractTypeID === '6');
+        const shortVideos = res.filter(item => String(item.dailyPractTypeID) === '5' || String(item.dailyPractTypeID) === '6');
         let selectedShort = null;
         if (shortVideos.length > 1) {
-          selectedShort = isOdd ? shortVideos.find(x => x.dailyPractTypeID === '5') : shortVideos.find(x => x.dailyPractTypeID === '6');
+          selectedShort = isOdd ? shortVideos.find(x => String(x.dailyPractTypeID) === '5') : shortVideos.find(x => String(x.dailyPractTypeID) === '6');
           if (!selectedShort) selectedShort = shortVideos[0];
         } else if (shortVideos.length === 1) {
           selectedShort = shortVideos[0];
@@ -221,27 +268,34 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
           this.DailyInspirationLink = selectedShort.Text_URL || this.resolveMediaUrl(selectedShort.url);
           this.DailyInspirationImg = selectedShort.imgPath;
           this.DailyInspirationTime = selectedShort.timing;
-          this.isVoices = selectedShort.dailyPractTypeID === '6';
+          this.isVoices = String(selectedShort.dailyPractTypeID) === '6';
           this.enableVideo = true;
         }
 
         // 2. Quote of the day (type 2)
-        const quoteItem = res.find(item => item.dailyPractTypeID === '2');
+        const quoteItem = res.find(item => String(item.dailyPractTypeID) === '2');
         if (quoteItem) {
           this.dailyinstext = quoteItem.Text_URL;
           this.dailyinsAuthor = quoteItem.title;
         }
 
         // 3. Try This Today / Challenge (type 4)
-        const challengeItem = res.find(item => item.dailyPractTypeID === '4');
+        const challengeItem = res.find(item => String(item.dailyPractTypeID) === '4');
         if (challengeItem) {
           this.trythistoday = challengeItem.Text_URL;
         }
 
-        // 4. Alternating Cards logic
+        // 4. Question of the day (type 10)
+        const questionItem = res.find(item => String(item.dailyPractTypeID) === '10' || item.DailyPractise?.toLowerCase() === 'question of the day');
+        if (questionItem) {
+          this.dailyqus = questionItem.Text_URL;
+          this.dailyqusrefid = questionItem.id;
+        }
+
+        // 5. Alternating Cards logic
         if (this.isAdults) {
-          const breathingItem = res.find(item => item.dailyPractTypeID === '1');
-          const meditationItem = res.find(item => item.dailyPractTypeID === '3');
+          const breathingItem = res.find(item => String(item.dailyPractTypeID) === '1');
+          const meditationItem = res.find(item => String(item.dailyPractTypeID) === '3');
           
           let selectType: 'breathing' | 'meditation' = 'breathing';
           if (breathingItem && meditationItem) {
@@ -277,8 +331,47 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
             this.activeExerciseImg = meditationItem.imgPath || 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/51.webp';
           }
         } else {
-          const teenTalkItem = res.find(item => item.dailyPractTypeID === '8');
-          const podcastItem = res.find(item => item.dailyPractTypeID === '9');
+          // Teenagers: alternate breathing exercise vs audio meditation by odd/even date
+          const breathingItem = res.find(item => String(item.dailyPractTypeID) === '1');
+          const meditationItem = res.find(item => String(item.dailyPractTypeID) === '3');
+
+          let selectExerciseType: 'breathing' | 'meditation' = 'breathing';
+          if (breathingItem && meditationItem) {
+            selectExerciseType = isOdd ? 'breathing' : 'meditation';
+          } else if (breathingItem) {
+            selectExerciseType = 'breathing';
+          } else if (meditationItem) {
+            selectExerciseType = 'meditation';
+          }
+
+          if (selectExerciseType === 'breathing' && breathingItem) {
+            this.dailybreathTitle = breathingItem.title;
+            this.videoLink = breathingItem.Text_URL || this.resolveMediaUrl(breathingItem.url);
+            this.breatheTime = breathingItem.timing;
+            this.enableVideo = true;
+            this.selectedExerciseType = 'breathing';
+
+            this.activeExerciseLabel = 'BREATHING EXERCISE';
+            this.activeExerciseIcon = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/pay_daily1.svg';
+            this.activeExerciseTitle = this.dailybreathTitle;
+            this.activeExerciseTime = this.breatheTime;
+            this.activeExerciseImg = breathingItem.imgPath || 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/resume/29.png';
+          } else if (selectExerciseType === 'meditation' && meditationItem) {
+            this.audioTitle = meditationItem.title;
+            this.audioLink = meditationItem.Text_URL || this.resolveMediaUrl(meditationItem.url);
+            this.audioTime = meditationItem.timing;
+            this.selectedExerciseType = 'meditation';
+
+            this.activeExerciseLabel = 'AUDIO MEDITATION';
+            this.activeExerciseIcon = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/audii_daily1.svg';
+            this.activeExerciseTitle = this.audioTitle;
+            this.activeExerciseTime = this.audioTime;
+            this.activeExerciseImg = meditationItem.imgPath || 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/51.webp';
+          }
+
+          // Teenagers also alternate teentalk vs podcast
+          const teenTalkItem = res.find(item => String(item.dailyPractTypeID) === '8');
+          const podcastItem = res.find(item => String(item.dailyPractTypeID) === '9');
 
           let selectType: 'teentalk' | 'podcast' = 'teentalk';
           if (teenTalkItem && podcastItem) {
@@ -293,24 +386,10 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
             this.teenTalkTitle = teenTalkItem.title;
             this.teenTalkLink = teenTalkItem.Text_URL || this.resolveMediaUrl(teenTalkItem.url);
             this.teenTalkImg = teenTalkItem.imgPath;
-            this.selectedExerciseType = 'teentalk';
-
-            this.activeExerciseLabel = 'TEENTALK';
-            this.activeExerciseIcon = 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/play_outline.svg';
-            this.activeExerciseTitle = this.teenTalkTitle;
-            this.activeExerciseTime = teenTalkItem.timing;
-            this.activeExerciseImg = teenTalkItem.imgPath || 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_vp.svg';
           } else if (selectType === 'podcast' && podcastItem) {
             this.podcastTitle = podcastItem.title;
             this.podcastLink = podcastItem.Text_URL || this.resolveMediaUrl(podcastItem.url);
             this.podcastImg = podcastItem.imgPath;
-            this.selectedExerciseType = 'podcast';
-
-            this.activeExerciseLabel = 'PODCAST';
-            this.activeExerciseIcon = 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/audio_inv.svg';
-            this.activeExerciseTitle = this.podcastTitle;
-            this.activeExerciseTime = podcastItem.timing;
-            this.activeExerciseImg = podcastItem.imgPath || 'https://d1tenzemoxuh75.cloudfront.net/assets/webp/podcast/01.webp';
           }
         }
 
@@ -319,29 +398,58 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
         // and the non-selected short video (type 5 vs 6 alternate),
         // and the non-selected exercise (breathing vs meditation / teentalk vs podcast alternate)
         const excludedShortTypeId = shortVideos.length > 1
-          ? (selectedShort?.dailyPractTypeID === '5' ? '6' : '5')
+          ? (String(selectedShort?.dailyPractTypeID) === '5' ? '6' : '5')
           : null;
 
         let excludedExerciseTypeId: string | null = null;
         if (this.isAdults) {
-          const breathingItem = res.find(item => item.dailyPractTypeID === '1');
-          const meditationItem = res.find(item => item.dailyPractTypeID === '3');
+          const breathingItem = res.find(item => String(item.dailyPractTypeID) === '1');
+          const meditationItem = res.find(item => String(item.dailyPractTypeID) === '3');
           if (breathingItem && meditationItem) {
             excludedExerciseTypeId = this.selectedExerciseType === 'breathing' ? '3' : '1';
           }
         } else {
-          const teenTalkItem = res.find(item => item.dailyPractTypeID === '8');
-          const podcastItem = res.find(item => item.dailyPractTypeID === '9');
+          const teenTalkItem = res.find(item => String(item.dailyPractTypeID) === '8');
+          const podcastItem = res.find(item => String(item.dailyPractTypeID) === '9');
           if (teenTalkItem && podcastItem) {
             excludedExerciseTypeId = this.selectedExerciseType === 'teentalk' ? '9' : '8';
+          }
+          // Also exclude the non-selected breathing/meditation for teenagers
+          const breathingItem2 = res.find(item => String(item.dailyPractTypeID) === '1');
+          const meditationItem2 = res.find(item => String(item.dailyPractTypeID) === '3');
+          if (breathingItem2 && meditationItem2) {
+            const excludedBreathingMeditation = this.selectedExerciseType === 'breathing' ? '3' : '1';
+            // Combine both exclusions using a filter below
+            this.dailyPractices = res.filter(item => {
+              const type = item.DailyPractise?.toLowerCase();
+              const typeId = String(item.dailyPractTypeID);
+              if (type === 'quote of the day' || typeId === '2') return false;
+              if (type === 'try this today' || typeId === '4') return false;
+              if (type === 'question of the day' || typeId === '10') return false;
+              if (excludedShortTypeId && typeId === excludedShortTypeId) return false;
+              if (excludedExerciseTypeId && typeId === excludedExerciseTypeId) return false;
+              if (typeId === excludedBreathingMeditation) return false;
+              return true;
+            });
+            const typeOrder: { [id: string]: number } = {
+              '1': 1, '3': 1, '8': 1,
+              '5': 2, '6': 2,
+              '9': 3,
+              '7': 4,
+            };
+            this.dailyPractices.sort((a, b) =>
+              (typeOrder[String(a.dailyPractTypeID)] ?? 99) - (typeOrder[String(b.dailyPractTypeID)] ?? 99)
+            );
+            return; // skip the shared filter below
           }
         }
 
         this.dailyPractices = res.filter(item => {
           const type = item.DailyPractise?.toLowerCase();
-          const typeId = item.dailyPractTypeID;
+          const typeId = String(item.dailyPractTypeID);
           if (type === 'quote of the day' || typeId === '2') return false;
           if (type === 'try this today' || typeId === '4') return false;
+          if (type === 'question of the day' || typeId === '10') return false;
           if (excludedShortTypeId && typeId === excludedShortTypeId) return false;
           if (excludedExerciseTypeId && typeId === excludedExerciseTypeId) return false;
           return true;
@@ -358,7 +466,7 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
           '7': 4, // Micro-learning
         };
         this.dailyPractices.sort((a, b) =>
-          (typeOrder[a.dailyPractTypeID] ?? 99) - (typeOrder[b.dailyPractTypeID] ?? 99)
+          (typeOrder[String(a.dailyPractTypeID)] ?? 99) - (typeOrder[String(b.dailyPractTypeID)] ?? 99)
         );
       }
     });
@@ -439,8 +547,16 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
   }
 
   routePracticeItem(item: any): void {
+    const isLocked = item && (item.isFree === '0' || item.isFree === 0);
+    if (!this.isSubscriber && isLocked) {
+      SharedService.setDataInLocalStorage('NaviagtedFrom', this.router.url);
+      this.logeventservice.logEvent('click_locked_content');
+      this.showModal = true;
+      return;
+    }
+
     const type = item.DailyPractise?.toLowerCase();
-    const typeId = item.dailyPractTypeID;
+    const typeId = String(item.dailyPractTypeID);
     const apiUrl: string = item.url || '';
     const textUrl: string = item.Text_URL || '';
     const prefix = SharedService.getprogramName();
@@ -464,9 +580,24 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
       return;
     }
 
-    // Breathing exercise & Audio meditation: use internal daily-practise player
+    // Breathing exercise & Audio meditation: use API url when present, fall back to legacy player
     if (type === 'breathing exercise' || typeId === '1') {
-      this.routeDailyPractice(1);
+      if (apiUrl) {
+        if (!this.isSubscriber) {
+          const key = `dly_prac_${typeId}`;
+          let hits = +(localStorage.getItem(key) || 0);
+          if (hits >= 2) {
+            this.router.navigate([prefix, 'subscription', 'start-your-free-trial']);
+            return;
+          }
+          localStorage.setItem(key, String(hits + 1));
+        }
+        this.logeventservice.logEvent('click_breathing_exercise');
+        const urlPath = this.getFormattedUrl(apiUrl, prefix);
+        this.router.navigate([urlPath]);
+      } else {
+        this.routeDailyPractice(1);
+      }
       return;
     }
     if (type === 'audio meditation' || typeId === '3') {
@@ -481,7 +612,7 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
           localStorage.setItem(key, String(hits + 1));
         }
         this.logeventservice.logEvent('click_daily_meditation');
-        const urlPath = apiUrl.startsWith('/') ? apiUrl : `/${apiUrl}`;
+        const urlPath = this.getFormattedUrl(apiUrl, prefix);
         this.router.navigate([urlPath]);
       } else {
         this.routeDailyPractice(4);
@@ -509,7 +640,7 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
 
       // The url field from the API is a relative path starting with /
       // Route: parse query params if any, otherwise navigate directly
-      const urlPath = apiUrl.startsWith('/') ? apiUrl : `/${apiUrl}`;
+      const urlPath = this.getFormattedUrl(apiUrl, prefix);
       if (urlPath.includes('?')) {
         const [path, queryString] = urlPath.split('?');
         const params = new URLSearchParams(queryString);
@@ -594,16 +725,56 @@ routeActiveExercise() {
     this.logeventservice.logEvent('click_proceed_to_home' );    
     this.router.navigate([SharedService.getDashboardUrls()]);
   }
+  get isLastVisitedGuidedJourney(): boolean {
+    if (this.resumeLastvisited && this.resumeLastvisited.length > 0) {
+      const url = this.resumeLastvisited[0].ModuleUrl || '';
+      return url.includes('/guided-journeys') || url.includes('/guided-journey');
+    }
+    return false;
+  }
+
+  /**
+   * True when the "Continue where you left" card is visible AND its content
+   * belongs to the self-awareness topic. In that case the Explore Self-awareness
+   * tile in the Olly landing section is redundant and should be hidden.
+   */
+  get isContinueCardSelfAwareness(): boolean {
+    if (
+      this.isloggedIn &&
+      this.resumeLastvisited &&
+      this.resumeLastvisited.length > 0 &&
+      !this.isLastVisitedGuidedJourney
+    ) {
+      const url = (this.resumeLastvisited[0].ModuleUrl || '').toLowerCase();
+      const feature = (this.resumeLastvisited[0].feature || '').toLowerCase();
+      return url.includes('self-awareness') || url.includes('self_awareness') || url.includes('selfawareness')
+          || feature.includes('self-awareness') || feature.includes('self awareness');
+    }
+    return false;
+  }
 
   routeToGuidedJourneys(): void {
     this.logeventservice.logEvent('click_guided_journeys');
-    const prefix = SharedService.getprogramName();
-    this.router.navigate([`${prefix}/guided-journeys`]);
+    if (this.isLastVisitedGuidedJourney) {
+      this.routeResume();
+    } else {
+      const prefix = SharedService.getprogramName();
+      this.router.navigate([`${prefix}/guided-journeys`]);
+    }
   }
 
   goToSubscribe(): void {
     const prefix = SharedService.getprogramName();
+    SharedService.setDataInLocalStorage('NaviagtedFrom', this.router.url);
     this.router.navigate([prefix, 'subscription', 'start-your-free-trial']);
+  }
+
+  onModalClose(event: string) {
+    this.showModal = false;
+    if (event === 'ok') {
+      SharedService.setDataInLocalStorage('NaviagtedFrom', this.router.url);
+      this.router.navigate([SharedService.getprogramName(), 'subscription', 'start-your-free-trial']);
+    }
   }
 
 
@@ -660,9 +831,11 @@ routeActiveExercise() {
 
   toggleBodyScroll(lock: boolean): void {
     if (lock) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.setProperty('overflow', 'hidden', 'important');
+      document.documentElement.style.setProperty('overflow', 'hidden', 'important');
     } else {
-      document.body.style.overflow = '';
+      document.body.style.removeProperty('overflow');
+      document.documentElement.style.removeProperty('overflow');
     }
   }
 
@@ -748,7 +921,7 @@ routeActiveExercise() {
       case "awareness exercises":
       case "self awareness":
       case "self-awareness": {
-        url = `/${SharedService.getprogramName()}/home`;
+        url = `/${SharedService.getprogramName()}/explore`;
         fragment = "self-awareness";
         break;
       }

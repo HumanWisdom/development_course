@@ -15,8 +15,10 @@ import { AdultsService } from '../../../adults/src/app/adults/adults.service';
 export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
   @Input() isIntegrated: boolean = false;
   @Input() startInQuestionsView: boolean = false;
+  @Input() hideExploreTopic: boolean = false;
   @Output() startChat = new EventEmitter<string>();
   @Output() viewChanged = new EventEmitter<boolean>();
+  @Output() bubbleComplete = new EventEmitter<void>();
   
   username: string = '';
   isAdults: boolean = true;
@@ -24,6 +26,10 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
   selectedTopic: { name: string; displayName: string; fragment: string } | null = null;
   fromImNotSure: boolean = false;
   fromBasicAccessSignup: boolean = false;
+  
+  get isExploreTopicVisible(): boolean {
+    return !!(this.selectedTopic && !this.hideExploreTopic);
+  }
   
   showQuestionsView: boolean = false;
   topicsList: OllyTopic[] = [];
@@ -245,7 +251,8 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
     // Resolve topicId with multiple fallbacks:
     // 1. From router navigation state (set in constructor)
     // 2. From window.history.state (Angular persists router state here)
-    // 3. From GetUserPreference API call (works even when login is from native app)
+    // 3. From localStorage (synchronizes dynamic tab switches immediately)
+    // 4. From GetUserPreference API call (works even when login is from native app)
     let topicId = this.topicIdFromNav;
 
     if (!topicId) {
@@ -256,10 +263,21 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
       }
     }
 
+    if (!topicId) {
+      // Fallback: localStorage stores the most recently set preference
+      // Only use it if the user is actually logged in
+      const isLoggedIn = localStorage.getItem('isloggedin') === 'T';
+      const isGuest = localStorage.getItem('guest') === 'T';
+      const storedPref = localStorage.getItem('userPreference');
+      if (storedPref && isLoggedIn && !isGuest) {
+        topicId = storedPref;
+      }
+    }
+
     const topicMap = this.isAdults ? this.adultTopics : this.teenTopics;
 
     if (topicId && topicMap[topicId]) {
-      // Topic came from navigation state — use it directly
+      // Topic came from navigation state or localStorage — use it directly
       this.selectedTopic = topicMap[topicId];
     } else {
       this.selectedTopic = null;
@@ -313,6 +331,8 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
       return;
     }
     if (localStorage.getItem(this.getIntroShownKey()) === 'true') {
+      // Intro already seen — emit immediately so parent doesn't wait
+      this.bubbleComplete.emit();
       return;
     }
     this.gifLoadedOnce = true;
@@ -324,6 +344,8 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
       return;
     }
     if (localStorage.getItem(this.getDialogueShownKey()) === 'true') {
+      // Bubble already shown before — notify parent immediately so it doesn't wait forever
+      this.bubbleComplete.emit();
       return;
     }
     this.cloudSequenceStarted = true;
@@ -365,6 +387,8 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
       localStorage.setItem(this.getIntroShownKey(), 'true');
       // Ensure the footer owl dialogue does not re-appear after the in-page Olly dialogue.
       localStorage.setItem(this.OWL_DIALOGUE_SHOWN_KEY, 'true');
+      // Notify parent that the bubble sequence has fully completed
+      this.bubbleComplete.emit();
     }, 600);
   }
 
@@ -391,6 +415,15 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   private fetchUserPreferenceFromApi(topicMap: { [id: string]: { name: string; displayName: string; fragment: string } }): void {
+    const isLoggedIn = localStorage.getItem('isloggedin') === 'T';
+    const isGuest = localStorage.getItem('guest') === 'T';
+
+    // Don't show the Explore tile for guest / not-logged-in users
+    if (!isLoggedIn || isGuest) {
+      this.selectedTopic = null;
+      return;
+    }
+
     this.commonService.getUserpreference().subscribe({
       next: (res) => {
         if (res) {
@@ -400,9 +433,11 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
             this.selectedTopic = topicMap[preferenceId];
             localStorage.setItem('userPreference', preferenceId);
           } else {
+            // API returned empty/0 — no preference set, hide the tile
             this.selectedTopic = null;
           }
         } else {
+          // No response — hide the tile
           this.selectedTopic = null;
         }
       },
@@ -416,7 +451,7 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
   onTopicLinkClick(): void {
     if (this.selectedTopic) {
       const program = this.isAdults ? 'adults' : 'teenagers';
-      this.router.navigate([`/${program}/home`], { fragment: this.selectedTopic.fragment });
+      this.router.navigate([`/${program}/explore`], { fragment: this.selectedTopic.fragment });
     }
   }
 

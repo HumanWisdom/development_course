@@ -535,6 +535,11 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnInit() {
+    // Always clear any leftover scroll locks from the previous session
+    document.body.style.removeProperty('overflow');
+    document.documentElement.style.removeProperty('overflow');
+    document.body.classList.remove('overflow_hidden');
+
     if (localStorage.getItem('pricing') === 'true' && localStorage.getItem('login') === 'false') {
       this.isSignUp = true;
     }
