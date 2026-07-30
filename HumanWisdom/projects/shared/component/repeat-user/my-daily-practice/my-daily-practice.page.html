@@ -35,8 +35,7 @@
             </div>
 
             <app-olly-landing #ollyLanding [isIntegrated]="true" [hideExploreTopic]="isContinueCardSelfAwareness"
-              (viewChanged)="onOllyViewChanged($event)"
-              (bubbleComplete)="onOllyBubbleComplete()"></app-olly-landing>
+              (viewChanged)="onOllyViewChanged($event)" (bubbleComplete)="onOllyBubbleComplete()"></app-olly-landing>
 
             <!-- hr - only show when explore topic tile is actually visible (logged-in, non-guest, explore topic tile rendered) -->
             <div class="row" *ngIf="isloggedIn && !guest && ollyLanding.isExploreTopicVisible">
@@ -457,16 +456,18 @@
       <div class="tour-popup-container" (click)="$event.stopPropagation()">
         <div class="tour-popup-card" [class.tour-popup-card--teens]="!isAdults">
           <div class="tour-popup-image-container">
-            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/take_a_tourad.svg"
+            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/take_a_tourad.svg"
               class="tour-popup-image" alt="Guide to HappierMe">
           </div>
           <div class="tour-popup-content">
             <h3 class="tour-popup-title" [class.tour-popup-title--teens]="!isAdults">Guide to HappierMe</h3>
             <p class="tour-popup-body" [class.tour-popup-body--teens]="!isAdults">
               Get to know the HappierMe app, its features, and explore the key ideas behind it. <br />
-              <span class="tour-body-content" [class.tour-body-content--teens]="!isAdults">You can also access the guide from the main menu.</span>
+              <span class="tour-body-content" [class.tour-body-content--teens]="!isAdults">You can also access the guide
+                from the main menu.</span>
             </p>
-            <button class="tour-popup-btn" [class.tour-popup-btn--teens]="!isAdults" (click)="goToTour()">Take a tour</button>
+            <button class="tour-popup-btn" [class.tour-popup-btn--teens]="!isAdults" (click)="goToTour()">Take a
+              tour</button>
             <a class="tour-popup-skip" [class.tour-popup-skip--teens]="!isAdults" (click)="closeTourPopup()">Skip</a>
           </div>
         </div>
