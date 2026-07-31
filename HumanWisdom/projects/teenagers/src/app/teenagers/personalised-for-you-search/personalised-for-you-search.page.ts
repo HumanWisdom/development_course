@@ -220,14 +220,14 @@ export class PersonalisedForYouSearchPage implements OnInit {
     this.aservice.getTeenagerTalk().subscribe((res: any) => {
       if (res && res.length) {
         this.teenTalkAll = res;
-        this.teenTalkPreview = res.slice(0, 5);
-        this.teenTalkShowMore = res.length > 5;
+        this.teenTalkPreview = res.slice(0, 6);
+        this.teenTalkShowMore = false;
       }
     });
   }
 
   teenTalkViewMore() {
-    this.teenTalkPreview = this.teenTalkAll.slice(0, 10);
+    this.teenTalkPreview = this.teenTalkAll;
     this.teenTalkShowMore = false;
   }
 

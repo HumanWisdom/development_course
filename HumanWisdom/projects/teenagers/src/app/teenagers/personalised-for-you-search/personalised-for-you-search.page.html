@@ -439,23 +439,8 @@
                               {{item.Timing}} min
                             </p>
                           </a>
-                          <!-- View More -->
-                          <a *ngIf="teenTalkShowMore"
-                            (click)="teenTalkViewMore(); $event.stopPropagation()"
-                            class="tt_card tt_card_viewmore">
-                            <span class="fs_12px fw_500 lh_150p" style="text-decoration:underline;">View more</span>
-                            <i class="fa fa-angle-right" style="font-size:14px;"></i>
-                          </a>
                           <!-- View All -->
-                          <a *ngIf="!teenTalkShowMore && teenTalkAll.length > 5"
-                            routerLink="/teenagers/teen-talk"
-                            (click)="logEvent('click_view_all_teenTalk', '/teenagers/teen-talk')"
-                            class="tt_card tt_card_viewmore">
-                            <span class="fs_12px fw_500 lh_150p" style="text-decoration:underline;">View all</span>
-                            <i class="fa fa-angle-right" style="font-size:14px;"></i>
-                          </a>
-                          <!-- View All for <=5 items -->
-                          <a *ngIf="!teenTalkShowMore && teenTalkAll.length <= 5 && teenTalkAll.length > 0"
+                          <a *ngIf="teenTalkAll.length > 0"
                             routerLink="/teenagers/teen-talk"
                             (click)="logEvent('click_view_all_teenTalk', '/teenagers/teen-talk')"
                             class="tt_card tt_card_viewmore">
