@@ -166,10 +166,16 @@
 
                             <!-- STATUS COLUMN -->
                             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
-                              <img *ngIf="item?.isRead === '1'"
+                              <img *ngIf="isAdults && item?.isRead === '1'"
                                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
                                 [ngClass]="{'ws-status-both': item?.isRead === '1' && !isSubscriber && item.isFree === '0'}"
                                 class="img-responsive ws-read-icon" />
+
+                                 <img *ngIf=" !isAdults &&item?.isRead === '1'"
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isread_teen.svg"
+                                [ngClass]="{'ws-status-both': item?.isRead === '1' && !isSubscriber && item.isFree === '0'}"
+                                class="img-responsive ws-read-icon" />
+
 
                               <ng-container *ngIf="!isSubscriber">
                                 <div *ngIf="item?.isRead !== '1' && item.isFree === '1'"></div>
@@ -449,10 +455,16 @@
                             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
 
                               <!-- TICK for subscriber OR non-subscriber -->
-                              <img *ngIf="item?.isRead === '1'"
+                              <img *ngIf=" isAdults && item?.isRead === '1'"
                                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
                                 [ngClass]="{'ws-status-both': item?.isRead === '1' && !isSubscriber && item.isFree === '0'}"
                                 class="img-responsive ws-read-icon" />
+                                 <img *ngIf=" !isAdults && item?.isRead === '1'"
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isread_teen.svg"
+                                [ngClass]="{'ws-status-both': item?.isRead === '1' && !isSubscriber && item.isFree === '0'}"
+                                class="img-responsive ws-read-icon" />
+
+
 
                               <!-- NON-SUBSCRIBER BLOCK -->
                               <ng-container *ngIf="!isSubscriber">
@@ -582,8 +594,12 @@
                             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
 
                               <!-- TICK for subscriber OR non-subscriber -->
-                              <img *ngIf="item?.isRead === '1'"
+                              <img *ngIf=" isAdults && item?.isRead === '1'"
                                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
+                                [ngClass]="{'ws-status-both': item?.isRead === '1' && !isSubscriber && item.isFree === '0'}"
+                                class="img-responsive ws-read-icon" />
+                                <img *ngIf=" !isAdults && item?.isRead === '1'"
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isread_teen.svg"
                                 [ngClass]="{'ws-status-both': item?.isRead === '1' && !isSubscriber && item.isFree === '0'}"
                                 class="img-responsive ws-read-icon" />
 
@@ -717,8 +733,12 @@
                             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
 
                               <!-- TICK for subscriber OR non-subscriber -->
-                              <img *ngIf="item?.isRead === '1'"
+                              <img *ngIf=" isAdults && item?.isRead === '1'"
                                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
+                                [ngClass]="{'ws-status-both': item?.isRead === '1' && !isSubscriber && item.isFree === '0'}"
+                                class="img-responsive ws-read-icon" />
+                                <img *ngIf=" !isAdults && item?.isRead === '1'"
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isread_teen.svg"
                                 [ngClass]="{'ws-status-both': item?.isRead === '1' && !isSubscriber && item.isFree === '0'}"
                                 class="img-responsive ws-read-icon" />
 
@@ -847,8 +867,12 @@
 
                               </div>
                             </div>
-                            <img *ngIf="item?.isRead === '1'"
+                            <img *ngIf="isAdults && item?.isRead === '1'"
                               src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
+                              class="ls-read-icon" />
+
+                               <img *ngIf="!isAdults && item?.isRead === '1'"
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isread_teen.svg"
                               class="ls-read-icon" />
 
                             <!-- LOCK: only for non-subscriber AND isFree = 0 AND not read -->
@@ -958,8 +982,12 @@
                                   </h4>
                                 </div>
                                 <div class="col-md-2 col-sm-2 col-xs-2 p0 tright center_flex">
-                                  <img *ngIf="item?.isRead === '1'"
+                                  <img *ngIf=" isAdults && item?.isRead === '1'"
                                     src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
+                                    class="mtb0px fs_15px fw_600 lh_150p blog_tick ml5px" alt="read" />
+
+                                     <img *ngIf=" !isAdults && item?.isRead === '1'"
+                                    src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isread_teen.svg"
                                     class="mtb0px fs_15px fw_600 lh_150p blog_tick ml5px" alt="read" />
                                 </div>
                               </div>
@@ -1349,8 +1377,11 @@
                             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
                               <!-- <i class="fa fa-angle-right  fs_20px"
                                 [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"></i> -->
-                              <img *ngIf="item?.isRead === '1'"
+                              <img *ngIf="isAdults && item?.isRead === '1'"
                                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
+                                class="img-responsive ws-read-icon" />
+                                <img *ngIf="!isAdults && item?.isRead === '1'"
+                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isread_teen.svg"
                                 class="img-responsive ws-read-icon" />
                             </div>
 
