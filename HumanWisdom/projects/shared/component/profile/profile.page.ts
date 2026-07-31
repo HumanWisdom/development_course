@@ -8,6 +8,7 @@ import { AdultsService } from '../../../adults/src/app/adults/adults.service';
 import { ProgramType } from '../../../shared/models/program-model';
 import { Location } from '@angular/common';
 import { NavigationService } from '../../services/navigation.service';
+import { isAwsSsoSession, redirectToAwsCognitoLogout } from '../../config/aws-cognito.config';
 
 
 
@@ -302,17 +303,23 @@ initialize(){
     const accessObj: any = window;
     (accessObj)?.Moengage?.destroy_session();
     this.logeventservice.logEvent('click_logout_Hamburger');
-    // if (this.platform.isBrowser) {
-      localStorage.setItem("isloggedin", "F");
-      localStorage.setItem("guest", "T");
-      localStorage.setItem("navigateToUpgradeToPremium", "false");
-      localStorage.setItem("btnClickBecomePartner", "false");
-      // this.router.navigate(["/adults/onboarding/login"]);
-      this.router.navigate(['/' + SharedService.getprogramName() + '/onboarding/login'])
-    // } else {
+    const wasAwsSso = isAwsSsoSession();
+    localStorage.setItem("isloggedin", "F");
+    localStorage.setItem("guest", "T");
+    localStorage.setItem("navigateToUpgradeToPremium", "false");
+    localStorage.setItem("btnClickBecomePartner", "false");
 
-      this.clickButtonById("liLogout");
-    // }
+    if (wasAwsSso) {
+      sessionStorage.clear();
+      localStorage.removeItem('loginMethod');
+      localStorage.removeItem('enterpriseOrganization');
+      localStorage.removeItem('ssoDepartment');
+      redirectToAwsCognitoLogout(SharedService.getprogramName() as 'adults' | 'teenagers');
+      return;
+    }
+
+    this.router.navigate(['/' + SharedService.getprogramName() + '/onboarding/login']);
+    this.clickButtonById("liLogout");
   }
 
   clickButtonById(buttonId: string): void {

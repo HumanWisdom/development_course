@@ -261,16 +261,19 @@
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <a routerLink="/teenagers/coach/" (click)="logEvent('click_ContactCoach','/teenagers/coach')">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_01">
-                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0">
+                    <div class="col-3 p0 mb8px text-center">
                       <img
-                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/contact_coach_teens.svg"
-                        class="img-responsive w100" style="width: 48px;height: 40px;margin-bottom: 18px !important;">
+                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/coach_teen.svg"
+                        >
                     </div>
-                    <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 p0 pl15px">
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 pl15px">
                       <h4 class="mtb0px fc_0C2B5F fs_18px fw_600 lh_140p">Contact a coach</h4>
-                      <h4 class="mtb0px fc_0C2B5F fs_12px fw_400 lh_140p">Speak to expert coaches from around the
-                        world</h4>
+                      <h4 class="mtb0px fc_0C2B5F fs_12px fw_400 lh_140p"> Contact our experienced coaches for personalised support
+</h4>
                     </div>
+                      <div class="col-1 p0 tright">
+                              <i class="fa fa-angle-right fs_20px  fc_0C2B5F"></i>
+                            </div>
                     <!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
                       <i class="fa fa-angle-right fc_ffffff fs_20px"></i>
                     </div> -->
@@ -298,10 +301,14 @@
                         <a class="accordion-toggle" (click)="toggleGuidedJourneys()">
                           <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-                              <div class="col-md-8 col-sm-8 col-xs-8 p0">
+                              <div class="col-md-10 col-sm-10 col-xs-10 p0">
+
                                 <h2 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px">Guided journeys</h2>
+                            
                               </div>
-                              <div class="col-md-4 col-sm-4 col-xs-4 p0 tright">
+
+                            
+                              <div class="col-md-2 col-sm-2 col-xs-2 p0 tright">
                                 <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/arrow_up.svg"
                                   alt="arrow" class="section-arrow arrow-expanded" [ngStyle]="{
                                       'filter': 'brightness(0) invert(1)',
@@ -309,6 +316,13 @@
                                     }">
                               </div>
                             </div>
+                          </div>
+                           <div class="row">
+                                <div class="col-md-12 col-sm-12 col-xs-12 p0 mt10px">
+                                 <h2 class="fw_400 fs_12px lh_140p fc_ffffff_0_7 mtb0px">
+                                 Guiding you step by step with carefully chosen content each day
+                                </h2>
+                                </div>
                           </div>
                         </a>
                       </h4>
@@ -336,7 +350,7 @@
                         <div class="col-md-12 col-sm-12 col-xs-12">
                           <a routerLink="/teenagers/guided-journeys"
                             style="color:rgba(255, 255, 255, 0.75); display:inline-flex; align-items:center; gap:10px; text-decoration:none;">
-                            <span style="text-decoration: underline;">View more</span>
+                            <span style="text-decoration: underline;">View all</span>
                             <i class="fa fa-angle-down" style="text-decoration:none;"></i>
                           </a>
                         </div>
@@ -400,6 +414,13 @@
                                 </div>
                               </div>
                             </div>
+                             <div class="row">
+                                <div class="col-md-12 col-sm-12 col-xs-12 p0 mt10px">
+                                  <h2 class="fw_400 fs_12px lh_140p fc_ffffff_0_7 mtb0px">
+                                    Quick takeaways that make a difference
+                                  </h2>
+                                </div>
+                            </div>
                           </a>
                         </h4>
                       </div>
@@ -420,7 +441,7 @@
                           <a routerLink="/teenagers/micro-learning"
                             (click)="logEvent('click_view_more_microlearning', '/teenagers/micro-learning')"
                             class="ml_card ml_card_viewmore">
-                            <span class="fs_12px fw_500 lh_150p" style="text-decoration:underline;">View more</span>
+                            <span class="fs_12px fw_500 lh_150p" style="text-decoration:underline;">View all</span>
                             <i class="fa fa-angle-right" style="font-size:14px;"></i>
                           </a>
                         </div>
@@ -465,3 +486,39 @@
 <app-modal *ngIf="enableAlert" [modalid]="'logout'" [enableCancel]="true" (closeEvent)="getAlertcloseEvent($event)"
   [okText]="'Ok'" [content]="'Start your free trial to activate this feature'"
   [isFreeTrialEnable]="isFreeTrialEnable"></app-modal>
+
+<!-- Learn Popup -->
+<div class="learn-popup-overlay" *ngIf="showLearnPopup" (click)="closeLearnPopup()">
+  <div class="learn-popup-container col-lg-4 col-md-6 col-sm-6 col-xs-12 col_cw" (click)="$event.stopPropagation()">
+    <div class="learn-popup-card">
+      <div class="learn-popup-header">
+        <h2 class="learn-popup-title">Learn</h2>
+      </div>
+      <div class="learn-popup-content">
+        <h3 class="learn-popup-subtitle">Build inner skills for a richer life.</h3>
+        <p class="learn-popup-grow-text">Grow step by step with:</p>
+
+        <ol class="learn-popup-list">
+          <li>
+            <span class="list-item-title">PATHWAY</span>
+            <div class="list-item-desc">for personal growth</div>
+          </li>
+          <li>
+            <span class="list-item-title">Guided Journeys</span>
+            <div class="list-item-desc">to reach a specific goal</div>
+          </li>
+          <li>
+            <span class="list-item-title">Find inspiration</span>
+            <div class="list-item-desc">by browsing our content library</div>
+          </li>
+          <li>
+            <span class="list-item-title">Support from coaches</span>
+            <div class="list-item-desc">when you need it</div>
+          </li>
+        </ol>
+
+        <button class="learn-popup-close-btn" (click)="closeLearnPopup()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

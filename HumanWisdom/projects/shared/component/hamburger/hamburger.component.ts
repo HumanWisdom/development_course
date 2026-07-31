@@ -16,6 +16,7 @@ import { SharedService } from "../../services/shared.service";
 import { Subject, Subscription } from "rxjs";
 import { environment } from "../../../../projects/environments/environment";
 import { debounceTime, throttleTime } from "rxjs/operators";
+import { isAwsSsoSession, redirectToAwsCognitoLogout } from "../../config/aws-cognito.config";
 
 @Component({
   selector: "app-hamburger",
@@ -578,9 +579,11 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
       this.isloggedIn = false;
       this.isPartner = false;
       this.initialize();
+      const wasAwsSso = isAwsSsoSession();
       const acceptCookie = localStorage.getItem("acceptcookie");
       const firstTimeTour = localStorage.getItem("firstTimeTour");
       const firstTimeSearchTour = localStorage.getItem("firstTimeSearchTour");
+      const enableAwsSsoLogin = localStorage.getItem("enableAwsSsoLogin");
       localStorage.clear();
       sessionStorage.clear();
       if (firstTimeTour === 'T') {
@@ -588,6 +591,9 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
       }
       if (firstTimeSearchTour === 'T') {
         localStorage.setItem('firstTimeSearchTour', 'T');
+      }
+      if (enableAwsSsoLogin) {
+        localStorage.setItem('enableAwsSsoLogin', enableAwsSsoLogin);
       }
       localStorage.setItem("isloggedin", "F");
       localStorage.setItem("guest", "T");
@@ -602,13 +608,16 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
       localStorage.removeItem("olly_today_dialogue_shown");
       localStorage.removeItem("olly_landing_intro_shown");
       localStorage.removeItem("olly_landing_dialogue_shown");
-      localStorage.removeItem("olly_today_intro_shown");
-      localStorage.removeItem("olly_today_dialogue_shown");
-      localStorage.removeItem("olly_landing_intro_shown");
-      localStorage.removeItem("olly_landing_dialogue_shown");
 
       // Reset Google Identity Services state
       this.resetGoogleSignIn();
+
+      // Clear Cognito Hosted UI session so the next SSO is not stuck on the previous user.
+      if (wasAwsSso) {
+        redirectToAwsCognitoLogout(SharedService.getprogramName() as 'adults' | 'teenagers');
+        return;
+      }
+
       this.Onboardingservice.guestEmailLogin();
       const auth2 = (window as any).gapi?.auth2?.getAuthInstance();
       if (auth2) {

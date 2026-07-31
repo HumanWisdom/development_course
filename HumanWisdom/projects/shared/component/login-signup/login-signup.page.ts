@@ -17,7 +17,7 @@ import { HomeStateService } from "../../services/home-state.service";
 import { ProgramType } from "../../models/program-model";
 import { OidcSecurityService } from 'angular-auth-oidc-client';
 import { take } from 'rxjs/operators';
-import { clearStaleAwsCognitoOidcCache, isAwsSsoLoginVisible } from '../../config/aws-cognito.config';
+import { AWS_SSO_LOGIN_METHOD, LOGIN_METHOD_STORAGE_KEY, clearStaleAwsCognitoOidcCache, isAwsSsoLoginVisible } from '../../config/aws-cognito.config';
 import { OrgSsoService } from '../../services/org-sso.service';
 import { OrgSsoDiscoverResult } from '../../models/org-sso.model';
 declare var $: any;
@@ -145,7 +145,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
   discoveredOrgName = '';
   discoveredIdpName = '';
 
-  /** Shown when localStorage enableAwsSsoLogin is not 'F'. */
+  /** Shown only when localStorage enableAwsSsoLogin = 'T' (hidden by default). */
   get showAwsSsoLogin(): boolean {
     return isAwsSsoLoginVisible();
   }
@@ -535,6 +535,11 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnInit() {
+    // Always clear any leftover scroll locks from the previous session
+    document.body.style.removeProperty('overflow');
+    document.documentElement.style.removeProperty('overflow');
+    document.body.classList.remove('overflow_hidden');
+
     if (localStorage.getItem('pricing') === 'true' && localStorage.getItem('login') === 'false') {
       this.isSignUp = true;
     }
@@ -710,10 +715,12 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
           email: decoded.email,
           given_name: decoded.given_name,
           family_name: decoded.family_name,
+          department: this.extractDepartmentFromClaims(decoded),
           token_use: decoded.token_use,
           iss: decoded.iss,
           aud: decoded.aud,
           exp: decoded.exp,
+          rawKeys: Object.keys(decoded || {}),
         });
       } catch (e) {
         console.warn('[AWS SSO] Could not decode ID token for logging', e);
@@ -876,20 +883,25 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
     }
 
     clearStaleAwsCognitoOidcCache();
+    // Drop any leftover OIDC client state so we don't silently reuse the last user.
+    try {
+      this.oidcSecurityService.logoffLocal();
+    } catch {
+      // ignore if not authenticated locally
+    }
     console.log('[AWS SSO] Starting authorize flow, reqtype:', reqtype, 'idp:', cognitoIdentityProvider || 'default');
 
+    // prompt=login forces Cognito to re-authenticate instead of reusing the previous Hosted UI session.
+    const customParams: Record<string, string> = {
+      prompt: 'login',
+    };
     if (cognitoIdentityProvider) {
-      const customParams: Record<string, string> = {
-        identity_provider: cognitoIdentityProvider,
-      };
-      if (loginHint) {
-        customParams.login_hint = loginHint;
-      }
-      this.oidcSecurityService.authorize(undefined, { customParams });
-      return;
+      customParams.identity_provider = cognitoIdentityProvider;
     }
-
-    this.oidcSecurityService.authorize();
+    if (loginHint) {
+      customParams.login_hint = loginHint;
+    }
+    this.oidcSecurityService.authorize(undefined, { customParams });
   }
 
   private handleAwsSsoLogin(idToken: string, userData: any): void {
@@ -902,16 +914,20 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
     console.log('[AWS SSO] handleAwsSsoLogin started');
 
     try {
-      const payload = userData || this.decodeJwt(idToken);
+      // Merge ID-token claims with userInfo — custom attrs like department often only appear on the ID token.
+      const tokenClaims = this.decodeJwt(idToken) || {};
+      const payload = { ...tokenClaims, ...(userData || {}) };
       this.idToken = idToken;
       this.socialFirstName = payload.given_name || payload.name?.split(' ')[0] || '';
       this.socialLastName = payload.family_name || payload.name?.split(' ').slice(1).join(' ') || '';
       this.socialEmail = payload.email || payload.preferred_username || '';
+      const department = this.extractDepartmentFromClaims(payload);
 
       console.log('[AWS SSO] User info extracted:', {
         email: this.socialEmail,
         firstName: this.socialFirstName,
         lastName: this.socialLastName,
+        department,
       });
 
       if (!this.socialEmail) {
@@ -922,12 +938,22 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
         return;
       }
 
+      if (department) {
+        localStorage.setItem('ssoDepartment', department);
+      } else {
+        localStorage.removeItem('ssoDepartment');
+        console.warn(
+          '[AWS SSO] No department claim in token. Map IAM IC ${path:enterprise.department} → Cognito custom:department, then grant the app client read access.'
+        );
+      }
+
       console.log('[AWS SSO] Calling verifyAwsSSOTokenAndLogin API...');
       this.service.verifyAwsSso({
         TokenID: this.idToken,
         FName: this.socialFirstName,
         LName: this.socialLastName,
         Email: this.socialEmail,
+        Department: department || '',
         VCode: "",
         Pwd: "",
       }).subscribe(
@@ -937,10 +963,20 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
           if (res) {
             console.log('[AWS SSO] Login successful, UserId:', res.UserId);
             const pendingOrgSso = sessionStorage.getItem('pendingOrgSso');
+            let orgInfo: Record<string, unknown> = {};
             if (pendingOrgSso) {
-              localStorage.setItem('enterpriseOrganization', pendingOrgSso);
-              sessionStorage.removeItem('pendingOrgSso');
+              try {
+                orgInfo = JSON.parse(pendingOrgSso);
+              } catch {
+                orgInfo = {};
+              }
             }
+            if (department) {
+              orgInfo.department = department;
+            }
+            localStorage.setItem('enterpriseOrganization', JSON.stringify(orgInfo));
+            localStorage.setItem(LOGIN_METHOD_STORAGE_KEY, AWS_SSO_LOGIN_METHOD);
+            sessionStorage.removeItem('pendingOrgSso');
             this.setUpLoginConfiguration(res, 'aws');
           } else {
             console.warn('[AWS SSO] API returned empty response');
@@ -964,6 +1000,32 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
       this.content = "SSO login failed. Please try again.";
       this.enableAlert = true;
     }
+  }
+
+  /** Reads department from Cognito ID token / userInfo (requires AWS attribute mapping). */
+  private extractDepartmentFromClaims(claims: Record<string, unknown> | null | undefined): string {
+    if (!claims) {
+      return '';
+    }
+
+    const candidates = [
+      claims['custom:department'],
+      claims['department'],
+      claims['Department'],
+      claims['https://aws.amazon.com/SAML/Attributes/Department'],
+      claims['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/department'],
+    ];
+
+    for (const value of candidates) {
+      if (typeof value === 'string' && value.trim()) {
+        return value.trim();
+      }
+      if (Array.isArray(value) && typeof value[0] === 'string' && value[0].trim()) {
+        return value[0].trim();
+      }
+    }
+
+    return '';
   }
 
   private handleGoogleSignIn(): void {

@@ -36,14 +36,14 @@
               </a>
             </div>
           </div>
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0  mb15px mt20px">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0  mb15px mt10px ">
             <a (click)="Logevent('/onboarding/user-profile', '', 'click_profile')" *ngIf="enableprofile">
               <h4 class="mt0px mb5px fs_20px fw_600 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                 {{getName()}}
               </h4>
             </a>
 <a  (click)="loginroute()">
-              <h4 class="mtb0px fs_12px fw_600 lh_150p fc_D7586B underline subscribe" *ngIf="!isloggedIn">
+              <h4 class="mtb0px fs_12px fw_600 lh_150p  underline subscribe"  [ngClass]="isAdults ? 'fc_D7586B' : 'fc_EE9596'" *ngIf="!isloggedIn"   >
                 Login
               </h4></a> 
             <!-- <a  (click)="Logevent('/subscription/start-your-free-trial', '', 'Subscribe now')">
@@ -68,8 +68,8 @@
                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/trial.svg" class="img-responsive" *ngIf="isAdults">
               </div> -->
                     <div class="col-md-11 col-sm-11 col-xs-11 p0">
-                      <h4 class="fw_600 fs_12px lh_15px  mt10px   underline subscribe"
-                        [ngClass]="isAdults ? 'fc_D7586B' : 'fc_e58d82'">
+                      <h4 class="fw_600 fs_12px lh_15px  mt5px   underline subscribe"
+                        [ngClass]="isAdults ? 'fc_D7586B' : 'fc_EE9596'">
                         View Profile
                       </h4>
                     </div>
@@ -83,15 +83,15 @@
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                     <div class="col-md-1 col-sm-1 col-xs-1 p0 ">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/hb_stp.svg"
+                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/hb_stp.svg"
                         class="img-responsive" *ngIf="!isAdults">
 
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/trial_ad.svg"
                         class="img-responsive" *ngIf="isAdults">
                     </div>
-                    <div class="col-md-11 col-sm-11 col-xs-11 ">
+                    <div class="col-md-11 col-sm-11 col-xs-11 p0">
                       <h4 class="fw_600 fs_15px lh_16px  mtb0px   underline subscribe"
-                        [ngClass]="isAdults ? 'fc_D7586B' : 'fc_e58d82'">
+                        [ngClass]="isAdults ? 'fc_D7586B' : 'fc_EE9596'">
                         Start your free trial
                       </h4>
                     </div>
@@ -136,7 +136,7 @@
                   alt="" class="p0" *ngIf="isAdults">
 
               </div>
-              <div class="col-md-10 col-sm-10 col-xs-10 ">
+              <div class="col-md-10 col-sm-10 col-xs-10 p0">
                 <h4 class="fw_500 fs_14px lh_16px  mtb0px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                   {{isAdults ? "HappierMe for Teenagers" : "HappierMe for Adults" }}
                 </h4>
@@ -188,7 +188,7 @@
 
 
               </div>
-              <div class="col-md-11 col-sm-11 col-xs-11 ">
+              <div class="col-md-11 col-sm-11 col-xs-11 p0 ">
                 <h4 class="fw_500 fs_14px lh_16px  mtb0px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                   {{GetSubscriptionText()}}
                 </h4>
@@ -198,22 +198,28 @@
         </a>
       </li>
 
-      <!-- <li>
-        <a (click)="Logevent('/adults/wisdom-survey', '', 'click_survey')"  class="p0 b0px">
+      <li>
+
+
+        <a (click)="Logevent('/intro-happierme', '', '')"  class="p0 b0px">
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-              <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
-                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/03.svg" class="img-responsive">
+              <div class="col-md-1 col-sm-1 col-xs-1 p0">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/guide_adu.svg" class="img-responsive" *ngIf="isAdults">
+                             
+                
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/guide_teen1.svg" class="img-responsive" *ngIf="!isAdults">
+
               </div>
               <div class="col-md-11 col-sm-11 col-xs-11 p0">
-                <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
-                  Happiness Survey
+                <h4 class="fw_500 fs_14px lh_16px  mtb0px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                  Guide to HappierMe
                 </h4>
               </div>
             </div>
           </div>
         </a>
-      </li> -->
+      </li> 
 
       <li>
         <a (click)="Logevent('/adults/testimonials', '', 'click_testimonials')" class="p0 b0px">
@@ -228,7 +234,7 @@
 
               </div>
 
-              <div class="col-md-11 col-sm-11 col-xs-11 ">
+              <div class="col-md-11 col-sm-11 col-xs-11 p0">
                 <h4 class="fw_500 fs_14px lh_16px  mtb0px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                   Success stories
                 </h4>
@@ -391,7 +397,7 @@
 
 
               </div>
-              <div class="col-md-11 col-sm-11 col-xs-11 ">
+              <div class="col-md-11 col-sm-11 col-xs-11 p0">
                 <h4 class="fw_500 fs_14px lh_16px  mtb0px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"
                   (click)="giftwisdom()">
                   Subscribe for family & friends
@@ -431,7 +437,7 @@
                   alt="" class="p0" *ngIf="isAdults">
 
               </div>
-              <div class="col-md-11 col-sm-11 col-xs-11 ">
+              <div class="col-md-11 col-sm-11 col-xs-11 p0">
                 <h4 class="fw_500 fs_14px lh_16px  mtb0px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                   Refer a Friend
                 </h4>
@@ -549,19 +555,19 @@
         </a>
       </li> -->
 
-      <li>
+      <!-- <li>
         <a (click)="handleTreeSistersClick()" class="p0 b0px">
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
               <div class="col-md-1 col-sm-1 col-xs-1 p0 ">
-                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/11.svg" alt=""
+                 <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/11.svg" alt=""
                   class="img-responsive" *ngIf="!isAdults">
                 <img src=" https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/tree_blak.svg "
                   alt="" class="p0" *ngIf="isAdults">
 
 
               </div>
-              <div class="col-md-11 col-sm-11 col-xs-11 ">
+              <div class="col-md-11 col-sm-11 col-xs-11 p0">
                 <h4 class="fw_500 fs_14px lh_16px  mtb0px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                   Tree Planting Program
                 </h4>
@@ -569,7 +575,7 @@
             </div>
           </div>
         </a>
-      </li>
+      </li> -->
 
       <li *ngIf="!ios">
         <a href="https://happierme.app/pages/newsletter.php" target="_blank" class="p0 b0px hc_sfn">
@@ -583,7 +589,7 @@
                   alt="" class="p0" *ngIf="isAdults">
 
               </div>
-              <div class="col-md-11 col-sm-11 col-xs-11 ">
+              <div class="col-md-11 col-sm-11 col-xs-11 p0">
                 <h4 class="fw_500 fs_14px lh_16px  mtb0px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                   Sign up for our newsletter
                 </h4>
@@ -725,7 +731,7 @@
                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/help_blackad.svg"
                   alt="" class="img-responsive back_p" *ngIf="isAdults">
               </div>
-              <div class="col-md-10 col-sm-10 col-xs-10 ">
+              <div class="col-md-10 col-sm-10 col-xs-10 p0">
                 <h4 class="fw_500 fs_14px lh_16px  mtb0px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                   Help & Support
                 </h4>
@@ -940,40 +946,40 @@
         </div>
       </li>
       <!-- /multilayer li for help & support -->
-      <div class="row mt80px mb50px">
+      <div class="row mtb20px">
         <div class="col-md-12 col-sm-12 col-xs-12 hamburger_sociali p0">
           <a class="" href="https://facebook.com/happiermeapp/" target="_blank">
-            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/hb_facebook.svg" alt=""
-              class="img-responsive" *ngIf="!isAdults">
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/hb_facebookteen.svg" alt=""
+              class="p0" *ngIf="!isAdults">
 
             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/facebook_ad.svg" alt=""
               class="p0" *ngIf="isAdults">
 
           </a>
           <a class="" href="https://twitter.com/happiermeapp" target="_blank">
-            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/hb_twitter.svg" alt=""
-              class="img-responsive" *ngIf="!isAdults">
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/hb_twitterteen.svg" alt=""
+              class="p0" *ngIf="!isAdults">
             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/twiter_ad.svg" alt=""
               class="p0" *ngIf="isAdults">
 
 
           </a>
           <a class="" href="https://www.instagram.com/happiermeapp/" target="_blank">
-            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/hb_instagram.svg" alt=""
-              class="img-responsive" *ngIf="!isAdults">
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/hb_instagramteen.svg" alt=""
+              class="p0" *ngIf="!isAdults">
             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/insta_ad.svg  " alt=""
               class="p0" *ngIf="isAdults">
 
           </a>
           <a class="" href="https://www.linkedin.com/company/humanwisdom" target="_blank">
-            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/hb_linkedin.svg" alt=""
-              class="img-responsive" *ngIf="!isAdults">
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/hb_linkedinteen.svg" alt=""
+              class="p0" *ngIf="!isAdults">
             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/link_ad.svg" alt=""
               class="p0" *ngIf="isAdults">
           </a>
           <a class="" href="https://www.youtube.com/channel/UCdNujB6X0slYKxLSdWuqCrA" target="_blank">
-            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/hb_youtube.svg" alt=""
-              class="img-responsive" *ngIf="!isAdults">
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/hb_youtubeteen.svg" alt=""
+              class="p0" *ngIf="!isAdults">
             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/youtube_ad.svg" alt=""
               class="p0" *ngIf="isAdults">
           </a>
@@ -995,7 +1001,7 @@
       </div>
 
       <div class="row" *ngIf="!isloggedIn">
-        <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="col-md-12 col-sm-12 col-xs-12 ">
           <button type="submit" class="btn btn_ctd center_flex" data-toggle="modal" (click)="loginroute()"
             data-target="#modal_logout">
             <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/btn_logout.svg"
@@ -1008,7 +1014,7 @@
         </div>
       </div>
 
-      <div class="pagebreak"></div>
+      <!-- <div class="pagebreak"></div> -->
     </ul>
   </div>
   <!-- /submenu -->

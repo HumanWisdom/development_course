@@ -223,6 +223,10 @@ export class SingleAudioContentComponent implements OnInit {
   }
 
   goBack() {
+    if (this.enableTextContent) {
+      this.enableTextContent = false;
+      return;
+    }
     var url = this.navigationService.navigateToBackLink();
     if (url != null) {
       this.router.navigateByUrl(url);

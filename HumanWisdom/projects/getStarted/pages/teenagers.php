@@ -6,7 +6,17 @@
   <meta property="title" content="Teen Mental Health, Wellbeing & Life Skills | HappierMe">
   <meta property="description"
     content="Help teenagers build confidence, manage stress and strengthen relationships with HappierMe. Selected by Mind and ORCHA certified.">
-  <meta name="keywords" content="Steenagers, mental health app, development, growth, acceptance, love, school">
+  <meta name="keywords" content="teen mental health,teen wellbeing,teenage mental health,
+emotional wellbeing for teens,
+stress management for teens,
+anxiety in teenagers,
+self-awareness for teenagers,
+emotional intelligence for teens,
+confidence for teenagers,
+resilience for teenagers,
+life skills for teenagers
+
+">
   <meta property="og:title" content="HappierMe:For Teens & Adults">
   <meta property="og:site_name" content="HappierMe">
   <meta property="og:url" content="https://happierme.app/">
@@ -21,8 +31,9 @@
   <!-- vendor_header -->
   <?php include('../includes/vendor_header.php'); ?>
 
-  <link rel="stylesheet" href="../assets/css/teenagers.css" />
   <?php hw_defer_stylesheet('../assets/css/index-inline.css'); ?>
+  <?php /* Load last so mobile title/video overrides beat deferred index/responsive */ ?>
+  <?php hw_defer_stylesheet('../assets/css/teenagers.css'); ?>
 </head>
 
 <body class="page-teenagers">
@@ -189,19 +200,24 @@
       <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
         <div class="col-lg-6 col-md-6 col-sm-10 col-xs-10 col-10 p0 w-980px teen-video-wrap">
           <div class="youtube-player teen-youtube-player">
-            <iframe class="yt-embed" src="https://www.youtube.com/embed/HJ4Rkc1bX70?si=eAi7g7vzur-h1IBb"
-              title="YouTube video player" frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            <button
+              id="teenYoutubeCover"
+              type="button"
+              aria-label="Play HappierMe for Teens video">
+              <img
+                src="https://d1tenzemoxuh75.cloudfront.net/website/yt-player.png"
+                alt="HappierMe for Teens video cover" />
+            </button>
+            <iframe
+              id="teenYoutube"
+              class="yt-embed"
+              src="about:blank"
+              data-src="https://www.youtube-nocookie.com/embed/HJ4Rkc1bX70?autoplay=1&rel=0&modestbranding=1&playsinline=1"
+              title="HappierMe for Teens"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
               allowfullscreen>
             </iframe>
           </div>
-          <!-- <video id="teenagerVideo" controls playinline class="w100p"
-              poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/teens_poster.webp"
-              controlsList="nodownload">
-              <source
-                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/videos/teenagers.mp4"
-                type="video/mp4">
-            </video> -->
         </div>
       </div>
     </section>
@@ -246,14 +262,29 @@
               class="img-responsive teens-app-img " loading="lazy" alt="Feel calm">
           </div>
 
-          <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col-12 pr0px tleft ta_lc w-384px mt0px" data-aos="fade-up" data-aos-delay="200">
-            <h2 class="mtb0px fs_24px fw_600 lh_150p teen-calm-title">
-              Feel calm, capable, and better everyday, with HappierMe!
+          <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col-12 pr0px tleft ta_lc w-384px mt0px teen-calm-copy" data-aos="fade-up" data-aos-delay="200">
+            <h2 class="mtb0px fs_24px fw_600 lh_140p teen-calm-title">
+              <span class="teen-calm-title-desktop">Feel calm, capable,<br>
+              and better everyday,<br>
+              with HappierMe!</span>
+              <span class="teen-calm-title-mobile">
+                <span class="teen-calm-line">Feel calm, capable, and</span>
+                <span class="teen-calm-line">better everyday, with</span>
+                <span class="teen-calm-line">HappierMe!</span>
+              </span>
             </h2>
 
-            <h5 class="mt15px mb10px fs_15px fw_400 lh_150p fc_000000">
-              The app helps you not only to feel better now , but also to understand why you think, feel and behave as
-              you do so you can be in charge of your emotions, habits and mental health. </h5>
+            <h5 class="mtb0px fw_400 lh_150p fc_000000 teen-calm-subtitle">
+              <span class="teen-calm-subtitle-desktop">The app helps you not only to feel better now, but<br>
+              also to understand your own mind, so you can be<br>
+              in charge of your emotions, habits and mental<br>
+              health.</span>
+              <span class="teen-calm-subtitle-mobile">
+                <span class="teen-calm-line">The app helps you not only to feel better now, but also</span>
+                <span class="teen-calm-line">to understand your own mind, so you can be in charge</span>
+                <span class="teen-calm-line">of your emotions, habits and mental health.</span>
+              </span>
+            </h5>
           </div>
         </div>
       </div>
@@ -581,6 +612,7 @@
                 <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
                   View all Success stories
                 </h4>
+                <span class="chevron-pink"><span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span>
               </a>
               <div class="owl-theme mt10px teen-testimonials-nav">
                 <div class="owl-controls">
@@ -1100,6 +1132,20 @@
     document.addEventListener('DOMContentLoaded', initTeenTestimonialsCarousel);
     window.addEventListener('load', initTeenTestimonialsCarousel);
     window.addEventListener('resize', initTeenTestimonialsCarousel);
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var introFrame = document.getElementById('teenYoutube');
+      var introCover = document.getElementById('teenYoutubeCover');
+      if (!introFrame || !introCover) return;
+      introCover.addEventListener('click', function () {
+        if (!introFrame.src || introFrame.src === 'about:blank') {
+          introFrame.src = introFrame.getAttribute('data-src');
+        }
+        introCover.style.display = 'none';
+      });
+    });
   </script>
 
 </body>

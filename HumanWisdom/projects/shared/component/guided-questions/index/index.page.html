@@ -205,9 +205,9 @@
                     <div class="div_qod">
                       <div class="row tcenter">
                         <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/question.svg"
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/question_f_dadu.svg"
                             *ngIf="isAdults" alt="" class="img-responsive" />
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/qfdteen_journal.svg"
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/question_teenagerss.svg"
                             *ngIf="!isAdults" alt="" class="img-responsive" />
 
 
@@ -462,3 +462,24 @@
 <app-modal *ngIf="enableAlert" [modalid]="'logout'" [enableCancel]="true" (closeEvent)="getAlertcloseEvent($event)"
   [okText]="'Ok'" [content]="'Start your free trial to activate this feature'"
   [isFreeTrialEnable]="isFreeTrialEnable"></app-modal>
+
+<!-- Journal Popup -->
+<div class="journal-popup-overlay" *ngIf="showJournalPopup" (click)="closeJournalPopup()">
+  <div class="journal-popup-container col-lg-4 col-md-6 col-sm-6 col-xs-12 col_cw" (click)="$event.stopPropagation()">
+    <div class="journal-popup-card" [ngClass]="{'popup-teens': !isAdults}">
+      <div class="journal-popup-header">
+        <h2 class="journal-popup-title">Journal</h2>
+      </div>
+      <div class="journal-popup-content">
+        <h3 class="journal-popup-subtitle">Understand yourself, find clarity.</h3>
+        <p class="journal-popup-body">
+          <strong>Journaling</strong> helps you notice your thoughts, process your emotions and find clarity.
+        </p>
+        <p class="journal-popup-body">
+          <strong>Guided Journaling</strong> asks carefully designed questions that help you discover your own insights, because the answers we find ourselves are more likely to stay with us.
+        </p>
+        <button class="journal-popup-close-btn" (click)="closeJournalPopup()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

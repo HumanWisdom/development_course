@@ -107,6 +107,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
   public enableAlert:any=false;
   public isSearchActive: boolean = false;
   public isFreeTrialEnable: boolean = false;
+  public showLearnPopup: boolean = false;
 
 
   constructor(private route: Router, public router: Router, private aservice: TeenagersService,
@@ -163,13 +164,24 @@ export class PersonalisedForYouSearchPage implements OnInit {
     this.loadMicrolearningPreview();
     this.loadGuidedJourneyPreview();
     this.isSubscribe = SharedService.isSubscriber();
-    let closetour = localStorage.getItem('closeTour');
+    const userId = localStorage.getItem('userId') || '';
+    const key = userId ? `hasSeenLearnPopup_${userId}` : 'hasSeenLearnPopup';
+    const hasSeen = localStorage.getItem(key) === 'true';
 
-   /*  if(!closetour && !localStorage.getItem('firstTimeSearchTour')) {
-      this.continueTour();
-    } */
+    if (!hasSeen) {
+      this.showLearnPopup = true;
+      localStorage.setItem(key, 'true');
+    } else {
+      this.showLearnPopup = false;
+    }
   }
 
+  closeLearnPopup() {
+    this.showLearnPopup = false;
+    const userId = localStorage.getItem('userId') || '';
+    const key = userId ? `hasSeenLearnPopup_${userId}` : 'hasSeenLearnPopup';
+    localStorage.setItem(key, 'true');
+  }
 
   toggleAccordion() {
     this.isExpanded = !this.isExpanded;
@@ -198,12 +210,12 @@ export class PersonalisedForYouSearchPage implements OnInit {
   loadMicrolearningPreview() {
     this.commonService.GetMicrolearningList(SharedService.ProgramId).subscribe((res: any) => {
       if (res && res.length) {
-        const pageCounts = [8, 7, 8];
-        this.microlearningPreview = res.slice(0, 3).map((item, i) => ({
+        // const pageCounts = [8, 7, 8];
+        this.microlearningPreview = res.slice(0, 6).map((item, i) => ({
           id: item.microlearningID,
           title: item.Title,
           imgUrl: item.ImageUrl,
-          pages: pageCounts[i]
+          pages: item.ScreenCnt
         }));
       }
     });
@@ -215,7 +227,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
       if (res) {
         const data = Array.isArray(res) ? res :
           (res.Data || res.data || res.DataList || res.GuidedJourneys || res.Guided_Journeys || res.list || []);
-        this.guidedJourneyPreview = data.slice(0, 3).map(item => ({
+        this.guidedJourneyPreview = data.slice(0, 2).map(item => ({
           id: item.GuidedJourneyID || item.JourneyID || item.journeyID || item.Id || item.id || item.RowID,
           title: item.Title || item.title || item.JourneyName || item.Name,
           subtitle: (item.Days || item.days) > 0 ? `${item.Days || item.days} days` : (item.Subtitle || item.subtitle || ''),
@@ -517,7 +529,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
       case "self awareness":
       case "self-awareness":
         {
-        this.route.navigate(['/teenagers/home'], { fragment: 'self-awareness', state: { source: 'search' } });
+        this.route.navigate(['/teenagers/explore'], { fragment: 'self-awareness', state: { source: 'search' } });
         return;
       }
       case "forum":{
@@ -862,9 +874,11 @@ export class PersonalisedForYouSearchPage implements OnInit {
 
   toggleBodyScroll(lock: boolean): void {
     if (lock) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.setProperty('overflow', 'hidden', 'important');
+      document.documentElement.style.setProperty('overflow', 'hidden', 'important');
     } else {
-      document.body.style.overflow = '';
+      document.body.style.removeProperty('overflow');
+      document.documentElement.style.removeProperty('overflow');
     }
   }
 
