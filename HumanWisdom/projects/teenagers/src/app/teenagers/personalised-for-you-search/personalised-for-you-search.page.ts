@@ -80,8 +80,12 @@ export class PersonalisedForYouSearchPage implements OnInit {
   public isExpanded = true;
   public isGuidedJourneysExpanded = true;
   public isMicrolearningExpanded = true;
+  public isTeenTalkExpanded = true;
   public microlearningPreview: any[] = [];
   public guidedJourneyPreview: any[] = [];
+  public teenTalkAll: any[] = [];
+  public teenTalkPreview: any[] = [];
+  public teenTalkShowMore = false;
   wisdomExerciseList = [];
   mediaPercent: any
   freeScreens = []
@@ -161,6 +165,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
     }
     this.GetWisdomScreens();
     this.getUserPreference();
+    this.loadTeenTalkPreview();
     this.loadMicrolearningPreview();
     this.loadGuidedJourneyPreview();
     this.isSubscribe = SharedService.isSubscriber();
@@ -205,6 +210,39 @@ export class PersonalisedForYouSearchPage implements OnInit {
     this.logeventservice.logEvent('click_microlearning_' + id);
     SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
     this.router.navigate(['/teenagers/micro-learning/inner', id]);
+  }
+
+  toggleTeenTalk() {
+    this.isTeenTalkExpanded = !this.isTeenTalkExpanded;
+  }
+
+  loadTeenTalkPreview() {
+    this.aservice.getTeenagerTalk().subscribe((res: any) => {
+      if (res && res.length) {
+        this.teenTalkAll = res;
+        this.teenTalkPreview = res.slice(0, 5);
+        this.teenTalkShowMore = res.length > 5;
+      }
+    });
+  }
+
+  teenTalkViewMore() {
+    this.teenTalkPreview = this.teenTalkAll.slice(0, 10);
+    this.teenTalkShowMore = false;
+  }
+
+  routeToTeenTalk(data) {
+    this.logeventservice.logEvent('click_teenTalk_' + data.RowID);
+    this.commonService.clickTeenTalk(data.RowID).subscribe();
+    let sub: any = localStorage.getItem('Subscriber');
+    let id = data.RowID <= 9 ? '0' + data.RowID : data.RowID;
+    if (sub == 0 && data.isFree === '0') {
+      this.enableAlert = true;
+      this.isFreeTrialEnable = true;
+      return;
+    }
+    SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
+    this.route.navigate(['teenagers/videopage', `teenagers-teen_talk-videos-${id}.mp4`, 'T', data.Title]);
   }
 
   loadMicrolearningPreview() {
