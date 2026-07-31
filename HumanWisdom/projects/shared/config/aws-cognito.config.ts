@@ -1,6 +1,6 @@
 import { environment } from '../../environments/environment';
 
-/** Set localStorage enableAwsSsoLogin = 'F' to hide the Cognito SSO button. */
+/** Set localStorage enableAwsSsoLogin = 'T' to show the Cognito SSO button (hidden by default). */
 export const AWS_SSO_LOGIN_STORAGE_KEY = 'enableAwsSsoLogin';
 
 export const AWS_COGNITO_OIDC_CONFIG_IDS = ['aws-cognito-adults', 'aws-cognito-teenagers'] as const;
@@ -9,7 +9,7 @@ export function isAwsSsoLoginVisible(): boolean {
   if (typeof window === 'undefined') {
     return false;
   }
-  return localStorage.getItem(AWS_SSO_LOGIN_STORAGE_KEY) !== 'F';
+  return localStorage.getItem(AWS_SSO_LOGIN_STORAGE_KEY) === 'T';
 }
 
 function getHostedUiBaseUrl(): string {
@@ -121,4 +121,37 @@ export function getAwsCognitoLogoutUrl(app: 'adults' | 'teenagers'): string {
   return app === 'adults'
     ? environment.awsCognito.logoutUrlAdults
     : environment.awsCognito.logoutUrlTeenagers;
+}
+
+/** Set when HappierMe login came from Cognito / IAM IC SSO. */
+export const AWS_SSO_LOGIN_METHOD = 'aws';
+export const LOGIN_METHOD_STORAGE_KEY = 'loginMethod';
+
+export function isAwsSsoSession(): boolean {
+  if (typeof window === 'undefined') {
+    return false;
+  }
+  return localStorage.getItem(LOGIN_METHOD_STORAGE_KEY) === AWS_SSO_LOGIN_METHOD
+    || !!localStorage.getItem('enterpriseOrganization')
+    || !!localStorage.getItem('ssoDepartment');
+}
+
+/**
+ * Cognito hosted UI logout — clears the Cognito browser session so the next
+ * SSO login is not stuck on the previous user.
+ * logout_uri must be in the app client's Allowed sign-out URLs.
+ */
+export function buildAwsCognitoHostedLogoutUrl(app: 'adults' | 'teenagers' = 'adults'): string {
+  const { clientId } = environment.awsCognito;
+  const logoutUri = getAwsCognitoLogoutUrl(app);
+  return `${getHostedUiBaseUrl()}/logout?client_id=${encodeURIComponent(clientId)}&logout_uri=${encodeURIComponent(logoutUri)}`;
+}
+
+export function redirectToAwsCognitoLogout(app?: 'adults' | 'teenagers'): void {
+  if (typeof window === 'undefined') {
+    return;
+  }
+  const program = app
+    || (window.location.pathname.includes('/teenagers') ? 'teenagers' : 'adults');
+  window.location.href = buildAwsCognitoHostedLogoutUrl(program);
 }
