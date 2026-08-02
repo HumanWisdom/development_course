@@ -1,6 +1,8 @@
 <?php
 // Include security configuration
 require_once('./includes/security_config.php');
+require_once('./includes/page_assets.php');
+hw_page_assets_configure('landing');
 ?>
 
 <!DOCTYPE html>
@@ -57,21 +59,12 @@ personal growth
     <?php include('./includes/vendor_header.php'); ?>
     <!-- /vendor_header -->
     
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"></noscript>
-
     <!-- LCP Hero images preloading (fetchpriority + media so only the viewport LCP image is prioritized) -->
     <link rel="preload" as="image" href="https://d1tenzemoxuh75.cloudfront.net/website/webp/bannerind.webp" fetchpriority="high" media="(min-width: 821px)" />
     <link rel="preload" as="image" href="https://d1tenzemoxuh75.cloudfront.net/website/webp/bannermobile11.webp" fetchpriority="high" media="(max-width: 820px)" />
     <link rel="preload" as="image" href="https://d1tenzemoxuh75.cloudfront.net/website/frame.webp" />
     <?php hw_defer_stylesheet('assets/css/index-inline.css'); ?>
 
-  <script>
-    $('#myCarousel').carousel({
-      interval: 3000,
-    })
-
-  </script>
   <script>
     (function () {
       var PLACEHOLDER = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
@@ -118,9 +111,6 @@ personal growth
 
   <!-- header -->
   <?php include('./includes/header.php'); ?>
-  <?php include('../includes/assets/css/landing.css'); ?>
-  <?php include('.../includes/assets/css/landing.css'); ?>
-
 
   <!-- /header --> 
 
@@ -2941,50 +2931,16 @@ personal growth
     </script>
 
     <script>
-      AOS.init({
-        duration: 1000,
-        easing: 'ease-in-out',
-        once: true
-      });
+      function hwInitAosAnimations() {
+        if (typeof AOS === 'undefined') return;
+        AOS.init({ duration: 1000, easing: 'ease-in-out', once: true });
+      }
+      document.addEventListener('hw:aos-ready', hwInitAosAnimations);
+      if (typeof AOS !== 'undefined') hwInitAosAnimations();
     </script>
 
-    <!-- Owl Carousel Initialization -->
     <script>
-      $(document).ready(function() {
-        // Initialize Owl Carousel for coaches
-        if ($('.owl_coach .owl-carousel').length) {
-          $('.owl_coach .owl-carousel').owlCarousel({
-            loop: true,
-            margin: 20,
-            nav: true,
-            navText: ['<i class="bi bi-chevron-left"></i>', '<i class="bi bi-chevron-right"></i>'],
-            dots: false,
-            responsive: {
-              0: { items: 1 },
-              600: { items: 2 },
-              1000: { items: 3 },
-              1200: { items: 4 }
-            }
-          });
-        }
-
-        // Initialize Owl Carousel for blog
-        if ($('.owl_blog .owl-carousel').length) {
-          $('.owl_blog .owl-carousel').owlCarousel({
-            loop: true,
-            margin: 20,
-            nav: true,
-            navText: ['<i class="bi bi-chevron-left"></i>', '<i class="bi bi-chevron-right"></i>'],
-            dots: false,
-            responsive: {
-              0: { items: 1 },
-              600: { items: 2 },
-              1000: { items: 3 }
-            }
-          });
-        }
-
-        // Initialize Bootstrap tabs (older layout: ul#toolTabs.nav-tabs; custom tools use #toolTabs.tools-tabs + switchTab)
+      document.addEventListener('DOMContentLoaded', function () {
         var triggerTabList = [].slice.call(document.querySelectorAll('#toolTabs.nav-tabs button'));
         triggerTabList.forEach(function (triggerEl) {
           var tabTrigger = new bootstrap.Tab(triggerEl);
