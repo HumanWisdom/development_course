@@ -678,6 +678,78 @@ body.page-work .owl_testimonials .owl-controls {
   display: none !important;
 }
 
+/* Wide screens (1400px+): exactly 3 full cards — no clipped peeks */
+@media (min-width: 1400px) {
+  body.page-work .work-testimonials-wrap {
+    max-width: 1340px !important;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  body.page-work .owl_testimonials {
+    --work-testimonial-row-width: 1340px;
+    --work-testimonial-gap: 30px;
+    --work-testimonial-card-width: calc((var(--work-testimonial-row-width) - 2 * var(--work-testimonial-gap)) / 3);
+    max-width: 1340px !important;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+  }
+
+  body.page-work .owl_testimonials > .owl-carousel {
+    max-width: 1340px !important;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden !important;
+  }
+
+  body.page-work .owl_testimonials > .owl-carousel > .owl-stage-outer {
+    width: 100% !important;
+    max-width: 1340px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    overflow: hidden !important;
+    display: block !important;
+  }
+
+  body.page-work .owl_testimonials .owl-carousel .owl-stage {
+    left: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  body.page-work .owl_testimonials .div_testimonials.work-testimonial-card {
+    width: var(--work-testimonial-card-width) !important;
+  }
+
+  body.page-work .owl_testimonials .owl-carousel .owl-item {
+    width: var(--work-testimonial-card-width) !important;
+    max-width: var(--work-testimonial-card-width) !important;
+  }
+}
+
+/* Ultra-wide (2080px+): override main.css stage-outer shift / overflow:visible */
+@media (min-width: 2080px) {
+  body.page-work .owl_testimonials > .owl-carousel > .owl-stage-outer {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    overflow: hidden !important;
+    display: block !important;
+  }
+
+  body.page-work .owl_testimonials .owl-carousel .owl-stage-outer {
+    overflow: hidden !important;
+    justify-content: flex-start !important;
+  }
+}
+
 /* Education — testimonials (Figma: title 30/600/120% black, gap 40px; cards 426.67×305, r20, p36, gap 30px, bg cream) */
 body.page-education .edu-testimonials-section .edu-testimonials-header,
 body.page-education main#main .section-header.edu-testimonials-header {
@@ -986,23 +1058,45 @@ body.page-education .div_inspire a:hover.fc_cb6171 {
 }
 
 @media (max-width: 767px) {
+  /* Figma: 60px gap between page sections */
+  body.page-work section.work-testimonials-section {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  body.page-work section.work-dyk-section {
+    padding-bottom: 0 !important;
+  }
+
+  body.page-work section.work-inspire-section {
+    padding-top: 0 !important;
+  }
+
   body.page-work .work-testimonials-wrap {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 0;
+    padding-right: 0;
+    overflow: hidden;
   }
 
   body.page-work .owl_testimonials {
     --work-testimonial-card-width: 315px;
     --work-testimonial-gap: 20px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow: visible;
   }
 
-  body.page-work .owl_testimonials .div_testimonials.work-testimonial-card {
-    height: auto !important;
-    min-height: 260px;
-    padding: 24px !important;
+  /* Figma: 24px gap between title and cards */
+  body.page-work .work-testimonials-section .work-testimonials-header,
+  body.page-work main#main .section-header.work-testimonials-header {
+    padding-top: 0 !important;
+    padding-bottom: 24px !important;
+    margin-bottom: 0 !important;
   }
 
-  body.page-work main#main .section-header.work-testimonials-header,
   body.page-work main#main .section-header.work-inspire-header {
     padding-bottom: 40px !important;
   }
@@ -1011,28 +1105,128 @@ body.page-education .div_inspire a:hover.fc_cb6171 {
     padding-bottom: 60px !important;
   }
 
+  /* Figma mobile title: Poppins 600 / 24 / 150% / center — 2 lines at 335px */
   body.page-work section.hpt120px ~ main#main .work-testimonials-header h2.work-testimonials-title,
-  body.page-work main#main .work-testimonials-title,
+  body.page-work main#main .work-testimonials-title {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 150% !important;
+    color: rgba(0, 0, 0, 1) !important;
+    text-align: center !important;
+    max-width: 335px;
+    width: 100%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 0;
+    padding-right: 0;
+    box-sizing: border-box;
+  }
+
+  body.page-work .work-testimonials-header .work-testimonials-title br.display_d_none {
+    display: block !important;
+  }
+
   body.page-work section.hpt120px ~ main#main .work-inspire-header h2.work-inspire-title,
   body.page-work main#main .work-inspire-title {
-    font-size: 18px !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 24px !important;
+    font-weight: 600 !important;
     line-height: 140% !important;
     color: rgba(0, 0, 0, 1) !important;
+    text-align: center !important;
     max-width: 100%;
   }
 
+  /* Figma: horizontal scroll — cards 315×213, gap 20, pad 24, r20 */
   body.page-work .owl_testimonials .owl-carousel.work-testimonials-native {
-    display: flex;
-    flex-direction: column;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch !important;
     gap: 20px;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 20px !important;
+    box-sizing: border-box;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+    scroll-padding-left: 20px;
+    scroll-padding-right: 20px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    touch-action: pan-x;
+    overscroll-behavior-x: contain;
+  }
+
+  body.page-work .owl_testimonials .owl-carousel.work-testimonials-native::-webkit-scrollbar {
+    display: none;
   }
 
   body.page-work .owl_testimonials .owl-carousel.work-testimonials-native > .item {
-    width: 100% !important;
+    flex: 0 0 315px !important;
+    width: 315px !important;
+    max-width: 315px !important;
+    flex-shrink: 0 !important;
+    scroll-snap-align: start;
+    margin: 0 !important;
+    height: 213px !important;
   }
 
-  body.page-work .owl_testimonials .owl-carousel.work-testimonials-native .work-testimonial-card {
-    width: 100% !important;
+  body.page-work .owl_testimonials .owl-carousel.work-testimonials-native .work-testimonial-card,
+  body.page-work .owl_testimonials .div_testimonials.work-testimonial-card {
+    width: 315px !important;
+    max-width: 315px !important;
+    height: 213px !important;
+    min-height: 213px !important;
+    max-height: 213px !important;
+    padding: 24px !important;
+    gap: 15px !important;
+    border-radius: 20px !important;
+    background: rgba(255, 247, 230, 1) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  body.page-work .owl_testimonials .work-testimonial-header {
+    gap: 15px !important;
+    min-height: 0 !important;
+    flex-shrink: 0 !important;
+  }
+
+  body.page-work .owl_testimonials .work-testimonial-avatar {
+    width: 60px !important;
+    height: 60px !important;
+    min-width: 60px !important;
+  }
+
+  body.page-work .owl_testimonials .work-testimonial-name {
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    line-height: 150% !important;
+  }
+
+  body.page-work .owl_testimonials .work-testimonial-role {
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    line-height: 150% !important;
+  }
+
+  body.page-work .owl_testimonials .work-testimonial-quote {
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    font-style: italic !important;
+    line-height: 150% !important;
+    overflow: hidden !important;
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
   }
 
   body.page-work .owl_testimonials .work-testimonials-footer .work-testimonials-nav {
@@ -1169,6 +1363,26 @@ body.page-healthcare #bring_happierme .work-demo-col .fc_01 {
   text-align: left;
 }
 
+/* Match Country empty-state text to input placeholder / icon color */
+body.page-work #bring_happierme .work-demo-col .fc_01::placeholder,
+body.page-education #bring_happierme .work-demo-col .fc_01::placeholder,
+body.page-healthcare #bring_happierme .work-demo-col .fc_01::placeholder {
+  color: rgba(18, 15, 64, 0.5);
+  opacity: 1;
+}
+
+body.page-work #bring_happierme .work-demo-col select.fc_01:required:invalid,
+body.page-education #bring_happierme .work-demo-col select.fc_01:required:invalid,
+body.page-healthcare #bring_happierme .work-demo-col select.fc_01:required:invalid {
+  color: rgba(18, 15, 64, 0.5);
+}
+
+body.page-work #bring_happierme .work-demo-col select.fc_01 option,
+body.page-education #bring_happierme .work-demo-col select.fc_01 option,
+body.page-healthcare #bring_happierme .work-demo-col select.fc_01 option {
+  color: #000;
+}
+
 body.page-work #bring_happierme .work-demo-cta,
 body.page-education #bring_happierme .work-demo-cta,
 body.page-healthcare #bring_happierme .work-demo-cta {
@@ -1211,31 +1425,111 @@ body.page-healthcare #bring_happierme #Request-Demo:active {
 }
 
 @media (max-width: 767px) {
+  body.page-work #bring_happierme,
+  body.page-education #bring_happierme,
+  body.page-healthcare #bring_happierme,
+  body.page-work section#bring_happierme,
+  body.page-education section#bring_happierme,
+  body.page-healthcare section#bring_happierme {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* Figma: 20px left/right gutters; content fills remaining width */
   body.page-work #bring_happierme .work-demo-band,
   body.page-education #bring_happierme .work-demo-band,
-  body.page-healthcare #bring_happierme .work-demo-band {
-    padding: 40px 20px !important;
+  body.page-healthcare #bring_happierme .work-demo-band,
+  body.page-work #bring_happierme .div_subscription.work-demo-band,
+  body.page-education #bring_happierme .div_subscription.work-demo-band,
+  body.page-healthcare #bring_happierme .div_subscription.work-demo-band,
+  body.page-work #bring_happierme .row.work-demo-band,
+  body.page-education #bring_happierme .row.work-demo-band,
+  body.page-healthcare #bring_happierme .row.work-demo-band {
+    padding: 32px 20px 40px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   body.page-work #bring_happierme .work-demo-inner,
   body.page-education #bring_happierme .work-demo-inner,
   body.page-healthcare #bring_happierme .work-demo-inner,
+  body.page-work #bring_happierme .email-w980px.work-demo-inner,
+  body.page-education #bring_happierme .email-w980px.work-demo-inner,
+  body.page-healthcare #bring_happierme .email-w980px.work-demo-inner,
+  body.page-work #bring_happierme .col-10.work-demo-inner,
+  body.page-education #bring_happierme .col-10.work-demo-inner,
+  body.page-healthcare #bring_happierme .col-10.work-demo-inner {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    float: none !important;
+    flex: 0 0 100% !important;
+    gap: 24px !important;
+    align-items: stretch !important;
+    box-sizing: border-box !important;
+  }
+
+  body.page-work #bring_happierme .work-demo-form-wrap,
+  body.page-education #bring_happierme .work-demo-form-wrap,
+  body.page-healthcare #bring_happierme .work-demo-form-wrap,
   body.page-work #bring_happierme .work-demo-form-wrap form,
   body.page-education #bring_happierme .work-demo-form-wrap form,
   body.page-healthcare #bring_happierme .work-demo-form-wrap form {
+    width: 100% !important;
+    max-width: 100% !important;
     gap: 24px !important;
+    align-items: stretch !important;
   }
 
+  body.page-work #bring_happierme .work-demo-copy,
+  body.page-education #bring_happierme .work-demo-copy,
+  body.page-healthcare #bring_happierme .work-demo-copy {
+    width: 100% !important;
+    max-width: 100% !important;
+    gap: 10px !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  /* Figma mobile title: Poppins 600 / 24 / 150% / center */
   body.page-work #bring_happierme .work-demo-title,
   body.page-education #bring_happierme .work-demo-title,
   body.page-healthcare #bring_happierme .work-demo-title,
   body.page-work section.hpt120px ~ main#main #bring_happierme .work-demo-title,
   body.page-education section.hpt120px ~ main#main #bring_happierme .work-demo-title,
   body.page-healthcare section.hpt120px ~ main#main #bring_happierme .work-demo-title {
-    font-size: 18px !important;
-    line-height: 140% !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 150% !important;
     color: rgba(255, 255, 255, 1) !important;
-    max-width: 100%;
+    text-align: center !important;
+    margin: 0 auto !important;
+  }
+
+  /* Figma mobile subtitle: Poppins 400 / 12 / 150% / center */
+  body.page-work #bring_happierme .work-demo-subtitle,
+  body.page-education #bring_happierme .work-demo-subtitle,
+  body.page-healthcare #bring_happierme .work-demo-subtitle {
+    width: 100% !important;
+    max-width: 100% !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    line-height: 150% !important;
+    color: rgba(255, 255, 255, 1) !important;
+    text-align: center !important;
+    margin: 0 auto !important;
   }
 
   body.page-work #bring_happierme .work-demo-fields,
@@ -1243,15 +1537,75 @@ body.page-healthcare #bring_happierme #Request-Demo:active {
   body.page-healthcare #bring_happierme .work-demo-fields {
     flex-direction: column;
     gap: 12px;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  body.page-work #bring_happierme .work-demo-col,
+  body.page-education #bring_happierme .work-demo-col,
+  body.page-healthcare #bring_happierme .work-demo-col {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Figma inputs: Fill width, H 50, r12, pad 10×16 */
+  body.page-work #bring_happierme .work-demo-col .div_input,
+  body.page-education #bring_happierme .work-demo-col .div_input,
+  body.page-healthcare #bring_happierme .work-demo-col .div_input {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  body.page-work #bring_happierme .work-demo-col .fc_01,
+  body.page-education #bring_happierme .work-demo-col .fc_01,
+  body.page-healthcare #bring_happierme .work-demo-col .fc_01 {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 50px !important;
+    min-height: 50px !important;
+    padding: 10px 16px !important;
+    border-radius: 12px !important;
+    box-sizing: border-box !important;
+    text-align: left !important;
+  }
+
+  body.page-work #bring_happierme .work-demo-cta,
+  body.page-education #bring_happierme .work-demo-cta,
+  body.page-healthcare #bring_happierme .work-demo-cta {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Figma mobile CTA: fill width × 55, r30, pad 15×30 */
+  body.page-work #bring_happierme #Request-Demo,
+  body.page-work #bring_happierme #Request-Demo:focus,
+  body.page-education #bring_happierme #Request-Demo,
+  body.page-education #bring_happierme #Request-Demo:focus,
+  body.page-healthcare #bring_happierme #Request-Demo,
+  body.page-healthcare #bring_happierme #Request-Demo:focus,
+  body.page-work #bring_happierme .work-demo-btn,
+  body.page-education #bring_happierme .work-demo-btn,
+  body.page-healthcare #bring_happierme .work-demo-btn {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 55px !important;
+    min-height: 55px !important;
+    padding: 15px 30px !important;
+    border-radius: 30px !important;
+    box-sizing: border-box !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    line-height: 140% !important;
+    text-align: center !important;
   }
 }
 
-/* Work — Explore our blog (Figma: black title 30/600/120%, gap 60px; link #d7586b → hover #803358) */
+/* Work — Explore our blog (Figma: black title 30/600/120%, gap 50px; link #d7586b → hover #803358) */
 body.page-work .work-blog-section {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  gap: 60px;
+  gap: 50px;
 }
 
 body.page-work .work-blog-section .work-blog-header,
@@ -1287,13 +1641,13 @@ body.page-work .work-blog-section .owl_blog {
   margin-right: auto;
 }
 
-/* Footer: "See all posts" centered; arrows aligned to end of 2nd card (470+40+470) */
+/* Footer: "View all blogs" centered; arrows aligned to end of 2nd card (470+40+470) */
 body.page-work .work-blog-footer {
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  margin-top: 40px;
+  margin-top: 20px;
   margin-left: 0;
   margin-right: 0;
   min-height: 40px;
@@ -1305,6 +1659,27 @@ body.page-work .work-blog-footer .sap.work-blog-more {
   width: auto !important;
   right: auto !important;
   margin: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px;
+  text-decoration: none !important;
+}
+
+body.page-work .work-blog-footer .sap.work-blog-more h4 {
+  text-decoration: underline;
+}
+
+body.page-work .work-blog-footer .work-blog-more .chevron-pink,
+body.page-work .work-blog-footer .work-blog-more .chevron-pink .bi {
+  color: #d7586b !important;
+  text-decoration: none !important;
+}
+
+body.page-work .work-blog-footer .work-blog-more:hover .chevron-pink,
+body.page-work .work-blog-footer .work-blog-more:hover .chevron-pink .bi,
+body.page-work .work-blog-footer .work-blog-more:active .chevron-pink,
+body.page-work .work-blog-footer .work-blog-more:active .chevron-pink .bi {
+  color: #803358 !important;
 }
 
 /* Nudge arrows right to align with end of 2nd card */
@@ -1329,6 +1704,22 @@ body.page-work .owl_blog .work-blog-footer .owl-nav-w {
   opacity: 1 !important;
 }
 
+/* Wide screen (1400px+): 3 blog cards visible — hide carousel arrows */
+@media (min-width: 1400px) {
+  body.page-work .work-blog-footer .work-blog-nav,
+  body.page-work .work-blog-footer .work-blog-nav .owl-controls,
+  body.page-work .work-blog-footer .work-blog-nav .owl-nav,
+  body.page-work .work-blog-footer .work-blog-nav .owl-nav-w,
+  body.page-work .owl_blog .work-blog-footer .owl-controls,
+  body.page-work .owl_blog .work-blog-footer .owl-nav,
+  body.page-work .owl_blog .work-blog-footer .owl-nav-w {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+}
+
 body.page-work .work-blog-more,
 body.page-work .work-blog-more h4 {
   color: #d7586b !important;
@@ -1345,29 +1736,109 @@ body.page-work .work-blog-more:active h4 {
 
 @media (max-width: 767px) {
   body.page-work .work-blog-section {
-    gap: 40px;
+    gap: 24px;
+    padding-top: 60px !important;
+    padding-bottom: 0 !important;
+    margin-top: 0 !important;
   }
 
   body.page-work main#main .section-header.work-blog-header {
     padding-bottom: 0 !important;
+    padding-top: 0 !important;
   }
 
+  /* Figma mobile “Explore our blog”: Poppins 600 / 24 / 140% / center */
   body.page-work section.hpt120px ~ main#main .work-blog-header h2.work-blog-title,
   body.page-work main#main .work-blog-title {
-    font-size: 18px !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 24px !important;
+    font-weight: 600 !important;
     line-height: 140% !important;
     color: rgba(0, 0, 0, 1) !important;
+    text-align: center !important;
+  }
+
+  /* Figma mobile blog tile: 306 × 242.54 (img 156.26 + caption 86.28) */
+  body.page-work .owl_blog .owl-carousel .owl-item,
+  body.page-work .owl_blog .owl-carousel .owl-item .item {
+    width: 306px !important;
+    max-width: 306px !important;
+  }
+
+  body.page-work .owl_blog .div_blog {
+    width: 306px !important;
+    max-width: 306px !important;
+    height: 242.54px !important;
+    min-height: 242.54px !important;
+    max-height: 242.54px !important;
+    border-radius: 10px !important;
+    background: rgba(255, 249, 238, 1) !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    box-sizing: border-box !important;
+  }
+
+  body.page-work .owl_blog .div_blog > .row:first-child,
+  body.page-work .owl_blog .div_blog > .row:first-child [class^="col-"] {
+    height: 156.26px !important;
+    min-height: 156.26px !important;
+    max-height: 156.26px !important;
+    flex-shrink: 0 !important;
+  }
+
+  body.page-work .owl_blog .div_blog img {
+    width: 100% !important;
+    height: 156.26px !important;
+    min-height: 156.26px !important;
+    max-height: 156.26px !important;
+    object-fit: cover !important;
+    border-radius: 10px 10px 0 0 !important;
+    display: block !important;
+  }
+
+  body.page-work .owl_blog .div_blog > .row:last-child,
+  body.page-work .owl_blog .div_blog > .row:last-child [class^="col-"] {
+    height: 86.28px !important;
+    min-height: 86.28px !important;
+    max-height: 86.28px !important;
+    flex-shrink: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  body.page-work .owl_blog .div_blog h4 {
+    margin: 10px 5px 0 !important;
+    padding: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: 66px !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    line-height: 140% !important;
+    color: rgba(0, 0, 0, 1) !important;
+    overflow: hidden !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 3 !important;
+    -webkit-box-orient: vertical !important;
+    box-sizing: border-box !important;
   }
 
   body.page-work .work-blog-footer {
-    margin-top: 40px;
+    margin-top: 20px;
+    margin-bottom: 0;
     margin-left: 20px;
     width: 100%;
     max-width: calc(100% - 40px);
+    min-height: 0;
   }
 
   body.page-work .work-blog-footer .work-blog-nav {
     display: none !important;
+  }
+
+  /* Blog → site footer: tighten the default 100px dfooter top margin */
+  body.page-work .dfooter {
+    margin-top: 40px !important;
   }
 }
 
@@ -1522,7 +1993,7 @@ body.page-education .edu-blog-more:active h4 {
 }
 
 .gap_40px {
-  gap: 40px;
+  gap: 30px;
 }
 
 .req_button {
@@ -1639,13 +2110,15 @@ body.page-healthcare .healthcare-hero-shell .wide-screen-only {
     flex: 0 0 50% !important;
   }
 
-  /* Keep Figma 384px copy column (do not stretch to 50%) */
-  body.page-work .flex_block .col-lg-6.w-384px.work-desc-copy,
-  body.page-healthcare .flex_block .col-lg-6.w-384px.hc-desc-copy,
-  body.page-education .flex_block .col-lg-6.w-384px.edu-desc-copy {
-    width: 384px !important;
-    max-width: 384px !important;
-    flex: 0 0 384px !important;
+  /* Keep Figma 384px copy column on tablet/desktop only (do not stretch to 50%) */
+  @media screen and (min-width: 768px) {
+    body.page-work .flex_block .col-lg-6.w-384px.work-desc-copy,
+    body.page-healthcare .flex_block .col-lg-6.w-384px.hc-desc-copy,
+    body.page-education .flex_block .col-lg-6.w-384px.edu-desc-copy {
+      width: 384px !important;
+      max-width: 384px !important;
+      flex: 0 0 384px !important;
+    }
   }
 
   body.page-work .email-w980px,
@@ -3115,7 +3588,7 @@ body.page-healthcare .healthcare-hero-shell .wide-screen-only {
     display: block !important;
   }
 
-  /* “Feel calm…” / description — match teenagers mobile (full width, 20px gutters) */
+  /* “Feel calm…” / description — Figma mobile: center, 24/140%, 20px gutters */
   body.page-work .flex_block,
   body.page-education .flex_block,
   body.page-healthcare .flex_block {
@@ -3132,6 +3605,8 @@ body.page-healthcare .healthcare-hero-shell .wide-screen-only {
     padding-left: 20px !important;
     padding-right: 20px !important;
     box-sizing: border-box !important;
+    gap: 24px !important;
+    align-items: center !important;
   }
 
   body.page-work .flex_block.w-1245px > [class*="col-"],
@@ -3142,12 +3617,21 @@ body.page-healthcare .healthcare-hero-shell .wide-screen-only {
   body.page-healthcare .flex_block .w-384px,
   body.page-work .flex_block .col-lg-6.w-384px,
   body.page-education .flex_block .col-lg-6.w-384px,
-  body.page-healthcare .flex_block .col-lg-6.w-384px {
+  body.page-healthcare .flex_block .col-lg-6.w-384px,
+  body.page-work .flex_block .col-lg-6.w-384px.work-desc-copy,
+  body.page-education .flex_block .col-lg-6.w-384px.edu-desc-copy,
+  body.page-healthcare .flex_block .col-lg-6.w-384px.hc-desc-copy,
+  body.page-work .flex_block .work-desc-copy,
+  body.page-education .flex_block .edu-desc-copy,
+  body.page-healthcare .flex_block .hc-desc-copy {
     width: 100% !important;
     max-width: 100% !important;
     flex: 0 0 100% !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box !important;
   }
 
   body.page-work .flex_block .ml10px,
@@ -3171,18 +3655,15 @@ body.page-healthcare .healthcare-hero-shell .wide-screen-only {
     text-align: center !important;
   }
 
-  /* Description copy — black title, left-aligned with subtitle on mobile too */
+  /* Figma: title + subtitle centered, stacked with 16px gap */
   body.page-work .flex_block .work-desc-copy,
-  body.page-healthcare .flex_block .hc-desc-copy {
-    align-items: flex-start !important;
-    gap: 16px !important;
-    text-align: left !important;
-  }
-
+  body.page-healthcare .flex_block .hc-desc-copy,
   body.page-education .flex_block .edu-desc-copy {
-    align-items: flex-start !important;
-    gap: 30px !important;
-    text-align: left !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 16px !important;
+    text-align: center !important;
   }
 
   body.page-work .flex_block .work-desc-copy h2,
@@ -3198,18 +3679,44 @@ body.page-healthcare .healthcare-hero-shell .wide-screen-only {
   body.page-education .flex_block .edu-desc-copy h5,
   body.page-education .flex_block .edu-desc-title,
   body.page-education .flex_block .edu-desc-subtitle {
-    text-align: left !important;
+    text-align: center !important;
     color: rgba(0, 0, 0, 1) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
+  /* Figma mobile title: Poppins 600 / 24 / 140% / center */
   body.page-work section.hpt120px ~ main#main .flex_block .work-desc-title,
+  body.page-work main#main .flex_block .work-desc-title,
   body.page-healthcare section.hpt120px ~ main#main .flex_block .hc-desc-title,
   body.page-healthcare section.hpt120px ~ main#main .hc-desc-heading-mobile h2,
-  body.page-education section.hpt120px ~ main#main .flex_block .edu-desc-title {
-    font-size: 18px !important;
+  body.page-healthcare main#main .flex_block .hc-desc-title,
+  body.page-education section.hpt120px ~ main#main .flex_block .edu-desc-title,
+  body.page-education main#main .flex_block .edu-desc-title {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 24px !important;
     font-weight: 600 !important;
     line-height: 140% !important;
     color: rgba(0, 0, 0, 1) !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+  }
+
+  body.page-work section.hpt120px ~ main#main .flex_block .work-desc-subtitle,
+  body.page-work main#main .flex_block .work-desc-subtitle,
+  body.page-healthcare section.hpt120px ~ main#main .flex_block .hc-desc-subtitle,
+  body.page-healthcare main#main .flex_block .hc-desc-subtitle,
+  body.page-education section.hpt120px ~ main#main .flex_block .edu-desc-subtitle,
+  body.page-education main#main .flex_block .edu-desc-subtitle {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 400 !important;
+    line-height: 150% !important;
+    color: rgba(0, 0, 0, 1) !important;
+    text-align: center !important;
+    margin: 0 auto !important;
   }
 
   /* Work / education / healthcare — mobile org landing (blogs, testimonials, typography) */
@@ -3352,12 +3859,31 @@ body.page-healthcare .healthcare-hero-shell .wide-screen-only {
   }
 
   body.page-work main#main .section-header.work-dyk-header,
-  body.page-work main#main .section-header.work-testimonials-header,
   body.page-work main#main .section-header.work-inspire-header,
   body.page-education main#main .section-header.edu-dyk-header,
   body.page-education main#main .section-header.edu-testimonials-header {
     padding-bottom: 40px !important;
     margin-bottom: 0 !important;
+  }
+
+  /* Figma: 24px gap between testimonials title and cards */
+  body.page-work main#main .section-header.work-testimonials-header {
+    padding-bottom: 24px !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* Figma: 60px gap between sections around testimonials */
+  body.page-work section.work-testimonials-section {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+
+  body.page-work section.work-dyk-section {
+    padding-bottom: 0 !important;
+  }
+
+  body.page-work section.work-inspire-section {
+    padding-top: 0 !important;
   }
 
   body.page-education main#main .section-header.edu-inspire-header {
@@ -3378,10 +3904,6 @@ body.page-healthcare .healthcare-hero-shell .wide-screen-only {
     margin-bottom: 0 !important;
   }
 
-  body.page-work section.hpt120px ~ main#main .work-dyk-header h2.work-dyk-title,
-  body.page-work main#main .work-dyk-title,
-  body.page-work section.hpt120px ~ main#main .work-inspire-header h2.work-inspire-title,
-  body.page-work main#main .work-inspire-title,
   body.page-education section.hpt120px ~ main#main .edu-dyk-header h2.edu-dyk-title,
   body.page-education main#main .edu-dyk-title,
   body.page-education section.hpt120px ~ main#main .edu-testimonials-header h2.edu-testimonials-title,
@@ -3394,6 +3916,49 @@ body.page-healthcare .healthcare-hero-shell .wide-screen-only {
     font-weight: 600 !important;
     line-height: 140% !important;
     color: rgba(0, 0, 0, 1) !important;
+  }
+
+  /* Figma mobile “Did you know?”: Poppins 600 / 24 / 140% / center */
+  body.page-work section.hpt120px ~ main#main .work-dyk-header h2.work-dyk-title,
+  body.page-work main#main .work-dyk-title {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 140% !important;
+    color: rgba(0, 0, 0, 1) !important;
+    text-align: center !important;
+  }
+
+  /* Figma mobile inspire title: 24 / 600 / 140% */
+  body.page-work section.hpt120px ~ main#main .work-inspire-header h2.work-inspire-title,
+  body.page-work main#main .work-inspire-title {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 140% !important;
+    color: rgba(0, 0, 0, 1) !important;
+    text-align: center !important;
+  }
+
+  /* Figma mobile “Explore our blog”: 24 / 600 / 140% */
+  body.page-work section.hpt120px ~ main#main .work-blog-header h2.work-blog-title,
+  body.page-work main#main .work-blog-title {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 140% !important;
+    color: rgba(0, 0, 0, 1) !important;
+    text-align: center !important;
+  }
+
+  /* Figma mobile testimonials title: 24 / 600 / 150% */
+  body.page-work section.hpt120px ~ main#main .work-testimonials-header h2.work-testimonials-title,
+  body.page-work main#main .work-testimonials-title {
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 150% !important;
+    color: rgba(0, 0, 0, 1) !important;
+    text-align: center !important;
   }
 
   body.page-work .div_dyk.work-dyk-band,
@@ -3523,6 +4088,15 @@ body.page-healthcare .healthcare-hero-shell .wide-screen-only {
 
   body.page-work .owl_blog .work-blog-footer .owl-controls,
   body.page-work .work-blog-footer .work-blog-nav .owl-controls,
+  body.page-work .work-blog-footer .work-blog-nav,
+  body.page-work .work-blog-footer .work-blog-nav .owl-nav,
+  body.page-work .work-blog-footer .work-blog-nav .owl-nav-w {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
   body.page-education .owl_blog .edu-blog-footer .owl-controls,
   body.page-education .edu-blog-footer .edu-blog-nav .owl-controls {
     visibility: visible !important;
