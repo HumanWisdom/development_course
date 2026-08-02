@@ -19,6 +19,12 @@ export class RouteHistoryGuard implements CanActivate {
 
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
 
+    // Bypass: if 't' query param is set (free content from guided journeys, etc.)
+    const tParam = next.queryParams['t'];
+    if (tParam === '1' || tParam === 1) {
+      return true;
+    }
+
     const isGuest = localStorage.getItem("guest") === 'T';
     const isLoggedIn = localStorage.getItem("isloggedin") === 'T';
     const isSubscribed = localStorage.getItem("Subscriber") === '1' || localStorage.getItem("Subscriber") === 'T';
@@ -30,7 +36,7 @@ export class RouteHistoryGuard implements CanActivate {
     const progId = isTeenagerRoute ? 11 : 9;
     const trialRedirectPath = isTeenagerRoute
       ? '/teenagers/subscription/start-your-free-trial'
-      : '/subscription/start-your-free-trial';
+      : '/adults/subscription/start-your-free-trial';
 
     // Guest user → redirect
     if (isGuest) {
