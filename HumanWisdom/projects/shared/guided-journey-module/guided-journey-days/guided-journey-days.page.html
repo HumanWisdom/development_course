@@ -147,9 +147,16 @@
                     <p class="card_type1_meta" *ngIf="exercise.Meta">{{exercise.Meta}}</p>
                   </div>
                   <div class="card_type1_status">
-                    <div class="card_type1_tick" *ngIf="exercise.isRead === '1' && isLoggedIn">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/isRead.svg" width="20" alt="">
+                    <div class="card_type1_tick" >
+                      
+                      <img  *ngIf=" isAdults && exercise.isRead === '1' && isLoggedIn" src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/isRead.svg" width="20" alt="">
+                                          <img  *ngIf=" !isAdults && exercise.isRead === '1' && isLoggedIn" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isread_teen.svg" width="20" alt="">
+
                     </div>
+                    <!-- <div class="" *ngIf=" !isAdults && exercise.isRead === '1' && isLoggedIn">
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isread_teen.svg"
+                              class="img-responsive ws-read-icon" />
+                          </div>     -->
                     <div class="card_type1_lock"
                       *ngIf="!isSubscriber && (exercise.isFree === '0' || exercise.isFree === 0)">
                       <!-- <div [ngClass]="isAdults ? '' : 'status-icon lock-icon'">
@@ -195,8 +202,10 @@
                       </ng-container>
                     </div>
                     <div class="card_content_status">
-                      <div class="read_status" *ngIf="exercise.isRead === '1' && isLoggedIn">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/isRead.svg" alt="">
+                      <div class="read_status" >
+                        <img  *ngIf="  isAdults && exercise.isRead === '1' && isLoggedIn" src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/isRead.svg" alt="">
+                         <img  *ngIf="  !isAdults && exercise.isRead === '1' && isLoggedIn"src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isread_teen.svg" alt="">
+
                       </div>
                       <div class="lock_status"
                         *ngIf="!isSubscriber && (exercise.isFree === '0' || exercise.isFree === 0)">

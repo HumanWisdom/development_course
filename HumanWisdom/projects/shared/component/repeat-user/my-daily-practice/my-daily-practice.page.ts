@@ -71,6 +71,7 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
   showModal = false;
   modalTitle = 'The best is yet to come';
   modalContent = 'Unlock the full experience and continue your journey to live your best life';
+  showTourPopup = false;
 
   constructor(
     private commonService: CommonService,
@@ -170,6 +171,14 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
     this.getLastvisitedScr(); 
 
     this.journalHits = +(localStorage.getItem('journalHits') || 0);
+
+    const userIdKey = localStorage.getItem('userId') || localStorage.getItem('userID') || '';
+    const key = userIdKey ? `hasSeenTourPopup_${userIdKey}` : 'hasSeenTourPopup';
+    const hasSeen = localStorage.getItem(key) === 'true';
+    if (hasSeen) {
+      this.showTourPopup = false;
+    }
+    // showTourPopup is triggered via (bubbleComplete) on the olly-landing component in the template
   }
 
   private getLastvisitedScr(): void {
@@ -184,6 +193,32 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
 
     if (localStorage.getItem("Subscriber") && localStorage.getItem("Subscriber") === '1') {
       this.isSubscriber = true;
+    }
+  }
+
+  onOllyBubbleComplete(): void {
+    // Only show the tour popup if user hasn't seen it before
+    const userIdKey = localStorage.getItem('userId') || localStorage.getItem('userID') || '';
+    const key = userIdKey ? `hasSeenTourPopup_${userIdKey}` : 'hasSeenTourPopup';
+    const hasSeen = localStorage.getItem(key) === 'true';
+    if (!hasSeen) {
+      this.showTourPopup = true;
+    }
+  }
+
+  closeTourPopup(): void {
+    this.showTourPopup = false;
+    const userId = localStorage.getItem('userId') || localStorage.getItem('userID') || '';
+    const key = userId ? `hasSeenTourPopup_${userId}` : 'hasSeenTourPopup';
+    localStorage.setItem(key, 'true');
+  }
+
+  goToTour(): void {
+    this.closeTourPopup();
+    if (this.isAdults) {
+      this.router.navigate(['/adults/intro-happierme']);
+    } else {
+      this.router.navigate(['/teenagers/intro-happierme']);
     }
   }
 

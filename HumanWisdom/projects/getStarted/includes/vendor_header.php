@@ -1,6 +1,10 @@
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-<?php require_once __DIR__ . '/cache_buster.php'; ?>
+<?php
+require_once __DIR__ . '/cache_buster.php';
+require_once __DIR__ . '/page_assets.php';
+$hw_assets = hw_page_assets_get();
+?>
 
 <!-- Favicons -->
 <link href="https://d1tenzemoxuh75.cloudfront.net/../assets/images/logo/logo_favicon_transparent.png" rel="icon">
@@ -37,13 +41,15 @@
 <link rel="preload" href="<?= hw_asset_url('../assets/vendor/bootstrap-icons/bootstrap-icons.css'); ?>" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="<?= hw_asset_url('../assets/vendor/bootstrap-icons/bootstrap-icons.css'); ?>"></noscript>
 
-<!-- <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet"> -->
+<?php if (hw_page_assets_flag('css', 'glightbox')) : ?>
 <link rel="preload" href="<?= hw_asset_url('../assets/vendor/glightbox/css/glightbox.min.css'); ?>" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="<?= hw_asset_url('../assets/vendor/glightbox/css/glightbox.min.css'); ?>"></noscript>
+<?php endif; ?>
 
-<!-- <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"> -->
+<?php if (hw_page_assets_flag('css', 'swiper')) : ?>
 <link rel="preload" href="<?= hw_asset_url('../assets/vendor/swiper/swiper-bundle.min.css'); ?>" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="<?= hw_asset_url('../assets/vendor/swiper/swiper-bundle.min.css'); ?>"></noscript>
+<?php endif; ?>
 
 <!-- LCP-critical CSS inlined; full stylesheets load async (non-render-blocking) -->
 <?php include __DIR__ . '/critical_lcp_style.php'; ?>
@@ -58,9 +64,13 @@ hw_defer_stylesheet('../assets/font/font_size.css');
 hw_defer_stylesheet('../assets/font/font_weight.css');
 hw_defer_stylesheet('../assets/font/line_height.css');
 hw_defer_stylesheet('../assets/css/style_hb.css');
-hw_defer_stylesheet('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
-hw_defer_stylesheet('https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css');
-hw_defer_stylesheet('https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css');
+if (hw_page_assets_flag('css', 'fontawesome_cdn')) {
+    hw_defer_stylesheet('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+}
+if (hw_page_assets_flag('css', 'owl')) {
+    hw_defer_stylesheet('https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css');
+    hw_defer_stylesheet('https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css');
+}
 ?> 
 
 <!-- Google tag (gtag.js) -->

@@ -271,6 +271,7 @@ nav
 .odiv_pathway,
 .odiv_wfgi,
 .odiv_microlearning,
+.odiv_teentalk,
 .ae_days {
   overflow: auto;
   scrollbar-width: thin;
@@ -280,6 +281,7 @@ nav
 .odiv_pathway:not(:hover),
 .odiv_wfgi:not(:hover),
 .odiv_microlearning:not(:hover),
+.odiv_teentalk:not(:hover),
 .ae_days:not(:hover) {
   scrollbar-color: transparent transparent;
 }
@@ -287,6 +289,7 @@ nav
 .odiv_pathway::-webkit-scrollbar,
 .odiv_wfgi::-webkit-scrollbar,
 .odiv_microlearning::-webkit-scrollbar,
+.odiv_teentalk::-webkit-scrollbar,
 .ae_days::-webkit-scrollbar {
   height: 2px;
   border-radius: 6px;
@@ -295,6 +298,7 @@ nav
 .odiv_pathway::-webkit-scrollbar-thumb,
 .odiv_wfgi::-webkit-scrollbar-thumb,
 .odiv_microlearning::-webkit-scrollbar-thumb,
+.odiv_teentalk::-webkit-scrollbar-thumb,
 .ae_days::-webkit-scrollbar-thumb {
   background-color: #16366D;
   border-radius: 6px;
@@ -303,6 +307,7 @@ nav
 .odiv_pathway::-webkit-scrollbar-track,
 .odiv_wfgi::-webkit-scrollbar-track,
 .odiv_microlearning::-webkit-scrollbar-track,
+.odiv_teentalk::-webkit-scrollbar-track,
 .ae_days::-webkit-scrollbar-track {
   background-color: #778899;
   border-radius: 10px;
@@ -339,6 +344,64 @@ nav
 }
 
 .ml_card_viewmore {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 85px;
+  height: 150px;
+  cursor: pointer;
+  padding-top: 0;
+  text-decoration: none;
+  vertical-align: top;
+  white-space: normal;
+  color: rgba(255, 255, 255, 0.75) !important;
+
+  span, i {
+    color: rgba(255, 255, 255, 0.75) !important;
+  }
+}
+
+// Teen Talk horizontal scroll carousel
+.odiv_teentalk {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 20px 20px 20px;
+}
+
+.tt_card {
+  display: inline-block;
+  width: 150px;
+  vertical-align: top;
+  margin-right: 12px;
+  cursor: pointer;
+  white-space: normal;
+  text-decoration: none;
+}
+
+.tt_card_img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.tt_card_play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.tt_card_title {
+  white-space: normal;
+}
+
+.tt_card_viewmore {
   display: inline-flex;
   flex-direction: row;
   align-items: center;

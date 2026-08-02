@@ -958,6 +958,10 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       this.YourTopicofChoice = [item];
       // Save user preference for Self Awareness
       this.update(item.id);
+      // Scroll the active tab to center
+      setTimeout(() => {
+        this.scrollToActiveList();
+      }, 500);
       return;
     }
 
@@ -1860,6 +1864,10 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       // Save user preference for Self Awareness
       this.update(item.id);
       console.log('Activated Self Awareness from hash');
+      // Scroll the active tab to center
+      setTimeout(() => {
+        this.scrollToActiveList();
+      }, 500);
       return;
     }
 
@@ -2285,5 +2293,12 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       return false;
     }
     return card.isFree === "0" || card.isFree === 0;
+  }
+
+  routeToCoach(){
+    this.logeventservice.logEvent("click_contact_a_coach");
+      this.router.navigate([SharedService.getprogramName(), 'coach']);
+
+
   }
 }
