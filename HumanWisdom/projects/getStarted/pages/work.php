@@ -115,21 +115,28 @@ life skills for work
           padding: 10px;
         }
 
-        /* Make testimonial cards same height on mobile */
-        .owl_testimonials .owl-carousel .owl-item {
+        /* Work testimonials — horizontal scroll cards on mobile (Figma 315×213) */
+        .owl_testimonials .owl-carousel.work-testimonials-native {
           display: flex !important;
-          height: auto !important;
+          flex-direction: row !important;
+          flex-wrap: nowrap !important;
+          overflow-x: auto !important;
+          gap: 20px;
         }
 
-        .owl_testimonials .owl-carousel .owl-item .item {
-          width: 100% !important;
-          height: auto !important;
+        .owl_testimonials .owl-carousel.work-testimonials-native > .item {
+          width: 315px !important;
+          max-width: 315px !important;
+          flex: 0 0 315px !important;
+          height: 213px !important;
         }
 
         .owl_testimonials .div_testimonials.work-testimonial-card {
-          height: auto !important;
-          min-height: 260px !important;
-          width: 100% !important;
+          width: 315px !important;
+          max-width: 315px !important;
+          height: 213px !important;
+          min-height: 213px !important;
+          max-height: 213px !important;
         }
 
         .owl-carousel .owl-stage {
@@ -147,9 +154,25 @@ life skills for work
       }
 
       .section-header.work-dyk-header,
-      .section-header.work-testimonials-header,
       .section-header.work-inspire-header {
         padding-bottom: 40px !important;
+      }
+
+      .section-header.work-testimonials-header {
+        padding-bottom: 24px !important;
+      }
+
+      section.work-testimonials-section {
+        padding-top: 60px !important;
+        padding-bottom: 60px !important;
+      }
+
+      section.work-dyk-section {
+        padding-bottom: 0 !important;
+      }
+
+      section.work-inspire-section {
+        padding-top: 0 !important;
       }
 
       .section-header.work-blog-header {
@@ -435,7 +458,7 @@ life skills for work
               <div class="row center_flex tcenter" data-aos="fade-up" data-aos-delay="100">
                 <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
                   <h2 class="mtb0px fs_30px fw_600 lh_120p fc_000000 work-testimonials-title">
-                    The HappierMe impact across organisations
+                    The HappierMe impact <br class="display_d_none">across organisations
                   </h2>
                 </div>
               </div>
@@ -930,8 +953,9 @@ life skills for work
             <div class="work-blog-footer">
               <a class="sap work-blog-more" href="https://happierme.app/adults/blogs">
                 <h4 class="mtb0px fs_18px fw_500 lh_150p td_underline">
-                  See all posts
+                  View all blogs
                 </h4>
+                <span class="chevron-pink"><span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span>
               </a>
               <div class="owl-theme mt10px work-blog-nav">
                 <div class="owl-controls">
