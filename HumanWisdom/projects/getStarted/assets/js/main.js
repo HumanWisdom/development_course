@@ -12,7 +12,12 @@
         }),
         $(document).ready(function () {
             $("#toggle").click(function () {
-                "View More" == $("#toggle").text() ? ($("#toggle").text("View Less"), $("#text").slideDown()) : ($("#toggle").text("View More"), $("#text").slideUp());
+                var $btn = $("#toggle");
+                /* blog_index uses .toggle-label + chevron — don't wipe HTML with .text() */
+                if ($btn.find(".toggle-label").length) {
+                    return;
+                }
+                "View More" == $btn.text() ? ($btn.text("View Less"), $("#text").slideDown()) : ($btn.text("View More"), $("#text").slideUp());
             });
         });
     let o = document.querySelectorAll("#navbar a");
