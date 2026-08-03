@@ -150,7 +150,7 @@ personal growth
                 <div class="frame-wrapper-2">
                   <div class="div-4">
                     <div class="div-65">
-                     <p class="p" style="color:rgba(255, 247, 230, 1) !important;text-align: left;line-height: 1.3;" >Think better.<br><span class="scrolling-words"><span class="scrolling-word">Live</span><span class="scrolling-word ">Feel</span><span class="scrolling-word">Sleep</span><span class="scrolling-word">Love</span><span class="scrolling-word">Work</span></span><span style="color:#ED7D6F"> better.</span></p>
+                     <p class="p" id="hw-website-title" style="color:rgba(255, 247, 230, 1) !important;text-align: left;line-height: 1.3;" >Think better.<br><span class="scrolling-words"><span class="scrolling-word">Live</span><span class="scrolling-word ">Feel</span><span class="scrolling-word">Sleep</span><span class="scrolling-word">Love</span><span class="scrolling-word">Work</span></span><span class="hero-title-accent" style="color:#ED7D6F"> better.</span></p>
                      
                     </div>
                     <p class="text-wrapper-4" id="hw-website-subtitle">

@@ -33,14 +33,18 @@ img { max-width: 100%; display: block; }
   padding-right: 40px;
 }
 
-/* Hero (Figma): headline 60px / coral accent line; subtitle 21px white.
+/* Hero (Figma desktop): title 60/600/130%; subtitle 21/400/150% max 500px; CTA 317×65.
    CMS (GetWebsiteTitle): wrap the second line in <span class="hero-title-accent">…</span> for the coral color. */
-.frame-wrapper.web_home_divlanding #hw-website-title {
+.frame-wrapper.web_home_divlanding #hw-website-title,
+.frame-wrapper.web_home_divlanding .div-65 .p {
+  font-family: "Poppins", Helvetica, sans-serif;
   font-size: 60px;
   line-height: 1.3;
   font-weight: 600;
   color: rgba(255, 247, 230, 1);
-  width: 400px;
+  width: auto;
+  max-width: 100%;
+  margin: 0;
 }
 .frame-wrapper.web_home_divlanding #hw-website-title .hero-title-accent {
   color: rgba(237, 125, 111, 1);
@@ -52,10 +56,12 @@ img { max-width: 100%; display: block; }
   color: rgba(237, 125, 111, 1) !important;
 }
 .frame-wrapper.web_home_divlanding #hw-website-subtitle {
+  font-family: "Poppins", Helvetica, sans-serif;
   font-size: 21px;
   font-weight: 400;
   line-height: 1.5;
   color: rgba(255, 247, 230, 1);
+  max-width: 500px;
   margin: 0;
 }
 .frame-wrapper.web_home_divlanding #hw-website-subtitle .subtitle-br-m { display: none; }
@@ -253,7 +259,8 @@ img { max-width: 100%; display: block; }
 }
 
 @media (min-width: 769px) {
-  .frame-wrapper.web_home_divlanding #hw-website-title {
+  .frame-wrapper.web_home_divlanding #hw-website-title,
+  .frame-wrapper.web_home_divlanding .div-65 .p {
     font-size: 60px !important;
     line-height: 1.3 !important;
     font-weight: 600 !important;
@@ -264,6 +271,18 @@ img { max-width: 100%; display: block; }
     line-height: 1.5 !important;
     font-weight: 400 !important;
     color: rgba(255, 247, 230, 1) !important;
+    max-width: 500px !important;
+  }
+  .web_home_divlanding .hero-try-free-link .start-your-free-wrapper {
+    width: 317px !important;
+    height: 65px !important;
+    padding: 18px 40px !important;
+    border-radius: 35px !important;
+  }
+  .web_home_divlanding .hero-try-free-link .text-wrapper-5 {
+    font-size: 21px !important;
+    font-weight: 600 !important;
+    line-height: 1.3 !important;
   }
 }
 
@@ -2722,6 +2741,27 @@ header a[href*="splash_options.php"] * {
   .orcha-strip { gap: 40px; padding: 30px 24px; }
   .orcha-strip-item span { max-width: 140px; }
   .orcha-strip-macmillan span { max-width: 203px; }
+  /* Stack Olly early so text doesn't left-align in a half-width column */
+  .frame-wrapper-3 .div-11 {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+  }
+  .frame-wrapper-3 .div-12,
+  .frame-wrapper-3 .div-5 {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: 480px;
+  }
+  .frame-wrapper-3 .introducing-olly-AI,
+  .frame-wrapper-3 .text-wrapper-8 {
+    text-align: center;
+  }
+  .frame-wrapper-3 #OllyChatBtn {
+    align-self: center;
+  }
 }
 
 /* ── 768 px: tablet ── */
@@ -2775,8 +2815,8 @@ header a[href*="splash_options.php"] * {
   /* Anchor must define width: inner .start-your-free-wrapper uses max-width:100% and
      would otherwise shrink-wrap wrong inside .div-3 (align-items:center). */
   .web_home_divlanding .hero-try-free-link {
-    width: 100%;
-    max-width: 317px;
+    width: 335px;
+    max-width: calc(100% - 40px);
     align-self: center;
     flex-shrink: 0;
     display: flex;
@@ -2786,35 +2826,51 @@ header a[href*="splash_options.php"] * {
     text-decoration: none;
   }
 
-  .p { font-size: 27px; font-weight: 600; text-align: center !important; }
-  .frame-wrapper.web_home_divlanding #hw-website-title {
-    font-size: 27px !important;
+  .p { font-size: 36px; font-weight: 600; text-align: center !important; }
+  .frame-wrapper.web_home_divlanding #hw-website-title,
+  .frame-wrapper.web_home_divlanding .div-65 .p {
+    font-size: 36px !important;
+    line-height: 1.3 !important;
+    font-weight: 600 !important;
+    text-align: center !important;
+    max-width: 335px;
+    width: 100%;
   }
   .frame-wrapper.web_home_divlanding #hw-website-subtitle {
-    font-size: 18px !important;
-    line-height: 1.5 !important;
-    margin-left: 20px;
-    margin-right: 20px;
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+    font-weight: 400 !important;
+    text-align: center !important;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 4px;
     margin-bottom: 4px;
-    max-width: 295px;
+    max-width: 335px;
+    width: 100%;
   }
   .frame-wrapper.web_home_divlanding #hw-website-subtitle .subtitle-br-m { display: inline; }
   .frame-wrapper.web_home_divlanding #hw-website-subtitle .subtitle-br-d { display: none; }
-  .text-wrapper-4 { font-size: 12px; font-weight: 400; line-height: 1.5; }
-  .text-wrapper-5 { font-size: 16px; }
+  .text-wrapper-4 { font-size: 12px; font-weight: 400; line-height: 1.4; }
+  .text-wrapper-5 { font-size: 15px; }
   .start-your-free-wrapper,
   .start-your-free-wrapper-2,
   .div-wrapper-4 { padding: 14px 32px; }
 
-  /* CTA button size (hero: Try HappierMe for free) */
+  /* CTA button size (hero: Try HappierMe for free) — Figma mobile 335×55 */
   .web_home_divlanding .hero-try-free-link .start-your-free-wrapper {
-    width: 100%;
-    max-width: none;
-    height: 48px;
-    border-radius: 24px;
-    padding: 0 20px !important;
-    gap: 12px;
+    width: 335px !important;
+    max-width: 100%;
+    height: 55px !important;
+    border-radius: 30px !important;
+    padding: 15px 30px !important;
+    gap: 10px;
+    box-sizing: border-box;
+  }
+
+  .web_home_divlanding .hero-try-free-link .text-wrapper-5 {
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    line-height: 1.3 !important;
   }
 
   /* Ensure rating stays centered on mobile */
@@ -2912,30 +2968,42 @@ header a[href*="splash_options.php"] * {
     margin: 0 auto;
   }
 
-  /* Olly */
+  /* Olly — same 335px column on every phone so wrap/alignment stay consistent */
   .frame-wrapper-3 {
-    padding: 48px 16px;
+    padding: 48px 20px;
     box-sizing: border-box;
   }
   .frame-wrapper-3 .div-11 {
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-align: center;
     gap: 18px;
     width: 100%;
-    max-width: 100%;
+    max-width: 335px;
+    margin-left: auto;
+    margin-right: auto;
   }
   .frame-wrapper-3 .div-12 {
     align-items: center;
     width: 100%;
-    max-width: 100%;
+    max-width: 335px;
     min-width: 0;
     flex: none;
+    margin-left: auto;
+    margin-right: auto;
   }
   .frame-wrapper-3 .div-5 {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     width: 100%;
+    max-width: 335px;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
+    gap: 12px;
+    box-sizing: border-box;
   }
   .frame-wrapper-3 .group-3 {
     width: clamp(160px, 50vw, 260px);
@@ -2947,20 +3015,27 @@ header a[href*="splash_options.php"] * {
   .frame-wrapper-3 .introducing-olly-AI {
     font-size: 24px !important;
     font-weight: 600;
-    text-align: center;
+    line-height: 140% !important;
+    text-align: center !important;
     width: 100%;
+    max-width: 335px;
+    margin: 0 auto;
+    box-sizing: border-box;
   }
   .frame-wrapper-3 .text-wrapper-8 {
-    font-size: 12px;
+    font-size: 12px !important;
     font-weight: 400;
-    text-align: center;
+    line-height: 150% !important;
+    text-align: center !important;
     width: 100%;
-    max-width: 100%;
+    max-width: 335px;
+    margin: 0 auto;
+    box-sizing: border-box;
   }
   .frame-wrapper-3 #OllyChatBtn {
     display: flex;
-    width: 335px;
-    max-width: 100%;
+    width: 100%;
+    max-width: 335px;
     margin-left: auto;
     margin-right: auto;
     align-self: center;
@@ -3416,11 +3491,12 @@ header a[href*="splash_options.php"] * {
 @media (max-width: 480px) {
   /* Hero */
   .frame-wrapper { padding: 36px 16px; }
-  .p { font-size: 27px; }
-  .frame-wrapper.web_home_divlanding #hw-website-title { font-size: 27px !important; }
+  .p { font-size: 36px; }
+  .frame-wrapper.web_home_divlanding #hw-website-title,
+  .frame-wrapper.web_home_divlanding .div-65 .p { font-size: 36px !important; }
   .text-wrapper-3 { font-size: 15px; }
-  .text-wrapper-4 { font-size: 16px; }
-  .frame-wrapper.web_home_divlanding #hw-website-subtitle { font-size: 16px !important; }
+  .text-wrapper-4 { font-size: 12px; }
+  .frame-wrapper.web_home_divlanding #hw-website-subtitle { font-size: 12px !important; line-height: 1.4 !important; }
   /* .new-app-adults-teen { width: clamp(150px, 70vw, 240px); } */
   .div-6 img { width: 28px !important; height: 32px !important; }
   /* Let tools panel size to content — fixed 600px + flex:1 on .tools-info caused a large gap under "Explore on app" */
@@ -3453,6 +3529,25 @@ header a[href*="splash_options.php"] * {
   .frame-wrapper-3 .introducing-olly-AI {
     font-size: 24px !important;
     font-weight: 600;
+    line-height: 140% !important;
+    text-align: center !important;
+    max-width: 335px;
+    margin: 0 auto;
+  }
+  .frame-wrapper-3 .text-wrapper-8 {
+    font-size: 12px !important;
+    line-height: 150% !important;
+    text-align: center !important;
+    max-width: 335px;
+    margin: 0 auto;
+  }
+  .frame-wrapper-3 .div-5,
+  .frame-wrapper-3 .div-11,
+  .frame-wrapper-3 .div-12,
+  .frame-wrapper-3 #OllyChatBtn {
+    max-width: 335px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   /* Video — Figma: 18px gap, 24px title (not 40px section gap) */
