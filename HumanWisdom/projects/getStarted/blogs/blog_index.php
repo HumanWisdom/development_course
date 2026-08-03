@@ -41,20 +41,60 @@ stress management
       margin-top: 20px;
     }
 
-    #toggle {
+    /* Match index.php .chevron-pink + .blog-more */
+    #toggle.blog-more .chevron-pink {
+      font-size: 12px;
+      color: #d7586b;
+      padding-top: 3px;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    #toggle.blog-more {
       background: none;
       border: none;
       cursor: pointer;
-      font-size: 18px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 16px;
       font-weight: 500;
       color: #d7586b;
       text-decoration: underline;
+      padding: 0;
     }
 
-    #toggle:hover,
-    #toggle:focus {
+    #toggle.blog-more:hover,
+    #toggle.blog-more:hover .chevron-pink,
+    #toggle.blog-more:hover .chevron-pink .bi {
       color: #803358 !important;
       text-decoration: underline !important;
+    }
+
+    #toggle.blog-more:active,
+    #toggle.blog-more:active .chevron-pink,
+    #toggle.blog-more:active .chevron-pink .bi {
+      color: #803358 !important;
+    }
+
+    /* Don't keep hover color after click (focus) — match index blog-more */
+    #toggle.blog-more:focus,
+    #toggle.blog-more:focus-visible {
+      outline: none;
+      color: #d7586b;
+    }
+
+    #toggle.blog-more:focus .chevron-pink,
+    #toggle.blog-more:focus .chevron-pink .bi,
+    #toggle.blog-more:focus-visible .chevron-pink,
+    #toggle.blog-more:focus-visible .chevron-pink .bi {
+      color: #d7586b;
+    }
+
+    #toggle.blog-more:focus:hover,
+    #toggle.blog-more:focus:hover .chevron-pink,
+    #toggle.blog-more:focus:hover .chevron-pink .bi {
+      color: #803358 !important;
     }
 
     /* Hero: clear stacked fixed headers */
@@ -114,10 +154,35 @@ stress management
       }
     }
 
-    @media (max-width: 767px) {
+    @media (max-width: 768px) {
 
       .blog-index-hero.hpt120px {
         margin-top: -4px !important;
+      }
+
+      /* Tighten space between View More and footer (default .dfooter margin-top: 100px) */
+      body.page-blog-index .dfooter {
+        margin-top: 40px !important;
+      }
+
+      body.page-blog-index .btn-container {
+        margin-top: 16px;
+        margin-bottom: 0;
+        height: auto;
+      }
+
+      body.page-blog-index main#main > section:last-of-type {
+        padding-bottom: 0;
+        margin-bottom: 0;
+      }
+
+      /* Blog card titles: 18px on mobile — beat section.hpt120px ~ main#main section h4 { 12px } */
+      body.page-blog-index section.hpt120px ~ main#main .blog_links h4,
+      body.page-blog-index section.hpt120px ~ main#main .blog_links h4.fs_18px,
+      body.page-blog-index section.hpt120px ~ main#main .blog_links a h4,
+      body.page-blog-index section.hpt120px ~ main#main section .blog_links h4.mt20px.mb10px.fs_18px {
+        font-size: 18px !important;
+        line-height: 140% !important;
       }
 
       /* Force White Plus/Minus Icons on Mobile Accordion - Override SVG from main.css */
@@ -1300,7 +1365,10 @@ stress management
             <div class="clearfix"></div>
 
           <div class="btn-container">
-            <button type="button" id="toggle">View More</button>
+            <button type="button" id="toggle" class="blog-more">
+              <span class="toggle-label">View More</span>
+              <span class="chevron-pink"><span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span>
+            </button>
           </div>
           <!-- <view less> -->
         </div>
@@ -1321,21 +1389,28 @@ stress management
   <script>
  $(document).ready(function () {
   let isExpanded = false;
-  
-  // Toggle button click handler
+  var toggleHtml = function (label) {
+    return '<span class="toggle-label">' + label + '</span>' +
+      '<span class="chevron-pink"><span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span>';
+  };
+
+  // Remove main.js #toggle handler — it uses .text() and strips the chevron
+  $('#toggle').off('click');
+
   $('#toggle').on('click', function(e) {
     e.preventDefault();
-    e.stopPropagation();
-    
+    e.stopImmediatePropagation();
+
     isExpanded = !isExpanded;
-    
+
     if (isExpanded) {
       $('#text').slideDown(300);
-      $('#toggle').text('View Less');
+      $(this).html(toggleHtml('View Less'));
     } else {
       $('#text').slideUp(300);
-      $('#toggle').text('View More');
+      $(this).html(toggleHtml('View More'));
     }
+    this.blur();
   });
 });
   </script>

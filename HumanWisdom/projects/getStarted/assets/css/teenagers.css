@@ -93,6 +93,16 @@ body.page-teenagers .teen-blog-wrap .blog-footer {
   padding-bottom: 6px;
   align-items: center;
 }
+
+/* Wide screens only (1400px+): center "View all blogs" — match index; keep desktop offset below 1400 */
+@media (min-width: 1400px) {
+  body.page-teenagers .teen-blog-wrap .blog-footer {
+    margin-left: 0;
+    justify-content: center;
+    gap: 0;
+    width: 100%;
+  }
+}
 body.page-teenagers .teen-video-wrap .youtube-player {
   width: 100%;
   max-width: 100%;
@@ -325,15 +335,34 @@ body.page-teenagers .owl_testimonials .teen-testimonials-footer .teen-testimonia
   align-items: center;
 }
 
-body.page-teenagers .owl_testimonials .teen-testimonials-footer .sap {
+body.page-teenagers .owl_testimonials .teen-testimonials-footer .sap,
+body.page-teenagers .owl_testimonials .teen-testimonials-footer .sap.teen-testimonials-more {
   position: static !important;
   right: auto !important;
   left: auto !important;
   width: auto !important;
+  max-width: 100%;
   margin: 0 !important;
-  display: flex !important;
+  display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
+  gap: 6px;
+  text-decoration: none !important;
+}
+
+body.page-teenagers .owl_testimonials .teen-testimonials-footer .sap h4,
+body.page-teenagers .owl_testimonials .teen-testimonials-footer .sap.teen-testimonials-more h4 {
+  margin: 0 !important;
+  width: auto !important;
+  flex: 0 0 auto !important;
+  display: inline !important;
+  text-decoration: underline;
+}
+
+body.page-teenagers .owl_testimonials .teen-testimonials-footer .sap .chevron-pink,
+body.page-teenagers .owl_testimonials .teen-testimonials-footer .sap .chevron-pink .bi {
+  margin: 0 !important;
+  flex: 0 0 auto !important;
 }
 
 body.page-teenagers .owl_testimonials .teen-testimonials-footer .owl-nav {
@@ -343,9 +372,86 @@ body.page-teenagers .owl_testimonials .teen-testimonials-footer .owl-nav {
 
 @media (min-width: 2080px) {
   body.page-teenagers .owl_testimonials > .owl-carousel > .owl-stage-outer {
-    margin-left: auto !important;
-    margin-right: auto !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
     overflow: hidden !important;
+    display: block !important;
+  }
+
+  body.page-teenagers .owl_testimonials .owl-carousel .owl-stage-outer {
+    overflow: hidden !important;
+    justify-content: flex-start !important;
+  }
+}
+
+/* Wide screens only (1400px+): exactly 3 full cards — no clipped peeks */
+@media (min-width: 1400px) {
+  body.page-teenagers .teen-testimonials-wrap {
+    max-width: 1340px !important;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  body.page-teenagers .owl_testimonials {
+    --teen-testimonial-row-width: 1340px;
+    --teen-testimonial-gap: 30px;
+    --teen-testimonial-card-width: calc((var(--teen-testimonial-row-width) - 2 * var(--teen-testimonial-gap)) / 3);
+    max-width: 1340px !important;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+  }
+
+  body.page-teenagers .owl_testimonials > .owl-carousel {
+    max-width: 1340px !important;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden !important;
+  }
+
+  body.page-teenagers .owl_testimonials > .owl-carousel > .owl-stage-outer {
+    width: 100% !important;
+    max-width: 1340px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    overflow: hidden !important;
+    display: block !important;
+  }
+
+  body.page-teenagers .owl_testimonials .owl-carousel .owl-stage {
+    left: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  body.page-teenagers .owl_testimonials .owl-carousel .owl-item {
+    margin-right: var(--teen-testimonial-gap) !important;
+    width: var(--teen-testimonial-card-width) !important;
+    max-width: var(--teen-testimonial-card-width) !important;
+    box-sizing: border-box;
+  }
+
+  body.page-teenagers .owl_testimonials .div_testimonialst.teen-testimonial-card {
+    width: var(--teen-testimonial-card-width) !important;
+    max-width: var(--teen-testimonial-card-width) !important;
+    height: 305px !important;
+  }
+
+  body.page-teenagers .owl_testimonials .owl-carousel .owl-item .item {
+    width: var(--teen-testimonial-card-width) !important;
+    max-width: var(--teen-testimonial-card-width) !important;
+  }
+
+  body.page-teenagers .owl_testimonials .teen-testimonials-footer {
+    justify-content: center;
+    width: 100%;
   }
 }
 
@@ -677,10 +783,15 @@ body.page-teenagers #div_subscription.frame-wrapper-9 {
   flex-wrap: wrap;   
 }
 
-/* Desktop — subscription section spacing */
+/* Desktop — subscription/description section spacing (no main.css section padding-top) */
+body.page-teenagers main#main > section.mt40px {
+  padding-top: 0 !important;
+}
+
 @media (min-width: 768px) {
   body.page-teenagers main#main > section.mt40px {
     margin-top: 100px !important;
+    padding-top: 0 !important;
   }
 }
 
@@ -1496,23 +1607,37 @@ body.page-teenagers #div_subscription.frame-wrapper-9 {
   }
 
   body.page-teenagers .sap,
-  body.page-teenagers .owl_testimonials .teen-testimonials-footer .sap {
+  body.page-teenagers .owl_testimonials .teen-testimonials-footer .sap,
+  body.page-teenagers .owl_testimonials .teen-testimonials-footer .sap.teen-testimonials-more,
+  body.page-teenagers a.sap.teen-testimonials-more[href*="testimonials"] {
     position: static !important;
     right: auto !important;
     left: auto !important;
-    width: 100% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    margin-top: 0 !important;
-    display: flex !important;
+    width: auto !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    display: inline-flex !important;
     justify-content: center !important;
     align-items: center !important;
+    gap: 6px !important;
     text-align: center !important;
   }
 
-  body.page-teenagers .sap h4 {
+  body.page-teenagers .sap h4,
+  body.page-teenagers .owl_testimonials .teen-testimonials-footer .sap h4,
+  body.page-teenagers .owl_testimonials .teen-testimonials-footer .sap.teen-testimonials-more h4,
+  body.page-teenagers a.sap.teen-testimonials-more h4 {
     text-align: center !important;
-    margin: 0 auto !important;
+    margin: 0 !important;
+    width: auto !important;
+    flex: 0 0 auto !important;
+    display: inline !important;
+  }
+
+  body.page-teenagers .owl_testimonials .teen-testimonials-footer .sap .chevron-pink,
+  body.page-teenagers .owl_testimonials .teen-testimonials-footer .sap .chevron-pink .bi {
+    margin: 0 !important;
+    flex: 0 0 auto !important;
   }
 
   /* FINAL: beat About-Us span{12px}; keep Figma 3 lines at 24px (no soft-wrap) */

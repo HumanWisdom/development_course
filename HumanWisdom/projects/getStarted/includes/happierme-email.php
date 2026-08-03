@@ -33,7 +33,7 @@
                     <div class="div_input">
                       <input type="text" class="form-control fc_01" id="company" name="company" placeholder="Company name">
                       <div class="fc_icons">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/web_form_user.svg" class="img-responsive" alt="">
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/website/star-website.svg" class="img-responsive" alt="">
                       </div>
                     </div>
                     <div class="div_input">
