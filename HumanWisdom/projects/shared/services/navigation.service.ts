@@ -355,7 +355,15 @@ export class NavigationService {
     }
     
     // Prevent loops: if the returned URL is the same as current or contains start-your-free-trial, don't use it
-    if (url != null && (url === this.router.url || url.includes('start-your-free-trial') || (this.router.url.includes('myprogram') && url.includes('payment')))) {
+    const isOnboardingFlowUrl = (u: string) =>
+      u.includes('start-your-free-trial') ||
+      u.includes('payment') ||
+      u.includes('free-trial') ||
+      u.includes('subscribe') ||
+      u.includes('add-to-cart') ||
+      u.includes('congratulation') ||
+      u.includes('congratulations');
+    if (url != null && (url === this.router.url || isOnboardingFlowUrl(url))) {
       // Reset context and fall through to fallback logic
       this.lastSource = null;
       localStorage.removeItem('lastNavSource');
@@ -370,6 +378,16 @@ export class NavigationService {
     const currentUrl = this.router.url;
     const segments = currentUrl.split('/');
     const lastSeg = segments[segments.length - 1];
+
+    // Subscription management: myprogram/manage-subscription -> myprogram -> Today
+    if (currentUrl.includes('/onboarding/myprogram/manage-subscription')) {
+      console.log("Fallback: Manage Subscription -> My Program");
+      return `/${prefix}/onboarding/myprogram`;
+    }
+    if (currentUrl.includes('/onboarding/myprogram')) {
+      console.log("Fallback: My Program -> Today");
+      return `/${prefix}/today`;
+    }
 
     // Explicit Context Fallbacks (Highest Priority on Empty History)
     // 5. Blogs: Blog article -> Blog listing -> Previous page
