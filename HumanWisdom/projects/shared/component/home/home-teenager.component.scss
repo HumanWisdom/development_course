@@ -744,3 +744,10 @@
 .fc_ffffff_0_7 {
     color: rgba(255, 255, 255, 0.7) !important;
 }
+
+/* ====== Crisis Popup: Teenager overlay blur override ====== */
+:host.teenager-theme .crisis-popup-overlay {
+  background-color: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
