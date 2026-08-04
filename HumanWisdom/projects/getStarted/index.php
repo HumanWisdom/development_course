@@ -3040,8 +3040,15 @@ personal growth
        <script>
  
     var words = document.querySelectorAll('.scrolling-word');
+  var container = document.querySelector('.scrolling-words');
   var current = 0;
   var timer;
+
+  function syncWordWidth(wordEl) {
+    if (!container || !wordEl) return;
+    var w = Math.ceil(wordEl.getBoundingClientRect().width || wordEl.offsetWidth || 0);
+    if (w > 0) container.style.width = w + 'px';
+  }
 
   function resetWords() {
     words.forEach(function(w) {
@@ -3055,6 +3062,7 @@ personal growth
   words[0].style.transform = '';
   words[0].style.opacity = '';
   words[0].classList.add('active');
+  syncWordWidth(words[0]);
   }
 
   function showNext() {
@@ -3075,6 +3083,7 @@ personal growth
     next.style.transition = 'none';
     next.style.transform = 'translateY(60%)';
     next.style.opacity = '0';
+    syncWordWidth(next);
 
     requestAnimationFrame(function() {
       requestAnimationFrame(function() {
@@ -3082,6 +3091,7 @@ personal growth
         next.style.transform = '';
         next.style.opacity = '';
         next.classList.add('active');
+        syncWordWidth(next);
       });
     });
   }
@@ -3098,6 +3108,10 @@ personal growth
     } else {
       clearInterval(timer);
     }
+  });
+
+  window.addEventListener('resize', function() {
+    if (words[current]) syncWordWidth(words[current]);
   });
 
   resetWords();
