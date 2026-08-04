@@ -89,8 +89,8 @@ transform: rotate(-360deg) scaleX(-1);
 //   background-color:#ffcd9cf7
 // }
 
-audio::-webkit-media-controls-play-button {
-background-color: #178da8 !important;
+::ng-deep audio::-webkit-media-controls-play-button {
+  background-color: #116a69 !important;
 border-radius: 15px;
 }
 
