@@ -107,11 +107,7 @@ To explore this, HappierMe conducted a LinkedIn poll with 1,695 professionals ac
                   
                 </h4>
 
-                <h4 class="mtb0px blog_desc">
-                  
-Just like athletes, coaches can benefit from building focus, awareness, and clarity in their thinking.
-
-
+                
 
                
 
@@ -181,7 +177,7 @@ AI is transforming the workplace, but it cannot replace the trust we build with 
 
                 </h4>
 
-                <h4 class="mtb0px blog_sub_title">
+                <h4 class="mtb0px blog_desc">
 Technology can process information.
 
 
@@ -329,7 +325,7 @@ Emotional resilience is not the absence of stress. It is the ability to recover,
                 <h4 class="mtb0px blog_desc">
 This ability helps people recover from setbacks, stay motivated, and continue performing under pressure.</h4>
 <h4 class="mtb0px blog_desc">
-Explore the  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/stress">Stress,</a>  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/fear-anxiety">Anxiety,</a> and  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/reactive-mind">Reactive Mind </a>modules in the HappierMe app to build emotional resilience.
+Explore the  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/stress">Stress</a>, <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/fear-anxiety">Anxiety</a>., and  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/reactive-mind">Reactive Mind</a> modules in the HappierMe app to build emotional resilience.
 
 </h4>
 
@@ -359,7 +355,7 @@ With it, we gain the freedom to respond more thoughtfully.
 
 </h4>
 <h4 class="mtb0px blog_desc">
-Explore the  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/explore#self-awareness">Self-Awareness </a>Exercises in the HappierMe app to begin understanding your own mind.</h4>
+Explore the  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/explore#self-awareness">Self-Awareness </a> Exercises in the HappierMe app to begin understanding your own mind.</h4>
 
 
                 <h4 class="mtb0px blog_sub_title">
