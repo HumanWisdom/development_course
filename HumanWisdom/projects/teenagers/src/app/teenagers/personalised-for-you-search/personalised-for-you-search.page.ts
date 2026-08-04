@@ -112,6 +112,29 @@ export class PersonalisedForYouSearchPage implements OnInit {
   public isSearchActive: boolean = false;
   public isFreeTrialEnable: boolean = false;
   public showLearnPopup: boolean = false;
+  public showCrisisPopup: boolean = false;
+
+  private readonly CRISIS_KEYWORDS: string[] = [
+    'suicide', 'suicidal', 'kill myself', 'end my life', "don't want to live",
+    'want to die', 'self-harm', 'self harm', 'cutting', 'hurting myself',
+    'overdose', "there's no point", "i can't go on", 'nothing will change',
+    'no way out', 'i give up', 'kms', "i'm done", 'i want to end it',
+    "life isn't worth it", 'i want to kill myself'
+  ];
+
+  private containsCrisisKeyword(text: string): boolean {
+    if (!text) return false;
+    const lower = text.toLowerCase().trim();
+    return this.CRISIS_KEYWORDS.some(keyword => lower.includes(keyword));
+  }
+
+  closeCrisisPopup(): void {
+    this.showCrisisPopup = false;
+    this.searchinp = '';
+    this.isSearchActive = false;
+    this.commonService.setSearchActive(false);
+    this.toggleBodyScroll(false);
+  }
 
 
   constructor(private route: Router, public router: Router, private aservice: TeenagersService,
@@ -480,6 +503,10 @@ export class PersonalisedForYouSearchPage implements OnInit {
     })
   }
   getAutoCompleteList(value) {
+    if (this.containsCrisisKeyword(value)) {
+      this.showCrisisPopup = true;
+      return;
+    }
     if (this.moduleList.length > 0) {
       if (value == null || value == "") {
         this.searchResult = this.moduleList;
@@ -508,6 +535,10 @@ export class PersonalisedForYouSearchPage implements OnInit {
   }
 
   getinp(event) {
+    if (this.containsCrisisKeyword(event)) {
+      this.showCrisisPopup = true;
+      return;
+    }
     this.isSearchActive = false;
     this.commonService.setSearchActive(false);
     this.toggleBodyScroll(false);

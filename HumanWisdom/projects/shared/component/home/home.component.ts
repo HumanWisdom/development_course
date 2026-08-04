@@ -155,6 +155,29 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   preference = '';  
   isHeaderHidden: boolean = false;
   showExplorePopup: boolean = false;
+  showCrisisPopup: boolean = false;
+
+  private readonly CRISIS_KEYWORDS: string[] = [
+    'suicide', 'suicidal', 'kill myself', 'end my life', "don't want to live",
+    'want to die', 'self-harm', 'self harm', 'cutting', 'hurting myself',
+    'overdose', "there's no point", "i can't go on", 'nothing will change',
+    'no way out', 'i give up', 'kms', "i'm done", 'i want to end it',
+    "life isn't worth it", 'i want to kill myself'
+  ];
+
+  private containsCrisisKeyword(text: string): boolean {
+    if (!text) return false;
+    const lower = text.toLowerCase().trim();
+    return this.CRISIS_KEYWORDS.some(keyword => lower.includes(keyword));
+  }
+
+  closeCrisisPopup(): void {
+    this.showCrisisPopup = false;
+    this.searchinp = '';
+    this.isSearchActive = false;
+    this.commonService.setSearchActive(false);
+    this.toggleBodyScroll(false);
+  }
   constructor(
     private router: Router,
     private commonService: CommonService,
@@ -1910,6 +1933,10 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
    * Get autocomplete list based on search input
    */
   getAutoCompleteList(value: string): void {
+    if (this.containsCrisisKeyword(value)) {
+      this.showCrisisPopup = true;
+      return;
+    }
     if (this.moduleList.length > 0) {
       if (value == null || value == "") {
         this.searchResult = this.moduleList;
@@ -1971,6 +1998,10 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
    * Navigate to search page when Enter is pressed or search result is clicked
    */
   getinp(searchTerm: string, fromDropdown: boolean = false): void {
+    if (this.containsCrisisKeyword(searchTerm)) {
+      this.showCrisisPopup = true;
+      return;
+    }
     this.isSearchActive = false;
     this.commonService.setSearchActive(false);
     if (searchTerm && searchTerm.trim() !== '') {

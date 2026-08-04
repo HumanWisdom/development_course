@@ -608,6 +608,31 @@
   </div>
 </div>
 
+<!-- Crisis Support Popup -->
+<div class="crisis-popup-overlay" *ngIf="showCrisisPopup" (click)="closeCrisisPopup()">
+  <div class="crisis-popup-container" (click)="$event.stopPropagation()">
+    <div class="crisis-popup-card" [class.crisis-popup-card--teens]="!isAdults">
+      <div class="crisis-popup-header" [class.crisis-popup-header--teens]="!isAdults">
+        <h2 class="crisis-popup-title">Urgent help available!</h2>
+      </div>
+      <div class="crisis-popup-content" [class.crisis-popup-content--teens]="!isAdults">
+        <p class="crisis-popup-body">If you are thinking of harming yourself, please call your local emergency number now.</p>
+        <p class="crisis-popup-numbers-label">COMMON EMERGENCY NUMBERS:</p>
+        <ul class="crisis-popup-numbers-list" [class.crisis-popup-numbers-list--teens]="!isAdults">
+          <li><strong>USA:</strong> <a href="tel:988">988</a></li>
+          <li><strong>UK/Ireland:</strong> <a href="tel:116123">116 123</a></li>
+          <li><strong>Canada:</strong> <a href="tel:988">988</a></li>
+          <li><strong>India:</strong> <a href="tel:14416">14416</a></li>
+          <li><strong>Australia:</strong> <a href="tel:131114">13 11 14</a></li>
+          <li><strong>New Zealand:</strong> <a href="tel:1737">1737</a></li>
+          <li><strong>South Africa:</strong> <a href="tel:0800567567">0800 567 567</a></li>
+        </ul>
+        <button class="crisis-popup-close-btn" [class.crisis-popup-close-btn--teens]="!isAdults" (click)="closeCrisisPopup()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <app-modal *ngIf="showModal" [title]="modalTitle" [content]="modalContent" [okText]="'Start your free trial'"
   [cancelText]="'Cancel'" [enableCancel]="true" [isFreeTrialEnable]="true"
   (closeEvent)="onModalClose($event)"></app-modal>
