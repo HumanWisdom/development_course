@@ -72,24 +72,6 @@ As AI becomes increasingly capable, one question matters more than ever:
 
                 </h4>
 
-                <!-- <h4 class="mtb0px blog_desc">
-From performance pressure to managing team dynamics, coaches face constant psychological demands.</h4> -->
-
-                <!-- <h4 class="mtb0px blog_desc">
-Developing mental toughness, clarity, and emotional resilience can help coaches lead better, make smarter decisions, and create a positive environment for their athletes.
-
-
-
-                </h4> -->
-
-                <!-- <h4 class="mtb0px blog_desc">
-Mental fitness is a skill, and like any skill, it can be trained.</h4> -->
-<!-- <h4 class="mtb0px blog_desc">
-Here are 10 powerful ways coaches can develop their mental fitness and perform at their best.</h4> -->
-
-
-
-
                 <h4 class="mtb0px blog_sub_title">
 Which human skills will matter most?
 
@@ -276,7 +258,7 @@ It also requires recognising when our assumptions, fears, or biases may be influ
                 
 
                 <h4 class="mtb0px blog_desc">
-Discover the <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/making-better-decisions">Decision Making </a>and <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/conditioning"> Conditioning </a>modules in the HappierMe app to develop clearer thinking.
+Discover the <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/making-better-decisions">Decision Making</a> and <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/conditioning">Conditioning</a> modules in the HappierMe app to develop clearer thinking.
 
 
 
@@ -325,7 +307,7 @@ Emotional resilience is not the absence of stress. It is the ability to recover,
                 <h4 class="mtb0px blog_desc">
 This ability helps people recover from setbacks, stay motivated, and continue performing under pressure.</h4>
 <h4 class="mtb0px blog_desc">
-Explore the  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/stress">Stress</a>, <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/fear-anxiety">Anxiety</a>., and  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/reactive-mind">Reactive Mind</a> modules in the HappierMe app to build emotional resilience.
+Explore the  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/stress">Stress,</a> <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/fear-anxiety">Anxiety,</a> and  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/reactive-mind"> Reactive Mind</a> modules in the HappierMe app to build emotional resilience.
 
 </h4>
 
@@ -355,7 +337,7 @@ With it, we gain the freedom to respond more thoughtfully.
 
 </h4>
 <h4 class="mtb0px blog_desc">
-Explore the  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/explore#self-awareness">Self-Awareness </a> Exercises in the HappierMe app to begin understanding your own mind.</h4>
+Explore the  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/explore#self-awareness">Self-Awareness</a> Exercises in the HappierMe app to begin understanding your own mind.</h4>
 
 
                 <h4 class="mtb0px blog_sub_title">
@@ -434,20 +416,7 @@ Join us as we build a future of prevention‑first wellbeing, where emotional in
 
 
 </h4>
-<!-- <h4 class="mtb0px blog_desc">
-To learn more visit                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/">
-happierme.app </a>or download the HappierMe app to explore it for free.
 
-</h4>
-
-<h4 class="mtb0px blog_desc">
-Follow us on                   <a class="blog_highlight_peach td_underline" href="https://linktr.ee/happierme.app">
-social media</a> for daily insights. Subscribe to our                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/pages/newsletter.php">
-newsletter </a>for fresh stories and updates.
-
-
-
-</h4> -->
 
 
 
