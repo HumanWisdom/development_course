@@ -13,7 +13,7 @@
                 <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
                   <a class="" (click)="transcript()">
                     <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/transcript_left.svg" class="img-responsive" alt=""> -->
-                    <h6 class="fs_15px fw_400 lh_140p fc_e58d82 underline">
+                    <h6 class="fs_15px fw_400 lh_140p  underline" [ngClass]="isAdults ? 'fc_D7586B' : 'fc_ee9596'">
                       Read text
                     </h6>
                   </a>
@@ -32,7 +32,7 @@
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0 mtb20px">
                   <audio id="aud1" controls controlsList="nodownload" #audio
-                   [ngClass]="[isAdults ? 'invert-controls' : '']">
+                    [ngClass]="[isAdults ? 'invert-controls' : '']">
                     <source [src]="audioLink" type="audio/mpeg">
                   </audio>
                 </div>
@@ -51,4 +51,5 @@
 </div>
 <!-- /page content -->
 
-<app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'" [content]="'You have reached your free limit. Start your free trial to Premium to  unlock full access to the app'"></app-modal>
+<app-modal *ngIf="enableAlert" (closeEvent)="getAlertcloseEvent($event)" [okText]="'Ok'"
+  [content]="'You have reached your free limit. Start your free trial to Premium to  unlock full access to the app'"></app-modal>
