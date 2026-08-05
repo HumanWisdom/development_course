@@ -684,8 +684,6 @@ nav {
   background: #FFE8BB;
   padding: 30px 30px 15px;
   display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .crisis-popup-title {
@@ -719,7 +717,7 @@ nav {
   font-size: 15px;
   line-height: 150%;
   color: #000000;
-  margin: 0 0 10px;
+  margin: 0 0 15px;
   letter-spacing: 0.3px;
 }
 
@@ -735,7 +733,7 @@ nav {
     font-weight: 400;
     line-height: 150%;
     color: #000000;
-    margin-bottom: 6px;
+    margin-bottom: 10px;
     list-style: none;
 
     &::marker {
@@ -784,15 +782,6 @@ nav {
   cursor: pointer;
   margin: 0;
   transition: opacity 0.2s ease, transform 0.15s ease;
-
-  &:hover {
-    opacity: 0.9;
-    transform: translateY(-1px);
-  }
-
-  &:active {
-    transform: translateY(0);
-  }
 
   &--teens {
     background: linear-gradient(180deg, #EE9596 0%, #F17071 100%);
