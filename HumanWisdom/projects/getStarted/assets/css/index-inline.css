@@ -46,7 +46,19 @@ img { max-width: 100%; display: block; }
   max-width: 100%;
   margin: 0;
 }
+/* Figma: "Think better." natural spacing; line-2 first word right-aligned in Think-width slot so "better." matches */
+.frame-wrapper.web_home_divlanding #hw-website-title .hero-title-verb {
+  white-space: nowrap;
+}
+.frame-wrapper.web_home_divlanding #hw-website-title .hero-title-better {
+  white-space: nowrap;
+  color: inherit;
+}
 .frame-wrapper.web_home_divlanding #hw-website-title .hero-title-accent {
+  white-space: nowrap;
+  color: rgba(237, 125, 111, 1);
+}
+.frame-wrapper.web_home_divlanding #hw-website-title .scrolling-word {
   color: rgba(237, 125, 111, 1);
 }
 .frame-wrapper.web_home_divlanding #hw-website-title:hover {
@@ -292,7 +304,46 @@ img { max-width: 100%; display: block; }
 
 /* .new-app-adults-teen { height: 480px; object-fit: contain; flex-shrink: 0; } */
 
-.div-3 {margin-top: -6px; display: flex; flex-direction: column; gap: 30px; flex: 1; min-width: 280px; max-width: 654px; }
+.div-3 {margin-top: -6px; display: flex; flex-direction: column; gap: 30px; flex: 1; min-width: 280px; max-width: 654px; align-items: flex-start; }
+
+/* Keep rating / title / CTA on one left edge (bootstrap cols add padding/float otherwise) */
+.web_home_divlanding .div-3 > [class*="col-"] {
+  width: 100% !important;
+  max-width: 100% !important;
+  float: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.web_home_divlanding .div-3 > .frame-wrapper-2,
+.web_home_divlanding .div-3 > .hero-try-free-link {
+  width: 100%;
+  max-width: 100%;
+  margin-left: 0;
+  align-self: flex-start;
+}
+
+/* Line-2 first word: same width as "Think", right-aligned so "better." lines up */
+.web_home_divlanding .scrolling-words {
+  display: inline-block !important;
+  position: relative;
+  vertical-align: bottom;
+  height: 1.3em;
+  overflow: hidden;
+  min-width: 0 !important;
+  text-align: right !important;
+  transition: none;
+}
+.web_home_divlanding .scrolling-word {
+  position: absolute !important;
+  left: auto !important;
+  right: 0 !important;
+  top: 0;
+  width: max-content !important;
+  white-space: nowrap;
+}
 
 /* rating */
 .p0        { padding: 0; }
@@ -350,7 +401,7 @@ p:hover {
 
 /* headline */
 .frame-wrapper-2 { width: 100%; }
-.div-4  { display: flex; flex-direction: column; gap: 24px; }
+.div-4  { display: flex; flex-direction: column; gap: 18px; }
 .div-5  { display: flex; flex-direction: column; gap: 16px; }
 
 
@@ -2838,7 +2889,7 @@ header a[href*="splash_options.php"] * {
   }
   .frame-wrapper.web_home_divlanding #hw-website-subtitle {
     font-size: 12px !important;
-    line-height: 1.4 !important;
+    line-height: 140% !important;
     font-weight: 400 !important;
     text-align: center !important;
     margin-left: auto;
@@ -2848,9 +2899,14 @@ header a[href*="splash_options.php"] * {
     max-width: 335px;
     width: 100%;
   }
-  .frame-wrapper.web_home_divlanding #hw-website-subtitle .subtitle-br-m { display: inline; }
-  .frame-wrapper.web_home_divlanding #hw-website-subtitle .subtitle-br-d { display: none; }
-  .text-wrapper-4 { font-size: 12px; font-weight: 400; line-height: 1.4; }
+  /* Figma mobile: hide mobile-only <br>s; keep break before "Build these" */
+  .frame-wrapper.web_home_divlanding #hw-website-subtitle .subtitle-br-m {
+    display: none !important;
+  }
+  .frame-wrapper.web_home_divlanding #hw-website-subtitle .subtitle-br-d {
+    display: inline !important;
+  }
+  .text-wrapper-4 { font-size: 12px; font-weight: 400; line-height: 140%; }
   .text-wrapper-5 { font-size: 15px; }
   .start-your-free-wrapper,
   .start-your-free-wrapper-2,
@@ -3496,7 +3552,7 @@ header a[href*="splash_options.php"] * {
   .frame-wrapper.web_home_divlanding .div-65 .p { font-size: 36px !important; }
   .text-wrapper-3 { font-size: 15px; }
   .text-wrapper-4 { font-size: 12px; }
-  .frame-wrapper.web_home_divlanding #hw-website-subtitle { font-size: 12px !important; line-height: 1.4 !important; }
+  .frame-wrapper.web_home_divlanding #hw-website-subtitle { font-size: 12px !important; line-height: 140% !important; }
   /* .new-app-adults-teen { width: clamp(150px, 70vw, 240px); } */
   .div-6 img { width: 28px !important; height: 32px !important; }
   /* Let tools panel size to content — fixed 600px + flex:1 on .tools-info caused a large gap under "Explore on app" */

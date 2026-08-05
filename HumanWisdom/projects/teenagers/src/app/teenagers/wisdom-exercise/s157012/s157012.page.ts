@@ -597,6 +597,20 @@ openHintModal() {
   }
 
   goBack() {
-    this.location.back();
+    const fromMicroLearningEnd = localStorage.getItem('fromMicroLearningEnd');
+    const microLearningEndUrl = localStorage.getItem('microLearningEndUrl');
+    if (fromMicroLearningEnd === 'true' && microLearningEndUrl) {
+      localStorage.removeItem('fromMicroLearningEnd');
+      localStorage.removeItem('microLearningEndUrl');
+      this.router.navigateByUrl(microLearningEndUrl);
+    } else {
+      // Navigate back to wherever the user came from (explore, today, etc.)
+      const navigatedFrom = localStorage.getItem('NaviagtedFrom');
+      if (navigatedFrom && navigatedFrom !== 'null') {
+        this.router.navigateByUrl(navigatedFrom);
+      } else {
+        this.router.navigate(['/teenagers/explore']);
+      }
+    }
   }
 }

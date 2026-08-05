@@ -34,7 +34,19 @@ img { max-width: 100%; display: block; }
   max-width: 100%;
   margin: 0;
 }
+/* Figma: "Think better." natural spacing; line-2 first word right-aligned in Think-width slot so "better." matches */
+.frame-wrapper.web_home_divlanding #hw-website-title .hero-title-verb {
+  white-space: nowrap;
+}
+.frame-wrapper.web_home_divlanding #hw-website-title .hero-title-better {
+  white-space: nowrap;
+  color: inherit;
+}
 .frame-wrapper.web_home_divlanding #hw-website-title .hero-title-accent {
+  white-space: nowrap;
+  color: rgba(237, 125, 111, 1);
+}
+.frame-wrapper.web_home_divlanding #hw-website-title .scrolling-word {
   color: rgba(237, 125, 111, 1);
 }
 .frame-wrapper.web_home_divlanding #hw-website-subtitle {
@@ -87,6 +99,16 @@ img { max-width: 100%; display: block; }
   flex: 1;
   min-width: 280px;
   max-width: 654px;
+  align-items: flex-start;
+}
+.web_home_divlanding .div-3 > [class*="col-"] {
+  width: 100% !important;
+  max-width: 100% !important;
+  float: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 .p0 { padding: 0; }
 .mtb0px { margin-top: 0; margin-bottom: 0; }
@@ -187,13 +209,19 @@ img { max-width: 100%; display: block; }
   }
   .frame-wrapper.web_home_divlanding #hw-website-subtitle {
     font-size: 12px !important;
-    line-height: 1.4 !important;
+    line-height: 140% !important;
     font-weight: 400 !important;
     text-align: center !important;
     max-width: 335px;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
+  }
+  .frame-wrapper.web_home_divlanding #hw-website-subtitle .subtitle-br-m {
+    display: none !important;
+  }
+  .frame-wrapper.web_home_divlanding #hw-website-subtitle .subtitle-br-d {
+    display: inline !important;
   }
   .web_home_divlanding .hero-try-free-link {
     width: 335px;
@@ -221,6 +249,6 @@ img { max-width: 100%; display: block; }
   .frame-wrapper { padding: 36px 16px; }
   .frame-wrapper.web_home_divlanding #hw-website-title,
   .frame-wrapper.web_home_divlanding .div-65 .p { font-size: 36px !important; }
-  .frame-wrapper.web_home_divlanding #hw-website-subtitle { font-size: 12px !important; line-height: 1.4 !important; }
+  .frame-wrapper.web_home_divlanding #hw-website-subtitle { font-size: 12px !important; line-height: 140% !important; }
   /* .new-app-adults-teen { width: clamp(150px, 70vw, 240px); } */
 }

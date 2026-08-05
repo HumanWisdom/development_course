@@ -32,6 +32,29 @@
   }
 }
 
+/* Wide screen: shrink photo column so text sits closer */
+@media (min-width: 768px) {
+  .toc_adiv_03 a .center_flex > [class*="col-lg-3"],
+  .toc_adiv_03 a .center_flex > [class*="col-md-3"],
+  .toc_adiv_03 a .center_flex > [class*="col-sm-3"],
+  .toc_adiv_03 a .center_flex > [class*="col-xs-3"] {
+    width: auto;
+    flex: 0 0 auto;
+    max-width: none;
+  }
+
+  .toc_adiv_03 a .center_flex > [class*="col-lg-9"],
+  .toc_adiv_03 a .center_flex > [class*="col-md-9"],
+  .toc_adiv_03 a .center_flex > [class*="col-sm-9"],
+  .toc_adiv_03 a .center_flex > [class*="col-xs-9"] {
+    flex: 1 1 0;
+    width: auto;
+    max-width: none;
+    padding-left: 12px !important;
+    margin-left: 0 !important;
+  }
+}
+
 .v3_ta_coach {
     width: 100%;
     height: auto!important;

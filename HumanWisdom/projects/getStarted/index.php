@@ -150,7 +150,7 @@ personal growth
                 <div class="frame-wrapper-2">
                   <div class="div-4">
                     <div class="div-65">
-                     <p class="p" id="hw-website-title" style="color:rgba(255, 247, 230, 1) !important;text-align: left;line-height: 1.3;" >Think better.<br><span class="scrolling-words"><span class="scrolling-word">Live</span><span class="scrolling-word ">Feel</span><span class="scrolling-word">Sleep</span><span class="scrolling-word">Love</span><span class="scrolling-word">Work</span></span><span class="hero-title-accent" style="color:#ED7D6F"> better.</span></p>
+                     <p class="p" id="hw-website-title" style="color:rgba(255, 247, 230, 1) !important;text-align: left;line-height: 1.3;" ><span class="hero-title-verb">Think</span><span class="hero-title-better">&nbsp;better.</span><br><span class="scrolling-words"><span class="scrolling-word">Live</span><span class="scrolling-word">Feel</span><span class="scrolling-word">Sleep</span><span class="scrolling-word">Love</span><span class="scrolling-word">Work</span></span><span class="hero-title-accent">&nbsp;better.</span></p>
                      
                     </div>
                     <p class="text-wrapper-4" id="hw-website-subtitle">
@@ -3040,10 +3040,21 @@ personal growth
        <script>
  
     var words = document.querySelectorAll('.scrolling-word');
+  var container = document.querySelector('.scrolling-words');
   var current = 0;
   var timer;
 
+  /* Slot width = "Think" only, so "Think better." keeps normal spacing; line-2 words right-align in that slot */
+  function lockVerbColumnWidth() {
+    if (!container) return;
+    var verbEl = document.querySelector('#hw-website-title .hero-title-verb');
+    if (!verbEl) return;
+    var thinkW = Math.ceil(verbEl.getBoundingClientRect().width || verbEl.offsetWidth || 0);
+    if (thinkW > 0) container.style.width = thinkW + 'px';
+  }
+
   function resetWords() {
+    if (!words.length) return;
     words.forEach(function(w) {
     w.classList.remove('active', 'exit');
     w.style.transition = 'none';
@@ -3055,6 +3066,7 @@ personal growth
   words[0].style.transform = '';
   words[0].style.opacity = '';
   words[0].classList.add('active');
+  lockVerbColumnWidth();
   }
 
   function showNext() {
@@ -3099,6 +3111,14 @@ personal growth
       clearInterval(timer);
     }
   });
+
+  window.addEventListener('resize', function() {
+    lockVerbColumnWidth();
+  });
+
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(lockVerbColumnWidth);
+  }
 
   resetWords();
   startTimer();
