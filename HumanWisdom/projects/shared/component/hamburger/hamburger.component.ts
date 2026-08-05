@@ -32,6 +32,7 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
   supportsPassiveEventListeners = supportsPassiveEventListeners();
   supportsScrollBehavior = supportsScrollBehavior();
   isPartner: any = "0";
+  //  @Input() dash = false;
   isloggedIn = false;
   name = "";
   roleid = 0;
