@@ -742,7 +742,7 @@ nav {
 }
 
 .crisis-popup-card {
-  border-radius: 16px;
+  border-radius: 10px;
   width: 100%;
   overflow: hidden;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
@@ -750,7 +750,7 @@ nav {
 
 .crisis-popup-header {
   background: #FFE8BB;
-  padding: 20px 30px;
+  padding: 30px 30px 15px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -758,8 +758,8 @@ nav {
 
 .crisis-popup-title {
   font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  font-size: 20px;
+  font-weight: 600;
+  font-size: 21px;
   line-height: 150%;
   text-align: center;
   color: #000000;
@@ -767,8 +767,9 @@ nav {
 }
 
 .crisis-popup-content {
-  background: #FFF7E6;
-  padding: 24px 30px 30px;
+  background: #FFE8BB;
+  padding: 0px 30px 24px;
+
 }
 
 .crisis-popup-body {
@@ -776,14 +777,14 @@ nav {
   font-weight: 400;
   font-size: 15px;
   line-height: 150%;
-  color: #000000BF;
-  margin: 0 0 16px;
+  color: #000000;
+  margin: 0 0 15px;
 }
 
 .crisis-popup-numbers-label {
   font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  font-size: 14px;
+  font-weight: 600;
+  font-size: 15px;
   line-height: 150%;
   color: #000000;
   margin: 0 0 10px;
@@ -792,6 +793,7 @@ nav {
 
 .crisis-popup-numbers-list {
   list-style: none;
+  list-style-type: none;
   padding: 0;
   margin: 0 0 24px;
 
@@ -800,8 +802,14 @@ nav {
     font-size: 15px;
     font-weight: 400;
     line-height: 150%;
-    color: #000000BF;
+    color: #000000;
     margin-bottom: 6px;
+    list-style: none;
+
+    &::marker {
+      content: none;
+      display: none;
+    }
 
     strong {
       font-weight: 600;
@@ -809,9 +817,21 @@ nav {
     }
 
     a {
-      color: #000000BF;
+      color: #000000;
       text-decoration: underline;
       text-underline-offset: 2px;
+    }
+  }
+
+  &--teens li {
+    color: #ffffff;
+
+    strong {
+      color: #ffffff;
+    }
+
+    a {
+      color: #ffffff;
     }
   }
 }
@@ -840,5 +860,9 @@ nav {
 
   &:active {
     transform: translateY(0);
+  }
+
+  &--teens {
+    background: linear-gradient(180deg, #EE9596 0%, #F17071 100%);
   }
 }
