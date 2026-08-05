@@ -34,7 +34,19 @@ img { max-width: 100%; display: block; }
   max-width: 100%;
   margin: 0;
 }
+/* Figma: "Think better." natural spacing; line-2 first word right-aligned in Think-width slot so "better." matches */
+.frame-wrapper.web_home_divlanding #hw-website-title .hero-title-verb {
+  white-space: nowrap;
+}
+.frame-wrapper.web_home_divlanding #hw-website-title .hero-title-better {
+  white-space: nowrap;
+  color: inherit;
+}
 .frame-wrapper.web_home_divlanding #hw-website-title .hero-title-accent {
+  white-space: nowrap;
+  color: rgba(237, 125, 111, 1);
+}
+.frame-wrapper.web_home_divlanding #hw-website-title .scrolling-word {
   color: rgba(237, 125, 111, 1);
 }
 .frame-wrapper.web_home_divlanding #hw-website-subtitle {
@@ -205,8 +217,11 @@ img { max-width: 100%; display: block; }
     margin-left: auto;
     margin-right: auto;
   }
-  .frame-wrapper.web_home_divlanding #hw-website-subtitle br {
+  .frame-wrapper.web_home_divlanding #hw-website-subtitle .subtitle-br-m {
     display: none !important;
+  }
+  .frame-wrapper.web_home_divlanding #hw-website-subtitle .subtitle-br-d {
+    display: inline !important;
   }
   .web_home_divlanding .hero-try-free-link {
     width: 335px;

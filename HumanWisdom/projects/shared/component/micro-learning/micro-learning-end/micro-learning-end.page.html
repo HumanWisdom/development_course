@@ -129,7 +129,8 @@
         <!-- Pagination and Navigation Footer (only for standalone page) -->
         <div class="mc_footer_container" *ngIf="!isSubComponent">
           <div class="row center_flex">
-            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 col_cw p0">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 col_cw p0"
+              [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
               <div class="mc_footer_section" [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
                 <div class="mc_end_footer_nav">
                   <a class="nav_btn active" (click)="goBack()">Prev.</a>
