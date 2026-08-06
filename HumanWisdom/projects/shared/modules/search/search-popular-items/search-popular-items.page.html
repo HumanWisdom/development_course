@@ -1,5 +1,5 @@
 <!-- top navigation -->
-<app-feature-header title="Search"></app-feature-header>
+<!-- <app-feature-header title="Search"></app-feature-header> -->
 <!-- /top navigation -->
 
 <app-bg-video></app-bg-video>
@@ -154,7 +154,7 @@
                         <div class="row p10px">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                             <div class="col-md-4 col-sm-4 col-xs-4 p0 prelative">
-                                <img src="{{item.ImgUrl}}" alt="" class="p0 session_img session_imgnew" />
+                              <img src="{{item.ImgUrl}}" alt="" class="p0 session_img session_imgnew" />
                             </div>
 
                             <div class="col-md-7 col-sm-7 col-xs-7 p0">
@@ -171,7 +171,7 @@
                                 [ngClass]="{'ws-status-both': item?.isRead === '1' && !isSubscriber && item.isFree === '0'}"
                                 class="img-responsive ws-read-icon" />
 
-                                 <img *ngIf=" !isAdults &&item?.isRead === '1'"
+                              <img *ngIf=" !isAdults &&item?.isRead === '1'"
                                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isread_teen.svg"
                                 [ngClass]="{'ws-status-both': item?.isRead === '1' && !isSubscriber && item.isFree === '0'}"
                                 class="img-responsive ws-read-icon" />
@@ -274,13 +274,13 @@
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                             <div class="col-md-4 col-sm-4 col-xs-4 p0">
                               <div class="prelative list-thumb-media">
-                              <img src="{{item.ImgUrl}}" alt="" class="session_imgnew img-responsive img_podcast_01">
-                              <img
-                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_border_0.svg"
-                                alt="" class="p0 session_img_play" *ngIf="!isAdults">
+                                <img src="{{item.ImgUrl}}" alt="" class="session_imgnew img-responsive img_podcast_01">
+                                <img
+                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_border_0.svg"
+                                  alt="" class="p0 session_img_play" *ngIf="!isAdults">
 
-                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg  " alt=""
-                                class="p0" class="p0 session_img_play" *ngIf="isAdults">
+                                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg  " alt=""
+                                  class="p0" class="p0 session_img_play" *ngIf="isAdults">
                               </div>
                             </div>
 
@@ -317,11 +317,11 @@
                               <img *ngIf="isAdults && item?.isRead === '1'"
                                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
                                 [ngClass]="{'ws-status-both': item?.isRead === '1' && !isSubscriber && item.isFree === '0'}"
-                                class="img-responsive ws-read-icon" >
-                                 <img *ngIf="!isAdults && item?.isRead === '1'"
+                                class="img-responsive ws-read-icon">
+                              <img *ngIf="!isAdults && item?.isRead === '1'"
                                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isread_teen.svg"
                                 [ngClass]="{'ws-status-both': item?.isRead === '1' && !isSubscriber && item.isFree === '0'}"
-                                class="img-responsive ws-read-icon" >
+                                class="img-responsive ws-read-icon">
 
                               <!-- NON-SUBSCRIBER BLOCK -->
                               <ng-container *ngIf="!isSubscriber">
@@ -430,9 +430,9 @@
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                             <div class="col-md-4 col-sm-4 col-xs-4 p0">
                               <div class="prelative list-thumb-media">
-                              <img [src]="getPodcastImage(item.PodcastID)" alt=""
-                                class="session_imgnew img-responsive img_podcast_01">
-                              <img class="session_img_play" [src]="
+                                <img [src]="getPodcastImage(item.PodcastID)" alt=""
+                                  class="session_imgnew img-responsive img_podcast_01">
+                                <img class="session_img_play" [src]="
                                 isAdults
                                   ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audio_play.svg'
                                   : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/audio_play.svg'
@@ -459,7 +459,7 @@
                                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
                                 [ngClass]="{'ws-status-both': item?.isRead === '1' && !isSubscriber && item.isFree === '0'}"
                                 class="img-responsive ws-read-icon" />
-                                 <img *ngIf=" !isAdults && item?.isRead === '1'"
+                              <img *ngIf=" !isAdults && item?.isRead === '1'"
                                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isread_teen.svg"
                                 [ngClass]="{'ws-status-both': item?.isRead === '1' && !isSubscriber && item.isFree === '0'}"
                                 class="img-responsive ws-read-icon" />
@@ -570,8 +570,8 @@
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                             <div class="col-md-4 col-sm-4 col-xs-4 p0">
                               <div class="prelative list-thumb-media">
-                              <img src="{{item.ImgUrl}}" alt="" class="session_imgnew img-responsive img_podcast_01">
-                              <img class="session_img_play" [src]="
+                                <img src="{{item.ImgUrl}}" alt="" class="session_imgnew img-responsive img_podcast_01">
+                                <img class="session_img_play" [src]="
                                 isAdults
                                   ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audio_play.svg'
                                   : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_border_0.svg'
@@ -598,7 +598,7 @@
                                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
                                 [ngClass]="{'ws-status-both': item?.isRead === '1' && !isSubscriber && item.isFree === '0'}"
                                 class="img-responsive ws-read-icon" />
-                                <img *ngIf=" !isAdults && item?.isRead === '1'"
+                              <img *ngIf=" !isAdults && item?.isRead === '1'"
                                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isread_teen.svg"
                                 [ngClass]="{'ws-status-both': item?.isRead === '1' && !isSubscriber && item.isFree === '0'}"
                                 class="img-responsive ws-read-icon" />
@@ -687,7 +687,7 @@
 
 
                     <!-- /AudioMeditations -->
-                    
+
                     <!-- soundscapes -->
                     <div class="row mt30px mb15px">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -709,8 +709,8 @@
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                             <div class="col-md-4 col-sm-4 col-xs-4 p0">
                               <div class="prelative list-thumb-media">
-                              <img [src]="item.ImageUrl" alt="" class="session_imgnew img-responsive img_podcast_01">
-                              <img class="session_img_play" [src]="
+                                <img [src]="item.ImageUrl" alt="" class="session_imgnew img-responsive img_podcast_01">
+                                <img class="session_img_play" [src]="
                                 isAdults
                                   ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audio_play.svg'
                                   : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_border_0.svg'
@@ -737,7 +737,7 @@
                                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
                                 [ngClass]="{'ws-status-both': item?.isRead === '1' && !isSubscriber && item.isFree === '0'}"
                                 class="img-responsive ws-read-icon" />
-                                <img *ngIf=" !isAdults && item?.isRead === '1'"
+                              <img *ngIf=" !isAdults && item?.isRead === '1'"
                                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isread_teen.svg"
                                 [ngClass]="{'ws-status-both': item?.isRead === '1' && !isSubscriber && item.isFree === '0'}"
                                 class="img-responsive ws-read-icon" />
@@ -746,7 +746,8 @@
                               <ng-container *ngIf="!isSubscriber">
 
                                 <!-- EMPTY DIV only when NOT read & isFree = 1 -->
-                                <div *ngIf="item?.isRead !== '1' && (item.isFree === '1' || item.SoundscapeID == 1)"></div>
+                                <div *ngIf="item?.isRead !== '1' && (item.isFree === '1' || item.SoundscapeID == 1)">
+                                </div>
 
                                 <!-- LOCK only when NOT read & isFree = 0 -->
                                 <img *ngIf="!isSubscriber && item.isFree !== '1' && item.SoundscapeID > 1" [src]="isAdults 
@@ -848,7 +849,8 @@
                           <!-- <a href="https://humanwisdom.me/wisdom-stories/view-stories?sId={{item.ScenarioID}}"> -->
                           <a (click)="viewStory(item)">
                             <div class="row box_v3_04a">
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"
+                                style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
 
                                 <div class="row">
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 prelative">
@@ -856,30 +858,35 @@
                                   </div>
                                 </div>
 
-                                <div class="row">
-                                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                    <h4 class="mt10px mb10px fw_500 fs_12px lh_130p"
-                                      [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                                <div class="row center_flex"
+                                  style="align-items: flex-end; margin-top: 10px; margin-bottom: 5px;">
+                                  <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0"
+                                    style="padding-right: 4px !important;">
+                                    <h4 class="mt0px mb0px fw_500 fs_12px lh_130p"
+                                      [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" style="word-break: break-word;">
                                       {{item.Title}}
                                     </h4>
+                                  </div>
+                                  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright text-end"
+                                    style="display: flex; justify-content: flex-end; align-items: flex-end;">
+                                    <img *ngIf="isAdults && item?.isRead === '1'"
+                                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
+                                      class="ls-read-icon" />
+
+                                    <img *ngIf="!isAdults && item?.isRead === '1'"
+                                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isread_teen.svg"
+                                      class="ls-read-icon" />
+
+                                    <!-- LOCK: only for non-subscriber AND isFree = 0 AND not read -->
+                                    <img *ngIf="!isSubscriber && item.isFree === '0'" [src]="isAdults 
+                                          ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg'
+                                          : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg'"
+                                      class="ls-lock-icon" />
                                   </div>
                                 </div>
 
                               </div>
                             </div>
-                            <img *ngIf="isAdults && item?.isRead === '1'"
-                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
-                              class="ls-read-icon" />
-
-                               <img *ngIf="!isAdults && item?.isRead === '1'"
-                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isread_teen.svg"
-                              class="ls-read-icon" />
-
-                            <!-- LOCK: only for non-subscriber AND isFree = 0 AND not read -->
-                            <img *ngIf="!isSubscriber && item.isFree === '0'" [src]="isAdults 
-                                  ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg'
-                                  : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg'"
-                              class="ls-lock-icon" />
                           </a>
                         </div>
 
@@ -954,7 +961,8 @@
                         </h4>
 
                         <h4 class="mt5px mb0px fs_12px fw_400 lh_150p "
-                          [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'" *ngIf="searchData.BlogRes.length==0 && !isLoading">
+                          [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'"
+                          *ngIf="searchData.BlogRes.length==0 && !isLoading">
                           No Record Found
                         </h4>
                       </div>
@@ -973,7 +981,7 @@
                               </div>
                             </div>
 
-                            <div class="row mt15px">
+                            <div class="row mtb15px">
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flexai_baseline">
                                 <div class="col-md-10 col-sm-10 col-xs-10 p0">
                                   <h4 class="mtb0px fs_18px fw_600 lh_150p ellipsis"
@@ -986,21 +994,21 @@
                                     src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
                                     class="mtb0px fs_15px fw_600 lh_150p blog_tick ml5px" alt="read" />
 
-                                     <img *ngIf=" !isAdults && item?.isRead === '1'"
+                                  <img *ngIf=" !isAdults && item?.isRead === '1'"
                                     src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isread_teen.svg"
                                     class="mtb0px fs_15px fw_600 lh_150p blog_tick ml5px" alt="read" />
                                 </div>
                               </div>
                             </div>
 
-                            <div class="row mt10px mb15px">
+                            <!-- <div class="row mt10px mb15px">
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                 <h4 class="mtb0px fs_12px fw_400 lh_150p  limit_characters"
                                   [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                                   <span>{{stripTags(item['Story'])}}</span>
                                 </h4>
                               </div>
-                            </div>
+                            </div> -->
 
                             <div class="row">
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
@@ -1228,13 +1236,13 @@
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                             <div class="col-md-4 col-sm-4 col-xs-4 p0">
                               <div class="prelative list-thumb-media">
-                              <img src="{{item.ImgUrl}}" alt="" class="session_imgnew img-responsive img_podcast_01">
-                              <img
-                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_border_0.svg"
-                                alt="" class="p0 session_img_play" *ngIf="!isAdults">
+                                <img src="{{item.ImgUrl}}" alt="" class="session_imgnew img-responsive img_podcast_01">
+                                <img
+                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_border_0.svg"
+                                  alt="" class="p0 session_img_play" *ngIf="!isAdults">
 
-                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg  " alt=""
-                                class="p0" class="p0 session_img_play" *ngIf="isAdults">
+                                <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg  " alt=""
+                                  class="p0" class="p0 session_img_play" *ngIf="isAdults">
                               </div>
                             </div>
 
@@ -1256,12 +1264,12 @@
                               <img *ngIf="isAdults &&item?.isRead === '1'"
                                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
                                 [ngClass]="{'ws-status-both': item?.isRead === '1' && !isSubscriber && item.isFree === '0'}"
-                                class="img-responsive ws-read-icon" >
+                                class="img-responsive ws-read-icon">
 
-                                 <img *ngIf="!isAdults && item?.isRead === '1'"
+                              <img *ngIf="!isAdults && item?.isRead === '1'"
                                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isread_teen.svg"
                                 [ngClass]="{'ws-status-both': item?.isRead === '1' && !isSubscriber && item.isFree === '0'}"
-                                class="img-responsive ws-read-icon" >
+                                class="img-responsive ws-read-icon">
 
                               <!-- NON-SUBSCRIBER BLOCK -->
                               <ng-container *ngIf="!isSubscriber">
@@ -1380,7 +1388,7 @@
                               <img *ngIf="isAdults && item?.isRead === '1'"
                                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg"
                                 class="img-responsive ws-read-icon" />
-                                <img *ngIf="!isAdults && item?.isRead === '1'"
+                              <img *ngIf="!isAdults && item?.isRead === '1'"
                                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isread_teen.svg"
                                 class="img-responsive ws-read-icon" />
                             </div>
@@ -1430,5 +1438,5 @@
   (closeEvent)="onModalClose($event)"></app-modal>
 
 <!-- footer  -->
-<app-bottom-navigation></app-bottom-navigation>
+<!-- <app-bottom-navigation></app-bottom-navigation> -->
 <!-- /footer -->
