@@ -40,7 +40,7 @@
                     (keydown.enter)="backToPreviousSearch()"
                     class="fa fa-arrow-left form-control-feedback left pfy_search_icon pointer-events-auto"
                     aria-hidden="true" style="pointer-events: all !important; cursor: pointer !important;"></span>
-                  <span *ngIf="search!=''" (click)="clearSearch()" tabindex="0" (keydown.enter)="clearSearch()"
+                  <span *ngIf="search!=''" (click)="goBack()" tabindex="0" (keydown.enter)="goBack()"
                     class="fa fa-search form-control-feedback ad_sclose_icon ad_sclose_icon_ext"
                     aria-hidden="true"></span>
                 </div>
