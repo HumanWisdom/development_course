@@ -2,23 +2,15 @@
 <html lang="en">
 
   <head>
+    <title>Employee Wellbeing, Life Skills & Leadership | HappierMe</title>
+    <meta name="title"  content="Employee Wellbeing, Life Skills & Leadership | HappierMe">
+    <meta name="description" content="Improve employee wellbeing and build life skills with HappierMe. Develop emotional intelligence, communication and stronger workplace relationships.">
+    <meta name="keywords" content="employee wellbeing, workplace wellbeing, workplace mental health, emotional intelligence at work, leadership skills, communication skills, resilience at work, employee resilience, workplace culture, stress management at work, life skills for work">
+
+
     <meta property="og:title" id="tag1" content="Employee Wellbeing, Life Skills & Leadership | HappierMe">
     <meta property="og:type" content="website" />
     <meta property="og:description" content="Improve employee wellbeing and build life skills with HappierMe. Develop emotional intelligence, communication and stronger workplace relationships.">
-    <meta name="keywords" content="employee wellbeing,workplace wellbeing,
-workplace mental health,
-emotional intelligence at work,
-leadership skills,
-communication skills,
-resilience at work,
-employee resilience,
-workplace culture,
-stress management at work,
-life skills for work
-
-
-
-">
     
     <meta property="og:image" content="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/imgs/website_share.jpg" />
     <meta property="og:image:alt" content="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/imgs/website_share.jpg" />
@@ -35,14 +27,14 @@ life skills for work
       "@context": "https://schema.org",
       "@type": "Article",
       "name": "HappierMe",
-      "description": "Mental health app that helps users understand their emotions and thoughts, and offers a variety of tools and resources to help people improve their lives.",
+      "description": "Improve employee wellbeing and build life skills with HappierMe. Develop emotional intelligence, communication and stronger workplace relationships.",
       "url": "https://happierme.app/"
     },
     {
       "@context": "https://schema.org",
       "@type": "MentalHealthService",
       "name": "HappierMe",
-      "description": "Mental health app that helps users understand their emotions and thoughts, and offers a variety of tools and resources to help people improve their lives.",
+      "description": "Improve employee wellbeing and build life skills with HappierMe. Develop emotional intelligence, communication and stronger workplace relationships.",
       "url": "https://happierme.app/"
     }
   ]

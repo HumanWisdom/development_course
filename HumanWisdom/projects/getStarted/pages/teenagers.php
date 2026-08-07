@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>HappierMe: Master your mind</title>
+  <title>Teen Mental Health, Wellbeing & Life Skills | HappierMe</title>
   <meta property="title" content="Teen Mental Health, Wellbeing & Life Skills | HappierMe">
   <meta property="description"
     content="Help teenagers build confidence, manage stress and strengthen relationships with HappierMe. Selected by Mind and ORCHA certified.">
@@ -17,7 +17,10 @@ resilience for teenagers,
 life skills for teenagers
 
 ">
-  <meta property="og:title" content="HappierMe:For Teens & Adults">
+  <meta property="og:title" content="Teen Mental Health, Wellbeing & Life Skills | HappierMe">
+    <meta property="og:title" content="Teen Mental Health, Wellbeing & Life Skills | HappierMe">
+  <meta property="og:description"
+    content="Help teenagers build confidence, manage stress and strengthen relationships with HappierMe. Selected by Mind and ORCHA certified.">
   <meta property="og:site_name" content="HappierMe">
   <meta property="og:url" content="https://happierme.app/">
   <meta property="og:type" content="Website">
