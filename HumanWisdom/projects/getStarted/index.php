@@ -8,22 +8,15 @@ hw_page_assets_configure('landing');
 <!DOCTYPE html>
 <html lang="en">
  <head>
-  <title>HappierMe: For Teens & Adults</title>
+  <title>Mental Wellbeing, Self-awareness and Life Skills | HappierMe</title>
   <meta name="title" content="Mental Wellbeing, Self-awareness and Life Skills | HappierMe">
   <meta name="description"
     content="Build mental wellbeing through self-awareness with HappierMe. Develop emotional intelligence and life skills to reduce stress and strengthen relationships.">
   <meta name="keywords"
-    content="mental wellbeing,emotional intelligence,self-awareness,
-life skills,
-mindfulness
-stress management,
-resilience,
-personal growth
-
-">
-  <meta property="og:title" content="HappierMe: For Teens & Adults">
+    content="mental wellbeing,emotional intelligence,self-awareness, life skills, mindfulness, stress management, resilience, personal growth">
+  <meta property="og:title" content="Mental Wellbeing, Self-awareness and Life Skills | HappierMe">
   <meta property="og:description"
-    content="Struggling with stress or relationships? HappierMe empowers teens and adults to master emotional intelligence, mental health, and life skills for real change.">
+    content="Build mental wellbeing through self-awareness with HappierMe. Develop emotional intelligence and life skills to reduce stress and strengthen relationships.">
   <meta property="og:site_name" content="HappierMe">
   <meta property="og:url" content="https://happierme.app">
   <meta property="og:type" content="">
@@ -53,7 +46,7 @@ personal growth
   <link rel="canonical" href="https://happierme.app" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="utf-8" />
-    <title>HappierMe: For Teens &amp; Adults</title>
+    <title>Mental Wellbeing, Self-awareness and Life Skills | HappierMe</title>
     
     <!-- vendor_header -->
     <?php include('./includes/vendor_header.php'); ?>

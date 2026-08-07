@@ -43,9 +43,9 @@
               </h4>
             </a>
 <a  (click)="loginroute()">
-              <h4 class="mtb0px fs_12px fw_600 lh_150p  underline subscribe"  [ngClass]="isAdults ? 'fc_D7586B' : 'fc_EE9596'" *ngIf="!isloggedIn"   >
+              <div class="login1"  [ngClass]="isAdults ? 'fc_D7586B' : 'fc_EE9596'" *ngIf="!isloggedIn"   >
                 Login
-              </h4></a> 
+              </div></a> 
             <!-- <a  (click)="Logevent('/subscription/start-your-free-trial', '', 'Subscribe now')">
               <h4 class="mtb0px fs_15px fw_500 lh_150p fc_D7586B underline subscribe" *ngIf="isloggedIn">
                 View Profile
@@ -67,11 +67,11 @@
 
                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/trial.svg" class="img-responsive" *ngIf="isAdults">
               </div> -->
-                    <div class="col-md-11 col-sm-11 col-xs-11 ">
-                      <h4 class="fw_600 fs_12px lh_15px  mt5px   underline subscribe"
+                    <div class="col-md-11 col-sm-11 col-xs-11 p0">
+                      <div class="login1"
                         [ngClass]="isAdults ? 'fc_D7586B' : 'fc_EE9596'">
                         View Profile
-                      </h4>
+                    </div>
                     </div>
                   </div>
                 </div>
@@ -82,18 +82,20 @@
               <a id="liSubscribe" (click)="Logevent('/subscription/try-free-and-subscribe', '', 'click_Subscribe')" class="p0 b0px">
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-                    <div class="col-md-1 col-sm-1 col-xs-1 p0 ">
+                    <div class="col-md-1 col-sm-1 col-xs-1 p0  image-box">
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/hb_stp.svg"
-                        class="img-responsive" *ngIf="!isAdults">
+                        class="img-responsive " *ngIf="!isAdults">
 
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/trial_ad.svg"
-                        class="img-responsive" *ngIf="isAdults">
+                        class="img1" *ngIf="isAdults">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/start_hov.svg"
+                        class="img2" *ngIf="isAdults">
                     </div>
-                    <div class="col-md-11 col-sm-11 col-xs-11 ">
-                      <h4 class="fw_600 fs_15px lh_16px  mtb0px   underline subscribe"
+                    <div class="col-md-11 col-sm-11 col-xs-11 login1 ">
+                      <div class="login1"style="font-size:15px"
                         [ngClass]="isAdults ? 'fc_D7586B' : 'fc_EE9596'">
                         Start your free trial
-                      </h4>
+                    </div>
                     </div>
                   </div>
                 </div>
@@ -947,13 +949,21 @@
       </li>
       <!-- /multilayer li for help & support -->
       <div class="row mtb20px">
-        <div class="col-md-12 col-sm-12 col-xs-12 hamburger_sociali p0">
-          <a class="" href="https://facebook.com/happiermeapp/" target="_blank">
+        <div class="col-md-12 col-sm-12 col-xs-12 hamburger_sociali p0 ">
+
+          <a *ngFor="let icon of socialIcons" [href]="icon.href" target="_blank"
+            (mouseenter)="onSocialHover(icon)" (mouseleave)="onSocialLeave(icon)">
+            <img [src]="icon.currentSrc" alt="" class="p0">
+        </a>
+          <!-- <a class="" href="https://facebook.com/happiermeapp/" target="_blank">
             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/hb_facebookteen.svg" alt=""
               class="p0" *ngIf="!isAdults">
 
             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/facebook_ad.svg" alt=""
-              class="p0" *ngIf="isAdults">
+              class="p0" *ngIf="isAdults"  class="img1">
+               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/facebook_ho.svg" alt=""
+              class="p0" *ngIf="isAdults" class="img2">
+
 
           </a>
           <a class="" href="https://twitter.com/happiermeapp" target="_blank">
@@ -961,6 +971,8 @@
               class="p0" *ngIf="!isAdults">
             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/twiter_ad.svg" alt=""
               class="p0" *ngIf="isAdults">
+               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/twitter_ho.svg" alt=""
+              class="p0" *ngIf="isAdults" class="img2">
 
 
           </a>
@@ -969,6 +981,8 @@
               class="p0" *ngIf="!isAdults">
             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/insta_ad.svg  " alt=""
               class="p0" *ngIf="isAdults">
+               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/insta_ho.svg" alt=""
+              class="p0" *ngIf="isAdults" class="img2">
 
           </a>
           <a class="" href="https://www.linkedin.com/company/humanwisdom" target="_blank">
@@ -976,13 +990,17 @@
               class="p0" *ngIf="!isAdults">
             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/link_ad.svg" alt=""
               class="p0" *ngIf="isAdults">
+               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/link_ho.svg" alt=""
+              class="p0" *ngIf="isAdults" class="img2">
           </a>
           <a class="" href="https://www.youtube.com/channel/UCdNujB6X0slYKxLSdWuqCrA" target="_blank">
             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/hb_youtubeteen.svg" alt=""
               class="p0" *ngIf="!isAdults">
             <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/youtube_ad.svg" alt=""
               class="p0" *ngIf="isAdults">
-          </a>
+               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/you_ho.svg" alt=""
+              class="p0" *ngIf="isAdults" class="img2">
+          </a> -->
         </div>
       </div>
 
@@ -1002,7 +1020,7 @@
 
       <div class="row" *ngIf="!isloggedIn">
         <div class="col-md-12 col-sm-12 col-xs-12 ">
-          <button type="submit" class="btn btn_ctd center_flex" data-toggle="modal" (click)="loginroute()"
+          <button type="submit" class="btn btn_ctdhov center_flex" data-toggle="modal" (click)="loginroute()"
             data-target="#modal_logout">
             <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/btn_logout.svg"
               class="img-responsive mr5px" *ngIf="!isAdults">
@@ -1010,6 +1028,8 @@
               class="img-responsive mr5px"  *ngIf="isAdults">
               
             Login
+
+            
           </button>
         </div>
       </div>
