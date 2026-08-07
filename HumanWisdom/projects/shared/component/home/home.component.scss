@@ -221,6 +221,7 @@ background: #FFF7E6;/* Ensure proper stacking context */
 }
 
 .card-container {
+  display: flex !important;
   overflow-x: auto;
   overflow-y: hidden;
   scroll-behavior: smooth;
@@ -228,7 +229,8 @@ background: #FFF7E6;/* Ensure proper stacking context */
   padding-bottom: 10px;
   scrollbar-width: thin;
   scrollbar-color: #eea170 #f6d1b7;
-  align-items: stretch;
+  /* top-align so View more can match image height band */
+  align-items: flex-start !important;
 }
 
 .card-wrapper {
@@ -584,13 +586,31 @@ background: #FFF7E6;/* Ensure proper stacking context */
   color: rgba(0, 0, 0, 0.9) !important;
 }
 
-/* View More and View All container styling */
-.view-more-container {
-  // height: 100%;
-  padding-bottom: 15%;
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
+/* View More / View All — vertically center with the card image (150px), not the text below */
+.card-container > .view-more-container {
+  flex: 0 0 auto !important;
+  align-self: flex-start !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: auto !important;
+  height: 150px !important;
+  min-height: 150px !important;
+  max-height: 150px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.card-container > .view-more-container .view-more-btn.btn,
+.card-container > .view-more-container .view-more-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  line-height: 1.2 !important;
 }
 
 /* View More and View All arrow styling */

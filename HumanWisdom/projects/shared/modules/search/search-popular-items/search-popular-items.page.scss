@@ -19,6 +19,20 @@
   padding-left: 20px !important;
   padding-right: 20px !important;
 }
+
+/* Keep search text clear of the left icon (wide + normal screens) */
+.search-box-container .pfy_search_icon.form-control-feedback.left,
+.search-box-container .pfy_search_icon {
+  left: 16px !important;
+  width: 24px;
+  margin: 0;
+}
+
+.search-box-container .form-control.has-feedback-left.pfy_search,
+.search-box-container input.pfy_search {
+  padding-left: 48px !important;
+  padding-right: 48px !important;
+}
 .bg_stake {
   background: #183C79 !important;
   min-height: 100vh;
@@ -189,8 +203,9 @@
 }
 
 .box_v3_04a img {
-  width: 150px !important;
-  height: 115px !important;
+  width: 100% !important;
+  height: 100px !important;
+  object-fit: cover;
 }
 
 // // .nav.adults-theme>li>a:hover, .nav.adults-theme>li>a:focus {
@@ -233,79 +248,67 @@ a {
   pointer-events: none;
 }
 
-@media (min-width: 1200px) {
-  .list-thumb-media {
-    width: 100px;
-    height: 100px;
-    display: block;
-  }
-
-  .list-thumb-media .session_imgnew {
-    width: 100px !important;
-    height: 100px !important;
-    max-width: 100px !important;
-    display: block;
-    object-fit: cover;
-  }
+/* Shrink thumbnail column to image width so title sits closer (all viewports;
+   on narrow phones 33% ≈ thumb size so layout stays the same) */
+.toc_adiv_02 a > .row,
+.toc_adiv a > .row {
+  padding: 10px !important;
 }
 
-/* Wide screen: shrink thumbnail column so title sits closer */
-@media (min-width: 768px) {
-  .toc_adiv_02 a .center_flex > .col-lg-4,
-  .toc_adiv_02 a .center_flex > .col-md-4,
-  .toc_adiv_02 a .center_flex > .col-sm-4,
-  .toc_adiv_02 a .center_flex > .col-xs-4,
-  .toc_adiv a .center_flex > .col-lg-4,
-  .toc_adiv a .center_flex > .col-md-4,
-  .toc_adiv a .center_flex > .col-sm-4,
-  .toc_adiv a .center_flex > .col-xs-4 {
-    width: auto !important;
-    flex: 0 0 auto !important;
-    max-width: none !important;
-    padding: 0 !important;
-  }
+.toc_adiv_02 a .center_flex,
+.toc_adiv a .center_flex {
+  justify-content: flex-start !important;
+  gap: 0;
+}
 
-  .toc_adiv_02 a .center_flex > .col-lg-7,
-  .toc_adiv_02 a .center_flex > .col-md-7,
-  .toc_adiv_02 a .center_flex > .col-sm-7,
-  .toc_adiv_02 a .center_flex > .col-xs-7,
-  .toc_adiv a .center_flex > .col-lg-7,
-  .toc_adiv a .center_flex > .col-md-7,
-  .toc_adiv a .center_flex > .col-sm-7,
-  .toc_adiv a .center_flex > .col-xs-7,
-  .toc_adiv_02 a .center_flex > .col-lg-8,
-  .toc_adiv_02 a .center_flex > .col-md-8,
-  .toc_adiv_02 a .center_flex > .col-sm-8,
-  .toc_adiv_02 a .center_flex > .col-xs-8,
-  .toc_adiv a .center_flex > .col-lg-8,
-  .toc_adiv a .center_flex > .col-md-8,
-  .toc_adiv a .center_flex > .col-sm-8,
-  .toc_adiv a .center_flex > .col-xs-8 {
-    flex: 1 1 0 !important;
-    width: auto !important;
-    max-width: none !important;
-    padding-left: 12px !important;
-  }
+.toc_adiv_02 a .center_flex > [class*="col-"][class*="-4"],
+.toc_adiv a .center_flex > [class*="col-"][class*="-4"] {
+  width: auto !important;
+  flex: 0 0 auto !important;
+  max-width: none !important;
+  /* space around image: left, top, bottom (match Figma / image 1) */
+  padding: 0 !important;
+}
 
-  .toc_adiv_02 a .center_flex > .col-lg-1,
-  .toc_adiv_02 a .center_flex > .col-md-1,
-  .toc_adiv_02 a .center_flex > .col-sm-1,
-  .toc_adiv_02 a .center_flex > .col-xs-1,
-  .toc_adiv a .center_flex > .col-lg-1,
-  .toc_adiv a .center_flex > .col-md-1,
-  .toc_adiv a .center_flex > .col-sm-1,
-  .toc_adiv a .center_flex > .col-xs-1 {
-    width: auto !important;
-    flex: 0 0 auto !important;
-    max-width: none !important;
-  }
+.toc_adiv_02 a .center_flex > [class*="col-"][class*="-7"],
+.toc_adiv a .center_flex > [class*="col-"][class*="-7"],
+.toc_adiv_02 a .center_flex > [class*="col-"][class*="-8"],
+.toc_adiv a .center_flex > [class*="col-"][class*="-8"] {
+  flex: 1 1 0 !important;
+  width: auto !important;
+  max-width: none !important;
+  padding-left: 10px !important;
+  padding-right: 0 !important;
+}
 
-  .toc_adiv_02 a .center_flex .session_imgnew,
-  .toc_adiv a .center_flex .session_imgnew {
-    width: 100px !important;
-    height: 100px !important;
-    max-width: 100px !important;
-  }
+.toc_adiv_02 a .center_flex > [class*="col-"][class*="-1"],
+.toc_adiv a .center_flex > [class*="col-"][class*="-1"] {
+  width: auto !important;
+  flex: 0 0 auto !important;
+  max-width: none !important;
+}
+
+.toc_adiv_02 a .center_flex .session_imgnew,
+.toc_adiv a .center_flex .session_imgnew {
+  width: 100px !important;
+  height: 100px !important;
+  max-width: 100px !important;
+  display: block;
+  object-fit: cover;
+}
+
+.list-thumb-media {
+  width: 100px;
+  height: 100px;
+  display: block;
+}
+
+.list-thumb-media .session_imgnew {
+  width: 100px !important;
+  height: 100px !important;
+  max-width: 100px !important;
+  display: block;
+  object-fit: cover;
 }
 
 .ws-read-icon {
