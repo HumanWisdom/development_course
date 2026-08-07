@@ -13,17 +13,10 @@ hw_page_assets_configure('landing');
   <meta name="description"
     content="Build mental wellbeing through self-awareness with HappierMe. Develop emotional intelligence and life skills to reduce stress and strengthen relationships.">
   <meta name="keywords"
-    content="mental wellbeing,emotional intelligence,self-awareness,
-life skills,
-mindfulness
-stress management,
-resilience,
-personal growth
-
-">
+    content="mental wellbeing,emotional intelligence,self-awareness, life skills, mindfulness, stress management, resilience, personal growth">
   <meta property="og:title" content="Mental Wellbeing, Self-awareness and Life Skills | HappierMe">
   <meta property="og:description"
-    content="Struggling with stress or relationships? HappierMe empowers teens and adults to master emotional intelligence, mental health, and life skills for real change.">
+    content="Build mental wellbeing through self-awareness with HappierMe. Develop emotional intelligence and life skills to reduce stress and strengthen relationships.">
   <meta property="og:site_name" content="HappierMe">
   <meta property="og:url" content="https://happierme.app">
   <meta property="og:type" content="">
