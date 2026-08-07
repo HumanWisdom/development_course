@@ -10,6 +10,7 @@ import { ProgramType } from '../../../models/program-model';
 import { SharedService, UrlConstant } from '../../../services/shared.service';
 import { CommonService } from '../../../services/common.service';
 import { OnboardingService } from '../../../services/onboarding.service';
+import { NavigationService } from '../../../services/navigation.service';
 
 @Component({
   selector: 'app-search-popular-items',
@@ -65,6 +66,8 @@ export class SearchPopularItemsPage implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private onboardingService: OnboardingService,
+    private location: Location,
+    private navigationService: NavigationService
   ) {
     if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
@@ -753,7 +756,12 @@ export class SearchPopularItemsPage implements OnInit {
   }
 
   goBack() {
-    this.router.navigate([SharedService.getUrlfromFeatureName(UrlConstant.search)]);
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
+      this.location.back();
+    } else {
+      this.router.navigateByUrl(url);
+    }
   }
 
   routemodule(res) {
@@ -882,16 +890,7 @@ export class SearchPopularItemsPage implements OnInit {
   }
 
   clearSearch() {
-    this.isSearchActive = false;
-    this.commonService.setSearchActive(false);
-    this.search = "";
-    if (this.moduleList.length === 0) {
-      this.getModuleList(true);
-    } else {
-      this.getAutoCompleteList('');
-    }
-    this.post = [];
-    this.jrList = [];
+    this.goBack();
   }
 
   backToPreviousSearch() {
