@@ -86,7 +86,7 @@
               </div>
               <div class="row tcenter" (click)="readText('Read text')"
                 (keydown.enter)="readText( 'Read text')" tabindex="0"
-                *ngIf="audioLink !== '' && textContent !== ''">
+                *ngIf="audioLink !== '' && textContent !== '' && !enableTextContent">
                 <!-- <p class="txt1 mt40px mb30px"> -->
                 <a class="">
                   <h6 class="fs_15px fw_400 lh_140p underline mtb10px" [ngClass]="isAdults ? 'fc_D7586B' : 'fc_ee9596'">

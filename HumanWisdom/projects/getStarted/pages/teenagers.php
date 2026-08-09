@@ -2,22 +2,12 @@
 <html lang="en">
 
 <head>
-  <title>HappierMe: Master your mind</title>
+  <title>Teen Mental Health, Wellbeing & Life Skills | HappierMe</title>
   <meta property="title" content="Teen Mental Health, Wellbeing & Life Skills | HappierMe">
-  <meta property="description"
-    content="Help teenagers build confidence, manage stress and strengthen relationships with HappierMe. Selected by Mind and ORCHA certified.">
-  <meta name="keywords" content="teen mental health,teen wellbeing,teenage mental health,
-emotional wellbeing for teens,
-stress management for teens,
-anxiety in teenagers,
-self-awareness for teenagers,
-emotional intelligence for teens,
-confidence for teenagers,
-resilience for teenagers,
-life skills for teenagers
-
-">
-  <meta property="og:title" content="HappierMe:For Teens & Adults">
+  <meta property="description" content="Help teenagers build confidence, manage stress and strengthen relationships with HappierMe. Selected by Mind and ORCHA certified.">
+  <meta name="keywords" content="teen mental health,teen wellbeing,teenage mental health, emotional wellbeing for teens, stress management for teens, anxiety in teenagers, self-awareness for teenagers, emotional intelligence for teens, confidence for teenagers, resilience for teenagers, life skills for teenagers">
+  <meta property="og:title" content="Teen Mental Health, Wellbeing & Life Skills | HappierMe">
+  <meta property="og:description" content="Help teenagers build confidence, manage stress and strengthen relationships with HappierMe. Selected by Mind and ORCHA certified.">
   <meta property="og:site_name" content="HappierMe">
   <meta property="og:url" content="https://happierme.app/">
   <meta property="og:type" content="Website">
@@ -612,7 +602,7 @@ life skills for teenagers
                 <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
                   View all Success stories
                 </h4>
-                <span class="chevron-pink"><span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span>
+                <span class="chevron-pink"><span style="-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span>
               </a>
               <div class="owl-theme mt10px teen-testimonials-nav">
                 <div class="owl-controls">
@@ -1100,7 +1090,7 @@ life skills for teenagers
         $tc.trigger('destroy.owl.carousel');
       }
 
-      $tc.removeClass('teen-testimonials-native owl-loaded owl-drag');
+      $tc.removeClass('teen-testimonials-native teen-testimonials-wide owl-loaded owl-drag');
 
       if (isMobile) {
         $tc.addClass('teen-testimonials-native');

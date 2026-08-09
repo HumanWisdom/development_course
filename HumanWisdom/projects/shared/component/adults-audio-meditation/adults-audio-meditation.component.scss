@@ -97,8 +97,8 @@
 //   filter: none !important;
 // }
 
-audio::-webkit-media-controls-play-button {
-  background-color: #178da8 !important;
+::ng-deep audio::-webkit-media-controls-play-button {
+  background-color: #116a69 !important;
   border-radius: 15px;
 }
 audio::-webkit-media-controls-current-time-display {

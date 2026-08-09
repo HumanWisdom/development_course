@@ -75,7 +75,9 @@
     padding: 15px 0;
     }
 .sc_01{
-    min-height: 90vh;
+    min-height: 100vh;
+    padding-bottom: 80px;
+    box-sizing: border-box;
 }
 .learning {
     background-image: url('https://d1tenzemoxuh75.cloudfront.net/microlearning/background.webp');
@@ -84,7 +86,7 @@
     background-attachment: fixed;
     background-size: contain;
     border-radius: 12px;
-    margin-bottom: 30px;
+    margin-bottom: 0;
     position: relative;
     height: calc(100vh - 157px);
     min-height: 400px;

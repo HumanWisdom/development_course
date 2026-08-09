@@ -32,6 +32,7 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
   supportsPassiveEventListeners = supportsPassiveEventListeners();
   supportsScrollBehavior = supportsScrollBehavior();
   isPartner: any = "0";
+  //  @Input() dash = false;
   isloggedIn = false;
   name = "";
   roleid = 0;
@@ -55,6 +56,15 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
   isDataRecieved = false;
   url = '';
   private closeEventSubject: Subject<void> = new Subject();
+
+  // Social media icons with hover support
+  socialIcons: {
+    name: string;
+    href: string;
+    currentSrc: string;
+    defaultSrc: string;
+    hoverSrc: string;
+  }[] = [];
 
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: MouseEvent): void {
@@ -243,6 +253,7 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
     }
     let userId = JSON.parse(localStorage.getItem("userId"));
     this.Onboardingservice.getuserDetail();
+    this.initSocialIcons();
     
     if (sessionStorage.getItem('openHamburger') === 'true') {
       setTimeout(() => {
@@ -696,6 +707,97 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
 
   setLogevent(evtName, param = '') {
     this.logeventservice.logEvent(evtName);
+  }
+
+  initSocialIcons() {
+    const base = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/';
+
+    if (this.isAdults) {
+      this.socialIcons = [
+        {
+          name: 'facebook',
+          href: 'https://facebook.com/happiermeapp/',
+          defaultSrc: base + 'facebook_ad.svg',
+          hoverSrc: base + 'facebook_ho.svg',
+          currentSrc: base + 'facebook_ad.svg'
+        },
+        {
+          name: 'twitter',
+          href: 'https://twitter.com/happiermeapp',
+          defaultSrc: base + 'twiter_ad.svg',
+          hoverSrc: base + 'twitter_ho.svg',
+          currentSrc: base + 'twiter_ad.svg'
+        },
+        {
+          name: 'instagram',
+          href: 'https://www.instagram.com/happiermeapp/',
+          defaultSrc: base + 'insta_ad.svg',
+          hoverSrc: base + 'insta_ho.svg',
+          currentSrc: base + 'insta_ad.svg'
+        },
+        {
+          name: 'linkedin',
+          href: 'https://www.linkedin.com/company/humanwisdom',
+          defaultSrc: base + 'link_ad.svg',
+          hoverSrc: base + 'link_ho.svg',
+          currentSrc: base + 'link_ad.svg'
+        },
+        {
+          name: 'youtube',
+          href: 'https://www.youtube.com/channel/UCdNujB6X0slYKxLSdWuqCrA',
+          defaultSrc: base + 'youtube_ad.svg',
+          hoverSrc: base + 'you_ho.svg',
+          currentSrc: base + 'youtube_ad.svg'
+        }
+      ];
+    } else {
+      const teenBase = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/';
+      this.socialIcons = [
+        {
+          name: 'facebook',
+          href: 'https://facebook.com/happiermeapp/',
+          defaultSrc: teenBase + 'hb_facebookteen.svg',
+          hoverSrc: base + 'facebook_teenhov.svg',
+          currentSrc: teenBase + 'hb_facebookteen.svg'
+        },
+        {
+          name: 'twitter',
+          href: 'https://twitter.com/happiermeapp',
+          defaultSrc: teenBase + 'hb_twitterteen.svg',
+          hoverSrc: base + 'twitter_teenhov.svg',
+          currentSrc: teenBase + 'hb_twitterteen.svg'
+        },
+        {
+          name: 'instagram',
+          href: 'https://www.instagram.com/happiermeapp/',
+          defaultSrc: teenBase + 'hb_instagramteen.svg',
+          hoverSrc: base + 'insta_teenhov.svg',
+          currentSrc: teenBase + 'hb_instagramteen.svg'
+        },
+        {
+          name: 'linkedin',
+          href: 'https://www.linkedin.com/company/humanwisdom',
+          defaultSrc: teenBase + 'hb_linkedinteen.svg',
+          hoverSrc: base + 'linkdn_teenhov.svg',
+          currentSrc: teenBase + 'hb_linkedinteen.svg'
+        },
+        {
+          name: 'youtube',
+          href: 'https://www.youtube.com/channel/UCdNujB6X0slYKxLSdWuqCrA',
+          defaultSrc: teenBase + 'hb_youtubeteen.svg',
+          hoverSrc: base + 'you_teenhov.svg',
+          currentSrc: teenBase + 'hb_youtubeteen.svg'
+        }
+      ];
+    }
+  }
+
+  onSocialHover(icon: any) {
+    icon.currentSrc = icon.hoverSrc;
+  }
+
+  onSocialLeave(icon: any) {
+    icon.currentSrc = icon.defaultSrc;
   }
 
   ngOnDestroy() {

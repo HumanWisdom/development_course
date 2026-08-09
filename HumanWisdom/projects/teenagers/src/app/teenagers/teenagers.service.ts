@@ -5954,9 +5954,20 @@ export class TeenagersService {
             const isSelfAwareness = id.toString() === '75' || id.toString() === '157' || lastVisitedurl.includes('self-awareness') || indexUrl.includes('self-awareness');
             if (isSelfAwareness) {
               let scr = pgResume ? pgResume.replace('s', '') : '';
-              if (!scr) {
-                const match = indexUrl.match(/(75\d{3}|157\d{3})(?:p\d+)?/) || lastVisitedurl.match(/(75\d{3}|157\d{3})(?:p\d+)?/);
-                if (match) scr = match[0];
+              // Also extract screen from indexUrl (from GetLastVisitedScreen, which is more up-to-date)
+              const indexUrlMatch = indexUrl.match(/(75\d{3}|157\d{3})(?:p\d+)?/) || lastVisitedurl.match(/(75\d{3}|157\d{3})(?:p\d+)?/);
+              const indexUrlScr = indexUrlMatch ? indexUrlMatch[0] : '';
+              // Prefer whichever has a higher part number (p3 > p2 > no-part)
+              if (indexUrlScr) {
+                if (!scr) {
+                  scr = indexUrlScr;
+                } else {
+                  const scrPart = parseInt((scr.match(/p(\d+)/) || [])[1] || '0', 10);
+                  const idxPart = parseInt((indexUrlScr.match(/p(\d+)/) || [])[1] || '0', 10);
+                  if (idxPart > scrPart) {
+                    scr = indexUrlScr;
+                  }
+                }
               }
               if (scr) {
                 const exerciseId = scr.split('p')[0];

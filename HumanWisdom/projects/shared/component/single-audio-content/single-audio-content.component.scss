@@ -97,8 +97,8 @@ transform: rotate(-360deg) scaleX(-1);
 //   filter: none !important;
 // }
 
-audio::-webkit-media-controls-play-button {
-  background-color: #178da8 !important;
+::ng-deep audio::-webkit-media-controls-play-button {
+  background-color: #116a69 !important;
   border-radius: 15px;
 }
 audio::-webkit-media-controls-current-time-display {
@@ -235,7 +235,7 @@ width: 100%;
   mix-blend-mode: multiply !important;
 }
 /* Play–pause button background color */
-.invert-controls::-webkit-media-controls-play-button {
+::ng-deep .invert-controls::-webkit-media-controls-play-button {
   background-color: #ED7D6F !important;
   border-radius: 50% !important;
   box-shadow: none !important;

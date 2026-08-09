@@ -162,6 +162,8 @@ export class WisdomExerciseS75001Component implements OnInit {
 
   onCardClick(card: ContentCard): void {
     if (card.path) {
+      // Save current URL so self-awareness screens can navigate back here
+      SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
       this.router.navigate([card.path]);
     }
   }

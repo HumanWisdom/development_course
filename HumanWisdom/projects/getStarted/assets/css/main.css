@@ -5258,8 +5258,9 @@ input[type="password" i]::-ms-reveal {
       height: 1.3em;
       overflow: hidden;
       vertical-align: bottom;
-      min-width: 116px;
-      text-align: right;
+      min-width: 0;
+      text-align: left;
+      transition: width 0.35s ease;
         }
 
    
@@ -5269,12 +5270,14 @@ input[type="password" i]::-ms-reveal {
 
 .scrolling-word {
   position: absolute;
-      right: 0;
+      left: 0;
+      top: 0;
       opacity: 0;
       transform: translateY(60%);
       color: #ED7D6F;
       font-weight: 600;
       white-space: nowrap;
+      width: max-content;
 }
 
 .scrolling-word.active {
@@ -5282,6 +5285,7 @@ input[type="password" i]::-ms-reveal {
   transform: translateY(0);
   transition: opacity 0.45s cubic-bezier(0.4, 0, 0.6, 1),
               transform 0.45s cubic-bezier(0.4, 0, 0.6, 1);
+  z-index: 1;
 }
 
 .scrolling-word.exit {
@@ -5293,12 +5297,12 @@ input[type="password" i]::-ms-reveal {
 
     @media (max-width: 575px) {
               .scrolling-word {
-                width: 75px;
+                width: max-content;
               }
 
                 .scrolling-words {
         
-      min-width: 75px;
+      min-width: 0;
         }
 
              

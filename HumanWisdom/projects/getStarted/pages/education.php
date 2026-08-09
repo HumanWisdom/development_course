@@ -2,30 +2,18 @@
 <html lang="en">
 
   <head>
+    <title>Student Wellbeing and Life Skills | HappierMe</title>
+    <meta name="title" id="tag1" content="Student Wellbeing and Life Skills | HappierMe">
+    <meta name="description" content="Improve student wellbeing and build life skills with HappierMe. Develop emotional intelligence, confidence and stronger relationships.">
+    <meta name="keywords" content="student wellbeing, student mental health, social emotional learning, emotional intelligence for students, life skills for students, resilience for students, self-awareness for students, school wellbeing, emotional wellbeing in schools, student resilience">
+    
+    
     <meta property="og:title" id="tag1" content="Student Wellbeing and Life Skills | HappierMe">
     <meta property="og:description" content="Improve student wellbeing and build life skills with HappierMe. Develop emotional intelligence, confidence and stronger relationships.">
-     <meta name="keywords" content="student wellbeing
-,student mental health,
-social emotional learning,
-emotional intelligence for students,
-life skills for students,
-resilience for students,
-self-awareness for students,
-school wellbeing,
-emotional wellbeing in schools,
-student resilience
-
-
-">
+   
     <meta property="og:image" content="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/imgs/website_share.jpg" />
     <meta property="og:image:alt" content="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/imgs/website_share.jpg" />
-    <meta property="og:image:width" content="414" />
-     <meta name="keywords" content="student wellbeing
-student mental health
-emotional intelligence for students
-social emotional learning
-
-">
+    <meta property="og:image:width" content="414" />   
     <meta property="og:image:height" content="232" />
   
     <meta property="og:site_name" content=HappierMe>
@@ -39,14 +27,14 @@ social emotional learning
       "@context": "https://schema.org",
       "@type": "Article",
       "name": "HappierMe",
-      "description": "Mental health app that helps users understand their emotions and thoughts, and offers a variety of tools and resources to help people improve their lives.",
+      "description": "Improve student wellbeing and build life skills with HappierMe. Develop emotional intelligence, confidence and stronger relationships.",
       "url": "https://happierme.app/"
     },
     {
       "@context": "https://schema.org",
       "@type": "MentalHealthService",
       "name": "HappierMe",
-      "description": "Mental health app that helps users understand their emotions and thoughts, and offers a variety of tools and resources to help people improve their lives.",
+      "description": "Improve student wellbeing and build life skills with HappierMe. Develop emotional intelligence, confidence and stronger relationships.",
       "url": "https://happierme.app/"
     }
   ]
