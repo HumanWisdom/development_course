@@ -104,8 +104,8 @@ runWhenDomReady(initTopicsHelpGa);
 })();
 
 setTimeout(() => {
-    console.log("Removing preloader...");
-    document.getElementById("preloader").remove();
+    var preloader = document.getElementById("preloader");
+    if (preloader) preloader.remove();
 }, 500);
 
 // Function to remove active_nav class from all navigation elements
@@ -1971,28 +1971,33 @@ function hideIndexLazySection(section) {
     section.classList.remove("is-visible");
 }
 
+var indexLazySectionIo = null;
+
 function initIndexLazySections() {
     document.querySelectorAll(".index-lazy-section").forEach(prepareIndexLazySection);
-    var sections = document.querySelectorAll(".index-lazy-section");
+    var sections = document.querySelectorAll(".index-lazy-section:not([data-lazy-io])");
     if (!sections.length) return;
     if (!("IntersectionObserver" in window)) {
         sections.forEach(showIndexLazySection);
         return;
     }
-    var io = new IntersectionObserver(
-        function (entries) {
-            entries.forEach(function (ent) {
-                if (ent.isIntersecting) {
-                    showIndexLazySection(ent.target);
-                } else {
-                    hideIndexLazySection(ent.target);
-                }
-            });
-        },
-        { rootMargin: "0px 0px -6% 0px", threshold: [0, 0.12, 0.25] }
-    );
+    if (!indexLazySectionIo) {
+        indexLazySectionIo = new IntersectionObserver(
+            function (entries) {
+                entries.forEach(function (ent) {
+                    if (ent.isIntersecting) {
+                        showIndexLazySection(ent.target);
+                    } else {
+                        hideIndexLazySection(ent.target);
+                    }
+                });
+            },
+            { rootMargin: "0px 0px -6% 0px", threshold: [0, 0.12, 0.25] }
+        );
+    }
     sections.forEach(function (section) {
-        io.observe(section);
+        section.setAttribute("data-lazy-io", "1");
+        indexLazySectionIo.observe(section);
     });
 }
 
@@ -2027,7 +2032,8 @@ function initCarouselWheelPassthrough(el) {
 function initIndexPageGa() {
     var ollyVideo = document.getElementById("olly-ai-video");
     var ollySection = document.getElementById("olly-ai-section");
-    if (ollyVideo && ollySection && "IntersectionObserver" in window) {
+    if (ollyVideo && ollySection && "IntersectionObserver" in window && !ollySection.dataset.hwOllyIo) {
+        ollySection.dataset.hwOllyIo = "1";
         var ollySectionVisible = false;
         var playOlly = function () {
             ollyVideo.muted = true;
@@ -2068,7 +2074,8 @@ function initIndexPageGa() {
     var orgMap = { orgCardWorkplace: "click_workplace_card", orgCardEducation: "click_education_card", orgCardHealthcare: "click_healthcare_card" };
     Object.keys(orgMap).forEach(function (id) {
         var el = document.getElementById(id);
-        if (!el) return;
+        if (!el || el.dataset.hwGaClick) return;
+        el.dataset.hwGaClick = "1";
         el.addEventListener("click", function (e) {
             e.preventDefault();
             logevent(orgMap[id], "index.php", { source: "home_card" });
@@ -2078,7 +2085,8 @@ function initIndexPageGa() {
     });
 
     var coachScroll = document.getElementById("coaches-scroll");
-    if (coachScroll) {
+    if (coachScroll && !coachScroll.dataset.hwGaClick) {
+        coachScroll.dataset.hwGaClick = "1";
         initCarouselWheelPassthrough(coachScroll);
         coachScroll.addEventListener("click", function (e) {
             var card = e.target.closest("a.coach-card");
@@ -2092,7 +2100,8 @@ function initIndexPageGa() {
     }
 
     var blogScrollEl = document.getElementById("blog-scroll");
-    if (blogScrollEl) {
+    if (blogScrollEl && !blogScrollEl.dataset.hwGaClick) {
+        blogScrollEl.dataset.hwGaClick = "1";
         initCarouselWheelPassthrough(blogScrollEl);
         blogScrollEl.addEventListener("click", function (e) {
             var card = e.target.closest("a.blog-card");
@@ -2106,7 +2115,8 @@ function initIndexPageGa() {
     }
 
     var coachesMore = document.getElementById("coachesFindOutMore");
-    if (coachesMore) {
+    if (coachesMore && !coachesMore.dataset.hwGaClick) {
+        coachesMore.dataset.hwGaClick = "1";
         coachesMore.addEventListener("click", function (e) {
             e.preventDefault();
             logevent("click_find_out_more", "index.php", { section: "coaches" });
@@ -2116,6 +2126,8 @@ function initIndexPageGa() {
     }
 
     document.querySelectorAll(".dfooter_social_links a").forEach(function (a) {
+        if (a.dataset.hwGaClick) return;
+        a.dataset.hwGaClick = "1";
         a.addEventListener("click", function () {
             var img = a.querySelector("img");
             var alt = img ? img.getAttribute("alt") || "social" : "social";
@@ -2124,9 +2136,11 @@ function initIndexPageGa() {
     });
 
     document.querySelectorAll(".dfooter .dfooter_links a[href]").forEach(function (a) {
+        if (a.dataset.hwGaClick) return;
         if (a.id && ["ourStory", "testimonialFooter", "partnershipfooter", "contactUsFooter"].indexOf(a.id) >= 0) return;
         var href = a.getAttribute("href");
         if (!href || href === "#") return;
+        a.dataset.hwGaClick = "1";
         a.addEventListener("click", function () {
             var label = (a.textContent || "").trim().replace(/\s+/g, " ").slice(0, 80);
             logevent("click_footer_link", "index.php", { link_name: label || href });
@@ -2134,52 +2148,48 @@ function initIndexPageGa() {
     });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+function runIndexPageDomInits() {
     initIndexLazySections();
     initIndexPageGa();
-    // Belt-and-suspenders: ensure carousel wheel passthrough even if GA init path changes
     initCarouselWheelPassthrough(document.getElementById("blog-scroll"));
     initCarouselWheelPassthrough(document.getElementById("coaches-scroll"));
-    // Convert existing accordion to Bootstrap 5.3
     convertAccordionToBootstrap53();
-    
-    // Initialize FAQ functionality
     initializeFAQTabs();
     initializeFAQAccordion();
 
     const arr = ["mental-wellbeing"];
     arr.forEach(element => {
     const modal = document.getElementById(element);
-    if (modal) {
+    if (modal && !modal.dataset.hwClickInit) {
+          modal.dataset.hwClickInit = "1";
           modal.addEventListener("click", () => {
                 modalManager.openModal(modal);
         });
     }
     });
-    
-    // Initialize modal manager for the page
+
     modalManager.initializeModalTriggers('[data-bs-toggle="modal"]');
-    
-    // Add modal hidden event listener for backdrop cleanup
+
     const modal = document.getElementById('product_view');
-    if (modal) {
+    if (modal && !modal.dataset.hwHiddenInit) {
+        modal.dataset.hwHiddenInit = "1";
         modal.addEventListener('hidden.bs.modal', function () {
             modalManager.cleanupModalBackdrop();
         });
     }
-    
-    // Initialize tool tabs separately
+
     initializeToolTabs();
-    
-    // Handle hash navigation on page load
+
     if (window.location.hash === "#div_subscription") {
-        // This is a first-time page load, use longer timeout
         const header = document.querySelector('.header');
         const headerHeight = header ? header.offsetHeight : 120;
         scrollToElement("div_subscription", headerHeight + 20, true);
     }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    runIndexPageDomInits();
     
-    // Handle hash changes (e.g., when clicking pricing link on same page)
     window.addEventListener('hashchange', function() {
         if (window.location.hash === "#div_subscription") {
             // Check if this is a first load or just hash change
@@ -2199,6 +2209,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // t?.addEventListener("click", () => {
     //     window.location.href = url+"/teenagers/subscription/start-your-free-trial";
     // });
+});
+
+document.addEventListener("hw:chunk-loaded", function () {
+    runIndexPageDomInits();
 });
 
 $(document).ready(function(){

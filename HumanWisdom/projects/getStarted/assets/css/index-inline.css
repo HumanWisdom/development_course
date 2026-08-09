@@ -3728,3 +3728,18 @@ header a[href*="splash_options.php"] * {
     transition: none;
   }
 }
+
+/* Progressive HTML: tiny sentinel only (layout lives in #main.frame > section rules) */
+.index-html-chunk[data-hw-chunk] {
+  min-height: 1px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.index-html-chunk--modals[data-hw-chunk] {
+  min-height: 0;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}

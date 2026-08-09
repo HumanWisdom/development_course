@@ -59,6 +59,14 @@
             fn();
             return;
         }
+        if (cfg.schedule === "domcontentloaded") {
+            if (document.readyState === "loading") {
+                document.addEventListener("DOMContentLoaded", fn, { once: true });
+            } else {
+                fn();
+            }
+            return;
+        }
         if ("requestIdleCallback" in window) {
             requestIdleCallback(fn, { timeout: 3000 });
         } else {
@@ -68,6 +76,17 @@
 
     function loadDeferredAssets() {
         var chain = Promise.resolve();
+
+        if (cssFlags.modal_tabs_defer && styleUrls.modal_tabs_defer) {
+            chain = chain.then(function () {
+                return loadStylesheet(styleUrls.modal_tabs_defer);
+            });
+        }
+        if (jsFlags.google_fonts_deferred && urls.google_fonts_deferred) {
+            chain = chain.then(function () {
+                return loadStylesheet(urls.google_fonts_deferred);
+            });
+        }
 
         if (cssFlags.glightbox && styleUrls.glightbox) {
             chain = chain.then(function () {
@@ -156,6 +175,8 @@
     }
 
     if (document.readyState === "complete") {
+        whenIdle(loadDeferredAssets);
+    } else if (cfg.schedule === "domcontentloaded") {
         whenIdle(loadDeferredAssets);
     } else {
         window.addEventListener(
