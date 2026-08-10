@@ -14,6 +14,14 @@ if (!function_exists('hw_page_assets_profiles')) {
                     'swiper' => true,
                     'owl' => true,
                     'fontawesome_cdn' => true,
+                    'critical_lcp' => false,
+                    'header_in_critical' => false,
+                    'google_fonts_head' => true,
+                    'vendor_debug_inline' => true,
+                    'modal_tabs_defer' => false,
+                    'font_stacks' => true,
+                    'font_colour' => true,
+                    'style_hb' => true,
                 ],
                 'js' => [
                     'aos' => true,
@@ -27,6 +35,12 @@ if (!function_exists('hw_page_assets_profiles')) {
                     'render' => true,
                     'main_vendors' => true,
                     'validate' => true,
+                    'gtag_head' => true,
+                    'gtag_deferred' => false,
+                    'google_fonts_deferred' => false,
+                ],
+                'ui' => [
+                    'preloader' => true,
                 ],
                 'schedule' => 'idle',
             ],
@@ -35,7 +49,15 @@ if (!function_exists('hw_page_assets_profiles')) {
                     'glightbox' => false,
                     'swiper' => false,
                     'owl' => false,
-                    'fontawesome_cdn' => true,
+                    'fontawesome_cdn' => false,
+                    'critical_lcp' => true,
+                    'header_in_critical' => true,
+                    'google_fonts_head' => false,
+                    'vendor_debug_inline' => false,
+                    'modal_tabs_defer' => true,
+                    'font_stacks' => false,
+                    'font_colour' => true,
+                    'style_hb' => false,
                 ],
                 'js' => [
                     'aos' => true,
@@ -49,8 +71,14 @@ if (!function_exists('hw_page_assets_profiles')) {
                     'render' => false,
                     'main_vendors' => false,
                     'validate' => false,
+                    'gtag_head' => false,
+                    'gtag_deferred' => true,
+                    'google_fonts_deferred' => true,
                 ],
-                'schedule' => 'idle',
+                'ui' => [
+                    'preloader' => false,
+                ],
+                'schedule' => 'domcontentloaded',
             ],
         ];
     }
@@ -79,7 +107,7 @@ if (!function_exists('hw_page_assets_merge')) {
     function hw_page_assets_merge(array $base, array $override)
     {
         foreach ($override as $key => $value) {
-            if ($key === 'css' || $key === 'js') {
+            if ($key === 'css' || $key === 'js' || $key === 'ui') {
                 $base[$key] = array_merge($base[$key] ?? [], $value);
             } else {
                 $base[$key] = $value;
@@ -126,6 +154,7 @@ if (!function_exists('hw_page_assets_script_urls')) {
             'validate' => hw_asset_url('../assets/vendor/php-email-form/validate.js'),
             'owl' => 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js',
             'fontawesome_kit' => 'https://kit.fontawesome.com/e7db147a51.js',
+            'google_fonts_deferred' => 'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap',
         ];
     }
 }
@@ -142,6 +171,7 @@ if (!function_exists('hw_page_assets_style_urls')) {
             'swiper' => hw_asset_url('../assets/vendor/swiper/swiper-bundle.min.css'),
             'owl' => 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css',
             'owl_theme' => 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css',
+            'modal_tabs_defer' => hw_asset_url('../assets/css/modal-tabs-defer.css'),
         ];
     }
 }

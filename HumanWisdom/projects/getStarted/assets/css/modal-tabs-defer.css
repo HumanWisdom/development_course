@@ -1,0 +1,128 @@
+/* Modal / tab helpers (deferred on landing for faster FCP) */
+.tab-content > .tab-pane.active {
+    display: block !important;
+}
+
+.tab-content > .tab-pane.active.show {
+    display: block !important;
+}
+
+.nav-tabs > li > a {
+    cursor: pointer;
+}
+
+.nav-tabs > li.active > a {
+    background-color: #f5f5f5;
+    border-color: #ddd;
+}
+
+.tab-pane {
+    transition: opacity 0.3s ease;
+}
+
+.tab-pane.show.active {
+    opacity: 1;
+}
+
+.tab-pane:not(.show.active) {
+    opacity: 0;
+    display: none;
+}
+
+.modal {
+    display: none;
+}
+
+.modal.show {
+    display: block !important;
+}
+
+.modal.fade .modal-dialog {
+    transform: translate(0, -25%);
+    transition: transform 0.3s ease-out;
+}
+
+.modal.show .modal-dialog {
+    transform: translate(0, 0) !important;
+}
+
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    background-color: #000;
+}
+
+.modal-backdrop.show {
+    opacity: 0.5;
+}
+
+.btn-close {
+    background: transparent;
+    border: 0;
+    font-size: 1.5rem;
+    line-height: 1;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+.btn-close::before {
+    content: "×";
+    display: block;
+    width: 1em;
+    height: 1em;
+    line-height: 1;
+    text-align: center;
+}
+
+body {
+    padding-right: 0px !important;
+}
+
+body.modal-open {
+    padding-right: 0px !important;
+    overflow: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #E58D82;
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #ccc #f1f1f1;
+}
+
+@media (max-width: 767px) {
+    .flex_block,
+    .flex_fd_cr,
+    .flex_fd_cr.flex_fd_cr,
+    .tab-content .flex_fd_cr,
+    .tab-content .row.center_flex > [class^="col-"].flex_fd_cr {
+        display: flex !important;
+        flex-direction: column-reverse !important;
+    }
+
+    .flex_block > div,
+    .flex_fd_cr > div {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}

@@ -1,0 +1,156 @@
+  .header_fixed.header.header_site_stack {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    box-sizing: border-box;
+  }
+  .header_site_top {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background: #ffffff;
+    box-sizing: border-box;
+    padding: 29px 0;
+    height:120px;
+    align-items: center;
+  }
+  .header_main_inner {
+    justify-content: center;
+    width: 100%;
+    max-width: 1440px;
+    text-align: center;
+    display: flex;
+    padding: 0 40px;
+    box-sizing: border-box;
+  }
+  .header_subnav {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    background: rgba(255, 249, 238, 1);
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(215, 88, 107, 0.25);
+    flex-shrink: 0;
+  }
+  .header_subnav_inner {
+    width: 100%;
+    max-width: 1440px;
+    box-sizing: border-box;
+    height: 49px;
+    padding: 15px 40px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    line-height: 1.2;
+  }
+  .header_subnav_inner a {
+    color: rgba(215, 88, 107, 1);;
+    font-weight: 500;
+    text-decoration: none;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 15px;;
+  }
+  .header_subnav_inner a:hover {
+    color: #803358;
+  }
+  /* Desktop/tablet: cream subnav only. Mobile: hidden — links live in hamburger menu */
+  .header_nav_mobile_only {
+    display: none !important;
+  }
+  @media (max-width: 767px) {
+    .header_fixed.header_site_stack {
+      justify-content: flex-start !important;
+    }
+    .header_main_inner {
+      width: 100% !important;
+      padding: 0 16px !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+    }
+    .header_site_top {
+      padding: 12px 0;
+      height: auto !important;
+      min-height: 0;
+    }
+    .header_subnav {
+      display: none !important;
+    }
+    .header_nav_mobile_only {
+      display: list-item !important;
+    }
+    /* Top row: logo | compact CTA + menu — avoid oversized button crowding the bar */
+    .header_main_inner > .dflex_end {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: flex-end !important;
+      flex-wrap: nowrap !important;
+      gap: 10px;
+      flex: 1 1 auto;
+      min-width: 0;
+      max-width: none;
+    }
+    .header_site_top .btn_tff.btn_popup {
+      width: auto !important;
+      min-width: 0;
+      max-width: none;
+      height: 40px !important;
+      padding: 8px 14px !important;
+      font-size: 13px !important;
+      line-height: 1.2 !important;
+      border-radius: 20px;
+      flex-shrink: 0;
+      box-sizing: border-box;
+    }
+    .header_main_inner .mobile-nav-show {
+      margin: 0 !important;
+      flex-shrink: 0;
+    }
+  }
+  @media (min-width: 768px) {
+    .header_fixed .navbar > ul > li > a:hover {
+      text-decoration: none !important;
+    }
+    .header_fixed .navbar > ul > li > a:before,
+    .header_fixed .navbar > ul > li > a:hover:before,
+    .header_fixed .navbar > ul > li:hover > a:before {
+      width: 0 !important;
+      visibility: hidden !important;
+    }
+  }
+  #teenagersHeaderClick .badge_new,
+  #teenagersHeaderClick_mobile .badge_new {
+    background: #D7586B !important;
+    border: none;
+    box-sizing: border-box;
+    transition: background 0.2s ease;
+    border-radius: 999px;
+    padding: 2px 6px;
+    line-height: 1;
+  }
+  #teenagersHeaderClick:hover .badge_new,
+  #teenagersHeaderClick.active_nav .badge_new,
+  #teenagersHeaderClick_mobile:hover .badge_new,
+  #teenagersHeaderClick_mobile.active_nav .badge_new {
+    background: #803358 !important;
+  }
+  #teenagersHeaderClick .badge_new h6,
+  #teenagersHeaderClick .badge_new h6:hover,
+  #teenagersHeaderClick_mobile .badge_new h6,
+  #teenagersHeaderClick_mobile .badge_new h6:hover {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+  }

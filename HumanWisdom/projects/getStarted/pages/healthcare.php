@@ -2,25 +2,15 @@
 <html lang="en">
 
   <head>
+    <title>Healthcare Staff and Patient Wellbeing | HappierMe</title>
+    <meta name="title" content="Healthcare Staff and Patient Wellbeing | HappierMe">
+    <meta name="description" content="Support healthier staff and patients with HappierMe. ORCHA approved, our prevention-first approach builds self-awareness, stronger relationships and resilience.">
+    <meta name="keywords" content="Healthcare wellbeing, healthcare staff wellbeing, patient self-management, burnout prevention, population health, healthcare mental health, clinician wellbeing, emotional intelligence in healthcare, preventive healthcare, workforce wellbeing, digital mental health">
+
     <meta property="og:title" id="tag1" content="Healthcare Staff and Patient Wellbeing | HappierMe">
     <meta property="og:type" content="website" />
     <meta property="og:description" content="Support healthier staff and patients with HappierMe. ORCHA approved, our prevention-first approach builds self-awareness, stronger relationships and resilience.">
    
-   <meta name="keywords" content="Healthcare wellbeing,
-healthcare staff wellbeing,
-patient self-management,
-burnout prevention,
-population health
-healthcare mental health,
-clinician wellbeing,
-emotional intelligence in healthcare,
-preventive healthcare,
-workforce wellbeing,
-digital mental health,
-
-
-
-">
     <meta property="og:image" content="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/imgs/website_share.jpg" />
     <meta property="og:image:alt" content="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/imgs/website_share.jpg" />
     <meta property="og:image:width" content="414" />
@@ -38,14 +28,14 @@ digital mental health,
       "@context": "https://schema.org",
       "@type": "Article",
       "name": "HappierMe",
-      "description": "Mental health app that helps users understand their emotions and thoughts, and offers a variety of tools and resources to help people improve their lives.",
+      "description": "Support healthier staff and patients with HappierMe. ORCHA approved, our prevention-first approach builds self-awareness, stronger relationships and resilience.",
       "url": "https://happierme.app/"
     },
     {
       "@context": "https://schema.org",
       "@type": "MentalHealthService",
       "name": "HappierMe",
-      "description": "Mental health app that helps users understand their emotions and thoughts, and offers a variety of tools and resources to help people improve their lives.",
+      "description": "Support healthier staff and patients with HappierMe. ORCHA approved, our prevention-first approach builds self-awareness, stronger relationships and resilience.",
       "url": "https://happierme.app/"
     }
   ]
