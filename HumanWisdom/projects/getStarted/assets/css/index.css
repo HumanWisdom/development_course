@@ -750,7 +750,7 @@ body.page-work .owl_testimonials .owl-controls {
   }
 }
 
-/* Education — testimonials (Figma: title 30/600/120% black, gap 40px; cards 426.67×305, r20, p36, gap 30px, bg cream) */
+/* Education — testimonials (Figma: 1340 row, 3×426.67 cards, gap 30, r20, p36, h305, bg cream) */
 body.page-education .edu-testimonials-section .edu-testimonials-header,
 body.page-education main#main .section-header.edu-testimonials-header {
   padding-bottom: 40px !important;
@@ -778,6 +778,7 @@ body.page-education .edu-testimonials-wrap {
   padding-left: 0;
   padding-right: 0;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 @media (max-width: 1380px) {
@@ -790,12 +791,13 @@ body.page-education .edu-testimonials-wrap {
 body.page-education .owl_testimonials {
   --edu-testimonial-row-width: 1340px;
   --edu-testimonial-gap: 30px;
-  --edu-testimonial-card-width: calc((var(--edu-testimonial-row-width) - 2 * var(--edu-testimonial-gap)) / 3);
+  /* Figma 426.67 — minus 2px each so 3 cards + gaps fit without clipping the last */
+  --edu-testimonial-card-width: calc((var(--edu-testimonial-row-width) - 2 * var(--edu-testimonial-gap)) / 3 - 2px);
   width: 100%;
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
-  overflow: visible;
+  overflow: hidden;
 }
 
 body.page-education .owl_testimonials .div_testimonials.edu-testimonial-card {
@@ -804,10 +806,10 @@ body.page-education .owl_testimonials .div_testimonials.edu-testimonial-card {
   border-radius: 20px !important;
   padding: 36px !important;
   width: var(--edu-testimonial-card-width) !important;
+  max-width: var(--edu-testimonial-card-width) !important;
   height: auto !important;
   min-height: 305px;
   max-height: none !important;
-  max-width: 100%;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -925,56 +927,244 @@ body.page-education .owl_testimonials .owl-carousel .owl-item {
   height: auto !important;
 }
 
+body.page-education .owl_testimonials .edu-testimonials-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-top: 40px;
+  min-height: 40px;
+  width: 100%;
+}
+
+body.page-education .owl_testimonials .edu-testimonials-footer .sap.edu-testimonials-more {
+  position: static !important;
+  width: auto !important;
+  margin: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px;
+  text-decoration: none !important;
+}
+
+body.page-education .owl_testimonials .edu-testimonials-footer .sap.edu-testimonials-more h4 {
+  color: #d7586b !important;
+  text-decoration: underline;
+  margin: 0 !important;
+}
+
+body.page-education .owl_testimonials .edu-testimonials-footer .sap.edu-testimonials-more:hover h4,
+body.page-education .owl_testimonials .edu-testimonials-footer .sap.edu-testimonials-more:active h4 {
+  color: #803358 !important;
+}
+
+body.page-education .owl_testimonials .edu-testimonials-footer .edu-testimonials-more .chevron-pink,
+body.page-education .owl_testimonials .edu-testimonials-footer .edu-testimonials-more .chevron-pink .bi {
+  color: #d7586b !important;
+  text-decoration: none !important;
+}
+
+body.page-education .owl_testimonials .edu-testimonials-footer .edu-testimonials-more:hover .chevron-pink,
+body.page-education .owl_testimonials .edu-testimonials-footer .edu-testimonials-more:hover .chevron-pink .bi,
+body.page-education .owl_testimonials .edu-testimonials-footer .edu-testimonials-more:active .chevron-pink,
+body.page-education .owl_testimonials .edu-testimonials-footer .edu-testimonials-more:active .chevron-pink .bi {
+  color: #803358 !important;
+}
+
 body.page-education .owl_testimonials .owl-nav,
 body.page-education .owl_testimonials .owl-nav-w,
 body.page-education .owl_testimonials .owl-controls,
-body.page-education .owl_testimonials + .owl-theme,
-body.page-education .edu-testimonials-wrap .sap {
+body.page-education .owl_testimonials + .owl-theme {
   display: none !important;
+}
+
+/* Desktop wide: lock Figma 1340 / cards (~424.67 with -2px) / gap 30 */
+@media (min-width: 1400px) {
+  body.page-education .edu-testimonials-wrap {
+    max-width: 1340px !important;
+    padding-left: 0;
+    padding-right: 0;
+    overflow: hidden;
+  }
+
+  body.page-education .owl_testimonials {
+    --edu-testimonial-row-width: 1340px;
+    --edu-testimonial-gap: 30px;
+    --edu-testimonial-card-width: calc((var(--edu-testimonial-row-width) - 2 * var(--edu-testimonial-gap)) / 3 - 2px);
+    max-width: 1340px !important;
+    overflow: hidden;
+  }
+
+  body.page-education .owl_testimonials > .owl-carousel {
+    max-width: 1340px !important;
+    overflow: hidden !important;
+  }
+
+  body.page-education .owl_testimonials > .owl-carousel > .owl-stage-outer {
+    max-width: 1340px !important;
+    overflow: hidden !important;
+  }
+
+  body.page-education .owl_testimonials .div_testimonials.edu-testimonial-card {
+    width: var(--edu-testimonial-card-width) !important;
+  }
+
+  body.page-education .owl_testimonials .owl-carousel .owl-item {
+    width: var(--edu-testimonial-card-width) !important;
+    max-width: var(--edu-testimonial-card-width) !important;
+    margin-right: var(--edu-testimonial-gap) !important;
+  }
 }
 
 @media (max-width: 767px) {
   body.page-education .edu-testimonials-wrap {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 0;
+    padding-right: 0;
+    overflow: hidden;
   }
 
   body.page-education .owl_testimonials {
     --edu-testimonial-card-width: 315px;
     --edu-testimonial-gap: 20px;
-  }
-
-  body.page-education .owl_testimonials .div_testimonials.edu-testimonial-card {
-    height: auto !important;
-    min-height: 260px;
-    padding: 24px !important;
-    gap: 20px;
-  }
-
-  body.page-education main#main .section-header.edu-testimonials-header {
-    padding-bottom: 40px !important;
-  }
-
-  body.page-education section.hpt120px ~ main#main .edu-testimonials-header h2.edu-testimonials-title,
-  body.page-education main#main .edu-testimonials-title {
-    font-size: 18px !important;
-    line-height: 140% !important;
-    color: rgba(0, 0, 0, 1) !important;
+    width: 100%;
     max-width: 100%;
+    min-width: 0;
+    overflow: visible;
   }
 
+  /* Figma: 24px gap between title and cards */
+  body.page-education main#main .section-header.edu-testimonials-header {
+    padding-top: 0 !important;
+    padding-bottom: 24px !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* Figma title: Poppins 600 / 24 / 150% / center — 335×72 */
+  body.page-education section.hpt120px ~ main#main .edu-testimonials-header h2.edu-testimonials-title,
+  body.page-education main#main .edu-testimonials-title,
+  body.page-education section.hpt120px ~ main#main .edu-testimonials-header h2.edu-testimonials-title.fs_30px {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 150% !important;
+    letter-spacing: 0 !important;
+    color: rgba(0, 0, 0, 1) !important;
+    text-align: center !important;
+    max-width: 335px !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Figma: horizontal scroll — 315px card + 20px gap; ~20px of 2nd card peeks */
+  body.page-education .owl_testimonials {
+    overflow: visible !important;
+  }
+
+  body.page-education .owl_testimonials > .owl-carousel,
   body.page-education .owl_testimonials .owl-carousel.edu-testimonials-native {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch !important;
+    gap: 20px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 20px !important;
+    box-sizing: border-box !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+    scroll-padding-left: 20px;
+    scroll-padding-right: 20px;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+    touch-action: pan-x;
+    overscroll-behavior-x: contain;
   }
 
-  body.page-education .owl_testimonials .owl-carousel.edu-testimonials-native > .item {
-    width: 100% !important;
+  body.page-education .owl_testimonials .owl-carousel.edu-testimonials-native::-webkit-scrollbar,
+  body.page-education .owl_testimonials > .owl-carousel::-webkit-scrollbar {
+    display: none !important;
+    height: 0 !important;
   }
 
-  body.page-education .owl_testimonials .owl-carousel.edu-testimonials-native .edu-testimonial-card {
-    width: 100% !important;
+  /* Hide leftover owl stage chrome if destroy leaves wrappers */
+  body.page-education .owl_testimonials .owl-carousel.edu-testimonials-native .owl-stage-outer,
+  body.page-education .owl_testimonials .owl-carousel.edu-testimonials-native .owl-stage {
+    display: contents !important;
+    width: auto !important;
+    transform: none !important;
+  }
+
+  body.page-education .owl_testimonials .owl-carousel.edu-testimonials-native > .item,
+  body.page-education .owl_testimonials .owl-carousel.edu-testimonials-native .owl-item,
+  body.page-education .owl_testimonials .owl-carousel.edu-testimonials-native .owl-item > .item {
+    flex: 0 0 315px !important;
+    width: 315px !important;
+    min-width: 315px !important;
+    max-width: 315px !important;
+    flex-shrink: 0 !important;
+    flex-grow: 0 !important;
+    scroll-snap-align: start;
+    margin: 0 !important;
+    margin-right: 0 !important;
+    height: 249px !important;
+  }
+
+  body.page-education .owl_testimonials .owl-carousel.edu-testimonials-native .edu-testimonial-card,
+  body.page-education .owl_testimonials .div_testimonials.edu-testimonial-card {
+    width: 315px !important;
+    min-width: 315px !important;
+    max-width: 315px !important;
+    height: 249px !important;
+    min-height: 249px !important;
+    max-height: 249px !important;
+    padding: 24px !important;
+    gap: 30px !important;
+    border-radius: 20px !important;
+    background: rgba(255, 247, 230, 1) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  body.page-education .owl_testimonials .edu-testimonial-header {
+    gap: 15px !important;
+    min-height: 0 !important;
+    flex-shrink: 0 !important;
+  }
+
+  body.page-education .owl_testimonials .edu-testimonial-avatar {
+    width: 60px !important;
+    height: 60px !important;
+    min-width: 60px !important;
+  }
+
+  body.page-education .owl_testimonials .edu-testimonial-quote {
+    flex: 1 1 auto !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+  }
+
+  body.page-education .owl_testimonials .edu-testimonials-footer {
+    margin-top: 24px;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+
+  body.page-education .owl_testimonials .edu-testimonials-footer .sap.edu-testimonials-more,
+  body.page-education .owl_testimonials .edu-testimonials-footer .sap.edu-testimonials-more h4 {
+    display: inline-flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    margin: 0 auto !important;
   }
 }
 
@@ -1136,6 +1326,24 @@ body.page-education .div_inspire a:hover.fc_cb6171 {
     color: rgba(0, 0, 0, 1) !important;
     text-align: center !important;
     max-width: 100%;
+  }
+
+  /* Figma mobile “Inspiring fresh ways of thinking”: Poppins 600 / 24 / 140% / center */
+  body.page-education section.hpt120px ~ main#main .edu-inspire-header h2.edu-inspire-title,
+  body.page-education main#main .edu-inspire-title,
+  body.page-education section.hpt120px ~ main#main .edu-inspire-header h2.edu-inspire-title.fs_30px {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 140% !important;
+    letter-spacing: 0 !important;
+    color: rgba(0, 0, 0, 1) !important;
+    text-align: center !important;
+    max-width: 335px !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
   }
 
   /* Figma: horizontal scroll — cards 315×213, gap 20, pad 24, r20 */
@@ -1718,6 +1926,19 @@ body.page-work .owl_blog .work-blog-footer .owl-nav-w {
     opacity: 0 !important;
     pointer-events: none !important;
   }
+
+  body.page-education .edu-blog-footer .edu-blog-nav,
+  body.page-education .edu-blog-footer .edu-blog-nav .owl-controls,
+  body.page-education .edu-blog-footer .edu-blog-nav .owl-nav,
+  body.page-education .edu-blog-footer .edu-blog-nav .owl-nav-w,
+  body.page-education .owl_blog .edu-blog-footer .owl-controls,
+  body.page-education .owl_blog .edu-blog-footer .owl-nav,
+  body.page-education .owl_blog .edu-blog-footer .owl-nav-w {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
 }
 
 body.page-work .work-blog-more,
@@ -1842,12 +2063,12 @@ body.page-work .work-blog-more:active h4 {
   }
 }
 
-/* Education — Explore our blog (Figma: black title 30/600/120%, gap 60px; link #d7586b → hover #803358) */
+/* Education — Explore our blog (Figma: black title 30/600/120%, gap 50px; link #d7586b → hover #803358) */
 body.page-education .edu-blog-section {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  gap: 60px;
+  gap: 50px;
 }
 
 body.page-education .edu-blog-section .edu-blog-header,
@@ -1899,6 +2120,27 @@ body.page-education .edu-blog-footer .sap.edu-blog-more {
   width: auto !important;
   right: auto !important;
   margin: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px;
+  text-decoration: none !important;
+}
+
+body.page-education .edu-blog-footer .sap.edu-blog-more h4 {
+  text-decoration: underline;
+}
+
+body.page-education .edu-blog-footer .edu-blog-more .chevron-pink,
+body.page-education .edu-blog-footer .edu-blog-more .chevron-pink .bi {
+  color: #d7586b !important;
+  text-decoration: none !important;
+}
+
+body.page-education .edu-blog-footer .edu-blog-more:hover .chevron-pink,
+body.page-education .edu-blog-footer .edu-blog-more:hover .chevron-pink .bi,
+body.page-education .edu-blog-footer .edu-blog-more:active .chevron-pink,
+body.page-education .edu-blog-footer .edu-blog-more:active .chevron-pink .bi {
+  color: #803358 !important;
 }
 
 body.page-education .edu-blog-footer .edu-blog-nav {
@@ -1922,45 +2164,187 @@ body.page-education .owl_blog .edu-blog-footer .owl-nav-w {
   opacity: 1 !important;
 }
 
-body.page-education .edu-blog-more,
+body.page-education .edu-blog-more {
+  text-decoration: none !important;
+  margin: 0 !important;
+}
+
 body.page-education .edu-blog-more h4 {
   color: #d7586b !important;
   text-decoration: underline;
   margin: 0 !important;
 }
 
-body.page-education .edu-blog-more:hover,
 body.page-education .edu-blog-more:hover h4,
-body.page-education .edu-blog-more:active,
 body.page-education .edu-blog-more:active h4 {
   color: #803358 !important;
 }
 
 @media (max-width: 767px) {
   body.page-education .edu-blog-section {
-    gap: 40px;
+    gap: 24px;
+    padding-top: 60px !important;
+    padding-bottom: 0 !important;
+    margin-top: 0 !important;
   }
 
   body.page-education main#main .section-header.edu-blog-header {
     padding-bottom: 0 !important;
+    padding-top: 0 !important;
   }
 
+  /* Figma mobile “Explore our blog”: Poppins 600 / 24 / 140% / center */
   body.page-education section.hpt120px ~ main#main .edu-blog-header h2.edu-blog-title,
   body.page-education main#main .edu-blog-title {
-    font-size: 18px !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 24px !important;
+    font-weight: 600 !important;
     line-height: 140% !important;
     color: rgba(0, 0, 0, 1) !important;
+    text-align: center !important;
+  }
+
+  /* Figma mobile blog tile: 306 × 242.54 (img 156.26 + caption 86.28) */
+  body.page-education .owl_blog .owl-carousel {
+    padding-bottom: 0 !important;
+  }
+
+  body.page-education .owl_blog > .owl-carousel > .owl-stage-outer,
+  body.page-education .owl_blog .owl-carousel .owl-stage-outer {
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    margin-left: 0 !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+
+  body.page-education .owl_blog .owl-carousel .owl-stage-outer::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+
+  body.page-education .owl_blog .owl-carousel .owl-stage {
+    left: 0 !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  body.page-education .owl_blog .owl-carousel .owl-item {
+    margin-right: 16px !important;
+  }
+
+  body.page-education .owl_blog .owl-carousel .owl-item,
+  body.page-education .owl_blog .owl-carousel .owl-item .item {
+    width: 306px !important;
+    max-width: 306px !important;
+  }
+
+  body.page-education .owl_blog .div_blog {
+    width: 306px !important;
+    max-width: 306px !important;
+    height: 242.54px !important;
+    min-height: 242.54px !important;
+    max-height: 242.54px !important;
+    border-radius: 10px !important;
+    background: rgba(255, 247, 230, 1) !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    box-sizing: border-box !important;
+  }
+
+  body.page-education .owl_blog .div_blog > .row:first-child,
+  body.page-education .owl_blog .div_blog > .row:first-child [class^="col-"] {
+    height: 156.26px !important;
+    min-height: 156.26px !important;
+    max-height: 156.26px !important;
+    flex-shrink: 0 !important;
+  }
+
+  body.page-education .owl_blog .div_blog img {
+    width: 100% !important;
+    height: 156.26px !important;
+    min-height: 156.26px !important;
+    max-height: 156.26px !important;
+    object-fit: cover !important;
+    border-radius: 10px 10px 0 0 !important;
+    display: block !important;
+  }
+
+  /* Figma caption: 306×86.28, padding 20 */
+  body.page-education .owl_blog .div_blog > .row:last-child,
+  body.page-education .owl_blog .div_blog > .row:last-child [class^="col-"] {
+    height: 86.28px !important;
+    min-height: 86.28px !important;
+    max-height: 86.28px !important;
+    flex-shrink: 0 !important;
+    padding: 20px !important;
+    padding-left: 20px !important;
+    box-sizing: border-box !important;
+    background: rgba(255, 247, 230, 1) !important;
+    border-radius: 0 0 10px 10px !important;
+    text-align: left !important;
+  }
+
+  /* Figma mobile blog title: Poppins 500 / 15 / 150% */
+  body.page-education .owl_blog .div_blog h4,
+  body.page-education .owl_blog .div_blog h4.fs_18px {
+    margin: 0 !important;
+    padding: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: 46px !important;
+    max-width: 265px !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    line-height: 150% !important;
+    letter-spacing: 0 !important;
+    color: rgba(0, 0, 0, 1) !important;
+    text-align: left !important;
+    overflow: hidden !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+  }
+
+  body.page-education .owl_blog a.item {
+    text-align: left !important;
+    justify-content: flex-start !important;
   }
 
   body.page-education .edu-blog-footer {
-    margin-top: 40px;
+    margin-top: 24px;
+    margin-bottom: 0;
     margin-left: 20px;
+    margin-right: 20px;
     width: 100%;
     max-width: calc(100% - 40px);
+    min-height: 0;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  body.page-education .edu-blog-footer .sap.edu-blog-more,
+  body.page-education .edu-blog-footer .sap.edu-blog-more h4,
+  body.page-education a.sap.edu-blog-more {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+    width: auto !important;
   }
 
   body.page-education .edu-blog-footer .edu-blog-nav {
     display: none !important;
+  }
+
+  body.page-education .dfooter {
+    margin-top: 40px !important;
   }
 }
 
@@ -3859,15 +4243,20 @@ body.page-healthcare .healthcare-hero-shell .wide-screen-only {
   }
 
   body.page-work main#main .section-header.work-dyk-header,
-  body.page-work main#main .section-header.work-inspire-header,
-  body.page-education main#main .section-header.edu-dyk-header,
-  body.page-education main#main .section-header.edu-testimonials-header {
+  body.page-work main#main .section-header.work-inspire-header {
     padding-bottom: 40px !important;
     margin-bottom: 0 !important;
   }
 
+  /* Figma mobile “Did you know?”: 24px gap between title and stats band */
+  body.page-education main#main .section-header.edu-dyk-header {
+    padding-bottom: 24px !important;
+    margin-bottom: 0 !important;
+  }
+
   /* Figma: 24px gap between testimonials title and cards */
-  body.page-work main#main .section-header.work-testimonials-header {
+  body.page-work main#main .section-header.work-testimonials-header,
+  body.page-education main#main .section-header.edu-testimonials-header {
     padding-bottom: 24px !important;
     margin-bottom: 0 !important;
   }
@@ -3904,18 +4293,74 @@ body.page-healthcare .healthcare-hero-shell .wide-screen-only {
     margin-bottom: 0 !important;
   }
 
+  /* Figma mobile “Did you know?”: Poppins 600 / 24 / 140% / center */
   body.page-education section.hpt120px ~ main#main .edu-dyk-header h2.edu-dyk-title,
   body.page-education main#main .edu-dyk-title,
+  body.page-education section.hpt120px ~ main#main .edu-dyk-header h2.edu-dyk-title.fs_30px {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 140% !important;
+    letter-spacing: 0 !important;
+    color: rgba(0, 0, 0, 1) !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    max-width: 375px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Figma mobile “The HappierMe impact…”: Poppins 600 / 24 / 150% / center — 335×72 */
   body.page-education section.hpt120px ~ main#main .edu-testimonials-header h2.edu-testimonials-title,
   body.page-education main#main .edu-testimonials-title,
+  body.page-education section.hpt120px ~ main#main .edu-testimonials-header h2.edu-testimonials-title.fs_30px {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 150% !important;
+    letter-spacing: 0 !important;
+    color: rgba(0, 0, 0, 1) !important;
+    text-align: center !important;
+    max-width: 335px !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Figma: 24px gap between testimonials title and cards */
+  body.page-education main#main .section-header.edu-testimonials-header {
+    padding-bottom: 24px !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* Figma mobile “Inspiring fresh ways of thinking”: Poppins 600 / 24 / 140% / center — 335×68 */
   body.page-education section.hpt120px ~ main#main .edu-inspire-header h2.edu-inspire-title,
   body.page-education main#main .edu-inspire-title,
+  body.page-education section.hpt120px ~ main#main .edu-inspire-header h2.edu-inspire-title.fs_30px {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 140% !important;
+    letter-spacing: 0 !important;
+    color: rgba(0, 0, 0, 1) !important;
+    text-align: center !important;
+    max-width: 335px !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Figma mobile “Explore our blog”: 24 / 600 / 140% */
   body.page-education section.hpt120px ~ main#main .edu-blog-header h2.edu-blog-title,
   body.page-education main#main .edu-blog-title {
-    font-size: 18px !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 24px !important;
     font-weight: 600 !important;
     line-height: 140% !important;
     color: rgba(0, 0, 0, 1) !important;
+    text-align: center !important;
   }
 
   /* Figma mobile “Did you know?”: Poppins 600 / 24 / 140% / center */
@@ -3927,6 +4372,24 @@ body.page-healthcare .healthcare-hero-shell .wide-screen-only {
     line-height: 140% !important;
     color: rgba(0, 0, 0, 1) !important;
     text-align: center !important;
+  }
+
+  body.page-education section.hpt120px ~ main#main .edu-dyk-header h2.edu-dyk-title,
+  body.page-education main#main .edu-dyk-title,
+  body.page-education section.hpt120px ~ main#main .edu-dyk-header h2.edu-dyk-title.fs_30px {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 140% !important;
+    letter-spacing: 0 !important;
+    color: rgba(0, 0, 0, 1) !important;
+    text-align: center !important;
+  }
+
+  body.page-work main#main .section-header.work-dyk-header,
+  body.page-education main#main .section-header.edu-dyk-header {
+    padding-bottom: 24px !important;
+    margin-bottom: 0 !important;
   }
 
   /* Figma mobile inspire title: 24 / 600 / 140% */
