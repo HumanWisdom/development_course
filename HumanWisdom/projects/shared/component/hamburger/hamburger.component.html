@@ -1,3 +1,12 @@
+
+
+
+
+
+
+
+
+
 <nav class="lh0">
   <input type="checkbox" id="menu" name="menu" class="m-menu__checkbox mc_main">
   <label class="m-menu__toggle m0px ihamburger" for="menu" (click)="disableClick ? $event.preventDefault() : null"
@@ -67,7 +76,7 @@
 
                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/trial.svg" class="img-responsive" *ngIf="isAdults">
               </div> -->
-                    <div class="col-md-11 col-sm-11 col-xs-11 p0">
+                    <div class="col-md-11 col-sm-11 col-xs-11 p0 p0">
                       <div class="login1"
                         [ngClass]="isAdults ? 'fc_D7586B' : 'fc_EE9596'">
                         View Profile
@@ -84,19 +93,22 @@
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                     <div class="col-md-1 col-sm-1 col-xs-1 p0  image-box">
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/hb_stp.svg"
-                        class="img-responsive " *ngIf="!isAdults">
+                         class="img1" *ngIf="!isAdults">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/teenfree_hov.svg"
+                         class="img2" *ngIf="!isAdults">
 
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/trial_ad.svg"
                         class="img1" *ngIf="isAdults">
                         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/start_hov.svg"
                         class="img2" *ngIf="isAdults">
                     </div>
-                    <div class="col-md-11 col-sm-11 col-xs-11 login1 ">
-                      <div class="login1"style="font-size:15px"
+                    <div class="col-md-11 col-sm-11 col-xs-11 pl10px login1 ">
+                      <div class="login1" style="font-size:15px;"
                         [ngClass]="isAdults ? 'fc_D7586B' : 'fc_EE9596'">
                         Start your free trial
                     </div>
                     </div>
+                   
                   </div>
                 </div>
               </a>
@@ -112,7 +124,7 @@
       <a class="p0 b0px">
         <div class="row">
           <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
-            <div class="col-md-11 col-sm-11 col-xs-11 ">
+            <div class="col-md-11 col-sm-11 col-xs-11 p0 ">
               <label class="flex_ai fw_500 fs_14px lh_16px fc_ffffff mtb0px" >
                 <input type="radio" name="switch" [value]="isAdults" (change)="onProgramChange($event)">
                 <span class="slider round"></span>
@@ -138,12 +150,12 @@
                   alt="" class="p0" *ngIf="isAdults">
 
               </div>
-              <div class="col-md-10 col-sm-10 col-xs-10 ">
+              <div class="col-md-10 col-sm-10 col-xs-10 p0">
                 <h4 class="fw_500 fs_14px lh_16px  mtb0px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                   {{isAdults ? "HappierMe for Teenagers" : "HappierMe for Adults" }}
                 </h4>
               </div>
-              <div class="col-md-1 col-sm-1 col-xs-1 tright p0  ">
+              <div class="col-md-1 col-sm-1 col-xs-1  p0  ">
                 <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/toggle.svg" alt=""
                   class="img-fluid " *ngIf="!isAdults">
 
@@ -165,7 +177,7 @@
               <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
                 <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/hb_stp.svg" class="img-responsive">
               </div>
-              <div class="col-md-11 col-sm-11 col-xs-11 ">
+              <div class="col-md-11 col-sm-11 col-xs-11 p0 ">
                 <h4 class="fw_500 fs_15px lh_1px  mtb0px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                   Start your free trial
                 </h4>
@@ -184,13 +196,13 @@
                 <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/06.svg"
                   class="img-responsive" *ngIf="!isAdults">
                 <img
-                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/asubscription.svg  "
+                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/subsad.svg"
                   alt="" class="p0" *ngIf="isAdults">
 
 
 
               </div>
-              <div class="col-md-11 col-sm-11 col-xs-11  ">
+              <div class="col-md-11 col-sm-11 col-xs-11 p0  ">
                 <h4 class="fw_500 fs_14px lh_16px  mtb0px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                   {{GetSubscriptionText()}}
                 </h4>
@@ -213,7 +225,7 @@
                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/dhamburger/guide_teen1.svg" class="img-responsive" *ngIf="!isAdults">
 
               </div>
-              <div class="col-md-11 col-sm-11 col-xs-11 ">
+              <div class="col-md-11 col-sm-11 col-xs-11 p0 ">
                 <h4 class="fw_500 fs_14px lh_16px  mtb0px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                   Guide to HappierMe
                 </h4>
@@ -236,7 +248,7 @@
 
               </div>
 
-              <div class="col-md-11 col-sm-11 col-xs-11 ">
+              <div class="col-md-11 col-sm-11 col-xs-11 p0 ">
                 <h4 class="fw_500 fs_14px lh_16px  mtb0px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                   Success stories
                 </h4>
@@ -260,12 +272,12 @@
                   alt="" class="p0" *ngIf="isAdults">
 
               </div>
-              <div class="col-md-10 col-sm-10 col-xs-10  ">
+              <div class="col-md-10 col-sm-10 col-xs-10  p0">
                 <h4 class="fw_500 fs_14px lh_16px  mtb0px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                   Partnership Program
                 </h4>
               </div>
-              <div class="col-md-1 col-sm-1 col-xs-1 tright p0">
+              <div class="col-md-1 col-sm-1 col-xs-1  p0">
                 <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/chevron_right_white.svg" alt=""
                   class="img-fluid" *ngIf="!isAdults">
 
@@ -288,7 +300,7 @@
                     <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/back.svg" alt=""
                       class="img-responsive back_p" *ngIf="isAdults">
                   </div>
-                  <div class="col-md-11 col-sm-11 col-xs-11 ">
+                  <div class="col-md-11 col-sm-11 col-xs-11 p0 ">
                     <h4 class="mtb0px fs_15px fw_500 lh_150p" [ngClass]="isAdults ? 'fc_D7586B' : 'fc_e58d82'">
                       Partnership Program
                     </h4>
@@ -309,7 +321,7 @@
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/apart.svg" alt=""  class="img-responsive" *ngIf="isAdults"  > 
 
                     </div> -->
-                    <div class="col-md-11 col-sm-11 col-xs-11 ">
+                    <div class="col-md-11 col-sm-11 col-xs-11 p0 ">
                       <h4 class="fw_500 fs_14px lh_16px  mtb0px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                         Become a Partner
                       </h4>
@@ -329,7 +341,7 @@
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/apart.svg" alt=""  class="img-responsive"  *ngIf="isAdults"  >
 
                     </div> -->
-                    <div class="col-md-11 col-sm-11 col-xs-11 ">
+                    <div class="col-md-11 col-sm-11 col-xs-11 p0 ">
                       <h4 class="fw_500 fs_14px lh_16px  mtb0px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                         My Partnership
                       </h4>
@@ -350,7 +362,7 @@
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/apart.svg" alt=""  class="img-responsive"  *ngIf="isAdults"  >
 
                     </div> -->
-                    <div class="col-md-11 col-sm-11 col-xs-11 ">
+                    <div class="col-md-11 col-sm-11 col-xs-11 p0 ">
                       <h4 class="fw_500 fs_14px lh_16px  mtb0px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                         About Partnership
                       </h4>
@@ -370,7 +382,7 @@
                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/apart.svg" alt=""  class="img-responsive"  *ngIf="isAdults"  >
 
                     </div> -->
-                    <div class="col-md-11 col-sm-11 col-xs-11 ">
+                    <div class="col-md-11 col-sm-11 col-xs-11 p0 ">
                       <h4 class="fw_500 fs_14px lh_16px  mtb0px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                         Partnership FAQ
                       </h4>
@@ -399,7 +411,7 @@
 
 
               </div>
-              <div class="col-md-11 col-sm-11 col-xs-11 ">
+              <div class="col-md-11 col-sm-11 col-xs-11 p0 ">
                 <h4 class="fw_500 fs_14px lh_16px  mtb0px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"
                   (click)="giftwisdom()">
                   Subscribe for family & friends
@@ -418,7 +430,7 @@
                 <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/07.svg" alt=""
                   class="img-responsive">
               </div>
-              <div class="col-md-11 col-sm-11 col-xs-11 ">
+              <div class="col-md-11 col-sm-11 col-xs-11 p0 ">
                 <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px" (click)="giftwisdom()">
                   Give the gift of Happiness
                 </h4>
@@ -439,7 +451,7 @@
                   alt="" class="p0" *ngIf="isAdults">
 
               </div>
-              <div class="col-md-11 col-sm-11 col-xs-11 ">
+              <div class="col-md-11 col-sm-11 col-xs-11 p0 ">
                 <h4 class="fw_500 fs_14px lh_16px  mtb0px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                   Refer a Friend
                 </h4>
@@ -447,8 +459,11 @@
             </div>
           </div>
         </a>
+
+        <!-- <div class="row ng-tns-c200-2"><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr10px "><hr  class="hr_style_v4 "></div></div> -->
       </li>
 
+<!-- <hr/> -->
       <!-- <li>
         <a routerLink="/give-the-gift-of-wisdom/" class="p0 b0px">
           <div class="row">
@@ -457,7 +472,7 @@
                 <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/08.svg" alt=""
                   class="img-responsive">
               </div>
-              <div class="col-md-11 col-sm-11 col-xs-11 ">
+              <div class="col-md-11 col-sm-11 col-xs-11 p0 ">
                 <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px" data-toggle="modal" data-target="#refer_popup">
                   Give the gift of wisdom
                 </h4>
@@ -475,7 +490,7 @@
                 <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/20.svg" alt=""
                   class="img-responsive">
               </div>
-              <div class="col-md-11 col-sm-11 col-xs-11 ">
+              <div class="col-md-11 col-sm-11 col-xs-11 p0 ">
                 <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px" data-toggle="modal" data-target="#refer_popup">
                   HappierMe for Business
                 </h4>
@@ -493,7 +508,7 @@
                 <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/21.svg" alt=""
                   class="img-responsive">
               </div>
-              <div class="col-md-11 col-sm-11 col-xs-11 ">
+              <div class="col-md-11 col-sm-11 col-xs-11 p0 ">
                 <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px" data-toggle="modal" data-target="#refer_popup">
                   HappierMe for Education
                 </h4>
@@ -511,7 +526,7 @@
                 <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/20.svg" alt=""
                   class="img-responsive">
               </div>
-              <div class="col-md-11 col-sm-11 col-xs-11 ">
+              <div class="col-md-11 col-sm-11 col-xs-11 p0 ">
                 <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
                   HappierMe for Work
                 </h4>
@@ -529,7 +544,7 @@
                 <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/21.svg" alt=""
                   class="img-responsive">
               </div>
-              <div class="col-md-11 col-sm-11 col-xs-11 ">
+              <div class="col-md-11 col-sm-11 col-xs-11 p0 ">
                 <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px" data-toggle="modal" data-target="#refer_popup">
                   HappierMe for Education
                 </h4>
@@ -547,7 +562,7 @@
                 <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/21.svg" alt=""
                   class="img-responsive">
               </div>
-              <div class="col-md-11 col-sm-11 col-xs-11 ">
+              <div class="col-md-11 col-sm-11 col-xs-11 p0 ">
                 <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px" data-toggle="modal" data-target="#refer_popup">
                   HappierMe for Healthcare
                 </h4>
@@ -569,7 +584,7 @@
 
 
               </div>
-              <div class="col-md-11 col-sm-11 col-xs-11 ">
+              <div class="col-md-11 col-sm-11 col-xs-11 p0 ">
                 <h4 class="fw_500 fs_14px lh_16px  mtb0px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                   Tree Planting Program
                 </h4>
@@ -591,7 +606,7 @@
                   alt="" class="p0" *ngIf="isAdults">
 
               </div>
-              <div class="col-md-11 col-sm-11 col-xs-11 ">
+              <div class="col-md-11 col-sm-11 col-xs-11 p0 ">
                 <h4 class="fw_500 fs_14px lh_16px  mtb0px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                   Sign up for our newsletter
                 </h4>
@@ -609,7 +624,7 @@
                 <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/19.svg" alt=""
                   class="img-responsive">
               </div>
-              <div class="col-md-11 col-sm-11 col-xs-11 ">
+              <div class="col-md-11 col-sm-11 col-xs-11 p0 ">
                 <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
                   About Us
                 </h4>
@@ -652,7 +667,7 @@
                       src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/hb_back.svg"
                       alt="" class="img-responsive back_au">
                   </div>
-                  <div class="col-md-11 col-sm-11 col-xs-11 ">
+                  <div class="col-md-11 col-sm-11 col-xs-11 p0 ">
                     <h4 class="mtb0px fs_15px fw_500 lh_150p fc_e58d82">
                       About Us
                     </h4>
@@ -670,7 +685,7 @@
                       <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/10.svg"
                         alt="" class="img-responsive">
                     </div>
-                    <div class="col-md-11 col-sm-11 col-xs-11 ">
+                    <div class="col-md-11 col-sm-11 col-xs-11 p0 ">
                       <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
                         HappierMe Project
                       </h4>
@@ -688,7 +703,7 @@
                       <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/12.svg"
                         alt="" class="img-responsive">
                     </div>
-                    <div class="col-md-11 col-sm-11 col-xs-11 ">
+                    <div class="col-md-11 col-sm-11 col-xs-11 p0 ">
                       <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
                         Our Story
                       </h4>
@@ -706,7 +721,7 @@
                       <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/12.svg"
                         alt="" class="img-responsive">
                     </div>
-                    <div class="col-md-11 col-sm-11 col-xs-11 ">
+                    <div class="col-md-11 col-sm-11 col-xs-11 p0 ">
                       <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
                       GPAY
                       </h4>
@@ -733,12 +748,12 @@
                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/help_blackad.svg"
                   alt="" class="img-responsive back_p" *ngIf="isAdults">
               </div>
-              <div class="col-md-10 col-sm-10 col-xs-10 ">
+              <div class="col-md-10 col-sm-10 col-xs-10 p0">
                 <h4 class="fw_500 fs_14px lh_16px  mtb0px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                   Help & Support
                 </h4>
               </div>
-              <div class="col-md-1 col-sm-1 col-xs-1 tright ">
+              <div class="col-md-1 col-sm-1 col-xs-1 p0 ">
                 <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/chevron_right_white.svg" alt=""
                   class="img-fluid" *ngIf="!isAdults">
 
@@ -762,7 +777,7 @@
                     <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/back.svg" alt=""
                       class="img-responsive back_p" *ngIf="isAdults">
                   </div>
-                  <div class="col-md-11 col-sm-11 col-xs-11 ">
+                  <div class="col-md-11 col-sm-11 col-xs-11 p0 ">
                     <h4 class="mtb0px fs_15px fw_500 lh_150p " [ngClass]="isAdults ? 'fc_D7586B' : 'fc_e58d82'">
                       Help & Support
                     </h4>
@@ -779,7 +794,7 @@
                     <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
                       <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/12.svg" alt="" class="img-responsive">
                     </div>
-                    <div class="col-md-11 col-sm-11 col-xs-11 ">
+                    <div class="col-md-11 col-sm-11 col-xs-11 p0 ">
                       <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
                         User Guides
                       </h4>
@@ -799,7 +814,7 @@
                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/ahelp.svg" alt=""
                       class="img-responsive " *ngIf="isAdults">
                     </div> -->
-                    <div class="col-md-11 col-sm-11 col-xs-11 ">
+                    <div class="col-md-11 col-sm-11 col-xs-11 p0 ">
                       <h4 class="fw_500 fs_14px lh_16px  mtb0px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                         FAQ
                       </h4>
@@ -815,7 +830,7 @@
                   <div class="col-md-1 col-sm-1 col-xs-1 p0 mr10px">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/icons/dhamburger/12.svg" alt="" class="img-responsive">
                   </div>
-                  <div class="col-md-11 col-sm-11 col-xs-11 ">
+                  <div class="col-md-11 col-sm-11 col-xs-11 p0 ">
                     <h4 class="fw_500 fs_14px lh_16px fc_ffffff mtb0px">
                       Help Centre
                     </h4>
@@ -834,7 +849,7 @@
                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/ahelp.svg" alt=""
                       class="img-responsive " *ngIf="isAdults">
                     </div> -->
-                    <div class="col-md-11 col-sm-11 col-xs-11 ">
+                    <div class="col-md-11 col-sm-11 col-xs-11 p0 ">
                       <h4 class="fw_500 fs_14px lh_16px  mtb0px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                         Contact Us
                       </h4>
@@ -855,7 +870,7 @@
                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/ahelp.svg" alt=""
                       class="img-responsive" *ngIf="isAdults">
                     </div> -->
-                    <div class="col-md-11 col-sm-11 col-xs-11 ">
+                    <div class="col-md-11 col-sm-11 col-xs-11 p0 ">
                       <h4 class="fw_500 fs_14px lh_16px  mtb0px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                         User Agreement
                       </h4>
@@ -875,7 +890,7 @@
                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/ahelp.svg" alt=""
                       class="img-responsive" *ngIf="isAdults">
                     </div> -->
-                    <div class="col-md-11 col-sm-11 col-xs-11 ">
+                    <div class="col-md-11 col-sm-11 col-xs-11 p0 ">
                       <h4 class="fw_500 fs_14px lh_16px  mtb0px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                         Privacy Policy
                       </h4>
@@ -895,7 +910,7 @@
                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/ahelp.svg" alt=""
                       class="img-responsive " *ngIf="isAdults">
                     </div> -->
-                    <div class="col-md-11 col-sm-11 col-xs-11 ">
+                    <div class="col-md-11 col-sm-11 col-xs-11 p0 ">
                       <h4 class="fw_500 fs_14px lh_16px  mtb0px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                         Cookie Policy
                       </h4>
@@ -915,7 +930,7 @@
                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/ahelp.svg" alt=""
                       class="img-responsive " *ngIf="isAdults">
                     </div> -->
-                    <div class="col-md-11 col-sm-11 col-xs-11 ">
+                    <div class="col-md-11 col-sm-11 col-xs-11 p0 ">
                       <h4 class="fw_500 fs_14px lh_16px  mtb0px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                         Accessibility Statement
                       </h4>
@@ -935,7 +950,7 @@
                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/ahelp.svg" alt=""
                       class="img-responsive " *ngIf="isAdults">
                     </div> -->
-                    <div class="col-md-11 col-sm-11 col-xs-11 ">
+                    <div class="col-md-11 col-sm-11 col-xs-11 p0 ">
                       <h4 class="fw_500 fs_14px lh_16px  mtb0px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                         Our content experts
                       </h4>
@@ -1085,3 +1100,1110 @@
   </div>
 </div> -->
 <!-- /modal logout -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

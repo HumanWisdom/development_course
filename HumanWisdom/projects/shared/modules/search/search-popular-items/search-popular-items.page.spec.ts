@@ -9,8 +9,6 @@ import { SharedService } from '../../../services/shared.service';
 import { ProgramType } from '../../../models/program-model';
 import { of, throwError } from 'rxjs';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { Location } from '@angular/common';
-import { NavigationService } from '../../../services/navigation.service';
 
 describe('SearchPopularItemsPage', () => {
   let component: SearchPopularItemsPage;
@@ -21,8 +19,6 @@ describe('SearchPopularItemsPage', () => {
   let mockActivatedRoute: any;
   let mockDomSanitizer: jasmine.SpyObj<DomSanitizer>;
   let mockOnboardingService: jasmine.SpyObj<OnboardingService>;
-  let mockLocation: jasmine.SpyObj<Location>;
-  let mockNavigationService: jasmine.SpyObj<NavigationService>;
   let mockProgramId: any;
 
   beforeEach(async () => {
@@ -96,10 +92,6 @@ describe('SearchPopularItemsPage', () => {
     mockOnboardingService.clickStory.and.returnValue(of({}));
     mockOnboardingService.clickBlog.and.returnValue(of({}));
 
-    mockLocation = jasmine.createSpyObj('Location', ['back']);
-    mockNavigationService = jasmine.createSpyObj('NavigationService', ['navigateToBackLink']);
-    mockNavigationService.navigateToBackLink.and.returnValue(null);
-
     // Setup SharedService defaults
     // Mock ProgramId using Object.defineProperty to avoid coverage instrumentation issues
     mockProgramId = ProgramType.Adults;
@@ -120,9 +112,7 @@ describe('SearchPopularItemsPage', () => {
         { provide: Router, useValue: mockRouter },
         { provide: ActivatedRoute, useValue: mockActivatedRoute },
         { provide: DomSanitizer, useValue: mockDomSanitizer },
-        { provide: OnboardingService, useValue: mockOnboardingService },
-        { provide: Location, useValue: mockLocation },
-        { provide: NavigationService, useValue: mockNavigationService }
+        { provide: OnboardingService, useValue: mockOnboardingService }
       ]
     }).compileComponents();
 
@@ -944,17 +934,9 @@ describe('SearchPopularItemsPage', () => {
   });
 
   describe('goBack', () => {
-    it('should navigate using navigationService when url is available', () => {
-      mockNavigationService.navigateToBackLink.and.returnValue('/adults/explore');
+    it('should navigate to search page', () => {
       component.goBack();
-      expect(mockNavigationService.navigateToBackLink).toHaveBeenCalled();
-      expect(mockRouter.navigateByUrl).toHaveBeenCalledWith('/adults/explore');
-    });
-
-    it('should use location.back when navigationService returns null', () => {
-      mockNavigationService.navigateToBackLink.and.returnValue(null);
-      component.goBack();
-      expect(mockLocation.back).toHaveBeenCalled();
+      expect(mockRouter.navigate).toHaveBeenCalledWith(['/adults/search']);
     });
   });
 
