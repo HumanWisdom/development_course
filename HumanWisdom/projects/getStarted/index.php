@@ -166,60 +166,78 @@ $hw_lcp_banner_mobile = hw_lcp_image_url('banner_mobile');
         document.querySelectorAll('.faq-panel').forEach(function(p){
           p.classList.remove('active');
         });
-        document.getElementById(panelId).classList.add('active');
+        var panel = document.getElementById(panelId);
+        if (panel) panel.classList.add('active');
       }
 
-      /* FAQ accordion toggle */
-      hwWhenChunkDomReady(function() {
-        document.querySelectorAll('.div-60, .div-61').forEach(function(row) {
-          row.style.cursor = 'pointer';
-          row.addEventListener('click', function() {
-            var body = this.parentElement.querySelector('.faq-body');
-            if (!body) return;
+      function findDesktopFaqBody(row) {
+        var block = row.closest('.div-58');
+        if (block) {
+          var body = block.querySelector('.faq-body');
+          if (body) return body;
+        }
+        var parent = row.parentElement;
+        return parent ? parent.querySelector('.faq-body') : null;
+      }
 
-            // If this one is already open, clicking it should close it.
-            var isOpen = body.style.display === 'block';
-            var nowOpen = !isOpen;
-            if (typeof logevent === 'function' && isOpen) logevent('click_faq_collapse', 'index.php');
+      function syncDesktopFaqAccordionState() {
+        var section = document.querySelector('.div-54');
+        if (!section) return;
+        section.querySelectorAll('.faq-panel').forEach(function (panel) {
+          panel.querySelectorAll('.faq-body').forEach(function (b) {
+            b.style.display = 'none';
+          });
+          panel.querySelectorAll('.div-60.faq-open, .div-61.faq-open').forEach(function (row) {
+            var body = findDesktopFaqBody(row);
+            if (body) body.style.display = 'block';
+          });
+        });
+      }
 
-            // Close all FAQ items first (true accordion behavior).
-            document.querySelectorAll('.faq-body').forEach(function(p) {
-              p.style.display = 'none';
-            });
-            document.querySelectorAll('.div-60.faq-open, .div-61.faq-open').forEach(function(r) {
-              r.classList.remove('faq-open');
-            });
+      (function initDesktopFaqAccordion() {
+        if (window.__hwDesktopFaqAccordion) return;
+        window.__hwDesktopFaqAccordion = true;
+        document.addEventListener('click', function (e) {
+          var row = e.target.closest('.div-60, .div-61');
+          if (!row || !row.closest('.div-54')) return;
+          var panel = row.closest('.faq-panel');
+          if (!panel || !panel.classList.contains('active')) return;
 
-            // Reset all icons to "closed".
-            document.querySelectorAll('img.faq-toggle-icon').forEach(function(img) {
-              img.src = 'https://d1tenzemoxuh75.cloudfront.net/website/faqclosed.svg';
-            });
-            document.querySelectorAll('.faq-toggle').forEach(function(toggle) {
-              if (toggle.querySelector('img.faq-toggle-icon')) return;
-              toggle.textContent = '+';
-            });
+          var body = findDesktopFaqBody(row);
+          if (!body) return;
 
-            if (nowOpen) {
-              body.style.display = 'block';
-              if (typeof logevent === 'function') logevent('click_faq_expand', 'index.php');
+          var isOpen = row.classList.contains('faq-open');
+          if (typeof logevent === 'function' && isOpen) logevent('click_faq_collapse', 'index.php');
 
-              var toggle = this.querySelector('.faq-toggle');
-              if (!toggle) return;
+          panel.querySelectorAll('.faq-body').forEach(function (p) {
+            p.style.display = 'none';
+          });
+          panel.querySelectorAll('.div-60.faq-open, .div-61.faq-open').forEach(function (r) {
+            r.classList.remove('faq-open');
+          });
+          panel.querySelectorAll('img.faq-toggle-icon').forEach(function (img) {
+            img.src = 'https://d1tenzemoxuh75.cloudfront.net/website/faqclosed.svg';
+          });
 
-              // Desktop FAQ icon (open/closed SVG)
+          if (!isOpen) {
+            body.style.display = 'block';
+            if (typeof logevent === 'function') logevent('click_faq_expand', 'index.php');
+            row.classList.add('faq-open');
+            var toggle = row.querySelector('.faq-toggle');
+            if (toggle) {
               var iconImg = toggle.querySelector('img.faq-toggle-icon');
               if (iconImg) {
                 iconImg.src = 'https://d1tenzemoxuh75.cloudfront.net/website/faq-open.svg';
-              } else {
-                // Fallback (if any mobile/legacy toggle uses text)
-                toggle.textContent = '−';
               }
-
-              this.classList.add('faq-open');
             }
-          });
+          }
         });
+      })();
+
+      document.addEventListener('hw:chunk-loaded', function (ev) {
+        if (ev.detail && ev.detail.id === '4') syncDesktopFaqAccordionState();
       });
+      hwWhenChunkDomReady(syncDesktopFaqAccordionState);
 
       hwWhenChunkDomReady(function() {
         var video = document.getElementById('fbn-video');

@@ -738,10 +738,10 @@ function convertAccordionToBootstrap53() {
     const panelGroups = document.querySelectorAll('.panel-group');
     
     panelGroups.forEach((panelGroup, groupIndex) => {
-        // Skip if this panel group has already been converted
-        if (panelGroup.parentElement.classList.contains('accordion')) {
+        if (panelGroup.dataset.hwBs53Converted === "1") {
             return;
         }
+        panelGroup.dataset.hwBs53Converted = "1";
         
         // Create new accordion container
         const accordion = document.createElement('div');

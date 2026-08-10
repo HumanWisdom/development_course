@@ -19,6 +19,15 @@ img { max-width: 100%; display: block; }
   .display_d_none { display: block !important; }
 }
 
+/* Desktop FAQ (chunk 4): tabs + accordion before index-inline.css loads */
+@media (min-width: 821px) {
+  .div-54 .faq-panel { display: none; }
+  .div-54 .faq-panel.active { display: block; }
+  .div-54 .faq-body { display: none; }
+  .div-54 .div-60,
+  .div-54 .div-61 { cursor: pointer; }
+}
+
 /* Hero layout */
 .frame { display: flex; flex-direction: column; align-items: center; width: 100%; gap: 0; }
 .frame-wrapper {

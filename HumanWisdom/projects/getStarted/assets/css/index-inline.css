@@ -2512,6 +2512,7 @@ header a[href*="splash_options.php"] * {
   align-items: center;
   justify-content: space-between;
   padding: 12px 0;
+  cursor: pointer;
 }
 .text-wrapper-46 { font-size: 15px; font-weight: 600; color: #000; flex: 1; margin: 0; }
 .icon-2, .icon-3 { width: 13px; height: 8px; object-fit: contain; }
