@@ -78,10 +78,10 @@ $hw_lcp_banner_mobile = hw_lcp_image_url('banner_mobile');
           <div class="div">
             <div class="div-2">
               <img class="new-app-adults-teen display_m_none"  fetchpriority="high"
-                src="<?= htmlspecialchars($hw_lcp_banner_desktop, ENT_QUOTES, 'UTF-8'); ?>"
+                src="https://d1tenzemoxuh75.cloudfront.net/website/webp/bannerind.webp"
                 alt="HappierMe app" />
              <img class="new-app-adults-teen display_d_none"  fetchpriority="high"
-                src="<?= htmlspecialchars($hw_lcp_banner_mobile, ENT_QUOTES, 'UTF-8'); ?>"
+                src="https://d1tenzemoxuh75.cloudfront.net/website/webp/bannermobile11.webp"
                 alt="HappierMe app" />
           <div class="div-3">
                  <!-- rating row -->
