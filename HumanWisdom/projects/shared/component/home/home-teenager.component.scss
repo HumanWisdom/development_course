@@ -610,14 +610,12 @@
         right: -20px;
         z-index: 2005; /* Ensure it stays on top */
         margin-top: 0;
-        padding-top: 20px;
-        height: 100vh;
+        padding-top: 10px;
         background-color: #183C79;
     }
 
     .autocomplete-list {
-        max-height: calc(100vh - 190px) !important;
-        height: 100vh !important;
+        max-height: calc(100vh - 90px) !important;
         overflow-y: auto !important;
         overscroll-behavior: contain;
         border-radius: 0;
@@ -706,7 +704,10 @@
             display: none !important;
         }
         .home-content {
-            padding-top: 40px !important;
+            padding-top: 20px !important;
+        }
+        .search-box-container {
+            margin-top: 20px !important;
         }
     }
 

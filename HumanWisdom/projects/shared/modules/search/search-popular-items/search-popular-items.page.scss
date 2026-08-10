@@ -1,14 +1,15 @@
 /* Core Page Structure */
-.right_col.mc_01,
-.mc_01 {
-  padding-top: 0px !important;
+.mc_01.search-active-container {
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 .sc_01 {
   min-height: 100vh !important;
-  padding: 10px 20px 20px 20px;
+  padding: 20px 20px;
   &.search-active {
     padding: 0px !important;
+    min-height: 100vh !important;
   }
 }
 
@@ -23,6 +24,20 @@
 .search-active .col-12{
   padding-left: 20px !important;
   padding-right: 20px !important;
+}
+
+/* Keep search text clear of the left icon (wide + normal screens) */
+.search-box-container .pfy_search_icon.form-control-feedback.left,
+.search-box-container .pfy_search_icon {
+  left: 16px !important;
+  width: 24px;
+  margin: 0;
+}
+
+.search-box-container .form-control.has-feedback-left.pfy_search,
+.search-box-container input.pfy_search {
+  padding-left: 48px !important;
+  padding-right: 48px !important;
 }
 .bg_stake {
   background: #183C79 !important;
@@ -39,13 +54,7 @@
   transition: opacity 0.3s ease, max-height 0.3s ease, margin 0.3s ease, padding 0.3s ease;
   overflow: visible;
   opacity: 1;
-  margin-top: 0px;
-  padding-top: 15px;
-  padding-bottom: 10px;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background-color: #FFF7E6;
+  margin-top: 20px;
 }
 
 .search-active .search-box-container {
@@ -71,24 +80,25 @@
 .adsearch {
   position: absolute;
   top: 100%;
+  left: 0;
+  right: 0;
+  width: 100%;
   z-index: 97; /* Ensure it stays on top */
   margin-top: 0;
-  padding-top: 20px;
-  height: 100vh;
+  padding-top: 10px;
   background-color: #FFF7E6;
 }
 
 .autocomplete-list {
-  max-height: calc(100vh - 260px) !important;
+  max-height: calc(100vh - 90px) !important;
   width: 100%;
-  height: 100vh !important;
   overflow-y: auto !important;
   overscroll-behavior: contain;
   border-radius: 0;
   box-shadow: none !important;
   margin: 0;
   padding: 0;
-  padding-bottom: 250px;
+  padding-bottom: 60px;
   background-color: #FFF7E6 !important;
   border: none !important;
 
@@ -160,10 +170,6 @@
 
 /* Teenager overrides */
 .bg_stake {
-  .search-box-container {
-    background-color: #183C79 !important;
-  }
-
   /* Full screen search background for teens */
   .adsearch {
     background-color: #183C79 !important;
@@ -211,8 +217,13 @@
   justify-content: space-between !important;
   padding: 12px !important;
   border-radius: 12px !important;
-  margin-bottom: 15px !important;
+  margin-bottom: 0px !important;
   overflow: visible !important;
+}
+.box_v3_04a img {
+  width: 100% !important;
+  height: 100px !important;
+  object-fit: cover;
 }
 
 .box_v3_04a img:not(.ls-lock-icon):not(.ls-read-icon) {
@@ -225,13 +236,13 @@
 .msrow {
   display: flex !important;
   flex-wrap: wrap !important;
-  justify-content: center;
+  justify-content: flex-start !important;
 }
 
 .msrow > [class*="col-"] {
   display: flex !important;
   flex-direction: column !important;
-  margin-bottom: 10px;
+  // margin-bottom: 10px;
 }
 
 .msrow > [class*="col-"] > a {
@@ -277,79 +288,67 @@ a {
   pointer-events: none;
 }
 
-@media (min-width: 1200px) {
-  .list-thumb-media {
-    width: 100px;
-    height: 100px;
-    display: block;
-  }
-
-  .list-thumb-media .session_imgnew {
-    width: 100px !important;
-    height: 100px !important;
-    max-width: 100px !important;
-    display: block;
-    object-fit: cover;
-  }
+/* Shrink thumbnail column to image width so title sits closer (all viewports;
+   on narrow phones 33% ≈ thumb size so layout stays the same) */
+.toc_adiv_02 a > .row,
+.toc_adiv a > .row {
+  padding: 10px !important;
 }
 
-/* Wide screen: shrink thumbnail column so title sits closer */
-@media (min-width: 768px) {
-  .toc_adiv_02 a .center_flex > .col-lg-4,
-  .toc_adiv_02 a .center_flex > .col-md-4,
-  .toc_adiv_02 a .center_flex > .col-sm-4,
-  .toc_adiv_02 a .center_flex > .col-xs-4,
-  .toc_adiv a .center_flex > .col-lg-4,
-  .toc_adiv a .center_flex > .col-md-4,
-  .toc_adiv a .center_flex > .col-sm-4,
-  .toc_adiv a .center_flex > .col-xs-4 {
-    width: auto !important;
-    flex: 0 0 auto !important;
-    max-width: none !important;
-    padding: 0 !important;
-  }
+.toc_adiv_02 a .center_flex,
+.toc_adiv a .center_flex {
+  justify-content: flex-start !important;
+  gap: 0;
+}
 
-  .toc_adiv_02 a .center_flex > .col-lg-7,
-  .toc_adiv_02 a .center_flex > .col-md-7,
-  .toc_adiv_02 a .center_flex > .col-sm-7,
-  .toc_adiv_02 a .center_flex > .col-xs-7,
-  .toc_adiv a .center_flex > .col-lg-7,
-  .toc_adiv a .center_flex > .col-md-7,
-  .toc_adiv a .center_flex > .col-sm-7,
-  .toc_adiv a .center_flex > .col-xs-7,
-  .toc_adiv_02 a .center_flex > .col-lg-8,
-  .toc_adiv_02 a .center_flex > .col-md-8,
-  .toc_adiv_02 a .center_flex > .col-sm-8,
-  .toc_adiv_02 a .center_flex > .col-xs-8,
-  .toc_adiv a .center_flex > .col-lg-8,
-  .toc_adiv a .center_flex > .col-md-8,
-  .toc_adiv a .center_flex > .col-sm-8,
-  .toc_adiv a .center_flex > .col-xs-8 {
-    flex: 1 1 0 !important;
-    width: auto !important;
-    max-width: none !important;
-    padding-left: 12px !important;
-  }
+.toc_adiv_02 a .center_flex > [class*="col-"][class*="-4"],
+.toc_adiv a .center_flex > [class*="col-"][class*="-4"] {
+  width: auto !important;
+  flex: 0 0 auto !important;
+  max-width: none !important;
+  /* space around image: left, top, bottom (match Figma / image 1) */
+  padding: 0 !important;
+}
 
-  .toc_adiv_02 a .center_flex > .col-lg-1,
-  .toc_adiv_02 a .center_flex > .col-md-1,
-  .toc_adiv_02 a .center_flex > .col-sm-1,
-  .toc_adiv_02 a .center_flex > .col-xs-1,
-  .toc_adiv a .center_flex > .col-lg-1,
-  .toc_adiv a .center_flex > .col-md-1,
-  .toc_adiv a .center_flex > .col-sm-1,
-  .toc_adiv a .center_flex > .col-xs-1 {
-    width: auto !important;
-    flex: 0 0 auto !important;
-    max-width: none !important;
-  }
+.toc_adiv_02 a .center_flex > [class*="col-"][class*="-7"],
+.toc_adiv a .center_flex > [class*="col-"][class*="-7"],
+.toc_adiv_02 a .center_flex > [class*="col-"][class*="-8"],
+.toc_adiv a .center_flex > [class*="col-"][class*="-8"] {
+  flex: 1 1 0 !important;
+  width: auto !important;
+  max-width: none !important;
+  padding-left: 10px !important;
+  padding-right: 0 !important;
+}
 
-  .toc_adiv_02 a .center_flex .session_imgnew,
-  .toc_adiv a .center_flex .session_imgnew {
-    width: 100px !important;
-    height: 100px !important;
-    max-width: 100px !important;
-  }
+.toc_adiv_02 a .center_flex > [class*="col-"][class*="-1"],
+.toc_adiv a .center_flex > [class*="col-"][class*="-1"] {
+  width: auto !important;
+  flex: 0 0 auto !important;
+  max-width: none !important;
+}
+
+.toc_adiv_02 a .center_flex .session_imgnew,
+.toc_adiv a .center_flex .session_imgnew {
+  width: 100px !important;
+  height: 100px !important;
+  max-width: 100px !important;
+  display: block;
+  object-fit: cover;
+}
+
+.list-thumb-media {
+  width: 100px;
+  height: 100px;
+  display: block;
+}
+
+.list-thumb-media .session_imgnew {
+  width: 100px !important;
+  height: 100px !important;
+  max-width: 100px !important;
+  display: block;
+  object-fit: cover;
 }
 
 .ws-read-icon {
@@ -367,6 +366,7 @@ a {
   height: 20px !important;
   max-width: 20px !important;
   max-height: 20px !important;
+  border: none !important;
   display: inline-block !important;
   vertical-align: bottom !important;
   z-index: 2;

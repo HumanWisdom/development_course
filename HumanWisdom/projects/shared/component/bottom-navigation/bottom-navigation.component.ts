@@ -38,6 +38,8 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
   disableClick = false;
   isAdults = false;
   isDataRecieved = false;
+  isSearchActive = false;
+  private searchActiveSubscription: Subscription;
   
     // Observable for owl component state management
     owlEnable$: Observable<boolean>;
@@ -75,6 +77,10 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
   }
 
     ngOnInit() {
+      this.searchActiveSubscription = this.commonService.isSearchActive$.subscribe(active => {
+        this.isSearchActive = active;
+      });
+
       this.onboardingService.updateUserDetails.next(true);
 
       this.onboardingService.getUserDetails.subscribe(res => {
@@ -227,6 +233,7 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
     ngOnDestroy(): void {
       this.toursubscription?.unsubscribe();
       this.footerOwlSubscription?.unsubscribe();
+      this.searchActiveSubscription?.unsubscribe();
     }
 
     

@@ -13,6 +13,7 @@ import { filter } from 'rxjs/operators';
 import { ProgramType } from '../../models/program-model';
 import { LogEventService } from '../../services/log-event.service';
 import { isPlatformBrowser } from '@angular/common';
+import { CommonService } from '../../services/common.service';
 
 @Component({
   selector: 'app-tn-dashboard-v03',
@@ -50,8 +51,10 @@ export class TnDashboardV03Component implements OnInit, OnChanges, OnDestroy {
   routerSubscription: Subscription;
   disableClick = false;
   isAdults = false;
+  isSearchActive = false;
+  private searchActiveSubscription: Subscription;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object,private router: Router, public Onboardingservice: OnboardingService,public logeventservice: LogEventService, public platform: Platform) {
+  constructor(@Inject(PLATFORM_ID) private platformId: Object,private router: Router, public Onboardingservice: OnboardingService,public logeventservice: LogEventService, public platform: Platform, private commonService: CommonService) {
     if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
     } else {
@@ -160,6 +163,10 @@ export class TnDashboardV03Component implements OnInit, OnChanges, OnDestroy {
     // Refresh data on component init (catches login/logout changes)
     this.refreshData();
 
+    this.searchActiveSubscription = this.commonService.isSearchActive$.subscribe(active => {
+      this.isSearchActive = active;
+    });
+
     this.toursubscription = this.Onboardingservice.getEnableTour().subscribe((value) => {
       this.disableClick = value;
     });
@@ -207,6 +214,9 @@ export class TnDashboardV03Component implements OnInit, OnChanges, OnDestroy {
     }
     if (this.routerSubscription) {
       this.routerSubscription.unsubscribe();
+    }
+    if (this.searchActiveSubscription) {
+      this.searchActiveSubscription.unsubscribe();
     }
   }
 

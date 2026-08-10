@@ -53,6 +53,43 @@
     min-height: 90px !important;
     box-sizing: border-box;
   }
+
+  /* Education: Figma mobile blog tile 306 × 242.54 */
+  body.page-education .owl_blog .div_blog {
+    width: 306px !important;
+    max-width: 306px !important;
+    height: 242.54px !important;
+    min-height: 242.54px !important;
+    max-height: 242.54px !important;
+  }
+  body.page-education .owl_blog .div_blog img {
+    height: 156.26px !important;
+    min-height: 156.26px !important;
+    max-height: 156.26px !important;
+  }
+  body.page-education .owl_blog .div_blog .row:last-child,
+  body.page-education .owl_blog .div_blog .row:last-child [class^="col-"] {
+    height: 86.28px !important;
+    min-height: 86.28px !important;
+    max-height: 86.28px !important;
+    padding: 20px !important;
+    padding-left: 20px !important;
+    box-sizing: border-box !important;
+  }
+  body.page-education .owl_blog .div_blog h4,
+  body.page-education .owl_blog .div_blog h4.fs_18px {
+    margin: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: 46px !important;
+    max-width: 265px !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    line-height: 150% !important;
+    letter-spacing: 0 !important;
+    text-align: left !important;
+  }
 }
 
 /* Consistent blog card height on mobile */
@@ -77,6 +114,43 @@
     height: 90px !important;
     min-height: 90px !important;
     box-sizing: border-box;
+  }
+
+  /* Education: Figma mobile blog tile 306 × 242.54 */
+  body.page-education .owl_blog .div_blog {
+    width: 306px !important;
+    max-width: 306px !important;
+    height: 242.54px !important;
+    min-height: 242.54px !important;
+    max-height: 242.54px !important;
+  }
+  body.page-education .owl_blog .div_blog img {
+    height: 156.26px !important;
+    min-height: 156.26px !important;
+    max-height: 156.26px !important;
+  }
+  body.page-education .owl_blog .div_blog .row:last-child,
+  body.page-education .owl_blog .div_blog .row:last-child [class^="col-"] {
+    height: 86.28px !important;
+    min-height: 86.28px !important;
+    max-height: 86.28px !important;
+    padding: 20px !important;
+    padding-left: 20px !important;
+    box-sizing: border-box !important;
+  }
+  body.page-education .owl_blog .div_blog h4,
+  body.page-education .owl_blog .div_blog h4.fs_18px {
+    margin: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: 46px !important;
+    max-width: 265px !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    line-height: 150% !important;
+    letter-spacing: 0 !important;
+    text-align: left !important;
   }
 }
 
@@ -3030,6 +3104,72 @@
       background-image: none !important;
       color: #ffffff !important;
     }
+  }
+
+  /*
+   * Education blog (mobile): left-align card title; center “View all blogs”.
+   * Must be last — earlier rules center a[href*="blog"], .sap, .td_underline.
+   */
+  body.page-education .owl_blog a.item,
+  body.page-education .owl_blog .div_blog,
+  body.page-education .owl_blog .div_blog [class^="col-"],
+  body.page-education .owl_blog .div_blog h4 {
+    text-align: left !important;
+    justify-content: flex-start !important;
+  }
+
+  body.page-education .owl_blog .div_blog h4,
+  body.page-education .owl_blog .div_blog h4.fs_18px {
+    display: -webkit-box !important;
+    -webkit-box-orient: vertical !important;
+    width: 100% !important;
+    max-width: 265px !important;
+    margin: 0 !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    line-height: 150% !important;
+    letter-spacing: 0 !important;
+  }
+
+  body.page-education .owl_blog .owl-carousel .owl-stage-outer {
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+
+  body.page-education .owl_blog .owl-carousel .owl-stage-outer::-webkit-scrollbar {
+    display: none !important;
+    height: 0 !important;
+  }
+
+  body.page-education .owl_blog .owl-carousel .owl-stage {
+    left: 0 !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  body.page-education .owl_blog .owl-carousel .owl-item {
+    margin-right: 16px !important;
+  }
+
+  body.page-education .edu-blog-footer {
+    margin-top: 24px !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  body.page-education .edu-blog-footer a.sap.edu-blog-more,
+  body.page-education .edu-blog-footer a.sap.edu-blog-more h4,
+  body.page-education .edu-blog-footer a.sap.edu-blog-more .td_underline,
+  body.page-education a.sap.edu-blog-more[href*="blog"] {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+    width: auto !important;
   }
 
 }
