@@ -134,7 +134,8 @@
 
 
                     <!-- microlearning -->
-                    <div class="row mt30px mb15px" *ngIf="searchData && searchData.MLMRes && searchData.MLMRes.length > 0">
+                    <div class="row mt30px mb15px"
+                      *ngIf="searchData && searchData.MLMRes && searchData.MLMRes.length > 0">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <h4 class="mtb0px fs_15px fw_600 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                           Microlearning
@@ -142,7 +143,8 @@
                       </div>
                     </div>
 
-                    <div class="toc_adiv_02 row" *ngIf="searchData && searchData.MLMRes && searchData.MLMRes.length > 0">
+                    <div class="toc_adiv_02 row"
+                      *ngIf="searchData && searchData.MLMRes && searchData.MLMRes.length > 0">
                       <!-- video row -->
                       <a (click)="mlmEvent(item)" *ngFor="let item of searchData.MLMRes">
                         <div class="row p10px">
@@ -246,7 +248,8 @@
                     </div>
 
                     <!-- short videos -->
-                    <div class="row mt30px mb15px" *ngIf="searchData && searchData.WisdomShortsRes && searchData.WisdomShortsRes.length > 0">
+                    <div class="row mt30px mb15px"
+                      *ngIf="searchData && searchData.WisdomShortsRes && searchData.WisdomShortsRes.length > 0">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <h4 class="mtb0px fs_15px fw_600 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                           Short videos
@@ -254,7 +257,8 @@
                       </div>
                     </div>
 
-                    <div class="toc_adiv_02 row" *ngIf="searchData && searchData.WisdomShortsRes && searchData.WisdomShortsRes.length > 0">
+                    <div class="toc_adiv_02 row"
+                      *ngIf="searchData && searchData.WisdomShortsRes && searchData.WisdomShortsRes.length > 0">
                       <!-- video row -->
                       <a (click)="wisdoshortsevent(item, item['VideoUrl'], item['Title'])"
                         *ngFor="let item of searchData.WisdomShortsRes">
@@ -397,7 +401,8 @@
                     <!-- /short videos -->
 
                     <!-- podcasts -->
-                    <div class="row mt30px mb15px" *ngIf="searchData && searchData.PodCastRes && searchData.PodCastRes.length > 0">
+                    <div class="row mt30px mb15px"
+                      *ngIf="searchData && searchData.PodCastRes && searchData.PodCastRes.length > 0">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <h4 class="mtb0px fs_15px fw_600 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                           Podcast
@@ -405,7 +410,8 @@
                       </div>
                     </div>
 
-                    <div class="toc_adiv_02 row" *ngIf="searchData && searchData.PodCastRes && searchData.PodCastRes.length > 0">
+                    <div class="toc_adiv_02 row"
+                      *ngIf="searchData && searchData.PodCastRes && searchData.PodCastRes.length > 0">
                       <!-- podcast row -->
                       <a (click)="podcastevent(item)" *ngFor="let item of searchData.PodCastRes">
                         <div class="row p10px">
@@ -532,14 +538,16 @@
                     <!-- /podcasts -->
 
                     <!-- AudioMeditations -->
-                    <div class="row mt30px mb15px" *ngIf="searchData && searchData.AudioMeditationRes && searchData.AudioMeditationRes.length > 0">
+                    <div class="row mt30px mb15px"
+                      *ngIf="searchData && searchData.AudioMeditationRes && searchData.AudioMeditationRes.length > 0">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <h4 class="mtb0px fs_15px fw_600 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                           Audio Meditations
                         </h4>
                       </div>
                     </div>
-                    <div class="toc_adiv_02 row" *ngIf="searchData && searchData.AudioMeditationRes && searchData.AudioMeditationRes.length > 0">
+                    <div class="toc_adiv_02 row"
+                      *ngIf="searchData && searchData.AudioMeditationRes && searchData.AudioMeditationRes.length > 0">
                       <!-- video row -->
                       <a (click)="audioevent(item)" *ngFor="let item of searchData.AudioMeditationRes">
                         <div class="row p10px">
@@ -665,14 +673,16 @@
                     <!-- /AudioMeditations -->
 
                     <!-- soundscapes -->
-                    <div class="row mt30px mb15px" *ngIf="searchData && searchData.SoundscapesRes && searchData.SoundscapesRes.length > 0">
+                    <div class="row mt30px mb15px"
+                      *ngIf="searchData && searchData.SoundscapesRes && searchData.SoundscapesRes.length > 0">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <h4 class="mtb0px fs_15px fw_600 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                           Soundscapes
                         </h4>
                       </div>
                     </div>
-                    <div class="toc_adiv_02 row" *ngIf="searchData && searchData.SoundscapesRes && searchData.SoundscapesRes.length > 0">
+                    <div class="toc_adiv_02 row"
+                      *ngIf="searchData && searchData.SoundscapesRes && searchData.SoundscapesRes.length > 0">
                       <!-- soundscape row -->
                       <a (click)="soundscapeEvent(item)" *ngFor="let item of searchData.SoundscapesRes">
                         <div class="row p10px">
@@ -797,7 +807,8 @@
 
 
                     <!-- wisdom stories -->
-                    <div class="row mt30px mb15px" *ngIf="searchData && searchData.WisdomStoriesRes && searchData.WisdomStoriesRes.length > 0">
+                    <div class="row mt30px mb15px"
+                      *ngIf="searchData && searchData.WisdomStoriesRes && searchData.WisdomStoriesRes.length > 0">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <h4 class="mtb0px fs_15px fw_600 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                           Life Stories
@@ -857,29 +868,27 @@
                         <ng-container *ngIf="isAdults; else storyViewMoreDefault">
                           <div (click)="enableViewMore('story','more')" tabindex="0"
                             (keydown.enter)="enableViewMore('story','more')"
-                            *ngIf="!enableStoryViewMore && searchDataDup.WisdomStoriesRes.length>2">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <div class="mt20px">
-                                <a class="btn btn-link view-more-btn"
-                                  style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.75) !important; font-size: 14px !important; font-weight: 500;">View
-                                  more <i class="fa fa-angle-down ms-3" aria-hidden="true"></i></a>
-                              </div>
+                            *ngIf="!enableStoryViewMore && searchDataDup.WisdomStoriesRes.length>2"
+                            class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                            <div class="mt20px">
+                              <a class="btn btn-link view-more-btn"
+                                style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.75) !important; font-size: 14px !important; font-weight: 500;">View
+                                more <i class="fa fa-angle-down ms-3" aria-hidden="true"></i></a>
                             </div>
                           </div>
                         </ng-container>
                         <ng-template #storyViewMoreDefault>
                           <a (click)="enableViewMore('story','more')"
-                            *ngIf="!enableStoryViewMore && searchDataDup.WisdomStoriesRes.length>2">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <div class="mt20px">
-                                <h4 class="mtb0px fw_500 fs_12px lh_140p  tcenter underline"
-                                  [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                                  <img
-                                    src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/view_more.svg"
-                                    class="img-responsive mb10px">
-                                  View More
-                                </h4>
-                              </div>
+                            *ngIf="!enableStoryViewMore && searchDataDup.WisdomStoriesRes.length>2"
+                            class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0" style="display: block;">
+                            <div class="mt20px">
+                              <h4 class="mtb0px fw_500 fs_12px lh_140p  tcenter underline"
+                                [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                                <img
+                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/view_more.svg"
+                                  class="img-responsive mb10px center-block">
+                                View More
+                              </h4>
                             </div>
                           </a>
                         </ng-template>
@@ -887,29 +896,27 @@
                         <ng-container *ngIf="isAdults; else storyViewLessDefault">
                           <div (click)="enableViewMore('story','less')" tabindex="0"
                             (keydown.enter)="enableViewMore('story','less')"
-                            *ngIf="enableStoryViewMore  && searchDataDup.WisdomStoriesRes.length>2">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <div class="mt20px">
-                                <a class="btn btn-link view-more-btn"
-                                  style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.75) !important; font-size: 14px !important; font-weight: 500;">View
-                                  less <i class="fa fa-angle-up ms-3" aria-hidden="true"></i></a>
-                              </div>
+                            *ngIf="enableStoryViewMore  && searchDataDup.WisdomStoriesRes.length>2"
+                            class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                            <div class="mt20px">
+                              <a class="btn btn-link view-more-btn"
+                                style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.75) !important; font-size: 14px !important; font-weight: 500;">View
+                                less <i class="fa fa-angle-up ms-3" aria-hidden="true"></i></a>
                             </div>
                           </div>
                         </ng-container>
                         <ng-template #storyViewLessDefault>
                           <a (click)="enableViewMore('story','less')"
-                            *ngIf="enableStoryViewMore  && searchDataDup.WisdomStoriesRes.length>2">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <div class="mt20px">
-                                <h4 class="mtb0px fw_500 fs_12px lh_140p  tcenter underline"
-                                  [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                                  <img
-                                    src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/view_less.svg"
-                                    class="img-responsive mb10px">
-                                  View Less
-                                </h4>
-                              </div>
+                            *ngIf="enableStoryViewMore  && searchDataDup.WisdomStoriesRes.length>2"
+                            class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0" style="display: block;">
+                            <div class="mt20px">
+                              <h4 class="mtb0px fw_500 fs_12px lh_140p  tcenter underline"
+                                [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                                <img
+                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/view_less.svg"
+                                  class="img-responsive mb10px center-block">
+                                View Less
+                              </h4>
                             </div>
                           </a>
                         </ng-template>
@@ -918,7 +925,8 @@
                     <!-- /wisdom stories -->
 
                     <!-- /blogs -->
-                    <div class="row mt30px mb15px" *ngIf="searchData && searchData.BlogRes && searchData.BlogRes.length > 0">
+                    <div class="row mt30px mb15px"
+                      *ngIf="searchData && searchData.BlogRes && searchData.BlogRes.length > 0">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <h4 class="mtb0px fs_15px fw_600 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                           Blog
@@ -926,7 +934,8 @@
                       </div>
                     </div>
 
-                    <div class="row div_blogs" *ngIf="searchData && searchData.BlogRes && searchData.BlogRes.length > 0">
+                    <div class="row div_blogs"
+                      *ngIf="searchData && searchData.BlogRes && searchData.BlogRes.length > 0">
                       <!-- article 01
     <a *ngFor="let item of searchData.BlogRes" (click)="viewblog(item)"> href="{{item['url']}}"   -->
                       <a *ngFor="let item of searchData.BlogRes; let i=index" (click)="view(item)">
@@ -939,7 +948,7 @@
                               </div>
                             </div>
 
-                            <div class="row mtb15px">
+                            <div class="row mt15px mb5px">
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flexai_baseline">
                                 <div class="col-md-10 col-sm-10 col-xs-10 p0">
                                   <h4 class="mtb0px fs_18px fw_600 lh_150p ellipsis"
@@ -971,7 +980,7 @@
                             <div class="row">
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
                                 <h4 class="p0 col-md-11 col-sm-11 col-xs-11 mtb0px fs_12px fw_400 lh_150p"
-                                  [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff_0_5'">
+                                  [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
                                   {{timeSince(item['CreatedDate'])}}
                                 </h4>
                                 <!-- <div class="col-md-1 col-sm-1 col-xs-1 p0 tright center_flex">
@@ -1057,7 +1066,8 @@
                     <!-- /blogs -->
 
                     <!-- modules -->
-                    <div class="row mt30px mb15px" *ngIf="searchData && searchData.ModuleRes && searchData.ModuleRes.length > 0">
+                    <div class="row mt30px mb15px"
+                      *ngIf="searchData && searchData.ModuleRes && searchData.ModuleRes.length > 0">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <h4 class="mtb0px fs_15px fw_600 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                           Pathway
@@ -1167,7 +1177,8 @@
                     <!-- /modules -->
 
                     <!-- Events -->
-                    <div class="row mt30px mb15px" *ngIf="searchData && searchData.EventsRes && searchData.EventsRes.length > 0">
+                    <div class="row mt30px mb15px"
+                      *ngIf="searchData && searchData.EventsRes && searchData.EventsRes.length > 0">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <h4 class="mtb0px fs_15px fw_600 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                           Events
@@ -1175,7 +1186,8 @@
                       </div>
                     </div>
 
-                    <div class="toc_adiv_02 row" *ngIf="searchData && searchData.EventsRes && searchData.EventsRes.length > 0">
+                    <div class="toc_adiv_02 row"
+                      *ngIf="searchData && searchData.EventsRes && searchData.EventsRes.length > 0">
                       <!-- video row -->
                       <a (click)="youtube(item)" *ngFor="let item of searchData.EventsRes">
                         <div class="row p10px">
@@ -1312,7 +1324,8 @@
 
 
                     <!-- sessions -->
-                    <div class="toc_adiv" *ngIf="searchData && searchData.SessionRes && searchData.SessionRes.length > 0">
+                    <div class="toc_adiv"
+                      *ngIf="searchData && searchData.SessionRes && searchData.SessionRes.length > 0">
                       <a [routerLink]="item.ModuleUrl" *ngFor="let item of searchData.SessionRes;let i=index">
                         <div class="row">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
@@ -1344,7 +1357,8 @@
                       </a>
                     </div>
                     <!-- /sessions -->
-                    <div class="row mt30px" *ngIf="getLearningRecords() == 0 && (!feelBetterNowTopic || feelBetterNowTopic == '') && !isLoading">
+                    <div class="row mt30px"
+                      *ngIf="getLearningRecords() == 0 && (!feelBetterNowTopic || feelBetterNowTopic == '') && !isLoading">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                         <h4 class="mt5px mb0px fs_12px fw_400 lh_150p "
                           [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">

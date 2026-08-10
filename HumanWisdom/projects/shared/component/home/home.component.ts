@@ -394,6 +394,9 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
     this.YourTopicofChoice = this.personalisedList.filter((d) => d['active']);
     console.log('Guest user default selection:', this.YourTopicofChoice);
+    if (this.YourTopicofChoice && this.YourTopicofChoice[0]) {
+      this.updateUrlFragment(this.YourTopicofChoice[0]);
+    }
 
     setTimeout(() => {
       this.scrollToActiveList();
@@ -717,6 +720,10 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
             console.log('User preference loaded:', this.YourTopicofChoice);
           }
 
+          if (this.YourTopicofChoice && this.YourTopicofChoice[0]) {
+            this.updateUrlFragment(this.YourTopicofChoice[0]);
+          }
+
           // Scroll to the selected section after preference is loaded
           setTimeout(() => {
             this.scrollToActiveList();
@@ -745,6 +752,10 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
               this.loadHomeContents(Number(storedActivePreference));
               this.YourTopicofChoice = this.personalisedList.filter((d) => d['active']);
               console.log('Guest user with stored preference:', this.YourTopicofChoice);
+            }
+
+            if (this.YourTopicofChoice && this.YourTopicofChoice[0]) {
+              this.updateUrlFragment(this.YourTopicofChoice[0]);
             }
 
             setTimeout(() => {
@@ -966,8 +977,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       this.logeventservice.logEvent('select_category_' + item.displayName.replace(/\s+/g, '').toLowerCase());
     }
 
-    // Clear fragment from URL after manual tab switch to fix back navigation issues
-    this.clearUrlFragment();
+    // Update URL fragment on manual tab switch so URL reflects selected tab (e.g. #meditation, #self-awareness)
+    this.updateUrlFragment(item);
 
     // Save active preference to store
     this.homeStateService.setActivePreference(item.id);
@@ -1710,7 +1721,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
    */
   private normalizeHash(hash: string): string {
     return hash.toLowerCase()
-      .replace(/-/g, '')
+      .replace(/[-_]/g, '')
+      .replace(/%20/g, '')
       .replace(/\s+/g, '')
       .trim();
   }
@@ -1844,6 +1856,24 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   /**
+   * Update the URL fragment (hash) using window.history.replaceState
+   * Keeps browser URL bar in sync with active tab without triggering page reload
+   */
+  private updateUrlFragment(item: NavigationItem): void {
+    if (!item || !item.displayName) return;
+
+    const fragment = item.displayName.toLowerCase().trim().replace(/\s+/g, '-');
+    const targetHash = '#' + fragment;
+
+    if (window.location.hash.toLowerCase() !== targetHash.toLowerCase()) {
+      const newUrl = window.location.pathname + window.location.search + targetHash;
+      window.history.replaceState(null, '', newUrl);
+      this.navigationService.replaceLastHistory(newUrl);
+      console.log('URL Fragment updated to:', targetHash);
+    }
+  }
+
+  /**
    * Clear the URL fragment (hash) using window.history.replaceState for immediate browser-level history update
    */
   private clearUrlFragment(): void {
@@ -1891,6 +1921,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       setTimeout(() => {
         this.scrollToActiveList();
       }, 500);
+      this.updateUrlFragment(item);
       return;
     }
 
@@ -1907,8 +1938,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       this.scrollToActiveList();
     }, 500);
 
-    // Clear hash immediately after use to fix back navigation issues
-    this.clearUrlFragment();
+    // Sync URL fragment to item's canonical hash (e.g., #self-awareness or #meditation)
+    this.updateUrlFragment(item);
   }
 
   /**
