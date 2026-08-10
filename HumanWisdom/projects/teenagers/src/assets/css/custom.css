@@ -28473,8 +28473,8 @@ video::-webkit-media-controls-panel {
 }
 
 
-login1:hover{
-  color: #834B66 !important;
+.login1:hover{
+  color: #F17071 !important;
 }
 .login1{
   font-size: 12px;
@@ -28487,8 +28487,11 @@ ul.dh_ul li:hover{
   /* opacity: 0.7; */
   /* background-color: green; */
   background: #10326B;
-  padding-left: 0px;
-  padding-right: 0px;
+  /* padding-left: 0px;
+  padding-right: 0px; */
+  margin-right: -10px;
+    margin-left: -10px;
+    /* padding: 15px 0 15px 5px; */
 }
 
 .btn_pfys_login_signup {
@@ -34381,6 +34384,38 @@ background: linear-gradient(180deg, #F17071 0%, #DE6768 100%);
 .btn_ctd1:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+.image-box {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  overflow: hidden;
+}
+
+.image-box img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+.img1 {
+  opacity: 1;
+}
+
+.img2 {
+  opacity: 0;
+}
+
+.image-box:hover .img1 {
+  opacity: 0;
+}
+
+.image-box:hover .img2 {
+  opacity: 1;
 }
 
 .fc_img {
