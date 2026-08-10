@@ -209,6 +209,17 @@
   top: 40px !important;
 }
 
+.box_v3_04a {
+  height: auto !important;
+  min-height: 185px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  padding: 12px !important;
+  border-radius: 12px !important;
+  margin-bottom: 0px !important;
+  overflow: visible !important;
+}
 .box_v3_04a img {
   width: 100% !important;
   height: 100px !important;
@@ -225,13 +236,13 @@
 .msrow {
   display: flex !important;
   flex-wrap: wrap !important;
-  justify-content: center;
+  justify-content: flex-start !important;
 }
 
 .msrow > [class*="col-"] {
   display: flex !important;
   flex-direction: column !important;
-  margin-bottom: 10px;
+  // margin-bottom: 10px;
 }
 
 .msrow > [class*="col-"] > a {
