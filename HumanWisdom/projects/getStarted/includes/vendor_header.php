@@ -56,6 +56,8 @@ if (hw_page_assets_flag('css', 'font_stacks')) {
     hw_defer_stylesheet('../assets/font/font_size.css');
     hw_defer_stylesheet('../assets/font/font_weight.css');
     hw_defer_stylesheet('../assets/font/line_height.css');
+} elseif (hw_page_assets_flag('css', 'font_colour')) {
+    hw_defer_stylesheet('../assets/font/font_colour.css');
 }
 if (hw_page_assets_flag('css', 'style_hb')) {
     hw_defer_stylesheet('../assets/css/style_hb.css');

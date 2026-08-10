@@ -20,6 +20,7 @@ if (!function_exists('hw_page_assets_profiles')) {
                     'vendor_debug_inline' => true,
                     'modal_tabs_defer' => false,
                     'font_stacks' => true,
+                    'font_colour' => true,
                     'style_hb' => true,
                 ],
                 'js' => [
@@ -55,6 +56,7 @@ if (!function_exists('hw_page_assets_profiles')) {
                     'vendor_debug_inline' => false,
                     'modal_tabs_defer' => true,
                     'font_stacks' => false,
+                    'font_colour' => true,
                     'style_hb' => false,
                 ],
                 'js' => [
