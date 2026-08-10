@@ -1,14 +1,15 @@
 /* Core Page Structure */
-.right_col.mc_01,
-.mc_01 {
-  padding-top: 0px !important;
+.mc_01.search-active-container {
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 .sc_01 {
   min-height: 100vh !important;
-  padding: 10px 20px 20px 20px;
+  padding: 20px 20px;
   &.search-active {
     padding: 0px !important;
+    min-height: 100vh !important;
   }
 }
 
@@ -53,13 +54,7 @@
   transition: opacity 0.3s ease, max-height 0.3s ease, margin 0.3s ease, padding 0.3s ease;
   overflow: visible;
   opacity: 1;
-  margin-top: 0px;
-  padding-top: 15px;
-  padding-bottom: 10px;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background-color: #FFF7E6;
+  margin-top: 20px;
 }
 
 .search-active .search-box-container {
@@ -85,24 +80,25 @@
 .adsearch {
   position: absolute;
   top: 100%;
+  left: 0;
+  right: 0;
+  width: 100%;
   z-index: 97; /* Ensure it stays on top */
   margin-top: 0;
-  padding-top: 20px;
-  height: 100vh;
+  padding-top: 10px;
   background-color: #FFF7E6;
 }
 
 .autocomplete-list {
-  max-height: calc(100vh - 260px) !important;
+  max-height: calc(100vh - 90px) !important;
   width: 100%;
-  height: 100vh !important;
   overflow-y: auto !important;
   overscroll-behavior: contain;
   border-radius: 0;
   box-shadow: none !important;
   margin: 0;
   padding: 0;
-  padding-bottom: 250px;
+  padding-bottom: 60px;
   background-color: #FFF7E6 !important;
   border: none !important;
 
@@ -174,10 +170,6 @@
 
 /* Teenager overrides */
 .bg_stake {
-  .search-box-container {
-    background-color: #183C79 !important;
-  }
-
   /* Full screen search background for teens */
   .adsearch {
     background-color: #183C79 !important;
@@ -363,6 +355,7 @@ a {
   height: 20px !important;
   max-width: 20px !important;
   max-height: 20px !important;
+  border: none !important;
   display: inline-block !important;
   vertical-align: bottom !important;
   z-index: 2;

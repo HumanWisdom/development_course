@@ -428,21 +428,9 @@ export class AppComponent implements OnDestroy {
     if (this.isSearchActiveGlobal) {
       return false;
     }
-    if (this.router.url.includes('site-search')) {
-      this.dash = false;
-      this.journal = false;
-      this.fourm = false;
-      this.search = false;
-      this.learn = false;
-      this.enableprofile = false;
-      this.isEnableHam = false;
-      this.enableplaystore = false;
-      this.isShowHeader = false;
-      this.isLoginPage = false;
-      return false;
-    }
     if (this.router.url == "/adults/search" || this.router.url == "/search" 
-      || this.router.url.includes('/adults/search') || this.router.url.includes('/adults/learn')) {
+      || this.router.url.includes('/adults/site-search/') ||
+      this.router.url.includes('/adults/search') || this.router.url.includes('/adults/learn')) {
       this.dash = false
       this.journal = false
       this.fourm = false;
