@@ -28472,6 +28472,25 @@ video::-webkit-media-controls-panel {
   margin: 30px 0 138px 0;
 }
 
+
+login1:hover{
+  color: #834B66 !important;
+}
+.login1{
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: underline;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+ul.dh_ul li:hover{
+  /* opacity: 0.7; */
+  /* background-color: green; */
+  background: #10326B;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
 .btn_pfys_login_signup {
   margin: 0;
   border: 0;
@@ -34297,14 +34316,36 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   background: #4267A5;
   color: #FFFFFF !important;
 }
-
+.btn_ctdout:hover{
+ background: #0C2B5F !important; 
+/* background: red; */
+}
 .btn_ctdout {
   height: 50px;
   width: 100%;
   margin: 0;
   border: 0;
   border-radius: 100px;
-  background: #0C2B5F !important;
+  background: #10326B;
+  color: #fff !important;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 150%;
+}
+.btn_ctdhov:hover{
+background: linear-gradient(180deg, #F17071 0%, #DE6768 100%);
+/* background: red; */
+}
+
+.btn_ctdhov {
+  height: 50px;
+  width: 100%;
+  margin: 0;
+  border: 0;
+  border-radius: 100px;
+  /* background: #10326B; */
+  background: linear-gradient(180deg, #EE9596 0%, #F17071 100%);
+
   color: #fff !important;
   font-size: 15px;
   font-weight: 600;

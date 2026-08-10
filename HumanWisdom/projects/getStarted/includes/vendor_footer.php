@@ -8,6 +8,7 @@ $hw_assets = hw_page_assets_get();
 $hw_asset_payload = [
     'js' => $hw_assets['js'],
     'css' => $hw_assets['css'],
+    'ui' => $hw_assets['ui'] ?? [],
     'schedule' => $hw_assets['schedule'] ?? 'idle',
     'urls' => hw_page_assets_script_urls(),
     'styleUrls' => hw_page_assets_style_urls(),
@@ -18,7 +19,27 @@ window.__HW_API__=<?php echo json_encode($hw_api_client, JSON_UNESCAPED_SLASHES 
 window.__HW_PAGE_ASSETS__=<?php echo json_encode($hw_asset_payload, JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS); ?>;
 </script>
 
+<?php if (hw_page_assets_flag('ui', 'preloader')) : ?>
 <div id="preloader"></div>
+<?php endif; ?>
+
+<?php if (hw_page_assets_flag('js', 'gtag_deferred')) : ?>
+<script>
+window.addEventListener("load", function () {
+  var s = document.createElement("script");
+  s.async = true;
+  s.src = "https://www.googletagmanager.com/gtag/js?id=G-1WBHRGL7VH";
+  document.head.appendChild(s);
+  s.onload = function () {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
+    gtag("js", new Date());
+    gtag("config", "G-1WBHRGL7VH");
+  };
+});
+</script>
+<?php endif; ?>
 
 <!-- Critical path: jQuery + Bootstrap (modals/nav), then app scripts; vendors load via hw-deferred-load.js -->
 <script defer src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4= sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>

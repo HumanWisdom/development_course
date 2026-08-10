@@ -1,4 +1,10 @@
 <!-- header -->
+<?php
+if (!function_exists('hw_page_assets_flag')) {
+    require_once __DIR__ . '/page_assets.php';
+}
+if (!hw_page_assets_flag('css', 'header_in_critical')) :
+?>
 <style>
   /* Full-bleed fixed stack: main.css .header uses padding: 30px 60px which inset the subnav — remove horizontal padding and auto height so both rows + cream bar fit */
   .header_fixed.header.header_site_stack {
@@ -158,6 +164,7 @@
     -webkit-text-fill-color: #ffffff !important;
   }
 </style>
+<?php endif; ?>
 <div class="header_fixed header header_site_stack" style="justify-content: flex-start; display: flex;">
   <div class="header_site_top">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 header_main_inner p0">

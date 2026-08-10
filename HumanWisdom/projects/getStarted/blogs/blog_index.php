@@ -3,20 +3,15 @@
 <html lang="en">
 
 <head>
-  <title>Explore Your Inner World with Our Self-Discovery Blog</title>
-  <meta property="title" content="Mental Wellbeing and Life Skills Blog | HappierMe">
-  <meta property="description"
-    content="Explore expert articles on mental wellbeing, self-awareness, emotional intelligence, relationships and life skills from HappierMe.">
-  <meta property="keyword"
-    content="Mental wellbeing articles,self-awareness blog,
-emotional intelligence,
-life skills,
-personal growth,
-mental health articles,
-resilience,
-relationships,
-stress management
-">
+  <title>Mental Wellbeing and Life Skills Blog | HappierMe</title>
+  <meta name="title" content="Mental Wellbeing and Life Skills Blog | HappierMe">
+  <meta name="description" content="Explore expert articles on mental wellbeing, self-awareness, emotional intelligence, relationships and life skills from HappierMe.">
+  <meta name="keyword" content="Mental wellbeing articles,self-awareness blog, emotional intelligence, life skills, personal growth, mental health articles, resilience, relationships, stress management">
+
+
+
+  <meta property="og:title" content="Mental Wellbeing and Life Skills Blog | HappierMe">
+  <meta property="og:description" content="Explore expert articles on mental wellbeing, self-awareness, emotional intelligence, relationships and life skills from HappierMe.">
 
   <!-- vendor_header -->
   <?php Template::vendorHeader(); ?>
