@@ -451,6 +451,11 @@ export class WisdomScalePage implements OnInit {
             console.log(error)
           },
           () => {
+            if (!this.isAdults) {
+              this.logeventservice.logEvent('teenager_complete_survey');
+            } else {
+              this.logeventservice.logEvent('adult_complete_survey');
+            }
             this.service.wisdomScore(this.wisdomScore).subscribe(r => console.log(r))
             const { isUseCloseButton, routedFromLogin } = window.history.state;
             if (isUseCloseButton) {
@@ -517,6 +522,9 @@ export class WisdomScalePage implements OnInit {
   }
 
   startSurvey() {
+    if (this.isAdults) {
+      this.logeventservice.logEvent('adult_click_startsurvey');
+    }
     const { routedFromLogin } = window.history.state;
     this.router.navigate(["/" + SharedService.getprogramName() + '/wellness-survey'], {
       state: {

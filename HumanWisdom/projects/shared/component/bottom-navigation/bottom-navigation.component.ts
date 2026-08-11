@@ -178,7 +178,11 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
     }
 
     routeExplore() {
-      this.logeventservice.logEvent("footer_explore")
+      if (!this.isAdults) {
+        this.logeventservice.logEvent('teenager_click_explore_footer');
+      } else {
+        this.logeventservice.logEvent('adult_click_explore_footer');
+      }
       this.router.navigateByUrl(SharedService.getDashboardUrls());
     }
 
@@ -188,12 +192,20 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
     }
 
     routeLearn() {
-      this.logeventservice.logEvent("footer_learn")
+      if (!this.isAdults) {
+        this.logeventservice.logEvent('teenager_click_learnicon_footer');
+      } else {
+        this.logeventservice.logEvent('adult_click_learnicon_footer');
+      }
       this.router.navigateByUrl(SharedService.getUrlfromFeatureName(UrlConstant.search));
     }
 
     routeJournal() {
-      this.logeventservice.logEvent("footer_Journal")
+      if (!this.isAdults) {
+        this.logeventservice.logEvent('teenager_click_Journal_footer');
+      } else {
+        this.logeventservice.logEvent('adult_click_Journal_footer');
+      }
       localStorage.setItem('NaviagtedFrom', this.router.url);
       this.router.navigate([SharedService.getUrlfromFeatureName(UrlConstant.journal)]);
     }
@@ -220,7 +232,11 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
     }
 
     routeForum() {
-      this.logeventservice.logEvent("footer_Forum")
+      if (!this.isAdults) {
+        this.logeventservice.logEvent('teenager_click_forum_footer');
+      } else {
+        this.logeventservice.logEvent('adult_click_forum_footer');
+      }
       localStorage.setItem('NaviagtedFrom', this.router.url);
       // if(localStorage.getItem('isloggedin') === 'T')
       this.router.navigate([SharedService.getUrlfromFeatureName(UrlConstant.forum)], { state: { programType: this.programType } })
@@ -238,10 +254,12 @@ export class BottomNavigationComponent implements OnInit, OnDestroy, OnChanges {
 
     
  openChat(){
-  this.logeventservice.logEvent('Click_olly_chat');
   if(this.isAdults){
+    this.logeventservice.logEvent('adult_click_ollyai');
+    this.logeventservice.logEvent('Click_olly_chat');
     this.router.navigate(['/adults/chat-bot'], { state: { startWithChat: true } });
   } else {
+    this.logeventservice.logEvent('teenager_click_ollyai');
     this.router.navigate(['/teenagers/chat-bot'], { state: { startWithChat: true } });
   }
  }

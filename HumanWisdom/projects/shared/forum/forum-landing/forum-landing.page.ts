@@ -220,6 +220,9 @@ export class ForumLandingPage implements OnInit, OnChanges {
     }
   }
   like(item, index) {
+    if (this.isAdults) {
+      this.logeventservice.logEvent('adult_click_like_threads');
+    }
     if (this.isLoggedIn) {
       this.serivce.likePost({ PostID: item.PostID, UserID: this.UserID }).subscribe(res => {
         if (res) {
@@ -233,6 +236,9 @@ export class ForumLandingPage implements OnInit, OnChanges {
   }
 
   reportpost(item, actionType) {
+    if (this.isAdults) {
+      this.logeventservice.logEvent('adult_click_report_threads');
+    }
     if(this.isLoggedIn){
     if (this.actionType == '' || this.actionType == actionType) {
       this.replyflag = !this.replyflag;
@@ -304,6 +310,9 @@ export class ForumLandingPage implements OnInit, OnChanges {
   }
 
   commentPost(item) {
+    if (this.isAdults) {
+      this.logeventservice.logEvent('adult_click_comment_threads');
+    }
     this.replyflag = !this.replyflag;
     this.activeCommentPost = item;
   }
@@ -356,6 +365,9 @@ export class ForumLandingPage implements OnInit, OnChanges {
   }
 
   follow(item, index) {
+    if (this.isAdults) {
+      this.logeventservice.logEvent('adult_click_follow');
+    }
     if(this.isLoggedIn){
       this.serivce.followPost({ PostID: item.PostID, UserID: this.UserID }).subscribe(res => {
         if (res == "1") {
@@ -369,11 +381,21 @@ export class ForumLandingPage implements OnInit, OnChanges {
   }
 
   postnavigate(item) {
+    if (!this.isAdults) {
+      this.logeventservice.logEvent('teenager_click_threads');
+    } else {
+      this.logeventservice.logEvent('adult_click_threads');
+    }
     this.serivce.postdataSource.next(item);
     this.router.navigateByUrl(SharedService.getUrlfromFeatureName('forum/forum-thread')+'/'+item.PostID);
   }
 
   onFocusOutEvent(){
+    if (!this.isAdults) {
+      this.logeventservice.logEvent('teenager_click_search_forum');
+    } else {
+      this.logeventservice.logEvent('adult_click_search_forum');
+    }
     this.logeventservice.logEvent("Search")
     if(this.searchInput==''){
        this.getAllRecords();
@@ -387,7 +409,10 @@ export class ForumLandingPage implements OnInit, OnChanges {
   }
 
   shareOnThread(item){
-      this.path = `https://happierme.app/${SharedService.getprogramName()}/forum/forum-thread/${item.PostID}`;
+    if (this.isAdults) {
+      this.logeventservice.logEvent('adult_click_share_threads');
+    }
+    this.path = `https://happierme.app/${SharedService.getprogramName()}/forum/forum-thread/${item.PostID}`;
     // } else {
     //   this.path = "http://humanwisdom.me/"  + this.address+"/"+item.PostID;
     // }
@@ -856,10 +881,21 @@ export class ForumLandingPage implements OnInit, OnChanges {
   }
 
   startNewThread(tagId){
-    if(tagId==5)
+    if(tagId==5) {
+      if (!this.isAdults) {
+        this.logeventservice.logEvent('teenager_click_askourexpertcoaches');
+      } else {
+        this.logeventservice.logEvent('adult_click_askourexpertcoaches');
+      }
       this.logeventservice.logEvent("click_AskExpert")
-    else
+    } else {
+      if (!this.isAdults) {
+        this.logeventservice.logEvent('teenager_click_plusicon');
+      } else {
+        this.logeventservice.logEvent('adult_click_plusicon');
+      }
       this.logeventservice.logEvent("click_NewThread")
+    }
 
     if(this.isSubscribe){
       localStorage.setItem('tagId',tagId);

@@ -862,6 +862,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
   }
 
   googleLogin(reqtype) {
+    this.logeventservice.logEvent('click_continuewithgoogle');
     if (reqtype == "signup")
       this.logeventservice.logEvent('click_signup_google');
     else {
@@ -1298,6 +1299,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
 
 
   fbLogin(reqtype) {
+    this.logeventservice.logEvent('click_continuewithfacebook');
     if (reqtype == "signup")
       this.logeventservice.logEvent('click_signup_facebook');
     else
@@ -1446,6 +1448,13 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
       this.logeventservice.logEvent('login_error_view');
     } else {
       this.logeventservice.logEvent('login_success');
+      if (social === 'google') {
+        this.logeventservice.logEvent('completed_googlesignin');
+      } else if (social === 'facebook') {
+        this.logeventservice.logEvent('completed_facebooksignin');
+      } else if (social === '') {
+        this.logeventservice.logEvent('email_signin_completed');
+      }
       if (res.NoOfVisits === 1) {
         localStorage.setItem("signupfirst", 'T');
       } else {
@@ -1831,6 +1840,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
 
   routeForgotPassword() {
     this.logeventservice.logEvent('click_forgot_password');
+    this.logeventservice.logEvent('click_forgotpassword');
     if (this.isAdults) {
       this.router.navigate(['/adults/onboarding/forgotpassword'])
     } else {
