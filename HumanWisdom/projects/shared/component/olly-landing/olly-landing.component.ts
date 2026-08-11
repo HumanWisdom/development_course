@@ -6,6 +6,7 @@ import { ProgramType } from '../../models/program-model';
 import { OLLY_QUESTIONS, OllyTopic } from './olly-questions';
 import { OnboardingService } from '../../services/onboarding.service';
 import { AdultsService } from '../../../adults/src/app/adults/adults.service';
+import { LogEventService } from '../../services/log-event.service';
 
 @Component({
   selector: 'app-olly-landing',
@@ -108,7 +109,8 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
     private activatedRoute: ActivatedRoute,
     private service: OnboardingService,
     private services: AdultsService,
-    private commonService: CommonService
+    private commonService: CommonService,
+    private logeventservice: LogEventService
   ) {
     // Must read getCurrentNavigation() in the constructor — it returns null by the time ngOnInit fires for lazy-loaded modules
     const navigation = this.router.getCurrentNavigation();
@@ -412,6 +414,9 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   private handleChatStart(query: string): void {
+    if (this.isAdults) {
+      this.logeventservice.logEvent('adult_click_send');
+    }
     this.startChat.emit(query);
 
     // When embedded in chat-bot, the parent handles the emitted query.
@@ -468,6 +473,11 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
     this.showQuestionsView = show;
     this.viewChanged.emit(show);
     if (show) {
+      if (!this.isAdults) {
+        this.logeventservice.logEvent('teenager_click_questionsyoucanask');
+      } else {
+        this.logeventservice.logEvent('adult_click_questionsyoucanask');
+      }
       this.expandedTopics = {};
       this.topicsList.forEach(topic => {
         this.expandedTopics[topic.fragment] = false;

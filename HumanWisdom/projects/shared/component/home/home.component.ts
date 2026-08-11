@@ -977,6 +977,73 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       this.logeventservice.logEvent('select_category_' + item.displayName.replace(/\s+/g, '').toLowerCase());
     }
 
+    if (this.isAdults && item && item.id) {
+      switch (item.id.toString()) {
+        case '2':
+          this.logeventservice.logEvent('adult_click_mentalhealth');
+          break;
+        case '1':
+          this.logeventservice.logEvent('adult_Click_success_at_work');
+          break;
+        case '3':
+          this.logeventservice.logEvent('adult_click_relationship');
+          break;
+        case '4':
+          this.logeventservice.logEvent('adult_click_happiness');
+          break;
+        case '8':
+          this.logeventservice.logEvent('adult_click_emotions');
+          break;
+        case '18':
+          this.logeventservice.logEvent('adult_click_forparents');
+          break;
+        case '19':
+          this.logeventservice.logEvent('adult_click_selfawareness');
+          break;
+        case '7':
+          this.logeventservice.logEvent('adult_click_meditation');
+          break;
+        case '6':
+          this.logeventservice.logEvent('adult_Click_sorrowandloss');
+          break;
+        case '5':
+          this.logeventservice.logEvent('adult_click_addiction');
+          break;
+      }
+    }
+
+    if (!this.isAdults && item && item.id) {
+      switch (item.id.toString()) {
+        case '10':
+          this.logeventservice.logEvent('teenager_click_mentalhealth');
+          break;
+        case '17':
+          this.logeventservice.logEvent('teenager_Click_success_at_work');
+          break;
+        case '11':
+          this.logeventservice.logEvent('teenager_click_relationship');
+          break;
+        case '13':
+          this.logeventservice.logEvent('teenager_click_happiness');
+          break;
+        case '14':
+          this.logeventservice.logEvent('teenager_click_emotions');
+          break;
+        case '20':
+          this.logeventservice.logEvent('teenager_click_selfawareness');
+          break;
+        case '12':
+          this.logeventservice.logEvent('teenager_click_freecalm');
+          break;
+        case '15':
+          this.logeventservice.logEvent('teenager_Click_habits');
+          break;
+        case '16':
+          this.logeventservice.logEvent('teenager_click_understandyourself');
+          break;
+      }
+    }
+
     // Update URL fragment on manual tab switch so URL reflects selected tab (e.g. #meditation, #self-awareness)
     this.updateUrlFragment(item);
 
@@ -1037,6 +1104,16 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       console.log(`%c [ANALYTICS EVENT] Triggering Card Click: ${eventName}`, 'color: #bada55; font-size: 14px');
       this.logeventservice.logEvent(eventName);
     }
+
+    const cardType = (card.moduleType || card.mediaType || '').toUpperCase();
+    if (!this.isAdults && cardType.includes('WELLNESS SURVEY')) {
+      this.logeventservice.logEvent('teenager_click_takethesurvey');
+    }
+    if (this.isAdults && cardType.includes('WELLNESS SURVEY')) {
+      this.logeventservice.logEvent('adult_click_takethesurvey');
+    }
+
+    this.trackTeenagerCardClick(card, section);
 
     const type = (card.moduleType || card.mediaType || '').toUpperCase();
     const isEvent = type.includes('EVENT') || (card.path || '').includes('/events/') || (card.path || '').includes('youtubelink');
@@ -1382,6 +1459,149 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     return '';
   }
 
+  trackTeenagerSectionClick(title: string): void {
+    if (!title) return;
+    const t = title.toLowerCase().trim();
+
+    if (this.isAdults) {
+      // Adults section button events
+      if (t.includes('begin here')) {
+        this.logeventservice.logEvent('adult_Click_beginhere');
+      } else if (t.includes('feel better now')) {
+        this.logeventservice.logEvent('adult_Click_feelbetternow');
+      } else if (t.includes('microlearning') || t.includes('micro-learning')) {
+        this.logeventservice.logEvent('adult_Click_microlearning');
+      } else if (t.includes('dive deeper')) {
+        this.logeventservice.logEvent('adult_Click_divedeeperforlastingchange');
+      } else if (t.includes('get to know your mind') || t.includes('understand your mind')) {
+        this.logeventservice.logEvent('adult_Click_gettoknowyourmind');
+      } else if (t.includes('short video') || t.includes('shorts')) {
+        this.logeventservice.logEvent('adult_Click_shortvideos');
+      } else if (t.includes('podcast')) {
+        this.logeventservice.logEvent('adult_Click_podcasts');
+      } else if (t.includes('life storie') || t.includes('storie')) {
+        this.logeventservice.logEvent('adult_click_lifestories');
+      } else if (t.includes('blog')) {
+        this.logeventservice.logEvent('adult_click_blogs');
+      } else if (t.includes('guided meditation') || t.includes('meditation') || t.includes('audio')) {
+        this.logeventservice.logEvent('adult_Click_guidedmeditation');
+      } else if (t.includes('guided journal') || t.includes('journal')) {
+        this.logeventservice.logEvent('adult_Click_guidedjournaling');
+      }
+      return;
+    }
+
+    // Teenagers section button events
+    if (t.includes('begin here')) {
+      this.logeventservice.logEvent('teenager_Click_beginhere');
+    } else if (t.includes('feel better now')) {
+      this.logeventservice.logEvent('teenager_Click_feelbetternow');
+    } else if (t.includes('microlearning') || t.includes('micro-learning')) {
+      this.logeventservice.logEvent('teenager_Click_microlearning');
+    } else if (t.includes('dive deeper')) {
+      this.logeventservice.logEvent('teenager_Click_divedeeperforlastingchange');
+    } else if (t.includes('teen talk')) {
+      this.logeventservice.logEvent('teenager_Click_teentalk');
+    } else if (t.includes('get to know your mind') || t.includes('understand your mind')) {
+      this.logeventservice.logEvent('teenager_Click_gettoknowyourmind');
+    } else if (t.includes('short video') || t.includes('shorts')) {
+      this.logeventservice.logEvent('teenager_Click_shortvideos');
+    } else if (t.includes('podcast')) {
+      this.logeventservice.logEvent('teenager_Click_podcasts');
+    } else if (t.includes('life storie') || t.includes('storie')) {
+      this.logeventservice.logEvent('teenager_Click_lifestories');
+    } else if (t.includes('blog')) {
+      this.logeventservice.logEvent('teenager_Click_blogs');
+    } else if (t.includes('meditation') || t.includes('audio')) {
+      this.logeventservice.logEvent('teenager_Click_guidedmeditation');
+    } else if (t.includes('journal')) {
+      this.logeventservice.logEvent('teenager_Click_guidedjournaling');
+    }
+  }
+
+  trackTeenagerCardClick(card: ContentCard, section?: ContentSection): void {
+    if (!card) return;
+
+    const title = (card.title || '').toLowerCase();
+    const path = (card.path || '').toLowerCase();
+    const secTitle = (section?.title || '').toLowerCase().trim();
+    const type = (card.moduleType || card.mediaType || '').toUpperCase();
+    const isVideo = type.includes('VIDEO') || type.includes('SHORT');
+    const isAudio = type.includes('AUDIO') || type.includes('BREATHING') || type.includes('SOUNDSCAPE');
+    const isPodcast = type.includes('PODCAST') || path.includes('podcast');
+    const isStory = type.includes('STORY') || path.includes('wisdom-stories') || path.includes('lifestory');
+    const isBlog = type.includes('BLOG') || path.includes('blogs') || path.includes('blog-article');
+
+    if (this.isAdults) {
+      // Adults specific card click events
+      if (title.includes('deal with your inner critic') || title.includes('inner critic') || path.includes('inner-critic') || path.includes('inner_critic')) {
+        this.logeventservice.logEvent('adult_click_dealwithyourinnercritic');
+        return;
+      }
+      if (title.includes('be less stressed') || title.includes('less stressed') || path.includes('be-less-stressed') || path.includes('belessstressed')) {
+        this.logeventservice.logEvent('adult_click_belessstressed');
+        return;
+      }
+
+      if (secTitle.includes('begin here')) {
+        if (isVideo) this.logeventservice.logEvent('adult_click_video');
+      } else if (secTitle.includes('feel better now')) {
+        if (isVideo) this.logeventservice.logEvent('adult_click_video_feelbetternow');
+      } else if (secTitle.includes('microlearning') || secTitle.includes('micro-learning')) {
+        if (isVideo) this.logeventservice.logEvent('adult_click_video_microlearning');
+      } else if (secTitle.includes('dive deeper')) {
+        if (isVideo) this.logeventservice.logEvent('adult_click_video_divedeeperforlastingchange');
+      } else if (secTitle.includes('get to know your mind') || secTitle.includes('understand your mind')) {
+        if (isVideo) this.logeventservice.logEvent('adult_click_video_gettoknowyourmind');
+      } else if (secTitle.includes('short video') || secTitle.includes('shorts')) {
+        if (isVideo) this.logeventservice.logEvent('adult_click_video_shortvideos');
+      } else if (secTitle.includes('podcast') || isPodcast) {
+        this.logeventservice.logEvent('adult_click_podcasts_icon');
+      } else if (secTitle.includes('life storie') || secTitle.includes('storie') || isStory) {
+        this.logeventservice.logEvent('adult_click_stories');
+      } else if (secTitle.includes('blog') || isBlog) {
+        this.logeventservice.logEvent('adult_click_blogsicon');
+      } else if (secTitle.includes('meditation') || secTitle.includes('audio') || isAudio) {
+        this.logeventservice.logEvent('adult_click_audio');
+      }
+      return;
+    }
+
+    // Teenagers specific card click events
+    if (title.includes('deal with your inner critic') || title.includes('inner critic') || path.includes('inner-critic') || path.includes('inner_critic')) {
+      this.logeventservice.logEvent('teenager_click_dealwithyourinnercritic');
+      return;
+    }
+    if (title.includes('be less stressed') || title.includes('less stressed') || path.includes('be-less-stressed') || path.includes('belessstressed')) {
+      this.logeventservice.logEvent('teenager_click_belessstressed');
+      return;
+    }
+
+    if (secTitle.includes('begin here')) {
+      if (isVideo) this.logeventservice.logEvent('teenager_click_video');
+    } else if (secTitle.includes('feel better now')) {
+      if (isVideo) this.logeventservice.logEvent('teenager_click_video_feelbetternow');
+    } else if (secTitle.includes('microlearning') || secTitle.includes('micro-learning')) {
+      if (isVideo) this.logeventservice.logEvent('teenager_click_video_microlearning');
+    } else if (secTitle.includes('dive deeper')) {
+      if (isVideo) this.logeventservice.logEvent('teenager_click_video_divedeeperforlasting change');
+    } else if (secTitle.includes('teen talk')) {
+      if (isVideo) this.logeventservice.logEvent('teenager_click_video_teentalk');
+    } else if (secTitle.includes('get to know your mind') || secTitle.includes('understand your mind')) {
+      if (isVideo) this.logeventservice.logEvent('teenager_click_video_gettoknowyourmind');
+    } else if (secTitle.includes('short video') || secTitle.includes('shorts')) {
+      if (isVideo) this.logeventservice.logEvent('teenager_click_video_shortvideos');
+    } else if (secTitle.includes('podcast') || isPodcast) {
+      this.logeventservice.logEvent('teenager_click_podcasts_icon');
+    } else if (secTitle.includes('life storie') || secTitle.includes('storie') || isStory) {
+      this.logeventservice.logEvent('teenager_click_stories');
+    } else if (secTitle.includes('blog') || isBlog) {
+      this.logeventservice.logEvent('teenager_click_blogsicon');
+    } else if (secTitle.includes('meditation') || secTitle.includes('audio') || isAudio) {
+      this.logeventservice.logEvent('teenager_click_audio');
+    }
+  }
+
   onSectionToggle(section: ContentSection): void {
     // Only toggle for normal accordion sections (not inline)
     if (section.isInlineSection) {
@@ -1396,6 +1616,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
             const eventName = `click_${prefix}${sectionName}`;
             console.log(`%c [ANALYTICS EVENT] Triggering Accordion Expand: ${eventName}`, 'color: #bada55; font-size: 14px');
             this.logeventservice.logEvent(eventName);
+            this.trackTeenagerSectionClick(section.title);
         }
     }
 
@@ -1465,6 +1686,9 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
    * Incrementally loads 4 more cards each time
    */
   onViewMoreClick(section: ContentSection): void {
+    if (section && section.title) {
+      this.trackTeenagerSectionClick(section.title);
+    }
     const totalCards = section.cards?.length || 0;
     if (!totalCards) {
       return;
@@ -1598,6 +1822,10 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   onViewAll(section): void {
     if (!section.viewall_Url) {
       return;
+    }
+
+    if (section.title) {
+      this.trackTeenagerSectionClick(section.title);
     }
 
     const title = (section.title || '').toLowerCase();
@@ -1993,9 +2221,15 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   onFocus(): void {
     this.isSearchActive = true;
     this.commonService.setSearchActive(true);
-    const eventName = 'click_search';
-    console.log(`%c [ANALYTICS EVENT] Triggering Search Click: ${eventName}`, 'color: #bada55; font-size: 14px');
+    this.toggleBodyScroll(true);
+    const prefix = this.getTabNamePrefix();
+    const eventName = `click_${prefix}search_bar`;
     this.logeventservice.logEvent(eventName);
+    if (!this.isAdults) {
+      this.logeventservice.logEvent('teenager_click_searchbar_explore');
+    } else {
+      this.logeventservice.logEvent('adult_click_searchbar_explore');
+    }
     
     if (this.moduleList.length === 0) {
       this.getModuleList();
@@ -2353,6 +2587,9 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
   routeToCoach(){
     this.logeventservice.logEvent("click_contact_a_coach");
+    if (!this.isAdults) {
+      this.logeventservice.logEvent('teenager_click_contactacoach');
+    }
       this.router.navigate([SharedService.getprogramName(), 'coach']);
 
 

@@ -63,6 +63,7 @@ export class ChangePasswordPage implements OnInit {
   }
 
   forgotPassword() {
+    this.logeventservice.logEvent('click_forgotpassword');
     this.logeventservice.logEvent('click_submit_change_password');
     this.showWarning = false
     // Ideally we want to just check for at least one letter and one digit, length is already checked separately or we can combine.

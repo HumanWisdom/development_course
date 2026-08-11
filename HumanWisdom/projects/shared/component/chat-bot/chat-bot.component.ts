@@ -196,7 +196,11 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
       return;
     }
 
-    this.logeventservice.logEvent('click_sent_icon');
+    if (!this.isAdults) {
+      this.logeventservice.logEvent('teenager_click_send');
+    } else {
+      this.logeventservice.logEvent('click_sent_icon');
+    }
 
     const originalMessage = this.currentMessage.trim();
     this.currentMessage = '';
@@ -297,6 +301,9 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
   onQuestionsLinkClick(event: Event): void {
     event.preventDefault();
     event.stopPropagation();
+    if (!this.isAdults) {
+      this.logeventservice.logEvent('teenager_click_questionsyoucanask');
+    }
     this.showLanding = true;
     this.startInQuestionsView = true;
   }

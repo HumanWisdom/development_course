@@ -60,6 +60,9 @@ export class IntroHappiermePage {
 
   routeVideoaudio(type, url, title = '') {
     if(title != ''){
+      if (!this.isAdults && title.toLowerCase().includes('podcast')) {
+        this.logeventservice.logEvent('teenager_click_podcasts_guidetohappierme');
+      }
       this.logeventservice.logEvent('click_'+ title);
 
 
