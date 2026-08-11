@@ -328,7 +328,10 @@ export class S75003Page implements OnInit {
         data = this.elementRef.nativeElement.querySelectorAll('.active')[0]?.firstChild?.children[0]?.
           children[1]?.children[0]?.lastChild?.classList.value;
       }
-      if (data == "audio-test") {
+       this.isShowButton=true;
+        this.isShowTranscript = true;
+        this.isShowAudio=false;
+    /*   if (data == "audio-test") {
         this.isShowButton=true;
         this.isShowTranscript = true;
         this.isShowAudio=false;
@@ -336,7 +339,7 @@ export class S75003Page implements OnInit {
         this.isShowButton=false;
         this.isShowTranscript = false;
         this.isShowAudio = false;
-      }
+      } */
       this.setHint();
     }, 700);
   }
@@ -498,6 +501,8 @@ openHintModal() {
 
   goBack() {
     // Check if we came from micro-learning end screen
+        if(this.currentDay === 0 && this.slideStart === 1) {
+
     const fromMicroLearningEnd = localStorage.getItem('fromMicroLearningEnd');
     const microLearningEndUrl = localStorage.getItem('microLearningEndUrl');
     
@@ -515,6 +520,13 @@ openHintModal() {
         this.router.navigate(['/adults/explore']);
       }
     }
+  }
+   else
+  {
+    
+    this.getdayevent('intro');
+  }
+
   }
 
 }
