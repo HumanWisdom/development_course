@@ -608,6 +608,8 @@ closeHintModal() {
 
   goBack() {
     // Check if we came from micro-learning end screen
+    if(this.currentDay === 0 && this.slideStart === 1) {
+
     const fromMicroLearningEnd = localStorage.getItem('fromMicroLearningEnd');
     const microLearningEndUrl = localStorage.getItem('microLearningEndUrl');
     
@@ -623,6 +625,12 @@ closeHintModal() {
       } else {
         this.router.navigate(['/adults/explore']);
       }
+    }
+    }
+    else
+    {
+      
+      this.getdayevent('intro');
     }
   }
 
