@@ -37132,82 +37132,113 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
   margin-bottom: 30px;
 }
 
-/* Wide screen: shrink thumbnail columns so text sits closer (find-answers cards) */
+/* Spacing between thumbnail and text on find-answers cards (mobile + wide).
+   Shrink image column + flex gap so spacing is visible; .p0 zeros padding so
+   margin/gap are used instead. */
+.toc_adiv_mp [class*="d-flex"],
+.toc_adiv_mp .center_flex,
+.div_fa [class*="d-flex"],
+.div_fa .center_flex,
+.box_v3_08.center_flex,
+.box_v3_08[class*="d-flex"] {
+  justify-content: flex-start !important;
+  gap: 16px;
+}
+
+.toc_adiv_mp [class*="d-flex"] > [class*="col-4"],
+.toc_adiv_mp [class*="d-flex"] > [class*="col-lg-4"],
+.toc_adiv_mp [class*="d-flex"] > [class*="col-md-4"],
+.toc_adiv_mp [class*="d-flex"] > [class*="col-sm-4"],
+.toc_adiv_mp [class*="d-flex"] > [class*="col-xs-4"],
+.toc_adiv_mp .center_flex > [class*="col-4"],
+.toc_adiv_mp .center_flex > [class*="col-lg-4"],
+.toc_adiv_mp .center_flex > [class*="col-md-4"],
+.toc_adiv_mp .center_flex > [class*="col-sm-4"],
+.toc_adiv_mp .center_flex > [class*="col-xs-4"],
+.div_fa [class*="d-flex"] > [class*="col-4"],
+.div_fa [class*="d-flex"] > [class*="col-lg-4"],
+.div_fa [class*="d-flex"] > [class*="col-md-4"],
+.div_fa [class*="d-flex"] > [class*="col-sm-4"],
+.div_fa [class*="d-flex"] > [class*="col-xs-4"],
+.div_fa .center_flex > [class*="col-4"],
+.div_fa .center_flex > [class*="col-lg-4"],
+.div_fa .center_flex > [class*="col-md-4"],
+.div_fa .center_flex > [class*="col-sm-4"],
+.div_fa .center_flex > [class*="col-xs-4"],
+.box_v3_08 > [class*="col-4"],
+.box_v3_08 > [class*="col-lg-4"],
+.box_v3_08 > [class*="col-md-4"],
+.box_v3_08 > [class*="col-sm-4"],
+.box_v3_08 > [class*="col-xs-4"] {
+  width: auto !important;
+  flex: 0 0 auto !important;
+  max-width: none !important;
+}
+
+.toc_adiv_mp [class*="d-flex"] > [class*="col-7"],
+.toc_adiv_mp [class*="d-flex"] > [class*="col-8"],
+.toc_adiv_mp .center_flex > [class*="col-7"],
+.toc_adiv_mp .center_flex > [class*="col-8"],
+.div_fa [class*="d-flex"] > [class*="col-7"],
+.div_fa [class*="d-flex"] > [class*="col-8"],
+.div_fa [class*="d-flex"] > [class*="col-lg-7"],
+.div_fa [class*="d-flex"] > [class*="col-md-7"],
+.div_fa [class*="d-flex"] > [class*="col-sm-7"],
+.div_fa [class*="d-flex"] > [class*="col-xs-7"],
+.div_fa .center_flex > [class*="col-7"],
+.div_fa .center_flex > [class*="col-8"],
+.div_fa .center_flex > [class*="col-lg-7"],
+.div_fa .center_flex > [class*="col-md-7"],
+.div_fa .center_flex > [class*="col-sm-7"],
+.div_fa .center_flex > [class*="col-xs-7"],
+.box_v3_08 > [class*="col-7"],
+.box_v3_08 > [class*="col-8"],
+.box_v3_08 > [class*="col-lg-7"],
+.box_v3_08 > [class*="col-md-7"],
+.box_v3_08 > [class*="col-sm-7"],
+.box_v3_08 > [class*="col-xs-7"] {
+  flex: 1 1 0 !important;
+  width: auto !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+}
+
+.toc_adiv_mp [class*="d-flex"] > .col-1,
+.toc_adiv_mp [class*="d-flex"] > .col-lg-1,
+.toc_adiv_mp [class*="d-flex"] > .col-md-1,
+.toc_adiv_mp [class*="d-flex"] > .col-sm-1,
+.toc_adiv_mp [class*="d-flex"] > .col-xs-1,
+.toc_adiv_mp .center_flex > .col-1,
+.toc_adiv_mp .center_flex > .col-lg-1,
+.toc_adiv_mp .center_flex > .col-md-1,
+.toc_adiv_mp .center_flex > .col-sm-1,
+.toc_adiv_mp .center_flex > .col-xs-1,
+.div_fa [class*="d-flex"] > .col-1,
+.div_fa [class*="d-flex"] > .col-lg-1,
+.div_fa [class*="d-flex"] > .col-md-1,
+.div_fa [class*="d-flex"] > .col-sm-1,
+.div_fa [class*="d-flex"] > .col-xs-1,
+.div_fa .center_flex > .col-1,
+.div_fa .center_flex > .col-lg-1,
+.div_fa .center_flex > .col-md-1,
+.div_fa .center_flex > .col-sm-1,
+.div_fa .center_flex > .col-xs-1,
+.box_v3_08 > .col-1,
+.box_v3_08 > .col-lg-1,
+.box_v3_08 > .col-md-1,
+.box_v3_08 > .col-sm-1,
+.box_v3_08 > .col-xs-1 {
+  width: auto !important;
+  flex: 0 0 auto !important;
+  max-width: none !important;
+  margin-left: auto !important;
+}
+
+/* Wide screen: keep find-answers list rows left-aligned */
 @media (min-width: 768px) {
-  .toc_adiv_mp [class*="d-flex"] > [class*="col-4"],
-  .toc_adiv_mp [class*="d-flex"] > [class*="col-lg-4"],
-  .toc_adiv_mp [class*="d-flex"] > [class*="col-md-4"],
-  .toc_adiv_mp [class*="d-flex"] > [class*="col-sm-4"],
-  .toc_adiv_mp [class*="d-flex"] > [class*="col-xs-4"],
-  .toc_adiv_mp .center_flex > [class*="col-4"],
-  .toc_adiv_mp .center_flex > [class*="col-lg-4"],
-  .toc_adiv_mp .center_flex > [class*="col-md-4"],
-  .toc_adiv_mp .center_flex > [class*="col-sm-4"],
-  .toc_adiv_mp .center_flex > [class*="col-xs-4"],
-  .div_fa [class*="d-flex"] > [class*="col-4"],
-  .div_fa [class*="d-flex"] > [class*="col-lg-4"],
-  .div_fa [class*="d-flex"] > [class*="col-md-4"],
-  .div_fa [class*="d-flex"] > [class*="col-sm-4"],
-  .div_fa [class*="d-flex"] > [class*="col-xs-4"],
-  .div_fa .center_flex > [class*="col-4"],
-  .div_fa .center_flex > [class*="col-lg-4"],
-  .div_fa .center_flex > [class*="col-md-4"],
-  .div_fa .center_flex > [class*="col-sm-4"],
-  .div_fa .center_flex > [class*="col-xs-4"],
-  .box_v3_08 > [class*="col-4"],
-  .box_v3_08 > [class*="col-lg-4"],
-  .box_v3_08 > [class*="col-md-4"],
-  .box_v3_08 > [class*="col-sm-4"],
-  .box_v3_08 > [class*="col-xs-4"] {
-    width: auto;
-    flex: 0 0 auto;
-    max-width: none;
-  }
-
-  .toc_adiv_mp [class*="d-flex"] > [class*="col-7"],
-  .toc_adiv_mp [class*="d-flex"] > [class*="col-8"],
-  .toc_adiv_mp .center_flex > [class*="col-7"],
-  .toc_adiv_mp .center_flex > [class*="col-8"],
-  .div_fa [class*="d-flex"] > [class*="col-7"],
-  .div_fa [class*="d-flex"] > [class*="col-8"],
-  .div_fa [class*="d-flex"] > [class*="col-lg-7"],
-  .div_fa [class*="d-flex"] > [class*="col-md-7"],
-  .div_fa [class*="d-flex"] > [class*="col-sm-7"],
-  .div_fa [class*="d-flex"] > [class*="col-xs-7"],
-  .div_fa .center_flex > [class*="col-7"],
-  .div_fa .center_flex > [class*="col-8"],
-  .div_fa .center_flex > [class*="col-lg-7"],
-  .div_fa .center_flex > [class*="col-md-7"],
-  .div_fa .center_flex > [class*="col-sm-7"],
-  .div_fa .center_flex > [class*="col-xs-7"],
-  .box_v3_08 > [class*="col-7"],
-  .box_v3_08 > [class*="col-8"],
-  .box_v3_08 > [class*="col-lg-7"],
-  .box_v3_08 > [class*="col-md-7"],
-  .box_v3_08 > [class*="col-sm-7"],
-  .box_v3_08 > [class*="col-xs-7"] {
-    flex: 1 1 0;
-    width: auto;
-    max-width: none;
-    padding-left: 12px !important;
-  }
-
-  .toc_adiv_mp [class*="d-flex"] > [class*="col-1"],
-  .toc_adiv_mp .center_flex > [class*="col-1"],
-  .div_fa [class*="d-flex"] > [class*="col-1"],
-  .div_fa .center_flex > [class*="col-1"],
-  .div_fa .center_flex > [class*="col-lg-1"],
-  .div_fa .center_flex > [class*="col-md-1"],
-  .div_fa .center_flex > [class*="col-sm-1"],
-  .div_fa .center_flex > [class*="col-xs-1"],
-  .box_v3_08 > [class*="col-1"],
-  .box_v3_08 > [class*="col-lg-1"],
-  .box_v3_08 > [class*="col-md-1"],
-  .box_v3_08 > [class*="col-sm-1"],
-  .box_v3_08 > [class*="col-xs-1"] {
-    width: auto;
-    flex: 0 0 auto;
-    max-width: none;
+  .div_fq a .row,
+  .div_fq a .center_flex {
+    justify-content: flex-start !important;
   }
 }
 

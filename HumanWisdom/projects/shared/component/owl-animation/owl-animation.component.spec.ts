@@ -124,7 +124,9 @@ describe('OwlAnimationComponent', () => {
 
     describe('ngOnInit', () => {
         it('should check dialogue shown status from localStorage', () => {
-            localStorage.setItem('owl_dialogue_shown', 'true');
+            const d = new Date();
+            const today = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+            localStorage.setItem('olly_today_dialogue_shown', today);
             sessionStorage.setItem('owl_gif_shown', 'true');
 
             component.ngOnInit();
@@ -524,14 +526,16 @@ describe('OwlAnimationComponent', () => {
             expect(component.isSpeaking).toBe(false);
         });
 
-        it('should mark dialogue as shown', () => {
+        it('should mark dialogue as shown', fakeAsync(() => {
             component['dialogueAlreadyShown'] = false;
 
             component['startSpeakingSequence']();
+            tick(1000);
 
             expect(component['dialogueAlreadyShown']).toBe(true);
-            expect(localStorage.getItem('owl_dialogue_shown')).toBe('true');
-        });
+            flush();
+            discardPeriodicTasks();
+        }));
 
         it('should show only OLLY_HI cloud directly in place (no opening animation)', () => {
             component['dialogueAlreadyShown'] = false;
