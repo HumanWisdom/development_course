@@ -22565,7 +22565,7 @@ input[type="search"]:focus::-webkit-search-cancel-button
 ul.dh_ul li {
   /* padding: 22px 0  0 0!important; */
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 15px 0 15px 0;
+  padding: 15px 0 15px 15px;
 }
 
 ul.dh_ul li:last-child {
@@ -28489,8 +28489,8 @@ ul.dh_ul li:hover{
   background: #10326B;
   /* padding-left: 0px;
   padding-right: 0px; */
-  margin-right: -10px;
-    margin-left: -10px;
+/*   margin-right: -10px;
+    margin-left: -10px; */
     /* padding: 15px 0 15px 5px; */
 }
 
