@@ -1139,6 +1139,36 @@ describe('CommonService', () => {
     });
   });
 
+  describe('Olly once-a-day bubble helpers', () => {
+    it('should return today as YYYY-MM-DD', () => {
+      const d = new Date();
+      const expected = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+      expect(service.getOllyBubbleDayKey()).toBe(expected);
+    });
+
+    it('should mark and detect bubble shown today', () => {
+      const key = 'olly_today_dialogue_shown';
+      expect(service.isOllyBubbleShownToday(key)).toBe(false);
+
+      service.markOllyBubbleShownToday(key);
+
+      expect(localStorage.getItem(key)).toBe(service.getOllyBubbleDayKey());
+      expect(service.isOllyBubbleShownToday(key)).toBe(true);
+      expect(service.hasSeenInPageOlly()).toBe(true);
+    });
+
+    it('should not treat a previous day as shown today', () => {
+      localStorage.setItem('olly_today_dialogue_shown', '2020-01-01');
+      expect(service.isOllyBubbleShownToday('olly_today_dialogue_shown')).toBe(false);
+      expect(service.hasSeenInPageOlly()).toBe(false);
+    });
+
+    it('should not treat legacy true as shown today', () => {
+      localStorage.setItem('olly_today_dialogue_shown', 'true');
+      expect(service.hasSeenInPageOlly()).toBe(false);
+    });
+  });
+
   describe('Error Handling', () => {
     it('should handle HTTP error gracefully', () => {
       const errorMessage = 'Server error';

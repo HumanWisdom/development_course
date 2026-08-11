@@ -27,7 +27,26 @@ export class CommonService {
   isFooterOwlVisible$ = this.isFooterOwlVisibleSubject.asObservable();
   setFooterOwlVisible(visible: boolean): void { this.isFooterOwlVisibleSubject.next(visible); }
 
-  /** True when in-page Olly was shown on Today or Olly landing (suppress footer bubble only). */
+  /** Local calendar day key (YYYY-MM-DD) for once-a-day Olly bubble gating. */
+  getOllyBubbleDayKey(): string {
+    const d = new Date();
+    const y = d.getFullYear();
+    const m = String(d.getMonth() + 1).padStart(2, '0');
+    const day = String(d.getDate()).padStart(2, '0');
+    return `${y}-${m}-${day}`;
+  }
+
+  /** True when a storage key was marked with today's date. */
+  isOllyBubbleShownToday(storageKey: string): boolean {
+    return localStorage.getItem(storageKey) === this.getOllyBubbleDayKey();
+  }
+
+  /** Persist that an Olly bubble key was shown today. */
+  markOllyBubbleShownToday(storageKey: string): void {
+    localStorage.setItem(storageKey, this.getOllyBubbleDayKey());
+  }
+
+  /** True when in-page Olly was shown today on Today or Olly landing (suppress footer bubble only). */
   hasSeenInPageOlly(): boolean {
     const keys = [
       'olly_today_intro_shown',
@@ -35,7 +54,8 @@ export class CommonService {
       'olly_landing_intro_shown',
       'olly_landing_dialogue_shown',
     ];
-    return keys.some((key) => localStorage.getItem(key) === 'true');
+    const today = this.getOllyBubbleDayKey();
+    return keys.some((key) => localStorage.getItem(key) === today);
   }
 
   // In-memory session flags — survive footer owl component destroy/recreate on route changes.
