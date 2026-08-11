@@ -33602,8 +33602,11 @@ body * {
   border-radius: 12px;
   border: 0;
   background: #FFE8BB;
+  height: 130px;
+  min-height: 130px;
   padding: 15px !important;
   margin-bottom: 10px;
+  box-sizing: border-box;
 }
 
 .div_fa a:last-child .box_v3_08 {
@@ -37563,9 +37566,11 @@ span {
 .toc_adiv_mp a>.row {
   border-radius: 12px;
   background: #FFE8BB;
-  min-height: 88px;
+  height: 130px;
+  min-height: 130px;
   margin-bottom: 10px;
-  padding: 12px;
+  padding: 15px;
+  box-sizing: border-box;
   /* margin: 0 10px 10px 10px; */
 }
 
@@ -37588,9 +37593,21 @@ span {
   margin-bottom: 30px;
 }
 
-/* Spacing between thumbnail and text on find-answers cards (mobile + wide).
-   Shrink image column + flex gap so spacing is visible; .p0 zeros padding so
-   margin/gap are used instead. */
+/* Find-answers tiles — Figma: height 130, padding 15, gap 15 */
+.toc_adiv_mp .session_imgnew,
+.div_fa .session_imgnew,
+.box_v3_08 .session_imgnew,
+.toc_adiv_mp img.img_podcast_01,
+.div_fa img.w100,
+.box_v3_08 img.w100 {
+  width: 100px !important;
+  height: 100px !important;
+  max-width: 100px !important;
+  object-fit: cover !important;
+  border-radius: 6px;
+  display: block;
+}
+
 .toc_adiv_mp [class*="d-flex"],
 .toc_adiv_mp .center_flex,
 .div_fa [class*="d-flex"],
@@ -37598,7 +37615,8 @@ span {
 .box_v3_08.center_flex,
 .box_v3_08[class*="d-flex"] {
   justify-content: flex-start !important;
-  gap: 16px;
+  gap: 15px;
+  align-items: center !important;
 }
 
 .toc_adiv_mp [class*="d-flex"] > [class*="col-4"],
@@ -37657,6 +37675,7 @@ span {
   width: auto !important;
   max-width: none !important;
   margin-left: 0 !important;
+  padding-left: 0 !important;
 }
 
 .toc_adiv_mp [class*="d-flex"] > .col-1,
