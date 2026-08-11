@@ -169,9 +169,11 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
     }
     // Navigate to the same tab in the other program
     if (this.isAdults) {
+      this.logeventservice.logEvent('click_happiermeforteenagers');
       this.logeventservice.logEvent('click_happierme_forteenagers');
       window.location.href = environment.clientUrl + 'teenagers/' + targetTab;
     } else {
+      this.logeventservice.logEvent('click_happiermeforadults');
       this.logeventservice.logEvent('click_happierme_foradults');
       window.location.href = environment.clientUrl + 'adults/today';
     }
@@ -180,6 +182,11 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
   getmenuevent() {
     if (this.router.url == "/onboarding/user-profile") {
       this.enableprofile = false;
+    }
+    if (!this.isAdults) {
+      this.logeventservice.logEvent('teenager_click_hamburgermenu');
+    } else {
+      this.logeventservice.logEvent('adult_click_hamburgermenu');
     }
     sessionStorage.setItem('openHamburger', 'true');
     this.toggleScrollLock(true);
@@ -582,6 +589,11 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
   }
 
   private handleLogoutAlert() {
+    if (!this.isAdults) {
+      this.logeventservice.logEvent('teenager_click_logout');
+    } else {
+      this.logeventservice.logEvent('adult_click_logout');
+    }
     this.logeventservice.logEvent('click_logout_Hamburger');
     this.chatbotService.clearMessages(); // reset chat history on logout
     // if (this.platform.isBrowser) {

@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { OnboardingService } from '../../../../../../shared/services/onboarding.service';
 import { TeenagersService } from '../../teenagers.service';
 import { NavigationService } from '../../../../../../shared/services/navigation.service';
+import { LogEventService } from '../../../../../../shared/services/log-event.service';
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.page.html',
@@ -26,7 +27,8 @@ export class ContactPage implements OnInit {
   activecoachId = '';
 
   constructor(private onboardingService: OnboardingService, private location: Location, private adultService: TeenagersService,
-    private meta: Meta, private title: Title, private router: Router,private route: ActivatedRoute,private navigationService:NavigationService) {
+    private meta: Meta, private title: Title, private router: Router,private route: ActivatedRoute,private navigationService:NavigationService,
+    private logeventservice: LogEventService) {
       this.userId = JSON.parse(localStorage.getItem("userId"))
     this.initializeForm();
     this.getCountriesList();
@@ -184,6 +186,7 @@ export class ContactPage implements OnInit {
 
 
   submit() {
+    this.logeventservice.logEvent('teenager_click_submit');
     this.adultService.contactForm(this.form).subscribe(res => {
       if (res) {
         this.initializeForm();

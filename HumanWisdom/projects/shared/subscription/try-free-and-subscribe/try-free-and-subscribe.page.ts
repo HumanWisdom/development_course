@@ -142,12 +142,20 @@ export class TryFreeAndSubscribePage implements OnInit, OnDestroy {
 
   tryFreeSubscribe() {
     if (this.trialStatus == "No Trial") {
-
+      if (!this.isAdults) {
+        this.logeventservice.logEvent('teenager_click_startyourfreetrial');
+      } else {
+        this.logeventservice.logEvent('adult_click_startyourfreetrial');
+      }
       this.logeventservice.logEvent("click_try_free_subscribe");
     }
     else if (this.trialStatus == "ended") {
+      if (!this.isAdults) {
+        this.logeventservice.logEvent('teenager_click_proceed');
+      } else {
+        this.logeventservice.logEvent('adult_click_proceed');
+      }
       this.logeventservice.logEvent("click_proceed_subscribe");
-
     }
 
 

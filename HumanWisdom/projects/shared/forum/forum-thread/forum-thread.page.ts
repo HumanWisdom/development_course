@@ -109,6 +109,9 @@ export class ForumThreadPage implements OnInit, OnDestroy {
     this.isReportPost = false;
     this.PostComment = "";
     if (this.isLoggedIn) {      
+      if (!this.isAdults) {
+        this.logeventservice.logEvent('teenager_click_comment_threads');
+      }
       this.isEditComment = true;
     }
   }
@@ -247,6 +250,9 @@ export class ForumThreadPage implements OnInit, OnDestroy {
   }
   like(PostID, index: number, ParentPOstID: any = null) {
     if (this.isLoggedIn) {
+      if (!this.isAdults) {
+        this.logeventservice.logEvent('teenager_click_like_threads');
+      }
       this.service.likePost({ PostID: PostID, UserID: this.userID }).subscribe(res => {
         if (res) {
           if (ParentPOstID != null && this.list.ReplyPost.length > 0) {
@@ -430,6 +436,9 @@ export class ForumThreadPage implements OnInit, OnDestroy {
 
   reportpost() {
     if (this.isLoggedIn) {
+          if (!this.isAdults) {
+            this.logeventservice.logEvent('teenager_click_report_threads');
+          }
           this.isEditComment = false;
           this.PostComment = "";
           if (this.isLoggedIn) {
@@ -442,6 +451,9 @@ export class ForumThreadPage implements OnInit, OnDestroy {
   }
 
   shareOnThread(item) {
+    if (!this.isAdults) {
+      this.logeventservice.logEvent('teenager_click_share_threads');
+    }
     this.path = `http://humanwisdom.me/${SharedService.getprogramName()}/forum/forum-thread/${item.PostID}`;
     // } else {
     //   this.path = "http://humanwisdom.me/"  + this.address+"/"+item.PostID;
@@ -551,6 +563,9 @@ export class ForumThreadPage implements OnInit, OnDestroy {
 
   follow(item) {
     if (this.isLoggedIn) {
+      if (!this.isAdults) {
+        this.logeventservice.logEvent('teenager_click_follow');
+      }
       this.service.followPost({ PostID: item.PostID, UserID: this.userID }).subscribe(res => {
         if (res == "1") {
           this.posttread.Followed = this.posttread.Followed == '1' ? '0' : '1';
