@@ -85,6 +85,23 @@
 
   
     <script src="scripts/index.js"></script>
+    <script>
+      // Event tracking for splash option selections
+      (function () {
+        var teenLink = document.getElementById('teenagers');
+        var adultLink = document.getElementById('adults');
+        if (teenLink) {
+          teenLink.addEventListener('click', function () {
+            logevent('Click_happiermeforteenagers', 'splash_options');
+          });
+        }
+        if (adultLink) {
+          adultLink.addEventListener('click', function () {
+            logevent('click_happiermeforadults', 'splash_options');
+          });
+        }
+      })();
+    </script>
 
   </body>
 
