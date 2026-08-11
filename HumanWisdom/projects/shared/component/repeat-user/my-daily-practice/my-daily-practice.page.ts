@@ -664,6 +664,9 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
   }
 
   routeToCoach(): void {
+    if (this.isAdults) {
+      this.logeventservice.logEvent('adult_click_contactacoach');
+    }
     const prefix = SharedService.getprogramName();
     this.router.navigate([`/${prefix}/coach`]);
   }
@@ -718,7 +721,11 @@ routeActiveExercise() {
 
   routeToDailyCheckIn(){
     this.logeventservice.logEvent('click_daily_checkin' );
-
+    if (!this.isAdults) {
+      this.logeventservice.logEvent('teenager_click_dailymood');
+    } else {
+      this.logeventservice.logEvent('adult_click_dailymood');
+    }
     this.router.navigate([SharedService.getprogramName()+'/daily-checkin'])
   }
   routeToDashboard(){
@@ -755,6 +762,11 @@ routeActiveExercise() {
 
   routeToGuidedJourneys(): void {
     this.logeventservice.logEvent('click_guided_journeys');
+    if (!this.isAdults) {
+      this.logeventservice.logEvent('teenager_click_beginanewjourney');
+    } else {
+      this.logeventservice.logEvent('adult_click_beginanewjourney');
+    }
     if (this.isLastVisitedGuidedJourney) {
       this.routeResume();
     } else {
@@ -800,6 +812,9 @@ routeActiveExercise() {
   }
 
   onFocus() {
+    if (this.isAdults) {
+      this.logeventservice.logEvent('adult_click_searchbar_today');
+    }
     this.isSearchActive = true;
     if (this.moduleList.length === 0) {
       this.getModuleList(true);
@@ -1036,6 +1051,9 @@ routeResume( enableLastVisited = false): void {
 
 survey(): void {
   this.logeventservice.logEvent('click_take_survey');
+  if (this.isAdults) {
+    this.logeventservice.logEvent('adult_click_takethesurvey');
+  }
 
   const prefix = this.isAdults ? '/adults' : '/teenagers';
   this.router.navigate([`${prefix}/wisdom-survey`], { state: { isUseCloseButton: true } });

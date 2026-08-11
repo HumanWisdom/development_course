@@ -6,6 +6,7 @@ import { ProgramType } from '../../models/program-model';
 import { OLLY_QUESTIONS, OllyTopic } from './olly-questions';
 import { OnboardingService } from '../../services/onboarding.service';
 import { AdultsService } from '../../../adults/src/app/adults/adults.service';
+import { LogEventService } from '../../services/log-event.service';
 
 @Component({
   selector: 'app-olly-landing',
@@ -43,6 +44,7 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
   private readonly DIALOGUE_SHOWN_KEY = 'olly_landing_dialogue_shown';
   // Integrated mode is used on the Today page (embedded inside the dashboard).
   // We keep separate keys so the dialogue can appear on both Olly landing and Today.
+  // Values are local calendar dates (YYYY-MM-DD) so the bubble shows once per day.
   private readonly INTEGRATED_INTRO_SHOWN_KEY = 'olly_today_intro_shown';
   private readonly INTEGRATED_DIALOGUE_SHOWN_KEY = 'olly_today_dialogue_shown';
   // Footer owl (app-owl-animation) uses this key to decide whether to show the dialogue cloud.
@@ -107,7 +109,8 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
     private activatedRoute: ActivatedRoute,
     private service: OnboardingService,
     private services: AdultsService,
-    private commonService: CommonService
+    private commonService: CommonService,
+    private logeventservice: LogEventService
   ) {
     // Must read getCurrentNavigation() in the constructor — it returns null by the time ngOnInit fires for lazy-loaded modules
     const navigation = this.router.getCurrentNavigation();
@@ -326,12 +329,24 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
     return this.isIntegrated ? this.INTEGRATED_DIALOGUE_SHOWN_KEY : this.DIALOGUE_SHOWN_KEY;
   }
 
+  private hasShownBubbleToday(): boolean {
+    return this.commonService.isOllyBubbleShownToday(this.getIntroShownKey())
+      || this.commonService.isOllyBubbleShownToday(this.getDialogueShownKey());
+  }
+
+  private markBubbleShownToday(): void {
+    this.commonService.markOllyBubbleShownToday(this.getDialogueShownKey());
+    this.commonService.markOllyBubbleShownToday(this.getIntroShownKey());
+    // Ensure the footer Hi bubble stays hidden on other pages for the rest of today.
+    this.commonService.markOllyBubbleShownToday(this.OWL_DIALOGUE_SHOWN_KEY);
+  }
+
   onOllyGifLoad(): void {
     if (this.gifLoadedOnce) {
       return;
     }
-    if (localStorage.getItem(this.getIntroShownKey()) === 'true') {
-      // Intro already seen — emit immediately so parent doesn't wait
+    if (this.hasShownBubbleToday()) {
+      // Already shown once today — emit immediately so parent doesn't wait
       this.bubbleComplete.emit();
       return;
     }
@@ -343,8 +358,8 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
     if (this.cloudSequenceStarted) {
       return;
     }
-    if (localStorage.getItem(this.getDialogueShownKey()) === 'true') {
-      // Bubble already shown before — notify parent immediately so it doesn't wait forever
+    if (this.hasShownBubbleToday()) {
+      // Bubble already shown today — notify parent immediately so it doesn't wait forever
       this.bubbleComplete.emit();
       return;
     }
@@ -358,9 +373,8 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
       this.cloudFadeIn = true;
       this.isSpeaking = true;
       this.isDisappearing = false;
-      // Mark in-page Olly seen so the footer Hi bubble stays hidden on other pages.
-      localStorage.setItem(this.getDialogueShownKey(), 'true');
-      localStorage.setItem(this.OWL_DIALOGUE_SHOWN_KEY, 'true');
+      // Mark in-page Olly seen today so the footer Hi bubble stays hidden on other pages.
+      this.markBubbleShownToday();
     }, 1000);
 
     this.scheduleTimer(() => {
@@ -383,10 +397,7 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
     this.scheduleTimer(() => {
       this.showCloudMessage = false;
       this.isDisappearing = false;
-      localStorage.setItem(this.getDialogueShownKey(), 'true');
-      localStorage.setItem(this.getIntroShownKey(), 'true');
-      // Ensure the footer owl dialogue does not re-appear after the in-page Olly dialogue.
-      localStorage.setItem(this.OWL_DIALOGUE_SHOWN_KEY, 'true');
+      this.markBubbleShownToday();
       // Notify parent that the bubble sequence has fully completed
       this.bubbleComplete.emit();
     }, 600);
@@ -403,6 +414,9 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   private handleChatStart(query: string): void {
+    if (this.isAdults) {
+      this.logeventservice.logEvent('adult_click_send');
+    }
     this.startChat.emit(query);
 
     // When embedded in chat-bot, the parent handles the emitted query.
@@ -459,6 +473,11 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
     this.showQuestionsView = show;
     this.viewChanged.emit(show);
     if (show) {
+      if (!this.isAdults) {
+        this.logeventservice.logEvent('teenager_click_questionsyoucanask');
+      } else {
+        this.logeventservice.logEvent('adult_click_questionsyoucanask');
+      }
       this.expandedTopics = {};
       this.topicsList.forEach(topic => {
         this.expandedTopics[topic.fragment] = false;

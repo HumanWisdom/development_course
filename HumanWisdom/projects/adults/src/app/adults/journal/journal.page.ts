@@ -75,8 +75,9 @@ export class JournalPage implements OnInit {
   }
 
   note() {
+    this.logeventservice.logEvent('adult_click_plusicon');
+    this.logeventservice.logEvent('adult_click_newnote');
     this.router.navigate(['/adults/note'])
-
   }
 
 
@@ -120,6 +121,7 @@ export class JournalPage implements OnInit {
   }
 
   searchText() {
+    this.logeventservice.logEvent('adult_click_search_journal');
     this.logeventservice.logEvent('click_search');
     if (this.searchedText == "")
       this.viewJournalAndReflections()

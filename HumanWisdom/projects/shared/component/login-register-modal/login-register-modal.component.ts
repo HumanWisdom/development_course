@@ -147,6 +147,7 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
   }
 
   loginGoogle(reqtype = '') {
+    this.logeventservice.logEvent('click_continuewithgoogle');
     if (reqtype == "signup")
       this.logeventservice.logEvent('google_signup');
     else
@@ -599,6 +600,7 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
       this.enableAlert = true;
       this.email = "";
     } else {
+      this.logeventservice.logEvent('completed_googlesignin');
       this.firstpage = false;
       this.fifthpage = false;
       this.thirdpage = true;
@@ -1142,6 +1144,7 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
   // }
 
   fbLogin(reqtype) {
+    this.logeventservice.logEvent('click_continuewithfacebook');
     if (reqtype == "signup")
       this.logeventservice.logEvent('facebook_signup');
     else
@@ -1248,6 +1251,7 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
       this.enableAlert = true;
       this.email = "";
     } else {
+      this.logeventservice.logEvent('completed_facebooksignin');
       this.firstpage = false;
       this.fifthpage = false;
       this.thirdpage = true;
@@ -1391,6 +1395,7 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
       this.enableAlert = true;
       this.email = "";
     } else {
+      this.logeventservice.logEvent('email_signin_completed');
       const accessObj: any = window;
       (accessObj)?.Moengage.add_unique_user_id(res.UserId.toString()).then(() => {
         (accessObj)?.Moengage.add_email(this.email);

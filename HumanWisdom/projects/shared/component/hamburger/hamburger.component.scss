@@ -93,7 +93,7 @@ nav
         //   background-color: #fff;
         // background: #292D56;
         box-shadow: unset;
-        padding: 15px;
+        // padding: 15px;
         border-radius: 16px 0 0 16px;
 
         &__overlay
@@ -116,7 +116,7 @@ nav
             box-shadow: unset;
             display: flex;
             align-items: center;
-            padding: 0;
+            padding:15px 15px 0 15px;
 
             span
             {
@@ -152,7 +152,7 @@ nav
             ul.dh_ul li
             {
                
-                padding: 15px 0 15px 0;
+                padding: 15px 0 15px 15px;
 
                 .adultsli{
                    border-bottom: 1px solid rgba(0,0,0,0.2);
@@ -380,7 +380,7 @@ ul.dh_ul li:last-child
 }
 @media (max-width: 480px) {
   .m-menu {
-      width: 80% !important;
+      width: 100% !important;
         // width: calc(100vw - 60px);
   }
   .hamburger_sociali a {

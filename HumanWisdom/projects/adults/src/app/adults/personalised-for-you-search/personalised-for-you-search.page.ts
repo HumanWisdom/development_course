@@ -563,6 +563,9 @@ toggleAccordion() {
     this.isSearchActive = false;
     this.commonService.setSearchActive(false);
     this.logeventservice.logEvent("click_search");
+    if (this.isAdults) {
+      this.logeventservice.logEvent('adult_click_search_learn');
+    }
 
     this.searchinp = module;
     this.searchResult = [];

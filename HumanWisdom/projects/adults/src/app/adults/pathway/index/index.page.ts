@@ -40,6 +40,8 @@ export class IndexPage implements OnInit {
   }
 
   logEvent(event, url){
+    this.logeventservice.logEvent('adult_click_pathway');
+    this.logeventservice.logEvent('adult_click_pathwaymodules');
     this.logeventservice.logEvent(event);
     this.router.navigate([url]);
    }

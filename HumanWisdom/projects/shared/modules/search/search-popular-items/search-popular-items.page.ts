@@ -1,5 +1,5 @@
 import { Location } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import * as moment from 'moment';
@@ -10,14 +10,13 @@ import { ProgramType } from '../../../models/program-model';
 import { SharedService, UrlConstant } from '../../../services/shared.service';
 import { CommonService } from '../../../services/common.service';
 import { OnboardingService } from '../../../services/onboarding.service';
-import { NavigationService } from '../../../services/navigation.service';
 
 @Component({
   selector: 'app-search-popular-items',
   templateUrl: './search-popular-items.page.html',
   styleUrls: ['./search-popular-items.page.scss'],
 })
-export class SearchPopularItemsPage implements OnInit {
+export class SearchPopularItemsPage implements OnInit, OnDestroy {
   searchData: SearchDataModel;
   searchinp:string='';
   search: string = "";
@@ -66,8 +65,6 @@ export class SearchPopularItemsPage implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private onboardingService: OnboardingService,
-    private location: Location,
-    private navigationService: NavigationService
   ) {
     if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
@@ -756,12 +753,7 @@ export class SearchPopularItemsPage implements OnInit {
   }
 
   goBack() {
-    var url = this.navigationService.navigateToBackLink();
-    if (url == null) {
-      this.location.back();
-    } else {
-      this.router.navigateByUrl(url);
-    }
+    this.router.navigate([SharedService.getUrlfromFeatureName(UrlConstant.search)]);
   }
 
   routemodule(res) {
@@ -890,7 +882,16 @@ export class SearchPopularItemsPage implements OnInit {
   }
 
   clearSearch() {
-    this.goBack();
+    this.isSearchActive = false;
+    this.commonService.setSearchActive(false);
+    this.search = "";
+    if (this.moduleList.length === 0) {
+      this.getModuleList(true);
+    } else {
+      this.getAutoCompleteList('');
+    }
+    this.post = [];
+    this.jrList = [];
   }
 
   backToPreviousSearch() {
@@ -908,6 +909,14 @@ export class SearchPopularItemsPage implements OnInit {
     } else {
       document.body.style.removeProperty('overflow');
       document.documentElement.style.removeProperty('overflow');
+    }
+  }
+
+  ngOnDestroy(): void {
+    if (this.isSearchActive) {
+      this.isSearchActive = false;
+      this.commonService.setSearchActive(false);
+      this.toggleBodyScroll(false);
     }
   }
 }

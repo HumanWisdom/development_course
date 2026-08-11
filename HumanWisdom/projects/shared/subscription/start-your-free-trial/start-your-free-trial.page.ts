@@ -41,6 +41,9 @@ export class StartYourFreeTrialPage implements OnInit {
   }
 
   tryFreeSubscribe() {
+    if (!this.isAdults) {
+      this.logeventservice.logEvent('teenager_click_startyourfreetrial');
+    }
     this.logeventservice.logEvent('click_start_trial');
     
     // Save the source URL if they came from locked content

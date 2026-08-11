@@ -71,21 +71,42 @@
   padding: 0 !important;
 }
 
+/* Indent event cards from the content edge; space inside card around thumbnail */
+.toc_adiv_02 {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 .toc_adiv_02 a > .row {
-    padding-left: 0px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-    padding-top: 10px;
+  padding-left: 10px !important;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-top: 10px;
 }
 
 @media (max-width: 414px) {
-.toc_adiv_02 a > .row {
-      padding-left: 5px;
+  .toc_adiv_02 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .toc_adiv_02 a > .row {
+    padding-left: 10px !important;
   }
 }
 
-/* Wide screen: shrink thumbnail column so title sits closer */
+/* Wide screen: shrink thumbnail column so title sits closer; keep left spacing */
 @media (min-width: 768px) {
+  .toc_adiv_02 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .toc_adiv_02 a > .row {
+    padding-left: 10px !important;
+    padding-right: 10px;
+  }
+
   .toc_adiv_02 a .center_flex > [class*="col-md-4"],
   .toc_adiv_02 a .center_flex > [class*="col-sm-4"],
   .toc_adiv_02 a .center_flex > [class*="col-xs-4"] {
