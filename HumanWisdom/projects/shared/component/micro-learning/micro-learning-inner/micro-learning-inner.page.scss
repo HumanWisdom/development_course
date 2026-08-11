@@ -6,11 +6,12 @@
 }
 
 .learning {
+    /* Fill the card so scrolled content stays on yellow, not outside it */
+    background-color: #FFEAB5;
     background-image: url('https://d1tenzemoxuh75.cloudfront.net/microlearning/background.webp');
     background-repeat: no-repeat;
     background-position: center;
-    background-attachment: fixed;
-    background-size: contain;
+    background-size: cover;
     border-radius: 12px;
     margin-bottom: 0;
     position: relative;
@@ -206,7 +207,9 @@
     background: #183C79 !important;
     
     .learning {
+        background-color: #183C79;
         background-image: url('https://d1tenzemoxuh75.cloudfront.net/microlearning/background_teens.webp');
+        background-size: cover;
     }
 
     .mc_footer_section {
