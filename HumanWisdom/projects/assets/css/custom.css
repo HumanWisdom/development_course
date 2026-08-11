@@ -22634,7 +22634,7 @@ ul.dh_ul li {
 .login1{
   font-size: 12px;
   font-weight: 600;
-  line-height: 150%;
+  /* line-height: 150%; */
   text-decoration: underline;
   margin-top: 0px;
   margin-bottom: 0px;

@@ -5,6 +5,7 @@ import { CommonService } from '../../services/common.service';
 import { SharedService } from '../../services/shared.service';
 import { ProgramType } from '../../models/program-model';
 import { Location } from '@angular/common';
+import { LogEventService } from '../../services/log-event.service';
 @Component({
   selector: 'app-profile-edit',
   templateUrl: './profile-edit.page.html',
@@ -42,7 +43,8 @@ export class ProfileEditPage implements OnInit {
   constructor(private onboardingService: OnboardingService, 
     private router: Router, 
     private Service: CommonService,
-    private location: Location
+    private location: Location,
+    public logeventservice: LogEventService
   ) {
     // this.triggerElement?.nativeElement?.addEventListener('customEvent', () => {
     //   console.log('Received custom event from index.html');
@@ -174,6 +176,11 @@ export class ProfileEditPage implements OnInit {
   }
 
   updateUser() {
+    if (!this.isAdults) {
+      this.logeventservice.logEvent('teenager_click_updatechanges');
+    } else {
+      this.logeventservice.logEvent('adult_click_updatechanges');
+    }
     let name = this.fullname.toString().trim().split(' ')
     let obj = {
       "UserID": this.userdetail['UserID'],

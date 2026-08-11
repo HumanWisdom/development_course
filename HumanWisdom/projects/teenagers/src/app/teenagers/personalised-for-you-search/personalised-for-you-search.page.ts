@@ -906,6 +906,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
   onFocus() {
     this.isSearchActive = true;
     this.commonService.setSearchActive(true);
+    this.logeventservice.logEvent('teenager_click_search_learn');
     this.getModuleList(true);
     if (this.searchinp == '') {
       this.searchResult = this.moduleList;
@@ -1324,7 +1325,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
   }
 
   navigateToPathway(url) {
-    this.logeventservice.logEvent(url.split("/")[3].toString().substring(0,15));
+    this.logeventservice.logEvent('teenager_click_pathwaymodules');
 
     SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.route.url);
     this.route.navigate([url]);
@@ -1342,7 +1343,11 @@ export class PersonalisedForYouSearchPage implements OnInit {
   }
 
   logEvent(event, url) {
-    this.logeventservice.logEvent(event);
+    if (event === 'click_intro_pathway') {
+      this.logeventservice.logEvent('teenager_click_pathway');
+    } else {
+      this.logeventservice.logEvent(event);
+    }
     if(url != ''){
       SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
       this.route.navigate([url]);

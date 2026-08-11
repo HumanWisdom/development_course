@@ -46,6 +46,7 @@ export class ForgetPasswordPage implements OnInit {
   }
 
   recoverPassword(){
+    this.logeventservice.logEvent('click_forgotpassword');
     this.logeventservice.logEvent('start_reset_password');
     this.service.sendPasswordLink(this.email)
     .subscribe(
