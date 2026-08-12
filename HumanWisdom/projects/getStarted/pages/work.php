@@ -594,6 +594,15 @@
 
                   </div>
 
+                  <div class="work-testimonials-footer">
+                    <a class="sap work-testimonials-more" href="https://happierme.app/adults/testimonials">
+                      <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
+                        View all success stories
+                      </h4>
+                      <span class="chevron-pink"><span style="-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span>
+                    </a>
+                  </div>
+
                 </div>
 
               </div>
@@ -1057,15 +1066,16 @@
             loop: false,
             margin: 30,
             nav: false,
-            autoWidth: true,
+            /* Fit 3 full cards — autoWidth caused the last card to clip */
+            autoWidth: false,
             dots: false,
             touchDrag: true,
             mouseDrag: true,
             pullDrag: true,
             responsive: {
               0: { items: 1 },
-              600: { items: 3 },
-              1000: { items: 3 }
+              768: { items: 2 },
+              1100: { items: 3 }
             }
           });
           workTestimonialsMode = 'desktop';
