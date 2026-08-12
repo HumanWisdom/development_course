@@ -1,7 +1,7 @@
 //const url = "https://happierme.app";
 //const url ="https://staging.happierme.app"
 
-$(".owl_container .owl-carousel").owlCarousel({
+$(".owl_container:not(.owl_testimonials) .owl-carousel").owlCarousel({
     stagePadding: 50,
     loop: !1,
     margin: 40,
@@ -11,7 +11,7 @@ $(".owl_container .owl-carousel").owlCarousel({
     navText: ['<i class="bi bi-chevron-left"></i>',
         '<i class="bi bi-chevron-right"></i>'
     ],
-    navContainer: ".owl_container .owl-nav",
+    navContainer: ".owl_container:not(.owl_testimonials) .owl-nav",
     responsive: { 0: { items: 1 }, 600: { items: 3 }, 1e3: { items: 3 } },
 }),
     $(".owl_coach .owl-carousel").owlCarousel({
