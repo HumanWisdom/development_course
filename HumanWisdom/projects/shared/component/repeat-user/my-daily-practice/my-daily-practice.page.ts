@@ -775,6 +775,17 @@ routeActiveExercise() {
     }
   }
 
+  beginNewJourney(): void {
+    this.logeventservice.logEvent('click_guided_journeys');
+    if (!this.isAdults) {
+      this.logeventservice.logEvent('teenager_click_beginanewjourney');
+    } else {
+      this.logeventservice.logEvent('adult_click_beginanewjourney');
+    }
+    const prefix = SharedService.getprogramName();
+    this.router.navigate([`${prefix}/guided-journeys`]);
+  }
+
   goToSubscribe(): void {
     const prefix = SharedService.getprogramName();
     SharedService.setDataInLocalStorage('NaviagtedFrom', this.router.url);

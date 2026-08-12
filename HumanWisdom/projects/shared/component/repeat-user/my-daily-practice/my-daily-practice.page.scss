@@ -520,12 +520,30 @@
     flex-direction: column !important;
     align-items: center !important;
 
+    .guided-journey-label {
+      font-size: 11px !important;
+      font-weight: 500 !important;
+      letter-spacing: 0.08em !important;
+      color: rgba(0, 0, 0, 0.55) !important;
+      text-transform: uppercase !important;
+      margin: 0 0 6px 0 !important;
+      display: block !important;
+    }
+
     .guided-journey-title {
       font-size: 21px !important;
       font-weight: 600 !important;
       color: #000000 !important;
       margin: 0 0 10px 0 !important;
       line-height: 1.3 !important;
+    }
+
+    /* Title variant when a journey is in progress — matches Figma black bold */
+    .guided-journey-title-active {
+      font-size: 22px !important;
+      font-weight: 700 !important;
+      color: #1a1a1a !important;
+      margin: 0 0 18px 0 !important;
     }
 
     .guided-journey-desc {
@@ -536,6 +554,7 @@
       line-height: 1.5 !important;
     }
 
+    /* Primary filled button — "Continue your journey" */
     .guided-journey-btn-new {
       background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%) !important;
       border: none !important;
@@ -545,7 +564,24 @@
       font-size: 15px !important;
       font-weight: 600 !important;
       width: 100% !important;
-      max-width: 280px !important;
+     
+    }
+
+    /* Continue your journey — same filled style (explicit alias) */
+    .guided-journey-btn-continue {
+      margin-bottom: 10px !important;
+    }
+
+    /* Outlined secondary button — "Begin a new journey" */
+    .guided-journey-btn-begin-outline {
+      background: transparent !important;
+      border: 1.5px solid rgba(0, 0, 0, 0.25) !important;
+      border-radius: 30px !important;
+      padding: 13px 30px !important;
+      color: #000000 !important;
+      font-size: 15px !important;
+      font-weight: 600 !important;
+      width: 100% !important;
     }
   }
 }
@@ -1115,7 +1151,15 @@
   .guided-journey-card-new {
     background: #0C2B5F !important;
 
+    .guided-journey-label {
+      color: rgba(255, 255, 255, 0.55) !important;
+    }
+
     .guided-journey-title {
+      color: #ffffff !important;
+    }
+
+    .guided-journey-title-active {
       color: #ffffff !important;
     }
 
@@ -1125,6 +1169,12 @@
 
     .guided-journey-btn-new {
       background: linear-gradient(180deg, #EE9596 0%, #F17071 100%) !important;
+    }
+
+    .guided-journey-btn-begin-outline {
+      background: transparent !important;
+      border-color: rgba(255, 255, 255, 0.35) !important;
+      color: #ffffff !important;
     }
   }
 
