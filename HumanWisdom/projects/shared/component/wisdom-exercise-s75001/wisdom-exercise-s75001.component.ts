@@ -74,6 +74,8 @@ export class WisdomExerciseS75001Component implements OnInit {
 
   ngOnInit() {
     this.service.setmoduleID(75);
+    SharedService.setDataInLocalStorage('NaviagtedFrom', this.router.url);
+
     this.pgResume = SharedService.getDataFromSessionStorage("pgResume");
     this.isGuest = !SharedService.isSubscriber();
     this.isAdults = SharedService.ProgramId === ProgramType.Adults;
