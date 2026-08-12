@@ -164,6 +164,9 @@ export class S75002Page implements OnInit, AfterViewInit {
   }
 
   getdayevent(event, isBack = false) {
+     this.isShowButton=true;
+        this.isShowTranscript = true;
+        this.isShowAudio=false;
     if (event === "intro" || event === "0") {
       this.startTime = Date.now();
       this.slideStart = 0;
