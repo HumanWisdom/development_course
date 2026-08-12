@@ -768,37 +768,37 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
         {
           name: 'facebook',
           href: 'https://facebook.com/happiermeapp/',
-          defaultSrc: teenBase + 'hb_facebookteen.svg',
+          defaultSrc: teenBase + 'facebookteen.svg',
           hoverSrc: base + 'facebook_teenhov.svg',
-          currentSrc: teenBase + 'hb_facebookteen.svg'
+          currentSrc: teenBase + 'facebookteen.svg'
         },
         {
           name: 'twitter',
           href: 'https://twitter.com/happiermeapp',
-          defaultSrc: teenBase + 'hb_twitterteen.svg',
+          defaultSrc: teenBase + 'tweet_ten.svg',
           hoverSrc: base + 'twitter_teenhov.svg',
-          currentSrc: teenBase + 'hb_twitterteen.svg'
+          currentSrc: teenBase + 'tweet_ten.svg'
         },
         {
           name: 'instagram',
           href: 'https://www.instagram.com/happiermeapp/',
-          defaultSrc: teenBase + 'hb_instagramteen.svg',
+          defaultSrc: teenBase + 'insta_teen.svg',
           hoverSrc: base + 'insta_teenhov.svg',
-          currentSrc: teenBase + 'hb_instagramteen.svg'
+          currentSrc: teenBase + 'insta_teen.svg'
         },
         {
           name: 'linkedin',
           href: 'https://www.linkedin.com/company/humanwisdom',
-          defaultSrc: teenBase + 'hb_linkedinteen.svg',
+          defaultSrc: teenBase + 'lndn_teen.svg',
           hoverSrc: base + 'linkdn_teenhov.svg',
-          currentSrc: teenBase + 'hb_linkedinteen.svg'
+          currentSrc: teenBase + 'lndn_teen.svg'
         },
         {
           name: 'youtube',
           href: 'https://www.youtube.com/channel/UCdNujB6X0slYKxLSdWuqCrA',
-          defaultSrc: teenBase + 'hb_youtubeteen.svg',
+          defaultSrc: teenBase + 'youten.svg',
           hoverSrc: base + 'you_teenhov.svg',
-          currentSrc: teenBase + 'hb_youtubeteen.svg'
+          currentSrc: teenBase + 'youten.svg'
         }
       ];
     }
