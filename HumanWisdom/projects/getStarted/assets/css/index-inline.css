@@ -1216,13 +1216,24 @@ header a[href*="splash_options.php"] * {
   background: transparent;
   z-index: 2;
 }
+
+.header_main_inner {
+  justify-content: center;
+  width: 100%;
+  max-width: 1440px;
+  text-align: center;
+  display: flex;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
 .tool-tab {
   width: 127px;
-  height:26px;
-  padding: 4px 11px;
+  height: 26px;
+  padding: 0px 11px;
   box-sizing: border-box;
   border-radius: 10px;
-  background:  rgba(238, 161, 112, 1);
+  background: rgba(238, 161, 112, 1);
   font-family: "Poppins", Helvetica, sans-serif;
   font-size: 12px;
   font-weight: 500;
@@ -1232,7 +1243,7 @@ header a[href*="splash_options.php"] * {
   white-space: nowrap;
 }
 .tool-tab-active {
-  background:  rgba(237, 125, 111, 1);
+  background: rgba(237, 125, 111, 1);
   border: 1px solid rgba(128, 51, 88, 1);
   color: #fff;
 }
@@ -2780,6 +2791,10 @@ header a[href*="splash_options.php"] * {
   .frame-wrapper { padding: 80px 40px;padding-top: 117px;
         padding-bottom: 60px; }
   .p { font-size: 42px; }
+  .frame-wrapper.web_home_divlanding #hw-website-title,
+  .frame-wrapper.web_home_divlanding .div-65 .p {
+    font-size: 42px !important;
+  }
   .introducing-olly-AI { font-size: 42px; }
 }
 
