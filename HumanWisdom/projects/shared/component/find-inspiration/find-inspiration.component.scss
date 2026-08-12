@@ -1,90 +1,94 @@
 /* inspiration-grid.component.scss */
-.inspiration-container {
-    // background-color: #292D56; 
-    color: #000000;
-    padding: 18px 18px 5px 18px;
-  }
-  
- 
-  .inspiration-grid {
-    display: flex;
-    flex-wrap: wrap;
-    width: 840px;
-    gap: 10px;
-    white-space: nowrap;
-   -ms-overflow-style: none; /* Internet Explorer and Edge */
-}
-  .inspiration-grid1 {
-    display: flex;
-    flex-wrap: wrap;
-    width: 850px;
-    gap: 10px;
-    white-space: nowrap;
-   -ms-overflow-style: none;
+.find-inspiration-container {
+  padding: 15px 0;
+  width: 100%;
 }
 
-.inspiration-grid::-webkit-scrollbar {
-  //display: none; /* Hide scrollbar for Chrome, Safari, Edge */
+.inspiration-header-wrap {
+  margin-bottom: 12px;
 }
-  
-  .inspiration-item {
-    background-color: #FFE8BB;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 14px;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    position: relative;
-    height:  59px;
-    min-width:60px;
 
-    &.highlight {
-      background-color: #120f40;
-      position: relative;
-      
-      &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        border-radius: 12px;
-        background: linear-gradient(to bottom right, #5e5df0, #9966ff);
-        opacity: 0.8;
-        z-index: 1;
-      }
-      
-      .icon-container, .item-title {
-        z-index: 2;
-        position: relative;
-      }
-    }
+.inspiration-header-title {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 130%;
+  margin: 0 0 4px 0;
+}
+
+.inspiration-subtext {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 140%;
+  margin: 0;
+  opacity: 0.75;
+}
+
+.inspiration-scroll-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
   }
-  
+}
+
+.inspiration-grid-row {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+  width: max-content;
+}
+
+.inspiration-item-pill {
+  background-color: #FFE8BB;
+  border-radius: 12px;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  gap: 8px;
+  height: 44px;
+
+  &:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+  }
+
   .icon-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 5px;
-   /*  font-size: 24px;
-    height: 28px; */
-  }
-  
-  .item-title {
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 120%;
-  }
-.h-24{
-  height:24px !important
-}
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
 
-.img-grid{
-  height:16px;
-  width: 18px;
-}
+    img {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+    }
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  .item-title {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 120%;
+    color: #000000;
+    white-space: nowrap;
+  }
+}

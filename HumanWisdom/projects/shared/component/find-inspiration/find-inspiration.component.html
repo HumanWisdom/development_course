@@ -1,15 +1,29 @@
-<div class="inspiration-container">
+<div class="find-inspiration-container" [ngClass]="isAdults ? 'find-inspiration-adults' : 'find-inspiration-teens'">
+  <div class="inspiration-header-wrap">
+    <h3 class="inspiration-header-title" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">Find inspiration</h3>
+    <p class="inspiration-subtext" [ngClass]="isAdults ? 'fc_000000_0_7' : 'fc_ffffff_0_7'">Browse the HappierMe content library</p>
+  </div>
 
-
-  <div [ngClass]="isAdults ? 'inspiration-grid' : 'inspiration-grid1'">
-    <div *ngFor="let item of inspirationItems" class="inspiration-item" (click)="routeTo(item.url)">
-
-      <div class="icon-container">
-        <img src={{item.img}} class="img-responsive " />
-        <!-- <i [ngClass]="'icon-' + item.icon"></i> -->
+  <div class="inspiration-scroll-wrapper">
+    <!-- Row 1 -->
+    <div class="inspiration-grid-row">
+      <div *ngFor="let item of inspirationItemsRow1" class="inspiration-item-pill" (click)="routeTo(item.url)">
+        <div class="icon-container">
+          <img [src]="item.img" class="img-responsive" [alt]="item.title" />
+        </div>
+        <span class="item-title">{{ item.title }}</span>
       </div>
-      <div class="item-title">{{ item.title }}</div>
+    </div>
 
+    <!-- Row 2 -->
+    <div class="inspiration-grid-row">
+      <div *ngFor="let item of inspirationItemsRow2" class="inspiration-item-pill" (click)="routeTo(item.url)">
+        <div class="icon-container">
+          <img [src]="item.img" class="img-responsive" [alt]="item.title" />
+        </div>
+        <span class="item-title">{{ item.title }}</span>
+      </div>
     </div>
   </div>
 </div>
+
