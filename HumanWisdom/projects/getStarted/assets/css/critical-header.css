@@ -131,6 +131,32 @@
       visibility: hidden !important;
     }
   }
+
+  .header_main_inner {
+    justify-content: center;
+    width: 100%;
+    max-width: 1440px;
+    text-align: center;
+    display: flex;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+  .badge_new {
+    width: 22px;
+    height: 12px;
+    border-radius: 7px;
+    background: #d16b75;
+    padding: 2px 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    right: 0;
+    top: -10px;
+    bottom: 0;
+    margin: 0 auto;
+  }
   #teenagersHeaderClick .badge_new,
   #teenagersHeaderClick_mobile .badge_new {
     background: #D7586B !important;
@@ -151,6 +177,12 @@
   #teenagersHeaderClick .badge_new h6:hover,
   #teenagersHeaderClick_mobile .badge_new h6,
   #teenagersHeaderClick_mobile .badge_new h6:hover {
+    margin: 0;
+    font-size: 6px;
+    font-weight: 600;
+    line-height: 1;
     color: #ffffff !important;
     -webkit-text-fill-color: #ffffff !important;
+    text-decoration: none !important;
+    white-space: nowrap;
   }
