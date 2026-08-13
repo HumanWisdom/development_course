@@ -151,6 +151,9 @@ export class S157004Page implements OnInit {
   }
 
   getdayevent(event, isBack = false) {
+    this.isShowButton=true;
+    this.isShowTranscript = true;
+    this.isShowAudio=false;
     if (event === 'intro' || event === '0') {
       this.slideStart = 0;
       this.totalSlidesCount = 6;
@@ -381,6 +384,10 @@ export class S157004Page implements OnInit {
   }
 
   next() {
+    this.isShowButton=true;
+    this.isShowTranscript = true;
+    this.isShowAudio=false;
+
     if (this.currentDay == 10 && this.slideStart == this.totalSlidesCount) {
       return;
     }
@@ -421,7 +428,7 @@ export class S157004Page implements OnInit {
         data = this.elementRef.nativeElement.querySelectorAll('.active')[0]?.firstChild?.children[0]?.
           children[1]?.children[0]?.lastChild?.classList.value;
       }
-      if (data == "audio-test") {
+     /*  if (data == "audio-test") {
         this.isShowButton=true;
         this.isShowTranscript = true;
         this.isShowAudio=false;
@@ -429,7 +436,7 @@ export class S157004Page implements OnInit {
         this.isShowButton=false;
         this.isShowTranscript = false;
         this.isShowAudio = false;
-      }
+      } */
           this.setHint();
     }, 700);
   }
@@ -439,6 +446,9 @@ export class S157004Page implements OnInit {
   }
   
   back() {
+     this.isShowButton=true;
+    this.isShowTranscript = true;
+    this.isShowAudio=false;
     if (this.currentDay == 0 && this.slideStart == 1) {
       return;
     }
@@ -465,7 +475,7 @@ export class S157004Page implements OnInit {
           data = this.elementRef.nativeElement.querySelectorAll('.active')[0]?.firstChild?.children[0]?.
             children[1]?.children[0]?.lastChild?.classList.value;
         }
-        if (data == "audio-test") {
+        /* if (data == "audio-test") {
           this.isShowButton=true;
           this.isShowTranscript = true;
           this.isShowAudio=false;
@@ -473,27 +483,36 @@ export class S157004Page implements OnInit {
           this.isShowButton=false;
           this.isShowTranscript = false;
           this.isShowAudio = false;
-        }
+        } */
         this.setHint();
     }, 700);
   }
 
   goBack() {
-    const fromMicroLearningEnd = localStorage.getItem('fromMicroLearningEnd');
-    const microLearningEndUrl = localStorage.getItem('microLearningEndUrl');
-    if (fromMicroLearningEnd === 'true' && microLearningEndUrl) {
-      localStorage.removeItem('fromMicroLearningEnd');
-      localStorage.removeItem('microLearningEndUrl');
-      this.router.navigateByUrl(microLearningEndUrl);
-    } else {
-      // Navigate back to wherever the user came from (explore, today, etc.)
-      const navigatedFrom = localStorage.getItem('NaviagtedFrom');
-      if (navigatedFrom && navigatedFrom !== 'null') {
-        this.router.navigateByUrl(navigatedFrom);
-      } else {
-        this.router.navigate(['/teenagers/explore']);
-      }
-    }
+      if(this.currentDay === 0 && this.slideStart === 1) {
+          const fromMicroLearningEnd = localStorage.getItem('fromMicroLearningEnd');
+          const microLearningEndUrl = localStorage.getItem('microLearningEndUrl');
+          if (fromMicroLearningEnd === 'true' && microLearningEndUrl) {
+            localStorage.removeItem('fromMicroLearningEnd');
+            localStorage.removeItem('microLearningEndUrl');
+            this.router.navigateByUrl(microLearningEndUrl);
+          } else {
+            // Navigate back to wherever the user came from (explore, today, etc.)
+            const navigatedFrom = localStorage.getItem('NaviagtedFrom');
+            if (navigatedFrom && navigatedFrom !== 'null') {
+              this.router.navigateByUrl(navigatedFrom);
+            } else {
+              this.router.navigate(['/teenagers/explore']);
+            }
+          }
+        }
+        else
+        {
+          
+          this.getdayevent('intro');
+           let carouselId = '#mdp_carousel_intro';
+          $(carouselId).carousel(0);
+        }   
   }
 
   submitProgress() {

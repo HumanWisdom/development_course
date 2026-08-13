@@ -76,7 +76,6 @@ export class WisdomExerciseS75001Component implements OnInit {
     this.service.setmoduleID(75);
     SharedService.setDataInLocalStorage('NaviagtedFrom', this.router.url);
 
-    this.pgResume = SharedService.getDataFromSessionStorage("pgResume");
     this.isGuest = !SharedService.isSubscriber();
     this.isAdults = SharedService.ProgramId === ProgramType.Adults;
 
@@ -209,6 +208,9 @@ export class WisdomExerciseS75001Component implements OnInit {
 
   
   Resume(Url:string) {
+   
+        this.pgResume = SharedService.getDataFromSessionStorage("pgResume");
+
     if (this.pgResume.includes(Url)){
       
       this.router.navigate(['/adults/self-awareness/' + Url], { state: { day: this.pgResume.split('p')[1] } });

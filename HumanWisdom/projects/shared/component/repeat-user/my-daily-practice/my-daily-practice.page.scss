@@ -521,12 +521,12 @@
     align-items: center !important;
 
     .guided-journey-label {
-      font-size: 11px !important;
-      font-weight: 500 !important;
+      font-size: 12px !important;
+      font-weight: 600 !important;
       letter-spacing: 0.08em !important;
-      color: rgba(0, 0, 0, 0.55) !important;
+      color: #000000BF !important;
       text-transform: uppercase !important;
-      margin: 0 0 6px 0 !important;
+      margin: 0 0 3px 0 !important;
       display: block !important;
     }
 
@@ -540,9 +540,9 @@
 
     /* Title variant when a journey is in progress — matches Figma black bold */
     .guided-journey-title-active {
-      font-size: 22px !important;
-      font-weight: 700 !important;
-      color: #1a1a1a !important;
+      font-size: 21px !important;
+      font-weight: 600 !important;
+      color: #000000 !important;
       margin: 0 0 18px 0 !important;
     }
 
@@ -1152,7 +1152,7 @@
     background: #0C2B5F !important;
 
     .guided-journey-label {
-      color: rgba(255, 255, 255, 0.55) !important;
+      color: rgba(255, 255, 255, 0.75) !important;
     }
 
     .guided-journey-title {
