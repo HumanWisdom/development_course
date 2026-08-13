@@ -5945,6 +5945,8 @@ export class TeenagersService {
         this.setModuleState(id, res);
         if (res && res.lastVisitedScreen && res.lastVisitedScreen !== '') {
           pgResume = "s" + res.lastVisitedScreen;
+                  sessionStorage.setItem("pgResume", pgResume)
+
         }
       }, error => {
         console.log(error)

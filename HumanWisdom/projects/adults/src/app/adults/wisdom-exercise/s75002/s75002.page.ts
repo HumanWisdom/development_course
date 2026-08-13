@@ -393,7 +393,7 @@ export class S75002Page implements OnInit, AfterViewInit {
             ?.firstChild?.children[0]?.children[1]?.children[0]?.lastChild
             ?.classList.value;
       }
-      if (data == "audio-test") {
+      /* if (data == "audio-test") {
         this.isShowTranscript = true;
         this.isShowAudio=false;
       this.isShowButton=true;
@@ -401,8 +401,10 @@ export class S75002Page implements OnInit, AfterViewInit {
         this.isShowTranscript = false;
         this.isShowAudio = false;
         this.isShowButton=false;
-      }
-      
+      } */
+      this.isShowButton=true;
+      this.isShowTranscript = true;
+      this.isShowAudio=false;
       this.setHint();
     }, 700);
   }
@@ -526,6 +528,8 @@ export class S75002Page implements OnInit, AfterViewInit {
   }
 
   goBack() {
+   
+
     if(this.currentDay === 0 && this.slideStart === 1) {
 
     // Check if we came from micro-learning end screen
@@ -549,8 +553,11 @@ export class S75002Page implements OnInit, AfterViewInit {
   }
   else
   {
-    
+   
     this.getdayevent('intro');
+     let carouselId = this.dayclass === 'intro' ? '#mdp_carousel_intro' : `#mdp_carousel_day${this.dayclass}`;
+        $(carouselId).carousel(0);
+        // this.setHint();
   }
 }
 

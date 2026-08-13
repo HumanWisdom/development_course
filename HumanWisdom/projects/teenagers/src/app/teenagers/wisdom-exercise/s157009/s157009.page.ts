@@ -88,6 +88,8 @@ export class S157009Page implements OnInit {
  }
 
   getdayevent(event, isBack = false) {
+    this.isShowTranscript = true;
+    this.isShowAudio=false;
     if (event === 'intro') {
       this.slideStart = 0;
       this.totalSlidesCount = 5;
@@ -350,12 +352,14 @@ export class S157009Page implements OnInit {
         data = this.elementRef.nativeElement.querySelectorAll('.active')[0]?.firstChild?.children[0]?.
           children[1]?.children[0]?.lastChild?.classList.value;
       }
-      if (data == 'audio-test') {
+      /* if (data == 'audio-test') {
         this.isShowTranscript = true;
       } else {
         this.isShowTranscript = false;
         this.isShowAudio = false;
-      }
+      } */
+          this.isShowTranscript = true;
+          this.isShowAudio=false;
       this.setHint();
     }, 700);
   }
@@ -441,12 +445,15 @@ export class S157009Page implements OnInit {
           data = this.elementRef.nativeElement.querySelectorAll('.active')[0]?.firstChild?.children[0]?.
             children[1]?.children[0]?.lastChild?.classList.value;
         }
-      if (data == 'audio-test') {
+     /*  if (data == 'audio-test') {
         this.isShowTranscript = true;
       } else {
         this.isShowTranscript = false;
         this.isShowAudio = false;
-      }
+      } */
+      
+          this.isShowTranscript = true;
+          this.isShowAudio=false;
       this.setHint();
     }, 700);
   }
@@ -627,20 +634,31 @@ openHintModal() {
   }
 
   goBack() {
-    const fromMicroLearningEnd = localStorage.getItem('fromMicroLearningEnd');
-    const microLearningEndUrl = localStorage.getItem('microLearningEndUrl');
-    if (fromMicroLearningEnd === 'true' && microLearningEndUrl) {
-      localStorage.removeItem('fromMicroLearningEnd');
-      localStorage.removeItem('microLearningEndUrl');
-      this.router.navigateByUrl(microLearningEndUrl);
-    } else {
-      // Navigate back to wherever the user came from (explore, today, etc.)
-      const navigatedFrom = localStorage.getItem('NaviagtedFrom');
-      if (navigatedFrom && navigatedFrom !== 'null') {
-        this.router.navigateByUrl(navigatedFrom);
-      } else {
-        this.router.navigate(['/teenagers/explore']);
-      }
+    if(this.currentDay === 0 && this.slideStart === 1) {
+
+          const fromMicroLearningEnd = localStorage.getItem('fromMicroLearningEnd');
+          const microLearningEndUrl = localStorage.getItem('microLearningEndUrl');
+          if (fromMicroLearningEnd === 'true' && microLearningEndUrl) {
+            localStorage.removeItem('fromMicroLearningEnd');
+            localStorage.removeItem('microLearningEndUrl');
+            this.router.navigateByUrl(microLearningEndUrl);
+          } else {
+            // Navigate back to wherever the user came from (explore, today, etc.)
+            const navigatedFrom = localStorage.getItem('NaviagtedFrom');
+            if (navigatedFrom && navigatedFrom !== 'null') {
+              this.router.navigateByUrl(navigatedFrom);
+            } else {
+              this.router.navigate(['/teenagers/explore']);
+            }
+          }
     }
+    else
+    {
+      
+      this.getdayevent('intro');
+      let carouselId =  '#mdp_carousel_intro';
+        $(carouselId).carousel(0);
+    }         
+
   }
 }
