@@ -97,7 +97,7 @@
   }
 
   &:hover {
-    scrollbar-color: #3CD5DB #1C3B6F;
+    scrollbar-color: #778899 #1C3B6F;
 
     &::-webkit-scrollbar-thumb {
       background-color: #3CD5DB;
@@ -124,13 +124,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 10px 14px;
+  padding: 12px 12px;
   cursor: pointer;
   transition: all 0.2s ease;
   white-space: nowrap;
-  gap: 6px;
+  gap: 3px;
   min-width: 80px;
-  min-height: 72px;
+  max-height: 59px;
   flex-shrink: 0;
 
   .icon-container {
@@ -147,8 +147,8 @@
   }
 
   .item-title {
-    font-size: 13px;
-    font-weight: 500;
+    font-size: 12px;
+    font-weight: 400;
     line-height: 120%;
     color: #000000;
     white-space: nowrap;
@@ -164,19 +164,14 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 10px 14px;
+  padding: 12px 12px;
   cursor: pointer;
   transition: all 0.2s ease;
   white-space: nowrap;
-  gap: 6px;
+  gap: 3px;
   min-width: 80px;
-  min-height: 72px;
+  max-height: 59px;
   flex-shrink: 0;
-
-  &:hover {
-    opacity: 0.9;
-    transform: translateY(-1px);
-  }
 
   .icon-container {
     display: flex;
@@ -187,15 +182,13 @@
     flex-shrink: 0;
 
     img {
-      width: 24px;
-      height: 24px;
       object-fit: contain;
     }
   }
 
   .item-title {
-    font-size: 13px;
-    font-weight: 500;
+    font-size: 12px;
+    font-weight: 400;
     line-height: 120%;
     color: #ffffff;
     white-space: nowrap;
