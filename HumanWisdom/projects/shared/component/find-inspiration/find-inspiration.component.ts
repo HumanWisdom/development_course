@@ -21,6 +21,7 @@ export class FindInspiration {
       this.isAdults = false;
     }
 
+    // Row 1: Podcasts, Video Library, Feel better now, Self-awareness, Guided journaling, Events
     this.inspirationItemsRow1 = [
       {
         title: 'Podcasts',
@@ -30,11 +31,25 @@ export class FindInspiration {
         url: 'podcast'
       },
       {
-        title: 'Short videos',
+        title: 'Video Library',
         img: this.isAdults
           ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/video.svg'
           : 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/short_video_without_bg.svg',
         url: 'wisdom-shorts'
+      },
+      {
+        title: 'Feel better now',
+        img: this.isAdults
+          ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/wellness.svg'
+          : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/fbn_like_teens.svg',
+        url: 'feel-better-now'
+      },
+      {
+        title: 'Self-awareness',
+        img: this.isAdults
+          ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/guided_journey.svg'
+          : 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/guided_journey_without_bg.svg',
+        url: this.isAdults ? 'curated/self-awareness' : 'curated/self-awareness'
       },
       {
         title: 'Guided journaling',
@@ -42,20 +57,6 @@ export class FindInspiration {
           ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/guided.svg'
           : 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/guided_without_bg.svg',
         url: 'journal'
-      },
-      {
-        title: 'Guided journeys',
-        img: this.isAdults
-          ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/guided_journey.svg'
-          : 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/guided_journey_without_bg.svg',
-        url: 'guided-journeys'
-      },
-      {
-        title: 'Wellness survey',
-        img: this.isAdults
-          ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/wellness.svg'
-          : 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/wellness_without_bg.svg',
-        url: 'wisdom-survey'
       },
       {
         title: 'Events',
@@ -66,6 +67,7 @@ export class FindInspiration {
       }
     ];
 
+    // Row 2: Microlearning, Audio meditation, Soundscapes, Life stories, Find answers, Blog
     this.inspirationItemsRow2 = [
       {
         title: 'Microlearning',
@@ -89,7 +91,7 @@ export class FindInspiration {
         url: 'soundscapes'
       },
       {
-        title: 'Life Stories',
+        title: 'Life stories',
         img: this.isAdults
           ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/life.svg'
           : 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/story_without_bg.svg',
@@ -133,10 +135,14 @@ export class FindInspiration {
       this.logeventservice.logEvent('click_pastevents');
     } else if (item === 'micro-learning') {
       this.logeventservice.logEvent('click_interactivemodules');
+    } else if (item === 'feel-better-now') {
+      this.logeventservice.logEvent('click_feelbetternow');
+    } else if (item === 'curated/self-awareness') {
+      this.logeventservice.logEvent('click_selfawareness');
     } else {
       this.logeventservice.logEvent('click_FI_' + item);
     }
     this.router.navigate([SharedService.getprogramName() + '/' + item]);
   }
 }
-
+
