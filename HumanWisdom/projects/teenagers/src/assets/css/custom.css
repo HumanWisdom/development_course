@@ -33315,8 +33315,11 @@ body * {
   border-radius: 12px;
   border: 0;
   background: #0C2B5F;
+  height: 130px;
+  min-height: 130px;
   padding: 15px !important;
   margin-bottom: 10px;
+  box-sizing: border-box;
 }
 
 .div_fa a:last-child .box_v3_08 {
@@ -35432,6 +35435,8 @@ background: linear-gradient(180deg, #F17071 0%, #DE6768 100%);
 
 .adults_index_img {
   border-radius: 0 0 20px 20px;
+   height: 200px;
+  object-fit: cover;
 }
 
 .cptrem {
@@ -37077,9 +37082,11 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
   border-radius: 12px;
   /* border: 1px solid rgba(255, 255, 255, 0.25); */
   background: #0C2B5F;
-  min-height: 88px;
+  height: 130px;
+  min-height: 130px;
   margin-bottom: 10px;
   padding: 15px;
+  box-sizing: border-box;
   /* margin: 0 10px 10px 10px; */
 }
 
@@ -37132,9 +37139,21 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
   margin-bottom: 30px;
 }
 
-/* Spacing between thumbnail and text on find-answers cards (mobile + wide).
-   Shrink image column + flex gap so spacing is visible; .p0 zeros padding so
-   margin/gap are used instead. */
+/* Find-answers tiles — Figma: height 130, padding 15, gap 15 */
+.toc_adiv_mp .session_imgnew,
+.div_fa .session_imgnew,
+.box_v3_08 .session_imgnew,
+.toc_adiv_mp img.img_podcast_01,
+.div_fa img.w100,
+.box_v3_08 img.w100 {
+  width: 100px !important;
+  height: 100px !important;
+  max-width: 100px !important;
+  object-fit: cover !important;
+  border-radius: 6px;
+  display: block;
+}
+
 .toc_adiv_mp [class*="d-flex"],
 .toc_adiv_mp .center_flex,
 .div_fa [class*="d-flex"],
@@ -37142,7 +37161,8 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
 .box_v3_08.center_flex,
 .box_v3_08[class*="d-flex"] {
   justify-content: flex-start !important;
-  gap: 16px;
+  gap: 15px;
+  align-items: center !important;
 }
 
 .toc_adiv_mp [class*="d-flex"] > [class*="col-4"],
@@ -37201,6 +37221,7 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
   width: auto !important;
   max-width: none !important;
   margin-left: 0 !important;
+  padding-left: 0 !important;
 }
 
 .toc_adiv_mp [class*="d-flex"] > .col-1,
