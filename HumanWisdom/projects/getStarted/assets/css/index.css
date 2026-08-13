@@ -516,12 +516,13 @@ body.page-work .work-testimonials-wrap {
 body.page-work .owl_testimonials {
   --work-testimonial-row-width: 1340px;
   --work-testimonial-gap: 30px;
-  --work-testimonial-card-width: calc((var(--work-testimonial-row-width) - 2 * var(--work-testimonial-gap)) / 3);
+  /* -2px so 3 cards + gaps fit without clipping the last tile */
+  --work-testimonial-card-width: calc((var(--work-testimonial-row-width) - 2 * var(--work-testimonial-gap)) / 3 - 2px);
   width: 100%;
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
-  overflow: visible;
+  overflow: hidden;
 }
 
 body.page-work .owl_testimonials .div_testimonials.work-testimonial-card {
@@ -529,9 +530,9 @@ body.page-work .owl_testimonials .div_testimonials.work-testimonial-card {
   background-image: none !important;
   border-radius: 20px !important;
   padding: 36px !important;
-  width: var(--work-testimonial-card-width) !important;
+  width: 100% !important;
+  max-width: 100% !important;
   height: 282px !important;
-  max-width: 100%;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -539,7 +540,7 @@ body.page-work .owl_testimonials .div_testimonials.work-testimonial-card {
 }
 
 body.page-work .owl_testimonials .owl-carousel:not(.work-testimonials-native) .owl-item .item {
-  width: var(--work-testimonial-card-width);
+  width: 100%;
   height: 282px;
 }
 
@@ -548,6 +549,18 @@ body.page-work .owl_testimonials .owl-carousel.work-testimonials-native > .item 
   display: block !important;
   text-decoration: none;
   cursor: default;
+  /* AOS on carousel items leaves opacity:0 — force visible */
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
+
+body.page-work .owl_testimonials .div_testimonials.work-testimonial-card,
+body.page-work .owl_testimonials .item[data-aos],
+body.page-work .owl_testimonials .owl-item {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
 }
 
 body.page-work .owl_testimonials .owl-carousel .owl-item .item:hover,
@@ -643,35 +656,65 @@ body.page-work .owl_testimonials > .owl-carousel > .owl-stage-outer {
 }
 
 body.page-work .owl_testimonials .owl-carousel .owl-item {
-  margin-right: var(--work-testimonial-gap) !important;
-  width: var(--work-testimonial-card-width) !important;
+  /* Gap via Owl margin option — do not force a fixed px width (clips last card) */
+  margin-right: 30px !important;
 }
 
 body.page-work .owl_testimonials .work-testimonials-footer {
-  display: flex;
+  display: flex !important;
   align-items: center;
   justify-content: center;
   position: relative;
   margin-top: 20px;
   min-height: 40px;
-  padding-bottom: 6px;
+  padding-bottom: 0;
   overflow: visible;
   width: 100%;
 }
 
 body.page-work .owl_testimonials .work-testimonials-footer .work-testimonials-nav {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  display: none !important;
 }
 
-body.page-work .owl_testimonials .work-testimonials-footer .sap {
-  margin: 0;
+body.page-work .owl_testimonials .work-testimonials-footer .sap.work-testimonials-more {
+  position: static !important;
+  width: auto !important;
+  margin: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px;
+  text-decoration: none !important;
 }
 
-/* Hide testimonials nav + view-all (Figma: no footer controls) */
-body.page-work .owl_testimonials .work-testimonials-footer,
+body.page-work .owl_testimonials .work-testimonials-footer .sap.work-testimonials-more h4 {
+  color: rgba(215, 88, 107, 1) !important;
+  text-decoration: underline;
+  margin: 0 !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 18px !important;
+  font-weight: 500 !important;
+  line-height: 150% !important;
+}
+
+body.page-work .owl_testimonials .work-testimonials-footer .sap.work-testimonials-more:hover h4,
+body.page-work .owl_testimonials .work-testimonials-footer .sap.work-testimonials-more:active h4 {
+  color: #803358 !important;
+}
+
+body.page-work .owl_testimonials .work-testimonials-footer .work-testimonials-more .chevron-pink,
+body.page-work .owl_testimonials .work-testimonials-footer .work-testimonials-more .chevron-pink .bi {
+  color: rgba(215, 88, 107, 1) !important;
+  text-decoration: none !important;
+}
+
+body.page-work .owl_testimonials .work-testimonials-footer .work-testimonials-more:hover .chevron-pink,
+body.page-work .owl_testimonials .work-testimonials-footer .work-testimonials-more:hover .chevron-pink .bi,
+body.page-work .owl_testimonials .work-testimonials-footer .work-testimonials-more:active .chevron-pink,
+body.page-work .owl_testimonials .work-testimonials-footer .work-testimonials-more:active .chevron-pink .bi {
+  color: #803358 !important;
+}
+
+/* Hide owl nav only — keep “View all success stories” visible */
 body.page-work .owl_testimonials .owl-nav,
 body.page-work .owl_testimonials .owl-nav-w,
 body.page-work .owl_testimonials .owl-controls {
@@ -726,12 +769,8 @@ body.page-work .owl_testimonials .owl-controls {
   }
 
   body.page-work .owl_testimonials .div_testimonials.work-testimonial-card {
-    width: var(--work-testimonial-card-width) !important;
-  }
-
-  body.page-work .owl_testimonials .owl-carousel .owl-item {
-    width: var(--work-testimonial-card-width) !important;
-    max-width: var(--work-testimonial-card-width) !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
 }
 
@@ -1196,16 +1235,21 @@ body.page-work .div_inspire h5:hover {
   text-decoration: none !important;
 }
 
-body.page-work .div_inspire a.fc_cb6171 {
-  color: #CB6171 !important;
-  text-decoration: underline;
-  text-decoration-color: #CB6171;
+body.page-work .div_inspire a.fc_cb6171,
+body.page-work .div_inspire a.fc_cb6171 span,
+body.page-work section.hpt120px ~ main#main .div_inspire a.fc_cb6171,
+body.page-work section.hpt120px ~ main#main .div_inspire a.fc_cb6171 span {
+  color: rgba(215, 88, 107, 1) !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  background: transparent !important;
 }
 
 body.page-work .div_inspire a.fc_cb6171:hover,
-body.page-work .div_inspire a:hover.fc_cb6171 {
+body.page-work .div_inspire a:hover.fc_cb6171,
+body.page-work .div_inspire a.fc_cb6171:hover span {
   color: #803358 !important;
-  text-decoration-color: #803358;
+  text-decoration: none !important;
 }
 
 /* Education — Inspiring fresh ways of thinking (Figma: black 30/600/140%, gap 60px) */
@@ -1256,7 +1300,12 @@ body.page-education .div_inspire a:hover.fc_cb6171 {
     margin-bottom: 0 !important;
   }
 
+  body.page-work section.work-desc-section {
+    padding-bottom: 0 !important;
+  }
+
   body.page-work section.work-dyk-section {
+    padding-top: 60px !important;
     padding-bottom: 0 !important;
   }
 
@@ -1265,9 +1314,11 @@ body.page-education .div_inspire a:hover.fc_cb6171 {
   }
 
   body.page-work .work-testimonials-wrap {
-    padding-left: 0;
-    padding-right: 0;
-    overflow: hidden;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    overflow: visible !important;
+    max-width: 100% !important;
+    width: 100% !important;
   }
 
   body.page-work .owl_testimonials {
@@ -1346,19 +1397,19 @@ body.page-education .div_inspire a:hover.fc_cb6171 {
     box-sizing: border-box !important;
   }
 
-  /* Figma: horizontal scroll — cards 315×213, gap 20, pad 24, r20 */
+  /* Figma: horizontal scroll — pad 20, gap 20, cards 315×213 (next card peeks) */
   body.page-work .owl_testimonials .owl-carousel.work-testimonials-native {
     display: flex !important;
     flex-direction: row !important;
     flex-wrap: nowrap !important;
     align-items: stretch !important;
-    gap: 20px;
+    gap: 20px !important;
     width: 100% !important;
     max-width: 100% !important;
     min-width: 0 !important;
     margin: 0 !important;
     padding: 0 20px !important;
-    box-sizing: border-box;
+    box-sizing: border-box !important;
     overflow-x: auto !important;
     overflow-y: hidden !important;
     -webkit-overflow-scrolling: touch;
@@ -1375,9 +1426,12 @@ body.page-education .div_inspire a:hover.fc_cb6171 {
     display: none;
   }
 
-  body.page-work .owl_testimonials .owl-carousel.work-testimonials-native > .item {
+  /* Support both native markup and leftover owl wrappers */
+  body.page-work .owl_testimonials .owl-carousel.work-testimonials-native > .item,
+  body.page-work .owl_testimonials .owl-carousel.work-testimonials-native .owl-item {
     flex: 0 0 315px !important;
     width: 315px !important;
+    min-width: 315px !important;
     max-width: 315px !important;
     flex-shrink: 0 !important;
     scroll-snap-align: start;
@@ -1385,9 +1439,24 @@ body.page-education .div_inspire a:hover.fc_cb6171 {
     height: 213px !important;
   }
 
+  body.page-work .owl_testimonials .owl-carousel.work-testimonials-native .owl-stage-outer {
+    overflow: visible !important;
+    width: auto !important;
+    display: contents !important;
+  }
+
+  body.page-work .owl_testimonials .owl-carousel.work-testimonials-native .owl-stage {
+    display: contents !important;
+    width: auto !important;
+    transform: none !important;
+    left: 0 !important;
+    padding: 0 !important;
+  }
+
   body.page-work .owl_testimonials .owl-carousel.work-testimonials-native .work-testimonial-card,
   body.page-work .owl_testimonials .div_testimonials.work-testimonial-card {
     width: 315px !important;
+    min-width: 315px !important;
     max-width: 315px !important;
     height: 213px !important;
     min-height: 213px !important;
@@ -1439,6 +1508,15 @@ body.page-education .div_inspire a:hover.fc_cb6171 {
 
   body.page-work .owl_testimonials .work-testimonials-footer .work-testimonials-nav {
     display: none !important;
+  }
+
+  body.page-work .owl_testimonials .work-testimonials-footer {
+    display: flex !important;
+    justify-content: center !important;
+    margin-top: 20px !important;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: auto;
   }
 }
 
@@ -1979,67 +2057,127 @@ body.page-work .work-blog-more:active h4 {
     text-align: center !important;
   }
 
-  /* Figma mobile blog tile: 306 × 242.54 (img 156.26 + caption 86.28) */
+  /* Figma mobile blog tile: 306 × 242.54; gap between cards 18px */
   body.page-work .owl_blog .owl-carousel .owl-item,
-  body.page-work .owl_blog .owl-carousel .owl-item .item {
+  body.page-work section.hpt120px ~ main#main .owl_blog .owl-carousel .owl-item {
     width: 306px !important;
     max-width: 306px !important;
+    margin: 0 18px 0 0 !important;
   }
 
-  body.page-work .owl_blog .div_blog {
+  body.page-work .owl_blog .owl-carousel .owl-item .item,
+  body.page-work section.hpt120px ~ main#main .owl_blog .owl-carousel .owl-item .item,
+  body.page-work section.hpt120px ~ main#main .owl_blog a.item[href*="blog"] {
+    width: 306px !important;
+    max-width: 306px !important;
+    margin: 0 !important;
+    display: block !important;
+    text-align: left !important;
+    justify-content: flex-start !important;
+    align-items: stretch !important;
+  }
+
+  body.page-work .owl_blog .div_blog,
+  body.page-work section.hpt120px ~ main#main .owl_blog .div_blog {
     width: 306px !important;
     max-width: 306px !important;
     height: 242.54px !important;
     min-height: 242.54px !important;
     max-height: 242.54px !important;
     border-radius: 10px !important;
-    background: rgba(255, 249, 238, 1) !important;
+    background: rgba(255, 247, 230, 1) !important;
     overflow: hidden !important;
     display: flex !important;
     flex-direction: column !important;
     box-sizing: border-box !important;
+    padding: 0 !important;
+    margin: 0 !important;
   }
 
-  body.page-work .owl_blog .div_blog > .row:first-child,
-  body.page-work .owl_blog .div_blog > .row:first-child [class^="col-"] {
+  /* Image flush edge-to-edge — kill Bootstrap row gutters + owl width:auto */
+  body.page-work section.hpt120px ~ main#main .owl_blog .div_blog > .row,
+  body.page-work section.hpt120px ~ main#main .owl_blog .div_blog > .row:first-child,
+  body.page-work section.hpt120px ~ main#main .owl_blog .div_blog > .row:last-child {
+    margin: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  body.page-work section.hpt120px ~ main#main .owl_blog .div_blog > .row:first-child,
+  body.page-work section.hpt120px ~ main#main .owl_blog .div_blog > .row:first-child [class^="col-"] {
     height: 156.26px !important;
     min-height: 156.26px !important;
     max-height: 156.26px !important;
     flex-shrink: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
   }
 
-  body.page-work .owl_blog .div_blog img {
+  body.page-work section.hpt120px ~ main#main .owl_blog .owl-carousel .owl-item img,
+  body.page-work section.hpt120px ~ main#main .owl_blog .div_blog img,
+  body.page-work section.hpt120px ~ main#main .owl_blog .div_blog img.img-responsive {
     width: 100% !important;
+    max-width: 100% !important;
     height: 156.26px !important;
     min-height: 156.26px !important;
     max-height: 156.26px !important;
     object-fit: cover !important;
     border-radius: 10px 10px 0 0 !important;
     display: block !important;
+    margin: 0 !important;
   }
 
-  body.page-work .owl_blog .div_blog > .row:last-child,
-  body.page-work .owl_blog .div_blog > .row:last-child [class^="col-"] {
+  /* Caption: padding only on the col (not the row) — avoids double 20px gap under image */
+  body.page-work section.hpt120px ~ main#main .owl_blog .div_blog > .row:last-child {
     height: 86.28px !important;
     min-height: 86.28px !important;
     max-height: 86.28px !important;
     flex-shrink: 0 !important;
-    box-sizing: border-box !important;
+    padding: 0 !important;
+    background: rgba(255, 247, 230, 1) !important;
+    border-radius: 0 0 10px 10px !important;
   }
 
-  body.page-work .owl_blog .div_blog h4 {
-    margin: 10px 5px 0 !important;
+  body.page-work section.hpt120px ~ main#main .owl_blog .div_blog > .row:last-child [class^="col-"] {
+    display: block !important;
+    height: 86.28px !important;
+    min-height: 86.28px !important;
+    max-height: 86.28px !important;
+    padding: 20px !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    text-align: left !important;
+    background: rgba(255, 247, 230, 1) !important;
+  }
+
+  /* Beat About-Us #main h4 { 12px } + a[href*=blog] centering */
+  body.page-work section.hpt120px ~ main#main .owl_blog .div_blog h4,
+  body.page-work section.hpt120px ~ main#main .owl_blog .div_blog h4.fs_18px,
+  body.page-work section.hpt120px ~ main#main .owl_blog .div_blog h4.mtb0px.fs_18px.fw_500.lh_150p.fc_000000 {
+    margin: 0 !important;
     padding: 0 !important;
     height: auto !important;
     min-height: 0 !important;
-    max-height: 66px !important;
+    max-height: 42px !important;
+    max-width: 265px !important;
+    width: 100% !important;
+    font-family: 'Poppins', sans-serif !important;
     font-size: 15px !important;
     font-weight: 500 !important;
     line-height: 140% !important;
+    letter-spacing: 0 !important;
     color: rgba(0, 0, 0, 1) !important;
+    text-align: left !important;
     overflow: hidden !important;
     display: -webkit-box !important;
-    -webkit-line-clamp: 3 !important;
+    -webkit-line-clamp: 2 !important;
     -webkit-box-orient: vertical !important;
     box-sizing: border-box !important;
   }
@@ -4039,7 +4177,7 @@ body.page-healthcare .healthcare-hero-shell .wide-screen-only {
     text-align: center !important;
   }
 
-  /* Figma: title + subtitle centered, stacked with 16px gap */
+  /* Figma: title + subtitle centered; work gap 15px, others 16px */
   body.page-work .flex_block .work-desc-copy,
   body.page-healthcare .flex_block .hc-desc-copy,
   body.page-education .flex_block .edu-desc-copy {
@@ -4048,6 +4186,25 @@ body.page-healthcare .healthcare-hero-shell .wide-screen-only {
     align-items: center !important;
     gap: 16px !important;
     text-align: center !important;
+  }
+
+  /* Work mobile — Figma: image 335×207.66; copy 335; title↔subtitle gap 15px */
+  body.page-work .flex_block .work-desc-copy {
+    gap: 15px !important;
+    width: 335px !important;
+    max-width: 335px !important;
+    flex: 0 0 auto !important;
+  }
+
+  body.page-work .flex_block .cpr_a,
+  body.page-work .flex_block .work_app_img,
+  body.page-work .flex_block img.work_app_img {
+    width: 335px !important;
+    max-width: 335px !important;
+    height: auto !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
   }
 
   body.page-work .flex_block .work-desc-copy h2,
@@ -4071,7 +4228,7 @@ body.page-healthcare .healthcare-hero-shell .wide-screen-only {
     margin-right: auto !important;
   }
 
-  /* Figma mobile title: Poppins 600 / 24 / 140% / center */
+  /* Figma mobile title: Poppins 600 / 24 / 140% / center — width 335 */
   body.page-work section.hpt120px ~ main#main .flex_block .work-desc-title,
   body.page-work main#main .flex_block .work-desc-title,
   body.page-healthcare section.hpt120px ~ main#main .flex_block .hc-desc-title,
@@ -4088,6 +4245,25 @@ body.page-healthcare .healthcare-hero-shell .wide-screen-only {
     margin: 0 auto !important;
   }
 
+  body.page-work section.hpt120px ~ main#main .flex_block .work-desc-title,
+  body.page-work main#main .flex_block .work-desc-title {
+    width: 335px !important;
+    max-width: 335px !important;
+  }
+
+  /* Beat About-Us `section.hpt120px ~ main#main section span { 12px }` on title spans */
+  body.page-work section.hpt120px ~ main#main .flex_block .work-desc-title,
+  body.page-work section.hpt120px ~ main#main .flex_block .work-desc-title span,
+  body.page-work section.hpt120px ~ main#main .flex_block .work-desc-title .display_d_none,
+  body.page-work main#main .flex_block .work-desc-title span {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 140% !important;
+    color: rgba(0, 0, 0, 1) !important;
+  }
+
+  /* Figma mobile subtitle: Poppins 400 / 12 / 150% / center — width 335 */
   body.page-work section.hpt120px ~ main#main .flex_block .work-desc-subtitle,
   body.page-work main#main .flex_block .work-desc-subtitle,
   body.page-healthcare section.hpt120px ~ main#main .flex_block .hc-desc-subtitle,
@@ -4101,6 +4277,13 @@ body.page-healthcare .healthcare-hero-shell .wide-screen-only {
     color: rgba(0, 0, 0, 1) !important;
     text-align: center !important;
     margin: 0 auto !important;
+  }
+
+  body.page-work section.hpt120px ~ main#main .flex_block .work-desc-subtitle,
+  body.page-work main#main .flex_block .work-desc-subtitle {
+    width: 335px !important;
+    max-width: 335px !important;
+    font-size: 12px !important;
   }
 
   /* Work / education / healthcare — mobile org landing (blogs, testimonials, typography) */
@@ -4267,7 +4450,12 @@ body.page-healthcare .healthcare-hero-shell .wide-screen-only {
     padding-bottom: 60px !important;
   }
 
+  body.page-work section.work-desc-section {
+    padding-bottom: 0 !important;
+  }
+
   body.page-work section.work-dyk-section {
+    padding-top: 60px !important;
     padding-bottom: 0 !important;
   }
 

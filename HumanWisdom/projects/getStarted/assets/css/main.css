@@ -469,7 +469,7 @@ label>input[type="checkbox"]+*::before {
 
 .navbar a,
 .navbar a:focus {
-  color: #CB6171;
+  color: rgba(215, 88, 107, 1);
 }
 
 /* For organisations dropdown: thin chevron to match Figma (inline SVG) */
