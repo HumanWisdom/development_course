@@ -35435,6 +35435,8 @@ background: linear-gradient(180deg, #F17071 0%, #DE6768 100%);
 
 .adults_index_img {
   border-radius: 0 0 20px 20px;
+   height: 200px;
+  object-fit: cover;
 }
 
 .cptrem {
