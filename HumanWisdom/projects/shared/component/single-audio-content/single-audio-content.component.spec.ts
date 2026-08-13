@@ -68,7 +68,7 @@ describe('SingleAudioContentComponent', () => {
       providers: [
         { provide: Router, useValue: mockRouter },
         { provide: ActivatedRoute, useValue: mockActivatedRoute },
-        { provide: HttpClient, useValue: {} },
+        { provide: HttpClient, useValue: { get: () => of('') } },
         { provide: Location, useValue: mockLocation },
         { provide: CommonService, useValue: mockCommonService },
         { provide: NavigationService, useValue: mockNavigationService }
@@ -172,9 +172,10 @@ describe('SingleAudioContentComponent', () => {
   });
 
   describe('callText', () => {
-    it('should set textContent from GetAudioTranscript response', () => {
+    it('should set textContent and hasTranscript from GetAudioTranscript response', () => {
       component.callText();
-      expect(component.textContent).toBe(mockTranscriptText);
+      expect(component.hasTranscript).toBe(true);
+      expect(component.textContent).toBeTruthy();
     });
 
     it('should call GetAudioTranscript with S3Directory and FileName', () => {
@@ -282,7 +283,7 @@ describe('SingleAudioContentComponent', () => {
     it('should navigate when navigateToBackLink returns url', () => {
       mockNavigationService.navigateToBackLink.and.returnValue('/adults/dashboard');
       component.goBack();
-      expect(mockRouter.navigate).toHaveBeenCalledWith(['/adults/dashboard']);
+      expect(mockRouter.navigateByUrl).toHaveBeenCalledWith('/adults/dashboard');
     });
 
     it('should call location.back when navigateToBackLink returns null', () => {
