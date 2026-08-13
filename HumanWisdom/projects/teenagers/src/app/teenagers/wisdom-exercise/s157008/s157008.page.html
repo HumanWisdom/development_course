@@ -17,7 +17,7 @@
 
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tright">
       <a (click)="changeType()" class="" *ngIf="isShowTranscript || isShowAudio">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/transcript_left.svg" alt="" *ngIf="isShowTranscript" class="p0" />
+        <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/transcript_left.svg" alt="" *ngIf="isShowTranscript" class="p0" /> -->
         <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/audio_grey_02.svg" alt="" *ngIf="isShowAudio" class="p0" /> -->
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/close.svg" alt="" *ngIf="isShowAudio" class="p0" />
       </a>
@@ -160,6 +160,12 @@
                               <app-audio-player class="audio-test" 
                                 audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/7.14.mp3">
                               </app-audio-player>
+                              <div class="row tcenter" (click)="changeType();" (keydown.enter)="changeType();" tabindex="0" *ngIf="isShowTranscript || isShowAudio">
+                                <a class="">
+                                  <h6 class="fs_15px fw_400 lh_140p underline mtb10px" [ngClass]="'fc_ee9596'">
+                                    {{'Read text'}} </h6>
+                                </a>                              
+                              </div>
                             </div>
                           </div>
 
@@ -302,6 +308,12 @@
                               <app-audio-player class="audio-test" 
                                 audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/7.2.mp3">
                               </app-audio-player>
+                              <div class="row tcenter" (click)="changeType();" (keydown.enter)="changeType();" tabindex="0" *ngIf="isShowTranscript || isShowAudio">
+                                <a class="">
+                                  <h6 class="fs_15px fw_400 lh_140p underline mtb10px" [ngClass]="'fc_ee9596'">
+                                    {{'Read text'}} </h6>
+                                </a>                              
+                              </div>
                             </div>
                           </div>
 
@@ -367,6 +379,12 @@
                               <app-audio-player class="audio-test" 
                                 audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/7.3.mp3">
                               </app-audio-player>
+                              <div class="row tcenter" (click)="changeType();" (keydown.enter)="changeType();" tabindex="0" *ngIf="isShowTranscript || isShowAudio">
+                                <a class="">
+                                  <h6 class="fs_15px fw_400 lh_140p underline mtb10px" [ngClass]="'fc_ee9596'">
+                                    {{'Read text'}} </h6>
+                                </a>                              
+                              </div>
                             </div>
                           </div>
 
@@ -492,6 +510,12 @@
                               <app-audio-player class="audio-test" 
                                 audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/7.4.mp3">
                               </app-audio-player>
+                              <div class="row tcenter" (click)="changeType();" (keydown.enter)="changeType();" tabindex="0" *ngIf="isShowTranscript || isShowAudio">
+                                <a class="">
+                                  <h6 class="fs_15px fw_400 lh_140p underline mtb10px" [ngClass]="'fc_ee9596'">
+                                    {{'Read text'}} </h6>
+                                </a>                              
+                              </div>
                             </div>
                           </div>
 
@@ -544,6 +568,12 @@
                               <app-audio-player class="audio-test" 
                                 audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/7.5.mp3">
                               </app-audio-player>
+                              <div class="row tcenter" (click)="changeType();" (keydown.enter)="changeType();" tabindex="0" *ngIf="isShowTranscript || isShowAudio">
+                                <a class="">
+                                  <h6 class="fs_15px fw_400 lh_140p underline mtb10px" [ngClass]="'fc_ee9596'">
+                                    {{'Read text'}} </h6>
+                                </a>                              
+                              </div>
                             </div>
                           </div>
 
@@ -715,6 +745,12 @@
                               <app-audio-player class="audio-test" 
                                 audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/7.6.mp3">
                               </app-audio-player>
+                              <div class="row tcenter" (click)="changeType();" (keydown.enter)="changeType();" tabindex="0" *ngIf="isShowTranscript || isShowAudio">
+                                <a class="">
+                                  <h6 class="fs_15px fw_400 lh_140p underline mtb10px" [ngClass]="'fc_ee9596'">
+                                    {{'Read text'}} </h6>
+                                </a>                              
+                              </div>
                             </div>
                           </div>
 
@@ -770,6 +806,12 @@
                               <app-audio-player class="audio-test" 
                                 audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/7.7.mp3">
                               </app-audio-player>
+                              <div class="row tcenter" (click)="changeType();" (keydown.enter)="changeType();" tabindex="0" *ngIf="isShowTranscript || isShowAudio">
+                                <a class="">
+                                  <h6 class="fs_15px fw_400 lh_140p underline mtb10px" [ngClass]="'fc_ee9596'">
+                                    {{'Read text'}} </h6>
+                                </a>                              
+                              </div>
                             </div>
                           </div>
 
@@ -875,6 +917,12 @@
                               <app-audio-player class="audio-test" 
                                 audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/7.8.mp3">
                               </app-audio-player>
+                              <div class="row tcenter" (click)="changeType();" (keydown.enter)="changeType();" tabindex="0" *ngIf="isShowTranscript || isShowAudio">
+                                <a class="">
+                                  <h6 class="fs_15px fw_400 lh_140p underline mtb10px" [ngClass]="'fc_ee9596'">
+                                    {{'Read text'}} </h6>
+                                </a>                              
+                              </div>
                             </div>
                           </div>
 
@@ -927,6 +975,12 @@
                               <app-audio-player class="audio-test" 
                                 audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/7.9.mp3">
                               </app-audio-player>
+                              <div class="row tcenter" (click)="changeType();" (keydown.enter)="changeType();" tabindex="0" *ngIf="isShowTranscript || isShowAudio">
+                                <a class="">
+                                  <h6 class="fs_15px fw_400 lh_140p underline mtb10px" [ngClass]="'fc_ee9596'">
+                                    {{'Read text'}} </h6>
+                                </a>                              
+                              </div>
                             </div>
                           </div>
 
@@ -1132,6 +1186,12 @@
                               <app-audio-player class="audio-test" 
                                 audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/7.10.mp3">
                               </app-audio-player>
+                              <div class="row tcenter" (click)="changeType();" (keydown.enter)="changeType();" tabindex="0" *ngIf="isShowTranscript || isShowAudio">
+                                <a class="">
+                                  <h6 class="fs_15px fw_400 lh_140p underline mtb10px" [ngClass]="'fc_ee9596'">
+                                    {{'Read text'}} </h6>
+                                </a>                              
+                              </div>
                             </div>
                           </div>
 
@@ -1187,6 +1247,12 @@
                               <app-audio-player class="audio-test" 
                                 audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/7.11.mp3">
                               </app-audio-player>
+                              <div class="row tcenter" (click)="changeType();" (keydown.enter)="changeType();" tabindex="0" *ngIf="isShowTranscript || isShowAudio">
+                                <a class="">
+                                  <h6 class="fs_15px fw_400 lh_140p underline mtb10px" [ngClass]="'fc_ee9596'">
+                                    {{'Read text'}} </h6>
+                                </a>                              
+                              </div>
                             </div>
                           </div>
 
@@ -1343,6 +1409,12 @@
                               <app-audio-player class="audio-test" 
                                 audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/7.12.mp3">
                               </app-audio-player>
+                              <div class="row tcenter" (click)="changeType();" (keydown.enter)="changeType();" tabindex="0" *ngIf="isShowTranscript || isShowAudio">
+                                <a class="">
+                                  <h6 class="fs_15px fw_400 lh_140p underline mtb10px" [ngClass]="'fc_ee9596'">
+                                    {{'Read text'}} </h6>
+                                </a>                              
+                              </div>
                             </div>
                           </div>
 
@@ -1390,6 +1462,12 @@
                               <app-audio-player class="audio-test" 
                                 audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/7.13.mp3">
                               </app-audio-player>
+                              <div class="row tcenter" (click)="changeType();" (keydown.enter)="changeType();" tabindex="0" *ngIf="isShowTranscript || isShowAudio">
+                                <a class="">
+                                  <h6 class="fs_15px fw_400 lh_140p underline mtb10px" [ngClass]="'fc_ee9596'">
+                                    {{'Read text'}} </h6>
+                                </a>                              
+                              </div>
                             </div>
                           </div>
 

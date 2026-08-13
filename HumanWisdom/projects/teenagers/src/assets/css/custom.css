@@ -24287,6 +24287,8 @@ a {
 
 .br_blr_20px {
   border-radius: 0px 0px 20px 20px;
+  height: 200px;
+  object-fit: cover;
 }
 
 .img_mt_01 {

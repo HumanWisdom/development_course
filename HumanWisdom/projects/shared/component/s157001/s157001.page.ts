@@ -41,6 +41,8 @@ export class S157001Page implements OnInit {
   @Input() isHome = true;
   isGuest : boolean =  true;
   beginIsExpanded: boolean = false;
+    pgResume: any;
+
   beginHereCards: ContentCard[] = [];
    path = setTimeout(() => {
     return this.router.url;
@@ -121,5 +123,21 @@ export class S157001Page implements OnInit {
     if (card.path) {
       this.router.navigate([card.path]);
     }
+  }
+
+  Resume(Url:string) {
+   
+        this.pgResume = SharedService.getDataFromSessionStorage("pgResume");
+console.log("pgResume",this.pgResume)
+    if (this.pgResume && this.pgResume.includes(Url)){
+      
+      this.router.navigate(['/teenagers/self-awareness/' + Url], { state: { day: this.pgResume.split('p')[1] } });
+    }
+    else
+    {
+      this.router.navigate(['/teenagers/self-awareness/' + Url])
+    }
+
+    
   }
 }
