@@ -58,6 +58,7 @@ export class WisdomExerciseS75001Component implements OnInit {
   dashboardData: any = {};
   introData: any = {};
   contentSections: ContentSection[] = [];
+  pgResume: any;
 
   path = setTimeout(() => {
     return this.router.url;
@@ -73,6 +74,9 @@ export class WisdomExerciseS75001Component implements OnInit {
 
   ngOnInit() {
     this.service.setmoduleID(75);
+    SharedService.setDataInLocalStorage('NaviagtedFrom', this.router.url);
+
+    this.pgResume = SharedService.getDataFromSessionStorage("pgResume");
     this.isGuest = !SharedService.isSubscriber();
     this.isAdults = SharedService.ProgramId === ProgramType.Adults;
 
@@ -201,5 +205,19 @@ export class WisdomExerciseS75001Component implements OnInit {
   goToSubscribe(): void {
     const prefix = SharedService.getprogramName();
     this.router.navigate([prefix, 'subscription', 'start-your-free-trial']);
+  }
+
+  
+  Resume(Url:string) {
+    if (this.pgResume.includes(Url)){
+      
+      this.router.navigate(['/adults/self-awareness/' + Url], { state: { day: this.pgResume.split('p')[1] } });
+    }
+    else
+    {
+      this.router.navigate(['/adults/self-awareness/' + Url])
+    }
+
+    
   }
 }

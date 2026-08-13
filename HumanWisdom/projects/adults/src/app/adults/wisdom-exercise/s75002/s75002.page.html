@@ -17,11 +17,10 @@
 
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tright">
       <a (click)="changeType()" class="" *ngIf="isShowTranscript || isShowAudio">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/transcript_left.svg" alt=""
-          *ngIf="isShowTranscript" class="p0" />
-        <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/audio_grey_02.svg" alt="" *ngIf="isShowAudio" class="p0" /> -->
+        <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/transcript_left.svg" alt=""
+          *ngIf="isShowTranscript" class="p0" /> -->
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/close.svg" alt=""
-          *ngIf="isShowAudio" class="p0" />
+          *ngIf="!isShowTranscript" class="p0" />
       </a>
       <a *ngIf="!isShowTranscript && !isShowAudio && isShowBulb" aria-expanded="false" (click)="openHintModal()">
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/hint_bulb.svg"
@@ -172,6 +171,12 @@
                               <app-audio-player class="audio-test"
                                 audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/1.1.mp3">
                               </app-audio-player>
+                               <div class="row tcenter" (click)="changeType();" (keydown.enter)="changeType();" tabindex="0" *ngIf="isShowTranscript">
+                                <a class="">
+                                  <h6 class="fs_15px fw_400 lh_140p underline mtb10px" [ngClass]="isAdults ? 'fc_D7586B' : 'fc_ee9596'">
+                                    {{'Read text'}} </h6>
+                                </a>                              
+                              </div>
                             </div>
                           </div>
 
@@ -399,6 +404,12 @@
                               <app-audio-player class="audio-test"
                                 audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/1.2.mp3">
                               </app-audio-player>
+                               <div class="row tcenter" (click)="changeType();" (keydown.enter)="changeType();" tabindex="0" *ngIf="isShowTranscript || isShowAudio">
+                                <a class="">
+                                  <h6 class="fs_15px fw_400 lh_140p underline mtb10px" [ngClass]="isAdults ? 'fc_D7586B' : 'fc_ee9596'">
+                                    {{'Read text'}} </h6>
+                                </a>                              
+                              </div>
                             </div>
                           </div>
 
@@ -557,8 +568,16 @@
                               <app-audio-player class="audio-test"
                                 audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/1.3.mp3">
                               </app-audio-player>
+                              <div class="row tcenter" (click)="changeType();" (keydown.enter)="changeType();" tabindex="0" *ngIf="isShowTranscript || isShowAudio">
+                                <a class="">
+                                  <h6 class="fs_15px fw_400 lh_140p underline mtb10px" [ngClass]="isAdults ? 'fc_D7586B' : 'fc_ee9596'">
+                                    {{'Read text'}} </h6>
+                                </a>
+                              </div>
+                              
                             </div>
                           </div>
+
 
                         </div>
                       </div>
@@ -739,6 +758,12 @@
                               <app-audio-player class="audio-test"
                                 audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/1.4.mp3">
                               </app-audio-player>
+                              <div class="row tcenter" (click)="changeType();" (keydown.enter)="changeType();" tabindex="0" *ngIf="isShowTranscript || isShowAudio">
+                                <a class="">
+                                  <h6 class="fs_15px fw_400 lh_140p underline mtb10px" [ngClass]="isAdults ? 'fc_D7586B' : 'fc_ee9596'">
+                                    {{'Read text'}} </h6>
+                                </a>                              
+                              </div>
                             </div>
                           </div>
 
@@ -911,6 +936,12 @@
                               <app-audio-player class="audio-test"
                                 audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/1.5.mp3">
                               </app-audio-player>
+                               <div class="row tcenter" (click)="changeType();" (keydown.enter)="changeType();" tabindex="0" *ngIf="isShowTranscript || isShowAudio">
+                                <a class="">
+                                  <h6 class="fs_15px fw_400 lh_140p underline mtb10px" [ngClass]="isAdults ? 'fc_D7586B' : 'fc_ee9596'">
+                                    {{'Read text'}} </h6>
+                                </a>                              
+                              </div>
                             </div>
                           </div>
 
@@ -1072,6 +1103,12 @@
                               <app-audio-player class="audio-test"
                                 audioLink="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/wisdom_exercise/audios/1.6.mp3">
                               </app-audio-player>
+                               <div class="row tcenter" (click)="changeType();" (keydown.enter)="changeType();" tabindex="0" *ngIf="isShowTranscript || isShowAudio">
+                                <a class="">
+                                  <h6 class="fs_15px fw_400 lh_140p underline mtb10px" [ngClass]="isAdults ? 'fc_D7586B' : 'fc_ee9596'">
+                                    {{'Read text'}} </h6>
+                                </a>                              
+                              </div>
                             </div>
                           </div>
 
