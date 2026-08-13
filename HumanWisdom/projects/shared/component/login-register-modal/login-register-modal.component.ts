@@ -738,18 +738,9 @@ export class LoginRegisterModalComponent implements OnInit, AfterViewInit {
   // }
 
   ngOnInit() {
-    // Clear owl animation session so GIF and dialogue play again after login
+    // Replay the landing GIF after login, but keep the once-a-day speech bubble flag.
     sessionStorage.removeItem('owl_gif_shown');
     localStorage.removeItem('owl_gif_shown');
-    localStorage.removeItem('owl_dialogue_shown');
-    localStorage.removeItem('olly_today_intro_shown');
-    localStorage.removeItem('olly_today_dialogue_shown');
-    localStorage.removeItem('olly_landing_intro_shown');
-    localStorage.removeItem('olly_landing_dialogue_shown');
-    localStorage.removeItem('olly_today_intro_shown');
-    localStorage.removeItem('olly_today_dialogue_shown');
-    localStorage.removeItem('olly_landing_intro_shown');
-    localStorage.removeItem('olly_landing_dialogue_shown');
 
     this.userId = JSON.parse(localStorage.getItem("userId"))
   }
