@@ -559,7 +559,7 @@
       background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%) !important;
       border: none !important;
       border-radius: 30px !important;
-      padding: 10px 30px !important;
+      padding: 15px 30px !important;
       color: #ffffff !important;
       font-size: 15px !important;
       font-weight: 600 !important;
@@ -572,6 +572,7 @@
 
     /* Continue your journey — same filled style (explicit alias) */
     .guided-journey-btn-continue {
+      padding: 10px 30px !important;
       margin-bottom: 10px !important;
     }
 
@@ -1188,7 +1189,7 @@
       color: #ffffff !important;
 
       &:hover{
-        background: #0C2B5F !important;
+        background: linear-gradient(180deg, #F17071 0%, #DE6768 100%) !important;
       }
     }
   }
