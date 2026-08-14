@@ -330,27 +330,23 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   private hasShownBubbleToday(): boolean {
-    return this.commonService.isOllyBubbleShownToday(this.getIntroShownKey())
-      || this.commonService.isOllyBubbleShownToday(this.getDialogueShownKey());
+    return this.commonService.hasShownOllyBubbleToday();
   }
 
   private markBubbleShownToday(): void {
     this.commonService.markOllyBubbleShownToday(this.getDialogueShownKey());
-    this.commonService.markOllyBubbleShownToday(this.getIntroShownKey());
-    // Ensure the footer Hi bubble stays hidden on other pages for the rest of today.
-    this.commonService.markOllyBubbleShownToday(this.OWL_DIALOGUE_SHOWN_KEY);
   }
 
   onOllyGifLoad(): void {
     if (this.gifLoadedOnce) {
       return;
     }
+    this.gifLoadedOnce = true;
     if (this.hasShownBubbleToday()) {
       // Already shown once today — emit immediately so parent doesn't wait
       this.bubbleComplete.emit();
       return;
     }
-    this.gifLoadedOnce = true;
     this.triggerCloudIfNeeded();
   }
 
@@ -364,6 +360,8 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
       return;
     }
     this.cloudSequenceStarted = true;
+    // Persist immediately so a refresh during the animation cannot replay the bubble.
+    this.markBubbleShownToday();
     this.startCloudSequence();
   }
 
@@ -373,8 +371,6 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
       this.cloudFadeIn = true;
       this.isSpeaking = true;
       this.isDisappearing = false;
-      // Mark in-page Olly seen today so the footer Hi bubble stays hidden on other pages.
-      this.markBubbleShownToday();
     }, 1000);
 
     this.scheduleTimer(() => {

@@ -320,6 +320,11 @@ const routes: Routes = [
     loadChildren: () => import('../teenagers/dealing-with-depression/dealing-with-depression.module').then(m => m.DealingWithDepressionModule)
   },
   {
+    path: 'find-answers',
+    redirectTo: 'find-answers/why-do-i',
+    pathMatch: 'full'
+  },
+  {
     path: 'find-answers/:url',
     loadChildren: () => import('./find-answers/find-answers.module').then(m => m.FindAnswersModule)
   },
