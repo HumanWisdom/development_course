@@ -1176,12 +1176,20 @@
 
     .guided-journey-btn-new {
       background: linear-gradient(180deg, #EE9596 0%, #F17071 100%) !important;
+
+      &:hover{
+        background: linear-gradient(180deg, #F17071 0%, #DE6768 100%) !important;
+      }
     }
 
     .guided-journey-btn-begin-outline {
       background: transparent !important;
       border-color: rgba(255, 255, 255, 0.35) !important;
       color: #ffffff !important;
+
+      &:hover{
+        background: #0C2B5F !important;
+      }
     }
   }
 
