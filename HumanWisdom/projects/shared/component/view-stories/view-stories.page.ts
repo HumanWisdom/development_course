@@ -27,6 +27,11 @@ export class ViewStoriesPage implements OnInit {
   storyList = []
   token = localStorage.getItem("shareToken")
   isAdults=true;
+  isSubscriber = false;
+  showModal = false;
+  modalTitle = 'The best is yet to come';
+  modalContent = 'Unlock the full experience and continue your journey to live your best life';
+
   constructor(private router: Router,
     private service: OnboardingService, private ngNavigatorShareService: NgNavigatorShareService,
     private navigationService:NavigationService,
@@ -47,6 +52,9 @@ export class ViewStoriesPage implements OnInit {
 
   ngOnInit() {
     this.userId = JSON.parse(sessionStorage.getItem("userId"))
+    let userid = localStorage.getItem('isloggedin');
+    let sub: any = localStorage.getItem('Subscriber');
+    this.isSubscriber = (userid === 'T' && sub === '1');
     /*  if(localStorage.getItem("StoryType")==="Locked")
      return false
      else */
@@ -383,13 +391,23 @@ export class ViewStoriesPage implements OnInit {
   }
 
   loadReflections(id,url,story) {
-
+    if (!this.isSubscriber) {
+      this.showModal = true;
+      return;
+    }
     this.service.clickModule(id, this.userId)
       .subscribe(res => {
         this.qrList = res
         this.routeToUrl(url,story)
         localStorage.setItem("qrList", JSON.stringify(this.qrList))
       })
+  }
+
+  onModalClose(event: string) {
+    this.showModal = false;
+    if (event === 'ok') {
+      this.router.navigate([SharedService.getprogramName(), 'subscription', 'start-your-free-trial']);
+    }
   }
 
 }

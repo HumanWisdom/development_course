@@ -24,6 +24,11 @@ export class RelatedWisdomStoriesTilesComponent implements OnInit,OnDestroy {
   enable_view_more_less = false;
   view_more_less="View More"
   isAdults = false;
+  isSubscriber = false;
+  showModal = false;
+  modalTitle = 'The best is yet to come';
+  modalContent = 'Unlock the full experience and continue your journey to live your best life';
+
   constructor(private router: Router,private service:AdultsService) {
 
      if (SharedService.ProgramId == ProgramType.Adults) {
@@ -34,6 +39,10 @@ export class RelatedWisdomStoriesTilesComponent implements OnInit,OnDestroy {
   }
 
   ngOnInit() {
+    let userid = localStorage.getItem('isloggedin');
+    let sub: any = localStorage.getItem('Subscriber');
+    this.isSubscriber = (userid === 'T' && sub === '1');
+
     if(this.wisdomstories.length >= 2) {
       this.enablewisdomstory = true
       let first = []
@@ -53,6 +62,12 @@ export class RelatedWisdomStoriesTilesComponent implements OnInit,OnDestroy {
   }
 
   viewstory(item){
+    const sid = item.ScenarioID;
+    const isGuestFree = (sid == 42 || sid == 1 || item.ExclFromChild === '1');
+    if (!this.isSubscriber && !isGuestFree) {
+      this.showModal = true;
+      return;
+    }
     localStorage.setItem("story",JSON.stringify(item))
     let res = localStorage.getItem("isloggedin");
     if(res && res === 'T') {
@@ -73,6 +88,13 @@ export class RelatedWisdomStoriesTilesComponent implements OnInit,OnDestroy {
       }
     }
 
+  }
+
+  onModalClose(event: string) {
+    this.showModal = false;
+    if (event === 'ok') {
+      this.router.navigate([SharedService.getprogramName(), 'subscription', 'start-your-free-trial']);
+    }
   }
 
   toggle_view_more_less()
