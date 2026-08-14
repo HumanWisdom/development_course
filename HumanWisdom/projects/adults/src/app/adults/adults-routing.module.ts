@@ -530,6 +530,11 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
+    path: 'find-answers',
+    redirectTo: 'find-answers/why-do-i',
+    pathMatch: 'full'
+  },
+  {
     path: 'find-answers/:url',
     loadChildren: () => import('./find-answers/find-answers.module').then( m => m.FindAnswersModule)
   },
