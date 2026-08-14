@@ -24416,6 +24416,8 @@ a {
 
 .br_blr_20px {
   border-radius: 0px 0px 20px 20px;
+  height: 200px;
+  object-fit: cover;
 }
 
 .img_mt_01 {
@@ -34867,9 +34869,6 @@ background: #FFD889;
   background: #FFF7E6;
 }
 
-.br_blr_20px {
-  border-radius: 0 0 20px 20px;
-}
 
 .we_ft .btn_wec {
   margin: 0 10px 0 0;

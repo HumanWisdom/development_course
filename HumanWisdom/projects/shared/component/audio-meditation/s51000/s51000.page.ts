@@ -33,7 +33,7 @@ export class S51000Page implements OnInit {
   allaudiomeditation = []
   isAdults= true;
   gamR = sessionStorage.getItem("gamR")
-  tocImage = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/guided_audio_meditation.jpg"
+  tocImage = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/51.webp"
   tocColor = "white"
   lastvisited = false;
   stories: any = []
