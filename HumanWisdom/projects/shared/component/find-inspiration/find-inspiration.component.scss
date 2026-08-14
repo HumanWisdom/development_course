@@ -1,7 +1,7 @@
 /* find-inspiration.component.scss */
 
 .find-inspiration-container {
-  padding: 15px 0;
+  padding: 15px 0 0 0;
   width: 100%;
 }
 
@@ -44,8 +44,7 @@
   margin-left: -20px;
   margin-right: -20px;
   padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 15px;
+  padding-bottom: 20px;
   -webkit-overflow-scrolling: touch;
   /* show scrollbar */
   scrollbar-width: thin;
@@ -56,7 +55,7 @@
   scrollbar-color: transparent transparent;
 
   &::-webkit-scrollbar {
-    height: 3px;
+    height: 4px;
     border-radius: 6px;
   }
   &::-webkit-scrollbar-thumb {
@@ -85,7 +84,7 @@
   scrollbar-color: transparent transparent;
 
   &::-webkit-scrollbar {
-    height: 3px;
+    height: 4px;
     border-radius: 6px;
   }
   &::-webkit-scrollbar-thumb {
@@ -98,13 +97,13 @@
   }
 
   &:hover {
-    scrollbar-color: #16366D #778899;
+    scrollbar-color: #778899 #1C3B6F;
 
     &::-webkit-scrollbar-thumb {
-      background-color: #16366D;
+      background-color: #3CD5DB;
     }
     &::-webkit-scrollbar-track {
-      background-color: #778899;
+      background-color: #1C3B6F;
     }
   }
 }
@@ -113,7 +112,7 @@
   display: flex;
   flex-wrap: nowrap;
   gap: 10px;
-  /* last item should have right padding so it doesn't clip at edge */
+  width: max-content;
   padding-right: 20px;
 }
 
@@ -125,13 +124,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 10px 14px;
+  padding: 12px 12px;
   cursor: pointer;
   transition: all 0.2s ease;
   white-space: nowrap;
-  gap: 6px;
+  gap: 3px;
   min-width: 80px;
-  min-height: 72px;
+  max-height: 59px;
   flex-shrink: 0;
 
   .icon-container {
@@ -143,15 +142,13 @@
     flex-shrink: 0;
 
     img {
-      width: 24px;
-      height: 24px;
       object-fit: contain;
     }
   }
 
   .item-title {
-    font-size: 13px;
-    font-weight: 500;
+    font-size: 12px;
+    font-weight: 400;
     line-height: 120%;
     color: #000000;
     white-space: nowrap;
@@ -167,19 +164,14 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 10px 14px;
+  padding: 12px 12px;
   cursor: pointer;
   transition: all 0.2s ease;
   white-space: nowrap;
-  gap: 6px;
+  gap: 3px;
   min-width: 80px;
-  min-height: 72px;
+  max-height: 59px;
   flex-shrink: 0;
-
-  &:hover {
-    opacity: 0.9;
-    transform: translateY(-1px);
-  }
 
   .icon-container {
     display: flex;
@@ -190,15 +182,13 @@
     flex-shrink: 0;
 
     img {
-      width: 24px;
-      height: 24px;
       object-fit: contain;
     }
   }
 
   .item-title {
-    font-size: 13px;
-    font-weight: 500;
+    font-size: 12px;
+    font-weight: 400;
     line-height: 120%;
     color: #ffffff;
     white-space: nowrap;

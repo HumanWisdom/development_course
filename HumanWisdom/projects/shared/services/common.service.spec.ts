@@ -40,6 +40,7 @@ describe('CommonService', () => {
   afterEach(() => {
     httpMock.verify();
     localStorage.clear();
+    sessionStorage.clear();
   });
 
   describe('Service Initialization', () => {
@@ -1163,9 +1164,25 @@ describe('CommonService', () => {
       expect(service.hasSeenInPageOlly()).toBe(false);
     });
 
-    it('should not treat legacy true as shown today', () => {
+    it('should treat legacy true as already shown and persist today', () => {
       localStorage.setItem('olly_today_dialogue_shown', 'true');
-      expect(service.hasSeenInPageOlly()).toBe(false);
+      expect(service.hasShownOllyBubbleToday()).toBe(true);
+      expect(service.hasSeenInPageOlly()).toBe(true);
+      expect(service.shouldShowFooterBubble()).toBe(false);
+    });
+
+    it('should skip bubble after refresh using sessionStorage', () => {
+      service.markOllyBubbleShownToday();
+      localStorage.clear();
+      expect(service.hasShownOllyBubbleToday()).toBe(true);
+      expect(service.shouldShowFooterBubble()).toBe(false);
+    });
+
+    it('should skip bubble after refresh using localStorage if session is empty', () => {
+      service.markOllyBubbleShownToday();
+      sessionStorage.clear();
+      expect(service.hasShownOllyBubbleToday()).toBe(true);
+      expect(service.shouldShowFooterBubble()).toBe(false);
     });
   });
 

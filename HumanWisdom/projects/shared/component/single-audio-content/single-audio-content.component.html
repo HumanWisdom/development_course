@@ -49,12 +49,12 @@
 
               <div class="row" *ngIf="enableTextContent">
                 <!-- <p class="txt1 mt40px mb30px"> -->
-                    <div class="row tcenter" (click)="readText('Back To Audio')"
+                    <div class="row tcenter read-text-row" (click)="readText('Back To Audio')"
                 (keydown.enter)="readText('Back To Audio')" tabindex="0"
-                *ngIf="audioLink !== '' && textContent !== ''">
+                *ngIf="audioLink !== '' && hasTranscript">
                 <!-- <p class="txt1 mt40px mb30px"> -->
-                <a class="">
-                  <h6 class="fs_15px fw_400 lh_140p  underline mtb10px" [ngClass]="isAdults ? 'fc_D7586B' : 'fc_ee9596'">
+                <a class="read-text-link">
+                  <h6 class="fs_15px fw_400 lh_140p underline mtb10px read-text-label" [ngClass]="isAdults ? 'fc_D7586B' : 'fc_ee9596'">
                     {{'Back To Audio' }} </h6>
                 </a>
                 <!-- </p> -->
@@ -93,12 +93,12 @@
 
                 </div>
               </div>
-              <div class="row tcenter" (click)="readText('Read text')"
+              <div class="row tcenter read-text-row" (click)="readText('Read text')"
                 (keydown.enter)="readText( 'Read text')" tabindex="0"
-                *ngIf="audioLink !== '' && textContent !== '' && !enableTextContent">
+                *ngIf="audioLink !== '' && hasTranscript && !enableTextContent">
                 <!-- <p class="txt1 mt40px mb30px"> -->
-                <a class="">
-                  <h6 class="fs_15px fw_400 lh_140p underline mtb10px" [ngClass]="isAdults ? 'fc_D7586B' : 'fc_ee9596'">
+                <a class="read-text-link">
+                  <h6 class="fs_15px fw_400 lh_140p underline mtb10px read-text-label" [ngClass]="isAdults ? 'fc_D7586B' : 'fc_ee9596'">
                     {{'Read text'}} </h6>
                 </a>
                 <!-- </p> -->

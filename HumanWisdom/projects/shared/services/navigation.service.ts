@@ -211,23 +211,23 @@ export class NavigationService {
     
     const category = match[1];
     const baseUrl = `/${segments[1]}`; // /adults or /teenagers
-    const findAnswersUrl = `${baseUrl}/find-answers`;
-    const categoryUrl = `${findAnswersUrl}/${category}`;
+    const searchUrl = `${baseUrl}/search`;
+    const categoryUrl = `${baseUrl}/find-answers/${category}`;
     
     try {
       // Use replaceState and go to create proper history stack
-      // This ensures back button goes: current → category → find-answers
-      this.location.replaceState(findAnswersUrl);
+      // This ensures back button goes: current → category → search
+      this.location.replaceState(searchUrl);
       this.location.go(categoryUrl);
       this.location.go(currentUrl);
 
       // Add these to internal history tracking
-      this.history.push(findAnswersUrl);
+      this.history.push(searchUrl);
       this.history.push(categoryUrl);
       this.history.push(currentUrl);
 
       console.log('[NavigationService] Injected Find Answers history:', {
-        stack: [findAnswersUrl, categoryUrl, currentUrl]
+        stack: [searchUrl, categoryUrl, currentUrl]
       });
     } catch (error) {
       console.error('[NavigationService] Error injecting Find Answers history:', error);
@@ -341,8 +341,22 @@ export class NavigationService {
     if (index !== -1) {
       this.history.splice(index + 1);
       const isGuidedJourneysListing = this.router.url.split('?')[0].endsWith('/guided-journeys');
+      const cleanUrl = this.router.url.split('?')[0];
+      const isFindAnswersListing = cleanUrl.endsWith('/find-answers/why-do-i') || cleanUrl.endsWith('/find-answers/how-can-i') || cleanUrl.endsWith('/find-answers') || cleanUrl.endsWith('/find-answers/index');
       if (isGuidedJourneysListing) {
         while (this.history.length > 0 && (this.history[this.history.length - 1].includes('/guided-journeys') || this.history[this.history.length - 1].includes('start-your-free-trial'))) {
+          this.history.pop();
+        }
+        url = this.history[this.history.length - 1];
+        this.backClicked = true;
+      } else if (isFindAnswersListing) {
+        while (this.history.length > 0 && (
+          this.history[this.history.length - 1].includes('/find-answers/why-do-i') ||
+          this.history[this.history.length - 1].includes('/find-answers/how-can-i') ||
+          this.history[this.history.length - 1].endsWith('/find-answers') ||
+          this.history[this.history.length - 1].includes('/find-answers/index') ||
+          this.history[this.history.length - 1].includes('start-your-free-trial')
+        )) {
           this.history.pop();
         }
         url = this.history[this.history.length - 1];
@@ -590,7 +604,7 @@ export class NavigationService {
       return segments.slice(0, -1).join('/');
     }
 
-    if (currentUrl.includes('/find-answers/')) {
+    if (currentUrl.includes('/find-answers')) {
       const lastSegment = segments[segments.length - 1];
       // Check if it's an answer page (ends with -a<number> or -a<number>-at)
       const isAnswerPage = /-a\d+(-at)?$/.test(lastSegment);
@@ -602,7 +616,7 @@ export class NavigationService {
           console.log(`Fallback: Find Answers Answer Page -> Category (${category})`);
           return `/${prefix}/find-answers/${category}`;
         }
-      } else if (lastSegment === 'why-do-i' || lastSegment === 'how-can-i') {
+      } else if (lastSegment === 'why-do-i' || lastSegment === 'how-can-i' || lastSegment === 'find-answers' || lastSegment === 'index') {
         // If on category page, go to search (matching adult behavior)
         console.log("Fallback: Find Answers Category -> Search");
         return `/${prefix}/search`;

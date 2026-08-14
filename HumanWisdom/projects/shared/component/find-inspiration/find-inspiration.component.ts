@@ -40,15 +40,15 @@ export class FindInspiration {
       {
         title: 'Feel better now',
         img: this.isAdults
-          ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/wellness.svg'
-          : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/fbn_like_teens.svg',
+          ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/feel_better_nowaug.svg'
+          : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/feelteen.svg',
         url: 'feel-better-now'
       },
       {
         title: 'Self-awareness',
         img: this.isAdults
-          ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/guided_journey.svg'
-          : 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/guided_journey_without_bg.svg',
+          ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/wellness.svg'
+          : 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/wellness_without_bg.svg',
         url: this.isAdults ? 'curated/self-awareness' : 'curated/self-awareness'
       },
       {
@@ -101,7 +101,7 @@ export class FindInspiration {
         title: 'Find answers',
         img: this.isAdults
           ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/answer1.svg'
-          : 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/find_ans_wihout_bg.svg',
+          : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/findansteen.svg',
         url: 'find-answers/why-do-i'
       },
       {

@@ -42,11 +42,10 @@ export class HowCanIA11AtPage implements OnInit {
   }
 
   defaultGoBack() {
-    // this.location.back()
     if (window.location.href.includes('teenagers')) {
-      this.router.navigate(['/teenagers/feel-better-now']);
+      this.router.navigate(['/teenagers/find-answers/how-can-i']);
     } else {
-      this.router.navigate(['/adults/feel-better-now']);
+      this.router.navigate(['/adults/find-answers/how-can-i']);
     }
   }
 }
