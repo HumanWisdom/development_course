@@ -94,10 +94,6 @@ export class AllStoriesPage implements OnInit {
     const sid = obj.ScenarioID;
     const isGuest = !(res && res === 'T');
     const isGuestFree = (sid == 42 || sid == 1);
-    if (isGuest && !isGuestFree) {
-      this.router.navigateByUrl(`/${SharedService.getprogramName()}/subscription/start-your-free-trial`);
-      return;
-    }
     const canProceed = enable || (isGuest && isGuestFree);
     if(canProceed) {
       localStorage.setItem("story",JSON.stringify(obj))
@@ -109,7 +105,7 @@ export class AllStoriesPage implements OnInit {
       } else {
         this.routeToViewStories();
       }
-    } else if (!this.isSubscriber) {
+    } else if (!this.isSubscriber || isGuest) {
       this.showModal = true;
     }
   }
