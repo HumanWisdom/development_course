@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SharedService } from '../../services/shared.service';
 import { HttpClient } from '@angular/common/http';
@@ -18,12 +18,14 @@ export class SingleAudioContentComponent implements OnInit {
   yellow = "#FFC455"
   @Input() audioLink = ""
   @Input() audioTitle = ''
-  mediaAudio = JSON.parse(localStorage.getItem("mediaAudio"))
+  mediaAudio: any = '';
   imageUrl = '';
   enableImage = true;
   isAdults = false;
   enableTextContent = false;
-  textContent = "";
+  textContent: SafeHtml | string = "";
+  /** Explicit flag — SafeHtml objects break `textContent !== ''` checks on some WebViews */
+  hasTranscript = false;
   audioLinkUrl = "";
   rowId: number = 0
   moduleName: any = ''
@@ -31,15 +33,25 @@ export class SingleAudioContentComponent implements OnInit {
   isFree: any = ''
   isSoundscapes: boolean = false;
 
-  constructor(private route: ActivatedRoute, private router: Router, private http: HttpClient, 
-     private location: Location, private navigationService: NavigationService, 
-    private service: CommonService, private sanitizer: DomSanitizer) {
-    // ;
-    const audioUrl = decodeURIComponent(this.route.snapshot.paramMap.get('audiolink'))
-    this.audioLink = this.mediaAudio + audioUrl.replace(/\~/g, '/');
-    this.audioLinkUrl = audioUrl.replace(/\~/g, '/');;
+  constructor(private route: ActivatedRoute, private router: Router, private http: HttpClient,
+     private location: Location, private navigationService: NavigationService,
+    private service: CommonService, private sanitizer: DomSanitizer,
+    private cdr: ChangeDetectorRef) {
+    try {
+      const rawMedia = localStorage.getItem("mediaAudio");
+      this.mediaAudio = rawMedia ? JSON.parse(rawMedia) : '';
+    } catch {
+      this.mediaAudio = localStorage.getItem("mediaAudio") || '';
+    }
+
+    const audioUrl = decodeURIComponent(this.route.snapshot.paramMap.get('audiolink') || '');
+    let path = audioUrl.replace(/\~/g, '/');
+    if (path && !path.startsWith('/')) {
+      path = '/' + path;
+    }
+    this.audioLink = (this.mediaAudio || '') + path;
+    this.audioLinkUrl = path;
     this.audioTitle = this.route.snapshot.paramMap.get('title');
-    this.callText();
     if (this.audioTitle) {
       this.audioTitle = decodeURIComponent(this.audioTitle).replace(/-/g, ' ');
     }
@@ -60,6 +72,9 @@ export class SingleAudioContentComponent implements OnInit {
         this.imageUrl = `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/podcast/${Id}.webp`;
     }
 
+    // Load transcript after route params (incl. moduleName) are set
+    this.callText();
+
     let m: any = window.location.href;
     if (m.includes('introduction_to_happierme')) {
       this.enableImage = false
@@ -69,7 +84,6 @@ export class SingleAudioContentComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.isAdults = SharedService.program
       if (SharedService.ProgramId == ProgramType.Adults) {
           this.isAdults = true;
         } else {
@@ -84,22 +98,33 @@ export class SingleAudioContentComponent implements OnInit {
     } else {
       this.enableTextContent = false;
     }
-
-
   }
 
   callText() {
+    if (!this.audioLinkUrl) return;
+
     let spt = this.audioLinkUrl.lastIndexOf('/');
     let url = this.audioLinkUrl.slice(spt + 1, this.audioLinkUrl.length);
     let s3 = this.audioLinkUrl.slice(1, spt);
     let s3Trans = s3.replace('audios', 'transcripts');
 
-    const extensions = ['txt', 'md'];
+    const isPodcast =
+      (this.moduleName && String(this.moduleName).toLowerCase() === 'podcast') ||
+      this.audioLinkUrl.toLowerCase().includes('podcast');
+
+    const extensions = isPodcast ? ['md', 'txt'] : ['txt', 'md'];
     let directories = [s3Trans];
 
-    if (this.moduleName === 'podcast' || this.audioLinkUrl.includes('podcasts')) {
+    if (isPodcast) {
       if (!s3Trans.includes('transcripts')) {
         directories.push(s3Trans + '/transcripts');
+      }
+      // Common podcast transcript locations
+      if (!directories.includes('podcasts/transcripts')) {
+        directories.push('podcasts/transcripts');
+      }
+      if (!directories.includes('podcast/transcripts')) {
+        directories.push('podcast/transcripts');
       }
     }
 
@@ -115,11 +140,17 @@ export class SingleAudioContentComponent implements OnInit {
 
     let dir = directories[dIdx];
     let ext = extensions[eIdx];
-    let fileName = url.replace('mp3', ext);
+    let fileName = url.replace(/\.?mp3$/i, '.' + ext).replace(/\.\./g, '.');
+    if (!fileName.includes('.')) {
+      fileName = url.replace('mp3', ext);
+    }
 
     this.service.GetAudioTranscript({ "S3Directory": dir + '/', "FileName": fileName }).subscribe((res) => {
-      if (res && res !== "" && res.length > 10) {
-        this.textContent = this.parseMarkdown(res);
+      const raw = this.normalizeTranscriptResponse(res);
+      if (raw && raw.length > 10) {
+        this.textContent = this.parseMarkdown(raw);
+        this.hasTranscript = true;
+        this.cdr.detectChanges();
       } else {
         this.advanceDiscovery(directories, url, extensions, dIdx, eIdx);
       }
@@ -128,12 +159,72 @@ export class SingleAudioContentComponent implements OnInit {
     });
   }
 
+  normalizeTranscriptResponse(res: any): string {
+    if (res == null) return '';
+    if (typeof res === 'string') return res;
+    if (typeof res === 'object') {
+      return (
+        res.Content ||
+        res.content ||
+        res.Transcript ||
+        res.transcript ||
+        res.Text ||
+        res.text ||
+        res.Data ||
+        res.data ||
+        ''
+      );
+    }
+    return String(res);
+  }
+
   advanceDiscovery(directories, url, extensions, dIdx, eIdx) {
     if (eIdx < extensions.length - 1) {
       this.tryNextTranscript(directories, url, extensions, dIdx, eIdx + 1);
     } else if (dIdx < directories.length - 1) {
       this.tryNextTranscript(directories, url, extensions, dIdx + 1, 0);
+    } else {
+      // API can fail on iOS (auth/token); load transcript from CDN as last resort
+      this.tryCdnTranscriptFallback(directories, url, extensions);
     }
+  }
+
+  tryCdnTranscriptFallback(directories: string[], url: string, extensions: string[]) {
+    const base =
+      (typeof this.mediaAudio === 'string' && this.mediaAudio) ||
+      'https://d1tenzemoxuh75.cloudfront.net/';
+
+    const cdnBase = base.endsWith('/') ? base.slice(0, -1) : base;
+    const candidates: string[] = [];
+
+    for (const dir of directories) {
+      for (const ext of extensions) {
+        let fileName = url.replace(/\.?mp3$/i, '.' + ext).replace(/\.\./g, '.');
+        if (!fileName.includes('.')) {
+          fileName = url.replace('mp3', ext);
+        }
+        candidates.push(`${cdnBase}/${dir}/${fileName}`);
+      }
+    }
+
+    this.fetchCdnTranscript(candidates, 0);
+  }
+
+  fetchCdnTranscript(candidates: string[], idx: number) {
+    if (idx >= candidates.length || this.hasTranscript) return;
+
+    this.http.get(candidates[idx], { responseType: 'text' }).subscribe(
+      (raw) => {
+        if (raw && raw.length > 10) {
+          this.textContent = this.parseMarkdown(raw);
+          this.hasTranscript = true;
+          this.cdr.detectChanges();
+        } else {
+          this.fetchCdnTranscript(candidates, idx + 1);
+        }
+      },
+      () => this.fetchCdnTranscript(candidates, idx + 1)
+    );
   }
 
 
@@ -154,7 +245,6 @@ export class SingleAudioContentComponent implements OnInit {
   setAudioControlsBackground() {
     const backgroundColor = this.isAdults ? '#FFE8BB' : '#0C2B5F';
 
-    // Create a new <style> element
     const style = document.createElement('style');
     style.textContent = `
     audio::-webkit-media-controls-enclosure {
@@ -162,14 +252,12 @@ export class SingleAudioContentComponent implements OnInit {
     }
   `;
 
-    // Append the <style> element to the document head
     document.head.appendChild(style);
   }
 
   parseMarkdown(text: string): any {
     if (!text) return '';
-    
-    // Convert bullet points (- or *) to list items
+
     let lines = text.split('\n');
     let result = '';
     let inList = false;
@@ -177,7 +265,6 @@ export class SingleAudioContentComponent implements OnInit {
     for (let line of lines) {
       let trimmed = line.trim();
 
-      // Horizontal rule: lines that are exactly ---
       if (trimmed === '---') {
         if (inList) {
           result += '</ul>';
@@ -208,15 +295,31 @@ export class SingleAudioContentComponent implements OnInit {
     }
     if (inList) result += '</ul>';
 
-    // Bold + italic (***text***) — must be replaced before bold and italic individually
+    // Markdown links [label](url) — before emphasis replaces brackets
+    result = result.replace(
+      /\[([^\]]+)\]\((https?:\/\/[^)\s]+|www\.[^)\s]+)\)/g,
+      '<a href="$2" target="_blank" rel="noopener noreferrer" class="transcript-link">$1</a>'
+    );
+
+    // Autolink bare URLs not already inside an href/attribute
+    result = result.replace(
+      /(^|[^"'>])(https?:\/\/[^\s<]+)/g,
+      '$1<a href="$2" target="_blank" rel="noopener noreferrer" class="transcript-link">$2</a>'
+    );
+
+    // Autolink bare domains (e.g. happierme.app) used in podcast transcripts
+    result = result.replace(
+      /(^|[^"'>\/=])((?:[a-zA-Z0-9-]+\.)+(?:app|com|org|net|io|co|me|uk)(?:\/[^\s<]*)?)/g,
+      (match, prefix, domain) => {
+        if (prefix.endsWith('://') || prefix === '@') return match;
+        return `${prefix}<a href="https://${domain}" target="_blank" rel="noopener noreferrer" class="transcript-link">${domain}</a>`;
+      }
+    );
+
     result = result.replace(/\*\*\*(.*?)\*\*\*/g, '<strong><em>$1</em></strong>');
-
-    // Bold text (**text**)
     result = result.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-
-    // Italic text (*text*) — single asterisk, not part of ** or ***
     result = result.replace(/\*([^*]+?)\*/g, '<em>$1</em>');
-    
+
     return this.sanitizer.bypassSecurityTrustHtml(result);
   }
 
