@@ -55,9 +55,9 @@ export class SingleAudioContentComponent implements OnInit {
       this.isSoundscapes = true;
     }
     if( this.moduleName && this.moduleName != 'undefined') {
-      this.imageUrl = `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/${this.moduleName.toLowerCase()}/${Id}.webp`;
+      this.imageUrl = `https://d1tenzemoxuh75.cloudfront.net/assets/webp/${this.moduleName.toLowerCase()}/${Id}.webp`;
     }else{
-        this.imageUrl = `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/podcast/${Id}.webp`;
+        this.imageUrl = `https://d1tenzemoxuh75.cloudfront.net/assets/webp/podcast/${Id}.webp`;
     }
 
     let m: any = window.location.href;
