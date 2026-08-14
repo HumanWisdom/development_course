@@ -559,12 +559,15 @@
       background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%) !important;
       border: none !important;
       border-radius: 30px !important;
-      padding: 14px 30px !important;
+      padding: 10px 30px !important;
       color: #ffffff !important;
       font-size: 15px !important;
       font-weight: 600 !important;
       width: 100% !important;
      
+      &:hover{
+        background: linear-gradient(180deg, #D7586B 0%, #BE3B4F 100%) !important;
+      }
     }
 
     /* Continue your journey — same filled style (explicit alias) */
@@ -577,11 +580,15 @@
       background: transparent !important;
       border: 1.5px solid rgba(0, 0, 0, 0.25) !important;
       border-radius: 30px !important;
-      padding: 13px 30px !important;
+      padding: 10px 30px !important;
       color: #000000 !important;
       font-size: 15px !important;
       font-weight: 600 !important;
       width: 100% !important;
+
+      &:hover{
+        background: #FFD889 !important;
+      }
     }
   }
 }
@@ -1169,12 +1176,20 @@
 
     .guided-journey-btn-new {
       background: linear-gradient(180deg, #EE9596 0%, #F17071 100%) !important;
+
+      &:hover{
+        background: linear-gradient(180deg, #F17071 0%, #DE6768 100%) !important;
+      }
     }
 
     .guided-journey-btn-begin-outline {
       background: transparent !important;
       border-color: rgba(255, 255, 255, 0.35) !important;
       color: #ffffff !important;
+
+      &:hover{
+        background: #0C2B5F !important;
+      }
     }
   }
 

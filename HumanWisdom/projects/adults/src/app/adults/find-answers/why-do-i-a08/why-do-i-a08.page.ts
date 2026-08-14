@@ -1,3 +1,4 @@
+import { NavigationService } from '../../../../../../shared/services/navigation.service';
 import { Component, OnInit, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
@@ -15,7 +16,7 @@ export class WhyDoIA08Page implements OnInit, AfterViewInit {
   @ViewChild('enablepopup') enablepopup!: ElementRef;
   @ViewChild('audio') audio!: ElementRef<HTMLAudioElement>;
 
-  constructor(private location: Location, private router: Router) {}
+  constructor(private location: Location, private router: Router, private navigationService: NavigationService) {}
 
   ngOnInit() {
     this.setAudioControlsBackground();
@@ -48,7 +49,12 @@ export class WhyDoIA08Page implements OnInit, AfterViewInit {
   }
 
   goBack() {
-    this.router.navigate(['/adults/find-answers/why-do-i']);
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
+      this.location.back();
+    } else {
+      this.router.navigate([url]);
+    }
   }
 
   setAudioControlsBackground() {
