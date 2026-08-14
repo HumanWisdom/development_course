@@ -288,8 +288,14 @@ a {
   pointer-events: none;
 }
 
-/* Shrink thumbnail column to image width so title sits closer (all viewports;
-   on narrow phones 33% ≈ thumb size so layout stays the same) */
+.toc_adiv,
+.toc_adiv_02,
+.toc_adiv_04 {
+  width: 100%;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
 .toc_adiv_02 a > .row,
 .toc_adiv a > .row {
   padding: 10px !important;
