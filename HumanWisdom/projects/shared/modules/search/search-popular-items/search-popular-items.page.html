@@ -1075,7 +1075,7 @@
                       </div>
                     </div>
 
-                    <div class="toc_adiv" *ngIf="searchData && searchData.ModuleRes && searchData.ModuleRes.length > 0">
+                    <div class="toc_adiv row" *ngIf="searchData && searchData.ModuleRes && searchData.ModuleRes.length > 0">
                       <!-- video row -->
                       <a (click)="routemodule(item)" *ngFor="let item of searchData.ModuleRes; let i=index">
                         <div class="row p10px">
