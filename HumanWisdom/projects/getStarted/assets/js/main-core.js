@@ -21,9 +21,17 @@
     if (typeof window.jQuery !== "undefined") {
         jQuery(document).ready(function ($) {
             $("#toggle").click(function () {
-                $("#toggle").text() === "View More"
-                    ? ($("#toggle").text("View Less"), $("#text").slideDown())
-                    : ($("#toggle").text("View More"), $("#text").slideUp());
+                var $btn = $("#toggle");
+                var $label = $btn.find(".toggle-label");
+                if ($label.length) {
+                    var expanding = $label.text().trim() === "View More";
+                    $label.text(expanding ? "View Less" : "View More");
+                    expanding ? $("#text").slideDown() : $("#text").slideUp();
+                    return;
+                }
+                $btn.text() === "View More"
+                    ? ($btn.text("View Less"), $("#text").slideDown())
+                    : ($btn.text("View More"), $("#text").slideUp());
             });
         });
     }
