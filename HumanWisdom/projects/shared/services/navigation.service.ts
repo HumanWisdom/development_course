@@ -336,7 +336,15 @@ export class NavigationService {
       return returnUrl;
     }
 
-    const index = this.history.lastIndexOf(this.router.url);
+    const currentUrlDecoded = decodeURIComponent(this.router.url);
+    let index = -1;
+    for (let i = this.history.length - 1; i >= 0; i--) {
+      const hDecoded = decodeURIComponent(this.history[i]);
+      if (hDecoded === currentUrlDecoded || hDecoded.split('?')[0] === currentUrlDecoded.split('?')[0]) {
+        index = i;
+        break;
+      }
+    }
     let url;
     if (index !== -1) {
       this.history.splice(index + 1);
@@ -506,8 +514,13 @@ export class NavigationService {
       return `/${prefix}/soundscapes`;
     }
     if (hasSoundscapes) {
-      console.log("Fallback: Soundscapes Listing -> Search");
-      return `/${prefix}/search`;
+      const navFrom = SharedService.getDataFromLocalStorage('NaviagtedFrom');
+      if (navFrom && navFrom != null && navFrom != 'null' && !navFrom.includes('soundscapes') && !navFrom.includes('start-your-free-trial')) {
+        console.log("Fallback: Soundscapes Listing -> " + navFrom);
+        return navFrom;
+      }
+      console.log("Fallback: Soundscapes Listing -> Dashboard");
+      return SharedService.getDashboardUrls();
     }
 
     // 15. Podcast: Inner -> Listing -> Search
@@ -665,7 +678,7 @@ export class NavigationService {
         // Perform routing logic to the popped path
         prevPath = this.history[this.history.length - 1];
         //special handling for module screens 
-        if (prevPath.includes('/s') && prevPath.includes(this.history[this.history.length - 1])) {
+        if (/\/s\d+/.test(prevPath) && prevPath.includes(this.history[this.history.length - 1])) {
           this.history.pop();
         }
 
