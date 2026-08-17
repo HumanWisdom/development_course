@@ -612,10 +612,13 @@
         margin-top: 0;
         padding-top: 10px;
         background-color: #183C79;
+        min-height: calc(100vh - 65px);
     }
 
     .autocomplete-list {
-        max-height: calc(100vh - 90px) !important;
+        max-height: calc(100vh - 75px) !important;
+        height: calc(100vh - 75px) !important;
+        min-height: calc(100vh - 75px) !important;
         overflow-y: auto !important;
         overscroll-behavior: contain;
         border-radius: 0;
