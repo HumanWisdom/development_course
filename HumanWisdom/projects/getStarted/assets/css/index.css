@@ -1905,6 +1905,19 @@ body.page-work .work-blog-section {
   flex-direction: column;
   align-items: stretch;
   gap: 50px;
+  padding-bottom: 80px !important;
+}
+
+@media (min-width: 768px) {
+  body.page-work .work-blog-section {
+    padding-bottom: 80px !important;
+    margin-bottom: 0 !important;
+  }
+
+  body.page-work main#main .dfooter,
+  body.page-work .dfooter {
+    margin-top: 0 !important;
+  }
 }
 
 body.page-work .work-blog-section .work-blog-header,
