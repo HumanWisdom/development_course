@@ -2,6 +2,7 @@ import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Location } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LogEventService } from '../../../../../../shared/services/log-event.service'; 
+import { NavigationService } from '../../../../../../shared/services/navigation.service';
 import { linkRadial } from 'd3-shape';
 import { SharedService } from '../../../../../../shared/services/shared.service';
 import { ProgramType } from '../../../../../../shared/models/program-model';
@@ -19,7 +20,8 @@ export class IndexPage implements OnInit {
   defaultUrl = 'how-can-i';
   activeClass = 'active';
   constructor(private location: Location, private router:Router,
-    private activatedRoute: ActivatedRoute,  public logeventservice: LogEventService) {
+    private activatedRoute: ActivatedRoute,  public logeventservice: LogEventService,
+    private navigationService: NavigationService) {
    var data = this.activatedRoute.snapshot.paramMap.get('url');
     if(data != null){
       this.defaultUrl= data;
@@ -52,9 +54,12 @@ export class IndexPage implements OnInit {
 
   goBack() 
   {
-    // this.location.back()
-    this.router.navigate(["/adults/search"])
-
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
+      this.location.back();
+    } else {
+      this.router.navigate([url]);
+    }
   } 
 
   routeToTab(param){

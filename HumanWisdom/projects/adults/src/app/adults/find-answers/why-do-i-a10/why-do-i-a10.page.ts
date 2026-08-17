@@ -1,3 +1,4 @@
+import { NavigationService } from '../../../../../../shared/services/navigation.service';
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
@@ -18,7 +19,7 @@ export class WhyDoIA10Page implements OnInit {
 
   @ViewChild('enablepopup') enablepopup: ElementRef;
 
-  constructor(private location: Location, private router:Router) { }
+  constructor(private location: Location, private router:Router, private navigationService: NavigationService) { }
 
   ngOnInit() {
     let userid = localStorage.getItem('isloggedin');
@@ -38,11 +39,13 @@ export class WhyDoIA10Page implements OnInit {
     }
   }
 
-  goBack() 
-  {
-    // this.location.back()
-    this.router.navigate(["/adults/find-answers/why-do-i"])
-
+  goBack() {
+    var url = this.navigationService.navigateToBackLink();
+    if (url == null) {
+      this.location.back();
+    } else {
+      this.router.navigate([url]);
+    }
   }
 
   handleMiniPodcastClick() {
