@@ -569,7 +569,7 @@
       <div class="row center_flex blog_links">
         <div class="col-lg-10 col-md-10 col-sm-10 col-10 col-xs-10 p0">
 
-        <!--   <div class="blog-filter-bar-wrap">
+          <div class="blog-filter-bar-wrap">
             <div class="blog-filter-bar" id="blog-filter-bar">
               <button type="button" class="blog-filter-tag is-active" data-filter="all" data-title="All">All</button>
               <button type="button" class="blog-filter-tag" data-filter="mental-health" data-title="Mental Health">Mental health</button>
@@ -588,7 +588,7 @@
               </form>
             </div>
             <h2 class="blog-filter-heading is-hidden" id="blog-filter-heading"></h2>
-          </div> -->
+          </div>
 
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0" data-aos="fade-up" data-aos-delay="200">
             <a class="" href="10_ways_understanding_your_mind_could_transform_your_life.php">
