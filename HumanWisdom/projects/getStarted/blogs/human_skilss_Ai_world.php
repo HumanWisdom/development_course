@@ -90,19 +90,19 @@ th{
 
  <h4 class="mtb0px blog_desc">AI can provide information, but it cannot truly understand who we are or what drives our choices.</h4>
 
- <h4 class="mtb0px blog_desc">54% of employers say graduates fall short of expectations in self-awareness. (<a class="blog_highlight_peach td_underline" href="https://ise.org.uk/knowledge/insights/416/employers_concerned_student_use_of_ai_misrepresents_skills/">Reference</a>)</h4>
+ <h4 class="mtb0px blog_desc">54% of employers say graduates fall short of expectations in self-awareness. <a class="blog_highlight_peach td_underline" href="https://ise.org.uk/knowledge/insights/416/employers_concerned_student_use_of_ai_misrepresents_skills/">(Reference)</a></h4>
 
  <h4 class="mtb0px blog_desc">People with greater self-awareness are better equipped to manage stress, make thoughtful decisions, build stronger relationships, and lead effectively.</h4>
 
  <h4 class="mtb0px blog_desc">In a rapidly changing world, knowing yourself becomes a competitive advantage.</h4>
 
- <h4 class="mtb0px blog_desc">Explore the HappierMe <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/home#self-awareness">Self-awareness</a> section</h4>
+ <h4 class="mtb0px blog_desc">Explore the HappierMe <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/explore#self-awareness">Self-awareness</a> section</h4>
 
  <h4 class="mtb0px blog_sub_title">2. Emotional Intelligence</h4>
 
  <h4 class="mtb0px blog_desc">Success in life is often determined by how well we manage emotions, not simply by how much we know.</h4>
 
- <h4 class="mtb0px blog_desc">71% of employers say they value emotional intelligence more than IQ. (<a class="blog_highlight_peach td_underline" href="https://www.hrreporter.com/news/hr-news/71-per-cent-of-employers-value-emotional-intelligence-over-iq/284219">Reference</a>)</h4>
+ <h4 class="mtb0px blog_desc">71% of employers say they value emotional intelligence more than IQ. <a class="blog_highlight_peach td_underline" href="https://www.hrreporter.com/news/hr-news/71-per-cent-of-employers-value-emotional-intelligence-over-iq/284219">(Reference)</a></h4>
 
  <h4 class="mtb0px blog_desc">Emotional intelligence helps us recognise emotions, respond rather than react, navigate challenges, communicate effectively, and maintain healthy relationships.</h4>
 
@@ -118,7 +118,7 @@ th{
 
  <h4 class="mtb0px blog_desc">The challenge is knowing whether those answers are accurate, ethical, relevant, or complete.</h4>
 
- <h4 class="mtb0px blog_desc">Around 70% of employers rank analytical thinking as an essential workplace skill. (<a class="blog_highlight_peach td_underline" href="https://www.weforum.org/publications/the-future-of-jobs-report-2025/in-full/3-skills-outlook/">Reference</a>)</h4>
+ <h4 class="mtb0px blog_desc">Around 70% of employers rank analytical thinking as an essential workplace skill. <a class="blog_highlight_peach td_underline" href="https://www.weforum.org/publications/the-future-of-jobs-report-2025/in-full/3-skills-outlook/">(Reference)</a></h4>
 
  <h4 class="mtb0px blog_desc">People need to question assumptions, evaluate evidence, recognise bias, and think independently.</h4>
 
@@ -192,7 +192,7 @@ th{
 
  <h4 class="mtb0px blog_desc">Yet these skills are rarely taught explicitly in education or workplace training.</h4>
 
- <h4 class="mtb0px blog_desc">Nearly half (48%) of workplace skills gaps identified by UK employers involve teamwork skills, while 44% involve difficulties managing emotions and relationships with others. (<a class="blog_highlight_peach td_underline" href="https://www.dropbox.com/scl/fi/k0yawj6zuw4wu2kyolhc8/Employer_Skills_Survey_2024_UK_report.pdf">Reference</a>)</h4>
+ <h4 class="mtb0px blog_desc">Nearly half (48%) of workplace skills gaps identified by UK employers involve teamwork skills, while 44% involve difficulties managing emotions and relationships with others. <a class="blog_highlight_peach td_underline" href="https://www.dropbox.com/scl/fi/k0yawj6zuw4wu2kyolhc8/Employer_Skills_Survey_2024_UK_report.pdf">(Reference)</a></h4>
 
  <h4 class="mtb0px blog_desc">As AI takes over more individual tasks, our ability to work effectively with other human beings may become even more valuable.</h4>
 
