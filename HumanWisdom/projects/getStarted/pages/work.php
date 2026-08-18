@@ -217,16 +217,26 @@
               </div>
         
               <div class="row center_flex absolute_desc absolute_desc_m" data-aos="fade-up" data-aos-delay="500">
-                <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10 col-10 p0 tleft">
+                <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10 col-10 p0 tleft work-hero-stack">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 mt20px">
                     <h1 class="mtb0px fs_36px fw_600 lh_140p fc_ffffff">
-                      Boost workplace wellbeing, performance and productivity
+                      <span class="display_m_none">
+                        Boost workplace wellbeing, performance and productivity
+                      </span>
+                      <span class="display_d_none">
+                        HappierMe for the workplace
+                      </span>
                     </h1>
                   </div>
         
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 ">
                     <h5 class="mt20px mb35px fs_15px fw_400 lh_160p fc_ffffff">
-                      Upskill your staff to be happier, emotionally intelligent and make better decisions. An all-in-one app for mental health, relationships, better decision-making and soft skills.
+                      <span class="display_m_none">
+                        Upskill your staff to be happier, emotionally intelligent and make better decisions. An all-in-one app for mental health, relationships, better decision-making and soft skills.
+                      </span>
+                      <span class="display_d_none">
+                        Boost workplace wellbeing, performance and productivity, with HappierMe. Upskill your staff to be happier, emotionally intelligent and make better decisions. An all-in-one app for mental health, relationships, better decision-making and soft skills.
+                      </span>
                     </h5>
                   </div>
         
