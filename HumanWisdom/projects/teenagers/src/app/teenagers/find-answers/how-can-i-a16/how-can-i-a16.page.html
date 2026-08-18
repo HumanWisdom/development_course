@@ -3,7 +3,7 @@
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
       <a class="" (click)="goBack()">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
+        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
       </a>
     </div>
 
@@ -56,10 +56,13 @@
 
         
               <div class="row tcenter mt30px">
-                <div class="col-md-12 col-sm-12 col-xs-12 center_flex p0"  *ngIf="audioLink !== ''">
-                  <audio id="aud1" controls controlsList="nodownload" #audio >
+                <div class="col-md-12 col-sm-12 col-xs-12  p0"  >
+                 <!--  <audio id="aud1" controls controlsList="nodownload" #audio >
                     <source [src]="audioLink" type="audio/mpeg">
-                  </audio>
+                  </audio> -->
+                   <app-audio-player class="audio-test" 
+                          audioLink="https://d1tenzemoxuh75.cloudfront.net/teenagers/modules/find-answers/audios/1.1.mp3">
+                        </app-audio-player>
                 </div>
               </div>
 

@@ -3390,10 +3390,20 @@
 
   /* Work inspire inline links — Figma: rgba(215, 88, 107, 1), weight 500, no underline */
   body.page-work section.hpt120px ~ main#main .div_inspire a.fc_cb6171,
+  body.page-work section.hpt120px ~ main#main .div_inspire a.fc_cb6171:link,
+  body.page-work section.hpt120px ~ main#main .div_inspire a.fc_cb6171:visited,
   body.page-work section.hpt120px ~ main#main .div_inspire a.fc_cb6171 span,
   body.page-work section.hpt120px ~ main#main section .div_inspire a.fc_cb6171 {
     color: rgba(215, 88, 107, 1) !important;
     font-weight: 500 !important;
+    text-decoration: none !important;
+  }
+
+  body.page-work section.hpt120px ~ main#main .div_inspire a.fc_cb6171:hover,
+  body.page-work section.hpt120px ~ main#main .div_inspire a.fc_cb6171:focus,
+  body.page-work section.hpt120px ~ main#main .div_inspire a.fc_cb6171:hover span,
+  body.page-work section.hpt120px ~ main#main section .div_inspire a.fc_cb6171:hover {
+    color: rgb(128, 51, 88) !important;
     text-decoration: none !important;
   }
 
