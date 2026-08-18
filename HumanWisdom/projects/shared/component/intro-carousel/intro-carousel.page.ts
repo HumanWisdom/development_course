@@ -585,6 +585,9 @@ export class IntroCarouselPage implements OnInit, AfterViewInit, OnDestroy {
   }
 
   next() {
+    if (this.currentSection === 0) {
+      this.logeventservice.logEvent('click_onboarding1');
+    }
     this.currentSection++;
     if (this.currentSection >= 6) {
       this.currentSection = 0;
@@ -826,6 +829,9 @@ export class IntroCarouselPage implements OnInit, AfterViewInit, OnDestroy {
 
   Logevent(route, params, evtName) {
     if (evtName === 'click_next_onboarding') {
+      if (this.currentSection === 0) {
+        this.logeventservice.logEvent('click_onboarding1');
+      }
       this.currentSection++;
       if (this.currentSection >= 6) {
         this.currentSection = 0;
@@ -871,6 +877,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit, OnDestroy {
     localStorage.setItem('personalised', 'F');
     localStorage.setItem('fromlandingpage', 'F');
     this.logeventservice.logEvent('click_signup_email');
+    this.logeventservice.logEvent('email_signup_complete');
     this.logeventservice.logEvent('onboarding_complete');
     this.isOnboardingCompleted = true;
   }
@@ -893,6 +900,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit, OnDestroy {
 
   googleLogin(reqtype) {
     console.log('=== googleLogin called ===', reqtype);
+    this.logeventservice.logEvent('click_continuewithgoogle');
     if (reqtype == "signup")
       this.logeventservice.logEvent('click_signup_google');
     else
@@ -1096,6 +1104,7 @@ export class IntroCarouselPage implements OnInit, AfterViewInit, OnDestroy {
   }
 
   fbLogin(reqtype) {
+    this.logeventservice.logEvent('click_continuewithfacebook');
     if (reqtype == "signup")
       this.logeventservice.logEvent('click_signup_facebook');
     else
@@ -1198,11 +1207,13 @@ export class IntroCarouselPage implements OnInit, AfterViewInit, OnDestroy {
 
   private setUpLoginConfiguration(res: any, social = ''): void {
     if (social === 'facebook') {
+      this.logeventservice.logEvent('click_continuewithfacebook');
       this.logeventservice.logEvent('facebook_signup_complete');
       this.logeventservice.logEvent('onboarding_complete');
       this.isOnboardingCompleted = true;
     }
     if (social === 'google') {
+      this.logeventservice.logEvent('completed_googlesignin');
       this.logeventservice.logEvent('google_signup_complete');
       this.logeventservice.logEvent('onboarding_complete');
       this.isOnboardingCompleted = true;
@@ -1219,6 +1230,13 @@ export class IntroCarouselPage implements OnInit, AfterViewInit, OnDestroy {
       this.email = "";
       this.password = "";
     } else {
+      if (social === 'google') {
+        this.logeventservice.logEvent('completed_googlesignin');
+      } else if (social === 'facebook') {
+        this.logeventservice.logEvent('completed_facebooksignin');
+      } else if (social === '') {
+        this.logeventservice.logEvent('email_signin_completed');
+      }
       this.loginResponse = res;
       this.onservice.getuser(res.UserId).subscribe(userInfo => {
         if (userInfo) {

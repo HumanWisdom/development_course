@@ -80,8 +80,12 @@ export class PersonalisedForYouSearchPage implements OnInit {
   public isExpanded = true;
   public isGuidedJourneysExpanded = true;
   public isMicrolearningExpanded = true;
+  public isTeenTalkExpanded = true;
   public microlearningPreview: any[] = [];
   public guidedJourneyPreview: any[] = [];
+  public teenTalkAll: any[] = [];
+  public teenTalkPreview: any[] = [];
+  public teenTalkShowMore = false;
   wisdomExerciseList = [];
   mediaPercent: any
   freeScreens = []
@@ -108,6 +112,29 @@ export class PersonalisedForYouSearchPage implements OnInit {
   public isSearchActive: boolean = false;
   public isFreeTrialEnable: boolean = false;
   public showLearnPopup: boolean = false;
+  public showCrisisPopup: boolean = false;
+
+  private readonly CRISIS_KEYWORDS: string[] = [
+    'suicide', 'suicidal', 'kill myself', 'end my life', "don't want to live",
+    'want to die', 'self-harm', 'self harm', 'cutting', 'hurting myself',
+    'overdose', "there's no point", "i can't go on", 'nothing will change',
+    'no way out', 'i give up', 'kms', "i'm done", 'i want to end it',
+    "life isn't worth it", 'i want to kill myself'
+  ];
+
+  private containsCrisisKeyword(text: string): boolean {
+    if (!text) return false;
+    const lower = text.toLowerCase().trim();
+    return this.CRISIS_KEYWORDS.some(keyword => lower.includes(keyword));
+  }
+
+  closeCrisisPopup(): void {
+    this.showCrisisPopup = false;
+    this.searchinp = '';
+    this.isSearchActive = false;
+    this.commonService.setSearchActive(false);
+    this.toggleBodyScroll(false);
+  }
 
 
   constructor(private route: Router, public router: Router, private aservice: TeenagersService,
@@ -161,6 +188,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
     }
     this.GetWisdomScreens();
     this.getUserPreference();
+    this.loadTeenTalkPreview();
     this.loadMicrolearningPreview();
     this.loadGuidedJourneyPreview();
     this.isSubscribe = SharedService.isSubscriber();
@@ -205,6 +233,39 @@ export class PersonalisedForYouSearchPage implements OnInit {
     this.logeventservice.logEvent('click_microlearning_' + id);
     SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
     this.router.navigate(['/teenagers/micro-learning/inner', id]);
+  }
+
+  toggleTeenTalk() {
+    this.isTeenTalkExpanded = !this.isTeenTalkExpanded;
+  }
+
+  loadTeenTalkPreview() {
+    this.aservice.getTeenagerTalk().subscribe((res: any) => {
+      if (res && res.length) {
+        this.teenTalkAll = res;
+        this.teenTalkPreview = res.slice(0, 6);
+        this.teenTalkShowMore = false;
+      }
+    });
+  }
+
+  teenTalkViewMore() {
+    this.teenTalkPreview = this.teenTalkAll;
+    this.teenTalkShowMore = false;
+  }
+
+  routeToTeenTalk(data) {
+    this.logeventservice.logEvent('click_teenTalk_' + data.RowID);
+    this.commonService.clickTeenTalk(data.RowID).subscribe();
+    let sub: any = localStorage.getItem('Subscriber');
+    let id = data.RowID <= 9 ? '0' + data.RowID : data.RowID;
+    if (sub == 0 && data.isFree === '0') {
+      this.enableAlert = true;
+      this.isFreeTrialEnable = true;
+      return;
+    }
+    SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
+    this.route.navigate(['teenagers/videopage', `teenagers-teen_talk-videos-${id}.mp4`, 'T', data.Title]);
   }
 
   loadMicrolearningPreview() {
@@ -442,6 +503,10 @@ export class PersonalisedForYouSearchPage implements OnInit {
     })
   }
   getAutoCompleteList(value) {
+    if (this.containsCrisisKeyword(value)) {
+      this.showCrisisPopup = true;
+      return;
+    }
     if (this.moduleList.length > 0) {
       if (value == null || value == "") {
         this.searchResult = this.moduleList;
@@ -470,6 +535,10 @@ export class PersonalisedForYouSearchPage implements OnInit {
   }
 
   getinp(event) {
+    if (this.containsCrisisKeyword(event)) {
+      this.showCrisisPopup = true;
+      return;
+    }
     this.isSearchActive = false;
     this.commonService.setSearchActive(false);
     this.toggleBodyScroll(false);
@@ -837,6 +906,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
   onFocus() {
     this.isSearchActive = true;
     this.commonService.setSearchActive(true);
+    this.logeventservice.logEvent('teenager_click_search_learn');
     this.getModuleList(true);
     if (this.searchinp == '') {
       this.searchResult = this.moduleList;
@@ -1255,7 +1325,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
   }
 
   navigateToPathway(url) {
-    this.logeventservice.logEvent(url.split("/")[3].toString().substring(0,15));
+    this.logeventservice.logEvent('teenager_click_pathwaymodules');
 
     SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.route.url);
     this.route.navigate([url]);
@@ -1273,7 +1343,11 @@ export class PersonalisedForYouSearchPage implements OnInit {
   }
 
   logEvent(event, url) {
-    this.logeventservice.logEvent(event);
+    if (event === 'click_intro_pathway') {
+      this.logeventservice.logEvent('teenager_click_pathway');
+    } else {
+      this.logeventservice.logEvent(event);
+    }
     if(url != ''){
       SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
       this.route.navigate([url]);

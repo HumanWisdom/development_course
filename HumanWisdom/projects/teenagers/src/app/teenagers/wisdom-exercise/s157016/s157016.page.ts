@@ -253,15 +253,30 @@ export class S157016Page implements OnInit {
   }
 
   goBack() {
-    const fromMicroLearningEnd = localStorage.getItem('fromMicroLearningEnd');
-    if (fromMicroLearningEnd === 'true') {
-      const endUrl = localStorage.getItem('microLearningEndUrl');
-      if (endUrl) {
-        this.router.navigateByUrl(endUrl);
-        return;
-      }
-    }
-    this.location.back();
+    if(this.currentDay === 0 && this.slideStart === 1) {
+        const fromMicroLearningEnd = localStorage.getItem('fromMicroLearningEnd');
+        const microLearningEndUrl = localStorage.getItem('microLearningEndUrl');
+        if (fromMicroLearningEnd === 'true' && microLearningEndUrl) {
+          localStorage.removeItem('fromMicroLearningEnd');
+          localStorage.removeItem('microLearningEndUrl');
+          this.router.navigateByUrl(microLearningEndUrl);
+        } else {
+          // Navigate back to wherever the user came from (explore, today, etc.)
+          const navigatedFrom = localStorage.getItem('NaviagtedFrom');
+          if (navigatedFrom && navigatedFrom !== 'null') {
+            this.router.navigateByUrl(navigatedFrom);
+          } else {
+            this.router.navigate(['/teenagers/explore']);
+          }
+        }
+     }
+    else
+    {
+      
+      this.getdayevent('intro');
+      let carouselId = this.dayclass === 'intro' ? '#mdp_carousel_intro' : `#mdp_carousel_day${this.dayclass}`;
+        $(carouselId).carousel(0);
+    }  
   }
 
   changeType() {

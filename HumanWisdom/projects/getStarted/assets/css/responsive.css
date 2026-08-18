@@ -53,6 +53,88 @@
     min-height: 90px !important;
     box-sizing: border-box;
   }
+
+  /* Education: Figma mobile blog tile 306 × 242.54 */
+  body.page-education .owl_blog .div_blog {
+    width: 306px !important;
+    max-width: 306px !important;
+    height: 242.54px !important;
+    min-height: 242.54px !important;
+    max-height: 242.54px !important;
+  }
+  body.page-education .owl_blog .div_blog img {
+    height: 156.26px !important;
+    min-height: 156.26px !important;
+    max-height: 156.26px !important;
+  }
+  body.page-education .owl_blog .div_blog .row:last-child,
+  body.page-education .owl_blog .div_blog .row:last-child [class^="col-"] {
+    height: 86.28px !important;
+    min-height: 86.28px !important;
+    max-height: 86.28px !important;
+    padding: 20px !important;
+    padding-left: 20px !important;
+    box-sizing: border-box !important;
+  }
+  body.page-education .owl_blog .div_blog h4,
+  body.page-education .owl_blog .div_blog h4.fs_18px {
+    margin: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: 46px !important;
+    max-width: 265px !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    line-height: 150% !important;
+    letter-spacing: 0 !important;
+    text-align: left !important;
+  }
+
+  /* Work: Figma mobile blog tile 306 × 242.54 — Poppins 15 / 140% */
+  body.page-work .owl_blog .div_blog {
+    width: 306px !important;
+    max-width: 306px !important;
+    height: 242.54px !important;
+    min-height: 242.54px !important;
+    max-height: 242.54px !important;
+  }
+  body.page-work .owl_blog .div_blog img {
+    height: 156.26px !important;
+    min-height: 156.26px !important;
+    max-height: 156.26px !important;
+  }
+  body.page-work .owl_blog .div_blog .row:last-child,
+  body.page-work .owl_blog .div_blog .row:last-child [class^="col-"] {
+    height: 86.28px !important;
+    min-height: 86.28px !important;
+    max-height: 86.28px !important;
+    box-sizing: border-box !important;
+    text-align: left !important;
+  }
+  body.page-work .owl_blog .div_blog .row:last-child {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  body.page-work .owl_blog .div_blog .row:last-child [class^="col-"] {
+    padding: 20px !important;
+  }
+  body.page-work .owl_blog .div_blog h4,
+  body.page-work .owl_blog .div_blog h4.fs_18px,
+  body.page-work section.hpt120px ~ main#main .owl_blog .div_blog h4,
+  body.page-work section.hpt120px ~ main#main .owl_blog .div_blog h4.fs_18px {
+    margin: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: 42px !important;
+    max-width: 265px !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    line-height: 140% !important;
+    letter-spacing: 0 !important;
+    text-align: left !important;
+  }
 }
 
 /* Consistent blog card height on mobile */
@@ -77,6 +159,88 @@
     height: 90px !important;
     min-height: 90px !important;
     box-sizing: border-box;
+  }
+
+  /* Education: Figma mobile blog tile 306 × 242.54 */
+  body.page-education .owl_blog .div_blog {
+    width: 306px !important;
+    max-width: 306px !important;
+    height: 242.54px !important;
+    min-height: 242.54px !important;
+    max-height: 242.54px !important;
+  }
+  body.page-education .owl_blog .div_blog img {
+    height: 156.26px !important;
+    min-height: 156.26px !important;
+    max-height: 156.26px !important;
+  }
+  body.page-education .owl_blog .div_blog .row:last-child,
+  body.page-education .owl_blog .div_blog .row:last-child [class^="col-"] {
+    height: 86.28px !important;
+    min-height: 86.28px !important;
+    max-height: 86.28px !important;
+    padding: 20px !important;
+    padding-left: 20px !important;
+    box-sizing: border-box !important;
+  }
+  body.page-education .owl_blog .div_blog h4,
+  body.page-education .owl_blog .div_blog h4.fs_18px {
+    margin: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: 46px !important;
+    max-width: 265px !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    line-height: 150% !important;
+    letter-spacing: 0 !important;
+    text-align: left !important;
+  }
+
+  /* Work: Figma mobile blog tile 306 × 242.54 — Poppins 15 / 140% */
+  body.page-work .owl_blog .div_blog {
+    width: 306px !important;
+    max-width: 306px !important;
+    height: 242.54px !important;
+    min-height: 242.54px !important;
+    max-height: 242.54px !important;
+  }
+  body.page-work .owl_blog .div_blog img {
+    height: 156.26px !important;
+    min-height: 156.26px !important;
+    max-height: 156.26px !important;
+  }
+  body.page-work .owl_blog .div_blog .row:last-child,
+  body.page-work .owl_blog .div_blog .row:last-child [class^="col-"] {
+    height: 86.28px !important;
+    min-height: 86.28px !important;
+    max-height: 86.28px !important;
+    box-sizing: border-box !important;
+    text-align: left !important;
+  }
+  body.page-work .owl_blog .div_blog .row:last-child {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  body.page-work .owl_blog .div_blog .row:last-child [class^="col-"] {
+    padding: 20px !important;
+  }
+  body.page-work .owl_blog .div_blog h4,
+  body.page-work .owl_blog .div_blog h4.fs_18px,
+  body.page-work section.hpt120px ~ main#main .owl_blog .div_blog h4,
+  body.page-work section.hpt120px ~ main#main .owl_blog .div_blog h4.fs_18px {
+    margin: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: 42px !important;
+    max-width: 265px !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    line-height: 140% !important;
+    letter-spacing: 0 !important;
+    text-align: left !important;
   }
 }
 
@@ -1373,22 +1537,29 @@
     justify-content: center;
   }
 
-  /* Center Olly AI section content on mobile */
+  /* Center Olly AI section content on mobile — same 335px column as index-inline */
   .frame-wrapper-3 .div-11,
   .frame-wrapper-3 .div-12,
   .frame-wrapper-3 .div-5 {
     align-items: center;
     text-align: center;
+    width: 100%;
+    max-width: 335px;
+    margin-left: auto;
+    margin-right: auto;
   }
   .frame-wrapper-3 .introducing-olly-AI,
   .frame-wrapper-3 .text-wrapper-8 {
-    text-align: center;
+    text-align: center !important;
     width: 100%;
+    max-width: 335px;
+    margin-left: auto;
+    margin-right: auto;
   }
   .frame-wrapper-3 #OllyChatBtn {
     display: flex;
-    width: 335px;
-    max-width: 100%;
+    width: 100%;
+    max-width: 335px;
     margin-left: auto;
     margin-right: auto;
     align-self: center;
@@ -3023,6 +3194,217 @@
       background-image: none !important;
       color: #ffffff !important;
     }
+  }
+
+  /*
+   * Education blog (mobile): left-align card title; center “View all blogs”.
+   * Must be last — earlier rules center a[href*="blog"], .sap, .td_underline.
+   */
+  body.page-education .owl_blog a.item,
+  body.page-education .owl_blog .div_blog,
+  body.page-education .owl_blog .div_blog [class^="col-"],
+  body.page-education .owl_blog .div_blog h4 {
+    text-align: left !important;
+    justify-content: flex-start !important;
+  }
+
+  body.page-education .owl_blog .div_blog h4,
+  body.page-education .owl_blog .div_blog h4.fs_18px {
+    display: -webkit-box !important;
+    -webkit-box-orient: vertical !important;
+    width: 100% !important;
+    max-width: 265px !important;
+    margin: 0 !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    line-height: 150% !important;
+    letter-spacing: 0 !important;
+  }
+
+  body.page-education .owl_blog .owl-carousel .owl-stage-outer {
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+
+  body.page-education .owl_blog .owl-carousel .owl-stage-outer::-webkit-scrollbar {
+    display: none !important;
+    height: 0 !important;
+  }
+
+  body.page-education .owl_blog .owl-carousel .owl-stage {
+    left: 0 !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  body.page-education .owl_blog .owl-carousel .owl-item {
+    margin-right: 16px !important;
+  }
+
+  body.page-education .edu-blog-footer {
+    margin-top: 24px !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  body.page-education .edu-blog-footer a.sap.edu-blog-more,
+  body.page-education .edu-blog-footer a.sap.edu-blog-more h4,
+  body.page-education .edu-blog-footer a.sap.edu-blog-more .td_underline,
+  body.page-education a.sap.edu-blog-more[href*="blog"] {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+    width: auto !important;
+  }
+
+  /*
+   * Work blog (mobile): beat About-Us rule
+   *   section.hpt120px ~ main#main section h4 { font-size: 12px !important }
+   * and centering from a[href*="blog"]. Keep “View all blogs” centered.
+   */
+  body.page-work section.hpt120px ~ main#main .owl_blog a.item,
+  body.page-work section.hpt120px ~ main#main .owl_blog a.item[href*="blog"] {
+    display: block !important;
+    width: 306px !important;
+    max-width: 306px !important;
+    margin: 0 !important;
+    text-align: left !important;
+    justify-content: flex-start !important;
+    align-items: stretch !important;
+  }
+
+  /* Figma: 18px gap between blog cards */
+  body.page-work section.hpt120px ~ main#main .owl_blog .owl-carousel .owl-item,
+  body.page-work .owl_blog .owl-carousel .owl-item {
+    margin-right: 18px !important;
+  }
+
+  body.page-work section.hpt120px ~ main#main .owl_blog .div_blog {
+    width: 306px !important;
+    max-width: 306px !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+
+  body.page-work section.hpt120px ~ main#main .owl_blog .div_blog > .row {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+
+  body.page-work section.hpt120px ~ main#main .owl_blog .div_blog > .row:first-child [class^="col-"] {
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  body.page-work section.hpt120px ~ main#main .owl_blog .owl-carousel .owl-item img,
+  body.page-work section.hpt120px ~ main#main .owl_blog .div_blog img,
+  body.page-work section.hpt120px ~ main#main .owl_blog .div_blog img.img-responsive {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 156.26px !important;
+    object-fit: cover !important;
+    display: block !important;
+    margin: 0 !important;
+  }
+
+  body.page-work section.hpt120px ~ main#main .owl_blog .div_blog > .row:last-child {
+    padding: 0 !important;
+    margin: 0 !important;
+    height: 86.28px !important;
+  }
+
+  body.page-work section.hpt120px ~ main#main .owl_blog .div_blog > .row:last-child [class^="col-"],
+  body.page-work section.hpt120px ~ main#main .owl_blog .div_blog > .row:last-child .col-12 {
+    display: block !important;
+    padding: 20px !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: left !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+  }
+
+  body.page-work section.hpt120px ~ main#main .owl_blog .div_blog h4,
+  body.page-work section.hpt120px ~ main#main .owl_blog .div_blog h4.fs_18px,
+  body.page-work section.hpt120px ~ main#main .owl_blog .div_blog h4.mtb0px.fs_18px.fw_500.lh_150p.fc_000000 {
+    display: -webkit-box !important;
+    -webkit-box-orient: vertical !important;
+    -webkit-line-clamp: 2 !important;
+    overflow: hidden !important;
+    width: 100% !important;
+    max-width: 265px !important;
+    height: auto !important;
+    max-height: 42px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    line-height: 140% !important;
+    letter-spacing: 0 !important;
+    color: rgba(0, 0, 0, 1) !important;
+    text-align: left !important;
+  }
+
+  body.page-work .work-blog-footer .sap.work-blog-more,
+  body.page-work .work-blog-footer .sap.work-blog-more h4,
+  body.page-work a.sap.work-blog-more[href*="blog"] {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+    width: auto !important;
+  }
+
+  /* Work desc title: beat About-Us span { 12px } — Figma 24px */
+  body.page-work section.hpt120px ~ main#main .flex_block .work-desc-title,
+  body.page-work section.hpt120px ~ main#main .flex_block .work-desc-title span,
+  body.page-work section.hpt120px ~ main#main .flex_block .work-desc-title .display_d_none,
+  body.page-work section.hpt120px ~ main#main section .work-desc-title span {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 140% !important;
+    letter-spacing: 0 !important;
+    color: rgba(0, 0, 0, 1) !important;
+  }
+
+  body.page-work section.hpt120px ~ main#main .flex_block .work-desc-subtitle span,
+  body.page-work section.hpt120px ~ main#main section .work-desc-subtitle span {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    line-height: 150% !important;
+    color: rgba(0, 0, 0, 1) !important;
+  }
+
+  /* Work inspire inline links — Figma: rgba(215, 88, 107, 1), weight 500, no underline */
+  body.page-work section.hpt120px ~ main#main .div_inspire a.fc_cb6171,
+  body.page-work section.hpt120px ~ main#main .div_inspire a.fc_cb6171:link,
+  body.page-work section.hpt120px ~ main#main .div_inspire a.fc_cb6171:visited,
+  body.page-work section.hpt120px ~ main#main .div_inspire a.fc_cb6171 span,
+  body.page-work section.hpt120px ~ main#main section .div_inspire a.fc_cb6171 {
+    color: rgba(215, 88, 107, 1) !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+  }
+
+  body.page-work section.hpt120px ~ main#main .div_inspire a.fc_cb6171:hover,
+  body.page-work section.hpt120px ~ main#main .div_inspire a.fc_cb6171:focus,
+  body.page-work section.hpt120px ~ main#main .div_inspire a.fc_cb6171:hover span,
+  body.page-work section.hpt120px ~ main#main section .div_inspire a.fc_cb6171:hover {
+    color: rgb(128, 51, 88) !important;
+    text-decoration: none !important;
   }
 
 }

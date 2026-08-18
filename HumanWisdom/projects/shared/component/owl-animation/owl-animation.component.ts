@@ -536,15 +536,12 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
     this.messageTimers.forEach(t => clearTimeout(t));
     this.messageTimers = [];
 
+    // Persist immediately so a refresh during the 1s delay cannot replay the bubble.
+    this.commonService.markFooterBubbleShownThisSession();
+    this.commonService.markOllyBubbleShownToday(this.DIALOGUE_SHOWN_KEY);
+    this.dialogueAlreadyShown = true;
+
     const showBubble = setTimeout(() => {
-      this.refreshDialogueState();
-      if (!this.commonService.shouldShowFooterBubble()) {
-        return;
-      }
-
-      this.commonService.markFooterBubbleShownThisSession();
-      this.dialogueAlreadyShown = true;
-
       this.currentCloudImage = this.OLLY_HI_URL;
       this.showCloudMessage = true;
       this.cloudFadeIn = true;
@@ -621,7 +618,7 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
   // Call this from browser console: ng.probe(document.querySelector('app-owl-animation')).componentInstance.forceShowGif()
   forceShowGif() {
     sessionStorage.removeItem(this.GIF_SHOWN_KEY);
-    localStorage.removeItem(this.DIALOGUE_SHOWN_KEY);
+    this.commonService.clearOllyBubbleShownToday();
     this.commonService.resetFooterBubbleSession();
     this.showGif = false;
     this.showStaticOwl = true;

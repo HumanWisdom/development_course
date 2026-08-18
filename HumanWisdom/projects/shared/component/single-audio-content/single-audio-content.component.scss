@@ -97,8 +97,8 @@ transform: rotate(-360deg) scaleX(-1);
 //   filter: none !important;
 // }
 
-audio::-webkit-media-controls-play-button {
-  background-color: #178da8 !important;
+::ng-deep audio::-webkit-media-controls-play-button {
+  background-color: #116a69 !important;
   border-radius: 15px;
 }
 audio::-webkit-media-controls-current-time-display {
@@ -235,7 +235,7 @@ width: 100%;
   mix-blend-mode: multiply !important;
 }
 /* Play–pause button background color */
-.invert-controls::-webkit-media-controls-play-button {
+::ng-deep .invert-controls::-webkit-media-controls-play-button {
   background-color: #ED7D6F !important;
   border-radius: 50% !important;
   box-shadow: none !important;
@@ -245,3 +245,37 @@ width: 100%;
   max-width: 480px;         
   border-radius: 40px;
 }
+
+/* Ensure Read text is visible on iOS / mobile WebViews */
+.read-text-row {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: relative;
+  z-index: 2;
+  margin-top: 12px;
+  margin-bottom: 24px;
+  min-height: 24px;
+}
+
+.read-text-link {
+  display: inline-block !important;
+  text-decoration: none;
+}
+
+.read-text-label {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  color: #D7586B !important;
+  text-decoration: underline !important;
+  pointer-events: auto;
+}
+
+:host ::ng-deep .transcript_txt .transcript-link,
+:host ::ng-deep .transcript_txt a {
+  color: #D7586B !important;
+  text-decoration: underline !important;
+  word-break: break-word;
+}
+

@@ -155,6 +155,30 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   preference = '';  
   isHeaderHidden: boolean = false;
   showExplorePopup: boolean = false;
+  showCrisisPopup: boolean = false;
+
+  private readonly CRISIS_KEYWORDS: string[] = [
+    'suicide', 'suicidal', 'kill myself', 'end my life', "don't want to live",
+    'want to die', 'self-harm', 'self harm', 'cutting', 'hurting myself',
+    'overdose', "there's no point", "i can't go on", 'nothing will change',
+    'no way out', 'i give up', 'kms', "i'm done", 'i want to end it',
+    "life isn't worth it", 'i want to kill myself'
+  ];
+
+  private containsCrisisKeyword(text: string): boolean {
+    if (!text) return false;
+    const lower = text.toLowerCase().trim();
+    return this.CRISIS_KEYWORDS.some(keyword => lower.includes(keyword));
+  }
+
+  closeCrisisPopup(): void {
+    this.showCrisisPopup = false;
+    this.searchinp = '';
+    this.isSearchActive = false;
+    this.commonService.setSearchActive(false);
+    this.updateHeaderDisplay();
+    this.toggleBodyScroll(false);
+  }
   constructor(
     private router: Router,
     private commonService: CommonService,
@@ -371,6 +395,9 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
     this.YourTopicofChoice = this.personalisedList.filter((d) => d['active']);
     console.log('Guest user default selection:', this.YourTopicofChoice);
+    if (this.YourTopicofChoice && this.YourTopicofChoice[0]) {
+      this.updateUrlFragment(this.YourTopicofChoice[0]);
+    }
 
     setTimeout(() => {
       this.scrollToActiveList();
@@ -694,6 +721,10 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
             console.log('User preference loaded:', this.YourTopicofChoice);
           }
 
+          if (this.YourTopicofChoice && this.YourTopicofChoice[0]) {
+            this.updateUrlFragment(this.YourTopicofChoice[0]);
+          }
+
           // Scroll to the selected section after preference is loaded
           setTimeout(() => {
             this.scrollToActiveList();
@@ -722,6 +753,10 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
               this.loadHomeContents(Number(storedActivePreference));
               this.YourTopicofChoice = this.personalisedList.filter((d) => d['active']);
               console.log('Guest user with stored preference:', this.YourTopicofChoice);
+            }
+
+            if (this.YourTopicofChoice && this.YourTopicofChoice[0]) {
+              this.updateUrlFragment(this.YourTopicofChoice[0]);
             }
 
             setTimeout(() => {
@@ -943,8 +978,75 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       this.logeventservice.logEvent('select_category_' + item.displayName.replace(/\s+/g, '').toLowerCase());
     }
 
-    // Clear fragment from URL after manual tab switch to fix back navigation issues
-    this.clearUrlFragment();
+    if (this.isAdults && item && item.id) {
+      switch (item.id.toString()) {
+        case '2':
+          this.logeventservice.logEvent('adult_click_mentalhealth');
+          break;
+        case '1':
+          this.logeventservice.logEvent('adult_Click_success_at_work');
+          break;
+        case '3':
+          this.logeventservice.logEvent('adult_click_relationship');
+          break;
+        case '4':
+          this.logeventservice.logEvent('adult_click_happiness');
+          break;
+        case '8':
+          this.logeventservice.logEvent('adult_click_emotions');
+          break;
+        case '18':
+          this.logeventservice.logEvent('adult_click_forparents');
+          break;
+        case '19':
+          this.logeventservice.logEvent('adult_click_selfawareness');
+          break;
+        case '7':
+          this.logeventservice.logEvent('adult_click_meditation');
+          break;
+        case '6':
+          this.logeventservice.logEvent('adult_Click_sorrowandloss');
+          break;
+        case '5':
+          this.logeventservice.logEvent('adult_click_addiction');
+          break;
+      }
+    }
+
+    if (!this.isAdults && item && item.id) {
+      switch (item.id.toString()) {
+        case '10':
+          this.logeventservice.logEvent('teenager_click_mentalhealth');
+          break;
+        case '17':
+          this.logeventservice.logEvent('teenager_Click_success_at_work');
+          break;
+        case '11':
+          this.logeventservice.logEvent('teenager_click_relationship');
+          break;
+        case '13':
+          this.logeventservice.logEvent('teenager_click_happiness');
+          break;
+        case '14':
+          this.logeventservice.logEvent('teenager_click_emotions');
+          break;
+        case '20':
+          this.logeventservice.logEvent('teenager_click_selfawareness');
+          break;
+        case '12':
+          this.logeventservice.logEvent('teenager_click_freecalm');
+          break;
+        case '15':
+          this.logeventservice.logEvent('teenager_Click_habits');
+          break;
+        case '16':
+          this.logeventservice.logEvent('teenager_click_understandyourself');
+          break;
+      }
+    }
+
+    // Update URL fragment on manual tab switch so URL reflects selected tab (e.g. #meditation, #self-awareness)
+    this.updateUrlFragment(item);
 
     // Save active preference to store
     this.homeStateService.setActivePreference(item.id);
@@ -958,6 +1060,10 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       this.YourTopicofChoice = [item];
       // Save user preference for Self Awareness
       this.update(item.id);
+      // Scroll the active tab to center
+      setTimeout(() => {
+        this.scrollToActiveList();
+      }, 500);
       return;
     }
 
@@ -999,6 +1105,16 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       console.log(`%c [ANALYTICS EVENT] Triggering Card Click: ${eventName}`, 'color: #bada55; font-size: 14px');
       this.logeventservice.logEvent(eventName);
     }
+
+    const cardType = (card.moduleType || card.mediaType || '').toUpperCase();
+    if (!this.isAdults && cardType.includes('WELLNESS SURVEY')) {
+      this.logeventservice.logEvent('teenager_click_takethesurvey');
+    }
+    if (this.isAdults && cardType.includes('WELLNESS SURVEY')) {
+      this.logeventservice.logEvent('adult_click_takethesurvey');
+    }
+
+    this.trackTeenagerCardClick(card, section);
 
     const type = (card.moduleType || card.mediaType || '').toUpperCase();
     const isEvent = type.includes('EVENT') || (card.path || '').includes('/events/') || (card.path || '').includes('youtubelink');
@@ -1344,6 +1460,149 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     return '';
   }
 
+  trackTeenagerSectionClick(title: string): void {
+    if (!title) return;
+    const t = title.toLowerCase().trim();
+
+    if (this.isAdults) {
+      // Adults section button events
+      if (t.includes('begin here')) {
+        this.logeventservice.logEvent('adult_Click_beginhere');
+      } else if (t.includes('feel better now')) {
+        this.logeventservice.logEvent('adult_Click_feelbetternow');
+      } else if (t.includes('microlearning') || t.includes('micro-learning')) {
+        this.logeventservice.logEvent('adult_Click_microlearning');
+      } else if (t.includes('dive deeper')) {
+        this.logeventservice.logEvent('adult_Click_divedeeperforlastingchange');
+      } else if (t.includes('get to know your mind') || t.includes('understand your mind')) {
+        this.logeventservice.logEvent('adult_Click_gettoknowyourmind');
+      } else if (t.includes('short video') || t.includes('shorts')) {
+        this.logeventservice.logEvent('adult_Click_shortvideos');
+      } else if (t.includes('podcast')) {
+        this.logeventservice.logEvent('adult_Click_podcasts');
+      } else if (t.includes('life storie') || t.includes('storie')) {
+        this.logeventservice.logEvent('adult_click_lifestories');
+      } else if (t.includes('blog')) {
+        this.logeventservice.logEvent('adult_click_blogs');
+      } else if (t.includes('guided meditation') || t.includes('meditation') || t.includes('audio')) {
+        this.logeventservice.logEvent('adult_Click_guidedmeditation');
+      } else if (t.includes('guided journal') || t.includes('journal')) {
+        this.logeventservice.logEvent('adult_Click_guidedjournaling');
+      }
+      return;
+    }
+
+    // Teenagers section button events
+    if (t.includes('begin here')) {
+      this.logeventservice.logEvent('teenager_Click_beginhere');
+    } else if (t.includes('feel better now')) {
+      this.logeventservice.logEvent('teenager_Click_feelbetternow');
+    } else if (t.includes('microlearning') || t.includes('micro-learning')) {
+      this.logeventservice.logEvent('teenager_Click_microlearning');
+    } else if (t.includes('dive deeper')) {
+      this.logeventservice.logEvent('teenager_Click_divedeeperforlastingchange');
+    } else if (t.includes('teen talk')) {
+      this.logeventservice.logEvent('teenager_Click_teentalk');
+    } else if (t.includes('get to know your mind') || t.includes('understand your mind')) {
+      this.logeventservice.logEvent('teenager_Click_gettoknowyourmind');
+    } else if (t.includes('short video') || t.includes('shorts')) {
+      this.logeventservice.logEvent('teenager_Click_shortvideos');
+    } else if (t.includes('podcast')) {
+      this.logeventservice.logEvent('teenager_Click_podcasts');
+    } else if (t.includes('life storie') || t.includes('storie')) {
+      this.logeventservice.logEvent('teenager_Click_lifestories');
+    } else if (t.includes('blog')) {
+      this.logeventservice.logEvent('teenager_Click_blogs');
+    } else if (t.includes('meditation') || t.includes('audio')) {
+      this.logeventservice.logEvent('teenager_Click_guidedmeditation');
+    } else if (t.includes('journal')) {
+      this.logeventservice.logEvent('teenager_Click_guidedjournaling');
+    }
+  }
+
+  trackTeenagerCardClick(card: ContentCard, section?: ContentSection): void {
+    if (!card) return;
+
+    const title = (card.title || '').toLowerCase();
+    const path = (card.path || '').toLowerCase();
+    const secTitle = (section?.title || '').toLowerCase().trim();
+    const type = (card.moduleType || card.mediaType || '').toUpperCase();
+    const isVideo = type.includes('VIDEO') || type.includes('SHORT');
+    const isAudio = type.includes('AUDIO') || type.includes('BREATHING') || type.includes('SOUNDSCAPE');
+    const isPodcast = type.includes('PODCAST') || path.includes('podcast');
+    const isStory = type.includes('STORY') || path.includes('wisdom-stories') || path.includes('lifestory');
+    const isBlog = type.includes('BLOG') || path.includes('blogs') || path.includes('blog-article');
+
+    if (this.isAdults) {
+      // Adults specific card click events
+      if (title.includes('deal with your inner critic') || title.includes('inner critic') || path.includes('inner-critic') || path.includes('inner_critic')) {
+        this.logeventservice.logEvent('adult_click_dealwithyourinnercritic');
+        return;
+      }
+      if (title.includes('be less stressed') || title.includes('less stressed') || path.includes('be-less-stressed') || path.includes('belessstressed')) {
+        this.logeventservice.logEvent('adult_click_belessstressed');
+        return;
+      }
+
+      if (secTitle.includes('begin here')) {
+        if (isVideo) this.logeventservice.logEvent('adult_click_video');
+      } else if (secTitle.includes('feel better now')) {
+        if (isVideo) this.logeventservice.logEvent('adult_click_video_feelbetternow');
+      } else if (secTitle.includes('microlearning') || secTitle.includes('micro-learning')) {
+        if (isVideo) this.logeventservice.logEvent('adult_click_video_microlearning');
+      } else if (secTitle.includes('dive deeper')) {
+        if (isVideo) this.logeventservice.logEvent('adult_click_video_divedeeperforlastingchange');
+      } else if (secTitle.includes('get to know your mind') || secTitle.includes('understand your mind')) {
+        if (isVideo) this.logeventservice.logEvent('adult_click_video_gettoknowyourmind');
+      } else if (secTitle.includes('short video') || secTitle.includes('shorts')) {
+        if (isVideo) this.logeventservice.logEvent('adult_click_video_shortvideos');
+      } else if (secTitle.includes('podcast') || isPodcast) {
+        this.logeventservice.logEvent('adult_click_podcasts_icon');
+      } else if (secTitle.includes('life storie') || secTitle.includes('storie') || isStory) {
+        this.logeventservice.logEvent('adult_click_stories');
+      } else if (secTitle.includes('blog') || isBlog) {
+        this.logeventservice.logEvent('adult_click_blogsicon');
+      } else if (secTitle.includes('meditation') || secTitle.includes('audio') || isAudio) {
+        this.logeventservice.logEvent('adult_click_audio');
+      }
+      return;
+    }
+
+    // Teenagers specific card click events
+    if (title.includes('deal with your inner critic') || title.includes('inner critic') || path.includes('inner-critic') || path.includes('inner_critic')) {
+      this.logeventservice.logEvent('teenager_click_dealwithyourinnercritic');
+      return;
+    }
+    if (title.includes('be less stressed') || title.includes('less stressed') || path.includes('be-less-stressed') || path.includes('belessstressed')) {
+      this.logeventservice.logEvent('teenager_click_belessstressed');
+      return;
+    }
+
+    if (secTitle.includes('begin here')) {
+      if (isVideo) this.logeventservice.logEvent('teenager_click_video');
+    } else if (secTitle.includes('feel better now')) {
+      if (isVideo) this.logeventservice.logEvent('teenager_click_video_feelbetternow');
+    } else if (secTitle.includes('microlearning') || secTitle.includes('micro-learning')) {
+      if (isVideo) this.logeventservice.logEvent('teenager_click_video_microlearning');
+    } else if (secTitle.includes('dive deeper')) {
+      if (isVideo) this.logeventservice.logEvent('teenager_click_video_divedeeperforlasting change');
+    } else if (secTitle.includes('teen talk')) {
+      if (isVideo) this.logeventservice.logEvent('teenager_click_video_teentalk');
+    } else if (secTitle.includes('get to know your mind') || secTitle.includes('understand your mind')) {
+      if (isVideo) this.logeventservice.logEvent('teenager_click_video_gettoknowyourmind');
+    } else if (secTitle.includes('short video') || secTitle.includes('shorts')) {
+      if (isVideo) this.logeventservice.logEvent('teenager_click_video_shortvideos');
+    } else if (secTitle.includes('podcast') || isPodcast) {
+      this.logeventservice.logEvent('teenager_click_podcasts_icon');
+    } else if (secTitle.includes('life storie') || secTitle.includes('storie') || isStory) {
+      this.logeventservice.logEvent('teenager_click_stories');
+    } else if (secTitle.includes('blog') || isBlog) {
+      this.logeventservice.logEvent('teenager_click_blogsicon');
+    } else if (secTitle.includes('meditation') || secTitle.includes('audio') || isAudio) {
+      this.logeventservice.logEvent('teenager_click_audio');
+    }
+  }
+
   onSectionToggle(section: ContentSection): void {
     // Only toggle for normal accordion sections (not inline)
     if (section.isInlineSection) {
@@ -1358,6 +1617,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
             const eventName = `click_${prefix}${sectionName}`;
             console.log(`%c [ANALYTICS EVENT] Triggering Accordion Expand: ${eventName}`, 'color: #bada55; font-size: 14px');
             this.logeventservice.logEvent(eventName);
+            this.trackTeenagerSectionClick(section.title);
         }
     }
 
@@ -1427,6 +1687,9 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
    * Incrementally loads 4 more cards each time
    */
   onViewMoreClick(section: ContentSection): void {
+    if (section && section.title) {
+      this.trackTeenagerSectionClick(section.title);
+    }
     const totalCards = section.cards?.length || 0;
     if (!totalCards) {
       return;
@@ -1562,6 +1825,10 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       return;
     }
 
+    if (section.title) {
+      this.trackTeenagerSectionClick(section.title);
+    }
+
     const title = (section.title || '').toLowerCase();
     const url = (section.viewall_Url || '').toLowerCase();
     let targetUrl = section.viewall_Url;
@@ -1683,9 +1950,21 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
    */
   private normalizeHash(hash: string): string {
     return hash.toLowerCase()
-      .replace(/-/g, '')
+      .replace(/[-_]/g, '')
+      .replace(/%20/g, '')
       .replace(/\s+/g, '')
       .trim();
+  }
+
+  updateHeaderDisplay(): void {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    const isHidden = scrollTop > 50 || this.isSearchActive;
+    this.isHeaderHidden = isHidden;
+    const dtnEl = document.querySelector('.dtn') as HTMLElement;
+    if (dtnEl) {
+      dtnEl.style.display = isHidden ? 'none' : 'block';
+    }
+    this.cdr.detectChanges();
   }
 
   /**
@@ -1706,17 +1985,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       this.showGreeting = true;
     }
 
-    // Toggle header visibility based on scroll threshold - don't hide when search is active
-    const isHidden = scrollTop > 50 && !this.isSearchActive;
-    if (this.isHeaderHidden !== isHidden) {
-      this.isHeaderHidden = isHidden;
-      // Directly toggle .dtn header since enableFooter() only runs on route changes
-      const dtnEl = document.querySelector('.dtn') as HTMLElement;
-      if (dtnEl) {
-        dtnEl.style.display = this.isSearchActive ? 'block' : (isHidden ? 'none' : 'block');
-      }
-      this.cdr.detectChanges();
-    }
+    // Toggle header visibility based on scroll threshold and search active state
+    this.updateHeaderDisplay();
 
     this.lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
   }
@@ -1817,6 +2087,24 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   /**
+   * Update the URL fragment (hash) using window.history.replaceState
+   * Keeps browser URL bar in sync with active tab without triggering page reload
+   */
+  private updateUrlFragment(item: NavigationItem): void {
+    if (!item || !item.displayName) return;
+
+    const fragment = item.displayName.toLowerCase().trim().replace(/\s+/g, '-');
+    const targetHash = '#' + fragment;
+
+    if (window.location.hash.toLowerCase() !== targetHash.toLowerCase()) {
+      const newUrl = window.location.pathname + window.location.search + targetHash;
+      window.history.replaceState(null, '', newUrl);
+      this.navigationService.replaceLastHistory(newUrl);
+      console.log('URL Fragment updated to:', targetHash);
+    }
+  }
+
+  /**
    * Clear the URL fragment (hash) using window.history.replaceState for immediate browser-level history update
    */
   private clearUrlFragment(): void {
@@ -1860,6 +2148,11 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       // Save user preference for Self Awareness
       this.update(item.id);
       console.log('Activated Self Awareness from hash');
+      // Scroll the active tab to center
+      setTimeout(() => {
+        this.scrollToActiveList();
+      }, 500);
+      this.updateUrlFragment(item);
       return;
     }
 
@@ -1876,8 +2169,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       this.scrollToActiveList();
     }, 500);
 
-    // Clear hash immediately after use to fix back navigation issues
-    this.clearUrlFragment();
+    // Sync URL fragment to item's canonical hash (e.g., #self-awareness or #meditation)
+    this.updateUrlFragment(item);
   }
 
   /**
@@ -1902,12 +2195,17 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
    * Get autocomplete list based on search input
    */
   getAutoCompleteList(value: string): void {
+    if (this.containsCrisisKeyword(value)) {
+      this.showCrisisPopup = true;
+      return;
+    }
     if (this.moduleList.length > 0) {
       if (value == null || value == "") {
         this.searchResult = this.moduleList;
       } else {
         this.isSearchActive = true;
         this.commonService.setSearchActive(true);
+        this.updateHeaderDisplay();
         this.searchResult = this.moduleList.filter(x =>
           (x.ModuleName?.toLocaleLowerCase() || '').includes(value?.toLocaleLowerCase() || '')
         );
@@ -1927,15 +2225,16 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   onFocus(): void {
     this.isSearchActive = true;
     this.commonService.setSearchActive(true);
-    // Show header immediately when search is activated
-    this.isHeaderHidden = false;
-    const dtnEl = document.querySelector('.dtn') as HTMLElement;
-    if (dtnEl) {
-      dtnEl.style.display = 'block';
-    }
-    const eventName = 'click_search';
-    console.log(`%c [ANALYTICS EVENT] Triggering Search Click: ${eventName}`, 'color: #bada55; font-size: 14px');
+    this.updateHeaderDisplay();
+    this.toggleBodyScroll(true);
+    const prefix = this.getTabNamePrefix();
+    const eventName = `click_${prefix}search_bar`;
     this.logeventservice.logEvent(eventName);
+    if (!this.isAdults) {
+      this.logeventservice.logEvent('teenager_click_searchbar_explore');
+    } else {
+      this.logeventservice.logEvent('adult_click_searchbar_explore');
+    }
     
     if (this.moduleList.length === 0) {
       this.getModuleList();
@@ -1963,8 +2262,13 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
    * Navigate to search page when Enter is pressed or search result is clicked
    */
   getinp(searchTerm: string, fromDropdown: boolean = false): void {
+    if (this.containsCrisisKeyword(searchTerm)) {
+      this.showCrisisPopup = true;
+      return;
+    }
     this.isSearchActive = false;
     this.commonService.setSearchActive(false);
+    this.updateHeaderDisplay();
     if (searchTerm && searchTerm.trim() !== '') {
       if (!fromDropdown) {
         const eventName = `search_${searchTerm.replace(/[^a-zA-Z0-9]/g, '').toLowerCase()}`;
@@ -2107,6 +2411,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
    */
   searchEvent(moduleName: string): void {
     this.isSearchActive = false;
+    this.commonService.setSearchActive(false);
+    this.updateHeaderDisplay();
     const eventName = `search_dropdown_${moduleName.replace(/[^a-zA-Z0-9]/g, '').toLowerCase()}`;
     console.log(`%c [ANALYTICS EVENT] Triggering Search Dropdown: ${eventName}`, 'color: #bada55; font-size: 14px');
     this.logeventservice.logEvent(eventName);
@@ -2123,6 +2429,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   clearSearch(): void {
     this.isSearchActive = false;
     this.commonService.setSearchActive(false);
+    this.updateHeaderDisplay();
     const eventName = 'click_search_clear';
     console.log(`%c [ANALYTICS EVENT] Triggering Search Clear: ${eventName}`, 'color: #bada55; font-size: 14px');
     this.logeventservice.logEvent(eventName);
@@ -2289,6 +2596,9 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
   routeToCoach(){
     this.logeventservice.logEvent("click_contact_a_coach");
+    if (!this.isAdults) {
+      this.logeventservice.logEvent('teenager_click_contactacoach');
+    }
       this.router.navigate([SharedService.getprogramName(), 'coach']);
 
 

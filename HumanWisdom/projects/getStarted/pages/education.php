@@ -2,30 +2,18 @@
 <html lang="en">
 
   <head>
+    <title>Student Wellbeing and Life Skills | HappierMe</title>
+    <meta name="title" id="tag1" content="Student Wellbeing and Life Skills | HappierMe">
+    <meta name="description" content="Improve student wellbeing and build life skills with HappierMe. Develop emotional intelligence, confidence and stronger relationships.">
+    <meta name="keywords" content="student wellbeing, student mental health, social emotional learning, emotional intelligence for students, life skills for students, resilience for students, self-awareness for students, school wellbeing, emotional wellbeing in schools, student resilience">
+    
+    
     <meta property="og:title" id="tag1" content="Student Wellbeing and Life Skills | HappierMe">
     <meta property="og:description" content="Improve student wellbeing and build life skills with HappierMe. Develop emotional intelligence, confidence and stronger relationships.">
-     <meta name="keywords" content="student wellbeing
-,student mental health,
-social emotional learning,
-emotional intelligence for students,
-life skills for students,
-resilience for students,
-self-awareness for students,
-school wellbeing,
-emotional wellbeing in schools,
-student resilience
-
-
-">
+   
     <meta property="og:image" content="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/imgs/website_share.jpg" />
     <meta property="og:image:alt" content="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/imgs/website_share.jpg" />
-    <meta property="og:image:width" content="414" />
-     <meta name="keywords" content="student wellbeing
-student mental health
-emotional intelligence for students
-social emotional learning
-
-">
+    <meta property="og:image:width" content="414" />   
     <meta property="og:image:height" content="232" />
   
     <meta property="og:site_name" content=HappierMe>
@@ -39,14 +27,14 @@ social emotional learning
       "@context": "https://schema.org",
       "@type": "Article",
       "name": "HappierMe",
-      "description": "Mental health app that helps users understand their emotions and thoughts, and offers a variety of tools and resources to help people improve their lives.",
+      "description": "Improve student wellbeing and build life skills with HappierMe. Develop emotional intelligence, confidence and stronger relationships.",
       "url": "https://happierme.app/"
     },
     {
       "@context": "https://schema.org",
       "@type": "MentalHealthService",
       "name": "HappierMe",
-      "description": "Mental health app that helps users understand their emotions and thoughts, and offers a variety of tools and resources to help people improve their lives.",
+      "description": "Improve student wellbeing and build life skills with HappierMe. Develop emotional intelligence, confidence and stronger relationships.",
       "url": "https://happierme.app/"
     }
   ]
@@ -120,7 +108,7 @@ social emotional learning
           padding: 10px;
         }
 
-        /* Make testimonial cards same height on mobile */
+        /* Education testimonials — Figma mobile: 315×249 cards */
         .owl_testimonials .owl-carousel .owl-item {
           display: flex !important;
           height: auto !important;
@@ -132,10 +120,17 @@ social emotional learning
         }
 
         .owl_testimonials .div_testimonials.edu-testimonial-card {
-          height: auto !important;
-          min-height: 260px !important;
+          width: 315px !important;
+          max-width: 315px !important;
+          height: 249px !important;
+          min-height: 249px !important;
+          max-height: 249px !important;
+          padding: 24px !important;
+          gap: 30px !important;
+          border-radius: 20px !important;
           display: flex !important;
           flex-direction: column !important;
+          box-sizing: border-box !important;
         }
 
         .owl-carousel .owl-stage {
@@ -260,7 +255,7 @@ social emotional learning
             </div> -->
 
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12  col-12 pl0px cpr_a ml15px" data-aos="fade-up" data-aos-delay="100">
-              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/education_app.webp" class="img-responsive education_app_img" alt="Develop a mind that is calm, and open to learning">
+              <img src="https://d1tenzemoxuh75.cloudfront.net/website/education_mobile.webp" class="img-responsive education_app_img" alt="Develop a mind that is calm, and open to learning">
             </div>
 
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 pr0px tleft w-384px mt0px edu-desc-copy" data-aos="fade-up" data-aos-delay="200">
@@ -539,6 +534,15 @@ social emotional learning
                   </div>
                 </div>
 
+              </div>
+
+              <div class="edu-testimonials-footer">
+                <a class="sap edu-testimonials-more" href="https://happierme.app/adults/testimonials">
+                  <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
+                    View all success stories
+                  </h4>
+                  <span class="chevron-pink"><span style="-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span>
+                </a>
               </div>
             </div>
           </div>
@@ -882,8 +886,9 @@ social emotional learning
               <div class="edu-blog-footer">
                 <a class="sap edu-blog-more" href="https://happierme.app/adults/blogs">
                   <h4 class="mtb0px fs_18px fw_500 lh_150p td_underline">
-                    See all posts
+                    View all blogs
                   </h4>
+                  <span class="chevron-pink"><span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span>
                 </a>
                 <div class="owl-theme mt10px edu-blog-nav">
                   <div class="owl-controls">
@@ -920,9 +925,21 @@ social emotional learning
         }
 
         $tc.removeClass('edu-testimonials-native owl-loaded owl-drag');
+        $tc.find('.owl-stage-outer').children().unwrap();
+        $tc.find('.owl-stage').children().unwrap();
+        $tc.find('.owl-item').each(function () {
+          $(this).children().unwrap();
+        });
 
         if (isMobile) {
           $tc.addClass('edu-testimonials-native');
+          $tc.css({
+            display: 'flex',
+            flexDirection: 'row',
+            flexWrap: 'nowrap',
+            overflowX: 'auto',
+            overflowY: 'hidden'
+          });
           return;
         }
 

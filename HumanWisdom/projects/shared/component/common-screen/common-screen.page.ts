@@ -178,12 +178,13 @@ export class CommonScreenPage implements OnInit {
    getUserPref(type) {
     this.selectedPref = '';
     this.filteredData = this.allData;
-    if(type.name === 'All') {
+    if (type === 'all' || type === 'All' || type?.name === 'All') {
       this.filteredData = this.allData;
-    }else{
-        this.filteredData= this.allData.filter((d) => d['PreferenceIDs'].includes(type.id));
-      }
+    } else {
+      const prefId = typeof type === 'object' ? type?.id : type;
+      this.filteredData = this.allData.filter((d) => d['PreferenceIDs'] && d['PreferenceIDs'].split(',').includes(prefId));
     }
+  }
 
     onModalClose(event: string) {
     this.showModal = false;

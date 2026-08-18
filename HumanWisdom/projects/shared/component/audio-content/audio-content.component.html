@@ -13,10 +13,10 @@
             <form>
 
               <div id="transcriptDiv" class="row mt10px mb20px">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter"  (click)="gotoTranscript()">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter" (click)="gotoTranscript()">
                   <a class="">
                     <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/transcript_left.svg" class="img-responsive" alt=""> -->
-                    <h6 class="fs_15px fw_400 lh_140p underline"  [ngClass]="isAdults? 'fc_D7586B': 'fc_e58d82'"  >
+                    <h6 class="fs_15px fw_400 lh_140p underline" [ngClass]="isAdults? 'fc_D7586B': 'fc_ee9596'">
                       Read text
                     </h6>
                   </a>
@@ -45,11 +45,9 @@
                   [ngClass]="[isAdults ? 'invert-controls' : '']">
                     <source [src]="audioLink" type="audio/mpeg">
                   </audio> -->
-                   <app-audio-player  id="aud1"  
-                        [ngClass]="[isAdults ? 'invert-controls' : '']"
-                                [audioLink]="audioLink">
-                              </app-audio-player> 
-                     </div>
+                  <app-audio-player id="aud1" [ngClass]="[isAdults ? 'invert-controls' : '']" [audioLink]="audioLink">
+                  </app-audio-player>
+                </div>
               </div>
               <!-- /angular audio player plugin  -->
 

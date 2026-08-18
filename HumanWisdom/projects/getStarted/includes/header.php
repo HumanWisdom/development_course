@@ -1,4 +1,10 @@
 <!-- header -->
+<?php
+if (!function_exists('hw_page_assets_flag')) {
+    require_once __DIR__ . '/page_assets.php';
+}
+if (!hw_page_assets_flag('css', 'header_in_critical')) :
+?>
 <style>
   /* Full-bleed fixed stack: main.css .header uses padding: 30px 60px which inset the subnav — remove horizontal padding and auto height so both rows + cream bar fit */
   .header_fixed.header.header_site_stack {
@@ -134,6 +140,21 @@
       visibility: hidden !important;
     }
   }
+  .badge_new {
+    width: 22px;
+    height: 12px;
+    border-radius: 7px;
+    background: #d16b75;
+    padding: 2px 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    right: 0;
+    top: -10px;
+    bottom: 0;
+    margin: 0 auto;
+  }
   #teenagersHeaderClick .badge_new,
   #teenagersHeaderClick_mobile .badge_new {
     background: #D7586B !important;
@@ -154,10 +175,17 @@
   #teenagersHeaderClick .badge_new h6:hover,
   #teenagersHeaderClick_mobile .badge_new h6,
   #teenagersHeaderClick_mobile .badge_new h6:hover {
+    margin: 0;
+    font-size: 6px;
+    font-weight: 600;
+    line-height: 1;
     color: #ffffff !important;
     -webkit-text-fill-color: #ffffff !important;
+    text-decoration: none !important;
+    white-space: nowrap;
   }
 </style>
+<?php endif; ?>
 <div class="header_fixed header header_site_stack" style="justify-content: flex-start; display: flex;">
   <div class="header_site_top">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 header_main_inner p0">

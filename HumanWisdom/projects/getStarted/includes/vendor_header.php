@@ -1,71 +1,82 @@
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-<?php require_once __DIR__ . '/cache_buster.php'; ?>
+<?php
+require_once __DIR__ . '/cache_buster.php';
+require_once __DIR__ . '/page_assets.php';
+$hw_assets = hw_page_assets_get();
+?>
 
 <!-- Favicons -->
 <link href="https://d1tenzemoxuh75.cloudfront.net/../assets/images/logo/logo_favicon_transparent.png" rel="icon">
 <link href="https://d1tenzemoxuh75.cloudfront.net/../assets/images/logo/logo_favicon_transparent.png" rel="apple-touch-icon">
 
+<?php
+require_once __DIR__ . '/media_config.php';
+hw_cdn_preconnect_tags();
+?>
+
+<!-- Critical CSS first (hero + header on landing) -->
+<?php include __DIR__ . '/critical_lcp_style.php'; ?>
+
+<?php if (hw_page_assets_flag('css', 'google_fonts_head')) : ?>
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" >
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin >
-<!-- <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" >
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" > -->
-
-<!-- Consolidated font request (all weights in one call) -->
-<!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"> -->
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"></noscript>
-
-
-
-<!-- Bootstrap 5.3 CSS 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">-->
+<?php endif; ?>
 
 <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"></noscript>
 
-
 <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"></noscript>
 
-
-
-    <!-- Vendor CSS Files -->
-<!-- <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" > -->
 <link rel="preload" href="<?= hw_asset_url('../assets/vendor/bootstrap-icons/bootstrap-icons.css'); ?>" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="<?= hw_asset_url('../assets/vendor/bootstrap-icons/bootstrap-icons.css'); ?>"></noscript>
 
-<!-- <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet"> -->
+<?php if (hw_page_assets_flag('css', 'glightbox')) : ?>
 <link rel="preload" href="<?= hw_asset_url('../assets/vendor/glightbox/css/glightbox.min.css'); ?>" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="<?= hw_asset_url('../assets/vendor/glightbox/css/glightbox.min.css'); ?>"></noscript>
+<?php endif; ?>
 
-<!-- <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"> -->
+<?php if (hw_page_assets_flag('css', 'swiper')) : ?>
 <link rel="preload" href="<?= hw_asset_url('../assets/vendor/swiper/swiper-bundle.min.css'); ?>" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="<?= hw_asset_url('../assets/vendor/swiper/swiper-bundle.min.css'); ?>"></noscript>
+<?php endif; ?>
 
-<!-- LCP-critical CSS inlined; full stylesheets load async (non-render-blocking) -->
-<?php include __DIR__ . '/critical_lcp_style.php'; ?>
 <?php
 hw_defer_stylesheet('../assets/css/landing.css');
 hw_defer_stylesheet('../assets/css/main.css');
 hw_defer_stylesheet('../assets/css/home.css');
 hw_defer_stylesheet('../assets/css/index.css');
 hw_defer_stylesheet('../assets/css/responsive.css');
-hw_defer_stylesheet('../assets/font/font_colour.css');
-hw_defer_stylesheet('../assets/font/font_size.css');
-hw_defer_stylesheet('../assets/font/font_weight.css');
-hw_defer_stylesheet('../assets/font/line_height.css');
-hw_defer_stylesheet('../assets/css/style_hb.css');
-hw_defer_stylesheet('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
-hw_defer_stylesheet('https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css');
-hw_defer_stylesheet('https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css');
-?> 
+if (hw_page_assets_flag('css', 'font_stacks')) {
+    hw_defer_stylesheet('../assets/font/font_colour.css');
+    hw_defer_stylesheet('../assets/font/font_size.css');
+    hw_defer_stylesheet('../assets/font/font_weight.css');
+    hw_defer_stylesheet('../assets/font/line_height.css');
+} elseif (hw_page_assets_flag('css', 'font_colour')) {
+    hw_defer_stylesheet('../assets/font/font_colour.css');
+}
+if (hw_page_assets_flag('css', 'style_hb')) {
+    hw_defer_stylesheet('../assets/css/style_hb.css');
+}
+if (hw_page_assets_flag('css', 'fontawesome_cdn')) {
+    hw_defer_stylesheet('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+}
+if (hw_page_assets_flag('css', 'owl')) {
+    hw_defer_stylesheet('https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css');
+    hw_defer_stylesheet('https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css');
+}
+?>
 
+<?php if (hw_page_assets_flag('js', 'gtag_head')) : ?>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1WBHRGL7VH"></script>
+<?php endif; ?>
 
+<?php if (hw_page_assets_flag('css', 'vendor_debug_inline')) : ?>
 <!-- Debug CSS for tabs and modals -->
 <style>
 /* Ensure tab content is visible when active */
@@ -215,3 +226,4 @@ body.modal-open {
     }
 }
 </style>
+<?php endif; ?>

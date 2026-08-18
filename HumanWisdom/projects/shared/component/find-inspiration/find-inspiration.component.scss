@@ -1,90 +1,197 @@
-/* inspiration-grid.component.scss */
-.inspiration-container {
-    // background-color: #292D56; 
-    color: #000000;
-    padding: 18px 18px 5px 18px;
+/* find-inspiration.component.scss */
+
+.find-inspiration-container {
+  padding: 15px 0 0 0;
+  width: 100%;
+}
+
+.inspiration-header-wrap {
+  margin-bottom: 15px;
+}
+
+.inspiration-header-title {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 130%;
+  margin: 0 0 4px 0;
+}
+
+/* Adults subtitle colour: black 75% opacity */
+.find-inspiration-adults .inspiration-subtext {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 140%;
+  margin: 0;
+  color: #000000BF;
+}
+
+/* Teens subtitle colour: white 75% opacity */
+.find-inspiration-teens .inspiration-subtext {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 140%;
+  margin: 0;
+  color: #FFFFFFBF;
+}
+
+/* Scroll wrapper — edge to edge, starts flush with screen left */
+.inspiration-scroll-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-x: auto;
+  /* break out of any parent padding */
+  margin-left: -20px;
+  margin-right: -20px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  -webkit-overflow-scrolling: touch;
+  /* show scrollbar */
+  scrollbar-width: thin;
+}
+
+/* Adults scrollbar: hidden by default, shown on hover */
+.find-inspiration-adults .inspiration-scroll-wrapper {
+  scrollbar-color: transparent transparent;
+
+  &::-webkit-scrollbar {
+    height: 4px;
+    border-radius: 6px;
   }
-  
- 
-  .inspiration-grid {
-    display: flex;
-    flex-wrap: wrap;
-    width: 840px;
-    gap: 10px;
-    white-space: nowrap;
-   -ms-overflow-style: none; /* Internet Explorer and Edge */
-}
-  .inspiration-grid1 {
-    display: flex;
-    flex-wrap: wrap;
-    width: 850px;
-    gap: 10px;
-    white-space: nowrap;
-   -ms-overflow-style: none;
-}
-
-.inspiration-grid::-webkit-scrollbar {
-  //display: none; /* Hide scrollbar for Chrome, Safari, Edge */
-}
-  
-  .inspiration-item {
-    background-color: #FFE8BB;
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
     border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 14px;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    position: relative;
-    height:  59px;
-    min-width:60px;
+  }
 
-    &.highlight {
-      background-color: #120f40;
-      position: relative;
-      
-      &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        border-radius: 12px;
-        background: linear-gradient(to bottom right, #5e5df0, #9966ff);
-        opacity: 0.8;
-        z-index: 1;
-      }
-      
-      .icon-container, .item-title {
-        z-index: 2;
-        position: relative;
-      }
+  &:hover {
+    scrollbar-color: #eea170 #f6d1b7;
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #eea170;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: #f6d1b7;
     }
   }
-  
+}
+
+/* Teens scrollbar: hidden by default, shown on hover */
+.find-inspiration-teens .inspiration-scroll-wrapper {
+  scrollbar-color: transparent transparent;
+
+  &::-webkit-scrollbar {
+    height: 4px;
+    border-radius: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 10px;
+  }
+
+  &:hover {
+    scrollbar-color: #778899 #1C3B6F;
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #3CD5DB;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: #1C3B6F;
+    }
+  }
+}
+
+.inspiration-grid-row {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+  width: max-content;
+  padding-right: 20px;
+}
+
+/* ── Adults tile ── */
+.find-inspiration-adults .inspiration-item-pill {
+  background-color: #FFE8BB;
+  border-radius: 12px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  gap: 3px;
+  min-width: 80px;
+  max-height: 59px;
+  flex-shrink: 0;
+
   .icon-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 5px;
-   /*  font-size: 24px;
-    height: 28px; */
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+
+    img {
+      object-fit: contain;
+    }
   }
-  
+
   .item-title {
     font-size: 12px;
     font-weight: 400;
     line-height: 120%;
+    color: #000000;
+    white-space: nowrap;
+    text-align: center;
   }
-.h-24{
-  height:24px !important
 }
 
-.img-grid{
-  height:16px;
-  width: 18px;
+/* ── Teens tile ── */
+.find-inspiration-teens .inspiration-item-pill {
+  background-color: #0C2B5F;
+  border-radius: 12px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  gap: 3px;
+  min-width: 80px;
+  max-height: 59px;
+  flex-shrink: 0;
+
+  .icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+
+    img {
+      object-fit: contain;
+    }
+  }
+
+  .item-title {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 120%;
+    color: #ffffff;
+    white-space: nowrap;
+    text-align: center;
+  }
 }

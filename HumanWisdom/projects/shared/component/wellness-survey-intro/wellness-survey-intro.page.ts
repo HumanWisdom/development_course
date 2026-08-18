@@ -35,6 +35,9 @@ export class WellnessSurveyIntroPage implements OnInit {
   ) { }
 
   startSurvey() {
+    if (!this.isAdults) {
+      this.logeventservice.logEvent('teenager_click_startsurvey');
+    }
     const { routedFromLogin } = window.history.state;
     this.router.navigate(["/" + SharedService.getprogramName() + '/wellness-survey'], {
       state: {

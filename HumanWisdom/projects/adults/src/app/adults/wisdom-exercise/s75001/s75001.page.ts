@@ -56,8 +56,13 @@ export class S75001Page implements OnInit {
       localStorage.removeItem('microLearningEndUrl');
       this.router.navigateByUrl(microLearningEndUrl);
     } else {
-      // Default: go to home
-      this.router.navigate(['/adults/home']);
+      // Navigate back to wherever the user came from (explore, today, etc.)
+      const navigatedFrom = localStorage.getItem('NaviagtedFrom');
+      if (navigatedFrom && navigatedFrom !== 'null') {
+        this.router.navigateByUrl(navigatedFrom);
+      } else {
+        this.router.navigate(['/adults/explore']);
+      }
     }
   }
 

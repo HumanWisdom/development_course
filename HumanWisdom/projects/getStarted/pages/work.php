@@ -2,23 +2,15 @@
 <html lang="en">
 
   <head>
+    <title>Employee Wellbeing, Life Skills & Leadership | HappierMe</title>
+    <meta name="title"  content="Employee Wellbeing, Life Skills & Leadership | HappierMe">
+    <meta name="description" content="Improve employee wellbeing and build life skills with HappierMe. Develop emotional intelligence, communication and stronger workplace relationships.">
+    <meta name="keywords" content="employee wellbeing, workplace wellbeing, workplace mental health, emotional intelligence at work, leadership skills, communication skills, resilience at work, employee resilience, workplace culture, stress management at work, life skills for work">
+
+
     <meta property="og:title" id="tag1" content="Employee Wellbeing, Life Skills & Leadership | HappierMe">
     <meta property="og:type" content="website" />
     <meta property="og:description" content="Improve employee wellbeing and build life skills with HappierMe. Develop emotional intelligence, communication and stronger workplace relationships.">
-    <meta name="keywords" content="employee wellbeing,workplace wellbeing,
-workplace mental health,
-emotional intelligence at work,
-leadership skills,
-communication skills,
-resilience at work,
-employee resilience,
-workplace culture,
-stress management at work,
-life skills for work
-
-
-
-">
     
     <meta property="og:image" content="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/imgs/website_share.jpg" />
     <meta property="og:image:alt" content="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/imgs/website_share.jpg" />
@@ -35,14 +27,14 @@ life skills for work
       "@context": "https://schema.org",
       "@type": "Article",
       "name": "HappierMe",
-      "description": "Mental health app that helps users understand their emotions and thoughts, and offers a variety of tools and resources to help people improve their lives.",
+      "description": "Improve employee wellbeing and build life skills with HappierMe. Develop emotional intelligence, communication and stronger workplace relationships.",
       "url": "https://happierme.app/"
     },
     {
       "@context": "https://schema.org",
       "@type": "MentalHealthService",
       "name": "HappierMe",
-      "description": "Mental health app that helps users understand their emotions and thoughts, and offers a variety of tools and resources to help people improve their lives.",
+      "description": "Improve employee wellbeing and build life skills with HappierMe. Develop emotional intelligence, communication and stronger workplace relationships.",
       "url": "https://happierme.app/"
     }
   ]
@@ -115,21 +107,34 @@ life skills for work
           padding: 10px;
         }
 
-        /* Make testimonial cards same height on mobile */
-        .owl_testimonials .owl-carousel .owl-item {
+        /* Work testimonials — Figma: pad 20, gap 20, cards 315×213 */
+        .owl_testimonials .owl-carousel.work-testimonials-native {
           display: flex !important;
-          height: auto !important;
+          flex-direction: row !important;
+          flex-wrap: nowrap !important;
+          overflow-x: auto !important;
+          gap: 20px !important;
+          padding: 0 20px !important;
+          -webkit-overflow-scrolling: touch;
         }
 
-        .owl_testimonials .owl-carousel .owl-item .item {
-          width: 100% !important;
-          height: auto !important;
+        .owl_testimonials .owl-carousel.work-testimonials-native > .item,
+        .owl_testimonials .owl-carousel.work-testimonials-native .owl-item {
+          width: 315px !important;
+          min-width: 315px !important;
+          max-width: 315px !important;
+          flex: 0 0 315px !important;
+          height: 213px !important;
+          margin: 0 !important;
         }
 
         .owl_testimonials .div_testimonials.work-testimonial-card {
-          height: auto !important;
-          min-height: 260px !important;
-          width: 100% !important;
+          width: 315px !important;
+          min-width: 315px !important;
+          max-width: 315px !important;
+          height: 213px !important;
+          min-height: 213px !important;
+          max-height: 213px !important;
         }
 
         .owl-carousel .owl-stage {
@@ -147,9 +152,30 @@ life skills for work
       }
 
       .section-header.work-dyk-header,
-      .section-header.work-testimonials-header,
       .section-header.work-inspire-header {
         padding-bottom: 40px !important;
+      }
+
+      .section-header.work-testimonials-header {
+        padding-bottom: 24px !important;
+      }
+
+      section.work-testimonials-section {
+        padding-top: 60px !important;
+        padding-bottom: 60px !important;
+      }
+
+      section.work-dyk-section {
+        padding-top: 60px !important;
+        padding-bottom: 0 !important;
+      }
+
+      section.work-desc-section {
+        padding-bottom: 0 !important;
+      }
+
+      section.work-inspire-section {
+        padding-top: 0 !important;
       }
 
       .section-header.work-blog-header {
@@ -191,16 +217,26 @@ life skills for work
               </div>
         
               <div class="row center_flex absolute_desc absolute_desc_m" data-aos="fade-up" data-aos-delay="500">
-                <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10 col-10 p0 tleft">
+                <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10 col-10 p0 tleft work-hero-stack">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 mt20px">
                     <h1 class="mtb0px fs_36px fw_600 lh_140p fc_ffffff">
-                      Boost workplace wellbeing, performance and productivity
+                      <span class="display_m_none">
+                        Boost workplace wellbeing, performance and productivity
+                      </span>
+                      <span class="display_d_none">
+                        HappierMe for the workplace
+                      </span>
                     </h1>
                   </div>
         
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 ">
                     <h5 class="mt20px mb35px fs_15px fw_400 lh_160p fc_ffffff">
-                      Upskill your staff to be happier, emotionally intelligent and make better decisions. An all-in-one app for mental health, relationships, better decision-making and soft skills.
+                      <span class="display_m_none">
+                        Upskill your staff to be happier, emotionally intelligent and make better decisions. An all-in-one app for mental health, relationships, better decision-making and soft skills.
+                      </span>
+                      <span class="display_d_none">
+                        Boost workplace wellbeing, performance and productivity, with HappierMe. Upskill your staff to be happier, emotionally intelligent and make better decisions. An all-in-one app for mental health, relationships, better decision-making and soft skills.
+                      </span>
                     </h5>
                   </div>
         
@@ -224,7 +260,7 @@ life skills for work
 
 
           <!-- description -->
-          <section>
+          <section class="work-desc-section">
             <div class="row center_flex">
               <div class="p0 flex_block w-1245px gap_40px gap_m24px">
                 <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 pr0px tleft ta_lc mb20px display_d_none" data-aos="fade-up" data-aos-delay="200">
@@ -239,13 +275,28 @@ life skills for work
 
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 pr0px tleft w-384px mt0px work-desc-copy" data-aos="fade-up" data-aos-delay="200">
                   <h2 class="mtb0px fs_30px fw_600 lh_140p fc_000000 work-desc-title">
-                    Feel calm, capable,<br>
-                    and better everyday,<br>
-                    with HappierMe!
+                    <span class="display_m_none">
+                      Feel calm, capable,<br>
+                      and better everyday,<br>
+                      with HappierMe!
+                    </span>
+                    <span class="display_d_none">
+                      Feel calm, capable, and<br>
+                      better everyday, with<br>
+                      HappierMe.
+                    </span>
                   </h2>
 
                   <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000 work-desc-subtitle">
-                    How you think matters! The app helps you feel better now, and then helps you to understand your own mind so you can be in charge of how you respond to challenges.
+                    <span class="display_m_none">
+                      How you think matters! The app helps you feel better now, and then helps you to understand your own mind so you can be in charge of how you respond to challenges.
+                    </span>
+                    <span class="display_d_none">
+                      How you think matters! The app helps you feel better<br>
+                      now, and then helps you to understand your own mind<br>
+                      so you can be in charge of how you respond to<br>
+                      challenges.
+                    </span>
                   </h5>
                 </div>
               </div>
@@ -435,7 +486,7 @@ life skills for work
               <div class="row center_flex tcenter" data-aos="fade-up" data-aos-delay="100">
                 <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
                   <h2 class="mtb0px fs_30px fw_600 lh_120p fc_000000 work-testimonials-title">
-                    The HappierMe impact across organisations
+                    The HappierMe impact <br class="display_d_none">across organisations
                   </h2>
                 </div>
               </div>
@@ -551,6 +602,15 @@ life skills for work
                       </div>
                     </div>
 
+                  </div>
+
+                  <div class="work-testimonials-footer">
+                    <a class="sap work-testimonials-more" href="https://happierme.app/adults/testimonials">
+                      <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
+                        View all success stories
+                      </h4>
+                      <span class="chevron-pink"><span style="-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span>
+                    </a>
                   </div>
 
                 </div>
@@ -881,7 +941,7 @@ life skills for work
                         </div>
 
                         <div class="row">
-                          <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                          <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                             <h4 class="mtb0px fs_18px fw_500 lh_150p fc_000000">
                               To succeed as a leader you need self-awareness
                             </h4>
@@ -899,7 +959,7 @@ life skills for work
                         </div>
 
                         <div class="row">
-                          <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                          <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                             <h4 class="mtb0px fs_18px fw_500 lh_150p fc_000000">
                               6 ways to transform organisations
                             </h4>
@@ -917,7 +977,7 @@ life skills for work
                         </div>
 
                         <div class="row">
-                          <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                          <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                             <h4 class="mtb0px fs_18px fw_500 lh_150p fc_000000">
                               How can organizations reduce workplace conflict and boost collaboration? 
                             </h4>
@@ -930,8 +990,9 @@ life skills for work
             <div class="work-blog-footer">
               <a class="sap work-blog-more" href="https://happierme.app/adults/blogs">
                 <h4 class="mtb0px fs_18px fw_500 lh_150p td_underline">
-                  See all posts
+                  View all blogs
                 </h4>
+                <span class="chevron-pink"><span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span>
               </a>
               <div class="owl-theme mt10px work-blog-nav">
                 <div class="owl-controls">
@@ -960,46 +1021,93 @@ life skills for work
     <!-- /vendor_footer -->
 
     <script>
-      function initWorkTestimonialsCarousel() {
-        var $tc = $('body.page-work .owl_testimonials .owl-carousel');
-        if (!$tc.length) return;
+      (function () {
+        var workTestimonialsMode = null;
 
-        var isMobile = window.matchMedia('(max-width: 767px)').matches;
-
-        if ($tc.hasClass('owl-loaded')) {
-          $tc.trigger('destroy.owl.carousel');
+        function ensureTestimonialItems($tc) {
+          var $items = $tc.find('.item');
+          if (!$items.length) return $();
+          // Flatten so .item are direct children (needed after Owl or native mode)
+          $items.detach();
+          $tc.children().remove();
+          $tc.append($items);
+          return $items;
         }
 
-        $tc.removeClass('work-testimonials-native owl-loaded owl-drag');
+        function initWorkTestimonialsCarousel() {
+          var $tc = $('body.page-work .owl_testimonials .owl-carousel');
+          if (!$tc.length) return;
 
-        if (isMobile) {
-          $tc.addClass('work-testimonials-native');
-          return;
-        }
+          var isMobile = window.matchMedia('(max-width: 767px)').matches;
+          var nextMode = isMobile ? 'mobile' : 'desktop';
 
-        if (typeof $.fn.owlCarousel !== 'function') return;
-
-        $tc.owlCarousel({
-          stagePadding: 0,
-          loop: false,
-          margin: 30,
-          nav: false,
-          autoWidth: true,
-          dots: false,
-          touchDrag: true,
-          mouseDrag: true,
-          pullDrag: true,
-          responsive: {
-            0: { items: 1 },
-            600: { items: 3 },
-            1000: { items: 3 }
+          // Avoid destroying/rebuilding on every resize pixel
+          if (workTestimonialsMode === nextMode) {
+            if (nextMode === 'desktop' && !$tc.hasClass('owl-loaded') && typeof $.fn.owlCarousel === 'function') {
+              // fall through to (re)init
+            } else {
+              return;
+            }
           }
-        });
-      }
 
-      document.addEventListener('DOMContentLoaded', initWorkTestimonialsCarousel);
-      window.addEventListener('load', initWorkTestimonialsCarousel);
-      window.addEventListener('resize', initWorkTestimonialsCarousel);
+          if ($tc.hasClass('owl-loaded')) {
+            try {
+              $tc.trigger('destroy.owl.carousel');
+            } catch (e) {}
+          }
+
+          ensureTestimonialItems($tc);
+          $tc.removeClass('work-testimonials-native owl-loaded owl-drag owl-grab');
+          $tc.css({ display: '', flexDirection: '', flexWrap: '', overflowX: '', overflowY: '' });
+
+          if (isMobile) {
+            $tc.addClass('work-testimonials-native');
+            workTestimonialsMode = 'mobile';
+            return;
+          }
+
+          if (typeof $.fn.owlCarousel !== 'function') {
+            workTestimonialsMode = null;
+            return;
+          }
+
+          $tc.owlCarousel({
+            stagePadding: 0,
+            loop: false,
+            margin: 30,
+            nav: false,
+            /* Fit 3 full cards — autoWidth caused the last card to clip */
+            autoWidth: false,
+            dots: false,
+            touchDrag: true,
+            mouseDrag: true,
+            pullDrag: true,
+            responsive: {
+              0: { items: 1 },
+              768: { items: 2 },
+              1100: { items: 3 }
+            }
+          });
+          workTestimonialsMode = 'desktop';
+        }
+
+        function scheduleInit() {
+          initWorkTestimonialsCarousel();
+          // Owl may load slightly after this inline script
+          setTimeout(initWorkTestimonialsCarousel, 100);
+          setTimeout(initWorkTestimonialsCarousel, 500);
+        }
+
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', scheduleInit);
+        } else {
+          scheduleInit();
+        }
+        window.addEventListener('load', scheduleInit);
+        window.addEventListener('resize', function () {
+          initWorkTestimonialsCarousel();
+        });
+      })();
     </script>
 
   </body>

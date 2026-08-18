@@ -153,6 +153,9 @@ export class S157002Page implements OnInit, AfterViewInit {
     return SharedService.GetExerciseClassName(day,this.currentDay,this.vistedScreens,this.nextDay)
   }
   getdayevent(event, isBack = false) {
+    this.isShowButton=true;
+        this.isShowTranscript = true;
+        this.isShowAudio=false;
     if (event === "intro" || event === "0") {
       this.startTime = Date.now();
       this.slideStart = 0;
@@ -309,7 +312,7 @@ export class S157002Page implements OnInit, AfterViewInit {
             ?.firstChild?.children[0]?.children[1]?.children[0]?.lastChild
             ?.classList.value;
       }
-      if (data == "audio-test") {
+    /*   if (data == "audio-test") {
         this.isShowButton=true;
         this.isShowTranscript = true;
         this.isShowAudio=false;
@@ -317,12 +320,18 @@ export class S157002Page implements OnInit, AfterViewInit {
         this.isShowButton=false;
         this.isShowTranscript = false;
         this.isShowAudio = false;
-      }
+      } */
+     this.isShowButton = true;
+    this.isShowTranscript = true;
+    this.isShowAudio = false;
       this.setHint();
     }, 700);
   }
 
   back() {
+      this.isShowButton=true;
+      this.isShowTranscript = true;
+      this.isShowAudio=false;
     if (this.lastClick >= (Date.now() - this.delay)) {
       return;
     }
@@ -360,7 +369,7 @@ export class S157002Page implements OnInit, AfterViewInit {
             ?.firstChild?.children[0]?.children[1]?.children[0]?.lastChild
             ?.classList.value;
       }
-      if (data == "audio-test") {
+    /*   if (data == "audio-test") {
         this.isShowTranscript = true;
         this.isShowAudio=false;
       this.isShowButton=true;
@@ -368,13 +377,37 @@ export class S157002Page implements OnInit, AfterViewInit {
         this.isShowTranscript = false;
         this.isShowAudio = false;
         this.isShowButton=false;
-      }
+      } */
       this.setHint();
     }, 700);
   }
 
   goBack() {
-    this.location.back();
+      if(this.currentDay === 0 && this.slideStart === 1) {
+    
+    const fromMicroLearningEnd = localStorage.getItem('fromMicroLearningEnd');
+    const microLearningEndUrl = localStorage.getItem('microLearningEndUrl');
+    if (fromMicroLearningEnd === 'true' && microLearningEndUrl) {
+      localStorage.removeItem('fromMicroLearningEnd');
+      localStorage.removeItem('microLearningEndUrl');
+      this.router.navigateByUrl(microLearningEndUrl);
+    } else {
+      // Navigate back to wherever the user came from (explore, today, etc.)
+      const navigatedFrom = localStorage.getItem('NaviagtedFrom');
+      if (navigatedFrom && navigatedFrom !== 'null') {
+        this.router.navigateByUrl(navigatedFrom);
+      } else {
+        this.router.navigate(['/teenagers/explore']);
+      }
+    }
+    }
+        else
+        {
+          
+          this.getdayevent('intro');
+           let carouselId = this.dayclass === 'intro' ? '#mdp_carousel_intro' : `#mdp_carousel_day${this.dayclass}`;
+            $(carouselId).carousel(0);
+        }
   }
 
 

@@ -164,6 +164,9 @@ export class S75002Page implements OnInit, AfterViewInit {
   }
 
   getdayevent(event, isBack = false) {
+     this.isShowButton=true;
+        this.isShowTranscript = true;
+        this.isShowAudio=false;
     if (event === "intro" || event === "0") {
       this.startTime = Date.now();
       this.slideStart = 0;
@@ -272,8 +275,8 @@ export class S75002Page implements OnInit, AfterViewInit {
             data = this.elementRef.nativeElement.querySelectorAll('.active')[0]?.firstChild?.children[0]
               ?.children[1]?.children[0]?.lastChild?.classList.value;
           }
-
-          if (data === "audio-test") {
+         
+          /* if (data === "audio-test") {
             this.isShowButton = true;
             this.isShowTranscript = true;
             this.isShowAudio = false;
@@ -281,7 +284,7 @@ export class S75002Page implements OnInit, AfterViewInit {
             this.isShowButton = false;
             this.isShowTranscript = false;
             this.isShowAudio = false;
-          }
+          } */
         }, 100);
       }, 700);
     } else {
@@ -343,7 +346,7 @@ export class S75002Page implements OnInit, AfterViewInit {
             ?.firstChild?.children[0]?.children[1]?.children[0]?.lastChild
             ?.classList.value;
       }
-      if (data == "audio-test") {
+     /*  if (data == "audio-test") {
         this.isShowButton=true;
         this.isShowTranscript = true;
         this.isShowAudio=false;
@@ -351,7 +354,10 @@ export class S75002Page implements OnInit, AfterViewInit {
         this.isShowButton=false;
         this.isShowTranscript = false;
         this.isShowAudio = false;
-      }
+      } */
+      this.isShowButton=true;
+        this.isShowTranscript = true;
+        this.isShowAudio=false;
       
       this.setHint();
     }, 700);
@@ -387,7 +393,7 @@ export class S75002Page implements OnInit, AfterViewInit {
             ?.firstChild?.children[0]?.children[1]?.children[0]?.lastChild
             ?.classList.value;
       }
-      if (data == "audio-test") {
+      /* if (data == "audio-test") {
         this.isShowTranscript = true;
         this.isShowAudio=false;
       this.isShowButton=true;
@@ -395,8 +401,10 @@ export class S75002Page implements OnInit, AfterViewInit {
         this.isShowTranscript = false;
         this.isShowAudio = false;
         this.isShowButton=false;
-      }
-      
+      } */
+      this.isShowButton=true;
+      this.isShowTranscript = true;
+      this.isShowAudio=false;
       this.setHint();
     }, 700);
   }
@@ -520,6 +528,10 @@ export class S75002Page implements OnInit, AfterViewInit {
   }
 
   goBack() {
+   
+
+    if(this.currentDay === 0 && this.slideStart === 1) {
+
     // Check if we came from micro-learning end screen
     const fromMicroLearningEnd = localStorage.getItem('fromMicroLearningEnd');
     const microLearningEndUrl = localStorage.getItem('microLearningEndUrl');
@@ -530,8 +542,24 @@ export class S75002Page implements OnInit, AfterViewInit {
       localStorage.removeItem('microLearningEndUrl');
       this.router.navigateByUrl(microLearningEndUrl);
     } else {
-      // Default: go to home
-      this.router.navigate(['/adults/home']);
+      // Navigate back to wherever the user came from (explore, today, etc.)
+      const navigatedFrom = localStorage.getItem('NaviagtedFrom');
+      if (navigatedFrom && navigatedFrom !== 'null') {
+        this.router.navigateByUrl(navigatedFrom);
+      } else {
+        this.router.navigate(['/adults/explore']);
+      }
     }
   }
+  else
+  {
+   
+    this.getdayevent('intro');
+     let carouselId = this.dayclass === 'intro' ? '#mdp_carousel_intro' : `#mdp_carousel_day${this.dayclass}`;
+        $(carouselId).carousel(0);
+        // this.setHint();
+  }
+}
+
+
 }

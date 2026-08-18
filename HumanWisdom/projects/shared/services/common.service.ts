@@ -27,15 +27,80 @@ export class CommonService {
   isFooterOwlVisible$ = this.isFooterOwlVisibleSubject.asObservable();
   setFooterOwlVisible(visible: boolean): void { this.isFooterOwlVisibleSubject.next(visible); }
 
-  /** True when in-page Olly was shown on Today or Olly landing (suppress footer bubble only). */
+  /** Local calendar day key (YYYY-MM-DD) for once-a-day Olly bubble gating. */
+  getOllyBubbleDayKey(): string {
+    const d = new Date();
+    const y = d.getFullYear();
+    const m = String(d.getMonth() + 1).padStart(2, '0');
+    const day = String(d.getDate()).padStart(2, '0');
+    return `${y}-${m}-${day}`;
+  }
+
+  private readonly OLLY_BUBBLE_SESSION_KEY = 'olly_speech_bubble_shown';
+  private readonly OLLY_BUBBLE_KEYS = [
+    'olly_speech_bubble_shown',
+    'olly_today_intro_shown',
+    'olly_today_dialogue_shown',
+    'olly_landing_intro_shown',
+    'olly_landing_dialogue_shown',
+    'owl_dialogue_shown',
+  ];
+
+  private isOllyBubbleValueShownToday(value: string | null): boolean {
+    if (!value) {
+      return false;
+    }
+    return value === this.getOllyBubbleDayKey() || value === 'true';
+  }
+
+  /** True when a storage key was marked with today's date (or legacy 'true'). */
+  isOllyBubbleShownToday(storageKey: string): boolean {
+    if (this.hasShownOllyBubbleToday()) {
+      return true;
+    }
+    return this.isOllyBubbleValueShownToday(localStorage.getItem(storageKey));
+  }
+
+  /**
+   * Persist that the Olly speech bubble was shown today.
+   * Writes both localStorage (survives new sessions) and sessionStorage (survives refresh).
+   */
+  markOllyBubbleShownToday(storageKey?: string): void {
+    const today = this.getOllyBubbleDayKey();
+    try {
+      sessionStorage.setItem(this.OLLY_BUBBLE_SESSION_KEY, today);
+      this.OLLY_BUBBLE_KEYS.forEach((key) => localStorage.setItem(key, today));
+      if (storageKey) {
+        localStorage.setItem(storageKey, today);
+      }
+    } catch {
+      // Ignore quota / private-mode failures; session + in-memory flags still apply.
+    }
+  }
+
+  /** True when any Olly Hi bubble (Today, landing, or footer) was already shown today. */
+  hasShownOllyBubbleToday(): boolean {
+    const today = this.getOllyBubbleDayKey();
+    if (sessionStorage.getItem(this.OLLY_BUBBLE_SESSION_KEY) === today) {
+      return true;
+    }
+    return this.OLLY_BUBBLE_KEYS.some((key) =>
+      this.isOllyBubbleValueShownToday(localStorage.getItem(key))
+    );
+  }
+
+  /** True when in-page Olly was shown today on Today or Olly landing (suppress footer bubble). */
   hasSeenInPageOlly(): boolean {
-    const keys = [
-      'olly_today_intro_shown',
-      'olly_today_dialogue_shown',
-      'olly_landing_intro_shown',
-      'olly_landing_dialogue_shown',
-    ];
-    return keys.some((key) => localStorage.getItem(key) === 'true');
+    return this.hasShownOllyBubbleToday();
+  }
+
+  clearOllyBubbleShownToday(): void {
+    try {
+      sessionStorage.removeItem(this.OLLY_BUBBLE_SESSION_KEY);
+      this.OLLY_BUBBLE_KEYS.forEach((key) => localStorage.removeItem(key));
+    } catch {
+      // ignore
+    }
   }
 
   // In-memory session flags — survive footer owl component destroy/recreate on route changes.
@@ -67,9 +132,9 @@ export class CommonService {
     this.footerBubbleSequenceScheduled = false;
   }
 
-  /** Footer Hi bubble: show on direct navigation; hide after Today / Olly landing in-page Olly. */
+  /** Footer Hi bubble: once per calendar day, including across refresh. */
   shouldShowFooterBubble(): boolean {
-    if (this.hasSeenInPageOlly()) {
+    if (this.hasShownOllyBubbleToday()) {
       return false;
     }
     return !this.footerBubbleShownThisSession;

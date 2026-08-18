@@ -22623,13 +22623,82 @@ input[type="search"]:focus::-webkit-search-cancel-button
 ul.dh_ul li {
   /* padding: 22px 0  0 0!important; */
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  padding: 15px 0 15px 0;
+  padding: 15px 0 15px 15px;
+   /*margin-right: -15px;
+     margin-left: -15px; */
+}
+.login1:hover{
+  color: #803358 !important;
+  
+}
+.login1{
+  font-size: 12px;
+  font-weight: 600;
+  /* line-height: 150%; */
+  text-decoration: underline;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
+/* .m-menu :hover {
+    background: red;
+    margin-right: -8px;
+    margin-left: -5px;
+    padding: 15px;
+} */
+ul.dh_ul li:hover{
+  /* opacity: 0.7; */
+  /* background-color: green; */
+  background: #FFE8BB;
+  /* padding-left: 5px;
+  padding-right: 5px; */
+   /* margin-right: -15px; */
+    /* margin-left: -15px; */
+    /* padding: 15px 0 15px 10px; */
+}
+/* .hamburger_sociali img:hover{
+  background-color:#ffd889 ;
+
+
+} */
 ul.dh_ul li:last-child {
   border-bottom: 0 !important;
 }
 
+
+
+.image-box {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  overflow: hidden;
+}
+
+.image-box img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+.img1 {
+  opacity: 1;
+}
+
+.img2 {
+  opacity: 0;
+}
+
+.image-box:hover .img1 {
+  opacity: 0;
+}
+
+.image-box:hover .img2 {
+  opacity: 1;
+}
 /* Safari 11+ */
 /* @media not all and (min-resolution:.001dpcm)
 { @supports (-webkit-appearance:none) and (stroke-color:transparent) {
@@ -24347,6 +24416,8 @@ a {
 
 .br_blr_20px {
   border-radius: 0px 0px 20px 20px;
+  height: 200px;
+  object-fit: cover;
 }
 
 .img_mt_01 {
@@ -33533,8 +33604,11 @@ body * {
   border-radius: 12px;
   border: 0;
   background: #FFE8BB;
+  height: 130px;
+  min-height: 130px;
   padding: 15px !important;
   margin-bottom: 10px;
+  box-sizing: border-box;
 }
 
 .div_fa a:last-child .box_v3_08 {
@@ -34548,8 +34622,48 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   margin-top: 100px;
 }
 
+.btn_ctdout:hover {
+background: #FFD889;
+}
 
+/* .image-box{
+    position:relative;
+    width:300px;
+    height:200px;
+    overflow:hidden;
+} */
 
+/* .image-box img{
+    position:absolute;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:0.5s ease;
+} */
+
+ .img2{
+    opacity:0;
+} 
+
+/* .hamburger_sociali:hover .img2{
+    opacity:1;
+} */
+
+/* .hamburger_sociali :hover .img2{
+  opacity: 1;
+
+} */
+.hamburger_sociali :hover .img_01{
+  opacity: 0;
+}
+.img2{
+    opacity:0;
+}
+
+.btn_ctdhov:hover{
+ background: linear-gradient(180deg, #D7586B 0%, #BE3B4F 100%); 
+/* background: red; */
+}
 .btn_ctdout {
   height: 50px;
   width: 100%;
@@ -34557,7 +34671,7 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   border: 0;
   border-radius: 100px;
   /* background: #ED7D6F !important; */
-  background: #FFD889 !important;
+  background: #FFE8BB;
   color: #000 !important;
   font-size: 15px;
   font-weight: 600;
@@ -34572,6 +34686,22 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   border-radius: 100px;
   /* background: #ED7D6F !important; */
   background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%) !important;
+  ;
+
+  color: #FFF !important;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 150%;
+}
+
+.btn_ctdhov {
+  height: 50px;
+  width: 100%;
+  margin: 0;
+  border: 0;
+  border-radius: 100px;
+  /* background: #ED7D6F !important; */
+  background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%) ;
   ;
 
   color: #FFF !important;
@@ -34739,9 +34869,6 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   background: #FFF7E6;
 }
 
-.br_blr_20px {
-  border-radius: 0 0 20px 20px;
-}
 
 .we_ft .btn_wec {
   margin: 0 10px 0 0;
@@ -35685,6 +35812,8 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
 
 .adults_index_img {
   border-radius: 0 0 20px 20px;
+  height: 200px;
+  object-fit: cover;
 }
 
 .cptrem {
@@ -37438,9 +37567,11 @@ span {
 .toc_adiv_mp a>.row {
   border-radius: 12px;
   background: #FFE8BB;
-  min-height: 88px;
+  height: 130px;
+  min-height: 130px;
   margin-bottom: 10px;
-  padding: 12px;
+  padding: 15px;
+  box-sizing: border-box;
   /* margin: 0 10px 10px 10px; */
 }
 
@@ -37461,6 +37592,130 @@ span {
 
 .toc_adiv_mp {
   margin-bottom: 30px;
+}
+
+/* Find-answers tiles — Figma: height 130, padding 15, gap 15 */
+.toc_adiv_mp .session_imgnew,
+.div_fa .session_imgnew,
+.box_v3_08 .session_imgnew,
+.toc_adiv_mp img.img_podcast_01,
+.div_fa img.w100,
+.box_v3_08 img.w100 {
+  width: 100px !important;
+  height: 100px !important;
+  max-width: 100px !important;
+  object-fit: cover !important;
+  border-radius: 6px;
+  display: block;
+}
+
+.toc_adiv_mp [class*="d-flex"],
+.toc_adiv_mp .center_flex,
+.div_fa [class*="d-flex"],
+.div_fa .center_flex,
+.box_v3_08.center_flex,
+.box_v3_08[class*="d-flex"] {
+  justify-content: flex-start !important;
+  gap: 15px;
+  align-items: center !important;
+}
+
+.toc_adiv_mp [class*="d-flex"] > [class*="col-4"],
+.toc_adiv_mp [class*="d-flex"] > [class*="col-lg-4"],
+.toc_adiv_mp [class*="d-flex"] > [class*="col-md-4"],
+.toc_adiv_mp [class*="d-flex"] > [class*="col-sm-4"],
+.toc_adiv_mp [class*="d-flex"] > [class*="col-xs-4"],
+.toc_adiv_mp .center_flex > [class*="col-4"],
+.toc_adiv_mp .center_flex > [class*="col-lg-4"],
+.toc_adiv_mp .center_flex > [class*="col-md-4"],
+.toc_adiv_mp .center_flex > [class*="col-sm-4"],
+.toc_adiv_mp .center_flex > [class*="col-xs-4"],
+.div_fa [class*="d-flex"] > [class*="col-4"],
+.div_fa [class*="d-flex"] > [class*="col-lg-4"],
+.div_fa [class*="d-flex"] > [class*="col-md-4"],
+.div_fa [class*="d-flex"] > [class*="col-sm-4"],
+.div_fa [class*="d-flex"] > [class*="col-xs-4"],
+.div_fa .center_flex > [class*="col-4"],
+.div_fa .center_flex > [class*="col-lg-4"],
+.div_fa .center_flex > [class*="col-md-4"],
+.div_fa .center_flex > [class*="col-sm-4"],
+.div_fa .center_flex > [class*="col-xs-4"],
+.box_v3_08 > [class*="col-4"],
+.box_v3_08 > [class*="col-lg-4"],
+.box_v3_08 > [class*="col-md-4"],
+.box_v3_08 > [class*="col-sm-4"],
+.box_v3_08 > [class*="col-xs-4"] {
+  width: auto !important;
+  flex: 0 0 auto !important;
+  max-width: none !important;
+}
+
+.toc_adiv_mp [class*="d-flex"] > [class*="col-7"],
+.toc_adiv_mp [class*="d-flex"] > [class*="col-8"],
+.toc_adiv_mp .center_flex > [class*="col-7"],
+.toc_adiv_mp .center_flex > [class*="col-8"],
+.div_fa [class*="d-flex"] > [class*="col-7"],
+.div_fa [class*="d-flex"] > [class*="col-8"],
+.div_fa [class*="d-flex"] > [class*="col-lg-7"],
+.div_fa [class*="d-flex"] > [class*="col-md-7"],
+.div_fa [class*="d-flex"] > [class*="col-sm-7"],
+.div_fa [class*="d-flex"] > [class*="col-xs-7"],
+.div_fa .center_flex > [class*="col-7"],
+.div_fa .center_flex > [class*="col-8"],
+.div_fa .center_flex > [class*="col-lg-7"],
+.div_fa .center_flex > [class*="col-md-7"],
+.div_fa .center_flex > [class*="col-sm-7"],
+.div_fa .center_flex > [class*="col-xs-7"],
+.box_v3_08 > [class*="col-7"],
+.box_v3_08 > [class*="col-8"],
+.box_v3_08 > [class*="col-lg-7"],
+.box_v3_08 > [class*="col-md-7"],
+.box_v3_08 > [class*="col-sm-7"],
+.box_v3_08 > [class*="col-xs-7"] {
+  flex: 1 1 0 !important;
+  width: auto !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+.toc_adiv_mp [class*="d-flex"] > .col-1,
+.toc_adiv_mp [class*="d-flex"] > .col-lg-1,
+.toc_adiv_mp [class*="d-flex"] > .col-md-1,
+.toc_adiv_mp [class*="d-flex"] > .col-sm-1,
+.toc_adiv_mp [class*="d-flex"] > .col-xs-1,
+.toc_adiv_mp .center_flex > .col-1,
+.toc_adiv_mp .center_flex > .col-lg-1,
+.toc_adiv_mp .center_flex > .col-md-1,
+.toc_adiv_mp .center_flex > .col-sm-1,
+.toc_adiv_mp .center_flex > .col-xs-1,
+.div_fa [class*="d-flex"] > .col-1,
+.div_fa [class*="d-flex"] > .col-lg-1,
+.div_fa [class*="d-flex"] > .col-md-1,
+.div_fa [class*="d-flex"] > .col-sm-1,
+.div_fa [class*="d-flex"] > .col-xs-1,
+.div_fa .center_flex > .col-1,
+.div_fa .center_flex > .col-lg-1,
+.div_fa .center_flex > .col-md-1,
+.div_fa .center_flex > .col-sm-1,
+.div_fa .center_flex > .col-xs-1,
+.box_v3_08 > .col-1,
+.box_v3_08 > .col-lg-1,
+.box_v3_08 > .col-md-1,
+.box_v3_08 > .col-sm-1,
+.box_v3_08 > .col-xs-1 {
+  width: auto !important;
+  flex: 0 0 auto !important;
+  max-width: none !important;
+  margin-left: auto !important;
+}
+
+/* Wide screen: keep find-answers list rows left-aligned */
+@media (min-width: 768px) {
+  .div_fq a .row,
+  .div_fq a .center_flex {
+    justify-content: flex-start !important;
+  }
 }
 
 .partnership_treesisters {

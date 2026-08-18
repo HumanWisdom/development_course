@@ -3,20 +3,15 @@
 <html lang="en">
 
 <head>
-  <title>Explore Your Inner World with Our Self-Discovery Blog</title>
-  <meta property="title" content="Mental Wellbeing and Life Skills Blog | HappierMe">
-  <meta property="description"
-    content="Explore expert articles on mental wellbeing, self-awareness, emotional intelligence, relationships and life skills from HappierMe.">
-  <meta property="keyword"
-    content="Mental wellbeing articles,self-awareness blog,
-emotional intelligence,
-life skills,
-personal growth,
-mental health articles,
-resilience,
-relationships,
-stress management
-">
+  <title>Mental Wellbeing and Life Skills Blog | HappierMe</title>
+  <meta name="title" content="Mental Wellbeing and Life Skills Blog | HappierMe">
+  <meta name="description" content="Explore expert articles on mental wellbeing, self-awareness, emotional intelligence, relationships and life skills from HappierMe.">
+  <meta name="keyword" content="Mental wellbeing articles,self-awareness blog, emotional intelligence, life skills, personal growth, mental health articles, resilience, relationships, stress management">
+
+
+
+  <meta property="og:title" content="Mental Wellbeing and Life Skills Blog | HappierMe">
+  <meta property="og:description" content="Explore expert articles on mental wellbeing, self-awareness, emotional intelligence, relationships and life skills from HappierMe.">
 
   <!-- vendor_header -->
   <?php Template::vendorHeader(); ?>
@@ -41,20 +36,60 @@ stress management
       margin-top: 20px;
     }
 
-    #toggle {
+    /* Match index.php .chevron-pink + .blog-more */
+    #toggle.blog-more .chevron-pink {
+      font-size: 12px;
+      color: #d7586b;
+      padding-top: 3px;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    #toggle.blog-more {
       background: none;
       border: none;
       cursor: pointer;
-      font-size: 18px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 16px;
       font-weight: 500;
       color: #d7586b;
       text-decoration: underline;
+      padding: 0;
     }
 
-    #toggle:hover,
-    #toggle:focus {
+    #toggle.blog-more:hover,
+    #toggle.blog-more:hover .chevron-pink,
+    #toggle.blog-more:hover .chevron-pink .bi {
       color: #803358 !important;
       text-decoration: underline !important;
+    }
+
+    #toggle.blog-more:active,
+    #toggle.blog-more:active .chevron-pink,
+    #toggle.blog-more:active .chevron-pink .bi {
+      color: #803358 !important;
+    }
+
+    /* Don't keep hover color after click (focus) — match index blog-more */
+    #toggle.blog-more:focus,
+    #toggle.blog-more:focus-visible {
+      outline: none;
+      color: #d7586b;
+    }
+
+    #toggle.blog-more:focus .chevron-pink,
+    #toggle.blog-more:focus .chevron-pink .bi,
+    #toggle.blog-more:focus-visible .chevron-pink,
+    #toggle.blog-more:focus-visible .chevron-pink .bi {
+      color: #d7586b;
+    }
+
+    #toggle.blog-more:focus:hover,
+    #toggle.blog-more:focus:hover .chevron-pink,
+    #toggle.blog-more:focus:hover .chevron-pink .bi {
+      color: #803358 !important;
     }
 
     /* Hero: clear stacked fixed headers */
@@ -114,10 +149,35 @@ stress management
       }
     }
 
-    @media (max-width: 767px) {
+    @media (max-width: 768px) {
 
       .blog-index-hero.hpt120px {
         margin-top: -4px !important;
+      }
+
+      /* Tighten space between View More and footer (default .dfooter margin-top: 100px) */
+      body.page-blog-index .dfooter {
+        margin-top: 40px !important;
+      }
+
+      body.page-blog-index .btn-container {
+        margin-top: 16px;
+        margin-bottom: 0;
+        height: auto;
+      }
+
+      body.page-blog-index main#main > section:last-of-type {
+        padding-bottom: 0;
+        margin-bottom: 0;
+      }
+
+      /* Blog card titles: 18px on mobile — beat section.hpt120px ~ main#main section h4 { 12px } */
+      body.page-blog-index section.hpt120px ~ main#main .blog_links h4,
+      body.page-blog-index section.hpt120px ~ main#main .blog_links h4.fs_18px,
+      body.page-blog-index section.hpt120px ~ main#main .blog_links a h4,
+      body.page-blog-index section.hpt120px ~ main#main section .blog_links h4.mt20px.mb10px.fs_18px {
+        font-size: 18px !important;
+        line-height: 140% !important;
       }
 
       /* Force White Plus/Minus Icons on Mobile Accordion - Override SVG from main.css */
@@ -181,6 +241,236 @@ stress management
     }
 
     }
+
+    /* Tags + search — Figma blog landing */
+    body.page-blog-index .blog-filter-bar-wrap {
+      float: none;
+      clear: both;
+      width: 100%;
+      margin: 40px 0 30px;
+    }
+
+    body.page-blog-index .blog-filter-bar {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      position: relative;
+      min-height: 54px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    body.page-blog-index .blog-filter-bar::-webkit-scrollbar {
+      display: none;
+    }
+
+    body.page-blog-index .blog-filter-tag {
+      flex: 0 0 auto;
+      height: 54px;
+      margin: 0;
+      padding: 4px 24px;
+      border: 1px solid transparent;
+      border-radius: 27px;
+      background: rgba(255, 247, 230, 1);
+      color: rgba(128, 51, 88, 1);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 150%;
+      white-space: nowrap;
+      cursor: pointer;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    body.page-blog-index .blog-filter-tag.is-active,
+    body.page-blog-index .blog-filter-tag:focus-visible {
+      border-color: rgba(128, 51, 88, 1);
+      outline: none;
+    }
+
+    body.page-blog-index .blog-filter-search {
+      flex: 0 0 54px;
+      width: 54px;
+      height: 54px;
+      margin: 0 0 0 auto;
+      padding: 0;
+      border: none;
+      border-radius: 27px;
+      background: rgba(255, 247, 230, 1);
+      cursor: pointer;
+      position: sticky;
+      right: 0;
+      z-index: 2;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    body.page-blog-index .blog-filter-search .blog-search-icon,
+    body.page-blog-index .blog-filter-search .blog-search-icon::after {
+      display: block;
+      position: absolute;
+    }
+
+    body.page-blog-index .blog-filter-search .blog-search-icon {
+      width: 15px;
+      height: 15px;
+      border: 2px solid rgba(128, 51, 88, 1);
+      border-radius: 50%;
+      top: 16px;
+      left: 16px;
+      box-sizing: border-box;
+    }
+
+    body.page-blog-index .blog-filter-search .blog-search-icon::after {
+      content: '';
+      width: 7px;
+      height: 2px;
+      background: rgba(128, 51, 88, 1);
+      top: 12px;
+      left: 10px;
+      transform: rotate(45deg);
+    }
+
+    body.page-blog-index .blog-filter-search.is-open .blog-search-icon {
+      width: 0;
+      height: 16px;
+      border: none;
+      border-radius: 0;
+      background: rgba(128, 51, 88, 1);
+      top: 19px;
+      left: 26px;
+      transform: rotate(45deg);
+    }
+
+    body.page-blog-index .blog-filter-search.is-open .blog-search-icon::after {
+      width: 16px;
+      height: 2px;
+      top: 7px;
+      left: -7px;
+      transform: none;
+    }
+
+    body.page-blog-index .blog-search-box {
+      position: absolute;
+      left: 0;
+      right: 70px;
+      top: 0;
+      height: 54px;
+      width: 0;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease, width 0.25s ease;
+    }
+
+    body.page-blog-index .blog-filter-bar.is-searching {
+      overflow: visible;
+    }
+
+    body.page-blog-index .blog-filter-bar.is-searching .blog-filter-tag {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    body.page-blog-index .blog-filter-bar.is-searching .blog-search-box {
+      width: calc(100% - 70px);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    body.page-blog-index .blog-search-input {
+      width: 100%;
+      height: 54px;
+      margin: 0;
+      padding: 4px 24px;
+      border: 1px solid rgba(128, 51, 88, 1);
+      border-radius: 27px;
+      background: rgba(255, 247, 230, 1);
+      color: rgba(128, 51, 88, 1);
+      font-family: 'Poppins', sans-serif;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 150%;
+      box-shadow: none;
+    }
+
+    body.page-blog-index .blog-search-input:focus {
+      outline: none;
+    }
+
+    body.page-blog-index .blog-search-input::placeholder {
+      color: rgba(128, 51, 88, 0.55);
+    }
+
+    body.page-blog-index .blog-filter-heading {
+      margin: 24px 0 16px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 30px;
+      font-weight: 600;
+      line-height: 140%;
+      color: #000000;
+    }
+
+    body.page-blog-index .blog-filter-heading.is-hidden,
+    body.page-blog-index .blog-empty.is-hidden {
+      display: none;
+    }
+
+    body.page-blog-index .blog-empty {
+      float: none;
+      clear: both;
+      width: 100%;
+      padding: 40px 0;
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      font-size: 18px;
+      color: rgba(128, 51, 88, 1);
+    }
+
+    body.page-blog-index .blog_links .col-lg-4.blog-card-hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 768px) {
+      body.page-blog-index .blog-filter-bar-wrap {
+        margin: 24px 0 20px;
+      }
+
+      body.page-blog-index .blog-filter-bar {
+        gap: 12px;
+      }
+
+      body.page-blog-index .blog-filter-tag {
+        height: 44px;
+        padding: 4px 16px;
+        font-size: 14px;
+        border-radius: 22px;
+      }
+
+      body.page-blog-index .blog-filter-search,
+      body.page-blog-index .blog-search-box,
+      body.page-blog-index .blog-search-input {
+        height: 44px;
+      }
+
+      body.page-blog-index .blog-filter-search {
+        flex-basis: 44px;
+        width: 44px;
+        border-radius: 22px;
+      }
+
+      body.page-blog-index .blog-filter-search .blog-search-icon {
+        top: 12px;
+        left: 12px;
+      }
+
+      body.page-blog-index .blog-filter-heading {
+        font-size: 22px;
+        margin: 16px 0 12px;
+      }
+    }
   </style>
 </head>
 
@@ -217,6 +507,23 @@ stress management
     <section>
       <div class="row center_flex blog_links">
         <div class="col-lg-10 col-md-10 col-sm-10 col-10 col-xs-10 p0">
+
+        <!--   <div class="blog-filter-bar-wrap">
+            <div class="blog-filter-bar" id="blog-filter-bar">
+              <button type="button" class="blog-filter-tag is-active" data-filter="all">All</button>
+              <button type="button" class="blog-filter-tag" data-filter="mental-health">Mental health</button>
+              <button type="button" class="blog-filter-tag" data-filter="relationships">Relationships</button>
+              <button type="button" class="blog-filter-tag" data-filter="work-leadership">Work &amp; Leadership</button>
+              <button type="button" class="blog-filter-tag" data-filter="breathing-meditation">Breathing &amp; Meditation</button>
+              <button type="button" class="blog-filter-search" id="blog-search-toggle" aria-label="Search articles" aria-expanded="false">
+                <span class="blog-search-icon" aria-hidden="true"></span>
+              </button>
+              <form class="blog-search-box" action="" onsubmit="return false;">
+                <input type="search" class="blog-search-input" id="blog-search-input" placeholder="Search articles..." autocomplete="off">
+              </form>
+            </div>
+            <h2 class="blog-filter-heading is-hidden" id="blog-filter-heading"></h2>
+          </div> -->
 
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0" data-aos="fade-up" data-aos-delay="200">
             <a class="" href="10_ways_understanding_your_mind_could_transform_your_life.php">
@@ -1295,12 +1602,44 @@ stress management
                
               </a>
             </div>
+  <div class="clearfix"></div>
+           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="1100">
+
+              <a class="" href="as_Ai_changes_work.php">
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/79.webp" class="img-responsive img_blogs" alt="Blog_img">
+                  </div>
+                </div>
+
+                <div class="row mt20px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">Mental health</button>
+
+
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                    <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">New poll: As AI changes work, what skills will matter most?
+</h4>
+                  </div>
+                </div>
+               
+              </a>
+            </div>
 
           </span>
             <div class="clearfix"></div>
 
+          <div class="blog-empty is-hidden" id="blog-empty">No articles match your search.</div>
+
           <div class="btn-container">
-            <button type="button" id="toggle">View More</button>
+            <button type="button" id="toggle" class="blog-more">
+              <span class="toggle-label">View More</span>
+              <span class="chevron-pink"><span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span>
+            </button>
           </div>
           <!-- <view less> -->
         </div>
@@ -1319,25 +1658,142 @@ stress management
   <!-- /vendor_footer -->
 
   <script>
- $(document).ready(function () {
+(function initBlogIndex() {
+  if (typeof window.jQuery === 'undefined') {
+    window.addEventListener('load', initBlogIndex);
+    return;
+  }
+
+  jQuery(function ($) {
   let isExpanded = false;
-  
-  // Toggle button click handler
+  var $bar = $('#blog-filter-bar');
+  var $searchToggle = $('#blog-search-toggle');
+  var $searchInput = $('#blog-search-input');
+  var $heading = $('#blog-filter-heading');
+  var $empty = $('#blog-empty');
+  var $cards = $('.blog_links .col-lg-4');
+
+  var setToggleLabel = function (label) {
+    var $label = $('#toggle .toggle-label');
+    if ($label.length) {
+      $label.text(label);
+      return;
+    }
+    $('#toggle').html(
+      '<span class="toggle-label">' + label + '</span>' +
+      '<span class="chevron-pink"><span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span>'
+    );
+  };
+
+  var categoryForTag = function (text) {
+    var t = (text || '').toLowerCase().replace(/\s+/g, ' ').trim();
+    if (t.indexOf('mental') !== -1 || t.indexOf('emotion') !== -1) {
+      return 'mental-health';
+    }
+    if (t.indexOf('relationship') !== -1 || t.indexOf('parenting') !== -1) {
+      return 'relationships';
+    }
+    if (t.indexOf('work') !== -1 || t.indexOf('leadership') !== -1) {
+      return 'work-leadership';
+    }
+    if (t.indexOf('breath') !== -1 || t.indexOf('meditat') !== -1) {
+      return 'breathing-meditation';
+    }
+    return '';
+  };
+
+  var applyBlogFilters = function () {
+    var filter = $('.blog-filter-tag.is-active').data('filter') || 'all';
+    var query = ($searchInput.val() || '').toLowerCase().trim();
+    var isFiltering = filter !== 'all' || query !== '';
+    var visibleCount = 0;
+
+    $cards.each(function () {
+      var $card = $(this);
+      var title = $card.find('h4').text().toLowerCase();
+      var categories = $card.find('.btn_blogp').map(function () {
+        return categoryForTag($(this).text());
+      }).get();
+      var tagMatch = filter === 'all' || categories.indexOf(filter) !== -1;
+      var searchMatch = !query || title.indexOf(query) !== -1;
+      var show = tagMatch && searchMatch;
+      $card.toggleClass('blog-card-hidden', !show);
+      if (show) {
+        visibleCount += 1;
+      }
+    });
+
+    if (filter !== 'all' && !query) {
+      $heading.text($('.blog-filter-tag.is-active').text().trim()).removeClass('is-hidden');
+    } else {
+      $heading.addClass('is-hidden').text('');
+    }
+
+    $empty
+      .text(query ? 'No articles match your search.' : 'No articles in this category.')
+      .toggleClass('is-hidden', visibleCount > 0);
+
+    if (isFiltering) {
+      $('#text').stop(true, true).show();
+      $('.btn-container').hide();
+    } else {
+      $('.btn-container').show();
+      if (!isExpanded) {
+        $('#text').stop(true, true).hide();
+      }
+    }
+  };
+
+  // Remove shared #toggle handler so it cannot replace the button HTML
+  $('#toggle').off('click');
+
   $('#toggle').on('click', function(e) {
     e.preventDefault();
-    e.stopPropagation();
-    
+    e.stopImmediatePropagation();
+
     isExpanded = !isExpanded;
-    
+
     if (isExpanded) {
       $('#text').slideDown(300);
-      $('#toggle').text('View Less');
+      setToggleLabel('View Less');
     } else {
       $('#text').slideUp(300);
-      $('#toggle').text('View More');
+      setToggleLabel('View More');
+    }
+    this.blur();
+  });
+
+  $('.blog-filter-tag').on('click', function () {
+    $('.blog-filter-tag').removeClass('is-active');
+    $(this).addClass('is-active');
+    applyBlogFilters();
+  });
+
+  $searchToggle.on('click', function () {
+    var opening = !$bar.hasClass('is-searching');
+    $bar.toggleClass('is-searching', opening);
+    $searchToggle.toggleClass('is-open', opening).attr('aria-expanded', opening);
+
+    if (opening) {
+      $searchInput.trigger('focus');
+    } else {
+      $searchInput.val('');
+      applyBlogFilters();
     }
   });
-});
+
+  $searchInput.on('input', applyBlogFilters);
+
+  $searchInput.on('keydown', function (e) {
+    if (e.key === 'Escape') {
+      $bar.removeClass('is-searching');
+      $searchToggle.removeClass('is-open').attr('aria-expanded', false);
+      $searchInput.val('');
+      applyBlogFilters();
+    }
+  });
+  });
+})();
   </script>
 
 </body>
