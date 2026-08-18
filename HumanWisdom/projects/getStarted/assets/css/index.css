@@ -1236,9 +1236,14 @@ body.page-work .div_inspire h5:hover {
 }
 
 body.page-work .div_inspire a.fc_cb6171,
+body.page-work .div_inspire a.fc_cb6171:link,
+body.page-work .div_inspire a.fc_cb6171:visited,
 body.page-work .div_inspire a.fc_cb6171 span,
 body.page-work section.hpt120px ~ main#main .div_inspire a.fc_cb6171,
-body.page-work section.hpt120px ~ main#main .div_inspire a.fc_cb6171 span {
+body.page-work section.hpt120px ~ main#main .div_inspire a.fc_cb6171:link,
+body.page-work section.hpt120px ~ main#main .div_inspire a.fc_cb6171:visited,
+body.page-work section.hpt120px ~ main#main .div_inspire a.fc_cb6171 span,
+body.page-work section.hpt120px ~ main#main section .div_inspire a.fc_cb6171 {
   color: rgba(215, 88, 107, 1) !important;
   font-weight: 500 !important;
   text-decoration: none !important;
@@ -1246,9 +1251,14 @@ body.page-work section.hpt120px ~ main#main .div_inspire a.fc_cb6171 span {
 }
 
 body.page-work .div_inspire a.fc_cb6171:hover,
+body.page-work .div_inspire a.fc_cb6171:focus,
 body.page-work .div_inspire a:hover.fc_cb6171,
-body.page-work .div_inspire a.fc_cb6171:hover span {
-  color: #803358 !important;
+body.page-work .div_inspire a.fc_cb6171:hover span,
+body.page-work section.hpt120px ~ main#main .div_inspire a.fc_cb6171:hover,
+body.page-work section.hpt120px ~ main#main .div_inspire a.fc_cb6171:focus,
+body.page-work section.hpt120px ~ main#main .div_inspire a.fc_cb6171:hover span,
+body.page-work section.hpt120px ~ main#main section .div_inspire a.fc_cb6171:hover {
+  color: rgb(128, 51, 88) !important;
   text-decoration: none !important;
 }
 
@@ -1279,16 +1289,19 @@ body.page-education .div_inspire h5:hover {
   text-decoration: none !important;
 }
 
-body.page-education .div_inspire a.fc_cb6171 {
+body.page-education .div_inspire a.fc_cb6171,
+body.page-education .div_inspire a.fc_cb6171:link,
+body.page-education .div_inspire a.fc_cb6171:visited {
   color: #CB6171 !important;
   text-decoration: underline;
   text-decoration-color: #CB6171;
 }
 
 body.page-education .div_inspire a.fc_cb6171:hover,
+body.page-education .div_inspire a.fc_cb6171:focus,
 body.page-education .div_inspire a:hover.fc_cb6171 {
-  color: #803358 !important;
-  text-decoration-color: #803358;
+  color: rgb(128, 51, 88) !important;
+  text-decoration-color: rgb(128, 51, 88);
 }
 
 @media (max-width: 767px) {
@@ -1892,6 +1905,19 @@ body.page-work .work-blog-section {
   flex-direction: column;
   align-items: stretch;
   gap: 50px;
+  padding-bottom: 80px !important;
+}
+
+@media (min-width: 768px) {
+  body.page-work .work-blog-section {
+    padding-bottom: 80px !important;
+    margin-bottom: 0 !important;
+  }
+
+  body.page-work main#main .dfooter,
+  body.page-work .dfooter {
+    margin-top: 0 !important;
+  }
 }
 
 body.page-work .work-blog-section .work-blog-header,
@@ -4403,8 +4429,6 @@ body.page-healthcare .healthcare-hero-shell .wide-screen-only {
   }
 
   /* Hero h1 only — 27px on mobile (all other headings stay 18px) */
-  body.page-work section.hpt120px .absolute_desc_m h1,
-  body.page-work section.hpt120px .absolute_desc_m h1.fs_36px,
   body.page-education section.hpt120px .absolute_desc_m h1,
   body.page-education section.hpt120px .absolute_desc_m h1.fs_36px,
   body.page-education section.hpt120px .absolute_desc_m h1.edu-hero-title,
@@ -4412,6 +4436,88 @@ body.page-healthcare .healthcare-hero-shell .wide-screen-only {
   body.page-healthcare section.hpt120px .absolute_desc_m h1.fs_36px {
     font-size: 27px !important;
     line-height: 140% !important;
+  }
+
+  /* Work mobile hero title — Figma: Poppins 600, 30px, 140% */
+  body.page-work section.hpt120px .absolute_desc_m h1,
+  body.page-work section.hpt120px .absolute_desc_m h1.fs_36px,
+  body.page-work section.hpt120px .absolute_desc_m h1 span {
+    font-size: 30px !important;
+    font-weight: 600 !important;
+    line-height: 140% !important;
+    letter-spacing: 0 !important;
+    color: rgba(255, 255, 255, 1) !important;
+    text-align: center !important;
+  }
+
+  /* Work mobile hero stack — Figma: 335px, 15px gap, subtitle 5 lines */
+  body.page-work .healthcare-hero-shell .absolute_desc_m {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    justify-content: center !important;
+  }
+
+  body.page-work .healthcare-hero-shell .absolute_desc_m > .work-hero-stack {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 15px !important;
+    width: 335px !important;
+    max-width: 335px !important;
+    flex: 0 0 335px !important;
+    box-sizing: border-box !important;
+  }
+
+  body.page-work .healthcare-hero-shell .absolute_desc_m > .work-hero-stack > [class*="col-"] {
+    width: 335px !important;
+    max-width: 335px !important;
+    flex: 0 0 auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  body.page-work .healthcare-hero-shell .absolute_desc_m h1,
+  body.page-work .healthcare-hero-shell .absolute_desc_m h5 {
+    margin: 0 !important;
+    text-align: center !important;
+    width: 335px !important;
+    max-width: 335px !important;
+  }
+
+  /* 12px / 140% fits Figma's 5-line wrap at 335px; 15px wraps to 6–7 lines */
+  body.page-work .healthcare-hero-shell .absolute_desc_m h5,
+  body.page-work .healthcare-hero-shell .absolute_desc_m h5.fs_15px,
+  body.page-work .healthcare-hero-shell .absolute_desc_m h5 .display_d_none {
+    display: block !important;
+    width: 335px !important;
+    max-width: 335px !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    line-height: 140% !important;
+    letter-spacing: 0 !important;
+    color: rgba(255, 255, 255, 1) !important;
+    text-align: center !important;
+  }
+
+  body.page-work .healthcare-hero-shell .absolute_desc_m .display_m_none {
+    display: none !important;
+  }
+
+  body.page-work .healthcare-hero-shell .absolute_desc_m h1 .display_d_none,
+  body.page-work .healthcare-hero-shell .absolute_desc_m h5 .display_d_none {
+    display: block !important;
+  }
+
+  /* Work mobile hero CTA — Figma: 335 Fill x 55 Hug, radius 30, padding 15/30 */
+  body.page-work .healthcare-hero-shell .absolute_desc_m .req_button {
+    width: 335px !important;
+    max-width: 335px !important;
+    height: 55px !important;
+    padding: 15px 30px !important;
+    border-radius: 30px !important;
+    box-sizing: border-box !important;
+    margin: 0 auto !important;
   }
 
   body.page-education section.hpt120px .absolute_desc_m h1.edu-hero-title {
