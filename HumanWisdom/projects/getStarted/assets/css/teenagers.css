@@ -1,3 +1,13 @@
+body.page-teenagers .header a.btn_tff,
+body.page-teenagers .header a.btn_tff:hover,
+body.page-teenagers .header a.btn_tff:focus,
+body.page-teenagers .header a.btn_tff:active,
+body.page-teenagers .header a.btn_tff:visited {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  text-decoration: none !important;
+}
+
 body.page-teenagers .healthcare-hero-shell .absolute_desc h1 {
   color: rgba(0, 0, 0, 1);
 }
