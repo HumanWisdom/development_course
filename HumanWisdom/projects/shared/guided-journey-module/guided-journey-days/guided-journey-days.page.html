@@ -51,44 +51,88 @@
             <div class="guided_journey_day_slide" [class.active-slide]="currentDay === 0"
               [class.inactive-slide]="currentDay !== 0 && !isAnimating && !isDragging">
               <ng-container *ngIf="journeyDetails">
-                <!-- Breadcrumb -->
-                <div class="row mb20px">
-                  <div class="col-md-12 p0">
-                    <a (click)="goToListing()" class="center_flex_left"
-                      style="cursor: pointer; display: flex; align-items: center;">
-                      <i class="fa fa-angle-left mr5px" [ngClass]="isAdults ? 'fc_D7586B' : 'fc_E58D82'"></i>
-                      <span class="fs_14px fw_400" [ngClass]="isAdults ? 'fc_D7586B' : 'fc_EE9596'">Guided
-                        journeys</span>
+
+                <!-- ── TRANSCRIPT VIEW: only Back To Audio + transcript text ── -->
+                <ng-container *ngIf="showTranscript">
+                  <div class="row tcenter read-text-row" (click)="closeTranscript()">
+                    <a class="read-text-link">
+                      <h6 class="fs_15px fw_400 lh_140p underline mtb10px read-text-label"
+                        [ngClass]="isAdults ? 'fc_D7586B' : 'fc_EE9596'">Back To Audio</h6>
                     </a>
                   </div>
-                </div>
+                  <h3 class="transcript_txt" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"
+                    [innerHTML]="transcriptHtml">
+                  </h3>
+                </ng-container>
 
-                <!-- Subtitle -->
-                <div class="row">
-                  <div class="col-md-12 p0">
-                    <h1 class="mt0px fs_30px fw_400 lh_140p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
-                      {{journeyDetails.subtitle}}
-                    </h1>
-                  </div>
-                </div>
+                <!-- ── NORMAL VIEW: everything else ── -->
+                <ng-container *ngIf="!showTranscript">
 
-                <!-- Description -->
-                <div class="row mb40px">
-                  <div class="col-md-12 p0">
-                    <h4 class="mt0px fs_15px fw_400 lh_150p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
-                      {{journeyDetails.description}}
-                    </h4>
+                  <!-- Breadcrumb -->
+                  <div class="row mb10px">
+                    <div class="col-md-12 p0">
+                      <a (click)="goToListing()" class="center_flex_left guided-journeys-link"
+                        style="cursor: pointer; display: flex; align-items: center;">
+                        <i class="fa fa-angle-left mr5px" [ngClass]="isAdults ? 'fc_000000' : 'fc_EE9596'"></i>
+                        <span class="fs_14px fw_400 guided-journeys-text"
+                          [ngClass]="isAdults ? 'fc_000000' : 'fc_EE9596'">Guided journeys</span>
+                      </a>
+                    </div>
                   </div>
-                </div>
 
-                <!-- Begin Button -->
-                <div class="row mb60px">
-                  <div class="col-md-12 p0">
-                    <button (click)="navigateToDay(1)" class="btn_return center_flex" style="width: 145px;">
-                      Begin here <i class="fa fa-angle-right ml10px"></i>
-                    </button>
+                  <!-- Audio Player -->
+                  <div class="row mb10px">
+                    <div class="col-md-12 p0">
+                      <app-audio-player [audioLink]="journeyDetails.audioUrl"></app-audio-player>
+                    </div>
                   </div>
-                </div>
+
+                  <!-- Read Text Link -->
+                  <div class="row tcenter read-text-row" (click)="loadTranscript()">
+                    <a class="read-text-link">
+                      <h6 class="fs_15px fw_400 lh_140p underline mtb10px read-text-label"
+                        [ngClass]="isAdults ? 'fc_D7586B' : 'fc_EE9596'">Read text</h6>
+                    </a>
+                  </div>
+
+                  <!-- Journey Title -->
+                  <div class="row">
+                    <div class="col-md-12 p0">
+                      <h1 class="mt0px fs_30px fw_400 lh_140p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
+                        {{journeyDetails.title}}
+                      </h1>
+                    </div>
+                  </div>
+
+                  <!-- Days Count -->
+                  <div class="row mb10px">
+                    <div class="col-md-12 p0">
+                      <p class="mt0px fs_14px fw_400 lh_150p intro-days-count"
+                        [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
+                        {{totalDays}} days
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- Description -->
+                  <div class="row mb40px">
+                    <div class="col-md-12 p0">
+                      <h4 class="mt0px fs_15px fw_400 lh_150p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
+                        {{journeyDetails.description}}
+                      </h4>
+                    </div>
+                  </div>
+
+                  <!-- Begin Button -->
+                  <div class="row mb60px">
+                    <div class="col-md-12 p0">
+                      <button (click)="navigateToDay(1)" class="btn_return center_flex" style="width: 145px;">
+                        Begin here <i class="fa fa-angle-right ml10px"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                </ng-container>
               </ng-container>
             </div>
 
@@ -108,10 +152,10 @@
               <!-- Exercises List -->
               <div *ngFor="let exercise of getExercisesForDay(dayNum); let i = index; let isLast = last">
 
-                <!-- Instruction Text Above Card -->
-                <p class="exercise_instruction" *ngIf="isBreathingExercise(exercise)">Do this for 5-10 minutes daily.
-                </p>
-                <p class="exercise_instruction" *ngIf="isSoundscape(exercise)">Listen for 3 minutes at least.
+                <!-- Description above card (from API) -->
+                <p class="exercise_instruction" *ngIf="exercise.Description && exercise.Description.trim() !== ''"
+                  [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                  {{exercise.Description}}
                 </p>
                 <!-- Type 1: Horizontal Card (Image Left, Content Right) -->
                 <div *ngIf="exercise.Type === 1 || !exercise.Type" class="card_type1"
@@ -147,10 +191,13 @@
                     <p class="card_type1_meta" *ngIf="exercise.Meta">{{exercise.Meta}}</p>
                   </div>
                   <div class="card_type1_status">
-                    <div class="card_type1_tick" >
-                      
-                      <img  *ngIf=" isAdults && exercise.isRead === '1' && isLoggedIn" src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/isRead.svg" width="20" alt="">
-                                          <img  *ngIf=" !isAdults && exercise.isRead === '1' && isLoggedIn" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isread_teen.svg" width="20" alt="">
+                    <div class="card_type1_tick">
+
+                      <img *ngIf=" isAdults && exercise.isRead === '1' && isLoggedIn"
+                        src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/isRead.svg" width="20" alt="">
+                      <img *ngIf=" !isAdults && exercise.isRead === '1' && isLoggedIn"
+                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isread_teen.svg"
+                        width="20" alt="">
 
                     </div>
                     <!-- <div class="" *ngIf=" !isAdults && exercise.isRead === '1' && isLoggedIn">
@@ -202,9 +249,12 @@
                       </ng-container>
                     </div>
                     <div class="card_content_status">
-                      <div class="read_status" >
-                        <img  *ngIf="  isAdults && exercise.isRead === '1' && isLoggedIn" src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/isRead.svg" alt="">
-                         <img  *ngIf="  !isAdults && exercise.isRead === '1' && isLoggedIn"src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isread_teen.svg" alt="">
+                      <div class="read_status">
+                        <img *ngIf="  isAdults && exercise.isRead === '1' && isLoggedIn"
+                          src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/isRead.svg" alt="">
+                        <img *ngIf="  !isAdults && exercise.isRead === '1' && isLoggedIn"
+                          src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isread_teen.svg"
+                          alt="">
 
                       </div>
                       <div class="lock_status"

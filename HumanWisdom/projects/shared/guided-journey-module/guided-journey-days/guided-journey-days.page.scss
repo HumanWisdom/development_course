@@ -520,6 +520,16 @@
             }
         }
 
+        &.intro_circle.active {
+            background: rgba(66, 103, 165, 1) !important;
+            border: 1px solid #ffffff !important;
+
+            span {
+                color: #ffffff !important;
+                font-weight: 600 !important;
+            }
+        }
+
         &.visited {
             background: rgba(0, 0, 0, 0.25) !important;
             border: none !important;
@@ -598,7 +608,54 @@
         &.intro_circle {
             background: #F8F8F8;
         }
+
+        &.intro_circle.active {
+            background: #FFD889 !important;
+            border-color: #FFD889 !important;
+
+            span {
+                color: #000 !important;
+                font-weight: 600 !important;
+            }
+        }
     }
+}
+
+/* Guided Journeys breadcrumb link */
+.guided-journeys-link {
+    text-decoration: none;
+}
+
+.guided-journeys-text {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.center_flex_left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* Intro days count */
+.intro-days-count {
+    margin-bottom: 0;
+    margin-top: 2px;
+}
+
+/* Begin here label above button */
+.begin-here-label {
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 8px !important;
+}
+
+.fc_000000_0_5 {
+    color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.fc_ffffff_0_5 {
+    color: rgba(255, 255, 255, 0.5) !important;
 }
 
 /* Utilities */
@@ -809,7 +866,6 @@
 
 /* Exercise Instruction Text */
 .exercise_instruction {
-    font-family: 'Poppins', sans-serif;
     font-weight: 400;
     font-size: 15px;
     line-height: 140%;
@@ -823,4 +879,48 @@
 }
 .fc_EE9596 {
     color: #EE9596 !important;
+}
+
+/* Transcript inline display (same pattern as single-audio-content) */
+.read-text-row {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative;
+    z-index: 2;
+    margin-top: 12px;
+    margin-bottom: 8px;
+    min-height: 24px;
+    cursor: pointer;
+}
+
+.read-text-link {
+    display: inline-block !important;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.read-text-label {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    text-decoration: underline !important;
+    pointer-events: auto;
+    cursor: pointer;
+    margin: 0;
+}
+
+.transcript_txt {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.7;
+    margin-top: 10px;
+    padding: 0;
+    word-break: break-word;
+
+    strong { font-weight: 600; }
+    em { font-style: italic; }
+    ul { padding-left: 20px; margin-bottom: 14px; }
+    li { margin-bottom: 5px; }
+    br { display: block; content: ''; margin-bottom: 4px; }
 }
