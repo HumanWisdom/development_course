@@ -1080,48 +1080,93 @@
   <!-- /vendor_footer -->
 
   <script>
-    function initTeenTestimonialsCarousel() {
-      var $tc = $('body.page-teenagers .owl_testimonials .owl-carousel');
-      if (!$tc.length) return;
+    (function () {
+      var teenTestimonialsMode = null;
 
-      var isMobile = window.matchMedia('(max-width: 767px)').matches;
-
-      if ($tc.hasClass('owl-loaded')) {
-        $tc.trigger('destroy.owl.carousel');
+      function ensureTestimonialItems($tc) {
+        var $items = $tc.find('.item');
+        if (!$items.length) return $();
+        $items.detach();
+        $tc.children().remove();
+        $tc.append($items);
+        return $items;
       }
 
-      $tc.removeClass('teen-testimonials-native teen-testimonials-wide owl-loaded owl-drag');
+      function initTeenTestimonialsCarousel() {
+        if (typeof window.jQuery === 'undefined') return;
+        var $ = window.jQuery;
+        var $tc = $('body.page-teenagers .owl_testimonials .owl-carousel');
+        if (!$tc.length) return;
 
-      if (isMobile) {
-        $tc.addClass('teen-testimonials-native');
-        return;
-      }
+        var isMobile = window.matchMedia('(max-width: 767px)').matches;
+        var nextMode = isMobile ? 'mobile' : 'desktop';
 
-      if (typeof $.fn.owlCarousel !== 'function') return;
-
-      $tc.owlCarousel({
-        stagePadding: 0,
-        loop: false,
-        margin: 30,
-        nav: true,
-        autoWidth: true,
-        dots: false,
-        touchDrag: true,
-        mouseDrag: true,
-        pullDrag: true,
-        navText: ['<i class="bi bi-chevron-left"></i>', '<i class="bi bi-chevron-right"></i>'],
-        navContainer: '.owl_testimonials .owl-nav-w',
-        responsive: {
-          0: { items: 1 },
-          600: { items: 3 },
-          1000: { items: 3 }
+        if (teenTestimonialsMode === nextMode) {
+          if (nextMode === 'desktop' && !$tc.hasClass('owl-loaded') && typeof $.fn.owlCarousel === 'function') {
+            // Owl loaded after first attempt — continue
+          } else {
+            return;
+          }
         }
-      });
-    }
 
-    document.addEventListener('DOMContentLoaded', initTeenTestimonialsCarousel);
-    window.addEventListener('load', initTeenTestimonialsCarousel);
-    window.addEventListener('resize', initTeenTestimonialsCarousel);
+        if ($tc.hasClass('owl-loaded')) {
+          try {
+            $tc.trigger('destroy.owl.carousel');
+          } catch (e) {}
+        }
+
+        ensureTestimonialItems($tc);
+        $tc.removeClass('teen-testimonials-native teen-testimonials-wide owl-loaded owl-drag owl-grab');
+        $tc.css({ display: '', flexDirection: '', flexWrap: '', overflowX: '', overflowY: '' });
+
+        if (isMobile) {
+          $tc.addClass('teen-testimonials-native');
+          teenTestimonialsMode = 'mobile';
+          return;
+        }
+
+        if (typeof $.fn.owlCarousel !== 'function') {
+          teenTestimonialsMode = null;
+          return;
+        }
+
+        $tc.owlCarousel({
+          stagePadding: 0,
+          loop: false,
+          margin: 30,
+          nav: true,
+          autoWidth: false,
+          dots: false,
+          touchDrag: true,
+          mouseDrag: true,
+          pullDrag: true,
+          navText: ['<i class="bi bi-chevron-left"></i>', '<i class="bi bi-chevron-right"></i>'],
+          navContainer: '.owl_testimonials .owl-nav-w',
+          responsive: {
+            0: { items: 1 },
+            768: { items: 2 },
+            1100: { items: 3 }
+          }
+        });
+        teenTestimonialsMode = 'desktop';
+      }
+
+      function scheduleInit() {
+        initTeenTestimonialsCarousel();
+        setTimeout(initTeenTestimonialsCarousel, 100);
+        setTimeout(initTeenTestimonialsCarousel, 500);
+        setTimeout(initTeenTestimonialsCarousel, 1500);
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', scheduleInit);
+      } else {
+        scheduleInit();
+      }
+      window.addEventListener('load', scheduleInit);
+      document.addEventListener('hw:owl-ready', initTeenTestimonialsCarousel);
+      window.addEventListener('resize', initTeenTestimonialsCarousel);
+    })();
   </script>
 
   <script>
