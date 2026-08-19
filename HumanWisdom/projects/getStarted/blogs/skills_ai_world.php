@@ -101,7 +101,7 @@ th{
 
 			 <h4 class="mtb0px blog_desc">In a rapidly changing world, knowing yourself becomes a competitive advantage.</h4>
 
-			 <h4 class="mtb0px blog_desc">Explore the HappierMe <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/home#self-awareness" target="_blank">Self-awareness</a> section</h4>
+			 <h4 class="mtb0px blog_desc">Explore the HappierMe <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/explore#self-awareness" target="_blank">Self-awareness</a> section</h4>
 
 			 <h4 class="mtb0px blog_sub_title">2. Emotional Intelligence</h4>
 
@@ -141,7 +141,7 @@ th{
 
 			 <h4 class="mtb0px blog_desc">The most successful people will be those who can combine ideas in new ways, solve complex problems creatively, and envision possibilities others cannot see.</h4>
 
-			 <h4 class="mtb0px blog_desc">Creativity remains one of humanity's greatest strengths.</h4>
+			 <h4 class="mtb0px blog_desc">Creativity remains one of humanity's greatest strengths. It comes from curiosity, the ability to ask questions and challenge assumptions.</h4>
 
 			 <h4 class="mtb0px blog_sub_title">5. Communication</h4>
 
@@ -149,7 +149,7 @@ th{
 
 			 <!-- <h4 class="mtb0px blog_desc">It is the ability to listen well, understand different perspectives, ask thoughtful questions, present ideas clearly, and build understanding with others.</h4> -->
 
-			 <h4 class="mtb0px blog_desc"> <span class="blog_highlight_black">Communication is consistently ranked as a top workplace skill, yet poor communication remains a significant organisational challenge.</span> <a class="blog_highlight_peach td_underline" href="https://www.zoom.com/en/blog/workplace-communication-statistics/" target="_blank">(Reference)</a></h4>
+			 <h4 class="mtb0px blog_desc"> <span class="blog_highlight_black">Communication is consistently ranked as a top workplace skill, yet poor communication remains a significant organisational challenge.</span> <a class="blog_highlight_peach td_underline" href="https://www.zoom.com/en/blog/workplace-communication-statistics/" > ( Reference ) </a></h4>
 
 			 <h4 class="mtb0px blog_desc">Whether presenting ideas, collaborating with teams, or resolving conflicts, effective communication is essential in every profession.</h4>
 
@@ -177,7 +177,7 @@ th{
 
 			 <h4 class="mtb0px blog_desc">Many jobs will evolve, industries will change, and people will need to continuously learn and adapt throughout their careers.</h4>
 
-			 <h4 class="mtb0px blog_desc"> <span class="blog_highlight_black">Research suggests that only around 30% of employees demonstrate high levels of resilience.</span> <a class="blog_highlight_peach td_underline" href="https://www.aon.com/unitedkingdom/media-room/articles/employees-motivated-productive-if-resilient" target="_blank">(Reference)</a></h4>
+			 <h4 class="mtb0px blog_desc"> <span class="blog_highlight_black">Research from AON suggests only 30% of employees are resilient and it is a core skill employers are looking for.</span> <a class="blog_highlight_peach td_underline" href="https://www.aon.com/unitedkingdom/media-room/articles/employees-motivated-productive-if-resilient" target="_blank">(Reference)</a></h4>
 
 			 <h4 class="mtb0px blog_desc">Resilience cannot be automated. It must be developed through experience, reflection, and self-understanding.</h4>
 
@@ -189,7 +189,7 @@ th{
 
 			 <h4 class="mtb0px blog_desc">Humans must decide what is right.</h4>
 
-			 <h4 class="mtb0px blog_desc">People need the ability to consider consequences, evaluate ethical dilemmas, and make responsible decisions that benefit both themselves and society.</h4>
+			 <h4 class="mtb0px blog_desc">Students need the ability to consider consequences, evaluate ethical dilemmas, and make responsible decisions that benefit both themselves and society.</h4>
 
 			 <h4 class="mtb0px blog_desc"> <span class="blog_highlight_black">As technology becomes more powerful and influential, human judgement and ethical leadership will become increasingly important.</span></h4>
 
@@ -207,7 +207,7 @@ th{
 
 			 <!-- <h4 class="mtb0px blog_desc">As AI takes over more individual tasks, our ability to work effectively with other human beings may become even more valuable.</h4> -->
 
-			 <h4 class="mtb0px blog_desc">Explore the HappierMe <a class="blog_highlight_peach td_underline" href="https://staging.happierme.app/adults/home#relationships" target="_blank">Relationship section</a>.</h4>
+			 <h4 class="mtb0px blog_desc">Explore the HappierMe <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/explore#relationships" target="_blank">Relationship section</a>.</h4>
 
 			 <h4 class="mtb0px blog_sub_title">How HappierMe Can Help</h4>
 
