@@ -50,7 +50,7 @@ a {
   color: #803358 !important;
 }
 
-body:not(.page-work):not(.page-education):not(.page-teenagers):not(.page-healthcare) p:hover {
+body:not(.page-work):not(.page-education):not(.page-teenagers):not(.page-healthcare):not(.page-newsletter) p:hover {
   color: green;
   text-decoration: underline;
 }
@@ -2165,7 +2165,7 @@ div.scroll-container img {
 }
 
 .section-headernew.a,
-body:not(.page-work):not(.page-education):not(.page-teenagers):not(.page-healthcare) h6:hover {
+body:not(.page-work):not(.page-education):not(.page-teenagers):not(.page-healthcare):not(.page-newsletter) h6:hover {
   color: #cb6171;
   text-decoration: underline;
 }
@@ -2912,6 +2912,213 @@ a {
   padding: 20px;
   margin: 20px;
   border-radius: 12px;
+}
+
+/* Newsletter page — Figma frame 14266: 958×540, pad 40/72, gap 20, radius 12 */
+body.page-newsletter {
+  background: #834b66;
+  overflow-x: hidden;
+}
+
+body.page-newsletter #main {
+  min-height: 100vh;
+}
+
+.newsletter-hero {
+  min-height: 100vh;
+  padding: 190px 24px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/cover.png) center / cover no-repeat;
+  box-sizing: border-box;
+}
+
+.newsletter-card {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 958px;
+  max-width: 100%;
+  min-height: 540px;
+  margin-top: 60px;
+  padding: 40px 72px;
+  gap: 20px;
+  border-radius: 12px;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.newsletter-card-close {
+  display: none;
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  font-size: 32px;
+  line-height: 1;
+  text-decoration: none;
+  z-index: 2;
+}
+
+.newsletter-card-close:hover,
+.newsletter-card-close:focus {
+  color: #834b66;
+  text-decoration: none;
+}
+
+.newsletter-card-visual {
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+}
+
+.newsletter-card-visual img {
+  width: 100%;
+  max-width: 420px;
+  max-height: 440px;
+  height: auto;
+  object-fit: contain;
+}
+
+.newsletter-visual-mobile {
+  display: none;
+}
+
+.newsletter-card-form {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.newsletter-card-form h1 {
+  margin: 0;
+  color: #000;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 130%;
+}
+
+body.page-newsletter .newsletter-card-form h1:hover,
+body.page-newsletter .newsletter-subtitle:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+.newsletter-card-form .newsletter-subtitle {
+  margin: 16px 0 0;
+  color: #000;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 140%;
+}
+
+.newsletter-br-desktop {
+  display: block;
+}
+
+.newsletter-form {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.newsletter-form .div_input {
+  width: 100%;
+  margin: 0;
+}
+
+.newsletter-form .fc_01 {
+  width: 100%;
+}
+
+.newsletter-form .btn_tff {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+}
+
+@media (max-width: 1100px) {
+  .newsletter-card {
+    padding: 32px 40px;
+  }
+}
+
+@media (max-width: 991px) {
+  .newsletter-hero {
+    padding: 140px 16px 32px;
+    align-items: flex-start;
+  }
+
+  .newsletter-card {
+    width: 100%;
+    min-height: 0;
+    margin-top: 0;
+    padding: 28px 24px 32px;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .newsletter-card-close {
+    display: flex;
+  }
+
+  .newsletter-visual-desktop {
+    display: none;
+  }
+
+  .newsletter-visual-mobile {
+    display: block;
+  }
+
+  .newsletter-card-visual img {
+    max-width: 280px;
+    max-height: 180px;
+  }
+
+  .newsletter-card-form {
+    text-align: center;
+    width: 100%;
+  }
+
+  .newsletter-card-form h1 {
+    font-size: 24px;
+  }
+
+  .newsletter-br-desktop {
+    display: none;
+  }
+
+  .newsletter-form {
+    margin-top: 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .newsletter-hero {
+    padding: 88px 16px 24px;
+  }
+
+  .newsletter-card {
+    padding: 36px 20px 28px;
+  }
+
+  .newsletter-card-visual img {
+    max-width: 220px;
+    max-height: 150px;
+  }
 }
 
 .btn_continue {
