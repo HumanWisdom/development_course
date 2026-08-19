@@ -28,7 +28,11 @@
     }
 
     #text {
-      display: none;
+      display: contents;
+    }
+
+    body.page-blog-index:not(.blog-show-extra) #text > .col-lg-4 {
+      display: none !important;
     }
 
     .btn-container {
@@ -143,9 +147,9 @@
       }
 
       body.page-blog-index .blog_links .col-lg-4 {
-        width: 33.33333333% !important;
-        max-width: 33.33333333% !important;
-        flex: 0 0 33.33333333% !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: none !important;
       }
     }
 
@@ -243,11 +247,41 @@
     }
 
     /* Tags + search — Figma blog landing */
+    body.page-blog-index .blog_links > .col-lg-10 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      column-gap: 24px;
+      row-gap: 40px;
+    }
+
+    body.page-blog-index .blog-filter-bar-wrap,
+    body.page-blog-index .blog-filter-heading,
+    body.page-blog-index .blog-empty,
+    body.page-blog-index .btn-container,
+    body.page-blog-index .blog_links .clearfix {
+      grid-column: 1 / -1;
+    }
+
+    body.page-blog-index .blog_links .clearfix {
+      display: none;
+    }
+
+    body.page-blog-index .blog_links .col-lg-4 {
+      float: none;
+      width: 100%;
+      max-width: 100%;
+      margin-bottom: 0;
+    }
+
+    body.page-blog-index .blog_links .col-lg-4.blog-card-hidden {
+      display: none !important;
+    }
+
     body.page-blog-index .blog-filter-bar-wrap {
       float: none;
       clear: both;
       width: 100%;
-      margin: 40px 0 30px;
+      margin: 40px 0 48px;
     }
 
     body.page-blog-index .blog-filter-bar {
@@ -283,15 +317,26 @@
       cursor: pointer;
       appearance: none;
       -webkit-appearance: none;
+      box-sizing: border-box;
+    }
+
+    body.page-blog-index .blog-filter-tag[data-filter="all"] {
+      font-weight: 700;
     }
 
     body.page-blog-index .blog-filter-tag.is-active,
     body.page-blog-index .blog-filter-tag:focus-visible {
-      border-color: rgba(128, 51, 88, 1);
+      background: rgba(255, 247, 230, 1);
+      border: 1px solid rgba(128, 51, 88, 1);
+      color: rgba(128, 51, 88, 1);
+      font-weight: 600;
       outline: none;
     }
 
     body.page-blog-index .blog-filter-search {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       flex: 0 0 54px;
       width: 54px;
       height: 54px;
@@ -299,65 +344,40 @@
       padding: 0;
       border: none;
       border-radius: 27px;
-      background: rgba(255, 247, 230, 1);
+      background: #FFF7E6;
+      color: #834B66;
       cursor: pointer;
-      position: sticky;
-      right: 0;
+      position: relative;
       z-index: 2;
       appearance: none;
       -webkit-appearance: none;
+      align-self: center;
     }
 
-    body.page-blog-index .blog-filter-search .blog-search-icon,
-    body.page-blog-index .blog-filter-search .blog-search-icon::after {
-      display: block;
-      position: absolute;
+    body.page-blog-index .blog-filter-search i {
+      font-size: 20px;
+      line-height: 1;
+      color: #834B66;
     }
 
-    body.page-blog-index .blog-filter-search .blog-search-icon {
-      width: 15px;
-      height: 15px;
-      border: 2px solid rgba(128, 51, 88, 1);
-      border-radius: 50%;
-      top: 16px;
-      left: 16px;
-      box-sizing: border-box;
+    body.page-blog-index .blog-filter-search .blog-icon-close {
+      display: none;
     }
 
-    body.page-blog-index .blog-filter-search .blog-search-icon::after {
-      content: '';
-      width: 7px;
-      height: 2px;
-      background: rgba(128, 51, 88, 1);
-      top: 12px;
-      left: 10px;
-      transform: rotate(45deg);
+    body.page-blog-index .blog-filter-search.is-open .blog-icon-search {
+      display: none;
     }
 
-    body.page-blog-index .blog-filter-search.is-open .blog-search-icon {
-      width: 0;
-      height: 16px;
-      border: none;
-      border-radius: 0;
-      background: rgba(128, 51, 88, 1);
-      top: 19px;
-      left: 26px;
-      transform: rotate(45deg);
-    }
-
-    body.page-blog-index .blog-filter-search.is-open .blog-search-icon::after {
-      width: 16px;
-      height: 2px;
-      top: 7px;
-      left: -7px;
-      transform: none;
+    body.page-blog-index .blog-filter-search.is-open .blog-icon-close {
+      display: inline-flex;
     }
 
     body.page-blog-index .blog-search-box {
       position: absolute;
       left: 0;
-      right: 70px;
-      top: 0;
+      right: 66px;
+      top: 50%;
+      transform: translateY(-50%);
       height: 54px;
       width: 0;
       opacity: 0;
@@ -375,7 +395,7 @@
     }
 
     body.page-blog-index .blog-filter-bar.is-searching .blog-search-box {
-      width: calc(100% - 70px);
+      width: calc(100% - 66px);
       opacity: 1;
       pointer-events: auto;
     }
@@ -384,16 +404,25 @@
       width: 100%;
       height: 54px;
       margin: 0;
-      padding: 4px 24px;
-      border: 1px solid rgba(128, 51, 88, 1);
+      padding: 4px 48px 4px 24px;
+      border: 1px solid #834B66;
       border-radius: 27px;
-      background: rgba(255, 247, 230, 1);
-      color: rgba(128, 51, 88, 1);
+      background: #FFF7E6;
+      color: #834B66;
       font-family: 'Poppins', sans-serif;
       font-size: 18px;
       font-weight: 400;
       line-height: 150%;
       box-shadow: none;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    body.page-blog-index .blog-search-input::-webkit-search-cancel-button,
+    body.page-blog-index .blog-search-input::-webkit-search-decoration {
+      -webkit-appearance: none;
+      appearance: none;
+      display: none;
     }
 
     body.page-blog-index .blog-search-input:focus {
@@ -401,16 +430,46 @@
     }
 
     body.page-blog-index .blog-search-input::placeholder {
-      color: rgba(128, 51, 88, 0.55);
+      color: rgba(131, 75, 102, 0.55);
     }
 
-    body.page-blog-index .blog-filter-heading {
-      margin: 24px 0 16px;
+    body.page-blog-index .blog-search-clear {
+      display: none;
+      position: absolute;
+      top: 50%;
+      right: 16px;
+      transform: translateY(-50%);
+      width: 28px;
+      height: 28px;
+      padding: 0;
+      border: none;
+      background: transparent;
+      color: #834B66;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    body.page-blog-index .blog-search-clear.is-visible {
+      display: inline-flex;
+    }
+
+    body.page-blog-index .blog-search-clear i {
+      font-size: 18px;
+      line-height: 1;
+      color: #834B66;
+    }
+
+    body.page-blog-index .blog-filter-heading,
+    body.page-blog-index .blog-filter-heading:hover {
+      margin: 64px 0 0;
       font-family: 'Poppins', sans-serif;
-      font-size: 30px;
+      font-size: 36px;
       font-weight: 600;
       line-height: 140%;
-      color: #000000;
+      color: #834B66;
+      text-align: center;
+      text-decoration: none;
     }
 
     body.page-blog-index .blog-filter-heading.is-hidden,
@@ -426,16 +485,23 @@
       text-align: center;
       font-family: 'Poppins', sans-serif;
       font-size: 18px;
-      color: rgba(128, 51, 88, 1);
+      color: #834B66;
     }
 
-    body.page-blog-index .blog_links .col-lg-4.blog-card-hidden {
-      display: none !important;
+    @media (max-width: 991px) {
+      body.page-blog-index .blog_links > .col-lg-10 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
     }
 
     @media (max-width: 768px) {
+      body.page-blog-index .blog_links > .col-lg-10 {
+        grid-template-columns: 1fr;
+        row-gap: 30px;
+      }
+
       body.page-blog-index .blog-filter-bar-wrap {
-        margin: 24px 0 20px;
+        margin: 24px 0 32px;
       }
 
       body.page-blog-index .blog-filter-bar {
@@ -461,14 +527,9 @@
         border-radius: 22px;
       }
 
-      body.page-blog-index .blog-filter-search .blog-search-icon {
-        top: 12px;
-        left: 12px;
-      }
-
       body.page-blog-index .blog-filter-heading {
         font-size: 22px;
-        margin: 16px 0 12px;
+        margin: 0 0 4px;
       }
     }
   </style>
@@ -508,22 +569,26 @@
       <div class="row center_flex blog_links">
         <div class="col-lg-10 col-md-10 col-sm-10 col-10 col-xs-10 p0">
 
-        <!--   <div class="blog-filter-bar-wrap">
+          <div class="blog-filter-bar-wrap">
             <div class="blog-filter-bar" id="blog-filter-bar">
-              <button type="button" class="blog-filter-tag is-active" data-filter="all">All</button>
-              <button type="button" class="blog-filter-tag" data-filter="mental-health">Mental health</button>
-              <button type="button" class="blog-filter-tag" data-filter="relationships">Relationships</button>
-              <button type="button" class="blog-filter-tag" data-filter="work-leadership">Work &amp; Leadership</button>
-              <button type="button" class="blog-filter-tag" data-filter="breathing-meditation">Breathing &amp; Meditation</button>
+              <button type="button" class="blog-filter-tag is-active" data-filter="all" data-title="All">All</button>
+              <button type="button" class="blog-filter-tag" data-filter="mental-health" data-title="Mental Health">Mental health</button>
+              <button type="button" class="blog-filter-tag" data-filter="relationships" data-title="Relationships">Relationships</button>
+              <button type="button" class="blog-filter-tag" data-filter="work-leadership" data-title="Work &amp; Leadership">Work &amp; Leadership</button>
+              <button type="button" class="blog-filter-tag" data-filter="breathing-meditation" data-title="Breathing &amp; Meditation">Breathing &amp; Meditation</button>
               <button type="button" class="blog-filter-search" id="blog-search-toggle" aria-label="Search articles" aria-expanded="false">
-                <span class="blog-search-icon" aria-hidden="true"></span>
+                <i class="bi bi-search blog-icon-search" aria-hidden="true"></i>
+                <i class="bi bi-x blog-icon-close" aria-hidden="true"></i>
               </button>
               <form class="blog-search-box" action="" onsubmit="return false;">
-                <input type="search" class="blog-search-input" id="blog-search-input" placeholder="Search articles..." autocomplete="off">
+                <input type="text" class="blog-search-input" id="blog-search-input" placeholder="Search articles..." autocomplete="off">
+                <button type="button" class="blog-search-clear" id="blog-search-clear" aria-label="Clear search">
+                  <i class="bi bi-x" aria-hidden="true"></i>
+                </button>
               </form>
             </div>
             <h2 class="blog-filter-heading is-hidden" id="blog-filter-heading"></h2>
-          </div> -->
+          </div>
 
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0" data-aos="fade-up" data-aos-delay="200">
             <a class="" href="10_ways_understanding_your_mind_could_transform_your_life.php">
@@ -701,7 +766,7 @@
           </div>
           <div class="clearfix"></div>
           <!-- <view more> -->
-          <span id="text">
+          <div id="text">
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0" data-aos="fade-up" data-aos-delay="700">
               <a class="" href="the_missed_opportunity_in_relationships.php">
                 <div class="row">
@@ -1630,6 +1695,7 @@
               </a>
             </div>
 
+          </div>
              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="1100">
 
               <a class="" href="skills_ai_world.php">
@@ -1729,6 +1795,7 @@ Work and Leadership</button>
   var $bar = $('#blog-filter-bar');
   var $searchToggle = $('#blog-search-toggle');
   var $searchInput = $('#blog-search-input');
+  var $searchClear = $('#blog-search-clear');
   var $heading = $('#blog-filter-heading');
   var $empty = $('#blog-empty');
   var $cards = $('.blog_links .col-lg-4');
@@ -1747,13 +1814,13 @@ Work and Leadership</button>
 
   var categoryForTag = function (text) {
     var t = (text || '').toLowerCase().replace(/\s+/g, ' ').trim();
-    if (t.indexOf('mental') !== -1 || t.indexOf('emotion') !== -1) {
+    if (t.indexOf('mental') !== -1 || t.indexOf('emotion') !== -1 || t.indexOf('anxiety') !== -1 || t.indexOf('stress') !== -1) {
       return 'mental-health';
     }
     if (t.indexOf('relationship') !== -1 || t.indexOf('parenting') !== -1) {
       return 'relationships';
     }
-    if (t.indexOf('work') !== -1 || t.indexOf('leadership') !== -1) {
+    if (t.indexOf('work') !== -1 || t.indexOf('leadership') !== -1 || t.indexOf('organisation') !== -1 || t.indexOf('organization') !== -1) {
       return 'work-leadership';
     }
     if (t.indexOf('breath') !== -1 || t.indexOf('meditat') !== -1) {
@@ -1762,8 +1829,13 @@ Work and Leadership</button>
     return '';
   };
 
+  var syncSearchClear = function () {
+    $searchClear.toggleClass('is-visible', ($searchInput.val() || '').trim().length > 0);
+  };
+
   var applyBlogFilters = function () {
-    var filter = $('.blog-filter-tag.is-active').data('filter') || 'all';
+    var $active = $('.blog-filter-tag.is-active');
+    var filter = $active.attr('data-filter') || 'all';
     var query = ($searchInput.val() || '').toLowerCase().trim();
     var isFiltering = filter !== 'all' || query !== '';
     var visibleCount = 0;
@@ -1779,12 +1851,13 @@ Work and Leadership</button>
       var show = tagMatch && searchMatch;
       $card.toggleClass('blog-card-hidden', !show);
       if (show) {
+        $card.addClass('aos-animate').css({ opacity: 1, transform: 'none' });
         visibleCount += 1;
       }
     });
 
     if (filter !== 'all' && !query) {
-      $heading.text($('.blog-filter-tag.is-active').text().trim()).removeClass('is-hidden');
+      $heading.text($active.attr('data-title') || $active.text().trim()).removeClass('is-hidden');
     } else {
       $heading.addClass('is-hidden').text('');
     }
@@ -1793,15 +1866,9 @@ Work and Leadership</button>
       .text(query ? 'No articles match your search.' : 'No articles in this category.')
       .toggleClass('is-hidden', visibleCount > 0);
 
-    if (isFiltering) {
-      $('#text').stop(true, true).show();
-      $('.btn-container').hide();
-    } else {
-      $('.btn-container').show();
-      if (!isExpanded) {
-        $('#text').stop(true, true).hide();
-      }
-    }
+    $('body').toggleClass('blog-show-extra', isFiltering || isExpanded);
+    $('.btn-container').toggle(!isFiltering);
+    syncSearchClear();
   };
 
   // Remove shared #toggle handler so it cannot replace the button HTML
@@ -1812,14 +1879,8 @@ Work and Leadership</button>
     e.stopImmediatePropagation();
 
     isExpanded = !isExpanded;
-
-    if (isExpanded) {
-      $('#text').slideDown(300);
-      setToggleLabel('View Less');
-    } else {
-      $('#text').slideUp(300);
-      setToggleLabel('View More');
-    }
+    setToggleLabel(isExpanded ? 'View Less' : 'View More');
+    applyBlogFilters();
     this.blur();
   });
 
@@ -1829,27 +1890,34 @@ Work and Leadership</button>
     applyBlogFilters();
   });
 
+  var closeSearch = function () {
+    $bar.removeClass('is-searching');
+    $searchToggle.removeClass('is-open').attr('aria-expanded', false);
+    $searchInput.val('');
+    applyBlogFilters();
+  };
+
   $searchToggle.on('click', function () {
     var opening = !$bar.hasClass('is-searching');
-    $bar.toggleClass('is-searching', opening);
-    $searchToggle.toggleClass('is-open', opening).attr('aria-expanded', opening);
-
     if (opening) {
+      $bar.addClass('is-searching');
+      $searchToggle.addClass('is-open').attr('aria-expanded', true);
       $searchInput.trigger('focus');
     } else {
-      $searchInput.val('');
-      applyBlogFilters();
+      closeSearch();
     }
+  });
+
+  $searchClear.on('click', function () {
+    $searchInput.val('').trigger('focus');
+    applyBlogFilters();
   });
 
   $searchInput.on('input', applyBlogFilters);
 
   $searchInput.on('keydown', function (e) {
     if (e.key === 'Escape') {
-      $bar.removeClass('is-searching');
-      $searchToggle.removeClass('is-open').attr('aria-expanded', false);
-      $searchInput.val('');
-      applyBlogFilters();
+      closeSearch();
     }
   });
   });
