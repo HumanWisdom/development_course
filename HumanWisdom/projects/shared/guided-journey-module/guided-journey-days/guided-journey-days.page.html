@@ -54,9 +54,9 @@
 
                 <!-- ── TRANSCRIPT VIEW: only Back To Audio + transcript text ── -->
                 <ng-container *ngIf="showTranscript">
-                  <div class="row tcenter read-text-row" (click)="closeTranscript()">
+                  <div class="row tcenter read-text-row back-to-audio-row" (click)="closeTranscript()">
                     <a class="read-text-link">
-                      <h6 class="fs_15px fw_400 lh_140p underline mtb10px read-text-label"
+                      <h6 class="fw_400 lh_140p underline read-text-label back-to-audio-label"
                         [ngClass]="isAdults ? 'fc_D7586B' : 'fc_EE9596'">Back To Audio</h6>
                     </a>
                   </div>
@@ -90,15 +90,15 @@
                   <!-- Read Text Link -->
                   <div class="row tcenter read-text-row" (click)="loadTranscript()">
                     <a class="read-text-link">
-                      <h6 class="fs_15px fw_400 lh_140p underline mtb10px read-text-label"
+                      <h6 class="fw_400 lh_140p underline read-text-label read-text-main"
                         [ngClass]="isAdults ? 'fc_D7586B' : 'fc_EE9596'">Read text</h6>
                     </a>
                   </div>
 
                   <!-- Journey Title -->
-                  <div class="row">
+                  <div class="row mt16px">
                     <div class="col-md-12 p0">
-                      <h1 class="mt0px fs_30px fw_400 lh_140p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
+                      <h1 class="mtb0px fs_30px fw_400 lh_140p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
                         {{journeyDetails.title}}
                       </h1>
                     </div>
@@ -127,7 +127,7 @@
                   <div class="row mb60px">
                     <div class="col-md-12 p0">
                       <button (click)="navigateToDay(1)" class="btn_return center_flex" style="width: 145px;">
-                        Begin here <i class="fa fa-angle-right ml10px"></i>
+                        Begin here <i class="fa fa-angle-right"></i>
                       </button>
                     </div>
                   </div>
@@ -174,7 +174,6 @@
                       <h3 class="card_type1_title">{{exercise.DisplayTitle}}</h3>
                       <p class="card_type1_meta">
                         {{exercise.DisplaySubtitle || exercise.Section}}
-                        <span *ngIf="exercise.Timing"> • {{exercise.Timing}}</span>
                       </p>
                     </ng-container>
                     <ng-container *ngIf="isSection8(exercise)">
@@ -233,7 +232,6 @@
                         <h3 class="exercise_title">{{exercise.DisplayTitle}}</h3>
                         <p class="exercise_meta">
                           {{exercise.DisplaySubtitle || exercise.Section}}
-                          <span *ngIf="exercise.Timing"> • {{exercise.Timing}}</span>
                         </p>
                       </ng-container>
                       <ng-container *ngIf="isSection8(exercise)">
@@ -337,9 +335,10 @@
               <span>Intro</span>
             </div>
             <div *ngFor="let dayNum of getDaysArray()" class="day_circle"
-              [ngClass]="{'active': currentDay === dayNum, 'visited': isVisited(dayNum) && currentDay !== dayNum}"
+              [ngClass]="{'active': currentDay === dayNum, 'visited': isVisited(dayNum) && currentDay !== dayNum, 'none-accessed': !isVisited(dayNum) && currentDay !== dayNum}"
               (click)="navigateToDay(dayNum)">
               <span>Day {{dayNum}}</span>
+              <span class="none-accessed-dot" *ngIf="!isVisited(dayNum) && currentDay !== dayNum"></span>
             </div>
           </div>
         </div>

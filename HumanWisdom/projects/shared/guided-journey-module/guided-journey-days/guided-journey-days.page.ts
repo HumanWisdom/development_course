@@ -186,7 +186,7 @@ export class GuidedJourneyDaysPage implements OnInit {
             id: journeyId,
             title: journey.Title || journey.title || journey.JourneyName || journey.Name,
             subtitle: journey.Subtitle || journey.subtitle,
-            description: journey.Description || journey.description,
+            description: (journey.Description || journey.description || '').replace(/\s*\(\d+\s*days?\)\s*$/i, '').trim(),
             imgUrl: this.getImgUrl(journey.ImageUrl || journey.ImgUrl || journey.imgUrl || journey.imageUrl),
             audioUrl: journey.AudioUrl || journey.audioUrl || journey.Audio || journey.audio
                       || `https://d1tenzemoxuh75.cloudfront.net/guided_journeys/intro/${journeyId}.mp3`,
