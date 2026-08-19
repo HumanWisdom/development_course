@@ -1,7 +1,7 @@
 .sc_01 {
     position: relative;
     min-height: 100vh !important;
-    padding: 120px 20px 140px 20px;
+    padding: 110px 20px 140px 20px;
 }
 
 .mc_01_v3_ext {
@@ -565,8 +565,6 @@
         padding: 15px !important;
         gap: 10px;
         box-shadow: 0 -2px 2px #00000010;
-        margin-top: 15px;
-
         &::-webkit-scrollbar {
             display: none;
         }
@@ -703,7 +701,7 @@
     gap: 6px;
     justify-content: center;
     margin-bottom: 0px;
-    padding-bottom: 5px;
+    padding-bottom: 20px;
 
     .dot {
         width: 6px;
@@ -935,7 +933,6 @@
     margin-top: 10px;
     padding: 0;
     word-break: break-word;
-    text-align: center;
 
     strong { font-weight: 600; }
     em { font-style: italic; }
