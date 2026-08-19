@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { SharedService } from "../../services/shared.service";
 import { CommonService } from "../../services/common.service";
 import { NavigationService } from "../../services/navigation.service";
@@ -40,11 +41,14 @@ export class GuidedJourneyDaysPage implements OnInit {
   alertContent: string = '';
   alertOkText: string = 'Ok';
   isNavigatingOut: boolean = false;
+  showTranscript: boolean = false;
+  transcriptHtml: SafeHtml = '';
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private location: Location,
+    private sanitizer: DomSanitizer,
     private commonService: CommonService,
     private navigationService: NavigationService
   ) {
@@ -177,12 +181,15 @@ export class GuidedJourneyDaysPage implements OnInit {
         
         if (journey) {
           this.journeyTitle = journey.Title || journey.title || journey.JourneyName || journey.Name;
+          const journeyId = journey.GuidedJourneyID || journey.JourneyID || journey.journeyID || journey.Id || journey.id || journey.RowID;
           this.journeyDetails = {
-            id: journey.GuidedJourneyID || journey.JourneyID || journey.journeyID || journey.Id || journey.id || journey.RowID,
+            id: journeyId,
             title: journey.Title || journey.title || journey.JourneyName || journey.Name,
             subtitle: journey.Subtitle || journey.subtitle,
-            description: journey.Description || journey.description,
+            description: (journey.Description || journey.description || '').replace(/\s*\(\d+\s*days?\)\s*$/i, '').trim(),
             imgUrl: this.getImgUrl(journey.ImageUrl || journey.ImgUrl || journey.imgUrl || journey.imageUrl),
+            audioUrl: journey.AudioUrl || journey.audioUrl || journey.Audio || journey.audio
+                      || `https://d1tenzemoxuh75.cloudfront.net/guided_journeys/intro/${journeyId}.mp3`,
           };
           if (journey.Days) {
             this.totalDays = parseInt(journey.Days);
@@ -354,6 +361,77 @@ export class GuidedJourneyDaysPage implements OnInit {
     this.alertTitle = '';
     this.alertContent = '';
     this.alertOkText = 'Ok';
+  }
+
+  loadTranscript() {
+    if (this.transcriptHtml) {
+      this.showTranscript = true;
+      return;
+    }
+    this.showTranscript = true;
+    const data = {
+      S3Directory: 'guided_journeys/intro/transcripts/',
+      FileName: `${this.journeyId}.md`
+    };
+    this.commonService.GetAudioTranscript(data).subscribe({
+      next: (res: any) => {
+        const raw = this.normalizeTranscriptResponse(res);
+        this.transcriptHtml = raw && raw.length > 5
+          ? this.parseMarkdown(raw)
+          : this.sanitizer.bypassSecurityTrustHtml('<p>Transcript not available.</p>');
+      },
+      error: () => {
+        this.transcriptHtml = this.sanitizer.bypassSecurityTrustHtml('<p>Transcript not available.</p>');
+      }
+    });
+  }
+
+  normalizeTranscriptResponse(res: any): string {
+    if (res == null) return '';
+    if (typeof res === 'string') return res;
+    if (typeof res === 'object') {
+      return res.Content || res.content || res.Transcript || res.transcript ||
+             res.Text || res.text || res.Data || res.data || '';
+    }
+    return String(res);
+  }
+
+  closeTranscript() {
+    this.showTranscript = false;
+  }
+
+  parseMarkdown(text: string): SafeHtml {
+    if (!text) return '';
+
+    let lines = text.split('\n');
+    let result = '';
+    let inList = false;
+
+    for (let line of lines) {
+      let trimmed = line.trim();
+
+      if (trimmed === '---') {
+        if (inList) { result += '</ul>'; inList = false; }
+        const hrColor = this.isAdults ? '#000000' : '#ffffff';
+        result += `<hr style="border: none; margin: 0; border-top: 1px solid ${hrColor};"/>`;
+        continue;
+      }
+
+      if (trimmed.startsWith('- ') || trimmed.startsWith('* ')) {
+        if (!inList) { result += '<ul style="padding-left: 20px;">'; inList = true; }
+        result += '<li style="margin-bottom: 5px;">' + trimmed.substring(2) + '</li>';
+      } else {
+        if (inList) { result += '</ul>'; inList = false; }
+        result += trimmed === '' ? '<br/>' : line + '<br/>';
+      }
+    }
+    if (inList) result += '</ul>';
+
+    result = result.replace(/\*\*\*(.*?)\*\*\*/g, '<strong><em>$1</em></strong>');
+    result = result.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    result = result.replace(/\*([^*]+?)\*/g, '<em>$1</em>');
+
+    return this.sanitizer.bypassSecurityTrustHtml(result);
   }
 
   getImgUrl(url: string) {
