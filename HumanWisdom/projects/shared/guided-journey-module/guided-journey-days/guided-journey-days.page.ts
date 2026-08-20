@@ -304,7 +304,17 @@ export class GuidedJourneyDaysPage implements OnInit {
     return isGJ && !!exercise.QuestionCnt;
   }
 
-
+  autoResize(event: any) {
+    const textarea = event.target;
+    textarea.style.height = '50px';
+    const newHeight = Math.min(Math.max(textarea.scrollHeight, 50), 80);
+    textarea.style.height = newHeight + 'px';
+    if (textarea.scrollHeight > 80) {
+      textarea.style.overflowY = 'auto';
+    } else {
+      textarea.style.overflowY = 'hidden';
+    }
+  }
 
   submitJournal(exercise: any) {
     if (!this.isSubscriber && (exercise.isFree === '0' || exercise.isFree === 0)) {
