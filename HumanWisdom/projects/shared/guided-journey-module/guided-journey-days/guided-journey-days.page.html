@@ -115,7 +115,7 @@
                   </div>
 
                   <!-- Description -->
-                  <div class="row mb40px">
+                  <div class="row mb30px">
                     <div class="col-md-12 p0">
                       <h4 class="mt0px fs_15px fw_400 lh_150p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
                         {{journeyDetails.description}}
@@ -273,9 +273,17 @@
 
                 <!-- Type 3: Journaling Box -->
                 <div *ngIf="exercise.Type === 3" class="journal_box">
+                  <div class="journal_header">
+                    <h4 class="journal_header_title">{{ exercise.HeaderTitle || exercise.Header || (exercise.Section &&
+                      exercise.Section.toUpperCase() !== 'JOURNALING' && exercise.Section.toUpperCase() !== 'JOURNAL' ?
+                      exercise.Section : 'QUESTION OF THE DAY') }}</h4>
+                    <div class="journal_header_divider"></div>
+                  </div>
+
                   <h4 class="journal_title">{{exercise.DisplayTitle}}</h4>
+
                   <textarea *ngIf="isSubscriber || exercise.isFree === '1' || exercise.isFree === 1"
-                    placeholder="Tap to answer" [(ngModel)]="exercise.Response"></textarea>
+                    placeholder="Tap to answer" [(ngModel)]="exercise.Response" (input)="autoResize($event)"></textarea>
                   <textarea *ngIf="!isSubscriber && (exercise.isFree === '0' || exercise.isFree === 0)"
                     [disabled]="true" [readonly]="true" [value]="'Subscribe to use this feature'"></textarea>
 
