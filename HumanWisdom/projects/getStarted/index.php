@@ -24,7 +24,7 @@ $hw_lcp_banner_mobile = hw_lcp_image_url('banner_mobile');
   <meta property="og:site_name" content="HappierMe">
   <meta property="og:url" content="https://happierme.app">
   <meta property="og:type" content="">
-  <meta property="og:image" content="https://d1tenzemoxuh75.cloudfront.net/website/Logo_Only.svg">
+  <meta property="og:image" content="https://d1tenzemoxuh75.cloudfront.net/assets/images/logo/logo_favicon_transparent_v3.png">
   <!-- <meta property="og:image" content="https://d1tenzemoxuh75.cloudfront.net/website/imgs/landing.png"> -->
   <!-- <meta property="og:image" content=https://d1tenzemoxuh75.cloudfront.net/website/webp/teens_app_01.webp>
      <meta property="og:image" content="">
