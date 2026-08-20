@@ -1,4 +1,40 @@
-<app-toc-header [tocImage]="tocImage" [tocColor]="tocColor" [moduleName]="'Events'"></app-toc-header>
+<!-- <app-toc-header [tocImage]="tocImage" [tocColor]="tocColor" [moduleName]="'Events'"></app-toc-header>
+ -->
+<!-- <app-feature-header title="Events"></app-feature-header>
+ -->
+
+
+  <div class="row center_flex">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 toc_nvmenu_v3 col_cw">
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tleft">
+        <a (click)="goBack()" class="">
+          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/back_round.svg" alt="" class="p0" *ngIf="!isAdults"> 
+          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/back.svg" alt="" class="p0" *ngIf="isAdults">
+        </a>
+      </div>
+  
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
+        <a class="">
+          <h4 class="mtb0px fs_18px fw_600 lh_130p  tcenter"  [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'" >
+           Events
+          </h4>
+        </a>
+      </div>
+  
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
+        <a id="btnShare" (click)="share()">                                       
+          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/share_round.svg" alt="" class="p0" *ngIf="!isAdults"> 
+          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/share.svg" alt="" class="p0" *ngIf="isAdults">
+        </a>
+      </div>
+    </div>
+  </div>
+   <div class="row center_flex">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 col_cw cptrem bg_stake">
+      <img [src]="tocImage"  alt="eventImg" class="img-responsive w100 adults_index_img1" >
+    </div>
+  </div>
+
 
 <app-index-content>
 
