@@ -16,11 +16,16 @@ export class GuidedJourneyEndPage implements OnInit {
   journeyId: any;
   journeyTitle: string = 'Stress reduction';
   moduleList: any[] = [];
+  continueExploringList: any[] = [];
   isLoading = true;
   totalDays: number = 0;
   currentDay: number = -1;
   visitedDays: Set<number> = new Set();
   loginResponse: any;
+  isSubscriber = false;
+  showModal = false;
+  modalTitle = 'The best is yet to come';
+  modalContent = 'Unlock the full experience and continue your journey to live your best life';
 
   constructor(
     private router: Router,
@@ -30,6 +35,7 @@ export class GuidedJourneyEndPage implements OnInit {
     private navigationService: NavigationService
   ) {
     this.isAdults = SharedService.ProgramId == 9;
+    this.isSubscriber = SharedService.isSubscriber();
   }
 
   ngOnInit() {
@@ -65,15 +71,107 @@ export class GuidedJourneyEndPage implements OnInit {
     this.commonService.GetGuidedJourneyDays(this.journeyId, programId, userId).subscribe((res: any) => {
       if (res && Array.isArray(res)) {
         const days = res.map(item => parseInt(item.Days_No || item.DayNo || item.dayNo || item.Day_No || item.day)).filter(n => !isNaN(n));
-        this.totalDays = days.length > 0 ? Math.max(...days) : 0;
+        const validDays = days.filter(d => d !== 100);
+        this.totalDays = validDays.length > 0 ? Math.max(...validDays) : 0;
         this.currentDay = this.totalDays + 1; // Mark as after last day
         
+        // Filter for Day 100 items (Continue Exploring)
+        this.continueExploringList = res.filter(item => {
+          const dayStr = String(item.Days_No || item.DayNo || item.dayNo || item.Day_No || item.day || '');
+          return dayStr === '100';
+        }).map(item => {
+          return {
+            ...item,
+            imgPath: this.getImgUrl(item.imgPath)
+          };
+        });
+
         // Mark all as visited on end screen
-        for(let i=0; i<=this.totalDays; i++) {
+        for (let i = 0; i <= this.totalDays; i++) {
           this.visitedDays.add(i);
         }
       }
     });
+  }
+
+  getSectionIcon(section: string) {
+    if (!section) return null;
+    const s = section.toUpperCase();
+    if (s.includes('PODCAST') || s.includes('AUDIO') || s.includes('MEDITATION') || s.includes('BREATHING') || s.includes('SOUNDSCAPE')) {
+      return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audio_play.svg';
+    }
+    if (s.includes('VIDEO') || s.includes('SHORT') || s.includes('CONVERSATION') || s.includes('TALK')) {
+      return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg';
+    }
+    return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg';
+  }
+
+  onExerciseClick(exercise: any) {
+    if (!this.isSubscriber && (exercise.isFree === '0' || exercise.isFree === 0)) {
+      this.showModal = true;
+      return;
+    }
+
+    this.commonService.clickGuidedJourneyDay(exercise.GuidedJourneyDayID).subscribe();
+    localStorage.setItem('lastNavSource', 'guided-journey');
+    localStorage.setItem('NaviagtedFrom', this.router.url);
+
+    if (exercise.Url) {
+      const urls = exercise.Url.split(',');
+      let targetUrl = urls[0].trim();
+      const prefix = SharedService.getprogramName();
+      const isFree = exercise.isFree === '1' || exercise.isFree === 1;
+      const queryParams = isFree ? { t: 1 } : {};
+
+      if (targetUrl.includes('~podcasts~')) {
+        const parts = targetUrl.split('/');
+        const path = parts[0];
+        const id = parts[1] || '0';
+        const enable = parts[2] || 'T';
+        const title = parts[3] || 'Podcast';
+        const moduleName = 'podcast';
+        this.router.navigate([`/${prefix}/audiopage`, path, id, enable, title, moduleName], { queryParams });
+
+      } else if (targetUrl.startsWith('https_~~') || (targetUrl.includes('~') && !targetUrl.startsWith('/'))) {
+        const rowId = exercise.GuidedJourneyDayID || '0';
+        const title = (exercise.Title || exercise.Section || 'Audio');
+        let finalUrl = `/${prefix}/guided-meditation/audiopage/${targetUrl}/${rowId}/T/${encodeURIComponent(title)}`;
+        if (isFree) {
+          finalUrl += (finalUrl.includes('?') ? '&t=1' : '?t=1');
+        }
+        this.router.navigateByUrl(finalUrl);
+
+      } else {
+        let finalUrl = targetUrl;
+        if (finalUrl.startsWith('http')) {
+          window.location.href = finalUrl;
+          return;
+        }
+        if (finalUrl.startsWith('/')) {
+          if (!finalUrl.startsWith(`/${prefix}/`)) {
+            finalUrl = `/${prefix}${finalUrl}`;
+          }
+        } else {
+          if (!finalUrl.startsWith(`${prefix}/`)) {
+            finalUrl = `/${prefix}/${finalUrl}`;
+          } else {
+            finalUrl = `/${finalUrl}`;
+          }
+        }
+        if (isFree) {
+          finalUrl += (finalUrl.includes('?') ? '&t=1' : '?t=1');
+        }
+        this.router.navigateByUrl(finalUrl);
+      }
+    }
+  }
+
+  onModalClose(event: string) {
+    this.showModal = false;
+    if (event === 'ok') {
+      const prefix = SharedService.getprogramName();
+      this.router.navigate([prefix, 'subscription', 'start-your-free-trial']);
+    }
   }
 
   getModuleList() {
@@ -143,7 +241,6 @@ export class GuidedJourneyEndPage implements OnInit {
   }
 
   logEvent(event: string, url: string) {
-    // Implement logEvent if needed or remove from HTML
     console.log(event, url);
   }
 
