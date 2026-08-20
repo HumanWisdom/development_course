@@ -191,7 +191,7 @@ export class GuidedJourneyDaysPage implements OnInit {
             audioUrl: journey.AudioUrl || journey.audioUrl || journey.Audio || journey.audio
                       || `https://d1tenzemoxuh75.cloudfront.net/guided_journeys/intro/${journeyId}.mp3`,
           };
-          if (journey.Days) {
+          if (journey.Days && this.totalDays === 0 && this.allDaysData.length === 0) {
             this.totalDays = parseInt(journey.Days);
           }
         }
@@ -206,7 +206,18 @@ export class GuidedJourneyDaysPage implements OnInit {
 
     this.commonService.GetGuidedJourneyDays(this.journeyId, programId, userId).subscribe((res: any) => {
       if (res && Array.isArray(res)) {
-        this.allDaysData = res.map(item => {
+        // Exclude Day 100 items from guided-journey-days completely (only for end screen)
+        const filteredRes = res.filter(item => {
+          const dayNum = parseInt(item.Days_No || item.DayNo || item.dayNo || item.Day_No || item.day);
+          return dayNum !== 100;
+        });
+
+        const dayNumbers = filteredRes.map(item => parseInt(item.Days_No || item.DayNo || item.dayNo || item.Day_No || item.day)).filter(n => !isNaN(n));
+        if (dayNumbers.length > 0) {
+          this.totalDays = Math.max(...dayNumbers);
+        }
+
+        this.allDaysData = filteredRes.map(item => {
           const rawTitle = item.Title || item.Section;
           const { mainTitle, subTitle, sessionLabel, sessionName } = this.parseTitle(rawTitle);
           return {
@@ -223,9 +234,6 @@ export class GuidedJourneyDaysPage implements OnInit {
           };
         });
         this.updateDisplayData();
-        
-        // Also check initial read status to mark visited
-        // Removed markAsVisited loop as isVisited now checks allDaysData directly
       }
       this.isLoading = false;
     }, error => {
@@ -468,10 +476,10 @@ export class GuidedJourneyDaysPage implements OnInit {
       return dayNum === this.currentDay;
     });
     
-    // Calculate total days as fallback if not already set by journey details
-    if (this.totalDays === 0) {
-      const days = this.allDaysData.map(item => parseInt(item.Days_No || item.DayNo || item.dayNo || item.Day_No || item.day)).filter(n => !isNaN(n));
-      this.totalDays = days.length > 0 ? Math.max(...days) : 0;
+    // Calculate total days excluding 100
+    const days = this.allDaysData.map(item => parseInt(item.Days_No || item.DayNo || item.dayNo || item.Day_No || item.day)).filter(n => !isNaN(n) && n !== 100);
+    if (days.length > 0) {
+      this.totalDays = Math.max(...days);
     }
 
     // Scroll to active day
