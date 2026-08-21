@@ -32826,8 +32826,8 @@ body * {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 20px;
+  justify-content: flex-start;
+  padding: 0 20px;
   z-index: 9;
   position: fixed;
   top: 0;
@@ -32841,14 +32841,84 @@ body * {
   background: #FFF7E6;
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 20px;
+  justify-content: flex-start;
+  padding: 0 20px;
   z-index: 9;
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
   margin: 0 auto;
+}
+
+.tn_title_back > div:nth-child(1),
+.tn_title_back_change_topic > div:nth-child(1),
+.toc_nvmenu_v3 > div:nth-child(1),
+.tn_we > div:nth-child(1) {
+  width: auto !important;
+  flex-shrink: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.tn_title_back > div:nth-child(2),
+.tn_title_back_change_topic > div:nth-child(2),
+.toc_nvmenu_v3 > div:nth-child(2),
+.tn_we > div:nth-child(2) {
+  width: auto !important;
+  flex: 1 !important;
+  margin-left: 20px !important;
+  display: flex !important;
+  align-items: center !important;
+  overflow: hidden !important;
+}
+
+.tn_title_back > div:nth-child(2) h1,
+.tn_title_back > div:nth-child(2) h2,
+.tn_title_back > div:nth-child(2) h3,
+.tn_title_back > div:nth-child(2) h4,
+.tn_title_back > div:nth-child(2) h5,
+.tn_title_back > div:nth-child(2) h6,
+.tn_title_back > div:nth-child(2) a,
+.tn_title_back > div:nth-child(2) p,
+.tn_title_back_change_topic > div:nth-child(2) h1,
+.tn_title_back_change_topic > div:nth-child(2) h2,
+.tn_title_back_change_topic > div:nth-child(2) h3,
+.tn_title_back_change_topic > div:nth-child(2) h4,
+.tn_title_back_change_topic > div:nth-child(2) h5,
+.tn_title_back_change_topic > div:nth-child(2) h6,
+.tn_title_back_change_topic > div:nth-child(2) a,
+.tn_title_back_change_topic > div:nth-child(2) p,
+.toc_nvmenu_v3 > div:nth-child(2) h1,
+.toc_nvmenu_v3 > div:nth-child(2) h2,
+.toc_nvmenu_v3 > div:nth-child(2) h3,
+.toc_nvmenu_v3 > div:nth-child(2) h4,
+.toc_nvmenu_v3 > div:nth-child(2) h5,
+.toc_nvmenu_v3 > div:nth-child(2) h6,
+.toc_nvmenu_v3 > div:nth-child(2) a,
+.toc_nvmenu_v3 > div:nth-child(2) p,
+.tn_we > div:nth-child(2) h1,
+.tn_we > div:nth-child(2) h2,
+.tn_we > div:nth-child(2) h3,
+.tn_we > div:nth-child(2) h4,
+.tn_we > div:nth-child(2) h5,
+.tn_we > div:nth-child(2) h6,
+.tn_we > div:nth-child(2) a,
+.tn_we > div:nth-child(2) p {
+  text-align: left !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.tn_title_back > div:nth-child(3),
+.tn_title_back_change_topic > div:nth-child(3),
+.toc_nvmenu_v3 > div:nth-child(3),
+.tn_we > div:nth-child(3) {
+  width: auto !important;
+  flex-shrink: 0 !important;
+  margin-left: auto !important;
+  display: flex !important;
+  align-items: center !important;
 }
 
 .div_fbn .row:hover {
