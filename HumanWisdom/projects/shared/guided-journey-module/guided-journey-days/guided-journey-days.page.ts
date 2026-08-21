@@ -21,6 +21,7 @@ export class GuidedJourneyDaysPage implements OnInit {
   displayExercises: any[] = [];
   isLoading = true;
   journeyTitle: string = '';
+  journeySubtitle: string = '';
   isSubscriber = false;
   isLoggedIn = false;
   showModal = false;
@@ -60,6 +61,12 @@ export class GuidedJourneyDaysPage implements OnInit {
     this.route.queryParams.subscribe(params => {
       const newJourneyId = params['journeyId'];
       const dayParam = params['day'];
+      if (params['subtitle']) {
+        this.journeySubtitle = params['subtitle'];
+      }
+      if (params['title']) {
+        this.journeyTitle = params['title'];
+      }
       
       let dayChanged = false;
       if (dayParam !== undefined && dayParam !== null) {
@@ -165,7 +172,7 @@ export class GuidedJourneyDaysPage implements OnInit {
   navigateToEnd() {
     const prefix = SharedService.getprogramName();
     this.router.navigate([`/${prefix}/guided-journeys/end`], {
-      queryParams: { journeyId: this.journeyId, title: this.journeyTitle }
+      queryParams: { journeyId: this.journeyId, title: this.journeyTitle, subtitle: this.journeySubtitle }
     });
   }
 
@@ -181,6 +188,7 @@ export class GuidedJourneyDaysPage implements OnInit {
         
         if (journey) {
           this.journeyTitle = journey.Title || journey.title || journey.JourneyName || journey.Name;
+          this.journeySubtitle = journey.Subtitle || journey.subtitle || this.journeyTitle;
           const journeyId = journey.GuidedJourneyID || journey.JourneyID || journey.journeyID || journey.Id || journey.id || journey.RowID;
           this.journeyDetails = {
             id: journeyId,
@@ -497,8 +505,12 @@ export class GuidedJourneyDaysPage implements OnInit {
   }
 
   goBack() {
-    const prefix = SharedService.getprogramName();
-    this.router.navigate([`/${prefix}/guided-journeys`]);
+    if (this.currentDay !== 0) {
+      this.navigateToDay(0);
+    } else {
+      const prefix = SharedService.getprogramName();
+      this.router.navigate([`/${prefix}/guided-journeys`]);
+    }
   }
 
   goToListing() {
