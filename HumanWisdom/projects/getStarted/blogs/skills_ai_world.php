@@ -77,7 +77,7 @@
 
 			 <h4 class="mtb0px blog_desc">AI can provide information, but it cannot truly understand who we are or what drives our choices.</h4>
 
-			 <h4 class="mtb0px blog_desc"> <span class="blog_highlight_black">54% of employers say graduates fall short of expectations in self-awareness.</span> <a class="blog_highlight_peach td_underline" href="https://ise.org.uk/knowledge/insights/416/employers_concerned_student_use_of_ai_misrepresents_skills/" target="_blank">(Reference)</a></h4>
+			 <h4 class="mtb0px blog_desc"> <span class="blog_highlight_black">54% of employers say graduates fall short of expectations in self-awareness.</span> <a class="blog_highlight_peach td_underline fs_12px " href="https://ise.org.uk/knowledge/insights/416/employers_concerned_student_use_of_ai_misrepresents_skills/" target="_blank">Reference</a></h4>
 
 			 <h4 class="mtb0px blog_desc">Students who develop self-awareness are better equipped to manage stress and anxiety, make thoughtful decisions, build stronger relationships and have fulfilling careers.</h4>
 
@@ -89,7 +89,7 @@
 
 			 <h4 class="mtb0px blog_desc">Success in life is often determined by how well we manage emotions, not simply by how much we know.</h4>
 
-			 <h4 class="mtb0px blog_desc"> <span class="blog_highlight_black">71% of employers say they value emotional intelligence more than IQ.</span> <a class="blog_highlight_peach td_underline" href="https://www.hrreporter.com/news/hr-news/71-per-cent-of-employers-value-emotional-intelligence-over-iq/284219" target="_blank">(Reference)</a></h4>
+			 <h4 class="mtb0px blog_desc"> <span class="blog_highlight_black">71% of employers say they value emotional intelligence more than IQ.</span> <a  style="font-size:12px;"class="blog_highlight_peach td_underline" href="https://www.hrreporter.com/news/hr-news/71-per-cent-of-employers-value-emotional-intelligence-over-iq/284219" target="_blank">Reference</a></h4>
 
 			 <h4 class="mtb0px blog_desc">Emotional intelligence helps us recognise emotions, respond rather than react, navigate challenges, communicate effectively, and maintain healthy relationships.</h4>
 
@@ -105,7 +105,7 @@
 
 			 <h4 class="mtb0px blog_desc">The challenge is knowing whether those answers are accurate, ethical, relevant, or complete.</h4>
 
-			 <h4 class="mtb0px blog_desc"> <span class="blog_highlight_black">Analytical thinking and good judgement are core skills for employers, with 7 out of 10 regarding it as essential</span> <a class="blog_highlight_peach td_underline" href="https://www.weforum.org/publications/the-future-of-jobs-report-2025/in-full/3-skills-outlook/" target="_blank">(Reference)</a></h4>
+			 <h4 class="mtb0px blog_desc"> <span class="blog_highlight_black">Analytical thinking and good judgement are core skills for employers, with 7 out of 10 regarding it as essential</span> <a  style="font-size:12px;"class="blog_highlight_peach td_underline" href="https://www.weforum.org/publications/the-future-of-jobs-report-2025/in-full/3-skills-outlook/" target="_blank">Reference</a></h4>
 
 			 <h4 class="mtb0px blog_desc">Students must learn to question assumptions, evaluate evidence, recognise bias, and think independently.
 
@@ -143,7 +143,7 @@
 
 			 <!-- <h4 class="mtb0px blog_desc">It is increasingly recognised as a critical workplace skill.</h4> -->
 
-			 <h4 class="mtb0px blog_desc">It is a skill employers are looking for. <span class="blog_highlight_black">89% of CEOs and 74% of employees believe empathy is important.</span> <a class="blog_highlight_peach td_underline" href="https://businessolver.com/workplace-empathy/" target="_blank">(Reference)</a></h4>
+			 <h4 class="mtb0px blog_desc">It is a skill employers are looking for. <span class="blog_highlight_black">89% of CEOs and 74% of employees believe empathy is important.</span> <a class ="blog_highlight_peach td_underline fs_12px" href="https://businessolver.com/workplace-empathy/" target="_blank">Reference</a></h4>
 
 			 <h4 class="mtb0px blog_desc">Healthcare professionals, teachers, leaders, counsellors, and countless others rely on empathy to build meaningful relationships and support others through challenges.</h4>
 
@@ -159,7 +159,7 @@
 
 			 <h4 class="mtb0px blog_desc">Many jobs will evolve, industries will change, and people will need to continuously learn and adapt throughout their careers.</h4>
 
-			 <h4 class="mtb0px blog_desc"> <span class="blog_highlight_black">Research from AON suggests only 30% of employees are resilient and it is a core skill employers are looking for.</span> <a class="blog_highlight_peach td_underline" href="https://www.aon.com/unitedkingdom/media-room/articles/employees-motivated-productive-if-resilient" target="_blank">(Reference)</a></h4>
+			 <h4 class="mtb0px blog_desc"> <span class="blog_highlight_black">Research from AON suggests only 30% of employees are resilient and it is a core skill employers are looking for.</span> <a class="blog_highlight_peach td_underline fs_12px" href="https://www.aon.com/unitedkingdom/media-room/articles/employees-motivated-productive-if-resilient" target="_blank">Reference</a></h4>
 
 			 <h4 class="mtb0px blog_desc">Resilience cannot be automated. It must be developed through experience, reflection, and self-understanding.</h4>
 
@@ -185,7 +185,7 @@
 
 			 <!-- <h4 class="mtb0px blog_desc">Yet these skills are rarely taught explicitly in education or workplace training.</h4> -->
 
-			 <h4 class="mtb0px blog_desc"> <span class="blog_highlight_black">Nearly half (48%) of workplace skills gaps identified by UK employers involve teamwork skills, while 44% involve difficulties managing emotions and relationships with others.</span> <a class="blog_highlight_peach td_underline" href="https://www.dropbox.com/scl/fi/k0yawj6zuw4wu2kyolhc8/Employer_Skills_Survey_2024_UK_report.pdf" target="_blank">(Reference)</a></h4>
+			 <h4 class="mtb0px blog_desc"> <span class="blog_highlight_black">Nearly half (48%) of workplace skills gaps identified by UK employers involve teamwork skills, while 44% involve difficulties managing emotions and relationships with others.</span> <a class="blog_highlight_peach td_underline fs_12px" href="https://www.dropbox.com/scl/fi/k0yawj6zuw4wu2kyolhc8/Employer_Skills_Survey_2024_UK_report.pdf" target="_blank">Reference</a></h4>
 
 			 <!-- <h4 class="mtb0px blog_desc">As AI takes over more individual tasks, our ability to work effectively with other human beings may become even more valuable.</h4> -->
 
