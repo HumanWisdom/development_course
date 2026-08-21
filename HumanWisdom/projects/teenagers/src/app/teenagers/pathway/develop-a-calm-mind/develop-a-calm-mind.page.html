@@ -33,38 +33,38 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 pimgrow">
                   <a routerLink="/teenagers/pathway/develop-a-calm-mind">
                     <img
-                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/webp/tpathway_01_active.webp"
+                      src="https://d1tenzemoxuh75.cloudfront.net/teenagers/assets/webp/tpathway_01_active.webp"
                       class="img-responsive active">
                   </a>
 
                   <a routerLink="/teenagers/pathway/learn-to-question-yourself">
                     <img
-                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/webp/tpathway_02_inactive.webp"
+                      src="https://d1tenzemoxuh75.cloudfront.net/teenagers/assets/webp/tpathway_02_inactive.webp"
                       class="img-responsive">
                   </a>
 
                   <a routerLink="/teenagers/pathway/understand-how-your-mind-works">
                     <img
-                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/webp/tpathway_03_inactive.webp"
+                      src="https://d1tenzemoxuh75.cloudfront.net/teenagers/assets/webp/tpathway_03_inactive.webp"
                       class="img-responsive">
                   </a>
 
                   <a routerLink="/teenagers/pathway/manage-your-emotions">
                     <img
-                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/webp/tpathway_04_inactive.webp"
+                      src="https://d1tenzemoxuh75.cloudfront.net/teenagers/assets/webp/tpathway_04_inactive.webp"
                       class="img-responsive">
                   </a>
 
                   <a routerLink="/teenagers/pathway/succeed-in-life">
                     <img
-                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/webp/tpathway_05_inactive.webp"
+                      src="https://d1tenzemoxuh75.cloudfront.net/teenagers/assets/webp/tpathway_05_inactive.webp"
                       class="img-responsive">
                   </a>
                 </div>
               </div>
 
               <!-- five dots -->
-              <div class="row mt30px">
+           <!--    <div class="row mt30px">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 phbtns">
                   <a>
                     <button type="button" class="btn active"></button>
@@ -86,7 +86,7 @@
                     <button type="button" class="btn"></button>
                   </a>
                 </div>
-              </div>
+              </div> -->
               <!-- /five dots -->
 
               <div class="row">
@@ -109,7 +109,7 @@
               <!-- hr -->
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <hr class="hr_style_v3_01 mtb10pxi">
+                  <hr class="hr_style_v3_01 mtb20pxi">
                 </div>
               </div>
               <!-- /hr -->
@@ -154,10 +154,106 @@
                   </div>
                 </div>
               </div>
-              <div class="row mt40px">
+
+                   <!-- hr -->
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <hr class="hr_style_v3_01 mtb20pxi">
+                </div>
+              </div>
+              <!-- /hr -->
+              <div class="row mt0px">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 msrow">
 
+                 
+<div class="row msrow"> 
                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <a (click)="this.logeventservice.logEvent('click_noticing-thoughts')"
+                      routerLink="/teenagers/noticing-thoughts">
+                      <div class="row box_v3_04 mb0pxi">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <img
+                                src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/teenagers/108.webp"
+                                class="img-responsive">
+                              <div class="progress dprogress">
+                                <div class="progress-bar" role="progressbar" [style.width]="ntP + '%'"
+                                  aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mt10px  fw_500 fs_15px lh_130p fc_ffffff">
+                                Noticing thoughts
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fw_400 fs_12px lh_130p fc_ffffff_0_5">
+                                1 session
+                              </h4>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <a (click)="this.logeventservice.logEvent('click_meditation')" routerLink="/teenagers/meditation">
+                      <div class="row box_v3_04 mb0pxi">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <img
+                                src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/teenagers/109.webp"
+                                class="img-responsive">
+                              <div class="progress dprogress">
+                                <div class="progress-bar" role="progressbar" [style.width]="meditationP + '%'"
+                                  aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mt10px  fw_500 fs_15px lh_130p fc_ffffff">
+                               Understanding Meditation
+                              </h4>
+                            </div>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                              <h4 class="mtb0px fw_400 fs_12px lh_130p fc_ffffff_0_5">
+                                3 sessions
+                              </h4>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+</div>
+    <!-- hr -->
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                  <hr class="hr_style_v3_01 mtb20pxi">
+                </div>
+              </div>
+              <!-- /hr -->
+               <div class="row msrow">
+            
+                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                     <a (click)="this.logeventservice.logEvent('click_nature')" routerLink="/teenagers/nature">
                       <div class="row box_v3_04">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -167,16 +263,16 @@
                               <img
                                 src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/teenagers/106.webp"
                                 class="img-responsive">
-                              <div class="progress dprogress">
+                             <!--  <div class="progress dprogress">
                                 <div class="progress-bar" role="progressbar" [style.width]="natureP + '%'"
                                   aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
+                              </div> -->
                             </div>
                           </div>
 
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mt10px mb10px fw_500 fs_15px lh_130p fc_ffffff">
+                              <h4 class="mt10px  fw_500 fs_15px lh_130p fc_ffffff">
                                 Nature meditations
                               </h4>
                             </div>
@@ -204,16 +300,16 @@
                               <img
                                 src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/teenagers/107.webp"
                                 class="img-responsive">
-                              <div class="progress dprogress">
+                             <!--  <div class="progress dprogress">
                                 <div class="progress-bar" role="progressbar" [style.width]="breathingP + '%'"
                                   aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
+                              </div> -->
                             </div>
                           </div>
 
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mt10px mb10px fw_500 fs_15px lh_130p fc_ffffff">
+                              <h4 class="mt10px  fw_500 fs_15px lh_130p fc_ffffff">
                                 Breathing exercises
                               </h4>
                             </div>
@@ -223,83 +319,6 @@
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <h4 class="mtb0px fw_400 fs_12px lh_130p fc_ffffff_0_5">
                                 12 exercises
-                              </h4>
-                            </div>
-                          </div>
-
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-
-                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <a (click)="this.logeventservice.logEvent('click_noticing-thoughts')"
-                      routerLink="/teenagers/noticing-thoughts">
-                      <div class="row box_v3_04">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-
-                          <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <img
-                                src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/teenagers/108.webp"
-                                class="img-responsive">
-                              <div class="progress dprogress">
-                                <div class="progress-bar" role="progressbar" [style.width]="ntP + '%'"
-                                  aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mt10px mb10px fw_500 fs_15px lh_130p fc_ffffff">
-                                Noticing thoughts
-                              </h4>
-                            </div>
-                          </div>
-
-                          <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mtb0px fw_400 fs_12px lh_130p fc_ffffff_0_5">
-                                1 session
-                              </h4>
-                            </div>
-                          </div>
-
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-
-                  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <a (click)="this.logeventservice.logEvent('click_meditation')" routerLink="/teenagers/meditation">
-                      <div class="row box_v3_04">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-
-                          <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <img
-                                src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/teenagers/109.webp"
-                                class="img-responsive">
-                              <div class="progress dprogress">
-                                <div class="progress-bar" role="progressbar" [style.width]="meditationP + '%'"
-                                  aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mt10px mb10px fw_500 fs_15px lh_130p fc_ffffff">
-                                Meditation
-                              </h4>
-                            </div>
-                          </div>
-
-                          <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mtb0px fw_400 fs_12px lh_130p fc_ffffff_0_5">
-                                3 sessions
                               </h4>
                             </div>
                           </div>
@@ -320,16 +339,16 @@
                               <img
                                 src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/teenagers/110.webp"
                                 class="img-responsive">
-                              <div class="progress dprogress">
+                              <!-- <div class="progress dprogress">
                                 <div class="progress-bar" role="progressbar" [style.width]="gamP + '%'"
                                   aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
+                              </div> -->
                             </div>
                           </div>
 
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mt10px mb10px fw_500 fs_15px lh_130p fc_ffffff">
+                              <h4 class="mt10px  fw_500 fs_15px lh_130p fc_ffffff">
                                 Audio meditation
                               </h4>
                             </div>
@@ -356,18 +375,18 @@
 
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/fbn_04.webp"
+                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/tapping_exercise.webp"
                                 class="img-responsive">
-                              <div class="progress dprogress">
+                             <!--  <div class="progress dprogress">
                                 <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0"
                                   aria-valuemax="100"></div>
-                              </div>
+                              </div> -->
                             </div>
                           </div>
 
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mt10px mb10px fw_500 fs_15px lh_130p fc_ffffff">
+                              <h4 class="mt10px  fw_500 fs_15px lh_130p fc_ffffff">
                                 Tapping exercises
                               </h4>
                             </div>
@@ -394,18 +413,18 @@
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <img
-                                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/background/toc/sounndscapes.webp"
+                                src="https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/sounndscapes.webp"
                                 class="img-responsive">
-                              <div class="progress dprogress">
+                             <!--  <div class="progress dprogress">
                                 <div class="progress-bar" role="progressbar" [style.width]="meditationP + '%'"
                                   aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                              </div>
+                              </div> -->
                             </div>
                           </div>
 
                           <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <h4 class="mt10px mb10px fw_500 fs_15px lh_130p fc_ffffff">
+                              <h4 class="mt10px  fw_500 fs_15px lh_130p fc_ffffff">
                                 Soundscapes
                               </h4>
                             </div>
@@ -423,6 +442,7 @@
                       </div>
                     </a>
                   </div>
+               </div>
                 </div>
               </div>
 

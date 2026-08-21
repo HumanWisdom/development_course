@@ -3,22 +3,16 @@
 <!-- top navigation -->
 <div class="row center_flex">
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_we col_cw" [ngClass]="isAdults ? '' : 'bg_stake'">
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-      <a class="" (click)="goBack()">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0" style="display: flex; align-items: center; min-height: 40px;">
+      <a class="" (click)="goBack()" style="display: flex; align-items: center; flex-shrink: 0; cursor: pointer;">
         <img
           [src]="isAdults ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/back.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/back_round.svg'"
           alt="" class="p0" />
       </a>
-    </div>
-
-    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
-      <h1 class="mtb0px fs_18px fw_600 lh_150p tcenter" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-        {{journeyTitle}}
+      <h1 class="mtb0px fs_18px fw_600 lh_150p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"
+        style="text-align: left; margin-left: 20px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1;">
+        {{journeySubtitle || journeyTitle}}
       </h1>
-    </div>
-
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tright">
-      <!-- Add extra icons if needed -->
     </div>
   </div>
 </div>
@@ -54,9 +48,9 @@
 
                 <!-- ── TRANSCRIPT VIEW: only Back To Audio + transcript text ── -->
                 <ng-container *ngIf="showTranscript">
-                  <div class="row tcenter read-text-row" (click)="closeTranscript()">
+                  <div class="row tcenter read-text-row back-to-audio-row" (click)="closeTranscript()">
                     <a class="read-text-link">
-                      <h6 class="fs_15px fw_400 lh_140p underline mtb10px read-text-label"
+                      <h6 class="fw_400 lh_140p underline read-text-label back-to-audio-label"
                         [ngClass]="isAdults ? 'fc_D7586B' : 'fc_EE9596'">Back To Audio</h6>
                     </a>
                   </div>
@@ -90,15 +84,15 @@
                   <!-- Read Text Link -->
                   <div class="row tcenter read-text-row" (click)="loadTranscript()">
                     <a class="read-text-link">
-                      <h6 class="fs_15px fw_400 lh_140p underline mtb10px read-text-label"
+                      <h6 class="fw_400 lh_140p underline read-text-label read-text-main"
                         [ngClass]="isAdults ? 'fc_D7586B' : 'fc_EE9596'">Read text</h6>
                     </a>
                   </div>
 
                   <!-- Journey Title -->
-                  <div class="row">
+                  <div class="row mt16px">
                     <div class="col-md-12 p0">
-                      <h1 class="mt0px fs_30px fw_400 lh_140p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
+                      <h1 class="mtb0px fs_30px fw_400 lh_140p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
                         {{journeyDetails.title}}
                       </h1>
                     </div>
@@ -115,7 +109,7 @@
                   </div>
 
                   <!-- Description -->
-                  <div class="row mb40px">
+                  <div class="row mb30px">
                     <div class="col-md-12 p0">
                       <h4 class="mt0px fs_15px fw_400 lh_150p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
                         {{journeyDetails.description}}
@@ -127,7 +121,7 @@
                   <div class="row mb60px">
                     <div class="col-md-12 p0">
                       <button (click)="navigateToDay(1)" class="btn_return center_flex" style="width: 145px;">
-                        Begin here <i class="fa fa-angle-right ml10px"></i>
+                        Begin here <i class="fa fa-angle-right"></i>
                       </button>
                     </div>
                   </div>
@@ -173,19 +167,18 @@
                     <ng-container *ngIf="!isSection8(exercise) && !isGuidedJournaling(exercise)">
                       <h3 class="card_type1_title">{{exercise.DisplayTitle}}</h3>
                       <p class="card_type1_meta">
-                        {{exercise.DisplaySubtitle || exercise.Section}}
-                        <span *ngIf="exercise.Timing"> • {{exercise.Timing}}</span>
+                        {{exercise.DisplaySubtitle || exercise.Section}}<span *ngIf="exercise.Timing && exercise.Timing !== '0' && exercise.Timing !== '0:00' && exercise.Timing !== '00:00'"> • {{exercise.Timing}}</span>
                       </p>
                     </ng-container>
                     <ng-container *ngIf="isSection8(exercise)">
                       <h3 class="card_type1_title_sec8">{{exercise.DisplayTitle}}</h3>
-                      <p class="card_type1_session_label">{{exercise.sessionLabel}}</p>
+                      <p class="card_type1_session_label">{{exercise.sessionLabel}}<span *ngIf="exercise.Timing && exercise.Timing !== '0' && exercise.Timing !== '0:00' && exercise.Timing !== '00:00'"> • {{exercise.Timing}}</span></p>
                       <h4 class="card_type1_session_name">{{exercise.sessionName}}</h4>
                     </ng-container>
                     <ng-container *ngIf="isGuidedJournaling(exercise)">
                       <h3 class="card_type1_title_gj">{{exercise.DisplayTitle}}</h3>
                       <p class="card_type1_meta" style="margin-bottom: 0px;">{{exercise.DisplaySubtitle ||
-                        exercise.Section}}</p>
+                        exercise.Section}}<span *ngIf="exercise.Timing && exercise.Timing !== '0' && exercise.Timing !== '0:00' && exercise.Timing !== '00:00'"> • {{exercise.Timing}}</span></p>
                       <p class="card_type1_meta_questions">{{exercise.QuestionCnt}} questions</p>
                     </ng-container>
                     <p class="card_type1_meta" *ngIf="exercise.Meta">{{exercise.Meta}}</p>
@@ -232,19 +225,18 @@
                       <ng-container *ngIf="!isSection8(exercise) && !isGuidedJournaling(exercise)">
                         <h3 class="exercise_title">{{exercise.DisplayTitle}}</h3>
                         <p class="exercise_meta">
-                          {{exercise.DisplaySubtitle || exercise.Section}}
-                          <span *ngIf="exercise.Timing"> • {{exercise.Timing}}</span>
+                          {{exercise.DisplaySubtitle || exercise.Section}}<span *ngIf="exercise.Timing && exercise.Timing !== '0' && exercise.Timing !== '0:00' && exercise.Timing !== '00:00'"> • {{exercise.Timing}}</span>
                         </p>
                       </ng-container>
                       <ng-container *ngIf="isSection8(exercise)">
                         <h3 class="exercise_title_sec8">{{exercise.DisplayTitle}}</h3>
-                        <p class="card_type1_session_label">{{exercise.sessionLabel}}</p>
+                        <p class="card_type1_session_label">{{exercise.sessionLabel}}<span *ngIf="exercise.Timing && exercise.Timing !== '0' && exercise.Timing !== '0:00' && exercise.Timing !== '00:00'"> • {{exercise.Timing}}</span></p>
                         <h4 class="card_type1_session_name">{{exercise.sessionName}}</h4>
                       </ng-container>
                       <ng-container *ngIf="isGuidedJournaling(exercise)">
                         <h3 class="exercise_title_gj">{{exercise.DisplayTitle}}</h3>
                         <p class="exercise_meta" style="margin-bottom: 0px;">{{exercise.DisplaySubtitle ||
-                          exercise.Section}}</p>
+                          exercise.Section}}<span *ngIf="exercise.Timing && exercise.Timing !== '0' && exercise.Timing !== '0:00' && exercise.Timing !== '00:00'"> • {{exercise.Timing}}</span></p>
                         <p class="card_type1_meta_questions">{{exercise.QuestionCnt}} questions</p>
                       </ng-container>
                     </div>
@@ -275,9 +267,17 @@
 
                 <!-- Type 3: Journaling Box -->
                 <div *ngIf="exercise.Type === 3" class="journal_box">
+                  <div class="journal_header">
+                    <h4 class="journal_header_title">{{ exercise.HeaderTitle || exercise.Header || (exercise.Section &&
+                      exercise.Section.toUpperCase() !== 'JOURNALING' && exercise.Section.toUpperCase() !== 'JOURNAL' ?
+                      exercise.Section : 'QUESTION OF THE DAY') }}</h4>
+                    <div class="journal_header_divider"></div>
+                  </div>
+
                   <h4 class="journal_title">{{exercise.DisplayTitle}}</h4>
+
                   <textarea *ngIf="isSubscriber || exercise.isFree === '1' || exercise.isFree === 1"
-                    placeholder="Tap to answer" [(ngModel)]="exercise.Response"></textarea>
+                    placeholder="Tap to answer" [(ngModel)]="exercise.Response" (input)="autoResize($event)"></textarea>
                   <textarea *ngIf="!isSubscriber && (exercise.isFree === '0' || exercise.isFree === 0)"
                     [disabled]="true" [readonly]="true" [value]="'Subscribe to use this feature'"></textarea>
 
@@ -337,9 +337,10 @@
               <span>Intro</span>
             </div>
             <div *ngFor="let dayNum of getDaysArray()" class="day_circle"
-              [ngClass]="{'active': currentDay === dayNum, 'visited': isVisited(dayNum) && currentDay !== dayNum}"
+              [ngClass]="{'active': currentDay === dayNum, 'visited': isVisited(dayNum) && currentDay !== dayNum, 'none-accessed': !isVisited(dayNum) && currentDay !== dayNum}"
               (click)="navigateToDay(dayNum)">
               <span>Day {{dayNum}}</span>
+              <span class="none-accessed-dot" *ngIf="!isVisited(dayNum) && currentDay !== dayNum"></span>
             </div>
           </div>
         </div>

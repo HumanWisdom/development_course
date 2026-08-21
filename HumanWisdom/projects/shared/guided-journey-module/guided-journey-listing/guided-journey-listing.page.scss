@@ -20,7 +20,7 @@
 }
 
 .btn_begin_here{
-  background: #ED7D6F !important;
+  background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%) !important;
     color: #ffffff;
     height: 40px;
     border-radius: 50px;
@@ -49,6 +49,29 @@
         box-sizing: border-box;
         display: flex;
         align-items: center;
+        transition: background 0.3s ease;
+    }
+
+}
+
+.toc_adiv_02 {
+    a > .row {
+        background: #0C2B5F;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+
+        &:hover {
+            background: #031A41;
+        }
+    }
+}
+
+.toc_adiv_03 {
+    a > .row {
+        background: #FFEFC7;
+
+        &:hover {
+            background: #FFD889;
+        }
     }
 
     a .center_flex {

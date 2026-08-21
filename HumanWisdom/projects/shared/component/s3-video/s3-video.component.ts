@@ -127,10 +127,11 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
       this.wisdomshort = false;
       let name = this.linkcode?.split('-videos')[0];
       let link = this.linkcode?.split('-videos')[1];
-      this.linkcode = `${name}/videos${link?.replaceAll('-', '/')}`;
-      if (this.linkcode?.includes('teenagers')) {
-        this.linkcode = this.linkcode.replaceAll('-', '/');
-      }
+      // this.linkcode = `${name}/videos${link?.replaceAll('-', '/')}`;
+      // if (this.linkcode?.includes('teenagers')) {
+      //   this.linkcode = this.linkcode.replaceAll('-', '/');
+      // }
+      this.linkcode = this.linkcode.replaceAll('-', '/');
       this.linkcode = this.linkcode.replaceAll('~', '-');
     }
     this.isSubscriber = localStorage.getItem('Subscriber') === '1';
