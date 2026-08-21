@@ -15,6 +15,7 @@ export class GuidedJourneyEndPage implements OnInit {
   isAdults = true;
   journeyId: any;
   journeyTitle: string = 'Stress reduction';
+  journeySubtitle: string = '';
   moduleList: any[] = [];
   continueExploringList: any[] = [];
   isLoading = true;
@@ -41,10 +42,14 @@ export class GuidedJourneyEndPage implements OnInit {
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
       this.journeyId = params['journeyId'];
+      if (params['subtitle']) {
+        this.journeySubtitle = params['subtitle'];
+      }
       if (params['title']) {
         this.journeyTitle = params['title'];
       }
       if (this.journeyId) {
+        this.getJourneyDetails();
         this.getGuidedJourneyDays();
       }
     });
@@ -62,6 +67,21 @@ export class GuidedJourneyEndPage implements OnInit {
   survey(): void {
     const prefix = this.isAdults ? '/adults' : '/teenagers';
     this.router.navigate([`${prefix}/wisdom-survey`], { state: { isUseCloseButton: true, source: 'guided-journey' } });
+  }
+
+  getJourneyDetails() {
+    let userid = SharedService.getUserId() || 100;
+    let programId = SharedService.ProgramId;
+    this.commonService.GetGuidedJourneys(programId, userid).subscribe((res: any) => {
+      if (res) {
+        const data = Array.isArray(res) ? res : (res.Data || res.data || res.DataList || res.GuidedJourneys || res.Guided_Journeys || res.list || []);
+        const journey = data.find(item => (item.GuidedJourneyID || item.JourneyID || item.journeyID || item.Id || item.id || item.RowID) == this.journeyId);
+        if (journey) {
+          this.journeyTitle = journey.Title || journey.title || journey.JourneyName || journey.Name;
+          this.journeySubtitle = journey.Subtitle || journey.subtitle || this.journeyTitle;
+        }
+      }
+    });
   }
 
   getGuidedJourneyDays() {
@@ -82,6 +102,7 @@ export class GuidedJourneyEndPage implements OnInit {
         }).map(item => {
           return {
             ...item,
+            Timing: item.Timing || item.timing || item.Time || item.time || item.duration || item.Duration || '',
             imgPath: this.getImgUrl(item.imgPath)
           };
         });
@@ -220,7 +241,14 @@ export class GuidedJourneyEndPage implements OnInit {
 
   goBack() {
     const prefix = SharedService.getprogramName();
-    this.router.navigate([`/${prefix}/guided-journeys`]);
+    this.router.navigate([`/${prefix}/guided-journeys/days`], {
+      queryParams: {
+        journeyId: this.journeyId,
+        day: 0,
+        title: this.journeyTitle,
+        subtitle: this.journeySubtitle
+      }
+    });
   }
 
   navigateToDay(day: number) {

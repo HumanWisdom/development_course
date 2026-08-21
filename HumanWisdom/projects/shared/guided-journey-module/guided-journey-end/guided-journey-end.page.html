@@ -3,19 +3,17 @@
 <!-- top navigation -->
 <div class="row center_flex">
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_we col_cw" [ngClass]="isAdults ? '' : 'bg_stake'">
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-      <a class="" (click)="goBack()">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0" style="display: flex; align-items: center; min-height: 40px;">
+      <a class="" (click)="goBack()" style="display: flex; align-items: center; flex-shrink: 0; cursor: pointer;">
         <img
           [src]="isAdults ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/back.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/back_round.svg'"
           alt="" class="p0" />
       </a>
-    </div>
-    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
-      <h1 class="mtb0px fs_18px fw_600 lh_150p tcenter" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-        {{journeyTitle}}
+      <h1 class="mtb0px fs_18px fw_600 lh_150p" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"
+        style="text-align: left; margin-left: 20px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1;">
+        {{journeySubtitle || journeyTitle}}
       </h1>
     </div>
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 tright"></div>
   </div>
 </div>
 <app-modal *ngIf="showModal" [title]="modalTitle" [content]="modalContent" [okText]="'Start your free trial'"
@@ -37,7 +35,8 @@
             <!-- Well Done Section -->
             <div class="well_done_section">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/saved_tick.svg"
+                <img
+                  [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/welldone!adultss.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/welldoneteenn.svg'"
                   class="img-responsive">
               </div>
               <h2 class="well_done_title" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
@@ -76,8 +75,8 @@
                 </div>
                 <div class="explore_content">
                   <h3 class="explore_card_title" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">{{item.Title}}</h3>
-                  <p class="explore_card_meta" [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
-                    {{item.Section}}<span *ngIf="item.Timing"> • {{item.Timing}}</span>
+                  <p class="explore_card_meta" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                    {{item.Section}}<span *ngIf="item.Timing && item.Timing !== '0' && item.Timing !== '0:00' && item.Timing !== '00:00'"> • {{item.Timing}}</span>
                   </p>
                 </div>
                 <div class="explore_status" *ngIf="!isSubscriber && (item.isFree === '0' || item.isFree === 0)">
@@ -384,8 +383,6 @@
               </div>
             </div>
             <!-- /pathway -->
-
-            <div class="pagebreak"></div>
 
           </div>
         </div>
