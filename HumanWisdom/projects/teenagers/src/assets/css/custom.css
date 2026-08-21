@@ -32849,7 +32849,7 @@ body * {
 .box_v3_04,
 .box_v3_04b {
   height: 196px;
-  width: 162px;
+  width: 100%;
   background: #0C2B5F;
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 12px;
