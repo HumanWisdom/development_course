@@ -55,8 +55,8 @@
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
-                <h4 class="mtb0px blog_sub_title">
-                    Across Europe, we have seen devastating wildfires destroy homes, habitats and communities. They offer us a powerful analogy for how we think about suicide prevention.
+                <h4 class="mtb0px blog_desc"> <span class="blog_highlight_black">
+                    Across Europe, we have seen devastating wildfires destroy homes, habitats and communities. They offer us a powerful analogy for how we think about suicide prevention.</span>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -98,7 +98,8 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                    These figures should make us ask an important question: alongside helping people when they reach crisis, are we doing enough to prevent them reaching that point in the first place?
+                    These figures should make us ask an important question:                     <span class="blog_highlight_black">
+alongside helping people when they reach crisis, are we doing enough to prevent them reaching that point in the first place?</span>
                 </h4>
 
                 <h4 class="mtb0px blog_sub_title">
@@ -114,7 +115,10 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                    But we also need to ask a different question: what was happening in someone's life and mind in the months or years before they reached that point of crisis, and could we have helped earlier?
+                    But we also need to ask a different question: 
+                                            <span class="blog_highlight_black">
+
+                        what was happening in someone's life and mind in the months or years before they reached that point of crisis, and could we have helped earlier?</span>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -130,16 +134,18 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                    We cannot prevent all of these things from happening. But we can help people develop the emotional skills to meet life's challenges differently, and not go under.
-                </h4>
+                    We cannot prevent all of these things from happening. But we                     <span class="blog_highlight_black">
+can help people develop the emotional skills to meet life's challenges differently, and not go under.
+                    </span> </h4>
 
                 <h4 class="mtb0px blog_desc">
                     I remember an anesthetic colleague of mine. He was highly educated and successful. Following a patient complaint, he was suspended while it was investigated. Tragically, unable to cope with the emotional crisis that followed, he took his own life.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                    It left me with a question that has stayed with me ever since: why do we spend so many years educating people for life, yet teach them so little about how to understand and manage their own mind?
-                </h4>
+                    It left me with a question that has stayed with me ever since:                     <span class="blog_highlight_black">
+why do we spend so many years educating people for life, yet teach them so little about how to understand and manage their own mind?
+                    </span> </h4>
 
                 <h4 class="mtb0px blog_desc">
                     We learn mathematics, science and history. We train for our careers. We exercise to keep our bodies healthy.
