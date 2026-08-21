@@ -78,7 +78,7 @@
  <h4 class="mtb0px blog_desc">AI can provide information, but it cannot truly understand who we are or what drives our choices.</h4>
 
  <h4 class="mtb0px blog_desc">
-  <span class="blog_highlight_black">54% of employers say graduates fall short of expectations in self-awareness. </span><a class="blog_highlight_peach td_underline" href="https://ise.org.uk/knowledge/insights/416/employers_concerned_student_use_of_ai_misrepresents_skills/">(Reference)</a></h4>
+  <span class="blog_highlight_black">54% of employers say graduates fall short of expectations in self-awareness. </span><a class="blog_highlight_peach td_underline fs_12px" href="https://ise.org.uk/knowledge/insights/416/employers_concerned_student_use_of_ai_misrepresents_skills/">Reference</a></h4>
 
  <h4 class="mtb0px blog_desc">People with greater self-awareness are better equipped to manage stress, make thoughtful decisions, build stronger relationships, and lead effectively.</h4>
 
@@ -91,7 +91,7 @@
  <h4 class="mtb0px blog_desc">Success in life is often determined by how well we manage emotions, not simply by how much we know.</h4>
 
  <h4 class="mtb0px blog_desc"><span class="blog_highlight_black">
-  71% of employers say they value emotional intelligence more than IQ.</span> <a class="blog_highlight_peach td_underline" href="https://www.hrreporter.com/news/hr-news/71-per-cent-of-employers-value-emotional-intelligence-over-iq/284219">(Reference)</a></h4>
+  71% of employers say they value emotional intelligence more than IQ.</span> <a class="blog_highlight_peach td_underline fs_12px" href="https://www.hrreporter.com/news/hr-news/71-per-cent-of-employers-value-emotional-intelligence-over-iq/284219">Reference</a></h4>
 
  <h4 class="mtb0px blog_desc">Emotional intelligence helps us recognise emotions, respond rather than react, navigate challenges, communicate effectively, and maintain healthy relationships.</h4>
 
@@ -108,7 +108,7 @@
  <h4 class="mtb0px blog_desc">The challenge is knowing whether those answers are accurate, ethical, relevant, or complete.</h4>
 
  <h4 class="mtb0px blog_desc"><span class="blog_highlight_black">
-  Around 70% of employers rank analytical thinking as an essential workplace skill.</span> <a class="blog_highlight_peach td_underline" href="https://www.weforum.org/publications/the-future-of-jobs-report-2025/in-full/3-skills-outlook/">(Reference)</a></h4>
+  Around 70% of employers rank analytical thinking as an essential workplace skill.</span> <a class="blog_highlight_peach td_underline fs_12px" href="https://www.weforum.org/publications/the-future-of-jobs-report-2025/in-full/3-skills-outlook/">Reference</a></h4>
 
  <h4 class="mtb0px blog_desc">People need to question assumptions, evaluate evidence, recognise bias, and think independently.</h4>
 
@@ -134,8 +134,8 @@
 
  <h4 class="mtb0px blog_desc"><span class="blog_highlight_black">
   Communication is consistently ranked as a top workplace skill, yet poor communication remains a 
-  significant organisational challenge.</span> <a class="blog_highlight_peach td_underline"
-   href="https://www.zoom.com/en/blog/workplace-communication-statistics/">(Reference)</a></h4>
+  significant organisational challenge.</span> <a class="blog_highlight_peach td_underline fs_12px"
+   href="https://www.zoom.com/en/blog/workplace-communication-statistics/">Reference</a></h4>
 
  <h4 class="mtb0px blog_desc">Whether presenting ideas, collaborating with teams, or resolving conflicts, effective communication is essential in every profession.</h4>
 
@@ -148,7 +148,7 @@
  <h4 class="mtb0px blog_desc">It is increasingly recognised as a critical workplace skill.</h4>
 
  <h4 class="mtb0px blog_desc"><span class="blog_highlight_black">
-  89% of CEOs and 74% of employees believe empathy is directly linked to financial performance. </span><a class="blog_highlight_peach td_underline" href="https://businessolver.com/workplace-empathy/">(Reference)</a></h4>
+  89% of CEOs and 74% of employees believe empathy is directly linked to financial performance. </span><a class="blog_highlight_peach td_underline fs_12px" href="https://businessolver.com/workplace-empathy/">Reference</a></h4>
 
  <h4 class="mtb0px blog_desc">Empathy helps leaders build trust, teams collaborate effectively, and organisations create cultures where people can thrive.</h4>
 
@@ -162,8 +162,8 @@
 
  <h4 class="mtb0px blog_desc"><span class="blog_highlight_black">Research suggests that only 
   around 30% of employees demonstrate high levels of resilience. </span><a 
-  class="blog_highlight_peach td_underline" 
-  href="https://www.aon.com/unitedkingdom/media-room/articles/employees-motivated-productive-if-resilient">(Reference)</a></h4>
+  class="blog_highlight_peach td_underline fs_12px" 
+  href="https://www.aon.com/unitedkingdom/media-room/articles/employees-motivated-productive-if-resilient">Reference</a></h4>
 
  <h4 class="mtb0px blog_desc">Resilience cannot be automated. It must be developed through experience, reflection, and self-understanding.</h4>
 
@@ -191,7 +191,7 @@
 
  <h4 class="mtb0px blog_desc">
  <span class="blog_highlight_black"> 
- Nearly half (48%) of workplace skills gaps identified by UK employers involve teamwork skills, while 44% involve difficulties managing emotions and relationships with others. </span><a class="blog_highlight_peach td_underline" href="https://www.dropbox.com/scl/fi/k0yawj6zuw4wu2kyolhc8/Employer_Skills_Survey_2024_UK_report.pdf">(Reference)</a></h4>
+ Nearly half (48%) of workplace skills gaps identified by UK employers involve teamwork skills, while 44% involve difficulties managing emotions and relationships with others. </span><a class="blog_highlight_peach td_underline fs_12px" href="https://www.dropbox.com/scl/fi/k0yawj6zuw4wu2kyolhc8/Employer_Skills_Survey_2024_UK_report.pdf">Reference</a></h4>
 
  <h4 class="mtb0px blog_desc">As AI takes over more individual tasks, our ability to work effectively with other human beings may become even more valuable.</h4>
 

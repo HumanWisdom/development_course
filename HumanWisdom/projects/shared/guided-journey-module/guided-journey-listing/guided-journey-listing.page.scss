@@ -49,6 +49,29 @@
         box-sizing: border-box;
         display: flex;
         align-items: center;
+        transition: background 0.3s ease;
+    }
+
+}
+
+.toc_adiv_02 {
+    a > .row {
+        background: #0C2B5F;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+
+        &:hover {
+            background: #031A41;
+        }
+    }
+}
+
+.toc_adiv_03 {
+    a > .row {
+        background: #FFEFC7;
+
+        &:hover {
+            background: #FFD889;
+        }
     }
 
     a .center_flex {

@@ -238,13 +238,17 @@
 
     .btn_return {
         background: linear-gradient(180deg, #EE9596 0%, #F17071 100%) !important;
-        box-shadow: 0 4px 10px rgba(238, 149, 150, 0.2);
     }
 
     .toc_adiv_01 {
         background: #0C2B5F;
         // border: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: 12px;
+        transition: background 0.3s ease;
+
+        &:hover {
+            background: #031A41;
+        }
     }
 .box_v3_05 {
   padding: 0 !important;
@@ -601,7 +605,7 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
 
     &:hover {
-      background: #0C2B5F;
+      background: #031A41;
     }
 
     .explore_img_container {
