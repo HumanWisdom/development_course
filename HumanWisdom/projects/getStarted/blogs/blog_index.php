@@ -1558,7 +1558,7 @@
               <a class="" href="10_ways_get_mentally_fit.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/80.webp" class="img-responsive img_blogs" alt="Blog_img">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/75.webp" class="img-responsive img_blogs" alt="Blog_img">
                   </div>
                 </div>
 
