@@ -173,18 +173,18 @@
                     <ng-container *ngIf="!isSection8(exercise) && !isGuidedJournaling(exercise)">
                       <h3 class="card_type1_title">{{exercise.DisplayTitle}}</h3>
                       <p class="card_type1_meta">
-                        {{exercise.DisplaySubtitle || exercise.Section}}
+                        {{exercise.DisplaySubtitle || exercise.Section}}<span *ngIf="exercise.Timing && exercise.Timing !== '0' && exercise.Timing !== '0:00' && exercise.Timing !== '00:00'"> • {{exercise.Timing}}</span>
                       </p>
                     </ng-container>
                     <ng-container *ngIf="isSection8(exercise)">
                       <h3 class="card_type1_title_sec8">{{exercise.DisplayTitle}}</h3>
-                      <p class="card_type1_session_label">{{exercise.sessionLabel}}</p>
+                      <p class="card_type1_session_label">{{exercise.sessionLabel}}<span *ngIf="exercise.Timing && exercise.Timing !== '0' && exercise.Timing !== '0:00' && exercise.Timing !== '00:00'"> • {{exercise.Timing}}</span></p>
                       <h4 class="card_type1_session_name">{{exercise.sessionName}}</h4>
                     </ng-container>
                     <ng-container *ngIf="isGuidedJournaling(exercise)">
                       <h3 class="card_type1_title_gj">{{exercise.DisplayTitle}}</h3>
                       <p class="card_type1_meta" style="margin-bottom: 0px;">{{exercise.DisplaySubtitle ||
-                        exercise.Section}}</p>
+                        exercise.Section}}<span *ngIf="exercise.Timing && exercise.Timing !== '0' && exercise.Timing !== '0:00' && exercise.Timing !== '00:00'"> • {{exercise.Timing}}</span></p>
                       <p class="card_type1_meta_questions">{{exercise.QuestionCnt}} questions</p>
                     </ng-container>
                     <p class="card_type1_meta" *ngIf="exercise.Meta">{{exercise.Meta}}</p>
@@ -231,18 +231,18 @@
                       <ng-container *ngIf="!isSection8(exercise) && !isGuidedJournaling(exercise)">
                         <h3 class="exercise_title">{{exercise.DisplayTitle}}</h3>
                         <p class="exercise_meta">
-                          {{exercise.DisplaySubtitle || exercise.Section}}
+                          {{exercise.DisplaySubtitle || exercise.Section}}<span *ngIf="exercise.Timing && exercise.Timing !== '0' && exercise.Timing !== '0:00' && exercise.Timing !== '00:00'"> • {{exercise.Timing}}</span>
                         </p>
                       </ng-container>
                       <ng-container *ngIf="isSection8(exercise)">
                         <h3 class="exercise_title_sec8">{{exercise.DisplayTitle}}</h3>
-                        <p class="card_type1_session_label">{{exercise.sessionLabel}}</p>
+                        <p class="card_type1_session_label">{{exercise.sessionLabel}}<span *ngIf="exercise.Timing && exercise.Timing !== '0' && exercise.Timing !== '0:00' && exercise.Timing !== '00:00'"> • {{exercise.Timing}}</span></p>
                         <h4 class="card_type1_session_name">{{exercise.sessionName}}</h4>
                       </ng-container>
                       <ng-container *ngIf="isGuidedJournaling(exercise)">
                         <h3 class="exercise_title_gj">{{exercise.DisplayTitle}}</h3>
                         <p class="exercise_meta" style="margin-bottom: 0px;">{{exercise.DisplaySubtitle ||
-                          exercise.Section}}</p>
+                          exercise.Section}}<span *ngIf="exercise.Timing && exercise.Timing !== '0' && exercise.Timing !== '0:00' && exercise.Timing !== '00:00'"> • {{exercise.Timing}}</span></p>
                         <p class="card_type1_meta_questions">{{exercise.QuestionCnt}} questions</p>
                       </ng-container>
                     </div>

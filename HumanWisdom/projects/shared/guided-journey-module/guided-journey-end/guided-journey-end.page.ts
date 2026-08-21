@@ -82,6 +82,7 @@ export class GuidedJourneyEndPage implements OnInit {
         }).map(item => {
           return {
             ...item,
+            Timing: item.Timing || item.timing || item.Time || item.time || item.duration || item.Duration || '',
             imgPath: this.getImgUrl(item.imgPath)
           };
         });

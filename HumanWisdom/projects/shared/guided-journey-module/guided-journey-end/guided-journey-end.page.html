@@ -37,7 +37,8 @@
             <!-- Well Done Section -->
             <div class="well_done_section">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/saved_tick.svg"
+                <img
+                  [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/welldone!adultss.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/welldoneteenn.svg'"
                   class="img-responsive">
               </div>
               <h2 class="well_done_title" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
@@ -76,8 +77,8 @@
                 </div>
                 <div class="explore_content">
                   <h3 class="explore_card_title" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">{{item.Title}}</h3>
-                  <p class="explore_card_meta" [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
-                    {{item.Section}}<span *ngIf="item.Timing"> • {{item.Timing}}</span>
+                  <p class="explore_card_meta" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                    {{item.Section}}<span *ngIf="item.Timing && item.Timing !== '0' && item.Timing !== '0:00' && item.Timing !== '00:00'"> • {{item.Timing}}</span>
                   </p>
                 </div>
                 <div class="explore_status" *ngIf="!isSubscriber && (item.isFree === '0' || item.isFree === 0)">
@@ -384,8 +385,6 @@
               </div>
             </div>
             <!-- /pathway -->
-
-            <div class="pagebreak"></div>
 
           </div>
         </div>

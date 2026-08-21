@@ -229,6 +229,7 @@ export class GuidedJourneyDaysPage implements OnInit {
             sessionLabel: sessionLabel,
             sessionName: sessionName,
             QuestionCnt: item.QuestionCnt,
+            Timing: item.Timing || item.timing || item.Time || item.time || item.duration || item.Duration || '',
             imgPath: this.getImgUrl(item.imgPath),
             OriginalResponse: item.Response || ''
           };
