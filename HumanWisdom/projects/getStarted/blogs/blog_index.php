@@ -1695,7 +1695,7 @@
               </a>
             </div>
 
-          </div>
+          
              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="1100">
 
               <a class="" href="skills_ai_world.php">
