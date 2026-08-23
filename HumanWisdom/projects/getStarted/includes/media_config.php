@@ -17,38 +17,26 @@ if (!function_exists('hw_cdn_url')) {
 
 if (!function_exists('hw_lcp_image_url')) {
     /**
+     * Always same-origin WebP (no CDN SVG fallback) so local and deployed scores match.
+     *
      * @param 'banner_desktop'|'banner_mobile' $key
      */
     function hw_lcp_image_url($key)
     {
-        static $map = null;
-        if ($map === null) {
-            $map = [
-                'banner_desktop' => [
-                    'local' => 'assets/images/lcp/banneraug.webp',
-                    'cdn' => 'website/svgs/banneraug.svg',
-                ],
-                'banner_mobile' => [
-                    'local' => 'assets/images/lcp/banner_mobile.webp',
-                    'cdn' => 'website/svgs/banner_mobile.svg',
-                ],
-            ];
-        }
+        static $map = [
+            'banner_desktop' => 'assets/images/lcp/banneraug.webp',
+            'banner_mobile' => 'assets/images/lcp/banner_mobile.webp',
+        ];
 
         if (!isset($map[$key])) {
             return '';
         }
 
-        $entry = $map[$key];
-        $localPath = __DIR__ . '/../' . $entry['local'];
-        if (is_file($localPath)) {
-            if (!function_exists('hw_asset_url')) {
-                require_once __DIR__ . '/cache_buster.php';
-            }
-            return hw_asset_url($entry['local']);
+        if (!function_exists('hw_asset_url')) {
+            require_once __DIR__ . '/cache_buster.php';
         }
 
-        return hw_cdn_url($entry['cdn']);
+        return hw_asset_url($map[$key]);
     }
 }
 
