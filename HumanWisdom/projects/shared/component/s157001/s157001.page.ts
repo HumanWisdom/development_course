@@ -41,6 +41,11 @@ export class S157001Page implements OnInit {
   @Input() isHome = true;
   isGuest : boolean =  true;
   beginIsExpanded: boolean = false;
+  pgResume: any;
+  showModal = false;
+  modalTitle = 'The best is yet to come';
+  modalContent = 'Unlock the full experience and continue your journey to live your best life';
+
   beginHereCards: ContentCard[] = [];
    path = setTimeout(() => {
     return this.router.url;
@@ -118,8 +123,36 @@ export class S157001Page implements OnInit {
     this.beginIsExpanded = !this.beginIsExpanded;
   }
   onCardClick(card: ContentCard): void {
+    if (this.isGuest && card.isFree === '0') {
+      this.showModal = true;
+      return;
+    }
     if (card.path) {
       this.router.navigate([card.path]);
+    }
+  }
+
+  Resume(Url:string) {
+    if (this.isGuest && Url !== 's157001' && Url !== 's157002') {
+      this.showModal = true;
+      return;
+    }
+    this.pgResume = SharedService.getDataFromSessionStorage("pgResume");
+    console.log("pgResume",this.pgResume)
+    if (this.pgResume && this.pgResume.includes(Url)){
+      
+      this.router.navigate(['/teenagers/self-awareness/' + Url], { state: { day: this.pgResume.split('p')[1] } });
+    }
+    else
+    {
+      this.router.navigate(['/teenagers/self-awareness/' + Url])
+    }
+  }
+
+  onModalClose(event: string) {
+    this.showModal = false;
+    if (event === 'ok') {
+      this.router.navigate([SharedService.getprogramName(), 'subscription', 'start-your-free-trial']);
     }
   }
 }

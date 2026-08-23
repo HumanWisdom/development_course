@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { CommonService } from '../../../services/common.service';
 import { SharedService } from '../../../services/shared.service';
 import { ProgramType } from '../../../models/program-model';
+import { NavigationService } from '../../../services/navigation.service';
+import { NgNavigatorShareService } from 'ng-navigator-share';
 
 @Component({
   selector: 'app-e01',
@@ -10,7 +12,7 @@ import { ProgramType } from '../../../models/program-model';
   styleUrls: ['./e01.page.scss'],
 })
 export class E01Page implements OnInit {
-
+  baseUrl:string
   tocImage = ""
   tocColor = "white"
   eventData = [];
@@ -24,7 +26,8 @@ export class E01Page implements OnInit {
   isdcode: any = '';
   phoneno: any = '';
   isAdults = true;
-  constructor(private service: CommonService, private route: ActivatedRoute) {
+  constructor(private ngNavigatorShareService: NgNavigatorShareService, private navigationService: NavigationService, private service: CommonService,
+     private route: ActivatedRoute,  private router: Router ) {
     this.route.queryParams.subscribe(params => {
       this.eventID = params?.eid
     });
@@ -54,7 +57,7 @@ export class E01Page implements OnInit {
 
       //if (split > new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate() + 1)) {
       // if (diff > 0) {
-      if (this.eventData['futureEvent'] == 1) {
+      if (this.eventData['futureEvent'] == "1") {
 
         this.enableRegister = true;
       }
@@ -137,5 +140,51 @@ export class E01Page implements OnInit {
     this.content = '';
     this.enableAlert = false;
   }
+shareUrl (programType) {
+    switch (programType) {
+      case ProgramType.Adults:
+        this.baseUrl=SharedService.AdultsBaseUrl;
+      break;
+      case ProgramType.Teenagers:
+        this.baseUrl=SharedService.TeenagerBaseUrl;
+       break;
+      default:
+      this.baseUrl=SharedService.TeenagerBaseUrl;
+    }
+  }
+  
+    share(){
+      this.shareUrl(SharedService.ProgramId);
+      
+      
+      
+      this.ngNavigatorShareService.share({
+        title: 'HappierMe Program',
+        text: 'Hey, check out the HappierMe Program',
+        url: this.baseUrl+ this.router.url     
+      }).then( (response) => {
+        
+      })
+      .catch( (error) => {
+        console.log(error);
+      });
+    }
+
+    
+      goBack() {
+        var url = this.navigationService.navigateToBackLink();
+    
+        // Skip duplicates of the current page in history
+        while (url != null && (url.split('?')[0].split('#')[0] === this.router.url.split('?')[0].split('#')[0])) {
+          url = this.navigationService.navigateToBackLink();
+        }
+    
+        if (url != null) {
+          this.router.navigateByUrl(url);
+        } else {
+          this.router.navigateByUrl(SharedService.getDashboardUrls());
+        }
+      }
+    
 
 }

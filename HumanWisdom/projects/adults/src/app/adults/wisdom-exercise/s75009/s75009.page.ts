@@ -87,6 +87,9 @@ export class S75009Page implements OnInit {
  }
 
   getdayevent(event, isBack = false) {
+      this.isShowButton = true;
+    this.isShowTranscript = true;
+    this.isShowAudio = false;
     if (event === 'intro' || event === '0') {
       this.slideStart = 0;
       this.totalSlidesCount = 5;
@@ -316,7 +319,7 @@ export class S75009Page implements OnInit {
               ?.children[1]?.children[0]?.lastChild?.classList.value;
           }
 
-          if (data === "audio-test") {
+        /*   if (data === "audio-test") {
             this.isShowButton = true;
             this.isShowTranscript = true;
             this.isShowAudio = false;
@@ -324,7 +327,7 @@ export class S75009Page implements OnInit {
             this.isShowButton = false;
             this.isShowTranscript = false;
             this.isShowAudio = false;
-          }
+          } */
         }, 100);
       }, 700);
     } else {
@@ -383,7 +386,7 @@ export class S75009Page implements OnInit {
           ?.children[1]?.children[0]?.lastChild?.classList.value;
       }
 
-      if (data === "audio-test") {
+      /* if (data === "audio-test") {
         this.isShowButton = true;
         this.isShowTranscript = true;
         this.isShowAudio = false;
@@ -392,7 +395,10 @@ export class S75009Page implements OnInit {
         this.isShowTranscript = false;
         this.isShowAudio = false;
       }
-
+ */
+  this.isShowButton = true;
+    this.isShowTranscript = true;
+    this.isShowAudio = false;
       this.setHint();
     }, 700);
   }
@@ -627,6 +633,8 @@ closeHintModal() {
       {
         
         this.getdayevent('intro');
+         let carouselId = this.dayclass === 'intro' ? '#mdp_carousel_intro' : `#mdp_carousel_day${this.dayclass}`;
+        $(carouselId).carousel(0);
       }
 
   }

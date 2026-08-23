@@ -24,7 +24,8 @@ $hw_lcp_banner_mobile = hw_lcp_image_url('banner_mobile');
   <meta property="og:site_name" content="HappierMe">
   <meta property="og:url" content="https://happierme.app">
   <meta property="og:type" content="">
-  <meta property="og:image" content=https://d1tenzemoxuh75.cloudfront.net/website/webp/landing.webp>
+  <meta property="og:image" content="https://d1tenzemoxuh75.cloudfront.net/assets/images/logo/logo_favicon_transparent_v3.png">
+  <!-- <meta property="og:image" content="https://d1tenzemoxuh75.cloudfront.net/website/imgs/landing.png"> -->
   <!-- <meta property="og:image" content=https://d1tenzemoxuh75.cloudfront.net/website/webp/teens_app_01.webp>
      <meta property="og:image" content="">
      <meta property="og:image" content="">
@@ -106,7 +107,7 @@ $hw_lcp_banner_mobile = hw_lcp_image_url('banner_mobile');
                      
                     </div>
                     <p class="text-wrapper-4" id="hw-website-subtitle">
-                      Feel calmer. Strengthen your <br class="subtitle-br-m">relationships.<br class="subtitle-br-d"> Build <a href="#" class="human-skills-link" data-bs-toggle="modal" data-bs-target="#humanSkillsModal" role="button" aria-haspopup="dialog" id="lifeskills">these skills</a><br class="subtitle-br-m"> to thrive at home and at work.
+                      Feel calmer. Strengthen your <br class="subtitle-br-m">relationships.<br class="subtitle-br-d"> Build <a href="#" class="human-skills-link" data-bs-toggle="modal" data-bs-target="#humanSkillsModal" role="button" aria-haspopup="dialog" id="lifeskills">these skills</a><br class="subtitle-br-m"> to create the life you want.
                     </p>
                   </div>
                 </div>

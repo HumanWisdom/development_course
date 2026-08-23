@@ -20,7 +20,7 @@
 }
 
 .btn_begin_here{
-  background: #ED7D6F !important;
+  background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%) !important;
     color: #ffffff;
     height: 40px;
     border-radius: 50px;
@@ -32,24 +32,97 @@
     line-height: 22px;
     margin: 0;
 }
-.toc_adiv_02 {
+
+/* Figma: fill width, height 130, padding 15, gap 15, radius 12 */
+.toc_adiv_02,
+.toc_adiv_03 {
     .row {
-        margin-bottom: 20px;
+        margin-bottom: 10px;
         cursor: pointer;
     }
+
+    a > .row {
+        height: 130px;
+        min-height: 130px;
+        padding: 15px;
+        border-radius: 12px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        transition: background 0.3s ease;
+    }
+
 }
-.toc_adiv_02 a>.row {
-    padding: 12px;
+
+.toc_adiv_02 {
+    a > .row {
+        background: #0C2B5F;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+
+        &:hover {
+            background: #031A41;
+        }
+    }
 }
 
 .toc_adiv_03 {
-    .row {
-        margin-bottom: 20px;
-        cursor: pointer;
+    a > .row {
+        background: #FFEFC7;
+
+        &:hover {
+            background: #FFD889;
+        }
     }
-}
-.toc_adiv_03 a>.row {
-    padding: 12px;
+
+    a .center_flex {
+        justify-content: flex-start !important;
+        align-items: center !important;
+        gap: 15px;
+        width: 100%;
+        height: 100%;
+    }
+
+    a .center_flex > [class*="col-4"],
+    a .center_flex > [class*="col-md-4"],
+    a .center_flex > [class*="col-sm-4"],
+    a .center_flex > [class*="col-xs-4"] {
+        width: auto !important;
+        flex: 0 0 auto !important;
+        max-width: none !important;
+        padding: 0 !important;
+    }
+
+    a .center_flex > [class*="col-7"],
+    a .center_flex > [class*="col-md-7"],
+    a .center_flex > [class*="col-sm-7"],
+    a .center_flex > [class*="col-xs-7"] {
+        flex: 1 1 0 !important;
+        width: auto !important;
+        max-width: none !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    a .center_flex > [class*="col-1"],
+    a .center_flex > [class*="col-lg-1"],
+    a .center_flex > [class*="col-md-1"],
+    a .center_flex > [class*="col-sm-1"],
+    a .center_flex > [class*="col-xs-1"] {
+        width: auto !important;
+        flex: 0 0 auto !important;
+        max-width: none !important;
+        margin-left: auto;
+    }
+
+    .session_imgnew,
+    .session_img {
+        width: 100px !important;
+        height: 100px !important;
+        max-width: 100px !important;
+        object-fit: cover !important;
+        border-radius: 6px;
+        display: block;
+    }
 }
 
 /* Shared scrollbar base */
@@ -84,43 +157,3 @@
 .fc_8c8c8c { color: #8c8c8c !important; }
 .lh_130p { line-height: 130% !important; }
 .fc_e58d82 { color: #EE9596 !important; }
-
-/* Wide screen: shrink thumbnail column so title sits closer */
-@media (min-width: 768px) {
-  .toc_adiv_02 a .center_flex > [class*="col-md-4"],
-  .toc_adiv_02 a .center_flex > [class*="col-sm-4"],
-  .toc_adiv_02 a .center_flex > [class*="col-xs-4"],
-  .toc_adiv_03 a .center_flex > [class*="col-md-4"],
-  .toc_adiv_03 a .center_flex > [class*="col-sm-4"],
-  .toc_adiv_03 a .center_flex > [class*="col-xs-4"] {
-    width: auto;
-    flex: 0 0 auto;
-    max-width: none;
-  }
-
-  .toc_adiv_02 a .center_flex > [class*="col-md-7"],
-  .toc_adiv_02 a .center_flex > [class*="col-sm-7"],
-  .toc_adiv_02 a .center_flex > [class*="col-xs-7"],
-  .toc_adiv_03 a .center_flex > [class*="col-md-7"],
-  .toc_adiv_03 a .center_flex > [class*="col-sm-7"],
-  .toc_adiv_03 a .center_flex > [class*="col-xs-7"] {
-    flex: 1 1 0;
-    width: auto;
-    max-width: none;
-    padding-left: 12px !important;
-  }
-
-  .toc_adiv_02 a .center_flex > [class*="col-lg-1"],
-  .toc_adiv_02 a .center_flex > [class*="col-md-1"],
-  .toc_adiv_02 a .center_flex > [class*="col-sm-1"],
-  .toc_adiv_02 a .center_flex > [class*="col-xs-1"],
-  .toc_adiv_03 a .center_flex > [class*="col-lg-1"],
-  .toc_adiv_03 a .center_flex > [class*="col-md-1"],
-  .toc_adiv_03 a .center_flex > [class*="col-sm-1"],
-  .toc_adiv_03 a .center_flex > [class*="col-xs-1"] {
-    width: auto;
-    flex: 0 0 auto;
-    max-width: none;
-  }
-}
-

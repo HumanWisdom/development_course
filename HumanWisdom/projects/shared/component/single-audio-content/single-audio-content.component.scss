@@ -245,3 +245,37 @@ width: 100%;
   max-width: 480px;         
   border-radius: 40px;
 }
+
+/* Ensure Read text is visible on iOS / mobile WebViews */
+.read-text-row {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: relative;
+  z-index: 2;
+  margin-top: 12px;
+  margin-bottom: 24px;
+  min-height: 24px;
+}
+
+.read-text-link {
+  display: inline-block !important;
+  text-decoration: none;
+}
+
+.read-text-label {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  color: #D7586B !important;
+  text-decoration: underline !important;
+  pointer-events: auto;
+}
+
+:host ::ng-deep .transcript_txt .transcript-link,
+:host ::ng-deep .transcript_txt a {
+  color: #D7586B !important;
+  text-decoration: underline !important;
+  word-break: break-word;
+}
+

@@ -544,18 +544,9 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
     if (localStorage.getItem('pricing') === 'true' && localStorage.getItem('login') === 'false') {
       this.isSignUp = true;
     }
-    // Clear owl animation session so GIF and dialogue play again after login
+    // Replay the landing GIF after login, but keep the once-a-day speech bubble flag.
     sessionStorage.removeItem('owl_gif_shown');
     localStorage.removeItem('owl_gif_shown');
-    localStorage.removeItem('owl_dialogue_shown');
-    localStorage.removeItem('olly_today_intro_shown');
-    localStorage.removeItem('olly_today_dialogue_shown');
-    localStorage.removeItem('olly_landing_intro_shown');
-    localStorage.removeItem('olly_landing_dialogue_shown');
-    localStorage.removeItem('olly_today_intro_shown');
-    localStorage.removeItem('olly_today_dialogue_shown');
-    localStorage.removeItem('olly_landing_intro_shown');
-    localStorage.removeItem('olly_landing_dialogue_shown');
 
     if (document.getElementById('password-reveal')) {
       document.getElementById('password-reveal').style.display = 'none';

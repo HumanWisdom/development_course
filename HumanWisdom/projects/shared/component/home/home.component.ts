@@ -176,6 +176,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     this.searchinp = '';
     this.isSearchActive = false;
     this.commonService.setSearchActive(false);
+    this.updateHeaderDisplay();
     this.toggleBodyScroll(false);
   }
   constructor(
@@ -1955,6 +1956,17 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       .trim();
   }
 
+  updateHeaderDisplay(): void {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    const isHidden = scrollTop > 50 || this.isSearchActive;
+    this.isHeaderHidden = isHidden;
+    const dtnEl = document.querySelector('.dtn') as HTMLElement;
+    if (dtnEl) {
+      dtnEl.style.display = isHidden ? 'none' : 'block';
+    }
+    this.cdr.detectChanges();
+  }
+
   /**
    * Handle scroll events to show/hide greeting
    * Using HostListener for better performance
@@ -1973,17 +1985,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       this.showGreeting = true;
     }
 
-    // Toggle header visibility based on scroll threshold - don't hide when search is active
-    const isHidden = scrollTop > 50 && !this.isSearchActive;
-    if (this.isHeaderHidden !== isHidden) {
-      this.isHeaderHidden = isHidden;
-      // Directly toggle .dtn header since enableFooter() only runs on route changes
-      const dtnEl = document.querySelector('.dtn') as HTMLElement;
-      if (dtnEl) {
-        dtnEl.style.display = this.isSearchActive ? 'block' : (isHidden ? 'none' : 'block');
-      }
-      this.cdr.detectChanges();
-    }
+    // Toggle header visibility based on scroll threshold and search active state
+    this.updateHeaderDisplay();
 
     this.lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
   }
@@ -2202,6 +2205,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       } else {
         this.isSearchActive = true;
         this.commonService.setSearchActive(true);
+        this.updateHeaderDisplay();
         this.searchResult = this.moduleList.filter(x =>
           (x.ModuleName?.toLocaleLowerCase() || '').includes(value?.toLocaleLowerCase() || '')
         );
@@ -2221,6 +2225,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   onFocus(): void {
     this.isSearchActive = true;
     this.commonService.setSearchActive(true);
+    this.updateHeaderDisplay();
     this.toggleBodyScroll(true);
     const prefix = this.getTabNamePrefix();
     const eventName = `click_${prefix}search_bar`;
@@ -2263,6 +2268,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     }
     this.isSearchActive = false;
     this.commonService.setSearchActive(false);
+    this.updateHeaderDisplay();
     if (searchTerm && searchTerm.trim() !== '') {
       if (!fromDropdown) {
         const eventName = `search_${searchTerm.replace(/[^a-zA-Z0-9]/g, '').toLowerCase()}`;
@@ -2405,6 +2411,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
    */
   searchEvent(moduleName: string): void {
     this.isSearchActive = false;
+    this.commonService.setSearchActive(false);
+    this.updateHeaderDisplay();
     const eventName = `search_dropdown_${moduleName.replace(/[^a-zA-Z0-9]/g, '').toLowerCase()}`;
     console.log(`%c [ANALYTICS EVENT] Triggering Search Dropdown: ${eventName}`, 'color: #bada55; font-size: 14px');
     this.logeventservice.logEvent(eventName);
@@ -2421,6 +2429,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   clearSearch(): void {
     this.isSearchActive = false;
     this.commonService.setSearchActive(false);
+    this.updateHeaderDisplay();
     const eventName = 'click_search_clear';
     console.log(`%c [ANALYTICS EVENT] Triggering Search Clear: ${eventName}`, 'color: #bada55; font-size: 14px');
     this.logeventservice.logEvent(eventName);

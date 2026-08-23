@@ -24287,6 +24287,8 @@ a {
 
 .br_blr_20px {
   border-radius: 0px 0px 20px 20px;
+  height: 200px;
+  object-fit: cover;
 }
 
 .img_mt_01 {
@@ -32587,8 +32589,8 @@ body * {
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 20px;
+  justify-content: flex-start;
+  padding: 0 20px;
   z-index: 9;
   position: fixed;
   top: 0;
@@ -32602,14 +32604,84 @@ body * {
   background: #183C79;
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 20px;
+  justify-content: flex-start;
+  padding: 0 20px;
   z-index: 9;
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
   margin: 0 auto;
+}
+
+.tn_title_back > div:nth-child(1),
+.tn_title_back_change_topic > div:nth-child(1),
+.toc_nvmenu_v3 > div:nth-child(1),
+.tn_we > div:nth-child(1) {
+  width: auto !important;
+  flex-shrink: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.tn_title_back > div:nth-child(2),
+.tn_title_back_change_topic > div:nth-child(2),
+.toc_nvmenu_v3 > div:nth-child(2),
+.tn_we > div:nth-child(2) {
+  width: auto !important;
+  flex: 1 !important;
+  margin-left: 20px !important;
+  display: flex !important;
+  align-items: center !important;
+  overflow: hidden !important;
+}
+
+.tn_title_back > div:nth-child(2) h1,
+.tn_title_back > div:nth-child(2) h2,
+.tn_title_back > div:nth-child(2) h3,
+.tn_title_back > div:nth-child(2) h4,
+.tn_title_back > div:nth-child(2) h5,
+.tn_title_back > div:nth-child(2) h6,
+.tn_title_back > div:nth-child(2) a,
+.tn_title_back > div:nth-child(2) p,
+.tn_title_back_change_topic > div:nth-child(2) h1,
+.tn_title_back_change_topic > div:nth-child(2) h2,
+.tn_title_back_change_topic > div:nth-child(2) h3,
+.tn_title_back_change_topic > div:nth-child(2) h4,
+.tn_title_back_change_topic > div:nth-child(2) h5,
+.tn_title_back_change_topic > div:nth-child(2) h6,
+.tn_title_back_change_topic > div:nth-child(2) a,
+.tn_title_back_change_topic > div:nth-child(2) p,
+.toc_nvmenu_v3 > div:nth-child(2) h1,
+.toc_nvmenu_v3 > div:nth-child(2) h2,
+.toc_nvmenu_v3 > div:nth-child(2) h3,
+.toc_nvmenu_v3 > div:nth-child(2) h4,
+.toc_nvmenu_v3 > div:nth-child(2) h5,
+.toc_nvmenu_v3 > div:nth-child(2) h6,
+.toc_nvmenu_v3 > div:nth-child(2) a,
+.toc_nvmenu_v3 > div:nth-child(2) p,
+.tn_we > div:nth-child(2) h1,
+.tn_we > div:nth-child(2) h2,
+.tn_we > div:nth-child(2) h3,
+.tn_we > div:nth-child(2) h4,
+.tn_we > div:nth-child(2) h5,
+.tn_we > div:nth-child(2) h6,
+.tn_we > div:nth-child(2) a,
+.tn_we > div:nth-child(2) p {
+  text-align: left !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.tn_title_back > div:nth-child(3),
+.tn_title_back_change_topic > div:nth-child(3),
+.toc_nvmenu_v3 > div:nth-child(3),
+.tn_we > div:nth-child(3) {
+  width: auto !important;
+  flex-shrink: 0 !important;
+  margin-left: auto !important;
+  display: flex !important;
+  align-items: center !important;
 }
 
 
@@ -32847,7 +32919,7 @@ body * {
 .box_v3_04,
 .box_v3_04b {
   height: 196px;
-  width: 162px;
+  width: 100%;
   background: #0C2B5F;
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 12px;
@@ -33315,8 +33387,11 @@ body * {
   border-radius: 12px;
   border: 0;
   background: #0C2B5F;
+  height: 130px;
+  min-height: 130px;
   padding: 15px !important;
   margin-bottom: 10px;
+  box-sizing: border-box;
 }
 
 .div_fa a:last-child .box_v3_08 {
@@ -34543,9 +34618,6 @@ background: linear-gradient(180deg, #F17071 0%, #DE6768 100%);
   background: #183C79;
 }
 
-.br_blr_20px {
-  border-radius: 0 0 20px 20px;
-}
 
 .we_ft .btn_wec {
   margin: 0 10px 0 0;
@@ -35432,6 +35504,8 @@ background: linear-gradient(180deg, #F17071 0%, #DE6768 100%);
 
 .adults_index_img {
   border-radius: 0 0 20px 20px;
+   height: 200px;
+  object-fit: cover;
 }
 
 .cptrem {
@@ -37077,9 +37151,11 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
   border-radius: 12px;
   /* border: 1px solid rgba(255, 255, 255, 0.25); */
   background: #0C2B5F;
-  min-height: 88px;
+  height: 130px;
+  min-height: 130px;
   margin-bottom: 10px;
   padding: 15px;
+  box-sizing: border-box;
   /* margin: 0 10px 10px 10px; */
 }
 
@@ -37132,9 +37208,21 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
   margin-bottom: 30px;
 }
 
-/* Spacing between thumbnail and text on find-answers cards (mobile + wide).
-   Shrink image column + flex gap so spacing is visible; .p0 zeros padding so
-   margin/gap are used instead. */
+/* Find-answers tiles — Figma: height 130, padding 15, gap 15 */
+.toc_adiv_mp .session_imgnew,
+.div_fa .session_imgnew,
+.box_v3_08 .session_imgnew,
+.toc_adiv_mp img.img_podcast_01,
+.div_fa img.w100,
+.box_v3_08 img.w100 {
+  width: 100px !important;
+  height: 100px !important;
+  max-width: 100px !important;
+  object-fit: cover !important;
+  border-radius: 6px;
+  display: block;
+}
+
 .toc_adiv_mp [class*="d-flex"],
 .toc_adiv_mp .center_flex,
 .div_fa [class*="d-flex"],
@@ -37142,7 +37230,8 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
 .box_v3_08.center_flex,
 .box_v3_08[class*="d-flex"] {
   justify-content: flex-start !important;
-  gap: 16px;
+  gap: 15px;
+  align-items: center !important;
 }
 
 .toc_adiv_mp [class*="d-flex"] > [class*="col-4"],
@@ -37201,6 +37290,7 @@ a[href^="#mdp_carousel_day"] .btn_next_v3:focus {
   width: auto !important;
   max-width: none !important;
   margin-left: 0 !important;
+  padding-left: 0 !important;
 }
 
 .toc_adiv_mp [class*="d-flex"] > .col-1,

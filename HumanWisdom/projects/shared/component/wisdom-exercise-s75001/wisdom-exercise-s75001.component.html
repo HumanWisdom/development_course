@@ -111,7 +111,7 @@
               </h4>
             </div>
 
-            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0">
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 pr10px">
               <i class="fc_000000 fs_20px" *ngIf="!isGuest"></i>
               <!-- lock -->
               <img *ngIf="isGuest" [src]="
@@ -143,7 +143,7 @@
               </h4>
             </div>
 
-            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0">
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 pr10px">
               <i class="fc_000000 fs_20px" *ngIf="!isGuest"></i>
               <!-- lock -->
               <img *ngIf="isGuest" [src]="
@@ -175,7 +175,7 @@
               </h4>
             </div>
 
-            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0">
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 pr10px">
               <i class="fc_000000 fs_20px" *ngIf="!isGuest"></i>
               <!-- lock -->
               <img *ngIf="isGuest" [src]="
@@ -206,7 +206,7 @@
               </h4>
             </div>
 
-            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0">
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 pr10px">
               <i class="fc_000000 fs_20px" *ngIf="!isGuest"></i>
               <!-- lock -->
               <img *ngIf="isGuest" [src]="
@@ -238,7 +238,7 @@
               </h4>
             </div>
 
-            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0">
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 pr10px">
               <i class="fc_000000 fs_20px" *ngIf="!isGuest"></i>
               <!-- lock -->
               <img *ngIf="isGuest" [src]="
@@ -270,7 +270,7 @@
               </h4>
             </div>
 
-            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0">
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 pr10px">
               <i class="fc_000000 fs_20px" *ngIf="!isGuest"></i>
               <!-- lock -->
               <img *ngIf="isGuest" [src]="
@@ -302,7 +302,7 @@
               </h4>
             </div>
 
-            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0">
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 pr10px">
               <i class="fc_000000 fs_20px" *ngIf="!isGuest"></i>
               <!-- lock -->
               <img *ngIf="isGuest" [src]="
@@ -334,7 +334,7 @@
               </h4>
             </div>
 
-            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0">
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 pr10px">
               <i class="fc_000000 fs_20px" *ngIf="!isGuest"></i>
               <!-- lock -->
               <img *ngIf="isGuest" [src]="
@@ -366,7 +366,7 @@
               </h4>
             </div>
 
-            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0">
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 pr10px">
               <i class="fc_000000 fs_20px" *ngIf="!isGuest"></i>
               <!-- lock -->
               <img *ngIf="isGuest" [src]="
@@ -398,7 +398,7 @@
               </h4>
             </div>
 
-            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0">
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 pr10px">
               <i class="fc_000000 fs_20px" *ngIf="!isGuest"></i>
               <!-- lock -->
               <img *ngIf="isGuest" [src]="
@@ -430,7 +430,7 @@
               </h4>
             </div>
 
-            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0">
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 pr10px">
               <i class="fc_000000 fs_20px" *ngIf="!isGuest"></i>
               <!-- lock -->
               <img *ngIf="isGuest" [src]="
@@ -447,6 +447,9 @@
   </div>
   <!-- /page content -->
 
+  <app-modal *ngIf="showModal" [title]="modalTitle" [content]="modalContent" [okText]="'Start your free trial'"
+    [cancelText]="'Cancel'" [enableCancel]="true" [isFreeTrialEnable]="true" (closeEvent)="onModalClose($event)">
+  </app-modal>
   <!-- footer -->
   <app-index-footer></app-index-footer>
   <!-- /footer -->

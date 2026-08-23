@@ -59,6 +59,9 @@ export class WisdomExerciseS75001Component implements OnInit {
   introData: any = {};
   contentSections: ContentSection[] = [];
   pgResume: any;
+  showModal = false;
+  modalTitle = 'The best is yet to come';
+  modalContent = 'Unlock the full experience and continue your journey to live your best life';
 
   path = setTimeout(() => {
     return this.router.url;
@@ -74,7 +77,8 @@ export class WisdomExerciseS75001Component implements OnInit {
 
   ngOnInit() {
     this.service.setmoduleID(75);
-    this.pgResume = SharedService.getDataFromSessionStorage("pgResume");
+    SharedService.setDataInLocalStorage('NaviagtedFrom', this.router.url);
+
     this.isGuest = !SharedService.isSubscriber();
     this.isAdults = SharedService.ProgramId === ProgramType.Adults;
 
@@ -163,6 +167,10 @@ export class WisdomExerciseS75001Component implements OnInit {
   }
 
   onCardClick(card: ContentCard): void {
+    if (this.isGuest && card.isFree === '0') {
+      this.showModal = true;
+      return;
+    }
     if (card.path) {
       // Save current URL so self-awareness screens can navigate back here
       SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
@@ -207,7 +215,13 @@ export class WisdomExerciseS75001Component implements OnInit {
 
   
   Resume(Url:string) {
-    if (this.pgResume.includes(Url)){
+    if (this.isGuest && Url !== 's75001' && Url !== 's75002') {
+      this.showModal = true;
+      return;
+    }
+    this.pgResume = SharedService.getDataFromSessionStorage("pgResume");
+
+    if (this.pgResume && this.pgResume.includes(Url)){
       
       this.router.navigate(['/adults/self-awareness/' + Url], { state: { day: this.pgResume.split('p')[1] } });
     }
@@ -215,7 +229,12 @@ export class WisdomExerciseS75001Component implements OnInit {
     {
       this.router.navigate(['/adults/self-awareness/' + Url])
     }
+  }
 
-    
+  onModalClose(event: string) {
+    this.showModal = false;
+    if (event === 'ok') {
+      this.router.navigate([SharedService.getprogramName(), 'subscription', 'start-your-free-trial']);
+    }
   }
 }
