@@ -2211,8 +2211,19 @@ document.addEventListener("DOMContentLoaded", () => {
     // });
 });
 
-document.addEventListener("hw:chunk-loaded", function () {
-    runIndexPageDomInits();
+document.addEventListener("hw:chunk-loaded", function (ev) {
+    var id = ev && ev.detail ? ev.detail.id : "";
+    initIndexLazySections();
+    initIndexPageGa();
+    if (id === "4") {
+        convertAccordionToBootstrap53();
+        initializeFAQTabs();
+        initializeFAQAccordion();
+        initializeToolTabs();
+    }
+    if (id === "modals" && typeof modalManager !== "undefined") {
+        modalManager.initializeModalTriggers('[data-bs-toggle="modal"]');
+    }
 });
 
 $(document).ready(function(){

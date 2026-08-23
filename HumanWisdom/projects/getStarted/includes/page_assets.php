@@ -60,7 +60,7 @@ if (!function_exists('hw_page_assets_profiles')) {
                     'style_hb' => false,
                 ],
                 'js' => [
-                    'aos' => true,
+                    'aos' => false,
                     'glightbox' => false,
                     'swiper' => false,
                     'purecounter' => false,
@@ -78,7 +78,7 @@ if (!function_exists('hw_page_assets_profiles')) {
                 'ui' => [
                     'preloader' => false,
                 ],
-                'schedule' => 'domcontentloaded',
+                'schedule' => 'idle',
             ],
         ];
     }

@@ -368,7 +368,6 @@ $hw_lcp_banner_mobile = hw_lcp_image_url('banner_mobile');
     ?>
     <script>window.__HW_INDEX_CHUNK_V__=<?= $chunkVer ?>;</script>
     <script defer src="<?= hw_asset_url('../assets/js/index-html-chunks.js'); ?>"></script>
-    <script defer src="<?= hw_asset_url('../assets/js/index-lazy-media-prep.js'); ?>"></script>
 
     <!-- vendor_footer -->
     <?php include('./includes/vendor_footer.php'); ?>
