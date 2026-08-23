@@ -106,7 +106,13 @@ img { max-width: 100%; display: block; }
   margin-top: 100px;
 }
 .div-2 > picture { display: contents; }
-.new-app-adults-teen {height: 480px;  object-fit: contain; flex-shrink: 0; }
+.new-app-adults-teen {
+  width: 331px;
+  height: 480px;
+  max-width: none;
+  object-fit: contain;
+  flex-shrink: 0;
+}
 .div-3 {
   margin-top: -6px;
   display: flex;

@@ -82,7 +82,7 @@ $hw_lcp_banner_mobile = hw_lcp_image_url('banner_mobile');
                 <source media="(min-width: 821px)" type="image/webp" srcset="<?= htmlspecialchars($hw_lcp_banner_desktop, ENT_QUOTES, 'UTF-8'); ?>" />
                 <img class="new-app-adults-teen"
                   src="<?= htmlspecialchars($hw_lcp_banner_mobile, ENT_QUOTES, 'UTF-8'); ?>"
-                  width="211" height="306"
+                  width="331" height="480"
                   fetchpriority="high" decoding="async" alt="HappierMe app" />
               </picture>
           <div class="div-3">
