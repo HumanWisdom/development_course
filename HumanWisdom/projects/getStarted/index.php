@@ -364,6 +364,12 @@ $hw_lcp_banner_mobile = hw_lcp_image_url('banner_mobile');
     <div id="hw-chunk-modals" class="index-html-chunk index-html-chunk--modals" data-hw-chunk="modals" aria-busy="true"></div>
 
     <?php
+    // App Store / Play Store sticky banner must load with the page (not chunk 4),
+    // otherwise it is missing on mobile until the footer chunk is scrolled into view.
+    include __DIR__ . '/includes/sticky_store_banner.php';
+    ?>
+
+    <?php
     $chunkVer = (int) @filemtime(__DIR__ . '/includes/index/chunks/chunk_1.php');
     ?>
     <script>window.__HW_INDEX_CHUNK_V__=<?= $chunkVer ?>;</script>

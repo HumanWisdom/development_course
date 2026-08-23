@@ -433,6 +433,10 @@
       <!-- ===== FOOTER ===== -->
          <div class="div-70" >
           <div class="div-71">
-      <?php include __DIR__ . '/../../footer.php'; ?>
+      <?php
+      // Sticky store banner is rendered eagerly on index.php (not in this lazy chunk).
+      $hw_omit_sticky_banner = true;
+      include __DIR__ . '/../../footer.php';
+      ?>
             </div>
             </div>
