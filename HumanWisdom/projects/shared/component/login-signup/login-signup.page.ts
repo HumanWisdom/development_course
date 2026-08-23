@@ -18,6 +18,7 @@ import { ProgramType } from "../../models/program-model";
 import { OidcSecurityService } from 'angular-auth-oidc-client';
 import { take } from 'rxjs/operators';
 import { AWS_SSO_LOGIN_METHOD, LOGIN_METHOD_STORAGE_KEY, clearStaleAwsCognitoOidcCache, isAwsSsoLoginVisible } from '../../config/aws-cognito.config';
+import { markLoginCompleted } from '../../config/session-auth.config';
 import { OrgSsoService } from '../../services/org-sso.service';
 import { OrgSsoDiscoverResult } from '../../models/org-sso.model';
 declare var $: any;
@@ -145,7 +146,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
   discoveredOrgName = '';
   discoveredIdpName = '';
 
-  /** Shown only when localStorage enableAwsSsoLogin = 'T' (hidden by default). */
+  /** Hidden only when localStorage enableAwsSsoLogin = 'F'. */
   get showAwsSsoLogin(): boolean {
     return isAwsSsoLoginVisible();
   }
@@ -1491,6 +1492,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
         JSON.stringify(this.loginResponse)
       );
       localStorage.setItem("token", JSON.stringify(res.access_token));
+      markLoginCompleted();
       localStorage.setItem("Subscriber", res.Subscriber);
       localStorage.setItem("SubscriberType", res.SubscriberType);
       localStorage.setItem('NoOfDPVisits', res.NoOfDPVisits?.toString() || '0');
