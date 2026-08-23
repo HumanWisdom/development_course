@@ -200,6 +200,8 @@
 
 .chat-area {
   background: #183C79;
+  display: flex;
+  flex-direction: column;
   height: auto;
   min-height: 100vh;
   padding-top: 120px;
@@ -224,11 +226,18 @@
 .chat-messages {
   display: flex;
   flex-direction: column;
+  flex: 1 1 auto;
   gap: 24px;
   margin: 0 20px;
   padding: 24px 0;
-  // padding-bottom: 24px; // Space for input area
-  scroll-behavior: smooth; // Smooth scrolling
+  scroll-behavior: smooth;
+
+  // Push default/welcome messages down to the input; shrinks as the chat grows
+  &::before {
+    content: '';
+    flex: 1 1 auto;
+    min-height: 0;
+  }
   
   // Custom scrollbar styling (optional)
   &::-webkit-scrollbar {
