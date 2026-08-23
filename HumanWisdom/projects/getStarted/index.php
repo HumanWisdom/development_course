@@ -53,9 +53,9 @@ $hw_lcp_banner_mobile = hw_lcp_image_url('banner_mobile');
     <meta charset="utf-8" />
   
 
-    <!-- LCP Hero images first (highest network priority) -->
-    <link rel="preload" as="image" href="<?= htmlspecialchars($hw_lcp_banner_desktop, ENT_QUOTES, 'UTF-8'); ?>" fetchpriority="high" media="(min-width: 821px)" />
-    <link rel="preload" as="image" href="<?= htmlspecialchars($hw_lcp_banner_mobile, ENT_QUOTES, 'UTF-8'); ?>" fetchpriority="high" media="(max-width: 820px)" />
+    <!-- LCP: compressed WebP (~46KB). Do not preload both viewports. -->
+    <link rel="preload" as="image" type="image/webp" href="<?= htmlspecialchars($hw_lcp_banner_desktop, ENT_QUOTES, 'UTF-8'); ?>" fetchpriority="high" media="(min-width: 821px)" />
+    <link rel="preload" as="image" type="image/webp" href="<?= htmlspecialchars($hw_lcp_banner_mobile, ENT_QUOTES, 'UTF-8'); ?>" fetchpriority="high" media="(max-width: 820px)" />
     <title>Mental Wellbeing, Self-awareness and Life Skills | HappierMe</title>
     
     <!-- vendor_header -->
@@ -78,12 +78,13 @@ $hw_lcp_banner_mobile = hw_lcp_image_url('banner_mobile');
         <div class="div-wrapper">
           <div class="div">
             <div class="div-2">
-              <img class="new-app-adults-teen display_m_none"  fetchpriority="high"
-                src="<?= htmlspecialchars($hw_lcp_banner_desktop, ENT_QUOTES, 'UTF-8'); ?>"
-                alt="HappierMe app" />
-             <img class="new-app-adults-teen display_d_none"  fetchpriority="high"
-                src="<?= htmlspecialchars($hw_lcp_banner_mobile, ENT_QUOTES, 'UTF-8'); ?>"
-                alt="HappierMe app" />
+              <picture>
+                <source media="(min-width: 821px)" type="image/webp" srcset="<?= htmlspecialchars($hw_lcp_banner_desktop, ENT_QUOTES, 'UTF-8'); ?>" />
+                <img class="new-app-adults-teen"
+                  src="<?= htmlspecialchars($hw_lcp_banner_mobile, ENT_QUOTES, 'UTF-8'); ?>"
+                  width="211" height="306"
+                  fetchpriority="high" decoding="async" alt="HappierMe app" />
+              </picture>
           <div class="div-3">
                  <!-- rating row -->
                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 pt_18px">
@@ -368,6 +369,7 @@ $hw_lcp_banner_mobile = hw_lcp_image_url('banner_mobile');
     ?>
     <script>window.__HW_INDEX_CHUNK_V__=<?= $chunkVer ?>;</script>
     <script defer src="<?= hw_asset_url('../assets/js/index-html-chunks.js'); ?>"></script>
+    <script defer src="<?= hw_asset_url('../assets/js/index-lazy-media-prep.js'); ?>"></script>
 
     <!-- vendor_footer -->
     <?php include('./includes/vendor_footer.php'); ?>

@@ -1,6 +1,5 @@
 /**
  * Fetches below-the-fold HTML when placeholders enter the viewport.
- * Numbered chunks load one at a time so the main thread is not flooded at startup.
  */
 (function () {
     "use strict";
@@ -95,15 +94,6 @@
 
     function bindModalPrefetch() {
         document.addEventListener(
-            "pointerover",
-            function (e) {
-                var t = e.target;
-                if (!t || !t.closest) return;
-                if (t.closest('[data-bs-toggle="modal"]')) ensureModalsHost();
-            },
-            true
-        );
-        document.addEventListener(
             "click",
             function (e) {
                 var t = e.target;
@@ -115,53 +105,34 @@
     }
 
     function initScrollChunks() {
-        var hosts = Array.prototype.filter.call(document.querySelectorAll("[data-hw-chunk]"), function (host) {
-            return host.getAttribute("data-hw-chunk") !== "modals";
-        });
+        var hosts = document.querySelectorAll("[data-hw-chunk]");
         if (!hosts.length) return;
 
-        var i = 0;
-
-        function watchNext() {
-            if (i >= hosts.length) return;
-            var host = hosts[i];
-            if (!host || !host.isConnected) {
-                i += 1;
-                watchNext();
-                return;
-            }
-            var id = host.getAttribute("data-hw-chunk");
-            if (!id) {
-                i += 1;
-                watchNext();
-                return;
-            }
-
-            if (!("IntersectionObserver" in window)) {
-                loadChunk(id, host).then(function () {
-                    i += 1;
-                    watchNext();
-                });
-                return;
-            }
-
-            var io = new IntersectionObserver(
-                function (entries) {
-                    entries.forEach(function (ent) {
-                        if (!ent.isIntersecting) return;
-                        io.disconnect();
-                        loadChunk(id, host).then(function () {
-                            i += 1;
-                            watchNext();
-                        });
-                    });
-                },
-                { rootMargin: "120px 0px", threshold: 0.01 }
-            );
-            io.observe(host);
+        if (!("IntersectionObserver" in window)) {
+            hosts.forEach(function (host) {
+                var id = host.getAttribute("data-hw-chunk");
+                if (id) loadChunk(id, host);
+            });
+            return;
         }
 
-        watchNext();
+        var io = new IntersectionObserver(
+            function (entries) {
+                entries.forEach(function (ent) {
+                    if (!ent.isIntersecting) return;
+                    var host = ent.target;
+                    var id = host.getAttribute("data-hw-chunk");
+                    if (!id) return;
+                    io.unobserve(host);
+                    loadChunk(id, host);
+                });
+            },
+            { rootMargin: "400px 0px 400px 0px", threshold: 0.01 }
+        );
+
+        hosts.forEach(function (host) {
+            io.observe(host);
+        });
     }
 
     function whenReady(fn) {
@@ -175,5 +146,12 @@
     whenReady(function () {
         initScrollChunks();
         bindModalPrefetch();
+        if ("requestIdleCallback" in window) {
+            requestIdleCallback(function () {
+                ensureModalsHost();
+            }, { timeout: 8000 });
+        } else {
+            setTimeout(ensureModalsHost, 4000);
+        }
     });
 })();

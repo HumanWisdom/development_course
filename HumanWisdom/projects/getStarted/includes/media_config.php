@@ -25,11 +25,11 @@ if (!function_exists('hw_lcp_image_url')) {
         if ($map === null) {
             $map = [
                 'banner_desktop' => [
-                    'local' => 'assets/images/lcp/banneraug.svg',
+                    'local' => 'assets/images/lcp/banneraug.webp',
                     'cdn' => 'website/svgs/banneraug.svg',
                 ],
                 'banner_mobile' => [
-                    'local' => 'assets/images/lcp/banner_mobile.svg',
+                    'local' => 'assets/images/lcp/banner_mobile.webp',
                     'cdn' => 'website/svgs/banner_mobile.svg',
                 ],
             ];
