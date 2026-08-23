@@ -1,7 +1,7 @@
 .sc_01 {
     position: relative;
     min-height: 100vh !important;
-    padding: 110px 20px 140px 20px;
+    padding: 120px 20px 140px 20px;
 }
 
 .mc_01_v3_ext {
@@ -30,6 +30,11 @@
     overflow: hidden;
     cursor: pointer;
     position: relative;
+    transition: background 0.3s ease;
+
+    &:hover {
+        background: #FFD889;
+    }
 
     .card_image_container {
         position: relative;
@@ -143,6 +148,12 @@
     align-items: center;
     gap: 12px;
     position: relative;
+    cursor: pointer;
+    transition: background 0.3s ease;
+
+    &:hover {
+        background: #FFD889;
+    }
 
     .card_img_small {
         width: 80px;
@@ -183,6 +194,11 @@
     position: relative;
     cursor: pointer;
     box-sizing: border-box;
+    transition: background 0.3s ease;
+
+    &:hover {
+        background: #FFD889;
+    }
 
     .card_type1_img_container {
         width: 100px;
@@ -291,40 +307,81 @@
     border-radius: 20px;
     padding: 20px;
     margin: 0;
-    box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: none;
+    border: none;
+
+    .journal_header {
+        margin-bottom: 15px;
+    }
+
+    .journal_header_title {
+        font-family: 'Poppins', sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: #000000;
+        margin: 0 0 15px 0;
+        line-height: 1.4;
+    }
+
+    .journal_header_divider {
+        height: 1px;
+        background-color: #000000;
+        width: 100%;
+        margin-bottom: 16px;
+    }
 
     .journal_title {
+        font-family: 'Poppins', sans-serif;
         font-size: 15px;
-        line-height: 130%;
-        font-weight: 600;
+        line-height: 140%;
+        font-weight: 400;
         margin-bottom: 15px;
-        color: rgba(0, 0, 0, 1);
+        margin-top: 0;
+        color: #000000;
     }
 
     textarea {
         width: 100%;
         background: #FFFFFFBF;
-        border: none;
-        border-radius: 12px;
-        border: 1px solid rgba(1, 1, 1, 0.25);
-        padding: 15px;
-        min-height: 100px;
-        font-size: 14px;
+        border-radius: 14px;
+        border: 1px solid rgba(0, 0, 0, 0.10);
+        padding: 13px 16px;
+        height: 50px;
+        min-height: 50px;
+        max-height: 80px;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 24px;
+        color: #000000;
         resize: none;
+        outline: none;
+        box-shadow: none;
+        box-sizing: border-box;
+        overflow: hidden;
+
+        &::-webkit-scrollbar {
+            display: none;
+            width: 0;
+            height: 0;
+        }
 
         &::placeholder {
-            color: #C4C4C4;
+            color: #00000080;
+            font-weight: 400;
+            line-height: 24px;
         }
 
         &:focus {
             outline: none;
+            border-color: rgba(0, 0, 0, 0.3);
         }
 
         &:disabled {
             cursor: not-allowed;
             pointer-events: none;
-            color: #C4C4C4 !important;
+            color: rgba(0, 0, 0, 0.4) !important;
+            -webkit-text-fill-color: rgba(0, 0, 0, 0.4);
         }
     }
 
@@ -335,11 +392,13 @@
         border: none;
         border-radius: 25px;
         padding: 12px 20px;
-        font-size: 16px;
+        font-size: 15px;
         font-weight: 600;
         margin-bottom: 5px;
         transition: 0.3s;
-        margin-top: 15px;
+        margin-top: 14px;
+        cursor: pointer;
+        box-shadow: 0 4px 10px rgba(215, 88, 107, 0.25);
 
         &:disabled {
             opacity: 0.5;
@@ -348,10 +407,10 @@
     }
 
     .journal_footer {
-        margin-top: 15px;
-        font-size: 10px;
+        margin-top: 14px;
+        font-size: 11px;
         font-weight: 400;
-        color: rgba(0, 0, 0, 0.7);
+        color: rgba(0, 0, 0, 0.55);
         text-align: center;
         line-height: 150%;
     }
@@ -370,15 +429,16 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    gap: 6px;
     width: 145px;
     height: 40px;
     position: relative;
-    padding: 0;
+    padding: 0 16px;
 
     i {
-        font-size: 20px;
-        position: absolute;
-        right: 16px;
+        font-size: 18px;
+        position: static;
+        line-height: 1;
     }
 
     &:active {
@@ -402,6 +462,10 @@
         background: #0C2B5F;
         border: 1px solid rgba(255, 255, 255, 0.1);
 
+        &:hover {
+            background: #031A41;
+        }
+
         .card_type1_title {
             color: #ffffff;
         }
@@ -414,6 +478,10 @@
     .exercise_card {
         background: #0C2B5F;
         border: 1px solid rgba(255, 255, 255, 0.1);
+
+        &:hover {
+            background: #031A41;
+        }
 
         .exercise_title {
             color: #ffffff;
@@ -444,15 +512,23 @@
         background: #0C2B5F;
         border: 1px solid rgba(255, 255, 255, 0.1);
 
+        .journal_header_title {
+            color: #ffffff;
+        }
+
+        .journal_header_divider {
+            background-color: #ffffff;
+        }
+
         .journal_title {
             color: #ffffff;
         }
 
         textarea {
-            border-radius: 12px;
+            border-radius: 16px;
             background: #031A41;
             color: #ffffff;
-            border: 1px solid #FFFFFF1A;
+            border: 1px solid rgba(255, 255, 255, 0.2);
 
             &::placeholder {
                 color: rgba(255, 255, 255, 0.4);
@@ -462,6 +538,7 @@
                 cursor: not-allowed;
                 pointer-events: none;
                 color: rgba(255, 255, 255, 0.4) !important;
+                -webkit-text-fill-color: rgba(255, 255, 255, 0.4);
             }
         }
 
@@ -520,6 +597,16 @@
             }
         }
 
+        &.intro_circle.active {
+            background: rgba(66, 103, 165, 1) !important;
+            border: 1px solid #ffffff !important;
+
+            span {
+                color: #ffffff !important;
+                font-weight: 600 !important;
+            }
+        }
+
         &.visited {
             background: rgba(0, 0, 0, 0.25) !important;
             border: none !important;
@@ -554,8 +641,6 @@
         padding: 15px !important;
         gap: 10px;
         box-shadow: 0 -2px 2px #00000010;
-        margin-top: 15px;
-
         &::-webkit-scrollbar {
             display: none;
         }
@@ -598,7 +683,54 @@
         &.intro_circle {
             background: #F8F8F8;
         }
+
+        &.intro_circle.active {
+            background: #FFD889 !important;
+            border-color: #FFD889 !important;
+
+            span {
+                color: #000 !important;
+                font-weight: 600 !important;
+            }
+        }
     }
+}
+
+/* Guided Journeys breadcrumb link */
+.guided-journeys-link {
+    text-decoration: none;
+}
+
+.guided-journeys-text {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.center_flex_left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* Intro days count */
+.intro-days-count {
+    margin-bottom: 0;
+    margin-top: 2px;
+}
+
+/* Begin here label above button */
+.begin-here-label {
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 8px !important;
+}
+
+.fc_000000_0_5 {
+    color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.fc_ffffff_0_5 {
+    color: rgba(255, 255, 255, 0.5) !important;
 }
 
 /* Utilities */
@@ -645,7 +777,7 @@
     gap: 6px;
     justify-content: center;
     margin-bottom: 0px;
-    padding-bottom: 5px;
+    padding-bottom: 20px;
 
     .dot {
         width: 6px;
@@ -809,7 +941,6 @@
 
 /* Exercise Instruction Text */
 .exercise_instruction {
-    font-family: 'Poppins', sans-serif;
     font-weight: 400;
     font-size: 15px;
     line-height: 140%;
@@ -823,4 +954,97 @@
 }
 .fc_EE9596 {
     color: #EE9596 !important;
+}
+
+/* Transcript inline display (same pattern as single-audio-content) */
+.read-text-row {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative;
+    z-index: 2;
+    margin-top: 8px;
+    margin-bottom: 0;
+    min-height: 24px;
+    cursor: pointer;
+}
+
+.read-text-main {
+    font-size: 12px !important;
+    // margin-bottom: 16px !important;
+    margin-top: 0 !important;
+}
+
+.back-to-audio-row {
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+.back-to-audio-label {
+    font-size: 12px !important;
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+}
+
+.read-text-link {
+    display: inline-block !important;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.read-text-label {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    text-decoration: underline !important;
+    pointer-events: auto;
+    cursor: pointer;
+    margin: 0;
+}
+
+.transcript_txt {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 180%;
+    margin-top: 10px;
+    padding: 0;
+    word-break: break-word;
+
+    strong { font-weight: 600; }
+    em { font-style: italic; }
+    ul { padding-left: 20px; margin-bottom: 14px; text-align: left; }
+    li { margin-bottom: 5px; text-align: left; }
+    br { display: block; content: ''; margin-bottom: 4px; }
+}
+
+.mt16px {
+    margin-top: 16px !important;
+}
+
+.day_circle {
+    position: relative;
+}
+
+.none-accessed-dot {
+    display: none;
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #FFD889;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.footer_days.bg_stake {
+    .none-accessed-dot {
+        background: rgba(255, 255, 255, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+}
+
+.card_type1_meta,
+.exercise_meta {
+    text-align: left;
 }

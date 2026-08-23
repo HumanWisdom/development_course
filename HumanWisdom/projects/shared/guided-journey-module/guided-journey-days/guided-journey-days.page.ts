@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { SharedService } from "../../services/shared.service";
 import { CommonService } from "../../services/common.service";
 import { NavigationService } from "../../services/navigation.service";
@@ -20,6 +21,7 @@ export class GuidedJourneyDaysPage implements OnInit {
   displayExercises: any[] = [];
   isLoading = true;
   journeyTitle: string = '';
+  journeySubtitle: string = '';
   isSubscriber = false;
   isLoggedIn = false;
   showModal = false;
@@ -40,11 +42,14 @@ export class GuidedJourneyDaysPage implements OnInit {
   alertContent: string = '';
   alertOkText: string = 'Ok';
   isNavigatingOut: boolean = false;
+  showTranscript: boolean = false;
+  transcriptHtml: SafeHtml = '';
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private location: Location,
+    private sanitizer: DomSanitizer,
     private commonService: CommonService,
     private navigationService: NavigationService
   ) {
@@ -56,6 +61,12 @@ export class GuidedJourneyDaysPage implements OnInit {
     this.route.queryParams.subscribe(params => {
       const newJourneyId = params['journeyId'];
       const dayParam = params['day'];
+      if (params['subtitle']) {
+        this.journeySubtitle = params['subtitle'];
+      }
+      if (params['title']) {
+        this.journeyTitle = params['title'];
+      }
       
       let dayChanged = false;
       if (dayParam !== undefined && dayParam !== null) {
@@ -161,7 +172,7 @@ export class GuidedJourneyDaysPage implements OnInit {
   navigateToEnd() {
     const prefix = SharedService.getprogramName();
     this.router.navigate([`/${prefix}/guided-journeys/end`], {
-      queryParams: { journeyId: this.journeyId, title: this.journeyTitle }
+      queryParams: { journeyId: this.journeyId, title: this.journeyTitle, subtitle: this.journeySubtitle }
     });
   }
 
@@ -177,14 +188,18 @@ export class GuidedJourneyDaysPage implements OnInit {
         
         if (journey) {
           this.journeyTitle = journey.Title || journey.title || journey.JourneyName || journey.Name;
+          this.journeySubtitle = journey.Subtitle || journey.subtitle || this.journeyTitle;
+          const journeyId = journey.GuidedJourneyID || journey.JourneyID || journey.journeyID || journey.Id || journey.id || journey.RowID;
           this.journeyDetails = {
-            id: journey.GuidedJourneyID || journey.JourneyID || journey.journeyID || journey.Id || journey.id || journey.RowID,
+            id: journeyId,
             title: journey.Title || journey.title || journey.JourneyName || journey.Name,
             subtitle: journey.Subtitle || journey.subtitle,
-            description: journey.Description || journey.description,
+            description: (journey.Description || journey.description || '').replace(/\s*\(\d+\s*days?\)\s*$/i, '').trim(),
             imgUrl: this.getImgUrl(journey.ImageUrl || journey.ImgUrl || journey.imgUrl || journey.imageUrl),
+            audioUrl: journey.AudioUrl || journey.audioUrl || journey.Audio || journey.audio
+                      || `https://d1tenzemoxuh75.cloudfront.net/guided_journeys/intro/${journeyId}.mp3`,
           };
-          if (journey.Days) {
+          if (journey.Days && this.totalDays === 0 && this.allDaysData.length === 0) {
             this.totalDays = parseInt(journey.Days);
           }
         }
@@ -199,7 +214,18 @@ export class GuidedJourneyDaysPage implements OnInit {
 
     this.commonService.GetGuidedJourneyDays(this.journeyId, programId, userId).subscribe((res: any) => {
       if (res && Array.isArray(res)) {
-        this.allDaysData = res.map(item => {
+        // Exclude Day 100 items from guided-journey-days completely (only for end screen)
+        const filteredRes = res.filter(item => {
+          const dayNum = parseInt(item.Days_No || item.DayNo || item.dayNo || item.Day_No || item.day);
+          return dayNum !== 100;
+        });
+
+        const dayNumbers = filteredRes.map(item => parseInt(item.Days_No || item.DayNo || item.dayNo || item.Day_No || item.day)).filter(n => !isNaN(n));
+        if (dayNumbers.length > 0) {
+          this.totalDays = Math.max(...dayNumbers);
+        }
+
+        this.allDaysData = filteredRes.map(item => {
           const rawTitle = item.Title || item.Section;
           const { mainTitle, subTitle, sessionLabel, sessionName } = this.parseTitle(rawTitle);
           return {
@@ -211,14 +237,12 @@ export class GuidedJourneyDaysPage implements OnInit {
             sessionLabel: sessionLabel,
             sessionName: sessionName,
             QuestionCnt: item.QuestionCnt,
+            Timing: item.Timing || item.timing || item.Time || item.time || item.duration || item.Duration || '',
             imgPath: this.getImgUrl(item.imgPath),
             OriginalResponse: item.Response || ''
           };
         });
         this.updateDisplayData();
-        
-        // Also check initial read status to mark visited
-        // Removed markAsVisited loop as isVisited now checks allDaysData directly
       }
       this.isLoading = false;
     }, error => {
@@ -297,7 +321,17 @@ export class GuidedJourneyDaysPage implements OnInit {
     return isGJ && !!exercise.QuestionCnt;
   }
 
-
+  autoResize(event: any) {
+    const textarea = event.target;
+    textarea.style.height = '50px';
+    const newHeight = Math.min(Math.max(textarea.scrollHeight, 50), 80);
+    textarea.style.height = newHeight + 'px';
+    if (textarea.scrollHeight > 80) {
+      textarea.style.overflowY = 'auto';
+    } else {
+      textarea.style.overflowY = 'hidden';
+    }
+  }
 
   submitJournal(exercise: any) {
     if (!this.isSubscriber && (exercise.isFree === '0' || exercise.isFree === 0)) {
@@ -356,6 +390,77 @@ export class GuidedJourneyDaysPage implements OnInit {
     this.alertOkText = 'Ok';
   }
 
+  loadTranscript() {
+    if (this.transcriptHtml) {
+      this.showTranscript = true;
+      return;
+    }
+    this.showTranscript = true;
+    const data = {
+      S3Directory: 'guided_journeys/intro/transcripts/',
+      FileName: `${this.journeyId}.md`
+    };
+    this.commonService.GetAudioTranscript(data).subscribe({
+      next: (res: any) => {
+        const raw = this.normalizeTranscriptResponse(res);
+        this.transcriptHtml = raw && raw.length > 5
+          ? this.parseMarkdown(raw)
+          : this.sanitizer.bypassSecurityTrustHtml('<p>Transcript not available.</p>');
+      },
+      error: () => {
+        this.transcriptHtml = this.sanitizer.bypassSecurityTrustHtml('<p>Transcript not available.</p>');
+      }
+    });
+  }
+
+  normalizeTranscriptResponse(res: any): string {
+    if (res == null) return '';
+    if (typeof res === 'string') return res;
+    if (typeof res === 'object') {
+      return res.Content || res.content || res.Transcript || res.transcript ||
+             res.Text || res.text || res.Data || res.data || '';
+    }
+    return String(res);
+  }
+
+  closeTranscript() {
+    this.showTranscript = false;
+  }
+
+  parseMarkdown(text: string): SafeHtml {
+    if (!text) return '';
+
+    let lines = text.split('\n');
+    let result = '';
+    let inList = false;
+
+    for (let line of lines) {
+      let trimmed = line.trim();
+
+      if (trimmed === '---') {
+        if (inList) { result += '</ul>'; inList = false; }
+        const hrColor = this.isAdults ? '#000000' : '#ffffff';
+        result += `<hr style="border: none; margin: 0; border-top: 1px solid ${hrColor};"/>`;
+        continue;
+      }
+
+      if (trimmed.startsWith('- ') || trimmed.startsWith('* ')) {
+        if (!inList) { result += '<ul style="padding-left: 20px;">'; inList = true; }
+        result += '<li style="margin-bottom: 5px;">' + trimmed.substring(2) + '</li>';
+      } else {
+        if (inList) { result += '</ul>'; inList = false; }
+        result += trimmed === '' ? '<br/>' : line + '<br/>';
+      }
+    }
+    if (inList) result += '</ul>';
+
+    result = result.replace(/\*\*\*(.*?)\*\*\*/g, '<strong><em>$1</em></strong>');
+    result = result.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    result = result.replace(/\*([^*]+?)\*/g, '<em>$1</em>');
+
+    return this.sanitizer.bypassSecurityTrustHtml(result);
+  }
+
   getImgUrl(url: string) {
     if (!url) return 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/51.webp';
     
@@ -380,10 +485,10 @@ export class GuidedJourneyDaysPage implements OnInit {
       return dayNum === this.currentDay;
     });
     
-    // Calculate total days as fallback if not already set by journey details
-    if (this.totalDays === 0) {
-      const days = this.allDaysData.map(item => parseInt(item.Days_No || item.DayNo || item.dayNo || item.Day_No || item.day)).filter(n => !isNaN(n));
-      this.totalDays = days.length > 0 ? Math.max(...days) : 0;
+    // Calculate total days excluding 100
+    const days = this.allDaysData.map(item => parseInt(item.Days_No || item.DayNo || item.dayNo || item.Day_No || item.day)).filter(n => !isNaN(n) && n !== 100);
+    if (days.length > 0) {
+      this.totalDays = Math.max(...days);
     }
 
     // Scroll to active day
@@ -400,8 +505,12 @@ export class GuidedJourneyDaysPage implements OnInit {
   }
 
   goBack() {
-    const prefix = SharedService.getprogramName();
-    this.router.navigate([`/${prefix}/guided-journeys`]);
+    if (this.currentDay !== 0) {
+      this.navigateToDay(0);
+    } else {
+      const prefix = SharedService.getprogramName();
+      this.router.navigate([`/${prefix}/guided-journeys`]);
+    }
   }
 
   goToListing() {

@@ -24,7 +24,8 @@ $hw_lcp_banner_mobile = hw_lcp_image_url('banner_mobile');
   <meta property="og:site_name" content="HappierMe">
   <meta property="og:url" content="https://happierme.app">
   <meta property="og:type" content="">
-  <meta property="og:image" content="https://d1tenzemoxuh75.cloudfront.net/website/imgs/landing.png">
+  <meta property="og:image" content="https://d1tenzemoxuh75.cloudfront.net/assets/images/logo/logo_favicon_transparent_v3.png">
+  <!-- <meta property="og:image" content="https://d1tenzemoxuh75.cloudfront.net/website/imgs/landing.png"> -->
   <!-- <meta property="og:image" content=https://d1tenzemoxuh75.cloudfront.net/website/webp/teens_app_01.webp>
      <meta property="og:image" content="">
      <meta property="og:image" content="">
@@ -52,9 +53,9 @@ $hw_lcp_banner_mobile = hw_lcp_image_url('banner_mobile');
     <meta charset="utf-8" />
   
 
-    <!-- LCP Hero images first (highest network priority) -->
-    <link rel="preload" as="image" href="<?= htmlspecialchars($hw_lcp_banner_desktop, ENT_QUOTES, 'UTF-8'); ?>" fetchpriority="high" media="(min-width: 821px)" />
-    <link rel="preload" as="image" href="<?= htmlspecialchars($hw_lcp_banner_mobile, ENT_QUOTES, 'UTF-8'); ?>" fetchpriority="high" media="(max-width: 820px)" />
+    <!-- LCP: compressed WebP (~46KB). Do not preload both viewports. -->
+    <link rel="preload" as="image" type="image/webp" href="<?= htmlspecialchars($hw_lcp_banner_desktop, ENT_QUOTES, 'UTF-8'); ?>" fetchpriority="high" media="(min-width: 821px)" />
+    <link rel="preload" as="image" type="image/webp" href="<?= htmlspecialchars($hw_lcp_banner_mobile, ENT_QUOTES, 'UTF-8'); ?>" fetchpriority="high" media="(max-width: 820px)" />
     <title>Mental Wellbeing, Self-awareness and Life Skills | HappierMe</title>
     
     <!-- vendor_header -->
@@ -77,12 +78,13 @@ $hw_lcp_banner_mobile = hw_lcp_image_url('banner_mobile');
         <div class="div-wrapper">
           <div class="div">
             <div class="div-2">
-              <img class="new-app-adults-teen display_m_none"  fetchpriority="high"
-                src="<?= htmlspecialchars($hw_lcp_banner_desktop, ENT_QUOTES, 'UTF-8'); ?>"
-                alt="HappierMe app" />
-             <img class="new-app-adults-teen display_d_none"  fetchpriority="high"
-                src="<?= htmlspecialchars($hw_lcp_banner_mobile, ENT_QUOTES, 'UTF-8'); ?>"
-                alt="HappierMe app" />
+              <picture>
+                <source media="(min-width: 821px)" type="image/webp" srcset="<?= htmlspecialchars($hw_lcp_banner_desktop, ENT_QUOTES, 'UTF-8'); ?>" />
+                <img class="new-app-adults-teen"
+                  src="<?= htmlspecialchars($hw_lcp_banner_mobile, ENT_QUOTES, 'UTF-8'); ?>"
+                  width="331" height="480"
+                  fetchpriority="high" decoding="async" alt="HappierMe app" />
+              </picture>
           <div class="div-3">
                  <!-- rating row -->
                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 pt_18px">
@@ -106,7 +108,7 @@ $hw_lcp_banner_mobile = hw_lcp_image_url('banner_mobile');
                      
                     </div>
                     <p class="text-wrapper-4" id="hw-website-subtitle">
-                      Feel calmer. Strengthen your <br class="subtitle-br-m">relationships.<br class="subtitle-br-d"> Build <a href="#" class="human-skills-link" data-bs-toggle="modal" data-bs-target="#humanSkillsModal" role="button" aria-haspopup="dialog" id="lifeskills">these skills</a><br class="subtitle-br-m"> to thrive at home and at work.
+                      Feel calmer. Strengthen your <br class="subtitle-br-m">relationships.<br class="subtitle-br-d"> Build <a href="#" class="human-skills-link" data-bs-toggle="modal" data-bs-target="#humanSkillsModal" role="button" aria-haspopup="dialog" id="lifeskills">these skills</a><br class="subtitle-br-m"> to create the life you want.
                     </p>
                   </div>
                 </div>

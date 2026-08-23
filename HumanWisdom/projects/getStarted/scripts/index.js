@@ -1829,7 +1829,7 @@ async function fetchData() {
 var DEFAULT_WEBSITE_TITLE =
         '<span class="hero-title-verb">Think</span><span class="hero-title-better">&nbsp;better.</span><br><span class="hero-title-accent">Live</span><span class="hero-title-accent">&nbsp;better.</span>';
 var DEFAULT_WEBSITE_SUBTITLE =
-        'Feel calmer. Strengthen your relationships.<br class="subtitle-br-d">Build <a href="#" class="human-skills-link" data-bs-toggle="modal" data-bs-target="#humanSkillsModal" role="button" aria-haspopup="dialog">these skills</a> to thrive at home and at work.';
+        'Feel calmer. Strengthen your relationships.<br class="subtitle-br-d">Build <a href="#" class="human-skills-link" data-bs-toggle="modal" data-bs-target="#humanSkillsModal" role="button" aria-haspopup="dialog">these skills</a> to create the life you want.';
 
 function initHumanSkillsLink() {
     document.querySelectorAll("#hw-website-subtitle .human-skills-link").forEach(function (link) {
