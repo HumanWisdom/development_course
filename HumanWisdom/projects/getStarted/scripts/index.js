@@ -1557,10 +1557,14 @@ viewAllSucessStories && viewAllSucessStories.addEventListener("click", function 
 const requestDemo = document.getElementById("Request-Demo");
 function closeElement() {
     localStorage.setItem("isDownloadHide", !0);
-    var e = document.getElementById("closeableElement");
-    if(e){
-        (e.style.display = "none"), e.classList.remove("display_df_none");
-    }
+    ["closeableElement", "closeableElementDesktop"].forEach(function (id) {
+        var e = document.getElementById(id);
+        if (e) {
+            e.style.display = "none";
+            e.classList.remove("display_df_none");
+            e.setAttribute("hidden", "hidden");
+        }
+    });
     var t = document.getElementById("scrollTopArrow");
     if(t){
         "Desktop" == type ? t.classList.remove("mb15px") : t.classList.remove("mb-8rem");
