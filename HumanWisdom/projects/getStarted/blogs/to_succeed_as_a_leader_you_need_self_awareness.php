@@ -158,7 +158,7 @@
 
                 <h4 class="mtb0px blog_desc">
                   Explore the following sections in the
-                  <a class="blog_highlight_peach td_underline" href="https://onelink.to/qsptex">
+                  <a class="blog_highlight_peach td_underline" href="https://onelink.to/hsnt8b">
                     HappierMe app
                   </a>
                   to get started:
