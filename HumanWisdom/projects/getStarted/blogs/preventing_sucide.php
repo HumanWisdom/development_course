@@ -154,7 +154,11 @@ can help people develop the emotional skills to meet life's challenges different
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                    It left me with a question that has stayed with me ever since:                     <span class="blog_highlight_black">
+                    It left me with a question that has stayed with me ever since:   
+                    </h4>
+                    <h4 class="mtb0px blog_desc">
+                 
+                     <span class="blog_highlight_black">
 why do we spend so many years educating people for life, yet teach them so little about how to understand and manage their own mind?
                     </span> </h4>
 
@@ -227,7 +231,12 @@ why do we spend so many years educating people for life, yet teach them so littl
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                    The aim is not simply to put today's fire out. It is to reduce the chances of the same fire starting again tomorrow.
+                    The aim is not simply to put today's fire out. </h4>
+                                    <h4 class="mtb0px blog_desc">
+
+                                         <span class="blog_highlight_black">
+
+                    It is to reduce the chances of the same fire starting again tomorrow.
                 </h4>
 
                 <h4 class="mtb0px blog_sub_title">
