@@ -131,7 +131,7 @@
 
 			 <!-- <h4 class="mtb0px blog_desc">It is the ability to listen well, understand different perspectives, ask thoughtful questions, present ideas clearly, and build understanding with others.</h4> -->
 
-			 <h4 class="mtb0px blog_desc"> <span class="blog_highlight_black">Communication is consistently ranked as a top workplace skill, yet poor communication remains a significant organisational challenge.</span> <a class="blog_highlight_peach td_underline" href="https://www.zoom.com/en/blog/workplace-communication-statistics/" > ( Reference ) </a></h4>
+			 <h4 class="mtb0px blog_desc"> <span class="blog_highlight_black">Communication is consistently ranked as a top workplace skill, yet poor communication remains a significant organisational challenge.</span> <a class="blog_highlight_peach td_underline fs_12px" href="https://www.zoom.com/en/blog/workplace-communication-statistics/" >Reference </a></h4>
 
 			 <h4 class="mtb0px blog_desc">Whether presenting ideas, collaborating with teams, or resolving conflicts, effective communication is essential in every profession.</h4>
 
