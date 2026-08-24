@@ -485,7 +485,7 @@
     </div>
 
     <div class="banner_button">
-      <a href="https://onelink.to/qsptex" class="">
+      <a href="https://onelink.to/hsnt8b" class="">
         <button class="btn_download">Download app</button>
       </a>
     </div>
@@ -526,7 +526,7 @@
     </div>
 
     <div class="banner_button">
-      <a href="https://onelink.to/qsptex" class="">
+      <a href="https://onelink.to/hsnt8b" class="">
         <button class="btn_download">Download app</button>
       </a>
     </div>

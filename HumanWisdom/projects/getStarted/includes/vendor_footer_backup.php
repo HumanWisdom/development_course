@@ -286,7 +286,7 @@ $('.owl_blog .owl-carousel').owlCarousel({
 $( window ).resize( function() {
     if (window.matchMedia('(max-width: 768px)').matches)
     {
-    //$('.btn_tff').attr('href','https://onelink.to/qsptex');
+    //$('.btn_tff').attr('href','https://onelink.to/hsnt8b');
     // $('.btn_tff').attr('href','#div_subscription');
     $('.btn_tff').attr('href','https://happierme.app/splash_options.html');
     } else {
@@ -299,7 +299,7 @@ $( window ).resize();
 $( window ).resize( function() {
     if (window.matchMedia('(max-width: 768px)').matches)
     {
-        $('.btn_tff_tn').attr('href','https://onelink.to/qsptex');
+        $('.btn_tff_tn').attr('href','https://onelink.to/hsnt8b');
     } 
     else 
     {
