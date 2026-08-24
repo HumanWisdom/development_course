@@ -42,7 +42,7 @@
     </div>
 
     <div class="banner_button" style="width: 20%;">
-      <a href="https://onelink.to/qsptex" class="">
+      <a href="https://onelink.to/hsnt8b" class="">
         <button class="btn_download">Download app</button>
       </a>
     </div>

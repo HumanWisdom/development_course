@@ -43,14 +43,14 @@ $(".owl_container:not(.owl_testimonials) .owl-carousel").owlCarousel({
     $(window).resize(function () {
         window.matchMedia("(max-width: 768px)").matches ? 
        //  (logevent("click_free_trial_menu_web", "index.php") 
-          $(".btn_tff_tn").attr("href", "https://onelink.to/qsptex")   :  
+          $(".btn_tff_tn").attr("href", "https://onelink.to/hsnt8b")   :  
           // (logevent("click_free_trial_menu_web", "index.php") 
            $(".btn_tff_tn").attr("href", "../pages/splash_options.php");
     }),
     $(window).resize(),
     $(window).resize(function () {
         var isMobile = window.matchMedia("(max-width: 768px)").matches;
-        var storeUrl = "https://onelink.to/qsptex";
+        var storeUrl = "https://onelink.to/hsnt8b";
         var splashUrl = "https://happierme.app/pages/splash_options.php";
         var ollyChatUrl = "https://happierme.app/adults/chat-bot";
         $("#transformDownloadApp").attr("href", isMobile ? storeUrl : splashUrl);
