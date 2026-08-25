@@ -569,9 +569,9 @@
     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/blog_landing.png"
       class="blog-index-hero-bg img-responsive img_bl" alt="Insightful articles with practical tips to be happier">
     <div class="blog-index-hero-copy">
-      <h2 class="mt0px mb20px fs_36px fw_600 lh_140p fc_ffffff">
+      <h1 class="mt0px mb20px fs_36px fw_600 lh_140p fc_ffffff">
         Insightful articles with practical tips to be happier
-      </h2>
+      </h1>
       <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
         Find articles on meditation, mental health, relationships, and how to succeed at work
       </h4>
