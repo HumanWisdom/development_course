@@ -3109,10 +3109,17 @@ body.page-newsletter .newsletter-subtitle:hover {
 @media (max-width: 767px) {
   .newsletter-hero {
     padding: 88px 16px 24px;
+    align-items: center;
   }
 
   .newsletter-card {
+    width: 335px;
+    max-width: 335px;
+    height: 636px;
+    min-height: 636px;
     padding: 36px 20px 28px;
+    box-sizing: border-box;
+    justify-content: flex-start;
   }
 
   .newsletter-card-visual img {

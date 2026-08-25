@@ -32974,6 +32974,34 @@ body * {
   padding-left: 5px;
 }
 
+/*
+ * iPhone 17 / 17 Pro: 402×874
+ * iPhone 17 Air: 420×912
+ * iPhone 17 Pro Max: 440×956
+ * Pathway tiles wrap to one column at these widths; keep 2-col grid like other iPhones.
+ */
+@media only screen and (min-width: 401px) and (max-width: 403px),
+       only screen and (min-width: 418px) and (max-width: 422px),
+       only screen and (min-width: 438px) and (max-width: 442px) {
+  .msrow {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    text-align: left !important;
+  }
+
+  .msrow > [class*="col-"],
+  .msrow > .col-6 {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+    width: 50% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    float: none !important;
+  }
+}
+
 .box_v3_04bevent img {
   width: 100%;
   height: 100px;
