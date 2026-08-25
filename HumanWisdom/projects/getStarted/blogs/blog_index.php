@@ -569,9 +569,9 @@
     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/blog_landing.png"
       class="blog-index-hero-bg img-responsive img_bl" alt="Insightful articles with practical tips to be happier">
     <div class="blog-index-hero-copy">
-      <h2 class="mt0px mb20px fs_36px fw_600 lh_140p fc_ffffff">
+      <h1 class="mt0px mb20px fs_36px fw_600 lh_140p fc_ffffff">
         Insightful articles with practical tips to be happier
-      </h2>
+      </h1>
       <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
         Find articles on meditation, mental health, relationships, and how to succeed at work
       </h4>
@@ -593,7 +593,7 @@
               <button type="button" class="blog-filter-tag" data-filter="work-leadership" data-title="Work &amp; Leadership">Work &amp; Leadership</button>
               <button type="button" class="blog-filter-tag" data-filter="breathing-meditation" data-title="Breathing &amp; Meditation">Breathing &amp; Meditation</button>
               <button type="button" class="blog-filter-search" id="blog-search-toggle" aria-label="Search articles" aria-expanded="false">
-                <img src="https://d1tenzemoxuh75.cloudfront.net/website/search.svg" class="blog-icon-search" alt="" width="18" height="18" aria-hidden="true">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/search.svg" class="blog-icon-search" alt="search_icon" width="18" height="18" aria-hidden="true">
                 <i class="bi bi-x blog-icon-close" aria-hidden="true"></i>
               </button>
               <form class="blog-search-box" action="" onsubmit="return false;">
