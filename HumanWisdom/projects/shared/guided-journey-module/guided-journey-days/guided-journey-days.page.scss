@@ -398,7 +398,6 @@
         transition: 0.3s;
         margin-top: 14px;
         cursor: pointer;
-        box-shadow: 0 4px 10px rgba(215, 88, 107, 0.25);
 
         &:disabled {
             opacity: 0.5;
@@ -450,12 +449,10 @@
 .teenagers-days {
     .btn_return {
         background: linear-gradient(180deg, #EE9596 0%, #F17071 100%) !important;
-        box-shadow: 0 4px 10px rgba(238, 149, 150, 0.2);
     }
 
     .btn_journal {
         background: linear-gradient(180deg, #EE9596 0%, #F17071 100%) !important;
-        box-shadow: 0 4px 10px rgba(238, 149, 150, 0.2);
     }
 
     .card_type1 {
