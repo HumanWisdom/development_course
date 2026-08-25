@@ -96,41 +96,62 @@
       color: #803358 !important;
     }
 
-    /* Hero: clear stacked fixed headers */
-    .blog-index-hero.hpt120px {
-      margin-top: 50px;
-    }
-
     /*
-     * Desktop hero band height — match index.php hero artboard (new-app-adults-teen 525px on wide screens).
-     * Without this, blog_landing.png intrinsic height makes the banner much taller than index.
+     * Hero: 400px gradient fully below the fixed header (120px + 49px subnav).
+     * Copy is an absolute overlay, flex-centered — no AOS transform.
      */
-    @media screen and (min-width: 768px) and (max-width: 1024px) {
-      body.page-blog-index .blog-index-hero {
-        overflow: hidden;
-      }
-
-      body.page-blog-index .blog-index-hero img.img-responsive.img_bl {
-        height: 406px !important;
-        width: 100% !important;
-        max-height: 406px !important;
-        object-fit: cover !important;
-        object-position: center !important;
-      }
+    body.page-blog-index section.blog-index-hero.hpt120px {
+      margin-top: 170px !important;
+      padding-top: 0 !important;
     }
 
-    @media screen and (min-width: 1025px) {
-      body.page-blog-index .blog-index-hero {
-        overflow: hidden;
-      }
+    body.page-blog-index section.blog-index-hero {
+      position: relative !important;
+      display: block !important;
+      height: 400px !important;
+      min-height: 400px !important;
+      max-height: 400px !important;
+      padding: 0 !important;
+      overflow: hidden !important;
+      box-sizing: border-box !important;
+    }
 
-      body.page-blog-index .blog-index-hero img.img-responsive.img_bl {
-        height: 525px !important;
-        width: 100% !important;
-        max-height: 525px !important;
-        object-fit: cover !important;
-        object-position: center !important;
-      }
+    body.page-blog-index .blog-index-hero-bg,
+    body.page-blog-index section.blog-index-hero img.img_bl {
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      height: 400px !important;
+      max-height: 400px !important;
+      object-fit: cover !important;
+      object-position: center !important;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    body.page-blog-index .blog-index-hero-copy {
+      position: absolute !important;
+      top: 0 !important;
+      right: 0 !important;
+      bottom: 0 !important;
+      left: 0 !important;
+      height: 400px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      text-align: center !important;
+      margin: 0 !important;
+      padding: 0 24px !important;
+      z-index: 1;
+      transform: none !important;
+    }
+
+    body.page-blog-index .blog-index-hero-copy h2,
+    body.page-blog-index .blog-index-hero-copy h4 {
+      margin-left: auto;
+      margin-right: auto;
     }
 
     @media screen and (min-width: 1600px) {
@@ -156,7 +177,7 @@
     @media (max-width: 768px) {
 
       .blog-index-hero.hpt120px {
-        margin-top: -4px !important;
+        margin-top: 70px !important;
       }
 
       /* Tighten space between View More and footer (default .dfooter margin-top: 100px) */
@@ -287,7 +308,7 @@
     body.page-blog-index .blog-filter-bar {
       display: flex;
       align-items: center;
-      gap: 18px;
+      gap: 24px;
       position: relative;
       min-height: 54px;
       overflow-x: auto;
@@ -320,10 +341,6 @@
       box-sizing: border-box;
     }
 
-    body.page-blog-index .blog-filter-tag[data-filter="all"] {
-      font-weight: 700;
-    }
-
     body.page-blog-index .blog-filter-tag.is-active,
     body.page-blog-index .blog-filter-tag:focus-visible {
       background: rgba(255, 247, 230, 1);
@@ -340,7 +357,7 @@
       flex: 0 0 54px;
       width: 54px;
       height: 54px;
-      margin: 0 0 0 auto;
+      margin: 0;
       padding: 0;
       border: none;
       border-radius: 27px;
@@ -358,6 +375,13 @@
       font-size: 20px;
       line-height: 1;
       color: #834B66;
+    }
+
+    body.page-blog-index .blog-filter-search .blog-icon-search {
+      width: 18px;
+      height: 18px;
+      display: block;
+      object-fit: contain;
     }
 
     body.page-blog-index .blog-filter-search .blog-icon-close {
@@ -542,23 +566,15 @@
   <!-- /header -->
 
   <section class="hpt120px blog-index-hero">
-    <div class="row prelative" data-aos="fade-up" data-aos-delay="100">
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/blog_landing.png"
-          class="img-responsive img_bl" alt="Insightful articles with practical tips to be happier">
-      </div>
-
-      <div class="row bl_text">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 tcenter">
-          <h2 class="mt0px mb20px fs_36px fw_600 lh_140p fc_ffffff">
-            Insightful articles with practical tips to be happier
-          </h2>
-
-          <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
-            Find articles on meditation, mental health, relationships, and how to succeed at work
-          </h4>
-        </div>
-      </div>
+    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/blog_landing.png"
+      class="blog-index-hero-bg img-responsive img_bl" alt="Insightful articles with practical tips to be happier">
+    <div class="blog-index-hero-copy">
+      <h2 class="mt0px mb20px fs_36px fw_600 lh_140p fc_ffffff">
+        Insightful articles with practical tips to be happier
+      </h2>
+      <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
+        Find articles on meditation, mental health, relationships, and how to succeed at work
+      </h4>
     </div>
   </section>
 
@@ -577,7 +593,7 @@
               <button type="button" class="blog-filter-tag" data-filter="work-leadership" data-title="Work &amp; Leadership">Work &amp; Leadership</button>
               <button type="button" class="blog-filter-tag" data-filter="breathing-meditation" data-title="Breathing &amp; Meditation">Breathing &amp; Meditation</button>
               <button type="button" class="blog-filter-search" id="blog-search-toggle" aria-label="Search articles" aria-expanded="false">
-                <i class="bi bi-search blog-icon-search" aria-hidden="true"></i>
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/search.svg" class="blog-icon-search" alt="" width="18" height="18" aria-hidden="true">
                 <i class="bi bi-x blog-icon-close" aria-hidden="true"></i>
               </button>
               <form class="blog-search-box" action="" onsubmit="return false;">
@@ -1755,7 +1771,34 @@ Work and Leadership</button>
                
               </a>
             </div>
+  <div class="clearfix"></div>
+           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="1100">
 
+              <a class="" href="preventing_sucide.php">
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/83.webp" class="img-responsive img_blogs" alt="Blog_img">
+                  </div>
+                </div>
+
+                <div class="row mt20px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp"> Suicide Prevention</button>
+
+
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                    <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">Preventing suicide before the fire starts
+
+</h4>
+                  </div>
+                </div>
+               
+              </a>
+            </div>
           </span>
             <div class="clearfix"></div>
 

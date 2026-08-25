@@ -1557,10 +1557,14 @@ viewAllSucessStories && viewAllSucessStories.addEventListener("click", function 
 const requestDemo = document.getElementById("Request-Demo");
 function closeElement() {
     localStorage.setItem("isDownloadHide", !0);
-    var e = document.getElementById("closeableElement");
-    if(e){
-        (e.style.display = "none"), e.classList.remove("display_df_none");
-    }
+    ["closeableElement", "closeableElementDesktop"].forEach(function (id) {
+        var e = document.getElementById(id);
+        if (e) {
+            e.style.display = "none";
+            e.classList.remove("display_df_none");
+            e.setAttribute("hidden", "hidden");
+        }
+    });
     var t = document.getElementById("scrollTopArrow");
     if(t){
         "Desktop" == type ? t.classList.remove("mb15px") : t.classList.remove("mb-8rem");
@@ -1829,7 +1833,7 @@ async function fetchData() {
 var DEFAULT_WEBSITE_TITLE =
         '<span class="hero-title-verb">Think</span><span class="hero-title-better">&nbsp;better.</span><br><span class="hero-title-accent">Live</span><span class="hero-title-accent">&nbsp;better.</span>';
 var DEFAULT_WEBSITE_SUBTITLE =
-        'Feel calmer. Strengthen your relationships.<br class="subtitle-br-d">Build these <a href="#" class="human-skills-link" data-bs-toggle="modal" data-bs-target="#humanSkillsModal" role="button" aria-haspopup="dialog">life skills</a> to live the life you want.';
+        'Feel calmer. Strengthen your relationships.<br class="subtitle-br-d">Build <a href="#" class="human-skills-link" data-bs-toggle="modal" data-bs-target="#humanSkillsModal" role="button" aria-haspopup="dialog">these skills</a> to create the life you want.';
 
 function initHumanSkillsLink() {
     document.querySelectorAll("#hw-website-subtitle .human-skills-link").forEach(function (link) {

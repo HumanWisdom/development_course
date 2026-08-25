@@ -4,6 +4,11 @@ import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/internal/operators/catchError';
+import {
+  getStoredAccessToken,
+  isWithinPostLoginGracePeriod,
+  shouldShowSessionExpiredAlert,
+} from '../../../shared/config/session-auth.config';
 
 @Injectable({
   providedIn: 'root'
@@ -24,13 +29,15 @@ export class TokenInterceptorService implements HttpInterceptor {
       return next.handle(req);
     }
 
-    this.token = JSON.parse(localStorage.getItem("token"))
-
-    let tokenizedReq = req.clone({
-      setHeaders: {
-        Authorization: `Bearer ` + this.token
-      }
-    })
+    this.token = getStoredAccessToken();
+    let tokenizedReq = req;
+    if (this.token) {
+      tokenizedReq = req.clone({
+        setHeaders: {
+          Authorization: `Bearer ${this.token}`,
+        },
+      });
+    }
     return next.handle(tokenizedReq).pipe(catchError(err => {
       if (err instanceof HttpErrorResponse) {
         if (err.status === 401) {
@@ -50,8 +57,10 @@ export class TokenInterceptorService implements HttpInterceptor {
           const isGuestEmail = userEmail === 'guest@humanwisdom.me' || userEmail === '"guest@humanwisdom.me"';
           const isLoggedIn = localStorage.getItem("isloggedin") === 'T';
 
-          if (isLoggedIn && !isGuestEmail) {
+          if (isLoggedIn && !isGuestEmail && shouldShowSessionExpiredAlert()) {
             this.showSessionExpiredAlert();
+          } else if (isLoggedIn && !isGuestEmail && isWithinPostLoginGracePeriod()) {
+            return throwError(err);
           } else if (isGuestEmail && !isLoggedIn && !isAuthPage && !isFromSignupFlow) {
             // ONLY refresh for actual guest users who are NOT in an onboarding flow
             localStorage.removeItem('token');
