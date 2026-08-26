@@ -76,7 +76,7 @@
                 <div class="explore_content">
                   <h3 class="explore_card_title" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">{{item.Title}}</h3>
                   <p class="explore_card_meta" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                    {{item.Section}}<span *ngIf="item.Timing && item.Timing !== '0' && item.Timing !== '0:00' && item.Timing !== '00:00'"> • {{item.Timing}}</span>
+                    {{getSectionDisplayName(item.Section)}}<span *ngIf="item.Timing && item.Timing !== '0' && item.Timing !== '0:00' && item.Timing !== '00:00'"> • {{item.Timing}}</span>
                   </p>
                 </div>
                 <div class="explore_status" *ngIf="!isSubscriber && (item.isFree === '0' || item.isFree === 0)">

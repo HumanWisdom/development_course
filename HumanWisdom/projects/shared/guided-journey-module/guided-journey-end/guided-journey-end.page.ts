@@ -121,10 +121,19 @@ export class GuidedJourneyEndPage implements OnInit {
     if (s.includes('PODCAST') || s.includes('AUDIO') || s.includes('MEDITATION') || s.includes('BREATHING') || s.includes('SOUNDSCAPE')) {
       return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audio_play.svg';
     }
-    if (s.includes('VIDEO') || s.includes('SHORT') || s.includes('CONVERSATION') || s.includes('TALK')) {
+    if (s.includes('VIDEO') || s.includes('SHORT') || s.includes('CONVERSATION') || s.includes('TALK') || s.includes('EVENT')) {
       return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg';
     }
     return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg';
+  }
+
+  getSectionDisplayName(section: string): string {
+    if (!section) return '';
+    const s = section.trim().toLowerCase();
+    if (s === 'event' || s === 'events' || s.includes('event')) {
+      return 'IN-DEPTH CONVERSATIONS';
+    }
+    return section;
   }
 
   onExerciseClick(exercise: any) {

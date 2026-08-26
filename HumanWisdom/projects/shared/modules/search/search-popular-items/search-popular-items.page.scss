@@ -237,12 +237,16 @@
   display: flex !important;
   flex-wrap: wrap !important;
   justify-content: flex-start !important;
+  margin-left: -5px !important;
+  margin-right: -5px !important;
 }
 
 .msrow > [class*="col-"] {
   display: flex !important;
   flex-direction: column !important;
-  // margin-bottom: 10px;
+  padding-left: 5px !important;
+  padding-right: 5px !important;
+  margin-bottom: 10px !important;
 }
 
 .msrow > [class*="col-"] > a {
@@ -254,6 +258,7 @@
 
 .msrow > [class*="col-"] .box_v3_04a {
   flex-grow: 1 !important;
+  margin-bottom: 0 !important;
 }
 
 a {
