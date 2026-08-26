@@ -60,8 +60,8 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                    Life can feel like a constant balancing act — between what we want, what we have, and what we think we should have.
-                </h4>
+                    Life can feel like a constant balancing act — between what we want, what we have, and what we think we <span style="font-style:italic">should</span> have.
+      </h4>
 
                 <h4 class="mtb0px blog_desc">
                     Stress is part of the modern experience. But how we respond to it makes all the difference.
@@ -75,11 +75,12 @@
                     "What's the best way to live with less stress in life?"
                 </h4>
 
-                <h4 class="mtb0px blog_desc">
-                    33% said Change my circumstances<br>
-                    27% said Accept things as they are<br>
-                    28% said Understand my mind better<br>
-                    13% said Improve my financial situation
+                <h4 class="mtb0px blog_desc"><ul>
+                    <li>33% said <span style="font-style:italic">Change my circumstances</span></li>
+                    <li>27% said <span style="font-style:italic">Accept things as they are</span></li>
+                    <li>28% said <span style="font-style:italic">Understand my mind better</span></li>
+                    <li>13% said <span style="font-style:italic">Improve my financial situation</span></li>
+</ul>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -101,13 +102,9 @@
                 <h4 class="mtb0px blog_desc">
                     The root of stress lies within us — in how we interpret what happens, in our
                     <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/expectation">
-                        expectations
-                    </a>
-                    , and in how attached we are to our
+                        expectations</a>, and in how attached we are to our
                     <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Opinions%20and%20Beliefs">
-                        opinions and beliefs
-                    </a>
-                    .
+                        opinions and beliefs</a>.
                 </h4>
 
                 <h4 class="mtb0px blog_sub_title">
@@ -130,7 +127,7 @@
 
                     modules in the HappierMe app to see this in action.
                     
-                    ·
+                    
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -148,11 +145,13 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                    It takes courage to look inward. To ask: why am I stressed? What am I afraid of losing? What expectation am I holding onto?
+                    It takes courage to look inward. To ask: <span style="font-style:italic">why am I stressed? What am I afraid of losing? What expectation am I holding onto?</span>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                    Often, stress is simply the difference between how life is and how we want it to be. When we understand this clearly, we can accept what we cannot change — and act wisely where we can.
+                    Often, stress is simply the difference between how life is and how we want it to be.
+</h4>
+ <h4 class="mtb0px blog_desc"> When we understand this clearly, we can accept what we cannot change — and act wisely where we can.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -187,32 +186,29 @@
                 </h4>
 
                 <h4 class="mtb0px blog_sub_title">
-                    The takeaway
+                    The takeaway:
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
                     You don't always need to change your life to reduce stress — sometimes, you just need to understand your mind.
                 </h4>
 
-                <h4 class="mtb0px blog_desc blog_highlight_black">
+                <h4 class="mtb0px blog_desc ">
                     The challenges of life are inevitable, but suffering isn't.
-                </h4>
-
-                <h4 class="mtb0px blog_desc">
+                
                     Explore the HappierMe app to understand your mind, calm your emotions, and find peace from within.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
                     To explore your inner world, visit
-                    <a class="blog_highlight_peach td_underline" href="https://happierme.app/">
-                        happierme.app
+                    <a class="blog_highlight_peach td_underline" href="https://happierme.app/">happierme.app
                     </a>
                     or download the HappierMe app for free. Discover modules on
-                    <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/fear">Fear</a>,
-                    <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Conditioning">Conditioning</a>,
-                    <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/expectation">Expectations</a>,
+                    <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/fear-anxiety">Fear</a>,
+                    <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/conditioning">Conditioning</a>,
+                    <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/expectation">Expectations</a>,
                     and
-                    <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Reactive%20Mind">The Reactive Mind</a>
+                    <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/reactive-mind">The Reactive Mind</a>
                     — and begin your journey to a calmer, more aware life.
                 </h4>
                 <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/MgsYk1SZh-w?si=6U3twVXxRYf1Oe19" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
