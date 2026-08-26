@@ -41,6 +41,27 @@ body.page-teenagers .healthcare-hero-shell .absolute_desc .row .w5p {
   padding-top: 7px !important;
 }
 
+/* Wide screens: hero copy left edge = video left edge (810px centered column) */
+@media (min-width: 1400px) {
+  body.page-teenagers .healthcare-hero-shell .absolute_desc {
+    left: 0 !important;
+    right: 0 !important;
+    width: 810px !important;
+    max-width: 810px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    justify-content: flex-start !important;
+  }
+
+  body.page-teenagers .healthcare-hero-shell .absolute_desc > [class*="col-"] {
+    flex: 0 0 440px !important;
+    width: 440px !important;
+    max-width: 440px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
 body.page-teenagers main#main .section-header h2.fc_183C79 {
   color: rgba(24, 60, 121, 1);
 }
