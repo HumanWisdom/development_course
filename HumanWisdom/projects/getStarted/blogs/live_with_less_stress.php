@@ -121,9 +121,9 @@
 
                 <h4 class="mtb0px blog_desc">
                     Explore the
-                    <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Reactive%20Mind">Reactive Mind</a>
+                    <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Reactive%20Mind">"Reactive Mind"</a>
                     and
-                                       <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/fear">Understanding Fear</a>
+                                       <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/fear">"Understanding Fear"</a>
 
                     modules in the HappierMe app to see this in action.
                     
