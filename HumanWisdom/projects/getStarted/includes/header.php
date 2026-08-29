@@ -236,7 +236,7 @@ if (!hw_page_assets_flag('css', 'header_in_critical')) :
             text-decoration: none !important;
           }
         </style>
-        <a class="btn_tff btn_tff_tn btn_popup no-underline-hover" id="headerTryForFree" href="https://onelink.to/qsptex">Try for free</a>
+        <a class="btn_tff btn_tff_tn btn_popup no-underline-hover" id="headerTryForFree" href="https://onelink.to/hsnt8b">Try for free</a>
         <i class="mobile-nav-toggle mobile-nav-show bi bi-list" role="button" aria-label="Open menu" tabindex="0"></i>
       </div>
 
