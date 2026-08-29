@@ -338,9 +338,8 @@ img { max-width: 100%; display: block; }
   vertical-align: bottom;
   height: 1.3em;
   overflow: hidden;
-  min-width: 0 !important;
   text-align: right !important;
-  transition: none;
+  transition: none !important;
 }
 .web_home_divlanding .scrolling-word {
   position: absolute !important;

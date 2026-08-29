@@ -5457,7 +5457,13 @@ input[type="password" i]::-ms-reveal {
       vertical-align: bottom;
       min-width: 0;
       text-align: left;
-      transition: width 0.35s ease;
+      transition: none;
+        }
+
+        /* Landing hero uses critical-lcp.css; skip global scroll-word rules there */
+        .web_home_divlanding .scrolling-words,
+        .web_home_divlanding .scrolling-word {
+          transition: none !important;
         }
 
    

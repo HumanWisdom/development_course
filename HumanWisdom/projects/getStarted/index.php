@@ -535,7 +535,10 @@ $hw_lcp_banner_mobile_srcset = hw_lcp_image_srcset('banner_mobile');
     var verbEl = document.querySelector('#hw-website-title .hero-title-verb');
     if (!verbEl) return;
     var thinkW = Math.ceil(verbEl.getBoundingClientRect().width || verbEl.offsetWidth || 0);
-    if (thinkW > 0) container.style.width = thinkW + 'px';
+    if (thinkW > 0) {
+      container.style.width = thinkW + 'px';
+      container.style.minWidth = thinkW + 'px';
+    }
   }
 
   function resetWords() {
@@ -590,18 +593,20 @@ $hw_lcp_banner_mobile_srcset = hw_lcp_image_srcset('banner_mobile');
   document.addEventListener('visibilitychange', function() {
     if (document.visibilityState === 'visible') {
       resetWords();
+      lockVerbColumnWidth();
       startTimer();
     } else {
       clearInterval(timer);
     }
   });
 
-  window.addEventListener('resize', function() {
-    lockVerbColumnWidth();
-  });
-
   resetWords();
+  lockVerbColumnWidth();
   startTimer();
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(lockVerbColumnWidth);
+  }
+  window.addEventListener('resize', lockVerbColumnWidth);
   </script>
 
   </body>
