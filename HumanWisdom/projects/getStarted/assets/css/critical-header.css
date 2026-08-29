@@ -186,3 +186,27 @@
     text-decoration: none !important;
     white-space: nowrap;
   }
+
+/* Above-fold icons only (menu, close, scroll-top). Full bootstrap-icons.css loads later on landing. */
+@font-face {
+  font-display: swap;
+  font-family: "bootstrap-icons";
+  src: url("../vendor/bootstrap-icons/fonts/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6") format("woff2");
+}
+.bi::before,
+[class^="bi-"]::before,
+[class*=" bi-"]::before {
+  display: inline-block;
+  font-family: bootstrap-icons !important;
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: -.125em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.bi-list::before { content: "\f479"; }
+.bi-x::before { content: "\f62a"; }
+.bi-arrow-up-short::before { content: "\f145"; }

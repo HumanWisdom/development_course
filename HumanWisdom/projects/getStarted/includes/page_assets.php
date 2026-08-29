@@ -22,6 +22,10 @@ if (!function_exists('hw_page_assets_profiles')) {
                     'font_stacks' => true,
                     'font_colour' => true,
                     'style_hb' => true,
+                    'bootstrap_css' => true,
+                    'bootstrap_icons' => true,
+                    'site_css_head' => true,
+                    'site_css_deferred' => false,
                 ],
                 'js' => [
                     'aos' => true,
@@ -58,6 +62,10 @@ if (!function_exists('hw_page_assets_profiles')) {
                     'font_stacks' => false,
                     'font_colour' => true,
                     'style_hb' => false,
+                    'bootstrap_css' => false,
+                    'bootstrap_icons' => false,
+                    'site_css_head' => false,
+                    'site_css_deferred' => true,
                 ],
                 'js' => [
                     'aos' => true,
@@ -78,7 +86,7 @@ if (!function_exists('hw_page_assets_profiles')) {
                 'ui' => [
                     'preloader' => false,
                 ],
-                'schedule' => 'domcontentloaded',
+                'schedule' => 'idle',
             ],
         ];
     }
@@ -172,6 +180,17 @@ if (!function_exists('hw_page_assets_style_urls')) {
             'owl' => 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css',
             'owl_theme' => 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css',
             'modal_tabs_defer' => hw_asset_url('../assets/css/modal-tabs-defer.css'),
+            'bootstrap_css' => 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css',
+            'bootstrap_icons' => hw_asset_url('../assets/vendor/bootstrap-icons/bootstrap-icons.css'),
+            'site_styles' => [
+                hw_asset_url('../assets/css/landing.css'),
+                hw_asset_url('../assets/css/main.css'),
+                hw_asset_url('../assets/css/home.css'),
+                hw_asset_url('../assets/css/index.css'),
+                hw_asset_url('../assets/css/responsive.css'),
+                hw_asset_url('../assets/css/index-inline.css'),
+                hw_asset_url('../assets/font/font_colour.css'),
+            ],
         ];
     }
 }

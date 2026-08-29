@@ -5,8 +5,10 @@ require_once('./includes/page_assets.php');
 require_once('./includes/media_config.php');
 hw_page_assets_configure('landing');
 
-$hw_lcp_banner_desktop = hw_lcp_image_url('banner_desktop');
-$hw_lcp_banner_mobile = hw_lcp_image_url('banner_mobile');
+$hw_lcp_banner_desktop = hw_lcp_image_url('banner_desktop', '1x');
+$hw_lcp_banner_mobile = hw_lcp_image_url('banner_mobile', '1x');
+$hw_lcp_banner_desktop_srcset = hw_lcp_image_srcset('banner_desktop');
+$hw_lcp_banner_mobile_srcset = hw_lcp_image_srcset('banner_mobile');
 ?>
 
 <!DOCTYPE html>
@@ -53,16 +55,18 @@ $hw_lcp_banner_mobile = hw_lcp_image_url('banner_mobile');
     <meta charset="utf-8" />
   
 
-    <!-- LCP: compressed WebP (~46KB). Do not preload both viewports. -->
-    <link rel="preload" as="image" type="image/webp" href="<?= htmlspecialchars($hw_lcp_banner_desktop, ENT_QUOTES, 'UTF-8'); ?>" fetchpriority="high" media="(min-width: 821px)" />
-    <link rel="preload" as="image" type="image/webp" href="<?= htmlspecialchars($hw_lcp_banner_mobile, ENT_QUOTES, 'UTF-8'); ?>" fetchpriority="high" media="(max-width: 820px)" />
+    <!-- LCP: preload 1x WebP per viewport; 2x served via srcset on retina only -->
+    <link rel="preload" as="image" type="image/webp" href="<?= htmlspecialchars($hw_lcp_banner_desktop, ENT_QUOTES, 'UTF-8'); ?>" imagesrcset="<?= $hw_lcp_banner_desktop_srcset ?>" imagesizes="<?= hw_lcp_image_sizes('banner_desktop'); ?>" fetchpriority="high" media="(min-width: 821px)" />
+    <link rel="preload" as="image" type="image/webp" href="<?= htmlspecialchars($hw_lcp_banner_mobile, ENT_QUOTES, 'UTF-8'); ?>" imagesrcset="<?= $hw_lcp_banner_mobile_srcset ?>" imagesizes="<?= hw_lcp_image_sizes('banner_mobile'); ?>" fetchpriority="high" media="(max-width: 820px)" />
     <title>Mental Wellbeing, Self-awareness and Life Skills | HappierMe</title>
     
     <!-- vendor_header -->
     <?php include('./includes/vendor_header.php'); ?>
     <!-- /vendor_header -->
     
+    <?php if (hw_page_assets_flag('css', 'site_css_head')) : ?>
     <?php hw_defer_stylesheet('assets/css/index-inline.css'); ?>
+    <?php endif; ?>
   </head>
 <body id="body" style="padding:0px !important">
 
@@ -79,9 +83,12 @@ $hw_lcp_banner_mobile = hw_lcp_image_url('banner_mobile');
           <div class="div">
             <div class="div-2">
               <picture>
-                <source media="(min-width: 821px)" type="image/webp" srcset="<?= htmlspecialchars($hw_lcp_banner_desktop, ENT_QUOTES, 'UTF-8'); ?>" />
+                <source media="(min-width: 821px)" type="image/webp" srcset="<?= $hw_lcp_banner_desktop_srcset ?>" sizes="<?= hw_lcp_image_sizes('banner_desktop'); ?>" />
+                <source media="(max-width: 820px)" type="image/webp" srcset="<?= $hw_lcp_banner_mobile_srcset ?>" sizes="<?= hw_lcp_image_sizes('banner_mobile'); ?>" />
                 <img class="new-app-adults-teen"
                   src="<?= htmlspecialchars($hw_lcp_banner_mobile, ENT_QUOTES, 'UTF-8'); ?>"
+                  srcset="<?= $hw_lcp_banner_mobile_srcset ?>"
+                  sizes="<?= hw_lcp_image_sizes('banner_mobile'); ?>"
                   width="331" height="480"
                   fetchpriority="high" decoding="async" alt="HappierMe app" />
               </picture>

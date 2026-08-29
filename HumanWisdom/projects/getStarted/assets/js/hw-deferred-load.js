@@ -11,6 +11,7 @@
     var cssFlags = cfg.css || {};
     var urls = cfg.urls || {};
     var styleUrls = cfg.styleUrls || {};
+    var siteStylesPromise = null;
 
     function loadScript(src) {
         return new Promise(function (resolve, reject) {
@@ -54,6 +55,42 @@
         });
     }
 
+    function loadSiteStyles() {
+        if (!cssFlags.site_css_deferred) {
+            return Promise.resolve();
+        }
+        if (siteStylesPromise) {
+            return siteStylesPromise;
+        }
+
+        var chain = Promise.resolve();
+        if (styleUrls.bootstrap_css) {
+            chain = chain.then(function () {
+                return loadStylesheet(styleUrls.bootstrap_css);
+            });
+        }
+        if (styleUrls.bootstrap_icons) {
+            chain = chain.then(function () {
+                return loadStylesheet(styleUrls.bootstrap_icons);
+            });
+        }
+        if (Array.isArray(styleUrls.site_styles)) {
+            styleUrls.site_styles.forEach(function (href) {
+                chain = chain.then(function () {
+                    return loadStylesheet(href);
+                });
+            });
+        }
+
+        siteStylesPromise = chain.catch(function (err) {
+            siteStylesPromise = null;
+            if (typeof console !== "undefined" && console.warn) {
+                console.warn("hw-deferred-load site styles:", err);
+            }
+        });
+        return siteStylesPromise;
+    }
+
     function whenIdle(fn) {
         if (cfg.schedule === "immediate") {
             fn();
@@ -75,7 +112,7 @@
     }
 
     function loadDeferredAssets() {
-        var chain = Promise.resolve();
+        var chain = loadSiteStyles();
 
         if (cssFlags.modal_tabs_defer && styleUrls.modal_tabs_defer) {
             chain = chain.then(function () {
@@ -173,6 +210,17 @@
             }
         });
     }
+
+    document.addEventListener("hw:chunk-loaded", function () {
+        loadSiteStyles();
+    });
+    document.addEventListener(
+        "pointerdown",
+        function () {
+            loadSiteStyles();
+        },
+        { once: true, capture: true }
+    );
 
     if (document.readyState === "complete") {
         whenIdle(loadDeferredAssets);
