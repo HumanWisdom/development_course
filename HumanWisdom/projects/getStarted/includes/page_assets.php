@@ -162,7 +162,7 @@ if (!function_exists('hw_page_assets_script_urls')) {
             'validate' => hw_asset_url('../assets/vendor/php-email-form/validate.js'),
             'owl' => 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js',
             'fontawesome_kit' => 'https://kit.fontawesome.com/e7db147a51.js',
-            'google_fonts_deferred' => 'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap',
+            'google_fonts_deferred' => 'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=optional',
         ];
     }
 }

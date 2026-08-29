@@ -192,7 +192,7 @@ if (!hw_page_assets_flag('css', 'header_in_critical')) :
 
       <div class="col-lg-2 col-md-2 col-sm-4 col-xs-4 col-4 p0">
         <a class="" href="../index.php">
-          <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/logo_new.svg" class="img-responsive" alt="logo">
+          <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/logo_new.svg" class="img-responsive" width="120" height="48" alt="logo">
         </a>
       </div>
 
@@ -215,19 +215,19 @@ if (!hw_page_assets_flag('css', 'header_in_critical')) :
           </ul>
           <div class="mobile-nav-social" aria-label="Social media">
             <a href="https://facebook.com/happiermeapp/" class="mobile-nav-social-link" target="_blank" rel="noopener noreferrer">
-              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/web_facebook.svg" alt="facebook">
+              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/web_facebook.svg" width="18" height="18" alt="facebook">
             </a>
             <a href="https://twitter.com/happiermeapp" class="mobile-nav-social-link" target="_blank" rel="noopener noreferrer">
-              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/web_twitter.svg" alt="twitter">
+              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/web_twitter.svg" width="18" height="18" alt="twitter">
             </a>
             <a href="https://www.instagram.com/happierme.app/" class="mobile-nav-social-link" target="_blank" rel="noopener noreferrer">
-              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/web_instagram.svg" alt="instagram">
+              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/web_instagram.svg" width="18" height="18" alt="instagram">
             </a>
             <a href="https://www.linkedin.com/company/humanwisdom" class="mobile-nav-social-link" target="_blank" rel="noopener noreferrer">
-              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/web_linkedin.svg" alt="linkedin">
+              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/web_linkedin.svg" width="18" height="18" alt="linkedin">
             </a>
             <a href="https://www.youtube.com/channel/UCdNujB6X0slYKxLSdWuqCrA" class="mobile-nav-social-link" target="_blank" rel="noopener noreferrer">
-              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/web_youtube.svg" alt="youtube">
+              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/web_youtube.svg" width="18" height="18" alt="youtube">
             </a>
           </div>
         </nav>

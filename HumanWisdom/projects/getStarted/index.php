@@ -551,7 +551,6 @@ $hw_lcp_banner_mobile_srcset = hw_lcp_image_srcset('banner_mobile');
   words[0].style.transform = '';
   words[0].style.opacity = '';
   words[0].classList.add('active');
-  lockVerbColumnWidth();
   }
 
   function showNext() {
@@ -600,10 +599,6 @@ $hw_lcp_banner_mobile_srcset = hw_lcp_image_srcset('banner_mobile');
   window.addEventListener('resize', function() {
     lockVerbColumnWidth();
   });
-
-  if (document.fonts && document.fonts.ready) {
-    document.fonts.ready.then(lockVerbColumnWidth);
-  }
 
   resetWords();
   startTimer();
