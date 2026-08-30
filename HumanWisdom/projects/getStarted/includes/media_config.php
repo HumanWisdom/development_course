@@ -35,6 +35,33 @@ if (!function_exists('hw_lcp_image_map')) {
     }
 }
 
+if (!function_exists('hw_lcp_image_path')) {
+    /**
+     * @param 'banner_desktop'|'banner_mobile' $key
+     * @param '1x'|'2x' $density
+     */
+    function hw_lcp_image_path($key, $density = '1x')
+    {
+        $map = hw_lcp_image_map();
+        if (!isset($map[$key][$density])) {
+            return null;
+        }
+
+        $relativePath = $map[$key][$density];
+        $fullPath = realpath(__DIR__ . '/../' . ltrim($relativePath, '/'));
+
+        return ($fullPath !== false && is_file($fullPath)) ? $fullPath : null;
+    }
+}
+
+if (!function_exists('hw_lcp_image_version')) {
+    function hw_lcp_image_version($key, $density = '1x')
+    {
+        $fullPath = hw_lcp_image_path($key, $density);
+        return $fullPath ? (int) filemtime($fullPath) : 0;
+    }
+}
+
 if (!function_exists('hw_lcp_image_url')) {
     /**
      * @param 'banner_desktop'|'banner_mobile' $key
@@ -47,11 +74,18 @@ if (!function_exists('hw_lcp_image_url')) {
             return '';
         }
 
-        if (!function_exists('hw_asset_url')) {
-            require_once __DIR__ . '/cache_buster.php';
+        $version = hw_lcp_image_version($key, $density);
+        if ($version <= 0) {
+            return '';
         }
 
-        return hw_asset_url($map[$key][$density]);
+        $query = http_build_query([
+            'k' => $key,
+            'd' => $density,
+            'v' => $version,
+        ]);
+
+        return 'lcp-image.php?' . $query;
     }
 }
 

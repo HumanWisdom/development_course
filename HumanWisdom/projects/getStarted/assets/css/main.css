@@ -242,7 +242,8 @@ textarea {
   transition: all 0.4s;
 }
 
-.scroll-top i {
+.scroll-top i,
+.scroll-top .hw-ui-icon {
   font-size: 24px;
   color: #fff;
   line-height: 0;
