@@ -48,18 +48,8 @@ hw_cdn_preconnect_tags();
 
 <?php if (hw_page_assets_flag('css', 'site_css_head')) : ?>
 <?php
-hw_defer_stylesheet('../assets/css/landing.css');
-hw_defer_stylesheet('../assets/css/main.css');
-hw_defer_stylesheet('../assets/css/home.css');
-hw_defer_stylesheet('../assets/css/index.css');
-hw_defer_stylesheet('../assets/css/responsive.css');
-if (hw_page_assets_flag('css', 'font_stacks')) {
-    hw_defer_stylesheet('../assets/font/font_colour.css');
-    hw_defer_stylesheet('../assets/font/font_size.css');
-    hw_defer_stylesheet('../assets/font/font_weight.css');
-    hw_defer_stylesheet('../assets/font/line_height.css');
-} elseif (hw_page_assets_flag('css', 'font_colour')) {
-    hw_defer_stylesheet('../assets/font/font_colour.css');
+foreach (hw_page_assets_site_style_urls() as $siteStyleUrl) {
+    hw_defer_stylesheet($siteStyleUrl);
 }
 ?>
 <?php endif; ?>

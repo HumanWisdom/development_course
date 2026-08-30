@@ -63,10 +63,6 @@ $hw_lcp_banner_mobile_srcset = hw_lcp_image_srcset('banner_mobile');
     <!-- vendor_header -->
     <?php include('./includes/vendor_header.php'); ?>
     <!-- /vendor_header -->
-    
-    <?php if (hw_page_assets_flag('css', 'site_css_head')) : ?>
-    <?php hw_defer_stylesheet('assets/css/index-inline.css'); ?>
-    <?php endif; ?>
   </head>
 <body id="body" style="padding:0px !important">
 

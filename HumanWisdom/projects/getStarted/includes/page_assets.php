@@ -59,7 +59,7 @@ if (!function_exists('hw_page_assets_profiles')) {
                     'google_fonts_head' => false,
                     'vendor_debug_inline' => false,
                     'modal_tabs_defer' => true,
-                    'font_stacks' => false,
+                    'font_stacks' => true,
                     'font_colour' => true,
                     'style_hb' => false,
                     'bootstrap_css' => false,
@@ -103,6 +103,7 @@ if (!function_exists('hw_page_assets_configure')) {
 
         if (is_string($profile) && isset($profiles[$profile])) {
             $base = hw_page_assets_merge($base, $profiles[$profile]);
+            $base['profile'] = $profile;
         } elseif (is_array($profile)) {
             $base = hw_page_assets_merge($base, $profile);
         }
@@ -167,12 +168,68 @@ if (!function_exists('hw_page_assets_script_urls')) {
     }
 }
 
+if (!function_exists('hw_page_assets_site_style_urls')) {
+  /**
+   * Deferred site CSS per page profile.
+   * landing = index.php only (no home.css; index-inline loads last).
+   */
+    function hw_page_assets_site_style_urls($profile = null)
+    {
+        if (!function_exists('hw_asset_url')) {
+            require_once __DIR__ . '/cache_buster.php';
+        }
+
+        if ($profile === null) {
+            $assets = hw_page_assets_get();
+            $profile = $assets['profile'] ?? 'standard';
+        }
+
+        $fontColour = hw_asset_url('../assets/font/font_colour.css');
+        $fontStacks = [
+            hw_asset_url('../assets/font/font_size.css'),
+            hw_asset_url('../assets/font/font_weight.css'),
+            hw_asset_url('../assets/font/line_height.css'),
+        ];
+
+        if ($profile === 'landing') {
+            /* index-inline.css must load last — it overrides landing/main/index/responsive */
+            return [
+                hw_asset_url('../assets/css/landing.css'),
+                hw_asset_url('../assets/css/main.css'),
+                hw_asset_url('../assets/css/index.css'),
+                hw_asset_url('../assets/css/responsive.css'),
+                hw_asset_url('../assets/css/index-inline.css'),
+                $fontColour,
+                $fontStacks[0],
+                $fontStacks[1],
+                $fontStacks[2],
+            ];
+        }
+
+        return [
+            hw_asset_url('../assets/css/landing.css'),
+            hw_asset_url('../assets/css/main.css'),
+            hw_asset_url('../assets/css/home.css'),
+            hw_asset_url('../assets/css/index.css'),
+            hw_asset_url('../assets/css/responsive.css'),
+            hw_asset_url('../assets/css/index-inline.css'),
+            $fontColour,
+            $fontStacks[0],
+            $fontStacks[1],
+            $fontStacks[2],
+        ];
+    }
+}
+
 if (!function_exists('hw_page_assets_style_urls')) {
     function hw_page_assets_style_urls()
     {
         if (!function_exists('hw_asset_url')) {
             require_once __DIR__ . '/cache_buster.php';
         }
+
+        $assets = hw_page_assets_get();
+        $profile = $assets['profile'] ?? 'standard';
 
         return [
             'glightbox' => hw_asset_url('../assets/vendor/glightbox/css/glightbox.min.css'),
@@ -182,15 +239,7 @@ if (!function_exists('hw_page_assets_style_urls')) {
             'modal_tabs_defer' => hw_asset_url('../assets/css/modal-tabs-defer.css'),
             'bootstrap_css' => 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css',
             'bootstrap_icons' => hw_asset_url('../assets/vendor/bootstrap-icons/bootstrap-icons.css'),
-            'site_styles' => [
-                hw_asset_url('../assets/css/landing.css'),
-                hw_asset_url('../assets/css/main.css'),
-                hw_asset_url('../assets/css/home.css'),
-                hw_asset_url('../assets/css/index.css'),
-                hw_asset_url('../assets/css/responsive.css'),
-                hw_asset_url('../assets/css/index-inline.css'),
-                hw_asset_url('../assets/font/font_colour.css'),
-            ],
+            'site_styles' => hw_page_assets_site_style_urls($profile),
         ];
     }
 }
