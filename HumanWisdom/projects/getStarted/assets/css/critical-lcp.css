@@ -376,6 +376,67 @@ img { max-width: 100%; display: block; }
   .rating-row { justify-content: center; margin: 0; }
 }
 
+/* ORCHA strip (below hero) — critical for desktop Speed Index */
+#main.frame > .frame-wrapper.web_home_divlanding + .orcha-strip {
+  margin-top: 0 !important;
+}
+.orcha-strip {
+  width: 100%;
+  background: rgba(255, 247, 230, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 80px;
+  padding: 30px 40px;
+  min-height: 105px;
+  box-sizing: border-box;
+  contain: layout style paint;
+}
+.orcha-strip-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-shrink: 0;
+}
+.orcha-strip-orcha img {
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+.orcha-strip-macmillan img {
+  width: 120px;
+  height: 36px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+.orcha-strip-mind img {
+  height: 54px;
+  width: auto;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+.orcha-strip-item span {
+  font-family: "Poppins", Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #000;
+  line-height: 1.4;
+  max-width: 156px;
+}
+.orcha-strip-macmillan span {
+  max-width: 203px;
+}
+@media (min-width: 1200px) {
+  .orcha-strip { gap: 80px; padding: 30px 40px; }
+}
+@media (max-width: 1024px) {
+  .orcha-strip { gap: 40px; padding: 30px 24px; }
+  .orcha-strip-item span { max-width: 140px; }
+  .orcha-strip-macmillan span { max-width: 203px; }
+}
+
 /* Below-fold chunk placeholders (reduce CLS when HTML injects) */
 .coaches-section.index-lazy-section {
   min-height: 420px;

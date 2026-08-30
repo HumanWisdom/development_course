@@ -58,7 +58,6 @@ $hw_lcp_banner_mobile_srcset = hw_lcp_image_srcset('banner_mobile');
     <!-- LCP: preload 1x WebP per viewport; 2x served via srcset on retina only -->
     <link rel="preload" as="image" type="image/webp" href="<?= htmlspecialchars($hw_lcp_banner_desktop, ENT_QUOTES, 'UTF-8'); ?>" imagesrcset="<?= $hw_lcp_banner_desktop_srcset ?>" imagesizes="<?= hw_lcp_image_sizes('banner_desktop'); ?>" fetchpriority="high" media="(min-width: 821px)" />
     <link rel="preload" as="image" type="image/webp" href="<?= htmlspecialchars($hw_lcp_banner_mobile, ENT_QUOTES, 'UTF-8'); ?>" imagesrcset="<?= $hw_lcp_banner_mobile_srcset ?>" imagesizes="<?= hw_lcp_image_sizes('banner_mobile'); ?>" fetchpriority="high" media="(max-width: 820px)" />
-    <title>Mental Wellbeing, Self-awareness and Life Skills | HappierMe</title>
     
     <!-- vendor_header -->
     <?php include('./includes/vendor_header.php'); ?>
@@ -125,6 +124,8 @@ $hw_lcp_banner_mobile_srcset = hw_lcp_image_srcset('banner_mobile');
           </div>
         </div>
       </div>
+
+      <?php include __DIR__ . '/includes/index/orcha_strip.php'; ?>
 
       <!-- Progressive HTML: sections load when scrolled into view (see index-html-chunks.js) -->
       <div class="index-html-chunk" data-hw-chunk="1" aria-busy="true"></div>
