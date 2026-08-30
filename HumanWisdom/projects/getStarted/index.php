@@ -90,7 +90,7 @@ $hw_lcp_banner_mobile_srcset = hw_lcp_image_srcset('banner_mobile');
           <div class="div-3">
                  <!-- rating row -->
                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 pt_18px">
-                  <h3 class="mtb0px fs_12px fw_400 lh_140p fc_000000 ta_lc mb_16px rating-row">
+                  <p class="mtb0px fs_12px fw_400 lh_140p fc_000000 ta_lc mb_16px rating-row" role="group" aria-label="App store rating">
                     <span class="rating_a" aria-hidden="true">
                       <span class="hero-star">★</span><span class="hero-star">★</span><span class="hero-star">★</span><span class="hero-star">★</span><span class="hero-star">★</span>
                     </span>
@@ -101,7 +101,7 @@ $hw_lcp_banner_mobile_srcset = hw_lcp_image_srcset('banner_mobile');
                       4.8
                     </span>
                     App store rating
-                  </h3>
+                  </p>
                 </div>
                 <div class="frame-wrapper-2">
                   <div class="div-4">
@@ -110,7 +110,7 @@ $hw_lcp_banner_mobile_srcset = hw_lcp_image_srcset('banner_mobile');
                      
                     </div>
                     <p class="text-wrapper-4" id="hw-website-subtitle">
-                      Feel calmer. Build happier <br class="subtitle-br-m">relationships.<br class="subtitle-br-d"> Develop <a href="#" class="human-skills-link" data-bs-toggle="modal" data-bs-target="#humanSkillsModal" role="button" aria-haspopup="dialog" id="lifeskills">these skills</a><br class="subtitle-br-m"> to create the life you want.
+                      Feel calmer. Build happier <br class="subtitle-br-m">relationships.<br class="subtitle-br-d"> Develop <button type="button" class="human-skills-link" data-bs-toggle="modal" data-bs-target="#humanSkillsModal" aria-haspopup="dialog" id="lifeskills">these skills</button><br class="subtitle-br-m"> to create the life you want.
                     </p>
                   </div>
                 </div>

@@ -173,8 +173,12 @@ if (!hw_page_assets_flag('css', 'header_in_critical')) :
   }
   #teenagersHeaderClick .badge_new h6,
   #teenagersHeaderClick .badge_new h6:hover,
+  #teenagersHeaderClick .badge_new_text,
+  #teenagersHeaderClick .badge_new_text:hover,
   #teenagersHeaderClick_mobile .badge_new h6,
-  #teenagersHeaderClick_mobile .badge_new h6:hover {
+  #teenagersHeaderClick_mobile .badge_new h6:hover,
+  #teenagersHeaderClick_mobile .badge_new_text,
+  #teenagersHeaderClick_mobile .badge_new_text:hover {
     margin: 0;
     font-size: 6px;
     font-weight: 600;
@@ -205,7 +209,7 @@ if (!hw_page_assets_flag('css', 'header_in_critical')) :
             <li><a href="../pages/about_us.php" id="AboutUs" class="nav">About us</a></li>
             <li><a href="../blogs/blog_index.php" id="blogs" class="nav">Blog</a></li>
             <li><a id="pricing" class="nav" href="../index.php#div_subscription">Pricing</a></li>
-            <li><a id="events" class="nav" href="https://happierme.app/adults/events" target="_self" rel="noopener noreferrer" id="events">Events</a></li>
+            <li><a id="events" class="nav" href="https://happierme.app/adults/events" target="_self" rel="noopener noreferrer">Events</a></li>
             <li class="header_nav_mobile_only">
               <a id="teenagersHeaderClick_mobile" class="nav" href="../pages/teenagers.php">For Teenagers</a>
             </li>
@@ -237,7 +241,7 @@ if (!hw_page_assets_flag('css', 'header_in_critical')) :
           }
         </style>
         <a class="btn_tff btn_tff_tn btn_popup no-underline-hover" id="headerTryForFree" href="https://onelink.to/hsnt8b">Try for free</a>
-        <i class="mobile-nav-toggle mobile-nav-show bi bi-list" role="button" aria-label="Open menu" tabindex="0"></i>
+        <button type="button" class="mobile-nav-toggle mobile-nav-show bi bi-list" aria-label="Open menu"></button>
       </div>
 
     </div>
@@ -245,11 +249,11 @@ if (!hw_page_assets_flag('css', 'header_in_critical')) :
 
   <nav class="header_subnav" aria-label="HappierMe for">
     <div class="header_subnav_inner">
-      <a id="teenagersHeaderClick" class="nav" href="../pages/teenagers.php">
+      <a id="teenagersHeaderClick" class="nav" href="../pages/teenagers.php" aria-label="For Teenagers, new">
         For Teenagers
-        <div class="badge_new">
-          <h6 class="mtb0px fs_6px fw_600 lh_130p fc_ffffff">NEW</h6>
-        </div>
+        <span class="badge_new" aria-hidden="true">
+          <span class="badge_new_text mtb0px fs_6px fw_600 lh_130p fc_ffffff">NEW</span>
+        </span>
       </a>
       <a id="work" href="../pages/work.php">For Work</a>
       <a id="healthcare" href="../pages/healthcare.php">For Healthcare</a>

@@ -175,8 +175,12 @@
   }
   #teenagersHeaderClick .badge_new h6,
   #teenagersHeaderClick .badge_new h6:hover,
+  #teenagersHeaderClick .badge_new_text,
+  #teenagersHeaderClick .badge_new_text:hover,
   #teenagersHeaderClick_mobile .badge_new h6,
-  #teenagersHeaderClick_mobile .badge_new h6:hover {
+  #teenagersHeaderClick_mobile .badge_new h6:hover,
+  #teenagersHeaderClick_mobile .badge_new_text,
+  #teenagersHeaderClick_mobile .badge_new_text:hover {
     margin: 0;
     font-size: 6px;
     font-weight: 600;

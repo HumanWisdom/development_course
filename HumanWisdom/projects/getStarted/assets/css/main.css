@@ -834,7 +834,7 @@ label>input[type="checkbox"]+*::before {
     filter: brightness(0);
   }
 
-  .mobile-nav-show {
+.mobile-nav-show {
     color: #CB6171;
     font-size: 28px;
     cursor: pointer;
@@ -842,6 +842,9 @@ label>input[type="checkbox"]+*::before {
     transition: 0.5s;
     z-index: 9999;
     margin: 0 10px 0 20px;
+    background: none;
+    border: 0;
+    padding: 0;
   }
 
   .mobile-nav-hide:not(.mobile-nav-close) {
