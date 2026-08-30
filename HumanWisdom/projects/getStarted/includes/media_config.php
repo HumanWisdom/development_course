@@ -64,6 +64,8 @@ if (!function_exists('hw_lcp_image_version')) {
 
 if (!function_exists('hw_lcp_image_url')) {
     /**
+     * Versioned static WebP (served directly by the web server — faster than PHP proxy).
+     *
      * @param 'banner_desktop'|'banner_mobile' $key
      * @param '1x'|'2x' $density
      */
@@ -74,18 +76,59 @@ if (!function_exists('hw_lcp_image_url')) {
             return '';
         }
 
-        $version = hw_lcp_image_version($key, $density);
-        if ($version <= 0) {
-            return '';
+        if (!function_exists('hw_asset_url')) {
+            require_once __DIR__ . '/cache_buster.php';
         }
 
-        $query = http_build_query([
-            'k' => $key,
-            'd' => $density,
-            'v' => $version,
-        ]);
+        return hw_asset_url($map[$key][$density]);
+    }
+}
 
-        return 'lcp-image.php?' . $query;
+if (!function_exists('hw_lcp_absolute_url')) {
+    function hw_lcp_absolute_url($url)
+    {
+        if ($url === '' || preg_match('#^https?://#i', $url)) {
+            return $url;
+        }
+
+        $scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
+        $host = $_SERVER['HTTP_HOST'] ?? 'happierme.app';
+        $base = str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? '/'));
+        $base = ($base === '/' || $base === '.') ? '' : rtrim($base, '/');
+
+        if ($url[0] === '/') {
+            return $scheme . '://' . $host . $url;
+        }
+
+        return $scheme . '://' . $host . $base . '/' . ltrim($url, '/');
+    }
+}
+
+if (!function_exists('hw_lcp_send_preload_headers')) {
+    /**
+     * HTTP Link preload hints — earliest possible LCP discovery (before HTML body).
+     */
+    function hw_lcp_send_preload_headers()
+    {
+        if (headers_sent()) {
+            return;
+        }
+
+        $desktop = hw_lcp_image_url('banner_desktop', '1x');
+        $mobile = hw_lcp_image_url('banner_mobile', '1x');
+
+        if ($desktop !== '') {
+            header(
+                'Link: <' . hw_lcp_absolute_url($desktop) . '>; rel=preload; as=image; type=image/webp; media="(min-width: 821px)"; fetchpriority=high',
+                false
+            );
+        }
+        if ($mobile !== '') {
+            header(
+                'Link: <' . hw_lcp_absolute_url($mobile) . '>; rel=preload; as=image; type=image/webp; media="(max-width: 820px)"; fetchpriority=high',
+                false
+            );
+        }
     }
 }
 

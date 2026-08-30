@@ -9,11 +9,17 @@ $hw_lcp_banner_desktop = hw_lcp_image_url('banner_desktop', '1x');
 $hw_lcp_banner_mobile = hw_lcp_image_url('banner_mobile', '1x');
 $hw_lcp_banner_desktop_srcset = hw_lcp_image_srcset('banner_desktop');
 $hw_lcp_banner_mobile_srcset = hw_lcp_image_srcset('banner_mobile');
+hw_lcp_send_preload_headers();
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
  <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- LCP: discover image before title, schema, and critical CSS -->
+  <link rel="preload" as="image" type="image/webp" href="<?= htmlspecialchars($hw_lcp_banner_desktop, ENT_QUOTES, 'UTF-8'); ?>" imagesrcset="<?= $hw_lcp_banner_desktop_srcset ?>" imagesizes="<?= hw_lcp_image_sizes('banner_desktop'); ?>" fetchpriority="high" media="(min-width: 821px)" />
+  <link rel="preload" as="image" type="image/webp" href="<?= htmlspecialchars($hw_lcp_banner_mobile, ENT_QUOTES, 'UTF-8'); ?>" imagesrcset="<?= $hw_lcp_banner_mobile_srcset ?>" imagesizes="<?= hw_lcp_image_sizes('banner_mobile'); ?>" fetchpriority="high" media="(max-width: 820px)" />
   <title>Mental Wellbeing, Self-awareness and Life Skills | HappierMe</title>
   <meta name="title" content="Mental Wellbeing, Self-awareness and Life Skills | HappierMe">
   <meta name="description"
@@ -51,14 +57,8 @@ $hw_lcp_banner_mobile_srcset = hw_lcp_image_srcset('banner_mobile');
 
   <!--Canonical Tag-->
   <link rel="canonical" href="https://happierme.app" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta charset="utf-8" />
   
 
-    <!-- LCP: preload 1x WebP per viewport; 2x served via srcset on retina only -->
-    <link rel="preload" as="image" type="image/webp" href="<?= htmlspecialchars($hw_lcp_banner_desktop, ENT_QUOTES, 'UTF-8'); ?>" imagesrcset="<?= $hw_lcp_banner_desktop_srcset ?>" imagesizes="<?= hw_lcp_image_sizes('banner_desktop'); ?>" fetchpriority="high" media="(min-width: 821px)" />
-    <link rel="preload" as="image" type="image/webp" href="<?= htmlspecialchars($hw_lcp_banner_mobile, ENT_QUOTES, 'UTF-8'); ?>" imagesrcset="<?= $hw_lcp_banner_mobile_srcset ?>" imagesizes="<?= hw_lcp_image_sizes('banner_mobile'); ?>" fetchpriority="high" media="(max-width: 820px)" />
-    
     <!-- vendor_header -->
     <?php include('./includes/vendor_header.php'); ?>
     <!-- /vendor_header -->
@@ -81,11 +81,11 @@ $hw_lcp_banner_mobile_srcset = hw_lcp_image_srcset('banner_mobile');
                 <source media="(min-width: 821px)" type="image/webp" srcset="<?= $hw_lcp_banner_desktop_srcset ?>" sizes="<?= hw_lcp_image_sizes('banner_desktop'); ?>" />
                 <source media="(max-width: 820px)" type="image/webp" srcset="<?= $hw_lcp_banner_mobile_srcset ?>" sizes="<?= hw_lcp_image_sizes('banner_mobile'); ?>" />
                 <img class="new-app-adults-teen"
-                  src="<?= htmlspecialchars($hw_lcp_banner_mobile, ENT_QUOTES, 'UTF-8'); ?>"
-                  srcset="<?= $hw_lcp_banner_mobile_srcset ?>"
-                  sizes="<?= hw_lcp_image_sizes('banner_mobile'); ?>"
+                  src="<?= htmlspecialchars($hw_lcp_banner_desktop, ENT_QUOTES, 'UTF-8'); ?>"
+                  srcset="<?= $hw_lcp_banner_desktop_srcset ?>"
+                  sizes="<?= hw_lcp_image_sizes('banner_desktop'); ?>"
                   width="331" height="480"
-                  fetchpriority="high" decoding="async" alt="HappierMe app" />
+                  fetchpriority="high" decoding="sync" alt="HappierMe app" />
               </picture>
           <div class="div-3">
                  <!-- rating row -->
