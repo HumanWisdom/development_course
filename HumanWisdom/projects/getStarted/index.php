@@ -106,7 +106,7 @@ $hw_lcp_banner_mobile_srcset = hw_lcp_image_srcset('banner_mobile');
                 <div class="frame-wrapper-2">
                   <div class="div-4">
                     <div class="div-65">
-                     <p class="p" id="hw-website-title" style="color:rgba(255, 247, 230, 1) !important;text-align: left;line-height: 1.3;" ><span class="hero-title-verb">Think</span><span class="hero-title-better">&nbsp;better.</span><br><span class="scrolling-words"><span class="scrolling-word">Live</span><span class="scrolling-word">Feel</span><span class="scrolling-word">Sleep</span><span class="scrolling-word">Love</span><span class="scrolling-word">Work</span></span><span class="hero-title-accent">&nbsp;better.</span></p>
+                     <p class="p" id="hw-website-title" style="color:rgba(255, 247, 230, 1) !important;text-align: left;line-height: 1.3;" ><span class="hero-title-verb">Think</span><span class="hero-title-better">&nbsp;better.</span><br><span class="scrolling-words"><span class="scrolling-word active">Live</span><span class="scrolling-word">Feel</span><span class="scrolling-word">Sleep</span><span class="scrolling-word">Love</span><span class="scrolling-word">Work</span></span><span class="hero-title-accent">&nbsp;better.</span></p>
                      
                     </div>
                     <p class="text-wrapper-4" id="hw-website-subtitle">
@@ -526,13 +526,14 @@ $hw_lcp_banner_mobile_srcset = hw_lcp_image_srcset('banner_mobile');
   var current = 0;
   var timer;
 
-  /* Slot width = "Think" only, so "Think better." keeps normal spacing; line-2 words right-align in that slot */
+  /* Slot width = "Think" only — line-2 words right-align in that slot so "better." matches */
   function lockVerbColumnWidth() {
     if (!container) return;
     var verbEl = document.querySelector('#hw-website-title .hero-title-verb');
     if (!verbEl) return;
     var thinkW = Math.ceil(verbEl.getBoundingClientRect().width || verbEl.offsetWidth || 0);
     if (thinkW > 0) {
+      container.style.setProperty('--hero-verb-width', thinkW + 'px');
       container.style.width = thinkW + 'px';
       container.style.minWidth = thinkW + 'px';
     }
@@ -587,6 +588,12 @@ $hw_lcp_banner_mobile_srcset = hw_lcp_image_srcset('banner_mobile');
     timer = setInterval(showNext, 2000);
   }
 
+  function initScrollingWords() {
+    resetWords();
+    lockVerbColumnWidth();
+    startTimer();
+  }
+
   document.addEventListener('visibilitychange', function() {
     if (document.visibilityState === 'visible') {
       resetWords();
@@ -597,9 +604,21 @@ $hw_lcp_banner_mobile_srcset = hw_lcp_image_srcset('banner_mobile');
     }
   });
 
-  resetWords();
+  function scheduleScrollingWordsInit() {
+    function run() {
+      requestAnimationFrame(function() {
+        requestAnimationFrame(initScrollingWords);
+      });
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', run, { once: true });
+    } else {
+      run();
+    }
+  }
+
+  scheduleScrollingWordsInit();
   lockVerbColumnWidth();
-  startTimer();
   if (document.fonts && document.fonts.ready) {
     document.fonts.ready.then(lockVerbColumnWidth);
   }

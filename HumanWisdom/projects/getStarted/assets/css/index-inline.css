@@ -354,6 +354,19 @@ img { max-width: 100%; display: block; }
   width: max-content !important;
   white-space: nowrap;
 }
+.web_home_divlanding .scrolling-word.active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.45s cubic-bezier(0.4, 0, 0.6, 1),
+              transform 0.45s cubic-bezier(0.4, 0, 0.6, 1);
+  z-index: 1;
+}
+.web_home_divlanding .scrolling-word.exit {
+  opacity: 0;
+  transform: translateY(-60%);
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 1, 1),
+              transform 0.4s cubic-bezier(0.4, 0, 1, 1);
+}
 
 /* rating */
 .p0        { padding: 0; }

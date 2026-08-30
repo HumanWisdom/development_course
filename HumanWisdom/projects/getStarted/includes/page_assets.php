@@ -56,7 +56,7 @@ if (!function_exists('hw_page_assets_profiles')) {
                     'fontawesome_cdn' => false,
                     'critical_lcp' => true,
                     'header_in_critical' => true,
-                    'google_fonts_head' => false,
+                    'google_fonts_head' => true,
                     'vendor_debug_inline' => false,
                     'modal_tabs_defer' => true,
                     'font_stacks' => true,
@@ -81,7 +81,7 @@ if (!function_exists('hw_page_assets_profiles')) {
                     'validate' => false,
                     'gtag_head' => false,
                     'gtag_deferred' => true,
-                    'google_fonts_deferred' => true,
+                    'google_fonts_deferred' => false,
                 ],
                 'ui' => [
                     'preloader' => false,

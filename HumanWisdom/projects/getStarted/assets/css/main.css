@@ -5463,10 +5463,10 @@ input[type="password" i]::-ms-reveal {
       transition: none;
         }
 
-        /* Landing hero uses critical-lcp.css; skip global scroll-word rules there */
-        .web_home_divlanding .scrolling-words,
-        .web_home_divlanding .scrolling-word {
+        /* Landing hero: no width transition on container only (word animation keeps transitions) */
+        .web_home_divlanding .scrolling-words {
           transition: none !important;
+          text-align: right !important;
         }
 
    
