@@ -41,6 +41,18 @@ export class WisdomShortsIndexPage implements OnInit {
     { id: 'real_life', displayName: 'Real-life stories' },
     { id: 'in_depth', displayName: 'In-depth' }
   ];
+
+  typeDescriptions: { [key: string]: string } = {
+    'all': '',
+    'short_videos': 'Nuggets of wisdom to reflect on and apply in your life',
+    'expert_tips': 'Quick insight from our expert coaches',
+    'real_life': 'Inspiring conversations with people from around the world',
+    'in_depth': 'Thought provoking conversations with experts from around the world.'
+  };
+
+  getTypeDescription(): string {
+    return this.typeDescriptions[this.selectedType] || '';
+  }
   constructor(
     private readonly ngNavigatorShareService: NgNavigatorShareService,
     public readonly platform: Platform,
@@ -97,18 +109,46 @@ export class WisdomShortsIndexPage implements OnInit {
         let allItems: any[] = [];
 
         if (Array.isArray(res)) {
-          allItems = res;
+          allItems = res.map(item => {
+            const isVoice = item['IsVoices'] == '1' || item['isVoices'] == '1' || item['IsVoices'] === 1 || item['isVoices'] === 1 || item['IsVoices'] === true || item['isVoices'] === true;
+            if (isVoice) {
+              item['Type'] = 'Expert tips';
+            }
+            return item;
+          });
         } else if (typeof res === 'object' && res !== null) {
           Object.keys(res).forEach((key) => {
             if (Array.isArray(res[key])) {
               res[key].forEach((item) => {
-                if (!item['Type']) {
-                  if (key === 'Shorts') item['Type'] = 'Short videos';
-                  else if (key === 'HwpAllEvents') item['Type'] = 'Expert tips';
-                  else if (key === 'Conversations') item['Type'] = 'Real-life stories';
-                  else if (key === 'Teentalks') item['Type'] = 'Teen talks';
-                  else item['Type'] = key;
+                const isVoice = item['IsVoices'] == '1' || item['isVoices'] == '1' || item['IsVoices'] === 1 || item['isVoices'] === 1 || item['IsVoices'] === true || item['isVoices'] === true;
+
+                if (key === 'Shorts') {
+                  if (isVoice) {
+                    item['Type'] = 'Expert tips';
+                  } else {
+                    item['Type'] = 'Short videos';
+                  }
+                } else if (key === 'HwpAllEvents') {
+                  item['Type'] = 'In-depth';
+                } else if (key === 'Conversations' || key === 'Teentalks') {
+                  item['Type'] = 'Real-life stories';
+                } else if (!item['Type']) {
+                  item['Type'] = key;
                 }
+
+                if (!item['ImgUrl']) {
+                  let yt = item['YoutubeLink'] || item['youtubeLink'] || item['YoutubeUrl'] || '';
+                  if (yt && typeof yt === 'string') {
+                    let ytCode = yt.trim();
+                    if (ytCode.includes('v=')) ytCode = ytCode.split('v=')[1].split('&')[0];
+                    else if (ytCode.includes('youtu.be/')) ytCode = ytCode.split('youtu.be/')[1].split('?')[0];
+                    else if (ytCode.includes('/embed/')) ytCode = ytCode.split('/embed/')[1].split('?')[0];
+                    if (ytCode && !ytCode.includes('/') && !ytCode.includes('.')) {
+                      item['ImgUrl'] = `https://img.youtube.com/vi/${ytCode}/hqdefault.jpg`;
+                    }
+                  }
+                }
+
                 allItems.push(item);
               });
             }
@@ -249,7 +289,7 @@ export class WisdomShortsIndexPage implements OnInit {
         isYoutube = true;
         ytCode = str;
       }
-    } else if (val['Type'] === 'Real-life stories' || val['Type'] === 'Expert tips') {
+    } else if (val['Type'] === 'Real-life stories' || val['Type'] === 'Expert tips' || val['Type'] === 'In-depth') {
       if (val['RowID']) {
         isYoutube = true;
         ytCode = val['RowID'].toString();
@@ -412,27 +452,51 @@ export class WisdomShortsIndexPage implements OnInit {
     }
 
     if (this.selectedPref && this.selectedPref !== 'all' && this.selectedPref !== '999') {
-      if (this.selectedPref === 'voices') {
-        list = list.filter((d) => d['IsVoices'] === '1');
-      } else if (this.selectedPref === '0') {
-        list = list.filter((d) => (!d['PreferenceIDs']));
+      const prefIdStr = this.selectedPref.toString().toLowerCase();
+      if (prefIdStr === 'voices') {
+        list = list.filter((d) => d['IsVoices'] == '1' || d['isVoices'] == '1' || d['IsVoices'] === 1 || d['isVoices'] === 1);
+      } else if (prefIdStr === '0') {
+        list = list.filter((d) => (!d['PreferenceIDs'] && !d['PrefIDs']));
       } else {
-        list = list.filter((d) => 
-          (d['PreferenceIDs'] && d['PreferenceIDs'].split(',').includes(this.selectedPref)) ||
-          (d['searchtags'] && d['searchtags'].toLowerCase().includes(this.selectedPref.toLowerCase()))
-        );
+        const prefObj = this.prefData?.find(p => p.id?.toString().toLowerCase() === prefIdStr);
+        const prefDisplayName = prefObj?.displayName?.toLowerCase();
+        const prefName = prefObj?.name?.toLowerCase();
+
+        list = list.filter((d) => {
+          // Check PreferenceIDs / PrefIDs / PreferenceID
+          const rawPrefIds = d['PreferenceIDs'] || d['PrefIDs'] || d['PreferenceID'] || d['prefIDs'] || '';
+          let matchPrefId = false;
+          if (Array.isArray(rawPrefIds)) {
+            matchPrefId = rawPrefIds.some(p => p.toString().trim() === prefIdStr);
+          } else if (rawPrefIds) {
+            matchPrefId = rawPrefIds.toString().split(',').map(s => s.trim()).includes(prefIdStr);
+          }
+
+          // Check searchtags
+          const searchTags = (d['searchtags'] || '').toLowerCase();
+          const matchTags = searchTags.includes(prefIdStr) || 
+                            (prefDisplayName && searchTags.includes(prefDisplayName)) ||
+                            (prefName && searchTags.includes(prefName));
+
+          // Check Title
+          const titleStr = (d['Title'] || '').toLowerCase();
+          const matchTitle = prefDisplayName ? titleStr.includes(prefDisplayName) : false;
+
+          return matchPrefId || matchTags || matchTitle;
+        });
       }
     }
 
     if (this.selectedType && this.selectedType !== 'all') {
-      if (this.selectedType === 'short_videos') {
+      const selectedTypeStr = this.selectedType.toLowerCase();
+      if (selectedTypeStr === 'short_videos') {
         list = list.filter(d => !d['Type'] || d['Type'].toLowerCase().includes('short'));
-      } else if (this.selectedType === 'expert_tips') {
+      } else if (selectedTypeStr === 'expert_tips') {
         list = list.filter(d => d['Type'] && d['Type'].toLowerCase().includes('expert'));
-      } else if (this.selectedType === 'real_life') {
-        list = list.filter(d => d['Type'] && d['Type'].toLowerCase().includes('real'));
-      } else if (this.selectedType === 'in_depth') {
-        list = list.filter(d => d['Type'] && d['Type'].toLowerCase().includes('depth'));
+      } else if (selectedTypeStr === 'real_life') {
+        list = list.filter(d => d['Type'] && (d['Type'].toLowerCase().includes('real') || d['Type'].toLowerCase().includes('teen') || d['Type'].toLowerCase().includes('conversation')));
+      } else if (selectedTypeStr === 'in_depth') {
+        list = list.filter(d => d['Type'] && (d['Type'].toLowerCase().includes('depth') || d['Type'].toLowerCase().includes('event')));
       }
     }
 
