@@ -5,6 +5,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { SharedService } from "../../services/shared.service";
 import { CommonService } from "../../services/common.service";
 import { NavigationService } from "../../services/navigation.service";
+import { combineLatest } from 'rxjs';
 
 @Component({
   selector: 'app-guided-journey-days',
@@ -58,18 +59,18 @@ export class GuidedJourneyDaysPage implements OnInit {
   }
 
   ngOnInit() {
-    this.route.queryParams.subscribe(params => {
-      const newJourneyId = params['journeyId'];
-      const dayParam = params['day'];
-      if (params['subtitle']) {
-        this.journeySubtitle = params['subtitle'];
+    combineLatest([this.route.params, this.route.queryParams]).subscribe(([params, queryParams]) => {
+      const newJourneyId = params['journeyId'] || queryParams['journeyId'];
+      const dayParam = queryParams['day'];
+      if (queryParams['subtitle']) {
+        this.journeySubtitle = queryParams['subtitle'];
       }
-      if (params['title']) {
-        this.journeyTitle = params['title'];
+      if (queryParams['title']) {
+        this.journeyTitle = queryParams['title'];
       }
       
       let dayChanged = false;
-      if (dayParam !== undefined && dayParam !== null) {
+      if (dayParam !== undefined && dayParam !== null && dayParam !== '') {
         const newDay = parseInt(dayParam);
         if (this.currentDay !== newDay) {
           this.currentDay = newDay;
@@ -552,11 +553,17 @@ export class GuidedJourneyDaysPage implements OnInit {
     this.updateDisplayData();
     // Update URL without reloading
     const prefix = SharedService.getprogramName();
-    this.router.navigate([], {
-      relativeTo: this.route,
-      queryParams: { day: this.currentDay },
-      queryParamsHandling: 'merge'
-    });
+    if (this.currentDay === 0) {
+      this.router.navigate([`/${prefix}/guided-journeys/${this.journeyId}`], {
+        queryParams: { day: null },
+        queryParamsHandling: 'merge'
+      });
+    } else {
+      this.router.navigate([`/${prefix}/guided-journeys/${this.journeyId}`], {
+        queryParams: { day: this.currentDay },
+        queryParamsHandling: 'merge'
+      });
+    }
     this.scrollToActiveDay();
     setTimeout(() => {
       this.isAnimating = false;

@@ -143,19 +143,22 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
       const shortList = localStorage.getItem('wisdomShortData');
       if (shortList) {
         const wisdomShortList = JSON.parse(shortList);
-        this.wisdomShortOrderList = wisdomShortList.map(
-          (element: any, index: number) => {
-            const linklist = element.VideoUrl.split('/');
+        this.wisdomShortOrderList = wisdomShortList
+          .filter((element: any) => element && (element.VideoUrl || element.YoutubeLink || element.YoutubeUrl || element.Url))
+          .map((element: any, index: number) => {
+            const vUrl = (element.VideoUrl || element.YoutubeLink || element.YoutubeUrl || element.Url || '').toString();
+            const linklist = vUrl.split('/');
             const linkcode = linklist[linklist.length - 1];
-            const code = `https://d1tenzemoxuh75.cloudfront.net/wisdom_shorts/videos/${linkcode}`;
+            const code = linkcode.startsWith('http')
+              ? linkcode
+              : `https://d1tenzemoxuh75.cloudfront.net/wisdom_shorts/videos/${linkcode}`;
             return {
               url: this.getSafeUrl(code),
               order: index,
-              title: element.Title,
-              code: linkcode, // store link code for exact matching
+              title: element.Title || '',
+              code: linkcode,
             };
-          }
-        );
+          });
 
         // Prefer exact match by link code over title includes
         const normalizedLinkcode = (this.linkcode || '').trim();

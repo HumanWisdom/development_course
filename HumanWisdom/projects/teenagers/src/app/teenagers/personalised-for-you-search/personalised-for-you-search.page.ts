@@ -222,7 +222,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
   routeToGuidedJourney(journeyId) {
     this.logeventservice.logEvent('click_guided_journey_' + journeyId);
     SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
-    this.router.navigate(['/teenagers/guided-journeys/intro'], { queryParams: { journeyId } });
+    this.router.navigate(['/teenagers/guided-journeys', journeyId]);
   }
 
   toggleMicrolearning() {

@@ -346,8 +346,14 @@ export class TeenagersService {
     return localStorage.getItem('guest') && localStorage.getItem('guest') === 'T' ? true : false;
   }
 
-  GetWisdomShorts(): Observable<any> {
-    return this.http.get(this.path + '/GetWisdomShortsListing');
+  GetWisdomShorts(progId?: any): Observable<any> {
+    const id = progId || SharedService.ProgramId || 11;
+    return this.http.get(this.path + `/GetVideolibraryLists/${id}`);
+  }
+
+  GetVideolibraryLists(progId?: any): Observable<any> {
+    const id = progId || SharedService.ProgramId || 11;
+    return this.http.get(this.path + `/GetVideolibraryLists/${id}`);
   }
 
   GetAudioMeditation(): Observable<any> {
@@ -377,7 +383,8 @@ export class TeenagersService {
     }
 
     GetWisdomShortsListing(data): Observable<any> {
-      return this.http.get(this.path + `/GetWisdomShortsListing/${SharedService.ProgramId}/${data}`)
+      const id = SharedService.ProgramId || 11;
+      return this.http.get(this.path + `/GetVideolibraryLists/${id}`);
     }
 
 

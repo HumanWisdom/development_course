@@ -37,7 +37,7 @@ export class GuidedJourneyIntroPage implements OnInit {
       this.journeyId = params['journeyId'];
       if (this.journeyId) {
         const prefix = SharedService.getprogramName();
-        this.router.navigate([`/${prefix}/guided-journeys/days`], { queryParams: { journeyId: this.journeyId, day: 0 }, replaceUrl: true });
+        this.router.navigate([`/${prefix}/guided-journeys/${this.journeyId}`], { replaceUrl: true });
       }
     });
   }
@@ -137,7 +137,7 @@ export class GuidedJourneyIntroPage implements OnInit {
     this.isNavigating = true;
     setTimeout(() => {
       const prefix = SharedService.getprogramName();
-      this.router.navigate([`/${prefix}/guided-journeys/days`], { queryParams: { journeyId: this.journeyId, day: 1 } });
+      this.router.navigate([`/${prefix}/guided-journeys/${this.journeyId}`], { queryParams: { day: 1 } });
     }, 400);
   }
 
@@ -146,7 +146,11 @@ export class GuidedJourneyIntroPage implements OnInit {
     this.isNavigating = true;
     setTimeout(() => {
       const prefix = SharedService.getprogramName();
-      this.router.navigate([`/${prefix}/guided-journeys/days`], { queryParams: { journeyId: this.journeyId, day: day } });
+      if (day === 0) {
+        this.router.navigate([`/${prefix}/guided-journeys/${this.journeyId}`]);
+      } else {
+        this.router.navigate([`/${prefix}/guided-journeys/${this.journeyId}`], { queryParams: { day: day } });
+      }
     }, 400);
   }
 
