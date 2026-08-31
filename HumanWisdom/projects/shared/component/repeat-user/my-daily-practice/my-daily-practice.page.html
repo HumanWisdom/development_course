@@ -16,7 +16,7 @@
                 <div class="mdp-streak-row" *ngIf="isloggedIn && streak">
                   <div class="mdp-streak-badge"
                     [ngClass]="isAdults ? 'mdp-streak-badge--adults' : 'mdp-streak-badge--teens'">
-                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/streak_teenn.svg"
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/streak_teenn.svg"
                       alt="streak" class="mdp-streak-icon" />
                     <span class="mdp-streak-label">Streak: <strong>{{ streak }}</strong> {{ streak == 1 ? 'day' : 'days'
                       }}</span>
@@ -90,10 +90,10 @@
                   <!-- Smiley icon -->
                   <div class="mood-icon-wrap">
                     <img *ngIf="isAdults"
-                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/emojis/1.svg"
+                      src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/emojis/1.svg"
                       alt="Daily mood" width="44" height="44" />
                     <img *ngIf="!isAdults"
-                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/teenagers/assets/svgs/emojis/1.svg"
+                      src="https://d1tenzemoxuh75.cloudfront.net/teenagers/assets/svgs/emojis/1.svg"
                       alt="Daily mood" width="44" height="44" />
                   </div>
                   <h4 class="mood-title">Daily mood</h4>
@@ -186,11 +186,11 @@
                     <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
 
                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 prelative pl15px" *ngIf="isAdults">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/start.svg" alt=""
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/start.svg" alt=""
                           class="p0 session_img">
                       </div>
                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 prelative pl15px" *ngIf="!isAdults">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/start_teen.svg"
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/start_teen.svg"
                           alt="" class="p0 session_img">
                       </div>
 
@@ -291,14 +291,14 @@
                 <!-- Contact a coach card -->
                 <!-- <div class="col-md-12 col-sm-12 col-xs-12 p0 plr10pxi">
                       <h4 class="mtb5px fs_12px fw_400 " style="line-height: 16.8px ;" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/questions.svg"
+                        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/questions.svg"
                         alt="play" class="mr10px" style="width:30px; height:30px">
                         QUESTION OF THE DAY
                       </h4> 
                     </div> -->
 
                 <!-- <h4 class="mtb5px fw_400 fs_12px   " style="line-height: 16.8px ;" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                            <img  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/questions.svg" alt="play" class="mr10px" style="width:30px; height:30px">
+                            <img  src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/questions.svg" alt="play" class="mr10px" style="width:30px; height:30px">
                              QUESTION OF THE DAY
                           </h4> -->
                 <div class="box_journalmy">
@@ -331,7 +331,7 @@
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 box_v3_01">
                             <div class="col-3 p0 mb8px text-center">
                               <img
-                                [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/coach_adu.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/coach_teen.svg'">
+                                [src]="isAdults ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/coach_adu.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/coach_teen.svg'">
                             </div>
 
                             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0 pl15px">
@@ -368,7 +368,7 @@
                   <div class="quote-card-new" *ngIf="dailyinstext">
                     <div class="quote-header">
                       <img
-                        [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/quote_ad.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/quete_teenn.svg'"
+                        [src]="isAdults ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/quote_ad.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/quete_teenn.svg'"
                         alt="Quote of the day">
                     </div>
                     <p class="quote-text">“{{dailyinstext}}”</p>
@@ -379,7 +379,7 @@
                   <div class="challenge-card-new" *ngIf="trythistoday">
                     <div class="challenge-icon-wrap">
                       <img
-                        [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/daily_challengad.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/daily_teenn.svg'"
+                        [src]="isAdults ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/daily_challengad.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/daily_teenn.svg'"
                         alt="Challenge Icon">
                     </div>
                     <h4 class="challenge-title">Try this today</h4>
@@ -390,7 +390,7 @@
                   <div class="question-card-new" *ngIf="dailyqus">
                     <div class="question-illustration">
                       <img
-                        [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/good_thing_adu.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/good_thing_teena.svg'"
+                        [src]="isAdults ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/good_thing_adu.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/good_thing_teena.svg'"
                         alt="One good thing">
                     </div>
                     <h4 class="question-title">One good thing</h4>
@@ -427,7 +427,7 @@
                   <a (click)="routeToForum()" class="forum-card-new">
                     <div class="forum-icon-wrap">
                       <img
-                        [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/forum_ad.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/foram_tenn.svg'"
+                        [src]="isAdults ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/forum_ad.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/foram_tenn.svg'"
                         alt="Forum chat bubbles" class="forum-icon">
                     </div>
                     <div class="forum-text-wrap">

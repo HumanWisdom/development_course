@@ -131,6 +131,44 @@ img { max-width: 100%; display: block; }
 .frame-wrapper.web_home_divlanding #hw-website-title .scrolling-word {
   color: rgba(237, 125, 111, 1);
 }
+/* Reserve rotating-word slot before deferred CSS / JS (prevents hero CLS) */
+.frame-wrapper.web_home_divlanding .scrolling-words {
+  display: inline-block;
+  position: relative;
+  vertical-align: bottom;
+  height: 1.3em;
+  overflow: hidden;
+  width: var(--hero-verb-width, 4.35ch);
+  min-width: var(--hero-verb-width, 4.35ch);
+  text-align: right;
+  transition: none !important;
+}
+.frame-wrapper.web_home_divlanding .scrolling-word {
+  position: absolute;
+  left: auto;
+  right: 0;
+  top: 0;
+  width: max-content;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(60%);
+}
+.frame-wrapper.web_home_divlanding .scrolling-word.active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.45s cubic-bezier(0.4, 0, 0.6, 1),
+              transform 0.45s cubic-bezier(0.4, 0, 0.6, 1);
+  z-index: 1;
+}
+.frame-wrapper.web_home_divlanding .scrolling-word.exit {
+  opacity: 0;
+  transform: translateY(-60%);
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 1, 1),
+              transform 0.4s cubic-bezier(0.4, 0, 1, 1);
+}
+#hw-website-title {
+  min-height: calc(3 * 1.3em);
+}
 .frame-wrapper.web_home_divlanding #hw-website-subtitle {
   font-family: "Poppins", Helvetica, sans-serif;
   font-size: 21px;
@@ -139,6 +177,7 @@ img { max-width: 100%; display: block; }
   color: rgba(255, 247, 230, 1);
   max-width: 500px;
   margin: 0;
+  min-height: calc(3 * 1.5em);
 }
 .frame-wrapper.web_home_divlanding .rating-row,
 .frame-wrapper.web_home_divlanding .rating-row .fs_15px.fw_700,
@@ -260,6 +299,11 @@ img { max-width: 100%; display: block; }
 }
 
 @media (min-width: 1200px) {
+  .frame-wrapper {
+    padding: 80px 40px;
+    padding-top: 117px;
+    padding-bottom: 60px;
+  }
   .p { font-size: 42px; }
   .frame-wrapper.web_home_divlanding #hw-website-title,
   .frame-wrapper.web_home_divlanding .div-65 .p {
@@ -346,6 +390,72 @@ img { max-width: 100%; display: block; }
     font-weight: 600 !important;
   }
   .rating-row { justify-content: center; margin: 0; }
+}
+
+/* ORCHA strip (below hero) — critical for desktop Speed Index */
+#main.frame > .frame-wrapper.web_home_divlanding + .orcha-strip {
+  margin-top: 0 !important;
+}
+.orcha-strip {
+  width: 100%;
+  background: rgba(255, 247, 230, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 80px;
+  padding: 30px 40px;
+  min-height: 105px;
+  box-sizing: border-box;
+  contain: layout style paint;
+}
+.orcha-strip-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-shrink: 0;
+}
+.orcha-strip-orcha img {
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+.orcha-strip-macmillan img {
+  width: 120px;
+  height: 36px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+.orcha-strip-mind img {
+  height: 54px;
+  width: auto;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+.orcha-strip-item span {
+  font-family: "Poppins", Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #000;
+  line-height: 1.4;
+  max-width: 156px;
+}
+.orcha-strip-macmillan span {
+  max-width: 203px;
+}
+@media (min-width: 1200px) {
+  .orcha-strip { gap: 80px; padding: 30px 40px; }
+}
+@media (max-width: 1024px) {
+  .orcha-strip { gap: 40px; padding: 30px 24px; }
+  .orcha-strip-item span { max-width: 140px; }
+  .orcha-strip-macmillan span { max-width: 203px; }
+}
+
+/* Below-fold chunk placeholders (reduce CLS when HTML injects) */
+.coaches-section.index-lazy-section {
+  min-height: 420px;
 }
 
 @media (max-width: 480px) {
