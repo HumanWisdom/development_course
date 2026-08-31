@@ -723,7 +723,7 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
   }
 
   initSocialIcons() {
-    const base = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dhamburger/';
+    const base = 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/dhamburger/';
 
     if (this.isAdults) {
       this.socialIcons = [
@@ -764,7 +764,7 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
         }
       ];
     } else {
-      const teenBase = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/';
+      const teenBase = 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/';
       this.socialIcons = [
         {
           name: 'facebook',
