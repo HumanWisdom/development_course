@@ -149,6 +149,99 @@
   padding-top: 8px;
 }
 
+/* =============================================
+   VIDEO LIBRARY SEARCH BAR — standalone block
+   outside <form> so NgForm cannot interfere
+   ============================================= */
+.vl-search-row {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  padding: 16px 20px 0 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.vl-search-inner {
+  position: relative;
+  display: block !important;
+  width: 100%;
+}
+
+.vl-search-input {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  width: 100% !important;
+  height: 44px !important;
+  background: #FFFFFF !important;
+  border: 1.5px solid #EAE4DC !important;
+  border-radius: 24px !important;
+  padding: 0 40px 0 42px !important;
+  font-size: 14px !important;
+  font-family: inherit;
+  color: #333333 !important;
+  box-shadow: none !important;
+  outline: none !important;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  appearance: none;
+
+  &::placeholder {
+    color: #8E8E93 !important;
+    opacity: 1 !important;
+  }
+
+  /* hide native browser cancel button — we use our own */
+  &::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    display: none;
+  }
+}
+
+.vl-search-icon {
+  position: absolute !important;
+  top: 50% !important;
+  left: 16px !important;
+  transform: translateY(-50%) !important;
+  color: #8E8E93 !important;
+  font-size: 14px !important;
+  pointer-events: none;
+  z-index: 2;
+  display: block !important;
+}
+
+.vl-search-clear {
+  position: absolute !important;
+  top: 50% !important;
+  right: 16px !important;
+  transform: translateY(-50%) !important;
+  color: #8E8E93 !important;
+  font-size: 14px !important;
+  cursor: pointer;
+  z-index: 2;
+  display: block !important;
+}
+
+/* Teens override */
+.mc_01_v3:not(.adults-scroll) {
+  .vl-search-input {
+    background: #1C2A48 !important;
+    border-color: #4267A5 !important;
+    color: #FFFFFF !important;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.6) !important;
+      opacity: 1 !important;
+    }
+  }
+
+  .vl-search-icon,
+  .vl-search-clear {
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+}
+
 /* Video Library Filter Section Labels */
 .vl-filter-label {
   font-size: 10px;
