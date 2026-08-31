@@ -33242,6 +33242,17 @@ body * {
   padding-left: 20px !important;
 }
 
+
+.session_img_playtest {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  width: auto;
+  height: 30px;
+}
 .session_img {
   width: 100%;
   border-radius: 10px;

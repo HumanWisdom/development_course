@@ -17,7 +17,7 @@ import { NavigationService } from "../../../services/navigation.service";
 })
 export class WisdomShortsIndexPage implements OnInit {
 
-  tocImage = "https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/wisdom_shorts.webp"
+  tocImage = ""
   tocColor = "white"
 
   path: string;
@@ -32,7 +32,15 @@ export class WisdomShortsIndexPage implements OnInit {
   showModal = false;
   modalTitle = 'The best is yet to come';
   modalContent = 'Unlock the full experience and continue your journey to live your best life';
-  selectedPref = 'All'
+  selectedPref = 'All';
+  selectedType = 'all';
+  typeData = [
+    { id: 'all', displayName: 'All' },
+    { id: 'short_videos', displayName: 'Short videos' },
+    { id: 'expert_tips', displayName: 'Expert tips' },
+    { id: 'real_life', displayName: 'Real-life stories' },
+    { id: 'in_depth', displayName: 'In-depth' }
+  ];
   constructor(
     private readonly ngNavigatorShareService: NgNavigatorShareService,
     public readonly platform: Platform,
@@ -52,15 +60,15 @@ export class WisdomShortsIndexPage implements OnInit {
 
     
   if(SharedService.ProgramId == ProgramType.Adults){
-    this.title.setTitle('Inspiring Shorts for Adults')
-      this.meta.updateTag({ property: 'title', content: 'Inspiring Shorts for Adults' })
-      this.meta.updateTag({ property: 'description', content: 'Our inspirational shorts are perfect for busy adults who want to grow and improve but don\'t have a lot of time to spare. Discover practical life tips and empowering quotes that can help you achieve your goals.' })
+    this.title.setTitle('Video library')
+      this.meta.updateTag({ property: 'title', content: 'Video library' })
+      this.meta.updateTag({ property: 'description', content: 'Explore our video library featuring practical life tips, expert insights, and wisdom for everyday living.' })
       this.meta.updateTag({ property: 'keywords', content: 'Everyday inspiration,Relatable wisdom,Practical life tips,Quick life hacks,Positive life lessons,Empowering quotes,Self-help wisdom,Encouraging words,Friendly life guidance' })
   }
   else if(SharedService.ProgramId == ProgramType.Teenagers){
-    this.title.setTitle('Inspiring Shorts for Teenagers')
-      this.meta.updateTag({ property: 'title', content: 'Inspiring Shorts for Teenagers' })
-      this.meta.updateTag({ property: 'description', content: 'Our inspirational shorts are perfect for busy Teenagers who want to grow and improve but don\'t have a lot of time to spare. Discover practical life tips and empowering quotes that can help you achieve your goals.' })
+    this.title.setTitle('Video library')
+      this.meta.updateTag({ property: 'title', content: 'Video library' })
+      this.meta.updateTag({ property: 'description', content: 'Explore our video library featuring practical life tips, expert insights, and wisdom for teenagers.' })
       this.meta.updateTag({ property: 'keywords', content: 'Everyday inspiration,Relatable wisdom,Practical life tips,Quick life hacks,Positive life lessons,Empowering quotes,Self-help wisdom,Encouraging words,Friendly life guidance' })
   }
 
@@ -86,26 +94,40 @@ export class WisdomShortsIndexPage implements OnInit {
   getwisdomshorts() {
     this.service.GetWisdomShorts().subscribe((res) => {
       if (res) {
-        let res1 = new Array()
-        res1 = res.filter(p =>  p.ProgIDs.includes(SharedService.ProgramId))
-        res1.forEach(element => {
-          res.splice(res.indexOf(element), 1)
-          res.unshift(element)
-        });
-        //this.allwisdomshorts = res1.sort((a,b)=>b.display - a.display);
-        this.allwisdomshorts = res1;
+        let allItems: any[] = [];
 
-        let m: any = window.location.href;
-     
-        this.allwisdomshorts.forEach((d) => {
-              this.prefData.forEach((h) => {
-                if(d['PreferenceIDs'] && (d['PreferenceIDs'].split(",").includes( h.id))) {
-                   h.active = true;
-                }else if(!d['PreferenceIDs']) {
-                  h.active = true;
+        if (Array.isArray(res)) {
+          allItems = res;
+        } else if (typeof res === 'object' && res !== null) {
+          Object.keys(res).forEach((key) => {
+            if (Array.isArray(res[key])) {
+              res[key].forEach((item) => {
+                if (!item['Type']) {
+                  if (key === 'Shorts') item['Type'] = 'Short videos';
+                  else if (key === 'HwpAllEvents') item['Type'] = 'Expert tips';
+                  else if (key === 'Conversations') item['Type'] = 'Real-life stories';
+                  else if (key === 'Teentalks') item['Type'] = 'Teen talks';
+                  else item['Type'] = key;
                 }
-              })
-            });
+                allItems.push(item);
+              });
+            }
+          });
+        }
+
+        const progIdStr = SharedService.ProgramId ? SharedService.ProgramId.toString() : '9';
+        let filteredItems = allItems.filter(p => p.ProgIDs ? p.ProgIDs.includes(progIdStr) : true);
+        if (filteredItems.length === 0) {
+          filteredItems = allItems;
+        }
+
+        this.allwisdomshorts = filteredItems;
+
+        if (this.prefData && Array.isArray(this.prefData)) {
+          this.prefData.forEach((h) => {
+            h.active = true;
+          });
+        }
         // if(m?.includes('voices')) {
         //  this.getVoicesData();
         //   /* this.wisdomshorts = res1.filter((d) => d['IsVoices'] === '1');
@@ -129,19 +151,28 @@ export class WisdomShortsIndexPage implements OnInit {
         //   }); */
         // }
        
+        let m: any = window.location.href;
         if(m?.includes('pref')){
-          let type = m.split('pref=')
-
-          this.getUserPref(type[1])
-
+          let type = m.split('pref=')[1];
+          this.getUserPref(type);
         }
         else {          
           const savedTab = localStorage.getItem('wisdomShortsSelectedTab');
+          const savedType = localStorage.getItem('wisdomShortsSelectedType');
+
           if (savedTab) {
-            this.getUserPref(savedTab);
+            this.selectedPref = savedTab.toLowerCase();
           } else {
-            this.getUserPref("all")
+            this.selectedPref = 'all';
           }
+
+          if (savedType) {
+            this.selectedType = savedType.toLowerCase();
+          } else {
+            this.selectedType = 'all';
+          }
+
+          this.filterShorts();
         }
 
         localStorage.setItem('wisdomShortData',JSON.stringify(this.allwisdomshorts));
@@ -172,6 +203,7 @@ export class WisdomShortsIndexPage implements OnInit {
 
   goBack() {
     localStorage.removeItem('wisdomShortsSelectedTab');
+    localStorage.removeItem('wisdomShortsSelectedType');
     localStorage.removeItem('lastWisdomShortId');
     var url = this.navigationService.navigateToBackLink();
     if (url != null) {
@@ -198,34 +230,96 @@ export class WisdomShortsIndexPage implements OnInit {
   wisdoshortsevent(val, video, title) {
     const loggedin = localStorage.getItem('isloggedin');
     const sub      = localStorage.getItem('Subscriber');
-    const id       = this.extractShortIdFromUrl(video);
 
-    /* 1.  register the click */
-    if (id !== null) {
+    const vUrl  = video || val['VideoUrl'] || val['YoutubeLink'] || val['YoutubeUrl'] || val['Url'] || val['URL'] || '';
+    const ytRaw = val['YoutubeLink'] || val['youtubeLink'] || val['YoutubeUrl'] || '';
+
+    let isYoutube = false;
+    let ytCode = '';
+
+    if (ytRaw) {
+      isYoutube = true;
+      ytCode = ytRaw.toString().trim();
+    } else if (vUrl) {
+      const str = vUrl.toString().trim();
+      if (str.includes('youtube.com') || str.includes('youtu.be')) {
+        isYoutube = true;
+        ytCode = str;
+      } else if (!str.startsWith('/') && !str.startsWith('http') && !str.includes('.mp4') && !str.includes('wisdom-shorts')) {
+        isYoutube = true;
+        ytCode = str;
+      }
+    } else if (val['Type'] === 'Real-life stories' || val['Type'] === 'Expert tips') {
+      if (val['RowID']) {
+        isYoutube = true;
+        ytCode = val['RowID'].toString();
+      }
+    }
+
+    /* 1. Register click */
+    const id = val['RowID'] || (vUrl ? this.extractShortIdFromUrl(vUrl) : null);
+    if (id !== null && id !== undefined) {
       this.service.clickShorts(id).subscribe({
-      next:  () => console.log('short click recorded'),
-      error: (e) => console.error('short click failed', e)
+        next:  () => console.log('short click recorded'),
+        error: (e) => console.error('short click failed', e)
       });
     }
 
-    /* 2.  existing free/subscription check & navigation */
-    this.service.CheckShortsIsFree(id).subscribe(res => {
-      const route = video.replace('adults', SharedService.getprogramName());
-      const extras = val['IsVoices'] === '1' ? { queryParams: { pref: 'voices' } } : undefined;
+    /* 2. YouTube / Conversation / Event navigation */
+    if (isYoutube && ytCode) {
+      if (ytCode.includes('v=')) {
+        ytCode = ytCode.split('v=')[1].split('&')[0];
+      } else if (ytCode.includes('youtu.be/')) {
+        ytCode = ytCode.split('youtu.be/')[1].split('?')[0];
+      } else if (ytCode.includes('/embed/')) {
+        ytCode = ytCode.split('/embed/')[1].split('?')[0];
+      }
 
-      if (res === true) {
-        // Mark origin so swipe-for-next is enabled only from index
-        localStorage.setItem('fromIndex', 'true');
-        localStorage.setItem('wisdomShortsSelectedTab', this.selectedPref);
+      const prog = SharedService.getprogramName();
+      const rowId = val['RowID'] || 1;
+
+      if (rowId > 1 && (loggedin !== 'T' || sub !== '1') && !this.isSubscriber) {
+        this.showModal = true;
+        return;
+      }
+
+      localStorage.setItem('fromIndex', 'true');
+      localStorage.setItem('wisdomShortsSelectedTab', this.selectedPref);
+      localStorage.setItem('wisdomShortsSelectedType', this.selectedType);
+      if (id) {
         localStorage.setItem('lastWisdomShortId', id.toString());
-        this.router.navigate([route, 'T', title], extras);
-      } else {
-        if (loggedin === 'T' && sub === '1') {
-          // Mark origin so swipe-for-next is enabled only from index
+      }
+
+      const suffix = rowId <= 1 ? '=rdtfghjhfdg' : '=vncbxdfchgvxd';
+      this.router.navigate([`/${prog}/curated/youtubelink`, `${ytCode}${suffix}`], { state: { title } });
+      return;
+    }
+
+    /* 3. Standard Wisdom Shorts navigation */
+    const checkId = id || 0;
+    this.service.CheckShortsIsFree(checkId).subscribe({
+      next: (res) => {
+        let route = vUrl ? vUrl.replace('adults', SharedService.getprogramName()) : `/${SharedService.getprogramName()}/wisdom-shorts/${checkId}`;
+        const extras = val['IsVoices'] === '1' ? { queryParams: { pref: 'voices' } } : undefined;
+
+        if (res === true || (loggedin === 'T' && sub === '1')) {
           localStorage.setItem('fromIndex', 'true');
           localStorage.setItem('wisdomShortsSelectedTab', this.selectedPref);
-          localStorage.setItem('lastWisdomShortId', id.toString());
+          localStorage.setItem('wisdomShortsSelectedType', this.selectedType);
+          localStorage.setItem('lastWisdomShortId', checkId.toString());
           this.router.navigate([route, 'T', title], extras);
+        } else {
+          this.showModal = true;
+        }
+      },
+      error: () => {
+        if (loggedin === 'T' && sub === '1') {
+          let route = vUrl ? vUrl.replace('adults', SharedService.getprogramName()) : `/${SharedService.getprogramName()}/wisdom-shorts/${checkId}`;
+          localStorage.setItem('fromIndex', 'true');
+          localStorage.setItem('wisdomShortsSelectedTab', this.selectedPref);
+          localStorage.setItem('wisdomShortsSelectedType', this.selectedType);
+          localStorage.setItem('lastWisdomShortId', checkId.toString());
+          this.router.navigate([route, 'T', title]);
         } else {
           this.showModal = true;
         }
@@ -253,48 +347,96 @@ export class WisdomShortsIndexPage implements OnInit {
   }
 
   searchShorts($event) {
-    if($event==''){
-      this.wisdomshorts = this.allwisdomshorts;
-    }else{
-      this.searchedText=$event;
-      let filterlist = this.allwisdomshorts.filter(it => it.Title.toLowerCase().includes(this.searchedText.toLowerCase()) || it.searchtags.toLowerCase().includes(this.searchedText.toLowerCase()));
-      this.wisdomshorts = filterlist;
+    this.searchedText = $event || '';
+    this.filterShorts();
+  }
+
+  selectType(typeId: string) {
+    this.selectedType = typeId.toLowerCase();
+    localStorage.setItem('wisdomShortsSelectedType', this.selectedType);
+    this.filterShorts();
+  }
+
+  formatTiming(timing: any): string {
+    if (!timing) return '';
+    const str = timing.toString().trim();
+    if (str.includes(':')) {
+      const parts = str.split(':');
+      if (parts.length === 3) {
+        if (parts[0] === '00') {
+          return `${parts[1]}:${parts[2]}`;
+        }
+        return str;
+      }
+      return str;
     }
+    const num = parseFloat(str);
+    if (!isNaN(num)) {
+      const mins = Math.floor(num);
+      const secs = Math.round((num - mins) * 60);
+      const mm = mins < 10 ? `0${mins}` : `${mins}`;
+      const ss = secs < 10 ? `0${secs}` : `${secs}`;
+      return `${mm}:${ss}`;
+    }
+    return str;
+  }
+
+  getCardSubtext(data: any): string {
+    const typeLabel = data['TypeLabel'] || data['Type'] || 'SHORT VIDEO';
+    const formatted = this.formatTiming(data['Timing']);
+    return formatted ? `${typeLabel.toUpperCase()} • ${formatted}` : typeLabel.toUpperCase();
   }
   
   getUserPref(type) {
     if (type === '999') type = 'all';
-    type = type.toLowerCase()
-
-    const btns = Array.from(document.getElementsByClassName('btn'));
-    for (const b of btns) {
-      const btn = b as HTMLElement;
-      btn.classList.remove('active');
-    }
-
-    const selectedBtn = document.getElementById(type);
-    if (selectedBtn) {
-      selectedBtn.classList.add('active');
-    }
+    type = type.toLowerCase();
 
     this.selectedPref = type;
-    this.wisdomshorts = this.allwisdomshorts;
-    if (type === "all") {
-      this.wisdomshorts = this.allwisdomshorts;
-    } else if (type === 'voices') {
-      this.wisdomshorts = this.allwisdomshorts.filter((d) => d['IsVoices'] === '1');
-    }
-    else {
-      if (type === '0') {  //wisdom
-        this.wisdomshorts = this.allwisdomshorts.filter((d) => (!d['PreferenceIDs']));
-      } else {
-        this.wisdomshorts = this.allwisdomshorts.filter((d) => (d['PreferenceIDs'] && (d['PreferenceIDs'].split(",").includes(type))));
-      }
-    }
+    localStorage.setItem('wisdomShortsSelectedTab', this.selectedPref);
+    this.filterShorts();
 
     setTimeout(() => {
       this.scrollToActiveTab();
     }, 200);
+  }
+
+  filterShorts() {
+    let list = [...this.allwisdomshorts];
+
+    if (this.searchedText && this.searchedText.trim() !== '') {
+      const q = this.searchedText.toLowerCase().trim();
+      list = list.filter(it => 
+        (it.Title && it.Title.toLowerCase().includes(q)) || 
+        (it.searchtags && it.searchtags.toLowerCase().includes(q))
+      );
+    }
+
+    if (this.selectedPref && this.selectedPref !== 'all' && this.selectedPref !== '999') {
+      if (this.selectedPref === 'voices') {
+        list = list.filter((d) => d['IsVoices'] === '1');
+      } else if (this.selectedPref === '0') {
+        list = list.filter((d) => (!d['PreferenceIDs']));
+      } else {
+        list = list.filter((d) => 
+          (d['PreferenceIDs'] && d['PreferenceIDs'].split(',').includes(this.selectedPref)) ||
+          (d['searchtags'] && d['searchtags'].toLowerCase().includes(this.selectedPref.toLowerCase()))
+        );
+      }
+    }
+
+    if (this.selectedType && this.selectedType !== 'all') {
+      if (this.selectedType === 'short_videos') {
+        list = list.filter(d => !d['Type'] || d['Type'].toLowerCase().includes('short'));
+      } else if (this.selectedType === 'expert_tips') {
+        list = list.filter(d => d['Type'] && d['Type'].toLowerCase().includes('expert'));
+      } else if (this.selectedType === 'real_life') {
+        list = list.filter(d => d['Type'] && d['Type'].toLowerCase().includes('real'));
+      } else if (this.selectedType === 'in_depth') {
+        list = list.filter(d => d['Type'] && d['Type'].toLowerCase().includes('depth'));
+      }
+    }
+
+    this.wisdomshorts = list;
   }
 
   scrollToActiveTab() {

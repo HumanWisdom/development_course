@@ -63,7 +63,7 @@
                 <ng-container *ngIf="!showTranscript">
 
                   <!-- Breadcrumb -->
-                  <div class="row mb10px">
+                <!--   <div class="row mb10px">
                     <div class="col-md-12 p0">
                       <a (click)="goToListing()" class="center_flex_left guided-journeys-link"
                         style="cursor: pointer; display: flex; align-items: center;">
@@ -72,22 +72,9 @@
                           [ngClass]="isAdults ? 'fc_000000' : 'fc_EE9596'">Guided journeys</span>
                       </a>
                     </div>
-                  </div>
+                  </div> -->
 
-                  <!-- Audio Player -->
-                  <div class="row mb10px">
-                    <div class="col-md-12 p0">
-                      <app-audio-player [audioLink]="journeyDetails.audioUrl"></app-audio-player>
-                    </div>
-                  </div>
-
-                  <!-- Read Text Link -->
-                  <div class="row tcenter read-text-row" (click)="loadTranscript()">
-                    <a class="read-text-link">
-                      <h6 class="fw_400 lh_140p underline read-text-label read-text-main"
-                        [ngClass]="isAdults ? 'fc_D7586B' : 'fc_EE9596'">Read text</h6>
-                    </a>
-                  </div>
+              
 
                   <!-- Journey Title -->
                   <div class="row mt16px">
@@ -108,8 +95,28 @@
                     </div>
                   </div>
 
+    <!-- Audio Player -->
+       <div class="row mt20px tcenter ">
+                    <div class="col-12 fs_15px fw_600 p0"  [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
+                      Introduction 
+                    </div>
+                  </div>
+                  <div class="row mb10px">
+                    <div class="col-md-12 p0">
+                      <app-audio-player [audioLink]="journeyDetails.audioUrl"></app-audio-player>
+                    </div>
+                  </div>
+
+                  <!-- Read Text Link -->
+                  <div class="row tcenter read-text-row" (click)="loadTranscript()">
+                    <a class="read-text-link">
+                      <h6 class="fw_400 lh_140p underline read-text-label read-text-main"
+                        [ngClass]="isAdults ? 'fc_D7586B' : 'fc_EE9596'">Read text</h6>
+                    </a>
+                  </div>
+
                   <!-- Description -->
-                  <div class="row mb30px">
+                  <div class="row mtb30px">
                     <div class="col-md-12 p0">
                       <h4 class="mt0px fs_15px fw_400 lh_150p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
                         {{journeyDetails.description}}

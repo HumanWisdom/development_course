@@ -569,9 +569,9 @@
     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/blog_landing.png"
       class="blog-index-hero-bg img-responsive img_bl" alt="Insightful articles with practical tips to be happier">
     <div class="blog-index-hero-copy">
-      <h2 class="mt0px mb20px fs_36px fw_600 lh_140p fc_ffffff">
+      <h1 class="mt0px mb20px fs_36px fw_600 lh_140p fc_ffffff">
         Insightful articles with practical tips to be happier
-      </h2>
+      </h1>
       <h4 class="mtb0px fs_15px fw_400 lh_150p fc_ffffff">
         Find articles on meditation, mental health, relationships, and how to succeed at work
       </h4>
@@ -593,7 +593,7 @@
               <button type="button" class="blog-filter-tag" data-filter="work-leadership" data-title="Work &amp; Leadership">Work &amp; Leadership</button>
               <button type="button" class="blog-filter-tag" data-filter="breathing-meditation" data-title="Breathing &amp; Meditation">Breathing &amp; Meditation</button>
               <button type="button" class="blog-filter-search" id="blog-search-toggle" aria-label="Search articles" aria-expanded="false">
-                <img src="https://d1tenzemoxuh75.cloudfront.net/website/search.svg" class="blog-icon-search" alt="" width="18" height="18" aria-hidden="true">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/search.svg" class="blog-icon-search" alt="search_icon" width="18" height="18" aria-hidden="true">
                 <i class="bi bi-x blog-icon-close" aria-hidden="true"></i>
               </button>
               <form class="blog-search-box" action="" onsubmit="return false;">
@@ -1659,7 +1659,7 @@
               <a class="" href="first_mental_health_support.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/78.webp" class="img-responsive img_blogs" alt="Blog_img">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/81.webp" class="img-responsive img_blogs" alt="Blog_img">
                   </div>
                 </div>
 
@@ -1689,7 +1689,7 @@
               <a class="" href="as_Ai_changes_work.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/79.webp" class="img-responsive img_blogs" alt="Blog_img">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/78.webp" class="img-responsive img_blogs" alt="Blog_img">
                   </div>
                 </div>
 
@@ -1777,7 +1777,35 @@ Work and Leadership</button>
               <a class="" href="preventing_sucide.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/83.webp" class="img-responsive img_blogs" alt="Blog_img">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/82.webp" class="img-responsive img_blogs" alt="Blog_img">
+                  </div>
+                </div>
+
+                <div class="row mt20px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">  Stress Management</button>
+
+
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                    <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">Preventing suicide before the fire starts
+
+</h4>
+                  </div>
+                </div>
+               
+              </a>
+            </div>
+
+             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="1100">
+
+              <a class="" href="live_with_less_stress.php">
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/84.webp" class="img-responsive img_blogs" alt="Blog_img">
                   </div>
                 </div>
 
@@ -1791,7 +1819,8 @@ Work and Leadership</button>
 
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                    <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">Preventing suicide before the fire starts
+                    <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">How can we live with less stress?
+
 
 </h4>
                   </div>

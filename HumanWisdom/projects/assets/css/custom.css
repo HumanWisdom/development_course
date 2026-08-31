@@ -33564,6 +33564,16 @@ body * {
   object-fit: cover;
   object-position: 50% 25%;
 }
+.session_img_playtest {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  width: auto;
+  height: 30px;
+}
 
 .session_img_play {
   position: absolute;

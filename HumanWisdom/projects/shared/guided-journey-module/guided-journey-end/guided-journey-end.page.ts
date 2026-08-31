@@ -121,10 +121,19 @@ export class GuidedJourneyEndPage implements OnInit {
     if (s.includes('PODCAST') || s.includes('AUDIO') || s.includes('MEDITATION') || s.includes('BREATHING') || s.includes('SOUNDSCAPE')) {
       return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audio_play.svg';
     }
-    if (s.includes('VIDEO') || s.includes('SHORT') || s.includes('CONVERSATION') || s.includes('TALK')) {
+    if (s.includes('VIDEO') || s.includes('SHORT') || s.includes('CONVERSATION') || s.includes('TALK') || s.includes('EVENT')) {
       return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg';
     }
     return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg';
+  }
+
+  getSectionDisplayName(section: string): string {
+    if (!section) return '';
+    const s = section.trim().toLowerCase();
+    if (s === 'event' || s === 'events' || s.includes('event')) {
+      return 'IN-DEPTH CONVERSATIONS';
+    }
+    return section;
   }
 
   onExerciseClick(exercise: any) {
@@ -241,22 +250,15 @@ export class GuidedJourneyEndPage implements OnInit {
 
   goBack() {
     const prefix = SharedService.getprogramName();
-    this.router.navigate([`/${prefix}/guided-journeys/days`], {
-      queryParams: {
-        journeyId: this.journeyId,
-        day: 0,
-        title: this.journeyTitle,
-        subtitle: this.journeySubtitle
-      }
-    });
+    this.router.navigate([`/${prefix}/guided-journeys/${this.journeyId}`]);
   }
 
   navigateToDay(day: number) {
     const prefix = SharedService.getprogramName();
     if (day === 0) {
-      this.router.navigate([`/${prefix}/guided-journeys/intro`], { queryParams: { journeyId: this.journeyId } });
+      this.router.navigate([`/${prefix}/guided-journeys/${this.journeyId}`]);
     } else {
-      this.router.navigate([`/${prefix}/guided-journeys/days`], { queryParams: { journeyId: this.journeyId, day: day } });
+      this.router.navigate([`/${prefix}/guided-journeys/${this.journeyId}`], { queryParams: { day: day } });
     }
   }
 

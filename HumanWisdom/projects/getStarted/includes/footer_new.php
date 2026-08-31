@@ -452,7 +452,7 @@
     </div>
 
     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 col-4 p0">
-      <a href="https://onelink.to/qsptex" class="">
+      <a href="https://onelink.to/hsnt8b" class="">
         <button class="fs_12px fw_600 lh_140p fc_ffffff btn_download" >
           Download app
         </button>
