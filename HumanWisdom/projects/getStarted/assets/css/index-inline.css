@@ -86,6 +86,11 @@ img { max-width: 100%; display: block; }
   text-decoration: underline;
   text-decoration-color: #FFF7E6;
   cursor: pointer;
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  display: inline;
 }
 .frame-wrapper.web_home_divlanding #hw-website-subtitle .human-skills-link:hover {
   color: #ED7D6F !important;
@@ -338,9 +343,8 @@ img { max-width: 100%; display: block; }
   vertical-align: bottom;
   height: 1.3em;
   overflow: hidden;
-  min-width: 0 !important;
   text-align: right !important;
-  transition: none;
+  transition: none !important;
 }
 .web_home_divlanding .scrolling-word {
   position: absolute !important;
@@ -349,6 +353,19 @@ img { max-width: 100%; display: block; }
   top: 0;
   width: max-content !important;
   white-space: nowrap;
+}
+.web_home_divlanding .scrolling-word.active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.45s cubic-bezier(0.4, 0, 0.6, 1),
+              transform 0.45s cubic-bezier(0.4, 0, 0.6, 1);
+  z-index: 1;
+}
+.web_home_divlanding .scrolling-word.exit {
+  opacity: 0;
+  transform: translateY(-60%);
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 1, 1),
+              transform 0.4s cubic-bezier(0.4, 0, 1, 1);
 }
 
 /* rating */
@@ -596,6 +613,94 @@ p:hover {
     flex-direction: column;
     align-items: center;
     gap: 60px;
+}
+
+/* Survey findings circle strip (chunk 2) — from home.css */
+.div-new .circle-mobile {
+  display: none;
+}
+
+.div-new .happy-wide-img,
+.div-new .quotation-comma-mobile {
+  display: none;
+}
+
+@media (min-width: 1800px) {
+  .div-new .happy-wide-img {
+    display: block;
+    width: 100%;
+  }
+
+  .div-new .d-wider {
+    display: none !important;
+  }
+}
+
+.div-new .scroller-container {
+  width: 100%;
+}
+
+@media (min-width: 769px) {
+  .div-new .scroller-container {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .div-new .scroller-container > div {
+    width: 100%;
+    max-width: 1340px;
+    text-align: center;
+  }
+
+  .div-new .scroller-container img.d-wider {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .div-new .scroller-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    display: flex;
+    flex-wrap: nowrap;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    height: 167px;
+    padding-top: 24px;
+    padding-left: 20px;
+  }
+
+  .div-new .scroller-container > div {
+    flex: 0 0 auto;
+    min-width: 335px;
+  }
+
+  .div-new .scroller-container img:not(.circle-mobile) {
+    max-width: 100%;
+    height: auto;
+    padding-left: 50px;
+  }
+
+  .div-new .scroller-container img.circle-mobile {
+    max-width: none;
+    width: auto;
+    height: auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .div-new .circle-mobile {
+    display: block;
+  }
+
+  .div-new .d-wider,
+  .div-new .quotation-comma {
+    display: none !important;
+  }
 }
 
 /* ========================================

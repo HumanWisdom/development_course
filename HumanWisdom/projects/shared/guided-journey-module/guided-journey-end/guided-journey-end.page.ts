@@ -250,22 +250,15 @@ export class GuidedJourneyEndPage implements OnInit {
 
   goBack() {
     const prefix = SharedService.getprogramName();
-    this.router.navigate([`/${prefix}/guided-journeys/days`], {
-      queryParams: {
-        journeyId: this.journeyId,
-        day: 0,
-        title: this.journeyTitle,
-        subtitle: this.journeySubtitle
-      }
-    });
+    this.router.navigate([`/${prefix}/guided-journeys/${this.journeyId}`]);
   }
 
   navigateToDay(day: number) {
     const prefix = SharedService.getprogramName();
     if (day === 0) {
-      this.router.navigate([`/${prefix}/guided-journeys/intro`], { queryParams: { journeyId: this.journeyId } });
+      this.router.navigate([`/${prefix}/guided-journeys/${this.journeyId}`]);
     } else {
-      this.router.navigate([`/${prefix}/guided-journeys/days`], { queryParams: { journeyId: this.journeyId, day: day } });
+      this.router.navigate([`/${prefix}/guided-journeys/${this.journeyId}`], { queryParams: { day: day } });
     }
   }
 

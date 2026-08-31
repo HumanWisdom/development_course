@@ -26,14 +26,15 @@ hw_cdn_preconnect_tags();
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"></noscript>
 <?php endif; ?>
 
+<?php if (hw_page_assets_flag('css', 'bootstrap_css')) : ?>
 <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"></noscript>
+<?php endif; ?>
 
-<link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"></noscript>
-
+<?php if (hw_page_assets_flag('css', 'bootstrap_icons')) : ?>
 <link rel="preload" href="<?= hw_asset_url('../assets/vendor/bootstrap-icons/bootstrap-icons.css'); ?>" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="<?= hw_asset_url('../assets/vendor/bootstrap-icons/bootstrap-icons.css'); ?>"></noscript>
+<?php endif; ?>
 
 <?php if (hw_page_assets_flag('css', 'glightbox')) : ?>
 <link rel="preload" href="<?= hw_asset_url('../assets/vendor/glightbox/css/glightbox.min.css'); ?>" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -45,20 +46,14 @@ hw_cdn_preconnect_tags();
 <noscript><link rel="stylesheet" href="<?= hw_asset_url('../assets/vendor/swiper/swiper-bundle.min.css'); ?>"></noscript>
 <?php endif; ?>
 
+<?php if (hw_page_assets_flag('css', 'site_css_head')) : ?>
 <?php
-hw_defer_stylesheet('../assets/css/landing.css');
-hw_defer_stylesheet('../assets/css/main.css');
-hw_defer_stylesheet('../assets/css/home.css');
-hw_defer_stylesheet('../assets/css/index.css');
-hw_defer_stylesheet('../assets/css/responsive.css');
-if (hw_page_assets_flag('css', 'font_stacks')) {
-    hw_defer_stylesheet('../assets/font/font_colour.css');
-    hw_defer_stylesheet('../assets/font/font_size.css');
-    hw_defer_stylesheet('../assets/font/font_weight.css');
-    hw_defer_stylesheet('../assets/font/line_height.css');
-} elseif (hw_page_assets_flag('css', 'font_colour')) {
-    hw_defer_stylesheet('../assets/font/font_colour.css');
+foreach (hw_page_assets_site_style_urls() as $siteStyleUrl) {
+    hw_defer_stylesheet($siteStyleUrl);
 }
+?>
+<?php endif; ?>
+<?php
 if (hw_page_assets_flag('css', 'style_hb')) {
     hw_defer_stylesheet('../assets/css/style_hb.css');
 }

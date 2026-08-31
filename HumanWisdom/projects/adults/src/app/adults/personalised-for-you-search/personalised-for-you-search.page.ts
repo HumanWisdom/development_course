@@ -361,7 +361,7 @@ toggleAccordion() {
   routeToGuidedJourney(journeyId) {
     this.logeventservice.logEvent('click_guided_journey_' + journeyId);
     SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
-    this.router.navigate(['/adults/guided-journeys/intro'], { queryParams: { journeyId } });
+    this.router.navigate(['/adults/guided-journeys', journeyId]);
   }
 
   toggleMicrolearning() {

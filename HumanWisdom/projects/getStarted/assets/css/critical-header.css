@@ -175,8 +175,12 @@
   }
   #teenagersHeaderClick .badge_new h6,
   #teenagersHeaderClick .badge_new h6:hover,
+  #teenagersHeaderClick .badge_new_text,
+  #teenagersHeaderClick .badge_new_text:hover,
   #teenagersHeaderClick_mobile .badge_new h6,
-  #teenagersHeaderClick_mobile .badge_new h6:hover {
+  #teenagersHeaderClick_mobile .badge_new h6:hover,
+  #teenagersHeaderClick_mobile .badge_new_text,
+  #teenagersHeaderClick_mobile .badge_new_text:hover {
     margin: 0;
     font-size: 6px;
     font-weight: 600;
@@ -186,3 +190,87 @@
     text-decoration: none !important;
     white-space: nowrap;
   }
+
+/* Above-fold header/footer icons use inline SVG (.hw-ui-icon), not bootstrap-icons font. */
+.hw-ui-icon {
+  display: block;
+  flex-shrink: 0;
+  pointer-events: none;
+}
+.mobile-nav-show .hw-ui-icon {
+  width: 28px;
+  height: 28px;
+}
+.mobile-nav-close .hw-ui-icon {
+  width: 22px;
+  height: 22px;
+}
+.scroll-top .hw-ui-icon {
+  width: 24px;
+  height: 24px;
+  color: #fff;
+}
+
+/* Keep mobile nav off-screen before main.css loads (prevents header CLS) */
+@media (max-width: 1024px) {
+  .header_fixed .navbar {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    transform: translateX(100%);
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 10050;
+    display: block;
+    background: rgba(255, 247, 230, 1);
+    box-sizing: border-box;
+    padding: 0 16px 16px;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  .mobile-nav-active .header_fixed .navbar {
+    transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
+  }
+  .navbar ul.mobile-nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 95px 0 0;
+  }
+  .mobile-nav-social {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 11px;
+    margin: 32px 0 0;
+  }
+  .mobile-nav-social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 232, 187, 1);
+    flex-shrink: 0;
+  }
+  .mobile-nav-social-link img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    display: block;
+  }
+  .mobile-nav-hide,
+  .mobile-nav-close {
+    display: none !important;
+  }
+  .header_main_inner .img-responsive {
+    width: auto;
+    max-height: 48px;
+    height: auto;
+    display: block;
+  }
+}

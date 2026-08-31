@@ -242,7 +242,8 @@ textarea {
   transition: all 0.4s;
 }
 
-.scroll-top i {
+.scroll-top i,
+.scroll-top .hw-ui-icon {
   font-size: 24px;
   color: #fff;
   line-height: 0;
@@ -834,7 +835,7 @@ label>input[type="checkbox"]+*::before {
     filter: brightness(0);
   }
 
-  .mobile-nav-show {
+.mobile-nav-show {
     color: #CB6171;
     font-size: 28px;
     cursor: pointer;
@@ -842,6 +843,9 @@ label>input[type="checkbox"]+*::before {
     transition: 0.5s;
     z-index: 9999;
     margin: 0 10px 0 20px;
+    background: none;
+    border: 0;
+    padding: 0;
   }
 
   .mobile-nav-hide:not(.mobile-nav-close) {
@@ -5385,16 +5389,6 @@ input[type="password" i]::-ms-reveal {
   color: #803358 !important;
 }
 
-/* Override Bootstrap Icons font-face */
-@font-face {
-  font-family: "bootstrap-icons";
-  src: url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/fonts/bootstrap-icons.woff2") format("woff2"),
-       url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/fonts/bootstrap-icons.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap; /* <-- key addition */
-}
-
 /* Override Font Awesome font-face */
 @font-face {
   font-family: "FontAwesome";
@@ -5467,7 +5461,13 @@ input[type="password" i]::-ms-reveal {
       vertical-align: bottom;
       min-width: 0;
       text-align: left;
-      transition: width 0.35s ease;
+      transition: none;
+        }
+
+        /* Landing hero: no width transition on container only (word animation keeps transitions) */
+        .web_home_divlanding .scrolling-words {
+          transition: none !important;
+          text-align: right !important;
         }
 
    
