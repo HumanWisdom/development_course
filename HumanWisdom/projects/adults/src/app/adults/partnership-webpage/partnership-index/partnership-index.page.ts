@@ -81,7 +81,7 @@ export class PartnershipIndexPage implements OnInit {
     localStorage.setItem('btnClickBecomePartner', 'true');
     this.services.navigateToUpgradeToPremium = true;
     //localStorage.setItem("navigateToUpgradeToPremium","true")
-    this.router.navigate(['adults/partnership-app']);
+    this.router.navigate(['/adults/partnership-app']);
   }
 
   scroll_to_Faq(): void {
@@ -138,5 +138,9 @@ export class PartnershipIndexPage implements OnInit {
     this.logeventservice.logEvent('click_testimonial_' + str);
     SharedService.setDataInLocalStorage(Constant.TestimonialId,str);
     this.router.navigate(['/adults/testimonials']);
+  }
+
+  goBack() {
+    this.router.navigate(['/adults/adult-dashboard']);
   }
 }

@@ -130,9 +130,13 @@ export class WisdomShortsIndexPage implements OnInit {
                   }
                 } else if (key === 'HwpAllEvents') {
                   item['Type'] = 'In-depth';
-                } else if (key === 'Conversations' || key === 'Teentalks') {
+                } else if (key === 'Conversations' && this.isAdults) {
                   item['Type'] = 'Real-life stories';
-                } else if (!item['Type']) {
+                } else if (key === 'Teentalks' && !this.isAdults) {
+                  item['Type'] = 'Real-life stories';
+                } else {
+                  // Always overwrite Type based on the API key so items
+                  // never inherit a stale/incorrect type from the server
                   item['Type'] = key;
                 }
 
@@ -490,13 +494,13 @@ export class WisdomShortsIndexPage implements OnInit {
     if (this.selectedType && this.selectedType !== 'all') {
       const selectedTypeStr = this.selectedType.toLowerCase();
       if (selectedTypeStr === 'short_videos') {
-        list = list.filter(d => !d['Type'] || d['Type'].toLowerCase().includes('short'));
+        list = list.filter(d => !d['Type'] || d['Type'].toLowerCase() === 'short videos');
       } else if (selectedTypeStr === 'expert_tips') {
-        list = list.filter(d => d['Type'] && d['Type'].toLowerCase().includes('expert'));
+        list = list.filter(d => d['Type'] && d['Type'].toLowerCase() === 'expert tips');
       } else if (selectedTypeStr === 'real_life') {
-        list = list.filter(d => d['Type'] && (d['Type'].toLowerCase().includes('real') || d['Type'].toLowerCase().includes('teen') || d['Type'].toLowerCase().includes('conversation')));
+        list = list.filter(d => d['Type'] && d['Type'].toLowerCase() === 'real-life stories');
       } else if (selectedTypeStr === 'in_depth') {
-        list = list.filter(d => d['Type'] && (d['Type'].toLowerCase().includes('depth') || d['Type'].toLowerCase().includes('event')));
+        list = list.filter(d => d['Type'] && d['Type'].toLowerCase() === 'in-depth');
       }
     }
 

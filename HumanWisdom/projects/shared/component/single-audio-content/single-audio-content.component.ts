@@ -281,6 +281,15 @@ export class SingleAudioContentComponent implements OnInit {
           inList = true;
         }
         result += '<li style="margin-bottom: 5px;">' + trimmed.substring(2) + '</li>';
+      } else if (trimmed.startsWith('### ')) {
+        if (inList) { result += '</ul>'; inList = false; }
+        result += '<h3>' + trimmed.substring(4) + '</h3>';
+      } else if (trimmed.startsWith('## ')) {
+        if (inList) { result += '</ul>'; inList = false; }
+        result += '<h2>' + trimmed.substring(3) + '</h2>';
+      } else if (trimmed.startsWith('# ')) {
+        if (inList) { result += '</ul>'; inList = false; }
+        result += '<h2>' + trimmed.substring(2) + '</h2>';
       } else {
         if (inList) {
           result += '</ul>';
