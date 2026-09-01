@@ -101,21 +101,17 @@
                     </div>
 
                     <!-- Status Icon (Read / Lock) -->
-                    <div class="vl-status-box" *ngIf="data?.isRead === '1' || (!isSubscriber && data['RowID'] > 2)">
-                      <img *ngIf="data?.isRead === '1'"
-                        [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isread_teen.svg'"
-                        class="ws-read-icon" alt="Read" />
-                      <img *ngIf="!isSubscriber && data['RowID'] > 2 && data?.isRead !== '1'"
-                        [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg'"
-                        class="ws-lock-icon" alt="Locked" />
-                    </div>
+                    <img *ngIf="data?.isRead === '1'"
+                      [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isread_teen.svg'"
+                      class="ws-read-icon" alt="Read" />
+                    <img *ngIf="!isSubscriber && data['RowID'] > 2 && data?.isRead !== '1'"
+                      [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg'"
+                      class="ws-lock-icon" alt="Locked" />
 
                   </div>
                 </ng-container>
               </div>
               <!-- /VIDEO CARDS LIST -->
-
-              <div class="pagebreak"></div>
             </form>
           </div>
         </div>
