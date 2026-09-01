@@ -119,6 +119,7 @@ export class SharedService {
   }
 
   private static iOS() {
+    const ua = navigator.userAgent || '';
     return [
       'iPad Simulator',
       'iPhone Simulator',
@@ -127,8 +128,9 @@ export class SharedService {
       'iPhone',
       'iPod'
     ].includes(navigator.platform)
-      // iPad on iOS 13 detection
-      || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+      || /iPhone|iPad|iPod/i.test(ua)
+      // iPad on iOS 13+ detection
+      || (ua.includes("Mac") && "ontouchend" in document)
   }
 
 
