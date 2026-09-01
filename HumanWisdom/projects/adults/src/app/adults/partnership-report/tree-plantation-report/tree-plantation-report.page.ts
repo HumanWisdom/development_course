@@ -82,7 +82,7 @@ getTittle(){
 
 
  redirectToMyPartnership(){
-  this.router.navigate(['adults/partnership-report/my-partner'])
+  this.router.navigate(['/adults/partnership-report/my-partner'])
 }
  DownloadPdf1(){
   this.isPdfDownloading=true;
@@ -115,7 +115,7 @@ getTittle(){
 
   goBack()
   {
-  this.router.navigate(['adults/adult-dashboard'])
+  this.router.navigate(['/adults/today'])
   }
 
   share(refcode){
