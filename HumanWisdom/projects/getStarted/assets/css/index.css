@@ -713,20 +713,21 @@ body.page-work .owl_testimonials .work-testimonials-footer .sap.work-testimonial
   line-height: 1 !important;
 }
 
+/* Same as index.php .chevron-pink: 12px, padding-top 3px */
 body.page-work .owl_testimonials .work-testimonials-footer .work-testimonials-more .chevron-pink {
-  display: inline-flex !important;
-  align-items: center !important;
-  padding: 0 !important;
+  display: inline !important;
+  align-items: unset !important;
+  padding: 3px 0 0 0 !important;
   margin: 0 !important;
   line-height: 1 !important;
-  font-size: 12px;
-  transform: translateY(1.5px);
+  font-size: 12px !important;
+  transform: none !important;
 }
 
 body.page-work .owl_testimonials .work-testimonials-footer .work-testimonials-more .chevron-pink .bi {
-  display: block;
+  display: inline !important;
   line-height: 1 !important;
-  font-size: 12px;
+  font-size: 12px !important;
 }
 
 body.page-work .owl_testimonials .work-testimonials-footer .work-testimonials-more:hover .chevron-pink,
