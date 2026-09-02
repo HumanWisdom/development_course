@@ -270,7 +270,7 @@ export class IncomeActivityPage implements OnInit {
 
   goBack()
   {
-  this.router.navigate(['adults/adult-dashboard'])
+    this.router.navigate(['/adults/today'])
   }
   redirectToMyPartnership(){
     this.router.navigate(['adults/partnership-report/my-partner'])

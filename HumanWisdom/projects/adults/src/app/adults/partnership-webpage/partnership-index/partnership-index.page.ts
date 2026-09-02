@@ -141,6 +141,6 @@ export class PartnershipIndexPage implements OnInit {
   }
 
   goBack() {
-    this.router.navigate(['/adults/adult-dashboard']);
+    this.router.navigate(['/adults/today']);
   }
 }
