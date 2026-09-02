@@ -121,7 +121,7 @@
 
                 <h4 class="mtb0px blog_desc">
                     Explore the
-                    <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/Reactive%20Mind">Reactive Mind</a>
+                    <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/reactive-mind">Reactive Mind</a>
                     and
                                        <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/fear-anxiety">Understanding Fear</a>
 
