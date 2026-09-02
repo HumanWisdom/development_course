@@ -1393,12 +1393,16 @@
   width: 100%;
   position: relative;
   overflow: hidden;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .tour-popup-image {
   width: 100%;
   height: auto;
   display: block;
+  transform: scale(1.06);
+  transform-origin: top center;
 }
 
 .tour-popup-content {
