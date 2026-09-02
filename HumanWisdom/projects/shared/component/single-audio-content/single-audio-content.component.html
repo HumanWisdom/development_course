@@ -65,12 +65,12 @@
               </div>
               <div class="row" *ngIf="!isSoundscapes && !enableTextContent">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-                  <img [src]="imageUrl" class="img-responsive img_podcast_02">
+                  <img [src]="imageUrl" class="img-responsive img_podcast_02" *ngIf="enableImage">
                     
                 </div>
               </div>
 
-              <div class="row" *ngIf="enableImage && !enableTextContent">
+              <div class="row" *ngIf="!enableTextContent">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
                   <!-- <img [src]="imageUrl" class="img-responsive img_podcast_02"> -->
                      <h1 class="txt1   mb30px " [ngClass]="isSoundscapes ? 'mt145px fc_ffffff tcenter' : ''"  *ngIf="!enableTextContent">
