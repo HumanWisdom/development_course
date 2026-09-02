@@ -101,9 +101,9 @@
 
                 <h4 class="mtb0px blog_desc">
                     The root of stress lies within us — in how we interpret what happens, in our
-                    <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/expectation">
+                    <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/expectation">
                         expectations</a>, and in how attached we are to our
-                    <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Opinions%20and%20Beliefs">
+                    <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/opinions-beliefs">
                         opinions and beliefs</a>.
                 </h4>
 
@@ -121,9 +121,9 @@
 
                 <h4 class="mtb0px blog_desc">
                     Explore the
-                    <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Reactive%20Mind">"Reactive Mind"</a>
+                    <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/reactive-mind">Reactive Mind</a>
                     and
-                                       <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/fear">"Understanding Fear"</a>
+                                       <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/fear-anxiety">Understanding Fear</a>
 
                     modules in the HappierMe app to see this in action.
                     
@@ -156,7 +156,7 @@
 
                 <h4 class="mtb0px blog_desc">
                     The HappierMe
-                    <span class="blog_highlight_black"><a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Conditioning">"Conditioning"</a>
+                    <span class="blog_highlight_black"><a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/Conditioning">Conditioning</a>
                     </span>module explores how our past experiences, culture, and beliefs shape the way we see life
                     . When we begin to question those beliefs, our mind becomes lighter — and so does our stress.
                 </h4>

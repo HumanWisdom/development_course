@@ -32,10 +32,10 @@ export class IncomeReportPage implements OnInit {
   isCopy: boolean = true;
   titl: string = '0';
   url: string = '';
-  sortedData: any;
+  sortedData: any = [];
   hasIncome: boolean;
   isSubscriber:boolean = false;
-  tableData:any;
+  tableData:any = [];
   isReferraLinkCopy = true;
   isCopyHeader = true;
   constructor(
@@ -408,7 +408,7 @@ export class IncomeReportPage implements OnInit {
   }
 
   ChangeAccountDetais() {
-    this.router.navigate(["adults/partnership-app/payment-bank"], {
+    this.router.navigate(["/adults/partnership-app/payment-bank"], {
       state: {
         isUpdate: true,
         ByPaypal: this.partnershipReport.ByPaypal,
@@ -416,9 +416,9 @@ export class IncomeReportPage implements OnInit {
     });
   }
   redirectToMyPartnership() {
-    this.router.navigate(['adults/partnership-report/my-partner'])
+    this.router.navigate(['/adults/partnership-report/my-partner'])
   }
   goBack() {
-    this.router.navigate(['adults/adult-dashboard'])
+    this.router.navigate(['/adults/today'])
   }
 }

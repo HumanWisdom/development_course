@@ -121,19 +121,28 @@ export class WisdomShortsIndexPage implements OnInit {
             if (Array.isArray(res[key])) {
               res[key].forEach((item) => {
                 const isVoice = item['IsVoices'] == '1' || item['isVoices'] == '1' || item['IsVoices'] === 1 || item['isVoices'] === 1 || item['IsVoices'] === true || item['isVoices'] === true;
+                const lowerKey = key.toLowerCase();
 
-                if (key === 'Shorts') {
+                if (lowerKey === 'shorts' || lowerKey === 'wisdomshorts') {
                   if (isVoice) {
                     item['Type'] = 'Expert tips';
                   } else {
                     item['Type'] = 'Short videos';
                   }
-                } else if (key === 'HwpAllEvents') {
+                } else if (lowerKey === 'voices' || lowerKey === 'experttips') {
+                  item['Type'] = 'Expert tips';
+                } else if (lowerKey === 'hwpallevents' || lowerKey === 'events' || lowerKey === 'indepth') {
                   item['Type'] = 'In-depth';
-                } else if (key === 'Conversations' || key === 'Teentalks') {
+                } else if (lowerKey === 'conversations' && this.isAdults) {
                   item['Type'] = 'Real-life stories';
-                } else if (!item['Type']) {
-                  item['Type'] = key;
+                } else if (lowerKey === 'teentalks' && !this.isAdults) {
+                  item['Type'] = 'Real-life stories';
+                } else {
+                  if (isVoice) {
+                    item['Type'] = 'Expert tips';
+                  } else {
+                    item['Type'] = key;
+                  }
                 }
 
                 if (!item['ImgUrl']) {
@@ -155,8 +164,15 @@ export class WisdomShortsIndexPage implements OnInit {
           });
         }
 
-        const progIdStr = SharedService.ProgramId ? SharedService.ProgramId.toString() : '9';
-        let filteredItems = allItems.filter(p => p.ProgIDs ? p.ProgIDs.includes(progIdStr) : true);
+        const progIdStr = SharedService.ProgramId ? SharedService.ProgramId.toString().trim() : '9';
+        let filteredItems = allItems.filter(p => {
+          if (!p.ProgIDs) return true;
+          if (Array.isArray(p.ProgIDs)) {
+            return p.ProgIDs.some((id: any) => id?.toString().trim() === progIdStr);
+          }
+          const str = p.ProgIDs.toString();
+          return str.split(',').map((s: string) => s.trim()).includes(progIdStr);
+        });
         if (filteredItems.length === 0) {
           filteredItems = allItems;
         }
@@ -168,28 +184,6 @@ export class WisdomShortsIndexPage implements OnInit {
             h.active = true;
           });
         }
-        // if(m?.includes('voices')) {
-        //  this.getVoicesData();
-        //   /* this.wisdomshorts = res1.filter((d) => d['IsVoices'] === '1');
-        //   this.prefData.forEach((d) => {
-        //     if(d['displayName'] === 'Voices') {
-        //       d['active'] = true;
-        //     }else if(d['displayName'] === 'All') {
-        //       d['active'] = false;
-        //     }
-        //   }) */
-        // }else {
-        //   this.wisdomshorts = res1;
-        //  /*  this.allwisdomshorts.forEach((d) => {
-        //     this.prefData.forEach((h) => {
-        //       if(d['PreferenceIDs'] && (d['PreferenceIDs'].includes(','+ h.id) || d['PreferenceIDs'].includes(','+ h.id +',') || d['PreferenceIDs'].includes(h.id +','))) {
-        //          h.active = true;
-        //       }else if(!d['PreferenceIDs']) {
-        //         h.active = true;
-        //       }
-        //     })
-        //   }); */
-        // }
        
         let m: any = window.location.href;
         if(m?.includes('pref')){
@@ -452,37 +446,69 @@ export class WisdomShortsIndexPage implements OnInit {
     }
 
     if (this.selectedPref && this.selectedPref !== 'all' && this.selectedPref !== '999') {
-      const prefIdStr = this.selectedPref.toString().toLowerCase();
+      const prefIdStr = this.selectedPref.toString().toLowerCase().trim();
       if (prefIdStr === 'voices') {
         list = list.filter((d) => d['IsVoices'] == '1' || d['isVoices'] == '1' || d['IsVoices'] === 1 || d['isVoices'] === 1);
       } else if (prefIdStr === '0') {
-        list = list.filter((d) => (!d['PreferenceIDs'] && !d['PrefIDs']));
+        list = list.filter((d) => (!d['PreferenceIDs'] && !d['PrefIDs'] && !d['PreferenceID'] && !d['prefIDs']));
       } else {
-        const prefObj = this.prefData?.find(p => p.id?.toString().toLowerCase() === prefIdStr);
+        const prefObj = this.prefData?.find((p: any) => p.id?.toString().toLowerCase() === prefIdStr);
         const prefDisplayName = prefObj?.displayName?.toLowerCase();
         const prefName = prefObj?.name?.toLowerCase();
 
+        // Equivalent ID mapping between Adults and Teens preferences
+        const prefIdMap: { [key: string]: string[] } = {
+          '1': ['1', '17'],   // Work (Adults 1) / Success (Teens 17)
+          '17': ['17', '1'],  // Success (Teens 17) / Work (Adults 1)
+          '2': ['2', '10'],   // Mental health (Adults 2) / Mental health (Teens 10)
+          '10': ['10', '2'],  // Mental health (Teens 10) / Mental health (Adults 2)
+          '3': ['3', '11'],   // Relationships (Adults 3) / Relationships (Teens 11)
+          '11': ['11', '3'],  // Relationships (Teens 11) / Relationships (Adults 3)
+          '4': ['4', '13'],   // Happiness (Adults 4) / Happiness (Teens 13)
+          '13': ['13', '4'],  // Happiness (Teens 13) / Happiness (Adults 4)
+          '5': ['5', '15'],   // Addiction (Adults 5) / Habits (Teens 15)
+          '15': ['15', '5'],  // Habits (Teens 15) / Addiction (Adults 5)
+          '7': ['7', '12'],   // Meditation (Adults 7) / Feel calm (Teens 12)
+          '12': ['12', '7'],  // Feel calm (Teens 12) / Meditation (Adults 7)
+          '8': ['8', '14'],   // Emotions (Adults 8) / Emotions (Teens 14)
+          '14': ['14', '8'],  // Emotions (Teens 14) / Emotions (Adults 8)
+        };
+
+        const targetIds = prefIdMap[prefIdStr] || [prefIdStr];
+
         list = list.filter((d) => {
-          // Check PreferenceIDs / PrefIDs / PreferenceID
-          const rawPrefIds = d['PreferenceIDs'] || d['PrefIDs'] || d['PreferenceID'] || d['prefIDs'] || '';
-          let matchPrefId = false;
+          // Extract item's Preference IDs as trimmed string tokens
+          const rawPrefIds = d['PreferenceIDs'] ?? d['PrefIDs'] ?? d['PreferenceID'] ?? d['prefIDs'] ?? '';
+          let itemPrefTokens: string[] = [];
           if (Array.isArray(rawPrefIds)) {
-            matchPrefId = rawPrefIds.some(p => p.toString().trim() === prefIdStr);
+            itemPrefTokens = rawPrefIds.map(p => p?.toString().trim()).filter(Boolean);
           } else if (rawPrefIds) {
-            matchPrefId = rawPrefIds.toString().split(',').map(s => s.trim()).includes(prefIdStr);
+            itemPrefTokens = rawPrefIds.toString().split(',').map((s: string) => s.trim()).filter(Boolean);
           }
 
-          // Check searchtags
-          const searchTags = (d['searchtags'] || '').toLowerCase();
-          const matchTags = searchTags.includes(prefIdStr) || 
-                            (prefDisplayName && searchTags.includes(prefDisplayName)) ||
-                            (prefName && searchTags.includes(prefName));
+          // Check if any item Preference ID matches target IDs
+          const matchPrefId = itemPrefTokens.some(id => targetIds.includes(id));
+
+          // Check searchtags (split into tokens to avoid substring matching single digits like "1" matching "10")
+          const rawSearchTags = (d['searchtags'] || d['searchTags'] || d['Tags'] || d['tags'] || '').toLowerCase();
+          const tagTokens = rawSearchTags.split(/[,;]+/).map((s: string) => s.trim()).filter(Boolean);
+
+          const matchTagId = tagTokens.some((t: string) => targetIds.includes(t));
+          
+          let matchTagName = false;
+          if (prefDisplayName && prefDisplayName.length >= 3) {
+            matchTagName = tagTokens.some((t: string) => t.includes(prefDisplayName) || prefDisplayName.includes(t)) ||
+                           rawSearchTags.includes(prefDisplayName);
+          }
+          if (!matchTagName && prefName && prefName.length >= 3) {
+            matchTagName = rawSearchTags.includes(prefName);
+          }
 
           // Check Title
           const titleStr = (d['Title'] || '').toLowerCase();
-          const matchTitle = prefDisplayName ? titleStr.includes(prefDisplayName) : false;
+          const matchTitle = prefDisplayName && prefDisplayName.length >= 3 ? titleStr.includes(prefDisplayName) : false;
 
-          return matchPrefId || matchTags || matchTitle;
+          return matchPrefId || matchTagId || matchTagName || matchTitle;
         });
       }
     }
@@ -490,13 +516,13 @@ export class WisdomShortsIndexPage implements OnInit {
     if (this.selectedType && this.selectedType !== 'all') {
       const selectedTypeStr = this.selectedType.toLowerCase();
       if (selectedTypeStr === 'short_videos') {
-        list = list.filter(d => !d['Type'] || d['Type'].toLowerCase().includes('short'));
+        list = list.filter(d => !d['Type'] || d['Type'].toLowerCase() === 'short videos' || d['Type'].toLowerCase() === 'shorts');
       } else if (selectedTypeStr === 'expert_tips') {
-        list = list.filter(d => d['Type'] && d['Type'].toLowerCase().includes('expert'));
+        list = list.filter(d => d['Type'] && (d['Type'].toLowerCase() === 'expert tips' || d['Type'].toLowerCase() === 'voices'));
       } else if (selectedTypeStr === 'real_life') {
-        list = list.filter(d => d['Type'] && (d['Type'].toLowerCase().includes('real') || d['Type'].toLowerCase().includes('teen') || d['Type'].toLowerCase().includes('conversation')));
+        list = list.filter(d => d['Type'] && (d['Type'].toLowerCase() === 'real-life stories' || d['Type'].toLowerCase() === 'conversations' || d['Type'].toLowerCase() === 'teentalks'));
       } else if (selectedTypeStr === 'in_depth') {
-        list = list.filter(d => d['Type'] && (d['Type'].toLowerCase().includes('depth') || d['Type'].toLowerCase().includes('event')));
+        list = list.filter(d => d['Type'] && (d['Type'].toLowerCase() === 'in-depth' || d['Type'].toLowerCase() === 'events' || d['Type'].toLowerCase() === 'hwpallevents'));
       }
     }
 

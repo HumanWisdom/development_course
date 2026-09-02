@@ -96,7 +96,7 @@
     color: #FFFFFF !important;
   }
 
-  .odiv, .odiv_pathway, .odiv_wfgi, .ae_days {
+  .odiv, .odiv_pathway, .odiv_wfgi, .ae_days, .vl-chip-scroll {
     scrollbar-color: #778899 #16366D;
     
     &::-webkit-scrollbar-thumb {
@@ -121,7 +121,7 @@
 
   ::ng-deep app-hwp-search-bar {
     .form-control {
-      background: #1C2A48 !important;
+      background: #0C2B5F !important;
       border-color: #4267A5 !important;
       color: #FFFFFF !important;
 
@@ -226,7 +226,7 @@
 /* Teens override */
 .mc_01_v3:not(.adults-scroll) {
   .vl-search-input {
-    background: #1C2A48 !important;
+    background: #0C2B5F !important;
     border-color: #4267A5 !important;
     color: #FFFFFF !important;
 
@@ -357,7 +357,7 @@
 /* Video Library Card List */
 .vl-card-list {
   margin-top: 18px;
-  margin-bottom: 40px;
+  margin-bottom: 80px;
   padding-bottom: 20px;
   display: flex;
   flex-direction: column;
@@ -379,7 +379,7 @@
 }
 
 .vl-card-teens {
-  background: #1C2A48;
+  background: #0C2B5F;
 
   .vl-card-subtext {
     color: #FFFFFF !important;
@@ -392,15 +392,17 @@
   width: 100px;
   height: 100px;
   flex-shrink: 0;
-  border-radius: 6px;
+  border-radius: 10px;
   overflow: hidden;
-  background: #E8E0D5;
+  background: transparent;
 
   .vl-thumb-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 12px;
+    border-radius: 10px;
+    transform: scale(1.06);
+    transform-origin: center;
   }
 
   .vl-play-icon {
@@ -443,37 +445,22 @@
   }
 }
 
-.vl-status-box {
-  flex-shrink: 0;
-  align-self: stretch;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.ws-read-icon {
+  position: absolute !important;
+  top: 10px !important;
+  right: 10px !important;
+  bottom: auto !important;
+  left: auto !important;
+  pointer-events: none;
+}
 
-  .ws-read-icon {
-    align-self: flex-start;
-    position: static !important;
-    top: auto !important;
-    bottom: auto !important;
-    left: auto !important;
-    right: auto !important;
-    width: 22px !important;
-    height: 22px !important;
-    margin: 2px 0 0 0 !important;
-  }
-
-  .ws-lock-icon {
-    align-self: flex-end;
-    margin-top: auto;
-    position: static !important;
-    top: auto !important;
-    bottom: auto !important;
-    left: auto !important;
-    right: auto !important;
-    width: 22px !important;
-    height: 22px !important;
-    margin: 0 !important;
-  }
+.ws-lock-icon {
+  position: absolute !important;
+  bottom: 10px !important;
+  right: 10px !important;
+  top: auto !important;
+  left: auto !important;
+  pointer-events: none;
 }
 
 /* Video Library Search Bar */
@@ -538,7 +525,7 @@
 .mc_01_v3:not(.adults-scroll) {
   .form-group.has-feedback {
     .form-control, .form-control.pfy_search {
-      background: #1C2A48 !important;
+      background: #0C2B5F !important;
       border: 1px solid #4267A5 !important;
       color: #FFFFFF !important;
 
