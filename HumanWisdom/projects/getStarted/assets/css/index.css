@@ -853,8 +853,8 @@ body.page-education .edu-testimonials-wrap {
 body.page-education .owl_testimonials {
   --edu-testimonial-row-width: 1340px;
   --edu-testimonial-gap: 30px;
-  /* Figma 426.67 — minus 2px each so 3 cards + gaps fit without clipping the last */
-  --edu-testimonial-card-width: calc((var(--edu-testimonial-row-width) - 2 * var(--edu-testimonial-gap)) / 3 - 2px);
+  /* Slightly under 1/3 so 3 cards + 30px gaps fit without clipping the last tile */
+  --edu-testimonial-card-width: calc((var(--edu-testimonial-row-width) - 2 * var(--edu-testimonial-gap)) / 3 - 8px);
   width: 100%;
   max-width: 100%;
   margin-left: auto;
@@ -866,22 +866,22 @@ body.page-education .owl_testimonials .div_testimonials.edu-testimonial-card {
   background: rgba(255, 247, 230, 1) !important;
   background-image: none !important;
   border-radius: 20px !important;
-  padding: 36px !important;
-  width: var(--edu-testimonial-card-width) !important;
-  max-width: var(--edu-testimonial-card-width) !important;
-  height: auto !important;
-  min-height: 305px;
-  max-height: none !important;
+  padding: 34px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 305px !important;
+  min-height: 305px !important;
+  max-height: 305px !important;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  overflow: visible !important;
+  gap: 15px;
+  overflow: hidden !important;
 }
 
 body.page-education .owl_testimonials .owl-carousel:not(.edu-testimonials-native) .owl-item .item {
-  width: var(--edu-testimonial-card-width);
-  height: auto !important;
+  width: 100%;
+  height: 305px !important;
 }
 
 body.page-education .owl_testimonials .owl-carousel .owl-item .item,
@@ -955,8 +955,8 @@ body.page-education .owl_testimonials .edu-testimonial-quote {
   line-height: 150%;
   color: rgba(0, 0, 0, 1);
   margin: 0;
-  flex: 0 0 auto;
-  overflow: visible;
+  flex: 1 1 auto;
+  overflow: hidden;
   text-align: left;
 }
 
@@ -975,6 +975,21 @@ body.page-education .owl_testimonials > .owl-carousel {
   overflow: hidden;
 }
 
+/* Owl CSS hides .owl-carousel until .owl-loaded — keep cards visible before/without init */
+body.page-education .owl_testimonials > .owl-carousel:not(.owl-loaded):not(.edu-testimonials-native) {
+  display: flex !important;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: var(--edu-testimonial-gap, 30px);
+  overflow: hidden;
+}
+
+body.page-education .owl_testimonials > .owl-carousel:not(.owl-loaded):not(.edu-testimonials-native) > .item {
+  flex: 0 0 var(--edu-testimonial-card-width);
+  width: var(--edu-testimonial-card-width);
+  max-width: var(--edu-testimonial-card-width);
+}
+
 body.page-education .owl_testimonials > .owl-carousel > .owl-stage-outer {
   width: 100% !important;
   max-width: 100%;
@@ -984,8 +999,8 @@ body.page-education .owl_testimonials > .owl-carousel > .owl-stage-outer {
 }
 
 body.page-education .owl_testimonials .owl-carousel .owl-item {
+  /* Gap via Owl margin — do not force a fixed px width (clips last card) */
   margin-right: var(--edu-testimonial-gap) !important;
-  width: var(--edu-testimonial-card-width) !important;
   height: auto !important;
 }
 
@@ -1040,7 +1055,7 @@ body.page-education .owl_testimonials + .owl-theme {
   display: none !important;
 }
 
-/* Desktop wide: lock Figma 1340 / cards (~424.67 with -2px) / gap 30 */
+/* Desktop wide: 3 full cards in the 1340 row — no clipped peeks */
 @media (min-width: 1400px) {
   body.page-education .edu-testimonials-wrap {
     max-width: 1340px !important;
@@ -1052,7 +1067,7 @@ body.page-education .owl_testimonials + .owl-theme {
   body.page-education .owl_testimonials {
     --edu-testimonial-row-width: 1340px;
     --edu-testimonial-gap: 30px;
-    --edu-testimonial-card-width: calc((var(--edu-testimonial-row-width) - 2 * var(--edu-testimonial-gap)) / 3 - 2px);
+    --edu-testimonial-card-width: calc((var(--edu-testimonial-row-width) - 2 * var(--edu-testimonial-gap)) / 3 - 8px);
     max-width: 1340px !important;
     overflow: hidden;
   }
@@ -1068,13 +1083,19 @@ body.page-education .owl_testimonials + .owl-theme {
   }
 
   body.page-education .owl_testimonials .div_testimonials.edu-testimonial-card {
-    width: var(--edu-testimonial-card-width) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 305px !important;
+    min-height: 305px !important;
+    max-height: 305px !important;
   }
+}
 
-  body.page-education .owl_testimonials .owl-carousel .owl-item {
-    width: var(--edu-testimonial-card-width) !important;
-    max-width: var(--edu-testimonial-card-width) !important;
-    margin-right: var(--edu-testimonial-gap) !important;
+@media (min-width: 2080px) {
+  body.page-education .owl_testimonials > .owl-carousel > .owl-stage-outer {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    overflow: hidden !important;
   }
 }
 
@@ -1314,10 +1335,15 @@ body.page-education .div_inspire h5:hover {
 
 body.page-education .div_inspire a.fc_cb6171,
 body.page-education .div_inspire a.fc_cb6171:link,
-body.page-education .div_inspire a.fc_cb6171:visited {
-  color: #CB6171 !important;
+body.page-education .div_inspire a.fc_cb6171:visited,
+body.page-education .div_inspire a.fc_cb6171 span,
+body.page-education section.hpt120px ~ main#main .div_inspire a.fc_cb6171,
+body.page-education section.hpt120px ~ main#main .div_inspire a.fc_cb6171:link,
+body.page-education section.hpt120px ~ main#main .div_inspire a.fc_cb6171:visited,
+body.page-education section.hpt120px ~ main#main .div_inspire a.fc_cb6171 span {
+  color: #d7586b !important;
   text-decoration: underline;
-  text-decoration-color: #CB6171;
+  text-decoration-color: #d7586b;
 }
 
 body.page-education .div_inspire a.fc_cb6171:hover,
@@ -4459,14 +4485,86 @@ body.page-healthcare .healthcare-hero-shell .wide-screen-only {
     line-height: 140% !important;
   }
 
-  /* Hero h1 only — 27px on mobile (all other headings stay 18px) */
-  body.page-education section.hpt120px .absolute_desc_m h1,
-  body.page-education section.hpt120px .absolute_desc_m h1.fs_36px,
-  body.page-education section.hpt120px .absolute_desc_m h1.edu-hero-title,
+  /* Hero h1 only — healthcare 27px; education Figma 30/600/140% */
   body.page-healthcare section.hpt120px .absolute_desc_m h1,
   body.page-healthcare section.hpt120px .absolute_desc_m h1.fs_36px {
     font-size: 27px !important;
     line-height: 140% !important;
+  }
+
+  body.page-education section.hpt120px .absolute_desc_m h1,
+  body.page-education section.hpt120px .absolute_desc_m h1.fs_36px,
+  body.page-education section.hpt120px .absolute_desc_m h1.edu-hero-title,
+  body.page-education section.hpt120px .absolute_desc_m h1.edu-hero-title span {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 30px !important;
+    font-weight: 600 !important;
+    line-height: 140% !important;
+    letter-spacing: 0 !important;
+    color: rgba(0, 0, 0, 1) !important;
+    text-align: center !important;
+  }
+
+  body.page-education .healthcare-hero-shell img.display_d_none {
+    width: 100% !important;
+    height: 700px !important;
+    display: block !important;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  body.page-education .healthcare-hero-shell .absolute_desc_m .display_m_none {
+    display: none !important;
+  }
+
+  body.page-education .healthcare-hero-shell .absolute_desc_m h1 .display_d_none,
+  body.page-education .healthcare-hero-shell .absolute_desc_m h5 .display_d_none {
+    display: block !important;
+  }
+
+  /* Education mobile hero — Figma: 335px stack, 24px gap, no inner padding */
+  body.page-education .healthcare-hero-shell .absolute_desc_m > .edu-hero-copy,
+  body.page-education section.hpt120px .row.center_flex .edu-hero-copy.col-sm-10,
+  body.page-education section.hpt120px .row.center_flex .edu-hero-copy.col-10 {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 24px !important;
+    width: 335px !important;
+    max-width: 335px !important;
+    flex: 0 0 335px !important;
+    padding: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+  }
+
+  body.page-education .healthcare-hero-shell .absolute_desc_m > .edu-hero-copy > [class*="col-"] {
+    width: 335px !important;
+    max-width: 335px !important;
+    flex: 0 0 auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  body.page-education .healthcare-hero-shell .absolute_desc_m .edu-hero-copy h1,
+  body.page-education .healthcare-hero-shell .absolute_desc_m .edu-hero-copy h5 {
+    width: 335px !important;
+    max-width: 335px !important;
+    margin: 0 !important;
+    text-align: center !important;
+  }
+
+  body.page-education .healthcare-hero-shell .absolute_desc_m .edu-hero-copy .req_button {
+    width: 335px !important;
+    max-width: 335px !important;
+    height: 55px !important;
+    padding: 15px 30px !important;
+    border-radius: 30px !important;
+    box-sizing: border-box !important;
+    margin: 0 auto !important;
+    display: block !important;
   }
 
   /* Work mobile hero title — Figma: Poppins 600, 30px, 140% */
