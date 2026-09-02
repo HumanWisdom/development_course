@@ -90,9 +90,13 @@
   }
 }
 
-/* Teens scrollbar style (when .adults-scroll is not present) */
+/* Teens scrollbar & color style (when .adults-scroll is not present) */
 .mc_01_v3:not(.adults-scroll) {
-  .odiv, .odiv_pathway, .odiv_wfgi, .ae_days {
+  .vl-filter-label {
+    color: #FFFFFF !important;
+  }
+
+  .odiv, .odiv_pathway, .odiv_wfgi, .ae_days, .vl-chip-scroll {
     scrollbar-color: #778899 #16366D;
     
     &::-webkit-scrollbar-thumb {
@@ -114,6 +118,22 @@
       }
     }
   }
+
+  ::ng-deep app-hwp-search-bar {
+    .form-control {
+      background: #0C2B5F !important;
+      border-color: #4267A5 !important;
+      color: #FFFFFF !important;
+
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.6) !important;
+      }
+    }
+
+    .pfy_search_icon, .ad_sclose_icon {
+      color: rgba(255, 255, 255, 0.7) !important;
+    }
+  }
 }
 
 /* Indent content cards from the content edge; space inside card around thumbnail */
@@ -129,33 +149,155 @@
   padding-top: 8px;
 }
 
+/* =============================================
+   VIDEO LIBRARY SEARCH BAR — standalone block
+   outside <form> so NgForm cannot interfere
+   ============================================= */
+.vl-search-row {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  padding: 16px 20px 0 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.vl-search-inner {
+  position: relative;
+  display: block !important;
+  width: 100%;
+}
+
+.vl-search-input {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  width: 100% !important;
+  height: 44px !important;
+  background: #FFFFFF !important;
+  border: 1.5px solid #EAE4DC !important;
+  border-radius: 24px !important;
+  padding: 0 40px 0 42px !important;
+  font-size: 14px !important;
+  font-family: inherit;
+  color: #333333 !important;
+  box-shadow: none !important;
+  outline: none !important;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  appearance: none;
+
+  &::placeholder {
+    color: #8E8E93 !important;
+    opacity: 1 !important;
+  }
+
+  /* hide native browser cancel button — we use our own */
+  &::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    display: none;
+  }
+}
+
+.vl-search-icon {
+  position: absolute !important;
+  top: 50% !important;
+  left: 16px !important;
+  transform: translateY(-50%) !important;
+  color: #8E8E93 !important;
+  font-size: 14px !important;
+  pointer-events: none;
+  z-index: 2;
+  display: block !important;
+}
+
+.vl-search-clear {
+  position: absolute !important;
+  top: 50% !important;
+  right: 16px !important;
+  transform: translateY(-50%) !important;
+  color: #8E8E93 !important;
+  font-size: 14px !important;
+  cursor: pointer;
+  z-index: 2;
+  display: block !important;
+}
+
+/* Teens override */
+.mc_01_v3:not(.adults-scroll) {
+  .vl-search-input {
+    background: #0C2B5F !important;
+    border-color: #4267A5 !important;
+    color: #FFFFFF !important;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.6) !important;
+      opacity: 1 !important;
+    }
+  }
+
+  .vl-search-icon,
+  .vl-search-clear {
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+}
+
 /* Video Library Filter Section Labels */
 .vl-filter-label {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.8px;
+  font-size: 10px;
+  font-weight: 400;
   text-transform: uppercase;
-  color: #8E8E93;
-  margin-top: 14px;
-  margin-bottom: 8px;
+  color: #000000;
+  margin-top: 20px;
+  margin-bottom: 6px;
 }
 
 /* Horizontal Chip Scroll */
 .vl-chip-scroll {
   display: flex !important;
   overflow-x: auto !important;
+  margin-left: -20px !important;
+  margin-right: -20px !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  width: calc(100% + 40px) !important;
   gap: 8px;
-  padding-bottom: 4px;
+  padding-bottom: 0px;
   -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
+  scrollbar-width: thin;
+  scrollbar-color: #eea170 #f6d1b7;
+
+  &::after {
+    content: '';
+    padding-right: 12px;
+    flex-shrink: 0;
+  }
+
   &::-webkit-scrollbar {
-    display: none;
+    height: 3px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #eea170;
+    border-radius: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: #f6d1b7;
+    border-radius: 10px;
+  }
+
+  &:not(:hover) {
+    scrollbar-color: transparent transparent;
+
+    &::-webkit-scrollbar-thumb,
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
   }
 }
 
 .vl-chip {
   border-radius: 12px;
-  padding: 9px 10px;
+  padding: 9px 12px;
   font-size: 12px;
   font-weight: 400;
   white-space: nowrap;
@@ -163,6 +305,7 @@
   cursor: pointer;
   box-shadow: none;
   outline: none;
+  flex-shrink: 0;
 }
 
 .vl-chip-adults {
@@ -190,10 +333,31 @@
   }
 }
 
+/* Tab Description & HR Separator */
+.vl-tab-description {
+  font-size: 13.5px;
+  font-weight: 400;
+  line-height: 1.4;
+  margin-top: 14px;
+  margin-bottom: 0;
+
+  &.fc_000000_0_8 {
+    color: rgba(0, 0, 0, 0.8);
+  }
+  &.fc_ffffff_0_8 {
+    color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+.hr_style_v3_01 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
 /* Video Library Card List */
 .vl-card-list {
   margin-top: 18px;
-  margin-bottom: 40px;
+  margin-bottom: 80px;
   padding-bottom: 20px;
   display: flex;
   flex-direction: column;
@@ -215,7 +379,7 @@
 }
 
 .vl-card-teens {
-  background: #1C2A48;
+  background: #0C2B5F;
 
   .vl-card-subtext {
     color: #FFFFFF !important;
@@ -228,15 +392,17 @@
   width: 100px;
   height: 100px;
   flex-shrink: 0;
-  border-radius: 6px;
+  border-radius: 10px;
   overflow: hidden;
-  background: #E8E0D5;
+  background: transparent;
 
   .vl-thumb-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 12px;
+    border-radius: 10px;
+    transform: scale(1.06);
+    transform-origin: center;
   }
 
   .vl-play-icon {
@@ -279,51 +445,31 @@
   }
 }
 
-.vl-status-box {
-  flex-shrink: 0;
-  align-self: stretch;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.ws-read-icon {
+  position: absolute !important;
+  top: 10px !important;
+  right: 10px !important;
+  bottom: auto !important;
+  left: auto !important;
+  pointer-events: none;
+}
 
-  .ws-read-icon {
-    align-self: flex-start;
-    position: static !important;
-    top: auto !important;
-    bottom: auto !important;
-    left: auto !important;
-    right: auto !important;
-    width: 22px !important;
-    height: 22px !important;
-    margin: 2px 0 0 0 !important;
-  }
-
-  .ws-lock-icon {
-    align-self: flex-end;
-    margin-top: auto;
-    position: static !important;
-    top: auto !important;
-    bottom: auto !important;
-    left: auto !important;
-    right: auto !important;
-    width: 22px !important;
-    height: 22px !important;
-    margin: 0 !important;
-  }
+.ws-lock-icon {
+  position: absolute !important;
+  bottom: 10px !important;
+  right: 10px !important;
+  top: auto !important;
+  left: auto !important;
+  pointer-events: none;
 }
 
 /* Video Library Search Bar */
-::ng-deep app-hwp-search-bar {
-  display: block !important;
-  width: 100% !important;
+.form-group.has-feedback {
+  position: relative;
+  width: 100%;
+  margin-bottom: 0;
 
-  .form-group {
-    position: relative;
-    width: 100%;
-    margin-bottom: 0;
-  }
-
-  .form-control {
+  .form-control, .form-control.pfy_search {
     width: 100% !important;
     height: 44px !important;
     background: #FFFFFF !important;
@@ -339,34 +485,61 @@
     box-shadow: none !important;
     outline: none !important;
 
+    &::-webkit-input-placeholder,
+    &::-moz-placeholder,
+    &:-ms-input-placeholder,
     &::placeholder {
-      color: #999999 !important;
+      color: #8E8E93 !important;
       font-size: 14px !important;
       opacity: 1 !important;
     }
   }
 
-  .pfy_search_icon {
+  .pfy_search_icon, .form-control-feedback.left {
     position: absolute;
     top: 50%;
     left: 14px;
     transform: translateY(-50%);
-    color: #999999;
+    color: #8E8E93 !important;
     font-size: 14px;
     pointer-events: none;
     line-height: 1;
     z-index: 2;
+    margin-top: 0 !important;
   }
 
-  .ad_sclose_icon {
+  .ad_sclose_icon, .form-control-feedback.right {
     position: absolute;
     top: 50%;
     right: 14px;
     transform: translateY(-50%);
-    color: #999999;
+    color: #8E8E93 !important;
     font-size: 14px;
     cursor: pointer;
     line-height: 1;
     z-index: 2;
+    margin-top: 0 !important;
+  }
+}
+
+.mc_01_v3:not(.adults-scroll) {
+  .form-group.has-feedback {
+    .form-control, .form-control.pfy_search {
+      background: #0C2B5F !important;
+      border: 1px solid #4267A5 !important;
+      color: #FFFFFF !important;
+
+      &::-webkit-input-placeholder,
+      &::-moz-placeholder,
+      &:-ms-input-placeholder,
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.6) !important;
+        opacity: 1 !important;
+      }
+    }
+
+    .pfy_search_icon, .ad_sclose_icon, .form-control-feedback {
+      color: rgba(255, 255, 255, 0.7) !important;
+    }
   }
 }

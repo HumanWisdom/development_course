@@ -1659,7 +1659,7 @@
               <a class="" href="first_mental_health_support.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/78.webp" class="img-responsive img_blogs" alt="Blog_img">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/81.webp" class="img-responsive img_blogs" alt="Blog_img">
                   </div>
                 </div>
 
@@ -1689,7 +1689,7 @@
               <a class="" href="as_Ai_changes_work.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/79.webp" class="img-responsive img_blogs" alt="Blog_img">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/78.webp" class="img-responsive img_blogs" alt="Blog_img">
                   </div>
                 </div>
 
@@ -1777,7 +1777,7 @@ Work and Leadership</button>
               <a class="" href="preventing_sucide.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/83.webp" class="img-responsive img_blogs" alt="Blog_img">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/82.webp" class="img-responsive img_blogs" alt="Blog_img">
                   </div>
                 </div>
 

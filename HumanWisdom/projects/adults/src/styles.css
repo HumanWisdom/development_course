@@ -30754,3 +30754,74 @@ input[type="search"].hide_search::-webkit-search-cancel-button {
     }
   }
 }
+
+
+/* ===== Video Library Search Bar (wisdom-shorts-index) ===== */
+.vl-search-row {
+  display: block !important;
+  visibility: visible !important;
+  margin-top: 15px;
+  margin-bottom: 0;
+  position: relative;
+}
+
+.vl-search-row .form-group,
+.vl-search-row .form-group.has-feedback {
+  display: block !important;
+  visibility: visible !important;
+  position: relative;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.vl-search-row input.pfy_search,
+.vl-search-row .form-control.pfy_search {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  width: 100% !important;
+  height: 44px !important;
+  background: #FFFFFF !important;
+  border: 1px solid #EAE4DC !important;
+  border-radius: 24px !important;
+  padding-left: 42px !important;
+  padding-right: 36px !important;
+  font-size: 14px !important;
+  color: #333333 !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.vl-search-row input.pfy_search::placeholder,
+.vl-search-row .form-control.pfy_search::placeholder {
+  color: #8E8E93 !important;
+  font-size: 14px !important;
+  opacity: 1 !important;
+}
+
+.vl-search-row .pfy_search_icon {
+  position: absolute !important;
+  top: 50% !important;
+  left: 14px !important;
+  transform: translateY(-50%) !important;
+  color: #8E8E93 !important;
+  font-size: 14px !important;
+  pointer-events: none !important;
+  z-index: 2 !important;
+  margin-top: 0 !important;
+  line-height: 1 !important;
+}
+
+.vl-search-row .ad_sclose_icon {
+  position: absolute !important;
+  top: 50% !important;
+  right: 14px !important;
+  transform: translateY(-50%) !important;
+  color: #8E8E93 !important;
+  font-size: 14px !important;
+  cursor: pointer !important;
+  z-index: 2 !important;
+  margin-top: 0 !important;
+  line-height: 1 !important;
+}
+/* ===== /Video Library Search Bar ===== */

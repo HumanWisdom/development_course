@@ -6,33 +6,41 @@
 <div class="right_col mc_01_v3 mc_01_v3_ext" [ngClass]="{'adults-scroll': isAdults}">
   <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 col_cw" [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 col_cw" [ngClass]="isAdults ? 'bg_FFF7E6' : 'bg_stake'">
         <div class="x_panel p0">
           <div class="x_content p0">
-            <form>
-              <!-- search -->
-              <div class="row prelative mt15px">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <app-hwp-search-bar [searchinp]="searchedText" [placeholder]="'Search Videos'"
-                    (textBoxEvent)="searchShorts($event)"></app-hwp-search-bar>
+
+            <!-- search -->
+            <div class="row search-row" style="padding-top: 60px;">
+              <div class="col-12 prelative plr20px mt40px">
+                <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback zi0 p0 mb0px">
+                  <input type="search" placeholder="Search Videos"
+                    class="form-control has-feedback-left pfy_search hide_search" name="search-videos"
+                    [(ngModel)]="searchedText" autocomplete="off" (input)="searchShorts($event.target.value)"
+                    style="border-radius: 100px !important;">
+                  <span class="fa fa-search form-control-feedback left pfy_search_icon" aria-hidden="true"></span>
+                  <span *ngIf="searchedText && searchedText != ''" (click)="searchedText=''; searchShorts('')"
+                    class="fa fa-times form-control-feedback ad_sclose_icon ad_sclose_icon_ext"
+                    aria-hidden="true"></span>
                 </div>
               </div>
-              <!-- /search -->
+            </div>
+            <!-- /search -->
 
+            <form ngNativeValidate style="padding: 0 20px;">
               <!-- SUBJECT filters -->
-              <div class="row mt15px">
+              <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
                   <div class="vl-filter-label" [ngClass]="isAdults ? '' : 'fc_ffffff_0_5'">SUBJECT</div>
                   <div class="vl-chip-scroll">
-                    <button type="button" class="vl-chip" [ngClass]="isAdults ? 'vl-chip-adults' : 'vl-chip-teens'" id="all"
-                      (click)="getUserPref('all')" [class.active]="selectedPref === 'all'">
+                    <button type="button" class="vl-chip" [ngClass]="isAdults ? 'vl-chip-adults' : 'vl-chip-teens'"
+                      id="all" (click)="getUserPref('all')" [class.active]="selectedPref === 'all'">
                       All
                     </button>
                     <ng-container *ngFor="let data of prefData">
-                      <button type="button" class="vl-chip" [ngClass]="isAdults ? 'vl-chip-adults' : 'vl-chip-teens'" id="{{data['id'] | lowercase}}"
-                        *ngIf="data['displayName'] !== 'All'"
-                        (click)="getUserPref(data['id'])"
-                        [class.active]="selectedPref === (data['id'] | lowercase)">
+                      <button type="button" class="vl-chip" [ngClass]="isAdults ? 'vl-chip-adults' : 'vl-chip-teens'"
+                        id="{{data['id'] | lowercase}}" *ngIf="data['displayName'] !== 'All'"
+                        (click)="getUserPref(data['id'])" [class.active]="selectedPref === (data['id'] | lowercase)">
                         {{data['displayName']}}
                       </button>
                     </ng-container>
@@ -44,10 +52,11 @@
               <!-- TYPE filters -->
               <div class="row mt10px">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <div class="vl-filter-label" [ngClass]="isAdults ? '' : 'fc_ffffff_0_5'">TYPE</div>
+                  <div class="vl-filter-label mt0px" [ngClass]="isAdults ? '' : 'fc_ffffff_0_5'">TYPE</div>
                   <div class="vl-chip-scroll">
-                    <button type="button" class="vl-chip" [ngClass]="isAdults ? 'vl-chip-adults' : 'vl-chip-teens'" *ngFor="let item of typeData"
-                      (click)="selectType(item.id)" [class.active]="selectedType === item.id">
+                    <button type="button" class="vl-chip" [ngClass]="isAdults ? 'vl-chip-adults' : 'vl-chip-teens'"
+                      *ngFor="let item of typeData" (click)="selectType(item.id)"
+                      [class.active]="selectedType === item.id">
                       {{item.displayName}}
                     </button>
                   </div>
@@ -55,17 +64,30 @@
               </div>
               <!-- /TYPE filters -->
 
+              <!-- TAB DESCRIPTION & SEPARATOR -->
+              <div class="row" *ngIf="getTypeDescription()">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <p class="vl-tab-description" [ngClass]="isAdults ? 'fc_000000_0_8' : 'fc_ffffff_0_8'">
+                    {{getTypeDescription()}}
+                  </p>
+                  <hr class="hr_style_v3_01" />
+                </div>
+              </div>
+              <!-- /TAB DESCRIPTION & SEPARATOR -->
+
               <!-- VIDEO CARDS LIST -->
               <div class="vl-card-list">
                 <ng-container *ngFor="let data of wisdomshorts; let i=index">
                   <div class="vl-card" [ngClass]="isAdults ? 'vl-card-adults' : 'vl-card-teens'"
                     (click)="wisdoshortsevent(data, data['VideoUrl'] || data['YoutubeLink'], data['Title'])"
                     id="short-{{data['RowID'] || extractShortIdFromUrl(data['VideoUrl'])}}">
-                    
+
                     <!-- Thumbnail -->
                     <div class="vl-thumb-box">
                       <img [src]="data.ImgUrl" [alt]="data.Title" class="vl-thumb-img" />
-                      <img [src]="isAdults ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_border_0.svg'" class="vl-play-icon" alt="Play" />
+                      <img
+                        [src]="isAdults ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/play_border_0.svg'"
+                        class="vl-play-icon" alt="Play" />
                     </div>
 
                     <!-- Card Body -->
@@ -79,21 +101,17 @@
                     </div>
 
                     <!-- Status Icon (Read / Lock) -->
-                    <div class="vl-status-box" *ngIf="data?.isRead === '1' || (!isSubscriber && data['RowID'] > 2)">
-                      <img *ngIf="data?.isRead === '1'"
-                        [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isread_teen.svg'"
-                        class="ws-read-icon" alt="Read" />
-                      <img *ngIf="!isSubscriber && data['RowID'] > 2 && data?.isRead !== '1'"
-                        [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg'"
-                        class="ws-lock-icon" alt="Locked" />
-                    </div>
+                    <img *ngIf="data?.isRead === '1'"
+                      [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isread_teen.svg'"
+                      class="ws-read-icon" alt="Read" />
+                    <img *ngIf="!isSubscriber && data['RowID'] > 2 && data?.isRead !== '1'"
+                      [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg'"
+                      class="ws-lock-icon" alt="Locked" />
 
                   </div>
                 </ng-container>
               </div>
               <!-- /VIDEO CARDS LIST -->
-
-              <div class="pagebreak"></div>
             </form>
           </div>
         </div>
