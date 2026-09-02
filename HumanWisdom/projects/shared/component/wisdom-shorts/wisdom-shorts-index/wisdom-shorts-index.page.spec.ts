@@ -402,6 +402,27 @@ describe('WisdomShortsIndexPage', () => {
       expect(component.wisdomshorts[0].PreferenceIDs).toContain('1');
     });
 
+    it('should not match single-digit ID 1 against searchtags containing 10 or 15', () => {
+      component.allwisdomshorts = [
+        { Title: 'Work Short', PreferenceIDs: '1', searchtags: 'work, leadership' },
+        { Title: 'Mental Health Short', PreferenceIDs: '10', searchtags: 'kindness, 10, mental health' },
+        { Title: 'Habits Short', PreferenceIDs: '15', searchtags: '15, habits' }
+      ] as any;
+      component.getUserPref('1');
+      expect(component.wisdomshorts.length).toBe(1);
+      expect(component.wisdomshorts[0].Title).toBe('Work Short');
+    });
+
+    it('should match equivalent Teen ID 17 when Adult ID 1 is selected', () => {
+      component.allwisdomshorts = [
+        { Title: 'Teen Success Short', PreferenceIDs: '17', searchtags: 'success' },
+        { Title: 'Unrelated Short', PreferenceIDs: '5', searchtags: 'habits' }
+      ] as any;
+      component.getUserPref('1');
+      expect(component.wisdomshorts.length).toBe(1);
+      expect(component.wisdomshorts[0].Title).toBe('Teen Success Short');
+    });
+
     it('should filter items without PreferenceIDs when type is 0', () => {
       component.getUserPref('0');
       expect(component.wisdomshorts.length).toBe(2);
