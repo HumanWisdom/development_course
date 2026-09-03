@@ -35404,6 +35404,17 @@ background: linear-gradient(180deg, #F17071 0%, #DE6768 100%);
   width: 100px;
 }
 
+
+.img_testimonial_usernew {
+  /* border: 5px solid #FFF7E6;
+  border-radius: 50%; */
+  width: 100%;
+  height:210px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+
 .testimonials_main {
   margin-bottom: 15px;
 }
