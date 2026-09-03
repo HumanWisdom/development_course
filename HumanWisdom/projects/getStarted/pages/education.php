@@ -215,13 +215,23 @@
             <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10  col-10 p0 tleft edu-hero-copy">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 p0 mt20px">
                 <h1 class="mtb0px fs_36px fw_600 lh_140p fc_000000 edu-hero-title">
-                  Boost student wellbeing, learning and emotional intelligence
+                  <span class="display_m_none">
+                    Boost student wellbeing, learning and emotional intelligence
+                  </span>
+                  <span class="display_d_none">
+                    HappierMe for education
+                  </span>
                 </h1>
               </div>
     
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 p0 mtb20px">
                 <h5 class="mt20px mb30px fs_15px fw_400 lh_160p fc_000000 edu-hero-subtitle">
-                  Give students all the support they need to help reduce stress and anxiety, manage their own mental health, be happier and learn the soft skills they need to succeed at work.
+                  <span class="display_m_none">
+                    Give students all the support they need to help reduce stress and anxiety, manage their own mental health, be happier and learn the soft skills they need to succeed at work.
+                  </span>
+                  <span class="display_d_none">
+                    Boost student well-being, learning, and emotional intelligence with HappierMe. Give students all the support they need to help reduce stress and anxiety, manage their own mental health, be happier and learn the soft skills they need to succeed at work.
+                  </span>
                 </h5>
               </div>
     
@@ -417,7 +427,7 @@
             <div class="owl_container owl_testimonials">
               <div class="owl-carousel owl-theme">
 
-                <div class="item" data-aos="fade-up" data-aos-delay="200">
+                <div class="item">
                   <div class="div_testimonials edu-testimonial-card">
                     <div class="edu-testimonial-header">
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_adam_beagley.webp" class="edu-testimonial-avatar" alt="Adam Beagley" loading="lazy">
@@ -430,7 +440,7 @@
                   </div>
                 </div>
 
-                <div class="item" data-aos="fade-up" data-aos-delay="300">
+                <div class="item">
                   <div class="div_testimonials edu-testimonial-card">
                     <div class="edu-testimonial-header">
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_samaira_giri.webp" class="edu-testimonial-avatar" alt="Samaira" loading="lazy">
@@ -443,7 +453,7 @@
                   </div>
                 </div>
 
-                <div class="item" data-aos="fade-up" data-aos-delay="400">
+                <div class="item">
                   <div class="div_testimonials edu-testimonial-card">
                     <div class="edu-testimonial-header">
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_rahul_bagale.webp" class="edu-testimonial-avatar" alt="Dr Rahul Bagale" loading="lazy">
@@ -456,7 +466,7 @@
                   </div>
                 </div>
 
-                <div class="item" data-aos="fade-up" data-aos-delay="500">
+                <div class="item">
                   <div class="div_testimonials edu-testimonial-card">
                     <div class="edu-testimonial-header">
                       <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_anthony_seldon.webp" class="edu-testimonial-avatar" alt="Sir Anthony Seldon" loading="lazy">
@@ -914,58 +924,91 @@
     <!-- /vendor_footer -->
 
     <script>
-      function initEducationTestimonialsCarousel() {
-        var $tc = $('body.page-education .owl_testimonials .owl-carousel');
-        if (!$tc.length) return;
+      (function () {
+        var eduTestimonialsMode = null;
 
-        var isMobile = window.matchMedia('(max-width: 767px)').matches;
-
-        if ($tc.hasClass('owl-loaded')) {
-          $tc.trigger('destroy.owl.carousel');
+        function ensureTestimonialItems($tc) {
+          var $items = $tc.find('.item');
+          if (!$items.length) return $();
+          $items.detach();
+          $tc.children().remove();
+          $tc.append($items);
+          return $items;
         }
 
-        $tc.removeClass('edu-testimonials-native owl-loaded owl-drag');
-        $tc.find('.owl-stage-outer').children().unwrap();
-        $tc.find('.owl-stage').children().unwrap();
-        $tc.find('.owl-item').each(function () {
-          $(this).children().unwrap();
-        });
+        function initEducationTestimonialsCarousel() {
+          if (typeof window.jQuery === 'undefined') return;
+          var $ = window.jQuery;
+          var $tc = $('body.page-education .owl_testimonials .owl-carousel');
+          if (!$tc.length) return;
 
-        if (isMobile) {
-          $tc.addClass('edu-testimonials-native');
-          $tc.css({
-            display: 'flex',
-            flexDirection: 'row',
-            flexWrap: 'nowrap',
-            overflowX: 'auto',
-            overflowY: 'hidden'
-          });
-          return;
-        }
+          var isMobile = window.matchMedia('(max-width: 767px)').matches;
+          var nextMode = isMobile ? 'mobile' : 'desktop';
 
-        if (typeof $.fn.owlCarousel !== 'function') return;
-
-        $tc.owlCarousel({
-          stagePadding: 0,
-          loop: false,
-          margin: 30,
-          nav: false,
-          autoWidth: true,
-          dots: false,
-          touchDrag: true,
-          mouseDrag: true,
-          pullDrag: true,
-          responsive: {
-            0: { items: 1 },
-            600: { items: 3 },
-            1000: { items: 3 }
+          if (eduTestimonialsMode === nextMode) {
+            if (nextMode === 'desktop' && !$tc.hasClass('owl-loaded') && typeof $.fn.owlCarousel === 'function') {
+              // Owl loaded after first attempt — continue
+            } else {
+              return;
+            }
           }
-        });
-      }
 
-      document.addEventListener('DOMContentLoaded', initEducationTestimonialsCarousel);
-      window.addEventListener('load', initEducationTestimonialsCarousel);
-      window.addEventListener('resize', initEducationTestimonialsCarousel);
+          if ($tc.hasClass('owl-loaded')) {
+            try {
+              $tc.trigger('destroy.owl.carousel');
+            } catch (e) {}
+          }
+
+          ensureTestimonialItems($tc);
+          $tc.removeClass('edu-testimonials-native owl-loaded owl-drag owl-grab');
+          $tc.css({ display: '', flexDirection: '', flexWrap: '', overflowX: '', overflowY: '' });
+
+          if (isMobile) {
+            $tc.addClass('edu-testimonials-native');
+            eduTestimonialsMode = 'mobile';
+            return;
+          }
+
+          if (typeof $.fn.owlCarousel !== 'function') {
+            eduTestimonialsMode = null;
+            return;
+          }
+
+          $tc.owlCarousel({
+            stagePadding: 0,
+            loop: false,
+            margin: 30,
+            nav: false,
+            autoWidth: false,
+            dots: false,
+            touchDrag: true,
+            mouseDrag: true,
+            pullDrag: true,
+            responsive: {
+              0: { items: 1 },
+              768: { items: 2 },
+              1100: { items: 3 }
+            }
+          });
+          eduTestimonialsMode = 'desktop';
+        }
+
+        function scheduleInit() {
+          initEducationTestimonialsCarousel();
+          setTimeout(initEducationTestimonialsCarousel, 100);
+          setTimeout(initEducationTestimonialsCarousel, 500);
+          setTimeout(initEducationTestimonialsCarousel, 1500);
+        }
+
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', scheduleInit);
+        } else {
+          scheduleInit();
+        }
+        window.addEventListener('load', scheduleInit);
+        document.addEventListener('hw:owl-ready', initEducationTestimonialsCarousel);
+        window.addEventListener('resize', initEducationTestimonialsCarousel);
+      })();
     </script>
 
   </body>
