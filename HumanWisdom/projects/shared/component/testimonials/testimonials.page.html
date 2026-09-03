@@ -524,16 +524,16 @@ HappierMe supports athletes both on and off the pitch through sports podcasts, j
                       </h6>
                     </div>
 
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mb5px">
+                    <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mb5px">
                       <p class="mtb0px fs_15px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
                         UK
                       </p>
-                    </div>
+                    </div> -->
 
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                       <h4 class="mtb0px fs_15px fw_400 lh_150p flex_ai" [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
 <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/testimonial_location_pin.svg" class="img-responsive mr5px" alt="location" *ngIf="!isAdults">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/location-pin.svg" class="img-responsive mr5px" alt="location" *ngIf="isAdults">                        UK
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/location-pin.svg" class="img-responsive mr5px" alt="location" *ngIf="isAdults">                        UK
                       </h4>
                     </div>
                   </div>
@@ -543,7 +543,7 @@ HappierMe supports athletes both on and off the pitch through sports podcasts, j
 </a>
 
 
-<a routerLink="/adults/videopage/testimonials-Sean+Brandenburg+-+HappierMe+Testimonial.mp4/T/Sean_Branderburg">
+<a (click)="routeVideoaudio('/videopage/testimonials-Sean+Brandenburg+-+HappierMe+Testimonial.mp4/T/Sean_Branderburg')">
             <div class="row testimonials_main" id="Emily" >
               <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
                 <!-- <div class="row testimonial_img">
@@ -555,7 +555,7 @@ HappierMe supports athletes both on and off the pitch through sports podcasts, j
                 <div class="div_testimonial">
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/qutation.svg" class="img-responsive" alt="quotes" *ngIf="isAdults">
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/qutation.svg" class="img-responsive" alt="quotes" *ngIf="isAdults">
                       <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/quotes_testimonials.svg" class="img-responsive" alt="quotes" *ngIf="!isAdults">
 
                     </div>
@@ -725,7 +725,7 @@ HappierMe supports athletes both on and off the pitch through sports podcasts, j
               </div>
             </div>
 
-          <a routerLink="/adults/videopage/testimonials-Leah+Christensen+Speaks+about+how+she+Used+HappierMe+to+Prevent+Anxiety+_+HappierMe.mp4/T/Leah">
+          <a  (click)="routeVideoaudio('/videopage/testimonials-Leah+Christensen+Speaks+about+how+she+Used+HappierMe+to+Prevent+Anxiety+_+HappierMe.mp4/T/Leah')">
 
             <div class="row testimonials_main" id="Leah"  *ngIf="isAdults">
               <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
