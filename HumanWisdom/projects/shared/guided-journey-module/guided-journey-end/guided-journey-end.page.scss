@@ -598,6 +598,35 @@
       width: 100%;
     }
   }
+
+  .explore_card_title_sec8 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 130%;
+    letter-spacing: 0.5px;
+    color: rgba(0, 0, 0, 1);
+    text-transform: uppercase;
+    margin: 0 0 6px 0;
+  }
+
+  .explore_card_session_label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.5);
+    margin: 0 0 6px 0;
+    line-height: 1.2;
+  }
+
+  .explore_card_session_name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 1);
+    margin: 0;
+    line-height: 130%;
+  }
 }
 
 .teenagers-end {
@@ -611,6 +640,18 @@
 
     .explore_img_container {
       background: #0c2b5f;
+    }
+
+    .explore_card_title_sec8 {
+      color: #ffffff;
+    }
+
+    .explore_card_session_label {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .explore_card_session_name {
+      color: #ffffff;
     }
   }
 }
