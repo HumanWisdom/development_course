@@ -24323,15 +24323,16 @@ a {
   font-weight: 600;
   font-style: normal;
   line-height: 160%;
-  color: #A54265 !important;
+  color: #EE9596;
   text-decoration: underline;
 }
 
 
-/* .blog_highlight_peach:hover{
-  color: #EE9596 !important;
+ .blog_highlight_peach:hover{
+  color: #f17071 !important;
+  
    text-decoration: underline; 
-} */
+} 
 .yt-embed {
   width: 100%;
   padding: 20px 0px;
