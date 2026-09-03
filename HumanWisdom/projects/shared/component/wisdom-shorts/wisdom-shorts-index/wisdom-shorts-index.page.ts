@@ -114,14 +114,25 @@ export class WisdomShortsIndexPage implements OnInit {
             if (isVoice) {
               item['Type'] = 'Expert tips';
             }
+            const readVal = item['isRead'] ?? item['IsRead'] ?? item['isread'] ?? item['Isread'] ?? '0';
+            item['isRead'] = (readVal == '1' || readVal === 1 || readVal === true || readVal === 'true') ? '1' : '0';
             return item;
           });
         } else if (typeof res === 'object' && res !== null) {
           Object.keys(res).forEach((key) => {
             if (Array.isArray(res[key])) {
+              const lowerKey = key.toLowerCase();
+              if (this.isAdults && (lowerKey === 'teentalks' || lowerKey === 'teentalk')) {
+                return;
+              }
+              if (!this.isAdults && (lowerKey === 'conversations' || lowerKey === 'conversation')) {
+                return;
+              }
+
               res[key].forEach((item) => {
                 const isVoice = item['IsVoices'] == '1' || item['isVoices'] == '1' || item['IsVoices'] === 1 || item['isVoices'] === 1 || item['IsVoices'] === true || item['isVoices'] === true;
-                const lowerKey = key.toLowerCase();
+                const readVal = item['isRead'] ?? item['IsRead'] ?? item['isread'] ?? item['Isread'] ?? '0';
+                item['isRead'] = (readVal == '1' || readVal === 1 || readVal === true || readVal === 'true') ? '1' : '0';
 
                 if (lowerKey === 'shorts' || lowerKey === 'wisdomshorts') {
                   if (isVoice) {
@@ -161,6 +172,18 @@ export class WisdomShortsIndexPage implements OnInit {
                 allItems.push(item);
               });
             }
+          });
+        }
+
+        if (this.isAdults) {
+          allItems = allItems.filter(item => {
+            const t = (item['Type'] || item['type'] || '').toString().toLowerCase();
+            return t !== 'teentalks' && t !== 'teentalk';
+          });
+        } else {
+          allItems = allItems.filter(item => {
+            const t = (item['Type'] || item['type'] || '').toString().toLowerCase();
+            return t !== 'conversations' && t !== 'conversation';
           });
         }
 
@@ -292,6 +315,9 @@ export class WisdomShortsIndexPage implements OnInit {
 
     /* 1. Register click */
     const id = val['RowID'] || (vUrl ? this.extractShortIdFromUrl(vUrl) : null);
+    if (val) {
+      val['isRead'] = '1';
+    }
     if (id !== null && id !== undefined) {
       this.service.clickShorts(id).subscribe({
         next:  () => console.log('short click recorded'),

@@ -74,16 +74,24 @@
                   </div>
                 </div>
                 <div class="explore_content">
-                  <h3 class="explore_card_title" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">{{item.Title}}</h3>
-                  <p class="explore_card_meta" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                    {{getSectionDisplayName(item.Section)}}<span *ngIf="item.Timing && item.Timing !== '0' && item.Timing !== '0:00' && item.Timing !== '00:00'"> • {{item.Timing}}</span>
-                  </p>
+                  <ng-container *ngIf="!isSection8(item)">
+                    <h3 class="explore_card_title" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">{{item.DisplayTitle || item.Title}}</h3>
+                    <p class="explore_card_meta" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                      {{getSectionDisplayName(item.Section)}}<span *ngIf="item.Timing && item.Timing !== '0' && item.Timing !== '0:00' && item.Timing !== '00:00'"> • {{item.Timing}}</span>
+                    </p>
+                  </ng-container>
+                  <ng-container *ngIf="isSection8(item)">
+                    <h3 class="explore_card_title_sec8" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">{{item.DisplayTitle}}</h3>
+                    <p class="explore_card_session_label" [ngClass]="isAdults ? '' : 'fc_ffffff_0_5'">{{item.sessionLabel}}<span *ngIf="item.Timing && item.Timing !== '0' && item.Timing !== '0:00' && item.Timing !== '00:00'"> • {{item.Timing}}</span></p>
+                    <h4 class="explore_card_session_name" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">{{item.sessionName}}</h4>
+                  </ng-container>
                 </div>
                 <div class="explore_status" *ngIf="!isSubscriber && (item.isFree === '0' || item.isFree === 0)">
                   <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg" alt=""
                     class="lock_icon">
                 </div>
               </div>
+
             </div>
 
             <!-- Divider -->
