@@ -116,6 +116,8 @@ export class WisdomShortsIndexPage implements OnInit {
             }
             const readVal = item['isRead'] ?? item['IsRead'] ?? item['isread'] ?? item['Isread'] ?? '0';
             item['isRead'] = (readVal == '1' || readVal === 1 || readVal === true || readVal === 'true') ? '1' : '0';
+            const freeVal = item['isFree'] ?? item['IsFree'] ?? item['isfree'] ?? item['Isfree'];
+            item['isFree'] = (freeVal == '1' || freeVal === 1 || freeVal === true || freeVal === 'true') ? '1' : (freeVal == '0' || freeVal === 0 || freeVal === false || freeVal === 'false') ? '0' : ((item['RowID'] == 1 || item['RowID'] == '1') ? '1' : '0');
             return item;
           });
         } else if (typeof res === 'object' && res !== null) {
@@ -133,6 +135,8 @@ export class WisdomShortsIndexPage implements OnInit {
                 const isVoice = item['IsVoices'] == '1' || item['isVoices'] == '1' || item['IsVoices'] === 1 || item['isVoices'] === 1 || item['IsVoices'] === true || item['isVoices'] === true;
                 const readVal = item['isRead'] ?? item['IsRead'] ?? item['isread'] ?? item['Isread'] ?? '0';
                 item['isRead'] = (readVal == '1' || readVal === 1 || readVal === true || readVal === 'true') ? '1' : '0';
+                const freeVal = item['isFree'] ?? item['IsFree'] ?? item['isfree'] ?? item['Isfree'];
+                item['isFree'] = (freeVal == '1' || freeVal === 1 || freeVal === true || freeVal === 'true') ? '1' : (freeVal == '0' || freeVal === 0 || freeVal === false || freeVal === 'false') ? '0' : ((item['RowID'] == 1 || item['RowID'] == '1') ? '1' : '0');
 
                 if (lowerKey === 'shorts' || lowerKey === 'wisdomshorts') {
                   if (isVoice) {
@@ -284,6 +288,28 @@ export class WisdomShortsIndexPage implements OnInit {
       });
   }
 
+  recordClick(val: any, id: any) {
+    if (id !== null && id !== undefined) {
+      const itemType = (val['Type'] || val['type'] || val['Category'] || val['category'] || '').toString().toLowerCase();
+      if (itemType === 'real-life stories' || itemType === 'real_life' || itemType === 'conversations' || itemType === 'conversation' || itemType === 'teentalks' || itemType === 'teentalk' || itemType === 'realstories') {
+        this.service.clickConversationVideos(id).subscribe({
+          next:  () => console.log('conversation video click recorded'),
+          error: (e) => console.error('conversation video click failed', e)
+        });
+      } else if (itemType === 'in-depth' || itemType === 'events' || itemType === 'event' || itemType === 'hwpallevents') {
+        this.service.clickEvents(id).subscribe({
+          next:  () => console.log('event click recorded'),
+          error: (e) => console.error('event click failed', e)
+        });
+      } else {
+        this.service.clickShorts(id).subscribe({
+          next:  () => console.log('short click recorded'),
+          error: (e) => console.error('short click failed', e)
+        });
+      }
+    }
+  }
+
   wisdoshortsevent(val, video, title) {
     const loggedin = localStorage.getItem('isloggedin');
     const sub      = localStorage.getItem('Subscriber');
@@ -313,30 +339,7 @@ export class WisdomShortsIndexPage implements OnInit {
       }
     }
 
-    /* 1. Register click */
     const id = val['RowID'] || (vUrl ? this.extractShortIdFromUrl(vUrl) : null);
-    if (val) {
-      val['isRead'] = '1';
-    }
-    if (id !== null && id !== undefined) {
-      const itemType = (val['Type'] || val['type'] || val['Category'] || val['category'] || '').toString().toLowerCase();
-      if (itemType === 'real-life stories' || itemType === 'real_life' || itemType === 'conversations' || itemType === 'conversation' || itemType === 'teentalks' || itemType === 'teentalk' || itemType === 'realstories') {
-        this.service.clickConversationVideos(id).subscribe({
-          next:  () => console.log('conversation video click recorded'),
-          error: (e) => console.error('conversation video click failed', e)
-        });
-      } else if (itemType === 'in-depth' || itemType === 'events' || itemType === 'event' || itemType === 'hwpallevents') {
-        this.service.clickEvents(id).subscribe({
-          next:  () => console.log('event click recorded'),
-          error: (e) => console.error('event click failed', e)
-        });
-      } else {
-        this.service.clickShorts(id).subscribe({
-          next:  () => console.log('short click recorded'),
-          error: (e) => console.error('short click failed', e)
-        });
-      }
-    }
 
     /* 2. YouTube / Conversation / Event navigation */
     if (isYoutube && ytCode) {
@@ -349,12 +352,18 @@ export class WisdomShortsIndexPage implements OnInit {
       }
 
       const prog = SharedService.getprogramName();
-      const rowId = val['RowID'] || 1;
+      const isFreeItem = val['isFree'] == '1' || val['isFree'] === 1 || val['isFree'] === true;
 
-      if (rowId > 1 && (loggedin !== 'T' || sub !== '1') && !this.isSubscriber) {
+      if (!isFreeItem && (loggedin !== 'T' || sub !== '1') && !this.isSubscriber) {
         this.showModal = true;
         return;
       }
+
+      /* Access granted: mark as read and record click */
+      if (val) {
+        val['isRead'] = '1';
+      }
+      this.recordClick(val, id);
 
       localStorage.setItem('fromIndex', 'true');
       localStorage.setItem('wisdomShortsSelectedTab', this.selectedPref);
@@ -363,7 +372,7 @@ export class WisdomShortsIndexPage implements OnInit {
         localStorage.setItem('lastWisdomShortId', id.toString());
       }
 
-      const suffix = rowId <= 1 ? '=rdtfghjhfdg' : '=vncbxdfchgvxd';
+      const suffix = isFreeItem ? '=rdtfghjhfdg' : '=vncbxdfchgvxd';
       this.router.navigate([`/${prog}/curated/youtubelink`, `${ytCode}${suffix}`], { state: { title } });
       return;
     }
@@ -375,7 +384,11 @@ export class WisdomShortsIndexPage implements OnInit {
         let route = vUrl ? vUrl.replace('adults', SharedService.getprogramName()) : `/${SharedService.getprogramName()}/wisdom-shorts/${checkId}`;
         const extras = val['IsVoices'] === '1' ? { queryParams: { pref: 'voices' } } : undefined;
 
-        if (res === true || (loggedin === 'T' && sub === '1')) {
+        if (res === true || val['isFree'] == '1' || (loggedin === 'T' && sub === '1')) {
+          if (val) {
+            val['isRead'] = '1';
+          }
+          this.recordClick(val, id);
           localStorage.setItem('fromIndex', 'true');
           localStorage.setItem('wisdomShortsSelectedTab', this.selectedPref);
           localStorage.setItem('wisdomShortsSelectedType', this.selectedType);
@@ -386,7 +399,11 @@ export class WisdomShortsIndexPage implements OnInit {
         }
       },
       error: () => {
-        if (loggedin === 'T' && sub === '1') {
+        if (val['isFree'] == '1' || (loggedin === 'T' && sub === '1')) {
+          if (val) {
+            val['isRead'] = '1';
+          }
+          this.recordClick(val, id);
           let route = vUrl ? vUrl.replace('adults', SharedService.getprogramName()) : `/${SharedService.getprogramName()}/wisdom-shorts/${checkId}`;
           localStorage.setItem('fromIndex', 'true');
           localStorage.setItem('wisdomShortsSelectedTab', this.selectedPref);
