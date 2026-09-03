@@ -45,9 +45,11 @@ describe('WisdomShortsIndexPage', () => {
 
     mockLocation = jasmine.createSpyObj('Location', ['back']);
 
-    mockCommonService = jasmine.createSpyObj('CommonService', ['GetWisdomShorts', 'clickShorts', 'CheckShortsIsFree']);
+    mockCommonService = jasmine.createSpyObj('CommonService', ['GetWisdomShorts', 'clickShorts', 'clickEvents', 'clickConversationVideos', 'CheckShortsIsFree']);
     mockCommonService.GetWisdomShorts.and.returnValue(of([]));
     mockCommonService.clickShorts.and.returnValue(of({}));
+    mockCommonService.clickEvents.and.returnValue(of({}));
+    mockCommonService.clickConversationVideos.and.returnValue(of({}));
     mockCommonService.CheckShortsIsFree.and.returnValue(of(true));
 
     mockMeta = jasmine.createSpyObj('Meta', ['updateTag']);
@@ -285,18 +287,31 @@ describe('WisdomShortsIndexPage', () => {
       expect(component.showModal).toBe(true);
     }));
 
-    it('should call clickShorts when id is extracted', fakeAsync(() => {
+    it('should call clickShorts when id is extracted for short video', fakeAsync(() => {
       localStorage.setItem('isloggedin', 'T');
       localStorage.setItem('Subscriber', '1');
       const video = '/adults/wisdom-shorts/video.123.mp4';
       const title = 'Test Title';
-      const val = { IsVoices: '0' };
+      const val = { IsVoices: '0', Type: 'Short videos' };
       mockCommonService.CheckShortsIsFree.and.returnValue(of(true));
 
       component.wisdoshortsevent(val, video, title);
       tick();
 
       expect(mockCommonService.clickShorts).toHaveBeenCalledWith(123);
+    }));
+
+    it('should call clickConversationVideos when Real-life stories item is clicked', fakeAsync(() => {
+      localStorage.setItem('isloggedin', 'T');
+      localStorage.setItem('Subscriber', '1');
+      const video = 'https://www.youtube.com/watch?v=abc12345';
+      const title = 'Real Story Title';
+      const val = { RowID: 15, Type: 'Real-life stories' };
+
+      component.wisdoshortsevent(val, video, title);
+      tick();
+
+      expect(mockCommonService.clickConversationVideos).toHaveBeenCalledWith(15);
     }));
 
     it('should pass queryParams pref voices when IsVoices is 1', fakeAsync(() => {

@@ -319,10 +319,23 @@ export class WisdomShortsIndexPage implements OnInit {
       val['isRead'] = '1';
     }
     if (id !== null && id !== undefined) {
-      this.service.clickShorts(id).subscribe({
-        next:  () => console.log('short click recorded'),
-        error: (e) => console.error('short click failed', e)
-      });
+      const itemType = (val['Type'] || val['type'] || val['Category'] || val['category'] || '').toString().toLowerCase();
+      if (itemType === 'real-life stories' || itemType === 'real_life' || itemType === 'conversations' || itemType === 'conversation' || itemType === 'teentalks' || itemType === 'teentalk' || itemType === 'realstories') {
+        this.service.clickConversationVideos(id).subscribe({
+          next:  () => console.log('conversation video click recorded'),
+          error: (e) => console.error('conversation video click failed', e)
+        });
+      } else if (itemType === 'in-depth' || itemType === 'events' || itemType === 'event' || itemType === 'hwpallevents') {
+        this.service.clickEvents(id).subscribe({
+          next:  () => console.log('event click recorded'),
+          error: (e) => console.error('event click failed', e)
+        });
+      } else {
+        this.service.clickShorts(id).subscribe({
+          next:  () => console.log('short click recorded'),
+          error: (e) => console.error('short click failed', e)
+        });
+      }
     }
 
     /* 2. YouTube / Conversation / Event navigation */

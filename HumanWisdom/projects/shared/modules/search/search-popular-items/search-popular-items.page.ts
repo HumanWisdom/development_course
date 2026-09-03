@@ -663,9 +663,16 @@ export class SearchPopularItemsPage implements OnInit, OnDestroy {
       return;
     }
     const idPart = (video || '').split('/')[3] || '';
-    const id = Number(idPart.split('.')[1]);
-    if (!isNaN(id)) {
-      this.commonService.clickShorts(id).subscribe({ next: () => {}, error: () => {} });
+    const id = val['RowID'] || (!isNaN(Number(idPart.split('.')[1])) ? Number(idPart.split('.')[1]) : null);
+    if (id !== null && id !== undefined && !isNaN(id)) {
+      const itemType = (val['Type'] || val['type'] || val['Category'] || val['category'] || '').toString().toLowerCase();
+      if (itemType === 'real-life stories' || itemType === 'real_life' || itemType === 'conversations' || itemType === 'conversation' || itemType === 'teentalks' || itemType === 'teentalk' || itemType === 'realstories') {
+        this.commonService.clickConversationVideos(id).subscribe({ next: () => {}, error: () => {} });
+      } else if (itemType === 'in-depth' || itemType === 'events' || itemType === 'event' || itemType === 'hwpallevents') {
+        this.commonService.clickEvents(id).subscribe({ next: () => {}, error: () => {} });
+      } else {
+        this.commonService.clickShorts(id).subscribe({ next: () => {}, error: () => {} });
+      }
     }
     if (val['IsVoices'] === '1') {
       this.router.navigate([video.replace('adults', SharedService.getprogramName()), 'T', title], { queryParams: { pref: 'voices' } });

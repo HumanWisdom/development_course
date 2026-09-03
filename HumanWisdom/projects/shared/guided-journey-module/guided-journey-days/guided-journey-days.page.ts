@@ -228,7 +228,11 @@ export class GuidedJourneyDaysPage implements OnInit {
 
         this.allDaysData = filteredRes.map(item => {
           const rawTitle = item.Title || item.Section;
-          const { mainTitle, subTitle, sessionLabel, sessionName } = this.parseTitle(rawTitle);
+          const { mainTitle, subTitle, sessionLabel, sessionName, extractedTiming } = this.parseTitle(rawTitle);
+          let timing = item.Timing || item.timing || item.Time || item.time || item.duration || item.Duration || '';
+          if ((!timing || timing === '0' || timing === '0:00' || timing === '00:00') && extractedTiming) {
+            timing = extractedTiming;
+          }
           return {
             ...item,
             Type: item.type ? parseInt(item.type) : 1,
@@ -238,7 +242,7 @@ export class GuidedJourneyDaysPage implements OnInit {
             sessionLabel: sessionLabel,
             sessionName: sessionName,
             QuestionCnt: item.QuestionCnt,
-            Timing: item.Timing || item.timing || item.Time || item.time || item.duration || item.Duration || '',
+            Timing: timing,
             imgPath: this.getImgUrl(item.imgPath),
             OriginalResponse: item.Response || ''
           };
@@ -259,6 +263,12 @@ export class GuidedJourneyDaysPage implements OnInit {
       
       let sessionLabel = '';
       let sessionName = '';
+      let extractedTiming = '';
+
+      const timingMatch = subTitle.match(/\b(?:\d{1,2}:)?\d{1,2}:\d{2}\b|\b\d+\s*(?:mins?|minutes?|sec|seconds?)\b/i);
+      if (timingMatch) {
+        extractedTiming = timingMatch[0];
+      }
       
       let separator = '';
       if (subTitle.includes(',')) {
@@ -298,9 +308,9 @@ export class GuidedJourneyDaysPage implements OnInit {
       if (displaySub.includes(',')) {
         displaySub = displaySub.replace(',', ' •');
       }
-      return { mainTitle, subTitle: displaySub, sessionLabel, sessionName };
+      return { mainTitle, subTitle: displaySub, sessionLabel, sessionName, extractedTiming };
     }
-    return { mainTitle: title, subTitle: '', sessionLabel: '', sessionName: '' };
+    return { mainTitle: title, subTitle: '', sessionLabel: '', sessionName: '', extractedTiming: '' };
   }
 
   isSection8(exercise: any): boolean {
