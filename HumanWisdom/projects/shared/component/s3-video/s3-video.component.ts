@@ -196,6 +196,8 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   ngOnInit(): void {
+    document.body.style.removeProperty('overflow');
+    document.documentElement.style.removeProperty('overflow');
     this.path = this.router.url;
     const url = window.location.href;
     this.wisdomshort = !url.includes('videopage');
@@ -423,6 +425,8 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   goBack(): void {
+    document.body.style.removeProperty('overflow');
+    document.documentElement.style.removeProperty('overflow');
     const url = this.navigationService.navigateToBackLink();
     if (url != null) {
       this.router.navigateByUrl(url);
@@ -491,6 +495,8 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
     }
     localStorage.setItem('isSwipeAllow', 'false');
     localStorage.removeItem('fromIndex');
+    document.body.style.removeProperty('overflow');
+    document.documentElement.style.removeProperty('overflow');
   }
 
     share(){

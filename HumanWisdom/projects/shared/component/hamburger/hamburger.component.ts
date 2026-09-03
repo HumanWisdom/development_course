@@ -133,10 +133,11 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
         const isOpen = sessionStorage.getItem('openHamburger') === 'true';
         const sourceUrl = sessionStorage.getItem('hamburgerSourceUrl');
         const isSamePage = this.router.url === sourceUrl;
+        const menuCheckbox = document.getElementById('menu') as HTMLInputElement;
+        const isMenuChecked = menuCheckbox ? menuCheckbox.checked : false;
 
-        if (isOpen && (isSamePage || this.wasBackClicked)) {
+        if (isOpen && isMenuChecked && (isSamePage || this.wasBackClicked)) {
           setTimeout(() => {
-            const menuCheckbox = document.getElementById('menu') as HTMLInputElement;
             if (menuCheckbox) {
               menuCheckbox.checked = true;
               this.toggleScrollLock(true);
@@ -145,10 +146,16 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
           
           // Fallback lock for back-navigation racing issues
           setTimeout(() => {
-            if (sessionStorage.getItem('openHamburger') === 'true') {
+            if (sessionStorage.getItem('openHamburger') === 'true' && menuCheckbox && menuCheckbox.checked) {
               this.toggleScrollLock(true);
+            } else if (!menuCheckbox || !menuCheckbox.checked) {
+              this.toggleScrollLock(false);
+              sessionStorage.setItem('openHamburger', 'false');
             }
           }, 300);
+        } else if (!isMenuChecked) {
+          this.toggleScrollLock(false);
+          sessionStorage.setItem('openHamburger', 'false');
         }
         this.wasBackClicked = false;
       }
@@ -404,24 +411,19 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
   } */
 
   routeToPartnerScreen() {
-    this.logeventservice.logEvent('click_My_Partnership_Hamburger')
+    this.logeventservice.logEvent('click_My_Partnership_Hamburger');
+    this.closemenuevent();
     this.router.navigate(["adults/partnership-report/income-report"]);
-    this.closemodal?.nativeElement?.click();
-    sessionStorage.setItem('hamburgerSourceUrl', this.router.url);
-    sessionStorage.setItem('openHamburger', 'true');
   }
 
   RouteToFaq() {
-    this.logeventservice.logEvent('click_Partnership_FAQ_Hamburger')
+    this.logeventservice.logEvent('click_Partnership_FAQ_Hamburger');
     localStorage.setItem('isPartnerFaq', 'true');
+    this.closemenuevent();
     this.router.navigate(["/adults/partnership-webpage/partnership-index/"], {
       replaceUrl: true,
       skipLocationChange: true
     });
-    this.closemodal?.nativeElement?.click();
-    sessionStorage.setItem('hamburgerSourceUrl', this.router.url);
-    sessionStorage.setItem('openHamburger', 'true');
-
   }
 
   // isShowDiv = false;
@@ -459,35 +461,30 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
   // }
 
   RouteToBecomeAPartner() {
-    this.logeventservice.logEvent('click_BecomeAPartner_Hamburger')
-    //  localStorage.setItem("navigateToUpgradeToPremium","true");
+    this.logeventservice.logEvent('click_BecomeAPartner_Hamburger');
+    this.closemenuevent();
     if (localStorage.getItem("isloggedin") == "F" || localStorage.getItem("isloggedin") == null) {
       this.content = 'To become a Partner you will need to Complete Registration and login?';
       this.enablebecomepartner = true;
       this.enableAlert = true;
       this.router.navigate([SharedService.getprogramName() + "/onboarding/login"]);
     } else {
-      // this.Onboardingservice.navigateToUpgradeToPremium = true;
-      //this.router.navigate(['adults/partnership-app']);
       this.router.navigate(['adults/partnership-app'], { skipLocationChange: true, replaceUrl: true });
     }
-    this.closemodal?.nativeElement?.click();
-    sessionStorage.setItem('hamburgerSourceUrl', this.router.url);
-    sessionStorage.setItem('openHamburger', 'true');
   }
 
   Logevent(route, params, evtName) {
     this.logeventservice.logEvent(evtName);
     if(evtName === 'click_Subscribe'){
       if (this.ios || this.isAndroid) {
-      return; // Do not navigate on mobile devices for subscription
+        return; // Do not navigate on mobile devices for subscription
       }
 
       if (!this.isloggedIn) {
-             localStorage.setItem('subscriberRedirectUrl', this.router.url);
-            SharedService.UrlToRedirect = `/${SharedService.getprogramName()}/subscription/try-free-and-subscribe`;
-            this.loginroute();
-             return;
+        localStorage.setItem('subscriberRedirectUrl', this.router.url);
+        SharedService.UrlToRedirect = `/${SharedService.getprogramName()}/subscription/try-free-and-subscribe`;
+        this.loginroute();
+        return;
       }
     }
     let currentRoute = route;
@@ -496,11 +493,11 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
     }
 
     if (!currentRoute || currentRoute === '') {
-      this.closemodal?.nativeElement?.click();
-      sessionStorage.setItem('hamburgerSourceUrl', this.router.url);
-      sessionStorage.setItem('openHamburger', 'true');
+      this.closemenuevent();
       return;
     }
+
+    this.closemenuevent();
 
     if (params !== '' && currentRoute !== '') {
       this.router.navigate([currentRoute, params]);
@@ -511,10 +508,6 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
       }
       this.router.navigate(['/' + SharedService.getprogramName() + currentRoute]);
     }
-
-    this.closemodal?.nativeElement?.click();
-    sessionStorage.setItem('hamburgerSourceUrl', this.router.url);
-    sessionStorage.setItem('openHamburger', 'true');
   }
 
   private isDirectNavigationRoute(route: string): boolean {
@@ -536,21 +529,17 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
 
   routeManageSubscriptiont(route, params, evtName) {
     this.logeventservice.logEvent(evtName);
+    this.closemenuevent();
     if (this.ios || this.isAndroid) {
       const manage_subscr = new CustomEvent("manage_subscr");
       window.dispatchEvent(manage_subscr);
     } else {
       this.router.navigate(['/' + SharedService.getprogramName() + route]);
     }
-    this.closemodal?.nativeElement?.click();
-    sessionStorage.setItem('hamburgerSourceUrl', this.router.url);
-    sessionStorage.setItem('openHamburger', 'true');
   }
 
   navigate(url) {
-    this.closemodal?.nativeElement?.click();
-    sessionStorage.setItem('hamburgerSourceUrl', this.router.url);
-    sessionStorage.setItem('openHamburger', 'true');
+    this.closemenuevent();
     this.router.navigate([url]);
   }
 
