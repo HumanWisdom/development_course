@@ -100,8 +100,14 @@ export class GuidedJourneyEndPage implements OnInit {
           const dayStr = String(item.Days_No || item.DayNo || item.dayNo || item.Day_No || item.day || '');
           return dayStr === '100';
         }).map(item => {
+          const rawTitle = item.Title || item.Section;
+          const { mainTitle, subTitle, sessionLabel, sessionName } = this.parseTitle(rawTitle);
           return {
             ...item,
+            DisplayTitle: mainTitle,
+            DisplaySubtitle: subTitle,
+            sessionLabel: sessionLabel,
+            sessionName: sessionName,
             Timing: item.Timing || item.timing || item.Time || item.time || item.duration || item.Duration || '',
             imgPath: this.getImgUrl(item.imgPath)
           };
@@ -134,6 +140,74 @@ export class GuidedJourneyEndPage implements OnInit {
       return 'IN-DEPTH CONVERSATIONS';
     }
     return section;
+  }
+
+  parseTitle(title: string) {
+    if (title && title.includes('(') && title.includes(')')) {
+      const parts = title.split('(');
+      const mainTitle = parts[0].trim();
+      let subTitle = parts[1].replace(')', '').trim();
+
+      let sessionLabel = '';
+      let sessionName = '';
+
+      let separator = '';
+      if (subTitle.includes(',')) {
+        separator = ',';
+      } else if (subTitle.includes('•')) {
+        separator = '•';
+      } else if (subTitle.includes('-')) {
+        separator = '-';
+      }
+
+      if (separator) {
+        const subParts = subTitle.split(separator);
+        sessionLabel = subParts[0].trim();
+        sessionName = subParts.slice(1).join(separator).trim();
+      } else {
+        sessionLabel = subTitle;
+      }
+
+      if (sessionLabel) {
+        const upper = sessionLabel.toUpperCase();
+        if (upper.startsWith('SESSION#') || upper.startsWith('SESSION #')) {
+          const num = sessionLabel.replace(/SESSION\s*#\s*/i, '').trim();
+          sessionLabel = `Session #${num}`;
+        } else if (upper.startsWith('MEDITATION#') || upper.startsWith('MEDITATION #')) {
+          const num = sessionLabel.replace(/MEDITATION\s*#\s*/i, '').trim();
+          sessionLabel = `Meditation #${num}`;
+        } else if (upper.startsWith('EXERCISE#') || upper.startsWith('EXERCISE #')) {
+          const num = sessionLabel.replace(/EXERCISE\s*#\s*/i, '').trim();
+          sessionLabel = `Exercise #${num}`;
+        } else {
+          sessionLabel = sessionLabel.charAt(0).toUpperCase() + sessionLabel.slice(1).toLowerCase();
+          sessionLabel = sessionLabel.replace(/([a-zA-Z])#/g, '$1 #');
+        }
+      }
+
+      if (sessionName) {
+        sessionName = sessionName.charAt(0).toUpperCase() + sessionName.slice(1).toLowerCase();
+      }
+
+      let displaySub = subTitle;
+      if (displaySub.includes(',')) {
+        displaySub = displaySub.replace(',', ' •');
+      }
+      return { mainTitle, subTitle: displaySub, sessionLabel, sessionName };
+    }
+    return { mainTitle: title, subTitle: '', sessionLabel: '', sessionName: '' };
+  }
+
+  isSection8(item: any): boolean {
+    if (!item) return false;
+    const secId = item.SectionID || item.SectionId || item.sectionID || item.sectionId;
+    const isSec8 = secId == 8 || secId == '8';
+
+    const sectionStr = (item.Section || '').toUpperCase();
+    const isModuleSession = sectionStr.includes('MODULE') || sectionStr.includes('SESSION') ||
+                            (item.DisplaySubtitle && (item.DisplaySubtitle.toUpperCase().includes('SESSION') || item.DisplaySubtitle.toUpperCase().includes('MODULE')));
+
+    return isSec8 && isModuleSession && !!item.sessionLabel && !!item.sessionName;
   }
 
   onExerciseClick(exercise: any) {

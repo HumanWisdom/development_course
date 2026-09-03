@@ -101,11 +101,11 @@
                     </div>
 
                     <!-- Status Icon (Read / Lock) -->
-                    <img *ngIf="data?.isRead === '1'"
+                    <img *ngIf="data?.isRead == '1'"
                       [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isread_teen.svg'"
                       class="ws-read-icon" alt="Read" />
-                    <img *ngIf="!isSubscriber && data['RowID'] > 2 && data?.isRead !== '1'"
-                      [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg'"
+                    <img *ngIf="!isSubscriber && data['RowID'] > 2 && data?.isRead != '1'"
+                      [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock.svg'"
                       class="ws-lock-icon" alt="Locked" />
 
                   </div>
