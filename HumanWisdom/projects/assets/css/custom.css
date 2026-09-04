@@ -35735,6 +35735,15 @@ background: #FFD889;
   border-radius: 6px;
 }
 
+
+.read-text-label {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  color: #D7586B !important;
+  text-decoration: underline !important;
+  pointer-events: auto;
+}
 .testimonials_main {
   margin-bottom: 5px;
 }
