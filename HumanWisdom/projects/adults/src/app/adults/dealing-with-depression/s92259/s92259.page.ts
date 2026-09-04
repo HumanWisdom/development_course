@@ -19,7 +19,7 @@ export class S92259Page implements OnInit {
   progressPercent:any
   progressText="7/8"
   link="/adults/dealing-with-depression/s92260"
-  name="#8 A conversation wtih someone who has overcome thier depression"
+  name="#8 A conversation with someone who has overcome their depression"
   progressImg=""
   toc="adults/dealing-with-depression/s92001"
 
