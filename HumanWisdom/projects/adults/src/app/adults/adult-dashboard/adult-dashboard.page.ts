@@ -4451,9 +4451,11 @@ getAlertcloseEvent($event) {
       }
       case "exercises":
       case "awareness exercises":
+      case "self awareness":
+      case "self-awareness":
         {
-        url = `/adults/wisdom-exercise`
-        break;
+        this.router.navigate(['/adults/explore'], { fragment: 'self-awareness' });
+        return;
       }
       case "journal":{
         url = `/adults/journal`

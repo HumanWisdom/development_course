@@ -182,7 +182,7 @@ export class SearchPopularItemsPage implements OnInit, OnDestroy {
       case "self awareness":
       case "self-awareness":
         {
-        url = `/${SharedService.getprogramName()}/home`
+        url = `/${SharedService.getprogramName()}/explore`
         fragment = "self-awareness"
         break;
       }

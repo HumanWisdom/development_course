@@ -2330,11 +2330,12 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
         case "self awareness":
         case "self-awareness":
           {
-          // If already on the home page, directly activate the Self Awareness nav item
+          // If already on the explore page, directly activate the Self Awareness nav item
           // instead of relying on router.navigate (which ignores same-URL navigation)
           const currentUrl = this.router.url.split('#')[0].split('?')[0];
+          const exploreUrl = `/${SharedService.getprogramName()}/explore`;
           const homeUrl = `/${SharedService.getprogramName()}/home`;
-          if (currentUrl === homeUrl) {
+          if (currentUrl === exploreUrl || currentUrl === homeUrl) {
             // Find the Self Awareness item from the UI-bound personalisedList
             // so that onNavigationClick updates the correct active state in the template
             const selfAwarenessItem = this.personalisedList.find(item => 
@@ -2354,7 +2355,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
             }
           }
           // Fallback: navigate via router (when on a different page)
-          url = `/${SharedService.getprogramName()}/home`
+          url = `/${SharedService.getprogramName()}/explore`
           fragment = "self-awareness"
           break;
         }
