@@ -2082,9 +2082,11 @@ closeCookies() {
       }
       case "exercises":
       case "awareness exercises":
+      case "self awareness":
+      case "self-awareness":
         {
-          url = `/teenagers/wisdom-exercise`
-          break;
+          this.router.navigate(['/teenagers/explore'], { fragment: 'self-awareness' });
+          return;
         }
       case "forum": {
         url = `/teenagers/forum`
