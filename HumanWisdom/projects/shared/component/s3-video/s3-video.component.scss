@@ -151,8 +151,10 @@ video.cvideo_01.invert-controls {
 }
 
 .video-portrait {
-  width: 270px !important;
-  height: 400px !important;
+/*   width: 270px !important;
+  height: 400px !important; */
+  height: 80% !important;
+  width: auto !important;
   object-fit: cover;
 }
 
