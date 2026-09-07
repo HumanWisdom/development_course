@@ -666,6 +666,19 @@ describe('CommonService', () => {
       req.flush(mockResponse);
     });
 
+    it('should click conversation videos', () => {
+      const videoId = 5;
+      const mockResponse = { success: true };
+
+      service.clickConversationVideos(videoId).subscribe(response => {
+        expect(response).toEqual(mockResponse);
+      });
+
+      const req = httpMock.expectOne(`${mockApiUrl}/clickConversationVideos/${videoId}`);
+      expect(req.request.method).toBe('POST');
+      req.flush(mockResponse);
+    });
+
     it('should click meditations', () => {
       const meditationId = 5;
       const mockResponse = { success: true };

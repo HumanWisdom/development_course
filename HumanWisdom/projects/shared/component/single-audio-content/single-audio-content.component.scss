@@ -263,14 +263,14 @@ width: 100%;
   text-decoration: none;
 }
 
-.read-text-label {
-  display: inline-block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  color: #ee9596 !important;
-  text-decoration: underline !important;
-  pointer-events: auto;
-}
+// .read-text-label {
+//   display: inline-block !important;
+//   visibility: visible !important;
+//   opacity: 1 !important;
+//   color: #ee9596 !important;
+//   text-decoration: underline !important;
+//   pointer-events: auto;
+// }
 
 :host ::ng-deep .transcript_txt .transcript-link,
 :host ::ng-deep .transcript_txt a {

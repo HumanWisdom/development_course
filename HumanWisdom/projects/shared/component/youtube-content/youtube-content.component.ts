@@ -14,6 +14,7 @@ export class YoutubeContentComponent implements OnInit {
   public videoLink: any;
   public linkcode: any;
   public title: string = '';
+  public headerTitle: string = 'Events';
   public isAdults: boolean = true;
 
   @ViewChild('enablepopup') enablepopup: ElementRef;
@@ -60,8 +61,21 @@ export class YoutubeContentComponent implements OnInit {
     this.bg='dark_blue_w1';
     }
 
-    if (window.history.state && window.history.state.title) {
-      this.title = window.history.state.title;
+    if (window.history.state) {
+      if (window.history.state.title) {
+        this.title = window.history.state.title;
+      }
+      if (window.history.state.headerTitle) {
+        this.headerTitle = window.history.state.headerTitle;
+        localStorage.setItem('youtubelinkHeaderTitle', this.headerTitle);
+      }
+    }
+
+    if (!window.history.state?.headerTitle) {
+      const savedHeader = localStorage.getItem('youtubelinkHeaderTitle');
+      if (savedHeader && savedHeader !== 'null') {
+        this.headerTitle = savedHeader;
+      }
     }
 
     this.isAdults = SharedService.ProgramId == ProgramType.Adults;
@@ -69,7 +83,7 @@ export class YoutubeContentComponent implements OnInit {
 
   ngOnInit()
   {
-    let code = `https://www.youtube.com/embed/${this.linkcode}`;
+    let code = `https://www.youtube.com/embed/${this.linkcode}?controls=0&cc_load_policy=0&autoplay=1&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&fs=1&enablejsapi=1`;
     this.videoLink = this.getSafeUrl(code);
   }
 

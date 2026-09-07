@@ -32474,7 +32474,8 @@ label.select_label:after {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
+  height: 350px;
 }
 
 .popup_02 {
@@ -35735,8 +35736,17 @@ background: #FFD889;
   border-radius: 6px;
 }
 
+
+.read-text-label {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  color: #D7586B !important;
+  text-decoration: underline !important;
+  pointer-events: auto;
+}
 .testimonials_main {
-  margin-bottom: 5px;
+  margin-bottom: 20px;
 }
 
 .div_testimonial .row:last-child {

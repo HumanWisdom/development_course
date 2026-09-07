@@ -248,7 +248,7 @@
   font-weight: 400;
   text-transform: uppercase;
   color: #000000;
-  margin-top: 20px;
+  margin-top: 18px;
   margin-bottom: 6px;
 }
 
@@ -306,6 +306,14 @@
   box-shadow: none;
   outline: none;
   flex-shrink: 0;
+
+  &:disabled,
+  &[disabled],
+  &.disabled {
+    opacity: 0.35 !important;
+    cursor: not-allowed !important;
+    pointer-events: none !important;
+  }
 }
 
 .vl-chip-adults {
@@ -422,6 +430,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-right: 22px;
 
   .vl-card-title {
     font-size: 15px;

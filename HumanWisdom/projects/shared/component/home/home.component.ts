@@ -156,6 +156,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   isHeaderHidden: boolean = false;
   showExplorePopup: boolean = false;
   showCrisisPopup: boolean = false;
+  pendingCrisisSearchTerm: string = '';
+  pendingCrisisFromDropdown: boolean = false;
 
   private readonly CRISIS_KEYWORDS: string[] = [
     'suicide', 'suicidal', 'kill myself', 'end my life', "don't want to live",
@@ -173,11 +175,15 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
   closeCrisisPopup(): void {
     this.showCrisisPopup = false;
-    this.searchinp = '';
-    this.isSearchActive = false;
-    this.commonService.setSearchActive(false);
     this.updateHeaderDisplay();
     this.toggleBodyScroll(false);
+    if (this.pendingCrisisSearchTerm) {
+      const term = this.pendingCrisisSearchTerm;
+      const fromDropdown = this.pendingCrisisFromDropdown;
+      this.pendingCrisisSearchTerm = '';
+      this.pendingCrisisFromDropdown = false;
+      this.executeGetInp(term, fromDropdown);
+    }
   }
   constructor(
     private router: Router,
@@ -2195,10 +2201,6 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
    * Get autocomplete list based on search input
    */
   getAutoCompleteList(value: string): void {
-    if (this.containsCrisisKeyword(value)) {
-      this.showCrisisPopup = true;
-      return;
-    }
     if (this.moduleList.length > 0) {
       if (value == null || value == "") {
         this.searchResult = this.moduleList;
@@ -2263,9 +2265,15 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
    */
   getinp(searchTerm: string, fromDropdown: boolean = false): void {
     if (this.containsCrisisKeyword(searchTerm)) {
+      this.pendingCrisisSearchTerm = searchTerm;
+      this.pendingCrisisFromDropdown = fromDropdown;
       this.showCrisisPopup = true;
       return;
     }
+    this.executeGetInp(searchTerm, fromDropdown);
+  }
+
+  executeGetInp(searchTerm: string, fromDropdown: boolean = false): void {
     this.isSearchActive = false;
     this.commonService.setSearchActive(false);
     this.updateHeaderDisplay();
@@ -2330,11 +2338,12 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
         case "self awareness":
         case "self-awareness":
           {
-          // If already on the home page, directly activate the Self Awareness nav item
+          // If already on the explore page, directly activate the Self Awareness nav item
           // instead of relying on router.navigate (which ignores same-URL navigation)
           const currentUrl = this.router.url.split('#')[0].split('?')[0];
+          const exploreUrl = `/${SharedService.getprogramName()}/explore`;
           const homeUrl = `/${SharedService.getprogramName()}/home`;
-          if (currentUrl === homeUrl) {
+          if (currentUrl === exploreUrl || currentUrl === homeUrl) {
             // Find the Self Awareness item from the UI-bound personalisedList
             // so that onNavigationClick updates the correct active state in the template
             const selfAwarenessItem = this.personalisedList.find(item => 
@@ -2354,7 +2363,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
             }
           }
           // Fallback: navigate via router (when on a different page)
-          url = `/${SharedService.getprogramName()}/home`
+          url = `/${SharedService.getprogramName()}/explore`
           fragment = "self-awareness"
           break;
         }

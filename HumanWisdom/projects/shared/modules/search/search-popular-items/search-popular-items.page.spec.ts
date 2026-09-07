@@ -337,14 +337,14 @@ describe('SearchPopularItemsPage', () => {
       expect(mockRouter.navigate).toHaveBeenCalledWith(['/adults/wisdom-shorts'], { fragment: '' });
     });
 
-    it('should navigate to home with fragment when event is "exercises"', () => {
+    it('should navigate to explore with fragment when event is "exercises"', () => {
       component.getinp('exercises');
-      expect(mockRouter.navigate).toHaveBeenCalledWith(['/adults/home'], { fragment: 'self-awareness' });
+      expect(mockRouter.navigate).toHaveBeenCalledWith(['/adults/explore'], { fragment: 'self-awareness' });
     });
 
-    it('should navigate to home with fragment when event is "awareness exercises"', () => {
+    it('should navigate to explore with fragment when event is "awareness exercises"', () => {
       component.getinp('awareness exercises');
-      expect(mockRouter.navigate).toHaveBeenCalledWith(['/adults/home'], { fragment: 'self-awareness' });
+      expect(mockRouter.navigate).toHaveBeenCalledWith(['/adults/explore'], { fragment: 'self-awareness' });
     });
 
     it('should navigate to journal when event is "journal"', () => {

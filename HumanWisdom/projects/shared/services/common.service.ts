@@ -810,6 +810,10 @@ export class CommonService {
     return this.http.post(this.path + `/clickteentalk/${id}`, {});
   }
 
+  clickConversationVideos(id: number): Observable<any> {
+    return this.http.post(this.path + `/clickConversationVideos/${id}`, {});
+  }
+
   GetGuidedJourneys(progID: any, userId: any): Observable<any> {
     return this.http.get(this.path + `/GetGuidedJourneys/${progID}/${userId}`);
   }

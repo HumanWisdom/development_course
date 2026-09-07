@@ -28,18 +28,36 @@
             <!-- /search -->
 
             <form ngNativeValidate style="padding: 0 20px;">
-              <!-- SUBJECT filters -->
+              <!-- TYPE filters -->
               <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <div class="vl-filter-label mt18px" [ngClass]="isAdults ? '' : 'fc_ffffff_0_5'">TYPE</div>
+                  <div class="vl-chip-scroll">
+                    <button type="button" class="vl-chip" [ngClass]="isAdults ? 'vl-chip-adults' : 'vl-chip-teens'"
+                      *ngFor="let item of typeData" (click)="selectType(item.id)"
+                      id="type-{{item.id}}"
+                      [class.active]="selectedType === item.id">
+                      {{item.displayName}}
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- /TYPE filters -->
+
+              <!-- SUBJECT filters -->
+              <div class="row mt10px">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
                   <div class="vl-filter-label" [ngClass]="isAdults ? '' : 'fc_ffffff_0_5'">SUBJECT</div>
                   <div class="vl-chip-scroll">
                     <button type="button" class="vl-chip" [ngClass]="isAdults ? 'vl-chip-adults' : 'vl-chip-teens'"
-                      id="all" (click)="getUserPref('all')" [class.active]="selectedPref === 'all'">
+                      id="pref-all" (click)="getUserPref('all')" [class.active]="selectedPref === 'all'">
                       All
                     </button>
                     <ng-container *ngFor="let data of prefData">
                       <button type="button" class="vl-chip" [ngClass]="isAdults ? 'vl-chip-adults' : 'vl-chip-teens'"
-                        id="{{data['id'] | lowercase}}" *ngIf="data['displayName'] !== 'All'"
+                        id="pref-{{data['id'] | lowercase}}" *ngIf="data['displayName'] !== 'All'"
+                        [disabled]="isSubjectDisabled(data['id'])"
+                        [class.disabled]="isSubjectDisabled(data['id'])"
                         (click)="getUserPref(data['id'])" [class.active]="selectedPref === (data['id'] | lowercase)">
                         {{data['displayName']}}
                       </button>
@@ -49,30 +67,15 @@
               </div>
               <!-- /SUBJECT filters -->
 
-              <!-- TYPE filters -->
-              <div class="row mt10px">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <div class="vl-filter-label mt0px" [ngClass]="isAdults ? '' : 'fc_ffffff_0_5'">TYPE</div>
-                  <div class="vl-chip-scroll">
-                    <button type="button" class="vl-chip" [ngClass]="isAdults ? 'vl-chip-adults' : 'vl-chip-teens'"
-                      *ngFor="let item of typeData" (click)="selectType(item.id)"
-                      [class.active]="selectedType === item.id">
-                      {{item.displayName}}
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <!-- /TYPE filters -->
-
               <!-- TAB DESCRIPTION & SEPARATOR -->
               <div class="row" *ngIf="getTypeDescription()">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
                   <p class="vl-tab-description" [ngClass]="isAdults ? 'fc_000000_0_8' : 'fc_ffffff_0_8'">
                     {{getTypeDescription()}}
                   </p>
-                  <hr class="hr_style_v3_01" />
                 </div>
               </div>
+              <hr class="hr_style_v3_01" />
               <!-- /TAB DESCRIPTION & SEPARATOR -->
 
               <!-- VIDEO CARDS LIST -->
@@ -101,11 +104,11 @@
                     </div>
 
                     <!-- Status Icon (Read / Lock) -->
-                    <img *ngIf="data?.isRead === '1'"
+                    <img *ngIf="data?.isRead == '1'"
                       [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isread_teen.svg'"
                       class="ws-read-icon" alt="Read" />
-                    <img *ngIf="!isSubscriber && data['RowID'] > 2 && data?.isRead !== '1'"
-                      [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/lock.svg'"
+                    <img *ngIf="!isSubscriber && (data?.isFree == '0' || data?.isFree === 0) && data?.isRead != '1'"
+                      [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock.svg'"
                       class="ws-lock-icon" alt="Locked" />
 
                   </div>
