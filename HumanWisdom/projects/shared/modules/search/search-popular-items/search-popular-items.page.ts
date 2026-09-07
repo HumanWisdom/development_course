@@ -634,10 +634,18 @@ export class SearchPopularItemsPage implements OnInit, OnDestroy {
       next: () => {},
       error: () => {}
     });
+    const itemTypeLower = (item['Type'] || item['type'] || item['Category'] || item['category'] || '').toString().toLowerCase();
+    let headerTitle = 'In-depth conversation';
+    if (itemTypeLower.includes('real') || itemTypeLower.includes('conversation') || itemTypeLower.includes('teentalk')) {
+      headerTitle = 'Real stories';
+    } else if (itemTypeLower.includes('in-depth') || itemTypeLower.includes('indepth') || itemTypeLower.includes('event')) {
+      headerTitle = 'In-depth conversation';
+    }
+    localStorage.setItem('youtubelinkHeaderTitle', headerTitle);
     if (item?.RowID <= 2) {
-      this.router.navigate([SharedService.getprogramName() + '/curated/youtubelink', (item?.YoutubeLink || '') + '=rdtfghjhfdg']);
+      this.router.navigate([SharedService.getprogramName() + '/curated/youtubelink', (item?.YoutubeLink || '') + '=rdtfghjhfdg'], { state: { headerTitle } });
     } else {
-      this.router.navigate([SharedService.getprogramName() + '/curated/youtubelink', (item?.YoutubeLink || '') + '=vncbxdfchgvxd']);
+      this.router.navigate([SharedService.getprogramName() + '/curated/youtubelink', (item?.YoutubeLink || '') + '=vncbxdfchgvxd'], { state: { headerTitle } });
     }
   }
 
