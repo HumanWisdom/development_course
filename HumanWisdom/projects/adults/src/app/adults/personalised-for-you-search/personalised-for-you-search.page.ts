@@ -124,6 +124,7 @@ export class PersonalisedForYouSearchPage implements OnInit {
   isSearchActive: boolean = false;
   showLearnPopup: boolean = false;
   showCrisisPopup: boolean = false;
+  pendingCrisisSearchTerm: string = '';
 
   private readonly CRISIS_KEYWORDS: string[] = [
     'suicide', 'suicidal', 'kill myself', 'end my life', "don't want to live",
@@ -141,10 +142,12 @@ export class PersonalisedForYouSearchPage implements OnInit {
 
   closeCrisisPopup(): void {
     this.showCrisisPopup = false;
-    this.searchinp = '';
-    this.isSearchActive = false;
-    this.commonService.setSearchActive(false);
     this.toggleBodyScroll(false);
+    if (this.pendingCrisisSearchTerm) {
+      const term = this.pendingCrisisSearchTerm;
+      this.pendingCrisisSearchTerm = '';
+      this.executeGetInp(term);
+    }
   }
 
 
@@ -412,10 +415,6 @@ toggleAccordion() {
 
   
   getAutoCompleteList(value) {
-    if (this.containsCrisisKeyword(value)) {
-      this.showCrisisPopup = true;
-      return;
-    }
     if (this.moduleList.length > 0) {
       if (value == null || value == "") {
         this.searchResult = this.moduleList;
@@ -445,9 +444,14 @@ toggleAccordion() {
 
   getinp(event) {
     if (this.containsCrisisKeyword(event)) {
+      this.pendingCrisisSearchTerm = event;
       this.showCrisisPopup = true;
       return;
     }
+    this.executeGetInp(event);
+  }
+
+  executeGetInp(event) {
     this.isSearchActive = false;
     this.commonService.setSearchActive(false);
     this.toggleBodyScroll(false);
