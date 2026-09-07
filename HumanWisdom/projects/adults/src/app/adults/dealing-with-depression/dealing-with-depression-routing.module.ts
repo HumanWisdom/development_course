@@ -97,6 +97,23 @@ import { S92087Page } from './s92087/s92087.page';
 import { S92088Page } from './s92088/s92088.page';
 import { S92088tPage } from './s92088t/s92088t.page';
 import { S92089Page } from './s92089/s92089.page';
+import { S92089p1Page } from './s92089p1/s92089p1.page';
+import { S92089p2Page } from './s92089p2/s92089p2.page';
+
+import { S92089p3Page } from './s92089p3/s92089p3.page';
+
+import { S92089p4Page } from './s92089p4/s92089p4.page';
+
+import { S92089p5Page } from './s92089p5/s92089p5.page';
+import { S92089p6Page } from './s92089p6/s92089p6.page';
+import { S92089p7Page } from './s92089p7/s92089p7.page';
+import { S92089p8Page } from './s92089p8/s92089p8.page';
+import { S92089p9Page } from './s92089p9/s92089p9.page';
+import { S92089p10Page } from './s92089p10/s92089p10.page';
+import { S92089p11Page } from './s92089p11/s92089p11.page';
+
+
+
 import { S92090Page } from './s92090/s92090.page';
 import { S92091Page } from './s92091/s92091.page';
 import { S92091tPage } from './s92091t/s92091t.page';
@@ -794,6 +811,61 @@ const routes: Routes = [
     canActivate:[ActiveGuard],  
     component: S92089Page,
   },
+   {
+    path: 's92089p1',   
+    canActivate:[ActiveGuard],  
+    component: S92089p1Page,
+  },
+   {
+    path: 's92089p2',   
+    canActivate:[ActiveGuard],  
+    component: S92089p2Page,
+  },
+   {
+    path: 's92089p3',   
+    canActivate:[ActiveGuard],  
+    component: S92089p3Page,
+  },
+   {
+    path: 's92089p4',   
+    canActivate:[ActiveGuard],  
+    component: S92089p4Page,
+  },
+   {
+    path: 's92089p5',   
+    canActivate:[ActiveGuard],  
+    component: S92089p5Page,
+  },
+   {
+    path: 's92089p6',   
+    canActivate:[ActiveGuard],  
+    component: S92089p6Page,
+  },
+   {
+    path: 's92089p7',   
+    canActivate:[ActiveGuard],  
+    component: S92089p7Page,
+  },
+   {
+    path: 's92089p8',   
+    canActivate:[ActiveGuard],  
+    component: S92089p8Page,
+  },
+   {
+    path: 's92089p9',   
+    canActivate:[ActiveGuard],  
+    component: S92089p9Page,
+  },
+   {
+    path: 's92089p10',   
+    canActivate:[ActiveGuard],  
+    component: S92089p10Page,
+  },  
+  {
+    path: 's92089p11',   
+    canActivate:[ActiveGuard],  
+    component: S92089p11Page,
+  },  
   {
     path: 's92090',   
     canActivate:[ActiveGuard],  
