@@ -28,8 +28,23 @@
             <!-- /search -->
 
             <form ngNativeValidate style="padding: 0 20px;">
-              <!-- SUBJECT filters -->
+              <!-- TYPE filters -->
               <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                  <div class="vl-filter-label mt0px" [ngClass]="isAdults ? '' : 'fc_ffffff_0_5'">TYPE</div>
+                  <div class="vl-chip-scroll">
+                    <button type="button" class="vl-chip" [ngClass]="isAdults ? 'vl-chip-adults' : 'vl-chip-teens'"
+                      *ngFor="let item of typeData" (click)="selectType(item.id)"
+                      [class.active]="selectedType === item.id">
+                      {{item.displayName}}
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- /TYPE filters -->
+
+              <!-- SUBJECT filters -->
+              <div class="row mt10px">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
                   <div class="vl-filter-label" [ngClass]="isAdults ? '' : 'fc_ffffff_0_5'">SUBJECT</div>
                   <div class="vl-chip-scroll">
@@ -49,30 +64,15 @@
               </div>
               <!-- /SUBJECT filters -->
 
-              <!-- TYPE filters -->
-              <div class="row mt10px">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <div class="vl-filter-label mt0px" [ngClass]="isAdults ? '' : 'fc_ffffff_0_5'">TYPE</div>
-                  <div class="vl-chip-scroll">
-                    <button type="button" class="vl-chip" [ngClass]="isAdults ? 'vl-chip-adults' : 'vl-chip-teens'"
-                      *ngFor="let item of typeData" (click)="selectType(item.id)"
-                      [class.active]="selectedType === item.id">
-                      {{item.displayName}}
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <!-- /TYPE filters -->
-
               <!-- TAB DESCRIPTION & SEPARATOR -->
               <div class="row" *ngIf="getTypeDescription()">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
                   <p class="vl-tab-description" [ngClass]="isAdults ? 'fc_000000_0_8' : 'fc_ffffff_0_8'">
                     {{getTypeDescription()}}
                   </p>
-                  <hr class="hr_style_v3_01" />
                 </div>
               </div>
+              <hr class="hr_style_v3_01" />
               <!-- /TAB DESCRIPTION & SEPARATOR -->
 
               <!-- VIDEO CARDS LIST -->

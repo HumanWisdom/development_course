@@ -38,8 +38,8 @@ export class WisdomShortsIndexPage implements OnInit {
     { id: 'all', displayName: 'All' },
     { id: 'short_videos', displayName: 'Short videos' },
     { id: 'expert_tips', displayName: 'Expert tips' },
-    { id: 'real_life', displayName: 'Real-life stories' },
-    { id: 'in_depth', displayName: 'In-depth' }
+    { id: 'real_life', displayName: 'Real stories' },
+    { id: 'in_depth', displayName: 'In-depth conversation' }
   ];
 
   typeDescriptions: { [key: string]: string } = {
@@ -147,11 +147,11 @@ export class WisdomShortsIndexPage implements OnInit {
                 } else if (lowerKey === 'voices' || lowerKey === 'experttips') {
                   item['Type'] = 'Expert tips';
                 } else if (lowerKey === 'hwpallevents' || lowerKey === 'events' || lowerKey === 'indepth') {
-                  item['Type'] = 'In-depth';
+                  item['Type'] = 'In-depth conversation';
                 } else if (lowerKey === 'conversations' && this.isAdults) {
-                  item['Type'] = 'Real-life stories';
+                  item['Type'] = 'Real stories';
                 } else if (lowerKey === 'teentalks' && !this.isAdults) {
-                  item['Type'] = 'Real-life stories';
+                  item['Type'] = 'Real stories';
                 } else {
                   if (isVoice) {
                     item['Type'] = 'Expert tips';
@@ -291,12 +291,12 @@ export class WisdomShortsIndexPage implements OnInit {
   recordClick(val: any, id: any) {
     if (id !== null && id !== undefined) {
       const itemType = (val['Type'] || val['type'] || val['Category'] || val['category'] || '').toString().toLowerCase();
-      if (itemType === 'real-life stories' || itemType === 'real_life' || itemType === 'conversations' || itemType === 'conversation' || itemType === 'teentalks' || itemType === 'teentalk' || itemType === 'realstories') {
+      if (itemType === 'real stories' || itemType === 'real-life stories' || itemType === 'real_life' || itemType === 'conversations' || itemType === 'conversation' || itemType === 'teentalks' || itemType === 'teentalk' || itemType === 'realstories') {
         this.service.clickConversationVideos(id).subscribe({
           next:  () => console.log('conversation video click recorded'),
           error: (e) => console.error('conversation video click failed', e)
         });
-      } else if (itemType === 'in-depth' || itemType === 'events' || itemType === 'event' || itemType === 'hwpallevents') {
+      } else if (itemType === 'in-depth conversation' || itemType === 'in-depth' || itemType === 'events' || itemType === 'event' || itemType === 'hwpallevents') {
         this.service.clickEvents(id).subscribe({
           next:  () => console.log('event click recorded'),
           error: (e) => console.error('event click failed', e)
@@ -332,7 +332,7 @@ export class WisdomShortsIndexPage implements OnInit {
         isYoutube = true;
         ytCode = str;
       }
-    } else if (val['Type'] === 'Real-life stories' || val['Type'] === 'Expert tips' || val['Type'] === 'In-depth') {
+    } else if (val['Type'] === 'Real stories' || val['Type'] === 'Real-life stories' || val['Type'] === 'Expert tips' || val['Type'] === 'In-depth' || val['Type'] === 'In-depth conversation') {
       if (val['RowID']) {
         isYoutube = true;
         ytCode = val['RowID'].toString();
@@ -372,8 +372,23 @@ export class WisdomShortsIndexPage implements OnInit {
         localStorage.setItem('lastWisdomShortId', id.toString());
       }
 
+      const itemTypeLower = (val['Type'] || val['type'] || '').toString().toLowerCase();
+      let headerTitle = 'Events';
+      if (itemTypeLower.includes('real') || itemTypeLower.includes('conversation') || itemTypeLower.includes('teentalk')) {
+        headerTitle = 'Real stories';
+      } else if (itemTypeLower.includes('in-depth') || itemTypeLower.includes('indepth') || itemTypeLower.includes('event')) {
+        headerTitle = 'In-depth conversation';
+      } else if (itemTypeLower.includes('expert')) {
+        headerTitle = 'Expert tips';
+      } else if (itemTypeLower.includes('short')) {
+        headerTitle = 'Short videos';
+      } else if (val['Type']) {
+        headerTitle = val['Type'];
+      }
+
+      localStorage.setItem('youtubelinkHeaderTitle', headerTitle);
       const suffix = isFreeItem ? '=rdtfghjhfdg' : '=vncbxdfchgvxd';
-      this.router.navigate([`/${prog}/curated/youtubelink`, `${ytCode}${suffix}`], { state: { title } });
+      this.router.navigate([`/${prog}/curated/youtubelink`, `${ytCode}${suffix}`], { state: { title, headerTitle } });
       return;
     }
 
@@ -444,7 +459,12 @@ export class WisdomShortsIndexPage implements OnInit {
   selectType(typeId: string) {
     this.selectedType = typeId.toLowerCase();
     localStorage.setItem('wisdomShortsSelectedType', this.selectedType);
+    this.selectedPref = 'all';
+    localStorage.setItem('wisdomShortsSelectedTab', 'all');
     this.filterShorts();
+    setTimeout(() => {
+      this.scrollToActiveTab();
+    }, 100);
   }
 
   formatTiming(timing: any): string {
@@ -576,9 +596,9 @@ export class WisdomShortsIndexPage implements OnInit {
       } else if (selectedTypeStr === 'expert_tips') {
         list = list.filter(d => d['Type'] && (d['Type'].toLowerCase() === 'expert tips' || d['Type'].toLowerCase() === 'voices'));
       } else if (selectedTypeStr === 'real_life') {
-        list = list.filter(d => d['Type'] && (d['Type'].toLowerCase() === 'real-life stories' || d['Type'].toLowerCase() === 'conversations' || d['Type'].toLowerCase() === 'teentalks'));
+        list = list.filter(d => d['Type'] && (d['Type'].toLowerCase() === 'real stories' || d['Type'].toLowerCase() === 'real-life stories' || d['Type'].toLowerCase() === 'conversations' || d['Type'].toLowerCase() === 'teentalks'));
       } else if (selectedTypeStr === 'in_depth') {
-        list = list.filter(d => d['Type'] && (d['Type'].toLowerCase() === 'in-depth' || d['Type'].toLowerCase() === 'events' || d['Type'].toLowerCase() === 'hwpallevents'));
+        list = list.filter(d => d['Type'] && (d['Type'].toLowerCase() === 'in-depth conversation' || d['Type'].toLowerCase() === 'in-depth' || d['Type'].toLowerCase() === 'events' || d['Type'].toLowerCase() === 'hwpallevents'));
       }
     }
 
