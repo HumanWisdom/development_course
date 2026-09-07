@@ -38,8 +38,7 @@
   padding-right: 12rem;
 }
 
-/* Hide OWL auto-generated nav to avoid duplicate buttons */
-.owl_blog .owl-nav,
+/* Testimonials: Figma shows cards only — hide Owl's default nav */
 .owl_testimonials .owl-nav {
   display: none !important;
 }
@@ -148,6 +147,18 @@ a,h5:hover {
   position: relative;
 }
 
+.healthcare-hero-shell .hc-hero-title {
+  color: #000000;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.hc-inspire-leadership-m,
+.hc-blog-more-m {
+  display: none;
+}
+
 @media (min-width: 768px) {
   .healthcare-hero-shell .absolute_desc {
     position: absolute;
@@ -164,19 +175,19 @@ a,h5:hover {
   }
 
   .healthcare-hero-shell .absolute_desc > [class*="col-"] {
-    flex: 0 0 440px;
-    max-width: 440px;
-    width: 440px;
-    margin-left: 34px;
+    flex: 0 0 383px;
+    max-width: 383px;
+    width: 383px;
+    margin-left: 0;
   }
 }
 
 .div_dyk {
-    background: rgba(255, 249, 238, 1);
+    background: rgba(255, 247, 230, 1);
     background-repeat: no-repeat;
     background-position: center;
     text-align: center;
-    padding: 50px 20px;
+    padding: 62px 20px;
 }
 .div_testimonials {
   border-radius: 10px;
@@ -219,8 +230,7 @@ a,h5:hover {
     text-align: center !important;
   }
 
-  /* Description section – mobile: column (not reverse) so order is:
-     1. heading (mobile-only div)  2. image  3. paragraph */
+  /* Description section – Figma: phones first, then title + copy */
   .w-1245px.gap_40px {
     flex-direction: column !important;
   }
@@ -236,11 +246,11 @@ a,h5:hover {
     font-size: 18px !important;
   }
 
-  /* Hero subtext – left-aligned on mobile */
+  /* Hero subtext – Figma 10473-7222: 12px / 150% / center */
   .absolute_desc_m h2,
   .absolute_desc_m h5,
   .absolute_desc_m p {
-    text-align: left !important;
+    text-align: center !important;
   }
   .d-contents{
     display: contents;
@@ -281,11 +291,17 @@ a,h5:hover {
     text-align: left !important;
   }
 
-  /* Request a demo button – Figma: Width Fill 335px, Height Hug 47px */
+  /* Request a demo – Figma: 335px, 18px, r30, py 15px */
   .req_button {
     width: 335px !important;
-    max-width: 90% !important;
-    height: 47px !important;
+    max-width: 335px !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 15px 30px !important;
+    border-radius: 30px !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    line-height: 140% !important;
     display: block !important;
     margin: 0 auto !important;
   }
@@ -293,6 +309,99 @@ a,h5:hover {
   /* Hide prev/next nav buttons on mobile */
   .hc-slider-footer {
     display: none !important;
+  }
+
+  .hc-desc-heading-mobile {
+    display: none !important;
+  }
+
+  .hc-desc-title.display_m_none {
+    display: block !important;
+  }
+
+  .hc-inspire-leadership-d,
+  .hc-blog-more-d {
+    display: none !important;
+  }
+
+  .hc-inspire-leadership-m,
+  .hc-blog-more-m {
+    display: inline !important;
+  }
+
+  /* Section titles: Figma 24px / 335px so they wrap to 2 lines (not 3) */
+  body.page-healthcare main#main .hc-dyk-title,
+  body.page-healthcare main#main .work-testimonials-title,
+  body.page-healthcare main#main .hc-inspire-title,
+  body.page-healthcare main#main .work-blog-title,
+  body.page-healthcare main#main #bring_happierme .work-demo-title,
+  body.page-healthcare section.hpt120px ~ main#main h2.hc-dyk-title,
+  body.page-healthcare section.hpt120px ~ main#main h2.work-testimonials-title,
+  body.page-healthcare section.hpt120px ~ main#main h2.hc-inspire-title,
+  body.page-healthcare section.hpt120px ~ main#main h2.work-blog-title,
+  body.page-healthcare section.hpt120px ~ main#main h2.work-demo-title,
+  body.page-healthcare section.hpt120px ~ main#main h2.hc-dyk-title.fs_30px,
+  body.page-healthcare section.hpt120px ~ main#main h2.work-testimonials-title.fs_30px,
+  body.page-healthcare section.hpt120px ~ main#main h2.hc-inspire-title.fs_30px,
+  body.page-healthcare section.hpt120px ~ main#main h2.work-blog-title.fs_30px,
+  body.page-healthcare section.hpt120px ~ main#main h2.work-demo-title.fs_30px {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    color: rgba(0, 0, 0, 1) !important;
+    text-align: center !important;
+    max-width: 335px !important;
+    width: 335px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+  }
+
+  body.page-healthcare main#main .work-testimonials-title,
+  body.page-healthcare section.hpt120px ~ main#main h2.work-testimonials-title {
+    line-height: 150% !important;
+  }
+
+  body.page-healthcare main#main .hc-dyk-title,
+  body.page-healthcare main#main .hc-inspire-title,
+  body.page-healthcare section.hpt120px ~ main#main h2.hc-dyk-title,
+  body.page-healthcare section.hpt120px ~ main#main h2.hc-inspire-title {
+    line-height: 140% !important;
+  }
+
+  body.page-healthcare main#main .work-blog-title,
+  body.page-healthcare section.hpt120px ~ main#main h2.work-blog-title {
+    line-height: 120% !important;
+    width: auto !important;
+  }
+
+  body.page-healthcare main#main #bring_happierme .work-demo-title,
+  body.page-healthcare section.hpt120px ~ main#main h2.work-demo-title {
+    color: rgba(255, 255, 255, 1) !important;
+    line-height: 150% !important;
+  }
+
+  body.page-healthcare .work-testimonials-header .work-testimonials-title br.display_d_none {
+    display: block !important;
+  }
+
+  body.page-healthcare main#main .section-header [class*="col-10"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    box-sizing: border-box !important;
+  }
+
+  body.page-healthcare .flex_block .hc-desc-title,
+  body.page-healthcare section.hpt120px ~ main#main .flex_block h2.hc-desc-title,
+  body.page-healthcare section.hpt120px ~ main#main .flex_block h2.hc-desc-title.fs_30px {
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 150% !important;
+    max-width: 335px !important;
+    width: 335px !important;
   }
 
   /* Hide scrollbars in "Did you know?" section on mobile */
