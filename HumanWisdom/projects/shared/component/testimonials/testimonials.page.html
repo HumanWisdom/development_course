@@ -65,7 +65,7 @@ HappierMe supports athletes both on and off the pitch through sports podcasts jo
               </div>
  -->
 
-              <div class="row testimonials_main" id="Dan" *ngIf="isAdults">
+              <div class="row testimonials_main" id="Dan" >
                 <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
                   <div class="row testimonial_img">
                     <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
@@ -112,7 +112,7 @@ HappierMe supports athletes both on and off the pitch through sports podcasts jo
                 </div>
               </div>
   
-              <div class="row testimonials_main" id="Brenda" *ngIf="isAdults">
+              <div class="row testimonials_main" id="Brenda">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
                   <div class="row testimonial_img">
                     <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
@@ -123,8 +123,10 @@ HappierMe supports athletes both on and off the pitch through sports podcasts jo
                   <div class="div_testimonial">
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/qutation.svg" class="img-responsive" alt="quote">
-                      </div>
+ <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/quotes_testimonials.svg" class="img-responsive" alt="quotes"  *ngIf="!isAdults">
+
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/qutation.svg" class="img-responsive" alt="quotes" *ngIf="isAdults" >
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/location-pin.svg" class="img-responsive mr5px" alt="location" *ngIf="isAdults">                      </div>
   
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mtb15px">
                         <h4 class="mtb0px fs_15px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
@@ -158,19 +160,19 @@ HappierMe supports athletes both on and off the pitch through sports podcasts jo
 
 
               
-             <div class="row testimonials_main" id=" Martha Van Dam" *ngIf="isAdults">
+             <div class="row testimonials_main" id=" Martha Van Dam" >
               <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
                 <div class="row testimonial_img">
                   <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                    <img src="https://d1tenzemoxuh75.cloudfront.net/coach/images/13.webp" alt="brenda" class="img-responsive img_testimonial_user"/>
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/martha.webp" alt="brenda" class="img-responsive img_testimonial_user"/>
                   </div>
                 </div>
 
                 <div class="div_testimonial">
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/quotes_testimonials.svg" class="img-responsive" alt="quotes" >
-                    </div>
+<img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/quotes_testimonials.svg" class="img-responsive" alt="quotes" *ngIf="!isAdults">
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/qutation.svg" class="img-responsive" alt="quotes" *ngIf="isAdults">                    </div>
 
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mtb15px">
                    <h4 class="mtb0px fs_15px fw_400 lh_150p " [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
@@ -306,7 +308,7 @@ HappierMe supports athletes both on and off the pitch through sports podcasts jo
             <a (click)="routeVideoaudio('/videopage/testimonials-Pierre+Redilinghuys+testimonial.mp4/T/Pierre Redilinghuys')">
 
           <!-- <a routerLink="/adults/videopage/testimonials-sean.mp4/T/Sean"> -->
-            <div class="row testimonials_main" id="Sean" >
+            <div class="row testimonials_main" id=" Pierre Redelinghuys" >
               <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
                 <!-- <div class="row testimonial_img">
                   <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
@@ -493,7 +495,7 @@ HappierMe supports athletes both on and off the pitch through sports podcasts jo
               </div>
 
               <a (click)="routeVideoaudio('/videopage/testimonials-Olivia+Preye.mp4/T/Olivia')">
-            <div class="row testimonials_main" id="Adam" >
+            <div class="row testimonials_main" id=" Olivia Preye" >
               <div class="col-md-12 col-sm-12 col-xs-12 p0 prelative">
                 <!-- <div class="row testimonial_img">
                   <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
@@ -1039,7 +1041,7 @@ HappierMe supports athletes both on and off the pitch through sports podcasts jo
                   </div>
                 </div>
 
-                <div class="div_testimonial">
+                <!-- <div class="div_testimonial">
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                       <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/quotes_testimonials.svg" class="img-responsive" alt="quotes" >
@@ -1115,7 +1117,7 @@ HappierMe supports athletes both on and off the pitch through sports podcasts jo
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
 
 
 
