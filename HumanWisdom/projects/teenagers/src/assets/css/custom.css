@@ -24326,7 +24326,14 @@ a {
   color: #EE9596;
   text-decoration: underline;
 }
-
+.read-text-label {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  color: #ee9596 !important;
+  text-decoration: underline !important;
+  pointer-events: auto;
+}
 
  .blog_highlight_peach:hover{
   color: #f17071 !important;
