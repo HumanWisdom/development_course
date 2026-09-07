@@ -372,21 +372,9 @@ export class WisdomShortsIndexPage implements OnInit {
         localStorage.setItem('lastWisdomShortId', id.toString());
       }
 
-      const itemTypeLower = (val['Type'] || val['type'] || '').toString().toLowerCase();
-      let headerTitle = 'Events';
-      if (itemTypeLower.includes('real') || itemTypeLower.includes('conversation') || itemTypeLower.includes('teentalk')) {
-        headerTitle = 'Real stories';
-      } else if (itemTypeLower.includes('in-depth') || itemTypeLower.includes('indepth') || itemTypeLower.includes('event')) {
-        headerTitle = 'In-depth conversation';
-      } else if (itemTypeLower.includes('expert')) {
-        headerTitle = 'Expert tips';
-      } else if (itemTypeLower.includes('short')) {
-        headerTitle = 'Short videos';
-      } else if (val['Type']) {
-        headerTitle = val['Type'];
-      }
-
+      const headerTitle = this.computeHeaderTitle(val);
       localStorage.setItem('youtubelinkHeaderTitle', headerTitle);
+      localStorage.setItem('wisdomVideoHeaderTitle', headerTitle);
       const suffix = isFreeItem ? '=rdtfghjhfdg' : '=vncbxdfchgvxd';
       this.router.navigate([`/${prog}/curated/youtubelink`, `${ytCode}${suffix}`], { state: { title, headerTitle } });
       return;
@@ -404,9 +392,12 @@ export class WisdomShortsIndexPage implements OnInit {
             val['isRead'] = '1';
           }
           this.recordClick(val, id);
+          const headerTitle = this.computeHeaderTitle(val);
           localStorage.setItem('fromIndex', 'true');
           localStorage.setItem('wisdomShortsSelectedTab', this.selectedPref);
           localStorage.setItem('wisdomShortsSelectedType', this.selectedType);
+          localStorage.setItem('youtubelinkHeaderTitle', headerTitle);
+          localStorage.setItem('wisdomVideoHeaderTitle', headerTitle);
           localStorage.setItem('lastWisdomShortId', checkId.toString());
           this.router.navigate([route, 'T', title], extras);
         } else {
@@ -420,9 +411,12 @@ export class WisdomShortsIndexPage implements OnInit {
           }
           this.recordClick(val, id);
           let route = vUrl ? vUrl.replace('adults', SharedService.getprogramName()) : `/${SharedService.getprogramName()}/wisdom-shorts/${checkId}`;
+          const headerTitle = this.computeHeaderTitle(val);
           localStorage.setItem('fromIndex', 'true');
           localStorage.setItem('wisdomShortsSelectedTab', this.selectedPref);
           localStorage.setItem('wisdomShortsSelectedType', this.selectedType);
+          localStorage.setItem('youtubelinkHeaderTitle', headerTitle);
+          localStorage.setItem('wisdomVideoHeaderTitle', headerTitle);
           localStorage.setItem('lastWisdomShortId', checkId.toString());
           this.router.navigate([route, 'T', title]);
         } else {
@@ -497,9 +491,110 @@ export class WisdomShortsIndexPage implements OnInit {
     return formatted ? `${typeLabel.toUpperCase()} • ${formatted}` : typeLabel.toUpperCase();
   }
   
+  computeHeaderTitle(val: any): string {
+    const itemTypeLower = (val?.Type || val?.type || val?.TypeLabel || '').toString().toLowerCase();
+    if (itemTypeLower.includes('in-depth') || itemTypeLower.includes('indepth') || itemTypeLower.includes('event')) {
+      return 'In-depth conversation';
+    } else if (itemTypeLower.includes('expert') || itemTypeLower.includes('voice')) {
+      return 'Expert tips';
+    } else if (itemTypeLower.includes('real') || itemTypeLower.includes('teentalk') || itemTypeLower.includes('conversation')) {
+      return 'Real stories';
+    } else if (itemTypeLower.includes('short')) {
+      return 'Short videos';
+    } else if (this.selectedType === 'expert_tips') {
+      return 'Expert tips';
+    } else if (this.selectedType === 'in_depth') {
+      return 'In-depth conversation';
+    } else if (this.selectedType === 'real_life') {
+      return 'Real stories';
+    } else if (this.selectedType === 'short_videos') {
+      return 'Short videos';
+    } else if (val?.TypeLabel) {
+      return val.TypeLabel;
+    } else if (val?.Type) {
+      return val.Type;
+    }
+    return 'Short videos';
+  }
+
+  prefIdMap: { [key: string]: string[] } = {
+    '1': ['1', '17'],   // Work (Adults 1) / Success (Teens 17)
+    '17': ['17', '1'],  // Success (Teens 17) / Work (Adults 1)
+    '2': ['2', '10'],   // Mental health (Adults 2) / Mental health (Teens 10)
+    '10': ['10', '2'],  // Mental health (Teens 10) / Mental health (Adults 2)
+    '3': ['3', '11'],   // Relationships (Adults 3) / Relationships (Teens 11)
+    '11': ['11', '3'],  // Relationships (Teens 11) / Relationships (Adults 3)
+    '4': ['4', '13'],   // Happiness (Adults 4) / Happiness (Teens 13)
+    '13': ['13', '4'],  // Happiness (Teens 13) / Happiness (Adults 4)
+    '5': ['5', '15'],   // Addiction (Adults 5) / Habits (Teens 15)
+    '15': ['15', '5'],  // Habits (Teens 15) / Addiction (Adults 5)
+    '7': ['7', '12'],   // Meditation (Adults 7) / Feel calm (Teens 12)
+    '12': ['12', '7'],  // Feel calm (Teens 12) / Meditation (Adults 7)
+    '8': ['8', '14'],   // Emotions (Adults 8) / Emotions (Teens 14)
+    '14': ['14', '8'],  // Emotions (Teens 14) / Emotions (Adults 8)
+  };
+
+  disabledSubjectMap: { [key: string]: boolean } = {};
+
+  isSubjectDisabled(prefId: any): boolean {
+    if (!prefId) return false;
+    const pid = prefId.toString().toLowerCase();
+    return !!this.disabledSubjectMap[pid];
+  }
+
+  itemMatchesSubject(d: any, prefIdStr: string, prefObj?: any): boolean {
+    if (!prefIdStr || prefIdStr === 'all' || prefIdStr === '999') return true;
+    if (prefIdStr === 'voices') {
+      return d['IsVoices'] == '1' || d['isVoices'] == '1' || d['IsVoices'] === 1 || d['isVoices'] === 1;
+    }
+    if (prefIdStr === '0') {
+      return (!d['PreferenceIDs'] && !d['PrefIDs'] && !d['PreferenceID'] && !d['prefIDs']);
+    }
+
+    if (!prefObj && this.prefData) {
+      prefObj = this.prefData.find((p: any) => p.id?.toString().toLowerCase() === prefIdStr);
+    }
+    const prefDisplayName = prefObj?.displayName?.toLowerCase();
+    const prefName = prefObj?.name?.toLowerCase();
+
+    const targetIds = this.prefIdMap[prefIdStr] || [prefIdStr];
+
+    const rawPrefIds = d['PreferenceIDs'] ?? d['PrefIDs'] ?? d['PreferenceID'] ?? d['prefIDs'] ?? '';
+    let itemPrefTokens: string[] = [];
+    if (Array.isArray(rawPrefIds)) {
+      itemPrefTokens = rawPrefIds.map((p: any) => p?.toString().trim()).filter(Boolean);
+    } else if (rawPrefIds) {
+      itemPrefTokens = rawPrefIds.toString().split(',').map((s: string) => s.trim()).filter(Boolean);
+    }
+
+    const matchPrefId = itemPrefTokens.some(id => targetIds.includes(id));
+
+    const rawSearchTags = (d['searchtags'] || d['searchTags'] || d['Tags'] || d['tags'] || '').toLowerCase();
+    const tagTokens = rawSearchTags.split(/[,;]+/).map((s: string) => s.trim()).filter(Boolean);
+    const matchTagId = tagTokens.some((t: string) => targetIds.includes(t));
+
+    let matchTagName = false;
+    if (prefDisplayName && prefDisplayName.length >= 3) {
+      matchTagName = tagTokens.some((t: string) => t.includes(prefDisplayName) || prefDisplayName.includes(t)) ||
+                     rawSearchTags.includes(prefDisplayName);
+    }
+    if (!matchTagName && prefName && prefName.length >= 3) {
+      matchTagName = rawSearchTags.includes(prefName);
+    }
+
+    const titleStr = (d['Title'] || '').toLowerCase();
+    const matchTitle = prefDisplayName && prefDisplayName.length >= 3 ? titleStr.includes(prefDisplayName) : false;
+
+    return matchPrefId || matchTagId || matchTagName || matchTitle;
+  }
+
   getUserPref(type) {
     if (type === '999') type = 'all';
     type = type.toLowerCase();
+
+    if (type !== 'all' && this.isSubjectDisabled(type)) {
+      return;
+    }
 
     this.selectedPref = type;
     localStorage.setItem('wisdomShortsSelectedTab', this.selectedPref);
@@ -521,74 +616,7 @@ export class WisdomShortsIndexPage implements OnInit {
       );
     }
 
-    if (this.selectedPref && this.selectedPref !== 'all' && this.selectedPref !== '999') {
-      const prefIdStr = this.selectedPref.toString().toLowerCase().trim();
-      if (prefIdStr === 'voices') {
-        list = list.filter((d) => d['IsVoices'] == '1' || d['isVoices'] == '1' || d['IsVoices'] === 1 || d['isVoices'] === 1);
-      } else if (prefIdStr === '0') {
-        list = list.filter((d) => (!d['PreferenceIDs'] && !d['PrefIDs'] && !d['PreferenceID'] && !d['prefIDs']));
-      } else {
-        const prefObj = this.prefData?.find((p: any) => p.id?.toString().toLowerCase() === prefIdStr);
-        const prefDisplayName = prefObj?.displayName?.toLowerCase();
-        const prefName = prefObj?.name?.toLowerCase();
-
-        // Equivalent ID mapping between Adults and Teens preferences
-        const prefIdMap: { [key: string]: string[] } = {
-          '1': ['1', '17'],   // Work (Adults 1) / Success (Teens 17)
-          '17': ['17', '1'],  // Success (Teens 17) / Work (Adults 1)
-          '2': ['2', '10'],   // Mental health (Adults 2) / Mental health (Teens 10)
-          '10': ['10', '2'],  // Mental health (Teens 10) / Mental health (Adults 2)
-          '3': ['3', '11'],   // Relationships (Adults 3) / Relationships (Teens 11)
-          '11': ['11', '3'],  // Relationships (Teens 11) / Relationships (Adults 3)
-          '4': ['4', '13'],   // Happiness (Adults 4) / Happiness (Teens 13)
-          '13': ['13', '4'],  // Happiness (Teens 13) / Happiness (Adults 4)
-          '5': ['5', '15'],   // Addiction (Adults 5) / Habits (Teens 15)
-          '15': ['15', '5'],  // Habits (Teens 15) / Addiction (Adults 5)
-          '7': ['7', '12'],   // Meditation (Adults 7) / Feel calm (Teens 12)
-          '12': ['12', '7'],  // Feel calm (Teens 12) / Meditation (Adults 7)
-          '8': ['8', '14'],   // Emotions (Adults 8) / Emotions (Teens 14)
-          '14': ['14', '8'],  // Emotions (Teens 14) / Emotions (Adults 8)
-        };
-
-        const targetIds = prefIdMap[prefIdStr] || [prefIdStr];
-
-        list = list.filter((d) => {
-          // Extract item's Preference IDs as trimmed string tokens
-          const rawPrefIds = d['PreferenceIDs'] ?? d['PrefIDs'] ?? d['PreferenceID'] ?? d['prefIDs'] ?? '';
-          let itemPrefTokens: string[] = [];
-          if (Array.isArray(rawPrefIds)) {
-            itemPrefTokens = rawPrefIds.map(p => p?.toString().trim()).filter(Boolean);
-          } else if (rawPrefIds) {
-            itemPrefTokens = rawPrefIds.toString().split(',').map((s: string) => s.trim()).filter(Boolean);
-          }
-
-          // Check if any item Preference ID matches target IDs
-          const matchPrefId = itemPrefTokens.some(id => targetIds.includes(id));
-
-          // Check searchtags (split into tokens to avoid substring matching single digits like "1" matching "10")
-          const rawSearchTags = (d['searchtags'] || d['searchTags'] || d['Tags'] || d['tags'] || '').toLowerCase();
-          const tagTokens = rawSearchTags.split(/[,;]+/).map((s: string) => s.trim()).filter(Boolean);
-
-          const matchTagId = tagTokens.some((t: string) => targetIds.includes(t));
-          
-          let matchTagName = false;
-          if (prefDisplayName && prefDisplayName.length >= 3) {
-            matchTagName = tagTokens.some((t: string) => t.includes(prefDisplayName) || prefDisplayName.includes(t)) ||
-                           rawSearchTags.includes(prefDisplayName);
-          }
-          if (!matchTagName && prefName && prefName.length >= 3) {
-            matchTagName = rawSearchTags.includes(prefName);
-          }
-
-          // Check Title
-          const titleStr = (d['Title'] || '').toLowerCase();
-          const matchTitle = prefDisplayName && prefDisplayName.length >= 3 ? titleStr.includes(prefDisplayName) : false;
-
-          return matchPrefId || matchTagId || matchTagName || matchTitle;
-        });
-      }
-    }
-
+    // Filter by selected TYPE first to identify items available for this type
     if (this.selectedType && this.selectedType !== 'all') {
       const selectedTypeStr = this.selectedType.toLowerCase();
       if (selectedTypeStr === 'short_videos') {
@@ -602,15 +630,57 @@ export class WisdomShortsIndexPage implements OnInit {
       }
     }
 
+    // Compute disabled state for each subject button based on currently available items
+    this.disabledSubjectMap = {};
+    if (this.prefData && Array.isArray(this.prefData)) {
+      for (const pref of this.prefData) {
+        const pid = (pref.id || '').toString().toLowerCase();
+        if (!pid || pid === 'all') continue;
+        const hasMatchingVideo = list.some(item => this.itemMatchesSubject(item, pid, pref));
+        if (!hasMatchingVideo) {
+          this.disabledSubjectMap[pid] = true;
+        }
+      }
+    }
+
+    // If currently active subject is now disabled for the selected type, reset to 'all' to avoid breaking the screen
+    if (this.selectedPref && this.selectedPref !== 'all' && this.selectedPref !== '999' && this.disabledSubjectMap[this.selectedPref.toLowerCase()]) {
+      this.selectedPref = 'all';
+      localStorage.setItem('wisdomShortsSelectedTab', 'all');
+    }
+
+    // Filter by selected SUBJECT (pref)
+    if (this.selectedPref && this.selectedPref !== 'all' && this.selectedPref !== '999') {
+      const prefIdStr = this.selectedPref.toString().toLowerCase().trim();
+      list = list.filter(d => this.itemMatchesSubject(d, prefIdStr));
+    }
+
     this.wisdomshorts = list;
   }
 
+  ionViewDidEnter() {
+    setTimeout(() => {
+      this.scrollToActiveTab();
+    }, 200);
+  }
+
   scrollToActiveTab() {
-    if (!this.selectedPref) return;
-    const id = this.selectedPref.toString().toLowerCase();
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+    // Scroll active TYPE pill into view
+    if (this.selectedType) {
+      const typeId = `type-${this.selectedType.toString().toLowerCase()}`;
+      const typeElement = document.getElementById(typeId);
+      if (typeElement) {
+        typeElement.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      }
+    }
+
+    // Scroll active SUBJECT (pref) pill into view
+    if (this.selectedPref) {
+      const prefId = `pref-${this.selectedPref.toString().toLowerCase()}`;
+      const prefElement = document.getElementById(prefId) || document.getElementById(this.selectedPref.toString().toLowerCase());
+      if (prefElement) {
+        prefElement.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      }
     }
   }
 
