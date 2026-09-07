@@ -301,12 +301,12 @@ describe('WisdomShortsIndexPage', () => {
       expect(mockCommonService.clickShorts).toHaveBeenCalledWith(123);
     }));
 
-    it('should call clickConversationVideos when Real-life stories item is clicked', fakeAsync(() => {
+    it('should call clickConversationVideos when Real stories item is clicked', fakeAsync(() => {
       localStorage.setItem('isloggedin', 'T');
       localStorage.setItem('Subscriber', '1');
       const video = 'https://www.youtube.com/watch?v=abc12345';
       const title = 'Real Story Title';
-      const val = { RowID: 15, Type: 'Real-life stories' };
+      const val = { RowID: 15, Type: 'Real stories' };
 
       component.wisdoshortsevent(val, video, title);
       tick();

@@ -5,8 +5,9 @@ import {
   ElementRef,
   OnDestroy,
   AfterViewInit,
+  HostListener,
 } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, NavigationStart, Router } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Location } from '@angular/common';
 import { NavigationService } from '../../services/navigation.service';
@@ -22,6 +23,7 @@ import {
 import { SharedService } from '../../services/shared.service';
 import { CommonService } from '../../services/common.service';
 import { ProgramType } from '../../models/program-model';
+import { Subscription } from 'rxjs';
 import * as Hammer from 'hammerjs';
 
 @Component({
@@ -87,6 +89,13 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
   public isSubscriber = false;
   public isSwipeAllow = true;
   public isAdults = true;
+  public isIOS = false;
+  private isSwiping = false;
+  private activeVideoElement: HTMLVideoElement | null = null;
+  private trackedVideos: Set<HTMLVideoElement> = new Set();
+  private pendingTimers: any[] = [];
+  private currentPlaybackId = 0;
+  private routerSub!: Subscription;
   public isPortrait = false;
   public fromIndex = false;
   baseUrl:string;
@@ -109,7 +118,13 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
     private readonly service: CommonService
   ) {
     this.isAdults = SharedService.ProgramId === ProgramType.Adults;
-    
+    this.isIOS = typeof navigator !== 'undefined' && (/iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && (navigator as any).maxTouchPoints > 1));
+
+    this.routerSub = this.router.events.subscribe(event => {
+      if (event instanceof NavigationStart) {
+        this.stopAllVideos(false);
+      }
+    });
   }
 
   private initializeData(): void {
@@ -315,7 +330,6 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    const isLoggedIn = localStorage.getItem('isloggedin') === 'T';
     if (!this.canRender || (this.wisdomshort && !this.videoLink)) {
       return;
     }
@@ -328,63 +342,149 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
     }
     
     this.ensureAutoPlay();
-
-    // Track once on first play automatically (covers autoplay and manual play)
-    const video = this.videoPlayer?.nativeElement as HTMLVideoElement | undefined;
-    if (video) {
-      const trackOnce = () => this.trackVideoClickIfApplicable();
-      video.addEventListener('play', trackOnce, { once: true });
-    }
   }
 
-  private ensureAutoPlay(): void {
-    if (this.videoPlayer?.nativeElement) {
-      const video = this.videoPlayer.nativeElement as HTMLVideoElement;
-      
-      // Ensure video is not muted
-      video.muted = false;
-      
-      // Try to play the video
-      const playPromise = video.play();
-      
-      if (playPromise !== undefined) {
-        playPromise.catch((err) => {
-          console.warn('Auto-play blocked by browser, attempting force play:', err);
-          
-          // Force playback attempt when browser blocks autoplay
-          setTimeout(() => {
-            video.muted = false;
-            
-            // Try multiple approaches to force playback
-            const forcePlay = () => {
-              video.play().catch(forceErr => {
-                console.warn('Force play attempt failed:', forceErr);
-                // Try programmatically clicking the video
-                setTimeout(() => {
-                  if (video) {
-                    video.click();
-                    // Immediately try to play again after click
-                    setTimeout(() => {
-                      video.play().catch(finalErr => {
-                        console.warn('All autoplay attempts failed:', finalErr);
-                      });
-                    }, 100);
-                  }
-                }, 500);
-              });
-            };
-            
-            forcePlay();
-          }, 200);
-        });
+  private clearTimers(): void {
+    this.pendingTimers.forEach(t => clearTimeout(t));
+    this.pendingTimers = [];
+  }
+
+  private safeTimeout(fn: () => void, delay: number): any {
+    const timer = setTimeout(() => {
+      this.pendingTimers = this.pendingTimers.filter(t => t !== timer);
+      fn();
+    }, delay);
+    this.pendingTimers.push(timer);
+    return timer;
+  }
+
+  public stopAndResetVideo(video: HTMLVideoElement | null | undefined): void {
+    if (!video) return;
+    try {
+      video.pause();
+      video.muted = true;
+      video.currentTime = 0;
+      video.removeAttribute('src');
+      while (video.firstChild) {
+        video.removeChild(video.firstChild);
       }
-      
-      // Ensure orientation is determined when metadata is available
-      video.addEventListener('loadedmetadata', () => {
-        this.checkVideoOrientation();
-        video.play().catch((err) => {
-          console.warn('Auto-play after metadata loaded failed:', err);
-        });
+      video.load();
+    } catch (_) { /* ignore */ }
+  }
+
+  /**
+   * Stop ALL video elements — ensures zero ghost audio from previous slides or detached elements.
+   */
+  public stopAllVideos(muteOnly = false): void {
+    this.clearTimers();
+    this.currentPlaybackId++;
+
+    if (this.activeVideoElement) {
+      if (muteOnly) {
+        try {
+          this.activeVideoElement.pause();
+          this.activeVideoElement.muted = true;
+        } catch (_) {}
+      } else {
+        this.stopAndResetVideo(this.activeVideoElement);
+      }
+      this.activeVideoElement = null;
+    }
+
+    this.trackedVideos.forEach(v => {
+      if (muteOnly) {
+        try {
+          v.pause();
+          v.muted = true;
+        } catch (_) {}
+      } else {
+        this.stopAndResetVideo(v);
+      }
+    });
+    this.trackedVideos.clear();
+
+    try {
+      const allVideos = document.querySelectorAll('video');
+      allVideos.forEach((v: HTMLVideoElement) => {
+        if (muteOnly) {
+          try {
+            v.pause();
+            v.muted = true;
+          } catch (_) {}
+        } else {
+          this.stopAndResetVideo(v);
+        }
+      });
+    } catch (_) { /* ignore */ }
+  }
+
+  public ensureAutoPlay(): void {
+    const playbackId = ++this.currentPlaybackId;
+    this.clearTimers();
+    this.safeTimeout(() => {
+      this.playActiveVideo(playbackId);
+    }, 50);
+  }
+
+  private playActiveVideo(playbackId: number): void {
+    // If a newer swipe or navigation started, ignore stale attempt
+    if (playbackId !== this.currentPlaybackId) {
+      return;
+    }
+
+    // Locate the video element for the current slide
+    const video = (this.videoPlayer?.nativeElement as HTMLVideoElement | undefined)
+      || (document.querySelector('.video-wrapper video') as HTMLVideoElement | null)
+      || (document.querySelector('video') as HTMLVideoElement | null);
+
+    if (!video) {
+      // Retry once if Angular hasn't completed DOM insertion yet
+      this.safeTimeout(() => {
+        if (playbackId === this.currentPlaybackId) {
+          this.playActiveVideo(playbackId);
+        }
+      }, 50);
+      return;
+    }
+
+    // Ensure all other videos are dead
+    this.trackedVideos.forEach(v => {
+      if (v !== video) {
+        this.stopAndResetVideo(v);
+        this.trackedVideos.delete(v);
+      }
+    });
+    try {
+      const allVideos = document.querySelectorAll('video');
+      allVideos.forEach((v: HTMLVideoElement) => {
+        if (v !== video) {
+          this.stopAndResetVideo(v);
+        }
+      });
+    } catch (_) {}
+
+    this.activeVideoElement = video;
+    this.trackedVideos.add(video);
+
+    video.muted = false;
+    this.checkVideoOrientation(video);
+
+    const playPromise = video.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(err => {
+        console.warn('Initial autoplay attempt blocked, retrying unmuted:', err);
+        if (playbackId === this.currentPlaybackId && video) {
+          setTimeout(() => {
+            if (playbackId === this.currentPlaybackId && video) {
+              video.muted = false;
+              video.play().catch(secondErr => {
+                console.warn('Second play attempt failed, fallback to muted autoplay:', secondErr);
+                video.muted = true;
+                video.play().catch(_ => {});
+              });
+            }
+          }, 50);
+        }
       });
     }
   }
@@ -393,21 +493,15 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
     return this._sanitizer.bypassSecurityTrustResourceUrl(url);
   }
 
-  checkVideoOrientation(): void {
-    const videoEl = this.videoPlayer?.nativeElement as HTMLVideoElement | undefined;
-    if (videoEl) {
-      // Determine orientation based on intrinsic media dimensions
-      const vw = videoEl.videoWidth;
-      const vh = videoEl.videoHeight;
+  checkVideoOrientation(videoEl?: HTMLVideoElement): void {
+    const el = videoEl || (this.videoPlayer?.nativeElement as HTMLVideoElement | undefined) || (document.querySelector('video') as HTMLVideoElement | null);
+    if (el) {
+      const vw = el.videoWidth;
+      const vh = el.videoHeight;
       if (vw && vh) {
         this.isPortrait = vh > vw;
       }
-
-      // Keep control tweaks
-      videoEl.setAttribute('controlsList', 'nodownload nofullscreen');
-      setTimeout(() => {
-        videoEl.setAttribute('controlsList', 'nodownload nofullscreen');
-      }, 500);
+      el.setAttribute('controlsList', 'nodownload nofullscreen');
     }
   }
 
@@ -425,6 +519,11 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   goBack(): void {
+    // Stop and kill all videos immediately — absolute silence on back
+    this.clearTimers();
+    this.currentPlaybackId++;
+    this.stopAllVideos(false);
+
     document.body.style.removeProperty('overflow');
     document.documentElement.style.removeProperty('overflow');
     const url = this.navigationService.navigateToBackLink();
@@ -437,43 +536,63 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
 
   onSwipeUp(): void {
     if (!this.isSwipeAllow || !this.wisdomShortOrderList.length) return;
+    if (this.isSwiping) return;
 
     if (this.currentIndex < this.wisdomShortOrderList.length - 1) {
+      this.isSwiping = true;
+      const playbackId = ++this.currentPlaybackId;
+      this.clearTimers();
+
+      // Immediately silence and stop all previous videos
+      this.stopAllVideos(false);
+
       this.direction = 'up';
       this.currentIndex++;
       this.hasTrackedThisVideo = false;
+
       if (this.currentIndex > 2 && !this.isSubscriber) {
+        this.isSwiping = false;
         this.router.navigate([
           `${SharedService.getprogramName()}/subscription/start-your-free-trial`,
         ]);
         return;
       }
+
       this.videoTitle = this.wisdomShortOrderList[this.currentIndex].title;
-      this.checkVideoOrientation();
-      
-      // Ensure auto-play for next video in swipe mode
-      setTimeout(() => {
-        this.ensureAutoPlay();
-      }, 100);
+
+      // Allow Angular view to render, then play new active video
+      this.safeTimeout(() => {
+        this.playActiveVideo(playbackId);
+        this.isSwiping = false;
+      }, 150);
     }
   }
 
   onSwipeDown(): void {
     if (!this.isSwipeAllow || !this.wisdomShortOrderList.length) return;
+    if (this.isSwiping) return;
 
+    this.isSwiping = true;
+    const playbackId = ++this.currentPlaybackId;
+    this.clearTimers();
+
+    // Immediately silence and stop all previous videos
+    this.stopAllVideos(false);
+
+    this.direction = 'down';
     this.currentIndex =
       this.currentIndex === 0
         ? this.wisdomShortOrderList.length - 1
         : this.currentIndex - 1;
 
     this.videoTitle = this.wisdomShortOrderList[this.currentIndex].title;
-    this.checkVideoOrientation();
     this.hasTrackedThisVideo = false;
-    
-    // Ensure auto-play for previous video in swipe mode
-    setTimeout(() => {
-      this.ensureAutoPlay();
-    }, 100);
+
+    // Allow Angular view to render, then play new active video
+    this.safeTimeout(() => {
+      this.playActiveVideo(playbackId);
+      this.isSwiping = false;
+    }, 150);
   }
 
   updateProgress(video: HTMLVideoElement): void {
@@ -489,10 +608,27 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
     video.paused ? video.play() : video.pause();
   }
 
+  @HostListener('window:popstate')
+  onPopState(): void {
+    this.stopAllVideos(false);
+  }
+
+  @HostListener('window:beforeunload')
+  @HostListener('window:pagehide')
+  onUnload(): void {
+    this.stopAllVideos(false);
+  }
+
   ngOnDestroy(): void {
-    if (this.videoPlayer && this.videoPlayer.nativeElement) {
-      this.videoPlayer.nativeElement.pause();
+    // Kill every video in the DOM and memory — no ghost audio after leaving the page
+    this.clearTimers();
+    this.currentPlaybackId++;
+    this.stopAllVideos(false);
+
+    if (this.routerSub) {
+      this.routerSub.unsubscribe();
     }
+
     localStorage.setItem('isSwipeAllow', 'false');
     localStorage.removeItem('fromIndex');
     document.body.style.removeProperty('overflow');
@@ -534,7 +670,28 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
     this.trackVideoClickIfApplicable();
   }
 
-  onVideoPlay(): void {
+  onVideoPlay(event?: any): void {
+    const targetVideo = event?.target as HTMLVideoElement | undefined;
+    if (targetVideo) {
+      this.trackedVideos.add(targetVideo);
+      this.activeVideoElement = targetVideo;
+
+      // Immediately silence and stop any other video
+      this.trackedVideos.forEach(v => {
+        if (v !== targetVideo) {
+          this.stopAndResetVideo(v);
+          this.trackedVideos.delete(v);
+        }
+      });
+      try {
+        const allVideos = document.querySelectorAll('video');
+        allVideos.forEach((v: HTMLVideoElement) => {
+          if (v !== targetVideo) {
+            this.stopAndResetVideo(v);
+          }
+        });
+      } catch (_) {}
+    }
     this.trackVideoClickIfApplicable();
   }
 
