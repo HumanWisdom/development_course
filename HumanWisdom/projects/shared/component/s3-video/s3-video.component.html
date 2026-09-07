@@ -13,8 +13,7 @@
       </div>
 
       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
-        <h1 class="fw_600 fs_18px lh_140p mtb0px tcenter" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">{{ fromIndex
-          ? 'Short Videos' : '' }}</h1>
+        <h1 class="fw_600 fs_18px lh_140p mtb0px tcenter" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">{{ wisdomshort ? headerTitle : (fromIndex ? headerTitle : '') }}</h1>
       </div>
 
       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
@@ -58,7 +57,7 @@
                       isPortrait ? 'video-portrait' : 'video-landscape'
                     ]" #videoPlayer controls controlsList="nodownload nofullscreen" (click)="onVideoClick()"
                       (keydown.enter)="onVideoClick()" tabindex="0" (play)="onVideoPlay($event)"
-                      (playing)="onVideoPlay($event)" (ended)="onVideoEnded()">
+                      (playing)="onVideoPlay($event)" (ended)="onVideoEnded()" (loadedmetadata)="checkVideoOrientation($event.target)">
                       <source [src]="video.url" type="video/mp4" />
                     </video>
                   </div>
@@ -109,7 +108,7 @@
                       isPortrait ? 'video-portrait' : 'video-landscape'
                     ]" #videoPlayer controls controlsList="nodownload nofullscreen" (click)="onVideoClick()"
                       (keydown.enter)="onVideoClick()" tabindex="0" (play)="onVideoPlay($event)"
-                      (playing)="onVideoPlay($event)">
+                      (playing)="onVideoPlay($event)" (loadedmetadata)="checkVideoOrientation($event.target)">
                       <source [src]="videoLink" type="video/mp4" />
                     </video>
                   </div>

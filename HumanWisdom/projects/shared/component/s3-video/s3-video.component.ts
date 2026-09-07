@@ -98,6 +98,7 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
   private routerSub!: Subscription;
   public isPortrait = false;
   public fromIndex = false;
+  public headerTitle: string = 'Short Videos';
   baseUrl:string;
   path:any;
   private hasTrackedThisVideo = false;
@@ -172,6 +173,7 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
               order: index,
               title: element.Title || '',
               code: linkcode,
+              type: element.Type || element.TypeLabel || '',
             };
           });
 
@@ -196,10 +198,13 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
             order: -1,
             title: this.videoTitle || 'Selected Video',
             code: normalizedLinkcode,
+            type: '',
           };
           this.wisdomShortOrderList.unshift(injectedItem);
           this.currentIndex = 0;
         }
+
+        this.updateHeaderTitle();
 
         if (this.currentIndex > 2 && !this.isSubscriber) {
           this.router.navigate([
@@ -226,6 +231,9 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
 
     const fromIndex = localStorage.getItem('fromIndex') === 'true';
     this.fromIndex = fromIndex;
+
+    this.updateHeaderTitle();
+
     const isLoggedIn = localStorage.getItem('isloggedin') === 'T';
     const isSubscriber = localStorage.getItem('Subscriber') === '1';
 
@@ -493,16 +501,75 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
     return this._sanitizer.bypassSecurityTrustResourceUrl(url);
   }
 
-  checkVideoOrientation(videoEl?: HTMLVideoElement): void {
-    const el = videoEl || (this.videoPlayer?.nativeElement as HTMLVideoElement | undefined) || (document.querySelector('video') as HTMLVideoElement | null);
+  checkVideoOrientation(videoEl?: HTMLVideoElement | EventTarget | null): void {
+    const el = (videoEl as HTMLVideoElement) || (this.videoPlayer?.nativeElement as HTMLVideoElement | undefined) || (document.querySelector('video') as HTMLVideoElement | null);
     if (el) {
       const vw = el.videoWidth;
       const vh = el.videoHeight;
       if (vw && vh) {
         this.isPortrait = vh > vw;
+      } else {
+        setTimeout(() => {
+          if (el && el.videoWidth && el.videoHeight) {
+            this.isPortrait = el.videoHeight > el.videoWidth;
+          }
+        }, 200);
       }
       el.setAttribute('controlsList', 'nodownload nofullscreen');
     }
+  }
+
+  public updateHeaderTitle(): void {
+    // 1. Check if current video in list has a Type
+    if (this.isSwipeAllow && this.wisdomShortOrderList && this.wisdomShortOrderList.length && this.wisdomShortOrderList[this.currentIndex]) {
+      const currentItem = this.wisdomShortOrderList[this.currentIndex];
+      const rawType = (currentItem.type || currentItem.Type || currentItem.TypeLabel || '').toString().toLowerCase();
+      if (rawType.includes('expert') || rawType.includes('voice')) {
+        this.headerTitle = 'Expert tips';
+        return;
+      } else if (rawType.includes('in-depth') || rawType.includes('indepth') || rawType.includes('event')) {
+        this.headerTitle = 'In-depth conversation';
+        return;
+      } else if (rawType.includes('real') || rawType.includes('teentalk') || rawType.includes('conversation')) {
+        this.headerTitle = 'Real stories';
+        return;
+      } else if (rawType.includes('short')) {
+        this.headerTitle = 'Short videos';
+        return;
+      }
+    }
+
+    // 2. Check saved wisdomVideoHeaderTitle or youtubelinkHeaderTitle
+    const savedHeader = localStorage.getItem('wisdomVideoHeaderTitle') || localStorage.getItem('youtubelinkHeaderTitle');
+    if (savedHeader && savedHeader !== 'null' && savedHeader !== 'undefined') {
+      this.headerTitle = savedHeader;
+      return;
+    }
+
+    // 3. Check selectedType from video library
+    const selectedType = localStorage.getItem('wisdomShortsSelectedType');
+    if (selectedType === 'expert_tips') {
+      this.headerTitle = 'Expert tips';
+      return;
+    } else if (selectedType === 'in_depth') {
+      this.headerTitle = 'In-depth conversation';
+      return;
+    } else if (selectedType === 'real_life') {
+      this.headerTitle = 'Real stories';
+      return;
+    } else if (selectedType === 'short_videos') {
+      this.headerTitle = 'Short videos';
+      return;
+    }
+
+    // 4. Fallback check on title
+    const titleLower = (this.videoTitle || '').toLowerCase();
+    if (titleLower.includes('expert') || titleLower.includes('coach')) {
+      this.headerTitle = 'Expert tips';
+      return;
+    }
+
+    this.headerTitle = 'Short videos';
   }
 
   showLoader(): void {
@@ -559,6 +626,8 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
       }
 
       this.videoTitle = this.wisdomShortOrderList[this.currentIndex].title;
+      this.checkVideoOrientation();
+      this.updateHeaderTitle();
 
       // Allow Angular view to render, then play new active video
       this.safeTimeout(() => {
@@ -586,7 +655,9 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
         : this.currentIndex - 1;
 
     this.videoTitle = this.wisdomShortOrderList[this.currentIndex].title;
+    this.checkVideoOrientation();
     this.hasTrackedThisVideo = false;
+    this.updateHeaderTitle();
 
     // Allow Angular view to render, then play new active video
     this.safeTimeout(() => {

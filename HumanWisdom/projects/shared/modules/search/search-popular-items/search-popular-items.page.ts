@@ -636,10 +636,14 @@ export class SearchPopularItemsPage implements OnInit, OnDestroy {
     });
     const itemTypeLower = (item['Type'] || item['type'] || item['Category'] || item['category'] || '').toString().toLowerCase();
     let headerTitle = 'In-depth conversation';
-    if (itemTypeLower.includes('real') || itemTypeLower.includes('conversation') || itemTypeLower.includes('teentalk')) {
-      headerTitle = 'Real stories';
-    } else if (itemTypeLower.includes('in-depth') || itemTypeLower.includes('indepth') || itemTypeLower.includes('event')) {
+    if (itemTypeLower.includes('in-depth') || itemTypeLower.includes('indepth') || itemTypeLower.includes('event')) {
       headerTitle = 'In-depth conversation';
+    } else if (itemTypeLower.includes('expert') || itemTypeLower.includes('voice')) {
+      headerTitle = 'Expert tips';
+    } else if (itemTypeLower.includes('real') || itemTypeLower.includes('teentalk') || itemTypeLower.includes('conversation')) {
+      headerTitle = 'Real stories';
+    } else if (itemTypeLower.includes('short')) {
+      headerTitle = 'Short videos';
     }
     localStorage.setItem('youtubelinkHeaderTitle', headerTitle);
     if (item?.RowID <= 2) {
