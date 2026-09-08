@@ -382,6 +382,8 @@ export class WisdomShortsIndexPage implements OnInit {
 
     /* 3. Standard Wisdom Shorts navigation */
     const checkId = id || 0;
+    // Teen Talk videos have a full videopage URL – navigate directly without appending extra segments
+    const isVideopageUrl = vUrl && vUrl.toString().includes('videopage');
     this.service.CheckShortsIsFree(checkId).subscribe({
       next: (res) => {
         let route = vUrl ? vUrl.replace('adults', SharedService.getprogramName()) : `/${SharedService.getprogramName()}/wisdom-shorts/${checkId}`;
@@ -399,7 +401,11 @@ export class WisdomShortsIndexPage implements OnInit {
           localStorage.setItem('youtubelinkHeaderTitle', headerTitle);
           localStorage.setItem('wisdomVideoHeaderTitle', headerTitle);
           localStorage.setItem('lastWisdomShortId', checkId.toString());
-          this.router.navigate([route, 'T', title], extras);
+          if (isVideopageUrl) {
+            this.router.navigateByUrl(route);
+          } else {
+            this.router.navigate([route, 'T', title], extras);
+          }
         } else {
           this.showModal = true;
         }
@@ -418,7 +424,11 @@ export class WisdomShortsIndexPage implements OnInit {
           localStorage.setItem('youtubelinkHeaderTitle', headerTitle);
           localStorage.setItem('wisdomVideoHeaderTitle', headerTitle);
           localStorage.setItem('lastWisdomShortId', checkId.toString());
-          this.router.navigate([route, 'T', title]);
+          if (isVideopageUrl) {
+            this.router.navigateByUrl(route);
+          } else {
+            this.router.navigate([route, 'T', title]);
+          }
         } else {
           this.showModal = true;
         }
