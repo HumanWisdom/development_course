@@ -54,12 +54,12 @@
                 *ngIf="audioLink !== '' && hasTranscript">
                 <!-- <p class="txt1 mt40px mb30px"> -->
                 <a class="read-text-link">
-                  <h6 class="fw_400 lh_140p underline mtb10px read-text-label" [ngClass]="isAdults ? 'fs_15px fc_D7586B' : 'fs_12px fc_ee9596'">
+                  <h6 class="fw_400 lh_140p underline mtb10px read-text-label" [ngClass]="isAdults ? 'fs_12px fc_D7586B' : 'fs_12px fc_ee9596'">
                     {{'Back To Audio' }} </h6>
                 </a>
                 <!-- </p> -->
               </div>
-                <h3 class="transcript_txt" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'" [innerHTML]="textContent">
+                <h3 class="transcript_txt" [ngClass]="[isAdults ? 'fc_000000' : 'fc_ffffff', isAdults ? 'transcript-adults' : 'transcript-teenagers']" [innerHTML]="textContent">
                 </h3>
                 <!-- </p> -->
               </div>
