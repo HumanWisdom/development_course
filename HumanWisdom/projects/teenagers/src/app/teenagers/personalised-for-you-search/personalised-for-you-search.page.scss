@@ -826,16 +826,14 @@ nav
   transition: opacity 0.2s ease, transform 0.15s ease;
 }
 
-/* ====== Crisis Support Popup (Teenagers Theme) ====== */
+/* ====== Crisis Support Popup ====== */
 .crisis-popup-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.65);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.45);
   z-index: 9999;
   display: flex;
   justify-content: center;
