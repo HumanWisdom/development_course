@@ -384,6 +384,40 @@ export class WisdomShortsIndexPage implements OnInit {
     const checkId = id || 0;
     // Teen Talk videos have a full videopage URL – navigate directly without appending extra segments
     const isVideopageUrl = vUrl && vUrl.toString().includes('videopage');
+
+    // Real Stories / Teen Talk items (videopage URL, no YouTube link) should NOT call CheckShortsIsFree.
+    // Apply the subscriber access check directly, same as the YouTube/conversation path above.
+    const itemTypeLower = (val['Type'] || val['type'] || '').toString().toLowerCase();
+    const isRealStories = itemTypeLower === 'real stories' || itemTypeLower === 'real-life stories' ||
+                          itemTypeLower === 'conversations' || itemTypeLower === 'conversation' ||
+                          itemTypeLower === 'teentalks' || itemTypeLower === 'teentalk';
+    if (isRealStories) {
+      const isFreeItem = val['isFree'] == '1' || val['isFree'] === 1 || val['isFree'] === true;
+      if (!isFreeItem && (loggedin !== 'T' || sub !== '1') && !this.isSubscriber) {
+        this.showModal = true;
+        return;
+      }
+      // Access granted
+      if (val) { val['isRead'] = '1'; }
+      this.recordClick(val, id);
+      const headerTitle = this.computeHeaderTitle(val);
+      localStorage.setItem('fromIndex', 'true');
+      localStorage.setItem('wisdomShortsSelectedTab', this.selectedPref);
+      localStorage.setItem('wisdomShortsSelectedType', this.selectedType);
+      localStorage.setItem('youtubelinkHeaderTitle', headerTitle);
+      localStorage.setItem('wisdomVideoHeaderTitle', headerTitle);
+      if (checkId) { localStorage.setItem('lastWisdomShortId', checkId.toString()); }
+      const prog = SharedService.getprogramName();
+      let route = vUrl ? vUrl.toString().replace('adults', prog) : `/${prog}/wisdom-shorts/${checkId}`;
+      if (isVideopageUrl) {
+        localStorage.setItem('wisdomLibrarySource', 'true');
+        this.router.navigateByUrl(route);
+      } else {
+        this.router.navigate([route, 'T', title]);
+      }
+      return;
+    }
+
     this.service.CheckShortsIsFree(checkId).subscribe({
       next: (res) => {
         let route = vUrl ? vUrl.replace('adults', SharedService.getprogramName()) : `/${SharedService.getprogramName()}/wisdom-shorts/${checkId}`;
@@ -402,6 +436,8 @@ export class WisdomShortsIndexPage implements OnInit {
           localStorage.setItem('wisdomVideoHeaderTitle', headerTitle);
           localStorage.setItem('lastWisdomShortId', checkId.toString());
           if (isVideopageUrl) {
+            // Mark as library source so s3-video knows this videopage came from video library
+            localStorage.setItem('wisdomLibrarySource', 'true');
             this.router.navigateByUrl(route);
           } else {
             this.router.navigate([route, 'T', title], extras);
@@ -425,6 +461,8 @@ export class WisdomShortsIndexPage implements OnInit {
           localStorage.setItem('wisdomVideoHeaderTitle', headerTitle);
           localStorage.setItem('lastWisdomShortId', checkId.toString());
           if (isVideopageUrl) {
+            // Mark as library source so s3-video knows this videopage came from video library
+            localStorage.setItem('wisdomLibrarySource', 'true');
             this.router.navigateByUrl(route);
           } else {
             this.router.navigate([route, 'T', title]);
