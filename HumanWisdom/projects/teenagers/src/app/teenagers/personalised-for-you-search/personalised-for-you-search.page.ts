@@ -536,6 +536,9 @@ export class PersonalisedForYouSearchPage implements OnInit {
   getinp(event) {
     if (this.containsCrisisKeyword(event)) {
       this.pendingCrisisSearchTerm = event;
+      this.isSearchActive = false;
+      this.commonService.setSearchActive(false);
+      this.toggleBodyScroll(false);
       this.showCrisisPopup = true;
       return;
     }

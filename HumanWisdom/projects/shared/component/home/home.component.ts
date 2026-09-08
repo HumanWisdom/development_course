@@ -2267,6 +2267,10 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     if (this.containsCrisisKeyword(searchTerm)) {
       this.pendingCrisisSearchTerm = searchTerm;
       this.pendingCrisisFromDropdown = fromDropdown;
+      this.isSearchActive = false;
+      this.commonService.setSearchActive(false);
+      this.updateHeaderDisplay();
+      this.toggleBodyScroll(false);
       this.showCrisisPopup = true;
       return;
     }
