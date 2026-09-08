@@ -1,3 +1,7 @@
+<?php
+$hm_demo_subtitle = $hm_demo_subtitle ?? 'Connect with our specialists today and see how we can help you prioritize a happier workspace';
+$hm_demo_org_placeholder = $hm_demo_org_placeholder ?? 'Company name';
+?>
      <section id="bring_happierme" class="work-demo-section">
         <div class="row center_flex div_subscription work-demo-band">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0 email-w980px work-demo-inner">
@@ -7,7 +11,7 @@
                 Bring HappierMe to your organization
               </h2>
               <h4 class="mtb0px fs_15px fw_400 lh_160p fc_ffffff work-demo-subtitle">
-                Connect with our specialists today and see how we can help you prioritize a happier workspace
+                <?= htmlspecialchars($hm_demo_subtitle, ENT_QUOTES, 'UTF-8'); ?>
               </h4>
             </div>
 
@@ -31,7 +35,7 @@
 
                   <div class="work-demo-col">
                     <div class="div_input">
-                      <input type="text" class="form-control fc_01" id="company" name="company" placeholder="Company name">
+                      <input type="text" class="form-control fc_01" id="company" name="company" placeholder="<?= htmlspecialchars($hm_demo_org_placeholder, ENT_QUOTES, 'UTF-8'); ?>">
                       <div class="fc_icons">
                         <img src="https://d1tenzemoxuh75.cloudfront.net/website/star-website.svg" class="img-responsive" alt="">
                       </div>

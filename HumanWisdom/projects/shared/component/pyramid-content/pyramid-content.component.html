@@ -9,17 +9,6 @@
           <div class="x_content p0">
             <form class="p0">
 
-              <div class="row mt10px mb30px">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-                  <a class="" (click)="transcript()">
-                    <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/transcript_left.svg" class="img-responsive" alt=""> -->
-                    <h6 class="fs_15px fw_400 lh_140p  underline" [ngClass]="isAdults ? 'fc_D7586B' : 'fc_ee9596'">
-                      Read text
-                    </h6>
-                  </a>
-                </div>
-              </div>
-
               <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
                   <h1 class="mtb0px txt1">
@@ -38,6 +27,17 @@
                 </div>
               </div>
               <!-- /audio player plugin -->
+
+              <div class="row mt10px mb30px">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+                  <a class="" (click)="transcript()">
+                    <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/transcript_left.svg" class="img-responsive" alt=""> -->
+                    <h6 class="fs_12px fw_400 lh_140p  underline" [ngClass]="isAdults ? 'fc_D7586B' : 'fc_ee9596'">
+                      Read text
+                    </h6>
+                  </a>
+                </div>
+              </div>
 
               <ng-content></ng-content>
 

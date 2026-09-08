@@ -426,6 +426,10 @@ body {
     width: 100% !important;
     max-width: 384px !important;
   }
+
+  body.page-healthcare .flex_block .hc-desc-subtitle {
+    line-height: 160% !important;
+  }
 }
 
 /* Work — Did you know? (Figma: black title 30/600/150%, gap 40px, bg rgba(255,247,230,1)) */
@@ -1248,6 +1252,772 @@ body.page-education .owl_testimonials + .owl-theme {
     align-items: center !important;
     text-align: center !important;
     margin: 0 auto !important;
+  }
+}
+
+/* Healthcare — testimonials (Figma 7841-14072: 1340 row, 3×426.67, gap 30, r20, p36, h305, cream) */
+body.page-healthcare .work-testimonials-section .work-testimonials-header,
+body.page-healthcare main#main .section-header.work-testimonials-header {
+  padding-bottom: 40px !important;
+  margin-bottom: 0 !important;
+}
+
+body.page-healthcare .work-testimonials-title,
+body.page-healthcare main#main .work-testimonials-header .work-testimonials-title,
+body.page-healthcare section.hpt120px ~ main#main .work-testimonials-header h2.work-testimonials-title {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 30px !important;
+  font-weight: 600 !important;
+  line-height: 120% !important;
+  color: rgba(0, 0, 0, 1) !important;
+  text-align: center !important;
+  margin: 0 auto !important;
+  max-width: 676px;
+}
+
+body.page-healthcare .work-testimonials-wrap {
+  max-width: 1340px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;
+  padding-right: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+@media (max-width: 1380px) {
+  body.page-healthcare .work-testimonials-wrap {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+body.page-healthcare .owl_testimonials {
+  --hc-testimonial-row-width: 1340px;
+  --hc-testimonial-gap: 30px;
+  --hc-testimonial-card-width: calc((var(--hc-testimonial-row-width) - 2 * var(--hc-testimonial-gap)) / 3);
+  width: 100%;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+
+body.page-healthcare .owl_testimonials .div_testimonials.work-testimonial-card {
+  background: rgba(255, 247, 230, 1) !important;
+  background-image: none !important;
+  border-radius: 20px !important;
+  padding: 36px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 305px !important;
+  min-height: 305px !important;
+  max-height: 305px !important;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  overflow: hidden !important;
+}
+
+body.page-healthcare .owl_testimonials .owl-carousel:not(.work-testimonials-native) .owl-item .item {
+  width: 100%;
+  height: 305px !important;
+}
+
+body.page-healthcare .owl_testimonials .owl-carousel .owl-item .item,
+body.page-healthcare .owl_testimonials .owl-carousel.work-testimonials-native > .item {
+  display: block !important;
+  text-decoration: none;
+  cursor: default;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
+
+body.page-healthcare .owl_testimonials .work-testimonial-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  min-height: 80px;
+  flex-shrink: 0;
+}
+
+body.page-healthcare .owl_testimonials .work-testimonial-avatar {
+  width: 80px;
+  height: 80px;
+  min-width: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+body.page-healthcare .owl_testimonials .work-testimonial-meta {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+body.page-healthcare .owl_testimonials .work-testimonial-name,
+body.page-healthcare .owl_testimonials .work-testimonial-role {
+  font-family: 'Poppins', sans-serif;
+  line-height: 150%;
+  color: rgba(0, 0, 0, 1);
+  margin: 0;
+  text-align: left;
+}
+
+body.page-healthcare .owl_testimonials .work-testimonial-name {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 130%;
+}
+
+body.page-healthcare .owl_testimonials .work-testimonial-role {
+  font-size: 15px;
+  font-weight: 400;
+  opacity: 0.75;
+}
+
+body.page-healthcare .owl_testimonials .work-testimonial-quote {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 150%;
+  color: rgba(0, 0, 0, 1);
+  opacity: 0.75;
+  margin: 0;
+  flex: 1 1 auto;
+  overflow: hidden;
+  text-align: left;
+}
+
+body.page-healthcare .owl_testimonials .owl-carousel .owl-stage {
+  left: 0 !important;
+  display: flex;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+body.page-healthcare .owl_testimonials > .owl-carousel {
+  width: 100%;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  padding-bottom: 0 !important;
+}
+
+body.page-healthcare .owl_testimonials > .owl-carousel:not(.owl-loaded):not(.work-testimonials-native) {
+  display: flex !important;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: var(--hc-testimonial-gap, 30px);
+  overflow: hidden;
+}
+
+body.page-healthcare .owl_testimonials > .owl-carousel:not(.owl-loaded):not(.work-testimonials-native) > .item {
+  flex: 0 0 var(--hc-testimonial-card-width);
+  width: var(--hc-testimonial-card-width);
+  max-width: var(--hc-testimonial-card-width);
+}
+
+body.page-healthcare .owl_testimonials > .owl-carousel.work-testimonials-native {
+  display: flex !important;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: var(--hc-testimonial-gap, 30px);
+  overflow-x: auto;
+}
+
+body.page-healthcare .owl_testimonials > .owl-carousel.owl-loaded {
+  display: block !important;
+}
+
+body.page-healthcare .owl_testimonials > .owl-carousel > .owl-stage-outer {
+  width: 100% !important;
+  overflow: hidden !important;
+}
+
+body.page-healthcare .owl_testimonials .owl-carousel .owl-item {
+  margin-right: var(--hc-testimonial-gap) !important;
+  height: auto !important;
+}
+
+body.page-healthcare .owl_testimonials .work-testimonials-footer {
+  display: none !important;
+}
+
+body.page-healthcare .owl_testimonials .work-testimonials-footer .sap.work-testimonials-more {
+  position: static !important;
+  width: auto !important;
+  margin: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px;
+}
+
+body.page-healthcare .owl_testimonials .work-testimonials-more h4,
+body.page-healthcare .owl_testimonials .work-testimonials-more .chevron-pink,
+body.page-healthcare .owl_testimonials .work-testimonials-more .chevron-pink .bi {
+  color: #d7586b !important;
+}
+
+body.page-healthcare .owl_testimonials .work-testimonials-more:hover h4,
+body.page-healthcare .owl_testimonials .work-testimonials-more:hover .chevron-pink,
+body.page-healthcare .owl_testimonials .work-testimonials-more:hover .chevron-pink .bi {
+  color: #803358 !important;
+}
+
+body.page-healthcare .owl_testimonials .owl-nav,
+body.page-healthcare .owl_testimonials .owl-nav-w,
+body.page-healthcare .owl_testimonials .owl-controls {
+  display: none !important;
+}
+
+@media (min-width: 1400px) {
+  body.page-healthcare .work-testimonials-wrap,
+  body.page-healthcare .owl_testimonials,
+  body.page-healthcare .owl_testimonials > .owl-carousel {
+    max-width: 1340px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  body.page-healthcare .work-testimonials-wrap {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  body.page-healthcare main#main .section-header.work-testimonials-header {
+    padding-bottom: 24px !important;
+  }
+
+  body.page-healthcare main#main .work-testimonials-title,
+  body.page-healthcare section.hpt120px ~ main#main .work-testimonials-header h2.work-testimonials-title,
+  body.page-healthcare section.hpt120px ~ main#main .work-testimonials-header h2.work-testimonials-title.fs_30px {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 150% !important;
+    max-width: 335px !important;
+    width: 335px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  body.page-healthcare .work-testimonials-header .work-testimonials-title br.display_d_none {
+    display: block !important;
+  }
+
+  body.page-healthcare .owl_testimonials > .owl-carousel,
+  body.page-healthcare .owl_testimonials .owl-carousel.work-testimonials-native {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch !important;
+    gap: 20px !important;
+    padding: 0 20px !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  body.page-healthcare .owl_testimonials .owl-carousel.work-testimonials-native::-webkit-scrollbar {
+    display: none;
+  }
+
+  body.page-healthcare .owl_testimonials .owl-carousel.work-testimonials-native > .item,
+  body.page-healthcare .owl_testimonials .owl-carousel.work-testimonials-native .owl-item {
+    flex: 0 0 315px !important;
+    width: 315px !important;
+    margin: 0 !important;
+    height: auto !important;
+  }
+
+  body.page-healthcare .owl_testimonials .div_testimonials.work-testimonial-card {
+    width: 315px !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    padding: 24px !important;
+    gap: 15px !important;
+    border-radius: 20px !important;
+  }
+
+  body.page-healthcare .owl_testimonials .work-testimonial-avatar {
+    width: 60px !important;
+    height: 60px !important;
+    min-width: 60px !important;
+  }
+
+  body.page-healthcare .owl_testimonials .work-testimonial-name {
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    line-height: 130% !important;
+  }
+
+  body.page-healthcare .owl_testimonials .work-testimonial-role,
+  body.page-healthcare .owl_testimonials .work-testimonial-quote {
+    font-size: 12px !important;
+    line-height: 150% !important;
+  }
+
+  body.page-healthcare .owl_testimonials .work-testimonials-footer {
+    display: none !important;
+  }
+}
+
+/* Healthcare — Did you know? (Figma: 30/600/150% black; band #fff7e6) */
+body.page-healthcare .hc-dyk-title,
+body.page-healthcare main#main .hc-dyk-title {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 30px !important;
+  font-weight: 600 !important;
+  line-height: 150% !important;
+  color: rgba(0, 0, 0, 1) !important;
+  text-align: center !important;
+  margin: 0 auto !important;
+}
+
+body.page-healthcare .hc-dyk-header,
+body.page-healthcare main#main .section-header.hc-dyk-header {
+  padding-bottom: 40px !important;
+  margin-bottom: 0 !important;
+}
+
+body.page-healthcare .div_dyk {
+  background: rgba(255, 247, 230, 1) !important;
+}
+
+/* Healthcare — Inspiring fresh ways of thinking (Figma: 30/600/120% black, 60px to grid) */
+body.page-healthcare .hc-inspire-section .hc-inspire-header,
+body.page-healthcare main#main .section-header.hc-inspire-header {
+  padding-bottom: 60px !important;
+  margin-bottom: 0 !important;
+}
+
+body.page-healthcare .hc-inspire-title,
+body.page-healthcare main#main .hc-inspire-header .hc-inspire-title,
+body.page-healthcare section.hpt120px ~ main#main .hc-inspire-header h2.hc-inspire-title {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 30px !important;
+  font-weight: 600 !important;
+  line-height: 120% !important;
+  color: rgba(0, 0, 0, 1) !important;
+  text-align: center !important;
+  margin: 0 auto !important;
+}
+
+body.page-healthcare .div_inspire h3,
+body.page-healthcare .div_inspire h3:hover,
+body.page-healthcare .div_inspire h5,
+body.page-healthcare .div_inspire h5:hover {
+  color: rgba(0, 0, 0, 1) !important;
+  text-decoration: none !important;
+}
+
+@media (max-width: 767px) {
+  body.page-healthcare main#main .hc-dyk-title,
+  body.page-healthcare main#main .hc-inspire-title,
+  body.page-healthcare main#main .work-testimonials-title,
+  body.page-healthcare main#main .work-blog-title {
+    font-size: 24px !important;
+    line-height: 140% !important;
+  }
+
+  body.page-healthcare main#main .work-testimonials-title {
+    line-height: 150% !important;
+  }
+
+  body.page-healthcare .hc-inspire-section .hc-inspire-header,
+  body.page-healthcare main#main .section-header.hc-inspire-header {
+    padding-bottom: 24px !important;
+  }
+}
+
+/* Healthcare form copy (Figma: 15px gap between title and subtitle; 16px stacked fields; 50px inputs) */
+body.page-healthcare #bring_happierme .work-demo-copy {
+  gap: 15px;
+}
+
+body.page-healthcare #bring_happierme .work-demo-col {
+  gap: 16px;
+}
+
+body.page-healthcare #bring_happierme .work-demo-col .fc_01 {
+  height: 50px;
+}
+
+/* Healthcare hero (Figma: 36/600/140% black, 383px copy column) */
+@media (min-width: 768px) {
+  body.page-healthcare .healthcare-hero-shell .absolute_desc > [class*="col-"] {
+    flex: 0 0 383px;
+    max-width: 383px;
+    width: 383px;
+    margin-left: 0;
+  }
+}
+
+/* Healthcare — Explore our blog (Figma 7841-14072: 470×370 tiles, 40px gap, 2 visible + peek, See all posts + 26px arrows) */
+body.page-healthcare .work-blog-section {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 60px;
+  padding-bottom: 80px !important;
+  overflow: visible;
+}
+
+body.page-healthcare .work-blog-section .work-blog-header,
+body.page-healthcare main#main .section-header.work-blog-header {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+body.page-healthcare .work-blog-title,
+body.page-healthcare main#main .work-blog-header .work-blog-title {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 30px !important;
+  font-weight: 600 !important;
+  line-height: 120% !important;
+  color: rgba(0, 0, 0, 1) !important;
+  text-align: center !important;
+  margin: 0 auto !important;
+}
+
+body.page-healthcare .work-blog-section > .row.center_flex,
+body.page-healthcare .work-blog-wrap {
+  width: 100%;
+  max-width: none;
+  overflow: visible;
+}
+
+body.page-healthcare .work-blog-section .owl_blog {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  overflow: visible;
+  position: relative;
+}
+
+body.page-healthcare .owl_blog > .owl-carousel {
+  width: 100%;
+  overflow: visible;
+}
+
+body.page-healthcare .owl_blog > .owl-carousel > .owl-nav,
+body.page-healthcare .owl_blog > .owl-carousel > .owl-dots {
+  display: none !important;
+}
+
+body.page-healthcare .owl_blog > .owl-carousel > .owl-stage-outer,
+body.page-healthcare .owl_blog .owl-carousel .owl-stage-outer {
+  overflow: visible !important;
+}
+
+@media (min-width: 768px) {
+  body.page-healthcare .owl_blog > .owl-carousel > .owl-stage-outer {
+    margin-left: max(20px, calc((100% - 980px) / 2));
+  }
+
+  body.page-healthcare .owl_blog .owl-carousel .owl-stage {
+    left: 0 !important;
+    display: flex;
+    align-items: stretch;
+  }
+
+  body.page-healthcare .owl_blog .owl-carousel .owl-item,
+  body.page-healthcare .owl_blog .owl-carousel .owl-item .item,
+  body.page-healthcare .owl_blog a.item {
+    width: 470px !important;
+    max-width: 470px !important;
+    flex: 0 0 470px !important;
+  }
+
+  body.page-healthcare .owl_blog .owl-carousel .owl-item {
+    margin-right: 40px !important;
+  }
+}
+
+body.page-healthcare .owl_blog .div_blog {
+  width: 470px !important;
+  max-width: 470px !important;
+  height: 370px !important;
+  min-height: 370px !important;
+  max-height: 370px !important;
+  border-radius: 10px !important;
+  background: rgba(255, 247, 230, 1) !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+  padding: 0 !important;
+}
+
+body.page-healthcare .owl_blog .div_blog > .row,
+body.page-healthcare .owl_blog .div_blog > .row:first-child,
+body.page-healthcare .owl_blog .div_blog > .row:last-child {
+  margin: 0 !important;
+  width: 100% !important;
+}
+
+body.page-healthcare .owl_blog .div_blog img,
+body.page-healthcare .owl_blog .div_blog img.img-responsive,
+body.page-healthcare .owl_blog .owl-carousel .owl-item img {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 240px !important;
+  min-height: 240px !important;
+  max-height: 240px !important;
+  object-fit: cover !important;
+  border-radius: 10px 10px 0 0 !important;
+  display: block !important;
+}
+
+body.page-healthcare .owl_blog .div_blog > .row:last-child,
+body.page-healthcare .owl_blog .div_blog > .row:last-child [class^="col-"] {
+  height: 130px !important;
+  min-height: 130px !important;
+  max-height: 130px !important;
+  background: rgba(255, 247, 230, 1) !important;
+  box-sizing: border-box !important;
+}
+
+body.page-healthcare .owl_blog .div_blog > .row:last-child [class^="col-"] {
+  padding: 38px 40px !important;
+}
+
+body.page-healthcare .owl_blog .div_blog h4,
+body.page-healthcare .owl_blog .div_blog h4.fs_18px,
+body.page-healthcare section.hpt120px ~ main#main .owl_blog .div_blog h4 {
+  margin: 0 !important;
+  max-width: 390px !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 18px !important;
+  font-weight: 500 !important;
+  line-height: 150% !important;
+  color: rgba(0, 0, 0, 1) !important;
+  text-align: left !important;
+  overflow: hidden !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  word-break: break-word !important;
+  white-space: normal !important;
+}
+
+body.page-healthcare .work-blog-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 20px auto 0;
+  min-height: 26px;
+  width: 980px;
+  max-width: calc(100% - 40px);
+}
+
+body.page-healthcare .work-blog-footer .sap.work-blog-more {
+  position: static !important;
+  width: auto !important;
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+body.page-healthcare .work-blog-more h4 {
+  color: #d7586b !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 18px !important;
+  font-weight: 500 !important;
+  line-height: 150% !important;
+  text-decoration: underline !important;
+}
+
+body.page-healthcare .work-blog-more:hover h4 {
+  color: #803358 !important;
+}
+
+body.page-healthcare .work-blog-footer .work-blog-nav,
+body.page-healthcare .work-blog-footer .owl-controls,
+body.page-healthcare .work-blog-footer .owl-nav,
+body.page-healthcare .owl_blog .work-blog-footer .owl-controls,
+body.page-healthcare .owl_blog .work-blog-footer .owl-nav {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+body.page-healthcare .work-blog-footer .work-blog-nav {
+  position: absolute;
+  right: 0;
+  left: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: auto !important;
+}
+
+body.page-healthcare .work-blog-footer .owl-nav {
+  position: static !important;
+  width: auto !important;
+  float: none !important;
+  gap: 12px;
+  justify-content: flex-end !important;
+}
+
+body.page-healthcare .owl_blog .work-blog-footer .owl-nav .owl-prev,
+body.page-healthcare .owl_blog .work-blog-footer .owl-nav .owl-next {
+  width: 26px !important;
+  height: 26px !important;
+  border-radius: 50% !important;
+  background: rgba(173, 173, 173, 1) !important;
+  color: #fff !important;
+  margin: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+}
+
+body.page-healthcare .owl_blog .work-blog-footer .owl-nav .owl-prev.disabled,
+body.page-healthcare .owl_blog .work-blog-footer .owl-nav .owl-next.disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+@media (min-width: 1400px) {
+  body.page-healthcare .work-blog-footer .work-blog-nav,
+  body.page-healthcare .work-blog-footer .owl-controls,
+  body.page-healthcare .work-blog-footer .owl-nav,
+  body.page-healthcare .owl_blog .work-blog-footer .owl-controls,
+  body.page-healthcare .owl_blog .work-blog-footer .owl-nav {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+}
+
+@media (min-width: 1600px) {
+  body.page-healthcare .work-blog-footer .owl-controls,
+  body.page-healthcare .work-blog-footer .owl-nav {
+    visibility: visible !important;
+    display: flex !important;
+  }
+}
+
+@media (max-width: 767px) {
+  body.page-healthcare .work-blog-section {
+    gap: 24px;
+    padding-bottom: 0 !important;
+  }
+
+  body.page-healthcare main#main .work-blog-title {
+    font-size: 24px !important;
+    line-height: 140% !important;
+  }
+
+  body.page-healthcare .work-blog-section .owl_blog {
+    width: 100%;
+    max-width: none;
+  }
+
+  body.page-healthcare .owl_blog .owl-carousel .owl-item,
+  body.page-healthcare .owl_blog .owl-carousel .owl-item .item,
+  body.page-healthcare .owl_blog .div_blog {
+    width: 306px !important;
+    max-width: 306px !important;
+    flex: 0 0 306px !important;
+  }
+
+  body.page-healthcare .owl_blog .div_blog {
+    height: 242.54px !important;
+    min-height: 242.54px !important;
+    max-height: 242.54px !important;
+  }
+
+  body.page-healthcare .owl_blog .div_blog img,
+  body.page-healthcare .owl_blog .div_blog img.img-responsive {
+    height: 156.26px !important;
+    min-height: 156.26px !important;
+    max-height: 156.26px !important;
+  }
+
+  body.page-healthcare .owl_blog .div_blog > .row:last-child,
+  body.page-healthcare .owl_blog .div_blog > .row:last-child [class^="col-"] {
+    height: 86.28px !important;
+    min-height: 86.28px !important;
+    max-height: 86.28px !important;
+  }
+
+  body.page-healthcare .owl_blog .div_blog > .row:last-child [class^="col-"] {
+    padding: 20px !important;
+  }
+
+  body.page-healthcare .owl_blog .div_blog h4,
+  body.page-healthcare .owl_blog .div_blog h4.fs_18px {
+    font-size: 15px !important;
+    line-height: 140% !important;
+    max-width: 265px !important;
+  }
+
+  body.page-healthcare .work-blog-footer {
+    width: 100%;
+    max-width: calc(100% - 40px);
+  }
+
+  body.page-healthcare .work-blog-footer .work-blog-nav,
+  body.page-healthcare .work-blog-footer .owl-nav {
+    display: none !important;
+  }
+
+  body.page-healthcare .owl_blog > .owl-carousel.hc-blog-native,
+  body.page-healthcare .owl_blog .owl-carousel.hc-blog-native {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch !important;
+    gap: 14px !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 20px !important;
+    box-sizing: border-box !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  body.page-healthcare .owl_blog > .owl-carousel.hc-blog-native::-webkit-scrollbar {
+    display: none;
+  }
+
+  body.page-healthcare .owl_blog .owl-carousel.hc-blog-native > .item,
+  body.page-healthcare .owl_blog .owl-carousel.hc-blog-native .owl-item {
+    flex: 0 0 306px !important;
+    width: 306px !important;
+    max-width: 306px !important;
+    margin: 0 !important;
+  }
+
+  body.page-healthcare .hc-blog-more-d {
+    display: none !important;
+  }
+
+  body.page-healthcare .hc-blog-more-m {
+    display: inline !important;
+  }
+
+  body.page-healthcare .work-blog-more h4,
+  body.page-healthcare section.hpt120px ~ main#main .work-blog-more h4 {
+    font-size: 15px !important;
+    line-height: 150% !important;
   }
 }
 
@@ -4485,11 +5255,380 @@ body.page-healthcare .healthcare-hero-shell .wide-screen-only {
     line-height: 140% !important;
   }
 
-  /* Hero h1 only — healthcare 27px; education Figma 30/600/140% */
+  /* Hero h1 — Figma 10473-7222: 30/600/140% / 335px / center */
   body.page-healthcare section.hpt120px .absolute_desc_m h1,
-  body.page-healthcare section.hpt120px .absolute_desc_m h1.fs_36px {
-    font-size: 27px !important;
+  body.page-healthcare section.hpt120px .absolute_desc_m h1.fs_36px,
+  body.page-healthcare section.hpt120px .absolute_desc_m h1.hc-hero-title {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 30px !important;
+    font-weight: 600 !important;
     line-height: 140% !important;
+    color: rgba(0, 0, 0, 1) !important;
+    text-align: center !important;
+    width: 335px !important;
+    max-width: 335px !important;
+    margin: 0 auto !important;
+  }
+
+  /* Healthcare mobile — Figma 10473-7222 (375px, 60px section gaps) */
+  body.page-healthcare main#main {
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px;
+  }
+
+  body.page-healthcare main#main > section {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  body.page-healthcare main#main > section + section {
+    margin-top: 60px !important;
+  }
+
+  body.page-healthcare .healthcare-hero-shell img.display_d_none {
+    width: 100% !important;
+    height: 600px !important;
+    object-fit: cover;
+    object-position: center;
+    display: block !important;
+  }
+
+  body.page-healthcare .healthcare-hero-shell .absolute_desc_m {
+    align-items: center !important;
+    justify-content: center !important;
+    top: 0 !important;
+    bottom: 0 !important;
+  }
+
+  body.page-healthcare .healthcare-hero-shell .absolute_desc_m > [class*="col-"] {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 335px !important;
+    max-width: 335px !important;
+    flex: 0 0 auto !important;
+    padding: 0 !important;
+  }
+
+  body.page-healthcare .healthcare-hero-shell .absolute_desc_m > [class*="col-"] > [class*="col-"]:nth-child(1) {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  body.page-healthcare .healthcare-hero-shell .absolute_desc_m > [class*="col-"] > [class*="col-"]:nth-child(2) {
+    margin: 15px 0 0 !important;
+    padding: 0 !important;
+  }
+
+  body.page-healthcare .healthcare-hero-shell .absolute_desc_m > [class*="col-"] > [class*="col-"]:nth-child(3) {
+    margin: 24px 0 0 !important;
+    padding: 0 !important;
+  }
+
+  body.page-healthcare section.hpt120px .absolute_desc_m h5,
+  body.page-healthcare section.hpt120px .absolute_desc_m h5.fs_15px {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    line-height: 150% !important;
+    text-align: center !important;
+    color: rgba(0, 0, 0, 1) !important;
+    width: 335px !important;
+    max-width: 335px !important;
+    margin: 0 auto !important;
+  }
+
+  body.page-healthcare .hc-desc-heading-mobile {
+    display: none !important;
+  }
+
+  body.page-healthcare .flex_block .hc-desc-title.display_m_none,
+  body.page-healthcare section.hpt120px ~ main#main .flex_block .hc-desc-title.display_m_none {
+    display: block !important;
+  }
+
+  body.page-healthcare .flex_block.w-1245px {
+    gap: 30px !important;
+  }
+
+  body.page-healthcare .flex_block .hc-desc-copy {
+    gap: 15px !important;
+    width: 335px !important;
+    max-width: 335px !important;
+    flex: 0 0 auto !important;
+  }
+
+  body.page-healthcare section.hpt120px ~ main#main .flex_block .hc-desc-title,
+  body.page-healthcare main#main .flex_block .hc-desc-title,
+  body.page-healthcare section.hpt120px ~ main#main .flex_block h2.hc-desc-title {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 150% !important;
+    text-align: center !important;
+    color: rgba(0, 0, 0, 1) !important;
+    width: 335px !important;
+    max-width: 335px !important;
+    margin: 0 auto !important;
+  }
+
+  body.page-healthcare section.hpt120px ~ main#main .flex_block .hc-desc-subtitle,
+  body.page-healthcare main#main .flex_block .hc-desc-subtitle {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    line-height: 150% !important;
+    text-align: center !important;
+    color: rgba(0, 0, 0, 1) !important;
+    width: 335px !important;
+    max-width: 335px !important;
+    margin: 0 auto !important;
+  }
+
+  body.page-healthcare section.hpt120px ~ main#main .hc-dyk-title,
+  body.page-healthcare main#main .hc-dyk-title,
+  body.page-healthcare section.hpt120px ~ main#main h2.hc-dyk-title {
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 140% !important;
+  }
+
+  body.page-healthcare main#main .section-header.hc-dyk-header {
+    padding-bottom: 24px !important;
+  }
+
+  body.page-healthcare .div_dyk {
+    padding: 30px 0 !important;
+    width: 100% !important;
+    overflow: hidden;
+  }
+
+  body.page-healthcare .div_dyk .div_dyk_l1,
+  body.page-healthcare .div_dyk_l1.w-980px {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 10px !important;
+    overflow-x: auto !important;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  body.page-healthcare .div_dyk_l1::-webkit-scrollbar {
+    display: none;
+  }
+
+  body.page-healthcare .div_dyk_l1 > [class^="col-"] {
+    flex: 0 0 120px !important;
+    width: 120px !important;
+    max-width: 120px !important;
+    min-width: 120px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    float: none !important;
+    box-sizing: border-box !important;
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+  }
+
+  body.page-healthcare .div_dyk_l1 > [class^="col-"]:last-child {
+    border-right: none;
+  }
+
+  body.page-healthcare section.hpt120px ~ main#main .div_dyk_l1 h2,
+  body.page-healthcare main#main .div_dyk_l1 h2 {
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    line-height: 120% !important;
+    margin: 0 0 3px !important;
+  }
+
+  body.page-healthcare section.hpt120px ~ main#main .div_dyk_l1 h5,
+  body.page-healthcare main#main .div_dyk_l1 h5 {
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    line-height: 150% !important;
+    margin: 0 !important;
+  }
+
+  body.page-healthcare section.hpt120px ~ main#main .hc-dyk-header h2.hc-dyk-title,
+  body.page-healthcare section.hpt120px ~ main#main h2.hc-dyk-title.fs_30px,
+  body.page-healthcare main#main .hc-dyk-title {
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 140% !important;
+    max-width: 335px !important;
+    width: 335px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  body.page-healthcare section.hpt120px ~ main#main .work-testimonials-header h2.work-testimonials-title,
+  body.page-healthcare section.hpt120px ~ main#main .work-testimonials-header h2.work-testimonials-title.fs_30px,
+  body.page-healthcare section.hpt120px ~ main#main h2.work-testimonials-title,
+  body.page-healthcare main#main .work-testimonials-title {
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 150% !important;
+    max-width: 335px !important;
+    width: 335px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  body.page-healthcare section.hpt120px ~ main#main .hc-inspire-header h2.hc-inspire-title,
+  body.page-healthcare section.hpt120px ~ main#main .hc-inspire-header h2.hc-inspire-title.fs_30px,
+  body.page-healthcare section.hpt120px ~ main#main h2.hc-inspire-title,
+  body.page-healthcare main#main .hc-inspire-title {
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 140% !important;
+    max-width: 335px !important;
+    width: 335px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  body.page-healthcare section.hpt120px ~ main#main .work-blog-header h2.work-blog-title,
+  body.page-healthcare section.hpt120px ~ main#main .work-blog-header h2.work-blog-title.fs_30px,
+  body.page-healthcare section.hpt120px ~ main#main h2.work-blog-title,
+  body.page-healthcare main#main .work-blog-title {
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 120% !important;
+    max-width: 335px !important;
+    width: auto !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  body.page-healthcare section.hpt120px ~ main#main #bring_happierme h2.work-demo-title,
+  body.page-healthcare section.hpt120px ~ main#main #bring_happierme h2.work-demo-title.fs_30px,
+  body.page-healthcare main#main #bring_happierme .work-demo-title {
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 150% !important;
+    max-width: 335px !important;
+    width: 335px !important;
+  }
+
+  body.page-healthcare .hc-inspire-section .hc-inspire-header,
+  body.page-healthcare main#main .section-header.hc-inspire-header {
+    padding-bottom: 24px !important;
+  }
+
+  body.page-healthcare .hc-inspire-section > .row.center_flex {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  body.page-healthcare .hc-inspire-section > .row.center_flex + .row.center_flex {
+    margin-top: 30px !important;
+  }
+
+  body.page-healthcare .div_inspire,
+  body.page-healthcare .row.center_flex .col-10.div_inspire {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 30px !important;
+    width: 335px !important;
+    max-width: 335px !important;
+    padding: 0 !important;
+    float: none !important;
+  }
+
+  body.page-healthcare .div_inspire > [class^="col-"] {
+    width: 100% !important;
+    max-width: 335px !important;
+    float: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  body.page-healthcare .div_inspire img {
+    width: 46px !important;
+    height: 46px !important;
+    margin: 0 auto !important;
+    display: block !important;
+  }
+
+  body.page-healthcare section.hpt120px ~ main#main .div_inspire h3,
+  body.page-healthcare main#main .div_inspire h3 {
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    line-height: 150% !important;
+    margin: 12px 0 6px !important;
+    text-align: center !important;
+  }
+
+  body.page-healthcare section.hpt120px ~ main#main .div_inspire h5,
+  body.page-healthcare main#main .div_inspire h5 {
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    line-height: 150% !important;
+    text-align: center !important;
+    margin: 0 !important;
+  }
+
+  body.page-healthcare .hc-inspire-leadership-d {
+    display: none !important;
+  }
+
+  body.page-healthcare .hc-inspire-leadership-m {
+    display: inline !important;
+  }
+
+  body.page-healthcare #bring_happierme .work-demo-band,
+  body.page-healthcare #bring_happierme .div_subscription.work-demo-band {
+    padding: 40px 20px !important;
+  }
+
+  body.page-healthcare #bring_happierme .work-demo-inner,
+  body.page-healthcare #bring_happierme .email-w980px.work-demo-inner {
+    gap: 40px !important;
+  }
+
+  body.page-healthcare #bring_happierme .work-demo-copy {
+    gap: 15px !important;
+  }
+
+  body.page-healthcare #bring_happierme .work-demo-fields,
+  body.page-healthcare #bring_happierme .work-demo-col {
+    gap: 10px !important;
+  }
+
+  body.page-healthcare #bring_happierme .work-demo-form-wrap,
+  body.page-healthcare #bring_happierme .work-demo-form-wrap form {
+    gap: 40px !important;
+  }
+
+  body.page-healthcare #bring_happierme #Request-Demo,
+  body.page-healthcare #bring_happierme #Request-Demo:focus,
+  body.page-healthcare #bring_happierme .work-demo-btn {
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 15px 30px !important;
+    border-radius: 30px !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    line-height: 140% !important;
+  }
+
+  body.page-healthcare section.hpt120px ~ main#main .work-blog-title,
+  body.page-healthcare main#main .work-blog-title,
+  body.page-healthcare section.hpt120px ~ main#main h2.work-blog-title {
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 120% !important;
   }
 
   body.page-education section.hpt120px .absolute_desc_m h1,
@@ -4940,6 +6079,13 @@ body.page-healthcare .healthcare-hero-shell .wide-screen-only {
     max-width: 440px;
     width: 440px;
     margin-left: 34px;
+  }
+
+  body.page-healthcare .healthcare-hero-shell .absolute_desc > [class*="col-"] {
+    flex: 0 0 383px;
+    max-width: 383px;
+    width: 383px;
+    margin-left: 0;
   }
 
   body.page-work .price-demo-row > [class*="col-"],

@@ -25671,10 +25671,8 @@ a {
 }
 
 .ellipsis {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
+  overflow: visible;
+  display: block;
   word-break: break-word;
 }
 
@@ -31594,10 +31592,8 @@ input[type="search"].hide_search::-webkit-search-cancel-button {
 }
 
 .ellipsis_01 {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
+  overflow: visible;
+  display: block;
   word-break: break-word;
 }
 
@@ -32270,12 +32266,11 @@ input[type="search"].hide_search::-webkit-search-cancel-button {
 }
 
 .box_blog h4 {
-  overflow: hidden;
-  text-overflow: ellipsis;
+  overflow: visible;
+  text-overflow: unset;
   max-width: 75ch;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
+  display: block;
+  white-space: normal;
 }
 
 .br_10px {
@@ -32291,12 +32286,11 @@ input[type="search"].hide_search::-webkit-search-cancel-button {
 }
 
 .box_ws h4 {
-  overflow: hidden;
-  text-overflow: ellipsis;
+  overflow: visible;
+  text-overflow: unset;
   max-width: 75ch;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
+  display: block;
+  white-space: normal;
 }
 
 .btn_select {

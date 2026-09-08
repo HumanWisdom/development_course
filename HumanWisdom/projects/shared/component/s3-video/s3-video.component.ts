@@ -543,14 +543,19 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
     }
 
     // 2. Check saved wisdomVideoHeaderTitle or youtubelinkHeaderTitle
-    const savedHeader = localStorage.getItem('wisdomVideoHeaderTitle') || localStorage.getItem('youtubelinkHeaderTitle');
-    if (savedHeader && savedHeader !== 'null' && savedHeader !== 'undefined') {
-      this.headerTitle = savedHeader;
-      return;
+    // Only use these if opened from video library (fromIndex = true), to avoid showing
+    // stale "In-depth conversation" / "Real stories" when opening from the learn page
+    const fromIndex = localStorage.getItem('fromIndex') === 'true';
+    if (fromIndex) {
+      const savedHeader = localStorage.getItem('wisdomVideoHeaderTitle') || localStorage.getItem('youtubelinkHeaderTitle');
+      if (savedHeader && savedHeader !== 'null' && savedHeader !== 'undefined') {
+        this.headerTitle = savedHeader;
+        return;
+      }
     }
 
-    // 3. Check selectedType from video library
-    const selectedType = localStorage.getItem('wisdomShortsSelectedType');
+    // 3. Check selectedType from video library (only when opened from video library)
+    const selectedType = fromIndex ? localStorage.getItem('wisdomShortsSelectedType') : null;
     if (selectedType === 'expert_tips') {
       this.headerTitle = 'Expert tips';
       return;
