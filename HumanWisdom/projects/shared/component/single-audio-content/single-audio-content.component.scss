@@ -274,8 +274,17 @@ width: 100%;
 
 :host ::ng-deep .transcript_txt .transcript-link,
 :host ::ng-deep .transcript_txt a {
-  color: #D7586B !important;
   text-decoration: underline !important;
   word-break: break-word;
+}
+
+:host ::ng-deep .transcript_txt.transcript-adults .transcript-link,
+:host ::ng-deep .transcript_txt.transcript-adults a {
+  color: #D7586B !important;
+}
+
+:host ::ng-deep .transcript_txt.transcript-teenagers .transcript-link,
+:host ::ng-deep .transcript_txt.transcript-teenagers a {
+  color: #EE9596 !important;
 }
 
