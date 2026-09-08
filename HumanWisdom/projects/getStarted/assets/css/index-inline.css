@@ -412,8 +412,18 @@ p:hover {
   gap: 2px;
   line-height: 1;
 }
-.rating_a .fa-star { color: #000; font-size: 16px; line-height: 1; vertical-align: middle;    height: 16px;
-    width: 16px; }
+.rating_a .fa-star,
+.rating_a .hero-star {
+  color: #000;
+  font-size: 16px;
+  line-height: 16px;
+  vertical-align: middle;
+  height: 16px;
+  width: 16px;
+  display: inline-block;
+  text-align: center;
+}
+.rating_a .hero-star { color: rgba(255, 247, 230, 1); }
 .appstore_a {
   display: inline-flex;
   align-items: center;
