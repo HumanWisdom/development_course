@@ -34,8 +34,7 @@
                   <div class="vl-filter-label mt18px" [ngClass]="isAdults ? '' : 'fc_ffffff_0_5'">TYPE</div>
                   <div class="vl-chip-scroll">
                     <button type="button" class="vl-chip" [ngClass]="isAdults ? 'vl-chip-adults' : 'vl-chip-teens'"
-                      *ngFor="let item of typeData" (click)="selectType(item.id)"
-                      id="type-{{item.id}}"
+                      *ngFor="let item of typeData" (click)="selectType(item.id)" id="type-{{item.id}}"
                       [class.active]="selectedType === item.id">
                       {{item.displayName}}
                     </button>
@@ -56,8 +55,7 @@
                     <ng-container *ngFor="let data of prefData">
                       <button type="button" class="vl-chip" [ngClass]="isAdults ? 'vl-chip-adults' : 'vl-chip-teens'"
                         id="pref-{{data['id'] | lowercase}}" *ngIf="data['displayName'] !== 'All'"
-                        [disabled]="isSubjectDisabled(data['id'])"
-                        [class.disabled]="isSubjectDisabled(data['id'])"
+                        [disabled]="isSubjectDisabled(data['id'])" [class.disabled]="isSubjectDisabled(data['id'])"
                         (click)="getUserPref(data['id'])" [class.active]="selectedPref === (data['id'] | lowercase)">
                         {{data['displayName']}}
                       </button>
@@ -108,7 +106,7 @@
                       [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isRead.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/isread_teen.svg'"
                       class="ws-read-icon" alt="Read" />
                     <img *ngIf="!isSubscriber && (data?.isFree == '0' || data?.isFree === 0) && data?.isRead != '1'"
-                      [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock_section2.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/lock.svg'"
+                      [src]="isAdults ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg'"
                       class="ws-lock-icon" alt="Locked" />
 
                   </div>
