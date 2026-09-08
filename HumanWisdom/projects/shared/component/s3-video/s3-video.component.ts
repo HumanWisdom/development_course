@@ -229,6 +229,19 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
     this.linkcode = videolinkParam ?? '';
     this.videoTitle = titleParam ? decodeURIComponent(titleParam) : (localStorage.getItem('wisdomvideotitle') ?? '');
 
+    // If opened via videopage (breathing, feel-better-now, etc.) it is NEVER from the
+    // video library — UNLESS wisdom-shorts-index explicitly navigated here (teen talk /
+    // real stories type). Use a dedicated one-shot flag to distinguish the two cases.
+    if (!this.wisdomshort) {
+      const fromLibrary = localStorage.getItem('wisdomLibrarySource') === 'true';
+      if (!fromLibrary) {
+        // Not from video library: clear stale fromIndex so stale headers can't leak through
+        localStorage.setItem('fromIndex', 'false');
+      }
+      // Always consume the one-shot flag so it doesn't persist across navigations
+      localStorage.removeItem('wisdomLibrarySource');
+    }
+
     const fromIndex = localStorage.getItem('fromIndex') === 'true';
     this.fromIndex = fromIndex;
 
@@ -543,14 +556,19 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
     }
 
     // 2. Check saved wisdomVideoHeaderTitle or youtubelinkHeaderTitle
-    const savedHeader = localStorage.getItem('wisdomVideoHeaderTitle') || localStorage.getItem('youtubelinkHeaderTitle');
-    if (savedHeader && savedHeader !== 'null' && savedHeader !== 'undefined') {
-      this.headerTitle = savedHeader;
-      return;
+    // Only use these if opened from video library (fromIndex = true), to avoid showing
+    // stale "In-depth conversation" / "Real stories" when opening from the learn page
+    const fromIndex = localStorage.getItem('fromIndex') === 'true';
+    if (fromIndex) {
+      const savedHeader = localStorage.getItem('wisdomVideoHeaderTitle') || localStorage.getItem('youtubelinkHeaderTitle');
+      if (savedHeader && savedHeader !== 'null' && savedHeader !== 'undefined') {
+        this.headerTitle = savedHeader;
+        return;
+      }
     }
 
-    // 3. Check selectedType from video library
-    const selectedType = localStorage.getItem('wisdomShortsSelectedType');
+    // 3. Check selectedType from video library (only when opened from video library)
+    const selectedType = fromIndex ? localStorage.getItem('wisdomShortsSelectedType') : null;
     if (selectedType === 'expert_tips') {
       this.headerTitle = 'Expert tips';
       return;

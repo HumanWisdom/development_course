@@ -154,6 +154,7 @@ video.cvideo_01.invert-controls {
 /*   width: 270px !important;
   height: 400px !important; */
   height: 80% !important;
+  max-height: 400px !important;
   width: auto !important;
   object-fit: cover;
 }
@@ -187,4 +188,5 @@ video.cvideo_01.invert-controls {
 
 .txt1{
   margin: 0 !important;
+  font-size: 22px !important;
 }

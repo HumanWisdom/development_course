@@ -1158,6 +1158,9 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       if (link) {
         const code = id != null && id <= 1 ? 'rdtfghjhfdg' : 'vncbxdfchgvxd';
         this.router.navigate([`${prog}/curated/youtubelink`, `${link}=${code}`], { state: { title: card.title } });
+        // Mark that this video was NOT opened from the video library,
+        // so stale header titles from video library are not reused
+        localStorage.setItem('fromIndex', 'false');
 
         // Optimistic update for Events before returning
         const isUnseen = card && card.id && (
@@ -1251,6 +1254,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
         const navExtras: any = { queryParams: queryObj };
         if (basePath.includes('youtubelink')) {
           navExtras.state = { title: card.title };
+          // Mark that this was NOT opened from video library
+          localStorage.setItem('fromIndex', 'false');
         }
         this.router.navigate([basePath], navExtras);
       } catch (e) {
@@ -1269,6 +1274,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       }
       try {
         if (card.path.includes('youtubelink')) {
+          // Mark that this was NOT opened from video library
+          localStorage.setItem('fromIndex', 'false');
           this.router.navigate([card.path], { state: { title: card.title } });
         } else {
           this.router.navigate([card.path]);

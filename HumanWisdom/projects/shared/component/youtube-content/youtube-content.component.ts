@@ -72,9 +72,16 @@ export class YoutubeContentComponent implements OnInit {
     }
 
     if (!window.history.state?.headerTitle) {
-      const savedHeader = localStorage.getItem('youtubelinkHeaderTitle');
-      if (savedHeader && savedHeader !== 'null') {
-        this.headerTitle = savedHeader;
+      // Only restore header from localStorage if opened from video library (fromIndex = true)
+      // Otherwise it shows stale "In-depth conversation" / "Real stories" when opened from learn page
+      const fromIndex = localStorage.getItem('fromIndex') === 'true';
+      if (fromIndex) {
+        const savedHeader = localStorage.getItem('youtubelinkHeaderTitle');
+        if (savedHeader && savedHeader !== 'null') {
+          this.headerTitle = savedHeader;
+        }
+      } else {
+        this.headerTitle = 'Events';
       }
     }
 
