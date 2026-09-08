@@ -98,6 +98,21 @@ import { S156090Page } from './s156090/s156090.page';
 import { S156090tPage } from './s156090t/s156090t.page';
 import { S156091Page } from './s156091/s156091.page';
 import { S156092Page } from './s156092/s156092.page';
+import { S156092p1Page } from './s156092p1/s156092p1.page';
+import { S156092p2Page } from './s156092p2/s156092p2.page';
+
+import { S156092p3Page } from './s156092p3/s156092p3.page';  
+
+import { S156092p4Page } from './s156092p4/s156092p4.page';
+
+import { S156092p5Page } from './s156092p5/s156092p5.page';
+import { S156092p6Page } from './s156092p6/s156092p6.page';
+import { S156092p7Page } from './s156092p7/s156092p7.page';
+import { S156092p8Page } from './s156092p8/s156092p8.page';
+import { S156092p9Page } from './s156092p9/s156092p9.page';
+import { S156092p10Page } from './s156092p10/s156092p10.page';
+import { S156092p11Page } from './s156092p11/s156092p11.page';
+
 import { S156093Page } from './s156093/s156093.page';
 import { S156094Page } from './s156094/s156094.page';
 import { S156095Page } from './s156095/s156095.page';
@@ -823,6 +838,61 @@ const routes: Routes = [
     canActivate: [ActiveGuard],
     component: S156092Page,
   },
+    {
+      path: 's156092p1',   
+      canActivate:[ActiveGuard],  
+      component: S156092p1Page,
+    },
+     {
+      path: 's156092p2',   
+      canActivate:[ActiveGuard],  
+      component: S156092p2Page,
+    },
+     {
+      path: 's156092p3',   
+      canActivate:[ActiveGuard],  
+      component: S156092p3Page,
+    },
+     {
+      path: 's156092p4',   
+      canActivate:[ActiveGuard],  
+      component: S156092p4Page,
+    },
+     {
+      path: 's156092p5',   
+      canActivate:[ActiveGuard],  
+      component: S156092p5Page,
+    },
+     {
+      path: 's156092p6',   
+      canActivate:[ActiveGuard],  
+      component: S156092p6Page,
+    },
+     {
+      path: 's156092p7',   
+      canActivate:[ActiveGuard],  
+      component: S156092p7Page,
+    },
+     {
+      path: 's156092p8',   
+      canActivate:[ActiveGuard],  
+      component: S156092p8Page,
+    },
+     {
+      path: 's156092p9',   
+      canActivate:[ActiveGuard],  
+      component: S156092p9Page,
+    },
+     {
+      path: 's156092p10',   
+      canActivate:[ActiveGuard],  
+      component: S156092p10Page,
+    },  
+    {
+      path: 's156092p11',   
+      canActivate:[ActiveGuard],  
+      component: S156092p11Page,
+    },  
   {
     path: 's156093',
     canActivate: [ActiveGuard],
