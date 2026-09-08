@@ -479,7 +479,14 @@
 
               </div>
 
-              <!-- Figma 7841-14072: testimonial row has no View all / arrows -->
+              <div class="work-testimonials-footer">
+                <a class="sap work-testimonials-more" href="https://happierme.app/adults/testimonials">
+                  <h4 class="mtb0px fs_18px fw_500 lh_150p fc_cb6171 td_underline">
+                    View all success stories
+                  </h4>
+                  <span class="chevron-pink"><span style="-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span>
+                </a>
+              </div>
 
             </div>
           </div>
@@ -815,9 +822,9 @@
               <div class="work-blog-footer">
                 <a class="sap work-blog-more" href="https://happierme.app/adults/blogs">
                   <h4 class="mtb0px fs_18px fw_500 lh_150p td_underline">
-                    <span class="hc-blog-more-d">See all posts</span>
-                    <span class="hc-blog-more-m">Find out more</span>
+                    View all blogs
                   </h4>
+                  <span class="chevron-pink"><span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span>
                 </a>
                 <div class="owl-theme work-blog-nav">
                   <div class="owl-controls">
@@ -940,13 +947,15 @@
           if (!$blog.length) return;
 
           var isMobile = window.matchMedia('(max-width: 767px)').matches;
-          var nextMode = isMobile ? 'mobile' : 'desktop';
+          var isWide = window.matchMedia('(min-width: 1400px)').matches;
+          var nextMode = isMobile ? 'mobile' : (isWide ? 'wide' : 'desktop');
+
           if (hcBlogMode === nextMode) {
-            if (isMobile && $blog.hasClass('owl-loaded')) {
-              // fall through — destroy leftover Owl and restore native scroll
-            } else if (!isMobile && $blog.hasClass('owl-loaded')) {
-              return;
-            } else if (isMobile) {
+            if (nextMode === 'desktop' && !$blog.hasClass('owl-loaded') && typeof $.fn.owlCarousel === 'function') {
+              // fall through — init Owl
+            } else if (nextMode !== 'desktop' && $blog.hasClass('owl-loaded')) {
+              // fall through — destroy leftover Owl
+            } else {
               return;
             }
           }
@@ -956,11 +965,19 @@
           }
 
           flattenCarouselItems($blog);
-          $blog.removeClass('hc-blog-native owl-loaded owl-drag owl-grab');
+          $blog.removeClass('hc-blog-native hc-blog-wide owl-loaded owl-drag owl-grab');
 
           if (isMobile) {
             $blog.addClass('hc-blog-native');
             hcBlogMode = 'mobile';
+            return;
+          }
+
+          // Wide screen: show all cards, no carousel / arrows (same as index.php)
+          if (isWide) {
+            $blog.addClass('hc-blog-wide');
+            hcBlogMode = 'wide';
+            hcBlogReady = true;
             return;
           }
 

@@ -2007,6 +2007,21 @@
   .dfooter footer button.accordion-button {
     font-size: 12px !important;
   }
+
+  /* Healthcare: beat About-Us `section.hpt120px ~ main#main section h4 { 12px }` */
+  body.page-healthcare section.hpt120px ~ main#main .work-testimonials-footer .sap.work-testimonials-more h4,
+  body.page-healthcare section.hpt120px ~ main#main .work-testimonials-footer .work-testimonials-more h4.fs_18px,
+  body.page-healthcare section.hpt120px ~ main#main .owl_testimonials .work-testimonials-more h4 {
+    font-size: 15px !important;
+    line-height: 150% !important;
+  }
+
+  body.page-healthcare section.hpt120px ~ main#main .owl_blog .div_blog h4,
+  body.page-healthcare section.hpt120px ~ main#main .owl_blog .div_blog h4.fs_18px,
+  body.page-healthcare section.hpt120px ~ main#main .owl_blog .div_blog h4.mtb0px.fs_18px.fw_500.lh_150p.fc_000000 {
+    font-size: 15px !important;
+    line-height: 140% !important;
+  }
 }
 
 @media (max-width: 820px) {
@@ -3405,6 +3420,14 @@
   body.page-work section.hpt120px ~ main#main section .div_inspire a.fc_cb6171:hover {
     color: rgb(128, 51, 88) !important;
     text-decoration: none !important;
+  }
+
+  body.page-education section.hpt120px ~ main#main .div_inspire a.fc_cb6171:hover,
+  body.page-education section.hpt120px ~ main#main .div_inspire a.fc_cb6171:focus,
+  body.page-education section.hpt120px ~ main#main .div_inspire a.fc_cb6171:hover span,
+  body.page-education section.hpt120px ~ main#main section .div_inspire a.fc_cb6171:hover {
+    color: rgb(128, 51, 88) !important;
+    text-decoration-color: rgb(128, 51, 88);
   }
 
 }
