@@ -376,7 +376,10 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
       while (video.firstChild) {
         video.removeChild(video.firstChild);
       }
+      
       video.load();
+       this.checkVideoOrientation(video);
+     
     } catch (_) { /* ignore */ }
   }
 

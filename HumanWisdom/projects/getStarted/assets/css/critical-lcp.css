@@ -5,7 +5,15 @@ body { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Se
 .header { background: #fff; z-index: 997; box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1); }
 .header_fixed { position: fixed; top: 0; left: 0; right: 0; z-index: 997; }
 .header .btn_tff { display: inline-flex; align-items: center; justify-content: center; color: #fff; text-decoration: none; font-weight: 600; font-size: 15px; padding: 10px 20px; border-radius: 24px; background: linear-gradient(180deg, #ed7d6f 0%, #d7586b 100%); box-sizing: border-box; }
-.hero-star { color: rgba(255, 247, 230, 1); font-size: 16px; line-height: 1; }
+.hero-star {
+  color: rgba(255, 247, 230, 1);
+  font-size: 16px;
+  line-height: 16px;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  text-align: center;
+}
 .text-wrapper-5 { color: #fff; font-weight: 600; text-align: center; line-height: 1.2; }
 img { max-width: 100%; display: block; }
 
@@ -166,9 +174,6 @@ img { max-width: 100%; display: block; }
   transition: opacity 0.4s cubic-bezier(0.4, 0, 1, 1),
               transform 0.4s cubic-bezier(0.4, 0, 1, 1);
 }
-#hw-website-title {
-  min-height: calc(3 * 1.3em);
-}
 .frame-wrapper.web_home_divlanding #hw-website-subtitle {
   font-family: "Poppins", Helvetica, sans-serif;
   font-size: 21px;
@@ -177,7 +182,6 @@ img { max-width: 100%; display: block; }
   color: rgba(255, 247, 230, 1);
   max-width: 500px;
   margin: 0;
-  min-height: calc(3 * 1.5em);
 }
 .frame-wrapper.web_home_divlanding .rating-row,
 .frame-wrapper.web_home_divlanding .rating-row .fs_15px.fw_700,
@@ -263,7 +267,17 @@ img { max-width: 100%; display: block; }
   line-height: 1;
 }
 .rating_a { display: inline-flex; align-items: center; gap: 2px; line-height: 1; }
-.rating_a .fa-star { color: #000; font-size: 16px; line-height: 1; vertical-align: middle; height: 16px; width: 16px; }
+.rating_a .fa-star,
+.rating_a .hero-star {
+  color: #000;
+  font-size: 16px;
+  line-height: 16px;
+  vertical-align: middle;
+  height: 16px;
+  width: 16px;
+  display: inline-block;
+  text-align: center;
+}
 .rating_a .hero-star { color: rgba(255, 247, 230, 1); }
 .appstore_a { display: inline-flex; align-items: center; line-height: 1; }
 .appstore_a .fa-apple { font-size: 16px; color: #000; line-height: 1; vertical-align: middle; }
@@ -363,6 +377,8 @@ img { max-width: 100%; display: block; }
     width: 100%;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 4px;
+    margin-bottom: 4px;
   }
   .frame-wrapper.web_home_divlanding #hw-website-subtitle .subtitle-br-m {
     display: none !important;
