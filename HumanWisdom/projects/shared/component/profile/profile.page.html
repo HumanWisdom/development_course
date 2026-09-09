@@ -491,12 +491,22 @@
                             </h4>
                           </div>
 
-                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright">
+                          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0 tright">
                             <a (click)="Logevent('/onboarding/payment-details', '', !isAdults ? 'teenager_click_updatedetails' : 'adult_click_updatedetails')">
                               <h4 class="mtb0px fs_12px fw_500 lh_150p  td_underline"
                                 [ngClass]="isAdults ? 'fc_D7586B' : 'fc_EE9596'">
 
                                 Update
+                              </h4>
+                            </a>
+                          </div>
+
+                           <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 pl5px">
+                            <a (click)="Logevent('/onboarding/payment-details', '', !isAdults ? 'teenager_click_updatedetails' : 'adult_click_updatedetails')">
+                              <h4 class="mtb0px fs_12px fw_500 lh_150p  td_underline"
+                                [ngClass]="isAdults ? 'fc_D7586B' : 'fc_EE9596'">
+
+                                
                                 <i class="fa fa-angle-right "></i>
                               </h4>
                             </a>
@@ -504,7 +514,10 @@
                         </div>
                       </div>
                     </a>
-
+  <!-- <a href="#" class="details">
+    Details
+    <span class="arrow">›</span>
+  </a> -->
                     <a *ngIf="enablepayment">
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
@@ -520,11 +533,21 @@
                             </h4>
                           </div>
 
-                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright">
+                          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0 tright">
                             <a (click)="Logevent('/onboarding/myprogram', '', !isAdults ? 'teenager_click_details' : 'adult_click_details')">
                               <h4 class="mtb0px fs_12px fw_500 lh_150p  td_underline"
                                 [ngClass]="isAdults ? 'fc_D7586B' : 'fc_EE9596'">
-                                Details
+                                Details 
+                              </h4>
+                            </a>
+                          </div>
+
+                          <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 pl5px">
+                            <a (click)="Logevent('/onboarding/myprogram', '', !isAdults ? 'teenager_click_details' : 'adult_click_details')">
+                              <h4 class="mtb0px fs_12px fw_500 lh_150p "
+                                              [ngClass]="isAdults ? 'fc_D7586B' : 'fc_EE9596'">
+
+                                
                                 <i class="fa fa-angle-right "></i>
                               </h4>
                             </a>
@@ -551,16 +574,22 @@
                       <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
-                            <h4 class="mt0px mb5px fs_15px fw_600 lh_150p "
+                            <h4 class="mt5px mb5px fs_15px fw_600 lh_150p "
                               [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                               Invite Friends
                             </h4>
                           </div>
 
-                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p0 tright">
+                          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 p0 tright">
                             <h4 class="mtb0px fs_12px fw_500 lh_150p  td_underline" [ngClass]="isAdults ? 'fc_D7586B' : 'fc_EE9596'">
-                              Share
-                              <i class="fa fa-angle-right "></i>
+                              Share</h4>
+                              <!-- <i class="fa fa-angle-right "></i> -->
+                            <!-- </h4> -->
+                          </div>
+                           <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 pl5px">
+                            <h4 class="mtb0px fs_12px fw_500 lh_150p" [ngClass]="isAdults ? 'fc_D7586B' : 'fc_EE9596'">
+                            
+                              <i class="fa fa-angle-right "></i> 
                             </h4>
                           </div>
                         </div>
