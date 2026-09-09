@@ -110,6 +110,10 @@ initialize(){
 }
 
   ngOnInit() {
+    // Remove overflow_hidden that may be set by dashboard tour, so profile page can scroll
+    document.body.classList.remove('overflow_hidden');
+    document.body.classList.add('overflow_auto');
+
     let userId = JSON.parse(localStorage.getItem("userId"))
     if(userId!=undefined && userId!=null && userId!="563"){
       this.isloggedIn = true;

@@ -38,10 +38,8 @@ export class RouteHistoryGuard implements CanActivate {
       ? '/teenagers/subscription/start-your-free-trial'
       : '/adults/subscription/start-your-free-trial';
 
-    // Guest user → redirect
     if (isGuest) {
-      this.router.navigate([trialRedirectPath]);
-      return false;
+      return true;
     }
 
     // Subscribed user → allow
