@@ -231,7 +231,7 @@ audioevent(data: any) {
 
   getimage(id) {
     let Id = id <= 9 ? '0' + id : id;
-    return `https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/podcast/${Id}.webp`
+    return `https://d1tenzemoxuh75.cloudfront.net/assets/webp/podcast/${Id}.webp`
   }
 
 getUserPref(type) {

@@ -52,7 +52,7 @@ export class WhyDoIA13Page implements OnInit {
 
   if (isLoggedIn && isSubscribed) {
     // Navigate to actual podcast page
-    this.router.navigate(['/adults/find-answers/why-do-i/why-do-i-a13 -at']);
+    this.router.navigate(['/adults/find-answers/why-do-i/why-do-i-a13-at']);
   } else {
       // this.router.navigate(['/subscription/start-your-free-trial']);
       this.showModal = true;

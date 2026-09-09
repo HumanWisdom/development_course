@@ -51,7 +51,7 @@
 
             <div class="row mt20px rmb80px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/blogs/81.webp" class="img-responsive" alt="Real success"  >
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/blogs/79.webp" class="img-responsive" alt="Real success"  >
               </div>
             </div>
 

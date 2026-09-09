@@ -127,7 +127,7 @@ export class GuidedJourneyListingPage implements OnInit {
 
     // Navigate to intro page of guided journey
     const prefix = SharedService.getprogramName();
-    this.router.navigate([`/${prefix}/guided-journeys/intro`], { queryParams: { journeyId: item.id } });
+    this.router.navigate([`/${prefix}/guided-journeys/${item.id}`]);
   }
 
   onModalClose(event: string) {
@@ -168,12 +168,14 @@ export class GuidedJourneyListingPage implements OnInit {
       if (res && res.length > 0 && res[0].guidedJourneyID && res[0].Days_No) {
         this.resumeData = res[0];
         const prefix = SharedService.getprogramName();
-        this.router.navigate([`/${prefix}/guided-journeys/days`], {
-          queryParams: {
-            journeyId: this.resumeData.guidedJourneyID,
-            day: this.resumeData.Days_No
-          }
-        });
+        const day = parseInt(this.resumeData.Days_No);
+        if (day > 0) {
+          this.router.navigate([`/${prefix}/guided-journeys/${this.resumeData.guidedJourneyID}`], {
+            queryParams: { day: this.resumeData.Days_No }
+          });
+        } else {
+          this.router.navigate([`/${prefix}/guided-journeys/${this.resumeData.guidedJourneyID}`]);
+        }
       }
     });
   }

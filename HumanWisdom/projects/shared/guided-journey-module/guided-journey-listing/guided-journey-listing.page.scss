@@ -12,6 +12,10 @@
 
     .btn_begin_here {
         background: linear-gradient(180deg, #EE9596 0%, #F17071 100%) !important;
+
+        &:hover {
+            background: linear-gradient(180deg, #F17071 0%, #D95657 100%) !important;
+        }
     }
 }
 
@@ -19,8 +23,8 @@
     bottom: 20px;
 }
 
-.btn_begin_here{
-  background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%) !important;
+.btn_begin_here {
+    background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%) !important;
     color: #ffffff;
     height: 40px;
     border-radius: 50px;
@@ -31,6 +35,12 @@
     box-shadow: none;
     line-height: 22px;
     margin: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background: linear-gradient(180deg, #D7586B 0%, #BF4356 100%) !important;
+    }
 }
 
 /* Figma: fill width, height 130, padding 15, gap 15, radius 12 */
@@ -157,3 +167,4 @@
 .fc_8c8c8c { color: #8c8c8c !important; }
 .lh_130p { line-height: 130% !important; }
 .fc_e58d82 { color: #EE9596 !important; }
+.mb80px{ margin-bottom: 80px;}

@@ -74,16 +74,24 @@
                   </div>
                 </div>
                 <div class="explore_content">
-                  <h3 class="explore_card_title" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">{{item.Title}}</h3>
-                  <p class="explore_card_meta" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                    {{item.Section}}<span *ngIf="item.Timing && item.Timing !== '0' && item.Timing !== '0:00' && item.Timing !== '00:00'"> • {{item.Timing}}</span>
-                  </p>
+                  <ng-container *ngIf="!isSection8(item)">
+                    <h3 class="explore_card_title" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">{{item.DisplayTitle || item.Title}}</h3>
+                    <p class="explore_card_meta" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                      {{getSectionDisplayName(item.Section)}}<span *ngIf="item.Timing && item.Timing !== '0' && item.Timing !== '0:00' && item.Timing !== '00:00'"> • {{item.Timing}}</span>
+                    </p>
+                  </ng-container>
+                  <ng-container *ngIf="isSection8(item)">
+                    <h3 class="explore_card_title_sec8" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">{{item.DisplayTitle}}</h3>
+                    <p class="explore_card_session_label" [ngClass]="isAdults ? '' : 'fc_ffffff_0_5'">{{item.sessionLabel}}<span *ngIf="item.Timing && item.Timing !== '0' && item.Timing !== '0:00' && item.Timing !== '00:00'"> • {{item.Timing}}</span></p>
+                    <h4 class="explore_card_session_name" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">{{item.sessionName}}</h4>
+                  </ng-container>
                 </div>
                 <div class="explore_status" *ngIf="!isSubscriber && (item.isFree === '0' || item.isFree === 0)">
                   <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/lock_section2.svg" alt=""
                     class="lock_icon">
                 </div>
               </div>
+
             </div>
 
             <!-- Divider -->
@@ -157,7 +165,7 @@
                       <!-- video row -->
                       <a
                         (click)="navigateToPathway(isAdults ? '/adults/videopage/Introduction-videos-develop_pathway.mp4/T/Develop a calm mind' : '/teenagers/videopage/Introduction-videos-Intro_pathway.mp4/T/Pathway')">
-                        <div class="row mb0pxi">
+                        <div class="row mb20px">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                             <div class="col-md-5 col-sm-5 col-xs-5 p0 prelative">
                               <img src="https://d1tenzemoxuh75.cloudfront.net/Introduction/images/intro_pathway.webp"
@@ -190,7 +198,7 @@
                   </div>
                 </div>
 
-                <div class="row mt20px pl20px tpr20px">
+                <div class="row pl20px tpr20px">
                   <div class="p0 col-md-12 col-sm-12 col-xs-12 odiv odiv_pathway">
 
                     <div class="col-md-3 col-sm-6 col-xs-6 prelative">

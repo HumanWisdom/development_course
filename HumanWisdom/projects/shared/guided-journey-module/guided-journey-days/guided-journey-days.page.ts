@@ -5,6 +5,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { SharedService } from "../../services/shared.service";
 import { CommonService } from "../../services/common.service";
 import { NavigationService } from "../../services/navigation.service";
+import { combineLatest } from 'rxjs';
 
 @Component({
   selector: 'app-guided-journey-days',
@@ -58,18 +59,18 @@ export class GuidedJourneyDaysPage implements OnInit {
   }
 
   ngOnInit() {
-    this.route.queryParams.subscribe(params => {
-      const newJourneyId = params['journeyId'];
-      const dayParam = params['day'];
-      if (params['subtitle']) {
-        this.journeySubtitle = params['subtitle'];
+    combineLatest([this.route.params, this.route.queryParams]).subscribe(([params, queryParams]) => {
+      const newJourneyId = params['journeyId'] || queryParams['journeyId'];
+      const dayParam = queryParams['day'];
+      if (queryParams['subtitle']) {
+        this.journeySubtitle = queryParams['subtitle'];
       }
-      if (params['title']) {
-        this.journeyTitle = params['title'];
+      if (queryParams['title']) {
+        this.journeyTitle = queryParams['title'];
       }
       
       let dayChanged = false;
-      if (dayParam !== undefined && dayParam !== null) {
+      if (dayParam !== undefined && dayParam !== null && dayParam !== '') {
         const newDay = parseInt(dayParam);
         if (this.currentDay !== newDay) {
           this.currentDay = newDay;
@@ -227,7 +228,11 @@ export class GuidedJourneyDaysPage implements OnInit {
 
         this.allDaysData = filteredRes.map(item => {
           const rawTitle = item.Title || item.Section;
-          const { mainTitle, subTitle, sessionLabel, sessionName } = this.parseTitle(rawTitle);
+          const { mainTitle, subTitle, sessionLabel, sessionName, extractedTiming } = this.parseTitle(rawTitle);
+          let timing = item.Timing || item.timing || item.Time || item.time || item.duration || item.Duration || '';
+          if ((!timing || timing === '0' || timing === '0:00' || timing === '00:00') && extractedTiming) {
+            timing = extractedTiming;
+          }
           return {
             ...item,
             Type: item.type ? parseInt(item.type) : 1,
@@ -237,7 +242,7 @@ export class GuidedJourneyDaysPage implements OnInit {
             sessionLabel: sessionLabel,
             sessionName: sessionName,
             QuestionCnt: item.QuestionCnt,
-            Timing: item.Timing || item.timing || item.Time || item.time || item.duration || item.Duration || '',
+            Timing: timing,
             imgPath: this.getImgUrl(item.imgPath),
             OriginalResponse: item.Response || ''
           };
@@ -258,6 +263,12 @@ export class GuidedJourneyDaysPage implements OnInit {
       
       let sessionLabel = '';
       let sessionName = '';
+      let extractedTiming = '';
+
+      const timingMatch = subTitle.match(/\b(?:\d{1,2}:)?\d{1,2}:\d{2}\b|\b\d+\s*(?:mins?|minutes?|sec|seconds?)\b/i);
+      if (timingMatch) {
+        extractedTiming = timingMatch[0];
+      }
       
       let separator = '';
       if (subTitle.includes(',')) {
@@ -297,9 +308,9 @@ export class GuidedJourneyDaysPage implements OnInit {
       if (displaySub.includes(',')) {
         displaySub = displaySub.replace(',', ' •');
       }
-      return { mainTitle, subTitle: displaySub, sessionLabel, sessionName };
+      return { mainTitle, subTitle: displaySub, sessionLabel, sessionName, extractedTiming };
     }
-    return { mainTitle: title, subTitle: '', sessionLabel: '', sessionName: '' };
+    return { mainTitle: title, subTitle: '', sessionLabel: '', sessionName: '', extractedTiming: '' };
   }
 
   isSection8(exercise: any): boolean {
@@ -447,6 +458,15 @@ export class GuidedJourneyDaysPage implements OnInit {
       if (trimmed.startsWith('- ') || trimmed.startsWith('* ')) {
         if (!inList) { result += '<ul style="padding-left: 20px;">'; inList = true; }
         result += '<li style="margin-bottom: 5px;">' + trimmed.substring(2) + '</li>';
+      } else if (trimmed.startsWith('### ')) {
+        if (inList) { result += '</ul>'; inList = false; }
+        result += '<h3>' + trimmed.substring(4) + '</h3>';
+      } else if (trimmed.startsWith('## ')) {
+        if (inList) { result += '</ul>'; inList = false; }
+        result += '<h2>' + trimmed.substring(3) + '</h2>';
+      } else if (trimmed.startsWith('# ')) {
+        if (inList) { result += '</ul>'; inList = false; }
+        result += '<h2>' + trimmed.substring(2) + '</h2>';
       } else {
         if (inList) { result += '</ul>'; inList = false; }
         result += trimmed === '' ? '<br/>' : line + '<br/>';
@@ -552,11 +572,17 @@ export class GuidedJourneyDaysPage implements OnInit {
     this.updateDisplayData();
     // Update URL without reloading
     const prefix = SharedService.getprogramName();
-    this.router.navigate([], {
-      relativeTo: this.route,
-      queryParams: { day: this.currentDay },
-      queryParamsHandling: 'merge'
-    });
+    if (this.currentDay === 0) {
+      this.router.navigate([`/${prefix}/guided-journeys/${this.journeyId}`], {
+        queryParams: { day: null },
+        queryParamsHandling: 'merge'
+      });
+    } else {
+      this.router.navigate([`/${prefix}/guided-journeys/${this.journeyId}`], {
+        queryParams: { day: this.currentDay },
+        queryParamsHandling: 'merge'
+      });
+    }
     this.scrollToActiveDay();
     setTimeout(() => {
       this.isAnimating = false;

@@ -353,76 +353,72 @@ class ModalManager {
      * @param {Function} options.onShow - Callback when modal is shown
      * @param {Function} options.onHide - Callback when modal is hidden
      */
+    resolveModal(modalTarget) {
+        if (typeof modalTarget === 'string') {
+            const id = modalTarget.charAt(0) === '#' ? modalTarget.slice(1) : modalTarget;
+            return document.getElementById(id);
+        }
+        if (modalTarget instanceof HTMLElement) {
+            return modalTarget;
+        }
+        return null;
+    }
+
     openModal(modalTarget, options = {}) {
         const {
-            handleBackdrop = true,
             handleUI = true,
             onShow = null,
             onHide = null
         } = options;
 
-        let modal;
-        this.handleUiShakingOnModalOpen();
-        if (typeof modalTarget === 'string') {
-            modal = document.getElementById(modalTarget);
-              
-             
-        } else if (modalTarget instanceof HTMLElement) {
-            modal = modalTarget;
-        } else {
-            console.error('Invalid modal target:', modalTarget);
-            return false;
-        }
-
+        const modal = this.resolveModal(modalTarget);
         if (!modal) {
             console.error('Modal not found:', modalTarget);
             return false;
         }
+
+        if (typeof bootstrap === 'undefined' || !bootstrap.Modal) {
+            console.error('Bootstrap Modal is not available');
+            return false;
+        }
          
         try {
-            // Prevent Bootstrap from adding padding-right to body
-            if (handleUI) {
-                document.body.style.paddingRight = '0px !important';
-            }
-
-            // Create Bootstrap 5.3 modal instance
-            const bsModal = new bootstrap.Modal(modal, {
+            // Reuse existing instance to avoid stacked scroll-locks
+            const bsModal = bootstrap.Modal.getOrCreateInstance(modal, {
                 backdrop: true,
                 keyboard: true,
                 focus: true
             });
             
-            // Store active modal reference
             this.activeModal = modal;
 
-            // Add event listeners
             if (onShow) {
-                modal.addEventListener('shown.bs.modal', onShow);
+                modal.addEventListener('shown.bs.modal', onShow, { once: true });
             }
             
             if (onHide) {
-                modal.addEventListener('hidden.bs.modal', onHide);
+                modal.addEventListener('hidden.bs.modal', onHide, { once: true });
             }
 
-            // Always add cleanup event listener
-            modal.addEventListener('hidden.bs.modal', () => {
-                this.cleanupModalBackdrop();
-                this.activeModal = null;
-            });
+            if (!modal.dataset.hwCleanupBound) {
+                modal.dataset.hwCleanupBound = '1';
+                modal.addEventListener('hidden.bs.modal', () => {
+                    this.cleanupModalBackdrop();
+                    this.activeModal = null;
+                });
+            }
 
-            // Show the modal
             bsModal.show();
 
-            // Handle UI adjustments
             if (handleUI) {
                 this.handleUiShakingOnModalOpen();
             }
 
-            console.log('Modal opened successfully:', modalTarget);
             return true;
 
         } catch (error) {
             console.error('Error opening modal:', error);
+            this.cleanupModalBackdrop();
             return false;
         }
     }
@@ -432,43 +428,38 @@ class ModalManager {
      * @param {string|HTMLElement} modalTarget - Modal ID or element
      */
     closeModal(modalTarget) {
-        let modal;
-        
-        if (typeof modalTarget === 'string') {
-            modal = document.getElementById(modalTarget);
-        } else if (modalTarget instanceof HTMLElement) {
-            modal = modalTarget;
-        } else {
-            console.error('Invalid modal target:', modalTarget);
-            return false;
-        }
-
+        const modal = this.resolveModal(modalTarget);
         if (!modal) {
             console.error('Modal not found:', modalTarget);
+            this.cleanupModalBackdrop();
             return false;
         }
 
         try {
-            const bsModal = bootstrap.Modal.getInstance(modal);
-            if (bsModal) {
-                bsModal.hide();
-                console.log('Modal closed successfully via Bootstrap instance:', modalTarget);
+            if (typeof bootstrap !== 'undefined' && bootstrap.Modal) {
+                const bsModal = bootstrap.Modal.getInstance(modal);
+                if (bsModal) {
+                    bsModal.hide();
+                } else {
+                    // No instance (already closed / never shown) — still unlock scroll
+                    this.cleanupModalBackdrop();
+                }
             } else {
-                // Fallback: create new instance and hide
-                const newBsModal = new bootstrap.Modal(modal);
-                newBsModal.hide();
-                console.log('Modal closed successfully via new Bootstrap instance:', modalTarget);
+                this.cleanupModalBackdrop();
             }
 
-            // Let Bootstrap handle the cleanup, but we can add a backup cleanup
+            // Backup unlock in case hidden.bs.modal does not fire
             setTimeout(() => {
-                this.cleanupModalBackdrop();
-            }, 100);
+                if (!document.querySelector('.modal.show')) {
+                    this.cleanupModalBackdrop();
+                }
+            }, 200);
 
             return true;
 
         } catch (error) {
             console.error('Error closing modal:', error);
+            this.cleanupModalBackdrop();
             return false;
         }
     }
@@ -493,17 +484,8 @@ class ModalManager {
      * @returns {boolean}
      */
     isModalOpen(modalTarget) {
-        let modal;
-        
-        if (typeof modalTarget === 'string') {
-            modal = document.getElementById(modalTarget);
-        } else if (modalTarget instanceof HTMLElement) {
-            modal = modalTarget;
-        } else {
-            return false;
-        }
-
-        return modal && modal.classList.contains('show');
+        const modal = this.resolveModal(modalTarget);
+        return !!(modal && modal.classList.contains('show'));
     }
 
     /**
@@ -519,54 +501,70 @@ class ModalManager {
      */
     handleUiShakingOnModalOpen() {
         setTimeout(() => {
-            const body = document.getElementById('body');
-            if (body) {
-                // Prevent Bootstrap from adding padding-right to body
-                body.style.paddingRight = '0px !important';
-                body.style.overflow = 'hidden';
-            }
+            if (!document.querySelector('.modal.show')) return;
+            const body = document.getElementById('body') || document.body;
+            body.style.paddingRight = '0px';
+            body.style.overflow = 'hidden';
         }, 50);
     }
 
     /**
-     * Clean up modal backdrop and body classes
+     * Clean up modal backdrop and body scroll lock
      */
     cleanupModalBackdrop() {
-        setTimeout(() => {
-            const backdrop = document.querySelector('.modal-backdrop');
-            if (backdrop) {
-                backdrop.remove();
-            }
+        const unlock = () => {
+            // Only fully unlock when no modal is still open
+            if (document.querySelector('.modal.show')) return;
+
+            document.querySelectorAll('.modal-backdrop').forEach((el) => el.remove());
             document.body.classList.remove('modal-open');
-            document.body.style.overflow = '';
-            document.body.style.paddingRight = '0px';
-        }, 150);
+            document.documentElement.classList.remove('modal-open');
+
+            document.body.style.removeProperty('overflow');
+            document.body.style.removeProperty('padding-right');
+            document.documentElement.style.removeProperty('overflow');
+            document.documentElement.style.removeProperty('padding-right');
+
+            // Clear Bootstrap scroll helper data attrs if present
+            document.body.removeAttribute('data-bs-overflow');
+            document.body.removeAttribute('data-bs-padding-right');
+            document.documentElement.removeAttribute('data-bs-overflow');
+            document.documentElement.removeAttribute('data-bs-padding-right');
+        };
+
+        unlock();
+        setTimeout(unlock, 150);
     }
 
     /**
      * Setup global modal event listeners
      */
     setupGlobalModalEvents() {
+        // Always unlock page scroll when any Bootstrap modal finishes hiding
+        document.addEventListener('hidden.bs.modal', () => {
+            this.cleanupModalBackdrop();
+            this.activeModal = null;
+        });
+
         // Handle modal triggers with data-bs-toggle="modal"
         document.addEventListener('click', (e) => {
-            if (e.target.matches('[data-bs-toggle="modal"]')) {
-                const target = e.target.getAttribute('data-bs-target');
-                if (target) {
-                    e.preventDefault();
-                    this.openModal(target);
-                }
-            }
-        });
+            const trigger = e.target.closest('[data-bs-toggle="modal"]');
+            if (!trigger) return;
+            const target = trigger.getAttribute('data-bs-target') || trigger.getAttribute('href');
+            if (!target || target === '#') return;
+            e.preventDefault();
+            e.stopPropagation();
+            this.openModal(target);
+        }, true);
 
         // Handle modal close buttons
         document.addEventListener('click', (e) => {
-            if (e.target.matches('[data-bs-dismiss="modal"]') || e.target.closest('[data-bs-dismiss="modal"]')) {
-                const modal = e.target.closest('.modal') || e.target.closest('[data-bs-dismiss="modal"]').closest('.modal');
-                if (modal) {
-                    e.preventDefault();
-                    console.log('Close button clicked, closing modal:', modal.id);
-                    this.closeModal(modal);
-                }
+            const dismiss = e.target.closest('[data-bs-dismiss="modal"]');
+            if (!dismiss) return;
+            const modal = dismiss.closest('.modal');
+            if (modal) {
+                e.preventDefault();
+                this.closeModal(modal);
             }
         });
 
@@ -639,17 +637,7 @@ class ModalManager {
      * @param {Function} callback - Event callback function
      */
     addModalEventListener(modalTarget, event, callback) {
-        let modal;
-        
-        if (typeof modalTarget === 'string') {
-            modal = document.getElementById(modalTarget);
-        } else if (modalTarget instanceof HTMLElement) {
-            modal = modalTarget;
-        } else {
-            console.error('Invalid modal target:', modalTarget);
-            return false;
-        }
-
+        const modal = this.resolveModal(modalTarget);
         if (!modal) {
             console.error('Modal not found:', modalTarget);
             return false;
@@ -666,17 +654,7 @@ class ModalManager {
      * @param {Function} callback - Event callback function
      */
     removeModalEventListener(modalTarget, event, callback) {
-        let modal;
-        
-        if (typeof modalTarget === 'string') {
-            modal = document.getElementById(modalTarget);
-        } else if (modalTarget instanceof HTMLElement) {
-            modal = modalTarget;
-        } else {
-            console.error('Invalid modal target:', modalTarget);
-            return false;
-        }
-
+        const modal = this.resolveModal(modalTarget);
         if (!modal) {
             console.error('Modal not found:', modalTarget);
             return false;
@@ -1557,10 +1535,14 @@ viewAllSucessStories && viewAllSucessStories.addEventListener("click", function 
 const requestDemo = document.getElementById("Request-Demo");
 function closeElement() {
     localStorage.setItem("isDownloadHide", !0);
-    var e = document.getElementById("closeableElement");
-    if(e){
-        (e.style.display = "none"), e.classList.remove("display_df_none");
-    }
+    ["closeableElement", "closeableElementDesktop"].forEach(function (id) {
+        var e = document.getElementById(id);
+        if (e) {
+            e.style.display = "none";
+            e.classList.remove("display_df_none");
+            e.setAttribute("hidden", "hidden");
+        }
+    });
     var t = document.getElementById("scrollTopArrow");
     if(t){
         "Desktop" == type ? t.classList.remove("mb15px") : t.classList.remove("mb-8rem");
@@ -1836,12 +1818,16 @@ function initHumanSkillsLink() {
         if (link.dataset.skillsBound === "1") return;
         link.dataset.skillsBound = "1";
         link.addEventListener("click", function (e) {
+            // ModalManager capture handler opens via data-bs-toggle; keep as fallback
+            if (typeof modalManager !== "undefined" && modalManager.openModal) {
+                e.preventDefault();
+                modalManager.openModal("#humanSkillsModal");
+                return;
+            }
             e.preventDefault();
             var modal = document.getElementById("humanSkillsModal");
             if (modal && typeof bootstrap !== "undefined") {
-                var bsModal = bootstrap.Modal.getInstance(modal);
-                if (!bsModal) bsModal = new bootstrap.Modal(modal);
-                bsModal.show();
+                bootstrap.Modal.getOrCreateInstance(modal).show();
             }
         });
         link.addEventListener("keydown", function (e) {

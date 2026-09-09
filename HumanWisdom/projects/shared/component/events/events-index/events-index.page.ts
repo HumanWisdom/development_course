@@ -131,10 +131,11 @@ export class EventsIndexPage implements OnInit, AfterViewInit {
       return;
     }
 
+    localStorage.setItem('youtubelinkHeaderTitle', 'In-depth conversation');
     if (RowID <= 1) {
-      this.router.navigate([`${prog}/curated/youtubelink`, `${link}=rdtfghjhfdg`], { state: { title } });
+      this.router.navigate([`${prog}/curated/youtubelink`, `${link}=rdtfghjhfdg`], { state: { title, headerTitle: 'In-depth conversation' } });
     } else {
-      this.router.navigate([`${prog}/curated/youtubelink`, `${link}=vncbxdfchgvxd`], { state: { title } });
+      this.router.navigate([`${prog}/curated/youtubelink`, `${link}=vncbxdfchgvxd`], { state: { title, headerTitle: 'In-depth conversation' } });
     }
   }
 

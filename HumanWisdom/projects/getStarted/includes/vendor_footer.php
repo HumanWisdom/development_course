@@ -1,4 +1,4 @@
-<a href="#" id="scrollTopArrow" class="scroll-top center_flex"><i class="bi bi-arrow-up-short"></i></a>
+<a href="#" id="scrollTopArrow" class="scroll-top center_flex" aria-label="Scroll to top"><svg class="hw-ui-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V4.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 4.707V11.5a.5.5 0 0 0 .5.5z"/></svg></a>
 <?php
 require_once __DIR__ . '/cache_buster.php';
 require_once __DIR__ . '/api_config.php';

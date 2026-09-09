@@ -31,7 +31,7 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
   private _isTransitioning: boolean = false;
   private _isAtCorner: boolean = true; // GIF plays in corner position from the start
   private gifAnimationDuration = 6000; // Duration of GIF animation in milliseconds (10 seconds)
-  public staticOwlUrl: string = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/onboarding/justBreathing.gif';
+  public staticOwlUrl: string = 'https://d1tenzemoxuh75.cloudfront.net/onboarding/justBreathing.gif';
   private gifPlayedOnce: boolean = false; // Track if GIF has played once
   private gifAnimationTimeout: any = null; // Track GIF animation timeout to prevent multiple calls
   private gifAlreadyStarting: boolean = false; // Prevent multiple GIF starts before localStorage is set
@@ -58,8 +58,8 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
   // Cloud image: only OLLY_HI – fade in on open, fade out on close
   public showCloudMessage: boolean = false;
   public cloudFadeIn: boolean = false; // Fade-in effect when cloud opens
-  private readonly OLLY_HI_URL = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/icons/Olly_Hi.svg';
-  public currentCloudImage: string = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/icons/Olly_Hi.svg';
+  private readonly OLLY_HI_URL = 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/Olly_Hi.svg';
+  public currentCloudImage: string = 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/Olly_Hi.svg';
   private cloudImageInterval: any = null;
   private readonly CLOUD_FADE_IN_MS = 1800;
 
@@ -517,7 +517,7 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
     this.isSpeaking = false;
     this.dialogueAlreadyShown = false;
     this.showCloudMessage = false;
-    this.staticOwlUrl = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/onboarding/justBreathing.gif?t=' + Date.now();
+    this.staticOwlUrl = 'https://d1tenzemoxuh75.cloudfront.net/onboarding/justBreathing.gif?t=' + Date.now();
     this.messageTimers.forEach(t => clearTimeout(t));
     this.messageTimers = [];
     this.cdr.detectChanges();
@@ -625,7 +625,7 @@ export class OwlAnimationComponent implements OnInit, OnDestroy, AfterViewInit {
     this.isPlaying = false;
     this.dialogueAlreadyShown = false;
     this.showCloudMessage = false;
-    this.staticOwlUrl = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/onboarding/justBreathing.gif?t=' + Date.now();
+    this.staticOwlUrl = 'https://d1tenzemoxuh75.cloudfront.net/onboarding/justBreathing.gif?t=' + Date.now();
     this.cdr.detectChanges();
   }
 } 

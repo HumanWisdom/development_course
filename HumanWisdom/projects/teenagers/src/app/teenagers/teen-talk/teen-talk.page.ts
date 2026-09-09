@@ -18,6 +18,8 @@ export class TeenTalkPage implements OnInit {
   public searchedText ="";
   isSubscriber = false;
   showModal = false;
+  modalTitle = 'The best is yet to come';
+  modalContent = 'Unlock the full experience and continue your journey to live your best life';
     
 
   constructor(private router: Router, private service: TeenagersService, private meta: Meta, private title: Title, private commonService: CommonService, private homeStateService: HomeStateService) { }
@@ -41,24 +43,21 @@ export class TeenTalkPage implements OnInit {
 
   teentalkS3(data) {
     let sub: any = localStorage.getItem("Subscriber")
-    this.commonService.clickTeenTalk(data.RowID).subscribe(res => {
-      data.isRead = '1';
-      this.homeStateService.markCardAsSeen(data.RowID.toString());
-    })
-    /* if (sub == 0 && isFree === "0") {
-        this.router.navigate(['teenagers/subscription/start-your-free-trial']);
-    } else {
-        this.router.navigate(['teenagers/videopage', `teenagers-teen_talk-videos-${id}.mp4`, 'T', title])
-    } */
     let id = data.RowID <= 9 ? '0' + data.RowID : data.RowID;
     if (sub == 0 && data.isFree === "0") {
-      // this.router.navigate([SharedService.getprogramName(), 'subscription', 'start-your-free-trial']);
       this.showModal = true;
       return;
     }
-    else {
-      this.router.navigate(['teenagers/videopage', `teenagers-teen_talk-videos-${id}.mp4`, 'T', data.Title])
-    }
+    // Only record click and navigate when access is granted
+    this.commonService.clickTeenTalk(data.RowID).subscribe(res => {
+      data.isRead = '1';
+      this.homeStateService.markCardAsSeen(data.RowID.toString());
+    });
+    this.router.navigate(['teenagers/videopage', `teenagers-teen_talk-videos-${id}.mp4`, 'T', data.Title]);
+  }
+
+  onModalClose(event) {
+    this.showModal = false;
   }
  
   searchTeenTalk($event) 

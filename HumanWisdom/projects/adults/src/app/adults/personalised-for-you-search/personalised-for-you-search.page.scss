@@ -470,6 +470,7 @@ nav {
 }
 .toc_adiv_01 a .row {
   padding: 15px;
+  margin-bottom: 20px !important;
 }
 /* Thumbnail size matches previous inline styles; play stays centered on thumb */
 .pathway-intro-media {
@@ -503,34 +504,36 @@ nav {
   pointer-events: none;
 }
 
+/* Hug the 114px thumb so the title sits next to it (including 360px Android) */
+.toc_adiv_01 a .center_flex > [class*="col-md-5"],
+.toc_adiv_01 a .center_flex > [class*="col-sm-5"],
+.toc_adiv_01 a .center_flex > [class*="col-xs-5"] {
+  width: auto;
+  flex: 0 0 auto;
+  max-width: none;
+}
+
+.toc_adiv_01 a .center_flex > [class*="col-md-6"],
+.toc_adiv_01 a .center_flex > [class*="col-sm-6"],
+.toc_adiv_01 a .center_flex > [class*="col-xs-6"] {
+  flex: 1 1 0;
+  width: auto;
+  max-width: none;
+  min-width: 0;
+  padding-left: 12px !important;
+}
+
+.toc_adiv_01 a .center_flex > [class*="col-lg-1"],
+.toc_adiv_01 a .center_flex > [class*="col-md-1"],
+.toc_adiv_01 a .center_flex > [class*="col-sm-1"],
+.toc_adiv_01 a .center_flex > [class*="col-xs-1"] {
+  width: auto;
+  flex: 0 0 auto;
+  max-width: none;
+}
+
 /* Wide screen: shrink image/icon columns so text sits closer */
 @media (min-width: 768px) {
-  .toc_adiv_01 a .center_flex > [class*="col-md-5"],
-  .toc_adiv_01 a .center_flex > [class*="col-sm-5"],
-  .toc_adiv_01 a .center_flex > [class*="col-xs-5"] {
-    width: auto;
-    flex: 0 0 auto;
-    max-width: none;
-  }
-
-  .toc_adiv_01 a .center_flex > [class*="col-md-6"],
-  .toc_adiv_01 a .center_flex > [class*="col-sm-6"],
-  .toc_adiv_01 a .center_flex > [class*="col-xs-6"] {
-    flex: 1 1 0;
-    width: auto;
-    max-width: none;
-    padding-left: 12px !important;
-  }
-
-  .toc_adiv_01 a .center_flex > [class*="col-lg-1"],
-  .toc_adiv_01 a .center_flex > [class*="col-md-1"],
-  .toc_adiv_01 a .center_flex > [class*="col-sm-1"],
-  .toc_adiv_01 a .center_flex > [class*="col-xs-1"] {
-    width: auto;
-    flex: 0 0 auto;
-    max-width: none;
-  }
-
   .box_v3_01 > .col-3 {
     width: auto;
     flex: 0 0 auto;

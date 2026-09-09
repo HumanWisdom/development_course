@@ -614,7 +614,7 @@
                           <div class="mt20px">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <a class="btn btn-link view-more-btn"
-                                style="display: block; text-align: center; width: 100%; text-decoration: none !important; color: rgba(0, 0, 0, 0.75) !important; font-size: 1.5rem !important;">View
+                                style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.75) !important; font-size: 14px !important; font-weight: 500;">View
                                 more <i class="fa fa-angle-down ms-3" aria-hidden="true"></i></a>
                             </div>
                           </div>
@@ -644,7 +644,7 @@
                           <div class="mt20px">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <a class="btn btn-link view-more-btn"
-                                style="display: block; text-align: center; width: 100%; text-decoration: none !important; color: rgba(0, 0, 0, 0.75) !important; font-size: 1.5rem !important;">View
+                                style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.75) !important; font-size: 14px !important; font-weight: 500;">View
                                 less <i class="fa fa-angle-up ms-3" aria-hidden="true"></i></a>
                             </div>
                           </div>
@@ -750,7 +750,7 @@
                           <div class="mt20px">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <a class="btn btn-link view-more-btn"
-                                style="display: block; text-align: center; width: 100%; text-decoration: none !important; color: rgba(0, 0, 0, 0.75) !important; font-size: 1.5rem !important;">View
+                                style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.75) !important; font-size: 14px !important; font-weight: 500;">View
                                 more <i class="fa fa-angle-down ms-3" aria-hidden="true"></i></a>
                             </div>
                           </div>
@@ -780,7 +780,7 @@
                           <div class="mt20px">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <a class="btn btn-link view-more-btn"
-                                style="display: block; text-align: center; width: 100%; text-decoration: none !important; color: rgba(0, 0, 0, 0.75) !important; font-size: 1.5rem !important;">View
+                                style="display: block; text-align: center; width: 100%; text-decoration: underline !important; color: rgba(0, 0, 0, 0.75) !important; font-size: 14px !important; font-weight: 500;">View
                                 less <i class="fa fa-angle-up ms-3" aria-hidden="true"></i></a>
                             </div>
                           </div>
@@ -823,13 +823,13 @@
                           *ngFor="let item of searchData.WisdomStoriesRes">
                           <!-- <a href="https://humanwisdom.me/wisdom-stories/view-stories?sId={{item.ScenarioID}}"> -->
                           <a (click)="viewStory(item)">
-                            <div class="row box_v3_04a">
+                            <div class="box_v3_04a">
                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"
                                 style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
 
                                 <div class="row">
                                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 prelative">
-                                    <img [src]="item.ImgUrl" class="img-responsive">
+                                    <img [src]="item.ImgUrl || item.Img || item.ImageUrl" class="img-responsive">
                                   </div>
                                 </div>
 

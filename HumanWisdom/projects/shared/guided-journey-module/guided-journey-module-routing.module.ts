@@ -22,6 +22,10 @@ const routes: Routes = [
   {
     path: 'end',
     component: GuidedJourneyEndPage
+  },
+  {
+    path: ':journeyId',
+    component: GuidedJourneyDaysPage
   }
 ];
 

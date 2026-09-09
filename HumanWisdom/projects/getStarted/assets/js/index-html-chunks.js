@@ -145,6 +145,10 @@
 
     whenReady(function () {
         initScrollChunks();
+        var firstChunk = document.querySelector('[data-hw-chunk="1"]');
+        if (firstChunk) {
+            loadChunk("1", firstChunk);
+        }
         bindModalPrefetch();
         if ("requestIdleCallback" in window) {
             requestIdleCallback(function () {

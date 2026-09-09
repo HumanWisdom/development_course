@@ -250,8 +250,14 @@ export class CommonService {
       return this.personalisedforyoulist;
     }
 
-  GetWisdomShorts(): Observable<any> {
-    return this.http.get(this.path + '/GetWisdomShortsListing');
+  GetWisdomShorts(progId?: any): Observable<any> {
+    const id = progId || SharedService.ProgramId || 9;
+    return this.http.get(this.path + `/GetVideolibraryLists/${id}`);
+  }
+
+  GetVideolibraryLists(progId?: any): Observable<any> {
+    const id = progId || SharedService.ProgramId || 9;
+    return this.http.get(this.path + `/GetVideolibraryLists/${id}`);
   }
 
   GetGuidedQs_Topics(): Observable<any> {
@@ -802,6 +808,10 @@ export class CommonService {
 
   clickTeenTalk(id: number): Observable<any> {
     return this.http.post(this.path + `/clickteentalk/${id}`, {});
+  }
+
+  clickConversationVideos(id: number): Observable<any> {
+    return this.http.post(this.path + `/clickConversationVideos/${id}`, {});
   }
 
   GetGuidedJourneys(progID: any, userId: any): Observable<any> {

@@ -100,9 +100,19 @@ export class GuidedJourneyEndPage implements OnInit {
           const dayStr = String(item.Days_No || item.DayNo || item.dayNo || item.Day_No || item.day || '');
           return dayStr === '100';
         }).map(item => {
+          const rawTitle = item.Title || item.Section;
+          const { mainTitle, subTitle, sessionLabel, sessionName, extractedTiming } = this.parseTitle(rawTitle);
+          let timing = item.Timing || item.timing || item.Time || item.time || item.duration || item.Duration || '';
+          if ((!timing || timing === '0' || timing === '0:00' || timing === '00:00') && extractedTiming) {
+            timing = extractedTiming;
+          }
           return {
             ...item,
-            Timing: item.Timing || item.timing || item.Time || item.time || item.duration || item.Duration || '',
+            DisplayTitle: mainTitle,
+            DisplaySubtitle: subTitle,
+            sessionLabel: sessionLabel,
+            sessionName: sessionName,
+            Timing: timing,
             imgPath: this.getImgUrl(item.imgPath)
           };
         });
@@ -121,10 +131,93 @@ export class GuidedJourneyEndPage implements OnInit {
     if (s.includes('PODCAST') || s.includes('AUDIO') || s.includes('MEDITATION') || s.includes('BREATHING') || s.includes('SOUNDSCAPE')) {
       return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audio_play.svg';
     }
-    if (s.includes('VIDEO') || s.includes('SHORT') || s.includes('CONVERSATION') || s.includes('TALK')) {
+    if (s.includes('VIDEO') || s.includes('SHORT') || s.includes('CONVERSATION') || s.includes('TALK') || s.includes('EVENT')) {
       return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg';
     }
     return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg';
+  }
+
+  getSectionDisplayName(section: string): string {
+    if (!section) return '';
+    const s = section.trim().toLowerCase();
+    if (s === 'event' || s === 'events' || s.includes('event')) {
+      return 'IN-DEPTH CONVERSATIONS';
+    }
+    return section;
+  }
+
+  parseTitle(title: string) {
+    if (title && title.includes('(') && title.includes(')')) {
+      const parts = title.split('(');
+      const mainTitle = parts[0].trim();
+      let subTitle = parts[1].replace(')', '').trim();
+
+      let sessionLabel = '';
+      let sessionName = '';
+      let extractedTiming = '';
+
+      const timingMatch = subTitle.match(/\b(?:\d{1,2}:)?\d{1,2}:\d{2}\b|\b\d+\s*(?:mins?|minutes?|sec|seconds?)\b/i);
+      if (timingMatch) {
+        extractedTiming = timingMatch[0];
+      }
+
+      let separator = '';
+      if (subTitle.includes(',')) {
+        separator = ',';
+      } else if (subTitle.includes('•')) {
+        separator = '•';
+      } else if (subTitle.includes('-')) {
+        separator = '-';
+      }
+
+      if (separator) {
+        const subParts = subTitle.split(separator);
+        sessionLabel = subParts[0].trim();
+        sessionName = subParts.slice(1).join(separator).trim();
+      } else {
+        sessionLabel = subTitle;
+      }
+
+      if (sessionLabel) {
+        const upper = sessionLabel.toUpperCase();
+        if (upper.startsWith('SESSION#') || upper.startsWith('SESSION #')) {
+          const num = sessionLabel.replace(/SESSION\s*#\s*/i, '').trim();
+          sessionLabel = `Session #${num}`;
+        } else if (upper.startsWith('MEDITATION#') || upper.startsWith('MEDITATION #')) {
+          const num = sessionLabel.replace(/MEDITATION\s*#\s*/i, '').trim();
+          sessionLabel = `Meditation #${num}`;
+        } else if (upper.startsWith('EXERCISE#') || upper.startsWith('EXERCISE #')) {
+          const num = sessionLabel.replace(/EXERCISE\s*#\s*/i, '').trim();
+          sessionLabel = `Exercise #${num}`;
+        } else {
+          sessionLabel = sessionLabel.charAt(0).toUpperCase() + sessionLabel.slice(1).toLowerCase();
+          sessionLabel = sessionLabel.replace(/([a-zA-Z])#/g, '$1 #');
+        }
+      }
+
+      if (sessionName) {
+        sessionName = sessionName.charAt(0).toUpperCase() + sessionName.slice(1).toLowerCase();
+      }
+
+      let displaySub = subTitle;
+      if (displaySub.includes(',')) {
+        displaySub = displaySub.replace(',', ' •');
+      }
+      return { mainTitle, subTitle: displaySub, sessionLabel, sessionName, extractedTiming };
+    }
+    return { mainTitle: title, subTitle: '', sessionLabel: '', sessionName: '', extractedTiming: '' };
+  }
+
+  isSection8(item: any): boolean {
+    if (!item) return false;
+    const secId = item.SectionID || item.SectionId || item.sectionID || item.sectionId;
+    const isSec8 = secId == 8 || secId == '8';
+
+    const sectionStr = (item.Section || '').toUpperCase();
+    const isModuleSession = sectionStr.includes('MODULE') || sectionStr.includes('SESSION') ||
+                            (item.DisplaySubtitle && (item.DisplaySubtitle.toUpperCase().includes('SESSION') || item.DisplaySubtitle.toUpperCase().includes('MODULE')));
+
+    return isSec8 && isModuleSession && !!item.sessionLabel && !!item.sessionName;
   }
 
   onExerciseClick(exercise: any) {
@@ -241,22 +334,15 @@ export class GuidedJourneyEndPage implements OnInit {
 
   goBack() {
     const prefix = SharedService.getprogramName();
-    this.router.navigate([`/${prefix}/guided-journeys/days`], {
-      queryParams: {
-        journeyId: this.journeyId,
-        day: 0,
-        title: this.journeyTitle,
-        subtitle: this.journeySubtitle
-      }
-    });
+    this.router.navigate([`/${prefix}/guided-journeys/${this.journeyId}`]);
   }
 
   navigateToDay(day: number) {
     const prefix = SharedService.getprogramName();
     if (day === 0) {
-      this.router.navigate([`/${prefix}/guided-journeys/intro`], { queryParams: { journeyId: this.journeyId } });
+      this.router.navigate([`/${prefix}/guided-journeys/${this.journeyId}`]);
     } else {
-      this.router.navigate([`/${prefix}/guided-journeys/days`], { queryParams: { journeyId: this.journeyId, day: day } });
+      this.router.navigate([`/${prefix}/guided-journeys/${this.journeyId}`], { queryParams: { day: day } });
     }
   }
 

@@ -216,9 +216,9 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
   goToTour(): void {
     this.closeTourPopup();
     if (this.isAdults) {
-      this.router.navigate(['/adults/intro-happierme']);
+      this.router.navigate(['/adults/videopage', 'introduction_to_happierme-videos-video_tour.mp4', 'T', 'Video tour of the app']);
     } else {
-      this.router.navigate(['/teenagers/intro-happierme']);
+      this.router.navigate(['/teenagers/videopage', 'introduction_to_happierme-videos-video_tour.mp4', 'T', 'Video tour of the app']);
     }
   }
 
@@ -314,7 +314,7 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
             this.selectedExerciseType = 'breathing';
 
             this.activeExerciseLabel = 'BREATHING EXERCISE';
-            this.activeExerciseIcon = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/pay_daily1.svg';
+            this.activeExerciseIcon = 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/pay_daily1.svg';
             this.activeExerciseTitle = this.dailybreathTitle;
             this.activeExerciseTime = this.breatheTime;
             this.activeExerciseImg = breathingItem.imgPath || 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/resume/29.png';
@@ -325,7 +325,7 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
             this.selectedExerciseType = 'meditation';
 
             this.activeExerciseLabel = 'DAILY MEDITATION';
-            this.activeExerciseIcon = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/audii_daily1.svg';
+            this.activeExerciseIcon = 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audii_daily1.svg';
             this.activeExerciseTitle = this.audioTitle;
             this.activeExerciseTime = this.audioTime;
             this.activeExerciseImg = meditationItem.imgPath || 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/51.webp';
@@ -352,7 +352,7 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
             this.selectedExerciseType = 'breathing';
 
             this.activeExerciseLabel = 'BREATHING EXERCISE';
-            this.activeExerciseIcon = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/pay_daily1.svg';
+            this.activeExerciseIcon = 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/pay_daily1.svg';
             this.activeExerciseTitle = this.dailybreathTitle;
             this.activeExerciseTime = this.breatheTime;
             this.activeExerciseImg = breathingItem.imgPath || 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/resume/29.png';
@@ -363,7 +363,7 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
             this.selectedExerciseType = 'meditation';
 
             this.activeExerciseLabel = 'AUDIO MEDITATION';
-            this.activeExerciseIcon = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/audii_daily1.svg';
+            this.activeExerciseIcon = 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audii_daily1.svg';
             this.activeExerciseTitle = this.audioTitle;
             this.activeExerciseTime = this.audioTime;
             this.activeExerciseImg = meditationItem.imgPath || 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/51.webp';
@@ -535,15 +535,15 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
     } else if (type === 'audio meditation') {
       return 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/51.webp';
     } else if (type === 'short video') {
-      return 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/daily_inspiration/portrait_new/default.webp';
+      return 'https://d1tenzemoxuh75.cloudfront.net/daily_inspiration/portrait_new/default.webp';
     } else if (type === 'podcast') {
       return 'https://d1tenzemoxuh75.cloudfront.net/assets/webp/podcast/01.webp';
     } else if (type === 'teentalk') {
-      return 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/mdp_vp.svg';
+      return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/mdp_vp.svg';
     } else if (type === 'micro-learning' || type === 'microlearning') {
       return 'https://d1tenzemoxuh75.cloudfront.net/assets/images/background/toc/77.webp';
     }
-    return 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/daily_inspiration/portrait_new/default.webp';
+    return 'https://d1tenzemoxuh75.cloudfront.net/daily_inspiration/portrait_new/default.webp';
   }
 
   routePracticeItem(item: any): void {

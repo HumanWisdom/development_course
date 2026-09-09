@@ -182,7 +182,7 @@ export class SearchPopularItemsPage implements OnInit, OnDestroy {
       case "self awareness":
       case "self-awareness":
         {
-        url = `/${SharedService.getprogramName()}/home`
+        url = `/${SharedService.getprogramName()}/explore`
         fragment = "self-awareness"
         break;
       }
@@ -634,10 +634,22 @@ export class SearchPopularItemsPage implements OnInit, OnDestroy {
       next: () => {},
       error: () => {}
     });
+    const itemTypeLower = (item['Type'] || item['type'] || item['Category'] || item['category'] || '').toString().toLowerCase();
+    let headerTitle = 'In-depth conversation';
+    if (itemTypeLower.includes('in-depth') || itemTypeLower.includes('indepth') || itemTypeLower.includes('event')) {
+      headerTitle = 'In-depth conversation';
+    } else if (itemTypeLower.includes('expert') || itemTypeLower.includes('voice')) {
+      headerTitle = 'Expert tips';
+    } else if (itemTypeLower.includes('real') || itemTypeLower.includes('teentalk') || itemTypeLower.includes('conversation')) {
+      headerTitle = 'Real stories';
+    } else if (itemTypeLower.includes('short')) {
+      headerTitle = 'Short videos';
+    }
+    localStorage.setItem('youtubelinkHeaderTitle', headerTitle);
     if (item?.RowID <= 2) {
-      this.router.navigate([SharedService.getprogramName() + '/curated/youtubelink', (item?.YoutubeLink || '') + '=rdtfghjhfdg']);
+      this.router.navigate([SharedService.getprogramName() + '/curated/youtubelink', (item?.YoutubeLink || '') + '=rdtfghjhfdg'], { state: { headerTitle } });
     } else {
-      this.router.navigate([SharedService.getprogramName() + '/curated/youtubelink', (item?.YoutubeLink || '') + '=vncbxdfchgvxd']);
+      this.router.navigate([SharedService.getprogramName() + '/curated/youtubelink', (item?.YoutubeLink || '') + '=vncbxdfchgvxd'], { state: { headerTitle } });
     }
   }
 
@@ -663,9 +675,16 @@ export class SearchPopularItemsPage implements OnInit, OnDestroy {
       return;
     }
     const idPart = (video || '').split('/')[3] || '';
-    const id = Number(idPart.split('.')[1]);
-    if (!isNaN(id)) {
-      this.commonService.clickShorts(id).subscribe({ next: () => {}, error: () => {} });
+    const id = val['RowID'] || (!isNaN(Number(idPart.split('.')[1])) ? Number(idPart.split('.')[1]) : null);
+    if (id !== null && id !== undefined && !isNaN(id)) {
+      const itemType = (val['Type'] || val['type'] || val['Category'] || val['category'] || '').toString().toLowerCase();
+      if (itemType === 'real-life stories' || itemType === 'real_life' || itemType === 'conversations' || itemType === 'conversation' || itemType === 'teentalks' || itemType === 'teentalk' || itemType === 'realstories') {
+        this.commonService.clickConversationVideos(id).subscribe({ next: () => {}, error: () => {} });
+      } else if (itemType === 'in-depth' || itemType === 'events' || itemType === 'event' || itemType === 'hwpallevents') {
+        this.commonService.clickEvents(id).subscribe({ next: () => {}, error: () => {} });
+      } else {
+        this.commonService.clickShorts(id).subscribe({ next: () => {}, error: () => {} });
+      }
     }
     if (val['IsVoices'] === '1') {
       this.router.navigate([video.replace('adults', SharedService.getprogramName()), 'T', title], { queryParams: { pref: 'voices' } });

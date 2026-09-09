@@ -45,9 +45,11 @@ describe('WisdomShortsIndexPage', () => {
 
     mockLocation = jasmine.createSpyObj('Location', ['back']);
 
-    mockCommonService = jasmine.createSpyObj('CommonService', ['GetWisdomShorts', 'clickShorts', 'CheckShortsIsFree']);
+    mockCommonService = jasmine.createSpyObj('CommonService', ['GetWisdomShorts', 'clickShorts', 'clickEvents', 'clickConversationVideos', 'CheckShortsIsFree']);
     mockCommonService.GetWisdomShorts.and.returnValue(of([]));
     mockCommonService.clickShorts.and.returnValue(of({}));
+    mockCommonService.clickEvents.and.returnValue(of({}));
+    mockCommonService.clickConversationVideos.and.returnValue(of({}));
     mockCommonService.CheckShortsIsFree.and.returnValue(of(true));
 
     mockMeta = jasmine.createSpyObj('Meta', ['updateTag']);
@@ -285,18 +287,31 @@ describe('WisdomShortsIndexPage', () => {
       expect(component.showModal).toBe(true);
     }));
 
-    it('should call clickShorts when id is extracted', fakeAsync(() => {
+    it('should call clickShorts when id is extracted for short video', fakeAsync(() => {
       localStorage.setItem('isloggedin', 'T');
       localStorage.setItem('Subscriber', '1');
       const video = '/adults/wisdom-shorts/video.123.mp4';
       const title = 'Test Title';
-      const val = { IsVoices: '0' };
+      const val = { IsVoices: '0', Type: 'Short videos' };
       mockCommonService.CheckShortsIsFree.and.returnValue(of(true));
 
       component.wisdoshortsevent(val, video, title);
       tick();
 
       expect(mockCommonService.clickShorts).toHaveBeenCalledWith(123);
+    }));
+
+    it('should call clickConversationVideos when Real stories item is clicked', fakeAsync(() => {
+      localStorage.setItem('isloggedin', 'T');
+      localStorage.setItem('Subscriber', '1');
+      const video = 'https://www.youtube.com/watch?v=abc12345';
+      const title = 'Real Story Title';
+      const val = { RowID: 15, Type: 'Real stories' };
+
+      component.wisdoshortsevent(val, video, title);
+      tick();
+
+      expect(mockCommonService.clickConversationVideos).toHaveBeenCalledWith(15);
     }));
 
     it('should pass queryParams pref voices when IsVoices is 1', fakeAsync(() => {
@@ -400,6 +415,27 @@ describe('WisdomShortsIndexPage', () => {
       component.getUserPref('1');
       expect(component.wisdomshorts.length).toBe(1);
       expect(component.wisdomshorts[0].PreferenceIDs).toContain('1');
+    });
+
+    it('should not match single-digit ID 1 against searchtags containing 10 or 15', () => {
+      component.allwisdomshorts = [
+        { Title: 'Work Short', PreferenceIDs: '1', searchtags: 'work, leadership' },
+        { Title: 'Mental Health Short', PreferenceIDs: '10', searchtags: 'kindness, 10, mental health' },
+        { Title: 'Habits Short', PreferenceIDs: '15', searchtags: '15, habits' }
+      ] as any;
+      component.getUserPref('1');
+      expect(component.wisdomshorts.length).toBe(1);
+      expect(component.wisdomshorts[0].Title).toBe('Work Short');
+    });
+
+    it('should match equivalent Teen ID 17 when Adult ID 1 is selected', () => {
+      component.allwisdomshorts = [
+        { Title: 'Teen Success Short', PreferenceIDs: '17', searchtags: 'success' },
+        { Title: 'Unrelated Short', PreferenceIDs: '5', searchtags: 'habits' }
+      ] as any;
+      component.getUserPref('1');
+      expect(component.wisdomshorts.length).toBe(1);
+      expect(component.wisdomshorts[0].Title).toBe('Teen Success Short');
     });
 
     it('should filter items without PreferenceIDs when type is 0', () => {

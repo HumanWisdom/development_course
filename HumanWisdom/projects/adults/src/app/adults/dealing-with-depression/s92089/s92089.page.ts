@@ -77,7 +77,7 @@ export class S92089Page implements OnInit, OnDestroy {
   {
     this.endTime = Date.now();
     this.totalTime = this.endTime - this.startTime;
-    this.router.navigate(['adults/dealing-with-depression/s92090'])
+    this.router.navigate(['adults/dealing-with-depression/s92089p1'])
     this.service.submitProgressText({
       "ScrNumber": this.screenNumber,
       "UserId": this.userId,

@@ -48,7 +48,7 @@
 
             <div class="row mt20px rmb80px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/83.webp" class="img-responsive" alt="Preventing suicide before the fire starts" >
+                <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/82.webp" class="img-responsive" alt="Preventing suicide before the fire starts" >
               </div>
             </div>
 
@@ -80,9 +80,9 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                    <span class="blog_highlight_black">
+                   
                         About 16% of people in the UK report poor mental health. A third of people know someone who has self-harmed. 42% of people have suicidal thoughts, and 18% planned a suicide attempt.
-                    </span>
+                   
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -98,7 +98,11 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                    These figures should make us ask an important question:                     <span class="blog_highlight_black">
+                    These figures should make us ask an important question: 
+</h4>
+                                    <h4 class="mtb0px blog_desc">
+                   
+                     <span class="blog_highlight_black">
 alongside helping people when they reach crisis, are we doing enough to prevent them reaching that point in the first place?</span>
                 </h4>
 
@@ -116,7 +120,9 @@ alongside helping people when they reach crisis, are we doing enough to prevent 
 
                 <h4 class="mtb0px blog_desc">
                     But we also need to ask a different question: 
-                                            <span class="blog_highlight_black">
+                    </h4>
+                      <h4 class="mtb0px blog_desc">                        
+                    <span class="blog_highlight_black">
 
                         what was happening in someone's life and mind in the months or years before they reached that point of crisis, and could we have helped earlier?</span>
                 </h4>
@@ -134,7 +140,12 @@ alongside helping people when they reach crisis, are we doing enough to prevent 
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                    We cannot prevent all of these things from happening. But we                     <span class="blog_highlight_black">
+                    We cannot prevent all of these things from happening. 
+                    </h4>
+
+                                    <h4 class="mtb0px blog_desc">
+
+                    But we                     <span class="blog_highlight_black">
 can help people develop the emotional skills to meet life's challenges differently, and not go under.
                     </span> </h4>
 
@@ -143,7 +154,11 @@ can help people develop the emotional skills to meet life's challenges different
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                    It left me with a question that has stayed with me ever since:                     <span class="blog_highlight_black">
+                    It left me with a question that has stayed with me ever since:   
+                    </h4>
+                    <h4 class="mtb0px blog_desc">
+                 
+                     <span class="blog_highlight_black">
 why do we spend so many years educating people for life, yet teach them so little about how to understand and manage their own mind?
                     </span> </h4>
 
@@ -180,7 +195,11 @@ why do we spend so many years educating people for life, yet teach them so littl
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                    This is not something we should wait to teach people until they are unwell. It is something all of us can learn while we are well — when the sun is shining — not in the middle of a storm.
+                    This is not something we should wait to teach people until they are unwell. 
+                                                           <span class="blog_highlight_black">
+
+                    It is something all of us can learn while we are well — when the sun is shining — not in the middle of a storm.
+                    </span>
                 </h4>
 
                 <h4 class="mtb0px blog_sub_title">
@@ -190,9 +209,9 @@ why do we spend so many years educating people for life, yet teach them so littl
                 <h4 class="mtb0px blog_desc">
                     At
                     <a class="blog_highlight_peach td_underline" href="https://happierme.app">
-                        HappierMe
-                    </a>
-                    , we think about mental health in both ways.
+                        HappierMe</a>,
+                    
+                     we think about mental health in both ways.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -212,7 +231,12 @@ why do we spend so many years educating people for life, yet teach them so littl
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                    The aim is not simply to put today's fire out. It is to reduce the chances of the same fire starting again tomorrow.
+                    The aim is not simply to put today's fire out. </h4>
+                                    <h4 class="mtb0px blog_desc">
+
+                                         <span class="blog_highlight_black">
+
+                    It is to reduce the chances of the same fire starting again tomorrow.
                 </h4>
 
                 <h4 class="mtb0px blog_sub_title">
@@ -269,9 +293,7 @@ why do we spend so many years educating people for life, yet teach them so littl
 
                 <h4 class="mtb0px blog_desc">
                     <a class="blog_highlight_peach td_underline" href="https://linkedin.com/in/humanwisdom">
-                        Dr Manoj Krishna
-                    </a>
-                    is a former spine surgeon, the author of Understanding Me Understanding You and Stress Free, and the founder of HappierMe — a prevention focused wellbeing and life-skills app.
+                        Dr Manoj Krishna</a>is a former spine surgeon, the author of Understanding Me Understanding You and Stress Free, and the founder of HappierMe — a prevention focused wellbeing and life-skills app.
                 </h4>
 
                 <h4 class="mtb0px blog_sub_title">

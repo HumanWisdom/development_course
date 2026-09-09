@@ -7,7 +7,7 @@ import { SharedService } from '../../services/shared.service';
 import { CommonService } from '../../services/common.service';
 import { ProgramType } from '../../models/program-model';
 import { Constant } from '../../services/constant';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-testimonials',
@@ -16,16 +16,16 @@ import { Constant } from '../../services/constant';
 export class TestimonialsPage implements OnInit,OnDestroy {
   isAdults = false;
   divId :any;
-  constructor(private readonly  location :Location,
+  constructor(private readonly  location :Location,public router: Router,
     private readonly  meta: Meta, public logeventservice: LogEventService, 
     private readonly title: Title) 
   { 
    this.divId = SharedService.getDataFromLocalStorage(Constant.TestimonialId);
    this.isAdults = SharedService.isAdultProgram();
-   if(this.divId && this.divId !=null && this.divId!='' && this.divId!='null' ){
-    this.scroll_to_Testimonial();
+  //  if(this.divId && this.divId !=null && this.divId!='' && this.divId!='null' ){
+  //   this.scroll_to_Testimonial();
   
-   }
+  //  }
   }
 
   ngOnInit() {
@@ -53,6 +53,12 @@ export class TestimonialsPage implements OnInit,OnDestroy {
     }, 700);
   }
 
+  routeVideoaudio(url) {
+        
+                    this.router.navigate(['/' + SharedService.getprogramName() + url])
+
+    
+ }
  
   ngOnDestroy(): void {
     SharedService.setDataInLocalStorage(Constant.TestimonialId,Constant.EmptyString);

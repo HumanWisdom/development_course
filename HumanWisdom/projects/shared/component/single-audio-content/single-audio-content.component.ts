@@ -281,6 +281,15 @@ export class SingleAudioContentComponent implements OnInit {
           inList = true;
         }
         result += '<li style="margin-bottom: 5px;">' + trimmed.substring(2) + '</li>';
+      } else if (trimmed.startsWith('### ')) {
+        if (inList) { result += '</ul>'; inList = false; }
+        result += '<h3>' + trimmed.substring(4) + '</h3>';
+      } else if (trimmed.startsWith('## ')) {
+        if (inList) { result += '</ul>'; inList = false; }
+        result += '<h2>' + trimmed.substring(3) + '</h2>';
+      } else if (trimmed.startsWith('# ')) {
+        if (inList) { result += '</ul>'; inList = false; }
+        result += '<h2>' + trimmed.substring(2) + '</h2>';
       } else {
         if (inList) {
           result += '</ul>';
@@ -307,12 +316,12 @@ export class SingleAudioContentComponent implements OnInit {
       '$1<a href="$2" target="_blank" rel="noopener noreferrer" class="transcript-link">$2</a>'
     );
 
-    // Autolink bare domains (e.g. happierme.app) used in podcast transcripts
+    // Autolink bare domains (e.g. happierme.app) — only in text nodes, not inside existing <a> tags
     result = result.replace(
-      /(^|[^"'>\/=])((?:[a-zA-Z0-9-]+\.)+(?:app|com|org|net|io|co|me|uk)(?:\/[^\s<]*)?)/g,
-      (match, prefix, domain) => {
-        if (prefix.endsWith('://') || prefix === '@') return match;
-        return `${prefix}<a href="https://${domain}" target="_blank" rel="noopener noreferrer" class="transcript-link">${domain}</a>`;
+      /(<a\b[^>]*>[\s\S]*?<\/a>)|(\b(?:[a-zA-Z0-9-]+\.)+(?:app|com|org|net|io|co|me|uk)(?:\/[^\s<]*)?)/g,
+      (match, alreadyLinked, domain) => {
+        if (alreadyLinked) return alreadyLinked; // leave existing <a> tags untouched
+        return `<a href="https://${domain}" target="_blank" rel="noopener noreferrer" class="transcript-link">${domain}</a>`;
       }
     );
 

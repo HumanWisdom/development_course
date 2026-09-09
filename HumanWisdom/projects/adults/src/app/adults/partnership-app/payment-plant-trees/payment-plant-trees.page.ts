@@ -43,6 +43,6 @@ export class PaymentPlantTreesPage implements OnInit {
     this.router.navigate(['adults/partnership-report/tree-plantation-report']);
   }
   routeToDashboard(){
-    this.router.navigate(['/adults/adult-dashboard'])
+    this.router.navigate(['/adults/today'])
   }
 }

@@ -24323,15 +24323,23 @@ a {
   font-weight: 600;
   font-style: normal;
   line-height: 160%;
-  color: #A54265 !important;
+  color: #EE9596;
   text-decoration: underline;
 }
+.read-text-label {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  color: #ee9596 !important;
+  text-decoration: underline !important;
+  pointer-events: auto;
+}
 
-
-/* .blog_highlight_peach:hover{
-  color: #EE9596 !important;
+ .blog_highlight_peach:hover{
+  color: #f17071 !important;
+  
    text-decoration: underline; 
-} */
+} 
 .yt-embed {
   width: 100%;
   padding: 20px 0px;
@@ -25515,10 +25523,8 @@ a {
 }
 
 .ellipsis {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
+  overflow: visible;
+  display: block;
   word-break: break-word;
 }
 
@@ -31384,10 +31390,8 @@ input[type="search"].hide_search::-webkit-search-cancel-button {
 }
 
 .ellipsis_01 {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
+  overflow: visible;
+  display: block;
   word-break: break-word;
 }
 
@@ -32040,12 +32044,11 @@ input[type="search"].hide_search::-webkit-search-cancel-button {
 }
 
 .box_blog h4 {
-  overflow: hidden;
-  text-overflow: ellipsis;
+  overflow: visible;
+  text-overflow: unset;
   max-width: 75ch;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
+  display: block;
+  white-space: normal;
 }
 
 .br_10px {
@@ -32061,12 +32064,11 @@ input[type="search"].hide_search::-webkit-search-cancel-button {
 }
 
 .box_ws h4 {
-  overflow: hidden;
-  text-overflow: ellipsis;
+  overflow: visible;
+  text-overflow: unset;
   max-width: 75ch;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
+  display: block;
+  white-space: normal;
 }
 
 .btn_select {
@@ -32244,7 +32246,8 @@ label.select_label:after {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 350px;
+  border-radius: 10px;
 }
 
 .popup_02 {
@@ -32974,6 +32977,34 @@ body * {
   padding-left: 5px;
 }
 
+/*
+ * iPhone 17 / 17 Pro: 402×874
+ * iPhone 17 Air: 420×912
+ * iPhone 17 Pro Max: 440×956
+ * Pathway tiles wrap to one column at these widths; keep 2-col grid like other iPhones.
+ */
+@media only screen and (min-width: 401px) and (max-width: 403px),
+       only screen and (min-width: 418px) and (max-width: 422px),
+       only screen and (min-width: 438px) and (max-width: 442px) {
+  .msrow {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    text-align: left !important;
+  }
+
+  .msrow > [class*="col-"],
+  .msrow > .col-6 {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+    width: 50% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    float: none !important;
+  }
+}
+
 .box_v3_04bevent img {
   width: 100%;
   height: 100px;
@@ -33214,6 +33245,17 @@ body * {
   padding-left: 20px !important;
 }
 
+
+.session_img_playtest {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  width: auto;
+  height: 30px;
+}
 .session_img {
   width: 100%;
   border-radius: 10px;
@@ -34493,6 +34535,25 @@ background: linear-gradient(180deg, #F17071 0%, #DE6768 100%);
   opacity: 1;
 }
 
+/* Start your free trial — hover only over icon + text changes both together */
+.sft-hover-group {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.sft-hover-group:hover .image-box .img1 {
+  opacity: 0;
+}
+
+.sft-hover-group:hover .image-box .img2 {
+  opacity: 1;
+}
+
+.sft-hover-group:hover .login1 {
+  color: #cc6070 !important;
+}
+
 .fc_img {
   position: absolute;
   right: 20px;
@@ -35365,6 +35426,17 @@ background: linear-gradient(180deg, #F17071 0%, #DE6768 100%);
   width: 100px;
 }
 
+
+.img_testimonial_usernew {
+  /* border: 5px solid #FFF7E6;
+  border-radius: 50%; */
+  width: 100%;
+  height:210px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+
 .testimonials_main {
   margin-bottom: 15px;
 }
@@ -35847,7 +35919,7 @@ h3_blogs p a font,
 
 .toc_adiv_02 a>.row {
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  /* border: 1px solid rgba(255, 255, 255, 0.25); */
   background: #0C2B5F;
   min-height: 88px;
   margin-bottom: 10px;
@@ -37823,3 +37895,74 @@ div.contentdiv p {
   display: block !important;
   object-fit: cover !important;
 }
+
+
+/* ===== Video Library Search Bar (wisdom-shorts-index) ===== */
+.vl-search-row {
+  display: block !important;
+  visibility: visible !important;
+  margin-top: 15px;
+  margin-bottom: 0;
+  position: relative;
+}
+
+.vl-search-row .form-group,
+.vl-search-row .form-group.has-feedback {
+  display: block !important;
+  visibility: visible !important;
+  position: relative;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.vl-search-row input.pfy_search,
+.vl-search-row .form-control.pfy_search {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  width: 100% !important;
+  height: 44px !important;
+  background: #1C2A48 !important;
+  border: 1px solid #4267A5 !important;
+  border-radius: 24px !important;
+  padding-left: 42px !important;
+  padding-right: 36px !important;
+  font-size: 14px !important;
+  color: #FFFFFF !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.vl-search-row input.pfy_search::placeholder,
+.vl-search-row .form-control.pfy_search::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-size: 14px !important;
+  opacity: 1 !important;
+}
+
+.vl-search-row .pfy_search_icon {
+  position: absolute !important;
+  top: 50% !important;
+  left: 14px !important;
+  transform: translateY(-50%) !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+  font-size: 14px !important;
+  pointer-events: none !important;
+  z-index: 2 !important;
+  margin-top: 0 !important;
+  line-height: 1 !important;
+}
+
+.vl-search-row .ad_sclose_icon {
+  position: absolute !important;
+  top: 50% !important;
+  right: 14px !important;
+  transform: translateY(-50%) !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+  font-size: 14px !important;
+  cursor: pointer !important;
+  z-index: 2 !important;
+  margin-top: 0 !important;
+  line-height: 1 !important;
+}
+/* ===== /Video Library Search Bar ===== */
