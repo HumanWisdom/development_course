@@ -34535,16 +34535,22 @@ background: linear-gradient(180deg, #F17071 0%, #DE6768 100%);
   opacity: 1;
 }
 
-/* Start your free trial — hover the whole row to change icon + text together */
-#liSubscribe:hover .image-box .img1 {
+/* Start your free trial — hover only over icon + text changes both together */
+.sft-hover-group {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.sft-hover-group:hover .image-box .img1 {
   opacity: 0;
 }
 
-#liSubscribe:hover .image-box .img2 {
+.sft-hover-group:hover .image-box .img2 {
   opacity: 1;
 }
 
-#liSubscribe:hover .login1 {
+.sft-hover-group:hover .login1 {
   color: #cc6070 !important;
 }
 
