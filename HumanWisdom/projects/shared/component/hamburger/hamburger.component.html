@@ -91,6 +91,7 @@
               <a id="liSubscribe" (click)="Logevent('/subscription/try-free-and-subscribe', '', !isAdults ? 'teenager_click_startyourfreetrial' : 'click_Subscribe')" class="p0 b0px">
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0 flex_ai">
+                    <div class="sft-hover-group">
                     <div class="col-md-1 col-sm-1 col-xs-1 p0  image-box">
                       <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/hb_stp.svg"
                          class="img1" *ngIf="!isAdults">
@@ -106,6 +107,7 @@
                       <div class="login1" style="font-size:15px;"
                         [ngClass]="isAdults ? 'fc_D7586B' : 'fc_EE9596'">
                         Start your free trial
+                    </div>
                     </div>
                     </div>
                    
