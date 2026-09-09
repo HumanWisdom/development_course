@@ -1059,7 +1059,7 @@ body.page-education .owl_testimonials + .owl-theme {
   display: none !important;
 }
 
-/* Desktop wide: 3 full cards in the 1340 row — no clipped peeks */
+/* Desktop wide: 3 full cards in the 1340 row — first 3 cards, no clipped peeks */
 @media (min-width: 1400px) {
   body.page-education .edu-testimonials-wrap {
     max-width: 1340px !important;
@@ -1081,9 +1081,22 @@ body.page-education .owl_testimonials + .owl-theme {
     overflow: hidden !important;
   }
 
-  body.page-education .owl_testimonials > .owl-carousel > .owl-stage-outer {
+  body.page-education .owl_testimonials > .owl-carousel > .owl-stage-outer,
+  body.page-education .owl_testimonials .owl-carousel .owl-stage-outer {
+    width: 100% !important;
     max-width: 1340px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
     overflow: hidden !important;
+    display: block !important;
+    justify-content: flex-start !important;
+  }
+
+  body.page-education .owl_testimonials .owl-carousel .owl-stage {
+    left: 0 !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 
   body.page-education .owl_testimonials .div_testimonials.edu-testimonial-card {
@@ -1096,10 +1109,18 @@ body.page-education .owl_testimonials + .owl-theme {
 }
 
 @media (min-width: 2080px) {
-  body.page-education .owl_testimonials > .owl-carousel > .owl-stage-outer {
+  body.page-education .owl_testimonials > .owl-carousel > .owl-stage-outer,
+  body.page-education .owl_testimonials .owl-carousel .owl-stage-outer {
     margin-left: 0 !important;
     margin-right: 0 !important;
     overflow: hidden !important;
+    display: block !important;
+    justify-content: flex-start !important;
+  }
+
+  body.page-education .owl_testimonials .owl-carousel .owl-stage {
+    left: 0 !important;
+    margin-left: 0 !important;
   }
 }
 
@@ -1447,7 +1468,15 @@ body.page-healthcare .owl_testimonials .owl-carousel .owl-item {
 }
 
 body.page-healthcare .owl_testimonials .work-testimonials-footer {
-  display: none !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-top: 20px;
+  min-height: 40px;
+  padding-bottom: 0;
+  overflow: visible;
+  width: 100%;
 }
 
 body.page-healthcare .owl_testimonials .work-testimonials-footer .sap.work-testimonials-more {
@@ -1457,12 +1486,42 @@ body.page-healthcare .owl_testimonials .work-testimonials-footer .sap.work-testi
   display: inline-flex !important;
   align-items: center !important;
   gap: 6px;
+  text-decoration: none !important;
+}
+
+body.page-healthcare .owl_testimonials .work-testimonials-footer .sap.work-testimonials-more h4 {
+  color: rgba(215, 88, 107, 1) !important;
+  text-decoration: underline;
+  margin: 0 !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 18px !important;
+  font-weight: 500 !important;
+  line-height: 1 !important;
+  display: inline !important;
+  width: auto !important;
 }
 
 body.page-healthcare .owl_testimonials .work-testimonials-more h4,
 body.page-healthcare .owl_testimonials .work-testimonials-more .chevron-pink,
 body.page-healthcare .owl_testimonials .work-testimonials-more .chevron-pink .bi {
-  color: #d7586b !important;
+  color: rgba(215, 88, 107, 1) !important;
+}
+
+body.page-healthcare .owl_testimonials .work-testimonials-footer .work-testimonials-more .chevron-pink {
+  display: inline !important;
+  align-items: unset !important;
+  padding: 3px 0 0 0 !important;
+  margin: 0 !important;
+  line-height: 1 !important;
+  font-size: 12px !important;
+  transform: none !important;
+  text-decoration: none !important;
+}
+
+body.page-healthcare .owl_testimonials .work-testimonials-footer .work-testimonials-more .chevron-pink .bi {
+  display: inline !important;
+  line-height: 1 !important;
+  font-size: 12px !important;
 }
 
 body.page-healthcare .owl_testimonials .work-testimonials-more:hover h4,
@@ -1478,10 +1537,69 @@ body.page-healthcare .owl_testimonials .owl-controls {
 }
 
 @media (min-width: 1400px) {
-  body.page-healthcare .work-testimonials-wrap,
-  body.page-healthcare .owl_testimonials,
+  body.page-healthcare .work-testimonials-wrap {
+    max-width: 1340px !important;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+    box-sizing: border-box;
+    overflow: hidden !important;
+  }
+
+  body.page-healthcare .owl_testimonials {
+    --hc-testimonial-row-width: 1340px;
+    --hc-testimonial-gap: 30px;
+    --hc-testimonial-card-width: calc((var(--hc-testimonial-row-width) - 2 * var(--hc-testimonial-gap)) / 3);
+    max-width: 1340px !important;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden !important;
+  }
+
   body.page-healthcare .owl_testimonials > .owl-carousel {
     max-width: 1340px !important;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden !important;
+  }
+
+  body.page-healthcare .owl_testimonials > .owl-carousel > .owl-stage-outer,
+  body.page-healthcare .owl_testimonials .owl-carousel .owl-stage-outer {
+    width: 100% !important;
+    max-width: 1340px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    overflow: hidden !important;
+    display: block !important;
+    justify-content: flex-start !important;
+  }
+
+  body.page-healthcare .owl_testimonials .owl-carousel .owl-stage {
+    left: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  body.page-healthcare .owl_testimonials .div_testimonials.work-testimonial-card {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+@media (min-width: 2080px) {
+  body.page-healthcare .owl_testimonials > .owl-carousel > .owl-stage-outer,
+  body.page-healthcare .owl_testimonials .owl-carousel .owl-stage-outer {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    overflow: hidden !important;
+    display: block !important;
+    justify-content: flex-start !important;
   }
 }
 
@@ -1535,18 +1653,34 @@ body.page-healthcare .owl_testimonials .owl-controls {
   body.page-healthcare .owl_testimonials .owl-carousel.work-testimonials-native .owl-item {
     flex: 0 0 315px !important;
     width: 315px !important;
+    min-width: 315px !important;
+    max-width: 315px !important;
     margin: 0 !important;
-    height: auto !important;
+    height: 249px !important;
   }
 
+  body.page-healthcare .owl_testimonials .owl-carousel.work-testimonials-native .work-testimonial-card,
   body.page-healthcare .owl_testimonials .div_testimonials.work-testimonial-card {
     width: 315px !important;
-    height: auto !important;
-    min-height: 0 !important;
-    max-height: none !important;
+    min-width: 315px !important;
+    max-width: 315px !important;
+    height: 249px !important;
+    min-height: 249px !important;
+    max-height: 249px !important;
     padding: 24px !important;
     gap: 15px !important;
     border-radius: 20px !important;
+    background: rgba(255, 247, 230, 1) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  body.page-healthcare .owl_testimonials .work-testimonial-header {
+    gap: 15px !important;
+    min-height: 0 !important;
+    flex-shrink: 0 !important;
   }
 
   body.page-healthcare .owl_testimonials .work-testimonial-avatar {
@@ -1561,14 +1695,35 @@ body.page-healthcare .owl_testimonials .owl-controls {
     line-height: 130% !important;
   }
 
-  body.page-healthcare .owl_testimonials .work-testimonial-role,
-  body.page-healthcare .owl_testimonials .work-testimonial-quote {
+  body.page-healthcare .owl_testimonials .work-testimonial-role {
     font-size: 12px !important;
+    font-weight: 400 !important;
     line-height: 150% !important;
   }
 
+  body.page-healthcare .owl_testimonials .work-testimonial-quote {
+    font-size: 12px !important;
+    line-height: 150% !important;
+    overflow: hidden !important;
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+  }
+
   body.page-healthcare .owl_testimonials .work-testimonials-footer {
-    display: none !important;
+    display: flex !important;
+    justify-content: center !important;
+    margin-top: 20px !important;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: auto;
+  }
+
+  body.page-healthcare .owl_testimonials .work-testimonials-footer .sap.work-testimonials-more h4,
+  body.page-healthcare .owl_testimonials .work-testimonials-more h4,
+  body.page-healthcare .owl_testimonials .work-testimonials-more h4.fs_18px {
+    font-size: 15px !important;
+    line-height: 150% !important;
   }
 }
 
@@ -1825,6 +1980,8 @@ body.page-healthcare .work-blog-footer .sap.work-blog-more {
   width: auto !important;
   display: inline-flex !important;
   align-items: center !important;
+  gap: 6px;
+  text-decoration: none !important;
 }
 
 body.page-healthcare .work-blog-more h4 {
@@ -1834,9 +1991,26 @@ body.page-healthcare .work-blog-more h4 {
   font-weight: 500 !important;
   line-height: 150% !important;
   text-decoration: underline !important;
+  margin: 0 !important;
 }
 
-body.page-healthcare .work-blog-more:hover h4 {
+body.page-healthcare .work-blog-more .chevron-pink,
+body.page-healthcare .work-blog-more .chevron-pink .bi {
+  color: #d7586b !important;
+  text-decoration: none !important;
+}
+
+body.page-healthcare .work-blog-more .chevron-pink {
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+  transform: translateY(1.5px);
+}
+
+body.page-healthcare .work-blog-more:hover h4,
+body.page-healthcare .work-blog-more:hover .chevron-pink,
+body.page-healthcare .work-blog-more:hover .chevron-pink .bi {
   color: #803358 !important;
 }
 
@@ -1891,23 +2065,61 @@ body.page-healthcare .owl_blog .work-blog-footer .owl-nav .owl-next.disabled {
 }
 
 @media (min-width: 1400px) {
+  body.page-healthcare .work-blog-section {
+    overflow-x: hidden;
+  }
+
   body.page-healthcare .work-blog-footer .work-blog-nav,
   body.page-healthcare .work-blog-footer .owl-controls,
   body.page-healthcare .work-blog-footer .owl-nav,
   body.page-healthcare .owl_blog .work-blog-footer .owl-controls,
   body.page-healthcare .owl_blog .work-blog-footer .owl-nav {
-    display: flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    pointer-events: auto !important;
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
   }
-}
 
-@media (min-width: 1600px) {
-  body.page-healthcare .work-blog-footer .owl-controls,
-  body.page-healthcare .work-blog-footer .owl-nav {
-    visibility: visible !important;
+  body.page-healthcare .work-blog-footer {
+    width: 100%;
+    max-width: none;
+    justify-content: center;
+  }
+
+  body.page-healthcare .owl_blog > .owl-carousel > .owl-stage-outer,
+  body.page-healthcare .owl_blog .owl-carousel .owl-stage-outer {
+    margin-left: 0 !important;
+    overflow: hidden !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+
+  body.page-healthcare .owl_blog .owl-carousel .owl-stage-outer::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  body.page-healthcare .owl_blog > .owl-carousel.hc-blog-wide,
+  body.page-healthcare .owl_blog .owl-carousel.hc-blog-wide,
+  body.page-healthcare .owl_blog > .owl-carousel:not(.owl-loaded) {
     display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+    align-items: stretch !important;
+    gap: 40px !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 auto !important;
+    overflow: visible !important;
+  }
+
+  body.page-healthcare .owl_blog .owl-carousel.hc-blog-wide > .item,
+  body.page-healthcare .owl_blog .owl-carousel.hc-blog-wide .owl-item,
+  body.page-healthcare .owl_blog > .owl-carousel:not(.owl-loaded) > .item {
+    flex: 0 0 470px !important;
+    width: 470px !important;
+    max-width: 470px !important;
+    margin: 0 !important;
   }
 }
 
@@ -1960,7 +2172,9 @@ body.page-healthcare .owl_blog .work-blog-footer .owl-nav .owl-next.disabled {
   }
 
   body.page-healthcare .owl_blog .div_blog h4,
-  body.page-healthcare .owl_blog .div_blog h4.fs_18px {
+  body.page-healthcare .owl_blog .div_blog h4.fs_18px,
+  body.page-healthcare section.hpt120px ~ main#main .owl_blog .div_blog h4,
+  body.page-healthcare section.hpt120px ~ main#main .owl_blog .div_blog h4.fs_18px {
     font-size: 15px !important;
     line-height: 140% !important;
     max-width: 265px !important;
@@ -2118,7 +2332,12 @@ body.page-education section.hpt120px ~ main#main .div_inspire a.fc_cb6171 span {
 
 body.page-education .div_inspire a.fc_cb6171:hover,
 body.page-education .div_inspire a.fc_cb6171:focus,
-body.page-education .div_inspire a:hover.fc_cb6171 {
+body.page-education .div_inspire a:hover.fc_cb6171,
+body.page-education .div_inspire a.fc_cb6171:hover span,
+body.page-education section.hpt120px ~ main#main .div_inspire a.fc_cb6171:hover,
+body.page-education section.hpt120px ~ main#main .div_inspire a.fc_cb6171:focus,
+body.page-education section.hpt120px ~ main#main .div_inspire a.fc_cb6171:hover span,
+body.page-education section.hpt120px ~ main#main section .div_inspire a.fc_cb6171:hover {
   color: rgb(128, 51, 88) !important;
   text-decoration-color: rgb(128, 51, 88);
 }

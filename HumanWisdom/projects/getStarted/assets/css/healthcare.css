@@ -394,6 +394,20 @@ a,h5:hover {
     box-sizing: border-box !important;
   }
 
+  body.page-healthcare section.hpt120px ~ main#main .work-testimonials-footer .sap.work-testimonials-more h4,
+  body.page-healthcare section.hpt120px ~ main#main .work-testimonials-more h4.fs_18px,
+  body.page-healthcare main#main .work-testimonials-more h4 {
+    font-size: 15px !important;
+    line-height: 150% !important;
+  }
+
+  body.page-healthcare section.hpt120px ~ main#main .owl_blog .div_blog h4,
+  body.page-healthcare section.hpt120px ~ main#main .owl_blog .div_blog h4.fs_18px,
+  body.page-healthcare main#main .owl_blog .div_blog h4 {
+    font-size: 15px !important;
+    line-height: 140% !important;
+  }
+
   body.page-healthcare .flex_block .hc-desc-title,
   body.page-healthcare section.hpt120px ~ main#main .flex_block h2.hc-desc-title,
   body.page-healthcare section.hpt120px ~ main#main .flex_block h2.hc-desc-title.fs_30px {
@@ -426,29 +440,46 @@ a,h5:hover {
   }
 }
 
-/* Wide screen (1400px+): hide testimonial nav, center cards — match index.php blog/coaches */
+/* Wide screen (1400px+): 3 full testimonial cards, no clipped peeks */
 @media (min-width: 1400px) {
   .hc-testimonials-footer {
     display: none !important;
   }
 
+  .work-testimonials-wrap {
+    overflow: hidden;
+  }
+
   .owl_testimonials {
-    max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+    overflow: visible;
   }
 
   .owl_testimonials > .owl-carousel > .owl-stage-outer {
     margin-left: 0 !important;
-    overflow: visible;
-    display: flex;
-    justify-content: center;
+    margin-right: 0 !important;
+    overflow: hidden !important;
+    display: block;
   }
 
   .owl_testimonials .owl-carousel .owl-stage {
     left: 0 !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* Blog: show all cards, hide arrows / scrollbar — match index.php */
+  .work-blog-footer .work-blog-nav,
+  .owl_blog .work-blog-footer .owl-nav,
+  .owl_blog .work-blog-footer .owl-controls {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  .owl_blog .owl-carousel.hc-blog-wide {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    overflow: visible;
   }
 }
 
