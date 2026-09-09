@@ -316,12 +316,12 @@ export class SingleAudioContentComponent implements OnInit {
       '$1<a href="$2" target="_blank" rel="noopener noreferrer" class="transcript-link">$2</a>'
     );
 
-    // Autolink bare domains (e.g. happierme.app) used in podcast transcripts
+    // Autolink bare domains (e.g. happierme.app) — only in text nodes, not inside existing <a> tags
     result = result.replace(
-      /(^|[^"'>\/=])((?:[a-zA-Z0-9-]+\.)+(?:app|com|org|net|io|co|me|uk)(?:\/[^\s<]*)?)/g,
-      (match, prefix, domain) => {
-        if (prefix.endsWith('://') || prefix === '@') return match;
-        return `${prefix}<a href="https://${domain}" target="_blank" rel="noopener noreferrer" class="transcript-link">${domain}</a>`;
+      /(<a\b[^>]*>[\s\S]*?<\/a>)|(\b(?:[a-zA-Z0-9-]+\.)+(?:app|com|org|net|io|co|me|uk)(?:\/[^\s<]*)?)/g,
+      (match, alreadyLinked, domain) => {
+        if (alreadyLinked) return alreadyLinked; // leave existing <a> tags untouched
+        return `<a href="https://${domain}" target="_blank" rel="noopener noreferrer" class="transcript-link">${domain}</a>`;
       }
     );
 
