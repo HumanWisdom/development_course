@@ -672,12 +672,8 @@
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 p0">
                   <h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
-                    Leadership skills are a by-product of self-awareness. The 
-                    <a class="fc_cb6171" href="https://happierme.app/adults/leadership">
-                      Leadership
-                    </a>
-                    section offers students a way of developing these skills to succeed at work.
-                  </h4>
+                    Leadership skills are a by-product of self-awareness. The <a class="fc_cb6171" href="https://happierme.app/adults/leadership">Leadership</a> section offers students a way of developing these skills to succeed at work.
+                  </h5>
                 </div>
               </div>
             </div>
@@ -981,6 +977,7 @@
             nav: false,
             autoWidth: false,
             dots: false,
+            startPosition: 0,
             touchDrag: true,
             mouseDrag: true,
             pullDrag: true,
@@ -990,6 +987,7 @@
               1100: { items: 3 }
             }
           });
+          $tc.trigger('to.owl.carousel', [0, 0]);
           eduTestimonialsMode = 'desktop';
         }
 

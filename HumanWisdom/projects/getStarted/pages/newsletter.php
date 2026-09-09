@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="page-newsletter-root">
   <head>
     <meta property="og:title" id="tag1" content="HappierMe:For Teens & Adults" />
     <meta property="og:type" content="website" />
