@@ -22699,6 +22699,19 @@ ul.dh_ul li:last-child {
 .image-box:hover .img2 {
   opacity: 1;
 }
+
+/* Start your free trial — hover the whole row to change icon + text together */
+#liSubscribe:hover .image-box .img1 {
+  opacity: 0;
+}
+
+#liSubscribe:hover .image-box .img2 {
+  opacity: 1;
+}
+
+#liSubscribe:hover .login1 {
+  color: #b03050 !important;
+}
 /* Safari 11+ */
 /* @media not all and (min-resolution:.001dpcm)
 { @supports (-webkit-appearance:none) and (stroke-color:transparent) {
