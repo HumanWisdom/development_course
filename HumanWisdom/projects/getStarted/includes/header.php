@@ -241,9 +241,7 @@ if (!hw_page_assets_flag('css', 'header_in_critical')) :
           }
         </style>
         <a class="btn_tff btn_tff_tn btn_popup no-underline-hover" id="headerTryForFree" href="https://onelink.to/hsnt8b">Try for free</a>
-        <button type="button" class="mobile-nav-toggle mobile-nav-show" aria-label="Open menu">
-          <svg class="hw-ui-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/></svg>
-        </button>
+        <i class="mobile-nav-toggle mobile-nav-show bi bi-list" role="button" aria-label="Open menu" tabindex="0"></i>
       </div>
 
     </div>
