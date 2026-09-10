@@ -63,6 +63,34 @@ export class EventsIndexPage implements OnInit, AfterViewInit {
     this.router.navigateByUrl(SharedService.getprogramName() + "/events/event?eid=" + item.RowID);
   }
 
+  stripTags(original: string): string {
+    if (!original) return '';
+    try {
+      let parsed = new DOMParser().parseFromString(original, "text/html");
+      let text = parsed.body.textContent || '';
+      return text.normalize('NFKC').replace(/\s+/g, ' ').trim();
+    } catch (e) {
+      return (original || '').replace(/<[^>]*>/g, '').normalize('NFKC').replace(/\s+/g, ' ').trim();
+    }
+  }
+
+  getEventDescription(desc: string): string {
+    return this.stripTags(desc);
+  }
+
+  getEventImage(item: any): string {
+    if (item?.ArtImgPath && item.ArtImgPath.trim() !== '') {
+      return item.ArtImgPath;
+    }
+    return item?.ImgUrl || '';
+  }
+
+  onImgError(event: any, item: any) {
+    if (item?.ImgUrl && event?.target && event.target.src !== item.ImgUrl) {
+      event.target.src = item.ImgUrl;
+    }
+  }
+
   clearSearch() {
     setTimeout(() => {
       this.searchinp = '';
