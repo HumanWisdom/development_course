@@ -97,6 +97,7 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
   private currentPlaybackId = 0;
   private routerSub!: Subscription;
   public isPortrait = false;
+    public isLandscape = false;
   public fromIndex = false;
   public headerTitle: string = 'Short Videos';
   baseUrl:string;
@@ -523,11 +524,15 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
       const vw = el.videoWidth;
       const vh = el.videoHeight;
       if (vw && vh) {
-        this.isPortrait = vh > vw;
-      } else {
+        this.isPortrait = (vh > vw) && (vh / vw > 1.3); // Consider it portrait if height is significantly greater than width
+        this.isLandscape = (vw > vh) && (vw / vh > 1.3); // Consider it landscape if width is significantly greater than height
+      } 
+     
+
+      else {
         setTimeout(() => {
           if (el && el.videoWidth && el.videoHeight) {
-            this.isPortrait = el.videoHeight > el.videoWidth;
+            this.isPortrait = (el.videoHeight > el.videoWidth) && (el.videoHeight / el.videoWidth > 1.2);
           }
         }, 200);
       }
