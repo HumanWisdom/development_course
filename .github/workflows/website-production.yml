@@ -2,7 +2,7 @@
 name: Website-Production
 on:
   push:
-    branches: [Production]
+    branches: [production-website]
     
 jobs:
   build-website:
