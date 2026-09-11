@@ -24,7 +24,6 @@ export class EventsIndexPage implements OnInit, AfterViewInit {
   backupList: any = [];
   isSubscriber = false;
   isAdults = true;
-  isEventsOpen = true;
   showModal = false;
   isIos = false;
   modalTitle = 'The best is yet to come';
@@ -66,11 +65,20 @@ export class EventsIndexPage implements OnInit, AfterViewInit {
   stripTags(original: string): string {
     if (!original) return '';
     try {
-      let parsed = new DOMParser().parseFromString(original, "text/html");
+      const withSpaces = original
+        .replace(/<\/(p|div|h[1-6]|li|blockquote)>/gi, ' ')
+        .replace(/<(br|hr)\s*[\/]?>/gi, ' ');
+      let parsed = new DOMParser().parseFromString(withSpaces, "text/html");
       let text = parsed.body.textContent || '';
       return text.normalize('NFKC').replace(/\s+/g, ' ').trim();
     } catch (e) {
-      return (original || '').replace(/<[^>]*>/g, '').normalize('NFKC').replace(/\s+/g, ' ').trim();
+      return (original || '')
+        .replace(/<\/(p|div|h[1-6]|li|blockquote)>/gi, ' ')
+        .replace(/<(br|hr)\s*[\/]?>/gi, ' ')
+        .replace(/<[^>]*>/g, ' ')
+        .normalize('NFKC')
+        .replace(/\s+/g, ' ')
+        .trim();
     }
   }
 
@@ -79,9 +87,6 @@ export class EventsIndexPage implements OnInit, AfterViewInit {
   }
 
   getEventImage(item: any): string {
-    if (item?.ArtImgPath && item.ArtImgPath.trim() !== '') {
-      return item.ArtImgPath;
-    }
     return item?.ImgUrl || '';
   }
 
@@ -122,13 +127,6 @@ export class EventsIndexPage implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    // initialize Bootstrap collapse after view is rendered
-    const collapseElements = document.querySelectorAll('.accordion-collapse');
-    collapseElements.forEach((el: any) => {
-      new bootstrap.Collapse(el, {
-        toggle: false, // prevents it from auto-opening
-      });
-    });
   }
 
   getStyle(url) {
@@ -191,10 +189,6 @@ export class EventsIndexPage implements OnInit, AfterViewInit {
       // Navigate to free trial when user clicks "Start your free trial"
       this.router.navigate([SharedService.getprogramName(), 'subscription', 'start-your-free-trial']);
     }
-  }
-
-  toggleEventsAccordion() {
-    this.isEventsOpen = !this.isEventsOpen;
   }
 
 }
