@@ -76,7 +76,7 @@
 .upcoming_event_card {
   border-radius: 12px;
   padding: 16px;
-  margin-bottom: 20px;
+  margin-bottom: 32px;
   cursor: pointer;
 
   &.adults_card {
@@ -194,12 +194,27 @@
   box-shadow: none !important;
   transform: none !important;
   opacity: 1 !important;
-  transition: none !important;
+  transition: background 0.2s ease !important;
+}
 
+.adults_card .upcoming_event_btn {
   &:hover,
   &:focus,
   &:active {
-    background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%) !important;
+    background: linear-gradient(180deg, #D7586B 0%, #BE3B4F 100%) !important;
+    color: #FFF !important;
+    opacity: 1 !important;
+    box-shadow: none !important;
+    transform: none !important;
+    outline: none !important;
+  }
+}
+
+.teen_card .upcoming_event_btn {
+  &:hover,
+  &:focus,
+  &:active {
+    background: linear-gradient(180deg, #F17071 0%, #DE6768 100%) !important;
     color: #FFF !important;
     opacity: 1 !important;
     box-shadow: none !important;
