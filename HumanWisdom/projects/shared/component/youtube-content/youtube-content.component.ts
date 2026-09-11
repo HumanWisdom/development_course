@@ -90,7 +90,7 @@ export class YoutubeContentComponent implements OnInit {
 
   ngOnInit()
   {
-    let code = `https://www.youtube.com/embed/${this.linkcode}?controls=0&cc_load_policy=0&autoplay=1&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&fs=1&enablejsapi=1`;
+    let code = `https://www.youtube.com/embed/${this.linkcode}?controls=0&cc_load_policy=0&autoplay=1&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&fs=1&enablejsapi=1&playsinline=1`;
     this.videoLink = this.getSafeUrl(code);
   }
 
