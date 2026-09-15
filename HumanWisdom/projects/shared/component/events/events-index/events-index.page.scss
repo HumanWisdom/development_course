@@ -1,3 +1,34 @@
+.right_col.mc_01 {
+  min-height: calc(100vh - 60px);
+  min-height: calc(100dvh - 60px);
+  display: flex;
+  flex-direction: column;
+
+  .cw100p,
+  .row.center_flex {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+}
+
+.col_cw {
+  min-height: calc(100vh - 60px);
+  min-height: calc(100dvh - 60px);
+  display: flex;
+  flex-direction: column;
+
+  .x_panel,
+  .x_content,
+  form {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+}
+
 .ws-read-icon {
     bottom: 39px !important;
 }
@@ -154,7 +185,7 @@
   display: flex;
   align-items: center;
   margin-bottom: 6px;
-  opacity: 0.65;
+  opacity: 50%;
 
   &:last-child {
     margin-bottom: 0;
@@ -198,6 +229,8 @@
 }
 
 .adults_card .upcoming_event_btn {
+  background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%) !important;
+
   &:hover,
   &:focus,
   &:active {
@@ -211,6 +244,8 @@
 }
 
 .teen_card .upcoming_event_btn {
+  background: linear-gradient(180deg, #EE9596 0%, #F17071 100%) !important;
+
   &:hover,
   &:focus,
   &:active {
