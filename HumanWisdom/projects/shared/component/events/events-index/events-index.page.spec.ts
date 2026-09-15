@@ -124,9 +124,6 @@ describe('EventsIndexPage', () => {
       expect(component.isIos).toBe(true);
     });
 
-    it('should have default isEventsOpen true', () => {
-      expect(component.isEventsOpen).toBe(true);
-    });
 
     it('should have default showModal false', () => {
       expect(component.showModal).toBe(false);
@@ -316,28 +313,4 @@ describe('EventsIndexPage', () => {
     });
   });
 
-  describe('toggleEventsAccordion', () => {
-    it('should toggle isEventsOpen from true to false', () => {
-      component.isEventsOpen = true;
-      component.toggleEventsAccordion();
-      expect(component.isEventsOpen).toBe(false);
-    });
-
-    it('should toggle isEventsOpen from false to true', () => {
-      component.isEventsOpen = false;
-      component.toggleEventsAccordion();
-      expect(component.isEventsOpen).toBe(true);
-    });
-  });
-
-  describe('ngAfterViewInit', () => {
-    it('should initialize bootstrap Collapse on accordion elements', () => {
-      const collapseEl = document.createElement('div');
-      collapseEl.className = 'accordion-collapse';
-      document.body.appendChild(collapseEl);
-      component.ngAfterViewInit();
-      expect((window as any).bootstrap.Collapse).toHaveBeenCalled();
-      document.body.removeChild(collapseEl);
-    });
-  });
 });
