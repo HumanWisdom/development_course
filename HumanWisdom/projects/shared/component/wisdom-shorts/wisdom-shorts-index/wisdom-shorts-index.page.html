@@ -111,6 +111,12 @@
 
                   </div>
                 </ng-container>
+
+                <div *ngIf="wisdomshorts.length === 0" class="vl-no-records">
+                  <p [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
+                    No videos found
+                  </p>
+                </div>
               </div>
               <!-- /VIDEO CARDS LIST -->
             </form>
