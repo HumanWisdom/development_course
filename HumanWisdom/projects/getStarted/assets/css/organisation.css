@@ -263,18 +263,20 @@ img {
   width: 120px;
   height: 120px;
   border-radius: 60px;
-  background: var(--org-peach);
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0;
   flex-shrink: 0;
+  overflow: hidden;
 }
 
 .org-benefit-icon img {
-  width: 60px;
-  height: 60px;
+  width: 120px;
+  height: 120px;
   object-fit: contain;
+  display: block;
 }
 
 .org-benefit-copy {
@@ -485,21 +487,28 @@ img {
 
 .org-quotes-inner {
   box-sizing: border-box;
-  width: 1340px;
-  max-width: 100%;
+  width: 980px;
+  max-width: calc(100% - 40px);
   margin: 0 auto;
-  padding: 0 50px;
+  padding: 0;
 }
 
+/* Figma Frame 1984077295: 980px row, 30px gap, equal cards */
 .org-quotes-grid {
   display: flex;
   flex-direction: row;
-  gap: 40px;
+  align-items: stretch;
+  gap: 30px;
+  width: 100%;
 }
 
 .org-quotes-grid .org-card {
   flex: 1 1 0;
+  width: 0;
   min-width: 0;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
 }
 
 .org-quote-mark {
@@ -517,7 +526,6 @@ img {
   background: var(--org-cream);
   border-radius: 20px;
   padding: 36px;
-  height: 100%;
 }
 
 .org-card-head {
@@ -525,6 +533,7 @@ img {
   align-items: center;
   gap: 15px;
   margin-bottom: 15px;
+  flex-shrink: 0;
 }
 
 .org-card-head img {
@@ -555,6 +564,7 @@ img {
   font-style: italic;
   line-height: 1.5;
   opacity: 0.75;
+  flex: 1 1 auto;
 }
 
 .org-bottom-cta {
@@ -820,19 +830,48 @@ body.org-flow .org-main {
   display: block;
 }
 
+/* Download card — Figma: title → QR → OR → black store badges */
+.org-download-card .org-flow-title {
+  margin: 0 0 24px;
+}
+
+.org-download-card .org-qr {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 24px;
+  display: block;
+  object-fit: contain;
+}
+
+.org-download-card .org-flow-rule {
+  margin: 0 0 24px;
+}
+
 .org-download-badges {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
   gap: 12px;
-  margin-bottom: 32px;
+  margin: 0;
 }
 
+.org-download-badges a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  flex: 0 0 auto;
+}
+
+/* Solid black App Store / Google Play badges */
 .org-download-badges img {
-  height: 53px;
+  height: 46px;
   width: auto;
+  max-width: 154px;
+  display: block;
+  object-fit: contain;
 }
 
 .org-qr {
@@ -843,16 +882,49 @@ body.org-flow .org-main {
   object-fit: contain;
 }
 
+/* Download page: textured peach → magenta panel behind white card (all viewports) */
+body.org-flow-download {
+  background: #fff;
+}
+
+body.org-flow-download .org-main {
+  min-height: calc(100vh - 120px);
+  background:
+    radial-gradient(ellipse at 15% 10%, rgba(255, 255, 255, 0.22) 0%, transparent 45%),
+    radial-gradient(ellipse at 85% 90%, rgba(0, 0, 0, 0.18) 0%, transparent 50%),
+    linear-gradient(135deg, #f4a574 0%, #e07a6a 35%, #c45a7a 65%, #8b2d5c 100%);
+  padding: 40px 20px 60px;
+}
+
+body.org-flow-download .org-download-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 40px 28px;
+  max-width: 420px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
 /* Desktop flow: peach/magenta panel behind a white card */
 @media (min-width: 768px) {
-  body.org-flow {
+  body.org-flow:not(.org-flow-download) {
     background: #fff;
   }
 
-  body.org-flow .org-main {
+  body.org-flow:not(.org-flow-download) .org-main {
     min-height: calc(100vh - 178px);
     background: linear-gradient(90deg, #f4a574 0%, #c45a7a 48%, #8b2d5c 100%);
     padding: 80px 24px;
+  }
+
+  body.org-flow-download .org-main {
+    min-height: calc(100vh - 178px);
+    padding: 80px 24px;
+  }
+
+  body.org-flow-download .org-download-card {
+    padding: 48px 45px;
+    max-width: 470px;
   }
 
   .org-flow-card {
@@ -973,8 +1045,8 @@ body.org-flow .org-main {
   }
 
   .org-benefit-icon img {
-    width: 30px;
-    height: 30px;
+    width: 60px;
+    height: 60px;
   }
 
   .org-benefit h2 {
@@ -1081,6 +1153,11 @@ body.org-flow .org-main {
   .org-quotes-grid {
     flex-direction: column;
     gap: 20px;
+  }
+
+  .org-quotes-grid .org-card {
+    width: 100%;
+    flex: 0 0 auto;
   }
 
   .org-bottom-cta {

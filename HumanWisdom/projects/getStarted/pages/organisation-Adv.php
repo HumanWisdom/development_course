@@ -21,7 +21,7 @@ include __DIR__ . '/../includes/organisation_header.php';
     <div class="org-benefits-list">
       <article class="org-benefit">
         <div class="org-benefit-icon">
-          <img src="<?= hw_org_h(hw_asset_url($assets['icon_heart'])) ?>" alt="" width="30" height="30">
+          <img src="<?= hw_org_h($assets['icon_heart']) ?>" alt="" width="120" height="120">
         </div>
         <div class="org-benefit-copy">
           <h2>Feel<br> better</h2>
@@ -30,7 +30,7 @@ include __DIR__ . '/../includes/organisation_header.php';
       </article>
       <article class="org-benefit">
         <div class="org-benefit-icon">
-          <img src="<?= hw_org_h(hw_asset_url($assets['icon_hearts'])) ?>" alt="" width="30" height="30">
+          <img src="<?= hw_org_h($assets['icon_hearts']) ?>" alt="" width="120" height="120">
         </div>
         <div class="org-benefit-copy">
           <h2>Build happier<br> relationships</h2>
@@ -39,7 +39,7 @@ include __DIR__ . '/../includes/organisation_header.php';
       </article>
       <article class="org-benefit">
         <div class="org-benefit-icon">
-          <img src="<?= hw_org_h(hw_asset_url($assets['icon_target'])) ?>" alt="" width="30" height="30">
+          <img src="<?= hw_org_h($assets['icon_target']) ?>" alt="" width="120" height="120">
         </div>
         <div class="org-benefit-copy">
           <h2>Handle life<br> better</h2>
