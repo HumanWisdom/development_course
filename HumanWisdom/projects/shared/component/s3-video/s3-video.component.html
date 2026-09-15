@@ -54,7 +54,7 @@
                     <video *ngIf="currentIndex === i" playsinline autoplay disablePictureInPicture class="cvideo"
                       [ngClass]="[
                       isIOS ? 'cvideo_ext_di_no_radius' : 'cvideo_ext_di',
-                      isPortrait ? 'video-portrait' : 'video-landscape'
+                      isPortrait ? 'video-portrait' : isLandscape ? 'video-landscape' : 'video-square'
                     ]" #videoPlayer controls controlsList="nodownload nofullscreen" (click)="onVideoClick()"
                       (keydown.enter)="onVideoClick()" tabindex="0" (play)="onVideoPlay($event)"
                       (playing)="onVideoPlay($event)" (ended)="onVideoEnded()" (loadedmetadata)="checkVideoOrientation($event.target)">
@@ -105,7 +105,7 @@
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                     <video playsinline autoplay disablePictureInPicture class="cvideo" [ngClass]="[
                       isIOS ? 'cvideo_ext_di_no_radius' : 'cvideo_ext_di',
-                      isPortrait ? 'video-portrait' : 'video-landscape'
+                        isPortrait ? 'video-portrait' : isLandscape ? 'video-landscape' : 'video-square'
                     ]" #videoPlayer controls controlsList="nodownload nofullscreen" (click)="onVideoClick()"
                       (keydown.enter)="onVideoClick()" tabindex="0" (play)="onVideoPlay($event)"
                       (playing)="onVideoPlay($event)" (loadedmetadata)="checkVideoOrientation($event.target)">

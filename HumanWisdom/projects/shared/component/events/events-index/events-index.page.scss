@@ -7,70 +7,6 @@
 // .session_img_play{
 //   right: 18px !important;
 // }
-/* Bootstrap 5 accordion overrides to preserve legacy panel UI on Events page */
-#accordion_event.accordion {
-  border: none;
-}
-#accordion_event .accordion-item {
-  border: none;
-  background: transparent;
-}
-#accordion_event .accordion-header {
-  padding: 0;
-  margin: 0;
-}
-#accordion_event .accordion-button {
-  background-color: transparent;
-  box-shadow: none;
-  border: none;
-  padding-left: 0;
-  padding-right: 0;
-}
-#accordion_event .accordion-button:focus {
-  box-shadow: none;
-}
-#accordion_event .accordion-button::after {
-  display: none;
-}
-#accordion_event .accordion-collapse {
-  border: none;
-}
-#accordion_event .accordion-body {
-  padding: 0;
-}
-
-/* Preserve original panel classes spacing if used elsewhere */
-#accordion_event .panel-heading { margin: 0; }
-#accordion_event .panel-body { padding: 0; }
-
-/* Custom chevron preceding title */
-#accordion_event .accordion-button {
-  position: relative;
-  padding-left: 24px;
-}
-#accordion_event .accordion-button .accordion-chevron {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 50%;
-  width: 12px;
-  height: 12px;
-  margin-top: -6px;
-  mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="%23000" d="M1.5 5l6 6 6-6"/></svg>') no-repeat center / contain;
-  -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="%23000" d="M1.5 5l6 6 6-6"/></svg>') no-repeat center / contain;
-  background-color: currentColor;
-  transition: transform 0.2s ease;
-}
-
-/* Rotate when collapsed/expanded based on aria-expanded */
-#accordion_event .accordion-button[aria-expanded="true"] .accordion-chevron {
-  transform: rotate(180deg);
-}
-
-.accordion-button {
-  padding: 0 !important;
-}
-
 /* Indent event cards from the content edge; space inside card around thumbnail */
 .toc_adiv_02 {
   padding-left: 10px;
@@ -132,5 +68,157 @@
     width: auto;
     flex: 0 0 auto;
     max-width: none;
+  }
+}
+
+/* Upcoming Events Card — Figma Design */
+
+.upcoming_event_card {
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 32px;
+  cursor: pointer;
+
+  &.adults_card {
+    background-color: #FFE8BB;
+  }
+
+  &.teen_card {
+    background-color: #0C2B5F;
+  }
+}
+
+.upcoming_event_img_box {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.upcoming_event_img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  border-radius: 6px;
+}
+
+.upcoming_event_content {
+  padding-top: 16px;
+}
+
+.upcoming_event_title_row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.upcoming_event_title {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 0;
+  flex: 1;
+}
+
+
+
+.upcoming_event_desc {
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 12px !important;
+  line-height: 150% !important;
+  letter-spacing: 0% !important;
+  margin-top: 0;
+  margin-bottom: 10px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  span, * {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 12px !important;
+    line-height: 150% !important;
+    letter-spacing: 0% !important;
+  }
+}
+
+.upcoming_event_meta {
+  margin-bottom: 16px;
+}
+
+.upcoming_event_meta_item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+  opacity: 0.65;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  img {
+    width: 15px;
+    height: 15px;
+    margin-right: 6px;
+    display: inline-block;
+    flex-shrink: 0;
+  }
+
+  .upcoming_event_meta_text {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.4;
+  }
+}
+
+.upcoming_event_btn_row {
+  margin-top: 16px;
+}
+
+.upcoming_event_btn {
+  height: 48px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 100px;
+  cursor: pointer;
+  background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%) !important;
+  color: #FFF !important;
+  box-shadow: none !important;
+  transform: none !important;
+  opacity: 1 !important;
+  transition: background 0.2s ease !important;
+}
+
+.adults_card .upcoming_event_btn {
+  &:hover,
+  &:focus,
+  &:active {
+    background: linear-gradient(180deg, #D7586B 0%, #BE3B4F 100%) !important;
+    color: #FFF !important;
+    opacity: 1 !important;
+    box-shadow: none !important;
+    transform: none !important;
+    outline: none !important;
+  }
+}
+
+.teen_card .upcoming_event_btn {
+  &:hover,
+  &:focus,
+  &:active {
+    background: linear-gradient(180deg, #F17071 0%, #DE6768 100%) !important;
+    color: #FFF !important;
+    opacity: 1 !important;
+    box-shadow: none !important;
+    transform: none !important;
+    outline: none !important;
   }
 }
