@@ -73,8 +73,8 @@ export const OLLY_QUESTIONS: OllyQuestionsData = {
     },
     {
       "topic": "Work",
-      "displayName": "Succeed at work",
-      "fragment": "success-at-work",
+      "displayName": "Thrive at work",
+      "fragment": "thrive-at-work",
       "questions": [
         "How can I feel happier at work",
         "How can I be emotionally intelligent",
