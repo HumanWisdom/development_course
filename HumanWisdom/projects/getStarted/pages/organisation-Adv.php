@@ -6,14 +6,14 @@ $pageTitle = 'Exclusive offer | HappierMe';
 $bodyClass = 'org-page org-page-adv';
 $useOrgLogo = true;
 $showCopyright = true;
-$signupUrl = hw_org_page('organisation-signup');
+$landingUrl = hw_org_page('organisation', [], true);
 include __DIR__ . '/../includes/organisation_head.php';
 include __DIR__ . '/../includes/organisation_header.php';
 ?>
 <main class="org-main">
   <section class="org-hero-offer">
     <p class="org-kicker">Exclusive offer</p>
-    <h1>Free <?= (int) $org['freeDays'] ?>-day access to the HappierMe app</h1>
+    <h1>Free <span data-org-free-days><?= (int) $org['freeDays'] ?></span>-day access to the HappierMe app</h1>
     <p class="org-hero-note">(No credit card needed)</p>
   </section>
 
@@ -50,7 +50,7 @@ include __DIR__ . '/../includes/organisation_header.php';
   </section>
 
   <div class="org-cta-row">
-    <a class="org-btn org-btn-cta" href="<?= hw_org_h($signupUrl) ?>">Start your free <?= (int) $org['freeDays'] ?> days</a>
+    <a class="org-btn org-btn-cta" href="<?= hw_org_h($landingUrl) ?>">Start your free <span data-org-free-days><?= (int) $org['freeDays'] ?></span> days</a>
   </div>
 </main>
 <?php include __DIR__ . '/../includes/organisation_foot.php'; ?>
