@@ -415,6 +415,171 @@
     }
 }
 
+/* Type 4: Response / Quote / Try This Today / Food For Thought Cards */
+.type4_card {
+    background: #ffe8bb;
+    border-radius: 16px;
+    padding: 40px 30px;
+    margin-bottom: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    box-shadow: none;
+    box-sizing: border-box;
+    width: 100%;
+
+    .card_icon_wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 15px;
+        width: 100%;
+
+        img {
+            object-fit: contain;
+        }
+    }
+
+    /* Quote Card */
+    &.quote_card_gj {
+        .quote_text {
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            font-style: italic;
+            line-height: 140%;
+            color: #000000;
+            margin: 0 0 10px 0;
+            text-align: center;
+        }
+
+        .quote_author {
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 150%;
+            color: #000000;
+            margin: 0;
+            text-align: center;
+        }
+    }
+
+    /* Try This Today & Food For Thought Cards */
+    &.try_today_card_gj, &.food_thought_card_gj {
+        .card_header_label {
+            font-family: 'Poppins', sans-serif;
+            font-size: 12px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: rgba(0, 0, 0, 0.5);
+            margin: 0 0 12px 0;
+            line-height: 140%;
+        }
+
+        .card_content_text {
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            line-height: 140%;
+            color: #000000;
+            margin: 0;
+            text-align: center;
+        }
+    }
+
+    /* Generic Type 4 Card */
+    &.generic_card_gj {
+        align-items: flex-start;
+        text-align: left;
+
+        .card_icon_wrap {
+            justify-content: center;
+        }
+
+        .generic_card_header {
+            font-family: 'Poppins', sans-serif;
+            font-size: 12px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: rgba(0, 0, 0, 0.5);
+            margin: 0 0 10px 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        .generic_card_title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            line-height: 140%;
+            color: #000000;
+            margin: 0 0 12px 0;
+            width: 100%;
+        }
+
+        .generic_card_desc {
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 140%;
+            color: #000000;
+            opacity: 50%;
+            width: 100%;
+
+            p {
+                margin: 0 0 8px 0;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            ol {
+                padding-left: 20px;
+                margin: 8px 0;
+                list-style-type: decimal;
+
+                li {
+                    margin-bottom: 6px;
+                    line-height: 150%;
+                    color: #000000;
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+
+            ul {
+                padding-left: 20px;
+                margin: 8px 0;
+                list-style-type: disc;
+
+                li {
+                    margin-bottom: 6px;
+                    line-height: 150%;
+                    color: #000000;
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+
+        .generic_card_author {
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            font-weight: 400;
+            color: rgba(0, 0, 0, 0.7);
+            margin-top: 10px;
+            width: 100%;
+            text-align: right;
+        }
+    }
+}
+
 .btn_return {
     background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%) !important;
     color: #ffffff;
@@ -541,6 +706,48 @@
 
         .journal_footer {
             color: rgba(255, 255, 255, 0.6);
+        }
+    }
+
+    .type4_card {
+        background: #0C2B5F;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+
+        &.quote_card_gj {
+            .quote_text {
+                color: #ffffff;
+            }
+            .quote_author {
+                color: rgba(255, 255, 255, 0.5);
+            }
+        }
+
+        &.try_today_card_gj, &.food_thought_card_gj {
+            .card_header_label {
+                color: rgba(255, 255, 255, 0.5);
+            }
+            .card_content_text {
+                color: #ffffff;
+            }
+        }
+
+        &.generic_card_gj {
+            .generic_card_header {
+                color: rgba(255, 255, 255, 0.5);
+            }
+            .generic_card_title {
+                color: #ffffff;
+            }
+            .generic_card_desc {
+                color: #ffffff;
+
+                p, ol, ul, li {
+                    color: #ffffff;
+                }
+            }
+            .generic_card_author {
+                color: rgba(255, 255, 255, 0.5);
+            }
         }
     }
 

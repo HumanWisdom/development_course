@@ -250,6 +250,49 @@ describe('MicroLearningEndPage', () => {
       const result = component.processLink(encodeURIComponent('Title with spaces'), '/path', '');
       expect(result.title).toBe('Title with spaces');
     });
+
+    it('should split guided program type and session text without comma', () => {
+      const result = component.processLink('Making better decisions (GUIDED PROGRAM, 3 SESSIONS)', '/path', 'img.jpg');
+      expect(result.title).toBe('Making better decisions');
+      expect(result.type).toBe('GUIDED PROGRAM');
+      expect(result.sessionText).toBe('3 sessions');
+      expect(result.isGuidedProgram).toBe(true);
+    });
+
+    it('should handle guided program without comma', () => {
+      const result = component.processLink('Making better decisions (GUIDED PROGRAM)', '/path', 'img.jpg');
+      expect(result.title).toBe('Making better decisions');
+      expect(result.type).toBe('GUIDED PROGRAM');
+      expect(result.sessionText).toBe('');
+      expect(result.isGuidedProgram).toBe(true);
+    });
+  });
+
+  describe('getResourceIcon', () => {
+    it('should return video play icon for Video and Event types', () => {
+      expect(component.getResourceIcon({ type: 'VIDEO, 1 MIN.', url: '' })).toBe('https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg');
+      expect(component.getResourceIcon({ type: 'SHORT VIDEO • 00:56', url: '' })).toBe('https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg');
+      expect(component.getResourceIcon({ type: 'EVENT', url: '' })).toBe('https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg');
+    });
+
+    it('should return audio play icon for Podcast, Soundscape, and Audio meditation', () => {
+      expect(component.getResourceIcon({ type: 'PODCAST, 24 MIN.', url: '' })).toBe('https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audio_play.svg');
+      expect(component.getResourceIcon({ type: 'SOUNDSCAPE', url: '' })).toBe('https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audio_play.svg');
+      expect(component.getResourceIcon({ type: 'AUDIO MEDITATION', url: '' })).toBe('https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audio_play.svg');
+    });
+
+    it('should return pathway icon for Guided program and Microlearning', () => {
+      expect(component.getResourceIcon({ type: 'GUIDED PROGRAM, 3 SESSIONS', url: '' })).toBe('https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/pathway.svg');
+      expect(component.getResourceIcon({ type: 'GUIDED PROGRAM', url: '' })).toBe('https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/pathway.svg');
+      expect(component.getResourceIcon({ type: 'MICROLEARNING', url: '' })).toBe('https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/pathway.svg');
+    });
+
+    it('should return null for Blog and other types', () => {
+      expect(component.getResourceIcon({ type: 'BLOG', url: '/adults/blogs/123' })).toBeNull();
+      expect(component.getResourceIcon({ type: 'Resource', url: '/adults/blogs/test' })).toBeNull();
+      expect(component.getResourceIcon({ type: 'ARTICLE', url: '' })).toBeNull();
+      expect(component.getResourceIcon(null)).toBeNull();
+    });
   });
 
   describe('goBack', () => {
