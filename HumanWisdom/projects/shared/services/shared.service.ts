@@ -243,9 +243,9 @@ return [
         },
           {
           id: "1",
-          displayName: "Success at work",
+          displayName: "Thrive at work",
           active: false,
-          name: 'Work and leadership'
+          name: 'Thrive at work'
         },
         {
           id: "3",
