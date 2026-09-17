@@ -159,6 +159,7 @@ export class GuidedJourneyEndPage implements OnInit {
       const timingMatch = subTitle.match(/\b(?:\d{1,2}:)?\d{1,2}:\d{2}\b|\b\d+\s*(?:mins?|minutes?|sec|seconds?)\b/i);
       if (timingMatch) {
         extractedTiming = timingMatch[0];
+        subTitle = subTitle.replace(timingMatch[0], '').replace(/^[,\s•–-]+|[,\s•–-]+$/g, '').trim();
       }
 
       let separator = '';

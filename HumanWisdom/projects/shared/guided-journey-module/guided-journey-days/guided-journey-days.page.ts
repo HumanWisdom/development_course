@@ -228,17 +228,35 @@ export class GuidedJourneyDaysPage implements OnInit {
 
         this.allDaysData = filteredRes.map(item => {
           const rawTitle = item.Title || item.Section;
-          const { mainTitle, subTitle, sessionLabel, sessionName, extractedTiming } = this.parseTitle(rawTitle);
+          let { mainTitle, subTitle, sessionLabel, sessionName, extractedTiming } = this.parseTitle(rawTitle);
           let timing = item.Timing || item.timing || item.Time || item.time || item.duration || item.Duration || '';
           if ((!timing || timing === '0' || timing === '0:00' || timing === '00:00') && extractedTiming) {
             timing = extractedTiming;
           }
+
+          if (timing && timing.includes('•')) {
+            const tParts = timing.split('•').map((p: string) => p.trim());
+            if (tParts.length > 1 && tParts[0] === tParts[1]) {
+              timing = tParts[0];
+            }
+          }
+
+          if (timing && subTitle) {
+            subTitle = subTitle.replace(timing, '').replace(/^[,\s•–-]+|[,\s•–-]+$/g, '').trim();
+          }
+
+          const parsedQuote = this.parseQuoteTitle(rawTitle);
+          const isQuoteSection = (item.Section || '').toUpperCase().includes('QUOTE') || (item.Section || '').toUpperCase().includes('QUOTATION');
+
           return {
             ...item,
             Type: item.type ? parseInt(item.type) : 1,
             Title: rawTitle,
-            DisplayTitle: mainTitle,
+            DisplayTitle: (isQuoteSection && parsedQuote.quoteText) ? parsedQuote.quoteText : mainTitle,
             DisplaySubtitle: subTitle,
+            QuoteText: parsedQuote.quoteText,
+            QuoteAuthor: parsedQuote.quoteAuthor,
+            Author: item.Author || item.author || parsedQuote.quoteAuthor,
             sessionLabel: sessionLabel,
             sessionName: sessionName,
             QuestionCnt: item.QuestionCnt,
@@ -255,6 +273,57 @@ export class GuidedJourneyDaysPage implements OnInit {
     });
   }
 
+  parseQuoteTitle(fullTitle: string): { quoteText: string; quoteAuthor: string } {
+    if (!fullTitle) return { quoteText: '', quoteAuthor: '' };
+
+    let titleStr = fullTitle.trim();
+    let quoteText = titleStr;
+    let quoteAuthor = '';
+
+    if (titleStr.includes('.-')) {
+      const parts = titleStr.split('.-');
+      quoteText = parts[0].trim();
+      if (!quoteText.endsWith('.')) {
+        quoteText += '.';
+      }
+      quoteAuthor = parts.slice(1).join('.-').trim();
+    } else if (titleStr.includes('. -')) {
+      const parts = titleStr.split('. -');
+      quoteText = parts[0].trim();
+      if (!quoteText.endsWith('.')) {
+        quoteText += '.';
+      }
+      quoteAuthor = parts.slice(1).join('. -').trim();
+    } else if (titleStr.includes(' - ')) {
+      const parts = titleStr.split(' - ');
+      quoteText = parts[0].trim();
+      quoteAuthor = parts.slice(1).join(' - ').trim();
+    } else if (titleStr.includes('—')) {
+      const parts = titleStr.split('—');
+      quoteText = parts[0].trim();
+      quoteAuthor = parts.slice(1).join('—').trim();
+    } else if (titleStr.includes('–')) {
+      const parts = titleStr.split('–');
+      quoteText = parts[0].trim();
+      quoteAuthor = parts.slice(1).join('–').trim();
+    } else {
+      const lastHyphenIdx = titleStr.lastIndexOf('-');
+      if (lastHyphenIdx > 0 && lastHyphenIdx < titleStr.length - 1) {
+        const candidateQuote = titleStr.substring(0, lastHyphenIdx).trim();
+        const candidateAuthor = titleStr.substring(lastHyphenIdx + 1).trim();
+        if (candidateAuthor.length > 0) {
+          quoteText = candidateQuote;
+          quoteAuthor = candidateAuthor;
+        }
+      }
+    }
+
+    quoteText = quoteText.replace(/^[“"']+|[”"']+$/g, '').trim();
+    quoteAuthor = quoteAuthor.replace(/^[.\s—–-]+|[.\s—–-]+$/g, '').trim();
+
+    return { quoteText, quoteAuthor };
+  }
+
   parseTitle(title: string) {
     if (title && title.includes('(') && title.includes(')')) {
       const parts = title.split('(');
@@ -268,6 +337,7 @@ export class GuidedJourneyDaysPage implements OnInit {
       const timingMatch = subTitle.match(/\b(?:\d{1,2}:)?\d{1,2}:\d{2}\b|\b\d+\s*(?:mins?|minutes?|sec|seconds?)\b/i);
       if (timingMatch) {
         extractedTiming = timingMatch[0];
+        subTitle = subTitle.replace(timingMatch[0], '').replace(/^[,\s•–-]+|[,\s•–-]+$/g, '').trim();
       }
       
       let separator = '';
@@ -295,13 +365,20 @@ export class GuidedJourneyDaysPage implements OnInit {
         } else if (upper.startsWith('MEDITATION#') || upper.startsWith('MEDITATION #')) {
           const num = sessionLabel.replace(/MEDITATION\s*#\s*/i, '').trim();
           sessionLabel = `Meditation #${num}`;
+        } else if (upper.includes('BREATHING')) {
+          sessionLabel = 'BREATHING EXERCISE';
         } else {
           sessionLabel = sessionLabel.charAt(0).toUpperCase() + sessionLabel.slice(1).toLowerCase();
         }
       }
       
       if (sessionName) {
-        sessionName = sessionName.charAt(0).toUpperCase() + sessionName.slice(1).toLowerCase();
+        if (extractedTiming) {
+          sessionName = sessionName.replace(extractedTiming, '').replace(/^[,\s•–-]+|[,\s•–-]+$/g, '').trim();
+        }
+        if (sessionName) {
+          sessionName = sessionName.charAt(0).toUpperCase() + sessionName.slice(1).toLowerCase();
+        }
       }
       
       let displaySub = subTitle;
@@ -311,6 +388,17 @@ export class GuidedJourneyDaysPage implements OnInit {
       return { mainTitle, subTitle: displaySub, sessionLabel, sessionName, extractedTiming };
     }
     return { mainTitle: title, subTitle: '', sessionLabel: '', sessionName: '', extractedTiming: '' };
+  }
+
+  shouldShowTiming(exercise: any, baseText?: string): boolean {
+    if (!exercise || !exercise.Timing) return false;
+    const t = String(exercise.Timing).trim();
+    if (!t || t === '0' || t === '0:00' || t === '00:00') return false;
+    const textToCheck = String(baseText !== undefined ? baseText : (exercise.DisplaySubtitle || exercise.Section || ''));
+    if (textToCheck.includes(t) || /\b(?:\d{1,2}:)?\d{1,2}:\d{2}\b|\b\d+\s*(?:mins?|minutes?|sec|seconds?)\b/i.test(textToCheck)) {
+      return false;
+    }
+    return true;
   }
 
   isSection8(exercise: any): boolean {
@@ -330,6 +418,96 @@ export class GuidedJourneyDaysPage implements OnInit {
     const isGJ = (exercise.Section || '').toUpperCase() === 'GUIDED JOURNALING' || 
                  (exercise.SectionID || exercise.SectionId || exercise.sectionID || exercise.sectionId) == 6;
     return isGJ && !!exercise.QuestionCnt;
+  }
+
+  getCardType(exercise: any): string {
+    if (!exercise) return 'generic';
+    const section = (exercise.Section || exercise.HeaderTitle || exercise.Header || '').toUpperCase();
+    const title = (exercise.Title || exercise.DisplayTitle || '').toUpperCase();
+    
+    if (section.includes('QUOTE') || section.includes('QUOTATION') || title.includes('QUOTE') || title.includes('QUOTATION') || exercise.Author || exercise.author || exercise.QuoteAuthor) {
+      return 'quote';
+    }
+    if (section.includes('TRY THIS TODAY') || section.includes('TRY THIS') || section.includes('CHALLENGE') || title.includes('TRY THIS TODAY') || title.includes('TRY THIS')) {
+      return 'try_today';
+    }
+    if (section.includes('FOOD FOR THOUGHT') || section.includes('FOOD') || title.includes('FOOD FOR THOUGHT')) {
+      return 'food_thought';
+    }
+    return 'generic';
+  }
+
+  getQuoteText(exercise: any): string {
+    if (!exercise) return '';
+    let text = exercise.QuoteText || '';
+    if (!text) {
+      let raw = exercise.DisplayTitle || exercise.Title || exercise.Description || exercise.text || '';
+      const parsed = this.parseQuoteTitle(raw);
+      text = parsed.quoteText || raw;
+    }
+    text = text.trim();
+    text = text.replace(/^[“"']+|[”"']+$/g, '').trim();
+    if (text) {
+      text = `“${text}”`;
+    }
+    return text;
+  }
+
+  getQuoteAuthor(exercise: any): string {
+    if (!exercise) return '';
+    if (exercise.Author || exercise.author) {
+      return (exercise.Author || exercise.author).replace(/^[.\s—–-]+|[.\s—–-]+$/g, '').trim();
+    }
+    if (exercise.QuoteAuthor) {
+      return exercise.QuoteAuthor.replace(/^[.\s—–-]+|[.\s—–-]+$/g, '').trim();
+    }
+    let raw = exercise.Title || exercise.DisplayTitle || exercise.Description || '';
+    const parsed = this.parseQuoteTitle(raw);
+    return parsed.quoteAuthor;
+  }
+
+  getType4Image(exercise: any): string {
+    if (exercise.imgPath && exercise.imgPath.length > 5 && !exercise.imgPath.includes('toc/51.webp')) {
+      return exercise.imgPath.split(',')[0];
+    }
+    const cardType = this.getCardType(exercise);
+    if (cardType === 'quote') {
+      return this.isAdults 
+        ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/adultquete_gui.svg'
+        : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/quete_teenn.svg';
+    }
+    if (cardType === 'try_today') {
+      return this.isAdults
+        ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/adutry_today.svg'
+        : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/daily_teenn.svg';
+    }
+    if (cardType === 'food_thought') {
+      return this.isAdults
+        ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/adu_food.svg'
+        : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/adu_food.svg';
+    }
+    return '';
+  }
+
+  getParagraphs(text: string): string[] {
+    if (!text) return [];
+    return text.split('\n').filter(p => p.trim().length > 0);
+  }
+
+  cleanCardContent(content: string): SafeHtml {
+    if (!content) return '';
+    let html = content.trim();
+    
+    if (!/<[a-z][\s\S]*>/i.test(html)) {
+      const lines = html.split('\n').filter(l => l.trim().length > 0);
+      if (lines.length > 1) {
+        html = lines.map(line => `<p style="margin-bottom: 8px;">${line}</p>`).join('');
+      } else {
+        html = `<p style="margin: 0;">${html}</p>`;
+      }
+    }
+
+    return this.sanitizer.bypassSecurityTrustHtml(html);
   }
 
   autoResize(event: any) {

@@ -154,7 +154,7 @@
               <div *ngFor="let exercise of getExercisesForDay(dayNum); let i = index; let isLast = last">
 
                 <!-- Description above card (from API) -->
-                <p class="exercise_instruction" *ngIf="exercise.Description && exercise.Description.trim() !== ''"
+                <p class="exercise_instruction" *ngIf="exercise.Type !== 4 && exercise.Type !== '4' && exercise.Type !== 3 && exercise.Type !== '3' && exercise.Description && exercise.Description.trim() !== ''"
                   [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                   {{exercise.Description}}
                 </p>
@@ -174,18 +174,18 @@
                     <ng-container *ngIf="!isSection8(exercise) && !isGuidedJournaling(exercise)">
                       <h3 class="card_type1_title">{{exercise.DisplayTitle}}</h3>
                       <p class="card_type1_meta">
-                        {{exercise.DisplaySubtitle || exercise.Section}}<span *ngIf="exercise.Timing && exercise.Timing !== '0' && exercise.Timing !== '0:00' && exercise.Timing !== '00:00'"> • {{exercise.Timing}}</span>
+                        {{exercise.DisplaySubtitle || exercise.Section}}<span *ngIf="shouldShowTiming(exercise)"> • {{exercise.Timing}}</span>
                       </p>
                     </ng-container>
                     <ng-container *ngIf="isSection8(exercise)">
                       <h3 class="card_type1_title_sec8">{{exercise.DisplayTitle}}</h3>
-                      <p class="card_type1_session_label">{{exercise.sessionLabel}}<span *ngIf="exercise.Timing && exercise.Timing !== '0' && exercise.Timing !== '0:00' && exercise.Timing !== '00:00'"> • {{exercise.Timing}}</span></p>
+                      <p class="card_type1_session_label">{{exercise.sessionLabel}}<span *ngIf="shouldShowTiming(exercise, exercise.sessionLabel)"> • {{exercise.Timing}}</span></p>
                       <h4 class="card_type1_session_name">{{exercise.sessionName}}</h4>
                     </ng-container>
                     <ng-container *ngIf="isGuidedJournaling(exercise)">
                       <h3 class="card_type1_title_gj">{{exercise.DisplayTitle}}</h3>
                       <p class="card_type1_meta" style="margin-bottom: 0px;">{{exercise.DisplaySubtitle ||
-                        exercise.Section}}<span *ngIf="exercise.Timing && exercise.Timing !== '0' && exercise.Timing !== '0:00' && exercise.Timing !== '00:00'"> • {{exercise.Timing}}</span></p>
+                        exercise.Section}}<span *ngIf="shouldShowTiming(exercise)"> • {{exercise.Timing}}</span></p>
                       <p class="card_type1_meta_questions">{{exercise.QuestionCnt}} questions</p>
                     </ng-container>
                     <p class="card_type1_meta" *ngIf="exercise.Meta">{{exercise.Meta}}</p>
@@ -232,18 +232,18 @@
                       <ng-container *ngIf="!isSection8(exercise) && !isGuidedJournaling(exercise)">
                         <h3 class="exercise_title">{{exercise.DisplayTitle}}</h3>
                         <p class="exercise_meta">
-                          {{exercise.DisplaySubtitle || exercise.Section}}<span *ngIf="exercise.Timing && exercise.Timing !== '0' && exercise.Timing !== '0:00' && exercise.Timing !== '00:00'"> • {{exercise.Timing}}</span>
+                          {{exercise.DisplaySubtitle || exercise.Section}}<span *ngIf="shouldShowTiming(exercise)"> • {{exercise.Timing}}</span>
                         </p>
                       </ng-container>
                       <ng-container *ngIf="isSection8(exercise)">
                         <h3 class="exercise_title_sec8">{{exercise.DisplayTitle}}</h3>
-                        <p class="card_type1_session_label">{{exercise.sessionLabel}}<span *ngIf="exercise.Timing && exercise.Timing !== '0' && exercise.Timing !== '0:00' && exercise.Timing !== '00:00'"> • {{exercise.Timing}}</span></p>
+                        <p class="card_type1_session_label">{{exercise.sessionLabel}}<span *ngIf="shouldShowTiming(exercise, exercise.sessionLabel)"> • {{exercise.Timing}}</span></p>
                         <h4 class="card_type1_session_name">{{exercise.sessionName}}</h4>
                       </ng-container>
                       <ng-container *ngIf="isGuidedJournaling(exercise)">
                         <h3 class="exercise_title_gj">{{exercise.DisplayTitle}}</h3>
                         <p class="exercise_meta" style="margin-bottom: 0px;">{{exercise.DisplaySubtitle ||
-                          exercise.Section}}<span *ngIf="exercise.Timing && exercise.Timing !== '0' && exercise.Timing !== '0:00' && exercise.Timing !== '00:00'"> • {{exercise.Timing}}</span></p>
+                          exercise.Section}}<span *ngIf="shouldShowTiming(exercise)"> • {{exercise.Timing}}</span></p>
                         <p class="card_type1_meta_questions">{{exercise.QuestionCnt}} questions</p>
                       </ng-container>
                     </div>
@@ -298,6 +298,52 @@
                     Your online journal is secure and private to you.
                   </div>
                 </div>
+
+                <!-- Type 4: Response / Quote / Try This Today / Food For Thought Cards -->
+                <ng-container *ngIf="exercise.Type === 4 || exercise.Type == 4">
+                  <!-- Quote Card Variant -->
+                  <div *ngIf="getCardType(exercise) === 'quote'" class="type4_card quote_card_gj">
+                    <div class="card_icon_wrap">
+                      <img [src]="getType4Image(exercise)" alt="Quote">
+                    </div>
+                    <div class="quote_text" [innerHTML]="cleanCardContent(getQuoteText(exercise))"></div>
+                    <p class="quote_author" *ngIf="getQuoteAuthor(exercise)">{{ getQuoteAuthor(exercise) }}</p>
+                  </div>
+
+                  <!-- Try This Today Card Variant -->
+                  <div *ngIf="getCardType(exercise) === 'try_today'" class="type4_card try_today_card_gj">
+                    <div class="card_icon_wrap">
+                      <img [src]="getType4Image(exercise)" alt="Try this today">
+                    </div>
+                    <h4 class="card_header_label">{{ exercise.HeaderTitle || exercise.Section || 'TRY THIS TODAY' }}</h4>
+                    <div class="card_content_text" [innerHTML]="cleanCardContent(exercise.DisplayTitle || exercise.Title || exercise.Description)"></div>
+                  </div>
+
+                  <!-- Food For Thought Card Variant -->
+                  <div *ngIf="getCardType(exercise) === 'food_thought'" class="type4_card food_thought_card_gj">
+                    <div class="card_icon_wrap">
+                      <img [src]="getType4Image(exercise)" alt="Food for thought">
+                    </div>
+                    <h4 class="card_header_label">{{ exercise.HeaderTitle || exercise.Section || 'FOOD FOR THOUGHT' }}</h4>
+                    <div class="card_content_text" [innerHTML]="cleanCardContent(exercise.DisplayTitle || exercise.Title || exercise.Description)"></div>
+                  </div>
+
+                  <!-- Generic Type 4 Card Variant -->
+                  <div *ngIf="getCardType(exercise) === 'generic'" class="type4_card generic_card_gj">
+                    <div class="card_icon_wrap" *ngIf="getType4Image(exercise)">
+                      <img [src]="getType4Image(exercise)" alt="Icon">
+                    </div>
+                    <h3 class="generic_card_title" *ngIf="exercise.DisplayTitle || exercise.Title">
+                      {{ exercise.DisplayTitle || exercise.Title }}
+                    </h3>
+                    <div class="generic_card_desc" *ngIf="exercise.Description || exercise.text || exercise.Response"
+                      [innerHTML]="cleanCardContent(exercise.Description || exercise.text || exercise.Response)">
+                    </div>
+                    <p class="generic_card_author" *ngIf="getQuoteAuthor(exercise)">
+                      {{ getQuoteAuthor(exercise) }}
+                    </p>
+                  </div>
+                </ng-container>
 
                 <!-- Separator -->
                 <div class="card_separator" *ngIf="!isLast"></div>
