@@ -19,37 +19,85 @@ if (!function_exists('hw_org_base')) {
     }
 }
 
+if (!function_exists('hw_org_sanitize_id')) {
+    function hw_org_sanitize_id($id)
+    {
+        return preg_replace('/[^a-zA-Z0-9_-]/', '', trim((string) $id));
+    }
+}
+
+if (!function_exists('hw_org_query_id')) {
+    /** OrganizationId from ?id= only (empty when the query param is absent). */
+    function hw_org_query_id()
+    {
+        if (!isset($_GET['id'])) {
+            return '';
+        }
+        return hw_org_sanitize_id($_GET['id']);
+    }
+}
+
 if (!function_exists('hw_org_id')) {
+    /**
+     * Resolved OrganizationId for the flow:
+     * query param → session (from a prior Adv/landing visit) → default.
+     */
     function hw_org_id()
     {
-        $id = isset($_GET['id']) ? trim((string) $_GET['id']) : '';
+        $id = hw_org_query_id();
         if ($id === '' && !empty($_SESSION['hw_org_id'])) {
-            $id = (string) $_SESSION['hw_org_id'];
+            $id = hw_org_sanitize_id($_SESSION['hw_org_id']);
         }
         if ($id === '') {
             $id = 'org-humanwisdom';
         }
-        $id = preg_replace('/[^a-zA-Z0-9_-]/', '', $id);
-        if ($id !== '') {
-            $_SESSION['hw_org_id'] = $id;
-        }
-        return $id !== '' ? $id : 'org-humanwisdom';
+        $_SESSION['hw_org_id'] = $id;
+        return $id;
+    }
+}
+
+if (!function_exists('hw_org_defaults')) {
+    function hw_org_defaults($id = 'org-humanwisdom')
+    {
+        $end = new DateTime('today');
+        $end->modify('+7 days');
+        return [
+            'id' => $id,
+            'name' => 'HappierMe',
+            'logo' => hw_org_cdn_assets()['logo_default'],
+            'freeDays' => 7,
+            'isActive' => 1,
+            'trialEnds' => $end->format('j M Y'),
+        ];
     }
 }
 
 if (!function_exists('hw_org_qs')) {
-    function hw_org_qs($extra = [])
+    /**
+     * Build a query string. Pass $withId=true only for Adv / organisation landing
+     * (other flow pages keep OrganizationId in session, not the URL).
+     */
+    function hw_org_qs($extra = [], $withId = false)
     {
-        $params = array_merge(['id' => hw_org_id()], $extra);
+        $params = $extra;
+        if ($withId) {
+            $params = array_merge(['id' => hw_org_id()], $params);
+        }
+        if (empty($params)) {
+            return '';
+        }
         return '?' . http_build_query($params);
     }
 }
 
 if (!function_exists('hw_org_page')) {
-    function hw_org_page($name, $extra = [])
+    /**
+     * @param bool $withId Include ?id=… — true for organisation-Adv / organisation only
+     */
+    function hw_org_page($name, $extra = [], $withId = false)
     {
         $base = hw_org_base();
-        $file = $name . '.php' . hw_org_qs($extra);
+        $file = $name . '.php' . hw_org_qs($extra, $withId);
         if ($base === '..') {
             return $file;
         }
@@ -118,15 +166,34 @@ if (!function_exists('hw_org_logo_url')) {
     }
 }
 
-if (!function_exists('hw_org_fetch')) {
-    function hw_org_fetch($id = null)
+if (!function_exists('hw_org_http_get')) {
+    /** GET JSON from API — prefers cURL (file_get_contents often blocked / fails SSL). */
+    function hw_org_http_get($url)
     {
-        $id = $id ?: hw_org_id();
-        $api = rtrim(hw_api_config()['apiBase'], '/');
-        $url = $api . '/GetOrganization/' . rawurlencode($id);
+        if (function_exists('curl_init')) {
+            $ch = curl_init($url);
+            curl_setopt_array($ch, [
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_FOLLOWLOCATION => true,
+                CURLOPT_CONNECTTIMEOUT => 5,
+                CURLOPT_TIMEOUT => 8,
+                CURLOPT_HTTPHEADER => [
+                    'Accept: application/json',
+                    'User-Agent: HappierMe-Website/1.0',
+                ],
+            ]);
+            $raw = curl_exec($ch);
+            $code = (int) curl_getinfo($ch, CURLINFO_HTTP_CODE);
+            curl_close($ch);
+            if ($raw !== false && $code >= 200 && $code < 300) {
+                return $raw;
+            }
+            return '';
+        }
+
         $ctx = stream_context_create([
             'http' => [
-                'timeout' => 6,
+                'timeout' => 8,
                 'ignore_errors' => true,
                 'header' => "Accept: application/json\r\nUser-Agent: HappierMe-Website/1.0\r\n",
             ],
@@ -136,8 +203,41 @@ if (!function_exists('hw_org_fetch')) {
             ],
         ]);
         $raw = @file_get_contents($url, false, $ctx);
+        return is_string($raw) ? $raw : '';
+    }
+}
+
+if (!function_exists('hw_org_fetch')) {
+    /**
+     * Loads org branding for the campaign pages.
+     * Calls GET /api/GetOrganization/{OrganizationId} ONLY when ?id= is present;
+     * otherwise reuses session cache / defaults (no API call).
+     */
+    function hw_org_fetch($id = null)
+    {
+        $queryId = hw_org_query_id();
+        $forceApi = ($id !== null && $id !== '');
+
+        // No query param and no explicit id → do not hit the API
+        if (!$forceApi && $queryId === '') {
+            if (!empty($_SESSION['hw_org_data']) && is_array($_SESSION['hw_org_data'])) {
+                return $_SESSION['hw_org_data'];
+            }
+            return hw_org_defaults(hw_org_id());
+        }
+
+        $id = hw_org_sanitize_id($forceApi ? $id : $queryId);
+        if ($id === '') {
+            return hw_org_defaults(hw_org_id());
+        }
+
+        $_SESSION['hw_org_id'] = $id;
+
+        $api = rtrim(hw_api_config()['apiBase'], '/');
+        $url = $api . '/GetOrganization/' . rawurlencode($id);
+        $raw = hw_org_http_get($url);
         $row = [];
-        if (is_string($raw) && $raw !== '') {
+        if ($raw !== '') {
             $decoded = json_decode($raw, true);
             if (is_array($decoded)) {
                 $row = isset($decoded[0]) && is_array($decoded[0]) ? $decoded[0] : $decoded;
@@ -152,7 +252,7 @@ if (!function_exists('hw_org_fetch')) {
         $end = new DateTime('today');
         $end->modify('+' . $freeDays . ' days');
 
-        return [
+        $org = [
             'id' => $id,
             'name' => !empty($row['OrganizationName']) ? (string) $row['OrganizationName'] : 'HappierMe',
             'logo' => hw_org_logo_url($row['LogoUrl'] ?? ''),
@@ -160,6 +260,9 @@ if (!function_exists('hw_org_fetch')) {
             'isActive' => isset($row['IsActive']) ? (int) $row['IsActive'] : 1,
             'trialEnds' => $end->format('j M Y'),
         ];
+
+        $_SESSION['hw_org_data'] = $org;
+        return $org;
     }
 }
 

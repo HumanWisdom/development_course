@@ -21,11 +21,13 @@ if (!function_exists('hw_api_config')) {
             $apiBase = rtrim($baseOverride, '/');
         } else {
             $host = isset($_SERVER['HTTP_HOST']) ? strtolower($_SERVER['HTTP_HOST']) : '';
+            // Strip port so localhost:8200 still resolves to staging
+            $hostNoPort = preg_replace('/:\d+$/', '', $host);
             $envFlag = getenv('HW_API_ENV');
             $useStaging = ($envFlag === 'staging')
-                || (strpos($host, 'staging.') !== false)
-                || ($host === 'localhost')
-                || (strpos($host, '127.0.0.1') === 0);
+                || (strpos($hostNoPort, 'staging.') !== false)
+                || ($hostNoPort === 'localhost')
+                || (strpos($hostNoPort, '127.0.0.1') === 0);
 
             $apiBase = $useStaging
                 ? 'https://staging.humanwisdom.info/api'
