@@ -82,26 +82,28 @@
 
                 <h4 class="mtb0px blog_desc">
                     Some common effects include:
-                </h4>
-
-                <h4 class="mtb0px blog_desc">
+                
+<ul><li>
+                
                     <span class="blog_highlight_black">Lower productivity</span>: When mental energy is consumed by tension, it's harder to concentrate or collaborate effectively.
-                </h4>
+</li>
 
-                <h4 class="mtb0px blog_desc">
+                <li>
                     <span class="blog_highlight_black">Reduced collaboration</span>: Conflict damages team cohesion and makes people less willing to share ideas or offer support.
-                </h4>
+</li>
 
-                <h4 class="mtb0px blog_desc">
+                <li>
                     <span class="blog_highlight_black">Increased burnout</span>: Persistent tension at work can lead to emotional fatigue, poor sleep, and burnout.
-                </h4>
+</li>
 
-                <h4 class="mtb0px blog_desc">
+                <li>
                     <span class="blog_highlight_black">Higher turnover</span>: People don't just leave bad jobs — they leave unhealthy work relationships.
-                </h4>
+</li>
 
-                <h4 class="mtb0px blog_desc">
+                <li>
                     <span class="blog_highlight_black">Lower engagement</span>: Staff are less likely to feel engaged at work if there is significant interpersonal conflict. They are more likely to feel negatively about their job, and this can impact productivity.
+
+</li>                </ul>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
