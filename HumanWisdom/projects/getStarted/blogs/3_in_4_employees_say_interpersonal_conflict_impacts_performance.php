@@ -60,14 +60,15 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
+                     <span class="blog_highlight_black">
                     A recent HappierMe poll of 2,124 people reveals that
-                    <span class="blog_highlight_black">
+                   
                         74% of professionals say interpersonal conflict significantly (48%) or moderately (26%) affects their performance at work.
-                    </span>
-                    Only 11% say it has no impact at all.
+                   
+                    Only 11% say it has no impact at all. </span>
                 </h4>
 
-                <h4 class="mtb0px blog_desc">
+                <h4 class="mtb0px blog_desc" >
                     That's a powerful reminder that how we relate to each other in organisations is just as important as what we do.
                 </h4>
 
