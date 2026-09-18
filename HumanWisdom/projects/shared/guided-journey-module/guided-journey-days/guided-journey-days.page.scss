@@ -1252,3 +1252,6 @@
 .exercise_meta {
     text-align: left;
 }
+:host ::ng-deep .generic_card_desc ol {
+  padding-left: 15px !important;
+}
