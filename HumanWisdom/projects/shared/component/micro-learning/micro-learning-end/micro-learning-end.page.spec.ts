@@ -259,12 +259,10 @@ describe('MicroLearningEndPage', () => {
       expect(result.isGuidedProgram).toBe(true);
     });
 
-    it('should handle guided program without comma', () => {
-      const result = component.processLink('Making better decisions (GUIDED PROGRAM)', '/path', 'img.jpg');
-      expect(result.title).toBe('Making better decisions');
-      expect(result.type).toBe('GUIDED PROGRAM');
-      expect(result.sessionText).toBe('');
-      expect(result.isGuidedProgram).toBe(true);
+    it('should add space after comma for soundscapes', () => {
+      const result = component.processLink('Rain (SOUNDSCAPE,10 MIN)', '/path', 'img.jpg');
+      expect(result.title).toBe('Rain');
+      expect(result.type).toBe('SOUNDSCAPE, 10 MIN');
     });
   });
 
@@ -273,6 +271,7 @@ describe('MicroLearningEndPage', () => {
       expect(component.getResourceIcon({ type: 'VIDEO, 1 MIN.', url: '' })).toBe('https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg');
       expect(component.getResourceIcon({ type: 'SHORT VIDEO • 00:56', url: '' })).toBe('https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg');
       expect(component.getResourceIcon({ type: 'EVENT', url: '' })).toBe('https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg');
+      expect(component.getResourceIcon({ type: 'BREATHING EXERCISE', url: '' })).toBe('https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg');
     });
 
     it('should return audio play icon for Podcast, Soundscape, and Audio meditation', () => {

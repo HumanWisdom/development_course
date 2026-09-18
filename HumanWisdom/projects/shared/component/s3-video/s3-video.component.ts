@@ -552,7 +552,7 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
         this.headerTitle = 'In-depth conversation';
         return;
       } else if (rawType.includes('real') || rawType.includes('teentalk') || rawType.includes('conversation')) {
-        this.headerTitle = 'Real stories';
+        this.headerTitle = this.isAdults ? 'Stories of hope' : 'Teen talk';
         return;
       } else if (rawType.includes('short')) {
         this.headerTitle = 'Short videos';
@@ -581,7 +581,7 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
       this.headerTitle = 'In-depth conversation';
       return;
     } else if (selectedType === 'real_life') {
-      this.headerTitle = 'Real stories';
+      this.headerTitle = this.isAdults ? 'Stories of hope' : 'Teen talk';
       return;
     } else if (selectedType === 'short_videos') {
       this.headerTitle = 'Short videos';

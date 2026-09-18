@@ -2193,7 +2193,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     this.commonService.getModuleList().subscribe(res => {
       if (res) {
         this.moduleList = res;
-        this.moduleList.push({"ModuleName":"Events"},{"ModuleName":"Blogs"},{"ModuleName":"Life stories"},{"ModuleName":"Stories"},{"ModuleName":"Podcast"}, {"ModuleName":"Microlearning"}, {"ModuleName":"Guided journeys"}, {"ModuleName":"Short videos"}, {"ModuleName":"Videos"}, {"ModuleName":"Audio meditations"},{"ModuleName":"Soundscapes"},{"ModuleName":"Journal"},{"ModuleName":"Forum"}, {"ModuleName":"Exercises"},{"ModuleName":"Awareness Exercises"},{"ModuleName":"Self Awareness"},
+        this.moduleList.push({"ModuleName":"Events"},{"ModuleName":"Blogs"},{"ModuleName":"Stories of hope"},{"ModuleName":"Teen talk"},{"ModuleName":"Real stories"},{"ModuleName":"Life stories"},{"ModuleName":"Stories"},{"ModuleName":"Podcast"}, {"ModuleName":"Microlearning"}, {"ModuleName":"Guided journeys"}, {"ModuleName":"Short videos"}, {"ModuleName":"Videos"}, {"ModuleName":"Audio meditations"},{"ModuleName":"Soundscapes"},{"ModuleName":"Journal"},{"ModuleName":"Forum"}, {"ModuleName":"Exercises"},{"ModuleName":"Awareness Exercises"},{"ModuleName":"Self Awareness"},
                             {"ModuleName":"Develop a calm mind"},{"ModuleName":"Manage your emotions"},
                             {"ModuleName":"Understand yourself"},{"ModuleName":"Succeed in life"},
                             {"ModuleName":"Understand how your mind works"},{"ModuleName":"Mental Health"} )
@@ -2309,6 +2309,9 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
           url =`/${SharedService.getprogramName()}/blogs`
           break;
         }
+        case "stories of hope":
+        case "teen talk":
+        case "real stories":
         case "life stories":
         case "stories":{
           url = `/${SharedService.getprogramName()}/wisdom-stories`
