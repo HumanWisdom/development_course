@@ -95,11 +95,16 @@ export class WisdomShortsIndexPage implements OnInit {
 
     if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
-        } else {
-         this.isAdults = false;
-        }
+    } else {
+      this.isAdults = false;
+    }
 
-        this.getwisdomshorts()
+    const realLifeItem = this.typeData.find(t => t.id === 'real_life');
+    if (realLifeItem) {
+      realLifeItem.displayName = this.isAdults ? 'Stories of hope' : 'Teen talk';
+    }
+
+    this.getwisdomshorts()
 
   }
 
@@ -541,12 +546,13 @@ export class WisdomShortsIndexPage implements OnInit {
   
   computeHeaderTitle(val: any): string {
     const itemTypeLower = (val?.Type || val?.type || val?.TypeLabel || '').toString().toLowerCase();
+    const realStoriesHeader = this.isAdults ? 'Stories of hope' : 'Teen talk';
     if (itemTypeLower.includes('in-depth') || itemTypeLower.includes('indepth') || itemTypeLower.includes('event')) {
       return 'In-depth conversation';
     } else if (itemTypeLower.includes('expert') || itemTypeLower.includes('voice')) {
       return 'Expert tips';
     } else if (itemTypeLower.includes('real') || itemTypeLower.includes('teentalk') || itemTypeLower.includes('conversation')) {
-      return 'Real stories';
+      return realStoriesHeader;
     } else if (itemTypeLower.includes('short')) {
       return 'Short videos';
     } else if (this.selectedType === 'expert_tips') {
@@ -554,7 +560,7 @@ export class WisdomShortsIndexPage implements OnInit {
     } else if (this.selectedType === 'in_depth') {
       return 'In-depth conversation';
     } else if (this.selectedType === 'real_life') {
-      return 'Real stories';
+      return realStoriesHeader;
     } else if (this.selectedType === 'short_videos') {
       return 'Short videos';
     } else if (val?.TypeLabel) {
