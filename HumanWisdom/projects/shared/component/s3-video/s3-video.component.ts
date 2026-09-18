@@ -536,7 +536,7 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
           }
         }, 200);
       }
-      el.setAttribute('controlsList', 'nodownload nofullscreen');
+      el.setAttribute('controlsList', 'nodownload');
     }
   }
 
