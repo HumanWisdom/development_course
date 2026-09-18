@@ -3,12 +3,8 @@
 <html lang="en">
 
   <head>
-    <title>66% of workers say their kids' <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/curated/overcome-stress-anxiety"> <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/curated/overcome-stress-anxiety"> mental health </a> </a> impacts work performance </title>
-    <meta property="title" content="66% of workers say their kids' <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/curated/overcome-stress-anxiety"> <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/curated/overcome-stress-anxiety"> mental health </a> </a> impacts work performance">
-    <meta property="description" content="A  <a class="blog_highlight_peach td_underline" href="https://happierme.app">
-                        HappierMe
-                    </a> poll of 1,259 working parents reveals that 66% say worrying about their children's <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/curated/overcome-stress-anxiety"> <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/curated/overcome-stress-anxiety"> mental health </a> </a> significantly or moderately impacts their performance and need for time off work.">
-    <meta property="keyword" content="working parents, kids <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/curated/overcome-stress-anxiety"> <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/curated/overcome-stress-anxiety"> mental health </a> </a>, employee wellbeing, workplace productivity, family wellbeing, teen <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/curated/overcome-stress-anxiety"> <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/curated/overcome-stress-anxiety"> mental health </a> </a>">
+    <title>66% of workers say their kids</title>
+                        
 
     <!-- vendor_header -->
     <?php Template::vendorHeader(); ?>
@@ -25,6 +21,7 @@
 
       <!-- aspects -->
       <section class="rpt_01">
+     
         <div class="row center_flex">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
             
@@ -64,18 +61,17 @@
                 <h4 class="mtb0px blog_desc">
                     At present,
                     
-                        29% of teens have a <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/curated/overcome-stress-anxiety"> <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/curated/overcome-stress-anxiety"> <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/curated/overcome-stress-anxiety"> mental health </a> </a> </a> problem, 22% think of suicide and 40% are persistently sad (CDC).
+                        29% of teens have a  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/curated/overcome-stress-anxiety"> mental health</a>     problem, 22% think of suicide and 40% are persistently sad (CDC).
                 
                     We wanted to assess the impact of this on parents, and more specifically on their performance at work.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
                     A recent
-                    <a class="blog_highlight_peach td_underline" href="https://happierme.app">
+                    
                          <a class="blog_highlight_peach td_underline" href="https://happierme.app">
-                        HappierMe
-                    </a>
-                    </a>
+                        HappierMe</a>
+                    
                     poll provides valuable insights into the experiences of working parents across industries. It highlights the challenges faced by modern families and the significant impact this has on work performance and time needed off work. It underscores the need for effective strategies to support working parents and boost workplace productivity.
                 </h4>
 
@@ -99,8 +95,7 @@
 
                 <h4 class="mtb0px blog_desc">
                     The  <a class="blog_highlight_peach td_underline" href="https://happierme.app">
-                        HappierMe
-                    </a> poll revealed that concerns about children and their <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/curated/overcome-stress-anxiety"> <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/curated/overcome-stress-anxiety"> mental health </a> </a> significantly impact performance and the need for time off work.
+                        HappierMe</a> poll revealed that concerns about children and their <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/curated/overcome-stress-anxiety"> <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/curated/overcome-stress-anxiety"> mental health </a> </a> significantly impact performance and the need for time off work.
                     <span class="blog_highlight_black">
                         According to the results, 34% reported a significant impact, 32% a moderate impact, and 15% a slight impact.
                     </span>
@@ -108,7 +103,7 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                    These findings highlight the importance of recognising this as a problem faced by employees in the first place, and then providing resources to help them to support the <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/curated/overcome-stress-anxiety"> <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/curated/overcome-stress-anxiety"> mental health </a> </a> of their children.
+                    These findings highlight the importance of recognising this as a problem faced by employees in the first place, and then providing resources to help them to support the <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/curated/overcome-stress-anxiety"> <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/curated/overcome-stress-anxiety"> mental health</a>  of their children.
                 </h4>
 
                 <h4 class="mtb0px blog_sub_title">
@@ -138,7 +133,8 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                    If a child cannot go to school because of a <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/curated/overcome-stress-anxiety"> <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/curated/overcome-stress-anxiety"> mental health </a> </a> problem, the parent is often forced to take time off, because childcare is either not available or prohibitively expensive. Support for children's <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/curated/overcome-stress-anxiety"> <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/curated/overcome-stress-anxiety"> mental health </a> </a> problems is often not easy to access, and it can become a recurring problem.
+                    If a child cannot go to school because of a 
+                    <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/curated/overcome-stress-anxiety"> mental health</a> problem, the parent is often forced to take time off, because childcare is either not available or prohibitively expensive. Support for children's <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/curated/overcome-stress-anxiety"> <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/curated/overcome-stress-anxiety"> mental health </a> </a> problems is often not easy to access, and it can become a recurring problem.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -171,18 +167,16 @@
             </div>
                 <h4 class="mtb0px blog_desc">
                      <a class="blog_highlight_peach td_underline" href="https://happierme.app">
-                        HappierMe
-                    </a> is a wellbeing app with a different approach. It has separate sections for teenagers and adults and can support the entire family to flourish.
+                        HappierMe</a> is a wellbeing app with a different approach. It has separate sections for teenagers and adults and can support the entire family to flourish.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                    It helps users develop their self-awareness and emotional intelligence and apply that to manage their emotions and <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/curated/overcome-stress-anxiety"> <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/curated/overcome-stress-anxiety"> mental health </a> </a> proactively — preventing problems before they occur.
+                    It helps users develop their self-awareness and emotional intelligence and apply that to manage their emotions and <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/curated/overcome-stress-anxiety"> <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/curated/overcome-stress-anxiety"> mental health</a>  proactively — preventing problems before they occur.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
                     Unlike other apps,  <a class="blog_highlight_peach td_underline" href="https://happierme.app">
-                        HappierMe
-                    </a> helps users truly understand the WHY behind their thoughts, feelings, and behaviors. By addressing the root causes of problems, it can create lasting change. It helps parents to support teens to understand and manage their emotions and facilitate conversations that lead to positive outcomes. Having a resource that teens can always access can reassure parents that they have the support when they need it, allowing them to focus better at work.
+                        HappierMe</a> helps users truly understand the WHY behind their thoughts, feelings, and behaviors. By addressing the root causes of problems, it can create lasting change. It helps parents to support teens to understand and manage their emotions and facilitate conversations that lead to positive outcomes. Having a resource that teens can always access can reassure parents that they have the support when they need it, allowing them to focus better at work.
                 </h4>
 
                 <!-- <h4 class="mtb0px blog_desc">
@@ -285,7 +279,7 @@
               </div>
             </div>
 
-            <div class="row">
+          <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <h1 class="mtb0px fs_36px fw_500 lh_140p fc_000000">
                   Understand your mind. Live a happier life. 
