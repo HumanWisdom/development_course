@@ -128,13 +128,16 @@ export class GuidedJourneyEndPage implements OnInit {
   getSectionIcon(section: string) {
     if (!section) return null;
     const s = section.toUpperCase();
-    if (s.includes('PODCAST') || s.includes('AUDIO') || s.includes('MEDITATION') || s.includes('BREATHING') || s.includes('SOUNDSCAPE')) {
-      return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audio_play.svg';
+    if (s.includes('MODULE') || s.includes('SESSION') || s.includes('PROGRAM') || s.includes('PATHWAY') || s.includes('GUIDED')) {
+      return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/pathway.svg';
     }
-    if (s.includes('VIDEO') || s.includes('SHORT') || s.includes('CONVERSATION') || s.includes('TALK') || s.includes('EVENT')) {
+    if (s.includes('VIDEO') || s.includes('SHORT') || s.includes('CONVERSATION') || s.includes('TALK') || s.includes('EVENT') || s.includes('BREATHING')) {
       return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg';
     }
-    return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg';
+    if (s.includes('PODCAST') || s.includes('AUDIO') || s.includes('MEDITATION') || s.includes('SOUNDSCAPE')) {
+      return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audio_play.svg';
+    }
+    return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/pathway.svg';
   }
 
   getSectionDisplayName(section: string): string {

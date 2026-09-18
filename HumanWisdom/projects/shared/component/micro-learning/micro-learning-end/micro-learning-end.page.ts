@@ -236,6 +236,11 @@ export class MicroLearningEndPage implements OnInit, AfterViewInit, OnDestroy {
         type = parts[0].trim();
         sessionText = parts.slice(1).join(',').trim().toLowerCase();
       }
+    } else {
+      // In soundscape (or other types) -> add space after comma ","
+      if (type.includes(',')) {
+        type = type.replace(/,(?!\s)/g, ', ');
+      }
     }
 
     return {
@@ -258,15 +263,17 @@ export class MicroLearningEndPage implements OnInit, AfterViewInit, OnDestroy {
       return null;
     }
 
-    // Video icon: Event, Video
+    // Video icon: Event, Video, Breathing exercise
     if (
       type.includes('EVENT') ||
       type.includes('VIDEO') ||
       type.includes('TALK') ||
+      type.includes('BREATHING') ||
       url.includes('EVENT') ||
       url.includes('VIDEO') ||
       url.includes('SHORTS') ||
-      url.includes('VIDEOPAGE')
+      url.includes('VIDEOPAGE') ||
+      url.includes('BREATHING')
     ) {
       return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg';
     }

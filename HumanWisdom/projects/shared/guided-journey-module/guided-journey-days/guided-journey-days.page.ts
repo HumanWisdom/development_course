@@ -245,8 +245,12 @@ export class GuidedJourneyDaysPage implements OnInit {
             subTitle = subTitle.replace(timing, '').replace(/^[,\s•–-]+|[,\s•–-]+$/g, '').trim();
           }
 
-          const parsedQuote = this.parseQuoteTitle(rawTitle);
-          const isQuoteSection = (item.Section || '').toUpperCase().includes('QUOTE') || (item.Section || '').toUpperCase().includes('QUOTATION');
+          const isQuoteSection = (item.Section || '').toUpperCase().includes('QUOTE') || 
+                                 (item.Section || '').toUpperCase().includes('QUOTATION') ||
+                                 (item.SectionID || item.SectionId || item.sectionID || item.sectionId) == 16 ||
+                                 (item.SectionID || item.SectionId || item.sectionID || item.sectionId) == '16';
+
+          const parsedQuote = isQuoteSection ? this.parseQuoteTitle(rawTitle) : { quoteText: '', quoteAuthor: '' };
 
           return {
             ...item,
@@ -256,7 +260,7 @@ export class GuidedJourneyDaysPage implements OnInit {
             DisplaySubtitle: subTitle,
             QuoteText: parsedQuote.quoteText,
             QuoteAuthor: parsedQuote.quoteAuthor,
-            Author: item.Author || item.author || parsedQuote.quoteAuthor,
+            Author: item.Author || item.author || (isQuoteSection ? parsedQuote.quoteAuthor : ''),
             sessionLabel: sessionLabel,
             sessionName: sessionName,
             QuestionCnt: item.QuestionCnt,
@@ -424,15 +428,19 @@ export class GuidedJourneyDaysPage implements OnInit {
     if (!exercise) return 'generic';
     const section = (exercise.Section || exercise.HeaderTitle || exercise.Header || '').toUpperCase();
     const title = (exercise.Title || exercise.DisplayTitle || '').toUpperCase();
+    const sectionId = String(exercise.SectionID || exercise.SectionId || exercise.sectionID || exercise.sectionId || '');
     
-    if (section.includes('QUOTE') || section.includes('QUOTATION') || title.includes('QUOTE') || title.includes('QUOTATION') || exercise.Author || exercise.author || exercise.QuoteAuthor) {
-      return 'quote';
+    if (sectionId === '18' || section.includes('FOOD FOR THOUGHT') || section.includes('FOOD') || title.includes('FOOD FOR THOUGHT')) {
+      return 'food_thought';
     }
-    if (section.includes('TRY THIS TODAY') || section.includes('TRY THIS') || section.includes('CHALLENGE') || title.includes('TRY THIS TODAY') || title.includes('TRY THIS')) {
+    if (sectionId === '17' || section.includes('TRY THIS TODAY') || section.includes('TRY THIS') || section.includes('CHALLENGE') || title.includes('TRY THIS TODAY') || title.includes('TRY THIS')) {
       return 'try_today';
     }
-    if (section.includes('FOOD FOR THOUGHT') || section.includes('FOOD') || title.includes('FOOD FOR THOUGHT')) {
-      return 'food_thought';
+    if (sectionId === '16' || section.includes('QUOTE') || section.includes('QUOTATION') || title.includes('QUOTE') || title.includes('QUOTATION')) {
+      return 'quote';
+    }
+    if (exercise.Author || exercise.author) {
+      return 'quote';
     }
     return 'generic';
   }
@@ -865,16 +873,16 @@ export class GuidedJourneyDaysPage implements OnInit {
     if (!section) return null;
     const s = section.toUpperCase();
     
-    if (s.includes('MODULE') || s.includes('SESSION')) {
+    if (s.includes('MODULE') || s.includes('SESSION') || s.includes('PROGRAM') || s.includes('PATHWAY') || s.includes('GUIDED')) {
       return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/pathway.svg';
     }
     
-    if (s.includes('PODCAST') || s.includes('AUDIO') || s.includes('MEDITATION') || s.includes('BREATHING') || s.includes('SOUNDSCAPE')) {
-      return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audio_play.svg';
+    if (s.includes('VIDEO') || s.includes('SHORT') || s.includes('BREATHING')) {
+      return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg';
     }
     
-    if (s.includes('VIDEO') || s.includes('SHORT')) {
-      return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg';
+    if (s.includes('PODCAST') || s.includes('AUDIO') || s.includes('MEDITATION') || s.includes('SOUNDSCAPE')) {
+      return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audio_play.svg';
     }
     
     return null;

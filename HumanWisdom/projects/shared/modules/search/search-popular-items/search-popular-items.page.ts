@@ -641,7 +641,7 @@ export class SearchPopularItemsPage implements OnInit, OnDestroy {
     } else if (itemTypeLower.includes('expert') || itemTypeLower.includes('voice')) {
       headerTitle = 'Expert tips';
     } else if (itemTypeLower.includes('real') || itemTypeLower.includes('teentalk') || itemTypeLower.includes('conversation')) {
-      headerTitle = 'Real stories';
+      headerTitle = this.isAdults ? 'Stories of hope' : 'Teen talk';
     } else if (itemTypeLower.includes('short')) {
       headerTitle = 'Short videos';
     }

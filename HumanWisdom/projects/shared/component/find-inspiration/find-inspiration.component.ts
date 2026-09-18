@@ -91,7 +91,7 @@ export class FindInspiration {
         url: 'soundscapes'
       },
       {
-        title: 'Life stories',
+        title: this.isAdults ? 'Stories of hope' : 'Teen talk',
         img: this.isAdults
           ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/life.svg'
           : 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/story_without_bg.svg',
