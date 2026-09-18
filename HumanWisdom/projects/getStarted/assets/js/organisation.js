@@ -95,16 +95,29 @@
       if (!ready()) return;
       btn.disabled = true;
       showError(err, "Creating your account…");
+
+      var account = {
+        FName: name.value.trim(),
+        Lname: "",
+        Email: email.value.trim(),
+        Pwd: password.value,
+        OrganizationId: org.id || getStoredOrganizationId(),
+      };
+
+      try {
+        localStorage.setItem("hw_org_account", JSON.stringify(account));
+        localStorage.setItem("email", account.Email);
+        localStorage.setItem("pswd", account.Pwd);
+        localStorage.setItem("name", account.FName);
+        if (account.OrganizationId) {
+          localStorage.setItem("OrganizationId", account.OrganizationId);
+        }
+      } catch (e) {}
+
       fetch(apiBase + "/AddLearner_Website", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          FName: name.value.trim(),
-          Lname: "",
-          Email: email.value.trim(),
-          Pwd: password.value,
-          OrgId: org.id || "",
-        }),
+        body: JSON.stringify(account),
       })
         .then(function (res) {
           return res.json().then(function (data) {
@@ -115,10 +128,11 @@
           var id = parseInt(result.data, 10);
           if (!isNaN(id)) {
             try {
-              sessionStorage.setItem("hw_org_email", email.value.trim());
-              sessionStorage.setItem("hw_org_name", name.value.trim());
+              account.UserId = id;
+              localStorage.setItem("hw_org_account", JSON.stringify(account));
+              localStorage.setItem("userId", String(id));
             } catch (e) {}
-            go("otp", { email: email.value.trim() });
+            go("otp", { email: account.Email });
             return;
           }
           showError(err, typeof result.data === "string" ? result.data : "Could not create account.");
@@ -131,6 +145,42 @@
     });
   }
 
+  function getAccountEmailFromLocalStorage() {
+    try {
+      var account = JSON.parse(localStorage.getItem("hw_org_account") || "null");
+      if (account && account.Email) return String(account.Email).trim();
+      var email = localStorage.getItem("email");
+      if (!email) return "";
+      // login-signup sometimes stores JSON-quoted email
+      if (email.charAt(0) === '"') {
+        try {
+          email = JSON.parse(email);
+        } catch (e) {}
+      }
+      return String(email || "").trim();
+    } catch (e) {
+      return "";
+    }
+  }
+
+  function clearCreateAccountLocalStorage() {
+    [
+      "hw_org_account",
+      "hw_org_response",
+      "hw_org_id",
+      "OrganizationId",
+      "email",
+      "pswd",
+      "password",
+      "name",
+      "userId",
+    ].forEach(function (key) {
+      try {
+        localStorage.removeItem(key);
+      } catch (e) {}
+    });
+  }
+
   function setupOtp() {
     var wrap = qs("org-otp");
     if (!wrap) return;
@@ -140,18 +190,20 @@
     var timerEl = qs("org-otp-timer");
     var resend = qs("org-resend");
     var back = qs("org-otp-back");
+    var verifying = false;
+
+    // Email for /verificationCode comes from localStorage (create-account data)
     var email =
+      getAccountEmailFromLocalStorage() ||
       new URLSearchParams(window.location.search).get("email") ||
-      (function () {
-        try {
-          return sessionStorage.getItem("hw_org_email") || "";
-        } catch (e) {
-          return "";
-        }
-      })();
+      "";
 
     if (emailEl && email) {
       emailEl.textContent = email;
+    }
+
+    if (!email) {
+      showError(err, "Missing account email. Please create your account again.");
     }
 
     var remaining = 30;
@@ -185,26 +237,54 @@
       }).join("");
     }
 
+    function resetOtpInputs() {
+      inputs.forEach(function (el) {
+        el.value = "";
+      });
+      if (inputs[0]) inputs[0].focus();
+      verifying = false;
+    }
+
+    // Same contract as adult-dashboard verifyCode(): POST /verificationCode { Email, VCode }
     function maybeSubmit() {
-      if (code().length !== 6) return;
+      if (verifying || code().length !== 6) return;
+      if (!email) {
+        showError(err, "Missing account email. Please create your account again.");
+        resetOtpInputs();
+        return;
+      }
+
+      verifying = true;
+      showError(err, "Verifying…");
+
       fetch(apiBase + "/verificationCode", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ Email: email, VCode: code() }),
+        body: JSON.stringify({
+          Email: email,
+          VCode: code(),
+        }),
       })
         .then(function (res) {
-          if (!res.ok) throw new Error("verify");
-          return res.json();
+          return res.json().then(function (data) {
+            return { ok: res.ok, data: data };
+          });
         })
-        .then(function () {
+        .then(function (result) {
+          // adult-dashboard: if (res > 0) …
+          var ok =
+            result.ok &&
+            (result.data === true ||
+              result.data > 0 ||
+              parseInt(result.data, 10) > 0);
+          if (!ok) throw new Error("verify");
+
+          clearCreateAccountLocalStorage();
           go("success");
         })
         .catch(function () {
           showError(err, "That code did not match. Please try again.");
-          inputs.forEach(function (el) {
-            el.value = "";
-          });
-          if (inputs[0]) inputs[0].focus();
+          resetOtpInputs();
         });
     }
 
@@ -224,7 +304,113 @@
     }
   }
 
+  function orgLogoUrl(logoUrl) {
+    var fallback = (assets && assets.logo_default) || "";
+    logoUrl = String(logoUrl || "").trim();
+    if (!logoUrl) return fallback;
+    if (/^https?:\/\//i.test(logoUrl)) return logoUrl;
+    return "https://d1tenzemoxuh75.cloudfront.net/" + logoUrl.replace(/^\//, "");
+  }
+
+  function applyOrganization(row, id, rawResponse) {
+    var freeDays = parseInt(row.FreeDays_Count, 10);
+    if (!freeDays || freeDays < 1) freeDays = 7;
+    var name = row.OrganizationName || "HappierMe";
+    var logo = orgLogoUrl(row.LogoUrl);
+    org.id = id;
+    org.name = name;
+    org.logo = logo;
+    org.freeDays = freeDays;
+    org.isActive = row.IsActive != null ? Number(row.IsActive) : 1;
+    window.__HW_ORG__ = org;
+
+    try {
+      // Persist the API payload exactly as returned
+      localStorage.setItem(
+        "hw_org_response",
+        JSON.stringify(rawResponse != null ? rawResponse : [row])
+      );
+      localStorage.setItem("hw_org_id", id);
+      localStorage.setItem("OrganizationId", id);
+    } catch (e) {}
+
+    var logoImg = document.querySelector(".org-logo");
+    if (logoImg) {
+      logoImg.src = logo;
+      logoImg.alt = name;
+    }
+    var logoLink = document.querySelector(".org-logo-link");
+    if (logoLink) {
+      logoLink.setAttribute("aria-label", name);
+    }
+    document.querySelectorAll("[data-org-free-days]").forEach(function (el) {
+      el.textContent = String(freeDays);
+    });
+  }
+
+  /**
+   * When ?id= is on the URL, call GET /api/GetOrganization/{OrganizationId}
+   * and save the response in localStorage.
+   */
+  function setupGetOrganization() {
+    var id = new URLSearchParams(window.location.search).get("id");
+    if (!id) return;
+    id = String(id).trim().replace(/[^a-zA-Z0-9_-]/g, "");
+    if (!id) return;
+
+    fetch(apiBase + "/GetOrganization/" + encodeURIComponent(id), {
+      method: "GET",
+      headers: { Accept: "application/json" },
+    })
+      .then(function (res) {
+        if (!res.ok) throw new Error("GetOrganization failed");
+        return res.json();
+      })
+      .then(function (data) {
+        var row = Array.isArray(data) ? data[0] : data;
+        if (!row || typeof row !== "object") throw new Error("empty org");
+        applyOrganization(row, id, data);
+      })
+      .catch(function () {
+        try {
+          localStorage.setItem("hw_org_id", id);
+          localStorage.setItem("OrganizationId", id);
+        } catch (e) {}
+      });
+  }
+
+  function restoreOrgFromStorage() {
+    try {
+      var stored = localStorage.getItem("hw_org_response");
+      if (!stored) return;
+      var data = JSON.parse(stored);
+      var row = Array.isArray(data) ? data[0] : data;
+      if (!row || typeof row !== "object") return;
+      var id =
+        localStorage.getItem("OrganizationId") ||
+        localStorage.getItem("hw_org_id") ||
+        org.id ||
+        "";
+      if (!id) return;
+      applyOrganization(row, id, data);
+    } catch (e) {}
+  }
+
+  function getStoredOrganizationId() {
+    try {
+      return (
+        localStorage.getItem("OrganizationId") ||
+        localStorage.getItem("hw_org_id") ||
+        ""
+      );
+    } catch (e) {
+      return "";
+    }
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
+    restoreOrgFromStorage();
+    setupGetOrganization();
     setupSignup();
     setupOtp();
   });
