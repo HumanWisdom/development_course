@@ -1,7 +1,7 @@
 <?php
 $assets = isset($assets) ? $assets : hw_org_cdn_assets();
 $org = isset($org) ? $org : hw_org_fetch();
-$headerHome = hw_org_page('organisation');
+$headerHome = hw_org_page('organisation', [], true);
 $useOrgLogo = !empty($useOrgLogo);
 $logoSrc = $useOrgLogo ? $org['logo'] : $assets['logo_default'];
 $logoAlt = $useOrgLogo ? $org['name'] : 'HappierMe';

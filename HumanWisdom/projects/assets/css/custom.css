@@ -11444,7 +11444,7 @@ btn:active {
 
 .tcenter {
   text-align: center !important;
-  text-align: -webkit-center !important;
+  text-align: -webkit-center !important;  /* not valid anymore */
 }
 
 a.img-btn:hover {
