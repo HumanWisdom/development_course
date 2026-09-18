@@ -243,16 +243,16 @@
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 2;
-            width: 30px;
-            height: 30px;
+            width: 24px;
+            height: 24px;
             display: flex;
             align-items: center;
             justify-content: center;
             pointer-events: none;
 
             .overlay_icon {
-                width: 30px;
-                height: 30px;
+                width: 24px;
+                height: 24px;
                 display: block;
             }
         }
