@@ -10,7 +10,7 @@
   --org-cream-text: #fff7e6;
   --org-ink: #000000;
   --org-muted: rgba(0, 0, 0, 0.5);
-  --org-header-h: 120px;
+  --org-header-h: 121px;
   --org-font: "Poppins", sans-serif;
 }
 
@@ -56,7 +56,7 @@ body.org-page-landing .org-footer {
 body.org-page-landing .org-header-inner {
   width: 100%;
   max-width: none;
-  padding: 38px 50px;
+  padding: 30px 50px;
 }
 
 body.org-page h1,
@@ -83,7 +83,7 @@ img {
   width: 1340px;
   max-width: 100%;
   margin: 0 auto;
-  padding: 38px 50px;
+  padding: 30px 50px;
   min-height: var(--org-header-h);
   display: flex;
   align-items: center;
@@ -94,9 +94,10 @@ img {
   line-height: 0;
 }
 
-.org-logo {
-  width: 190px;
-  height: 44px;
+img.org-logo {
+  width: 215px;
+  height: 61px;
+  max-width: 215px;
   object-fit: contain;
   object-position: left center;
   display: block;
@@ -107,12 +108,14 @@ img {
   width: 100%;
 }
 
+a.org-btn,
+button.org-btn,
 .org-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   border: 0;
-  background: linear-gradient(180deg, var(--org-cta-start) 0%, var(--org-cta-end) 100%);
+  background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
   color: #fff;
   font-weight: 600;
   text-decoration: none;
@@ -121,13 +124,53 @@ img {
   font-size: 24px;
   line-height: 1.4;
   cursor: pointer;
-  transition: filter 0.2s ease, background 0.2s ease;
+  transition: background 0.2s ease;
 }
 
+a.org-btn:hover,
+a.org-btn:focus,
+a.org-btn:active,
+a.org-btn:focus-visible,
+button.org-btn:hover,
+button.org-btn:focus,
+button.org-btn:active,
 .org-btn:hover,
-.org-btn:focus {
+.org-btn:focus,
+.org-btn:active {
   color: #fff;
-  filter: brightness(0.96);
+  text-decoration: none;
+  background: linear-gradient(180deg, #da7d71 0%, #bf5061 100%);
+  filter: none;
+}
+
+a.org-btn-welcome,
+.org-btn-welcome {
+  background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
+  color: #fff;
+}
+
+a.org-btn-welcome:hover,
+a.org-btn-welcome:focus,
+a.org-btn-welcome:active,
+a.org-btn-welcome:focus-visible,
+.org-btn-welcome:hover,
+.org-btn-welcome:focus,
+.org-btn-welcome:active {
+  color: #fff;
+  text-decoration: none;
+  background: linear-gradient(180deg, #da7d71 0%, #bf5061 100%);
+}
+
+a.org-btn:visited,
+a.org-btn-welcome:visited {
+  color: #fff;
+  background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
+}
+
+a.org-btn:visited:hover,
+a.org-btn-welcome:visited:hover {
+  color: #fff;
+  background: linear-gradient(180deg, #da7d71 0%, #bf5061 100%);
 }
 
 .org-btn:disabled {
@@ -164,12 +207,18 @@ img {
   white-space: nowrap;
 }
 
+a.org-btn-outline,
 .org-btn-outline {
   background: #fff;
   color: var(--org-cta-end);
   border: 1px solid var(--org-cta-end);
 }
 
+a.org-btn-outline:hover,
+a.org-btn-outline:focus,
+a.org-btn-outline:active,
+a.org-btn-outline:visited,
+a.org-btn-outline:visited:hover,
 .org-btn-outline:hover,
 .org-btn-outline:focus {
   color: var(--org-cta-end);
@@ -204,10 +253,30 @@ img {
   text-align: center;
   padding: 80px 24px;
   color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.org-hero-offer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  width: 979px;
+  max-width: 100%;
+}
+
+.org-hero-offer-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
 }
 
 .org-kicker {
-  margin: 0 0 30px;
+  margin: 0;
   font-size: 30px;
   font-weight: 600;
   line-height: 1.5;
@@ -226,7 +295,7 @@ img {
 }
 
 .org-hero-note {
-  margin: 9px 0 0;
+  margin: 0;
   font-size: 21px;
   font-weight: 400;
   line-height: 1.5;
@@ -284,7 +353,8 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 6px;
+  width: 100%;
 }
 
 .org-benefit h2 {
@@ -334,7 +404,8 @@ img {
   width: 100%;
   height: 497px;
   margin: 0 auto;
-  padding: 0 50px;
+  padding: 24px 50px;
+  overflow: hidden;
 }
 
 .org-hero-copy {
@@ -363,26 +434,37 @@ img {
 }
 
 .org-phone {
+  position: relative;
   flex: 0 0 auto;
-  text-align: center;
+  width: 290px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  max-height: 100%;
 }
 
 .org-phone img {
-  width: 331px;
-  max-width: 100%;
+  width: 100%;
   height: auto;
-  max-height: 450px;
+  max-height: 420px;
   object-fit: contain;
+  object-position: bottom center;
   display: block;
-  margin: 0 auto;
 }
 
 .org-phone-caption {
-  margin: 8px 0 0;
+  box-sizing: border-box;
+  width: 80%;
+  margin: 0 0 0 20%;
+  padding: 0;
   font-size: 12px;
   font-style: italic;
   font-weight: 500;
+  line-height: 1.4;
   color: #fef6e6;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .org-rating {
@@ -832,7 +914,12 @@ body.org-flow .org-main {
 
 /* Download card — Figma: title → QR → OR → black store badges */
 .org-download-card .org-flow-title {
-  margin: 0 0 24px;
+  margin: 0 auto 24px;
+  max-width: 380px;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
 }
 
 .org-download-card .org-qr {
@@ -923,7 +1010,7 @@ body.org-flow-download .org-download-card {
   }
 
   body.org-flow-download .org-download-card {
-    padding: 48px 45px;
+    padding: 40px 72px;
     max-width: 470px;
   }
 
@@ -953,9 +1040,10 @@ body.org-flow-download .org-download-card {
     min-height: 70px;
   }
 
-  .org-logo {
-    width: 140px;
-    height: 32px;
+  img.org-logo {
+    width: 160px;
+    height: 45px;
+    max-width: 160px;
     object-position: center;
   }
 
@@ -973,16 +1061,17 @@ body.org-flow-download .org-download-card {
     font-weight: 600;
     line-height: 1.25;
     letter-spacing: 0.08em;
-    margin-bottom: 0;
+    margin: 0;
     color: #ffffff;
   }
 
   .org-hero-offer {
     padding: 30px 40px;
+  }
+
+  .org-hero-offer-inner {
     gap: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: 100%;
   }
 
   .org-hero-offer h1 {
@@ -995,6 +1084,7 @@ body.org-flow-download .org-download-card {
   }
 
   .org-hero-note {
+    margin: 0;
     font-size: 12px;
     font-weight: 400;
     line-height: 1.25;
@@ -1083,10 +1173,25 @@ body.org-flow-download .org-download-card {
     height: auto;
     padding: 40px 20px;
     gap: 24px;
+    overflow: visible;
   }
 
   .org-hero-copy {
     align-items: center;
+  }
+
+  .org-phone {
+    width: 211px;
+    justify-content: flex-start;
+  }
+
+  .org-phone img {
+    max-height: none;
+  }
+
+  .org-phone-caption {
+    width: 80%;
+    margin: 0 0 0 20%;
   }
 
   .org-hero-copy h1 {
@@ -1102,10 +1207,6 @@ body.org-flow-download .org-download-card {
     line-height: 1.5;
     margin: 0;
     text-align: center;
-  }
-
-  .org-phone img {
-    width: 211px;
   }
 
   .org-trust {
