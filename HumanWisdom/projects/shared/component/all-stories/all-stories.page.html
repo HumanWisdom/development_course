@@ -1,9 +1,9 @@
-<title>Wisdom Stories|Wisdom for Personal Growth|HumanWisdom</title>
+<title>{{isAdults ? 'Stories of hope | Wisdom for Personal Growth | HumanWisdom' : 'Teen talk | HumanWisdom'}}</title>
 <meta name="description"
-  content="Real-life stories submitted by users across the world. You can also submit your own story. All the stories are subject to approval." />
+  content="Stories submitted by users across the world. You can also submit your own story. All the stories are subject to approval." />
 
 <!-- top navigation -->
-<app-feature-header title="Life Stories"></app-feature-header>
+<app-feature-header [title]="isAdults ? 'Stories of hope' : 'Teen talk'"></app-feature-header>
 <!-- /top navigation -->
 
 <app-bg-video></app-bg-video>
@@ -35,7 +35,7 @@
                   <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12 p0">
                       <h6 class="mtb0px fs_12px fw_400 lh_150p" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff_0_5'">
-                        These are all real-life stories submitted by users from
+                        These are all {{isAdults ? 'stories of hope' : 'teen talk stories'}} submitted by users from
                         across the world. All names have been changed. They
                         offer illumination, hope, and nuggets of wisdom, and we
                         hope they inspire you to submit your own story.

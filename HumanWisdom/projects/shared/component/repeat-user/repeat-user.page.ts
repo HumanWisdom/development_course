@@ -2338,7 +2338,7 @@ export class RepeatUserPage implements OnInit {
   getModuleList(isLoad?) {
     this.service.getModuleList().subscribe(res => {
       this.moduleList = res;
-      this.moduleList.push({"ModuleName":"Events"},{"ModuleName":"Blogs"},{"ModuleName":"Life stories"},{"ModuleName":"Stories"},{"ModuleName":"Podcast"}, {"ModuleName":"Short videos"}, {"ModuleName":"Videos"}, {"ModuleName":"Audio meditations"},{"ModuleName":"Soundscapes"},{"ModuleName":"Journal"},{"ModuleName":"Forum"}, {"ModuleName":"Exercises"},{"ModuleName":"Awareness Exercises"},
+      this.moduleList.push({"ModuleName":"Events"},{"ModuleName":"Blogs"},{"ModuleName":"Stories of hope"},{"ModuleName":"Teen talk"},{"ModuleName":"Real stories"},{"ModuleName":"Life stories"},{"ModuleName":"Stories"},{"ModuleName":"Podcast"}, {"ModuleName":"Short videos"}, {"ModuleName":"Videos"}, {"ModuleName":"Audio meditations"},{"ModuleName":"Soundscapes"},{"ModuleName":"Journal"},{"ModuleName":"Forum"}, {"ModuleName":"Exercises"},{"ModuleName":"Awareness Exercises"},
                            {"ModuleName":"Develop a calm mind"},{"ModuleName":"Manage your emotions"},
                            {"ModuleName":"Understand yourself"},{"ModuleName":"Succeed in life"},
                            {"ModuleName":"Understand how your mind works"},{"ModuleName":"Mental Health"} )

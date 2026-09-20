@@ -1747,7 +1747,7 @@
               <a class="" href="human_skilss_Ai_world.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/blogs/81.webp" class="img-responsive img_blogs" alt="Blog_img">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/blogs/79.webp" class="img-responsive img_blogs" alt="Blog_img">
                   </div>
                 </div>
 
@@ -1828,8 +1828,69 @@ Work and Leadership</button>
                
               </a>
             </div>
+
+               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="1100">
+
+              <a class="" href="3_in_4_employees_say_interpersonal_conflict_impacts_performance.php">
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/85.webp" class="img-responsive img_blogs" alt="Blog_img">
+                  </div>
+                </div>
+
+                <div class="row mt20px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp"> Mental health</button>
+
+
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                    <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">3 in 4 employees say interpersonal conflict impacts performance
+
+
+
+
+</h4>
+                  </div>
+                </div>
+               
+              </a>
+            </div>
           </span>
             <div class="clearfix"></div>
+
+               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="1100">
+
+              <a class="" href="worker_says.php">
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/86.webp" class="img-responsive img_blogs" alt="Blog_img">
+                  </div>
+                </div>
+
+                <div class="row mt20px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp"> Mental health</button>
+
+
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                    <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">66% of workers say their kids’ mental health impacts work performance
+
+
+
+</h4>
+                  </div>
+                </div>
+               
+              </a>
+            </div>
 
           <div class="blog-empty is-hidden" id="blog-empty">No articles match your search.</div>
 

@@ -1,3 +1,34 @@
+.right_col.mc_01_v3 {
+  min-height: calc(100vh - 60px);
+  min-height: calc(100dvh - 60px);
+  display: flex;
+  flex-direction: column;
+
+  .cw100p,
+  .row.center_flex {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+}
+
+.col_cw {
+  min-height: calc(100vh - 60px);
+  min-height: calc(100dvh - 60px);
+  display: flex;
+  flex-direction: column;
+
+  .x_panel,
+  .x_content,
+  form {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+}
+
 .title_content {
   margin-left: 10px;
   margin-bottom: 20px;
@@ -370,6 +401,23 @@
   display: flex;
   flex-direction: column;
   gap: 14px;
+  flex: 1;
+}
+
+.vl-no-records {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+  flex: 1;
+
+  p {
+    font-size: 15px;
+    font-weight: 400;
+    opacity: 0.6;
+    margin: 0;
+  }
 }
 
 .vl-card {

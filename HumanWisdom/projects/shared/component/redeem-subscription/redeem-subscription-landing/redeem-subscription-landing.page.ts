@@ -46,9 +46,9 @@ export class RedeemSubscriptionLandingPage implements OnInit {
       this.enabledModal = true;
     } else if (type === 'dash') {
       if (SharedService.getprogramName() === 'teenagers') {
-        this.router.navigate(['/teenagers/teenager-dashboard'])
+        this.router.navigate(['/teenagers'])
       } else {
-        this.router.navigate(['/' + SharedService.getprogramName() + '/adult-dashboard']);
+        this.router.navigate(['/' + SharedService.getprogramName() ]);
       }
     }
   }

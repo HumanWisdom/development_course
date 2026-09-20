@@ -28,7 +28,7 @@ export class PodcastTocPage implements OnInit {
   isSubscriber = false;
   address: any;
   searchedText= '';
-  prefData = [];
+  prefData: any[] = [];
   selectedPref = 'all'
   isAdults = true;
   showModal = false;
@@ -57,13 +57,25 @@ export class PodcastTocPage implements OnInit {
         displayName: 'Sports',
         active: false,
         name: 'Sports'
-      });
+      },
+      {
+        id: 'Understand your mind',
+        displayName: 'Understand your mind',
+        active: false,
+        name: 'Understand your mind'
+      }
+    );
     } else {
       this.prefData.push({
         id: 'Sports',
         displayName: 'Sports',
         active: false,
         name: 'Sports'
+      }, {
+        id: 'Understand your mind',
+        displayName: 'Understand your mind',
+        active: false,
+        name: 'Understand your mind'
       });
     }
   }
@@ -139,10 +151,14 @@ export class PodcastTocPage implements OnInit {
             const s = this.prefData.find(p => p.id === 'Sports');
             if (s) s.active = true;
           }
+          else  if (d['isUnderstandYourMind'] === '1') {
+            const s = this.prefData.find(p => p.id === 'Understand your mind');
+            if (s) s.active = true;
+          }
           this.prefData.forEach((h) => {
             if (d['PreferenceIDs'] && d['PreferenceIDs'].split(",").includes(h.id)) {
               h.active = true;
-            } else if (!d['PreferenceIDs'] && h.id !== 'Sports') {
+            } else if (!d['PreferenceIDs'] && h.id !== 'Sports' && h.id !== 'Understand your mind') {
               h.active = true;
             }
           })
@@ -247,7 +263,10 @@ getUserPref(type) {
     this.podcastList = this.podcastList.filter((d) => d['IsMiniPodcast'] === '1');
   } else if (type === 'Sports') {
     this.podcastList = this.podcastList.filter((d) => d['isSports'] === '1');
-  } else {
+  } else if (type === 'Understand your mind') {
+    this.podcastList = this.podcastList.filter((d) => d['isUnderstandYourMind'] === '1');
+  }
+  else {
     this.podcastList = this.podcastList.filter((d) =>
       d['PreferenceIDs'] && d['PreferenceIDs'].split(',').includes(type)
     );
