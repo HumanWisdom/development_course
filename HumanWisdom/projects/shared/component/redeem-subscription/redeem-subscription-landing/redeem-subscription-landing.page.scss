@@ -4,3 +4,17 @@
 .sc_01{
     min-height: 100vh !important;
 }
+
+/* .tcenter uses text-align: -webkit-center, which shrink-wraps block children
+   on iOS Safari (iPhone 13 Pro) and collapses this landing layout.
+   Keep text centered without the WebKit value so other pages stay unchanged. */
+.x_content {
+  text-align: center;
+  width: 100%;
+}
+
+.x_content form,
+.x_content .row {
+  width: 100%;
+  max-width: 100%;
+}

@@ -4,7 +4,6 @@ $org = hw_org_fetch();
 $assets = hw_org_cdn_assets();
 $pageTitle = 'Exclusive offer | HappierMe';
 $bodyClass = 'org-page org-page-adv';
-$useOrgLogo = true;
 $showCopyright = true;
 $signupUrl = hw_org_page('organisation-signup');
 include __DIR__ . '/../includes/organisation_head.php';
@@ -12,9 +11,13 @@ include __DIR__ . '/../includes/organisation_header.php';
 ?>
 <main class="org-main">
   <section class="org-hero-offer">
-    <p class="org-kicker">Exclusive offer</p>
-    <h1>Free <?= (int) $org['freeDays'] ?>-day access to the HappierMe app</h1>
-    <p class="org-hero-note">(No credit card needed)</p>
+    <div class="org-hero-offer-inner">
+      <p class="org-kicker">Exclusive offer</p>
+      <div class="org-hero-offer-copy">
+        <h1>Free <?= (int) $org['freeDays'] ?>-day access to the HappierMe app</h1>
+        <p class="org-hero-note">(No credit card needed)</p>
+      </div>
+    </div>
   </section>
 
   <section class="org-benefits">

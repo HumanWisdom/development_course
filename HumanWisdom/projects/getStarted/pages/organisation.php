@@ -4,7 +4,6 @@ $org = hw_org_fetch();
 $assets = hw_org_cdn_assets();
 $pageTitle = 'Welcome to HappierMe';
 $bodyClass = 'org-page org-page-landing';
-$useOrgLogo = true;
 $signupUrl = hw_org_page('organisation-signup');
 include __DIR__ . '/../includes/organisation_head.php';
 include __DIR__ . '/../includes/organisation_header.php';
