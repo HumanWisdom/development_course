@@ -4,7 +4,6 @@ $org = hw_org_fetch();
 $assets = hw_org_cdn_assets();
 $pageTitle = 'Exclusive offer | HappierMe';
 $bodyClass = 'org-page org-page-adv';
-$useOrgLogo = true;
 $showCopyright = true;
 $landingUrl = hw_org_page('organisation', [], true);
 include __DIR__ . '/../includes/organisation_head.php';

@@ -111,7 +111,7 @@ if (!function_exists('hw_org_cdn_assets')) {
         $cdn = HW_CDN_ORIGIN;
         $s3 = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com';
         return [
-            'logo_default' => $cdn . '/website/Logo_Only.svg',
+            'logo_default' => $s3 . '/website/svgs/logo.svg',
             'hero_desktop' => hw_org_base() . '/assets/images/lcp/banneraug.webp',
             'hero_desktop_2x' => hw_org_base() . '/assets/images/lcp/banneraug@2x.webp',
             'hero_mobile' => hw_org_base() . '/assets/images/lcp/banner_mobile.webp',
