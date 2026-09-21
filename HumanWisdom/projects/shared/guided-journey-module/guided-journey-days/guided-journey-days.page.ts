@@ -254,6 +254,7 @@ export class GuidedJourneyDaysPage implements OnInit {
 
           return {
             ...item,
+            Description: item.Description ? item.Description.trim() : item.Description,
             Type: item.type ? parseInt(item.type) : 1,
             Title: rawTitle,
             DisplayTitle: (isQuoteSection && parsedQuote.quoteText) ? parsedQuote.quoteText : mainTitle,
@@ -482,17 +483,17 @@ export class GuidedJourneyDaysPage implements OnInit {
     if (cardType === 'quote') {
       return this.isAdults 
         ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/adultquete_gui.svg'
-        : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/quete_teenn.svg';
+        : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/quo_teen.svg';
     }
     if (cardType === 'try_today') {
       return this.isAdults
         ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/adutry_today.svg'
-        : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/daily_teenn.svg';
+        : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/tryttoteen.svg';
     }
     if (cardType === 'food_thought') {
       return this.isAdults
         ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/adu_food.svg'
-        : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/adu_food.svg';
+        : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/food_teenthought.svg';
     }
     return '';
   }
@@ -505,13 +506,22 @@ export class GuidedJourneyDaysPage implements OnInit {
   cleanCardContent(content: string): SafeHtml {
     if (!content) return '';
     let html = content.trim();
-    
+
+    html = html
+      .replace(/^[\s\u00A0\u200B]+/, '')
+      .replace(/(<br\s*\/?>)[\s\u00A0\u200B]+/gi, '$1')
+      .replace(/(<p[^>]*>)[\s\u00A0\u200B]+/gi, '$1')
+      .replace(/(<li[^>]*>)[\s\u00A0\u200B]+/gi, '$1')
+      .replace(/(<div[^>]*>)[\s\u00A0\u200B]+/gi, '$1');
+
     if (!/<[a-z][\s\S]*>/i.test(html)) {
-      const lines = html.split('\n').filter(l => l.trim().length > 0);
+      const lines = html.split('\n')
+        .map(l => l.replace(/^[\s\u00A0\u200B]+/, '').replace(/[\s\u00A0\u200B]+$/, ''))
+        .filter(l => l.length > 0);
       if (lines.length > 1) {
         html = lines.map(line => `<p style="margin-bottom: 8px;">${line}</p>`).join('');
-      } else {
-        html = `<p style="margin: 0;">${html}</p>`;
+      } else if (lines.length === 1) {
+        html = `<p style="margin: 0;">${lines[0]}</p>`;
       }
     }
 

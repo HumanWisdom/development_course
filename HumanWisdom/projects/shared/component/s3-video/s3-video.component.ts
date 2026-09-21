@@ -97,7 +97,7 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
   private currentPlaybackId = 0;
   private routerSub!: Subscription;
   public isPortrait = false;
-    public isLandscape = false;
+  public isLandscape = false;
   public fromIndex = false;
   public headerTitle: string = 'Short Videos';
   baseUrl:string;
@@ -105,6 +105,10 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
   private hasTrackedThisVideo = false;
   private isFreeShort = false;
   public canRender = false;
+  public showSwipePrompt = false;
+  public swipePromptCount = 0;
+  public hasUserSwiped = false;
+  private hasPromptShownForCurrentVideo = false;
 
 
   @ViewChild('videoPlayer') videoPlayer!: ElementRef;
@@ -169,12 +173,25 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
             const code = linkcode.startsWith('http')
               ? linkcode
               : `https://d1tenzemoxuh75.cloudfront.net/wisdom_shorts/videos/${linkcode}`;
+
+            const titleLower = (element.Title || '').toLowerCase();
+            const typeLower = (element.Type || element.TypeLabel || '').toLowerCase();
+            const urlLower = vUrl.toLowerCase();
+
+            const isL = typeLower.includes('in-depth') || typeLower.includes('indepth') ||
+                        typeLower.includes('landscape') || typeLower.includes('event') ||
+                        urlLower.includes('youtube') || urlLower.includes('16_9') ||
+                        titleLower.includes('in-depth') || titleLower.includes('conversation');
+            const isP = !isL;
+
             return {
               url: this.getSafeUrl(code),
               order: index,
               title: element.Title || '',
               code: linkcode,
               type: element.Type || element.TypeLabel || '',
+              isPortrait: isP,
+              isLandscape: isL,
             };
           });
 
@@ -194,15 +211,26 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
         // If still not found, inject the clicked video as the first item
         if (this.currentIndex === -1 && normalizedLinkcode) {
           const injectedCode = `https://d1tenzemoxuh75.cloudfront.net/wisdom_shorts/videos/${normalizedLinkcode}`;
+          const titleLower = (this.videoTitle || '').toLowerCase();
+          const codeLower = (normalizedLinkcode || '').toLowerCase();
+          const isL = codeLower.includes('in-depth') || codeLower.includes('indepth') ||
+                      titleLower.includes('in-depth') || titleLower.includes('conversation');
           const injectedItem: any = {
             url: this.getSafeUrl(injectedCode),
             order: -1,
             title: this.videoTitle || 'Selected Video',
             code: normalizedLinkcode,
             type: '',
+            isPortrait: !isL,
+            isLandscape: isL,
           };
           this.wisdomShortOrderList.unshift(injectedItem);
           this.currentIndex = 0;
+        }
+
+        if (this.wisdomShortOrderList[this.currentIndex]) {
+          this.isPortrait = !!this.wisdomShortOrderList[this.currentIndex].isPortrait;
+          this.isLandscape = !!this.wisdomShortOrderList[this.currentIndex].isLandscape;
         }
 
         this.updateHeaderTitle();
@@ -518,23 +546,57 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
     return this._sanitizer.bypassSecurityTrustResourceUrl(url);
   }
 
-  checkVideoOrientation(videoEl?: HTMLVideoElement | EventTarget | null): void {
-    const el = (videoEl as HTMLVideoElement) || (this.videoPlayer?.nativeElement as HTMLVideoElement | undefined) || (document.querySelector('video') as HTMLVideoElement | null);
+  public resetScrollPosition(): void {
+    this.currentTime = 0;
+    try {
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+      if (this.swipeContainer?.nativeElement) {
+        this.swipeContainer.nativeElement.scrollTop = 0;
+      }
+      const sliderEl = document.querySelector('.video-slider-container');
+      if (sliderEl) {
+        sliderEl.scrollTop = 0;
+      }
+    } catch (_) {}
+  }
+
+  checkVideoOrientation(videoItem?: any, videoEl?: HTMLVideoElement | EventTarget | null): void {
+    let el: HTMLVideoElement | null = null;
+    if (videoEl && (videoEl as any).videoWidth) {
+      el = videoEl as HTMLVideoElement;
+    } else if (videoEl instanceof HTMLVideoElement) {
+      el = videoEl;
+    } else {
+      el = (this.videoPlayer?.nativeElement as HTMLVideoElement | undefined) || (document.querySelector('video') as HTMLVideoElement | null);
+    }
+
     if (el) {
       const vw = el.videoWidth;
       const vh = el.videoHeight;
       if (vw && vh) {
-        this.isPortrait = (vh > vw) && (vh / vw > 1.3); // Consider it portrait if height is significantly greater than width
-        this.isLandscape = (vw > vh) && (vw / vh > 1.3); // Consider it landscape if width is significantly greater than height
-      } 
-     
-
-      else {
+        const isP = (vh > vw) && (vh / vw > 1.15);
+        const isL = (vw > vh) && (vw / vh > 1.15);
+        if (videoItem) {
+          videoItem.isPortrait = isP;
+          videoItem.isLandscape = isL;
+        }
+        this.isPortrait = isP;
+        this.isLandscape = isL;
+      } else {
         setTimeout(() => {
           if (el && el.videoWidth && el.videoHeight) {
-            this.isPortrait = (el.videoHeight > el.videoWidth) && (el.videoHeight / el.videoWidth > 1.2);
+            const isP = (el.videoHeight > el.videoWidth) && (el.videoHeight / el.videoWidth > 1.15);
+            const isL = (el.videoWidth > el.videoHeight) && (el.videoWidth / el.videoHeight > 1.15);
+            if (videoItem) {
+              videoItem.isPortrait = isP;
+              videoItem.isLandscape = isL;
+            }
+            this.isPortrait = isP;
+            this.isLandscape = isL;
           }
-        }, 200);
+        }, 150);
       }
       el.setAttribute('controlsList', 'nodownload');
     }
@@ -607,7 +669,8 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   onVideoEnded(): void {
-    this.onSwipeUp();
+    this.resetScrollPosition();
+    this.onSwipeUp(false);
     this.isLoading = false;
   }
 
@@ -627,12 +690,19 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
     }
   }
 
-  onSwipeUp(): void {
+  onSwipeUp(isUserAction = true): void {
     if (!this.isSwipeAllow || !this.wisdomShortOrderList.length) return;
     if (this.isSwiping) return;
 
     if (this.currentIndex < this.wisdomShortOrderList.length - 1) {
       this.isSwiping = true;
+      if (isUserAction) {
+        this.hasUserSwiped = true;
+      }
+      this.hasPromptShownForCurrentVideo = false;
+      this.showSwipePrompt = false;
+      this.resetScrollPosition();
+
       const playbackId = ++this.currentPlaybackId;
       this.clearTimers();
 
@@ -652,7 +722,12 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
       }
 
       this.videoTitle = this.wisdomShortOrderList[this.currentIndex].title;
-      this.checkVideoOrientation();
+      const currentVideoItem = this.wisdomShortOrderList[this.currentIndex];
+      if (currentVideoItem) {
+        this.isPortrait = !!currentVideoItem.isPortrait;
+        this.isLandscape = !!currentVideoItem.isLandscape;
+      }
+      this.checkVideoOrientation(currentVideoItem);
       this.updateHeaderTitle();
 
       // Allow Angular view to render, then play new active video
@@ -668,6 +743,11 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
     if (this.isSwiping) return;
 
     this.isSwiping = true;
+    this.hasUserSwiped = true;
+    this.hasPromptShownForCurrentVideo = false;
+    this.showSwipePrompt = false;
+    this.resetScrollPosition();
+
     const playbackId = ++this.currentPlaybackId;
     this.clearTimers();
 
@@ -681,7 +761,12 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
         : this.currentIndex - 1;
 
     this.videoTitle = this.wisdomShortOrderList[this.currentIndex].title;
-    this.checkVideoOrientation();
+    const currentVideoItem = this.wisdomShortOrderList[this.currentIndex];
+    if (currentVideoItem) {
+      this.isPortrait = !!currentVideoItem.isPortrait;
+      this.isLandscape = !!currentVideoItem.isLandscape;
+    }
+    this.checkVideoOrientation(currentVideoItem);
     this.hasTrackedThisVideo = false;
     this.updateHeaderTitle();
 
@@ -690,6 +775,32 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
       this.playActiveVideo(playbackId);
       this.isSwiping = false;
     }, 150);
+  }
+
+  isSlideVisible(i: number): boolean {
+    return Math.abs(this.currentIndex - i) <= 1;
+  }
+
+  onTimeUpdate(event: any): void {
+    const video = event?.target as HTMLVideoElement;
+    if (video) {
+      this.updateProgress(video);
+      if (video.duration && !isNaN(video.duration)) {
+        const remaining = video.duration - video.currentTime;
+        if (this.hasUserSwiped || this.swipePromptCount >= 2) {
+          this.showSwipePrompt = false;
+          return;
+        }
+        const shouldShow = remaining <= 5 || video.ended || video.duration <= 5;
+        if (shouldShow && !this.hasPromptShownForCurrentVideo) {
+          this.hasPromptShownForCurrentVideo = true;
+          this.swipePromptCount++;
+        }
+        this.showSwipePrompt = shouldShow;
+      } else {
+        this.showSwipePrompt = false;
+      }
+    }
   }
 
   updateProgress(video: HTMLVideoElement): void {
