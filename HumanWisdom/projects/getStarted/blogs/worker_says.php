@@ -133,7 +133,7 @@
 
                 <h4 class="mtb0px blog_desc">
                     If a child cannot go to school because of a 
-                    <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/curated/overcome-stress-anxiety">mental health</a>  problem, the parent is often forced to take time off, because childcare is either not available or prohibitively expensive. Support for children's <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/curated/overcome-stress-anxiety"> mental health</a> problems is often not easy to access, and it can become a recurring problem.
+                    <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/curated/overcome-stress-anxiety">mental health</a>  problem, the parent is often forced to take time off, because childcare is either not available or prohibitively expensive. Support for children's  mental health problems is often not easy to access, and it can become a recurring problem.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -174,16 +174,16 @@
 
                 <h4 class="mtb0px blog_desc">
                     It helps users develop their 
-                                         <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/stress">
+                                         <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/explore#self-awareness">
                     self-awareness</a> and emotional intelligence and apply that to manage their emotions and <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/curated/overcome-stress-anxiety"> <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/curated/overcome-stress-anxiety"> mental health</a>  proactively — preventing problems before they occur.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                    Unlike other apps,  <a class="blog_highlight_peach td_underline" href="https://happierme.app">
-                        HappierMe</a> helps users truly understand the WHY behind their thoughts, feelings, and behaviors. By addressing the root causes of problems, it can create lasting change. It helps parents to support teens to understand and manage their emotions and facilitate conversations that lead to positive outcomes. Having a resource that teens can always access can reassure parents that they have the support when they need it, allowing them to focus better at work.
+                    Unlike other apps,  
+                        HappierMe helps users truly understand the WHY behind their thoughts, feelings, and behaviors. By addressing the root causes of problems, it can create lasting change. It helps parents to support teens to understand and manage their emotions and facilitate conversations that lead to positive outcomes. Having a resource that teens can always access can reassure parents that they have the support when they need it, allowing them to focus better at work.
                 </h4>
 
-                <!-- <h4 class="mtb0px blog_desc">
+                <!-- <h4 class="mtb0px blog_des">
                     <span class="blog_highlight_black"> <a class="blog_highlight_peach td_underline" href="https://happierme.app">
                         HappierMe
                     </a> helps teens and adults:</span>
@@ -294,9 +294,9 @@
             <div class="row mt20px mb40px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000_i ">
-                  Life can be tough. The  <a class="blog_highlight_peach td_underline" href="https://happierme.app">
+                  Life can be tough. The  
                         HappierMe
-                    </a> app is your personal guide to help you feel better now, but also to take you deeper to understand your thoughts and feelings. It supports you to become the person you want to be, to be happier, manage your emotions and  succeed in the world. There are also coaches you can speak to through the app.
+                    app is your personal guide to help you feel better now, but also to take you deeper to understand your thoughts and feelings. It supports you to become the person you want to be, to be happier, manage your emotions and  succeed in the world. There are also coaches you can speak to through the app.
                 </h5>
               </div>
             </div>
