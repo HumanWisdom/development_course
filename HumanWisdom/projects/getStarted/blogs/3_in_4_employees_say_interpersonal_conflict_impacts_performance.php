@@ -69,7 +69,7 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc" >
-                    That's a powerful reminder that how we relate to each other in organisations is just as important as what we do.
+                    That's a powerful reminder that <span style="font-style:italic;">how we relate to each other in organisations is just as important as what we do.</span>
                 </h4>
 
                 <h4 class="mtb0px blog_sub_title">
@@ -116,31 +116,40 @@
 
                 <h4 class="mtb0px blog_desc">
                     The HappierMe app breaks down the root causes of interpersonal tension at work:
-                </h4>
+                
 
-                <h4 class="mtb0px blog_desc">
+             <ul>
+              <li>
                     <span class="blog_highlight_black">Poor communication</span>: Misunderstandings often stem from unspoken expectations or poor listening.
-                </h4>
+</li>
 
-                <h4 class="mtb0px blog_desc">
+                <li>
                     <span class="blog_highlight_black">Emotional triggers</span>: Our own past experiences can influence how we perceive others' behavior and can trigger an emotional reaction, which we assume is the other person's fault.
-                </h4>
+</li>
 
-                <h4 class="mtb0px blog_desc">
+                <li">
                     <span class="blog_highlight_black">Personality clashes</span>: Different values or working styles can lead to friction — especially under stress.
-                </h4>
+</li>
 
-                <h4 class="mtb0px blog_desc">
+                <li>
                     <span class="blog_highlight_black">Power dynamics</span>: Conflicts often arise when there's a tussle for influence or power between different departments or people within the same department.
-                </h4>
+</li>
 
-                <h4 class="mtb0px blog_desc">
+                <li>
                     <span class="blog_highlight_black">Stress and burnout</span>: When people are overwhelmed, patience and empathy take a hit.
-                </h4>
+</li>
 
-                <h4 class="mtb0px blog_desc">
+                <li>
                     <span class="blog_highlight_black">Our own ego</span>: A lack of understanding of our own ego can lead to conflict over the smallest disagreements, with each person digging in and defending their own point of view.
-                </h4>
+</li>
+</h4>
+
+<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/VLQJKIf0n8k?si=nsdYt1SuXo9EChOL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+
+ <iframe id="youtubeIntro" loading="lazy" title="youtubeIntro"
+            src="https://www.youtube.com/embed/VLQJKIf0n8k?si=nsdYt1SuXo9EChOL"
+            class="cvideo_b yt-embed" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen
+            onclick="return logevent('click_play_video_home', 'index.php')"></iframe>
 
                 <h4 class="mtb0px blog_sub_title">
                     Self-awareness is the key to avoiding conflict and building stronger relationships
@@ -152,39 +161,40 @@
 
                 <h4 class="mtb0px blog_desc">
                     The
-                    <a class="blog_highlight_peach td_underline" href="https://happierme.app">
+                    
                         HappierMe app
-                    </a>
+                    
                     offers tools to help individuals build self-awareness and communicate with more empathy and clarity.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
                     Here's how HappierMe helps:
-                </h4>
-
-                <h4 class="mtb0px blog_desc">
+                
+<ul>
+                <li>
                     <span class="blog_highlight_black">Communication</span> — Learn how to express needs clearly, listen actively, and resolve issues respectfully.
-                </h4>
+</li>
 
-                <h4 class="mtb0px blog_desc">
+                <li>
                     <span class="blog_highlight_black">Emotional intelligence training</span> — Understand your triggers and respond with wisdom, not reactivity.
-                </h4>
+</li>
 
-                <h4 class="mtb0px blog_desc">
+                <li>
                     <span class="blog_highlight_black">Mindfulness practices</span> — Center yourself before tough conversations.
-                </h4>
+</li>
 
-                <h4 class="mtb0px blog_desc">
+                <li>
                     <span class="blog_highlight_black">Journaling exercises</span> — Reflect on your thoughts and feelings and explore different ways of seeing the same person.
-                </h4>
+</li>
 
-                <h4 class="mtb0px blog_desc">
+                <li>
                     <span class="blog_highlight_black">Conflict resolution strategies</span> — Tools to help you reduce friction and improve relationships.
-                </h4>
+</li>
 
-                <h4 class="mtb0px blog_desc">
+                <li>
                     <span class="blog_highlight_black">Relationship tips</span> — Dive into the details of what makes relationships work, how conflicts arise, and how to avoid them.
-                </h4>
+</li>
+</ul>
 
                 <h4 class="mtb0px blog_sub_title">
                     Conflict Is a productivity problem
