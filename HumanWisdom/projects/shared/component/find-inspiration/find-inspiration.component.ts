@@ -94,7 +94,7 @@ export class FindInspiration {
         title: this.isAdults ? 'Stories of hope' : 'Teen talk',
         img: this.isAdults
           ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/life.svg'
-          : 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/story_without_bg.svg',
+          : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/teenntak.svg',
         url: 'wisdom-stories'
       },
       {
