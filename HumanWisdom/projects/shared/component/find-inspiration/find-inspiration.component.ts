@@ -67,8 +67,18 @@ export class FindInspiration {
       }
     ];
 
-    // Row 2: Microlearning, Audio meditation, Soundscapes, Life stories, Find answers, Blog
-    this.inspirationItemsRow2 = [
+    // Row 2: Teen talk (teens only), Microlearning, Audio meditation, Soundscapes, Life stories, Find answers, Blog
+    this.inspirationItemsRow2 = [];
+
+    if (!this.isAdults) {
+      this.inspirationItemsRow2.push({
+        title: 'Teen talk',
+        img: 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/teenntak.svg',
+        url: 'teen-talk'
+      });
+    }
+
+    this.inspirationItemsRow2.push(
       {
         title: 'Microlearning',
         img: this.isAdults
@@ -91,10 +101,10 @@ export class FindInspiration {
         url: 'soundscapes'
       },
       {
-        title: this.isAdults ? 'Stories of hope' : 'Teen talk',
+        title: 'Stories of hope',
         img: this.isAdults
           ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/life.svg'
-          : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/teenntak.svg',
+          : 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/story_without_bg.svg',
         url: 'wisdom-stories'
       },
       {
@@ -111,7 +121,7 @@ export class FindInspiration {
           : 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/blog_without_bg.svg',
         url: 'blogs'
       }
-    ];
+    );
   }
 
   routeTo(item: any) {
@@ -139,6 +149,8 @@ export class FindInspiration {
       this.logeventservice.logEvent('click_feelbetternow');
     } else if (item === 'curated/self-awareness') {
       this.logeventservice.logEvent('click_selfawareness');
+    } else if (item === 'teen-talk') {
+      this.logeventservice.logEvent('click_teenTalk');
     } else {
       this.logeventservice.logEvent('click_FI_' + item);
     }
