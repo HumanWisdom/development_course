@@ -132,7 +132,7 @@
               localStorage.setItem("hw_org_account", JSON.stringify(account));
               localStorage.setItem("userId", String(id));
             } catch (e) {}
-            go("otp", { email: account.Email });
+            go("otp");
             return;
           }
           showError(err, typeof result.data === "string" ? result.data : "Could not create account.");
@@ -192,11 +192,9 @@
     var back = qs("org-otp-back");
     var verifying = false;
 
-    // Email for /verificationCode comes from localStorage (create-account data)
-    var email =
-      getAccountEmailFromLocalStorage() ||
-      new URLSearchParams(window.location.search).get("email") ||
-      "";
+    // Email for /verificationCode comes from localStorage only (no ?email= in URL)
+    stripEmailQueryParam();
+    var email = getAccountEmailFromLocalStorage();
 
     if (emailEl && email) {
       emailEl.textContent = email;
@@ -348,14 +346,50 @@
     });
   }
 
+  function stripQueryParams(keys) {
+    try {
+      var url = new URL(window.location.href);
+      var changed = false;
+      (keys || []).forEach(function (key) {
+        if (url.searchParams.has(key)) {
+          url.searchParams.delete(key);
+          changed = true;
+        }
+      });
+      if (!changed) return;
+      var next = url.pathname + (url.search ? url.search : "") + url.hash;
+      window.history.replaceState({}, "", next);
+    } catch (e) {}
+  }
+
+  function stripIdQueryParam() {
+    stripQueryParams(["id"]);
+  }
+
+  function stripEmailQueryParam() {
+    stripQueryParams(["email"]);
+  }
+
+  function captureOrgIdFromUrl() {
+    var id = new URLSearchParams(window.location.search).get("id");
+    if (!id) return "";
+    id = String(id).trim().replace(/[^a-zA-Z0-9_-]/g, "");
+    if (!id) return "";
+    try {
+      localStorage.setItem("OrganizationId", id);
+      localStorage.setItem("hw_org_id", id);
+    } catch (e) {}
+    stripIdQueryParam();
+    return id;
+  }
+
   /**
-   * When ?id= is on the URL, call GET /api/GetOrganization/{OrganizationId}
-   * and save the response in localStorage.
+   * Call GET /api/GetOrganization/{OrganizationId} using localStorage only.
+   * If the URL still has ?id=, it is saved once then removed from the address bar.
    */
   function setupGetOrganization() {
-    var id = new URLSearchParams(window.location.search).get("id");
-    if (!id) return;
-    id = String(id).trim().replace(/[^a-zA-Z0-9_-]/g, "");
+    captureOrgIdFromUrl();
+    var id = getStoredOrganizationId();
     if (!id) return;
 
     fetch(apiBase + "/GetOrganization/" + encodeURIComponent(id), {
@@ -386,11 +420,7 @@
       var data = JSON.parse(stored);
       var row = Array.isArray(data) ? data[0] : data;
       if (!row || typeof row !== "object") return;
-      var id =
-        localStorage.getItem("OrganizationId") ||
-        localStorage.getItem("hw_org_id") ||
-        org.id ||
-        "";
+      var id = getStoredOrganizationId() || org.id || "";
       if (!id) return;
       applyOrganization(row, id, data);
     } catch (e) {}
