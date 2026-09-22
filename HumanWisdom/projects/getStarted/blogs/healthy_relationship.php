@@ -78,7 +78,7 @@
 
                 <h4 class="mtb0px blog_desc">
                 Good communication takes courage, kindness and emotional intelligence. Open, honest and consistent communication is the heartbeat of any  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/relationships">
-                healthy relationship,</a> . Sharing your thoughts, listening actively and empathizing with your partner builds mutual respect and understanding. Rather than multitasking, give each other your full attention during conversations.
+                healthy relationship</a> . Sharing your thoughts, listening actively and empathizing with your partner builds mutual respect and understanding. Rather than multitasking, give each other your full attention during conversations.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -93,7 +93,7 @@
 
                 <h4 class="mtb0px blog_desc">
                 Everyone has emotional needs they may not even be fully aware of. One partner might need physical affection and verbal affirmation, while another feels most loved through acts of kindness. One may want to feel safe, another may want to feel special. Understanding these differences is essential for a  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/relationships">
-                healthy relationship,</a> .
+                healthy relationship</a> .
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
