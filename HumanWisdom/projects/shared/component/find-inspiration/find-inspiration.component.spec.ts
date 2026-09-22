@@ -61,9 +61,20 @@ describe('FindInspiration', () => {
     expect(component.isAdults).toBe(false);
   });
 
-  it('should have inspirationItems populated', () => {
-    expect(component.inspirationItems).toBeDefined();
-    expect(component.inspirationItems.length).toBeGreaterThan(0);
+  it('should have inspirationItemsRow1 and inspirationItemsRow2 populated', () => {
+    expect(component.inspirationItemsRow1).toBeDefined();
+    expect(component.inspirationItemsRow1.length).toBeGreaterThan(0);
+    expect(component.inspirationItemsRow2).toBeDefined();
+    expect(component.inspirationItemsRow2.length).toBeGreaterThan(0);
+  });
+
+  it('should include Teen talk tile before Microlearning when in Teenagers mode', () => {
+    Object.defineProperty(SharedService, 'ProgramId', { value: ProgramType.Teenagers, writable: true, configurable: true });
+    fixture = TestBed.createComponent(FindInspiration);
+    component = fixture.componentInstance;
+    expect(component.inspirationItemsRow2[0].title).toBe('Teen talk');
+    expect(component.inspirationItemsRow2[0].url).toBe('teen-talk');
+    expect(component.inspirationItemsRow2[1].title).toBe('Microlearning');
   });
 
   describe('routeTo', () => {
@@ -72,6 +83,13 @@ describe('FindInspiration', () => {
       expect(mockLogEventService.logEvent).toHaveBeenCalledWith('click_FI_podcast');
       expect(SharedService.getprogramName).toHaveBeenCalled();
       expect(mockRouter.navigate).toHaveBeenCalledWith(['adults/podcast']);
+    });
+
+    it('should navigate to teen-talk when routeTo is called with teen-talk', () => {
+      (SharedService.getprogramName as jasmine.Spy).and.returnValue('teenagers');
+      component.routeTo('teen-talk');
+      expect(mockLogEventService.logEvent).toHaveBeenCalledWith('click_teenTalk');
+      expect(mockRouter.navigate).toHaveBeenCalledWith(['teenagers/teen-talk']);
     });
   });
 });
