@@ -60,6 +60,11 @@ export class TryFreeAndSubscribePage implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    if (SharedService.isSubscriber()) {
+      this.routeToDashboard();
+      return;
+    }
+
     const isPricing = localStorage.getItem('pricing') === 'true';
     const isLoggedIn = localStorage.getItem('isloggedin') === 'T';
     const isGuest = localStorage.getItem('guest') === 'T';
