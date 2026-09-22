@@ -43,7 +43,7 @@
                       : currentIndex > i
                       ? 'previous'
                       : 'next'
-                  " [style.zIndex]="currentIndex === i ? 1 : 0">
+                  " [style.zIndex]="currentIndex === i ? 2 : (isSlideVisible(i) ? 1 : 0)">
                     <div class="video-slide-content" *ngIf="isSlideVisible(i)">
                       <h1 class="txt1 tcenter" [ngStyle]="{
                         color: isAdults ? 'black' : 'white',

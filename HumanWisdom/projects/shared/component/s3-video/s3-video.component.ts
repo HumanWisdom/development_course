@@ -35,37 +35,39 @@ import * as Hammer from 'hammerjs';
     trigger('slideAnimation', [
       state(
         'previous',
-        style({ transform: 'translateY(-100%)', opacity: 0 })
+        style({ transform: 'translateY(-100%)', opacity: 1 })
       ),
       state(
         'next',
-        style({ transform: 'translateY(100%)', opacity: 0 })
+        style({ transform: 'translateY(100%)', opacity: 1 })
       ),
       state('active', style({ transform: 'translateY(0)', opacity: 1 })),
       transition('previous => active', [
-        style({ transform: 'translateY(-100%)', opacity: 0 }),
+        style({ transform: 'translateY(-100%)', opacity: 1 }),
         animate(
-          '0.5s ease-in-out',
+          '0.4s cubic-bezier(0.25, 0.8, 0.25, 1)',
           style({ transform: 'translateY(0)', opacity: 1 })
         ),
       ]),
       transition('next => active', [
-        style({ transform: 'translateY(100%)', opacity: 0 }),
+        style({ transform: 'translateY(100%)', opacity: 1 }),
         animate(
-          '0.5s ease-in-out',
+          '0.4s cubic-bezier(0.25, 0.8, 0.25, 1)',
           style({ transform: 'translateY(0)', opacity: 1 })
         ),
       ]),
       transition('active => previous', [
+        style({ transform: 'translateY(0)', opacity: 1 }),
         animate(
-          '0.5s ease-in-out',
-          style({ transform: 'translateY(-100%)', opacity: 0 })
+          '0.4s cubic-bezier(0.25, 0.8, 0.25, 1)',
+          style({ transform: 'translateY(-100%)', opacity: 1 })
         ),
       ]),
       transition('active => next', [
+        style({ transform: 'translateY(0)', opacity: 1 }),
         animate(
-          '0.5s ease-in-out',
-          style({ transform: 'translateY(100%)', opacity: 0 })
+          '0.4s cubic-bezier(0.25, 0.8, 0.25, 1)',
+          style({ transform: 'translateY(100%)', opacity: 1 })
         ),
       ]),
     ]),
@@ -787,16 +789,7 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
       this.updateProgress(video);
       if (video.duration && !isNaN(video.duration)) {
         const remaining = video.duration - video.currentTime;
-        if (this.hasUserSwiped || this.swipePromptCount >= 2) {
-          this.showSwipePrompt = false;
-          return;
-        }
-        const shouldShow = remaining <= 5 || video.ended || video.duration <= 5;
-        if (shouldShow && !this.hasPromptShownForCurrentVideo) {
-          this.hasPromptShownForCurrentVideo = true;
-          this.swipePromptCount++;
-        }
-        this.showSwipePrompt = shouldShow;
+        this.showSwipePrompt = remaining <= 5 || video.ended || video.duration <= 5;
       } else {
         this.showSwipePrompt = false;
       }
