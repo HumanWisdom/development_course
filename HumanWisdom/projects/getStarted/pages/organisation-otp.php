@@ -5,14 +5,13 @@ $assets = hw_org_cdn_assets();
 $pageTitle = 'Verify your email | HappierMe';
 $bodyClass = 'org-page org-flow';
 $showCopyright = false;
-$email = isset($_GET['email']) ? trim((string) $_GET['email']) : '';
 include __DIR__ . '/../includes/organisation_head.php';
 include __DIR__ . '/../includes/organisation_header.php';
 ?>
 <main class="org-main">
   <div class="org-flow-card">
     <h1 class="org-flow-title">Verify your email</h1>
-    <p class="org-lead mt-3">We’ve sent a 6-digit code to <span id="org-otp-email"><?= hw_org_h($email) ?></span></p>
+    <p class="org-lead mt-3">We’ve sent a 6-digit code to <span id="org-otp-email"></span></p>
 
     <div class="org-otp" id="org-otp">
       <input type="text" inputmode="numeric" maxlength="1" aria-label="Digit 1" autocomplete="one-time-code">
