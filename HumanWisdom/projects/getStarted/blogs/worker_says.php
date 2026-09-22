@@ -94,7 +94,7 @@
 
                 <h4 class="mtb0px blog_desc">
                     The  <a class="blog_highlight_peach td_underline" href="https://happierme.app">
-                        HappierMe</a> poll revealed that concerns about children and their <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/curated/overcome-stress-anxiety"> <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/curated/overcome-stress-anxiety"> mental health </a> </a> significantly impact performance and the need for time off work.
+                        HappierMe</a> poll revealed that concerns about children and their  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/curated/overcome-stress-anxiety">mental health</a>  significantly impact performance and the need for time off work.
 
                         According to the results, 34% reported a significant impact, 32% a moderate impact, and 15% a slight impact.
                    
@@ -116,8 +116,7 @@
                 <h4 class="mtb20px blog_desc">
                     The cognitive load of juggling work and parental concerns can be mentally and emotionally taxing, leading to burnout and fatigue. This creates a cycle of worry, 
                      <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/stress">
-                        Stress,
-                    </a> and underperformance.
+                        Stress,</a>  and underperformance.
                 </h4>
 
 
