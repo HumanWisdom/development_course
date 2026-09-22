@@ -15,9 +15,9 @@ window.__HW_API__ = <?= json_encode(hw_api_config(), JSON_UNESCAPED_SLASHES | JS
 window.__HW_ORG__ = <?= json_encode($org, JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS) ?>;
 window.__HW_ORG_ASSETS__ = <?= json_encode($assets, JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS) ?>;
 window.__HW_ORG_PAGES__ = <?= json_encode([
-    // Only Adv + landing carry ?id=; other pages use session OrganizationId
-    'adv' => hw_org_page('organisation-Adv', [], true),
-    'landing' => hw_org_page('organisation', [], true),
+    // Org id lives in localStorage — no ?id= on page URLs
+    'adv' => hw_org_page('organisation-Adv'),
+    'landing' => hw_org_page('organisation'),
     'signup' => hw_org_page('organisation-signup'),
     'otp' => hw_org_page('organisation-otp'),
     'success' => hw_org_page('organisation-success'),
