@@ -61,7 +61,8 @@
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
                 <h4 class="mtb0px blog_desc">
-                Fostering community and mental health is both a societal need and a personal goal. How connected we are to others shapes how we cope with life's challenges, develop emotional intelligence, and build resilience. HappierMe, a platform dedicated to mental wellbeing, offers a range of tools designed to nurture exactly these qualities.
+                Fostering 
+                 <span class="blog_highlight_black">community and mental health </span> is both a societal need and a personal goal. How connected we are to others shapes how we cope with life's challenges, develop emotional intelligence, and build resilience. HappierMe, a platform dedicated to mental wellbeing, offers a range of tools designed to nurture exactly these qualities.
                 </h4>
 
                 <h4 class="mtb0px blog_sub_title">
@@ -76,7 +77,7 @@
                 HappierMe recognizes this vital connection and offers tools and programs that bring people together to share experiences, build trust and foster resilience — creating safe spaces where individuals can explore their feelings and work through challenges together.
                 </h4>
 
-  <div class="row mt40px mb20px">
+  <div class="row mt40px mb10px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/86_new.webp" class="img-responsive" alt="Calm mind, less stress">
                   </div>
@@ -102,7 +103,7 @@
                 Emotional intelligence is a cornerstone of mental wellbeing — self-awareness, empathy, and the ability to manage emotions effectively. Communities help build emotional intelligence by encouraging reflection and exposing people to different perspectives.
                 </h4>
 
-                <h4 class="mtb0px blog_desc">
+                <h4  style=" padding-bottom:20px;"class="mt0px blog_desc">
                 HappierMe's tools support this directly — from guided journaling exercises to meaningful conversations through the community forum, helping users sharpen self-awareness and communication skills. These improvements don't just boost mental health; they open the door to greater personal and professional success.
                 </h4>
 
@@ -132,7 +133,7 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                By promoting community and mental health, HappierMe continues to inspire people to build resilience, develop emotional intelligence, and engage in meaningful reflection — qualities that strengthen not just individual success, but the fabric of society as a whole.
+                By promoting  <span class="blog_highlight_black">community and mental health,</span> HappierMe continues to inspire people to build resilience, develop emotional intelligence, and engage in meaningful reflection — qualities that strengthen not just individual success, but the fabric of society as a whole.
                 <br><br>
                
                 </h4>
