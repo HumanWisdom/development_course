@@ -116,7 +116,7 @@
                 Through guided questions and progress-tracking features, HappierMe helps users set goals and follow through on them, aligned with their own values and aspirations.
                 </h4>
 
-                <div class="row mtb20px ">
+                <div class="row mt40px mb10px ">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/86_new.webp" class="img-responsive" alt="Calm mind, less stress">
                   </div>
@@ -193,35 +193,35 @@
                 FAQs
                 </h4>
 
-                <h4 class="mtb0px blog_desc">
-                What are the 7 highly effective habits for success?<br>
-                Building resilience, practicing emotional intelligence, regular reflection, setting SMART goals, embracing lifelong learning, mindfulness, and cultivating meaningful relationships.
+                <h4 class="mtb10px blog_desc">
+                What are the 7 highly effective habits for success?</br>
+                 The habits include Building resilience, practicing emotional intelligence, regular reflection, setting SMART goals, embracing lifelong learning, mindfulness, and cultivating meaningful relationships.
                 </h4>
 
-                <h4 class="mtb0px blog_desc">
+                <h4 class="mtb10px blog_desc">
                 How does HappierMe support emotional intelligence development?<br>
                 HappierMe offers tools like guided journaling and community forums to build self-awareness, empathy and communication skills.
                 </h4>
 
-                <h4 class="mtb0px blog_desc">
+                <h4 class="mtb10px blog_desc">
                 Why is resilience important in personal growth?<br>
                 Resilience helps people navigate challenges effectively, turning obstacles into opportunities for learning and growth.
                 </h4>
 
-                <h4 class="mtb0px blog_desc">
+                <h4 class="mtb10px blog_desc">
                 What role does reflection play in achieving success?<br>
                 Reflection lets people assess their actions and improve continuously, supporting both personal and professional growth.
                 </h4>
 
-                <h4 class="mtb0px blog_desc">
+                <h4 class="mtb10px blog_desc">
                 How can mindfulness improve mental health?<br>
                 Mindfulness practices help reduce stress, sharpen focus and promote emotional balance, supporting overall wellbeing.
                 </h4>
 
-                <h4 class="mtb0px blog_desc">
+                <h4 class="mtb10px blog_desc">
                 Why choose HappierMe for personal development?<br>
                 HappierMe takes a holistic approach to mental wellbeing, combining tools for emotional intelligence, resilience, reflection and community support.
-                <br><br>
+              
                
                 </h4>
 
