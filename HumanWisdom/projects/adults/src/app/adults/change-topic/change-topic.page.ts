@@ -167,7 +167,12 @@ export class ChangeTopicPage implements OnInit {
 
   skip() {
     localStorage.setItem('fromImNotSure', 'T');
-    this.router.navigate(['/adults/subscription/try-free-and-subscribe']);
+    if (SharedService.isSubscriber()) {
+      const program = SharedService.getprogramName();
+      this.router.navigate([`/${program}/today`]);
+    } else {
+      this.router.navigate(['/adults/subscription/try-free-and-subscribe']);
+    }
   }
 
   updateList(id,name) {
