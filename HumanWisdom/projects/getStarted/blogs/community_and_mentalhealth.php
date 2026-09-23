@@ -61,7 +61,8 @@
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
                 <h4 class="mtb0px blog_desc">
-                Fostering community and mental health is both a societal need and a personal goal. How connected we are to others shapes how we cope with life's challenges, develop emotional intelligence, and build resilience. HappierMe, a platform dedicated to mental wellbeing, offers a range of tools designed to nurture exactly these qualities.
+                Fostering 
+                 <span class="blog_highlight_black">community and mental health </span> is both a societal need and a personal goal. How connected we are to others shapes how we cope with life's challenges, develop emotional intelligence, and build resilience. HappierMe, a platform dedicated to mental wellbeing, offers a range of tools designed to nurture exactly these qualities.
                 </h4>
 
                 <h4 class="mtb0px blog_sub_title">
@@ -132,7 +133,7 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                By promoting community and mental health, HappierMe continues to inspire people to build resilience, develop emotional intelligence, and engage in meaningful reflection — qualities that strengthen not just individual success, but the fabric of society as a whole.
+                By promoting  <span class="blog_highlight_black">community and mental health,</span> HappierMe continues to inspire people to build resilience, develop emotional intelligence, and engage in meaningful reflection — qualities that strengthen not just individual success, but the fabric of society as a whole.
                 <br><br>
                
                 </h4>
