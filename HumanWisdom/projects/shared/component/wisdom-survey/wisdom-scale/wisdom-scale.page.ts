@@ -28,6 +28,7 @@ export class WisdomScalePage implements OnInit {
   //qrList=JSON.parse(localStorage.getItem("qrList"))
   qrList: any
   //moduleId=JSON.parse(localStorage.getItem("moduleId"))
+
   moduleId = 50
   screenNumber = 50001
   screenType = JSON.parse(localStorage.getItem("feedbackSurvey"))
@@ -158,8 +159,10 @@ export class WisdomScalePage implements OnInit {
 
     if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
+      this.moduleId = 50;
     } else {
       this.isAdults = false;
+      this.moduleId = 161;
     }
     
     let authtoken
@@ -274,7 +277,7 @@ export class WisdomScalePage implements OnInit {
   }
 
   apiCall() {
-    this.service.clickModule(50, this.userId)
+    this.service.clickModule(this.moduleId, this.userId)
       .subscribe(res => {
         this.qrList = res
         // localStorage.setItem("qrList",JSON.stringify(this.qrList))

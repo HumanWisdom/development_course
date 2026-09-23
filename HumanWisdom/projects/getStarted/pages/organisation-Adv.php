@@ -5,7 +5,7 @@ $assets = hw_org_cdn_assets();
 $pageTitle = 'Exclusive offer | HappierMe';
 $bodyClass = 'org-page org-page-adv';
 $showCopyright = true;
-$landingUrl = hw_org_page('organisation', [], true);
+$landingUrl = hw_org_page('organisation');
 include __DIR__ . '/../includes/organisation_head.php';
 include __DIR__ . '/../includes/organisation_header.php';
 ?>

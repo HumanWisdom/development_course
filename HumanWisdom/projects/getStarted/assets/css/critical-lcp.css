@@ -523,7 +523,7 @@ img { max-width: 100%; display: block; }
 
 /* Below-fold chunk placeholders (reduce CLS when HTML injects) */
 .coaches-section.index-lazy-section {
-  min-height: 420px;
+  min-height: 40px;
 }
 
 @media (max-width: 480px) {

@@ -5,7 +5,6 @@ $assets = hw_org_cdn_assets();
 $pageTitle = 'Verify your email | HappierMe';
 $bodyClass = 'org-page org-flow org-flow-otp';
 $showCopyright = false;
-$email = isset($_GET['email']) ? trim((string) $_GET['email']) : '';
 include __DIR__ . '/../includes/organisation_head.php';
 include __DIR__ . '/../includes/organisation_header.php';
 ?>
