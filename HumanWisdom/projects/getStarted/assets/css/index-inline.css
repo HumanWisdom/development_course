@@ -2,8 +2,7 @@
 
 /* ── RESET / BASE ── */
 *, *::before, *::after { box-sizing: border-box; }
-body { margin: 0; font-family: "Poppins", Helvetica, sans-serif; background: #ffffff; color: #000; max-width: 100%; overflow-x: hidden; }
-#body, #main.frame { max-width: 100%; overflow-x: hidden; }
+body { margin: 0; font-family: "Poppins", Helvetica, sans-serif; background: #ffffff; color: #000; }
 a { text-decoration: none; color: inherit; }
 img { max-width: 100%; display: block; }
 
@@ -23,7 +22,7 @@ img { max-width: 100%; display: block; }
 /* ========================================
    HERO
 ======================================== */
-.frame { display: flex; flex-direction: column; align-items: stretch; width: 100%; max-width: 100%; gap: 0; }
+.frame { display: flex; flex-direction: column; align-items: center; width: 100%; gap: 0; }
 
 .frame-wrapper {
   width: 100%;
@@ -307,15 +306,6 @@ img { max-width: 100%; display: block; }
 .div-wrapper { width: 100%; max-width: 1340px; }
 .div         { width: 100%; }
 .div-2       { display: flex; align-items: center; gap: 50px; justify-content: center; flex-wrap: wrap;margin-top:100px }
-/* Keep <picture> as a real box so <source> tags are not hoisted into the flex row
-   (display:contents caused extra right space on mobile). */
-.div-2 > picture {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 0;
-  line-height: 0;
-}
 
 .new-app-adults-teen {
   width: 331px;
@@ -1996,25 +1986,31 @@ header a[href*="splash_options.php"] * {
 .coaches-footer {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 40px;
   margin-top: 40px;
   width: 100%;
-  padding-left: 12rem;
+  padding-left: 0;
   box-sizing: border-box;
   overflow: visible;
   min-height: 40px;
   padding-bottom: 6px;
+  position: relative;
 }
 .coaches-footer-spacer {
-  flex: 1;
+  display: none;
 }
 .coaches-nav-btns {
-  flex: 1;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  flex: 0 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  margin-left: 15rem;
+  margin-left: 0;
   overflow: visible;
   padding: 4px 0;
 }
@@ -2178,10 +2174,13 @@ header a[href*="splash_options.php"] * {
   gap: 40px;
   margin-top: 20px;
   flex-wrap: wrap;
-  margin-left: 27rem;
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
   overflow: visible;
   min-height: 40px;
   padding-bottom: 6px;
+  position: relative;
 }
 .blog-dots { display: flex; gap: 8px; align-items: center; }
 .bdot {
@@ -2202,13 +2201,73 @@ header a[href*="splash_options.php"] * {
 .blog-more:active .chevron-pink { color: #803358 !important; }
 .blog-more img { width: 8px; height: auto; }
 
+/* ========================================
+   COACHES + BLOG SCROLL ONLY
+   Scoped to these two sections so the rest of
+   the page keeps align-items:center alignment.
+======================================== */
+.coaches-section,
+#exploreBlogSection.div-13 {
+  align-self: stretch;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+.coaches-section .coaches-outer,
+.coaches-section .coaches-track-wrap,
+#exploreBlogSection .blog-outer,
+#exploreBlogSection .blog-track-wrap {
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+/* Keep scrollport bounded so cards can overflow-x */
+.coaches-section .coaches-scroll,
+#exploreBlogSection #blog-scroll.blog-scroll {
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+/* Center "Find out more" / "See all posts" */
+.coaches-section .coaches-footer,
+#exploreBlogSection .blog-footer {
+  justify-content: center;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+  position: relative;
+}
+.coaches-section .coaches-footer-spacer {
+  display: none;
+}
+/* Left/right arrows pinned to the right corner */
+.coaches-section .coaches-nav-btns,
+#exploreBlogSection .coaches-nav-btns {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 0;
+  flex: 0 0 auto;
+}
+.coaches-section .coaches-more,
+#exploreBlogSection .blog-more {
+  justify-content: center;
+  text-align: center;
+}
+
 /* Wide screen only (1400px+): coaches + blog show all cards, no nav arrows, centered footer */
 @media (min-width: 1400px) {
   .coaches-section {
     max-width: 100%;
     margin-left: auto;
     margin-right: auto;
-    overflow-x: visible;
+    overflow-x: hidden;
   }
   .coaches-outer {
     width: 100%;
@@ -2221,13 +2280,14 @@ header a[href*="splash_options.php"] * {
     margin-left: auto;
     margin-right: auto;
   }
-  .coaches-scroll {
-    overflow-x: visible;
-    overflow-y: visible;
+  .coaches-section .coaches-scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
     flex-wrap: nowrap;
-    justify-content: center;
+    justify-content: flex-start;
     width: 100%;
-    max-width: none;
+    max-width: 100%;
+    min-width: 0;
     gap: 20px;
   }
   .coaches-scroll .coach-card:first-child {
@@ -2243,11 +2303,11 @@ header a[href*="splash_options.php"] * {
     display: none;
   }
   .coaches-section .coaches-nav-btns {
-    display: none !important;
+    display: flex !important;
   }
 
-  .div-13 {
-    overflow-x: visible;
+  #exploreBlogSection.div-13 {
+    overflow-x: hidden;
     max-width: 100%;
   }
   .blog-outer {
@@ -2261,13 +2321,14 @@ header a[href*="splash_options.php"] * {
     max-width: 100%;
     overflow: visible;
   }
-  .blog-scroll {
-    overflow-x: visible;
-    overflow-y: visible;
+  #exploreBlogSection .blog-scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
     flex-wrap: nowrap;
-    justify-content: center;
+    justify-content: flex-start;
     width: 100%;
-    max-width: none;
+    max-width: 100%;
+    min-width: 0;
     margin-left: auto;
     margin-right: auto;
     gap: 20px;
@@ -2280,8 +2341,8 @@ header a[href*="splash_options.php"] * {
     justify-content: center;
     gap: 0;
   }
-  .div-13 .coaches-nav-btns {
-    display: none !important;
+  #exploreBlogSection .coaches-nav-btns {
+    display: flex !important;
   }
 }
 
@@ -2501,9 +2562,9 @@ header a[href*="splash_options.php"] * {
     box-sizing: border-box;
   }
   .blog-outer.is-scrolled .blog-track-wrap {
-    width: 100%;
-    margin-left: 0;
-    max-width: 100%;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    max-width: none;
   }
   .div-13:has(#blog-scroll):has(.blog-outer.is-scrolled) {
     padding-left: 0 !important;
@@ -2515,13 +2576,15 @@ header a[href*="splash_options.php"] * {
     padding-right: 20px;
     box-sizing: border-box;
   }
-  .blog-scroll {
+  #exploreBlogSection .blog-scroll {
     width: 100%;
     margin-left: 0;
-    max-width: none;
+    max-width: 100%;
+    min-width: 0;
     height: auto;
     min-height: 0;
-    overflow-y: visible;
+    overflow-x: auto;
+    overflow-y: hidden;
     align-items: flex-start;
     margin-top: 0;
     touch-action: pan-x pan-y;
@@ -2976,42 +3039,27 @@ header a[href*="splash_options.php"] * {
     padding-left: 0 !important;
     padding-right: 0 !important;
     margin: 0;
-    overflow-x: hidden;
   }
 
   .div-2 {
     flex-direction: column;
-    flex-wrap: nowrap;
     align-items: center;
-    justify-content: flex-start;
     width: 100%;
-    max-width: 100%;
-    gap: 24px;
+    gap: 18px;
     margin-top: 0;
     padding-top: 60px;
-    box-sizing: border-box;
-  }
-
-  .web_home_divlanding .div-2 > picture {
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
   }
 
   .pt_18px{
     padding-top: 18px;
   }
 
-  /* Center phone+Olly on every mobile width (Figma 335px column). */
   .web_home_divlanding .new-app-adults-teen {
     display: block;
     width: 211px;
-    max-width: min(211px, 100%);
+    max-width: 100%;
     height: 306px;
-    margin-left: auto;
+    margin-left: 60px;
     margin-right: auto;
     align-self: center;
     object-fit: contain;
@@ -3019,50 +3067,24 @@ header a[href*="splash_options.php"] * {
     flex-shrink: 0;
   }
 
-  .web_home_divlanding .div-3 {
-    width: min(335px, calc(100% - 40px));
-    max-width: min(335px, calc(100% - 40px));
-    min-width: 0;
-    text-align: center;
-    align-items: center;
-    gap: 18px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .web_home_divlanding .div-3 > .frame-wrapper-2,
-  .web_home_divlanding .div-3 > .hero-try-free-link,
-  .web_home_divlanding .div-3 > [class*="col-"] {
-    align-self: center !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    float: none !important;
-    text-align: center;
-  }
-
   .div-3 { max-width: 100%; text-align: center; align-items: center; gap: 18px; }
-  .div-4 { gap: 18px; align-items: center; text-align: center; }
-  .div-5 { gap: 18px; align-items: center; text-align: center; }
-  .div-65 { align-items: center; text-align: center; }
+  .div-4 { gap: 18px; }
+  .div-5 { gap: 18px; }
   .group { justify-content: center; }
   .start-your-free-wrapper { align-self: center; }
 
   /* Anchor must define width: inner .start-your-free-wrapper uses max-width:100% and
      would otherwise shrink-wrap wrong inside .div-3 (align-items:center). */
   .web_home_divlanding .hero-try-free-link {
-    width: 100%;
-    max-width: 100%;
-    align-self: center !important;
+    width: 335px;
+    max-width: calc(100% - 40px);
+    align-self: center;
     flex-shrink: 0;
     display: flex;
     align-items: stretch;
     justify-content: center;
     box-sizing: border-box;
     text-decoration: none;
-    margin-left: auto;
-    margin-right: auto;
   }
 
   .p { font-size: 36px; font-weight: 600; text-align: center !important; }
@@ -3074,8 +3096,6 @@ header a[href*="splash_options.php"] * {
     text-align: center !important;
     max-width: 335px;
     width: 100%;
-    margin-left: auto;
-    margin-right: auto;
   }
   .frame-wrapper.web_home_divlanding #hw-website-subtitle {
     font-size: 12px !important;
@@ -3120,14 +3140,7 @@ header a[href*="splash_options.php"] * {
   }
 
   /* Ensure rating stays centered on mobile */
-  .web_home_divlanding .rating-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin: 0 auto;
-    text-align: center;
-  }
+  .rating-row { justify-content: center; margin: 0; }
 
   /* Orcha / Macmillan / Mind strip */
   .orcha-strip { flex-direction: column; flex-wrap: wrap; gap: 6px; min-height: 0; align-items: center; }
@@ -3609,15 +3622,18 @@ header a[href*="splash_options.php"] * {
   }
   #coaches-scroll.coaches-scroll {
     width: 100%;
+    max-width: 100%;
+    min-width: 0;
     padding-right: 0;
-    touch-action: auto;
+    overflow-x: auto;
+    touch-action: pan-x pan-y;
     overscroll-behavior-x: contain;
   }
   /* Once user starts scrolling, make strip edge-to-edge on mobile */
   .coaches-outer.is-scrolled .coaches-track-wrap {
-    width: 100%;
-    margin-left: 0;
-    max-width: 100%;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    max-width: none;
   }
   .coaches-outer.is-scrolled #coaches-scroll.coaches-scroll {
     padding-right: 0;
@@ -3744,27 +3760,13 @@ header a[href*="splash_options.php"] * {
 @media (max-width: 480px) {
   /* Hero */
   .frame-wrapper { padding: 36px 16px; }
-  .frame-wrapper.web_home_divlanding {
-    padding-top: 40px !important;
-    padding-bottom: 40px !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
   .p { font-size: 36px; }
   .frame-wrapper.web_home_divlanding #hw-website-title,
-  .frame-wrapper.web_home_divlanding .div-65 .p {
-    font-size: 36px !important;
-    text-align: center !important;
-    margin-left: auto;
-    margin-right: auto;
-  }
+  .frame-wrapper.web_home_divlanding .div-65 .p { font-size: 36px !important; }
   .text-wrapper-3 { font-size: 15px; }
   .text-wrapper-4 { font-size: 12px; }
   .frame-wrapper.web_home_divlanding #hw-website-subtitle { font-size: 12px !important; line-height: 140% !important; }
-  .web_home_divlanding .new-app-adults-teen {
-    margin-left: auto;
-    margin-right: auto;
-  }
+  /* .new-app-adults-teen { width: clamp(150px, 70vw, 240px); } */
   .div-6 img { width: 28px !important; height: 32px !important; }
   /* Let tools panel size to content — fixed 600px + flex:1 on .tools-info caused a large gap under "Explore on app" */
   .tools-panel.active {
