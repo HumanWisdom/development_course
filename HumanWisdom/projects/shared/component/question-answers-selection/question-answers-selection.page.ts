@@ -59,6 +59,9 @@ export class QuestionAnswersSelection implements OnInit {
   s8: any
   s9: any
   s10: any
+  s11: any
+  s12: any
+  s13: any
   rating1 = 5
   rating2 = 5
   rating3 = 1
@@ -69,8 +72,10 @@ export class QuestionAnswersSelection implements OnInit {
   rating8 = 1
   rating9 = 1
   rating10 = 1
-  moduleId = 50
-  screenNumber = 50001
+  rating11 = 1
+  rating12 = 1
+  rating13 = 1
+ 
   screenType = JSON.parse(localStorage.getItem("feedbackSurvey"))
 
   endTime: any
@@ -96,8 +101,14 @@ export class QuestionAnswersSelection implements OnInit {
     ) { 
      if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
+      this.moduleId = 50;
+       this.screenNumber = 50001
+
     } else {
       this.isAdults = false;
+      this.moduleId = 161;
+       this.screenNumber = 161001
+
     }
 
     }
@@ -176,7 +187,7 @@ export class QuestionAnswersSelection implements OnInit {
     this.btnDisabled = false;
     this.timeoutId = setTimeout(() => {
 
-      if (index == 9)
+      if (index == 12)
         this.submitProgress();
       else
         this.next('click_Daily_Practice_Next');
@@ -201,14 +212,14 @@ export class QuestionAnswersSelection implements OnInit {
     }
     window.scrollTo(0, 0);
     this.currentSection++;
-    if (this.currentSection >= 10) {
+    if (this.currentSection >= 13) {
       this.currentSection = 0;
     }
 
     if (this.currentSection === 1) {
       this.prevBtnDisabled = true;
     }
-    this.progress = this.progress + 10;
+    this.progress = this.progress + 13;
     if (this.currentSection === 1 && this.s2) {
 
       this.btnDisabled = false;
@@ -228,6 +239,12 @@ export class QuestionAnswersSelection implements OnInit {
       this.btnDisabled = false;
     } else if (this.currentSection === 9 && this.s10) {
       this.btnDisabled = false;
+    } else if (this.currentSection === 10 && this.s11) {
+      this.btnDisabled = false;
+    } else if (this.currentSection === 11 && this.s12) {
+      this.btnDisabled = false;
+    } else if (this.currentSection === 12 && this.s13) {
+      this.btnDisabled = false;
     } else {
       this.btnDisabled = true;
     }
@@ -244,12 +261,12 @@ export class QuestionAnswersSelection implements OnInit {
     }
     window.scrollTo(0, 0);
     if (this.currentSection == 0) {
-      this.currentSection = 10;
+      this.currentSection = 13;
     } else {
       this.currentSection--;
     }
     this.direction = 'right';
-    this.progress = this.progress - 10;
+    this.progress = this.progress - 13;
 
     if (this.currentSection === 0) {
       this.prevBtnDisabled = false;
@@ -276,7 +293,14 @@ export class QuestionAnswersSelection implements OnInit {
       this.btnDisabled = false;
     } else if (this.currentSection === 9 && this.s10) {
       this.btnDisabled = false;
+    } else if (this.currentSection === 10 && this.s11) {
+      this.btnDisabled = false;
+    } else if (this.currentSection === 11 && this.s12) {
+      this.btnDisabled = false;
+    } else if (this.currentSection === 12 && this.s13) {
+      this.btnDisabled = false;
     }
+    
   }
 
   receiveRating(e) {
@@ -344,6 +368,21 @@ export class QuestionAnswersSelection implements OnInit {
         break;
 
       }
+      case "11": {
+        this.rating11 = Number(e.Rating)
+        this.s11 = e.s
+        break;
+      }
+      case "12": {
+        this.rating12 = Number(e.Rating)
+        this.s12 = e.s
+        break;
+      }
+      case "13": {
+        this.rating13 = Number(e.Rating)
+        this.s13 = e.s
+        break;
+      }
       default: {
         break;
       }
@@ -352,13 +391,13 @@ export class QuestionAnswersSelection implements OnInit {
 
 
   submitProgress() {
-    if (this.s1 && this.s2 && this.s3 && this.s4 && this.s5 && this.s6 && this.s7 && this.s8 && this.s9 && this.s10) {
+    if (this.s1 && this.s2 && this.s3 && this.s4 && this.s5 && this.s6 && this.s7 && this.s8 && this.s9 && this.s10  && this.s11 && this.s12 && this.s13) {
       this.logeventservice.logEvent('click_survey_submit');
       this.endTime = Date.now();
       this.totalTime = this.endTime - this.startTime;
 
-      const optionT = [this.s1, this.s2, this.s3, this.s4, this.s5, this.s6, this.s7, this.s8, this.s9, this.s10];
-      this.wisdomScore = (this.rating1 + this.rating2 + this.rating3 + this.rating4 + this.rating5 + this.rating6 + this.rating7 + this.rating8 + this.rating9 + this.rating10) * 2;
+      const optionT = [this.s1, this.s2, this.s3, this.s4, this.s5, this.s6, this.s7, this.s8, this.s9, this.s10, this.s11, this.s12, this.s13];
+      this.wisdomScore = (this.rating1 + this.rating2 + this.rating3 + this.rating4 + this.rating5 + this.rating6 + this.rating7 + this.rating8 + this.rating9 + this.rating10 ) * 2;
       localStorage.setItem("wisdomScore", this.wisdomScore);
 
        const savedLogin = localStorage.getItem("loginResponse") || sessionStorage.getItem("loginResponse");
