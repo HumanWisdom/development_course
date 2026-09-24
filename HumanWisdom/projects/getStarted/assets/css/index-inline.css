@@ -860,41 +860,70 @@ a:hover {
   color: #803358 !important;
   text-decoration: underline !important;
 }
-header a:hover,
+.header a:hover,
 nav a:hover {
   text-decoration: none !important;
 }
-/* Keep header "Try for free" text white on hover/focus/active */
-header .btn_tff,
-header .btn_tff:hover,
-header .btn_tff:focus,
-header .btn_tff:active,
-header a.btn_tff,
-header a.btn_tff:hover,
-header a.btn_tff:focus,
-header a.btn_tff:active {
-  color: #fff !important;
-  text-decoration: none !important;
-}
-header .btn_tff *,
-header a.btn_tff * {
-  color: #fff !important;
-}
-/* Header CTA may come from included markup without btn_tff class */
-header a[href*="splash_options.php"],
-header a[href*="splash_options.php"]:hover,
-header a[href*="splash_options.php"]:focus,
-header a[href*="splash_options.php"]:active,
-header a[href*="splash_options.php"]:visited {
+/* Keep header "Try for free" white + work.php hover gradient on all pages */
+.header .btn_tff,
+.header .btn_tff:hover,
+.header .btn_tff:focus,
+.header .btn_tff:active,
+.header a.btn_tff,
+.header a.btn_tff:hover,
+.header a.btn_tff:focus,
+.header a.btn_tff:active,
+.header a#headerTryForFree,
+.header a#headerTryForFree:hover,
+.header a#headerTryForFree:focus,
+.header a#headerTryForFree:active,
+.header a#headerTryForFree:visited {
   color: #fff !important;
   -webkit-text-fill-color: #fff !important;
   text-decoration: none !important;
 }
-header a[href*="splash_options.php"] * {
+.header .btn_tff *,
+.header a.btn_tff * {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+.header a.btn_tff.btn_popup,
+.header a#headerTryForFree.btn_tff {
+  background: linear-gradient(180deg, #ed7d6f 0%, #d7586b 100%) !important;
+}
+.header a.btn_tff.btn_popup:hover,
+.header a.btn_tff.btn_popup:focus:hover,
+.header a.btn_tff.btn_popup:active,
+.header a#headerTryForFree.btn_tff:hover,
+.header a#headerTryForFree.btn_tff:focus:hover,
+.header a#headerTryForFree.btn_tff:active {
+  background: linear-gradient(180deg, #da7d71 0%, #bf5061 100%) !important;
+}
+/* Header CTA may come from included markup without btn_tff class */
+.header a[href*="splash_options.php"],
+.header a[href*="splash_options.php"]:hover,
+.header a[href*="splash_options.php"]:focus,
+.header a[href*="splash_options.php"]:active,
+.header a[href*="splash_options.php"]:visited {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  text-decoration: none !important;
+}
+.header a[href*="splash_options.php"] * {
   color: #fff !important;
   -webkit-text-fill-color: #fff !important;
 }
 /* Actual top nav uses .header container (not <header> tag) */
+.header a.btn_tff,
+.header a.btn_tff:hover,
+.header a.btn_tff:focus,
+.header a.btn_tff:active,
+.header a.btn_tff:visited,
+.header a.btn_tff.btn_tff_tn.btn_popup.no-underline-hover,
+.header a.btn_tff.btn_tff_tn.btn_popup.no-underline-hover:hover,
+.header a.btn_tff.btn_tff_tn.btn_popup.no-underline-hover:focus,
+.header a.btn_tff.btn_tff_tn.btn_popup.no-underline-hover:active,
+.header a.btn_tff.btn_tff_tn.btn_popup.no-underline-hover:visited,
 #body .header a.btn_tff,
 #body .header a.btn_tff:hover,
 #body .header a.btn_tff:focus,

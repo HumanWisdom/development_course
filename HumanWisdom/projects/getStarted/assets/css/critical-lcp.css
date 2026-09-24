@@ -5,6 +5,11 @@ body { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Se
 .header { background: #fff; z-index: 997; box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1); }
 .header_fixed { position: fixed; top: 0; left: 0; right: 0; z-index: 997; }
 .header .btn_tff { display: inline-flex; align-items: center; justify-content: center; color: #fff; text-decoration: none; font-weight: 600; font-size: 15px; padding: 10px 20px; border-radius: 24px; background: linear-gradient(180deg, #ed7d6f 0%, #d7586b 100%); box-sizing: border-box; }
+.header .btn_tff:hover,
+.header a#headerTryForFree:hover {
+  color: #fff;
+  background: linear-gradient(180deg, #da7d71 0%, #bf5061 100%);
+}
 .hero-star {
   color: rgba(255, 247, 230, 1);
   font-size: 16px;
