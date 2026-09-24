@@ -88,7 +88,7 @@
 
 
                 
-               <div class="row mt40px mb10px">
+               <div class="row mt30px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/90_new.webp" class="img-responsive" alt="Calm mind, less stress">
                   </div>
