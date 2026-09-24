@@ -11447,6 +11447,30 @@ btn:active {
   text-align: -webkit-center !important;  /* not valid anymore */
 }
 
+/* Redeem landing only: -webkit-center shrink-wraps this screen on iOS Safari.
+   Do not remove -webkit-center from .tcenter — other pages still need it. */
+app-redeem-subscription-landing .x_content,
+app-redeem-subscription-landing .x_content.tcenter,
+app-redeem-subscription-landing .redeem-landing-content {
+  text-align: center !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  float: none !important;
+}
+
+app-redeem-subscription-landing .x_panel,
+app-redeem-subscription-landing .x_content form,
+app-redeem-subscription-landing .x_content .row {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  float: none !important;
+}
+
+app-redeem-subscription-landing .mc_03 {
+  overflow-x: hidden;
+}
+
 a.img-btn:hover {
   background: rgba(0, 0, 0, 0.9);
   border: 2px solid red;
