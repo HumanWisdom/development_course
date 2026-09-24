@@ -11,9 +11,11 @@ include __DIR__ . '/../includes/organisation_header.php';
 ?>
 <main class="org-main">
   <section class="org-hero-offer">
-    <p class="org-kicker">Exclusive offer</p>
-    <h1>Free <span data-org-free-days><?= (int) $org['freeDays'] ?></span>-day access to the HappierMe app</h1>
-    <p class="org-hero-note">(No credit card needed)</p>
+    <div class="org-hero-offer-copy">
+      <p class="org-kicker">Exclusive offer</p>
+      <h1>Free <span data-org-free-days><?= (int) $org['freeDays'] ?></span>-day access to the HappierMe app</h1>
+      <p class="org-hero-note">(No credit card needed)</p>
+    </div>
   </section>
 
   <section class="org-benefits">
@@ -49,7 +51,7 @@ include __DIR__ . '/../includes/organisation_header.php';
   </section>
 
   <div class="org-cta-row">
-    <a class="org-btn org-btn-cta" href="<?= hw_org_h($landingUrl) ?>">Start your free <span data-org-free-days><?= (int) $org['freeDays'] ?></span> days</a>
+    <a class="org-btn org-btn-cta" href="<?= hw_org_h($landingUrl) ?>"><span class="org-btn-cta-label">Start your free <span data-org-free-days><?= (int) $org['freeDays'] ?></span> days</span></a>
   </div>
 </main>
 <?php include __DIR__ . '/../includes/organisation_foot.php'; ?>

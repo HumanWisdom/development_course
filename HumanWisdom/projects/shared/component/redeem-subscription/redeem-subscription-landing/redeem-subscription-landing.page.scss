@@ -1,20 +1,53 @@
-.pagebreak{
-    padding-bottom: 7rem !important;
-}
-.sc_01{
-    min-height: 100vh !important;
+.pagebreak {
+  padding-bottom: 7rem !important;
 }
 
-/* .tcenter uses text-align: -webkit-center, which shrink-wraps block children
-   on iOS Safari (iPhone 13 Pro) and collapses this landing layout.
-   Keep text centered without the WebKit value so other pages stay unchanged. */
-.x_content {
-  text-align: center;
+.sc_01 {
+  min-height: 100vh !important;
+}
+
+/*
+  Page-scoped iOS fix. Do NOT change global .tcenter — other screens need
+  text-align: -webkit-center. On this landing page that value shrink-wraps
+  .x_content children and .mc_03 { overflow: hidden } clips them (iPhone 13).
+*/
+app-redeem-subscription-landing {
+  display: block;
   width: 100%;
 }
 
-.x_content form,
-.x_content .row {
+app-redeem-subscription-landing .redeem-landing.mc_03 {
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+app-redeem-subscription-landing .x_panel {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  float: none !important;
+}
+
+app-redeem-subscription-landing .x_content,
+app-redeem-subscription-landing .x_content.tcenter,
+app-redeem-subscription-landing .redeem-landing-content {
+  text-align: center !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  float: none !important;
+}
+
+app-redeem-subscription-landing .x_content form,
+app-redeem-subscription-landing .x_content .row {
+  width: 100% !important;
+  max-width: 100% !important;
+  float: none !important;
+  box-sizing: border-box;
+}
+
+app-redeem-subscription-landing .x_content h4 {
   width: 100%;
   max-width: 100%;
+  white-space: normal;
+  overflow-wrap: break-word;
 }
