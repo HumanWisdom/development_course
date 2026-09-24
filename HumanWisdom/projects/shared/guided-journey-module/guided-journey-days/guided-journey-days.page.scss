@@ -40,7 +40,7 @@
         position: relative;
         width: 100%;
         height: 180px;
-
+        padding: 5px;
         .card_img {
             width: 100%;
             height: 100%;
@@ -80,7 +80,7 @@
     }
 
     .card_content {
-        padding: 10px;
+        padding:0px 10px 10px 10px;
         position: relative;
         display: flex;
         justify-content: space-between;
@@ -103,10 +103,11 @@
 
     .exercise_title {
         font-size: 16px;
-        font-weight: 600;
+        font-weight: 500;
         line-height: 1.4;
         color: #000;
         margin: 0;
+        margin-bottom:5px;
     }
 
     .exercise_meta {
