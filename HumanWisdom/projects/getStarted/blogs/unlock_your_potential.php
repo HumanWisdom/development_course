@@ -115,11 +115,11 @@
                 Building resilience equips you to face the highs and lows of the year ahead with determination and composure.
                 </h4>
 
-                <div class="row mt20px rmb80px">
+                <!-- <div class="row mt20px rmb80px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                     <img src="https://miro.medium.com/v2/resize:fit:1358/format:webp/1*wnwv2errErKcVBbfaGScig.png" class="img-responsive" alt="Reflection and resilience for the new year">
                   </div>
-                </div>
+                </div> -->
 
                 <h4 class="mtb0px blog_sub_title">
                 Enhancing Emotional Intelligence with HappierMe
@@ -175,8 +175,7 @@
                 <h4 class="mtb0px blog_desc">
                 This New Year is a blank canvas, and with HappierMe's support, you can make it an extraordinary one. Let HappierMe guide you toward the success you deserve.
                 <br><br>
-                To find out more, visit
-                <a class="blog_highlight_peach" href="https://happierme.app"> https://happierme.app, </a>or download HappierMe from the app stores. There is a free trial.
+                
                 </h4>
 
               </div>
