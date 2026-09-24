@@ -46,6 +46,39 @@
   width: 100%;
   overflow: hidden;
   box-sizing: border-box;
+
+  /* Desktop: show grab cursor so users know they can drag */
+  cursor: grab;
+  touch-action: pan-x; /* allow horizontal scroll but we handle vertical ourselves */
+  -webkit-user-select: none;
+  user-select: none;
+
+  /* While dragging: switch to grabbing cursor and disable text selection */
+  &.is-dragging {
+    cursor: grabbing;
+
+    /* Block accidental clicks on buttons/links but NOT pointer events on the
+       container itself — the mousemove needs to keep firing on the document */
+    a, button, ion-button {
+      pointer-events: none;
+    }
+  }
+}
+
+/* Snap-back transition lives on the wrapper.
+   During a committed swipe the TS code clears inline styles and Angular's
+   @slideAnimation takes over. For a cancelled drag (snap-back) the TS code
+   sets transition + clears transform, which produces the spring-back feel. */
+.video-wrapper {
+  will-change: transform; /* GPU-accelerate for smooth drag */
+}
+
+/* Prevent browser's native drag ghost on video/img elements inside the slider.
+   We only set draggable=false via HTML; CSS user-drag is a hint only. */
+.video-slider-container video,
+.video-slider-container img {
+  -webkit-user-drag: none;
+  user-drag: none;
 }
 .video-width {
   width: -webkit-fill-available !important;
