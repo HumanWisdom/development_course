@@ -57,7 +57,7 @@ body:not(.page-work):not(.page-education):not(.page-teenagers):not(.page-healthc
 
 a:hover {
   color: #803358;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 h1,
@@ -464,8 +464,10 @@ label>input[type="checkbox"]+*::before {
 .btn_tff_a:hover,
 .btn_tff_a:focus:hover,
 .btn_tff_a:active {
-  color: #fff;
+  color: #fff !important;
   background: linear-gradient(180deg, #da7d71 0%, #bf5061 100%);
+  text-decoration: none !important;
+
 }
 
 .navbar a,
@@ -2520,7 +2522,7 @@ a {
 
 .hr_style_web_02 {
   border: 1px solid rgba(0, 0, 0, 0.5);
-  margin: 80px 0;
+  margin: 50px 0;
 }
 .hr_style_web_faq {
   border: 1px solid rgba(0, 0, 0, 0.5);
@@ -2559,7 +2561,6 @@ a {
   height: 48px;
   border-radius: 24px;
   background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
-
 }
 
 .btn_tff_widthnew {
@@ -3164,6 +3165,7 @@ body.page-newsletter .newsletter-subtitle:hover {
   }
 }
 
+
 .btn_continue {
   width: 380px;
   height: 48px;
@@ -3727,7 +3729,7 @@ audio::-webkit-media-controls-enclosure {
   font-weight: 400;
   line-height: 32.4px;
   color: #000;
-  margin-bottom: 20px;
+  margin-bottom: 20px !important;
 }
 
 .blog_highlight_black {
@@ -5553,3 +5555,7 @@ input[type="password" i]::-ms-reveal {
 
              
         }
+
+  .BlogCard, .BlogCard:hover {
+      text-decoration: none !important;
+  }

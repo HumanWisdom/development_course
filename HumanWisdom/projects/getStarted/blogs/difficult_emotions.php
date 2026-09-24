@@ -117,23 +117,17 @@
                   <span class="blog_highlight_black">
                   Resources to explore in the HappierMe app:</span>
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/breathing">
-                    Breathing exercises,
-                  </a>
+                  Breathing exercises</a>, 
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/nature">
-                    Nature meditations,
-                  </a>
+                  Nature meditations</a>, 
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/guided-meditation">
-                    Audio meditations,
-                  </a>
+                  Audio meditations</a>, 
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/videopage/get-support-now-videos-1.6.mp4/F/Feel%20better%20with%20tapping%20exercises">
-                    Tapping exercises,
-                  </a>
+                  Tapping exercises</a>,
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/meditation">
-                    Meditation,
-                  </a>
+                  Meditation</a>, 
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/without-language">
-                    Looking without language
-                  </a>
+                  Looking without language</a>
                 </h4>
 
                 <h4 class="mtb0px blog_sub_title">
@@ -185,17 +179,13 @@
                   <span class="blog_highlight_black">
                   Resources to explore in the HappierMe app:</span>
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/awareness">
-                    Awareness,
-                  </a>
+                    Awareness</a>,
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/wisdom-exercise/s75002">
-                    See the world freshly,
-                  </a>
+                    See the world freshly</a>,
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/wisdom-exercise/s75003">
-                    Notice your body,
-                  </a>
+                    Notice your body</a>,
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/noticing-thoughts">
-                    Notice feelings,
-                  </a>
+                    Notice feelings</a>,
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/journal">
                     Online journal
                   </a>
@@ -224,11 +214,9 @@
                   <span class="blog_highlight_black">
                   Resources to explore in the HappierMe app:</span>
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/no-judgement">
-                    No judgement,
-                  </a>
+                    No judgement</a>,
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/pathway/understand-yourself">
-                    Learn to question yourself,
-                  </a>
+                    Learn to question yourself</a>,
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/pathway/">
                     PATHWAY program.
                   </a>
@@ -282,11 +270,9 @@
                   <span class="blog_highlight_black">
                   Resources to explore in the HappierMe app:</span>
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/questions-are-key">
-                    Questions are the key,
-                  </a>
+                    Questions are the key</a>,
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/three-steps-enquiry">
-                    Three steps to enquiry,
-                  </a>
+                    Three steps to enquiry</a>,
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/journal">
                     Guided journaling
                   </a>
@@ -328,17 +314,13 @@
                   <span class="blog_highlight_black">
                   Resources to explore in the HappierMe app:</span>
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/pathway/live-your-best-life">
-                    Succeed in life,
-                  </a>
+                    Succeed in life</a>,
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/fear-anxiety">
-                    Fear and anxiety,
-                  </a>
+                    Fear and anxiety</a>,
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/stress">
-                    Stress,
-                  </a>
+                    Stress</a>,
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/relationships">
-                    Relationships,
-                  </a>
+                    Relationships</a>,
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/podcast">
                     Podcasts
                   </a>
@@ -390,11 +372,9 @@
 
                   Resources to explore in the HappierMe app:</span>
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/insight">
-                    Insight,
-                  </a>
+                    Insight</a>,
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/coach">
-                    Coaches,
-                  </a>
+                    Coaches</a>,
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/forum">
                     Discussion Forum
                   </a>
