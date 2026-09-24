@@ -35,7 +35,9 @@
           <div class="x_panel p0">
             <div class="x_content p0">
               <form>
-                <div class="video-slider-container">
+                <div class="video-slider-container" #swipeContainer
+                  [class.is-dragging]="isDragging"
+                  (swipeup)="onSwipeUp()" (swipedown)="onSwipeDown()">
                   <div class="video-wrapper" *ngFor="let video of wisdomShortOrderList; let i = index"
                     [@slideAnimation]="
                     currentIndex === i
@@ -45,14 +47,19 @@
                       : 'next'
                   " [style.zIndex]="currentIndex === i ? 2 : (isSlideVisible(i) ? 1 : 0)">
                     <div class="video-slide-content" *ngIf="isSlideVisible(i)">
-                      <h1 class="txt1 tcenter" [ngStyle]="{
+                      <h1 class="txt1 tcenter"
+                        [style.opacity]="videoReady || currentIndex !== i ? '1' : '0'"
+                        [style.transition]="'opacity 0.3s ease'"
+                        [ngStyle]="{
                         color: isAdults ? 'black' : 'white',
                         alignSelf: 'flex-start',
                         display: 'flex'
                       }">
                         {{ video.title || videoTitle }}
                       </h1>
-                      <video *ngIf="currentIndex === i" autoplay disablePictureInPicture class="cvideo"
+                      <video *ngIf="currentIndex === i" autoplay disablePictureInPicture draggable="false" class="cvideo"
+                        [style.opacity]="videoReady ? '1' : '0'"
+                        [style.transition]="'opacity 0.3s ease'"
                         [ngClass]="[
                         isIOS ? 'cvideo_ext_di_no_radius' : 'cvideo_ext_di',
                         video.isPortrait ? 'video-portrait' : video.isLandscape ? 'video-landscape' : (isPortrait ? 'video-portrait' : 'video-square')
