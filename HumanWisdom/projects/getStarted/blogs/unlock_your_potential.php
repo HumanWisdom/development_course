@@ -77,8 +77,10 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                <b>Reflecting with purpose:</b> HappierMe's guided journaling and self-awareness exercises make it easier to understand what's happened, learn from it, and move forward happier.
-                </h4>
+                    <ul>
+                <li> <span class="blog_highlight_black">Reflecting with purpose:</span> HappierMe's guided journaling and self-awareness exercises make it easier to understand what's happened, learn from it, and move forward happier.
+                
+</li></ul></h4>
 
                 <h4 class="mtb0px blog_desc">
                 Using these tools to reflect sharpens your emotional intelligence and sets the tone for a genuinely fulfilling year.
@@ -86,7 +88,7 @@
 
 
                 
-                <div class="row mt40px">
+               <div class="row mt40px mb10px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/90_new.webp" class="img-responsive" alt="Calm mind, less stress">
                   </div>
@@ -100,16 +102,20 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                <b>Practicing gratitude:</b> HappierMe offers exercises that build gratitude, reinforcing positive thinking and mental strength.
-                </h4>
+                    <ul>
+                    <li> <span class="blog_highlight_black">
+                Practicing gratitude: </span>HappierMe offers exercises that build gratitude, reinforcing positive thinking and mental strength.
+</li>
 
-                <h4 class="mtb0px blog_desc">
-                <b>Developing healthy habits:</b> Guided meditation and stress management techniques on HappierMe help you stay balanced during tough times.
-                </h4>
+               
+                <li> <span class="blog_highlight_black">Developing healthy habits: </span> Guided meditation and stress management techniques on HappierMe help you stay balanced during tough times.
+</li>
 
-                <h4 class="mtb0px blog_desc">
-                <b>Fostering a growth mindset:</b> With HappierMe's guidance, you can learn to treat setbacks as stepping stones rather than dead ends.
-                </h4>
+               <li> <span class="blog_highlight_black">
+                Fostering a growth mindset: </span> With HappierMe's guidance, you can learn to treat setbacks as stepping stones rather than dead ends.
+</li>
+</ul>
+</h4>
 
                 <h4 class="mtb0px blog_desc">
                 Building resilience equips you to face the highs and lows of the year ahead with determination and composure.
@@ -130,18 +136,22 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                <b>Self-awareness tools:</b> Guided reflection activities help you identify your emotions and understand their impact.
-                </h4>
+                    <ul>
+                    <li> <span class="blog_highlight_black">
+            Self-awareness tools:</span> Guided reflection activities help you identify your emotions and understand their impact.
+</li>
 
-                <h4 class="mtb0px blog_desc">
-                <b>Empathy building:</b> Curated resources help you learn to see situations from other people's perspectives.
-                </h4>
+              <li> <span class="blog_highlight_black">
+                Empathy building:</span> Curated resources help you learn to see situations from other people's perspectives.
+</li>
 
-                <h4 class="mtb0px blog_desc">
-                <b>Communication skills:</b> HappierMe's communication modules teach active listening and effective expression for stronger relationships.
-                </h4>
+               <li> <span class="blog_highlight_black">
+                Communication skills:</span> HappierMe's communication modules teach active listening and effective expression for stronger relationships.
+</li>
+</ul>
+</h4>
 
-                <h4 class="mtb0px blog_desc">
+                <h4  style=" padding-bottom:20px;" class="mtb0px blog_desc">
                 Improving your emotional intelligence helps you navigate challenges, collaborate more effectively, and achieve your goals.
                 </h4>
                 
