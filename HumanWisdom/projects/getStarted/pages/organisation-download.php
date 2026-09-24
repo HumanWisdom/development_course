@@ -15,10 +15,10 @@ include __DIR__ . '/../includes/organisation_header.php';
     <div class="org-flow-rule"><span>OR</span></div>
     <div class="org-download-badges">
       <a href="<?= hw_org_h($assets['appstore_url']) ?>" target="_blank" rel="noopener">
-        <img src="<?= hw_org_h(hw_asset_url($assets['appstore'])) ?>" alt="Download on the App Store" width="154" height="46">
+        <img src="<?= hw_org_h(hw_asset_url($assets['appstore'])) ?>" alt="Download on the App Store" width="179" height="53">
       </a>
       <a href="<?= hw_org_h($assets['playstore_url']) ?>" target="_blank" rel="noopener">
-        <img src="<?= hw_org_h(hw_asset_url($assets['playstore'])) ?>" alt="Get it on Google Play" width="154" height="46">
+        <img src="<?= hw_org_h(hw_asset_url($assets['playstore'])) ?>" alt="Get it on Google Play" width="179" height="53">
       </a>
     </div>
   </div>
