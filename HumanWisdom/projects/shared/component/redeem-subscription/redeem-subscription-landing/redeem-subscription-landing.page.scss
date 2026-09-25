@@ -1,6 +1,53 @@
-.pagebreak{
-    padding-bottom: 7rem !important;
+.pagebreak {
+  padding-bottom: 7rem !important;
 }
-.sc_01{
-    min-height: 100vh !important;
+
+.sc_01 {
+  min-height: 100vh !important;
+}
+
+/*
+  Page-scoped iOS fix. Do NOT change global .tcenter — other screens need
+  text-align: -webkit-center. On this landing page that value shrink-wraps
+  .x_content children and .mc_03 { overflow: hidden } clips them (iPhone 13).
+*/
+app-redeem-subscription-landing {
+  display: block;
+  width: 100%;
+}
+
+app-redeem-subscription-landing .redeem-landing.mc_03 {
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+app-redeem-subscription-landing .x_panel {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  float: none !important;
+}
+
+app-redeem-subscription-landing .x_content,
+app-redeem-subscription-landing .x_content.tcenter,
+app-redeem-subscription-landing .redeem-landing-content {
+  text-align: center !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  float: none !important;
+}
+
+app-redeem-subscription-landing .x_content form,
+app-redeem-subscription-landing .x_content .row {
+  width: 100% !important;
+  max-width: 100% !important;
+  float: none !important;
+  box-sizing: border-box;
+}
+
+app-redeem-subscription-landing .x_content h4 {
+  width: 100%;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: break-word;
 }

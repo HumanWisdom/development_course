@@ -1,10 +1,15 @@
 /* Minimal above-the-fold CSS for index LCP (hero). Full styles load deferred. */
 *, *::before, *::after { box-sizing: border-box; }
-body { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #fff; color: #000; }
+body { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #fff; color: #000; max-width: 100%; overflow-x: hidden; }
 #preloader { display: none !important; }
 .header { background: #fff; z-index: 997; box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1); }
 .header_fixed { position: fixed; top: 0; left: 0; right: 0; z-index: 997; }
 .header .btn_tff { display: inline-flex; align-items: center; justify-content: center; color: #fff; text-decoration: none; font-weight: 600; font-size: 15px; padding: 10px 20px; border-radius: 24px; background: linear-gradient(180deg, #ed7d6f 0%, #d7586b 100%); box-sizing: border-box; }
+.header .btn_tff:hover,
+.header a#headerTryForFree:hover {
+  color: #fff;
+  background: linear-gradient(180deg, #da7d71 0%, #bf5061 100%);
+}
 .hero-star {
   color: rgba(255, 247, 230, 1);
   font-size: 16px;
@@ -104,7 +109,7 @@ img { max-width: 100%; display: block; }
 }
 
 /* Hero layout */
-.frame { display: flex; flex-direction: column; align-items: center; width: 100%; gap: 0; }
+.frame { display: flex; flex-direction: column; align-items: stretch; width: 100%; max-width: 100%; gap: 0; }
 .frame-wrapper {
   width: 100%;
   display: flex;
@@ -215,7 +220,13 @@ img { max-width: 100%; display: block; }
   flex-wrap: wrap;
   margin-top: 100px;
 }
-.div-2 > picture { display: contents; }
+.div-2 > picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  line-height: 0;
+}
 .new-app-adults-teen {
   width: 331px;
   height: 480px;
@@ -328,35 +339,70 @@ img { max-width: 100%; display: block; }
 
 @media (max-width: 768px) {
   .frame-wrapper.web_home_divlanding {
-    width: 375px;
+    width: 100%;
     max-width: 100%;
-    height: 755px;
+    height: auto;
+    min-height: 0;
     padding-top: 40px;
     padding-bottom: 40px;
     padding-left: 0 !important;
     padding-right: 0 !important;
     margin: 0 auto;
+    overflow-x: hidden;
   }
   .div-2 {
     flex-direction: column;
+    flex-wrap: nowrap;
     align-items: center;
+    justify-content: flex-start;
     width: 100%;
-    gap: 18px;
+    max-width: 100%;
+    gap: 24px;
     margin-top: 0;
     padding-top: 60px;
+    box-sizing: border-box;
+  }
+  .web_home_divlanding .div-2 > picture {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
   }
   .pt_18px { padding-top: 18px; }
   .web_home_divlanding .new-app-adults-teen {
     display: block;
     width: 211px;
-    max-width: 100%;
+    max-width: min(211px, 100%);
     height: 306px;
-    margin-left: 60px;
+    margin-left: auto;
     margin-right: auto;
     align-self: center;
     object-fit: contain;
     object-position: center center;
     flex-shrink: 0;
+  }
+  .web_home_divlanding .div-3 {
+    width: min(335px, calc(100% - 40px));
+    max-width: min(335px, calc(100% - 40px));
+    min-width: 0;
+    text-align: center;
+    align-items: center;
+    gap: 18px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .web_home_divlanding .div-3 > .frame-wrapper-2,
+  .web_home_divlanding .div-3 > .hero-try-free-link,
+  .web_home_divlanding .div-3 > [class*="col-"] {
+    align-self: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    float: none !important;
+    text-align: center;
   }
   .div-3 { max-width: 100%; text-align: center; align-items: center; gap: 18px; }
   .frame-wrapper.web_home_divlanding #hw-website-title,
@@ -367,6 +413,8 @@ img { max-width: 100%; display: block; }
     text-align: center !important;
     max-width: 335px;
     width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
   .frame-wrapper.web_home_divlanding #hw-website-subtitle {
     font-size: 12px !important;
@@ -387,11 +435,13 @@ img { max-width: 100%; display: block; }
     display: inline !important;
   }
   .web_home_divlanding .hero-try-free-link {
-    width: 335px;
-    max-width: calc(100% - 40px);
-    align-self: center;
+    width: 100%;
+    max-width: 100%;
+    align-self: center !important;
     display: flex;
     justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
   }
   .web_home_divlanding .hero-try-free-link .start-your-free-wrapper {
     width: 335px !important;
@@ -405,7 +455,14 @@ img { max-width: 100%; display: block; }
     font-size: 15px !important;
     font-weight: 600 !important;
   }
-  .rating-row { justify-content: center; margin: 0; }
+  .web_home_divlanding .rating-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
 }
 
 /* ORCHA strip (below hero) — critical for desktop Speed Index */
@@ -471,15 +528,29 @@ img { max-width: 100%; display: block; }
 
 /* Below-fold chunk placeholders (reduce CLS when HTML injects) */
 .coaches-section.index-lazy-section {
-  min-height: 420px;
+  min-height: 40px;
 }
 
 @media (max-width: 480px) {
   .frame-wrapper { padding: 36px 16px; }
+  .frame-wrapper.web_home_divlanding {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
   .frame-wrapper.web_home_divlanding #hw-website-title,
-  .frame-wrapper.web_home_divlanding .div-65 .p { font-size: 36px !important; }
+  .frame-wrapper.web_home_divlanding .div-65 .p {
+    font-size: 36px !important;
+    text-align: center !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
   .frame-wrapper.web_home_divlanding #hw-website-subtitle { font-size: 12px !important; line-height: 140% !important; }
-  /* .new-app-adults-teen { width: clamp(150px, 70vw, 240px); } */
+  .web_home_divlanding .new-app-adults-teen {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 /* Footer (chunk 4) before main.css / responsive.css load */

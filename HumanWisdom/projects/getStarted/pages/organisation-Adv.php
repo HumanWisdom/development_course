@@ -1,0 +1,57 @@
+<?php
+require_once __DIR__ . '/../includes/organisation_helper.php';
+$org = hw_org_fetch();
+$assets = hw_org_cdn_assets();
+$pageTitle = 'Exclusive offer | HappierMe';
+$bodyClass = 'org-page org-page-adv';
+$showCopyright = true;
+$landingUrl = hw_org_page('organisation');
+include __DIR__ . '/../includes/organisation_head.php';
+include __DIR__ . '/../includes/organisation_header.php';
+?>
+<main class="org-main">
+  <section class="org-hero-offer">
+    <div class="org-hero-offer-copy">
+      <p class="org-kicker">Exclusive offer</p>
+      <h1>Free <span data-org-free-days><?= (int) $org['freeDays'] ?></span>-day access to the HappierMe app</h1>
+      <p class="org-hero-note">(No credit card needed)</p>
+    </div>
+  </section>
+
+  <section class="org-benefits">
+    <div class="org-benefits-list">
+      <article class="org-benefit">
+        <div class="org-benefit-icon">
+          <img src="<?= hw_org_h($assets['icon_heart']) ?>" alt="" width="120" height="120">
+        </div>
+        <div class="org-benefit-copy">
+          <h2>Feel<br> better</h2>
+          <p>Manage and improve wellbeing</p>
+        </div>
+      </article>
+      <article class="org-benefit">
+        <div class="org-benefit-icon">
+          <img src="<?= hw_org_h($assets['icon_hearts']) ?>" alt="" width="120" height="120">
+        </div>
+        <div class="org-benefit-copy">
+          <h2>Build happier<br> relationships</h2>
+          <p>Understand yourself and others better</p>
+        </div>
+      </article>
+      <article class="org-benefit">
+        <div class="org-benefit-icon">
+          <img src="<?= hw_org_h($assets['icon_target']) ?>" alt="" width="120" height="120">
+        </div>
+        <div class="org-benefit-copy">
+          <h2>Handle life<br> better</h2>
+          <p>Navigate challenges with greater confidence</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <div class="org-cta-row">
+    <a class="org-btn org-btn-cta" href="<?= hw_org_h($landingUrl) ?>"><span class="org-btn-cta-label">Start your free <span data-org-free-days><?= (int) $org['freeDays'] ?></span> days</span></a>
+  </div>
+</main>
+<?php include __DIR__ . '/../includes/organisation_foot.php'; ?>

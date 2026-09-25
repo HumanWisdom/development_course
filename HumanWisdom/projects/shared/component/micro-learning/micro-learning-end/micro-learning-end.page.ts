@@ -225,12 +225,91 @@ export class MicroLearningEndPage implements OnInit, AfterViewInit, OnDestroy {
       cleanTitle = (decodedTitle.substring(0, start) + decodedTitle.substring(end + 1)).trim();
     }
 
+    let isGuidedProgram = false;
+    let sessionText = '';
+
+    const upperType = type.toUpperCase();
+    if (upperType.includes('GUIDED PROGRAM') || upperType.includes('GUIDED JOURNEY') || upperType.includes('GUIDED')) {
+      isGuidedProgram = true;
+      if (type.includes(',')) {
+        const parts = type.split(',');
+        type = parts[0].trim();
+        sessionText = parts.slice(1).join(',').trim().toLowerCase();
+      }
+    } else {
+      // In soundscape (or other types) -> add space after comma ","
+      if (type.includes(',')) {
+        type = type.replace(/,(?!\s)/g, ', ');
+      }
+    }
+
     return {
       title: cleanTitle,
       url: url,
       imgUrl: imgUrl,
-      type: type
+      type: type,
+      isGuidedProgram: isGuidedProgram,
+      sessionText: sessionText
     };
+  }
+
+  getResourceIcon(resource: any): string | null {
+    if (!resource) return null;
+    const type = (resource.type || '').toUpperCase();
+    const url = (resource.url || '').toUpperCase();
+
+    // Do not show icon for blogs or unknown types
+    if (type.includes('BLOG') || url.includes('/BLOG') || url.includes('/BLOGS/')) {
+      return null;
+    }
+
+    // Video icon: Event, Video, Breathing exercise
+    if (
+      type.includes('EVENT') ||
+      type.includes('VIDEO') ||
+      type.includes('TALK') ||
+      type.includes('BREATHING') ||
+      url.includes('EVENT') ||
+      url.includes('VIDEO') ||
+      url.includes('SHORTS') ||
+      url.includes('VIDEOPAGE') ||
+      url.includes('BREATHING')
+    ) {
+      return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg';
+    }
+
+    // Audio icon: Podcast, Soundscape, Audio meditation
+    if (
+      type.includes('PODCAST') ||
+      type.includes('SOUNDSCAPE') ||
+      type.includes('AUDIO MEDITATION') ||
+      type.includes('MEDITATION') ||
+      type.includes('AUDIO') ||
+      url.includes('PODCAST') ||
+      url.includes('SOUNDSCAPE') ||
+      url.includes('AUDIO-MEDITATION') ||
+      url.includes('AUDIOPAGE')
+    ) {
+      return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audio_play.svg';
+    }
+
+    // Module icon: Guided program, Microlearning
+    if (
+      resource.isGuidedProgram ||
+      type.includes('GUIDED PROGRAM') ||
+      type.includes('GUIDED JOURNEY') ||
+      type.includes('GUIDED') ||
+      type.includes('MICROLEARNING') ||
+      type.includes('MICRO LEARNING') ||
+      type.includes('MICRO-LEARNING') ||
+      type.includes('MODULE') ||
+      url.includes('GUIDED') ||
+      url.includes('MICRO-LEARNING')
+    ) {
+      return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/pathway.svg';
+    }
+
+    return null;
   }
 
   goBack() {

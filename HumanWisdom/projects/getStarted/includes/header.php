@@ -239,6 +239,23 @@ if (!hw_page_assets_flag('css', 'header_in_critical')) :
           a.no-underline-hover:hover {
             text-decoration: none !important;
           }
+          /* Match work.php header CTA hover everywhere (overrides global a:hover / page CSS) */
+          .header a#headerTryForFree.btn_tff,
+          .header a#headerTryForFree.btn_tff:visited,
+          .header a#headerTryForFree.btn_tff:focus {
+            color: #fff !important;
+            -webkit-text-fill-color: #fff !important;
+            text-decoration: none !important;
+            background: linear-gradient(180deg, #ed7d6f 0%, #d7586b 100%) !important;
+          }
+          .header a#headerTryForFree.btn_tff:hover,
+          .header a#headerTryForFree.btn_tff:focus:hover,
+          .header a#headerTryForFree.btn_tff:active {
+            color: #fff !important;
+            -webkit-text-fill-color: #fff !important;
+            text-decoration: none !important;
+            background: linear-gradient(180deg, #da7d71 0%, #bf5061 100%) !important;
+          }
         </style>
         <a class="btn_tff btn_tff_tn btn_popup no-underline-hover" id="headerTryForFree" href="https://onelink.to/hsnt8b">Try for free</a>
         <i class="mobile-nav-toggle mobile-nav-show bi bi-list" role="button" aria-label="Open menu" tabindex="0"></i>

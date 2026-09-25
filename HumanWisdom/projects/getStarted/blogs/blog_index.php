@@ -512,7 +512,7 @@
       color: #834B66;
     }
 
-    @media (max-width: 991px) {
+       @media (max-width: 991px) {
       body.page-blog-index .blog_links > .col-lg-10 {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
@@ -582,10 +582,11 @@
 
     <!-- aspects -->
     <section>
-      <div class="row center_flex blog_links">
+     
+    
+    <div class="row center_flex blog_links">
         <div class="col-lg-10 col-md-10 col-sm-10 col-10 col-xs-10 p0">
-
-          <div class="blog-filter-bar-wrap">
+   <div class="blog-filter-bar-wrap">
             <div class="blog-filter-bar" id="blog-filter-bar">
               <button type="button" class="blog-filter-tag is-active" data-filter="all" data-title="All">All</button>
               <button type="button" class="blog-filter-tag" data-filter="mental-health" data-title="Mental Health">Mental health</button>
@@ -604,10 +605,11 @@
               </form>
             </div>
             <h2 class="blog-filter-heading is-hidden" id="blog-filter-heading"></h2>
-          </div>
+          </div> 
+       
 
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0" data-aos="fade-up" data-aos-delay="200">
-            <a class="" href="10_ways_understanding_your_mind_could_transform_your_life.php">
+          <a class="BlogCard" href="10_ways_understanding_your_mind_could_transform_your_life.php">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                   <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/58.webp" class="img-responsive img_blogs"
@@ -636,7 +638,7 @@
           </div>
 
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0" data-aos="fade-up" data-aos-delay="200">
-            <a class="" href="difficult_emotions.php">
+          <a class="BlogCard" href="difficult_emotions.php">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                   <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/52.webp" class="img-responsive img_blogs"
@@ -665,7 +667,7 @@
           </div>
 
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0" data-aos="fade-up" data-aos-delay="300">
-            <a class="" href="real_success.php">
+          <a class="BlogCard" href="real_success.php">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                   <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/47.webp" class="img-responsive img_blogs"
@@ -695,7 +697,7 @@
           <div class="clearfix"></div>
 
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0" data-aos="fade-up" data-aos-delay="400">
-            <a class="" href="self_Awareness_can_help_relationships_flourish.php">
+          <a class="BlogCard" href="self_Awareness_can_help_relationships_flourish.php">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                   <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/21.webp" class="img-responsive img_blogs"
@@ -724,7 +726,7 @@
           </div>
 
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0" data-aos="fade-up" data-aos-delay="500">
-            <a class="" href="why_are_we_critical_of_ourselves.php">
+          <a class="BlogCard" href="why_are_we_critical_of_ourselves.php">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                   <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/12.webp" class="img-responsive img_blogs"
@@ -753,7 +755,7 @@
           </div>
 
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0" data-aos="fade-up" data-aos-delay="600">
-            <a class="" href="how_to_calm_anxiety_with_the_help_of_the_happierme_app.php">
+          <a class="BlogCard" href="how_to_calm_anxiety_with_the_help_of_the_happierme_app.php">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                   <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/36.webp" class="img-responsive img_blogs"
@@ -784,7 +786,7 @@
           <!-- <view more> -->
           <div id="text">
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0" data-aos="fade-up" data-aos-delay="700">
-              <a class="" href="the_missed_opportunity_in_relationships.php">
+            <a class="BlogCard" href="the_missed_opportunity_in_relationships.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/53.webp" class="img-responsive img_blogs"
@@ -817,7 +819,7 @@
             </div>
 
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0" data-aos="fade-up" data-aos-delay="800">
-              <a class="" href="how_to_manage_your_own_mental_health.php">
+            <a class="BlogCard" href="how_to_manage_your_own_mental_health.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/54.webp" class="img-responsive img_blogs"
@@ -850,7 +852,7 @@
             </div>
 
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0" data-aos="fade-up" data-aos-delay="900">
-              <a class="" href="discover_the_joys_of_journaling.php">
+            <a class="BlogCard" href="discover_the_joys_of_journaling.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/55.webp" class="img-responsive img_blogs"
@@ -885,7 +887,7 @@
 
 
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0" data-aos="fade-up" data-aos-delay="1000">
-              <a class="" href="6_ways_to_transform_organisations.php">
+            <a class="BlogCard" href="6_ways_to_transform_organisations.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/56.webp" class="img-responsive img_blogs"
@@ -914,7 +916,7 @@
             </div>
 
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0" data-aos="fade-up" data-aos-delay="1100">
-              <a class="" href="6_barriers_to_overcoming_stress.php">
+            <a class="BlogCard" href="6_barriers_to_overcoming_stress.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/57.webp" class="img-responsive img_blogs"
@@ -947,7 +949,7 @@
             </div>
 
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0" data-aos="fade-up" data-aos-delay="1100">
-              <a class="" href="addressing_health_problems_with_emotional_intelligence.php">
+            <a class="BlogCard" href="addressing_health_problems_with_emotional_intelligence.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/59.webp" class="img-responsive img_blogs"
@@ -977,7 +979,7 @@
 
             <div class="clearfix"></div>
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0" data-aos="fade-up" data-aos-delay="1100">
-              <a class="" href="does_education_make_us_intelligent.php">
+            <a class="BlogCard" href="does_education_make_us_intelligent.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/60.webp" class="img-responsive img_blogs"
@@ -1008,7 +1010,7 @@
               </a>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0" data-aos="fade-up" data-aos-delay="1100">
-              <a class="" href="a_fresh_way_to_avoid_and_overcome_addiction.php">
+            <a class="BlogCard" href="a_fresh_way_to_avoid_and_overcome_addiction.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/48.webp" class="img-responsive img_blogs"
@@ -1040,7 +1042,7 @@
             </div>
 
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0" data-aos="fade-up" data-aos-delay="1100">
-              <a class="" href="how_to_manage_anxiety_attacks.php">
+            <a class="BlogCard" href="how_to_manage_anxiety_attacks.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/38.webp" class="img-responsive img_blogs"
@@ -1072,7 +1074,7 @@
 
 
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0" data-aos="fade-up" data-aos-delay="1100">
-              <a class="" href="how_to_meditate.php">
+            <a class="BlogCard" href="how_to_meditate.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/40.webp" class="img-responsive img_blogs"
@@ -1101,7 +1103,7 @@
               </a>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0" data-aos="fade-up" data-aos-delay="1100">
-              <a class="" href="happierme_survey_into_causes_of_work_stress.php">
+            <a class="BlogCard" href="happierme_survey_into_causes_of_work_stress.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/50.webp" class="img-responsive img_blogs"
@@ -1130,7 +1132,7 @@
               </a>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0" data-aos="fade-up" data-aos-delay="1100">
-              <a class="" href="avoid_and_overcome_burnout_with_self_awareness.php">
+            <a class="BlogCard" href="avoid_and_overcome_burnout_with_self_awareness.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/49.webp" class="img-responsive img_blogs"
@@ -1161,7 +1163,7 @@
             <div class="clearfix"></div>
 
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0" data-aos="fade-up" data-aos-delay="1100">
-              <a class="" href="looking_for_love.php">
+            <a class="BlogCard" href="looking_for_love.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/35.webp" class="img-responsive img_blogs"
@@ -1192,7 +1194,7 @@
               </a>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0" data-aos="fade-up" data-aos-delay="1100">
-              <a class="" href="to_succeed_as_a_leader_you_need_self-awareness.php">
+            <a class="BlogCard" href="to_succeed_as_a_leader_you_need_self-awareness.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/33.webp" class="img-responsive img_blogs"
@@ -1221,7 +1223,7 @@
             </div>
 
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0" data-aos="fade-up" data-aos-delay="1100">
-              <a class="" href="boosting_well-being_and_productivity_at_work.php">
+            <a class="BlogCard" href="boosting_well-being_and_productivity_at_work.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/32.webp" class="img-responsive img_blogs"
@@ -1250,7 +1252,7 @@
             </div>
             <div class="clearfix"></div>
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0" data-aos="fade-up" data-aos-delay="1100">
-              <a class="" href="transforming_the_lives_of_children_through_self-knowledge.php">
+            <a class="BlogCard" href="transforming_the_lives_of_children_through_self-knowledge.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/62.webp" class="img-responsive img_blogs"
@@ -1281,7 +1283,7 @@
               </a>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0" data-aos="fade-up" data-aos-delay="1100">
-              <a class="" href="the_future_of_education_a_happierme_survey.php">
+            <a class="BlogCard" href="the_future_of_education_a_happierme_survey.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/63.webp" class="img-responsive img_blogs"
@@ -1310,7 +1312,7 @@
             </div>
 
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0" data-aos="fade-up" data-aos-delay="1100">
-              <a class="" href="transforming_education_to_meet_the_needs_of_students_and_society.php">
+            <a class="BlogCard" href="transforming_education_to_meet_the_needs_of_students_and_society.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/64.webp" class="img-responsive img_blogs"
@@ -1339,7 +1341,7 @@
             </div>
             <div class="clearfix"></div>
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0" data-aos="fade-up" data-aos-delay="1100">
-              <a class="" href="tackling_the_teen_suicide_crisis.php">
+            <a class="BlogCard" href="tackling_the_teen_suicide_crisis.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/65.webp" class="img-responsive img_blogs"
@@ -1368,7 +1370,7 @@
             </div>
 
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0" data-aos="fade-up" data-aos-delay="1100">
-              <a class="" href="alarming_impact_of_work_stress.php">
+            <a class="BlogCard" href="alarming_impact_of_work_stress.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/69.webp" class="img-responsive img_blogs"
@@ -1397,7 +1399,7 @@
             </div>
 
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0" data-aos="fade-up" data-aos-delay="1100">
-              <a class="" href="teens_says.php">
+            <a class="BlogCard" href="teens_says.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/68.webp" class="img-responsive img_blogs"
@@ -1426,7 +1428,7 @@
             </div>
             <div class="clearfix"></div>
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0" data-aos="fade-up" data-aos-delay="1100">
-              <a class="" href="workplace_bullying.php">
+            <a class="BlogCard" href="workplace_bullying.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/70.webp" class="img-responsive img_blogs"
@@ -1458,7 +1460,7 @@
 
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0" data-aos="fade-up" data-aos-delay="1100">
 
-              <a class="" href="new_poll.php">
+            <a class="BlogCard" href="new_poll.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/71.webp" class="img-responsive img_blogs"
@@ -1489,7 +1491,7 @@
 
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="1100">
 
-              <a class="" href="find-love-and-deepen-your-relationships.php">
+            <a class="BlogCard" href="find-love-and-deepen-your-relationships.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/72.webp" class="img-responsive img_blogs" alt="Why Do Leaders Fail? Insights from a new poll">
@@ -1516,7 +1518,7 @@
             
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="1100">
 
-              <a class="" href="10-ways-to-thrive-as-a-parent.php">
+            <a class="BlogCard" href="10-ways-to-thrive-as-a-parent.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/73.webp" class="img-responsive img_blogs" alt="Blog_img">
@@ -1543,7 +1545,7 @@
 
              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="1100">
 
-              <a class="" href="3_steps_to_deeper_meditation.php">
+            <a class="BlogCard" href="3_steps_to_deeper_meditation.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/74.webp" class="img-responsive img_blogs" alt="Blog_img">
@@ -1571,7 +1573,7 @@
 
              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="1100">
 
-              <a class="" href="10_ways_get_mentally_fit.php">
+            <a class="BlogCard" href="10_ways_get_mentally_fit.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/75.webp" class="img-responsive img_blogs" alt="Blog_img">
@@ -1599,7 +1601,7 @@
               <div class="clearfix"></div>
            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="1100">
 
-              <a class="" href="10_ways_success_as_coach.php">
+            <a class="BlogCard" href="10_ways_success_as_coach.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/76.webp" class="img-responsive img_blogs" alt="Blog_img">
@@ -1627,7 +1629,7 @@
 
                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="1100">
 
-              <a class="" href="mental_health_preventation.php">
+            <a class="BlogCard" href="mental_health_preventation.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/77.webp" class="img-responsive img_blogs" alt="Blog_img">
@@ -1656,7 +1658,7 @@
 
              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="1100">
 
-              <a class="" href="first_mental_health_support.php">
+            <a class="BlogCard" href="first_mental_health_support.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/81.webp" class="img-responsive img_blogs" alt="Blog_img">
@@ -1686,7 +1688,7 @@
   <div class="clearfix"></div>
            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="1100">
 
-              <a class="" href="as_Ai_changes_work.php">
+            <a class="BlogCard" href="as_Ai_changes_work.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/78.webp" class="img-responsive img_blogs" alt="Blog_img">
@@ -1714,7 +1716,7 @@
           
              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="1100">
 
-              <a class="" href="skills_ai_world.php">
+            <a class="BlogCard" href="skills_ai_world.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/blogs/80.webp" class="img-responsive img_blogs" alt="Blog_img">
@@ -1744,10 +1746,10 @@
 
                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="1100">
 
-              <a class="" href="human_skilss_Ai_world.php">
+            <a class="BlogCard" href="human_skilss_Ai_world.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/blogs/81.webp" class="img-responsive img_blogs" alt="Blog_img">
+                    <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/blogs/79.webp" class="img-responsive img_blogs" alt="Blog_img">
                   </div>
                 </div>
 
@@ -1774,7 +1776,7 @@ Work and Leadership</button>
   <div class="clearfix"></div>
            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="1100">
 
-              <a class="" href="preventing_sucide.php">
+            <a class="BlogCard" href="preventing_sucide.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/82.webp" class="img-responsive img_blogs" alt="Blog_img">
@@ -1802,7 +1804,7 @@ Work and Leadership</button>
 
              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="1100">
 
-              <a class="" href="live_with_less_stress.php">
+            <a class="BlogCard" href="live_with_less_stress.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/84.webp" class="img-responsive img_blogs" alt="Blog_img">
@@ -1828,9 +1830,197 @@ Work and Leadership</button>
                
               </a>
             </div>
+
+               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="1100">
+
+            <a class="BlogCard" href="3_in_4_employees_say_interpersonal_conflict_impacts_performance.php">
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/85.webp" class="img-responsive img_blogs" alt="Blog_img">
+                  </div>
+                </div>
+
+                <div class="row mt20px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp"> Mental health</button>
+
+
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                    <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">3 in 4 employees say interpersonal conflict impacts performance
+
+
+
+
+</h4>
+                  </div>
+                </div>
+               
+              </a>
+            </div>
           </span>
             <div class="clearfix"></div>
 
+               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="1100">
+
+            <a class="BlogCard" href="worker_says.php">
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/86.webp" class="img-responsive img_blogs" alt="Blog_img">
+                  </div>
+                </div>
+
+                <div class="row mt20px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp"> Mental health</button>
+
+
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                    <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">66% of workers say their kids’ mental health impacts work performance
+
+
+
+</h4>
+                  </div>
+                </div>
+               
+              </a>
+            </div>
+
+             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="1100">
+
+            <a class="BlogCard" href="healthy_relationship.php">
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/87.webp" class="img-responsive img_blogs" alt="Blog_img">
+                  </div>
+                </div>
+
+                <div class="row mt20px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp"> Relationships</button>
+
+
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                    <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">10 proven tips for a healthy relationship in 2025
+
+
+
+
+</h4>
+                  </div>
+                </div>
+               
+              </a>
+            </div>
+
+             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="1100">
+
+            <a class="BlogCard" href="highly_effective.php">
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/88.webp" class="img-responsive img_blogs" alt="Blog_img">
+                  </div>
+                </div>
+
+                <div class="row mt20px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp"> Mental Health</button>
+
+
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                    <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">7 Highly effective habits for a happier life
+
+
+
+
+</h4>
+                  </div>
+                </div>
+               
+              </a>
+            </div>
+   <div class="clearfix"></div>
+
+
+              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="1100">
+
+            <a class="BlogCard" href="community_and_mentalhealth.php">
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/89.webp" class="img-responsive img_blogs" alt="Blog_img">
+                  </div>
+                </div>
+
+                <div class="row mt20px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp"> Mental health</button>
+
+
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                    <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">Community and mental health: Building resilience and emotional intelligence
+
+
+
+
+</h4>
+                  </div>
+                </div>
+               
+              </a>
+            </div>
+
+            
+               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="1100">
+
+              <a class="" href="unlock_your_potential.php">
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/90.webp" class="img-responsive img_blogs" alt="Blog_img">
+                  </div>
+                </div>
+
+                <div class="row mt20px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp"> Mental health</button>
+
+
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                    <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">Unlock Your Potential This New Year: A Journey of Reflection, Resilience, and Emotional Intelligence
+
+
+
+
+
+</h4>
+                  </div>
+                </div>
+               
+              </a>
+            </div>
           <div class="blog-empty is-hidden" id="blog-empty">No articles match your search.</div>
 
           <div class="btn-container">

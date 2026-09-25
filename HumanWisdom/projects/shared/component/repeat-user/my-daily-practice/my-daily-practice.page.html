@@ -16,8 +16,8 @@
                 <div class="mdp-streak-row" *ngIf="isloggedIn && streak">
                   <div class="mdp-streak-badge"
                     [ngClass]="isAdults ? 'mdp-streak-badge--adults' : 'mdp-streak-badge--teens'">
-                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/streak_teenn.svg"
-                      alt="streak" class="mdp-streak-icon" />
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/streak_teenn.svg" alt="streak"
+                      class="mdp-streak-icon" />
                     <span class="mdp-streak-label">Streak: <strong>{{ streak }}</strong> {{ streak == 1 ? 'day' : 'days'
                       }}</span>
                   </div>
@@ -89,12 +89,11 @@
                 <div class="mood-card-new" (click)="routeToDailyCheckIn()">
                   <!-- Smiley icon -->
                   <div class="mood-icon-wrap">
-                    <img *ngIf="isAdults"
-                      src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/emojis/1.svg"
+                    <img *ngIf="isAdults" src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/emojis/1.svg"
                       alt="Daily mood" width="44" height="44" />
                     <img *ngIf="!isAdults"
-                      src="https://d1tenzemoxuh75.cloudfront.net/teenagers/assets/svgs/emojis/1.svg"
-                      alt="Daily mood" width="44" height="44" />
+                      src="https://d1tenzemoxuh75.cloudfront.net/teenagers/assets/svgs/emojis/1.svg" alt="Daily mood"
+                      width="44" height="44" />
                   </div>
                   <h4 class="mood-title">Daily mood</h4>
                   <p class="mood-sub">Check-in</p>
@@ -379,7 +378,7 @@
                   <div class="challenge-card-new" *ngIf="trythistoday">
                     <div class="challenge-icon-wrap">
                       <img
-                        [src]="isAdults ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/daily_challengad.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/daily_teenn.svg'"
+                        [src]="isAdults ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/adutry_today.svg' : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/tryttoteen.svg'"
                         alt="Challenge Icon">
                     </div>
                     <h4 class="challenge-title">Try this today</h4>

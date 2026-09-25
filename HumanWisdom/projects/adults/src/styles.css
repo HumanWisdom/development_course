@@ -11413,6 +11413,30 @@ btn:active {
   text-align: -webkit-center !important;
 }
 
+/* Redeem landing only: -webkit-center shrink-wraps this screen on iOS Safari.
+   Do not remove -webkit-center from .tcenter — other pages still need it. */
+app-redeem-subscription-landing .x_content,
+app-redeem-subscription-landing .x_content.tcenter,
+app-redeem-subscription-landing .redeem-landing-content {
+  text-align: center !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  float: none !important;
+}
+
+app-redeem-subscription-landing .x_panel,
+app-redeem-subscription-landing .x_content form,
+app-redeem-subscription-landing .x_content .row {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  float: none !important;
+}
+
+app-redeem-subscription-landing .mc_03 {
+  overflow-x: hidden;
+}
+
 .w100 {
   width: 100%;
 }
@@ -16375,13 +16399,7 @@ input[type="number"] {
 
 input[type="search"]::-webkit-search-cancel-button {
   -webkit-appearance: none;
-  height: 1em;
-  width: 1em;
-  border-radius: 50em;
-  background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/close.png) no-repeat 50% 50%;
-  background-size: contain;
-  opacity: 1;
-  pointer-events: none;
+  display: none !important;
 }
 
 input[type="search"]:focus::-webkit-search-cancel-button {
@@ -26706,15 +26724,7 @@ all and (min-width: 992px) and (-webkit-transform-3d) {
 
 input[type="search"].pfy_search::-webkit-search-cancel-button {
   -webkit-appearance: none;
-  height: 1em;
-  width: 1em;
-  border-radius: 50em;
-  background: url(https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/images/icons/close.png) no-repeat 50% 50%;
-  /* filter: opacity(0.5) drop-shadow(0 0 0 #5D5D5D); */
-  filter: invert(100%);
-  background-size: contain;
-  opacity: 1;
-  pointer-events: none;
+  display: none !important;
 }
 
 input[type="search"].pfy_search:focus::-webkit-search-cancel-button {

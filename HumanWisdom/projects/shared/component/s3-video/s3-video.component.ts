@@ -35,37 +35,39 @@ import * as Hammer from 'hammerjs';
     trigger('slideAnimation', [
       state(
         'previous',
-        style({ transform: 'translateY(-100%)', opacity: 0 })
+        style({ transform: 'translateY(-100%)', opacity: 1 })
       ),
       state(
         'next',
-        style({ transform: 'translateY(100%)', opacity: 0 })
+        style({ transform: 'translateY(100%)', opacity: 1 })
       ),
       state('active', style({ transform: 'translateY(0)', opacity: 1 })),
       transition('previous => active', [
-        style({ transform: 'translateY(-100%)', opacity: 0 }),
+        style({ transform: 'translateY(-100%)', opacity: 1 }),
         animate(
-          '0.5s ease-in-out',
+          '1.25s cubic-bezier(0.4, 0.0, 0.2, 1)',
           style({ transform: 'translateY(0)', opacity: 1 })
         ),
       ]),
       transition('next => active', [
-        style({ transform: 'translateY(100%)', opacity: 0 }),
+        style({ transform: 'translateY(100%)', opacity: 1 }),
         animate(
-          '0.5s ease-in-out',
+          '1.25s cubic-bezier(0.4, 0.0, 0.2, 1)',
           style({ transform: 'translateY(0)', opacity: 1 })
         ),
       ]),
       transition('active => previous', [
+        style({ transform: 'translateY(0)', opacity: 1 }),
         animate(
-          '0.5s ease-in-out',
-          style({ transform: 'translateY(-100%)', opacity: 0 })
+          '1.25s cubic-bezier(0.4, 0.0, 0.2, 1)',
+          style({ transform: 'translateY(-100%)', opacity: 1 })
         ),
       ]),
       transition('active => next', [
+        style({ transform: 'translateY(0)', opacity: 1 }),
         animate(
-          '0.5s ease-in-out',
-          style({ transform: 'translateY(100%)', opacity: 0 })
+          '1.25s cubic-bezier(0.4, 0.0, 0.2, 1)',
+          style({ transform: 'translateY(100%)', opacity: 1 })
         ),
       ]),
     ]),
@@ -97,6 +99,7 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
   private currentPlaybackId = 0;
   private routerSub!: Subscription;
   public isPortrait = false;
+  public isLandscape = false;
   public fromIndex = false;
   public headerTitle: string = 'Short Videos';
   baseUrl:string;
@@ -104,7 +107,26 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
   private hasTrackedThisVideo = false;
   private isFreeShort = false;
   public canRender = false;
+  public showSwipePrompt = false;
+  public swipePromptCount = 0;
+  public hasUserSwiped = false;
+  private hasPromptShownForCurrentVideo = false;
+  public videoReady = false; // hides video element until browser has enough data to play
 
+  // ── Drag-to-swipe state ──────────────────────────────────────────────────
+  private dragStartY = 0;
+  private dragCurrentY = 0;
+  private isDragging = false;
+  private dragThreshold = 80;          // px needed to commit a swipe
+  private readonly DRAG_RESISTANCE = 0.45; // reduces drag distance so it feels natural
+  // Bound references so we can remove them in ngOnDestroy
+  private _onTouchStart!: (e: TouchEvent) => void;
+  private _onTouchMove!:  (e: TouchEvent) => void;
+  private _onTouchEnd!:   (e: TouchEvent) => void;
+  private _onMouseDown!:  (e: MouseEvent) => void;
+  private _onMouseMove!:  (e: MouseEvent) => void;
+  private _onMouseUp!:    (e: MouseEvent) => void;
+  // ─────────────────────────────────────────────────────────────────────────
 
   @ViewChild('videoPlayer') videoPlayer!: ElementRef;
   @ViewChild('swipeContainer') swipeContainer!: ElementRef;
@@ -168,12 +190,25 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
             const code = linkcode.startsWith('http')
               ? linkcode
               : `https://d1tenzemoxuh75.cloudfront.net/wisdom_shorts/videos/${linkcode}`;
+
+            const titleLower = (element.Title || '').toLowerCase();
+            const typeLower = (element.Type || element.TypeLabel || '').toLowerCase();
+            const urlLower = vUrl.toLowerCase();
+
+            const isL = typeLower.includes('in-depth') || typeLower.includes('indepth') ||
+                        typeLower.includes('landscape') || typeLower.includes('event') ||
+                        urlLower.includes('youtube') || urlLower.includes('16_9') ||
+                        titleLower.includes('in-depth') || titleLower.includes('conversation');
+            const isP = !isL;
+
             return {
               url: this.getSafeUrl(code),
               order: index,
               title: element.Title || '',
               code: linkcode,
               type: element.Type || element.TypeLabel || '',
+              isPortrait: isP,
+              isLandscape: isL,
             };
           });
 
@@ -193,15 +228,26 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
         // If still not found, inject the clicked video as the first item
         if (this.currentIndex === -1 && normalizedLinkcode) {
           const injectedCode = `https://d1tenzemoxuh75.cloudfront.net/wisdom_shorts/videos/${normalizedLinkcode}`;
+          const titleLower = (this.videoTitle || '').toLowerCase();
+          const codeLower = (normalizedLinkcode || '').toLowerCase();
+          const isL = codeLower.includes('in-depth') || codeLower.includes('indepth') ||
+                      titleLower.includes('in-depth') || titleLower.includes('conversation');
           const injectedItem: any = {
             url: this.getSafeUrl(injectedCode),
             order: -1,
             title: this.videoTitle || 'Selected Video',
             code: normalizedLinkcode,
             type: '',
+            isPortrait: !isL,
+            isLandscape: isL,
           };
           this.wisdomShortOrderList.unshift(injectedItem);
           this.currentIndex = 0;
+        }
+
+        if (this.wisdomShortOrderList[this.currentIndex]) {
+          this.isPortrait = !!this.wisdomShortOrderList[this.currentIndex].isPortrait;
+          this.isLandscape = !!this.wisdomShortOrderList[this.currentIndex].isLandscape;
         }
 
         this.updateHeaderTitle();
@@ -360,10 +406,72 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
 
       hammertime.on('swipeup', () => this.onSwipeUp());
       hammertime.on('swipedown', () => this.onSwipeDown());
+
+      this.attachDragListeners();
     }
     
     this.ensureAutoPlay();
   }
+
+  // ── Drag listener attachment / detachment ──────────────────────────────
+  private attachDragListeners(): void {
+    const el = this.swipeContainer?.nativeElement as HTMLElement | undefined;
+    if (!el) return;
+
+    // ── Touch handlers ──────────────────────────────────────────────────────
+    this._onTouchStart = (e: TouchEvent) => this.onDragStart(e.touches[0].clientY, true);
+    this._onTouchMove  = (e: TouchEvent) => { e.preventDefault(); this.onDragMove(e.touches[0].clientY); };
+    this._onTouchEnd   = () => this.onDragEnd();
+
+    el.addEventListener('touchstart', this._onTouchStart, { passive: true });
+    el.addEventListener('touchmove',  this._onTouchMove,  { passive: false });
+    el.addEventListener('touchend',   this._onTouchEnd,   { passive: true });
+
+    // ── Mouse handlers ──────────────────────────────────────────────────────
+    // mousedown on container, but mousemove/mouseup on DOCUMENT so the pointer
+    // leaving the container mid-drag doesn't break tracking.
+    this._onMouseDown = (e: MouseEvent) => {
+      // Only left-button drags
+      if (e.button !== 0) return;
+      e.preventDefault();           // stops browser's native drag-ghost on images/video
+      this.onDragStart(e.clientY, false);
+    };
+
+    this._onMouseMove = (e: MouseEvent) => {
+      if (!this.isDragging) return;
+      e.preventDefault();
+      this.onDragMove(e.clientY);
+    };
+
+    this._onMouseUp = (e: MouseEvent) => {
+      if (!this.isDragging) return;
+      e.preventDefault();
+      this.onDragEnd();
+    };
+
+    el.addEventListener('mousedown', this._onMouseDown);
+
+    // Use document so pointer can leave the container without losing the drag
+    document.addEventListener('mousemove', this._onMouseMove);
+    document.addEventListener('mouseup',   this._onMouseUp);
+
+    // Prevent browser's native element drag (video thumbnail ghost, etc.)
+    el.addEventListener('dragstart', (e) => e.preventDefault());
+  }
+
+  private detachDragListeners(): void {
+    const el = this.swipeContainer?.nativeElement as HTMLElement | undefined;
+    if (el) {
+      if (this._onTouchStart) el.removeEventListener('touchstart', this._onTouchStart);
+      if (this._onTouchMove)  el.removeEventListener('touchmove',  this._onTouchMove);
+      if (this._onTouchEnd)   el.removeEventListener('touchend',   this._onTouchEnd);
+      if (this._onMouseDown)  el.removeEventListener('mousedown',  this._onMouseDown);
+    }
+    // Removed from document (not window)
+    if (this._onMouseMove) document.removeEventListener('mousemove', this._onMouseMove);
+    if (this._onMouseUp)   document.removeEventListener('mouseup',   this._onMouseUp);
+  }
+  // ─────────────────────────────────────────────────────────────────────────
 
   private clearTimers(): void {
     this.pendingTimers.forEach(t => clearTimeout(t));
@@ -517,21 +625,59 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
     return this._sanitizer.bypassSecurityTrustResourceUrl(url);
   }
 
-  checkVideoOrientation(videoEl?: HTMLVideoElement | EventTarget | null): void {
-    const el = (videoEl as HTMLVideoElement) || (this.videoPlayer?.nativeElement as HTMLVideoElement | undefined) || (document.querySelector('video') as HTMLVideoElement | null);
+  public resetScrollPosition(): void {
+    this.currentTime = 0;
+    try {
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+      if (this.swipeContainer?.nativeElement) {
+        this.swipeContainer.nativeElement.scrollTop = 0;
+      }
+      const sliderEl = document.querySelector('.video-slider-container');
+      if (sliderEl) {
+        sliderEl.scrollTop = 0;
+      }
+    } catch (_) {}
+  }
+
+  checkVideoOrientation(videoItem?: any, videoEl?: HTMLVideoElement | EventTarget | null): void {
+    let el: HTMLVideoElement | null = null;
+    if (videoEl && (videoEl as any).videoWidth) {
+      el = videoEl as HTMLVideoElement;
+    } else if (videoEl instanceof HTMLVideoElement) {
+      el = videoEl;
+    } else {
+      el = (this.videoPlayer?.nativeElement as HTMLVideoElement | undefined) || (document.querySelector('video') as HTMLVideoElement | null);
+    }
+
     if (el) {
       const vw = el.videoWidth;
       const vh = el.videoHeight;
       if (vw && vh) {
-        this.isPortrait = vh > vw;
+        const isP = (vh > vw) && (vh / vw > 1.15);
+        const isL = (vw > vh) && (vw / vh > 1.15);
+        if (videoItem) {
+          videoItem.isPortrait = isP;
+          videoItem.isLandscape = isL;
+        }
+        this.isPortrait = isP;
+        this.isLandscape = isL;
       } else {
         setTimeout(() => {
           if (el && el.videoWidth && el.videoHeight) {
-            this.isPortrait = el.videoHeight > el.videoWidth;
+            const isP = (el.videoHeight > el.videoWidth) && (el.videoHeight / el.videoWidth > 1.15);
+            const isL = (el.videoWidth > el.videoHeight) && (el.videoWidth / el.videoHeight > 1.15);
+            if (videoItem) {
+              videoItem.isPortrait = isP;
+              videoItem.isLandscape = isL;
+            }
+            this.isPortrait = isP;
+            this.isLandscape = isL;
           }
-        }, 200);
+        }, 150);
       }
-      el.setAttribute('controlsList', 'nodownload nofullscreen');
+      el.setAttribute('controlsList', 'nodownload');
     }
   }
 
@@ -547,7 +693,7 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
         this.headerTitle = 'In-depth conversation';
         return;
       } else if (rawType.includes('real') || rawType.includes('teentalk') || rawType.includes('conversation')) {
-        this.headerTitle = 'Real stories';
+        this.headerTitle = this.isAdults ? 'Stories of hope' : 'Teen talk';
         return;
       } else if (rawType.includes('short')) {
         this.headerTitle = 'Short videos';
@@ -576,7 +722,7 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
       this.headerTitle = 'In-depth conversation';
       return;
     } else if (selectedType === 'real_life') {
-      this.headerTitle = 'Real stories';
+      this.headerTitle = this.isAdults ? 'Stories of hope' : 'Teen talk';
       return;
     } else if (selectedType === 'short_videos') {
       this.headerTitle = 'Short videos';
@@ -602,7 +748,8 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   onVideoEnded(): void {
-    this.onSwipeUp();
+    this.resetScrollPosition();
+    this.onSwipeUp(false);
     this.isLoading = false;
   }
 
@@ -622,12 +769,19 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
     }
   }
 
-  onSwipeUp(): void {
+  onSwipeUp(isUserAction = true): void {
     if (!this.isSwipeAllow || !this.wisdomShortOrderList.length) return;
     if (this.isSwiping) return;
 
     if (this.currentIndex < this.wisdomShortOrderList.length - 1) {
       this.isSwiping = true;
+      this.videoReady = false;      if (isUserAction) {
+        this.hasUserSwiped = true;
+      }
+      this.hasPromptShownForCurrentVideo = false;
+      this.showSwipePrompt = false;
+      this.resetScrollPosition();
+
       const playbackId = ++this.currentPlaybackId;
       this.clearTimers();
 
@@ -647,7 +801,12 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
       }
 
       this.videoTitle = this.wisdomShortOrderList[this.currentIndex].title;
-      this.checkVideoOrientation();
+      const currentVideoItem = this.wisdomShortOrderList[this.currentIndex];
+      if (currentVideoItem) {
+        this.isPortrait = !!currentVideoItem.isPortrait;
+        this.isLandscape = !!currentVideoItem.isLandscape;
+      }
+      this.checkVideoOrientation(currentVideoItem);
       this.updateHeaderTitle();
 
       // Allow Angular view to render, then play new active video
@@ -663,6 +822,12 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
     if (this.isSwiping) return;
 
     this.isSwiping = true;
+    this.videoReady = false;
+    this.hasUserSwiped = true;
+    this.hasPromptShownForCurrentVideo = false;
+    this.showSwipePrompt = false;
+    this.resetScrollPosition();
+
     const playbackId = ++this.currentPlaybackId;
     this.clearTimers();
 
@@ -676,7 +841,12 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
         : this.currentIndex - 1;
 
     this.videoTitle = this.wisdomShortOrderList[this.currentIndex].title;
-    this.checkVideoOrientation();
+    const currentVideoItem = this.wisdomShortOrderList[this.currentIndex];
+    if (currentVideoItem) {
+      this.isPortrait = !!currentVideoItem.isPortrait;
+      this.isLandscape = !!currentVideoItem.isLandscape;
+    }
+    this.checkVideoOrientation(currentVideoItem);
     this.hasTrackedThisVideo = false;
     this.updateHeaderTitle();
 
@@ -685,6 +855,23 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
       this.playActiveVideo(playbackId);
       this.isSwiping = false;
     }, 150);
+  }
+
+  isSlideVisible(i: number): boolean {
+    return Math.abs(this.currentIndex - i) <= 1;
+  }
+
+  onTimeUpdate(event: any): void {
+    const video = event?.target as HTMLVideoElement;
+    if (video) {
+      this.updateProgress(video);
+      if (video.duration && !isNaN(video.duration)) {
+        const remaining = video.duration - video.currentTime;
+        this.showSwipePrompt = remaining <= 5 || video.ended || video.duration <= 5;
+      } else {
+        this.showSwipePrompt = false;
+      }
+    }
   }
 
   updateProgress(video: HTMLVideoElement): void {
@@ -720,6 +907,8 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
     if (this.routerSub) {
       this.routerSub.unsubscribe();
     }
+
+    this.detachDragListeners();
 
     localStorage.setItem('isSwipeAllow', 'false');
     localStorage.removeItem('fromIndex');
@@ -763,6 +952,7 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   onVideoPlay(event?: any): void {
+    this.videoReady = true;
     const targetVideo = event?.target as HTMLVideoElement | undefined;
     if (targetVideo) {
       this.trackedVideos.add(targetVideo);
@@ -786,6 +976,83 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
     }
     this.trackVideoClickIfApplicable();
   }
+
+  // ── Drag handlers ─────────────────────────────────────────────────────────
+
+  private getDragContainer(): HTMLElement | null {
+    return (this.swipeContainer?.nativeElement as HTMLElement) ?? null;
+  }
+
+  /**
+   * Apply a live translateY to every visible video-wrapper so they follow the finger/cursor.
+   * The active slide moves 1:1 with reduced resistance; neighbours slide along with it.
+   */
+  private applyDragTranslate(deltaY: number): void {
+    const container = this.getDragContainer();
+    if (!container) return;
+    const wrappers = container.querySelectorAll<HTMLElement>('.video-wrapper');
+    wrappers.forEach((el, i) => {
+      // Each wrapper already has an animation state (active / previous / next).
+      // We shift them all by deltaY so the visual position follows the drag.
+      const base = i < this.currentIndex ? -100 : i > this.currentIndex ? 100 : 0; // % offset from animation state
+      el.style.transition = 'none';
+      el.style.transform  = `translateY(calc(${base}% + ${deltaY}px))`;
+    });
+  }
+
+  /** Reset wrappers to animation-controlled transforms so Angular's @slideAnimation takes over again. */
+  private resetDragTranslate(animate = true): void {
+    const container = this.getDragContainer();
+    if (!container) return;
+    const wrappers = container.querySelectorAll<HTMLElement>('.video-wrapper');
+    wrappers.forEach(el => {
+      el.style.transition = animate ? 'transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1)' : 'none';
+      el.style.transform  = '';
+    });
+  }
+
+  onDragStart(clientY: number, _isTouch: boolean): void {
+    if (!this.isSwipeAllow || this.isSwiping) return;
+    this.isDragging   = true;
+    this.dragStartY   = clientY;
+    this.dragCurrentY = clientY;
+  }
+
+  onDragMove(clientY: number): void {
+    if (!this.isDragging || this.isSwiping) return;
+    this.dragCurrentY = clientY;
+    const raw   = clientY - this.dragStartY;
+    const delta = raw * this.DRAG_RESISTANCE;
+
+    // Clamp: don't drag past 60% of the viewport height so it never looks broken
+    const maxDrag = window.innerHeight * 0.6;
+    const clamped = Math.max(-maxDrag, Math.min(maxDrag, delta));
+
+    this.applyDragTranslate(clamped);
+  }
+
+  onDragEnd(): void {
+    if (!this.isDragging) return;
+    this.isDragging = false;
+
+    const raw   = this.dragCurrentY - this.dragStartY;
+    const delta = raw * this.DRAG_RESISTANCE;
+
+    if (Math.abs(delta) >= this.dragThreshold) {
+      // Enough drag → commit swipe (wrappers will be re-controlled by Angular animation)
+      this.resetDragTranslate(false); // no CSS transition — Angular animation handles it
+      if (delta < 0) {
+        this.onSwipeUp();
+      } else {
+        this.onSwipeDown();
+      }
+    } else {
+      // Not enough → snap back with smooth transition
+      this.resetDragTranslate(true);
+    }
+  }
+
+  // ─────────────────────────────────────────────────────────────────────────
 
   // Tracking helpers (short videos and teen talk)
   private trackVideoClickIfApplicable(): void {

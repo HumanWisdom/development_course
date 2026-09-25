@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { SharedService } from '../../../../shared/services/shared.service';
 import { ProgramType } from '../../../models/program-model';
@@ -7,6 +7,7 @@ import { ProgramType } from '../../../models/program-model';
   selector: 'app-redeem-subscription-landing',
   templateUrl: './redeem-subscription-landing.page.html',
   styleUrls: ['./redeem-subscription-landing.page.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class RedeemSubscriptionLandingPage implements OnInit {
 
@@ -46,9 +47,9 @@ export class RedeemSubscriptionLandingPage implements OnInit {
       this.enabledModal = true;
     } else if (type === 'dash') {
       if (SharedService.getprogramName() === 'teenagers') {
-        this.router.navigate(['/teenagers/teenager-dashboard'])
+        this.router.navigate(['/teenagers'])
       } else {
-        this.router.navigate(['/' + SharedService.getprogramName() + '/adult-dashboard']);
+        this.router.navigate(['/' + SharedService.getprogramName() ]);
       }
     }
   }

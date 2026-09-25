@@ -860,41 +860,70 @@ a:hover {
   color: #803358 !important;
   text-decoration: underline !important;
 }
-header a:hover,
+.header a:hover,
 nav a:hover {
   text-decoration: none !important;
 }
-/* Keep header "Try for free" text white on hover/focus/active */
-header .btn_tff,
-header .btn_tff:hover,
-header .btn_tff:focus,
-header .btn_tff:active,
-header a.btn_tff,
-header a.btn_tff:hover,
-header a.btn_tff:focus,
-header a.btn_tff:active {
-  color: #fff !important;
-  text-decoration: none !important;
-}
-header .btn_tff *,
-header a.btn_tff * {
-  color: #fff !important;
-}
-/* Header CTA may come from included markup without btn_tff class */
-header a[href*="splash_options.php"],
-header a[href*="splash_options.php"]:hover,
-header a[href*="splash_options.php"]:focus,
-header a[href*="splash_options.php"]:active,
-header a[href*="splash_options.php"]:visited {
+/* Keep header "Try for free" white + work.php hover gradient on all pages */
+.header .btn_tff,
+.header .btn_tff:hover,
+.header .btn_tff:focus,
+.header .btn_tff:active,
+.header a.btn_tff,
+.header a.btn_tff:hover,
+.header a.btn_tff:focus,
+.header a.btn_tff:active,
+.header a#headerTryForFree,
+.header a#headerTryForFree:hover,
+.header a#headerTryForFree:focus,
+.header a#headerTryForFree:active,
+.header a#headerTryForFree:visited {
   color: #fff !important;
   -webkit-text-fill-color: #fff !important;
   text-decoration: none !important;
 }
-header a[href*="splash_options.php"] * {
+.header .btn_tff *,
+.header a.btn_tff * {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+.header a.btn_tff.btn_popup,
+.header a#headerTryForFree.btn_tff {
+  background: linear-gradient(180deg, #ed7d6f 0%, #d7586b 100%) !important;
+}
+.header a.btn_tff.btn_popup:hover,
+.header a.btn_tff.btn_popup:focus:hover,
+.header a.btn_tff.btn_popup:active,
+.header a#headerTryForFree.btn_tff:hover,
+.header a#headerTryForFree.btn_tff:focus:hover,
+.header a#headerTryForFree.btn_tff:active {
+  background: linear-gradient(180deg, #da7d71 0%, #bf5061 100%) !important;
+}
+/* Header CTA may come from included markup without btn_tff class */
+.header a[href*="splash_options.php"],
+.header a[href*="splash_options.php"]:hover,
+.header a[href*="splash_options.php"]:focus,
+.header a[href*="splash_options.php"]:active,
+.header a[href*="splash_options.php"]:visited {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  text-decoration: none !important;
+}
+.header a[href*="splash_options.php"] * {
   color: #fff !important;
   -webkit-text-fill-color: #fff !important;
 }
 /* Actual top nav uses .header container (not <header> tag) */
+.header a.btn_tff,
+.header a.btn_tff:hover,
+.header a.btn_tff:focus,
+.header a.btn_tff:active,
+.header a.btn_tff:visited,
+.header a.btn_tff.btn_tff_tn.btn_popup.no-underline-hover,
+.header a.btn_tff.btn_tff_tn.btn_popup.no-underline-hover:hover,
+.header a.btn_tff.btn_tff_tn.btn_popup.no-underline-hover:focus,
+.header a.btn_tff.btn_tff_tn.btn_popup.no-underline-hover:active,
+.header a.btn_tff.btn_tff_tn.btn_popup.no-underline-hover:visited,
 #body .header a.btn_tff,
 #body .header a.btn_tff:hover,
 #body .header a.btn_tff:focus,
@@ -1986,25 +2015,31 @@ header a[href*="splash_options.php"] * {
 .coaches-footer {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 40px;
   margin-top: 40px;
   width: 100%;
-  padding-left: 12rem;
+  padding-left: 0;
   box-sizing: border-box;
   overflow: visible;
   min-height: 40px;
   padding-bottom: 6px;
+  position: relative;
 }
 .coaches-footer-spacer {
-  flex: 1;
+  display: none;
 }
 .coaches-nav-btns {
-  flex: 1;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  flex: 0 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  margin-left: 15rem;
+  margin-left: 0;
   overflow: visible;
   padding: 4px 0;
 }
@@ -2168,10 +2203,13 @@ header a[href*="splash_options.php"] * {
   gap: 40px;
   margin-top: 20px;
   flex-wrap: wrap;
-  margin-left: 27rem;
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
   overflow: visible;
   min-height: 40px;
   padding-bottom: 6px;
+  position: relative;
 }
 .blog-dots { display: flex; gap: 8px; align-items: center; }
 .bdot {
@@ -2192,13 +2230,73 @@ header a[href*="splash_options.php"] * {
 .blog-more:active .chevron-pink { color: #803358 !important; }
 .blog-more img { width: 8px; height: auto; }
 
+/* ========================================
+   COACHES + BLOG SCROLL ONLY
+   Scoped to these two sections so the rest of
+   the page keeps align-items:center alignment.
+======================================== */
+.coaches-section,
+#exploreBlogSection.div-13 {
+  align-self: stretch;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+.coaches-section .coaches-outer,
+.coaches-section .coaches-track-wrap,
+#exploreBlogSection .blog-outer,
+#exploreBlogSection .blog-track-wrap {
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+/* Keep scrollport bounded so cards can overflow-x */
+.coaches-section .coaches-scroll,
+#exploreBlogSection #blog-scroll.blog-scroll {
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+/* Center "Find out more" / "See all posts" */
+.coaches-section .coaches-footer,
+#exploreBlogSection .blog-footer {
+  justify-content: center;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+  position: relative;
+}
+.coaches-section .coaches-footer-spacer {
+  display: none;
+}
+/* Left/right arrows pinned to the right corner */
+.coaches-section .coaches-nav-btns,
+#exploreBlogSection .coaches-nav-btns {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 0;
+  flex: 0 0 auto;
+}
+.coaches-section .coaches-more,
+#exploreBlogSection .blog-more {
+  justify-content: center;
+  text-align: center;
+}
+
 /* Wide screen only (1400px+): coaches + blog show all cards, no nav arrows, centered footer */
 @media (min-width: 1400px) {
   .coaches-section {
     max-width: 100%;
     margin-left: auto;
     margin-right: auto;
-    overflow-x: visible;
+    overflow-x: hidden;
   }
   .coaches-outer {
     width: 100%;
@@ -2211,13 +2309,14 @@ header a[href*="splash_options.php"] * {
     margin-left: auto;
     margin-right: auto;
   }
-  .coaches-scroll {
-    overflow-x: visible;
-    overflow-y: visible;
+  .coaches-section .coaches-scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
     flex-wrap: nowrap;
-    justify-content: center;
+    justify-content: flex-start;
     width: 100%;
-    max-width: none;
+    max-width: 100%;
+    min-width: 0;
     gap: 20px;
   }
   .coaches-scroll .coach-card:first-child {
@@ -2233,11 +2332,11 @@ header a[href*="splash_options.php"] * {
     display: none;
   }
   .coaches-section .coaches-nav-btns {
-    display: none !important;
+    display: flex !important;
   }
 
-  .div-13 {
-    overflow-x: visible;
+  #exploreBlogSection.div-13 {
+    overflow-x: hidden;
     max-width: 100%;
   }
   .blog-outer {
@@ -2251,13 +2350,14 @@ header a[href*="splash_options.php"] * {
     max-width: 100%;
     overflow: visible;
   }
-  .blog-scroll {
-    overflow-x: visible;
-    overflow-y: visible;
+  #exploreBlogSection .blog-scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
     flex-wrap: nowrap;
-    justify-content: center;
+    justify-content: flex-start;
     width: 100%;
-    max-width: none;
+    max-width: 100%;
+    min-width: 0;
     margin-left: auto;
     margin-right: auto;
     gap: 20px;
@@ -2270,8 +2370,8 @@ header a[href*="splash_options.php"] * {
     justify-content: center;
     gap: 0;
   }
-  .div-13 .coaches-nav-btns {
-    display: none !important;
+  #exploreBlogSection .coaches-nav-btns {
+    display: flex !important;
   }
 }
 
@@ -2505,13 +2605,15 @@ header a[href*="splash_options.php"] * {
     padding-right: 20px;
     box-sizing: border-box;
   }
-  .blog-scroll {
+  #exploreBlogSection .blog-scroll {
     width: 100%;
     margin-left: 0;
-    max-width: none;
+    max-width: 100%;
+    min-width: 0;
     height: auto;
     min-height: 0;
-    overflow-y: visible;
+    overflow-x: auto;
+    overflow-y: hidden;
     align-items: flex-start;
     margin-top: 0;
     touch-action: pan-x pan-y;
@@ -3549,8 +3651,11 @@ header a[href*="splash_options.php"] * {
   }
   #coaches-scroll.coaches-scroll {
     width: 100%;
+    max-width: 100%;
+    min-width: 0;
     padding-right: 0;
-    touch-action: auto;
+    overflow-x: auto;
+    touch-action: pan-x pan-y;
     overscroll-behavior-x: contain;
   }
   /* Once user starts scrolling, make strip edge-to-edge on mobile */
@@ -4007,6 +4112,8 @@ header a[href*="splash_options.php"] * {
 .index-lazy-section.is-visible {
   opacity: 1;
   transform: translateY(0);
+  padding-left: 0px !important;
+  padding-right: 0px !important;
 }
 
 @media (prefers-reduced-motion: reduce) {

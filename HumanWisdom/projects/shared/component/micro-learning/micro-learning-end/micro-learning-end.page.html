@@ -92,10 +92,16 @@
                 <ng-container *ngFor="let resource of resourcesList">
                   <div class="mc_end_resource_card" (click)="handleResourceClick(resource)"
                     (keydown.enter)="handleResourceClick(resource)" tabindex="0">
-                    <img [src]="resource.imgUrl" class="resource_img" [alt]="resource.title">
+                    <div class="resource_img_container">
+                      <img [src]="resource.imgUrl" class="resource_img" [alt]="resource.title">
+                      <div class="icon_overlay" *ngIf="getResourceIcon(resource)">
+                        <img [src]="getResourceIcon(resource)" alt="" class="overlay_icon">
+                      </div>
+                    </div>
                     <div class="resource_info">
                       <h4>{{ resource.title }}</h4>
                       <p>{{ resource.type }}</p>
+                      <p class="resource_session" *ngIf="resource.sessionText">{{ resource.sessionText }}</p>
                     </div>
                   </div>
                 </ng-container>

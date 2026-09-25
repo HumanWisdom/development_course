@@ -31,11 +31,17 @@ export class AllStoriesPage implements OnInit {
     private readonly meta: Meta, private readonly title: Title, private readonly navigationService:NavigationService) { }
 
   ngOnInit() {
-    this.getStories()
-    this.title.setTitle('Inspiring real-life stories')
-    this.meta.updateTag({ property: 'title', content: 'Inspiring real-life stories' })
-    this.meta.updateTag({ property: 'description', content: 'Discover the transformative impact of wisdom through the real-life stories of adults and find ways to apply it in your life.' })
-    this.meta.updateTag({ property: 'keywords', content: 'Wisdom stories for adults,Inspiring stories for adults,Life lessons from stories,Adult wisdom tales,Uplifting stories for adults,Motivational stories for grown-ups,Adult storytelling,Personal growth through stories,Life-changing stories for adults,Empowering adult stories' })
+    if (SharedService.ProgramId == ProgramType.Adults) {
+      this.isAdults = true;
+    } else {
+      this.isAdults = false;
+    }
+    this.getStories();
+    const pageTitle = 'Stories of hope';
+    this.title.setTitle(pageTitle);
+    this.meta.updateTag({ property: 'title', content: pageTitle });
+    this.meta.updateTag({ property: 'description', content: 'Discover the transformative impact of wisdom through stories of hope and find ways to apply it in your life.' });
+    this.meta.updateTag({ property: 'keywords', content: 'Wisdom stories,Inspiring stories,Life lessons from stories,Wisdom tales,Uplifting stories,Motivational stories,Storytelling,Personal growth through stories,Life-changing stories,Empowering stories,Stories of hope' });
     let userid = localStorage.getItem('isloggedin');
     let sub: any = localStorage.getItem('Subscriber');
     if (userid === 'T' && sub === '1') {
@@ -43,11 +49,6 @@ export class AllStoriesPage implements OnInit {
     } else {
       this.isSubscriber = false;
     }
-    if (SharedService.ProgramId == ProgramType.Adults) {
-      this.isAdults = true;
-        } else {
-         this.isAdults = false;
-        }
   }
 
   goBack() {

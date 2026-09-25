@@ -128,13 +128,16 @@ export class GuidedJourneyEndPage implements OnInit {
   getSectionIcon(section: string) {
     if (!section) return null;
     const s = section.toUpperCase();
-    if (s.includes('PODCAST') || s.includes('AUDIO') || s.includes('MEDITATION') || s.includes('BREATHING') || s.includes('SOUNDSCAPE')) {
-      return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audio_play.svg';
+    if (s.includes('MODULE') || s.includes('SESSION') || s.includes('PROGRAM') || s.includes('PATHWAY') || s.includes('GUIDED')) {
+      return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/pathway.svg';
     }
-    if (s.includes('VIDEO') || s.includes('SHORT') || s.includes('CONVERSATION') || s.includes('TALK') || s.includes('EVENT')) {
+    if (s.includes('VIDEO') || s.includes('SHORT') || s.includes('CONVERSATION') || s.includes('TALK') || s.includes('EVENT') || s.includes('BREATHING')) {
       return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg';
     }
-    return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg';
+    if (s.includes('PODCAST') || s.includes('AUDIO') || s.includes('MEDITATION') || s.includes('SOUNDSCAPE')) {
+      return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audio_play.svg';
+    }
+    return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/pathway.svg';
   }
 
   getSectionDisplayName(section: string): string {
@@ -159,6 +162,7 @@ export class GuidedJourneyEndPage implements OnInit {
       const timingMatch = subTitle.match(/\b(?:\d{1,2}:)?\d{1,2}:\d{2}\b|\b\d+\s*(?:mins?|minutes?|sec|seconds?)\b/i);
       if (timingMatch) {
         extractedTiming = timingMatch[0];
+        subTitle = subTitle.replace(timingMatch[0], '').replace(/^[,\s•–-]+|[,\s•–-]+$/g, '').trim();
       }
 
       let separator = '';

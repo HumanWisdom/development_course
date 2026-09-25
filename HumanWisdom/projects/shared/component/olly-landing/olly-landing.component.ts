@@ -66,7 +66,7 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
 
   // Topic mappings for Adults
   private adultTopics: { [id: string]: { name: string; displayName: string; fragment: string } } = {
-    '1': { name: 'Work and Leadership', displayName: 'Success at work', fragment: 'success-at-work' },
+    '1': { name: 'Thrive at work', displayName: 'Thrive at work', fragment: 'thrive-at-work' },
     '2': { name: 'Manage your mental wellbeing', displayName: 'Mental health', fragment: 'mental-health' },
     '3': { name: 'Relationships', displayName: 'Relationships', fragment: 'relationships' },
     '4': { name: 'Be happier', displayName: 'Happiness', fragment: 'happiness' },
