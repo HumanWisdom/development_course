@@ -396,41 +396,46 @@ p:hover {
 
 .rating-row {
   display: inline-flex;
-  align-items: center;
-  gap: 5px;
+  align-items: flex-start;
+  height: 21px;
+  gap: 0;
   flex-wrap: nowrap;
+  font-family: "Poppins", Helvetica, sans-serif;
   font-size: 12px;
   font-weight: 400;
-  color: #000;
+  color: #fff7e6;
   margin: 0 0 8px;
-  line-height: 1;
-  vertical-align: middle;
+  line-height: 1.4;
 }
 .rating_a {
   display: inline-flex;
-  align-items: center;
-  gap: 2px;
-  line-height: 1;
+  align-items: flex-start;
+  gap: 7px;
+  margin-top: 2px;
+  margin-right: 12px;
+  line-height: 0;
 }
-.rating_a .fa-star,
-.rating_a .hero-star {
-  color: #000;
-  font-size: 16px;
-  line-height: 16px;
-  vertical-align: middle;
-  height: 16px;
-  width: 16px;
-  display: inline-block;
-  text-align: center;
+.hero-star,
+.hero-app-icon {
+  display: block;
+  flex-shrink: 0;
+  max-width: none;
 }
-.rating_a .hero-star { color: rgba(255, 247, 230, 1); }
 .appstore_a {
   display: inline-flex;
-  align-items: center;
-  line-height: 1;
+  align-items: flex-start;
+  margin-right: 5px;
+  line-height: 0;
 }
-.appstore_a .fa-apple { font-size: 16px; color: #000; line-height: 1; vertical-align: middle; }
-.fs_15px.fw_700 { font-size: 15px; font-weight: 700; line-height: 1; vertical-align: middle; }
+.rating-label {
+  align-self: center;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #fff7e6;
+  white-space: nowrap;
+}
+.fs_15px.fw_700 { font-size: 15px; font-weight: 700; line-height: 1.4; }
 
 /* headline */
 .frame-wrapper-2 { width: 100%; }
@@ -578,6 +583,8 @@ p:hover {
 ======================================== */
 .div-13 { width: 100%; max-width: 1340px; padding: 60px 20px; display: flex; flex-direction: column; align-items: center; gap: 40px; }
 .div-13:not(#exploreBlogSection) { padding-top: 20px; }
+/* Figma: 100px from the tools CTA to "Explore our blog" */
+#exploreBlogSection.div-13 { padding-top: 100px; }
 .text-wrapper-21 { font-size: 24px; font-weight: 600; color: #000; text-align: center; margin: 0; }
 /* 16:9 box; iframe fills it (overrides global #youtubeIntro fixed sizes from responsive.css / index.css) */
 .youtube-player {
@@ -2038,7 +2045,7 @@ nav a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 12px;
   margin-left: 0;
   overflow: visible;
   padding: 4px 0;
@@ -2260,15 +2267,15 @@ nav a:hover {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 }
-/* Center "Find out more" / "See all posts" */
+/* Center "Find out more" / "See all posts"; arrows on the right edge of the 980px column */
 .coaches-section .coaches-footer,
 #exploreBlogSection .blog-footer {
   justify-content: center;
-  margin-left: 0;
-  margin-right: 0;
+  margin-left: auto;
+  margin-right: auto;
   padding-left: 0;
   padding-right: 0;
-  width: 100%;
+  width: min(980px, 100%);
   position: relative;
 }
 .coaches-section .coaches-footer-spacer {
@@ -2768,9 +2775,12 @@ nav a:hover {
 }
 .faq-body {
   font-size: 15px;
+  font-weight: 400;
   color: #000;
-  line-height: 1.6;
-  margin: 6px 0 12px;
+  line-height: 1.53;
+  margin: 10px 0 12px;
+  padding-right: 26px;
+  box-sizing: border-box;
   display: none;
 }
 
@@ -4137,4 +4147,16 @@ nav a:hover {
   height: 0;
   overflow: hidden;
   visibility: hidden;
+}
+
+/* Footer: social icons centered on the App Store / Google Play badges */
+.dfooter_social_links {
+  justify-content: center;
+}
+.dfooter .tright {
+  text-align: center;
+}
+.dfooter .tright img {
+  margin-left: auto;
+  margin-right: auto;
 }

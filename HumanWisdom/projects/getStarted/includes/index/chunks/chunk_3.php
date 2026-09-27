@@ -271,6 +271,3 @@
       </a>
         </div>
       </div>
-
-      <!-- ===== BLOG ===== -->
-      <div class="div-13 index-lazy-section" id="exploreBlogSection">

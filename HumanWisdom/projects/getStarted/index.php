@@ -90,17 +90,18 @@ hw_lcp_send_preload_headers();
           <div class="div-3">
                  <!-- rating row -->
                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 pt_18px">
-                  <p class="mtb0px fs_12px fw_400 lh_140p fc_000000 ta_lc mb_16px rating-row" role="group" aria-label="App store rating">
+                  <p class="mtb0px fs_12px fw_400 lh_140p fc_000000 ta_lc mb_16px rating-row" role="group" aria-label="4.8 App store rating">
                     <span class="rating_a" aria-hidden="true">
-                      <span class="hero-star">★</span><span class="hero-star">★</span><span class="hero-star">★</span><span class="hero-star">★</span><span class="hero-star">★</span>
+                      <img class="hero-star" src="assets/svgs/hero-rating-star.svg" width="16" height="16" alt="">
+                      <img class="hero-star" src="assets/svgs/hero-rating-star.svg" width="16" height="16" alt="">
+                      <img class="hero-star" src="assets/svgs/hero-rating-star.svg" width="16" height="16" alt="">
+                      <img class="hero-star" src="assets/svgs/hero-rating-star.svg" width="16" height="16" alt="">
+                      <img class="hero-star" src="assets/svgs/hero-rating-star.svg" width="16" height="16" alt="">
                     </span>
                     <span class="appstore_a" aria-hidden="true">
-                      <span class="hero-app-icon"></span>
+                      <img class="hero-app-icon" src="assets/svgs/hero-rating-apple.svg" width="17" height="20" alt="">
                     </span>
-                    <span class="fs_15px fw_700 lh_140p fc_000000">
-                      4.8
-                    </span>
-                    App store rating
+                    <span class="rating-label"><span class="fs_15px fw_700 lh_140p">4.8</span> App store rating</span>
                   </p>
                 </div>
                 <div class="frame-wrapper-2">
@@ -279,13 +280,67 @@ hw_lcp_send_preload_headers();
       });
 
       /* Coaches arrow navigation – left disabled initially, enabled after first scroll right */
+      function hwCarouselStep(el, cardSelector, fallback) {
+        var card = el.querySelector(cardSelector);
+        if (!card) return fallback;
+        var width = card.getBoundingClientRect().width;
+        if (!width) return fallback;
+        var styles = window.getComputedStyle(el);
+        var gap = parseFloat(styles.columnGap || styles.gap) || 20;
+        return Math.round(width + gap);
+      }
+
+      function hwScrollCarousel(el, delta, onDone) {
+        if (!el || !delta) return;
+        var max = el.scrollWidth - el.clientWidth;
+        if (max <= 1) {
+          el.dataset.hwPendingScroll = String(delta);
+          return;
+        }
+        delete el.dataset.hwPendingScroll;
+        var target = Math.max(0, Math.min(max, el.scrollLeft + delta));
+        var start = el.scrollLeft;
+        el.scrollTo({ left: target, behavior: 'smooth' });
+        window.setTimeout(function () {
+          if (Math.abs(el.scrollLeft - start) < 1 && Math.abs(target - start) > 1) {
+            el.scrollLeft = target;
+          }
+          if (onDone) onDone();
+        }, 120);
+      }
+
+      function hwWatchCarousel(el, update) {
+        if (!el || el.dataset.hwNavInit) return;
+        el.dataset.hwNavInit = '1';
+        function tick() {
+          update();
+          var pending = parseFloat(el.dataset.hwPendingScroll || '');
+          if (!pending || (el.scrollWidth - el.clientWidth) <= 1) return;
+          delete el.dataset.hwPendingScroll;
+          hwScrollCarousel(el, pending, update);
+        }
+        tick();
+        el.addEventListener('scroll', update, { passive: true });
+        window.addEventListener('resize', tick);
+        window.addEventListener('load', tick);
+        if (window.ResizeObserver) {
+          var ro = new ResizeObserver(tick);
+          ro.observe(el);
+          Array.prototype.forEach.call(el.children, function (child) { ro.observe(child); });
+        }
+        document.querySelectorAll('link[rel="stylesheet"], link[as="style"]').forEach(function (link) {
+          link.addEventListener('load', tick);
+        });
+      }
+
       function updateCoachesNavButtons() {
         var el = document.getElementById('coaches-scroll');
         var prevBtn = document.getElementById('coaches-prev');
         var nextBtn = document.getElementById('coaches-next');
         if (!el || !prevBtn || !nextBtn) return;
+        var max = el.scrollWidth - el.clientWidth;
         var atStart = el.scrollLeft <= 1;
-        var atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 1;
+        var atEnd = max > 1 && el.scrollLeft >= max - 1;
         var outer = el.closest('.coaches-outer');
         if (outer) {
           outer.classList.toggle('is-scrolled', !atStart);
@@ -297,9 +352,8 @@ hw_lcp_send_preload_headers();
       function coachScroll(dir) {
         var el = document.getElementById('coaches-scroll');
         if (!el) return;
-        var cardWidth = 220; // card 200px + 20px gap
-        el.scrollBy({ left: dir * cardWidth * 3, behavior: 'smooth' });
-        setTimeout(updateCoachesNavButtons, 350);
+        var step = hwCarouselStep(el, '.coach-card', 254);
+        hwScrollCarousel(el, dir * step * 3, updateCoachesNavButtons);
       }
     function coachDot(idx, btn) {
         var scroll = document.getElementById('coaches-scroll');
@@ -311,11 +365,7 @@ hw_lcp_send_preload_headers();
 
       (function initCoachesNav() {
         function run() {
-          var el = document.getElementById('coaches-scroll');
-          if (!el || el.dataset.hwNavInit) return;
-          el.dataset.hwNavInit = "1";
-          updateCoachesNavButtons();
-          el.addEventListener('scroll', updateCoachesNavButtons);
+          hwWatchCarousel(document.getElementById('coaches-scroll'), updateCoachesNavButtons);
         }
         hwWhenChunkDomReady(run);
       })();
@@ -326,8 +376,9 @@ hw_lcp_send_preload_headers();
         var prevBtn = document.getElementById('blog-prev');
         var nextBtn = document.getElementById('blog-next');
         if (!el || !prevBtn || !nextBtn) return;
+        var max = el.scrollWidth - el.clientWidth;
         var atStart = el.scrollLeft <= 1;
-        var atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 1;
+        var atEnd = max > 1 && el.scrollLeft >= max - 1;
         var outer = el.closest('.blog-outer');
         if (outer) {
           outer.classList.toggle('is-scrolled', !atStart);
@@ -340,18 +391,13 @@ hw_lcp_send_preload_headers();
         if (typeof logevent === 'function') logevent('scroll_blog_carousel', 'index.php');
         var el = document.getElementById('blog-scroll');
         if (!el) return;
-        var cardWidth = 490; // blog card 470px + 20px gap
-        el.scrollBy({ left: dir * cardWidth, behavior: 'smooth' });
-        setTimeout(updateBlogNavButtons, 350);
+        var step = hwCarouselStep(el, '.blog-card', 490);
+        hwScrollCarousel(el, dir * step, updateBlogNavButtons);
       }
 
       (function initBlogNav() {
         function run() {
-          var el = document.getElementById('blog-scroll');
-          if (!el || el.dataset.hwNavInit) return;
-          el.dataset.hwNavInit = "1";
-          updateBlogNavButtons();
-          el.addEventListener('scroll', updateBlogNavButtons);
+          hwWatchCarousel(document.getElementById('blog-scroll'), updateBlogNavButtons);
         }
         hwWhenChunkDomReady(run);
       })();
