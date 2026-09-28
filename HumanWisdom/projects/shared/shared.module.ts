@@ -3,6 +3,7 @@ import { BrowserModule, HammerModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { NgxCircularPlayerModule } from 'ngx-circular-player';
 import { FtPrevNextComponent } from '../shared/component/ft-prev-next/ft-prev-next.component';
 import { FtPrevComponent } from '../shared/component/ft-prev/ft-prev.component';
@@ -230,6 +231,7 @@ export class MyHammerConfig extends HammerGestureConfig {
   imports: [
     CommonModule,
     FormsModule,
+    HttpClientModule,
     NgxCircularPlayerModule,
     NgxSliderModule,
     RouterModule,

@@ -142,7 +142,7 @@ export class EventsIndexPage implements OnInit, AfterViewInit {
     }
   }
 
-  youtube(link: string, RowID: number, title?: string) {
+  youtube(link: string, RowID: number, title?: string, imgUrl?: string) {
     this.service.clickEvents(RowID).subscribe({
       next: () => console.log('youtube event logged'),
       error: (e) => console.error('youtube event failed', e)
@@ -158,10 +158,11 @@ export class EventsIndexPage implements OnInit, AfterViewInit {
     }
 
     localStorage.setItem('youtubelinkHeaderTitle', 'In-depth conversation');
+    const stateObj = { title, headerTitle: 'In-depth conversation', imgUrl, autoPlay: true };
     if (RowID <= 1) {
-      this.router.navigate([`${prog}/curated/youtubelink`, `${link}=rdtfghjhfdg`], { state: { title, headerTitle: 'In-depth conversation' } });
+      this.router.navigate([`${prog}/curated/youtubelink`, `${link}=rdtfghjhfdg`], { state: stateObj });
     } else {
-      this.router.navigate([`${prog}/curated/youtubelink`, `${link}=vncbxdfchgvxd`], { state: { title, headerTitle: 'In-depth conversation' } });
+      this.router.navigate([`${prog}/curated/youtubelink`, `${link}=vncbxdfchgvxd`], { state: stateObj });
     }
   }
 
