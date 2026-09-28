@@ -145,7 +145,7 @@ if (!function_exists('hw_org_cdn_assets')) {
             'appstore_url' => 'https://apps.apple.com/in/app/humanwisdom/id1588535567',
             'playstore_url' => 'https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US',
             'onelink' => 'https://onelink.to/hsnt8b',
-            'web_app' => '/',
+            'web_app' => 'https://happierme.app/pages/splash_options.php',
             'login' => hw_org_base() === '..' ? 'splash_options.php' : 'pages/splash_options.php',
         ];
     }

@@ -315,9 +315,12 @@ export class WisdomShortsIndexPage implements OnInit {
     }
   }
 
-  wisdoshortsevent(val, video, title) {
+  async wisdoshortsevent(val, video, title) {
     const loggedin = localStorage.getItem('isloggedin');
     const sub      = localStorage.getItem('Subscriber');
+
+    // Detect orientation from thumbnail early — used by all navigation paths below
+    const detectedOrientation = await this.detectOrientationFromThumbnail(val);
 
     const vUrl  = video || val['VideoUrl'] || val['YoutubeLink'] || val['YoutubeUrl'] || val['Url'] || val['URL'] || '';
     const ytRaw = val['YoutubeLink'] || val['youtubeLink'] || val['YoutubeUrl'] || '';
@@ -371,6 +374,7 @@ export class WisdomShortsIndexPage implements OnInit {
       this.recordClick(val, id);
 
       localStorage.setItem('fromIndex', 'true');
+      localStorage.setItem('wisdomVideoOrientation', detectedOrientation);
       localStorage.setItem('wisdomShortsSelectedTab', this.selectedPref);
       localStorage.setItem('wisdomShortsSelectedType', this.selectedType);
       if (id) {
@@ -407,6 +411,7 @@ export class WisdomShortsIndexPage implements OnInit {
       this.recordClick(val, id);
       const headerTitle = this.computeHeaderTitle(val);
       localStorage.setItem('fromIndex', 'true');
+      localStorage.setItem('wisdomVideoOrientation', detectedOrientation);
       localStorage.setItem('wisdomShortsSelectedTab', this.selectedPref);
       localStorage.setItem('wisdomShortsSelectedType', this.selectedType);
       localStorage.setItem('youtubelinkHeaderTitle', headerTitle);
@@ -435,6 +440,7 @@ export class WisdomShortsIndexPage implements OnInit {
           this.recordClick(val, id);
           const headerTitle = this.computeHeaderTitle(val);
           localStorage.setItem('fromIndex', 'true');
+          localStorage.setItem('wisdomVideoOrientation', detectedOrientation);
           localStorage.setItem('wisdomShortsSelectedTab', this.selectedPref);
           localStorage.setItem('wisdomShortsSelectedType', this.selectedType);
           localStorage.setItem('youtubelinkHeaderTitle', headerTitle);
@@ -460,6 +466,7 @@ export class WisdomShortsIndexPage implements OnInit {
           let route = vUrl ? vUrl.replace('adults', SharedService.getprogramName()) : `/${SharedService.getprogramName()}/wisdom-shorts/${checkId}`;
           const headerTitle = this.computeHeaderTitle(val);
           localStorage.setItem('fromIndex', 'true');
+          localStorage.setItem('wisdomVideoOrientation', detectedOrientation);
           localStorage.setItem('wisdomShortsSelectedTab', this.selectedPref);
           localStorage.setItem('wisdomShortsSelectedType', this.selectedType);
           localStorage.setItem('youtubelinkHeaderTitle', headerTitle);
@@ -544,6 +551,48 @@ export class WisdomShortsIndexPage implements OnInit {
     return formatted ? `${typeLabel.toUpperCase()} • ${formatted}` : typeLabel.toUpperCase();
   }
   
+  computeOrientation(val: any): 'landscape' | 'portrait' {
+    const typeLower  = (val?.Type || val?.type || val?.TypeLabel || '').toString().toLowerCase();
+    const urlLower   = (val?.VideoUrl || val?.YoutubeLink || val?.YoutubeUrl || val?.Url || '').toString().toLowerCase();
+    const titleLower = (val?.Title || '').toString().toLowerCase();
+    const isLandscape = typeLower.includes('in-depth') || typeLower.includes('indepth') ||
+                        typeLower.includes('landscape') || typeLower.includes('event') ||
+                        urlLower.includes('youtube') || urlLower.includes('16_9') ||
+                        titleLower.includes('in-depth') || titleLower.includes('conversation');
+    return isLandscape ? 'landscape' : 'portrait';
+  }
+
+  /**
+   * Tries to detect orientation from the thumbnail image dimensions.
+   * Falls back to the heuristic computeOrientation() if the image can't be loaded within 800ms.
+   */
+  detectOrientationFromThumbnail(val: any): Promise<'landscape' | 'portrait'> {
+    const imgUrl = val?.ImgUrl || val?.imgUrl || val?.ThumbnailUrl || '';
+    const fallback = this.computeOrientation(val);
+    if (!imgUrl) return Promise.resolve(fallback);
+
+    return new Promise((resolve) => {
+      const timeout = setTimeout(() => resolve(fallback), 800);
+      const img = new Image();
+      img.onload = () => {
+        clearTimeout(timeout);
+        // If already cached, naturalWidth/Height are available instantly
+        if (img.naturalWidth && img.naturalHeight) {
+          resolve(img.naturalWidth >= img.naturalHeight ? 'landscape' : 'portrait');
+        } else {
+          resolve(fallback);
+        }
+      };
+      img.onerror = () => { clearTimeout(timeout); resolve(fallback); };
+      img.src = imgUrl;
+      // If browser already has it cached, onload fires synchronously before we set src — handle that
+      if (img.complete && img.naturalWidth) {
+        clearTimeout(timeout);
+        resolve(img.naturalWidth >= img.naturalHeight ? 'landscape' : 'portrait');
+      }
+    });
+  }
+
   computeHeaderTitle(val: any): string {
     const itemTypeLower = (val?.Type || val?.type || val?.TypeLabel || '').toString().toLowerCase();
     const realStoriesHeader = this.isAdults ? 'Stories of hope' : 'Teen talk';

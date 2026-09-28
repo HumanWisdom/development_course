@@ -177,6 +177,3 @@
           </div>
         </div>
       </div>
-
-            <!-- ===== COACHES ===== -->
-      <div class="coaches-section index-lazy-section">

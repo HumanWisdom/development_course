@@ -45,28 +45,28 @@ import * as Hammer from 'hammerjs';
       transition('previous => active', [
         style({ transform: 'translateY(-100%)', opacity: 1 }),
         animate(
-          '0.4s cubic-bezier(0.25, 0.8, 0.25, 1)',
+          '1.25s cubic-bezier(0.4, 0.0, 0.2, 1)',
           style({ transform: 'translateY(0)', opacity: 1 })
         ),
       ]),
       transition('next => active', [
         style({ transform: 'translateY(100%)', opacity: 1 }),
         animate(
-          '0.4s cubic-bezier(0.25, 0.8, 0.25, 1)',
+          '1.25s cubic-bezier(0.4, 0.0, 0.2, 1)',
           style({ transform: 'translateY(0)', opacity: 1 })
         ),
       ]),
       transition('active => previous', [
         style({ transform: 'translateY(0)', opacity: 1 }),
         animate(
-          '0.4s cubic-bezier(0.25, 0.8, 0.25, 1)',
+          '1.25s cubic-bezier(0.4, 0.0, 0.2, 1)',
           style({ transform: 'translateY(-100%)', opacity: 1 })
         ),
       ]),
       transition('active => next', [
         style({ transform: 'translateY(0)', opacity: 1 }),
         animate(
-          '0.4s cubic-bezier(0.25, 0.8, 0.25, 1)',
+          '1.25s cubic-bezier(0.4, 0.0, 0.2, 1)',
           style({ transform: 'translateY(100%)', opacity: 1 })
         ),
       ]),
@@ -111,7 +111,22 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
   public swipePromptCount = 0;
   public hasUserSwiped = false;
   private hasPromptShownForCurrentVideo = false;
+  public videoReady = false; // hides video element until browser has enough data to play
 
+  // ── Drag-to-swipe state ──────────────────────────────────────────────────
+  private dragStartY = 0;
+  private dragCurrentY = 0;
+  private isDragging = false;
+  private dragThreshold = 80;          // px needed to commit a swipe
+  private readonly DRAG_RESISTANCE = 0.45; // reduces drag distance so it feels natural
+  // Bound references so we can remove them in ngOnDestroy
+  private _onTouchStart!: (e: TouchEvent) => void;
+  private _onTouchMove!:  (e: TouchEvent) => void;
+  private _onTouchEnd!:   (e: TouchEvent) => void;
+  private _onMouseDown!:  (e: MouseEvent) => void;
+  private _onMouseMove!:  (e: MouseEvent) => void;
+  private _onMouseUp!:    (e: MouseEvent) => void;
+  // ─────────────────────────────────────────────────────────────────────────
 
   @ViewChild('videoPlayer') videoPlayer!: ElementRef;
   @ViewChild('swipeContainer') swipeContainer!: ElementRef;
@@ -391,10 +406,72 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
 
       hammertime.on('swipeup', () => this.onSwipeUp());
       hammertime.on('swipedown', () => this.onSwipeDown());
+
+      this.attachDragListeners();
     }
     
     this.ensureAutoPlay();
   }
+
+  // ── Drag listener attachment / detachment ──────────────────────────────
+  private attachDragListeners(): void {
+    const el = this.swipeContainer?.nativeElement as HTMLElement | undefined;
+    if (!el) return;
+
+    // ── Touch handlers ──────────────────────────────────────────────────────
+    this._onTouchStart = (e: TouchEvent) => this.onDragStart(e.touches[0].clientY, true);
+    this._onTouchMove  = (e: TouchEvent) => { e.preventDefault(); this.onDragMove(e.touches[0].clientY); };
+    this._onTouchEnd   = () => this.onDragEnd();
+
+    el.addEventListener('touchstart', this._onTouchStart, { passive: true });
+    el.addEventListener('touchmove',  this._onTouchMove,  { passive: false });
+    el.addEventListener('touchend',   this._onTouchEnd,   { passive: true });
+
+    // ── Mouse handlers ──────────────────────────────────────────────────────
+    // mousedown on container, but mousemove/mouseup on DOCUMENT so the pointer
+    // leaving the container mid-drag doesn't break tracking.
+    this._onMouseDown = (e: MouseEvent) => {
+      // Only left-button drags
+      if (e.button !== 0) return;
+      e.preventDefault();           // stops browser's native drag-ghost on images/video
+      this.onDragStart(e.clientY, false);
+    };
+
+    this._onMouseMove = (e: MouseEvent) => {
+      if (!this.isDragging) return;
+      e.preventDefault();
+      this.onDragMove(e.clientY);
+    };
+
+    this._onMouseUp = (e: MouseEvent) => {
+      if (!this.isDragging) return;
+      e.preventDefault();
+      this.onDragEnd();
+    };
+
+    el.addEventListener('mousedown', this._onMouseDown);
+
+    // Use document so pointer can leave the container without losing the drag
+    document.addEventListener('mousemove', this._onMouseMove);
+    document.addEventListener('mouseup',   this._onMouseUp);
+
+    // Prevent browser's native element drag (video thumbnail ghost, etc.)
+    el.addEventListener('dragstart', (e) => e.preventDefault());
+  }
+
+  private detachDragListeners(): void {
+    const el = this.swipeContainer?.nativeElement as HTMLElement | undefined;
+    if (el) {
+      if (this._onTouchStart) el.removeEventListener('touchstart', this._onTouchStart);
+      if (this._onTouchMove)  el.removeEventListener('touchmove',  this._onTouchMove);
+      if (this._onTouchEnd)   el.removeEventListener('touchend',   this._onTouchEnd);
+      if (this._onMouseDown)  el.removeEventListener('mousedown',  this._onMouseDown);
+    }
+    // Removed from document (not window)
+    if (this._onMouseMove) document.removeEventListener('mousemove', this._onMouseMove);
+    if (this._onMouseUp)   document.removeEventListener('mouseup',   this._onMouseUp);
+  }
+  // ─────────────────────────────────────────────────────────────────────────
 
   private clearTimers(): void {
     this.pendingTimers.forEach(t => clearTimeout(t));
@@ -698,7 +775,7 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
 
     if (this.currentIndex < this.wisdomShortOrderList.length - 1) {
       this.isSwiping = true;
-      if (isUserAction) {
+      this.videoReady = false;      if (isUserAction) {
         this.hasUserSwiped = true;
       }
       this.hasPromptShownForCurrentVideo = false;
@@ -745,6 +822,7 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
     if (this.isSwiping) return;
 
     this.isSwiping = true;
+    this.videoReady = false;
     this.hasUserSwiped = true;
     this.hasPromptShownForCurrentVideo = false;
     this.showSwipePrompt = false;
@@ -830,6 +908,8 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
       this.routerSub.unsubscribe();
     }
 
+    this.detachDragListeners();
+
     localStorage.setItem('isSwipeAllow', 'false');
     localStorage.removeItem('fromIndex');
     document.body.style.removeProperty('overflow');
@@ -872,6 +952,7 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   onVideoPlay(event?: any): void {
+    this.videoReady = true;
     const targetVideo = event?.target as HTMLVideoElement | undefined;
     if (targetVideo) {
       this.trackedVideos.add(targetVideo);
@@ -895,6 +976,83 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
     }
     this.trackVideoClickIfApplicable();
   }
+
+  // ── Drag handlers ─────────────────────────────────────────────────────────
+
+  private getDragContainer(): HTMLElement | null {
+    return (this.swipeContainer?.nativeElement as HTMLElement) ?? null;
+  }
+
+  /**
+   * Apply a live translateY to every visible video-wrapper so they follow the finger/cursor.
+   * The active slide moves 1:1 with reduced resistance; neighbours slide along with it.
+   */
+  private applyDragTranslate(deltaY: number): void {
+    const container = this.getDragContainer();
+    if (!container) return;
+    const wrappers = container.querySelectorAll<HTMLElement>('.video-wrapper');
+    wrappers.forEach((el, i) => {
+      // Each wrapper already has an animation state (active / previous / next).
+      // We shift them all by deltaY so the visual position follows the drag.
+      const base = i < this.currentIndex ? -100 : i > this.currentIndex ? 100 : 0; // % offset from animation state
+      el.style.transition = 'none';
+      el.style.transform  = `translateY(calc(${base}% + ${deltaY}px))`;
+    });
+  }
+
+  /** Reset wrappers to animation-controlled transforms so Angular's @slideAnimation takes over again. */
+  private resetDragTranslate(animate = true): void {
+    const container = this.getDragContainer();
+    if (!container) return;
+    const wrappers = container.querySelectorAll<HTMLElement>('.video-wrapper');
+    wrappers.forEach(el => {
+      el.style.transition = animate ? 'transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1)' : 'none';
+      el.style.transform  = '';
+    });
+  }
+
+  onDragStart(clientY: number, _isTouch: boolean): void {
+    if (!this.isSwipeAllow || this.isSwiping) return;
+    this.isDragging   = true;
+    this.dragStartY   = clientY;
+    this.dragCurrentY = clientY;
+  }
+
+  onDragMove(clientY: number): void {
+    if (!this.isDragging || this.isSwiping) return;
+    this.dragCurrentY = clientY;
+    const raw   = clientY - this.dragStartY;
+    const delta = raw * this.DRAG_RESISTANCE;
+
+    // Clamp: don't drag past 60% of the viewport height so it never looks broken
+    const maxDrag = window.innerHeight * 0.6;
+    const clamped = Math.max(-maxDrag, Math.min(maxDrag, delta));
+
+    this.applyDragTranslate(clamped);
+  }
+
+  onDragEnd(): void {
+    if (!this.isDragging) return;
+    this.isDragging = false;
+
+    const raw   = this.dragCurrentY - this.dragStartY;
+    const delta = raw * this.DRAG_RESISTANCE;
+
+    if (Math.abs(delta) >= this.dragThreshold) {
+      // Enough drag → commit swipe (wrappers will be re-controlled by Angular animation)
+      this.resetDragTranslate(false); // no CSS transition — Angular animation handles it
+      if (delta < 0) {
+        this.onSwipeUp();
+      } else {
+        this.onSwipeDown();
+      }
+    } else {
+      // Not enough → snap back with smooth transition
+      this.resetDragTranslate(true);
+    }
+  }
+
+  // ─────────────────────────────────────────────────────────────────────────
 
   // Tracking helpers (short videos and teen talk)
   private trackVideoClickIfApplicable(): void {
