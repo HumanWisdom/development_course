@@ -4502,9 +4502,9 @@ button {
   display: block;
   margin-left: auto;
   /* padding-top: 20px;
-    padding-bottom: 20px; */
+    padding-bottom: 20px; */ 
   margin-right: auto;
-  margin: 40px;
+  /* margin: 40px; */
 }
 
 .product_view .modal-dialog {

@@ -144,6 +144,11 @@
                 <h4 class="mtb0px blog_desc">
                 Improving your emotional intelligence helps you navigate challenges, collaborate more effectively, and achieve your goals.
                 </h4>
+                
+                 <iframe id="youtubeIntro" loading="lazy" title="youtubeIntro"
+            src="https://www.youtube.com/embed/y5hd9MHnUyM?si=YOFWYNpc4seBRw3U"
+            class="cvideo_b yt-embed" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen
+            onclick="return logevent('click_play_video_home', 'index.php')"></iframe>
 
                 <h4 class="mtb0px blog_sub_title">
                 Achieving Success in Life with HappierMe's Support
