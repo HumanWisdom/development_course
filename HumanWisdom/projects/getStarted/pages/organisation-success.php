@@ -19,14 +19,12 @@ include __DIR__ . '/../includes/organisation_header.php';
     </div>
 
     <div class="org-trial">
-      <div class="org-trial-top">
-        <img src="<?= hw_org_h($assets['calendar']) ?>" alt="" width="80" height="80">
-        <p class="org-trial-copy">
-          <span>You have</span>
-          <strong><?= $freeDays ?> days of</strong>
-          <span>free access</span>
-        </p>
-      </div>
+      <img class="org-trial-icon" src="<?= hw_org_h($assets['calendar']) ?>" alt="" width="64" height="64">
+      <p class="org-trial-copy">
+        <span>You have</span>
+        <strong><?= $freeDays ?> days of</strong>
+        <strong>free access</strong>
+      </p>
       <p class="org-trial-ends">Trial ends on <?= hw_org_h($org['trialEnds']) ?></p>
     </div>
 
