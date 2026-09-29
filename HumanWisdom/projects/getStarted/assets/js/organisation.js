@@ -305,7 +305,7 @@
   function orgLogoUrl(logoUrl) {
     var fallback = (assets && assets.logo_default) || "";
     logoUrl = String(logoUrl || "").trim();
-    if (!logoUrl) return fallback;
+    if (!logoUrl || /\/website\/svgs\/logo\.svg(?:\?|#|$)/i.test(logoUrl)) return fallback;
     if (/^https?:\/\//i.test(logoUrl)) return logoUrl;
     return "https://d1tenzemoxuh75.cloudfront.net/" + logoUrl.replace(/^\//, "");
   }

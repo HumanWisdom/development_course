@@ -3428,7 +3428,14 @@ body.page-newsletter .newsletter-subtitle:hover {
 .dfooter_social_links {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
+}
+.dfooter .tright {
+  text-align: center;
+}
+.dfooter .tright img {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .dfooter_social_links a {
