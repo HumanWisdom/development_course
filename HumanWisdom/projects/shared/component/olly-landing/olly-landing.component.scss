@@ -173,6 +173,11 @@
   margin-left: auto;
   object-fit: contain;
 
+  &.clickable {
+    pointer-events: auto;
+    cursor: pointer;
+  }
+
   &--flying {
     width: 100px;
     opacity: 1;

@@ -25,9 +25,15 @@ include __DIR__ . '/../includes/organisation_header.php';
       <div class="org-hero-copy">
         <div class="org-rating" role="group" aria-label="4.8 App store rating">
           <span class="org-rating-stars" aria-hidden="true">
-            <span class="org-hero-star">★</span><span class="org-hero-star">★</span><span class="org-hero-star">★</span><span class="org-hero-star">★</span><span class="org-hero-star">★</span>
+            <img class="org-hero-star" src="<?= hw_org_h(hw_asset_url(hw_org_base() . '/assets/svgs/hero-rating-star.svg')) ?>" width="16" height="16" alt="">
+            <img class="org-hero-star" src="<?= hw_org_h(hw_asset_url(hw_org_base() . '/assets/svgs/hero-rating-star.svg')) ?>" width="16" height="16" alt="">
+            <img class="org-hero-star" src="<?= hw_org_h(hw_asset_url(hw_org_base() . '/assets/svgs/hero-rating-star.svg')) ?>" width="16" height="16" alt="">
+            <img class="org-hero-star" src="<?= hw_org_h(hw_asset_url(hw_org_base() . '/assets/svgs/hero-rating-star.svg')) ?>" width="16" height="16" alt="">
+            <img class="org-hero-star" src="<?= hw_org_h(hw_asset_url(hw_org_base() . '/assets/svgs/hero-rating-star.svg')) ?>" width="16" height="16" alt="">
           </span>
-          <span class="org-app-icon" aria-hidden="true"></span>
+          <span class="org-app-icon" aria-hidden="true">
+            <img src="<?= hw_org_h(hw_asset_url(hw_org_base() . '/assets/svgs/hero-rating-apple.svg')) ?>" width="17" height="20" alt="">
+          </span>
           <span class="org-rating-copy"><strong>4.8</strong> App store rating</span>
         </div>
         <h1>Welcome to<br> HappierMe!</h1>

@@ -43,8 +43,8 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
   private readonly INTRO_SHOWN_KEY = 'olly_landing_intro_shown';
   private readonly DIALOGUE_SHOWN_KEY = 'olly_landing_dialogue_shown';
   // Integrated mode is used on the Today page (embedded inside the dashboard).
-  // We keep separate keys so the dialogue can appear on both Olly landing and Today.
-  // Values are local calendar dates (YYYY-MM-DD) so the bubble shows once per day.
+  // Standalone Olly landing still shows the bubble once per calendar day.
+  // The Today-page owl shows the dialogue on every visit, with no once-per-day gate.
   private readonly INTEGRATED_INTRO_SHOWN_KEY = 'olly_today_intro_shown';
   private readonly INTEGRATED_DIALOGUE_SHOWN_KEY = 'olly_today_dialogue_shown';
   // Footer owl (app-owl-animation) uses this key to decide whether to show the dialogue cloud.
@@ -342,7 +342,8 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
       return;
     }
     this.gifLoadedOnce = true;
-    if (this.hasShownBubbleToday()) {
+    // Today page (integrated): always play the dialogue. Standalone landing stays once per day.
+    if (!this.isIntegrated && this.hasShownBubbleToday()) {
       // Already shown once today — emit immediately so parent doesn't wait
       this.bubbleComplete.emit();
       return;
@@ -350,17 +351,28 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
     this.triggerCloudIfNeeded();
   }
 
+  /** Today-page owl: same destination as the footer owl (chat, not the questions list). */
+  onTopOwlClick(): void {
+    if (!this.isIntegrated) {
+      return;
+    }
+    this.logeventservice.logEvent('Click_olly_chat');
+    const program = this.isAdults ? 'adults' : 'teenagers';
+    this.router.navigate([`/${program}/chat-bot`], { state: { startWithChat: true } });
+  }
+
   private triggerCloudIfNeeded(): void {
     if (this.cloudSequenceStarted) {
       return;
     }
-    if (this.hasShownBubbleToday()) {
+    if (!this.isIntegrated && this.hasShownBubbleToday()) {
       // Bubble already shown today — notify parent immediately so it doesn't wait forever
       this.bubbleComplete.emit();
       return;
     }
     this.cloudSequenceStarted = true;
-    // Persist immediately so a refresh during the animation cannot replay the bubble.
+    // Footer owl still uses this flag so it does not repeat the bubble after Today has shown it.
+    // The Today owl itself ignores the flag and shows the dialogue on every visit.
     this.markBubbleShownToday();
     this.startCloudSequence();
   }
