@@ -111,7 +111,7 @@ if (!function_exists('hw_org_cdn_assets')) {
         $cdn = HW_CDN_ORIGIN;
         $s3 = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com';
         return [
-            'logo_default' => $s3 . '/website/svgs/logo.svg',
+            'logo_default' => 'https://d1tenzemoxuh75.cloudfront.net/website/svgs/logo_new.svg',
             'hero_desktop' => hw_org_base() . '/assets/images/lcp/banneraug.webp',
             'hero_desktop_2x' => hw_org_base() . '/assets/images/lcp/banneraug@2x.webp',
             'hero_mobile' => hw_org_base() . '/assets/images/lcp/banner_mobile.webp',
@@ -156,7 +156,7 @@ if (!function_exists('hw_org_logo_url')) {
     {
         $assets = hw_org_cdn_assets();
         $logoUrl = trim((string) $logoUrl);
-        if ($logoUrl === '') {
+        if ($logoUrl === '' || preg_match('#/website/svgs/logo\.svg(?:\?|#|$)#i', $logoUrl)) {
             return $assets['logo_default'];
         }
         if (preg_match('#^https?://#i', $logoUrl)) {
