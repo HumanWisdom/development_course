@@ -13,8 +13,8 @@ $logoAlt = $useOrgLogo ? $org['name'] : 'HappierMe';
         class="org-logo"
         src="<?= hw_org_h($logoSrc) ?>"
         alt="<?= hw_org_h($logoAlt) ?>"
-        width="215"
-        height="61"
+        width="190"
+        height="44"
         data-fallback="<?= hw_org_h($assets['logo_default']) ?>"
         onerror="if(this.dataset.fallback && this.src!==this.dataset.fallback){this.src=this.dataset.fallback;}">
     </a>

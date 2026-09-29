@@ -11,10 +11,12 @@ include __DIR__ . '/../includes/organisation_header.php';
 ?>
 <main class="org-main">
   <section class="org-hero-offer">
-    <div class="org-hero-offer-copy">
+    <div class="org-hero-offer-inner">
       <p class="org-kicker">Exclusive offer</p>
-      <h1>Free <span data-org-free-days><?= (int) $org['freeDays'] ?></span>-day access to the HappierMe app</h1>
-      <p class="org-hero-note">(No credit card needed)</p>
+      <div class="org-hero-offer-copy">
+        <h1>Free <span data-org-free-days><?= (int) $org['freeDays'] ?></span>-day access to the HappierMe app</h1>
+        <p class="org-hero-note">(No credit card needed)</p>
+      </div>
     </div>
   </section>
 

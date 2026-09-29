@@ -973,12 +973,26 @@
 }
 
 @media (max-width: 480px) {
+  :host {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+  }
+
   .chat-bot-container,
   .chat-header,
   .chat-area,
   .chat-input-area {
     width: 100%;
-    max-width: 374px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .chat-header,
+  .chat-input-area {
+    left: 0;
+    right: 0;
+    transform: none;
   }
   
   .error-message {
