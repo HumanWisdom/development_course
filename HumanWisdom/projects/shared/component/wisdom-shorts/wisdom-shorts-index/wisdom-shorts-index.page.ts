@@ -101,7 +101,7 @@ export class WisdomShortsIndexPage implements OnInit {
 
     const realLifeItem = this.typeData.find(t => t.id === 'real_life');
     if (realLifeItem) {
-      realLifeItem.displayName = this.isAdults ? 'Stories of hope' : 'Teen talk';
+      realLifeItem.displayName = this.isAdults ? 'Life stories' : 'Teen talk';
     }
 
     this.getwisdomshorts()
@@ -595,7 +595,7 @@ export class WisdomShortsIndexPage implements OnInit {
 
   computeHeaderTitle(val: any): string {
     const itemTypeLower = (val?.Type || val?.type || val?.TypeLabel || '').toString().toLowerCase();
-    const realStoriesHeader = this.isAdults ? 'Stories of hope' : 'Teen talk';
+    const realStoriesHeader = this.isAdults ? 'Life stories' : 'Teen talk';
     if (itemTypeLower.includes('in-depth') || itemTypeLower.includes('indepth') || itemTypeLower.includes('event')) {
       return 'In-depth conversation';
     } else if (itemTypeLower.includes('expert') || itemTypeLower.includes('voice')) {
