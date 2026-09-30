@@ -332,14 +332,30 @@
       localStorage.setItem("OrganizationId", id);
     } catch (e) {}
 
-    var logoImg = document.querySelector(".org-logo");
+    var logoImg = document.querySelector(".org-logo[data-use-org-logo]");
     if (logoImg) {
       logoImg.src = logo;
       logoImg.alt = name;
+      var logoLink = logoImg.closest(".org-logo-link");
+      if (logoLink) {
+        logoLink.setAttribute("aria-label", name);
+      }
     }
-    var logoLink = document.querySelector(".org-logo-link");
-    if (logoLink) {
-      logoLink.setAttribute("aria-label", name);
+
+    org.showPartnerLogo = Number(row.showPartnerLogo) === 1 ? 1 : 0;
+    org.partnerLogo =
+      "https://d1tenzemoxuh75.cloudfront.net/website/svgs/OrgLogo/" +
+      encodeURIComponent(id) +
+      ".svg";
+    var partnerImg = document.querySelector(".org-partner-logo");
+    if (partnerImg) {
+      if (org.showPartnerLogo) {
+        partnerImg.src = org.partnerLogo;
+        partnerImg.alt = name;
+        partnerImg.hidden = false;
+      } else {
+        partnerImg.hidden = true;
+      }
     }
     document.querySelectorAll("[data-org-free-days]").forEach(function (el) {
       el.textContent = String(freeDays);

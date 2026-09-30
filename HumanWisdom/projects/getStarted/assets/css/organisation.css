@@ -103,6 +103,21 @@ img.org-logo {
   display: block;
 }
 
+img.org-partner-logo {
+  height: 44px;
+  width: auto;
+  max-width: 190px;
+  object-fit: contain;
+  display: block;
+  margin-left: 24px;
+  padding-left: 24px;
+  border-left: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+img.org-partner-logo[hidden] {
+  display: none;
+}
+
 .org-main {
   flex: 1 0 auto;
   width: 100%;
@@ -1421,6 +1436,13 @@ body.org-flow-download .org-download-card {
     height: 37px;
     max-width: 160px;
     object-position: center;
+  }
+
+  img.org-partner-logo {
+    height: 37px;
+    max-width: 140px;
+    margin-left: 16px;
+    padding-left: 16px;
   }
 
   body.org-page .org-header {
