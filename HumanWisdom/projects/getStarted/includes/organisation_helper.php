@@ -70,7 +70,29 @@ if (!function_exists('hw_org_defaults')) {
             'showPartnerLogo' => 0,
             'partnerLogo' => hw_org_partner_logo_url($id),
             'trialEnds' => $end->format('j M Y'),
+        ] + hw_org_copy([]);
+    }
+}
+
+if (!function_exists('hw_org_copy')) {
+    /** Adv page copy from GetOrganization, falling back to the default wording. */
+    function hw_org_copy($row)
+    {
+        $defaults = [
+            'bannerText' => 'Exclusive offer',
+            'iconTitle1' => 'Feel better',
+            'iconTitle2' => 'Build happier relationships',
+            'iconTitle3' => 'Handle life better',
+            'iconSubtitle1' => 'Manage and improve wellbeing',
+            'iconSubtitle2' => 'Understand yourself and others better',
+            'iconSubtitle3' => 'Navigate challenges with greater confidence',
         ];
+        $copy = [];
+        foreach ($defaults as $key => $fallback) {
+            $value = isset($row[$key]) ? trim((string) $row[$key]) : '';
+            $copy[$key] = $value !== '' ? $value : $fallback;
+        }
+        return $copy;
     }
 }
 
@@ -271,7 +293,7 @@ if (!function_exists('hw_org_fetch')) {
             'showPartnerLogo' => isset($row['showPartnerLogo']) ? (int) $row['showPartnerLogo'] : 0,
             'partnerLogo' => hw_org_partner_logo_url($id),
             'trialEnds' => $end->format('j M Y'),
-        ];
+        ] + hw_org_copy($row);
 
         $_SESSION['hw_org_data'] = $org;
         return $org;

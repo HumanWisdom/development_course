@@ -253,7 +253,7 @@
       }
 
       verifying = true;
-      showError(err, "Verifying…");
+      showError(err, "Verifying Code");
 
       fetch(apiBase + "/verificationCode", {
         method: "POST",
@@ -264,24 +264,30 @@
         }),
       })
         .then(function (res) {
-          return res.json().then(function (data) {
-            return { ok: res.ok, data: data };
-          });
+          return res
+            .json()
+            .catch(function () {
+              return null;
+            })
+            .then(function (data) {
+              return { ok: res.ok, data: data };
+            });
         })
         .then(function (result) {
-          // adult-dashboard: if (res > 0) …
+          var data = result.data;
           var ok =
             result.ok &&
-            (result.data === true ||
-              result.data > 0 ||
-              parseInt(result.data, 10) > 0);
-          if (!ok) throw new Error("verify");
-
-          clearCreateAccountLocalStorage();
-          go("success");
+            (data === true || data > 0 || parseInt(data, 10) > 0);
+          if (ok) {
+            clearCreateAccountLocalStorage();
+            go("success");
+            return;
+          }
+          showError(err, "Invalid Code");
+          resetOtpInputs();
         })
         .catch(function () {
-          showError(err, "That code did not match. Please try again.");
+          showError(err, "Invalid Code");
           resetOtpInputs();
         });
     }
@@ -291,7 +297,7 @@
         e.preventDefault();
         if (remaining > 0) return;
         remaining = 30;
-        showError(err, "A new code is on its way.");
+        showError(err, "New Code Sent");
       });
     }
     if (back) {
@@ -359,6 +365,12 @@
     }
     document.querySelectorAll("[data-org-free-days]").forEach(function (el) {
       el.textContent = String(freeDays);
+    });
+    document.querySelectorAll("[data-org-copy]").forEach(function (el) {
+      var value = row[el.getAttribute("data-org-copy")];
+      if (value != null && String(value).trim() !== "") {
+        el.textContent = String(value).trim();
+      }
     });
   }
 
