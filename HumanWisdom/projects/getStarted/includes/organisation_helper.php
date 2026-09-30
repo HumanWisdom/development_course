@@ -67,8 +67,40 @@ if (!function_exists('hw_org_defaults')) {
             'logo' => hw_org_cdn_assets()['logo_default'],
             'freeDays' => 7,
             'isActive' => 1,
+            'showPartnerLogo' => 0,
+            'partnerLogo' => hw_org_partner_logo_url($id),
             'trialEnds' => $end->format('j M Y'),
+        ] + hw_org_copy([]);
+    }
+}
+
+if (!function_exists('hw_org_copy')) {
+    /** Adv page copy from GetOrganization, falling back to the default wording. */
+    function hw_org_copy($row)
+    {
+        $defaults = [
+            'bannerText' => 'Exclusive offer',
+            'iconTitle1' => 'Feel better',
+            'iconTitle2' => 'Build happier relationships',
+            'iconTitle3' => 'Handle life better',
+            'iconSubtitle1' => 'Manage and improve wellbeing',
+            'iconSubtitle2' => 'Understand yourself and others better',
+            'iconSubtitle3' => 'Navigate challenges with greater confidence',
         ];
+        $copy = [];
+        foreach ($defaults as $key => $fallback) {
+            $value = isset($row[$key]) ? trim((string) $row[$key]) : '';
+            $copy[$key] = $value !== '' ? $value : $fallback;
+        }
+        return $copy;
+    }
+}
+
+if (!function_exists('hw_org_partner_logo_url')) {
+    /** Partner logo file is named after the OrganizationId, e.g. OrgLogo/org-humanwisdom2.svg */
+    function hw_org_partner_logo_url($id)
+    {
+        return HW_CDN_ORIGIN . '/website/svgs/OrgLogo/' . rawurlencode(hw_org_sanitize_id($id)) . '.svg';
     }
 }
 
@@ -258,8 +290,10 @@ if (!function_exists('hw_org_fetch')) {
             'logo' => hw_org_logo_url($row['LogoUrl'] ?? ''),
             'freeDays' => $freeDays,
             'isActive' => isset($row['IsActive']) ? (int) $row['IsActive'] : 1,
+            'showPartnerLogo' => isset($row['showPartnerLogo']) ? (int) $row['showPartnerLogo'] : 0,
+            'partnerLogo' => hw_org_partner_logo_url($id),
             'trialEnds' => $end->format('j M Y'),
-        ];
+        ] + hw_org_copy($row);
 
         $_SESSION['hw_org_data'] = $org;
         return $org;
