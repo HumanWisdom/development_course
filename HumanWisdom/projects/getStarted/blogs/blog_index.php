@@ -1992,7 +1992,7 @@ Work and Leadership</button>
             
                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="1100">
 
-              <a class="" href="unlock_your_potential.php">
+              <a class="BlogCard" href="unlock_your_potential.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/90.webp" class="img-responsive img_blogs" alt="Blog_img">
