@@ -67,6 +67,7 @@ export class YoutubeContentComponent implements OnInit, OnDestroy {
       (document as any).webkitFullscreenElement ||
       (document as any).msFullscreenElement
     );
+    this.onPlayerAreaMouseMove();
     this.cdr.detectChanges();
   };
 

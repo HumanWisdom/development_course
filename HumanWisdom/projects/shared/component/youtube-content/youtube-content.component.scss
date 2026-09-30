@@ -309,6 +309,14 @@
       z-index: 10 !important;
       background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.6) 70%, transparent 100%);
       padding: 8px 16px 14px;
+      opacity: 0 !important;
+      pointer-events: none !important;
+      transition: opacity 0.3s ease;
+    }
+
+    &.show-controls .yt-controls {
+      opacity: 1 !important;
+      pointer-events: auto !important;
     }
   }
 }
