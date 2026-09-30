@@ -89,6 +89,13 @@
     padding-top: 0 !important;
     padding-bottom: 0 !important;
     background-color: transparent !important;
+
+    // Today page: Figma tail sits on the owl's eye. The owl stays put.
+    .olly-cloud-container {
+      top: -116px;
+      left: -34%;
+      z-index: 30;
+    }
     
     .suggestion-link-wrapper {
       margin-bottom: 50px;
@@ -173,6 +180,11 @@
   margin-left: auto;
   object-fit: contain;
 
+  &.clickable {
+    pointer-events: auto;
+    cursor: pointer;
+  }
+
   &--flying {
     width: 100px;
     opacity: 1;
@@ -249,6 +261,12 @@
     left: -35%;
     width: 140px;
     height: 110px;
+  }
+
+  .olly-landing-container.integrated .olly-cloud-container {
+    top: -86px;
+    left: -20%;
+    z-index: 30;
   }
 
   .cloud-image {
