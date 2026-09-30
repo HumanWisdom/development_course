@@ -35,6 +35,8 @@
                     <!-- ── PLAYING ── -->
                     <div *ngIf="isPlaying && videoLink"
                          class="yt-video-area"
+                         [class.is-fullscreen]="isFullscreen"
+                         [class.show-controls]="showControls || isPaused"
                          id="youtubeVideoWrapper"
                          (mousemove)="onPlayerAreaMouseMove()"
                          (mouseleave)="onPlayerAreaMouseLeave()"

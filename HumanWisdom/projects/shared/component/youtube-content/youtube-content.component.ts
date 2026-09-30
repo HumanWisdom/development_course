@@ -26,8 +26,29 @@ export class YoutubeContentComponent implements OnInit, OnDestroy {
   public isPaused: boolean = false;
   public ytVideoTitle: string = '';
   public ytAuthorName: string = '';
+  public showControls: boolean = false;
+  private controlsTimeout: any = null;
 
-  // Progress bar state
+  onPlayerAreaMouseMove() {
+    this.showControls = true;
+    if (this.controlsTimeout) {
+      clearTimeout(this.controlsTimeout);
+    }
+    this.controlsTimeout = setTimeout(() => {
+      if (!this.isPaused) {
+        this.showControls = false;
+        this.cdr.detectChanges();
+      }
+    }, 2500);
+    this.cdr.detectChanges();
+  }
+
+  onPlayerAreaMouseLeave() {
+    if (!this.isPaused) {
+      this.showControls = false;
+      this.cdr.detectChanges();
+    }
+  }
   public currentTime: number = 0;
   public duration: number = 0;
   public progressPercent: number = 0;
@@ -46,6 +67,7 @@ export class YoutubeContentComponent implements OnInit, OnDestroy {
       (document as any).webkitFullscreenElement ||
       (document as any).msFullscreenElement
     );
+    this.onPlayerAreaMouseMove();
     this.cdr.detectChanges();
   };
 
@@ -357,9 +379,6 @@ export class YoutubeContentComponent implements OnInit, OnDestroy {
       );
     }
   }
-
-  onPlayerAreaMouseMove() {}
-  onPlayerAreaMouseLeave() {}
 
   // ── Play / Pause ──────────────────────────────────────────────────────
   togglePlayPause() {
