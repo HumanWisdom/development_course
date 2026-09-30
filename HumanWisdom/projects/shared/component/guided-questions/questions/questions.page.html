@@ -67,7 +67,7 @@
                       <div class="row mt20px">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
                           <textarea type="text" id="comment" name="thread" required="required" class="cta1 form-control"
-                            [ngClass]="isAdults ? '' : 'ph_ffffff_0_5'" [(ngModel)]="item.Response"
+                            [ngClass]="isAdults ? 'ph_000000_0_25' : 'ph_ffffff_0_25'" [(ngModel)]="item.Response"
                             placeholder="{{item.hint}}" (blur)="SaveAnswers(item)" maxlength="256" rows="10">
                           {{item.Response }}
                         </textarea>
@@ -76,7 +76,7 @@
 
                       <div class="row mt20px">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                          <h4 class="mtb0px fs_15px fw_400 lh_150p"
+                          <h4 class="mtb0px fs_12px fw_400 lh_150p"
                             [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
                             Your answers are automatically saved.
                           </h4>
