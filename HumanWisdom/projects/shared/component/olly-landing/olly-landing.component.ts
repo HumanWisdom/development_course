@@ -36,8 +36,9 @@ export class OllyLandingComponent implements OnInit, OnDestroy, OnChanges {
   topicsList: OllyTopic[] = [];
   expandedTopics: { [fragment: string]: boolean } = {};
 
-  private readonly OLLY_GIF_URL =
-    'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/onboarding/olly_singleloop.gif';
+  private readonly OLLY_GIF_URL ='https://d1tenzemoxuh75.cloudfront.net/onboarding/olly_singleloop2.gif';
+    /* 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/onboarding/olly_singleloop.gif'; */
+    
   private readonly OLLY_HI_URL =
     'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/icons/Olly_Hi.svg';
   private readonly INTRO_SHOWN_KEY = 'olly_landing_intro_shown';

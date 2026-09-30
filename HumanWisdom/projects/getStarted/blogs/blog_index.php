@@ -591,8 +591,11 @@
               <button type="button" class="blog-filter-tag is-active" data-filter="all" data-title="All">All</button>
               <button type="button" class="blog-filter-tag" data-filter="mental-health" data-title="Mental Health">Mental health</button>
               <button type="button" class="blog-filter-tag" data-filter="relationships" data-title="Relationships">Relationships</button>
-              <button type="button" class="blog-filter-tag" data-filter="work-leadership" data-title="Work &amp; Leadership">Work &amp; Leadership</button>
-              <button type="button" class="blog-filter-tag" data-filter="breathing-meditation" data-title="Breathing &amp; Meditation">Breathing &amp; Meditation</button>
+              <button type="button" class="blog-filter-tag" data-filter="work" data-title="Work">Work</button>
+              <button type="button" class="blog-filter-tag" data-filter="sports" data-title="Sports">Sports</button>
+              <button type="button" class="blog-filter-tag" data-filter="parenting" data-title="Parenting">Parenting</button>
+              <button type="button" class="blog-filter-tag" data-filter="teenagers" data-title="Teenagers">Teenagers</button>
+
               <button type="button" class="blog-filter-search" id="blog-search-toggle" aria-label="Search articles" aria-expanded="false">
                 <img src="https://d1tenzemoxuh75.cloudfront.net/website/search.svg" class="blog-icon-search" alt="search_icon" width="18" height="18" aria-hidden="true">
                 <i class="bi bi-x blog-icon-close" aria-hidden="true"></i>
@@ -649,7 +652,7 @@
               <div class="row mt20px">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                   <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                    Manage your emotions
+                    Mental health
                   </button>
                 </div>
               </div>
@@ -678,7 +681,7 @@
               <div class="row mt20px">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                   <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                    Work and Leadership
+                    Work
                   </button>
                 </div>
               </div>
@@ -832,10 +835,7 @@
                     <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
                       Mental health
                     </button>
-
-                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                      Breathing & Meditation
-                    </button>
+                  
                   </div>
                 </div>
 
@@ -862,13 +862,14 @@
 
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                      Work and Leadership
-                    </button>
-
-                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
+                     <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
                       Mental health
                     </button>
+                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
+                      Work
+                    </button>
+
+                   
                   </div>
                 </div>
 
@@ -898,7 +899,7 @@
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                      Work and Leadership
+                      Work
                     </button>
                   </div>
                 </div>
@@ -990,10 +991,7 @@
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                      Mental health
-                    </button>
-                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                      Work and Leadership
+                      Teenagers
                     </button>
                   </div>
                 </div>
@@ -1023,9 +1021,7 @@
                     <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
                       Mental health
                     </button>
-                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                      Breathing & Meditation
-                    </button>
+                  
                   </div>
                 </div>
 
@@ -1114,7 +1110,7 @@
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                      Work and Leadership
+                      Work
                     </button>
 
                   </div>
@@ -1174,7 +1170,7 @@
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                      Mental health
+                      Relationships
                     </button>
 
                   </div>
@@ -1205,7 +1201,7 @@
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                      Mental health
+                      Work
                     </button>
 
                   </div>
@@ -1234,7 +1230,7 @@
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                      Work and Leadership
+                      Work
                     </button>
 
                   </div>
@@ -1263,9 +1259,11 @@
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                      Mental health
+                      Parenting
                     </button>
-
+ <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
+                      Teenagers
+                    </button>
                   </div>
                 </div>
 
@@ -1294,7 +1292,7 @@
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                      Mental health
+                      Teenagers
                     </button>
 
                   </div>
@@ -1323,7 +1321,7 @@
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                      Work and Leadership
+                      Teenagers
                     </button>
 
                   </div>
@@ -1354,6 +1352,9 @@
                     <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
                       mental health
                     </button>
+                     <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
+                      Teenagers
+                    </button>
 
                   </div>
                 </div>
@@ -1381,8 +1382,13 @@
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                      Work and Leadership
+                      Mental health
                     </button>
+                  
+                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
+                      Work
+                    </button>
+                   
 
                   </div>
                 </div>
@@ -1412,6 +1418,9 @@
                     <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
                       mental health
                     </button>
+                       <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
+                     Teenagers
+                    </button>
 
                   </div>
                 </div>
@@ -1439,7 +1448,7 @@
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                      Work and Leadership
+                      Work
                     </button>
 
                   </div>
@@ -1471,7 +1480,7 @@
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                      Work and Leadership
+                      Work
                     </button>
 
 
@@ -1582,7 +1591,7 @@
 
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">Manage your emotions</button>
+                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">Sports</button>
 
 
                   </div>
@@ -1610,7 +1619,7 @@
 
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">Mental health</button>
+                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">Sports</button>
 
 
                   </div>
@@ -1725,7 +1734,7 @@
 
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">Work and Leadership</button>
+                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">Teenagers</button>
 
 
                   </div>
@@ -1756,7 +1765,7 @@
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">                    
-Work and Leadership</button>
+Work</button>
 
 
                   </div>
@@ -1785,7 +1794,7 @@ Work and Leadership</button>
 
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">  Stress Management</button>
+                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">Mental Health</button>
 
 
                   </div>
@@ -1813,7 +1822,7 @@ Work and Leadership</button>
 
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp"> Suicide Prevention</button>
+                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">Mental Health</button>
 
 
                   </div>
@@ -2079,14 +2088,23 @@ Work and Leadership</button>
     if (t.indexOf('mental') !== -1 || t.indexOf('emotion') !== -1 || t.indexOf('anxiety') !== -1 || t.indexOf('stress') !== -1) {
       return 'mental-health';
     }
-    if (t.indexOf('relationship') !== -1 || t.indexOf('parenting') !== -1) {
+    if (t.indexOf('relationship') !== -1) {
       return 'relationships';
     }
     if (t.indexOf('work') !== -1 || t.indexOf('leadership') !== -1 || t.indexOf('organisation') !== -1 || t.indexOf('organization') !== -1) {
-      return 'work-leadership';
+      return 'work';
     }
     if (t.indexOf('breath') !== -1 || t.indexOf('meditat') !== -1) {
       return 'breathing-meditation';
+    }
+     if (t.indexOf('sports') !== -1 ) {
+      return 'sports';
+    }
+     if (t.indexOf('teenagers') !== -1 ) {
+      return 'teenagers';
+    }
+     if (t.indexOf('parenting') !== -1 ) {
+      return 'parenting';
     }
     return '';
   };
