@@ -5,6 +5,7 @@ $assets = hw_org_cdn_assets();
 $pageTitle = 'Welcome to HappierMe';
 $bodyClass = 'org-page org-page-landing';
 $signupUrl = hw_org_page('organisation-signup');
+$partnerLogoSlot = true;
 include __DIR__ . '/../includes/organisation_head.php';
 include __DIR__ . '/../includes/organisation_header.php';
 ?>

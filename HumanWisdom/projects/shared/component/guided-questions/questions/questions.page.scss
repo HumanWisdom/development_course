@@ -13,13 +13,18 @@ background: linear-gradient(180deg, #61C0C0 0%, #4491A5 100%);
 .fctray_gqtns {
   padding: 20px !important;
 }
-.ph_ffffff_0_5::placeholder {
-  color: rgba(255, 255, 255, 0.5) !important;
-  opacity: 1; 
+.ph_ffffff_0_25::placeholder {
+  color: rgba(255, 255, 255, 0.25) !important;
+  opacity: 1;
 }
 
-.ph_ffffff_0_5 {
+.ph_ffffff_0_25 {
   color: #ffffff !important;
+}
+
+.ph_000000_0_25::placeholder {
+  color: rgba(0, 0, 0, 0.25) !important;
+  opacity: 1;
 }
 
 .fctray_gqtns {

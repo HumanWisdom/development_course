@@ -58,7 +58,7 @@ export class ForumThreadStartNewPage implements OnInit,AfterViewInit, OnDestroy 
       this.postID = p;
     }
     this.isSubscriber = SharedService.isSubscriber(); 
-    this.selectedOption = localStorage.getItem('tagId') && localStorage.getItem('tagId') != null ? Number.parseInt(localStorage.getItem('tagId')) : 0;
+    this.selectedOption = 0;
 
    
 

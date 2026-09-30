@@ -103,6 +103,20 @@ img.org-logo {
   display: block;
 }
 
+img.org-partner-logo {
+  height: 44px;
+  width: auto;
+  max-width: 190px;
+  object-fit: contain;
+  display: block;
+  margin-left: auto;
+  object-position: right center;
+}
+
+img.org-partner-logo[hidden] {
+  display: none;
+}
+
 .org-main {
   flex: 1 0 auto;
   width: 100%;
@@ -1446,6 +1460,11 @@ body.org-flow-download .org-download-card {
     height: 37px;
     max-width: 160px;
     object-position: center;
+  }
+
+  img.org-partner-logo {
+    height: 37px;
+    max-width: 140px;
   }
 
   body.org-page .org-header {

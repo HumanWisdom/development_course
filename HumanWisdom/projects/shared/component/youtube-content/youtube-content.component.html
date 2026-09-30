@@ -10,13 +10,13 @@
         <div class="x_panel p0">
           <div class="x_content p0">
             <form>
-              <div class="row">
+              <div class="row" style="margin: 0;">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <h1 class="txt1 tleft m0px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">{{title}}</h1>
+                  <h1 class="txt1 tleft m0px" style="margin-bottom: 20px !important;" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">{{title}}</h1>
                 </div>
               </div>
 
-              <div class="row">
+              <div class="row" style="margin: 0;">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0 pt15px">
 
                   <div class="yt-player-outer">
@@ -35,6 +35,8 @@
                     <!-- ── PLAYING ── -->
                     <div *ngIf="isPlaying && videoLink"
                          class="yt-video-area"
+                         [class.is-fullscreen]="isFullscreen"
+                         [class.show-controls]="showControls || isPaused"
                          id="youtubeVideoWrapper"
                          (mousemove)="onPlayerAreaMouseMove()"
                          (mouseleave)="onPlayerAreaMouseLeave()"
