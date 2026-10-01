@@ -569,16 +569,18 @@
                   </div>
                 </a>
 
-                <!-- <a routerLink="/teenagers/self-awareness/s157013/">
+                <a (click)="Resume('s157013');">
                   <div class="row p0 center_flex">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                      
-                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p10px">
-                      
-                              <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_12.svg" class="img-responsive w100 img_podcast_01 session_imgnew">
-                           
+
+                      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 p10px tcenter">
+
+                        <img
+                          src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/wisdom_exercise/wisdom_exercise_12.svg"
+                          class="img-responsive w100 img_podcast_01 session_imgnew">
+
                       </div>
-                      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
+                      <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7 p0">
 
                         <h4 class="mt0px mb5px fs_15px fw_500 lh_130p fc_ffffff ellipsis_01">
                           Exploring the masks we wear
@@ -587,17 +589,19 @@
                           7 days
                         </h4>
                       </div>
-                    
-                      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 ">
+
+                      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 pr10px">
                         <i class="fc_ffffff fs_20px" *ngIf="!isGuest"></i>
-                       
-                        <img *ngIf="isGuest" src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg" class="img-responsive">
-                        
+                        <!-- lock -->
+                        <img *ngIf="isGuest"
+                          src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/lock.svg"
+                          class="img-responsive ws-lock-icon">
+                        <!-- /lock -->
                       </div>
 
                     </div>
                   </div>
-                </a> -->
+                </a>
                 <!--    <a routerLink="/teenagers/self-awareness/s157013/">
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
