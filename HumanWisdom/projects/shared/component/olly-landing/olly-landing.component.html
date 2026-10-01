@@ -25,8 +25,8 @@
                 <div class="search-section">
                   <div class="owl-section">
                     <div class="olly-character-container">
-                      <img *ngIf="showOllyGif" class="olly-owl-img" [src]="ollyGifUrl" alt="Olly"
-                        (load)="onOllyGifLoad()" />
+                      <img *ngIf="showOllyGif" class="olly-owl-img" [class.clickable]="isIntegrated"
+                        [src]="ollyGifUrl" alt="Olly" (load)="onOllyGifLoad()" (click)="onTopOwlClick()" />
                       <div class="olly-cloud-container" *ngIf="showCloudMessage" [ngClass]="{
                           'speaking': isSpeaking,
                           'disappearing': isDisappearing,
