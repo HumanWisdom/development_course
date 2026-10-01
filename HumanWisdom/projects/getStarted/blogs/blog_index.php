@@ -174,11 +174,13 @@
       }
     }
 
-    @media (max-width: 768px) {
-
-      .blog-index-hero.hpt120px {
-        margin-top: 70px !important;
+    @media (max-width: 767px) {
+      body.page-blog-index section.blog-index-hero.hpt120px {
+        margin-top: 64px !important;
       }
+    }
+
+    @media (max-width: 768px) {
 
       /* Tighten space between View More and footer (default .dfooter margin-top: 100px) */
       body.page-blog-index .dfooter {
@@ -519,8 +521,12 @@
     }
 
     @media (max-width: 768px) {
+      /* 1fr is minmax(auto, 1fr). The nowrap filter row then forces this
+         column wider than the screen, and card images follow it. */
       body.page-blog-index .blog_links > .col-lg-10 {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
+        min-width: 0;
+        max-width: 100%;
         row-gap: 30px;
       }
 
