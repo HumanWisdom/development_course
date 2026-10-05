@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 import { OnboardingService } from '../../services/onboarding.service';
 import { SharedService } from "../../services/shared.service";
 import { Constant } from '../../services/constant';
@@ -10,13 +10,16 @@ import {
 } from "@angular/cdk/platform";
 import { ProgramType } from "../../models/program-model";
 import { NavigationService } from "../../services/navigation.service";
+import { Subscription } from 'rxjs';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-subscription-s09-v02',
   templateUrl: './subscription-s09-v02.page.html',
   styleUrls: ['./subscription-s09-v02.page.scss'],
 })
-export class SubscriptionS09V02Page implements OnInit {
+export class SubscriptionS09V02Page implements OnInit, OnDestroy {
+  private routerSub: Subscription;
   public myprograms = [];
   public notmyprograms = [];
   public notStarted = [];
@@ -48,6 +51,16 @@ export class SubscriptionS09V02Page implements OnInit {
   ngOnInit() {
     this.isActiveSubscription = SharedService.isSubscriber();
     this.getProgramData();
+    this.routerSub = this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe((event: NavigationEnd) => {
+      if (event.urlAfterRedirects.includes('myprogram') &&
+          !event.urlAfterRedirects.includes('manage-subscription') &&
+          !event.urlAfterRedirects.includes('cancel-subscription')) {
+        this.isActiveSubscription = SharedService.isSubscriber();
+        this.getProgramData();
+      }
+    });
   }
 
   autorenew(key, val = '', id = '') {
@@ -187,6 +200,12 @@ export class SubscriptionS09V02Page implements OnInit {
           this.router.navigate(["/"+ SharedService.getprogramName()+ "/onboarding/myprogram/manage-subscription"]);
         }
       }
+    }
+  }
+
+  ngOnDestroy() {
+    if (this.routerSub) {
+      this.routerSub.unsubscribe();
     }
   }
 
