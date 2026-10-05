@@ -10,9 +10,9 @@ include __DIR__ . '/../includes/organisation_header.php';
 ?>
 <main class="org-main">
   <div class="org-flow-card org-download-card text-center">
-    <h1 class="org-flow-title">Scan to download<br>the app</h1>
-    <img class="org-qr" src="<?= hw_org_h($assets['qr']) ?>" alt="Scan QR code to download the HappierMe app" width="200" height="200">
-    <div class="org-flow-rule"><span>OR</span></div>
+    <h1 class="org-flow-title org-download-heading">Scan to download<br>the app</h1>
+    <img class="org-qr org-download-qr" src="<?= hw_org_h($assets['qr']) ?>" alt="Scan QR code to download the HappierMe app" width="200" height="200">
+    <div class="org-flow-rule org-download-or"><span>OR</span></div>
     <div class="org-download-badges">
       <a href="<?= hw_org_h($assets['appstore_url']) ?>" target="_blank" rel="noopener">
         <img src="<?= hw_org_h(hw_asset_url($assets['appstore'])) ?>" alt="Download on the App Store" width="179" height="53">
