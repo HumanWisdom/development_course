@@ -157,7 +157,8 @@
       }
 
       .w-335px_m {
-        width: 335px;
+        width: 100%;
+        max-width: 100%;
       }
 
       /* Force White Plus/Minus Icons on Mobile Accordion */
