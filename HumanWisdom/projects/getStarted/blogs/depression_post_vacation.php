@@ -109,7 +109,7 @@
 
                 <div class="row mt20px rmb80px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                    <img src="https://miro.medium.com/v2/resize:fit:1358/format:webp/1*wnwv2errErKcVBbfaGScig.png" class="img-responsive" alt="Overcoming post vacation blues">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/86_new.webp" class="img-responsive" alt="Overcoming post vacation blues">
                   </div>
                 </div>
 
@@ -147,11 +147,23 @@
 
                 <h4 class="mtb0px blog_desc">
                 Learning from past experiences can help you plan better vacations going forward:<br>
-                • Choose destinations that balance relaxation and adventure.<br>
-                • Avoid overloading your itinerary to prevent burnout.<br>
-                • Leave financial room for flexibility to reduce stress post-vacation.
+                <ul>
+                  <li>
+                 Choose destinations that balance relaxation and adventure.</li>
+                <li>
+                 Avoid overloading your itinerary to prevent burnout.<br></li>
+                <li>
+                 Leave financial room for flexibility to reduce stress post-vacation.</li>
+</ul>
                 </h4>
 
+
+
+                
+                 <iframe id="youtubeIntro" loading="lazy" title="youtubeIntro"
+            src="https://www.youtube.com/embed/y5hd9MHnUyM?si=YOFWYNpc4seBRw3U"
+            class="cvideo_b yt-embed" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen
+            onclick="return logevent('click_play_video_home', 'index.php')"></iframe>
                 <h4 class="mtb0px blog_sub_title">
                 How HappierMe Can Help
                 </h4>
