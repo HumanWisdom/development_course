@@ -21,6 +21,7 @@ export interface ChatMessage {
   offer_related?: boolean; // Whether to offer related content
   is_followup?: boolean; // Whether this is a followup question
   feedback_given?: 'positive' | 'negative' | null; // Track user feedback
+  related_answer_given?: 'yes' | 'no' | null; // Track yes/no related content response
   has_more?: boolean; // Whether there are more options available
   isStreaming?: boolean; // Whether the bot message is still being streamed
 }

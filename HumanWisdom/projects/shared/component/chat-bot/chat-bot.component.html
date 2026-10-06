@@ -84,12 +84,21 @@
             <a class="questions-link" (click)="onQuestionsLinkClick($event)">Questions you can ask Olly</a>
           </div>
 
-          <!-- Give More Options Button (shown when bot offers related content or has more options) -->
-          <div *ngIf="isLast && message.sender === 'bot' && (message.offer_related || message.has_more) && !isLoading && !message.isStreaming"
-            class="more-options-container">
-            <button class="action-button more-options-button" (click)="onGiveMoreOptions()">
-              Give me more options
-            </button>
+          <!-- Yes/No Buttons (shown when bot offers related content OR has more options) -->
+          <div *ngIf="message.sender === 'bot' && (message.offer_related || message.has_more) && !message.isStreaming"
+            class="yes-no-container"
+            [class.answered]="!!message.related_answer_given">
+            <p class="yes-no-label">Would you like to see related content?</p>
+            <div class="yes-no-buttons">
+              <button class="action-button yes-button"
+                [class.selected]="message.related_answer_given === 'yes'"
+                [disabled]="!!message.related_answer_given || isLoading"
+                (click)="onYesClick(message)">Yes</button>
+              <button class="action-button no-button"
+                [class.selected]="message.related_answer_given === 'no'"
+                [disabled]="!!message.related_answer_given || isLoading"
+                (click)="onNoClick(message)">No</button>
+            </div>
           </div>
 
           <!-- Feedback Buttons (Thumbs Up/Down) - OUTSIDE the message bubble -->
