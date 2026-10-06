@@ -672,12 +672,15 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
   /**
    * Handle Yes button click - send yes response
    */
-  onYesClick(): void {
-    if (this.isLoading) {
+  onYesClick(message: ChatMessage): void {
+    if (this.isLoading || message.related_answer_given) {
       return;
     }
 
-    this.currentMessage = 'Yes';
+    // Mark message as answered immediately so buttons disable
+    this.chatStore.updateMessage({ id: message.id, updates: { related_answer_given: 'yes' } });
+
+    this.currentMessage = '';
     this.errorMessage = '';
     this.isLoading = true;
 
@@ -724,12 +727,15 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
   /**
    * Handle No button click - send no response
    */
-  onNoClick(): void {
-    if (this.isLoading) {
+  onNoClick(message: ChatMessage): void {
+    if (this.isLoading || message.related_answer_given) {
       return;
     }
 
-    this.currentMessage = 'No';
+    // Mark message as answered immediately so buttons disable
+    this.chatStore.updateMessage({ id: message.id, updates: { related_answer_given: 'no' } });
+
+    this.currentMessage = '';
     this.errorMessage = '';
     this.isLoading = true;
 
