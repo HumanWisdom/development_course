@@ -582,6 +582,25 @@ body.page-teenagers .owl_testimonials .teen-testimonials-footer .owl-nav {
     margin-left: 0;
   }
 
+  /* Mobile only: desktop .blog-scroll is 370px tall; cards are shorter, so the link sat too low */
+  .teen-blog-wrap .blog-scroll {
+    height: auto;
+    min-height: 0;
+  }
+
+  .teen-blog-wrap .blog-footer {
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .teen-blog-wrap .teen-blog-more {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   body.page-teenagers .teen-blog-wrap #blog-prev,
   body.page-teenagers .teen-blog-wrap #blog-next {
     display: none;

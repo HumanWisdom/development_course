@@ -2197,6 +2197,15 @@ Work</button>
   $('#toggle').on('click', function(e) {
     e.preventDefault();
     e.stopImmediatePropagation();
+    /* Ignore a second handler on the same click (shared #toggle script). */
+    if (this.dataset.blogToggleLock === '1') {
+      return;
+    }
+    this.dataset.blogToggleLock = '1';
+    var btn = this;
+    setTimeout(function () {
+      delete btn.dataset.blogToggleLock;
+    }, 0);
 
     isExpanded = !isExpanded;
     setToggleLabel(isExpanded ? 'View Less' : 'View More');

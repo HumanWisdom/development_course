@@ -315,6 +315,35 @@ img { max-width: 100%; display: block; }
   flex-shrink: 0;
 }
 
+.web_home_divlanding .hero-phone {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-shrink: 0;
+  gap: 0;
+}
+.web_home_divlanding .hero-phone picture {
+  display: flex;
+  line-height: 0;
+}
+/* Figma text: 220×18, centered on the phone (bezel 101–314 inside the 331px image) */
+.web_home_divlanding .hero-phone-caption {
+  box-sizing: border-box;
+  width: 220px;
+  height: 18px;
+  margin: 0 0 0 98px;
+  padding: 0;
+  font-family: "Poppins", Helvetica, sans-serif;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 0;
+  color: rgba(255, 247, 230, 1);
+  text-align: center;
+  white-space: nowrap;
+}
+
 .div-3 {margin-top: -6px; display: flex; flex-direction: column; gap: 30px; flex: 1; min-width: 280px; max-width: 654px; align-items: flex-start; }
 
 /* Keep rating / title / CTA on one left edge (bootstrap cols add padding/float otherwise) */
@@ -548,6 +577,19 @@ p:hover {
    TOPICS GRID
 ======================================== */
 .div-7 { width: 100%; max-width: 1340px; padding: 60px 80px; display: flex; flex-direction: column; gap: 40px; }
+/* Index topics: 1340px wide on a 1440px screen (50px each side) */
+@media (min-width: 769px) {
+  #main.frame > .div-7 {
+    box-sizing: border-box;
+    width: 1340px;
+    max-width: calc(100% - 100px);
+    min-width: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
 .div-wrapper-2 { display: flex; justify-content: center; }
 .text-wrapper-6 { font-size: 30px; font-weight: 600; color: #000; text-align: center; margin: 0; padding-bottom: 40px; }
 .text-wrapper-6-1{ font-size: 30px; font-weight: 600; color: #000; text-align: center; margin: 0; }
@@ -1384,16 +1426,22 @@ nav a:hover {
   box-sizing: border-box;
 }
 
-.tool-tab {
-  width: 127px;
+.tools-section .tool-tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: auto;
   height: 26px;
-  padding: 0px 11px;
+  padding: 0 12px;
   box-sizing: border-box;
+  border: 1px solid transparent;
   border-radius: 10px;
   background: rgba(238, 161, 112, 1);
   font-family: "Poppins", Helvetica, sans-serif;
   font-size: 12px;
   font-weight: 500;
+  line-height: 1;
   color: #fff;
   cursor: pointer;
   transition: background 0.18s, color 0.18s, border-color 0.18s;
@@ -2203,6 +2251,16 @@ nav a:hover {
   opacity: 1 !important;
   z-index: 2;
 }
+/* Index desktop blog caption — Figma 470×130, title inset 38×40 */
+@media (min-width: 769px) {
+  #exploreBlogSection .blog-caption {
+    background: rgba(255, 247, 230, 1);
+    padding: 38px 40px;
+  }
+  #exploreBlogSection .blog-title {
+    line-height: 150%;
+  }
+}
 .blog-footer {
   display: flex;
   align-items: center;
@@ -2715,6 +2773,13 @@ nav a:hover {
   .modal-content1 .cross_btn_row a[data-bs-dismiss="modal"] .cross_btn, .modal-content1 .popup-close-btn .cross_btn{
         min-width: 20px !important;
   }
+
+  /* Popup CTA — Figma mobile: 295 fill × 55 hug */
+  .modal-content1 .btn_popup {
+    width: 295px !important;
+    max-width: 100% !important;
+    height: 55px !important;
+  }
 }
 
 /* keep old selectors harmless */
@@ -2890,8 +2955,13 @@ nav a:hover {
     display: none;
     height: 0;
   }
-  .tool-tab {
+  .tools-section .tool-tab {
     flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1;
   }
   .tools-content-wrap {
     width: 100% !important;
@@ -2945,7 +3015,12 @@ nav a:hover {
     padding-right: 12px;
     gap: 8px;
   }
-  .tool-tab { font-size: 12px; padding: 4px 14px; }
+  .tools-section .tool-tab {
+    font-size: 12px;
+    padding: 0 14px;
+    text-align: center;
+    line-height: 1;
+  }
   .tools-section {
     padding-left: 0;
     padding-right: 0;
@@ -3104,6 +3179,10 @@ nav a:hover {
     object-fit: contain;
     object-position: center center;
     flex-shrink: 0;
+  }
+  .web_home_divlanding .hero-phone-caption {
+    width: 170px;
+    margin-left: 107px;
   }
 
   .div-3 { max-width: 100%; text-align: center; align-items: center; gap: 18px; }
@@ -4149,9 +4228,13 @@ nav a:hover {
   visibility: hidden;
 }
 
-/* Footer: social icons centered on the App Store / Google Play badges */
+/* Footer: social icons share the 154px badge width and align to its right edge */
 .dfooter_social_links {
-  justify-content: center;
+  width: 154px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: flex-end;
 }
 .dfooter .tright {
   text-align: center;

@@ -22,11 +22,8 @@
         jQuery(document).ready(function ($) {
             $("#toggle").click(function () {
                 var $btn = $("#toggle");
-                var $label = $btn.find(".toggle-label");
-                if ($label.length) {
-                    var expanding = $label.text().trim() === "View More";
-                    $label.text(expanding ? "View Less" : "View More");
-                    expanding ? $("#text").slideDown() : $("#text").slideUp();
+                /* blog_index owns this button (.toggle-label). Do not flip the label here. */
+                if ($btn.find(".toggle-label").length) {
                     return;
                 }
                 $btn.text() === "View More"
