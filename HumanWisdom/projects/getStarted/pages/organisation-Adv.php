@@ -35,7 +35,11 @@ include __DIR__ . '/../includes/organisation_header.php';
             <img src="<?= hw_org_h($benefit['icon']) ?>" alt="" width="120" height="120">
           </div>
           <div class="org-benefit-copy">
-            <h2 data-org-copy="iconTitle<?= $benefit['n'] ?>"><?= hw_org_h($copy['iconTitle' . $benefit['n']]) ?></h2>
+            <?php
+            $iconTitle = $copy['iconTitle' . $benefit['n']];
+            $iconTitleHtml = trim($iconTitle) === 'Feel better' ? 'Feel <br>better' : hw_org_h($iconTitle);
+            ?>
+            <h2 data-org-copy="iconTitle<?= $benefit['n'] ?>"><?= $iconTitleHtml ?></h2>
             <p data-org-copy="iconSubtitle<?= $benefit['n'] ?>"><?= hw_org_h($copy['iconSubtitle' . $benefit['n']]) ?></p>
           </div>
         </article>

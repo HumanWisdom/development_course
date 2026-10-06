@@ -61,7 +61,7 @@ include __DIR__ . '/../includes/organisation_header.php';
   <section class="org-quotes">
     <div class="org-quotes-inner">
       <div class="org-quote-mark d-lg-none">
-        <img src="<?= hw_org_h($assets['quote']) ?>" alt="">
+        <img src="<?= hw_org_h(hw_asset_url(hw_org_base() . '/assets/svgs/org-quote.svg')) ?>" alt="" width="48" height="32">
       </div>
       <div class="org-quotes-grid">
         <article class="org-card">
