@@ -53,7 +53,7 @@
 
             <div class="row mt20px rmb80px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <img src="https://miro.medium.com/v2/resize:fit:1200/1*HOvhBIvSvxNGZ_PDmksjHQ.png" class="img-responsive" alt="Depression post vacation">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/83.webp" class="img-responsive" alt="Depression post vacation">
               </div>
             </div>
 
@@ -74,15 +74,22 @@
 
                 <h4 class="mtb0px blog_desc">
                 <b>Common causes include:</b><br>
-                <b>Disrupted routine:</b> Structured daily life pauses during a vacation, making it harder to readjust.<br>
-                <b>Unmet expectations:</b> A holiday that didn't meet personal expectations can amplify dissatisfaction.<br>
-                <b>Overwhelming responsibilities:</b> Returning to piled-up work, household tasks or pending commitments triggers that slump feeling.<br>
-                <b>Emotional contrast:</b> The excitement of a vacation, followed by routine monotony, creates an emotional imbalance.
-                </h4>
+                <ul>
+                  <li>
+                <b>Disrupted routine:</b> Structured daily life pauses during a vacation, making it harder to readjust.<br></li>
+               <li> <b>Unmet expectations:</b> A holiday that didn't meet personal expectations can amplify dissatisfaction.<br></li>
+                <li><b>Overwhelming responsibilities:</b> Returning to piled-up work, household tasks or pending commitments triggers that slump feeling.<br></li>
+                <li><b>Emotional contrast:</b> The excitement of a vacation, followed by routine monotony, creates an emotional imbalance.</li>
+                
+</ul></h4>
 
                 <h4 class="mtb0px blog_sub_title">
                 The Role of Holiday Depression and Anxiety
                 </h4>
+
+
+
+
 
                 <h4 class="mtb0px blog_desc">
                 Holiday depression and holiday anxiety often go hand in hand. Depression stems from longing for the joy of the holiday, while anxiety builds from anticipating a return to responsibilities. These emotions can feel overwhelming, but modern tools like HappierMe offer accessible ways to manage them.
