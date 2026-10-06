@@ -77,6 +77,7 @@ hw_lcp_send_preload_headers();
         <div class="div-wrapper">
           <div class="div">
             <div class="div-2">
+              <div class="hero-phone">
               <picture>
                 <source media="(min-width: 821px)" type="image/webp" srcset="<?= $hw_lcp_banner_desktop_srcset ?>" sizes="<?= hw_lcp_image_sizes('banner_desktop'); ?>" />
                 <source media="(max-width: 820px)" type="image/webp" srcset="<?= $hw_lcp_banner_mobile_srcset ?>" sizes="<?= hw_lcp_image_sizes('banner_mobile'); ?>" />
@@ -87,6 +88,8 @@ hw_lcp_send_preload_headers();
                   width="331" height="480"
                   fetchpriority="high" decoding="sync" alt="HappierMe app" />
               </picture>
+              <p class="hero-phone-caption">for Adults &amp; Teenagers</p>
+              </div>
           <div class="div-3">
                  <!-- rating row -->
                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 pt_18px">

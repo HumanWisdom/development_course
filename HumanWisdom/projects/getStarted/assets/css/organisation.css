@@ -1468,8 +1468,7 @@ body.org-flow-download .org-download-card {
   }
 
   body.org-page .org-header {
-    background: var(--org-cream);
-    box-shadow: none;
+    background: #fff;
   }
 
   body.org-page .org-header-inner {
@@ -1701,39 +1700,150 @@ body.org-flow-download .org-download-card {
   }
 }
 
-/* Download page, phone only — Figma 11951:3930. Desktop card stays 470×573. */
+/* Flow screens, phone only — cream page, centered logo, 295×50 buttons.
+   Desktop keeps the cover image and white cards. */
+@media (max-width: 767.98px) {
+  body.org-flow {
+    background: var(--org-cream);
+  }
+
+  body.org-flow .org-main {
+    background: var(--org-cream);
+    background-image: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 16px 20px 48px;
+  }
+
+  body.org-flow .org-flow-card {
+    width: 335px;
+    max-width: 100%;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  body.org-flow .org-continue-actions {
+    width: 295px;
+    max-width: 100%;
+    gap: 10px;
+  }
+
+  body.org-flow-success .org-main {
+    padding-top: 8px;
+  }
+
+  body.org-flow-success .org-success-card {
+    gap: 24px;
+  }
+
+  body.org-flow-success .org-success-heading {
+    width: 295px;
+    max-width: 100%;
+    gap: 4px;
+  }
+
+  body.org-flow-success .org-success-heading .org-lead {
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  body.org-flow-success .org-success-art {
+    margin: 0;
+  }
+
+  body.org-flow-success .org-trial {
+    width: 295px;
+    max-width: 100%;
+    padding: 16px 20px;
+    gap: 8px;
+  }
+
+  body.org-flow-success .org-trial-top {
+    gap: 16px;
+  }
+
+  body.org-flow-success .org-trial-ends {
+    line-height: 1.4;
+  }
+
+  body.org-flow .org-devices {
+    margin: 12px auto 16px;
+  }
+
+  body.org-flow .org-continue-note {
+    margin-top: 12px;
+  }
+
+  body.org-flow .org-btn-block,
+  body.org-flow button.org-btn.org-btn-block,
+  body.org-flow a.org-btn.org-btn-block,
+  body.org-flow .org-success-card .org-btn-block,
+  body.org-flow .org-success-card a.org-btn.org-btn-block,
+  body.org-flow .org-continue-actions .org-btn-block,
+  body.org-flow .org-continue-actions a.org-btn.org-btn-block {
+    width: 295px;
+    max-width: 100%;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 20px;
+    border-radius: 100px;
+    box-sizing: border-box;
+  }
+}
+
+/* Download page, phone only — Figma 11951:3930 / Frame 14252.
+   Cream page, no card. 295px stack, 40px gap: badges, OR, heading, QR.
+   Desktop card stays 470×573 on the cover, heading → QR → OR → badges. */
 @media (max-width: 767.98px) {
   body.org-flow-download {
     overflow-x: hidden;
+    background: var(--org-cream);
   }
 
   body.org-flow-download .org-main {
     display: flex;
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
     justify-content: flex-start;
-    padding: 20px 16px 32px;
+    padding: 40px 16px 48px;
     min-height: calc(100vh - 70px);
     min-height: calc(100dvh - 70px);
     box-sizing: border-box;
+    background: var(--org-cream);
+    background-image: none;
   }
 
   body.org-flow-download .org-download-card {
-    width: 100%;
+    width: 295px;
     max-width: 100%;
     min-width: 0;
     min-height: 0;
-    margin: 0;
-    padding: 32px 16px 28px;
-    gap: 28px;
-    border-radius: 16px;
+    margin: 0 auto;
+    padding: 0;
+    gap: 40px;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
     box-sizing: border-box;
-    overflow: hidden;
+  }
+
+  body.org-flow-download .org-download-or {
+    order: 2;
+  }
+
+  body.org-flow-download .org-download-heading {
+    order: 3;
+  }
+
+  body.org-flow-download .org-download-qr {
+    order: 4;
   }
 
   .org-download-card .org-flow-title {
     max-width: 100%;
-    font-size: 28px;
+    font-size: 30px;
     font-weight: 600;
     line-height: 1.2;
   }
@@ -1753,31 +1863,35 @@ body.org-flow-download .org-download-card {
   }
 
   body.org-flow-download .org-download-badges {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     max-width: 100%;
     min-width: 0;
     height: auto;
-    gap: 12px;
-    justify-content: stretch;
+    gap: 8px;
   }
 
   body.org-flow-download .org-download-badges a {
-    display: block;
-    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 178.79px;
     min-width: 0;
     max-width: 100%;
-    height: auto;
+    height: 52.97px;
     flex: none;
   }
 
   body.org-flow-download .org-download-badges img {
-    width: 100%;
-    height: auto;
+    width: 178.79px;
+    height: 52.97px;
     max-width: 100%;
-    max-height: none;
-    aspect-ratio: 179 / 53;
+    max-height: 52.97px;
+    aspect-ratio: auto;
     object-fit: contain;
   }
 }
