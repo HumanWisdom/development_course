@@ -215,11 +215,18 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
 
   goToTour(): void {
     this.closeTourPopup();
-    if (this.isAdults) {
+   /*  if (this.isAdults) {
       this.router.navigate(['/adults/videopage', 'introduction_to_happierme-videos-video_tour.mp4', 'T', 'Video tour of the app']);
     } else {
       this.router.navigate(['/teenagers/videopage', 'introduction_to_happierme-videos-video_tour.mp4', 'T', 'Video tour of the app']);
-    }
+    } */
+   if (this.isAdults) {
+     this.router.navigate(['/adults/intro-happierme']);
+   }
+   else{
+      this.router.navigate(['/teenagers/intro-happierme']);
+
+   }
   }
 
   resolveMediaUrl(url: string): string {
