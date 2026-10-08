@@ -261,48 +261,54 @@ export class SingleAudioContentComponent implements OnInit {
     let lines = text.split('\n');
     let result = '';
     let inList = false;
+    let justEmittedHeading = false;
 
     for (let line of lines) {
       let trimmed = line.trim();
 
       if (trimmed === '---') {
-        if (inList) {
-          result += '</ul>';
-          inList = false;
-        }
+        if (inList) { result += '</ul>'; inList = false; }
+        justEmittedHeading = false;
         const hrColor = this.isAdults ? '#000000' : '#ffffff';
         result += `<hr style="border: none; margin: 0; border-top: 1px solid ${hrColor};"/>`;
         continue;
       }
 
       if (trimmed.startsWith('- ') || trimmed.startsWith('* ')) {
-        if (!inList) {
-          result += '<ul style="padding-left: 20px;">';
-          inList = true;
-        }
+        if (!inList) { result += '<ul style="padding-left: 20px;">'; inList = true; }
+        justEmittedHeading = false;
         result += '<li style="margin-bottom: 5px;">' + trimmed.substring(2) + '</li>';
       } else if (trimmed.startsWith('### ')) {
         if (inList) { result += '</ul>'; inList = false; }
         result += '<h3>' + trimmed.substring(4) + '</h3>';
+        justEmittedHeading = true;
       } else if (trimmed.startsWith('## ')) {
         if (inList) { result += '</ul>'; inList = false; }
         result += '<h2>' + trimmed.substring(3) + '</h2>';
+        justEmittedHeading = true;
       } else if (trimmed.startsWith('# ')) {
         if (inList) { result += '</ul>'; inList = false; }
         result += '<h2>' + trimmed.substring(2) + '</h2>';
+        justEmittedHeading = true;
       } else {
-        if (inList) {
-          result += '</ul>';
-          inList = false;
-        }
+        if (inList) { result += '</ul>'; inList = false; }
         if (trimmed === '') {
-          result += '<br/>';
+          // Skip blank line immediately after a heading
+          if (justEmittedHeading) { justEmittedHeading = false; continue; }
+          // Blank line = paragraph break
+          result += '</p><p>';
         } else {
-          result += line + '<br/>';
+          justEmittedHeading = false;
+          result += trimmed + ' ';
         }
       }
     }
     if (inList) result += '</ul>';
+
+    // Wrap all loose text in a paragraph
+    result = '<p>' + result + '</p>';
+    // Clean up empty paragraphs
+    result = result.replace(/<p>\s*<\/p>/g, '');
 
     // Markdown links [label](url) — before emphasis replaces brackets
     result = result.replace(
