@@ -6,3 +6,38 @@
     color: #000;
     margin-left: 5px;
 }
+
+.raf_share_row {
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.raf_copy_link_icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 49px;
+  height: 49px;
+  border-radius: 50%;
+  cursor: pointer;
+  vertical-align: middle;
+  flex-shrink: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.raf_copy_adults {
+  background-color: #FFE8BB;
+
+  svg {
+    fill: #000;
+  }
+}
+
+.raf_copy_teens {
+  background-color: #10326B;
+
+  svg {
+    fill: #fff;
+  }
+}
