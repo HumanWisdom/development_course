@@ -1,25 +1,27 @@
-import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
+import { HttpContextToken, HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { Observable, throwError } from 'rxjs';
-import { catchError } from 'rxjs/internal/operators/catchError';
+import { catchError, switchMap } from 'rxjs/operators';
 import {
   getStoredAccessToken,
-  isWithinPostLoginGracePeriod,
   shouldShowSessionExpiredAlert,
 } from '../../../shared/config/session-auth.config';
+import { GuestSessionService } from '../../../shared/services/guest-session.service';
+
+const GUEST_TOKEN_RETRIED = new HttpContextToken<boolean>(() => false);
 
 @Injectable({
   providedIn: 'root'
 })
 export class TokenInterceptorService implements HttpInterceptor {
-  token = '';
   private sessionExpiredAlertShown = false;
 
   constructor(
     private router: Router,
-    private alertController: AlertController
+    private alertController: AlertController,
+    private guestSession: GuestSessionService
   ) {
   }
 
@@ -29,46 +31,44 @@ export class TokenInterceptorService implements HttpInterceptor {
       return next.handle(req);
     }
 
-    this.token = getStoredAccessToken();
-    let tokenizedReq = req;
-    if (this.token) {
-      tokenizedReq = req.clone({
-        setHeaders: {
-          Authorization: `Bearer ${this.token}`,
-        },
-      });
+    if (this.guestSession.shouldAwaitGuestToken(req.url)) {
+      return this.guestSession.getToken().pipe(switchMap(() => this.send(req, next)));
     }
+    return this.send(req, next);
+  }
+
+  private send(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    const token = getStoredAccessToken();
+    const tokenizedReq = token
+      ? req.clone({ setHeaders: { Authorization: `Bearer ${token}` } })
+      : req;
     return next.handle(tokenizedReq).pipe(catchError(err => {
-      if (err instanceof HttpErrorResponse) {
-        if (err.status === 401) {
-          const browserUrl = window.location.href;
-          const isAuthPage = browserUrl.includes('login') || browserUrl.includes('signup') || browserUrl.includes('onboarding') || browserUrl.includes('wisdom-survey');
-          const isFromSignupFlow = localStorage.getItem('isFromSignupFlow') === 'T';
+      if (!(err instanceof HttpErrorResponse) || err.status !== 401) {
+        return throwError(err);
+      }
+      if (this.guestSession.isAuthEndpoint(req.url) || this.guestSession.isAuthFlowActive()) {
+        return throwError(err);
+      }
 
-          // Skip handling for login/signup related APIs
-          const excludedUrls = ['/login', '/AddLearner', '/verifyGoogleTokenAndLogin', '/verifyFaceBookTokenAndLogin', '/verifyAwsSSOTokenAndLogin', '/forgotPassword', '/verificationCode', '/VerifyUserByEmail'];
-          const isExcluded = excludedUrls.some(url => err.url && err.url.includes(url));
-
-          if (isExcluded || isAuthPage || isFromSignupFlow) {
-            return throwError(err);
-          }
-          
-          const userEmail = localStorage.getItem('email');
-          const isGuestEmail = userEmail === 'guest@humanwisdom.me' || userEmail === '"guest@humanwisdom.me"';
-          const isLoggedIn = localStorage.getItem("isloggedin") === 'T';
-
-          if (isLoggedIn && !isGuestEmail && shouldShowSessionExpiredAlert()) {
-            this.showSessionExpiredAlert();
-          } else if (isLoggedIn && !isGuestEmail && isWithinPostLoginGracePeriod()) {
-            return throwError(err);
-          } else if (isGuestEmail && !isLoggedIn && !isAuthPage && !isFromSignupFlow) {
-            // ONLY refresh for actual guest users who are NOT in an onboarding flow
-            localStorage.removeItem('token');
-            window.location.reload();
-          }
+      if (this.guestSession.isRegisteredUserLoggedIn()) {
+        if (shouldShowSessionExpiredAlert()) {
+          this.showSessionExpiredAlert();
         }
         return throwError(err);
       }
+
+      if (localStorage.getItem('isloggedin') !== 'T' && !req.context.get(GUEST_TOKEN_RETRIED)) {
+        // Only drop the token this request used; another request may already have stored a fresh one
+        if (getStoredAccessToken() === token) {
+          localStorage.removeItem('token');
+        }
+        return this.guestSession.getToken().pipe(
+          switchMap(newToken => newToken
+            ? this.send(req.clone({ context: req.context.set(GUEST_TOKEN_RETRIED, true) }), next)
+            : throwError(err))
+        );
+      }
+      return throwError(err);
     }));
   }
 
