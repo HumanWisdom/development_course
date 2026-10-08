@@ -16,6 +16,7 @@ export class ReferFriendPage {
   name = '';
   content = '';
   enableAlert = false;
+  linkCopied = false;
   emailElmtRegex = new RegExp('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$');
   isAdults: boolean = true; 
 
@@ -25,6 +26,24 @@ export class ReferFriendPage {
     } else {
       this.isAdults = false;
     }
+  }
+
+  copyAppLink() {
+    const appLink = 'https://onelink.to/hsnt8b';
+    navigator.clipboard.writeText(appLink).then(() => {
+      this.linkCopied = true;
+      setTimeout(() => { this.linkCopied = false; }, 2000);
+    }).catch(() => {
+      // Fallback for environments where clipboard API is unavailable
+      const el = document.createElement('textarea');
+      el.value = appLink;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+      this.linkCopied = true;
+      setTimeout(() => { this.linkCopied = false; }, 2000);
+    });
   }
 
   sharewhatsapp(){
