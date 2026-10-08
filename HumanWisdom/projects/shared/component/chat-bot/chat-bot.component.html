@@ -84,23 +84,6 @@
             <a class="questions-link" (click)="onQuestionsLinkClick($event)">Questions you can ask Olly</a>
           </div>
 
-          <!-- Yes/No Buttons (shown when bot offers related content OR has more options) -->
-          <div *ngIf="message.sender === 'bot' && (message.offer_related || message.has_more) && !message.isStreaming"
-            class="yes-no-container"
-            [class.answered]="!!message.related_answer_given">
-            <p class="yes-no-label">Would you like to see related content?</p>
-            <div class="yes-no-buttons">
-              <button class="action-button yes-button"
-                [class.selected]="message.related_answer_given === 'yes'"
-                [disabled]="!!message.related_answer_given || isLoading"
-                (click)="onYesClick(message)">Yes</button>
-              <button class="action-button no-button"
-                [class.selected]="message.related_answer_given === 'no'"
-                [disabled]="!!message.related_answer_given || isLoading"
-                (click)="onNoClick(message)">No</button>
-            </div>
-          </div>
-
           <!-- Feedback Buttons (Thumbs Up/Down) - OUTSIDE the message bubble -->
           <div *ngIf="!message.isTyping && message.allow_feedback && message.sender === 'bot' && !message.isStreaming"
             class="feedback-container">
@@ -146,6 +129,23 @@
                   alt="Thumbs Down Active" />
               </ng-container>
             </button>
+          </div>
+
+          <!-- Yes/No Buttons (shown when bot offers related content OR has more options) -->
+          <div *ngIf="message.sender === 'bot' && (message.offer_related || message.has_more) && !message.isStreaming"
+            class="yes-no-container"
+            [class.answered]="!!message.related_answer_given">
+            <p class="yes-no-label">Would you like to see related content?</p>
+            <div class="yes-no-buttons">
+              <button class="action-button yes-button"
+                [class.selected]="message.related_answer_given === 'yes'"
+                [disabled]="!!message.related_answer_given || isLoading"
+                (click)="onYesClick(message)">Yes</button>
+              <button class="action-button no-button"
+                [class.selected]="message.related_answer_given === 'no'"
+                [disabled]="!!message.related_answer_given || isLoading"
+                (click)="onNoClick(message)">No</button>
+            </div>
           </div>
 
           <!-- <span class="timestamp" *ngIf="shouldShowTimestamp(message, isFirst)">{{ formatTimestamp(message.timestamp)
