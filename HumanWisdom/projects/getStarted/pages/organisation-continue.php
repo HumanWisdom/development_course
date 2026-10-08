@@ -3,7 +3,7 @@ require_once __DIR__ . '/../includes/organisation_helper.php';
 $org = hw_org_fetch();
 $assets = hw_org_cdn_assets();
 $pageTitle = 'Continue on web or download the app | HappierMe';
-$bodyClass = 'org-page org-flow';
+$bodyClass = 'org-page org-flow org-flow-continue';
 $showCopyright = false;
 include __DIR__ . '/../includes/organisation_head.php';
 include __DIR__ . '/../includes/organisation_header.php';
