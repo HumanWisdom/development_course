@@ -508,7 +508,7 @@ a.org-btn-outline:visited:hover,
 .org-phone-caption {
   box-sizing: border-box;
   width: 80%;
-  margin: 0 0 0 20%;
+  margin: 0 0 0 68px;
   padding: 0;
   font-size: 12px;
   font-style: italic;
@@ -1846,8 +1846,10 @@ body.org-flow-download .org-download-card {
     gap: 18px;
   }
 
+  /* Mobile only. Frame 335px, padding-right 50px. Image group 210.65×306,
+     centered in the remaining width so it sits left of the column. */
   body.org-page-landing .org-phone {
-    width: 211px;
+    width: 335px;
     max-width: 100%;
     margin: 0 auto;
     padding: 0 50px 0 0;
@@ -1861,31 +1863,31 @@ body.org-flow-download .org-download-card {
 
   body.org-page-landing .org-phone picture {
     display: block;
-    width: 211px;
+    width: 210.65px;
     max-width: 100%;
     margin: 0;
     line-height: 0;
+    flex-shrink: 0;
   }
 
   body.org-page-landing .org-phone img {
-    width: 211px;
-    height: 306px;
-    max-width: 100%;
+    width: 210.65px;
+    height: auto;
+    max-width: 210.65px;
     max-height: none;
     margin: 0;
     object-fit: contain;
     object-position: center center;
   }
 
-  /* Figma 11951:4044 — 157px line, 54px from the image’s left edge, centered on the phone. */
+  /* Caption shares the image’s left edge. 54px inset centers the line on the handset. */
   body.org-page-landing .org-phone-caption {
-    width: 211px;
+    width: 210.65px;
     max-width: 100%;
     margin: 0;
     padding: 0 0 0 54px;
     box-sizing: border-box;
     text-align: center;
-    margin-left: 28px;
   }
 
   body.org-page-landing .org-hero-copy {
