@@ -369,7 +369,12 @@
     document.querySelectorAll("[data-org-copy]").forEach(function (el) {
       var value = row[el.getAttribute("data-org-copy")];
       if (value != null && String(value).trim() !== "") {
-        el.textContent = String(value).trim();
+        var text = String(value).trim();
+        if (el.getAttribute("data-org-copy") === "iconTitle1" && text === "Feel better") {
+          el.innerHTML = "Feel <br>better";
+        } else {
+          el.textContent = text;
+        }
       }
     });
   }

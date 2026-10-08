@@ -614,8 +614,8 @@ export class SearchPopularItemsPage implements OnInit, OnDestroy {
     }
     const path = encodeURIComponent(media.replaceAll('/', '~'));
     const route = this.isAdults
-      ? ['adults', 'audiopage', path, data.PodcastID, 'T', data.Title]
-      : ['teenagers', 'audiopage', path, data.PodcastID, 'T', data.Title];
+      ? ['adults', 'audiopage', path, data.PodcastID, 'T', data.Title, 'podcast']
+      : ['teenagers', 'audiopage', path, data.PodcastID, 'T', data.Title, 'podcast'];
     this.router.navigate(route);
   }
 
