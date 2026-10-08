@@ -376,6 +376,19 @@ img { max-width: 100%; display: block; }
     margin: 0;
   }
   .pt_18px { padding-top: 18px; }
+  .web_home_divlanding .hero-phone {
+    width: 211px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: flex-start;
+  }
+  .web_home_divlanding .hero-phone picture {
+    display: block;
+    width: 211px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
   .web_home_divlanding .new-app-adults-teen {
     display: block;
     width: 211px;
@@ -387,6 +400,10 @@ img { max-width: 100%; display: block; }
     object-fit: contain;
     object-position: center center;
     flex-shrink: 0;
+  }
+  .web_home_divlanding .hero-phone-caption {
+    width: 170px;
+    margin-left: 45px;
   }
   .web_home_divlanding .div-3 {
     width: min(335px, calc(100% - 40px));

@@ -889,6 +889,22 @@ button#org-continue-btn.org-btn:disabled {
   cursor: not-allowed;
 }
 
+.org-signup-login {
+  margin: 32px 0 0;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0;
+  text-align: center;
+  color: #000;
+}
+
+.org-signup-login a {
+  color: inherit;
+  font-weight: 500;
+  text-decoration: none;
+}
+
 .org-check {
   display: flex;
   align-items: flex-start;
@@ -1457,10 +1473,10 @@ body.org-flow-download .org-download-card {
   }
 
   img.org-logo {
-    width: 160px;
-    height: 37px;
-    max-width: 160px;
-    object-position: center;
+    width: 130px;
+    height: 30px;
+    max-width: 130px;
+    object-position: left center;
   }
 
   img.org-partner-logo {
@@ -1473,7 +1489,7 @@ body.org-flow-download .org-download-card {
   }
 
   body.org-page .org-header-inner {
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   .org-kicker {
@@ -1717,23 +1733,27 @@ body.org-flow-download .org-download-card {
   }
 
   body.org-page img.org-logo {
+    width: 130px;
+    height: 30px;
+    max-width: 130px;
     object-position: left center;
   }
 
-  /* Adv offer, phone only. Header logo centered.
+  /* Adv offer, phone only. Header logo left.
      Button 295×50, padding 15/20, label 15px.
      Benefit rows 295×60, icon 60 with 8px pad, copy gap 3. */
   body.org-page-adv .org-header-inner {
-    justify-content: center;
+    justify-content: flex-start;
     min-height: 70px;
     height: 70px;
     padding: 0 20px;
   }
 
   body.org-page-adv img.org-logo {
-    width: 160px;
-    height: 37px;
-    object-position: center;
+    width: 130px;
+    height: 30px;
+    max-width: 130px;
+    object-position: left center;
   }
 
   body.org-page-adv .org-benefits-list {
@@ -1807,10 +1827,11 @@ body.org-flow-download .org-download-card {
   }
 
   /* Landing hero, phone only. Header 375×70.
-     Phone frame 335×306, caption centered under it.
+     Figma 11951:4041 — frame 335×306, padding-right 50px, image centered
+     in the remaining width so it sits left of the column. Image 211×306.
      Copy column 335, gap 18. Create account 335×55. */
   body.org-page-landing .org-header-inner {
-    justify-content: center;
+    justify-content: flex-start;
     min-height: 70px;
     height: 70px;
     padding: 0 20px;
@@ -1829,33 +1850,40 @@ body.org-flow-download .org-download-card {
     width: 335px;
     max-width: 100%;
     margin: 0 auto;
-    padding-right: 50px;
+    padding: 0 50px 0 0;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
     justify-content: flex-start;
     gap: 10px;
   }
 
   body.org-page-landing .org-phone picture {
     display: block;
+    width: 211px;
+    max-width: 100%;
+    margin: 0;
     line-height: 0;
   }
 
   body.org-page-landing .org-phone img {
-    width: 100%;
-    height: auto;
+    width: 211px;
+    height: 306px;
     max-width: 100%;
     max-height: none;
     margin: 0;
     object-fit: contain;
-    object-position: center bottom;
+    object-position: center center;
   }
 
+  /* Figma 11951:4044 — 157px line, 54px from the image’s left edge, centered on the phone. */
   body.org-page-landing .org-phone-caption {
-    width: 100%;
+    width: 211px;
+    max-width: 100%;
     margin: 0;
+    padding: 0 0 0 54px;
+    box-sizing: border-box;
     text-align: center;
   }
 
@@ -1969,9 +1997,15 @@ body.org-flow-download .org-download-card {
     box-sizing: border-box;
   }
 
+  body.org-flow-otp,
   body.org-flow-success,
   body.org-flow-continue {
     background: var(--org-cream);
+  }
+
+  body.org-flow-otp .org-main {
+    background: var(--org-cream);
+    background-image: none;
   }
 
   body.org-flow-success .org-main,
@@ -2064,7 +2098,11 @@ body.org-flow-download .org-download-card {
   }
 
   body.org-flow-continue .org-devices {
-    margin: 0;
+    width: 122.45px;
+    height: 100px;
+    max-width: 122.45px;
+    margin: 0 auto;
+    object-fit: contain;
   }
 
   body.org-flow-continue .org-continue-note {
@@ -2094,7 +2132,7 @@ body.org-flow-download .org-download-card {
   }
 
   /* Signup, phone only — Frame 14252: 335px, pad 20, gap 32.
-     Fields 295×50, radius 12, icons 24. Button 295×48, 40px under the ticks. */
+     Fields 295×50, radius 12, icons 24. Button 295×48. */
   body.org-flow-signup {
     background: var(--org-cream);
   }
@@ -2203,10 +2241,28 @@ body.org-flow-download .org-download-card {
     width: 295px;
     max-width: 100%;
     height: 48px;
-    margin: 40px 0 0;
+    margin: 32px 0 0;
     padding: 10px 20px;
     border-radius: 100px;
     box-sizing: border-box;
+  }
+
+  body.org-flow-signup .org-signup-login {
+    width: 295px;
+    max-width: 100%;
+    margin: 32px 0 0;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0;
+    text-align: center;
+    color: #000;
+  }
+
+  body.org-flow-signup .org-signup-login a {
+    color: #000;
+    font-weight: 500;
+    text-decoration: none;
   }
 }
 

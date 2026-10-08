@@ -1,7 +1,7 @@
 .sc_01 {
     position: relative;
     min-height: 100vh !important;
-    padding: 120px 20px 140px 20px;
+    padding: 120px 20px calc(170px + env(safe-area-inset-bottom, 0px)) 20px;
 }
 
 .mc_01_v3_ext {
@@ -31,6 +31,14 @@
     cursor: pointer;
     position: relative;
     transition: background 0.3s ease;
+    touch-action: manipulation !important;
+    -webkit-tap-highlight-color: transparent;
+
+    img {
+        pointer-events: none;
+        -webkit-user-drag: none;
+        user-select: none;
+    }
 
     &:hover {
         background: #FFD889;
@@ -196,6 +204,14 @@
     cursor: pointer;
     box-sizing: border-box;
     transition: background 0.3s ease;
+    touch-action: manipulation !important;
+    -webkit-tap-highlight-color: transparent;
+
+    img {
+        pointer-events: none;
+        -webkit-user-drag: none;
+        user-select: none;
+    }
 
     &:hover {
         background: #FFD889;
@@ -843,7 +859,7 @@
     .odiv {
         display: flex;
         overflow-x: auto;
-        padding: 15px !important;
+        padding: 15px 15px calc(15px + env(safe-area-inset-bottom, 0px)) 15px !important;
         gap: 10px;
         box-shadow: 0 -2px 2px #00000010;
         &::-webkit-scrollbar {
@@ -972,7 +988,7 @@
 }
 
 .footer_dots {
-    pointer-events: auto;
+    pointer-events: none;
     padding: 10px 0 0 0 !important;
 }
 
@@ -1116,6 +1132,7 @@
         overflow: hidden;
         opacity: 0;
         visibility: hidden;
+        pointer-events: none;
     }
 }
 
