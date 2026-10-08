@@ -30,10 +30,7 @@ export class ReferFriendPage {
 
   copyAppLink() {
     const appLink = 'https://onelink.to/hsnt8b';
-    navigator.clipboard.writeText(appLink).then(() => {
-      this.linkCopied = true;
-      setTimeout(() => { this.linkCopied = false; }, 2000);
-    }).catch(() => {
+    navigator.clipboard.writeText(appLink).catch(() => {
       // Fallback for environments where clipboard API is unavailable
       const el = document.createElement('textarea');
       el.value = appLink;
@@ -41,9 +38,9 @@ export class ReferFriendPage {
       el.select();
       document.execCommand('copy');
       document.body.removeChild(el);
-      this.linkCopied = true;
-      setTimeout(() => { this.linkCopied = false; }, 2000);
     });
+    this.linkCopied = true;
+    setTimeout(() => { this.linkCopied = false; }, 4000);
   }
 
   sharewhatsapp(){

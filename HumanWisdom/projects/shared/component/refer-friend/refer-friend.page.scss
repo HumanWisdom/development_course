@@ -13,29 +13,31 @@
   align-items: center;
 }
 
-.raf_copy_link_btn {
+.raf_copy_link_icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 49px;
+  height: 49px;
   border-radius: 50%;
-  border: none;
-  background-color: #555;
-  color: #fff;
   cursor: pointer;
-  position: relative;
   vertical-align: middle;
   flex-shrink: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
 
-  .raf_copied_text {
-    position: absolute;
-    bottom: -22px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 10px;
-    white-space: nowrap;
-    color: #555;
-    font-weight: 600;
+.raf_copy_adults {
+  background-color: #FFE8BB;
+
+  svg {
+    fill: #000;
+  }
+}
+
+.raf_copy_teens {
+  background-color: #10326B;
+
+  svg {
+    fill: #fff;
   }
 }
