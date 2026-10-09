@@ -159,7 +159,7 @@
                   {{exercise.Description}}
                 </p>
                 <!-- Type 1: Horizontal Card (Image Left, Content Right) -->
-                <div *ngIf="exercise.Type === 1 || !exercise.Type" class="card_type1"
+                <div *ngIf="exercise.Type === 1 || !exercise.Type" class="card_type1" role="button"
                   (click)="onExerciseClick(exercise)">
                   <div class="card_type1_img_container">
                     <img [src]="exercise.imgPath.split(',')[0]" alt="">
@@ -220,7 +220,7 @@
                 </div>
 
                 <!-- Type 2: Vertical Card (Large Image Top) -->
-                <div *ngIf="exercise.Type === 2" class="exercise_card" (click)="onExerciseClick(exercise)">
+                <div *ngIf="exercise.Type === 2" class="exercise_card" role="button" (click)="onExerciseClick(exercise)">
                   <div class="card_image_container">
                     <img [src]="exercise.imgPath.split(',')[0]" class="card_img" alt="">
                     <div class="icon_overlay" *ngIf="getSectionIcon(exercise.Section)">

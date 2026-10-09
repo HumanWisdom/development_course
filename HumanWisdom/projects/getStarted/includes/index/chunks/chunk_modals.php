@@ -12,7 +12,7 @@
           <div class="human-skills-modal-inner">
             <div class="human-skills-modal-header">
               <h2 class="human-skills-modal-title" id="humanSkillsModalLabel">Life skills</h2>
-              <p class="human-skills-modal-subtitle">Feel better. Do better.</p>
+              <p class="human-skills-modal-subtitle">Feel calmer. Strengthen your relationships.<br>Build these skills and live a happier life.</p>
             </div>
             <ul class="human-skills-list">
               <li>Self-awareness</li>
