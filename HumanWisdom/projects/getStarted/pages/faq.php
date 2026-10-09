@@ -151,7 +151,7 @@ Blogs 15 -FAQ
 
                     <h2 class="accordion-header" id="heading_c11">
                       
-                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c11"
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c11"
                         aria-expanded="true" aria-controls="c11">
                        About HappierMe 
                       </button>
