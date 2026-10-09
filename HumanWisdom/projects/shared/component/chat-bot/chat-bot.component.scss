@@ -667,6 +667,12 @@
   color: inherit !important;
   text-decoration: underline !important;
   cursor: pointer !important;
+  pointer-events: auto !important;
+
+  * {
+    cursor: pointer !important;
+    pointer-events: auto !important;
+  }
 
   &:hover,
   &:visited,

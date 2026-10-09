@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef, AfterViewInit, OnDestroy, HostListener, HostBinding } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef, AfterViewInit, OnDestroy, HostListener, HostBinding, NgZone } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { Subscription } from 'rxjs';
@@ -57,7 +57,8 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     private sanitizer: DomSanitizer,
     private router: Router,
     private location: Location,
-    private logeventservice: LogEventService
+    private logeventservice: LogEventService,
+    private ngZone: NgZone
   ) {
     const navigation = this.router.getCurrentNavigation();
     if (navigation?.extras?.state) {
@@ -497,7 +498,7 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   /**
-   * Handle clicks on message content to track link clicks
+   * Handle clicks on message content to track link clicks and navigate immediately
    */
   onMessageContentClick(event: Event): void {
     const target = event.target as HTMLElement;
@@ -505,26 +506,26 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     // Check if clicked element is an anchor tag or inside one
     const anchor = target.closest('a') as HTMLAnchorElement;
     
-    if (anchor && anchor.href) {
-      event.preventDefault(); // Prevent default navigation
-      event.stopPropagation(); // Stop event bubbling
-      
-      const clickedUrl = anchor.href;
-      console.log('Link clicked via delegation, tracking:', clickedUrl);
-      
-      // Track the click first, then navigate on success
-      this.chatbotService.trackLinkClick(clickedUrl).subscribe({
-        next: (response) => {
-          console.log('Link click tracked successfully:', response);
-          // Navigate to the URL using Angular Router
-          this.navigateToUrl(clickedUrl);
-        },
-        error: (error) => {
-          console.error('Error tracking link click:', error);
-          // Even if tracking fails, navigate to the URL so user isn't blocked
-          this.navigateToUrl(clickedUrl);
+    if (anchor) {
+      const href = anchor.getAttribute('href') || anchor.href;
+      if (href && href !== '#' && !href.startsWith('javascript:')) {
+        event.preventDefault(); // Prevent default browser navigation
+        event.stopPropagation(); // Stop event bubbling
+        
+        const clickedUrl = anchor.href || href;
+        console.log('Link clicked via delegation, tracking:', clickedUrl);
+        
+        // Track the click asynchronously in background (fire-and-forget, non-blocking)
+        if (clickedUrl) {
+          this.chatbotService.trackLinkClick(clickedUrl).subscribe({
+            next: (response) => console.log('Link click tracked successfully:', response),
+            error: (error) => console.error('Error tracking link click:', error)
+          });
         }
-      });
+        
+        // Navigate IMMEDIATELY on first click
+        this.navigateToUrl(clickedUrl);
+      }
     }
   }
 
@@ -843,7 +844,7 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   styleAnchorTags(): void {
-    // Use setTimeout with longer delay to ensure DOM is updated after innerHTML rendering
+    // Use setTimeout to ensure DOM is updated after innerHTML rendering
     setTimeout(() => {
       const anchorTags = document.querySelectorAll('.bot-message-content a');
       console.log('Found anchor tags in bot messages:', anchorTags.length);
@@ -851,56 +852,32 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
       anchorTags.forEach((anchor: Element) => {
         const htmlAnchor = anchor as HTMLAnchorElement;
         
-        // Check if this anchor already has tracking (to avoid duplicates)
-        if (htmlAnchor.getAttribute('data-tracking-added')) {
+        // Check if this anchor already has styling applied
+        if (htmlAnchor.getAttribute('data-styled')) {
           return;
         }
         
-        // Mark as tracking added
-        htmlAnchor.setAttribute('data-tracking-added', 'true');
+        htmlAnchor.setAttribute('data-styled', 'true');
         
-        htmlAnchor.style.color = '#1976d2';
-        htmlAnchor.style.textDecoration = 'underline';
+        const isCard = htmlAnchor.classList.contains('content-card') || 
+                      (htmlAnchor.getAttribute('style') || '').includes('background');
+
+        if (!isCard) {
+          htmlAnchor.style.color = '#1976d2';
+          htmlAnchor.style.textDecoration = 'underline';
+        }
         htmlAnchor.style.cursor = 'pointer';
 
-        // Add hover event listener
+        // Hover effect styling only - click handling is managed via onMessageContentClick delegation
         htmlAnchor.addEventListener('mouseenter', () => {
-          htmlAnchor.style.color = '#1565c0';
+          if (!isCard) htmlAnchor.style.color = '#1565c0';
         });
 
         htmlAnchor.addEventListener('mouseleave', () => {
-          htmlAnchor.style.color = '#1976d2';
+          if (!isCard) htmlAnchor.style.color = '#1976d2';
         });
-
-        // Add click tracking
-        htmlAnchor.addEventListener('click', (event: Event) => {
-          event.preventDefault(); // Prevent default navigation
-          event.stopPropagation(); // Stop event bubbling
-          
-          const clickedUrl = htmlAnchor.href;
-          
-          if (clickedUrl) {
-            console.log('Link clicked, tracking:', clickedUrl);
-            
-            // Track the click first, then navigate on success
-            this.chatbotService.trackLinkClick(clickedUrl).subscribe({
-              next: (response) => {
-                console.log('Link click tracked successfully:', response);
-                // Navigate to the URL using Angular Router
-                this.navigateToUrl(clickedUrl);
-              },
-              error: (error) => {
-                console.error('Error tracking link click:', error);
-                // Even if tracking fails, navigate to the URL so user isn't blocked
-                this.navigateToUrl(clickedUrl);
-              }
-            });
-          }
-        });
-
-        console.log('Styled and added tracking to anchor:', htmlAnchor.href);
       });
-    }, 300);
+    }, 100);
   }
 
   shouldShowTimestamp(message: ChatMessage, isFirst: boolean): boolean {
@@ -1047,16 +1024,37 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
 
   /**
    * Navigate to a URL - extracts path from full URL and uses Angular Router
-   * Since URLs are always full URLs like https://happierme.app/adults/blog-article?sId=54,
-   * we extract whatever comes after the origin (/adults/blog-article?sId=54) and use navigateByUrl
+  /**
+   * Navigate to a URL - extracts path from full URL and uses Angular Router inside NgZone
    */
   private navigateToUrl(url: string): void {
-      // Parse the URL to extract the path
-      const urlObj = new URL(url);
-      // Extract whatever comes after the origin (pathname + search + hash)
-      const path = urlObj.pathname + urlObj.search + urlObj.hash;
-     
-          this.router.navigateByUrl(path);
-           
-}
+    if (!url) return;
+
+    this.ngZone.run(() => {
+      try {
+        let path = url;
+        if (url.startsWith('http://') || url.startsWith('https://')) {
+          const urlObj = new URL(url);
+          const hostname = urlObj.hostname.toLowerCase();
+          // If external link (e.g. youtube, vimeo, external domain), open in new tab
+          if (!hostname.includes('happierme') && !hostname.includes('humanwisdom') && !hostname.includes('localhost') && !hostname.includes('127.0.0.1')) {
+            window.open(url, '_blank');
+            return;
+          }
+          // Internal route path
+          path = urlObj.pathname + urlObj.search + urlObj.hash;
+        }
+
+        console.log('Navigating immediately on 1st click to path:', path);
+        this.router.navigateByUrl(path);
+      } catch (e) {
+        console.error('Navigation error:', e);
+        try {
+          window.location.href = url;
+        } catch (err) {
+          console.error('Fallback navigation error:', err);
+        }
+      }
+    });
+  }
 }
