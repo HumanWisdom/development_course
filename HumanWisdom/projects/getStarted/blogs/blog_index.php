@@ -607,10 +607,10 @@
                 <i class="bi bi-x blog-icon-close" aria-hidden="true"></i>
               </button>
               <form class="blog-search-box" action="" onsubmit="return false;">
-                <input type="text" class="blog-search-input" id="blog-search-input" placeholder="Search articles..." autocomplete="off">
-                <button type="button" class="blog-search-clear" id="blog-search-clear" aria-label="Clear search">
+                <input type="text" class="blog-search-input" id="blog-search-input" placeholder="Search blogs..." autocomplete="off">
+               <!--  <button type="button" class="blog-search-clear" id="blog-search-clear" aria-label="Clear search">
                   <i class="bi bi-x" aria-hidden="true"></i>
-                </button>
+                </button> -->
               </form>
             </div>
             <h2 class="blog-filter-heading is-hidden" id="blog-filter-heading"></h2>
