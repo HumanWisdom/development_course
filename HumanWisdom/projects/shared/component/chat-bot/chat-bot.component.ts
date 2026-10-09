@@ -265,6 +265,7 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
               event.is_followup,
               event.has_more
             );
+            this.parseAndAttachCards(event.htmlContent);
           } else {
             this.errorMessage = 'Sorry, I encountered an error. Please try again.';
           }
@@ -502,30 +503,42 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
    */
   onMessageContentClick(event: Event): void {
     const target = event.target as HTMLElement;
-    
+    console.log('[ChatBot Click] event.target:', target.tagName, target.className);
+
     // Check if clicked element is an anchor tag or inside one
     const anchor = target.closest('a') as HTMLAnchorElement;
-    
+    console.log('[ChatBot Click] closest <a> found:', !!anchor, anchor?.outerHTML?.slice(0, 200));
+
     if (anchor) {
       const href = anchor.getAttribute('href') || anchor.href;
+      console.log('[ChatBot Click] href attr:', anchor.getAttribute('href'));
+      console.log('[ChatBot Click] anchor.href (resolved):', anchor.href);
+      console.log('[ChatBot Click] data-path:', anchor.getAttribute('data-path'));
+
       if (href && href !== '#' && !href.startsWith('javascript:')) {
-        event.preventDefault(); // Prevent default browser navigation
-        event.stopPropagation(); // Stop event bubbling
+        event.preventDefault();
+        event.stopPropagation();
         
+        const path = anchor.getAttribute('data-path');
         const clickedUrl = anchor.href || href;
-        console.log('Link clicked via delegation, tracking:', clickedUrl);
+
+        console.log('[ChatBot Click] ✅ Navigating — data-path:', path, '| fallback url:', clickedUrl);
         
-        // Track the click asynchronously in background (fire-and-forget, non-blocking)
+        // Track the click in background (fire-and-forget)
         if (clickedUrl) {
           this.chatbotService.trackLinkClick(clickedUrl).subscribe({
-            next: (response) => console.log('Link click tracked successfully:', response),
-            error: (error) => console.error('Error tracking link click:', error)
+            next: (response) => console.log('[ChatBot Click] tracked ok:', response),
+            error: (error) => console.error('[ChatBot Click] tracking error:', error)
           });
         }
         
-        // Navigate IMMEDIATELY on first click
-        this.navigateToUrl(clickedUrl);
+        // Navigate immediately using pre-extracted path
+        this.navigateToCard(path || clickedUrl);
+      } else {
+        console.warn('[ChatBot Click] ⚠️ href blocked — value:', href);
       }
+    } else {
+      console.warn('[ChatBot Click] ⚠️ No <a> found for target:', target.tagName, '| parent chain:', target.parentElement?.tagName, target.parentElement?.parentElement?.tagName);
     }
   }
 
@@ -710,6 +723,7 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
             response.is_followup,
             response.has_more
           );
+          this.parseAndAttachCards(response.response);
         } else {
           this.errorMessage = 'Sorry, I encountered an error. Please try again.';
         }
@@ -765,6 +779,7 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
             response.is_followup,
             response.has_more
           );
+          this.parseAndAttachCards(response.response);
         } else {
           this.errorMessage = 'Sorry, I encountered an error. Please try again.';
         }
@@ -816,6 +831,7 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
             response.is_followup,
             response.has_more
           );
+          this.parseAndAttachCards(response.response);
         } else {
           this.errorMessage = 'Sorry, I encountered an error. Please try again.';
         }
@@ -832,34 +848,32 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   sanitizeHtml(html: string): SafeHtml {
-    // Style anchor tags and allow backend-injected thumbnail HTML (<a>/<img>)
-    const styledHtml = html.replace(/<a\s+([^>]*?)>/gi, (match, attributes) => {
-      if (attributes.includes('style=')) {
-        return match.replace(/style="([^"]*)"/, 'style="$1; font-weight:500; text-decoration: underline !important;"');
-      }
-      return `<a ${attributes} style="font-weight:500; text-decoration: underline !important; cursor: pointer !important;">`;
-    });
-
-    return this.sanitizer.bypassSecurityTrustHtml(styledHtml);
+    // Strip resource-card divs — rendered as Angular cards above, no duplicate needed
+    // Each card = <div class="resource-card" ...>...<div>...</div></div> (2 closing divs)
+    const stripped = html.replace(/<div class="resource-card"[\s\S]*?<\/div>[\s\S]*?<\/div>/gi, '');
+    return this.sanitizer.bypassSecurityTrustHtml(stripped);
   }
 
   styleAnchorTags(): void {
     // Use setTimeout to ensure DOM is updated after innerHTML rendering
     setTimeout(() => {
       const anchorTags = document.querySelectorAll('.bot-message-content a');
-      console.log('Found anchor tags in bot messages:', anchorTags.length);
+      console.log('[styleAnchorTags] found anchors:', anchorTags.length);
 
       anchorTags.forEach((anchor: Element) => {
         const htmlAnchor = anchor as HTMLAnchorElement;
         
-        // Check if this anchor already has styling applied
         if (htmlAnchor.getAttribute('data-styled')) {
           return;
         }
         
         htmlAnchor.setAttribute('data-styled', 'true');
-        
-        const isCard = htmlAnchor.classList.contains('content-card') || 
+
+        // Force remove target="_blank" directly on the DOM element
+        htmlAnchor.removeAttribute('target');
+        htmlAnchor.removeAttribute('rel');
+
+        const isCard = htmlAnchor.classList.contains('content-card') ||
                       (htmlAnchor.getAttribute('style') || '').includes('background');
 
         if (!isCard) {
@@ -868,11 +882,30 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
         }
         htmlAnchor.style.cursor = 'pointer';
 
-        // Hover effect styling only - click handling is managed via onMessageContentClick delegation
+        // Direct click handler on every anchor — no delegation needed
+        htmlAnchor.addEventListener('click', (e: MouseEvent) => {
+          e.preventDefault();
+          e.stopPropagation();
+
+          const path = htmlAnchor.getAttribute('data-path');
+          const href = htmlAnchor.getAttribute('href') || htmlAnchor.href;
+          console.log('[styleAnchorTags click] data-path:', path, '| href:', href);
+
+          // Track in background
+          const trackUrl = htmlAnchor.href || href;
+          if (trackUrl) {
+            this.chatbotService.trackLinkClick(trackUrl).subscribe({
+              next: (r) => console.log('[styleAnchorTags] tracked:', r),
+              error: (err) => console.error('[styleAnchorTags] tracking error:', err)
+            });
+          }
+
+          this.navigateToCard(path || href);
+        });
+
         htmlAnchor.addEventListener('mouseenter', () => {
           if (!isCard) htmlAnchor.style.color = '#1565c0';
         });
-
         htmlAnchor.addEventListener('mouseleave', () => {
           if (!isCard) htmlAnchor.style.color = '#1976d2';
         });
@@ -1023,38 +1056,60 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   /**
-   * Navigate to a URL - extracts path from full URL and uses Angular Router
-  /**
-   * Navigate to a URL - extracts path from full URL and uses Angular Router inside NgZone
+   * Parse resource-card anchors from bot HTML response and store them on the message.
+   * This runs once when API response arrives — no DOM touching needed.
    */
-  private navigateToUrl(url: string): void {
-    if (!url) return;
+  private parseAndAttachCards(html: string): void {
+    const cards: { title: string; type: string; path: string; img: string }[] = [];
 
-    this.ngZone.run(() => {
+    // Match each resource-card div individually
+    const cardRegex = /<div class="resource-card"[^>]*>([\s\S]*?)<\/div>\s*<\/div>/gi;
+    let cardMatch: RegExpExecArray | null;
+
+    while ((cardMatch = cardRegex.exec(html)) !== null) {
+      const inner = cardMatch[1];
+
+      const hrefMatch = inner.match(/href="([^"]*)"/i);
+      const imgMatch  = inner.match(/src="([^"]*)"/i);
+      const titleMatch = inner.match(/<strong[^>]*>([\s\S]*?)<\/strong>/i);
+      const typeMatch  = inner.match(/<span[^>]*>([\s\S]*?)<\/span>/i);
+
+      if (!hrefMatch || !imgMatch || !titleMatch) continue;
+
       try {
-        let path = url;
-        if (url.startsWith('http://') || url.startsWith('https://')) {
-          const urlObj = new URL(url);
-          const hostname = urlObj.hostname.toLowerCase();
-          // If external link (e.g. youtube, vimeo, external domain), open in new tab
-          if (!hostname.includes('happierme') && !hostname.includes('humanwisdom') && !hostname.includes('localhost') && !hostname.includes('127.0.0.1')) {
-            window.open(url, '_blank');
-            return;
-          }
-          // Internal route path
-          path = urlObj.pathname + urlObj.search + urlObj.hash;
-        }
+        const u = new URL(hrefMatch[1]);
+        cards.push({
+          path:  u.pathname + u.search + u.hash,
+          img:   imgMatch[1],
+          title: titleMatch[1].replace(/<[^>]*>/g, '').replace(/^\d+\.\s*/, '').trim(),
+          type:  typeMatch ? typeMatch[1].replace(/<[^>]*>/g, '').trim() : ''
+        });
+      } catch { /* skip malformed url */ }
+    }
 
-        console.log('Navigating immediately on 1st click to path:', path);
-        this.router.navigateByUrl(path);
-      } catch (e) {
-        console.error('Navigation error:', e);
-        try {
-          window.location.href = url;
-        } catch (err) {
-          console.error('Fallback navigation error:', err);
-        }
+    if (cards.length === 0) return;
+
+    setTimeout(() => {
+      const botMessages = this.messages.filter(msg => msg.sender === 'bot' && !msg.isTyping);
+      const latest = botMessages[botMessages.length - 1];
+      if (latest) {
+        this.chatStore.updateMessage({ id: latest.id, updates: { resourceCards: cards } });
       }
+    }, 0);
+  }
+
+  /** Navigate to a path or full URL — always same tab, always Angular router */
+  navigateToCard(urlOrPath: string): void {
+    if (!urlOrPath) return;
+    this.ngZone.run(() => {
+      let path = urlOrPath;
+      if (urlOrPath.startsWith('http://') || urlOrPath.startsWith('https://')) {
+        try {
+          const u = new URL(urlOrPath);
+          path = u.pathname + u.search + u.hash;
+        } catch { /* use as-is */ }
+      }
+      this.router.navigateByUrl(path);
     });
   }
 }
