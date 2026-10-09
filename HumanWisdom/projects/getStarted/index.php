@@ -114,7 +114,7 @@ hw_lcp_send_preload_headers();
                      
                     </div>
                     <p class="text-wrapper-4" id="hw-website-subtitle">
-                      Feel calmer. Build happier <br class="subtitle-br-m">relationships.<br class="subtitle-br-d"> Develop <a href="#" class="human-skills-link" data-bs-toggle="modal" data-bs-target="#humanSkillsModal" role="button" aria-haspopup="dialog" id="lifeskills">these skills</a><br class="subtitle-br-m"> to create the life you want.
+                      Feel calmer. Strengthen your relationships.<br class="subtitle-br-d"> Build <a href="#" class="human-skills-link" data-bs-toggle="modal" data-bs-target="#humanSkillsModal" role="button" aria-haspopup="dialog" id="lifeskills">these skills</a><br class="subtitle-br-m">  and live a happier life.
                     </p>
                   </div>
                 </div>
