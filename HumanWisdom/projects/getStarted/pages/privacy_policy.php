@@ -31,7 +31,7 @@
 
           <section class="hpt120px">
             <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
-              <div class="col-lg-10 col-md-12 col-sm-12 col-xs-12 p0 hs_bg">
+              <div class="col-lg-10 col-md-12 col-sm-12 col-xs-12  hs_bg">
                 <h4 class="hs_sub_title">
                   This is the privacy notice of HumanWisdom Ltd. In this document, "we", "our", or "us" refer to HumanWisdom Ltd.
                 </h4>
