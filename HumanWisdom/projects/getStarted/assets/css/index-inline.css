@@ -120,7 +120,7 @@ img { max-width: 100%; display: block; }
   box-sizing: border-box;
   background: linear-gradient(180deg, rgba(255, 249, 238, 1) 0%, rgba(255, 244, 225, 1) 100%);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
-  height:524px;
+  min-height: 524px;
 }
 .human-skills-modal-close-row {
   display: flex;
@@ -209,11 +209,11 @@ img { max-width: 100%; display: block; }
 }
 .human-skills-modal-subtitle {
   font-family: Poppins, sans-serif;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 400;
   color: #000;
   margin: 0;
-  line-height: 1.4;
+  line-height: 1.45;
 }
 .human-skills-list {
   list-style: none;
@@ -3168,18 +3168,32 @@ nav a:hover {
     padding-top: 18px;
   }
 
+  .web_home_divlanding .hero-phone {
+    width: 211px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: flex-start;
+  }
+  .web_home_divlanding .hero-phone picture {
+    display: block;
+    width: 211px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
   .web_home_divlanding .new-app-adults-teen {
     display: block;
     width: 211px;
     max-width: 100%;
     height: 306px;
-    /* margin-left: 60px; */
+    margin-left: auto;
     margin-right: auto;
     align-self: center;
     object-fit: contain;
     object-position: center center;
     flex-shrink: 0;
   }
+  /* Same centering as the live index hero: 170px line, 45px from the image’s left edge. */
   .web_home_divlanding .hero-phone-caption {
     width: 170px;
     margin-left: 45px;
