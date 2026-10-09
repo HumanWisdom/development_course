@@ -28,7 +28,7 @@
 
           <section class="hpt120px">
             <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
-              <div class="col-lg-10 col-md-12 col-sm-12 col-xs-12 p0 hs_bg">
+              <div class="col-lg-10 col-md-12 col-sm-12 col-xs-12  hs_bg">
                 <h2 class="hs_title">
                   Does HappierMe use cookies?
                 </h2>
