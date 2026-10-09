@@ -266,8 +266,9 @@
       <!-- CTA after tools -->
       <div id="AnnualType">
         <div id="PricingSelectBtn">
-      <a href="https://happierme.app/pages/splash_options.php" id="startyourfreetrial">
+      <a href="/organisation-Adv.php?id=org-humanwisdom" id="startyourfreetrial">
         <div class="div-wrapper-4" style="margin:0 auto;"><div class="text-wrapper-5">Try HappierMe for free</div></div>
       </a>
         </div>
+        <p class="try-free-no-card">(No credit card needed)</p>
       </div>
