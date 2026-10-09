@@ -37,6 +37,9 @@ export class GuidedJourneyDaysPage implements OnInit {
   dragOffset = 0;
   private containerWidth = 0;
   private isHorizontalSwipe = false;
+  private touchTracking = false;
+  /** Ignore small finger drift so a tap still clicks the card on iPhone. */
+  private readonly swipeSlop = 32;
   enableAlert: boolean = false;
   content: string = '';
   alertTitle: string = '';
@@ -103,12 +106,14 @@ export class GuidedJourneyDaysPage implements OnInit {
     const target = event.target as HTMLElement;
     // Don't drag when touching buttons, links, etc.
     if (target.closest('a') || target.closest('button')) {
+      this.touchTracking = false;
       this.isDragging = false;
       return;
     }
 
     // Don't start drag when touching journal textarea or any input
     if (target.closest('textarea') || target.closest('input') || target.closest('[contenteditable="true"]')) {
+      this.touchTracking = false;
       this.isDragging = false;
       return;
     }
@@ -117,7 +122,10 @@ export class GuidedJourneyDaysPage implements OnInit {
     this.touchStartX = event.type.startsWith('touch') ? event.touches[0].clientX : event.clientX;
     this.touchStartY = event.type.startsWith('touch') ? event.touches[0].clientY : event.clientY;
     this.touchCurrentX = this.touchStartX;
-    this.isDragging = true;
+    // Stay in tracking until the finger clearly swipes. Setting isDragging
+    // here expands the other day slides and cancels the card click on iPhone.
+    this.touchTracking = true;
+    this.isDragging = false;
     this.dragOffset = 0;
     this.isHorizontalSwipe = false;
 
@@ -132,15 +140,21 @@ export class GuidedJourneyDaysPage implements OnInit {
     if (target.closest('textarea') || target.closest('input') || target.closest('[contenteditable="true"]')) {
       return;
     }
-    if (!this.isDragging || this.isAnimating) return;
+    if (!this.touchTracking || this.isAnimating) return;
     this.touchCurrentX = event.type.startsWith('touch') ? event.touches[0].clientX : event.clientX;
     const deltaX = this.touchCurrentX - this.touchStartX;
     const deltaY = (event.type.startsWith('touch') ? event.touches[0].clientY : event.clientY) - this.touchStartY;
 
     if (!this.isHorizontalSwipe) {
-      if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 10) {
+      if (Math.abs(deltaX) < this.swipeSlop && Math.abs(deltaY) < this.swipeSlop) {
+        return;
+      }
+      if (Math.abs(deltaX) > Math.abs(deltaY)) {
         this.isHorizontalSwipe = true;
-      } else if (Math.abs(deltaY) > 10) {
+        this.isDragging = true;
+      } else {
+        this.touchTracking = false;
+        this.isDragging = false;
         return;
       }
     }
@@ -152,19 +166,20 @@ export class GuidedJourneyDaysPage implements OnInit {
   }
 
   handleTouchEnd(event: any) {
-    if (!this.isDragging) return;
+    if (!this.touchTracking && !this.isDragging) return;
+    const wasSwipe = this.isHorizontalSwipe;
     const threshold = this.containerWidth * 0.2;
-    if (this.isHorizontalSwipe) {
+    if (wasSwipe) {
       if (this.dragOffset < -threshold && this.currentDay < this.totalDays) {
         this.navigateToDay(this.currentDay + 1);
       } else if (this.dragOffset < -threshold && this.currentDay === this.totalDays) {
         this.navigateToEnd();
       } else if (this.dragOffset > threshold && this.currentDay > 0) {
         this.navigateToDay(this.currentDay - 1);
-      } else if (this.dragOffset > threshold && this.currentDay === 0) {
-        // Already at intro, maybe do nothing or go to listing
       }
+      if (event.cancelable) event.preventDefault();
     }
+    this.touchTracking = false;
     this.isDragging = false;
     this.dragOffset = 0;
     this.isHorizontalSwipe = false;

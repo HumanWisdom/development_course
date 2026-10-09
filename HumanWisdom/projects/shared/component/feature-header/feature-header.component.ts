@@ -17,6 +17,7 @@ import { NavigationService } from '../../services/navigation.service';
 export class FeatureHeaderComponent implements OnInit {
   @Input() title: string;
   @Input() sharedPath: string;
+  @Input() hideShare: boolean = false;
 
   urlT:any
   userId:any

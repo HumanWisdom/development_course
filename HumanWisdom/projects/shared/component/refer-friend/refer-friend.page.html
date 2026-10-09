@@ -1,5 +1,5 @@
 <!-- top navigation -->
-<app-feature-header title="Refer a friend"></app-feature-header>
+<app-feature-header title="Share with a friend" [hideShare]="true"></app-feature-header>
 <!-- /top navigation -->
 
 <app-bg-video></app-bg-video>
@@ -90,7 +90,7 @@
               </div>
 
               <div class="row center_flex">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0 center_flex raf_share_row">
                   <share-buttons  [theme]="'circles-dark'"
                   [include]="['facebook','twitter','linkedin','whatsapp']"
                    [showIcon]="true"
@@ -100,6 +100,16 @@
                   [autoSetMeta]="false"
                  >
                   </share-buttons>
+
+                  <!-- Copy app link -->
+                  <a (click)="copyAppLink()" class="raf_copy_link_icon" [ngClass]="isAdults ? 'raf_copy_adults' : 'raf_copy_teens'" [attr.aria-label]="'Copy app link'">
+                    <img *ngIf="!linkCopied"
+                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/copy.svg"
+                      alt="Copy link" style="width:22px;height:22px;" />
+                    <img *ngIf="linkCopied"
+                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/copied.svg"
+                      alt="Copied" style="width:22px;height:22px;" />
+                  </a>
                 </div>
               </div>
 
