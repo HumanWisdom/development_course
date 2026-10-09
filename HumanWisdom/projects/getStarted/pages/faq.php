@@ -3299,6 +3299,8 @@ HappierMe helps users develop greater self-awareness and build practical habits 
                 <!-- About HappierMe -->
               </h5>
 
+
+              
               <div class="panel-group" id="accordion_faq_2">
                 <div class="panel panel-default">
                   <div class="panel-heading">
@@ -3309,7 +3311,7 @@ HappierMe helps users develop greater self-awareness and build practical habits 
                       </a>
                     </h4>
                   </div>
-                  <div id="cm11" class="panel-collapse collapse in">
+                  <div id="cm11" class="panel-collapse collapse">
                     <div class="panel-body">
                         <h2 class="hs_title">
                  1. What is HappierMe?
