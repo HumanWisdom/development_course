@@ -677,6 +677,71 @@
   }
 }
 
+// ─── Backend-injected content cards (teenager theme) ─────────────────────────
+// Cards are white-background elements injected inside the dark blue message
+// bubble. Override the bubble's white text colour so card text is readable.
+:host ::ng-deep .bot-message-content {
+
+  // Wrapper anchor that makes the whole card clickable
+  a.content-card,
+  a[style*="background"],
+  a[style*="border-radius"],
+  a[style*="display:flex"],
+  a[style*="display: flex"],
+  a {
+    text-decoration: none !important;
+    color: #222222 !important;
+    cursor: pointer !important;
+    pointer-events: auto !important;
+
+    * {
+      cursor: pointer !important;
+      pointer-events: auto !important;
+    }
+
+    &:hover {
+      opacity: 0.9;
+      color: #222222 !important;
+    }
+  }
+
+  // Card title text
+  .card-title,
+  [class*="card-title"],
+  [style*="font-weight: bold"],
+  [style*="font-weight:bold"] {
+    color: #222222 !important;
+  }
+
+  // Card type/badge label (e.g. "MICRO-LEARNING")
+  .card-label,
+  .content-type,
+  [class*="card-label"],
+  [class*="content-type"],
+  [style*="font-size: 11px"],
+  [style*="font-size:11px"],
+  [style*="letter-spacing"] {
+    color: #666666 !important;
+  }
+
+  // Any element with a white or light background is a card — reset text to dark
+  [style*="background: white"],
+  [style*="background:#fff"],
+  [style*="background: #fff"],
+  [style*="background-color: white"],
+  [style*="background-color:#fff"],
+  [style*="background-color: #fff"],
+  [style*="background-color: rgb(255, 255, 255)"],
+  [style*="background: rgb(255, 255, 255)"] {
+    color: #222222 !important;
+
+    a, span, p, div {
+      color: inherit !important;
+    }
+  }
+}
+// ─────────────────────────────────────────────────────────────────────────────
+
 // Feedback buttons (Thumbs up/down) - placed OUTSIDE the chat bubble
 .feedback-container {
   display: flex;
@@ -735,7 +800,7 @@
   .yes-no-label {
     font-size: 13px;
     font-weight: 500;
-    color: rgba(0, 0, 0, 0.6);
+    color: #ffffff;   // ← white text on dark-blue chat background
     margin: 0 0 8px 0;
   }
 
@@ -768,11 +833,11 @@
         transform: none;
       }
 
-      // Selected state
+      // Selected / active state — teens pink accent + white text
       &.selected {
-        background: rgba(0, 0, 0, 0.08);
-        border-color: rgba(0, 0, 0, 0.25);
-        color: rgba(0, 0, 0, 0.75);
+        background: #EE9596;
+        border-color: transparent;
+        color: #ffffff !important;   // ← white text on pink selected button
         font-weight: 600;
         cursor: not-allowed;
       }
