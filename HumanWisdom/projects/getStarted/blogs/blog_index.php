@@ -427,7 +427,7 @@
     }
 
     body.page-blog-index .blog-search-input {
-      width: 88%;
+      width: 80%;
       height: 54px;
       margin: 0;
       padding: 4px 48px 4px 24px;
