@@ -58,6 +58,17 @@
               (click)="onMessageContentClick($event)" (keydown.enter)="onMessageContentClick($event)" tabindex="0">
             </div>
 
+            <!-- Resource cards — rendered by Angular, no innerHTML, one click navigation -->
+            <div *ngIf="!message.isTyping && message.resourceCards && message.resourceCards.length > 0" class="resource-cards-container">
+              <div *ngFor="let card of message.resourceCards" class="resource-card-btn" (click)="navigateToCard(card.path)" role="button" tabindex="0" (keydown.enter)="navigateToCard(card.path)">
+                <img [src]="card.img" [alt]="card.title" class="resource-card-img" />
+                <div class="resource-card-info">
+                  <strong class="resource-card-title">{{ card.title }}</strong>
+                  <span class="resource-card-type">{{ card.type }}</span>
+                </div>
+              </div>
+            </div>
+
             <!-- Suggestions -->
             <div *ngIf="!message.isTyping && message.suggestions && message.suggestions.length > 0"
               class="suggestions-container">

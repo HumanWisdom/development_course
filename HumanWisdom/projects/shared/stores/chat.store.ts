@@ -24,6 +24,7 @@ export interface ChatMessage {
   related_answer_given?: 'yes' | 'no' | null; // Track yes/no related content response
   has_more?: boolean; // Whether there are more options available
   isStreaming?: boolean; // Whether the bot message is still being streamed
+  resourceCards?: { title: string; type: string; path: string; img: string }[]; // Pre-parsed cards from API
 }
 
 /**
