@@ -412,18 +412,39 @@
     }
 
     body.page-blog-index .blog-filter-bar.is-searching {
-      overflow: visible;
+      overflow: hidden;
+      gap: 8px;
     }
 
     body.page-blog-index .blog-filter-bar.is-searching .blog-filter-tag {
-      opacity: 0;
-      pointer-events: none;
+      display: none;
     }
 
     body.page-blog-index .blog-filter-bar.is-searching .blog-search-box {
-      width: calc(100% - 66px);
+      position: relative;
+      left: auto;
+      right: auto;
+      top: auto;
+      transform: none;
+      order: 1;
+      flex: 1 1 auto;
+      width: auto;
       opacity: 1;
       pointer-events: auto;
+    }
+
+    body.page-blog-index .blog-filter-bar.is-searching .blog-search-input {
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    body.page-blog-index .blog-filter-bar.is-searching .blog-filter-search {
+      order: 2;
+      position: relative;
+      right: auto;
+      top: auto;
+      transform: none;
+      flex: 0 0 54px;
     }
 
     body.page-blog-index .blog-search-input {
@@ -555,6 +576,20 @@
         flex-basis: 44px;
         width: 44px;
         border-radius: 22px;
+      }
+
+      body.page-blog-index .blog-filter-bar.is-searching .blog-filter-search {
+        flex-basis: 44px;
+        width: 44px;
+      }
+
+      body.page-blog-index .blog-filter-search.is-open .blog-icon-close {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        line-height: 1;
+        color: #834B66;
       }
 
       body.page-blog-index .blog-filter-heading {
@@ -2231,6 +2266,9 @@ Work</button>
     if (opening) {
       $bar.addClass('is-searching');
       $searchToggle.addClass('is-open').attr('aria-expanded', true);
+      if (window.matchMedia('(max-width: 768px)').matches) {
+        $bar.scrollLeft(0);
+      }
       $searchInput.trigger('focus');
     } else {
       closeSearch();

@@ -207,6 +207,33 @@ img { max-width: 100%; display: block; }
   padding: 18px 40px;
   border-radius: 35px;
 }
+.web_home_divlanding .hero-try-free-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: flex-start;
+  width: 317px;
+  max-width: 100%;
+  gap: 8px;
+}
+.web_home_divlanding .hero-try-free-block .hero-try-free-link {
+  width: 100%;
+  align-self: stretch;
+  justify-content: center;
+}
+.web_home_divlanding .hero-no-card-note {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: "Poppins", Helvetica, sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 0;
+  color: rgba(255, 247, 230, 1);
+  text-align: center;
+}
 .div-wrapper { width: 100%; max-width: 1340px; }
 .div { width: 100%; }
 .div-2 {
@@ -415,7 +442,13 @@ img { max-width: 100%; display: block; }
     margin-left: auto;
     margin-right: auto;
   }
+  .web_home_divlanding .hero-try-free-block {
+    width: min(335px, 100%);
+    max-width: 100%;
+    align-self: center;
+  }
   .web_home_divlanding .div-3 > .frame-wrapper-2,
+  .web_home_divlanding .div-3 > .hero-try-free-block,
   .web_home_divlanding .div-3 > .hero-try-free-link,
   .web_home_divlanding .div-3 > [class*="col-"] {
     align-self: center !important;

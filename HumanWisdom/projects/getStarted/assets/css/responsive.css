@@ -857,7 +857,8 @@
   }
 
   .header .btn_tff {
-    width: 106px;
+    width: auto;
+    white-space: nowrap;
     height: 40px;
     font-size: 12px;
   }
@@ -2054,7 +2055,8 @@
 
   .header .btn_tff,
   .header .btn_tff:focus {
-    width: 106px;
+    width: auto;
+    white-space: nowrap;
     height: 40px;
     font-size: 12px;
   }
