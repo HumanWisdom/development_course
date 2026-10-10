@@ -20,10 +20,10 @@ include __DIR__ . '/../includes/organisation_header.php';
 
     <div class="org-trial">
       <div class="org-trial-top">
-        <img src="<?= hw_org_h($assets['calendar']) ?>" alt="" width="80" height="80">
+        <img class="org-trial-icon" src="<?= hw_org_h($assets['calendar']) ?>" alt="" width="60" height="60">
         <p class="org-trial-copy">
           <span>You have</span>
-          <strong><?= $freeDays ?> days of</strong>
+          <span><strong><?= $freeDays ?> days</strong> of</span>
           <span>free access</span>
         </p>
       </div>

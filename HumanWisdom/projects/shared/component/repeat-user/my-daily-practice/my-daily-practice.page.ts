@@ -215,11 +215,18 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
 
   goToTour(): void {
     this.closeTourPopup();
-    if (this.isAdults) {
+   /*  if (this.isAdults) {
       this.router.navigate(['/adults/videopage', 'introduction_to_happierme-videos-video_tour.mp4', 'T', 'Video tour of the app']);
     } else {
       this.router.navigate(['/teenagers/videopage', 'introduction_to_happierme-videos-video_tour.mp4', 'T', 'Video tour of the app']);
-    }
+    } */
+   if (this.isAdults) {
+     this.router.navigate(['/adults/intro-happierme']);
+   }
+   else{
+      this.router.navigate(['/teenagers/intro-happierme']);
+
+   }
   }
 
   resolveMediaUrl(url: string): string {
@@ -868,7 +875,7 @@ routeActiveExercise() {
   getModuleList(isLoad?) {
     this.commonService.getModuleList().subscribe(res => {
       this.moduleList = res;
-      this.moduleList.push({"ModuleName":"Events"},{"ModuleName":"Blogs"},{"ModuleName":"Stories of hope"},{"ModuleName":"Teen talk"},{"ModuleName":"Real stories"},{"ModuleName":"Life stories"},{"ModuleName":"Stories"},{"ModuleName":"Podcast"}, {"ModuleName":"Microlearning"}, {"ModuleName":"Guided journeys"}, {"ModuleName":"Short videos"}, {"ModuleName":"Videos"}, {"ModuleName":"Audio meditations"},{"ModuleName":"Journal"},{"ModuleName":"Forum"}, {"ModuleName":"Exercises"},{"ModuleName":"Awareness Exercises"},{"ModuleName":"Self Awareness"},
+      this.moduleList.push({"ModuleName":"Events"},{"ModuleName":"Blogs"},{"ModuleName":"Life stories"},{"ModuleName":"Teen talk"},{"ModuleName":"Real stories"},{"ModuleName":"Life stories"},{"ModuleName":"Stories"},{"ModuleName":"Podcast"}, {"ModuleName":"Microlearning"}, {"ModuleName":"Guided journeys"}, {"ModuleName":"Short videos"}, {"ModuleName":"Videos"}, {"ModuleName":"Audio meditations"},{"ModuleName":"Journal"},{"ModuleName":"Forum"}, {"ModuleName":"Exercises"},{"ModuleName":"Awareness Exercises"},{"ModuleName":"Self Awareness"},
                           {"ModuleName":"Develop a calm mind"},{"ModuleName":"Manage your emotions"},
                           {"ModuleName":"Understand yourself"},{"ModuleName":"Succeed in life"},
                           {"ModuleName":"Understand how your mind works"},{"ModuleName":"Mental Health"} )
@@ -916,7 +923,7 @@ routeActiveExercise() {
         url = `/${SharedService.getprogramName()}/blogs`;
         break;
       }
-      case "stories of hope":
+      case "life stories":
       case "teen talk":
       case "real stories":
       case "life stories":

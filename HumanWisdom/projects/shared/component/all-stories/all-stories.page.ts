@@ -37,11 +37,11 @@ export class AllStoriesPage implements OnInit {
       this.isAdults = false;
     }
     this.getStories();
-    const pageTitle = 'Stories of hope';
+    const pageTitle = 'Life stories';
     this.title.setTitle(pageTitle);
     this.meta.updateTag({ property: 'title', content: pageTitle });
-    this.meta.updateTag({ property: 'description', content: 'Discover the transformative impact of wisdom through stories of hope and find ways to apply it in your life.' });
-    this.meta.updateTag({ property: 'keywords', content: 'Wisdom stories,Inspiring stories,Life lessons from stories,Wisdom tales,Uplifting stories,Motivational stories,Storytelling,Personal growth through stories,Life-changing stories,Empowering stories,Stories of hope' });
+    this.meta.updateTag({ property: 'description', content: 'Discover the transformative impact of wisdom through life stories and find ways to apply it in your life.' });
+    this.meta.updateTag({ property: 'keywords', content: 'Wisdom stories,Inspiring stories,Life lessons from stories,Wisdom tales,Uplifting stories,Motivational stories,Storytelling,Personal growth through stories,Life-changing stories,Empowering stories,Life stories' });
     let userid = localStorage.getItem('isloggedin');
     let sub: any = localStorage.getItem('Subscriber');
     if (userid === 'T' && sub === '1') {

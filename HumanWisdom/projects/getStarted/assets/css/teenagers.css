@@ -137,21 +137,43 @@ body.page-teenagers .teen-blog-wrap .blog-outer {
   overflow: visible;
 }
 
-body.page-teenagers .teen-blog-wrap .blog-footer {
-  margin-left: 39rem;
-  overflow: visible;
-  min-height: 40px;
-  padding-bottom: 6px;
-  align-items: center;
-}
-
-/* Wide screens only (1400px+): center "View all blogs" — match index; keep desktop offset below 1400 */
-@media (min-width: 1400px) {
+/* Desktop: center "View all blogs" in the 980px card column; arrows on the right edge, same as healthcare */
+@media (min-width: 769px) {
   body.page-teenagers .teen-blog-wrap .blog-footer {
-    margin-left: 0;
+    display: flex;
+    align-items: center;
     justify-content: center;
+    position: relative;
+    width: 980px;
+    max-width: calc(100% - 40px);
+    margin: 20px auto 0;
+    overflow: visible;
+    min-height: 26px;
+    padding-bottom: 0;
     gap: 0;
-    width: 100%;
+  }
+
+  body.page-teenagers .teen-blog-wrap .blog-footer .coaches-nav-btns {
+    position: absolute;
+    right: 0;
+    left: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    margin: 0;
+    z-index: 2;
+  }
+
+  body.page-teenagers .teen-blog-wrap .blog-footer .coach-arrow {
+    width: 26px;
+    height: 26px;
+    min-width: 26px;
+    min-height: 26px;
+    border-radius: 50%;
+    display: flex;
   }
 }
 body.page-teenagers .teen-video-wrap .youtube-player {
@@ -543,8 +565,8 @@ body.page-teenagers .owl_testimonials .teen-testimonials-footer .owl-nav {
   body.page-teenagers #teenBlogSection.teen-blog-wrap,
   body.page-teenagers .teen-blog-wrap:has(#blog-scroll) {
     padding-top: 0 !important;
-    padding-left: 16px !important;
-    padding-right: 16px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
     padding-bottom: 0 !important;
     align-items: stretch;
     gap: 24px !important;
@@ -582,6 +604,44 @@ body.page-teenagers .owl_testimonials .teen-testimonials-footer .owl-nav {
     margin-left: 0;
   }
 
+  /* Mobile only: same 20px side inset as healthcare blog cards */
+  body.page-teenagers .teen-blog-wrap .blog-track-wrap,
+  body.page-teenagers .teen-blog-wrap .blog-outer.is-scrolled .blog-track-wrap {
+    display: block;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+  }
+
+  body.page-teenagers .teen-blog-wrap .blog-scroll {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0 20px;
+    box-sizing: border-box;
+    gap: 14px;
+  }
+
+  body.page-teenagers .teen-blog-wrap .blog-scroll .blog-card:first-child {
+    margin-left: 0;
+  }
+
+  .teen-blog-wrap .blog-footer {
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .teen-blog-wrap .teen-blog-more {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   body.page-teenagers .teen-blog-wrap #blog-prev,
   body.page-teenagers .teen-blog-wrap #blog-next {
     display: none;
@@ -593,8 +653,8 @@ body.page-teenagers .owl_testimonials .teen-testimonials-footer .owl-nav {
   }
 
   body.page-teenagers .teen-blog-wrap:has(#blog-scroll):has(.blog-outer.is-scrolled) {
-    padding-left: 16px !important;
-    padding-right: 16px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 
   body.page-teenagers .teen-blog-wrap .text-wrapper-blog,

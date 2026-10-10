@@ -4,40 +4,145 @@
 
 <!-- page content -->
 <div class="right_col mc_02">
-  <!-- class -->
   <div class="cw100p">
     <div class="row center_flex">
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_02_v3 center_flex bg_stake col_cw">
         <div class="x_panel p0">
           <div class="x_content p0">
             <form>
-              <div class="row">
+              <div class="row" style="margin: 0;">
                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                  <h1 class="txt1 tleft m0px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">{{title}}</h1>
+                  <h1 class="txt1 tleft m0px" style="margin-bottom: 20px !important;" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">{{title}}</h1>
                 </div>
               </div>
 
-              <div class="row ">
-                <div class="col-md-12 col-sm-12 col-xs-12 p0 pt30px" *ngIf="videoLink !== ''">
-                  <div class="videowrapper">
-                    <iframe [src]="videoLink" frameborder="0" allowfullscreen></iframe>
+              <div class="row" style="margin: 0;">
+                <div class="col-md-12 col-sm-12 col-xs-12 p0 pt15px">
+
+                  <div class="yt-player-outer">
+
+                    <!-- Custom top bar: title + author -->
+                    <div class="yt-top-bar" *ngIf="ytVideoTitle">
+                      <div class="yt-top-avatar" *ngIf="ytAuthorName">
+                        <span>{{ ytAuthorName.charAt(0).toUpperCase() }}</span>
+                      </div>
+                      <div class="yt-top-meta">
+                        <div class="yt-top-title" [title]="ytVideoTitle">{{ ytVideoTitle }}</div>
+                        <div class="yt-top-author" *ngIf="ytAuthorName">{{ ytAuthorName }}</div>
+                      </div>
+                    </div>
+
+                    <!-- ── PLAYING ── -->
+                    <div *ngIf="isPlaying && videoLink"
+                         class="yt-video-area"
+                         [class.is-fullscreen]="isFullscreen"
+                         [class.show-controls]="showControls || isPaused"
+                         id="youtubeVideoWrapper"
+                         (mousemove)="onPlayerAreaMouseMove()"
+                         (mouseleave)="onPlayerAreaMouseLeave()"
+                         (touchstart)="onPlayerAreaMouseMove()">
+
+                      <!-- Iframe clip zone: top title bar is clipped; bottom CC area stays visible -->
+                      <div class="yt-iframe-clip">
+
+                        <!-- iframe shifted up 38px to hide YouTube's top title bar only -->
+                        <iframe
+                          id="ytPlayerIframe"
+                          [src]="videoLink"
+                          frameborder="0"
+                          allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
+                          allowfullscreen>
+                        </iframe>
+
+                        <!-- Covers top edge artifact -->
+                        <div class="yt-cover-top"></div>
+
+                        <!-- Transparent tap layer for play/pause (stops above CC zone) -->
+                        <div class="yt-click-overlay" (click)="togglePlayPause()"></div>
+
+                        <!-- ░░ CUSTOM CONTROLS BAR — overlaid at bottom, covers YouTube's controls ░░ -->
+                        <div class="yt-controls">
+
+                          <!-- Progress bar -->
+                          <div class="yt-progress-row" (click)="onProgressBarClick($event)" #progressBarRef>
+                            <div class="yt-progress-track">
+                              <div class="yt-progress-fill" [style.width.%]="progressPercent"></div>
+                              <div class="yt-progress-thumb" [style.left.%]="progressPercent"></div>
+                            </div>
+                          </div>
+
+                          <!-- Controls row -->
+                          <div class="yt-controls-row">
+
+                            <!-- Play / Pause -->
+                            <button type="button" class="yt-btn" (click)="togglePlayPause()" title="Play/Pause">
+                              <svg *ngIf="isPaused" width="20" height="20" viewBox="0 0 24 24" fill="white">
+                                <path d="M8 5v14l11-7z"/>
+                              </svg>
+                              <svg *ngIf="!isPaused" width="20" height="20" viewBox="0 0 24 24" fill="white">
+                                <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                              </svg>
+                            </button>
+
+                            <!-- Time -->
+                            <span class="yt-time">
+                              {{ formatTime(currentTime) }}&nbsp;/&nbsp;{{ formatTime(duration) }}
+                            </span>
+
+                            <div class="yt-spacer"></div>
+
+                            <!-- CC -->
+                            <button type="button"
+                                    class="yt-btn yt-cc-btn"
+                                    [class.yt-cc-on]="isCcOn"
+                                    (click)="toggleCc()"
+                                    title="Captions">
+                              <span class="yt-cc-label">CC</span>
+                            </button>
+
+                            <!-- Fullscreen -->
+                            <button type="button" class="yt-btn" (click)="toggleFullscreen()" title="Fullscreen">
+                              <svg *ngIf="!isFullscreen" width="20" height="20" viewBox="0 0 24 24" fill="white">
+                                <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/>
+                              </svg>
+                              <svg *ngIf="isFullscreen" width="20" height="20" viewBox="0 0 24 24" fill="white">
+                                <path d="M5 16h3v3h2v-5H5v2zm3-8H5v2h5V5H8v3zm6 11h2v-3h3v-2h-5v5zm2-11V5h-2v5h5V8h-3z"/>
+                              </svg>
+                            </button>
+
+                          </div>
+                        </div>
+                        <!-- /custom controls -->
+
+                      </div>
+
+                    </div>
+                    <!-- /yt-video-area -->
+
+                    <!-- ── THUMBNAIL ── -->
+                    <div *ngIf="!isPlaying" class="yt-thumbnail-box" (click)="playVideo()">
+                      <img [src]="getThumbnailUrl()" (error)="onThumbnailError($event)" class="thumb-img" [alt]="title" />
+                      <div class="thumb-play-btn">
+                        <svg height="48" viewBox="0 0 68 48" width="68" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#FF0000"></path>
+                          <path d="M 45,24 27,14 27,34" fill="#FFFFFF"></path>
+                        </svg>
+                      </div>
+                    </div>
+
                   </div>
+                  <!-- /yt-player-outer -->
+
                 </div>
               </div>
-
             </form>
 
             <div class="pagebreak"></div>
-
           </div>
         </div>
       </div>
     </div>
   </div>
-  <!--/class -->
 </div>
-<!-- /page content -->
 
-<!-- footer  -->
 <app-bottom-navigation [dash]="true" (journalclick)="getclcickevent($event)"></app-bottom-navigation>
-<!-- /footer -->

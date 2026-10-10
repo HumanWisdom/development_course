@@ -154,9 +154,9 @@ export class WisdomShortsIndexPage implements OnInit {
                 } else if (lowerKey === 'hwpallevents' || lowerKey === 'events' || lowerKey === 'indepth') {
                   item['Type'] = 'In-depth conversation';
                 } else if (lowerKey === 'conversations' && this.isAdults) {
-                  item['Type'] = 'Real stories';
+                  item['Type'] = 'Stories of hope';
                 } else if (lowerKey === 'teentalks' && !this.isAdults) {
-                  item['Type'] = 'Real stories';
+                  item['Type'] = 'Stories of hope';
                 } else {
                   if (isVoice) {
                     item['Type'] = 'Expert tips';
@@ -296,7 +296,7 @@ export class WisdomShortsIndexPage implements OnInit {
   recordClick(val: any, id: any) {
     if (id !== null && id !== undefined) {
       const itemType = (val['Type'] || val['type'] || val['Category'] || val['category'] || '').toString().toLowerCase();
-      if (itemType === 'real stories' || itemType === 'real-life stories' || itemType === 'real_life' || itemType === 'conversations' || itemType === 'conversation' || itemType === 'teentalks' || itemType === 'teentalk' || itemType === 'realstories') {
+      if (itemType === 'stories of hope' || itemType === 'real stories' || itemType === 'real-life stories' || itemType === 'real_life' || itemType === 'conversations' || itemType === 'conversation' || itemType === 'teentalks' || itemType === 'teentalk' || itemType === 'realstories') {
         this.service.clickConversationVideos(id).subscribe({
           next:  () => console.log('conversation video click recorded'),
           error: (e) => console.error('conversation video click failed', e)
@@ -340,7 +340,7 @@ export class WisdomShortsIndexPage implements OnInit {
         isYoutube = true;
         ytCode = str;
       }
-    } else if (val['Type'] === 'Real stories' || val['Type'] === 'Real-life stories' || val['Type'] === 'Expert tips' || val['Type'] === 'In-depth' || val['Type'] === 'In-depth conversation') {
+    } else if (val['Type'] === 'Stories of hope' || val['Type'] === 'Real stories' || val['Type'] === 'Real-life stories' || val['Type'] === 'Expert tips' || val['Type'] === 'In-depth' || val['Type'] === 'In-depth conversation') {
       if (val['RowID']) {
         isYoutube = true;
         ytCode = val['RowID'].toString();
@@ -397,7 +397,7 @@ export class WisdomShortsIndexPage implements OnInit {
     // Real Stories / Teen Talk items (videopage URL, no YouTube link) should NOT call CheckShortsIsFree.
     // Apply the subscriber access check directly, same as the YouTube/conversation path above.
     const itemTypeLower = (val['Type'] || val['type'] || '').toString().toLowerCase();
-    const isRealStories = itemTypeLower === 'real stories' || itemTypeLower === 'real-life stories' ||
+    const isRealStories = itemTypeLower === 'stories of hope' || itemTypeLower === 'real stories' || itemTypeLower === 'real-life stories' ||
                           itemTypeLower === 'conversations' || itemTypeLower === 'conversation' ||
                           itemTypeLower === 'teentalks' || itemTypeLower === 'teentalk';
     if (isRealStories) {
@@ -727,7 +727,7 @@ export class WisdomShortsIndexPage implements OnInit {
       } else if (selectedTypeStr === 'expert_tips') {
         list = list.filter(d => d['Type'] && (d['Type'].toLowerCase() === 'expert tips' || d['Type'].toLowerCase() === 'voices'));
       } else if (selectedTypeStr === 'real_life') {
-        list = list.filter(d => d['Type'] && (d['Type'].toLowerCase() === 'real stories' || d['Type'].toLowerCase() === 'real-life stories' || d['Type'].toLowerCase() === 'conversations' || d['Type'].toLowerCase() === 'teentalks'));
+        list = list.filter(d => d['Type'] && (d['Type'].toLowerCase() === 'stories of hope' || d['Type'].toLowerCase() === 'real stories' || d['Type'].toLowerCase() === 'real-life stories' || d['Type'].toLowerCase() === 'conversations' || d['Type'].toLowerCase() === 'teentalks'));
       } else if (selectedTypeStr === 'in_depth') {
         list = list.filter(d => d['Type'] && (d['Type'].toLowerCase() === 'in-depth conversation' || d['Type'].toLowerCase() === 'in-depth' || d['Type'].toLowerCase() === 'events' || d['Type'].toLowerCase() === 'hwpallevents'));
       }

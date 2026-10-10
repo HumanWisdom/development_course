@@ -67,8 +67,40 @@ if (!function_exists('hw_org_defaults')) {
             'logo' => hw_org_cdn_assets()['logo_default'],
             'freeDays' => 7,
             'isActive' => 1,
+            'showPartnerLogo' => 0,
+            'partnerLogo' => hw_org_partner_logo_url($id),
             'trialEnds' => $end->format('j M Y'),
+        ] + hw_org_copy([]);
+    }
+}
+
+if (!function_exists('hw_org_copy')) {
+    /** Adv page copy from GetOrganization, falling back to the default wording. */
+    function hw_org_copy($row)
+    {
+        $defaults = [
+            'bannerText' => 'Exclusive offer',
+            'iconTitle1' => 'Feel better',
+            'iconTitle2' => 'Build happier relationships',
+            'iconTitle3' => 'Handle life better',
+            'iconSubtitle1' => 'Manage and improve wellbeing',
+            'iconSubtitle2' => 'Understand yourself and others better',
+            'iconSubtitle3' => 'Navigate challenges with greater confidence',
         ];
+        $copy = [];
+        foreach ($defaults as $key => $fallback) {
+            $value = isset($row[$key]) ? trim((string) $row[$key]) : '';
+            $copy[$key] = $value !== '' ? $value : $fallback;
+        }
+        return $copy;
+    }
+}
+
+if (!function_exists('hw_org_partner_logo_url')) {
+    /** Partner logo file is named after the OrganizationId, e.g. OrgLogo/org-humanwisdom2.svg */
+    function hw_org_partner_logo_url($id)
+    {
+        return HW_CDN_ORIGIN . '/website/svgs/OrgLogo/' . rawurlencode(hw_org_sanitize_id($id)) . '.svg';
     }
 }
 
@@ -111,7 +143,7 @@ if (!function_exists('hw_org_cdn_assets')) {
         $cdn = HW_CDN_ORIGIN;
         $s3 = 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com';
         return [
-            'logo_default' => $s3 . '/website/svgs/logo.svg',
+            'logo_default' => 'https://d1tenzemoxuh75.cloudfront.net/website/svgs/logo_new.svg',
             'hero_desktop' => hw_org_base() . '/assets/images/lcp/banneraug.webp',
             'hero_desktop_2x' => hw_org_base() . '/assets/images/lcp/banneraug@2x.webp',
             'hero_mobile' => hw_org_base() . '/assets/images/lcp/banner_mobile.webp',
@@ -128,10 +160,10 @@ if (!function_exists('hw_org_cdn_assets')) {
             'icon_heart' => $s3 . '/website/svgs/heart_feel.svg',
             'icon_hearts' => $s3 . '/website/svgs/build_better.svg',
             'icon_target' => $s3 . '/website/svgs/handle_better.svg',
-            'user' => $s3 . '/website/svgs/web_form_user.svg',
-            'mail' => $s3 . '/website/svgs/web_form_mail.svg',
-            'eye' => $s3 . '/assets/svgs/v1_3/password_hide.svg',
-            'eye_show' => $s3 . '/assets/svgs/v1_3/password_show.svg',
+            'user' => $s3 . '/assets/svgs/v_1_4/svg_user.svg',
+            'mail' => $s3 . '/assets/svgs/v_1_4/svg_email.svg',
+            'eye' => $s3 . '/assets/svgs/v_1_4/password_hide.svg',
+            'eye_show' => $s3 . '/assets/svgs/v_1_4/password_show.svg',
             'tick' => $s3 . '/assets/svgs/v1_3/tick_white.svg',
             'success_check' => $s3 . '/assets/svgs/v_1_4/welldone!adultss.svg',
             'calendar' => $s3 . '/website/svgs/calender.svg',
@@ -145,7 +177,7 @@ if (!function_exists('hw_org_cdn_assets')) {
             'appstore_url' => 'https://apps.apple.com/in/app/humanwisdom/id1588535567',
             'playstore_url' => 'https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US',
             'onelink' => 'https://onelink.to/hsnt8b',
-            'web_app' => '/',
+            'web_app' => 'https://happierme.app/pages/splash_options.php',
             'login' => hw_org_base() === '..' ? 'splash_options.php' : 'pages/splash_options.php',
         ];
     }
@@ -156,7 +188,7 @@ if (!function_exists('hw_org_logo_url')) {
     {
         $assets = hw_org_cdn_assets();
         $logoUrl = trim((string) $logoUrl);
-        if ($logoUrl === '') {
+        if ($logoUrl === '' || preg_match('#/website/svgs/logo\.svg(?:\?|#|$)#i', $logoUrl)) {
             return $assets['logo_default'];
         }
         if (preg_match('#^https?://#i', $logoUrl)) {
@@ -258,8 +290,10 @@ if (!function_exists('hw_org_fetch')) {
             'logo' => hw_org_logo_url($row['LogoUrl'] ?? ''),
             'freeDays' => $freeDays,
             'isActive' => isset($row['IsActive']) ? (int) $row['IsActive'] : 1,
+            'showPartnerLogo' => isset($row['showPartnerLogo']) ? (int) $row['showPartnerLogo'] : 0,
+            'partnerLogo' => hw_org_partner_logo_url($id),
             'trialEnds' => $end->format('j M Y'),
-        ];
+        ] + hw_org_copy($row);
 
         $_SESSION['hw_org_data'] = $org;
         return $org;

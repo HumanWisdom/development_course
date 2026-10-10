@@ -174,11 +174,13 @@
       }
     }
 
-    @media (max-width: 768px) {
-
-      .blog-index-hero.hpt120px {
-        margin-top: 70px !important;
+    @media (max-width: 767px) {
+      body.page-blog-index section.blog-index-hero.hpt120px {
+        margin-top: 64px !important;
       }
+    }
+
+    @media (max-width: 768px) {
 
       /* Tighten space between View More and footer (default .dfooter margin-top: 100px) */
       body.page-blog-index .dfooter {
@@ -308,7 +310,7 @@
     body.page-blog-index .blog-filter-bar {
       display: flex;
       align-items: center;
-      gap: 24px;
+      gap: 12px;
       position: relative;
       min-height: 54px;
       overflow-x: auto;
@@ -325,7 +327,7 @@
       flex: 0 0 auto;
       height: 54px;
       margin: 0;
-      padding: 4px 24px;
+      padding: 4px 15px;
       border: 1px solid transparent;
       border-radius: 27px;
       background: rgba(255, 247, 230, 1);
@@ -410,22 +412,43 @@
     }
 
     body.page-blog-index .blog-filter-bar.is-searching {
-      overflow: visible;
+      overflow: hidden;
+      gap: 8px;
     }
 
     body.page-blog-index .blog-filter-bar.is-searching .blog-filter-tag {
-      opacity: 0;
-      pointer-events: none;
+      display: none;
     }
 
     body.page-blog-index .blog-filter-bar.is-searching .blog-search-box {
-      width: calc(100% - 66px);
+      position: relative;
+      left: auto;
+      right: auto;
+      top: auto;
+      transform: none;
+      order: 1;
+      flex: 1 1 auto;
+      width: auto;
       opacity: 1;
       pointer-events: auto;
     }
 
-    body.page-blog-index .blog-search-input {
+    body.page-blog-index .blog-filter-bar.is-searching .blog-search-input {
       width: 100%;
+      box-sizing: border-box;
+    }
+
+    body.page-blog-index .blog-filter-bar.is-searching .blog-filter-search {
+      order: 2;
+      position: relative;
+      right: auto;
+      top: auto;
+      transform: none;
+      flex: 0 0 54px;
+    }
+
+    body.page-blog-index .blog-search-input {
+      width: 80%;
       height: 54px;
       margin: 0;
       padding: 4px 48px 4px 24px;
@@ -519,8 +542,12 @@
     }
 
     @media (max-width: 768px) {
+      /* 1fr is minmax(auto, 1fr). The nowrap filter row then forces this
+         column wider than the screen, and card images follow it. */
       body.page-blog-index .blog_links > .col-lg-10 {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
+        min-width: 0;
+        max-width: 100%;
         row-gap: 30px;
       }
 
@@ -549,6 +576,20 @@
         flex-basis: 44px;
         width: 44px;
         border-radius: 22px;
+      }
+
+      body.page-blog-index .blog-filter-bar.is-searching .blog-filter-search {
+        flex-basis: 44px;
+        width: 44px;
+      }
+
+      body.page-blog-index .blog-filter-search.is-open .blog-icon-close {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        line-height: 1;
+        color: #834B66;
       }
 
       body.page-blog-index .blog-filter-heading {
@@ -591,17 +632,20 @@
               <button type="button" class="blog-filter-tag is-active" data-filter="all" data-title="All">All</button>
               <button type="button" class="blog-filter-tag" data-filter="mental-health" data-title="Mental Health">Mental health</button>
               <button type="button" class="blog-filter-tag" data-filter="relationships" data-title="Relationships">Relationships</button>
-              <button type="button" class="blog-filter-tag" data-filter="work-leadership" data-title="Work &amp; Leadership">Work &amp; Leadership</button>
-              <button type="button" class="blog-filter-tag" data-filter="breathing-meditation" data-title="Breathing &amp; Meditation">Breathing &amp; Meditation</button>
-              <button type="button" class="blog-filter-search" id="blog-search-toggle" aria-label="Search articles" aria-expanded="false">
+              <button type="button" class="blog-filter-tag" data-filter="work" data-title="Work">Work</button>
+              <button type="button" class="blog-filter-tag" data-filter="sports" data-title="Sports">Sports</button>
+              <button type="button" class="blog-filter-tag" data-filter="parenting" data-title="Parenting">Parenting</button>
+              <button type="button" class="blog-filter-tag" data-filter="teenagers" data-title="Teenagers">Teenagers</button>
+
+              <button type="button" class="blog-filter-search" id="blog-search-toggle" aria-label="Search blogs" aria-expanded="false">
                 <img src="https://d1tenzemoxuh75.cloudfront.net/website/search.svg" class="blog-icon-search" alt="search_icon" width="18" height="18" aria-hidden="true">
                 <i class="bi bi-x blog-icon-close" aria-hidden="true"></i>
               </button>
               <form class="blog-search-box" action="" onsubmit="return false;">
-                <input type="text" class="blog-search-input" id="blog-search-input" placeholder="Search articles..." autocomplete="off">
-                <button type="button" class="blog-search-clear" id="blog-search-clear" aria-label="Clear search">
+                <input type="text" class="blog-search-input" id="blog-search-input" placeholder="Search blogs..." autocomplete="off">
+               <!--  <button type="button" class="blog-search-clear" id="blog-search-clear" aria-label="Clear search">
                   <i class="bi bi-x" aria-hidden="true"></i>
-                </button>
+                </button> -->
               </form>
             </div>
             <h2 class="blog-filter-heading is-hidden" id="blog-filter-heading"></h2>
@@ -649,7 +693,7 @@
               <div class="row mt20px">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                   <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                    Manage your emotions
+                    Mental health
                   </button>
                 </div>
               </div>
@@ -678,7 +722,7 @@
               <div class="row mt20px">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                   <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                    Work and Leadership
+                    Work
                   </button>
                 </div>
               </div>
@@ -832,10 +876,7 @@
                     <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
                       Mental health
                     </button>
-
-                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                      Breathing & Meditation
-                    </button>
+                  
                   </div>
                 </div>
 
@@ -862,13 +903,14 @@
 
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                      Work and Leadership
-                    </button>
-
-                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
+                     <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
                       Mental health
                     </button>
+                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
+                      Work
+                    </button>
+
+                   
                   </div>
                 </div>
 
@@ -898,7 +940,7 @@
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                      Work and Leadership
+                      Work
                     </button>
                   </div>
                 </div>
@@ -990,10 +1032,7 @@
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                      Mental health
-                    </button>
-                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                      Work and Leadership
+                      Teenagers
                     </button>
                   </div>
                 </div>
@@ -1023,9 +1062,7 @@
                     <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
                       Mental health
                     </button>
-                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                      Breathing & Meditation
-                    </button>
+                  
                   </div>
                 </div>
 
@@ -1114,7 +1151,7 @@
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                      Work and Leadership
+                      Work
                     </button>
 
                   </div>
@@ -1174,7 +1211,7 @@
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                      Mental health
+                      Relationships
                     </button>
 
                   </div>
@@ -1205,7 +1242,7 @@
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                      Mental health
+                      Work
                     </button>
 
                   </div>
@@ -1234,7 +1271,7 @@
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                      Work and Leadership
+                      Work
                     </button>
 
                   </div>
@@ -1263,9 +1300,11 @@
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                      Mental health
+                      Parenting
                     </button>
-
+ <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
+                      Teenagers
+                    </button>
                   </div>
                 </div>
 
@@ -1294,7 +1333,7 @@
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                      Mental health
+                      Teenagers
                     </button>
 
                   </div>
@@ -1323,7 +1362,7 @@
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                      Work and Leadership
+                      Teenagers
                     </button>
 
                   </div>
@@ -1354,6 +1393,9 @@
                     <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
                       mental health
                     </button>
+                     <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
+                      Teenagers
+                    </button>
 
                   </div>
                 </div>
@@ -1381,8 +1423,13 @@
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                      Work and Leadership
+                      Mental health
                     </button>
+                  
+                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
+                      Work
+                    </button>
+                   
 
                   </div>
                 </div>
@@ -1412,6 +1459,9 @@
                     <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
                       mental health
                     </button>
+                       <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
+                     Teenagers
+                    </button>
 
                   </div>
                 </div>
@@ -1439,7 +1489,7 @@
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                      Work and Leadership
+                      Work
                     </button>
 
                   </div>
@@ -1471,7 +1521,7 @@
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                      Work and Leadership
+                      Work
                     </button>
 
 
@@ -1582,7 +1632,7 @@
 
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">Manage your emotions</button>
+                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">Sports</button>
 
 
                   </div>
@@ -1610,7 +1660,7 @@
 
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">Mental health</button>
+                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">Sports</button>
 
 
                   </div>
@@ -1725,7 +1775,7 @@
 
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">Work and Leadership</button>
+                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">Teenagers</button>
 
 
                   </div>
@@ -1756,7 +1806,7 @@
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">                    
-Work and Leadership</button>
+Work</button>
 
 
                   </div>
@@ -1785,7 +1835,7 @@ Work and Leadership</button>
 
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">  Stress Management</button>
+                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">Mental Health</button>
 
 
                   </div>
@@ -1813,7 +1863,7 @@ Work and Leadership</button>
 
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp"> Suicide Prevention</button>
+                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">Mental Health</button>
 
 
                   </div>
@@ -1992,7 +2042,7 @@ Work and Leadership</button>
             
                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="1100">
 
-              <a class="" href="unlock_your_potential.php">
+              <a class="BlogCard" href="unlock_your_potential.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/90.webp" class="img-responsive img_blogs" alt="Blog_img">
@@ -2010,6 +2060,40 @@ Work and Leadership</button>
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                     <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">Unlock Your Potential This New Year: A Journey of Reflection, Resilience, and Emotional Intelligence
+
+
+
+
+
+</h4>
+                  </div>
+                </div>
+               
+              </a>
+            </div>
+
+
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="1100">
+
+              <a class="BlogCard" href="depression_post_vacation.php">
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/83.webp" class="img-responsive img_blogs" alt="Blog_img">
+                  </div>
+                </div>
+
+                <div class="row mt20px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp"> Mental health</button>
+
+
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                    <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">Why Does Depression Post Vacation Happen and How to Overcome It?
+
 
 
 
@@ -2079,14 +2163,23 @@ Work and Leadership</button>
     if (t.indexOf('mental') !== -1 || t.indexOf('emotion') !== -1 || t.indexOf('anxiety') !== -1 || t.indexOf('stress') !== -1) {
       return 'mental-health';
     }
-    if (t.indexOf('relationship') !== -1 || t.indexOf('parenting') !== -1) {
+    if (t.indexOf('relationship') !== -1) {
       return 'relationships';
     }
     if (t.indexOf('work') !== -1 || t.indexOf('leadership') !== -1 || t.indexOf('organisation') !== -1 || t.indexOf('organization') !== -1) {
-      return 'work-leadership';
+      return 'work';
     }
     if (t.indexOf('breath') !== -1 || t.indexOf('meditat') !== -1) {
       return 'breathing-meditation';
+    }
+     if (t.indexOf('sports') !== -1 ) {
+      return 'sports';
+    }
+     if (t.indexOf('teenagers') !== -1 ) {
+      return 'teenagers';
+    }
+     if (t.indexOf('parenting') !== -1 ) {
+      return 'parenting';
     }
     return '';
   };
@@ -2139,6 +2232,15 @@ Work and Leadership</button>
   $('#toggle').on('click', function(e) {
     e.preventDefault();
     e.stopImmediatePropagation();
+    /* Ignore a second handler on the same click (shared #toggle script). */
+    if (this.dataset.blogToggleLock === '1') {
+      return;
+    }
+    this.dataset.blogToggleLock = '1';
+    var btn = this;
+    setTimeout(function () {
+      delete btn.dataset.blogToggleLock;
+    }, 0);
 
     isExpanded = !isExpanded;
     setToggleLabel(isExpanded ? 'View Less' : 'View More');
@@ -2164,6 +2266,9 @@ Work and Leadership</button>
     if (opening) {
       $bar.addClass('is-searching');
       $searchToggle.addClass('is-open').attr('aria-expanded', true);
+      if (window.matchMedia('(max-width: 768px)').matches) {
+        $bar.scrollLeft(0);
+      }
       $searchInput.trigger('focus');
     } else {
       closeSearch();

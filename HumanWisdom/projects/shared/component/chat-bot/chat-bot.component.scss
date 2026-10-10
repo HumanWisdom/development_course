@@ -667,6 +667,12 @@
   color: inherit !important;
   text-decoration: underline !important;
   cursor: pointer !important;
+  pointer-events: auto !important;
+
+  * {
+    cursor: pointer !important;
+    pointer-events: auto !important;
+  }
 
   &:hover,
   &:visited,
@@ -865,71 +871,66 @@
 
 // Yes/No action buttons
 .yes-no-container {
-  margin: 0 20px 12px 20px;
-  padding: 12px;
-  background: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
-  
+  margin: 12px 0 0 0;
+  padding: 0;
+
+  &.answered {
+    cursor: not-allowed;
+
+    .yes-no-label {
+      cursor: not-allowed;
+    }
+  }
+
   .yes-no-label {
     font-size: 13px;
-    font-weight: 600;
+    font-weight: 500;
     color: rgba(0, 0, 0, 0.6);
-    margin-bottom: 8px;
+    margin: 0 0 8px 0;
   }
-  
+
   .yes-no-buttons {
     display: flex;
     gap: 8px;
-    
+
     .action-button {
-      flex: 1;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 6px;
       padding: 10px 16px;
-      border: none;
+      border: 0px solid white;
       border-radius: 8px;
       font-size: 14px;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.2s ease;
       pointer-events: auto;
-      
-      svg {
-        width: 16px;
-        height: 16px;
+      background: white;
+      box-shadow: 1px 1px 2px 0px #0000001A;
+      color: rgba(0, 0, 0, 0.75);
+
+      &:hover:not(:disabled) {
+        background: #f0f0f0;
+        transform: translateY(-1px);
       }
-      
-      &.yes-button {
-        background: #4caf50;
-        color: white;
-        
-        &:hover {
-          background: #45a049;
-          transform: translateY(-1px);
-          box-shadow: 0px 2px 6px rgba(76, 175, 80, 0.3);
-        }
-        
-        &:active {
-          transform: translateY(0);
-        }
+
+      &:active:not(:disabled) {
+        transform: none;
       }
-      
-      &.no-button {
-        background: #f44336;
-        color: white;
-        
-        &:hover {
-          background: #e53935;
-          transform: translateY(-1px);
-          box-shadow: 0px 2px 6px rgba(244, 67, 54, 0.3);
-        }
-        
-        &:active {
-          transform: translateY(0);
-        }
+
+      // Selected state
+      &.selected {
+        background: rgba(0, 0, 0, 0.08);
+        border-color: rgba(0, 0, 0, 0.25);
+        color: rgba(0, 0, 0, 0.75);
+        font-weight: 600;
+        cursor: not-allowed;
+      }
+
+      // Disabled unselected - same appearance, just no pointer
+      &:disabled:not(.selected) {
+        cursor: not-allowed;
+        pointer-events: none;
       }
     }
   }
@@ -973,12 +974,26 @@
 }
 
 @media (max-width: 480px) {
+  :host {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+  }
+
   .chat-bot-container,
   .chat-header,
   .chat-area,
   .chat-input-area {
     width: 100%;
-    max-width: 374px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .chat-header,
+  .chat-input-area {
+    left: 0;
+    right: 0;
+    transform: none;
   }
   
   .error-message {

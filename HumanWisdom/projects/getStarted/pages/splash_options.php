@@ -42,6 +42,10 @@
           /* font-family: verdana; */
           font-family:poppins !important;
         }
+        #scrollTopArrow
+        {
+          display: none !important;
+        }
         </style>
   </head>
 

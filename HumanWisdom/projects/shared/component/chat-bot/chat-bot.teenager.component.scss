@@ -677,6 +677,71 @@
   }
 }
 
+// ─── Backend-injected content cards (teenager theme) ─────────────────────────
+// Cards are white-background elements injected inside the dark blue message
+// bubble. Override the bubble's white text colour so card text is readable.
+:host ::ng-deep .bot-message-content {
+
+  // Wrapper anchor that makes the whole card clickable
+  a.content-card,
+  a[style*="background"],
+  a[style*="border-radius"],
+  a[style*="display:flex"],
+  a[style*="display: flex"],
+  a {
+    text-decoration: none !important;
+    color: #222222 !important;
+    cursor: pointer !important;
+    pointer-events: auto !important;
+
+    * {
+      cursor: pointer !important;
+      pointer-events: auto !important;
+    }
+
+    &:hover {
+      opacity: 0.9;
+      color: #222222 !important;
+    }
+  }
+
+  // Card title text
+  .card-title,
+  [class*="card-title"],
+  [style*="font-weight: bold"],
+  [style*="font-weight:bold"] {
+    color: #222222 !important;
+  }
+
+  // Card type/badge label (e.g. "MICRO-LEARNING")
+  .card-label,
+  .content-type,
+  [class*="card-label"],
+  [class*="content-type"],
+  [style*="font-size: 11px"],
+  [style*="font-size:11px"],
+  [style*="letter-spacing"] {
+    color: #666666 !important;
+  }
+
+  // Any element with a white or light background is a card — reset text to dark
+  [style*="background: white"],
+  [style*="background:#fff"],
+  [style*="background: #fff"],
+  [style*="background-color: white"],
+  [style*="background-color:#fff"],
+  [style*="background-color: #fff"],
+  [style*="background-color: rgb(255, 255, 255)"],
+  [style*="background: rgb(255, 255, 255)"] {
+    color: #222222 !important;
+
+    a, span, p, div {
+      color: inherit !important;
+    }
+  }
+}
+// ─────────────────────────────────────────────────────────────────────────────
+
 // Feedback buttons (Thumbs up/down) - placed OUTSIDE the chat bubble
 .feedback-container {
   display: flex;
@@ -718,77 +783,74 @@
   }
 }
 
+
 // Yes/No action buttons
 .yes-no-container {
-  margin: 0 20px 12px 20px;
-  padding: 12px;
-  background: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
-  
+  margin: 12px 0 0 0;
+  padding: 0;
+
+  &.answered {
+    cursor: not-allowed;
+
+    .yes-no-label {
+      cursor: not-allowed;
+    }
+  }
+
   .yes-no-label {
     font-size: 13px;
-    font-weight: 600;
-    color: rgba(0, 0, 0, 0.6);
-    margin-bottom: 8px;
+    font-weight: 500;
+    color: #ffffff;   // ← white text on dark-blue chat background
+    margin: 0 0 8px 0;
   }
-  
+
   .yes-no-buttons {
     display: flex;
     gap: 8px;
-    
+
     .action-button {
-      flex: 1;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 6px;
       padding: 10px 16px;
-      border: none;
+      border: 0px solid white;
       border-radius: 8px;
-      font-size: 14px;
-      font-weight: 600;
+      font-size: 15px;
+      font-weight: 500;
       cursor: pointer;
       transition: all 0.2s ease;
       pointer-events: auto;
-      
-      svg {
-        width: 16px;
-        height: 16px;
+      background: white;
+      box-shadow: 1px 1px 2px 0px #0000001A;
+      color: rgba(0, 0, 0, 0.75);
+
+      &:hover:not(:disabled) {
+        background: #f0f0f0;
+        transform: translateY(-1px);
       }
-      
-      &.yes-button {
-        background: #4caf50;
-        color: white;
-        
-        &:hover {
-          background: #45a049;
-          transform: translateY(-1px);
-          box-shadow: 0px 2px 6px rgba(76, 175, 80, 0.3);
-        }
-        
-        &:active {
-          transform: translateY(0);
-        }
+
+      &:active:not(:disabled) {
+        transform: none;
       }
-      
-      &.no-button {
-        background: #f44336;
-        color: white;
-        
-        &:hover {
-          background: #e53935;
-          transform: translateY(-1px);
-          box-shadow: 0px 2px 6px rgba(244, 67, 54, 0.3);
-        }
-        
-        &:active {
-          transform: translateY(0);
-        }
+
+      // Selected / active state — teens pink accent + white text
+      &.selected {
+        background: #EE9596;
+        border-color: transparent;
+        color: #ffffff !important;   // ← white text on pink selected button
+        font-weight: 600;
+        cursor: not-allowed;
+      }
+
+      // Disabled unselected - same appearance, just no pointer
+      &:disabled:not(.selected) {
+        cursor: not-allowed;
+        pointer-events: none;
       }
     }
   }
 }
+
 
 // Give More Options button
 .more-options-container {
@@ -828,13 +890,21 @@
   }
 }
 
-@media (max-width: 480px) {.chat-bot-container
+@media (max-width: 480px) {
   .chat-bot-container,
   .chat-header,
   .chat-area,
   .chat-input-area {
     width: 100%;
-    max-width: 374px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .chat-header,
+  .chat-input-area {
+    left: 0;
+    right: 0;
+    transform: none;
   }
   
   .error-message {

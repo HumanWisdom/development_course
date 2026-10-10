@@ -10,14 +10,11 @@ body { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Se
   color: #fff;
   background: linear-gradient(180deg, #da7d71 0%, #bf5061 100%);
 }
-.hero-star {
-  color: rgba(255, 247, 230, 1);
-  font-size: 16px;
-  line-height: 16px;
-  width: 16px;
-  height: 16px;
-  display: inline-block;
-  text-align: center;
+.hero-star,
+.hero-app-icon {
+  display: block;
+  flex-shrink: 0;
+  max-width: none;
 }
 .text-wrapper-5 { color: #fff; font-weight: 600; text-align: center; line-height: 1.2; }
 img { max-width: 100%; display: block; }
@@ -210,6 +207,33 @@ img { max-width: 100%; display: block; }
   padding: 18px 40px;
   border-radius: 35px;
 }
+.web_home_divlanding .hero-try-free-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: flex-start;
+  width: 317px;
+  max-width: 100%;
+  gap: 8px;
+}
+.web_home_divlanding .hero-try-free-block .hero-try-free-link {
+  width: 100%;
+  align-self: stretch;
+  justify-content: center;
+}
+.web_home_divlanding .hero-no-card-note {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: "Poppins", Helvetica, sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 0;
+  color: rgba(255, 247, 230, 1);
+  text-align: center;
+}
 .div-wrapper { width: 100%; max-width: 1340px; }
 .div { width: 100%; }
 .div-2 {
@@ -268,32 +292,40 @@ img { max-width: 100%; display: block; }
 .ta_lc { text-align: left; }
 .rating-row {
   display: inline-flex;
-  align-items: center;
-  gap: 5px;
+  align-items: flex-start;
+  height: 21px;
+  gap: 0;
   flex-wrap: nowrap;
+  font-family: "Poppins", Helvetica, sans-serif;
   font-size: 12px;
   font-weight: 400;
-  color: #000;
+  color: #fff7e6;
   margin: 0 0 8px;
-  line-height: 1;
+  line-height: 1.4;
 }
-.rating_a { display: inline-flex; align-items: center; gap: 2px; line-height: 1; }
-.rating_a .fa-star,
-.rating_a .hero-star {
-  color: #000;
-  font-size: 16px;
-  line-height: 16px;
-  vertical-align: middle;
-  height: 16px;
-  width: 16px;
-  display: inline-block;
-  text-align: center;
+.rating_a {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 7px;
+  margin-top: 2px;
+  margin-right: 12px;
+  line-height: 0;
 }
-.rating_a .hero-star { color: rgba(255, 247, 230, 1); }
-.appstore_a { display: inline-flex; align-items: center; line-height: 1; }
-.appstore_a .fa-apple { font-size: 16px; color: #000; line-height: 1; vertical-align: middle; }
-.hero-app-icon::before { content: ""; display: inline-block; width: 14px; height: 16px; background: rgba(255, 247, 230, 1); mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 384 512'%3E%3Cpath fill='black' d='M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25-3.9 43-17.3 76.4-17.3 32.9 0 49.9 17.3 84.1 17.3 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72-23.8 1.4-52 16.3-68.9 34.1-17.8 18.8-28.2 43.2-25.8 68.6 27.7 2.1 52.2-16.8 70.7-30.6z'/%3E%3C/svg%3E") center/contain no-repeat; -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 384 512'%3E%3Cpath fill='black' d='M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25-3.9 43-17.3 76.4-17.3 32.9 0 49.9 17.3 84.1 17.3 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72-23.8 1.4-52 16.3-68.9 34.1-17.8 18.8-28.2 43.2-25.8 68.6 27.7 2.1 52.2-16.8 70.7-30.6z'/%3E%3C/svg%3E") center/contain no-repeat; }
-.fs_15px.fw_700 { font-size: 15px; font-weight: 700; line-height: 1; vertical-align: middle; }
+.appstore_a {
+  display: inline-flex;
+  align-items: flex-start;
+  margin-right: 5px;
+  line-height: 0;
+}
+.rating-label {
+  align-self: center;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #fff7e6;
+  white-space: nowrap;
+}
+.fs_15px.fw_700 { font-size: 15px; font-weight: 700; line-height: 1.4; }
 
 @media (min-width: 769px) {
   .frame-wrapper.web_home_divlanding #hw-website-title,
@@ -371,6 +403,19 @@ img { max-width: 100%; display: block; }
     margin: 0;
   }
   .pt_18px { padding-top: 18px; }
+  .web_home_divlanding .hero-phone {
+    width: 211px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: flex-start;
+  }
+  .web_home_divlanding .hero-phone picture {
+    display: block;
+    width: 211px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
   .web_home_divlanding .new-app-adults-teen {
     display: block;
     width: 211px;
@@ -383,6 +428,10 @@ img { max-width: 100%; display: block; }
     object-position: center center;
     flex-shrink: 0;
   }
+  .web_home_divlanding .hero-phone-caption {
+    width: 170px;
+    margin-left: 45px;
+  }
   .web_home_divlanding .div-3 {
     width: min(335px, calc(100% - 40px));
     max-width: min(335px, calc(100% - 40px));
@@ -393,7 +442,13 @@ img { max-width: 100%; display: block; }
     margin-left: auto;
     margin-right: auto;
   }
+  .web_home_divlanding .hero-try-free-block {
+    width: min(335px, 100%);
+    max-width: 100%;
+    align-self: center;
+  }
   .web_home_divlanding .div-3 > .frame-wrapper-2,
+  .web_home_divlanding .div-3 > .hero-try-free-block,
   .web_home_divlanding .div-3 > .hero-try-free-link,
   .web_home_divlanding .div-3 > [class*="col-"] {
     align-self: center !important;
@@ -458,7 +513,7 @@ img { max-width: 100%; display: block; }
   .web_home_divlanding .rating-row {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
     margin: 0 auto;
     text-align: center;
@@ -581,7 +636,14 @@ img { max-width: 100%; display: block; }
 .dfooter_social_links {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
+}
+.dfooter .tright {
+  text-align: center;
+}
+.dfooter .tright img {
+  margin-left: auto;
+  margin-right: auto;
 }
 .dfooter_social_links a {
   margin-right: 15px;

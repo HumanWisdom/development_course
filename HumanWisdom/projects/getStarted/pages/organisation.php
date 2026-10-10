@@ -5,6 +5,7 @@ $assets = hw_org_cdn_assets();
 $pageTitle = 'Welcome to HappierMe';
 $bodyClass = 'org-page org-page-landing';
 $signupUrl = hw_org_page('organisation-signup');
+$partnerLogoSlot = true;
 include __DIR__ . '/../includes/organisation_head.php';
 include __DIR__ . '/../includes/organisation_header.php';
 ?>
@@ -25,9 +26,15 @@ include __DIR__ . '/../includes/organisation_header.php';
       <div class="org-hero-copy">
         <div class="org-rating" role="group" aria-label="4.8 App store rating">
           <span class="org-rating-stars" aria-hidden="true">
-            <span class="org-hero-star">★</span><span class="org-hero-star">★</span><span class="org-hero-star">★</span><span class="org-hero-star">★</span><span class="org-hero-star">★</span>
+            <img class="org-hero-star" src="<?= hw_org_h(hw_asset_url(hw_org_base() . '/assets/svgs/hero-rating-star.svg')) ?>" width="16" height="16" alt="">
+            <img class="org-hero-star" src="<?= hw_org_h(hw_asset_url(hw_org_base() . '/assets/svgs/hero-rating-star.svg')) ?>" width="16" height="16" alt="">
+            <img class="org-hero-star" src="<?= hw_org_h(hw_asset_url(hw_org_base() . '/assets/svgs/hero-rating-star.svg')) ?>" width="16" height="16" alt="">
+            <img class="org-hero-star" src="<?= hw_org_h(hw_asset_url(hw_org_base() . '/assets/svgs/hero-rating-star.svg')) ?>" width="16" height="16" alt="">
+            <img class="org-hero-star" src="<?= hw_org_h(hw_asset_url(hw_org_base() . '/assets/svgs/hero-rating-star.svg')) ?>" width="16" height="16" alt="">
           </span>
-          <span class="org-app-icon" aria-hidden="true"></span>
+          <span class="org-app-icon" aria-hidden="true">
+            <img src="<?= hw_org_h(hw_asset_url(hw_org_base() . '/assets/svgs/hero-rating-apple.svg')) ?>" width="17" height="20" alt="">
+          </span>
           <span class="org-rating-copy"><strong>4.8</strong> App store rating</span>
         </div>
         <h1>Welcome to<br> HappierMe!</h1>
@@ -54,7 +61,7 @@ include __DIR__ . '/../includes/organisation_header.php';
   <section class="org-quotes">
     <div class="org-quotes-inner">
       <div class="org-quote-mark d-lg-none">
-        <img src="<?= hw_org_h($assets['quote']) ?>" alt="">
+        <img src="<?= hw_org_h(hw_asset_url(hw_org_base() . '/assets/svgs/org-quote.svg')) ?>" alt="" width="48" height="32">
       </div>
       <div class="org-quotes-grid">
         <article class="org-card">

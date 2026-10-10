@@ -95,12 +95,26 @@ img {
 }
 
 img.org-logo {
-  width: 215px;
-  height: 61px;
-  max-width: 215px;
+  width: 190px;
+  height: 44px;
+  max-width: 190px;
   object-fit: contain;
   object-position: left center;
   display: block;
+}
+
+img.org-partner-logo {
+  height: 44px;
+  width: auto;
+  max-width: 190px;
+  object-fit: contain;
+  display: block;
+  margin-left: auto;
+  object-position: right center;
+}
+
+img.org-partner-logo[hidden] {
+  display: none;
 }
 
 .org-main {
@@ -226,20 +240,24 @@ a.org-btn.org-btn-block {
 }
 
 a.org-btn-outline,
-.org-btn-outline {
-  background: #fff;
+.org-btn-outline,
+a.org-btn-outline:visited {
   color: #000;
-  border: 1px solid var(--org-cta-end);
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  background: #fff;
 }
 
 a.org-btn-outline:hover,
 a.org-btn-outline:focus,
+a.org-btn-outline:focus-visible,
 a.org-btn-outline:active,
-a.org-btn-outline:visited,
 a.org-btn-outline:visited:hover,
 .org-btn-outline:hover,
-.org-btn-outline:focus {
+.org-btn-outline:focus,
+.org-btn-outline:focus-visible,
+.org-btn-outline:active {
   color: #000;
+  border: 1px solid rgba(0, 0, 0, 0.25);
   background: #fff;
   filter: none;
 }
@@ -280,7 +298,7 @@ a.org-btn-outline:visited:hover,
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px;
+  gap: 20px;
   width: 979px;
   max-width: 100%;
 }
@@ -290,7 +308,7 @@ a.org-btn-outline:visited:hover,
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 12px;
   width: 979px;
   max-width: 100%;
   text-align: center;
@@ -302,6 +320,7 @@ a.org-btn-outline:visited:hover,
   font-weight: 600;
   line-height: 1.5;
   letter-spacing: 0.06em;
+  padding-left: 0.06em;
   text-transform: uppercase;
   text-align: center;
   color: var(--org-cream-text);
@@ -400,9 +419,16 @@ a.org-btn-outline:visited:hover,
 }
 
 .org-cta-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: #fff;
-  padding: 40px 24px 80px;
+  padding: 60px 24px;
   text-align: center;
+}
+
+.org-cta-row .org-btn-cta {
+  margin: 0 auto;
 }
 
 /* ----- Welcome landing ----- */
@@ -471,7 +497,7 @@ a.org-btn-outline:visited:hover,
 }
 
 .org-phone img {
-  width: 100%;
+  width:100%;
   height: auto;
   max-height: 420px;
   object-fit: contain;
@@ -482,7 +508,7 @@ a.org-btn-outline:visited:hover,
 .org-phone-caption {
   box-sizing: border-box;
   width: 80%;
-  margin: 0 0 0 20%;
+  margin: 0 0 0 68px;
   padding: 0;
   font-size: 12px;
   font-style: italic;
@@ -495,58 +521,61 @@ a.org-btn-outline:visited:hover,
 
 .org-rating {
   display: inline-flex;
-  align-items: center;
+  align-items: flex-start;
+  height: 21px;
+  gap: 0;
   flex-wrap: nowrap;
-  gap: 5px;
   font-size: 12px;
   font-weight: 400;
-  line-height: 1;
-  color: var(--org-cream-text);
+  line-height: 1.4;
+  color: rgba(255, 247, 230, 1);
 }
 
 .org-rating-stars {
   display: inline-flex;
-  align-items: center;
-  gap: 2px;
-  line-height: 1;
+  align-items: flex-start;
+  gap: 7px;
+  margin-top: 2px;
+  margin-right: 12px;
+  line-height: 0;
 }
 
 .org-hero-star {
-  color: rgba(255, 247, 230, 1);
-  font-size: 16px;
-  line-height: 16px;
+  display: block;
   width: 16px;
   height: 16px;
-  display: inline-block;
-  text-align: center;
+  max-width: 16px;
+  flex-shrink: 0;
 }
 
 .org-app-icon {
   display: inline-flex;
-  align-items: center;
-  line-height: 1;
+  align-items: flex-start;
+  margin-right: 5px;
+  line-height: 0;
 }
 
-.org-app-icon::before {
-  content: "";
-  display: inline-block;
-  width: 14px;
-  height: 16px;
-  background: rgba(255, 247, 230, 1);
-  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 384 512'%3E%3Cpath fill='black' d='M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25-3.9 43-17.3 76.4-17.3 32.9 0 49.9 17.3 84.1 17.3 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72-23.8 1.4-52 16.3-68.9 34.1-17.8 18.8-28.2 43.2-25.8 68.6 27.7 2.1 52.2-16.8 70.7-30.6z'/%3E%3C/svg%3E") center / contain no-repeat;
-  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 384 512'%3E%3Cpath fill='black' d='M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25-3.9 43-17.3 76.4-17.3 32.9 0 49.9 17.3 84.1 17.3 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72-23.8 1.4-52 16.3-68.9 34.1-17.8 18.8-28.2 43.2-25.8 68.6 27.7 2.1 52.2-16.8 70.7-30.6z'/%3E%3C/svg%3E") center / contain no-repeat;
+.org-app-icon img {
+  display: block;
+  width: 17px;
+  height: 20px;
+  max-width: 17px;
+  flex-shrink: 0;
 }
 
 .org-rating-copy {
+  align-self: center;
   font-size: 12px;
   font-weight: 400;
+  line-height: 1.4;
   color: rgba(255, 247, 230, 1);
+  white-space: nowrap;
 }
 
 .org-rating-copy strong {
   font-size: 15px;
   font-weight: 700;
-  line-height: 1;
+  line-height: 1.4;
 }
 
 .org-trust {
@@ -625,9 +654,10 @@ a.org-btn-outline:visited:hover,
 }
 
 .org-quote-mark img {
-  width: 48px;
+  width: 47.93px;
   height: 32px;
-  transform: scaleY(-1);
+  display: block;
+  margin: 0 auto;
 }
 
 .org-card {
@@ -748,19 +778,19 @@ body.org-flow .org-main {
 }
 
 .org-input input:focus {
-  outline: 2px solid rgba(215, 88, 107, 0.45);
-  border-color: #d7586b;
+  outline: none;
+  border-color: rgba(0, 0, 0, 0.5);
 }
 
-/* Figma field icons: 24×24, vertically centered, muted grey */
+/* Adults login icons (v_1_4). Sizes are the SVG frames: user 24×24, mail 20×17, eye 22×18. */
 .org-input > img,
 .org-input > button {
   position: absolute;
   right: 16px;
   top: 50%;
   transform: translateY(-50%);
-  width: 24px;
-  height: 24px;
+  width: auto;
+  height: auto;
   border: 0;
   background: transparent;
   padding: 0;
@@ -770,16 +800,33 @@ body.org-flow .org-main {
   line-height: 0;
 }
 
+.org-input > button {
+  cursor: pointer;
+}
+
 .org-input > img,
 .org-input button img {
-  width: 24px;
-  height: 24px;
-  max-width: 24px;
+  display: block;
   object-fit: contain;
   object-position: center;
   flex-shrink: 0;
-  filter: brightness(0);
-  opacity: 0.45;
+  max-width: none;
+}
+
+.org-input .org-icon-user {
+  width: 24px;
+  height: 24px;
+}
+
+.org-input .org-icon-mail {
+  width: 20px;
+  height: 17px;
+}
+
+.org-input .org-icon-eye {
+  width: 22px;
+  height: 18px;
+  opacity: 0.5;
 }
 
 .org-signup-card {
@@ -840,6 +887,22 @@ button#org-continue-btn.org-btn:disabled {
   color: #fff;
   background: linear-gradient(90deg, rgb(237, 125, 111) 0%, rgb(215, 88, 107) 100%);
   cursor: not-allowed;
+}
+
+.org-signup-login {
+  margin: 32px 0 0;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0;
+  text-align: center;
+  color: #000;
+}
+
+.org-signup-login a {
+  color: inherit;
+  font-weight: 500;
+  text-decoration: none;
 }
 
 .org-check {
@@ -950,13 +1013,13 @@ button#org-continue-btn.org-btn:disabled {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: 3px;
+  align-self: center;
+  gap: 0;
   margin: 0;
-  flex: 0 1 auto;
   min-width: 0;
-  font-size: 21px;
+  font-size: 24px;
   font-weight: 400;
-  line-height: 32px;
+  line-height: 1.4;
   color: #000;
   text-align: left;
 }
@@ -1067,7 +1130,7 @@ button#org-continue-btn.org-btn:disabled {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0;
+  gap: 8px;
   text-decoration: none;
 }
 
@@ -1081,10 +1144,10 @@ button#org-continue-btn.org-btn:disabled {
   font-size: 15px;
   font-weight: 400;
   line-height: 1.5;
-  color: rgba(0, 0, 0, 1) !important;
-  -webkit-text-fill-color: rgba(0, 0, 0, 1);
+  color: #000 !important;
+  -webkit-text-fill-color: #000;
   text-decoration: underline;
-  text-decoration-color: rgba(0, 0, 0, 1) !important;
+  text-decoration-color: #000 !important;
   text-underline-offset: 3px;
 }
 
@@ -1092,10 +1155,15 @@ button#org-continue-btn.org-btn:disabled {
 #org-resend:link,
 #org-resend:visited,
 #org-resend:hover,
-#org-resend:active {
-  color: rgba(0, 0, 0, 1) !important;
-  -webkit-text-fill-color: rgba(0, 0, 0, 1);
-  text-decoration-color: rgba(0, 0, 0, 1) !important;
+#org-resend:active,
+#org-otp-back,
+#org-otp-back:link,
+#org-otp-back:visited,
+#org-otp-back:hover,
+#org-otp-back:active {
+  color: #000 !important;
+  -webkit-text-fill-color: #000;
+  text-decoration-color: #000 !important;
 }
 
 .org-otp-timer {
@@ -1103,7 +1171,7 @@ button#org-continue-btn.org-btn:disabled {
   font-size: 15px;
   font-weight: 400;
   line-height: 1.5;
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 1);
   text-align: center;
   text-decoration: none !important;
 }
@@ -1172,7 +1240,6 @@ button#org-continue-btn.org-btn:disabled {
 .org-trial {
   width: 100%;
   max-width: 380px;
-  min-height: 196px;
   margin: 0;
   background: #ffe8bb;
   border: 0;
@@ -1181,10 +1248,8 @@ button#org-continue-btn.org-btn:disabled {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   gap: 15px;
   box-sizing: border-box;
-  text-align: center;
 }
 
 .org-trial-top {
@@ -1192,19 +1257,18 @@ button#org-continue-btn.org-btn:disabled {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 24px;
   width: 100%;
-  max-width: 320px;
-  min-height: 102px;
-  margin: 0 auto;
-  box-sizing: border-box;
-  text-align: left;
 }
 
+.org-trial-icon,
 .org-trial-top img,
 .org-trial-icon-slot {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
+  max-width: 60px;
+  max-height: 60px;
+  display: block;
   object-fit: contain;
   flex-shrink: 0;
 }
@@ -1220,10 +1284,13 @@ button#org-continue-btn.org-btn:disabled {
 }
 
 .org-trial-ends {
+  align-self: stretch;
+  width: 100%;
   margin: 0;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.7;
+  letter-spacing: 0;
   color: rgba(0, 0, 0, 0.5);
   text-align: center;
 }
@@ -1406,19 +1473,23 @@ body.org-flow-download .org-download-card {
   }
 
   img.org-logo {
-    width: 160px;
-    height: 45px;
-    max-width: 160px;
-    object-position: center;
+    width: 130px;
+    height: 30px;
+    max-width: 130px;
+    object-position: left center;
+  }
+
+  img.org-partner-logo {
+    height: 37px;
+    max-width: 140px;
   }
 
   body.org-page .org-header {
-    background: var(--org-cream);
-    box-shadow: none;
+    background: #fff;
   }
 
   body.org-page .org-header-inner {
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   .org-kicker {
@@ -1643,6 +1714,661 @@ body.org-flow-download .org-download-card {
 @media (min-width: 992px) {
   .display-desktop-cta {
     display: inline-flex !important;
+  }
+}
+
+/* Phone only. White header on every organisation page.
+   Success frame 335×531: padding 20px, gap 24px.
+   Heading 295×86, gap 10px. Trial card 295×176, padding 24/30, gap 15px. */
+@media (max-width: 767.98px) {
+  body.org-page .org-header {
+    background: #fff;
+    box-shadow: 0 4px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  body.org-page .org-header-inner {
+    justify-content: flex-start;
+    padding: 16px 20px;
+    min-height: 56px;
+  }
+
+  body.org-page img.org-logo {
+    width: 130px;
+    height: 30px;
+    max-width: 130px;
+    object-position: left center;
+  }
+
+  /* Adv offer, phone only. Header logo left.
+     Button 295×50, padding 15/20, label 15px.
+     Benefit rows 295×60, icon 60 with 8px pad, copy gap 3. */
+  body.org-page-adv .org-header-inner {
+    justify-content: flex-start;
+    min-height: 70px;
+    height: 70px;
+    padding: 0 20px;
+  }
+
+  body.org-page-adv img.org-logo {
+    width: 130px;
+    height: 30px;
+    max-width: 130px;
+    object-position: left center;
+  }
+
+  body.org-page-adv .org-benefits-list {
+    width: 335px;
+    gap: 24px;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+
+  body.org-page-adv .org-benefit {
+    width: 295px;
+    max-width: 100%;
+    min-height: 60px;
+    gap: 15px;
+  }
+
+  body.org-page-adv .org-benefit-icon {
+    width: 60px;
+    height: 60px;
+    padding: 8px;
+    border-radius: 30px;
+    background: rgba(255, 232, 187, 1);
+    box-sizing: border-box;
+  }
+
+  body.org-page-adv .org-benefit-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  body.org-page-adv .org-benefit-copy {
+    width: 220px;
+    max-width: calc(100% - 75px);
+    gap: 3px;
+  }
+
+  body.org-page-adv .org-benefit h2 {
+    font-size: 21px;
+    font-weight: 500;
+    line-height: 1.25;
+  }
+
+  body.org-page-adv .org-benefit p {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.4;
+  }
+
+  body.org-page-adv .org-cta-row {
+    padding: 0 40px 40px;
+    background: var(--org-cream);
+  }
+
+  body.org-page-adv .org-btn-cta,
+  body.org-page-adv .org-btn-cta-label {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.33;
+    letter-spacing: 0;
+  }
+
+  body.org-page-adv .org-btn-cta {
+    width: 295px;
+    max-width: 100%;
+    height: 50px;
+    padding: 15px 20px;
+    border-radius: 100px;
+    gap: 10px;
+    box-sizing: border-box;
+  }
+
+  /* Landing hero, phone only. Header 375×70.
+     Figma 11951:4041 — frame 335×306, padding-right 50px, image centered
+     in the remaining width so it sits left of the column. Image 211×306.
+     Copy column 335, gap 18. Create account 335×55. */
+  body.org-page-landing .org-header-inner {
+    justify-content: flex-start;
+    min-height: 70px;
+    height: 70px;
+    padding: 0 20px;
+  }
+
+  body.org-page-landing .org-hero-welcome-inner {
+    align-items: center;
+    width: 335px;
+    max-width: calc(100% - 40px);
+    margin: 0 auto;
+    padding: 24px 0 32px;
+    gap: 18px;
+  }
+
+  /* Mobile only. Frame 335px, padding-right 50px. Image group 210.65×306,
+     centered in the remaining width so it sits left of the column. */
+  body.org-page-landing .org-phone {
+    width: 335px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 50px 0 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  body.org-page-landing .org-phone picture {
+    display: block;
+    width: 210.65px;
+    max-width: 100%;
+    margin: 0;
+    line-height: 0;
+    flex-shrink: 0;
+  }
+
+  body.org-page-landing .org-phone img {
+    width: 210.65px;
+    height: auto;
+    max-width: 210.65px;
+    max-height: none;
+    margin: 0;
+    object-fit: contain;
+    object-position: center center;
+  }
+
+  /* Caption shares the image’s left edge. 54px inset centers the line on the handset. */
+  body.org-page-landing .org-phone-caption {
+    width: 210.65px;
+    max-width: 100%;
+    margin: 0;
+    padding: 0 0 0 54px;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  body.org-page-landing .org-hero-copy {
+    width: 335px;
+    max-width: 100%;
+    align-items: center;
+    gap: 18px;
+    text-align: center;
+  }
+
+  body.org-page-landing .org-hero-copy h1,
+  body.org-page-landing .org-hero-sub {
+    width: 100%;
+    text-align: center;
+  }
+
+  body.org-page-landing .org-rating {
+    width: 100%;
+    justify-content: center;
+  }
+
+  body.org-page-landing .org-hero-welcome .org-btn-welcome {
+    width: 335px;
+    max-width: 100%;
+    height: 55px;
+    margin: 0;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.4;
+    border-radius: 100px;
+    box-sizing: border-box;
+  }
+
+  /* Landing quotes, phone only. Icon 47.93×32. Cards 335×197, pad 24.
+     Bottom Create account is 335×55. Name 15px, role and quote 12px. */
+  body.org-page-landing .org-quotes {
+    padding: 45px 0 20px;
+    background: #fff;
+  }
+
+  body.org-page-landing .org-quotes-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 335px;
+    max-width: calc(100% - 40px);
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  body.org-page-landing .org-quote-mark {
+    margin: 0;
+  }
+
+  body.org-page-landing .org-quotes-grid {
+    width: 100%;
+    gap: 20px;
+  }
+
+  body.org-page-landing .org-quotes-grid .org-card {
+    width: 100%;
+    max-width: 335px;
+    margin: 0;
+    padding: 24px;
+    gap: 15px;
+    border-radius: 20px;
+    background: rgba(255, 247, 230, 1);
+    box-sizing: border-box;
+  }
+
+  body.org-page-landing .org-card-head {
+    gap: 15px;
+    margin: 0;
+  }
+
+  body.org-page-landing .org-card-head h3 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  body.org-page-landing .org-card-head p,
+  body.org-page-landing .org-card blockquote {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  body.org-page-landing .org-card blockquote {
+    font-style: italic;
+  }
+
+  body.org-page-landing .org-bottom-cta {
+    padding: 0 20px 20px;
+    background: #fff;
+  }
+
+  body.org-page-landing .org-bottom-cta .org-btn-welcome {
+    width: 335px;
+    max-width: 100%;
+    height: 55px;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.4;
+    border-radius: 100px;
+    box-sizing: border-box;
+  }
+
+  body.org-flow-otp,
+  body.org-flow-success,
+  body.org-flow-continue {
+    background: var(--org-cream);
+  }
+
+  body.org-flow-otp .org-main {
+    background: var(--org-cream);
+    background-image: none;
+  }
+
+  body.org-flow-success .org-main,
+  body.org-flow-continue .org-main {
+    background: var(--org-cream);
+    background-image: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 48px 20px 48px;
+  }
+
+  body.org-flow-success .org-flow-card,
+  body.org-flow-continue .org-flow-card {
+    width: 335px;
+    max-width: 100%;
+    background: transparent;
+    box-shadow: none;
+    box-sizing: border-box;
+  }
+
+  body.org-flow-success .org-success-card,
+  body.org-flow-continue .org-flow-card {
+    padding: 0 20px;
+    gap: 24px;
+  }
+
+  body.org-flow-continue .org-flow-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 0 20px;
+  }
+
+  body.org-flow-continue .org-flow-title {
+    width: 100%;
+    max-width: 295px;
+  }
+
+  body.org-flow-continue .org-continue-actions {
+    width: 295px;
+    max-width: 100%;
+    height: 112px;
+    gap: 12px;
+    margin: 0;
+  }
+
+  body.org-flow-success .org-success-heading {
+    width: 100%;
+    max-width: 295px;
+    gap: 10px;
+  }
+
+  body.org-flow-success .org-success-heading .org-lead {
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  body.org-flow-success .org-success-art {
+    margin: 0;
+  }
+
+  body.org-flow-success .org-trial {
+    width: 100%;
+    max-width: 295px;
+    padding: 24px 30px;
+    gap: 15px;
+    border-radius: 16px;
+    background: rgba(255, 232, 187, 1);
+    box-sizing: border-box;
+  }
+
+  body.org-flow-success .org-trial-top {
+    gap: 16px;
+    align-items: center;
+  }
+
+  body.org-flow-success .org-trial-copy {
+    width: 235px;
+    max-width: 100%;
+    gap: 3px;
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  body.org-flow-success .org-trial-ends {
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+  body.org-flow-continue .org-devices {
+    width: 122.45px;
+    height: 100px;
+    max-width: 122.45px;
+    margin: 0 auto;
+    object-fit: contain;
+  }
+
+  body.org-flow-continue .org-continue-note {
+    width: 255px;
+    max-width: 100%;
+    margin: 0;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: 0;
+    text-align: center;
+    color: #000;
+  }
+
+  body.org-flow-success .org-btn-block,
+  body.org-flow-success a.org-btn.org-btn-block,
+  body.org-flow-continue .org-btn-block,
+  body.org-flow-continue a.org-btn.org-btn-block {
+    width: 295px;
+    max-width: 100%;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 20px;
+    border-radius: 100px;
+    box-sizing: border-box;
+  }
+
+  /* Signup, phone only — Frame 14252: 335px, pad 20, gap 32.
+     Fields 295×50, radius 12, icons 24. Button 295×48. */
+  body.org-flow-signup {
+    background: var(--org-cream);
+  }
+
+  body.org-flow-signup .org-main {
+    background: var(--org-cream);
+    background-image: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 48px 20px 48px;
+  }
+
+  body.org-flow-signup .org-signup-card {
+    width: 335px;
+    max-width: 100%;
+    padding: 0 20px;
+    gap: 32px;
+    align-items: center;
+    background: transparent;
+    box-shadow: none;
+    box-sizing: border-box;
+  }
+
+  body.org-flow-signup .org-signup-head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 295px;
+    gap: 12px;
+  }
+
+  body.org-flow-signup .org-signup-head .org-flow-rule {
+    width: 100%;
+    margin: 0;
+  }
+
+  body.org-flow-signup .org-signup-fields,
+  body.org-flow-signup .org-signup-foot {
+    width: 295px;
+    max-width: 100%;
+  }
+
+  body.org-flow-signup .org-signup-fields {
+    gap: 10px;
+  }
+
+  body.org-flow-signup .org-input input {
+    height: 50px;
+    border: 0.5px solid rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    padding: 10px 50px 10px 16px;
+    box-sizing: border-box;
+    background: #fff;
+  }
+
+  body.org-flow-signup .org-input > img,
+  body.org-flow-signup .org-input > button {
+    right: 16px;
+    width: 24px;
+    height: 24px;
+  }
+
+  body.org-flow-signup .org-input .org-icon-user,
+  body.org-flow-signup .org-input .org-icon-mail,
+  body.org-flow-signup .org-input .org-icon-eye,
+  body.org-flow-signup .org-input button img {
+    width: 24px;
+    height: 24px;
+  }
+
+  body.org-flow-signup .org-signup-foot {
+    gap: 0;
+  }
+
+  body.org-flow-signup .org-signup-foot .org-check {
+    align-items: center;
+    width: 100%;
+    margin: 0 0 10px;
+    gap: 10px;
+  }
+
+  body.org-flow-signup .org-signup-foot .org-check:nth-of-type(2) {
+    margin-bottom: 0;
+  }
+
+  body.org-flow-signup .org-check i {
+    flex: 0 0 20px;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+  }
+
+  body.org-flow-signup .org-signup-foot .org-error {
+    margin: 0;
+    min-height: 0;
+  }
+
+  body.org-flow-signup .org-signup-foot .org-error:not(:empty) {
+    margin-top: 8px;
+  }
+
+  body.org-flow-signup .org-signup-foot .org-btn-block,
+  body.org-flow-signup button#org-continue-btn.org-btn {
+    width: 295px;
+    max-width: 100%;
+    height: 48px;
+    margin: 32px 0 0;
+    padding: 10px 20px;
+    border-radius: 100px;
+    box-sizing: border-box;
+  }
+
+  body.org-flow-signup .org-signup-login {
+    width: 295px;
+    max-width: 100%;
+    margin: 32px 0 0;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0;
+    text-align: center;
+    color: #000;
+  }
+
+  body.org-flow-signup .org-signup-login a {
+    color: #000;
+    font-weight: 500;
+    text-decoration: none;
+  }
+}
+
+/* Download page, phone only — Figma 11951:3930 / Frame 14252.
+   Cream page, no card. 295px stack, 40px gap: badges, OR, heading, QR.
+   Desktop card stays 470×573 on the cover, heading → QR → OR → badges. */
+@media (max-width: 767.98px) {
+  body.org-flow-download {
+    overflow-x: hidden;
+    background: var(--org-cream);
+  }
+
+  body.org-flow-download .org-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 40px 16px 48px;
+    min-height: calc(100vh - 70px);
+    min-height: calc(100dvh - 70px);
+    box-sizing: border-box;
+    background: var(--org-cream);
+    background-image: none;
+  }
+
+  body.org-flow-download .org-download-card {
+    width: 295px;
+    max-width: 100%;
+    min-width: 0;
+    min-height: 0;
+    margin: 0 auto;
+    padding: 0;
+    gap: 40px;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    box-sizing: border-box;
+  }
+
+  body.org-flow-download .org-download-or {
+    order: 2;
+  }
+
+  body.org-flow-download .org-download-heading {
+    order: 3;
+  }
+
+  body.org-flow-download .org-download-qr {
+    order: 4;
+  }
+
+  .org-download-card .org-flow-title {
+    max-width: 100%;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  .org-download-card .org-qr {
+    width: 200px;
+    height: 200px;
+    max-width: 200px;
+    max-height: 200px;
+  }
+
+  .org-download-card .org-flow-rule {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    gap: 12px;
+  }
+
+  body.org-flow-download .org-download-badges {
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    height: auto;
+    gap: 8px;
+  }
+
+  body.org-flow-download .org-download-badges a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 178.79px;
+    min-width: 0;
+    max-width: 100%;
+    height: 52.97px;
+    flex: none;
+  }
+
+  body.org-flow-download .org-download-badges img {
+    width: 178.79px;
+    height: 52.97px;
+    max-width: 100%;
+    max-height: 52.97px;
+    aspect-ratio: auto;
+    object-fit: contain;
   }
 }
 

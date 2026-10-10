@@ -120,7 +120,7 @@ img { max-width: 100%; display: block; }
   box-sizing: border-box;
   background: linear-gradient(180deg, rgba(255, 249, 238, 1) 0%, rgba(255, 244, 225, 1) 100%);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
-  height:524px;
+  min-height: 524px;
 }
 .human-skills-modal-close-row {
   display: flex;
@@ -209,11 +209,11 @@ img { max-width: 100%; display: block; }
 }
 .human-skills-modal-subtitle {
   font-family: Poppins, sans-serif;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 400;
   color: #000;
   margin: 0;
-  line-height: 1.4;
+  line-height: 1.45;
 }
 .human-skills-list {
   list-style: none;
@@ -274,6 +274,33 @@ img { max-width: 100%; display: block; }
   color: inherit !important;
   text-decoration: none !important;
 }
+.web_home_divlanding .hero-try-free-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: flex-start;
+  width: 317px;
+  max-width: 100%;
+  gap: 8px;
+}
+.web_home_divlanding .hero-try-free-block .hero-try-free-link {
+  width: 100%;
+  align-self: stretch;
+  justify-content: center;
+}
+.web_home_divlanding .hero-no-card-note {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: "Poppins", Helvetica, sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 0;
+  color: rgba(255, 247, 230, 1);
+  text-align: center;
+}
 
 @media (min-width: 769px) {
   .frame-wrapper.web_home_divlanding #hw-website-title,
@@ -313,6 +340,35 @@ img { max-width: 100%; display: block; }
   max-width: none;
   object-fit: contain;
   flex-shrink: 0;
+}
+
+.web_home_divlanding .hero-phone {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-shrink: 0;
+  gap: 0;
+}
+.web_home_divlanding .hero-phone picture {
+  display: flex;
+  line-height: 0;
+}
+/* Figma text: 220×18, centered on the phone (bezel 101–314 inside the 331px image) */
+.web_home_divlanding .hero-phone-caption {
+  box-sizing: border-box;
+  width: 220px;
+  height: 18px;
+  margin: 0 0 0 98px;
+  padding: 0;
+  font-family: "Poppins", Helvetica, sans-serif;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 0;
+  color: rgba(255, 247, 230, 1);
+  text-align: center;
+  white-space: nowrap;
 }
 
 .div-3 {margin-top: -6px; display: flex; flex-direction: column; gap: 30px; flex: 1; min-width: 280px; max-width: 654px; align-items: flex-start; }
@@ -396,41 +452,46 @@ p:hover {
 
 .rating-row {
   display: inline-flex;
-  align-items: center;
-  gap: 5px;
+  align-items: flex-start;
+  height: 21px;
+  gap: 0;
   flex-wrap: nowrap;
+  font-family: "Poppins", Helvetica, sans-serif;
   font-size: 12px;
   font-weight: 400;
-  color: #000;
+  color: #fff7e6;
   margin: 0 0 8px;
-  line-height: 1;
-  vertical-align: middle;
+  line-height: 1.4;
 }
 .rating_a {
   display: inline-flex;
-  align-items: center;
-  gap: 2px;
-  line-height: 1;
+  align-items: flex-start;
+  gap: 7px;
+  margin-top: 2px;
+  margin-right: 12px;
+  line-height: 0;
 }
-.rating_a .fa-star,
-.rating_a .hero-star {
-  color: #000;
-  font-size: 16px;
-  line-height: 16px;
-  vertical-align: middle;
-  height: 16px;
-  width: 16px;
-  display: inline-block;
-  text-align: center;
+.hero-star,
+.hero-app-icon {
+  display: block;
+  flex-shrink: 0;
+  max-width: none;
 }
-.rating_a .hero-star { color: rgba(255, 247, 230, 1); }
 .appstore_a {
   display: inline-flex;
-  align-items: center;
-  line-height: 1;
+  align-items: flex-start;
+  margin-right: 5px;
+  line-height: 0;
 }
-.appstore_a .fa-apple { font-size: 16px; color: #000; line-height: 1; vertical-align: middle; }
-.fs_15px.fw_700 { font-size: 15px; font-weight: 700; line-height: 1; vertical-align: middle; }
+.rating-label {
+  align-self: center;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #fff7e6;
+  white-space: nowrap;
+}
+.fs_15px.fw_700 { font-size: 15px; font-weight: 700; line-height: 1.4; }
 
 /* headline */
 .frame-wrapper-2 { width: 100%; }
@@ -482,6 +543,38 @@ p:hover {
 .start-your-free-wrapper-2:hover,
 .div-wrapper-4:hover {
   background: linear-gradient(180deg, #da7d71 0%, #bf5061 100%);
+}
+.try-free-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: flex-start;
+  width: fit-content;
+  max-width: 100%;
+  gap: 8px;
+}
+.try-free-no-card {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: "Poppins", Helvetica, sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #000;
+  text-align: center;
+}
+#AnnualType {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+#AnnualType #PricingSelectBtn {
+  display: flex;
+  justify-content: center;
 }
 #OllyChatBtn,
 #OllyChatBtn:hover,
@@ -543,6 +636,19 @@ p:hover {
    TOPICS GRID
 ======================================== */
 .div-7 { width: 100%; max-width: 1340px; padding: 60px 80px; display: flex; flex-direction: column; gap: 40px; }
+/* Index topics: 1340px wide on a 1440px screen (50px each side) */
+@media (min-width: 769px) {
+  #main.frame > .div-7 {
+    box-sizing: border-box;
+    width: 1340px;
+    max-width: calc(100% - 100px);
+    min-width: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
 .div-wrapper-2 { display: flex; justify-content: center; }
 .text-wrapper-6 { font-size: 30px; font-weight: 600; color: #000; text-align: center; margin: 0; padding-bottom: 40px; }
 .text-wrapper-6-1{ font-size: 30px; font-weight: 600; color: #000; text-align: center; margin: 0; }
@@ -578,6 +684,8 @@ p:hover {
 ======================================== */
 .div-13 { width: 100%; max-width: 1340px; padding: 60px 20px; display: flex; flex-direction: column; align-items: center; gap: 40px; }
 .div-13:not(#exploreBlogSection) { padding-top: 20px; }
+/* Figma: 100px from the tools CTA to "Explore our blog" */
+#exploreBlogSection.div-13 { padding-top: 100px; }
 .text-wrapper-21 { font-size: 24px; font-weight: 600; color: #000; text-align: center; margin: 0; }
 /* 16:9 box; iframe fills it (overrides global #youtubeIntro fixed sizes from responsive.css / index.css) */
 .youtube-player {
@@ -1179,7 +1287,7 @@ nav a:hover {
 .div-24 { display: flex; gap: 30px; flex-wrap: wrap; width: 100%; justify-content: center;padding-left: 50px; padding-right: 50px; }
 .div-25 {
   display: flex; flex-direction: column; flex: 1; min-width: 280px; max-width: 429px;
-  border-radius: 20px; overflow: hidden; background: #fff4e6;
+  border-radius: 20px; overflow: hidden; background: #FFF7E6;
   transition: box-shadow 0.2s; cursor: pointer;
 }
 /* .div-25:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.10); } */
@@ -1377,16 +1485,22 @@ nav a:hover {
   box-sizing: border-box;
 }
 
-.tool-tab {
-  width: 127px;
+.tools-section .tool-tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: auto;
   height: 26px;
-  padding: 0px 11px;
+  padding: 0 12px;
   box-sizing: border-box;
+  border: 1px solid transparent;
   border-radius: 10px;
   background: rgba(238, 161, 112, 1);
   font-family: "Poppins", Helvetica, sans-serif;
   font-size: 12px;
   font-weight: 500;
+  line-height: 1;
   color: #fff;
   cursor: pointer;
   transition: background 0.18s, color 0.18s, border-color 0.18s;
@@ -2038,7 +2152,7 @@ nav a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 12px;
   margin-left: 0;
   overflow: visible;
   padding: 4px 0;
@@ -2196,6 +2310,16 @@ nav a:hover {
   opacity: 1 !important;
   z-index: 2;
 }
+/* Index desktop blog caption — Figma 470×130, title inset 38×40 */
+@media (min-width: 769px) {
+  #exploreBlogSection .blog-caption {
+    background: rgba(255, 247, 230, 1);
+    padding: 38px 40px;
+  }
+  #exploreBlogSection .blog-title {
+    line-height: 150%;
+  }
+}
 .blog-footer {
   display: flex;
   align-items: center;
@@ -2260,15 +2384,15 @@ nav a:hover {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 }
-/* Center "Find out more" / "See all posts" */
+/* Center "Find out more" / "See all posts"; arrows on the right edge of the 980px column */
 .coaches-section .coaches-footer,
 #exploreBlogSection .blog-footer {
   justify-content: center;
-  margin-left: 0;
-  margin-right: 0;
+  margin-left: auto;
+  margin-right: auto;
   padding-left: 0;
   padding-right: 0;
-  width: 100%;
+  width: min(980px, 100%);
   position: relative;
 }
 .coaches-section .coaches-footer-spacer {
@@ -2708,6 +2832,13 @@ nav a:hover {
   .modal-content1 .cross_btn_row a[data-bs-dismiss="modal"] .cross_btn, .modal-content1 .popup-close-btn .cross_btn{
         min-width: 20px !important;
   }
+
+  /* Popup CTA — Figma mobile: 295 fill × 55 hug */
+  .modal-content1 .btn_popup {
+    width: 295px !important;
+    max-width: 100% !important;
+    height: 55px !important;
+  }
 }
 
 /* keep old selectors harmless */
@@ -2768,9 +2899,12 @@ nav a:hover {
 }
 .faq-body {
   font-size: 15px;
+  font-weight: 400;
   color: #000;
-  line-height: 1.6;
-  margin: 6px 0 12px;
+  line-height: 1.53;
+  margin: 10px 0 12px;
+  padding-right: 26px;
+  box-sizing: border-box;
   display: none;
 }
 
@@ -2880,8 +3014,13 @@ nav a:hover {
     display: none;
     height: 0;
   }
-  .tool-tab {
+  .tools-section .tool-tab {
     flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1;
   }
   .tools-content-wrap {
     width: 100% !important;
@@ -2935,7 +3074,12 @@ nav a:hover {
     padding-right: 12px;
     gap: 8px;
   }
-  .tool-tab { font-size: 12px; padding: 4px 14px; }
+  .tools-section .tool-tab {
+    font-size: 12px;
+    padding: 0 14px;
+    text-align: center;
+    line-height: 1;
+  }
   .tools-section {
     padding-left: 0;
     padding-right: 0;
@@ -3083,17 +3227,35 @@ nav a:hover {
     padding-top: 18px;
   }
 
+  .web_home_divlanding .hero-phone {
+    width: 211px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: flex-start;
+  }
+  .web_home_divlanding .hero-phone picture {
+    display: block;
+    width: 211px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
   .web_home_divlanding .new-app-adults-teen {
     display: block;
     width: 211px;
     max-width: 100%;
     height: 306px;
-    margin-left: 60px;
+    margin-left: auto;
     margin-right: auto;
     align-self: center;
     object-fit: contain;
     object-position: center center;
     flex-shrink: 0;
+  }
+  /* Same centering as the live index hero: 170px line, 45px from the image’s left edge. */
+  .web_home_divlanding .hero-phone-caption {
+    width: 170px;
+    margin-left: 45px;
   }
 
   .div-3 { max-width: 100%; text-align: center; align-items: center; gap: 18px; }
@@ -3104,9 +3266,14 @@ nav a:hover {
 
   /* Anchor must define width: inner .start-your-free-wrapper uses max-width:100% and
      would otherwise shrink-wrap wrong inside .div-3 (align-items:center). */
-  .web_home_divlanding .hero-try-free-link {
+  .web_home_divlanding .hero-try-free-block {
     width: 335px;
     max-width: calc(100% - 40px);
+    align-self: center;
+  }
+  .web_home_divlanding .hero-try-free-link {
+    width: 100%;
+    max-width: 100%;
     align-self: center;
     flex-shrink: 0;
     display: flex;
@@ -3509,7 +3676,13 @@ nav a:hover {
     margin-top: 0;
   }
   .div-31 .div-28 .chevron-pink { display: none; }
-  .div-31 a[href*="teenagers/intro-carousel"] {
+  .div-31 .try-free-stack {
+    order: 6;
+    align-self: center;
+    width: 335px;
+    max-width: 100%;
+  }
+  .div-31 #happiermeTryForFree_teens {
     display: flex !important;
     order: 6;
     width: 335px;
@@ -3522,7 +3695,7 @@ nav a:hover {
     text-decoration: none;
     box-sizing: border-box;
   }
-  .div-31 a[href*="teenagers/intro-carousel"] .div-wrapper-4 {
+  .div-31 #happiermeTryForFree_teens .div-wrapper-4 {
     display: inline-flex !important;
     align-items: center;
     justify-content: center;
@@ -3534,10 +3707,10 @@ nav a:hover {
     box-sizing: border-box;
     background: linear-gradient(180deg, rgba(237, 125, 111, 1) 0%, rgba(215, 88, 107, 1) 100%) !important;
   }
-  .div-31 a[href*="teenagers/intro-carousel"] .div-wrapper-4:hover {
+  .div-31 #happiermeTryForFree_teens .div-wrapper-4:hover {
     background: linear-gradient(180deg, #da7d71 0%, #bf5061 100%) !important;
   }
-  .div-31 a[href*="teenagers/intro-carousel"] .div-wrapper-4 .text-wrapper-5 {
+  .div-31 #happiermeTryForFree_teens .div-wrapper-4 .text-wrapper-5 {
     font-size: 16px;
     font-weight: 600;
     color: #fff;
@@ -3925,11 +4098,14 @@ nav a:hover {
   .div-31 .text-wrapper-20 { display: none !important; }
   .div-31 .text-wrapper-19-mobile { display: block !important; font-family: 'Poppins', sans-serif !important; font-size: 24px !important; font-weight: 600 !important; color: #000 !important; text-align: center; line-height: 140% !important; margin: 0; max-width: 335px; }
   .div-31 .text-wrapper-20-mobile { display: block !important; font-size: 12px !important; font-weight: 400; color: #000 !important; line-height: 1.6; margin: 0; text-align: center; }
-  .div-31 a[href*="teenagers/intro-carousel"] {
+  .div-31 .try-free-stack {
+    width: 335px;
+  }
+  .div-31 #happiermeTryForFree_teens {
     width: 335px;
     height: 55px;
   }
-  .div-31 a[href*="teenagers/intro-carousel"] .div-wrapper-4 {
+  .div-31 #happiermeTryForFree_teens .div-wrapper-4 {
     height: 55px !important;
     border-radius: 30px !important;
     padding: 15px 30px !important;
@@ -4137,4 +4313,20 @@ nav a:hover {
   height: 0;
   overflow: hidden;
   visibility: hidden;
+}
+
+/* Footer: social icons share the 154px badge width and align to its right edge */
+.dfooter_social_links {
+  width: 154px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: flex-end;
+}
+.dfooter .tright {
+  text-align: center;
+}
+.dfooter .tright img {
+  margin-left: auto;
+  margin-right: auto;
 }

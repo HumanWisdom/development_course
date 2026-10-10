@@ -18,22 +18,22 @@ include __DIR__ . '/../includes/organisation_header.php';
     <div class="org-signup-fields">
       <div class="org-input">
         <input type="text" id="org-name" name="name" autocomplete="name" placeholder="Your name">
-        <img src="<?= hw_org_h($assets['user']) ?>" alt="" width="24" height="24">
+        <img class="org-icon-user" src="<?= hw_org_h($assets['user']) ?>" alt="" width="24" height="24">
       </div>
       <div class="org-input">
         <input type="email" id="org-email" name="email" autocomplete="email" placeholder="Your email">
-        <img src="<?= hw_org_h($assets['mail']) ?>" alt="" width="24" height="24">
+        <img class="org-icon-mail" src="<?= hw_org_h($assets['mail']) ?>" alt="" width="20" height="17">
       </div>
       <div class="org-input">
         <input type="password" id="org-password" name="password" autocomplete="new-password" placeholder="Password">
         <button type="button" id="org-password-toggle" aria-label="Show password">
-          <img src="<?= hw_org_h($assets['eye']) ?>" alt="" width="24" height="24">
+          <img class="org-icon-eye" src="<?= hw_org_h($assets['eye']) ?>" alt="" width="22" height="18">
         </button>
       </div>
       <div class="org-input">
         <input type="password" id="org-repeat" name="repeat" autocomplete="new-password" placeholder="Repeat Password">
         <button type="button" id="org-repeat-toggle" aria-label="Show password">
-          <img src="<?= hw_org_h($assets['eye']) ?>" alt="" width="24" height="24">
+          <img class="org-icon-eye" src="<?= hw_org_h($assets['eye']) ?>" alt="" width="22" height="18">
         </button>
       </div>
     </div>
@@ -52,6 +52,7 @@ include __DIR__ . '/../includes/organisation_header.php';
 
       <p class="org-error" id="org-signup-error"></p>
       <button type="button" class="org-btn org-btn-block" id="org-continue-btn" disabled>Continue</button>
+      <!-- <p class="org-signup-login">Already have an account? <a href="<?= hw_org_h($assets['login']) ?>">Login</a></p> -->
     </div>
   </div>
 </main>

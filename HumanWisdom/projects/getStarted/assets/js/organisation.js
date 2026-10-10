@@ -253,7 +253,7 @@
       }
 
       verifying = true;
-      showError(err, "Verifying…");
+      showError(err, "Verifying Code");
 
       fetch(apiBase + "/verificationCode", {
         method: "POST",
@@ -264,24 +264,30 @@
         }),
       })
         .then(function (res) {
-          return res.json().then(function (data) {
-            return { ok: res.ok, data: data };
-          });
+          return res
+            .json()
+            .catch(function () {
+              return null;
+            })
+            .then(function (data) {
+              return { ok: res.ok, data: data };
+            });
         })
         .then(function (result) {
-          // adult-dashboard: if (res > 0) …
+          var data = result.data;
           var ok =
             result.ok &&
-            (result.data === true ||
-              result.data > 0 ||
-              parseInt(result.data, 10) > 0);
-          if (!ok) throw new Error("verify");
-
-          clearCreateAccountLocalStorage();
-          go("success");
+            (data === true || data > 0 || parseInt(data, 10) > 0);
+          if (ok) {
+            clearCreateAccountLocalStorage();
+            go("success");
+            return;
+          }
+          showError(err, "Invalid Code");
+          resetOtpInputs();
         })
         .catch(function () {
-          showError(err, "That code did not match. Please try again.");
+          showError(err, "Invalid Code");
           resetOtpInputs();
         });
     }
@@ -291,7 +297,7 @@
         e.preventDefault();
         if (remaining > 0) return;
         remaining = 30;
-        showError(err, "A new code is on its way.");
+        showError(err, "New Code Sent");
       });
     }
     if (back) {
@@ -305,7 +311,7 @@
   function orgLogoUrl(logoUrl) {
     var fallback = (assets && assets.logo_default) || "";
     logoUrl = String(logoUrl || "").trim();
-    if (!logoUrl) return fallback;
+    if (!logoUrl || /\/website\/svgs\/logo\.svg(?:\?|#|$)/i.test(logoUrl)) return fallback;
     if (/^https?:\/\//i.test(logoUrl)) return logoUrl;
     return "https://d1tenzemoxuh75.cloudfront.net/" + logoUrl.replace(/^\//, "");
   }
@@ -332,17 +338,44 @@
       localStorage.setItem("OrganizationId", id);
     } catch (e) {}
 
-    var logoImg = document.querySelector(".org-logo");
+    var logoImg = document.querySelector(".org-logo[data-use-org-logo]");
     if (logoImg) {
       logoImg.src = logo;
       logoImg.alt = name;
+      var logoLink = logoImg.closest(".org-logo-link");
+      if (logoLink) {
+        logoLink.setAttribute("aria-label", name);
+      }
     }
-    var logoLink = document.querySelector(".org-logo-link");
-    if (logoLink) {
-      logoLink.setAttribute("aria-label", name);
+
+    org.showPartnerLogo = Number(row.showPartnerLogo) === 1 ? 1 : 0;
+    org.partnerLogo =
+      "https://d1tenzemoxuh75.cloudfront.net/website/svgs/OrgLogo/" +
+      encodeURIComponent(id) +
+      ".svg";
+    var partnerImg = document.querySelector(".org-partner-logo");
+    if (partnerImg) {
+      if (org.showPartnerLogo) {
+        partnerImg.src = org.partnerLogo;
+        partnerImg.alt = name;
+        partnerImg.hidden = false;
+      } else {
+        partnerImg.hidden = true;
+      }
     }
     document.querySelectorAll("[data-org-free-days]").forEach(function (el) {
       el.textContent = String(freeDays);
+    });
+    document.querySelectorAll("[data-org-copy]").forEach(function (el) {
+      var value = row[el.getAttribute("data-org-copy")];
+      if (value != null && String(value).trim() !== "") {
+        var text = String(value).trim();
+        if (el.getAttribute("data-org-copy") === "iconTitle1" && text === "Feel better") {
+          el.innerHTML = "Feel <br>better";
+        } else {
+          el.textContent = text;
+        }
+      }
     });
   }
 
