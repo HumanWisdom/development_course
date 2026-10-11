@@ -209,11 +209,13 @@ img { max-width: 100%; display: block; }
 }
 .human-skills-modal-subtitle {
   font-family: Poppins, sans-serif;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 400;
-  color: #000;
+  color: rgba(0, 0, 0, 1);
   margin: 0;
-  line-height: 1.45;
+  line-height: 150%;
+  letter-spacing: 0;
+  text-align: center;
 }
 .human-skills-list {
   list-style: none;
@@ -300,6 +302,12 @@ img { max-width: 100%; display: block; }
   letter-spacing: 0;
   color: rgba(255, 247, 230, 1);
   text-align: center;
+}
+/* Global `p:hover` turns these green and underlined. Keep the banner cream. */
+body .web_home_divlanding p.hero-phone-caption:hover,
+body .web_home_divlanding p.hero-no-card-note:hover {
+  color: rgba(255, 247, 230, 1) !important;
+  text-decoration: none !important;
 }
 
 @media (min-width: 769px) {
@@ -967,6 +975,27 @@ p:hover {
 a:hover {
   color: #803358 !important;
   text-decoration: underline !important;
+}
+/* Blog card titles on work, education, and healthcare stay plain on hover. */
+body.page-work .owl_blog a.item:hover,
+body.page-work .owl_blog a.item:hover h4,
+body.page-education .owl_blog a.item:hover,
+body.page-education .owl_blog a.item:hover h4,
+body.page-healthcare .owl_blog a.item:hover,
+body.page-healthcare .owl_blog a.item:hover h4 {
+  text-decoration: none !important;
+}
+/* Education inspire links: same hover as work.php (burgundy, no underline) */
+body.page-education .div_inspire a.fc_cb6171:hover,
+body.page-education .div_inspire a.fc_cb6171:focus,
+body.page-education .div_inspire a:hover.fc_cb6171,
+body.page-education .div_inspire h5:hover a.fc_cb6171:hover,
+body.page-education section.hpt120px ~ main#main .div_inspire a.fc_cb6171:hover,
+body.page-education section.hpt120px ~ main#main section .div_inspire a.fc_cb6171:hover {
+  color: rgb(128, 51, 88) !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  background: transparent !important;
 }
 .header a:hover,
 nav a:hover {
@@ -2548,8 +2577,11 @@ nav a:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   gap: 32px;
+}
+.transform-cta-actions .transform-cta-trial {
+  align-self: flex-start;
 }
 .transform-cta-actions a {
   text-decoration: none !important;
@@ -2680,6 +2712,10 @@ nav a:hover {
     flex-direction: column;
     gap: 10px;
     align-items: center;
+  }
+  .transform-cta-actions .transform-cta-trial {
+    align-self: center;
+    width: min(100%, 335px);
   }
   .transform-cta-actions a {
     display: flex;
