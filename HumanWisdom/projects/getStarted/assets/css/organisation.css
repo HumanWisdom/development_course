@@ -896,11 +896,11 @@ button#org-continue-btn.org-btn:disabled {
   line-height: 1.5;
   letter-spacing: 0;
   text-align: center;
-  color: #000;
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .org-signup-login a {
-  color: inherit;
+  color: #000;
   font-weight: 500;
   text-decoration: none;
 }
@@ -2259,7 +2259,7 @@ body.org-flow-download .org-download-card {
     line-height: 1.5;
     letter-spacing: 0;
     text-align: center;
-    color: #000;
+    color: rgba(0, 0, 0, 0.5);
   }
 
   body.org-flow-signup .org-signup-login a {

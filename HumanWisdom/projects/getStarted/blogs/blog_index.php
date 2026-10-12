@@ -310,7 +310,7 @@
     body.page-blog-index .blog-filter-bar {
       display: flex;
       align-items: center;
-      gap: 24px;
+      gap: 12px;
       position: relative;
       min-height: 54px;
       overflow-x: auto;
@@ -327,7 +327,7 @@
       flex: 0 0 auto;
       height: 54px;
       margin: 0;
-      padding: 4px 24px;
+      padding: 4px 15px;
       border: 1px solid transparent;
       border-radius: 27px;
       background: rgba(255, 247, 230, 1);
@@ -412,22 +412,43 @@
     }
 
     body.page-blog-index .blog-filter-bar.is-searching {
-      overflow: visible;
+      overflow: hidden;
+      gap: 8px;
     }
 
     body.page-blog-index .blog-filter-bar.is-searching .blog-filter-tag {
-      opacity: 0;
-      pointer-events: none;
+      display: none;
     }
 
     body.page-blog-index .blog-filter-bar.is-searching .blog-search-box {
-      width: calc(100% - 66px);
+      position: relative;
+      left: auto;
+      right: auto;
+      top: auto;
+      transform: none;
+      order: 1;
+      flex: 1 1 auto;
+      width: auto;
       opacity: 1;
       pointer-events: auto;
     }
 
-    body.page-blog-index .blog-search-input {
+    body.page-blog-index .blog-filter-bar.is-searching .blog-search-input {
       width: 100%;
+      box-sizing: border-box;
+    }
+
+    body.page-blog-index .blog-filter-bar.is-searching .blog-filter-search {
+      order: 2;
+      position: relative;
+      right: auto;
+      top: auto;
+      transform: none;
+      flex: 0 0 54px;
+    }
+
+    body.page-blog-index .blog-search-input {
+      width: 80%;
       height: 54px;
       margin: 0;
       padding: 4px 48px 4px 24px;
@@ -557,6 +578,20 @@
         border-radius: 22px;
       }
 
+      body.page-blog-index .blog-filter-bar.is-searching .blog-filter-search {
+        flex-basis: 44px;
+        width: 44px;
+      }
+
+      body.page-blog-index .blog-filter-search.is-open .blog-icon-close {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        line-height: 1;
+        color: #834B66;
+      }
+
       body.page-blog-index .blog-filter-heading {
         font-size: 22px;
         margin: 0 0 4px;
@@ -602,15 +637,15 @@
               <button type="button" class="blog-filter-tag" data-filter="parenting" data-title="Parenting">Parenting</button>
               <button type="button" class="blog-filter-tag" data-filter="teenagers" data-title="Teenagers">Teenagers</button>
 
-              <button type="button" class="blog-filter-search" id="blog-search-toggle" aria-label="Search articles" aria-expanded="false">
+              <button type="button" class="blog-filter-search" id="blog-search-toggle" aria-label="Search blogs" aria-expanded="false">
                 <img src="https://d1tenzemoxuh75.cloudfront.net/website/search.svg" class="blog-icon-search" alt="search_icon" width="18" height="18" aria-hidden="true">
                 <i class="bi bi-x blog-icon-close" aria-hidden="true"></i>
               </button>
               <form class="blog-search-box" action="" onsubmit="return false;">
-                <input type="text" class="blog-search-input" id="blog-search-input" placeholder="Search articles..." autocomplete="off">
-                <button type="button" class="blog-search-clear" id="blog-search-clear" aria-label="Clear search">
+                <input type="text" class="blog-search-input" id="blog-search-input" placeholder="Search blogs..." autocomplete="off">
+               <!--  <button type="button" class="blog-search-clear" id="blog-search-clear" aria-label="Clear search">
                   <i class="bi bi-x" aria-hidden="true"></i>
-                </button>
+                </button> -->
               </form>
             </div>
             <h2 class="blog-filter-heading is-hidden" id="blog-filter-heading"></h2>
@@ -2231,6 +2266,9 @@ Work</button>
     if (opening) {
       $bar.addClass('is-searching');
       $searchToggle.addClass('is-open').attr('aria-expanded', true);
+      if (window.matchMedia('(max-width: 768px)').matches) {
+        $bar.scrollLeft(0);
+      }
       $searchInput.trigger('focus');
     } else {
       closeSearch();

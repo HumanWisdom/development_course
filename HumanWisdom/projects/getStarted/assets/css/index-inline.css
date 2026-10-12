@@ -209,11 +209,13 @@ img { max-width: 100%; display: block; }
 }
 .human-skills-modal-subtitle {
   font-family: Poppins, sans-serif;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 400;
-  color: #000;
+  color: rgba(0, 0, 0, 1);
   margin: 0;
-  line-height: 1.45;
+  line-height: 150%;
+  letter-spacing: 0;
+  text-align: center;
 }
 .human-skills-list {
   list-style: none;
@@ -272,6 +274,39 @@ img { max-width: 100%; display: block; }
 }
 .web_home_divlanding .hero-try-free-link:hover {
   color: inherit !important;
+  text-decoration: none !important;
+}
+.web_home_divlanding .hero-try-free-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: flex-start;
+  width: 317px;
+  max-width: 100%;
+  gap: 8px;
+}
+.web_home_divlanding .hero-try-free-block .hero-try-free-link {
+  width: 100%;
+  align-self: stretch;
+  justify-content: center;
+}
+.web_home_divlanding .hero-no-card-note {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: "Poppins", Helvetica, sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 0;
+  color: rgba(255, 247, 230, 1);
+  text-align: center;
+}
+/* Global `p:hover` turns these green and underlined. Keep the banner cream. */
+body .web_home_divlanding p.hero-phone-caption:hover,
+body .web_home_divlanding p.hero-no-card-note:hover {
+  color: rgba(255, 247, 230, 1) !important;
   text-decoration: none !important;
 }
 
@@ -516,6 +551,38 @@ p:hover {
 .start-your-free-wrapper-2:hover,
 .div-wrapper-4:hover {
   background: linear-gradient(180deg, #da7d71 0%, #bf5061 100%);
+}
+.try-free-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: flex-start;
+  width: fit-content;
+  max-width: 100%;
+  gap: 8px;
+}
+.try-free-no-card {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: "Poppins", Helvetica, sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #000;
+  text-align: center;
+}
+#AnnualType {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+#AnnualType #PricingSelectBtn {
+  display: flex;
+  justify-content: center;
 }
 #OllyChatBtn,
 #OllyChatBtn:hover,
@@ -908,6 +975,27 @@ p:hover {
 a:hover {
   color: #803358 !important;
   text-decoration: underline !important;
+}
+/* Blog card titles on work, education, and healthcare stay plain on hover. */
+body.page-work .owl_blog a.item:hover,
+body.page-work .owl_blog a.item:hover h4,
+body.page-education .owl_blog a.item:hover,
+body.page-education .owl_blog a.item:hover h4,
+body.page-healthcare .owl_blog a.item:hover,
+body.page-healthcare .owl_blog a.item:hover h4 {
+  text-decoration: none !important;
+}
+/* Education inspire links: same hover as work.php (burgundy, no underline) */
+body.page-education .div_inspire a.fc_cb6171:hover,
+body.page-education .div_inspire a.fc_cb6171:focus,
+body.page-education .div_inspire a:hover.fc_cb6171,
+body.page-education .div_inspire h5:hover a.fc_cb6171:hover,
+body.page-education section.hpt120px ~ main#main .div_inspire a.fc_cb6171:hover,
+body.page-education section.hpt120px ~ main#main section .div_inspire a.fc_cb6171:hover {
+  color: rgb(128, 51, 88) !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  background: transparent !important;
 }
 .header a:hover,
 nav a:hover {
@@ -2489,8 +2577,11 @@ nav a:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   gap: 32px;
+}
+.transform-cta-actions .transform-cta-trial {
+  align-self: flex-start;
 }
 .transform-cta-actions a {
   text-decoration: none !important;
@@ -2621,6 +2712,10 @@ nav a:hover {
     flex-direction: column;
     gap: 10px;
     align-items: center;
+  }
+  .transform-cta-actions .transform-cta-trial {
+    align-self: center;
+    width: min(100%, 335px);
   }
   .transform-cta-actions a {
     display: flex;
@@ -3207,9 +3302,14 @@ nav a:hover {
 
   /* Anchor must define width: inner .start-your-free-wrapper uses max-width:100% and
      would otherwise shrink-wrap wrong inside .div-3 (align-items:center). */
-  .web_home_divlanding .hero-try-free-link {
+  .web_home_divlanding .hero-try-free-block {
     width: 335px;
     max-width: calc(100% - 40px);
+    align-self: center;
+  }
+  .web_home_divlanding .hero-try-free-link {
+    width: 100%;
+    max-width: 100%;
     align-self: center;
     flex-shrink: 0;
     display: flex;
@@ -3612,7 +3712,13 @@ nav a:hover {
     margin-top: 0;
   }
   .div-31 .div-28 .chevron-pink { display: none; }
-  .div-31 a[href*="teenagers/intro-carousel"] {
+  .div-31 .try-free-stack {
+    order: 6;
+    align-self: center;
+    width: 335px;
+    max-width: 100%;
+  }
+  .div-31 #happiermeTryForFree_teens {
     display: flex !important;
     order: 6;
     width: 335px;
@@ -3625,7 +3731,7 @@ nav a:hover {
     text-decoration: none;
     box-sizing: border-box;
   }
-  .div-31 a[href*="teenagers/intro-carousel"] .div-wrapper-4 {
+  .div-31 #happiermeTryForFree_teens .div-wrapper-4 {
     display: inline-flex !important;
     align-items: center;
     justify-content: center;
@@ -3637,10 +3743,10 @@ nav a:hover {
     box-sizing: border-box;
     background: linear-gradient(180deg, rgba(237, 125, 111, 1) 0%, rgba(215, 88, 107, 1) 100%) !important;
   }
-  .div-31 a[href*="teenagers/intro-carousel"] .div-wrapper-4:hover {
+  .div-31 #happiermeTryForFree_teens .div-wrapper-4:hover {
     background: linear-gradient(180deg, #da7d71 0%, #bf5061 100%) !important;
   }
-  .div-31 a[href*="teenagers/intro-carousel"] .div-wrapper-4 .text-wrapper-5 {
+  .div-31 #happiermeTryForFree_teens .div-wrapper-4 .text-wrapper-5 {
     font-size: 16px;
     font-weight: 600;
     color: #fff;
@@ -4028,11 +4134,14 @@ nav a:hover {
   .div-31 .text-wrapper-20 { display: none !important; }
   .div-31 .text-wrapper-19-mobile { display: block !important; font-family: 'Poppins', sans-serif !important; font-size: 24px !important; font-weight: 600 !important; color: #000 !important; text-align: center; line-height: 140% !important; margin: 0; max-width: 335px; }
   .div-31 .text-wrapper-20-mobile { display: block !important; font-size: 12px !important; font-weight: 400; color: #000 !important; line-height: 1.6; margin: 0; text-align: center; }
-  .div-31 a[href*="teenagers/intro-carousel"] {
+  .div-31 .try-free-stack {
+    width: 335px;
+  }
+  .div-31 #happiermeTryForFree_teens {
     width: 335px;
     height: 55px;
   }
-  .div-31 a[href*="teenagers/intro-carousel"] .div-wrapper-4 {
+  .div-31 #happiermeTryForFree_teens .div-wrapper-4 {
     height: 55px !important;
     border-radius: 30px !important;
     padding: 15px 30px !important;

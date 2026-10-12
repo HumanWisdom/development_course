@@ -114,15 +114,18 @@ hw_lcp_send_preload_headers();
                      
                     </div>
                     <p class="text-wrapper-4" id="hw-website-subtitle">
-                      Feel calmer. Build happier <br class="subtitle-br-m">relationships.<br class="subtitle-br-d"> Develop <a href="#" class="human-skills-link" data-bs-toggle="modal" data-bs-target="#humanSkillsModal" role="button" aria-haspopup="dialog" id="lifeskills">these skills</a><br class="subtitle-br-m"> to create the life you want.
+                      Feel calmer. Strengthen your relationships.<br class="subtitle-br-d"> Build <a href="#" class="human-skills-link" data-bs-toggle="modal" data-bs-target="#humanSkillsModal" role="button" aria-haspopup="dialog" id="lifeskills">these skills</a><br class="subtitle-br-m">  and live a happier life.
                     </p>
                   </div>
                 </div>
-                <a class="hero-try-free-link" id="happiermeTryForFree" href="https://happierme.app/pages/splash_options.php">
-                  <div class="start-your-free-wrapper">
-                    <div class="text-wrapper-5">Try HappierMe for free</div>
-                  </div>
-                </a>
+                <div class="hero-try-free-block">
+                  <a class="hero-try-free-link" id="happiermeTryForFree" href="/organisation-Adv.php?id=org-humanwisdom">
+                    <div class="start-your-free-wrapper">
+                      <div class="text-wrapper-5">Try HappierMe for free</div>
+                    </div>
+                  </a>
+                  <p class="hero-no-card-note">(No credit card needed)</p>
+                </div>
               </div>
             </div>
           </div>
