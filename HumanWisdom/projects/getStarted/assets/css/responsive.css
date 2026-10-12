@@ -857,7 +857,8 @@
   }
 
   .header .btn_tff {
-    width: 106px;
+    width: auto;
+    white-space: nowrap;
     height: 40px;
     font-size: 12px;
   }
@@ -2054,7 +2055,8 @@
 
   .header .btn_tff,
   .header .btn_tff:focus {
-    width: 106px;
+    width: auto;
+    white-space: nowrap;
     height: 40px;
     font-size: 12px;
   }
@@ -3425,9 +3427,13 @@
   body.page-education section.hpt120px ~ main#main .div_inspire a.fc_cb6171:hover,
   body.page-education section.hpt120px ~ main#main .div_inspire a.fc_cb6171:focus,
   body.page-education section.hpt120px ~ main#main .div_inspire a.fc_cb6171:hover span,
-  body.page-education section.hpt120px ~ main#main section .div_inspire a.fc_cb6171:hover {
+  body.page-education section.hpt120px ~ main#main section .div_inspire a.fc_cb6171:hover,
+  body.page-education .div_inspire a.fc_cb6171:hover,
+  body.page-education .div_inspire h5:hover a.fc_cb6171:hover {
     color: rgb(128, 51, 88) !important;
-    text-decoration-color: rgb(128, 51, 88);
+    font-weight: 500 !important;
+    text-decoration: none !important;
+    background: transparent !important;
   }
 
 }
