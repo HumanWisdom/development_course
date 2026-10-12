@@ -664,8 +664,8 @@ Stress can affect people differently. Common experiences can include <b> feeling
 
                 </h2>
 
-                <h6 class="hs_desc">
-Anxiety can involve excessive worry, nervousness, fear, restlessness, difficulty concentrating, feeling on edge, and repeatedly thinking about possible negative outcomes. Some people may also experience physical sensations such as increased heart rate or muscle tension. If symptoms are persistent, severe, or affecting daily life, professional guidance may be appropriate.                </h6>
+                <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/site-search/5%20questions%20to%20ask%20if%20you%20are%20anxious">
+Anxiety </a> can involve <b>excessive worry, nervousness, fear, restlessness, difficulty concentrating, feeling on edge, and repeatedly thinking about possible negative outcomes. </b> Some people may also experience physical sensations such as increased heart rate or muscle tension. If symptoms are persistent, severe, or affecting daily life, professional guidance may be appropriate.                </h6>
                   <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_web_faq">
@@ -676,7 +676,7 @@ Anxiety can involve excessive worry, nervousness, fear, restlessness, difficulty
                 </h2>
 
                 <h6 class="hs_desc">
-Feeling stressed frequently can have many possible causes, including ongoing responsibilities, work or academic pressure, relationship difficulties, uncertainty, lack of recovery time, unhealthy habits, or repeatedly dwelling on problems. Understanding your triggers and patterns can be a useful first step toward managing everyday stress.
+Feeling  <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/feel-better-now/stress">stressed frequently </a> can have many possible causes, including  <b> ongoing responsibilities, work or academic pressure, relationship difficulties, uncertainty, lack of recovery time, unhealthy habits, or repeatedly dwelling on problems.</b> Understanding your triggers and patterns can be a useful first step toward managing everyday stress.
                 </h6>
 
                <div class="row">
@@ -688,8 +688,8 @@ Feeling stressed frequently can have many possible causes, including ongoing res
 7. Why do I worry so much?
                 </h2>
 
-                <h6 class="hs_desc">
-Worry can become repetitive when the mind keeps trying to predict, prevent, or control uncertain outcomes. It may be influenced by fear, past experiences, current stress, uncertainty, or habitual thinking patterns. Learning to notice when worry is happening and distinguishing between what you can and cannot control can help you respond more consciously.
+                <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/site-search/Why%20do%20I%20worry%20about%20what%20others%20think%20of%20me">
+Worry </a> can become repetitive when the mind keeps trying to <b> predict, prevent, or control uncertain outcomes.</b> It may be influenced by fear, past experiences, current stress, uncertainty, or habitual thinking patterns. Learning to notice when worry is happening and distinguishing between what you can and cannot control can help you respond more consciously.
                 </h6>
 
                <div class="row">
@@ -702,7 +702,7 @@ Worry can become repetitive when the mind keeps trying to predict, prevent, or c
                 </h2>
 
                 <h6 class="hs_desc">
-Everyday stress may be supported through healthy practices such as regular physical activity, adequate sleep, mindfulness, breathing exercises, meditation, journaling, spending time with supportive people, taking breaks, and maintaining healthy routines. Different approaches work for different people, so it can help to experiment and identify practices that are sustainable for you.
+Everyday  <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/site-search/Reduce%20your%20stress%20live%20longer">stress </a> may be supported through healthy practices such as <b> regular physical activity, adequate sleep, mindfulness, breathing exercises, meditation, journaling, spending time with supportive people, taking breaks, and maintaining healthy routines.</b> Different approaches work for different people, so it can help to experiment and identify practices that are sustainable for you.
                 </h6>
 
 
@@ -717,7 +717,7 @@ Everyday stress may be supported through healthy practices such as regular physi
                 </h2>
 
                 <h6 class="hs_desc">
-When you feel overwhelmed, start by slowing down and bringing your attention to the present moment. Taking a few mindful breaths, identifying what you are feeling, writing down your thoughts, breaking a problem into smaller actions, or taking a short break can help create mental space. If feeling overwhelmed is persistent or severe, consider seeking professional support.
+When you feel overwhelmed, start by <b>  <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/site-search/Calm%20your%20mind">slowing down </a> and bringing your attention to the present moment. </b> Taking a few mindful breaths, identifying what you are feeling, writing down your thoughts, breaking a problem into smaller actions, or taking a short break can help create mental space. If feeling overwhelmed is persistent or severe, consider seeking professional support.
                 </h6>
                   <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -728,8 +728,8 @@ When you feel overwhelmed, start by slowing down and bringing your attention to 
 10. Can breathing exercises help with stress?
                 </h2>
 
-                <h6 class="hs_desc">
-Breathing exercises can be a simple way to slow down, focus attention on the present moment, and create a sense of calm. They can be incorporated into a daily mindfulness routine or used during stressful moments. Breathing exercises are a wellness practice and should not be considered a replacement for professional treatment when treatment is needed.
+                <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/site-search/%20breathing">
+Breathing exercises </a> can be a simple way to <b> slow down, focus attention on the present moment, and create a sense of calm.</b> They can be incorporated into a daily mindfulness routine or used during stressful moments. Breathing exercises are a wellness practice and should not be considered a replacement for professional treatment when treatment is needed.
 
                <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -741,7 +741,7 @@ Breathing exercises can be a simple way to slow down, focus attention on the pre
                 </h2>
 
                 <h6 class="hs_desc">
-Meditation and mindfulness can help people develop greater awareness of their thoughts, emotions, and present-moment experiences. Regular practice may help some people develop healthier responses to everyday stress and emotional challenges. Meditation is a complementary wellness practice and is not a substitute for professional mental health care.
+Meditation and mindfulness can help people <b> develop greater awareness of their thoughts, emotions, and present-moment experiences. </b> Regular practice may help some people develop healthier responses to everyday stress and emotional challenges. Meditation is a complementary wellness practice and is not a substitute for professional mental health care.
                 </h6>
 
                <div class="row">
@@ -754,7 +754,7 @@ Meditation and mindfulness can help people develop greater awareness of their th
                 </h2>
 
                 <h6 class="hs_desc">
-Overthinking can keep attention focused on past events, possible future problems, or repeatedly analyzing the same situation. This can make a situation feel more overwhelming and make it harder to shift attention toward useful action. Recognizing repetitive thinking patterns can be an important part of developing a healthier response to stress.
+Overthinking can keep attention focused on <b> past events, <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/site-search/problems">possible future problems,</a>  or repeatedly analyzing the same situation.</b> This can make a situation feel more overwhelming and make it harder to shift attention toward useful action. Recognizing repetitive thinking patterns can be an important part of developing a healthier response to stress.
 
 
                <div class="row">
@@ -768,7 +768,7 @@ Overthinking can keep attention focused on past events, possible future problems
                 </h2>
 
                 <h6 class="hs_desc">
-A useful starting point is to separate what you can control, what you can influence, and what you cannot control. Focus your energy on actions within your control and practice accepting uncertainty where you cannot change the outcome. Mindfulness, journaling, and self-reflection can help you recognize when your mind is repeatedly trying to solve something that is outside your control.
+A useful starting point is to separate what you can control, <b> what you can influence, and what you cannot control.</b> <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/site-search/focus"> Focus  </a> your energy on actions within your control and practice accepting uncertainty where you cannot change the outcome. Mindfulness, journaling, and self-reflection can help you recognize when your mind is repeatedly trying to solve something that is outside your control.
                 </h6>
                   <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -779,8 +779,8 @@ A useful starting point is to separate what you can control, what you can influe
 14. How can HappierMe help with stress and anxiety?
                 </h2>
 
-                <h6 class="hs_desc">
-HappierMe provides practical wellness resources that can help users understand and manage everyday stress, worry, overthinking, and emotional challenges. Users can explore mindfulness practices, meditation, breathing exercises, guided journaling, self-awareness exercises, podcasts, short videos, and microlearning. Olly AI can also guide users toward relevant expert-curated HappierMe content based on what they are experiencing.
+                <h6 class="hs_desc"><b>
+HappierMe provides  <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/blog-article?sId=45"> practical wellness resources  </a> that can help users understand and manage everyday stress, worry, overthinking, and emotional challenges. </b> Users can explore mindfulness practices, meditation, breathing exercises, guided journaling, self-awareness exercises, podcasts, short videos, and microlearning. Olly AI can also guide users toward relevant expert-curated HappierMe content based on what they are experiencing.
                 </h6>
 
                <div class="row">
@@ -793,7 +793,8 @@ HappierMe provides practical wellness resources that can help users understand a
                 </h2>
 
                 <h6 class="hs_desc">
-Consider seeking professional support when stress or anxiety is persistent, severe, difficult to manage, or interfering with everyday activities, relationships, work, school, or sleep. A qualified mental health or healthcare professional can help assess what you are experiencing and recommend appropriate support. HappierMe can complement personal wellness practices but is not a replacement for professional diagnosis or treatment.                </h6>
+Consider seeking professional support when stress or anxiety is <b> persistent, severe, difficult to manage, or interfering with everyday activities, relationships, work, school, or sleep.</b> A qualified mental health or 
+<a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/coach">healthcare professional </a> can help assess what you are experiencing and recommend appropriate support. HappierMe can complement personal wellness practices but is not a replacement for professional diagnosis or treatment.                </h6>
 
                       </div>
                     </div>
