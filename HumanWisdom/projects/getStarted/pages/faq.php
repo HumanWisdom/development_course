@@ -168,8 +168,8 @@ Blogs 15 -FAQ
 
                 </h2>
 
-                <h6 class="hs_desc">
-HappierMe is an all-in-one mental wellness and personal growth app designed to help people handle everyday life challenges more effectively. It combines mental wellness education, mindfulness, meditation, journaling, emotional intelligence, relationship support, habit-building, and self-awareness tools in one app. HappierMe is designed for both teenagers and adults and provides practical resources that users can explore in just a few minutes a day.
+                <h6 class="hs_desc"><span class="blog_highlight_black" style="font-size:15px;">
+HappierMe is an all-in-one mental wellness and personal growth app designed to help people handle everyday life challenges more effectively.</span> It combines mental wellness education, mindfulness, meditation, journaling, emotional intelligence, relationship support, habit-building, and self-awareness tools in one app. HappierMe is designed for both teenagers and adults and provides practical resources that users can explore in just a few minutes a day.
                 </h6>
              <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -181,7 +181,7 @@ HappierMe is an all-in-one mental wellness and personal growth app designed to h
                 </h2>
 
                 <h6 class="hs_desc">
-HappierMe helps users work on a wide range of everyday challenges, including stress, anxiety, overthinking, emotional difficulties, relationships, unhealthy habits, sleep, confidence, self-awareness, focus, and personal growth. The app provides educational content and practical exercises to help users better understand their thoughts, emotions, behaviors, and relationships.
+HappierMe helps users work on a wide range of everyday challenges, including <span class="blog_highlight_black" style="font-size:15px;"> stress, anxiety, overthinking, emotional difficulties, relationships, unhealthy habits, sleep, confidence, self-awareness, focus, and personal growth.</span> The app provides educational content and practical exercises to help users better understand their thoughts, emotions, behaviors, and relationships.
                 </h6>
 
 
@@ -196,7 +196,9 @@ HappierMe helps users work on a wide range of everyday challenges, including str
                 </h2>
 
                 <h6 class="hs_desc">
-HappierMe is more than a meditation app. While it includes meditation, breathing exercises, and mindfulness practices, it also provides podcasts, short videos, blogs, journaling, microlearning, wellness surveys, emotional intelligence resources, relationship guidance, habit-building tools, coaching access, community experiences, and AI-guided content discovery through Olly AI.
+                  <span class="blog_highlight_black" style="font-size:15px;">
+
+                HappierMe is more than a meditation app.</span> While it includes meditation, breathing exercises, and mindfulness practices, it also provides podcasts, short videos, blogs, journaling, microlearning, wellness surveys, emotional intelligence resources, relationship guidance, habit-building tools, coaching access, community experiences, and AI-guided content discovery through Olly AI.
                 </h6>
 <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -209,7 +211,7 @@ HappierMe is more than a meditation app. While it includes meditation, breathing
                 </h2>
 
                 <h6 class="hs_desc">
-HappierMe is designed for both teenagers and adults. The app has separate experiences and content areas for teens and adults, addressing age-relevant challenges such as exam stress, social pressure, friendships, relationships, work stress, burnout, emotional wellbeing, and personal growth.
+HappierMe is designed for <span class="blog_highlight_black" style="font-size:15px;"> both teenagers and adults.</span> The app has separate experiences and content areas for teens and adults, addressing age-relevant challenges such as exam stress, social pressure, friendships, relationships, work stress, burnout, emotional wellbeing, and personal growth.
                 </h6>
 
 
@@ -224,7 +226,7 @@ HappierMe is designed for both teenagers and adults. The app has separate experi
                 </h2>
 
                 <h6 class="hs_desc">
-Yes. HappierMe includes a dedicated teen section designed around challenges teenagers commonly experience, including school and exam stress, friendships, social pressure, emotions, confidence, self-awareness, and relationships. The app also has a separate adult experience covering adult life, work, relationships, stress, and personal growth.
+Yes. HappierMe includes a    <a class="blog_highlight_peach td_underline" href="https://happierme.app/pages/teenagers.php"> dedicated teen section </a> designed around challenges teenagers commonly experience, including school and exam stress, friendships, social pressure, emotions, confidence, self-awareness, and relationships. The app also has a separate adult experience covering adult life, work, relationships, stress, and personal growth.
                 </h6>
                   <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -236,7 +238,7 @@ Yes. HappierMe includes a dedicated teen section designed around challenges teen
                 </h2>
 
                 <h6 class="hs_desc">
-HappierMe brings mental wellness, emotional intelligence, relationships, mindfulness, personal growth, habit-building, and educational content together in one app. Instead of focusing only on temporary relaxation, HappierMe aims to help users understand themselves, develop healthier habits, improve relationships, and build skills that can be applied to everyday life.
+HappierMe brings   <span class="blog_highlight_black"> mental wellness, emotional intelligence, relationships, mindfulness, personal growth, habit-building, and educational content together in one app.</span> Instead of focusing only on temporary relaxation, HappierMe aims to help users understand themselves, develop healthier habits, improve relationships, and build skills that can be applied to everyday life.
                 </h6>
 
                <div class="row">
@@ -249,7 +251,7 @@ HappierMe brings mental wellness, emotional intelligence, relationships, mindful
                 </h2>
 
                 <h6 class="hs_desc">
-HappierMe includes AI-guided content discovery, podcasts, blogs, short videos, microlearning modules, guided journaling, wellness surveys, meditation, breathing exercises, mindfulness practices, habit-building tools, daily emotional check-ins, coaching access, live events, and a community forum. These features are designed to support ongoing self-awareness and personal growth.
+HappierMe includes   <span class="blog_highlight_black"> AI-guided content discovery, podcasts, blogs, short videos, microlearning modules, guided journaling, wellness surveys, meditation, breathing exercises, mindfulness practices, habit-building tools, daily emotional check-ins, coaching access, live events, and a community forum.</span> These features are designed to support ongoing self-awareness and personal growth.
                 </h6>
 
                <div class="row">
@@ -262,7 +264,7 @@ HappierMe includes AI-guided content discovery, podcasts, blogs, short videos, m
                 </h2>
 
                 <h6 class="hs_desc">
-Olly AI is the AI-powered wellness guide built into HappierMe. It helps users reflect on what they are experiencing and guides them toward relevant expert-curated resources within the HappierMe platform. Depending on the user's needs, Olly AI can guide them toward videos, podcasts, self-awareness exercises, microlearning modules, and meditations.
+  <span class="blog_highlight_black">                                                        Olly AI is the AI-powered wellness guide built into HappierMe. </span> It helps users reflect on what they are experiencing and guides them toward relevant expert-curated resources within the HappierMe platform. Depending on the user's needs, Olly AI can guide them toward videos, podcasts, self-awareness exercises, microlearning modules, and meditations.
                 </h6>
 
 
@@ -277,7 +279,8 @@ Olly AI is the AI-powered wellness guide built into HappierMe. It helps users re
                 </h2>
 
                 <h6 class="hs_desc">
-No. Olly AI does not source its guidance from the open internet. It is designed to guide users toward expert-curated content available within the HappierMe ecosystem. This approach helps keep its recommendations focused on the content and resources provided by HappierMe.
+                    <span class="blog_highlight_black">
+No. Olly AI does not source its guidance from the open internet.</span> It is designed to guide users toward expert-curated content available within the HappierMe ecosystem. This approach helps keep its recommendations focused on the content and resources provided by HappierMe.
                 </h6>
                   <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -289,7 +292,7 @@ No. Olly AI does not source its guidance from the open internet. It is designed 
                 </h2>
 
                 <h6 class="hs_desc">
-HappierMe provides educational resources and practical tools for managing everyday stress, anxiety, overthinking, and emotional challenges. Users can explore mindfulness practices, meditation, breathing exercises, journaling, videos, podcasts, microlearning, and self-awareness exercises to develop healthier ways of understanding and responding to difficult experiences.                </h6>
+HappierMe provides    <span class="blog_highlight_black"> educational resources and practical tools for managing everyday stress, anxiety, overthinking, and emotional challenges.</span> Users can explore mindfulness practices, meditation, breathing exercises, journaling, videos, podcasts, microlearning, and self-awareness exercises to develop healthier ways of understanding and responding to difficult experiences.                </h6>
 
                <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -301,7 +304,7 @@ HappierMe provides educational resources and practical tools for managing everyd
                 </h2>
 
                 <h6 class="hs_desc">
-Yes. HappierMe includes relationship-focused educational content and practical resources designed to help users better understand communication, emotions, empathy, self-awareness, and relationship patterns. The goal is to help users develop healthier communication and stronger relationships with themselves and others.
+Yes. HappierMe includes relationship-  <span class="blog_highlight_black">focused educational content and practical resources </span> designed to help users better understand communication, emotions, empathy, self-awareness, and relationship patterns. The goal is to help users develop healthier communication and stronger relationships with themselves and others.
                 </h6>
 
                <div class="row">
@@ -314,7 +317,7 @@ Yes. HappierMe includes relationship-focused educational content and practical r
                 </h2>
 
                 <h6 class="hs_desc">
-Yes. Personal growth is a core part of HappierMe. The app helps users develop self-awareness, emotional intelligence, confidence, resilience, mindfulness, communication skills, healthier habits, focus, and emotional understanding through short, practical learning and self-reflection activities.                </h6>
+Yes. Personal growth is a core part of HappierMe. The app helps users develop self-awareness,    <span class="blog_highlight_black"> emotional intelligence, confidence, resilience, mindfulness, communication skills, healthier habits, focus, and emotional understanding</span> through short, practical learning and self-reflection activities.                </h6>
 
 
                <div class="row">
@@ -328,7 +331,7 @@ Yes. Personal growth is a core part of HappierMe. The app helps users develop se
                 </h2>
 
                 <h6 class="hs_desc">
-Yes. HappierMe can provide personalized guidance through Olly AI, which helps users reflect on their needs and directs them toward relevant HappierMe resources. These may include videos, podcasts, exercises, microlearning content, and meditation practices.
+Yes. HappierMe can provide <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/chat-bot">personalized guidance through Olly AI,</a> which helps users reflect on their needs and directs them toward relevant HappierMe resources. These may include videos, podcasts, exercises, microlearning content, and meditation practices.
                 </h6>
                   <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -340,7 +343,7 @@ Yes. HappierMe can provide personalized guidance through Olly AI, which helps us
                 </h2>
 
                 <h6 class="hs_desc">
-Yes. HappierMe is designed to support small, consistent daily practices rather than requiring long sessions. Users can spend a few minutes exploring educational content, journaling, meditating, practicing mindfulness, completing exercises, or checking in with themselves. Consistent use can help users build greater self-awareness and healthier habits over time.
+Yes. HappierMe is designed to support small,<a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/guided-journeys/12"> consistent daily practices</a> rather than requiring long sessions. Users can spend a few minutes exploring educational content, journaling, meditating, practicing mindfulness, completing exercises, or checking in with themselves. Consistent use can help users build greater self-awareness and healthier habits over time.
                 </h6>
 
                <div class="row">
@@ -353,7 +356,9 @@ Yes. HappierMe is designed to support small, consistent daily practices rather t
                 </h2>
 
                 <h6 class="hs_desc">
-No. HappierMe is a mental wellness and personal growth app and is not intended to replace professional medical or mental health care. It provides educational content, self-reflection tools, mindfulness practices, and wellness resources that can support everyday wellbeing. People experiencing serious or persistent mental health concerns should seek appropriate support from a qualified healthcare or mental health professional.
+                  <span class="blog_highlight_black">
+
+No. HappierMe is a mental wellness and personal growth app and is not intended to replace professional medical or</span>  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/insight">mental health care.</a> It provides educational content, self-reflection tools, mindfulness practices, and wellness resources that can support everyday wellbeing. People experiencing serious or persistent mental health concerns should seek appropriate support from a qualified healthcare or mental health professional.
                 </h6>
 
                       </div>
@@ -2055,7 +2060,7 @@ Recognizing personal values and becoming comfortable making independent choices 
                       <hr class="hr_style_web_01 hr-darker">
                     </div>
                   </div>
-                   <!-- <div class="accordion-item">
+                   <div class="accordion-item">
                     <h2 class="accordion-header" id="heading_20">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#c20" aria-expanded="false" aria-controls="c20">
