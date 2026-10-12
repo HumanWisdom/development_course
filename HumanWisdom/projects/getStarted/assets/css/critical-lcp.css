@@ -234,6 +234,11 @@ img { max-width: 100%; display: block; }
   color: rgba(255, 247, 230, 1);
   text-align: center;
 }
+body .web_home_divlanding p.hero-phone-caption:hover,
+body .web_home_divlanding p.hero-no-card-note:hover {
+  color: rgba(255, 247, 230, 1) !important;
+  text-decoration: none !important;
+}
 .div-wrapper { width: 100%; max-width: 1340px; }
 .div { width: 100%; }
 .div-2 {

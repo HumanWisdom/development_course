@@ -1524,9 +1524,13 @@ body.page-healthcare .owl_testimonials .work-testimonials-footer .work-testimoni
   font-size: 12px !important;
 }
 
+body.page-healthcare .owl_testimonials .work-testimonials-footer .sap.work-testimonials-more:hover h4,
+body.page-healthcare .owl_testimonials .work-testimonials-footer .sap.work-testimonials-more:active h4,
 body.page-healthcare .owl_testimonials .work-testimonials-more:hover h4,
 body.page-healthcare .owl_testimonials .work-testimonials-more:hover .chevron-pink,
-body.page-healthcare .owl_testimonials .work-testimonials-more:hover .chevron-pink .bi {
+body.page-healthcare .owl_testimonials .work-testimonials-more:hover .chevron-pink .bi,
+body.page-healthcare .owl_testimonials .work-testimonials-more:active .chevron-pink,
+body.page-healthcare .owl_testimonials .work-testimonials-more:active .chevron-pink .bi {
   color: #803358 !important;
 }
 
@@ -1826,6 +1830,18 @@ body.page-healthcare .work-blog-section {
   gap: 60px;
   padding-bottom: 80px !important;
   overflow: visible;
+}
+
+@media (min-width: 768px) {
+  body.page-healthcare .work-blog-section {
+    margin-bottom: 0 !important;
+  }
+
+  /* Default .dfooter margin-top is 100px; section padding already supplies the gap. */
+  body.page-healthcare main#main .dfooter,
+  body.page-healthcare .dfooter {
+    margin-top: 0 !important;
+  }
 }
 
 body.page-healthcare .work-blog-section .work-blog-header,
@@ -2129,6 +2145,10 @@ body.page-healthcare .owl_blog .work-blog-footer .owl-nav .owl-next.disabled {
     padding-bottom: 0 !important;
   }
 
+  body.page-healthcare .dfooter {
+    margin-top: 40px !important;
+  }
+
   body.page-healthcare main#main .work-blog-title {
     font-size: 24px !important;
     line-height: 140% !important;
@@ -2334,12 +2354,15 @@ body.page-education .div_inspire a.fc_cb6171:hover,
 body.page-education .div_inspire a.fc_cb6171:focus,
 body.page-education .div_inspire a:hover.fc_cb6171,
 body.page-education .div_inspire a.fc_cb6171:hover span,
+body.page-education .div_inspire h5:hover a.fc_cb6171:hover,
 body.page-education section.hpt120px ~ main#main .div_inspire a.fc_cb6171:hover,
 body.page-education section.hpt120px ~ main#main .div_inspire a.fc_cb6171:focus,
 body.page-education section.hpt120px ~ main#main .div_inspire a.fc_cb6171:hover span,
 body.page-education section.hpt120px ~ main#main section .div_inspire a.fc_cb6171:hover {
   color: rgb(128, 51, 88) !important;
-  text-decoration-color: rgb(128, 51, 88);
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  background: transparent !important;
 }
 
 @media (max-width: 767px) {
