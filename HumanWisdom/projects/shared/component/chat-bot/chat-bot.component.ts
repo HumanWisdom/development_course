@@ -8,6 +8,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { SharedService } from '../../services/shared.service';
 import { ProgramType } from '../../models/program-model';
 import { LogEventService } from '../../services/log-event.service';
+import { Constant } from '../../services/constant';
 
 @Component({
   selector: 'app-chat-bot',
@@ -256,6 +257,7 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
               is_followup: event.is_followup,
               has_more: event.has_more
             });
+            // Cards inside streaming HTML render via innerHTML + styleAnchorTags click handler
           } else if (event.rawContent) {
             this.chatbotService.addBotMessage(
               event.htmlContent,
@@ -265,7 +267,8 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
               event.is_followup,
               event.has_more
             );
-            this.parseAndAttachCards(event.htmlContent);
+            // First/streaming responses render cards via innerHTML directly
+            // parseAndAttachCards not needed here
           } else {
             this.errorMessage = 'Sorry, I encountered an error. Please try again.';
           }
@@ -848,67 +851,31 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   sanitizeHtml(html: string): SafeHtml {
-    // Strip resource-card divs — rendered as Angular cards above, no duplicate needed
-    // Each card = <div class="resource-card" ...>...<div>...</div></div> (2 closing divs)
-    const stripped = html.replace(/<div class="resource-card"[\s\S]*?<\/div>[\s\S]*?<\/div>/gi, '');
-    return this.sanitizer.bypassSecurityTrustHtml(stripped);
+    // Strip target/rel so no new tab opens
+    const cleaned = html
+      .replace(/target\s*=\s*["'][^"']*["']/gi, '')
+      .replace(/rel\s*=\s*["'][^"']*["']/gi, '');
+    return this.sanitizer.bypassSecurityTrustHtml(cleaned);
   }
 
   styleAnchorTags(): void {
-    // Use setTimeout to ensure DOM is updated after innerHTML rendering
     setTimeout(() => {
-      const anchorTags = document.querySelectorAll('.bot-message-content a');
-      console.log('[styleAnchorTags] found anchors:', anchorTags.length);
-
+      const anchorTags = document.querySelectorAll('.bot-message-content a:not([data-styled])');
       anchorTags.forEach((anchor: Element) => {
         const htmlAnchor = anchor as HTMLAnchorElement;
-        
-        if (htmlAnchor.getAttribute('data-styled')) {
-          return;
-        }
-        
         htmlAnchor.setAttribute('data-styled', 'true');
 
-        // Force remove target="_blank" directly on the DOM element
+        // Remove new-tab behavior — delegation handler in onMessageContentClick navigates
         htmlAnchor.removeAttribute('target');
         htmlAnchor.removeAttribute('rel');
 
-        const isCard = htmlAnchor.classList.contains('content-card') ||
-                      (htmlAnchor.getAttribute('style') || '').includes('background');
-
+        // Styling only — NO addEventListener click (delegation handles it, no duplicates)
+        const isCard = (htmlAnchor.getAttribute('style') || '').includes('position: absolute');
         if (!isCard) {
           htmlAnchor.style.color = '#1976d2';
           htmlAnchor.style.textDecoration = 'underline';
+          htmlAnchor.style.cursor = 'pointer';
         }
-        htmlAnchor.style.cursor = 'pointer';
-
-        // Direct click handler on every anchor — no delegation needed
-        htmlAnchor.addEventListener('click', (e: MouseEvent) => {
-          e.preventDefault();
-          e.stopPropagation();
-
-          const path = htmlAnchor.getAttribute('data-path');
-          const href = htmlAnchor.getAttribute('href') || htmlAnchor.href;
-          console.log('[styleAnchorTags click] data-path:', path, '| href:', href);
-
-          // Track in background
-          const trackUrl = htmlAnchor.href || href;
-          if (trackUrl) {
-            this.chatbotService.trackLinkClick(trackUrl).subscribe({
-              next: (r) => console.log('[styleAnchorTags] tracked:', r),
-              error: (err) => console.error('[styleAnchorTags] tracking error:', err)
-            });
-          }
-
-          this.navigateToCard(path || href);
-        });
-
-        htmlAnchor.addEventListener('mouseenter', () => {
-          if (!isCard) htmlAnchor.style.color = '#1565c0';
-        });
-        htmlAnchor.addEventListener('mouseleave', () => {
-          if (!isCard) htmlAnchor.style.color = '#1976d2';
-        });
       });
     }, 100);
   }
@@ -1059,20 +1026,20 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
    * Parse resource-card anchors from bot HTML response and store them on the message.
    * This runs once when API response arrives — no DOM touching needed.
    */
-  private parseAndAttachCards(html: string): void {
+  private parseAndAttachCards(html: string, messageId?: string): void {
     const cards: { title: string; type: string; path: string; img: string }[] = [];
 
-    // Match each resource-card div individually
-    const cardRegex = /<div class="resource-card"[^>]*>([\s\S]*?)<\/div>\s*<\/div>/gi;
+    const cardRegex = /<div class="resource-card"[^>]*>([\s\S]*?<\/div>)\s*<\/div>/gi;
     let cardMatch: RegExpExecArray | null;
 
     while ((cardMatch = cardRegex.exec(html)) !== null) {
-      const inner = cardMatch[1];
+      const block = cardMatch[0];
 
-      const hrefMatch = inner.match(/href="([^"]*)"/i);
-      const imgMatch  = inner.match(/src="([^"]*)"/i);
-      const titleMatch = inner.match(/<strong[^>]*>([\s\S]*?)<\/strong>/i);
-      const typeMatch  = inner.match(/<span[^>]*>([\s\S]*?)<\/span>/i);
+      const hrefMatch  = block.match(/href="([^"]*)"/i);
+      const imgMatch   = block.match(/src="([^"]*cloudfront[^"]*)"/i)
+                      || block.match(/src="([^"]*)"/i);
+      const titleMatch = block.match(/<strong[^>]*>([\s\S]*?)<\/strong>/i);
+      const typeMatch  = block.match(/<span[^>]*>([\s\S]*?)<\/span>/i);
 
       if (!hrefMatch || !imgMatch || !titleMatch) continue;
 
@@ -1089,11 +1056,18 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
 
     if (cards.length === 0) return;
 
+    // Strip resource-card HTML from content — Angular cards take over rendering
+    const strippedHtml = html.replace(/<div class="resource-card"[^>]*>[\s\S]*?<\/div>\s*<\/div>/gi, '').trim();
+
     setTimeout(() => {
-      const botMessages = this.messages.filter(msg => msg.sender === 'bot' && !msg.isTyping);
-      const latest = botMessages[botMessages.length - 1];
-      if (latest) {
-        this.chatStore.updateMessage({ id: latest.id, updates: { resourceCards: cards } });
+      if (messageId) {
+        this.chatStore.updateMessage({ id: messageId, updates: { resourceCards: cards, content: strippedHtml } });
+      } else {
+        const botMessages = this.messages.filter(msg => msg.sender === 'bot' && !msg.isTyping);
+        const latest = botMessages[botMessages.length - 1];
+        if (latest) {
+          this.chatStore.updateMessage({ id: latest.id, updates: { resourceCards: cards, content: strippedHtml } });
+        }
       }
     }, 0);
   }
@@ -1109,6 +1083,10 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
           path = u.pathname + u.search + u.hash;
         } catch { /* use as-is */ }
       }
+
+      // Save current chatbot URL so subscription page back button returns here
+      SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
+
       this.router.navigateByUrl(path);
     });
   }
