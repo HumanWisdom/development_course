@@ -257,7 +257,7 @@ if (!hw_page_assets_flag('css', 'header_in_critical')) :
             background: linear-gradient(180deg, #da7d71 0%, #bf5061 100%) !important;
           }
         </style>
-        <a class="btn_tff btn_tff_tn btn_popup no-underline-hover" id="headerTryForFree" href="https://onelink.to/hsnt8b">Try for free</a>
+        <a class="btn_tff btn_tff_tn btn_popup no-underline-hover" id="headerTryForFree" href="https://onelink.to/hsnt8b">Download the app</a>
         <i class="mobile-nav-toggle mobile-nav-show bi bi-list" role="button" aria-label="Open menu" tabindex="0"></i>
       </div>
 

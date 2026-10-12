@@ -106,9 +106,12 @@
               <span class="chevron-pink"><span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span>
             </div>
           </div>
-          <a href="https://happierme.app/teenagers/intro-carousel" id="happiermeTryForFree_teens">
-            <div class="div-wrapper-4"><div class="text-wrapper-5">Try HappierMe for free</div></div>
-          </a>
+          <div class="try-free-stack">
+            <a href="/organisation-Adv.php?id=org-humanwisdom" id="happiermeTryForFree_teens">
+              <div class="div-wrapper-4"><div class="text-wrapper-5">Try HappierMe for free</div></div>
+            </a>
+            <p class="try-free-no-card">(No credit card needed)</p>
+          </div>
         </div>
       </div>
 
@@ -169,7 +172,7 @@
               <div id="AnnualTypebtn">
                 <div id="PricingSelectBtn1">
               <a href="https://happierme.app/pages/splash_options.php" id="startyourfreetrial1">
-                <div class="div-wrapper-4"><div class="text-wrapper-5">Start your free trial</div></div>
+                <div class="div-wrapper-4"><div class="text-wrapper-5">Subscribe now</div></div>
               </a>
                 </div>
               </div>

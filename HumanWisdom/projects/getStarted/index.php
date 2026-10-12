@@ -118,11 +118,14 @@ hw_lcp_send_preload_headers();
                     </p>
                   </div>
                 </div>
-                <a class="hero-try-free-link" id="happiermeTryForFree" href="https://happierme.app/pages/splash_options.php">
-                  <div class="start-your-free-wrapper">
-                    <div class="text-wrapper-5">Try HappierMe for free</div>
-                  </div>
-                </a>
+                <div class="hero-try-free-block">
+                  <a class="hero-try-free-link" id="happiermeTryForFree" href="/organisation-Adv.php?id=org-humanwisdom">
+                    <div class="start-your-free-wrapper">
+                      <div class="text-wrapper-5">Try HappierMe for free</div>
+                    </div>
+                  </a>
+                  <p class="hero-no-card-note">(No credit card needed)</p>
+                </div>
               </div>
             </div>
           </div>
