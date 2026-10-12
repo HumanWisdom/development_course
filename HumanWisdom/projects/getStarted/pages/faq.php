@@ -608,8 +608,9 @@ Stress & Anxiety
 
                 </h2>
 
-                <h6 class="hs_desc">
-Stress is the mind and body's response to situations that feel demanding, challenging, uncertain, or overwhelming. Everyday stress can come from work, school, relationships, finances, responsibilities, major life changes, or difficult situations. Understanding what triggers stress can help you develop healthier ways of responding to it. 
+                <h6 class="hs_desc"><b>
+                  <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/feel-better-now/stress">
+Stress </a> is the mind and body's response to situations that feel demanding, challenging, uncertain, or overwhelming.</b> Everyday stress can come from work, school, relationships, finances, responsibilities, major life changes, or difficult situations. Understanding what triggers stress can help you develop healthier ways of responding to it. 
                 </h6>
              <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -620,8 +621,8 @@ Stress is the mind and body's response to situations that feel demanding, challe
 2. What is anxiety?
                 </h2>
 
-                <h6 class="hs_desc">
-Anxiety is a feeling of worry, fear, nervousness, or uneasiness that can arise when we anticipate uncertainty, danger, or a difficult outcome. Occasional anxiety is a normal human experience, but persistent or severe anxiety can interfere with everyday life and may require professional support.
+                <h6 class="hs_desc"><b><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/fear-anxiety">
+Anxiety </a> is a feeling of worry, fear, nervousness, or uneasiness that can arise when we anticipate uncertainty, danger, or a difficult outcome. </b> Occasional anxiety is a normal human experience, but persistent or severe anxiety can interfere with everyday life and may require professional support.
                 </h6>
 
 
@@ -635,8 +636,8 @@ Anxiety is a feeling of worry, fear, nervousness, or uneasiness that can arise w
 3. What is the difference between stress and anxiety?
                 </h2>
 
-                <h6 class="hs_desc">
-Stress is often connected to a specific challenge, demand, or situation, while anxiety can continue even when there is no immediate or clearly identifiable threat. They can also overlap—stressful situations can trigger anxious feelings, and ongoing worry can make everyday stress feel more difficult to manage.
+                <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/feel-better-now/stress">
+Stress </a> is often connected to a <b> specific challenge, demand, or situation, </a> while  <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/feel-better-now/anxiety">anxiety  </a> can continue even when there is no immediate or clearly identifiable threat. They can also overlap—stressful situations can trigger anxious feelings, and ongoing worry can make everyday stress feel more difficult to manage.
                 </h6>
 <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -649,7 +650,7 @@ Stress is often connected to a specific challenge, demand, or situation, while a
                 </h2>
 
                 <h6 class="hs_desc">
-Stress can affect people differently. Common experiences can include feeling overwhelmed, difficulty relaxing, irritability, racing thoughts, trouble concentrating, changes in sleep, feeling tense, and becoming emotionally exhausted. Physical symptoms can also occur. Persistent or concerning symptoms should be discussed with a qualified healthcare professional.
+Stress can affect people differently. Common experiences can include <b> feeling overwhelmed, difficulty relaxing, irritability, racing thoughts, trouble concentrating, changes in sleep, feeling tense, and becoming emotionally exhausted.</a> Physical symptoms can also occur. Persistent or concerning symptoms should be discussed with a qualified healthcare professional.
                 </h6>
 
 
