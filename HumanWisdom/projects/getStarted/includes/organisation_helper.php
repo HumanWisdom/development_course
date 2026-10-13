@@ -5,6 +5,7 @@
  */
 require_once __DIR__ . '/security_config.php';
 require_once __DIR__ . '/api_config.php';
+require_once __DIR__ . '/social_config.php';
 require_once __DIR__ . '/media_config.php';
 require_once __DIR__ . '/cache_buster.php';
 

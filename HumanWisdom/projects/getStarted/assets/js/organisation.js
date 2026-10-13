@@ -145,6 +145,289 @@
     });
   }
 
+  var social = window.__HW_SOCIAL__ || {};
+
+  function loadScript(id, src) {
+    return new Promise(function (resolve, reject) {
+      var existing = document.getElementById(id);
+      if (existing) {
+        if (existing.getAttribute("data-loaded") === "1") resolve();
+        else {
+          existing.addEventListener("load", function () { resolve(); });
+          existing.addEventListener("error", reject);
+        }
+        return;
+      }
+      var s = document.createElement("script");
+      s.id = id;
+      s.src = src;
+      s.async = true;
+      s.defer = true;
+      s.onload = function () {
+        s.setAttribute("data-loaded", "1");
+        resolve();
+      };
+      s.onerror = reject;
+      document.head.appendChild(s);
+    });
+  }
+
+  function decodeJwt(token) {
+    var base64 = String(token || "").split(".")[1].replace(/-/g, "+").replace(/_/g, "/");
+    var json = decodeURIComponent(
+      atob(base64)
+        .split("")
+        .map(function (c) {
+          return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
+        })
+        .join("")
+    );
+    return JSON.parse(json);
+  }
+
+  function adultsUrl(path) {
+    return (social.adultsAppUrl || window.location.origin) + path;
+  }
+
+  function isSameOriginAsAdults() {
+    try {
+      return new URL(adultsUrl("/")).origin === window.location.origin;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  /** Mirrors LoginSignupPage.setUpLoginConfiguration so the adults app boots as logged in. */
+  function storeAdultsSession(res) {
+    var ls = localStorage;
+    clearCreateAccountLocalStorage();
+    ls.setItem("socialLogin", "T");
+    ls.setItem("isloggedin", "T");
+    ls.setItem("guest", "F");
+    ls.setItem("btnclick", "F");
+    ls.setItem("remember", "T");
+    ls.setItem("loginResponse", JSON.stringify(res));
+    sessionStorage.setItem("loginResponse", JSON.stringify(res));
+    sessionStorage.setItem("loginCompletedAt", String(Date.now()));
+    ls.setItem("token", JSON.stringify(res.access_token));
+    ls.setItem("IsPartner", res.IsPartner);
+    ls.setItem("isPartner", res.IsPartner);
+    ls.setItem("PartnerOption", res.PartnerOption);
+    ls.setItem("Subscriber", res.Subscriber);
+    ls.setItem("SubscriberType", res.SubscriberType);
+    ls.setItem("NoOfDPVisits", res.NoOfDPVisits != null ? String(res.NoOfDPVisits) : "0");
+    ls.setItem("NoOfVisits", res.NoOfVisits);
+    ls.setItem("signupfirst", res.NoOfVisits === 1 ? "T" : "F");
+    ls.setItem("RoleID", JSON.stringify(res.RoleID));
+    ls.setItem("email", res.Email);
+    ls.setItem("pswd", "");
+    ls.setItem("name", res.Name);
+    ls.setItem("first", "T");
+    ls.setItem("userName", JSON.stringify(res.Name));
+    ls.setItem("userEmail", JSON.stringify(res.Email));
+    ls.setItem("userID", res.UserId);
+    ls.setItem("userId", JSON.stringify(res.UserId));
+    sessionStorage.setItem("userId", JSON.stringify(res.UserId));
+    sessionStorage.setItem("userEmail", JSON.stringify(res.Email));
+    sessionStorage.setItem("userName", JSON.stringify(res.Name));
+    ls.setItem("mediaAudio", JSON.stringify("https://humanwisdoms3.s3.eu-west-2.amazonaws.com"));
+    ls.setItem("mediaVideo", JSON.stringify("https://humanwisdoms3.s3.eu-west-2.amazonaws.com"));
+    ls.setItem("video", JSON.stringify(3));
+    ls.setItem("audio", JSON.stringify(4));
+  }
+
+  function loginToAdults(res) {
+    // Different origin means no shared localStorage; adults /social-login verifies the token itself.
+    if (!isSameOriginAsAdults()) {
+      window.location.href = adultsUrl("/adults/social-login?authtoken=" + encodeURIComponent(res.access_token));
+      return;
+    }
+    try {
+      storeAdultsSession(res);
+    } catch (e) {}
+    window.location.href = adultsUrl(res.NoOfVisits === 1 ? "/adults/change-topic" : "/adults/today");
+  }
+
+  function setupSocialSignup() {
+    var wrap = qs("org-social");
+    if (!wrap) return;
+
+    var err = qs("org-signup-error");
+    var fbBtn = qs("org-facebook-btn");
+    var appleBtn = qs("org-apple-btn");
+    var busy = false;
+
+    function fail(msg) {
+      busy = false;
+      showError(err, msg);
+    }
+
+    function verifyAndLogin(endpoint, payload, provider) {
+      busy = true;
+      showError(err, "Signing you in…");
+      payload.VCode = "";
+      payload.Pwd = "";
+      payload.OrganizationId = org.id || getStoredOrganizationId();
+
+      fetch(apiBase + "/" + endpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      })
+        .then(function (res) {
+          return res
+            .json()
+            .catch(function () {
+              return null;
+            })
+            .then(function (data) {
+              return { ok: res.ok, data: data };
+            });
+        })
+        .then(function (result) {
+          var data = result.data;
+          if (!result.ok || !data || typeof data !== "object") {
+            fail((data && data.Message) || provider + " sign-in failed. Please try again.");
+            return;
+          }
+          if (data.UserId === 0) {
+            fail("We couldn't sign you in with " + provider + ". Please try again.");
+            return;
+          }
+          if (data.UserId === -1) {
+            fail("Email was not verified. Please sign up again with the same email to verify it.");
+            return;
+          }
+          if (!data.access_token) {
+            fail(provider + " sign-in failed. Please try again.");
+            return;
+          }
+          loginToAdults(data);
+        })
+        .catch(function () {
+          fail("Internal Server Error");
+        });
+    }
+
+    if (social.googleClientId && qs("org-google-btn")) {
+      loadScript("google-signin-script", "https://accounts.google.com/gsi/client")
+        .then(function () {
+          google.accounts.id.initialize({
+            client_id: social.googleClientId,
+            auto_select: false,
+            cancel_on_tap_outside: true,
+            callback: function (response) {
+              if (busy) return;
+              var payload;
+              try {
+                payload = decodeJwt(response.credential);
+              } catch (e) {
+                fail("Google sign-in failed. Please try again.");
+                return;
+              }
+              if (!payload.email) {
+                fail("Unable to retrieve email from Google account. Please try again.");
+                return;
+              }
+              verifyAndLogin(
+                "verifyGoogleTokenAndLogin",
+                {
+                  TokenID: response.credential,
+                  FName: payload.given_name || "",
+                  LName: payload.family_name || "",
+                  Email: payload.email,
+                },
+                "Google"
+              );
+            },
+          });
+          google.accounts.id.renderButton(qs("org-google-btn"), {
+            type: "icon",
+            shape: "circle",
+            theme: "outline",
+            size: "large",
+          });
+        })
+        .catch(function () {
+          var g = wrap.querySelector(".org-social-google");
+          if (g) g.hidden = true;
+        });
+    }
+
+    if (social.facebookAppId && fbBtn) {
+      window.fbAsyncInit = function () {
+        FB.init({
+          appId: social.facebookAppId,
+          cookie: true,
+          xfbml: false,
+          version: social.facebookApiVersion || "v18.0",
+        });
+      };
+      loadScript("facebook-jssdk", "https://connect.facebook.net/en_US/sdk.js").catch(function () {
+        fbBtn.hidden = true;
+      });
+
+      fbBtn.addEventListener("click", function () {
+        if (busy) return;
+        if (typeof FB === "undefined") {
+          fail("Facebook sign-in is not available. Please refresh the page.");
+          return;
+        }
+        // FB.login must run synchronously inside the click handler or the popup is blocked.
+        FB.login(
+          function (response) {
+            if (!response.authResponse) {
+              if (response.status !== "unknown") fail("Facebook sign-in was cancelled. Please try again.");
+              return;
+            }
+            var accessToken = response.authResponse.accessToken;
+            FB.api("/me", { fields: "id,email,first_name,last_name" }, function (user) {
+              if (!user || user.error) {
+                fail("Failed to fetch Facebook user information. Please try again.");
+                return;
+              }
+              if (!user.email) {
+                fail("Please use a Facebook account with an email address, or try another method.");
+                return;
+              }
+              verifyAndLogin(
+                "verifyFaceBookTokenAndLogin",
+                {
+                  TokenID: accessToken,
+                  FName: user.first_name || "",
+                  LName: user.last_name || "",
+                  Email: user.email,
+                },
+                "Facebook"
+              );
+            });
+          },
+          { scope: "email,public_profile" }
+        );
+      });
+    }
+
+    if (social.appleClientId && appleBtn) {
+      appleBtn.addEventListener("click", function () {
+        if (busy) return;
+        busy = true;
+        try {
+          localStorage.setItem("appleLogin", "T");
+        } catch (e) {}
+        // Apple posts to the API, which creates the user and redirects to /adults/social-login?authtoken=…
+        var params = new URLSearchParams({
+          client_id: social.appleClientId,
+          redirect_uri: social.appleRedirectUri,
+          response_type: "code id_token",
+          scope: "name email",
+          response_mode: "form_post",
+          state: org.id || getStoredOrganizationId() || "",
+        });
+        window.location.href = "https://appleid.apple.com/auth/authorize?" + params.toString();
+      });
+    }
+  }
+
   function getAccountEmailFromLocalStorage() {
     try {
       var account = JSON.parse(localStorage.getItem("hw_org_account") || "null");
@@ -475,6 +758,7 @@
     restoreOrgFromStorage();
     setupGetOrganization();
     setupSignup();
+    setupSocialSignup();
     setupOtp();
   });
 })();
