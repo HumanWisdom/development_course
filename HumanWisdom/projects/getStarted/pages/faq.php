@@ -226,7 +226,7 @@ HappierMe is designed for <b> both teenagers and adults.</b> The app has separat
                 </h2>
 
                 <h6 class="hs_desc">
-Yes. HappierMe includes a    <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/pages/teenagers.php"> dedicated teen section </a> designed around challenges teenagers commonly experience, including school and exam stress, friendships, social pressure, emotions, confidence, self-awareness, and relationships. The app also has a separate adult experience covering adult life, work, relationships, stress, and personal growth.
+Yes. HappierMe includes a  <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/pages/teenagers.php"> dedicated teen section</a> designed around challenges teenagers commonly experience, including school and exam stress, friendships, social pressure, emotions, confidence, self-awareness, and relationships. The app also has a separate adult experience covering adult life, work, relationships, stress, and personal growth.
                 </h6>
                   <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -304,7 +304,7 @@ HappierMe provides   <b> educational resources and practical tools for managing 
                 </h2>
 
                 <h6 class="hs_desc">
-Yes. HappierMe includes <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/explore#relationships"> relationship-</a> <b>focused educational content and practical resources </b> designed to help users better understand communication, emotions, empathy, self-awareness, and relationship patterns. The goal is to help users develop healthier communication and stronger relationships with themselves and others.
+Yes. HappierMe includes <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/explore#relationships"> relationship</a> <b> - focused educational content and practical resources </b> designed to help users better understand communication, emotions, empathy, self-awareness, and relationship patterns. The goal is to help users develop healthier communication and stronger relationships with themselves and others.
                 </h6>
 
                <div class="row">
@@ -317,7 +317,7 @@ Yes. HappierMe includes <a class="blog_highlight_peach td_underline fs_12px" hre
                 </h2>
 
                 <h6 class="hs_desc">
-Yes. Personal growth is a core part of HappierMe. The app helps users develop <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/explore#self-awareness"> self-awareness, </a>  <b> emotional intelligence, confidence, resilience, mindfulness, communication skills, healthier habits, focus, and emotional understanding</b> through short, practical learning and self-reflection activities.                </h6>
+Yes. Personal growth is a core part of HappierMe. The app helps users develop <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/explore#self-awareness"> self-awareness </a>  <b>, emotional intelligence, confidence, resilience, mindfulness, communication skills, healthier habits, focus, and emotional understanding</b> through short, practical learning and self-reflection activities.                </h6>
 
 
                <div class="row">
@@ -343,7 +343,7 @@ Yes. HappierMe can provide <a class="blog_highlight_peach td_underline fs_12px" 
                 </h2>
 
                 <h6 class="hs_desc">
-Yes. HappierMe is designed to support small,<a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/guided-journeys/12"> consistent daily practices</a> rather than requiring long sessions. Users can spend a few minutes exploring educational content, journaling, meditating, practicing mindfulness, completing exercises, or checking in with themselves. Consistent use can help users build greater self-awareness and healthier habits over time.
+Yes. HappierMe is designed to support small, <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/guided-journeys/12">consistent daily practices</a> rather than requiring long sessions. Users can spend a few minutes exploring educational content, journaling, meditating, practicing mindfulness, completing exercises, or checking in with themselves. Consistent use can help users build greater self-awareness and healthier habits over time.
                 </h6>
 
                <div class="row">
@@ -391,7 +391,7 @@ Understanding Your Mind
                 </h2>
 
                 <h6 class="hs_desc">
-Understanding your mind means becoming more aware of <b>your thoughts,  <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/explore#emotions"> emotions,</a> reactions, beliefs, habits, and patterns of behavior </b>. It helps you recognize what you are experiencing, understand what may be influencing your reactions, and make more conscious choices instead of automatically reacting to every thought or emotion.
+Understanding your mind means becoming more aware of <b>your thoughts, <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/explore#emotions"> emotions</a> , reactions, beliefs, habits, and patterns of behavior </b>. It helps you recognize what you are experiencing, understand what may be influencing your reactions, and make more conscious choices instead of automatically reacting to every thought or emotion.
                 </h6>
              <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -403,7 +403,7 @@ Understanding your mind means becoming more aware of <b>your thoughts,  <a class
                 </h2>
 
                 <h6 class="hs_desc">
-Understanding your mind can help you become more aware of <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/videopage/Introduction-videos-mind_pathway.mp4/T/Understand%20how%20your%20mind%20works%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20"> why you think, </a> <b> feel, and behave in certain ways.</b> Greater self-awareness can support better emotional regulation, healthier relationships, improved decision-making, and personal growth. It can also help you recognize unhelpful patterns such as overthinking, negative self-talk, or automatic reactions.
+Understanding your mind can help you become more aware of <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/videopage/Introduction-videos-mind_pathway.mp4/T/Understand%20how%20your%20mind%20works%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20"> why you think </a> <b>, feel, and behave in certain ways.</b> Greater self-awareness can support better emotional regulation, healthier relationships, improved decision-making, and personal growth. It can also help you recognize unhelpful patterns such as overthinking, negative self-talk, or automatic reactions.
                 </h6>
 
 
@@ -418,7 +418,7 @@ Understanding your mind can help you become more aware of <a class="blog_highlig
                 </h2>
 
                 <h6 class="hs_desc">
-You can develop <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/insight"> self-awareness </a> by regularly paying attention to your <b> thoughts, emotions, reactions, habits, and behaviors.</b> Practices such as journaling, mindfulness, meditation, self-reflection, emotional check-ins, and guided exercises can help you notice patterns and understand yourself better.
+You can develop <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/insight"> self-awareness</a> by regularly paying attention to your <b> thoughts, emotions, reactions, habits, and behaviors.</b> Practices such as journaling, mindfulness, meditation, self-reflection, emotional check-ins, and guided exercises can help you notice patterns and understand yourself better.
                 </h6>
 <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"> 
@@ -431,7 +431,7 @@ You can develop <a class="blog_highlight_peach td_underline fs_12px" href="https
                 </h2>
 
                 <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/site-search/overthinking">
-Overthinking </a> often involves repeatedly analyzing a situation, decision, conversation, or possible future outcome without reaching a useful conclusion. Understanding your thoughts and emotions can help you recognize when you are caught in an unhelpful thinking pattern and create some distance from those thoughts before deciding how to respond.
+Overthinking</a> often involves repeatedly analyzing a situation, decision, conversation, or possible future outcome without reaching a useful conclusion. Understanding your thoughts and emotions can help you recognize when you are caught in an unhelpful thinking pattern and create some distance from those thoughts before deciding how to respond.
                 </h6>
 
 
@@ -446,7 +446,7 @@ Overthinking </a> often involves repeatedly analyzing a situation, decision, con
                 </h2>
 
                 <h6 class="hs_desc">
-Rather than trying to force every thought to disappear, it can be useful to <b>notice the thought, understand the emotion behind it, and examine whether the thinking is actually helping you.</b> Mindfulness, journaling, breathing exercises, self-awareness practices, and focusing on what you can control can help  <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/site-search/stop%20overthinking"> develop healthier responses </a> to repetitive thinking.                </h6>
+Rather than trying to force every thought to disappear, it can be useful to <b>notice the thought, understand the emotion behind it, and examine whether the thinking is actually helping you.</b> Mindfulness, journaling, breathing exercises, self-awareness practices, and focusing on what you can control can help  <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/site-search/stop%20overthinking"> develop healthier responses</a> to repetitive thinking.                </h6>
                   <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_web_faq">
@@ -458,7 +458,7 @@ Rather than trying to force every thought to disappear, it can be useful to <b>n
 
                 <h6 class="hs_desc"> <a class="blog_highlight_peach td_underline fs_12px" 
                 href="https://happierme.app/adults/site-search/Negative%20Thoughts">
-Negative  </a> are a normal part of human experience. They can arise in response to stress, difficult experiences, uncertainty, fears, beliefs, habits, or situations that feel threatening or challenging. Learning to observe thoughts without automatically accepting them as facts can help you develop greater awareness of your thinking patterns.                </h6>
+Negative</a> are a normal part of human experience. They can arise in response to stress, difficult experiences, uncertainty, fears, beliefs, habits, or situations that feel threatening or challenging. Learning to observe thoughts without automatically accepting them as facts can help you develop greater awareness of your thinking patterns.                </h6>
 
                <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -470,7 +470,7 @@ Negative  </a> are a normal part of human experience. They can arise in response
                 </h2>
 
                 <h6 class="hs_desc">
-<b> No. A   <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/insight">thought </a> is not necessarily a fact.</b> Thoughts are interpretations of experiences and can sometimes be influenced by emotions, assumptions, past experiences, fears, or habits. Developing self-awareness can help you notice your thoughts and evaluate them rather than automatically believing or acting on them.
+<b> No. A   <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/insight">thought</a> is not necessarily a fact.</b> Thoughts are interpretations of experiences and can sometimes be influenced by emotions, assumptions, past experiences, fears, or habits. Developing self-awareness can help you notice your thoughts and evaluate them rather than automatically believing or acting on them.
                 </h6>
 
                <div class="row">
@@ -483,7 +483,7 @@ Negative  </a> are a normal part of human experience. They can arise in response
                 </h2>
 
                 <h6 class="hs_desc">
-Start by noticing <b> what you are feeling, <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/videopage/Introduction-videos-managing_cdp.mp4/T/Manage%20your%20emotions"> when it happens,</a>  what triggered it, what thoughts accompany it, and how you respond.</b>  Journaling, mindfulness, emotional check-ins, and self-reflection can help identify emotional patterns and improve your understanding of yourself.
+Start by noticing <b> what you are feeling, <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/videopage/Introduction-videos-managing_cdp.mp4/T/Manage%20your%20emotions"> when it happens</a>,  what triggered it, what thoughts accompany it, and how you respond.</b>  Journaling, mindfulness, emotional check-ins, and self-reflection can help identify emotional patterns and improve your understanding of yourself.
                 </h6>
 
 
@@ -498,7 +498,7 @@ Start by noticing <b> what you are feeling, <a class="blog_highlight_peach td_un
                 </h2>
 
                 <h6 class="hs_desc">
-Emotional  <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/audiopage/~podcasts~141.mp3/141/T/Where%20do%20our%20reactions%20come%20from/podcast">reactions   </a>can be influenced by many factors, including <b> past experiences, beliefs, expectations, fears, habits, current circumstances, and the meaning we give to an event.</b>  Understanding these patterns can help you recognize your automatic reactions and respond more consciously.
+Emotional  <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/audiopage/~podcasts~141.mp3/141/T/Where%20do%20our%20reactions%20come%20from/podcast">reactions</a>can be influenced by many factors, including <b> past experiences, beliefs, expectations, fears, habits, current circumstances, and the meaning we give to an event.</b>  Understanding these patterns can help you recognize your automatic reactions and respond more consciously.
                 </h6>
                   <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -511,7 +511,7 @@ Emotional  <a class="blog_highlight_peach td_underline fs_12px" href="https://ha
 
                 <h6 class="hs_desc">
 The goal is not necessarily to eliminate or suppress
-<a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/pathway/manage-your-emotions"> emotions.</a> A healthier approach is to  <b> notice, understand, and respond to emotions rather than automatically reacting to them. </b> Mindfulness, breathing practices, self-reflection, journaling, and emotional-awareness exercises can help develop this ability over time.
+<a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/pathway/manage-your-emotions"> emotions</a>. A healthier approach is to  <b> notice, understand, and respond to emotions rather than automatically reacting to them. </b> Mindfulness, breathing practices, self-reflection, journaling, and emotional-awareness exercises can help develop this ability over time.
                <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_web_faq">
@@ -523,7 +523,7 @@ The goal is not necessarily to eliminate or suppress
 
                 <h6 class="hs_desc">
                   <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/explore#self-awareness">
-Self-awareness </a> is the ability to recognize and understand your thoughts, emotions, behaviors, motivations, strengths, and patterns. It matters because understanding yourself can help you make more conscious decisions, improve relationships, 
+Self-awareness</a> is the ability to recognize and understand your thoughts, emotions, behaviors, motivations, strengths, and patterns. It matters because understanding yourself can help you make more conscious decisions, improve relationships, 
 manage reactions, develop healthier habits, and work toward meaningful personal growth.
                 </h6>
 
@@ -537,7 +537,7 @@ manage reactions, develop healthier habits, and work toward meaningful personal 
                 </h2>
 
                 <h6 class="hs_desc">
-The first step is to <b> notice and understand the pattern </b> rather than automatically following it. You can then examine the <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/insight">thoughts, </a> emotions, assumptions, and behaviors involved and practice alternative ways of responding. Journaling, mindfulness, self-awareness exercises, and learning about emotional and thinking patterns can support this process.
+The first step is to <b> notice and understand the pattern </b> rather than automatically following it. You can then examine the <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/insight">thoughts</a>,  emotions, assumptions, and behaviors involved and practice alternative ways of responding. Journaling, mindfulness, self-awareness exercises, and learning about emotional and thinking patterns can support this process.
 
 
                <div class="row">
@@ -563,7 +563,7 @@ Understanding behavior involves looking beyond the behavior itself and exploring
                 </h2>
 
                 <h6 class="hs_desc">
-Yes.  <b> <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/site-search/Mindfulness">Mindfulness  </a>involves paying attention to your present experience with greater awareness and less automatic judgment. </b> Regular mindfulness practice can help you notice thoughts, emotions, sensations, and reactions as they arise. This increased awareness can make it easier to recognize patterns and respond more consciously.
+Yes.  <b> <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/site-search/Mindfulness">Mindfulness</a>involves paying attention to your present experience with greater awareness and less automatic judgment. </b> Regular mindfulness practice can help you notice thoughts, emotions, sensations, and reactions as they arise. This increased awareness can make it easier to recognize patterns and respond more consciously.
                 </h6>
 
                <div class="row">
@@ -825,8 +825,8 @@ Overthinking & Negative Thoughts
 
                 </h2>
 
-                <h6 class="hs_desc">
-Overthinking is a pattern of repeatedly analyzing, replaying, or worrying about thoughts, situations, decisions, or possible outcomes without reaching a useful conclusion. It can involve repeatedly thinking about something that happened in the past or imagining what might happen in the future.
+                <h6 class="hs_desc"><b><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/site-search/Overthinking%20what%20people%20think">
+Overthinking</a> is a pattern of repeatedly analyzing, replaying, or worrying about thoughts, situations, decisions, or possible outcomes without reaching a useful conclusion.</b> It can involve repeatedly thinking about something that happened in the past or imagining what might happen in the future.
                 </h6>
              <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -837,8 +837,8 @@ Overthinking is a pattern of repeatedly analyzing, replaying, or worrying about 
 2. Why do I overthink so much?
                 </h2>
 
-                <h6 class="hs_desc">
-Overthinking can happen when the mind is trying to solve a problem, avoid a mistake, predict the future, gain certainty, or protect you from something you perceive as a threat. Stress, uncertainty, difficult experiences, fear, and habitual thinking patterns can all contribute to repetitive thinking.
+                <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/site-search/Overthinking%20what%20people%20think">
+Overthinking</a> can happen when the mind is trying to <b> solve a problem, avoid a mistake, predict the future, gain certainty, or protect you from something you perceive as a threat.</b> Stress, uncertainty, difficult experiences, fear, and habitual thinking patterns can all contribute to repetitive thinking.
                 </h6>
 
 
@@ -853,7 +853,7 @@ Overthinking can happen when the mind is trying to solve a problem, avoid a mist
                 </h2>
 
                 <h6 class="hs_desc">
-Your mind may repeatedly return to an unresolved situation because it believes there is still something to understand, solve, prevent, or control. When this becomes repetitive without producing useful action, it can turn into an unhelpful thinking loop.
+Your mind may repeatedly return to an  <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/site-search/thinking">unresolved situation </a> because it believes there is still something to understand, solve, prevent, or control. When this becomes repetitive without producing useful action, it can turn into an <b> unhelpful thinking loop.</b>
                 </h6>
 <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -866,7 +866,7 @@ Your mind may repeatedly return to an unresolved situation because it believes t
                 </h2>
 
                 <h6 class="hs_desc">
-The mind can replay past situations when you feel regret, embarrassment, guilt, disappointment, anger, or uncertainty about what happened. You may repeatedly analyze what you said or did and imagine how things could have been different. Recognizing that the event cannot be changed can help shift attention toward what you can learn or do now.
+The mind can replay past situations when you feel <b> regret, embarrassment, guilt, disappointment, anger, or <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/site-search/thinking">uncertainty about what happened</a>.</b> You may repeatedly analyze what you said or did and imagine how things could have been different. Recognizing that the event cannot be changed can help shift attention toward what you can learn or do now.
                 </h6>
 
 
