@@ -292,7 +292,7 @@ No. Olly AI does not source its guidance from the open internet.</b> It is desig
                 </h2>
 
                 <h6 class="hs_desc">
-HappierMe provides   <b> educational resources and practical tools for managing everyday   <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/stress">stress,</a>  anxiety, overthinking, and emotional challenges.</b> Users can explore mindfulness practices, meditation, breathing exercises, journaling, videos, podcasts, microlearning, and self-awareness exercises to develop healthier ways of understanding and responding to difficult experiences.                </h6>
+HappierMe provides   <b> educational resources and practical tools for managing everyday   <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/stress">stress</a> , anxiety, overthinking, and emotional challenges.</b> Users can explore mindfulness practices, meditation, breathing exercises, journaling, videos, podcasts, microlearning, and self-awareness exercises to develop healthier ways of understanding and responding to difficult experiences.                </h6>
 
                <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -358,7 +358,7 @@ Yes. HappierMe is designed to support small, <a class="blog_highlight_peach td_u
                 <h6 class="hs_desc">
                  <b>
 
-No. HappierMe is a mental wellness and personal growth app and is not intended to replace professional medical or</b>  <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/feel-better-now">mental health care.</a> It provides educational content, self-reflection tools, mindfulness practices, and wellness resources that can support everyday wellbeing. People experiencing serious or persistent mental health concerns should seek appropriate support from a qualified healthcare or mental health professional.
+No. HappierMe is a mental wellness and personal growth app and is not intended to replace professional medical or</b>  <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/feel-better-now">mental health care</a>. It provides educational content, self-reflection tools, mindfulness practices, and wellness resources that can support everyday wellbeing. People experiencing serious or persistent mental health concerns should seek appropriate support from a qualified healthcare or mental health professional.
                 </h6>
 
                       </div>
@@ -403,7 +403,7 @@ Understanding your mind means becoming more aware of <b>your thoughts, <a class=
                 </h2>
 
                 <h6 class="hs_desc">
-Understanding your mind can help you become more aware of <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/videopage/Introduction-videos-mind_pathway.mp4/T/Understand%20how%20your%20mind%20works%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20"> why you think </a> <b>, feel, and behave in certain ways.</b> Greater self-awareness can support better emotional regulation, healthier relationships, improved decision-making, and personal growth. It can also help you recognize unhelpful patterns such as overthinking, negative self-talk, or automatic reactions.
+Understanding your mind can help you become more aware of <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/videopage/Introduction-videos-mind_pathway.mp4/T/Understand%20how%20your%20mind%20works%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20"> why you think</a> <b>, feel, and behave in certain ways.</b> Greater self-awareness can support better emotional regulation, healthier relationships, improved decision-making, and personal growth. It can also help you recognize unhelpful patterns such as overthinking, negative self-talk, or automatic reactions.
                 </h6>
 
 
@@ -418,7 +418,7 @@ Understanding your mind can help you become more aware of <a class="blog_highlig
                 </h2>
 
                 <h6 class="hs_desc">
-You can develop <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/insight"> self-awareness</a> by regularly paying attention to your <b> thoughts, emotions, reactions, habits, and behaviors.</b> Practices such as journaling, mindfulness, meditation, self-reflection, emotional check-ins, and guided exercises can help you notice patterns and understand yourself better.
+You can develop <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/explore#self-awareness"> self-awareness</a> by regularly paying attention to your <b> thoughts, emotions, reactions, habits, and behaviors.</b> Practices such as journaling, mindfulness, meditation, self-reflection, emotional check-ins, and guided exercises can help you notice patterns and understand yourself better.
                 </h6>
 <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"> 
@@ -430,7 +430,7 @@ You can develop <a class="blog_highlight_peach td_underline fs_12px" href="https
 4. Why do I overthink things?
                 </h2>
 
-                <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/site-search/overthinking">
+                <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/micro-learning/inner/3">
 Overthinking</a> often involves repeatedly analyzing a situation, decision, conversation, or possible future outcome without reaching a useful conclusion. Understanding your thoughts and emotions can help you recognize when you are caught in an unhelpful thinking pattern and create some distance from those thoughts before deciding how to respond.
                 </h6>
 
@@ -446,7 +446,7 @@ Overthinking</a> often involves repeatedly analyzing a situation, decision, conv
                 </h2>
 
                 <h6 class="hs_desc">
-Rather than trying to force every thought to disappear, it can be useful to <b>notice the thought, understand the emotion behind it, and examine whether the thinking is actually helping you.</b> Mindfulness, journaling, breathing exercises, self-awareness practices, and focusing on what you can control can help  <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/site-search/stop%20overthinking"> develop healthier responses</a> to repetitive thinking.                </h6>
+Rather than trying to force every thought to disappear, it can be useful to <b>notice the thought, understand the emotion behind it, and examine whether the thinking is actually helping you.</b> Mindfulness, journaling, breathing exercises, self-awareness practices, and focusing on what you can control can help  <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/micro-learning/inner/3"> develop healthier responses</a> to repetitive thinking.                </h6>
                   <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_web_faq">
@@ -498,7 +498,7 @@ Start by noticing <b> what you are feeling, <a class="blog_highlight_peach td_un
                 </h2>
 
                 <h6 class="hs_desc">
-Emotional  <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/audiopage/~podcasts~141.mp3/141/T/Where%20do%20our%20reactions%20come%20from/podcast">reactions</a>can be influenced by many factors, including <b> past experiences, beliefs, expectations, fears, habits, current circumstances, and the meaning we give to an event.</b>  Understanding these patterns can help you recognize your automatic reactions and respond more consciously.
+Emotional  <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/audiopage/~podcasts~141.mp3/141/T/Where%20do%20our%20reactions%20come%20from/podcast">reactions</a> can be influenced by many factors, including <b> past experiences, beliefs, expectations, fears, habits, current circumstances, and the meaning we give to an event.</b>  Understanding these patterns can help you recognize your automatic reactions and respond more consciously.
                 </h6>
                   <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -563,7 +563,7 @@ Understanding behavior involves looking beyond the behavior itself and exploring
                 </h2>
 
                 <h6 class="hs_desc">
-Yes.  <b> <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/site-search/Mindfulness">Mindfulness</a>involves paying attention to your present experience with greater awareness and less automatic judgment. </b> Regular mindfulness practice can help you notice thoughts, emotions, sensations, and reactions as they arise. This increased awareness can make it easier to recognize patterns and respond more consciously.
+Yes.  <b> <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/site-search/Mindfulness">Mindfulness</a> involves paying attention to your present experience with greater awareness and less automatic judgment. </b> Regular mindfulness practice can help you notice thoughts, emotions, sensations, and reactions as they arise. This increased awareness can make it easier to recognize patterns and respond more consciously.
                 </h6>
 
                <div class="row">
@@ -610,7 +610,7 @@ Stress & Anxiety
 
                 <h6 class="hs_desc"><b>
                   <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/feel-better-now/stress">
-Stress </a> is the mind and body's response to situations that feel demanding, challenging, uncertain, or overwhelming.</b> Everyday stress can come from work, school, relationships, finances, responsibilities, major life changes, or difficult situations. Understanding what triggers stress can help you develop healthier ways of responding to it. 
+Stress</a> is the mind and body's response to situations that feel demanding, challenging, uncertain, or overwhelming.</b> Everyday stress can come from work, school, relationships, finances, responsibilities, major life changes, or difficult situations. Understanding what triggers stress can help you develop healthier ways of responding to it. 
                 </h6>
              <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -622,7 +622,7 @@ Stress </a> is the mind and body's response to situations that feel demanding, c
                 </h2>
 
                 <h6 class="hs_desc"><b><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/fear-anxiety">
-Anxiety </a> is a feeling of worry, fear, nervousness, or uneasiness that can arise when we anticipate uncertainty, danger, or a difficult outcome. </b> Occasional anxiety is a normal human experience, but persistent or severe anxiety can interfere with everyday life and may require professional support.
+Anxiety</a> is a feeling of worry, fear, nervousness, or uneasiness that can arise when we anticipate uncertainty, danger, or a difficult outcome. </b> Occasional anxiety is a normal human experience, but persistent or severe anxiety can interfere with everyday life and may require professional support.
                 </h6>
 
 
@@ -637,7 +637,7 @@ Anxiety </a> is a feeling of worry, fear, nervousness, or uneasiness that can ar
                 </h2>
 
                 <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/feel-better-now/stress">
-Stress </a> is often connected to a <b> specific challenge, demand, or situation, </a> while  <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/feel-better-now/anxiety">anxiety  </a> can continue even when there is no immediate or clearly identifiable threat. They can also overlap—stressful situations can trigger anxious feelings, and ongoing worry can make everyday stress feel more difficult to manage.
+Stress</a> is often connected to a <b> specific challenge, demand, or situation, </a> while  <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/feel-better-now/anxiety">anxiety  </a> can continue even when there is no immediate or clearly identifiable threat. They can also overlap—stressful situations can trigger anxious feelings, and ongoing worry can make everyday stress feel more difficult to manage.
                 </h6>
 <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -665,7 +665,7 @@ Stress can affect people differently. Common experiences can include <b> feeling
                 </h2>
 
                 <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/site-search/5%20questions%20to%20ask%20if%20you%20are%20anxious">
-Anxiety </a> can involve <b>excessive worry, nervousness, fear, restlessness, difficulty concentrating, feeling on edge, and repeatedly thinking about possible negative outcomes. </b> Some people may also experience physical sensations such as increased heart rate or muscle tension. If symptoms are persistent, severe, or affecting daily life, professional guidance may be appropriate.                </h6>
+Anxiety</a> can involve <b>excessive worry, nervousness, fear, restlessness, difficulty concentrating, feeling on edge, and repeatedly thinking about possible negative outcomes. </b> Some people may also experience physical sensations such as increased heart rate or muscle tension. If symptoms are persistent, severe, or affecting daily life, professional guidance may be appropriate.                </h6>
                   <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_web_faq">
@@ -676,7 +676,7 @@ Anxiety </a> can involve <b>excessive worry, nervousness, fear, restlessness, di
                 </h2>
 
                 <h6 class="hs_desc">
-Feeling  <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/feel-better-now/stress">stressed frequently </a> can have many possible causes, including  <b> ongoing responsibilities, work or academic pressure, relationship difficulties, uncertainty, lack of recovery time, unhealthy habits, or repeatedly dwelling on problems.</b> Understanding your triggers and patterns can be a useful first step toward managing everyday stress.
+Feeling  <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/feel-better-now/stress">stressed frequently</a> can have many possible causes, including  <b> ongoing responsibilities, work or academic pressure, relationship difficulties, uncertainty, lack of recovery time, unhealthy habits, or repeatedly dwelling on problems.</b> Understanding your triggers and patterns can be a useful first step toward managing everyday stress.
                 </h6>
 
                <div class="row">
@@ -689,7 +689,7 @@ Feeling  <a class="blog_highlight_peach td_underline fs_12px" href="https://happ
                 </h2>
 
                 <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/site-search/Why%20do%20I%20worry%20about%20what%20others%20think%20of%20me">
-Worry </a> can become repetitive when the mind keeps trying to <b> predict, prevent, or control uncertain outcomes.</b> It may be influenced by fear, past experiences, current stress, uncertainty, or habitual thinking patterns. Learning to notice when worry is happening and distinguishing between what you can and cannot control can help you respond more consciously.
+Worry</a> can become repetitive when the mind keeps trying to <b> predict, prevent, or control uncertain outcomes.</b> It may be influenced by fear, past experiences, current stress, uncertainty, or habitual thinking patterns. Learning to notice when worry is happening and distinguishing between what you can and cannot control can help you respond more consciously.
                 </h6>
 
                <div class="row">
@@ -702,7 +702,7 @@ Worry </a> can become repetitive when the mind keeps trying to <b> predict, prev
                 </h2>
 
                 <h6 class="hs_desc">
-Everyday  <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/site-search/Reduce%20your%20stress%20live%20longer">stress </a> may be supported through healthy practices such as <b> regular physical activity, adequate sleep, mindfulness, breathing exercises, meditation, journaling, spending time with supportive people, taking breaks, and maintaining healthy routines.</b> Different approaches work for different people, so it can help to experiment and identify practices that are sustainable for you.
+Everyday  <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/site-search/Reduce%20your%20stress%20live%20longer">stress</a> may be supported through healthy practices such as <b> regular physical activity, adequate sleep, mindfulness, breathing exercises, meditation, journaling, spending time with supportive people, taking breaks, and maintaining healthy routines.</b> Different approaches work for different people, so it can help to experiment and identify practices that are sustainable for you.
                 </h6>
 
 
@@ -717,7 +717,7 @@ Everyday  <a class="blog_highlight_peach td_underline fs_12px" href="https://hap
                 </h2>
 
                 <h6 class="hs_desc">
-When you feel overwhelmed, start by <b>  <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/site-search/Calm%20your%20mind">slowing down </a> and bringing your attention to the present moment. </b> Taking a few mindful breaths, identifying what you are feeling, writing down your thoughts, breaking a problem into smaller actions, or taking a short break can help create mental space. If feeling overwhelmed is persistent or severe, consider seeking professional support.
+When you feel overwhelmed, start by <b>  <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/site-search/Calm%20your%20mind">slowing down</a> and bringing your attention to the present moment. </b> Taking a few mindful breaths, identifying what you are feeling, writing down your thoughts, breaking a problem into smaller actions, or taking a short break can help create mental space. If feeling overwhelmed is persistent or severe, consider seeking professional support.
                 </h6>
                   <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -729,7 +729,7 @@ When you feel overwhelmed, start by <b>  <a class="blog_highlight_peach td_under
                 </h2>
 
                 <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/site-search/%20breathing">
-Breathing exercises </a> can be a simple way to <b> slow down, focus attention on the present moment, and create a sense of calm.</b> They can be incorporated into a daily mindfulness routine or used during stressful moments. Breathing exercises are a wellness practice and should not be considered a replacement for professional treatment when treatment is needed.
+Breathing exercises</a> can be a simple way to <b> slow down, focus attention on the present moment, and create a sense of calm.</b> They can be incorporated into a daily mindfulness routine or used during stressful moments. Breathing exercises are a wellness practice and should not be considered a replacement for professional treatment when treatment is needed.
 
                <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -754,7 +754,7 @@ Meditation and mindfulness can help people <b> develop greater awareness of thei
                 </h2>
 
                 <h6 class="hs_desc">
-Overthinking can keep attention focused on <b> past events, <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/site-search/problems">possible future problems,</a>  or repeatedly analyzing the same situation.</b> This can make a situation feel more overwhelming and make it harder to shift attention toward useful action. Recognizing repetitive thinking patterns can be an important part of developing a healthier response to stress.
+Overthinking can keep attention focused on <b> past events, <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/site-search/problems">possible future problems</a> , or repeatedly analyzing the same situation.</b> This can make a situation feel more overwhelming and make it harder to shift attention toward useful action. Recognizing repetitive thinking patterns can be an important part of developing a healthier response to stress.
 
 
                <div class="row">
@@ -768,7 +768,7 @@ Overthinking can keep attention focused on <b> past events, <a class="blog_highl
                 </h2>
 
                 <h6 class="hs_desc">
-A useful starting point is to separate what you can control, <b> what you can influence, and what you cannot control.</b> <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/site-search/focus"> Focus  </a> your energy on actions within your control and practice accepting uncertainty where you cannot change the outcome. Mindfulness, journaling, and self-reflection can help you recognize when your mind is repeatedly trying to solve something that is outside your control.
+A useful starting point is to separate what you can control, <b> what you can influence, and what you cannot control.</b> <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/site-search/focus"> Focus </a> your energy on actions within your control and practice accepting uncertainty where you cannot change the outcome. Mindfulness, journaling, and self-reflection can help you recognize when your mind is repeatedly trying to solve something that is outside your control.
                 </h6>
                   <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -780,7 +780,7 @@ A useful starting point is to separate what you can control, <b> what you can in
                 </h2>
 
                 <h6 class="hs_desc"><b>
-HappierMe provides  <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/blog-article?sId=45"> practical wellness resources  </a> that can help users understand and manage everyday stress, worry, overthinking, and emotional challenges. </b> Users can explore mindfulness practices, meditation, breathing exercises, guided journaling, self-awareness exercises, podcasts, short videos, and microlearning. Olly AI can also guide users toward relevant expert-curated HappierMe content based on what they are experiencing.
+HappierMe provides  <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/blog-article?sId=45"> practical wellness resources</a> that can help users understand and manage everyday stress, worry, overthinking, and emotional challenges. </b> Users can explore mindfulness practices, meditation, breathing exercises, guided journaling, self-awareness exercises, podcasts, short videos, and microlearning. Olly AI can also guide users toward relevant expert-curated HappierMe content based on what they are experiencing.
                 </h6>
 
                <div class="row">
@@ -794,7 +794,7 @@ HappierMe provides  <a class="blog_highlight_peach td_underline fs_12px" href="h
 
                 <h6 class="hs_desc">
 Consider seeking professional support when stress or anxiety is <b> persistent, severe, difficult to manage, or interfering with everyday activities, relationships, work, school, or sleep.</b> A qualified mental health or 
-<a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/coach">healthcare professional </a> can help assess what you are experiencing and recommend appropriate support. HappierMe can complement personal wellness practices but is not a replacement for professional diagnosis or treatment.                </h6>
+<a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/coach">healthcare professional</a> can help assess what you are experiencing and recommend appropriate support. HappierMe can complement personal wellness practices but is not a replacement for professional diagnosis or treatment.                </h6>
 
                       </div>
                     </div>
@@ -881,7 +881,7 @@ The mind can replay past situations when you feel <b> regret, embarrassment, gui
                 </h2>
 
                 <h6 class="hs_desc">
-Worrying about the future can be the mind's attempt to prepare for uncertainty or prevent something from going wrong. However, repeatedly imagining negative possibilities can create additional stress without necessarily improving the outcome. Learning to distinguish between useful preparation and repetitive worry can help.
+Worrying about the future can be the mind's attempt to <b>prepare for uncertainty or prevent something from going wrong.</b> However, repeatedly imagining negative possibilities can create additional stress without necessarily improving the outcome. Learning to distinguish between useful preparation and repetitive worry can help.
                 </h6>
                   <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -892,8 +892,8 @@ Worrying about the future can be the mind's attempt to prepare for uncertainty o
 6. Are negative thoughts normal?
                 </h2>
 
-                <h6 class="hs_desc">
-Yes. Negative thoughts are a normal part of human thinking. Everyone experiences thoughts involving worry, fear, self-doubt, frustration, or pessimism at times. Having a negative thought does not mean that the thought is true or that something is wrong with you.
+                <h6 class="hs_desc"><b>
+Yes. <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/site-search/thoughts">Negative thoughts</a> are a normal part of human thinking.</b> Everyone experiences thoughts involving worry, fear, self-doubt, frustration, or pessimism at times. Having a negative thought does not mean that the thought is true or that something is wrong with you.
                 </h6>
 
                <div class="row">
@@ -906,7 +906,7 @@ Yes. Negative thoughts are a normal part of human thinking. Everyone experiences
                 </h2>
 
                 <h6 class="hs_desc">
-Not necessarily. A negative thought can occur occasionally and pass naturally. Negative thinking refers more to recurring patterns in which the mind consistently interprets situations through pessimistic, fearful, self-critical, or unhelpful perspectives.
+Not necessarily. A  <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/site-search/thoughts">negative thought</a> can occur occasionally and pass naturally. <b>Negative thinking</b> refers more to recurring patterns in which the mind consistently interprets situations through pessimistic, fearful, self-critical, or unhelpful perspectives.
                 </h6>
 
                <div class="row">
@@ -918,8 +918,8 @@ Not necessarily. A negative thought can occur occasionally and pass naturally. N
 8. Are my negative thoughts true?
                 </h2>
 
-                <h6 class="hs_desc">
-Not necessarily. A thought is an interpretation, not automatically a fact. Thoughts can be influenced by emotions, assumptions, past experiences, fears, and habitual patterns. Developing the ability to observe and question your thoughts can help you avoid automatically treating every thought as reality.
+                <h6 class="hs_desc"><b>
+Not necessarily. A <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/site-search/thoughts">thought</a> is an interpretation, not automatically a fact.</b> Thoughts can be influenced by emotions, assumptions, past experiences, fears, and habitual patterns. Developing the ability to observe and question your thoughts can help you avoid automatically treating every thought as reality.
                 </h6>
 
 
@@ -934,7 +934,7 @@ Not necessarily. A thought is an interpretation, not automatically a fact. Thoug
                 </h2>
 
                 <h6 class="hs_desc">
-Trying to force negative thoughts to disappear can sometimes make you more focused on them. Instead, you can practice noticing the thought, identifying the emotion behind it, questioning whether it is helpful or accurate, and redirecting your attention toward something constructive. Mindfulness, journaling, and self-reflection can support this process.
+Trying to force <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/site-search/Negative%20thoughts">negative thoughts to disappear</a> can sometimes make you more focused on them. Instead, you can practice<b> noticing the thought, identifying the emotion behind it, questioning whether it is helpful or accurate, and redirecting your attention toward something constructive.</b> Mindfulness, journaling, and self-reflection can support this process.
                 </h6>
                   <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -945,8 +945,8 @@ Trying to force negative thoughts to disappear can sometimes make you more focus
 10. How can I stop overthinking at night?
                 </h2>
 
-                <h6 class="hs_desc">
-Nighttime can make repetitive thinking feel stronger because there are fewer distractions. A calming bedtime routine, reducing stimulating activities before sleep, journaling unresolved thoughts, practicing mindfulness or breathing exercises, and shifting attention away from problem-solving can help create a calmer mental environment.
+                <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/site-search/sleep">
+Nighttime</a> can make repetitive thinking feel stronger because there are fewer distractions. A calming bedtime routine, reducing stimulating activities before sleep, journaling unresolved thoughts, practicing mindfulness or breathing exercises, and shifting attention away from problem-solving can help create a calmer mental environment.
 
                <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -958,7 +958,7 @@ Nighttime can make repetitive thinking feel stronger because there are fewer dis
                 </h2>
 
                 <h6 class="hs_desc">
-If you repeatedly replay a conversation, try noticing what you are hoping to understand, change, or prevent by replaying it. Ask yourself whether there is a useful action you can take now. If there isn't, mindfulness and attention-shifting practices can help you allow the thought to pass instead of continuing the mental replay.
+If you repeatedly replay a conversation, try noticing <b>what you are hoping to understand, change, or  <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/site-search/prevent">prevent</a></b> by replaying it. Ask yourself whether there is a useful action you can take now. If there isn't, mindfulness and attention-shifting practices can help you allow the thought to pass instead of continuing the mental replay.
                 </h6>
 
                <div class="row">
@@ -971,7 +971,7 @@ If you repeatedly replay a conversation, try noticing what you are hoping to und
                 </h2>
 
                 <h6 class="hs_desc">
-Concern about other people's opinions can be influenced by self-doubt, past experiences, fear of rejection, or a strong desire for approval. Developing self-awareness can help you distinguish between what others may actually think and what you are imagining they think. Building confidence around your own values and accepting that you cannot control everyone's opinion can also help.
+Concern about other <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/wisdom-shorts/1.219.mp4/T/Overthinking%20what%20people%20think">people's opinions</a> can be influenced by <b>self-doubt, past experiences, fear of rejection, or a strong desire for approval</b>. Developing self-awareness can help you distinguish between what others may actually think and what you are imagining they think. Building confidence around your own values and accepting that you cannot control everyone's opinion can also help.
 
 
                <div class="row">
@@ -985,7 +985,7 @@ Concern about other people's opinions can be influenced by self-doubt, past expe
                 </h2>
 
                 <h6 class="hs_desc">
-Start by recognizing that you are in an overthinking loop. Then identify the thought or concern, separate facts from assumptions, determine whether there is an action you can take, and shift your attention toward that action or toward the present moment. Mindfulness, journaling, breathing exercises, and self-awareness practices can help you develop this skill.
+Start by <b>recognizing that you are in an<a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/micro-learning/inner/3"> overthinking loop</a></b>. Then identify the thought or concern, separate facts from assumptions, determine whether there is an action you can take, and shift your attention toward that action or toward the present moment. Mindfulness, journaling, breathing exercises, and self-awareness practices can help you develop this skill.
                 </h6>
                   <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -997,7 +997,7 @@ Start by recognizing that you are in an overthinking loop. Then identify the tho
                 </h2>
 
                 <h6 class="hs_desc">
-Yes. Mindfulness can help you become more aware of thoughts without automatically reacting to or believing them. With practice, you can learn to notice repetitive thinking as it happens and bring your attention back to the present moment. This can create more space between a thought and your response to it.
+Yes.<b><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/micro-learning/inner/34"> Mindfulness</a> can help you become more aware of thoughts without automatically reacting to or believing them</b>. With practice, you can learn to notice repetitive thinking as it happens and bring your attention back to the present moment. This can create more space between a thought and your response to it.
                 </h6>
 
                <div class="row">
@@ -2068,7 +2068,7 @@ Recognizing personal values and becoming comfortable making independent choices 
                       <hr class="hr_style_web_01 hr-darker">
                     </div>
                   </div>
-                   <div class="accordion-item">
+                   <!-- <div class="accordion-item">
                     <h2 class="accordion-header" id="heading_20">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#c20" aria-expanded="false" aria-controls="c20">
@@ -2905,7 +2905,7 @@ HappierMe helps users develop greater self-awareness and build practical habits 
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> -->
 
               <div id="how_can_the_app_help" class="tab-pane fade in">
                 <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000" style="text-align:left;">
