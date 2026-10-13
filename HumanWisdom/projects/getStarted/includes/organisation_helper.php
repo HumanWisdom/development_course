@@ -41,7 +41,7 @@ if (!function_exists('hw_org_query_id')) {
 if (!function_exists('hw_org_id')) {
     /**
      * Resolved OrganizationId for the flow:
-     * query param → session (from a prior Adv/landing visit) → default.
+     * query param → session (from a prior Adv/landing visit) → default (1 = HappierMe).
      */
     function hw_org_id()
     {
@@ -50,7 +50,7 @@ if (!function_exists('hw_org_id')) {
             $id = hw_org_sanitize_id($_SESSION['hw_org_id']);
         }
         if ($id === '') {
-            $id = 'org-humanwisdom';
+            $id = '1';
         }
         $_SESSION['hw_org_id'] = $id;
         return $id;
@@ -58,7 +58,7 @@ if (!function_exists('hw_org_id')) {
 }
 
 if (!function_exists('hw_org_defaults')) {
-    function hw_org_defaults($id = 'org-humanwisdom')
+    function hw_org_defaults($id = '1')
     {
         $end = new DateTime('today');
         $end->modify('+7 days');

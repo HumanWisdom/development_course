@@ -488,16 +488,8 @@
     }
 
     var remaining = 30;
-    var tick = setInterval(function () {
-      remaining -= 1;
-      if (remaining <= 0) {
-        remaining = 0;
-        clearInterval(tick);
-      }
-      if (timerEl) {
-        timerEl.textContent = "(00:" + String(remaining).padStart(2, "0") + ")";
-      }
-    }, 1000);
+    var tick = null;
+    startTimer();
 
     inputs.forEach(function (input, i) {
       input.addEventListener("input", function () {
@@ -575,12 +567,63 @@
         });
     }
 
+    function startTimer() {
+      remaining = 30;
+      if (timerEl) timerEl.textContent = "(00:30)";
+      clearInterval(tick);
+      tick = setInterval(function () {
+        remaining -= 1;
+        if (remaining <= 0) {
+          remaining = 0;
+          clearInterval(tick);
+        }
+        if (timerEl) {
+          timerEl.textContent = "(00:" + String(remaining).padStart(2, "0") + ")";
+        }
+      }, 1000);
+    }
+
+    var resending = false;
     if (resend) {
       resend.addEventListener("click", function (e) {
         e.preventDefault();
-        if (remaining > 0) return;
-        remaining = 30;
-        showError(err, "New Code Sent");
+        if (remaining > 0 || resending) return;
+        if (!email) {
+          showError(err, "Missing account email. Please create your account again.");
+          return;
+        }
+        resending = true;
+        showError(err, "Sending code…");
+
+        fetch(apiBase + "/ResendverificationCode", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ Email: email }),
+        })
+          .then(function (res) {
+            return res
+              .json()
+              .catch(function () {
+                return null;
+              })
+              .then(function (data) {
+                return { ok: res.ok, data: data };
+              });
+          })
+          .then(function (result) {
+            resending = false;
+            if (result.ok) {
+              resetOtpInputs();
+              startTimer();
+              showError(err, "Verification code resent");
+              return;
+            }
+            showError(err, (result.data && result.data.Message) || "Could not resend the code. Please try again.");
+          })
+          .catch(function () {
+            resending = false;
+            showError(err, "Could not resend the code. Please try again.");
+          });
       });
     }
     if (back) {
@@ -692,6 +735,9 @@
     id = String(id).trim().replace(/[^a-zA-Z0-9_-]/g, "");
     if (!id) return "";
     try {
+      if (getStoredOrganizationId() !== id) {
+        localStorage.removeItem("hw_org_response");
+      }
       localStorage.setItem("OrganizationId", id);
       localStorage.setItem("hw_org_id", id);
     } catch (e) {}
@@ -722,6 +768,8 @@
         applyOrganization(row, id, data);
       })
       .catch(function () {
+        org.id = id;
+        window.__HW_ORG__ = org;
         try {
           localStorage.setItem("hw_org_id", id);
           localStorage.setItem("OrganizationId", id);
@@ -755,6 +803,7 @@
   }
 
   document.addEventListener("DOMContentLoaded", function () {
+    captureOrgIdFromUrl();
     restoreOrgFromStorage();
     setupGetOrganization();
     setupSignup();

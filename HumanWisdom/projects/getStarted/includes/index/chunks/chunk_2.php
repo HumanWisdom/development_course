@@ -107,7 +107,7 @@
             </div>
           </div>
           <div class="try-free-stack">
-            <a href="/organisation-Adv.php?id=org-humanwisdom" id="happiermeTryForFree_teens">
+            <a href="/organisation-signup.php?id=1" id="happiermeTryForFree_teens">
               <div class="div-wrapper-4"><div class="text-wrapper-5">Try HappierMe for free</div></div>
             </a>
             <p class="try-free-no-card">(No credit card needed)</p>
