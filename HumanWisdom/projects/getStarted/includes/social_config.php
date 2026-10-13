@@ -13,16 +13,42 @@ require_once __DIR__ . '/api_config.php';
  *   HW_APPLE_REDIRECT_URI  — Apple form_post endpoint (default {apiBase}/verifyAppleToken_htmlAdults)
  *   HW_ADULTS_APP_URL      — Adults web app origin, e.g. https://happierme.app (default current origin)
  *
+ * Each key is read from the process environment, then Apache SetEnv ($_SERVER),
+ * then an INI file outside the webroot (HW_ENV_FILE, default /etc/humanwisdom/getstarted.env).
  * A provider whose key is unset is hidden on the page.
  */
+if (!function_exists('hw_social_env_file')) {
+    function hw_social_env_file()
+    {
+        static $values = null;
+        if ($values !== null) {
+            return $values;
+        }
+        $values = [];
+        $path = getenv('HW_ENV_FILE');
+        if (!is_string($path) || $path === '') {
+            $path = '/etc/humanwisdom/getstarted.env';
+        }
+        if (@is_readable($path)) {
+            $parsed = @parse_ini_file($path, false, INI_SCANNER_RAW);
+            if (is_array($parsed)) {
+                $values = $parsed;
+            }
+        }
+        return $values;
+    }
+}
+
 if (!function_exists('hw_social_env')) {
     function hw_social_env($name, $default = '')
     {
-        $value = getenv($name);
-        if (!is_string($value) || trim($value) === '') {
-            return $default;
+        $candidates = [getenv($name), $_SERVER[$name] ?? null, hw_social_env_file()[$name] ?? null];
+        foreach ($candidates as $value) {
+            if (is_string($value) && trim($value) !== '') {
+                return trim($value, " \t\n\r\0\x0B\"'");
+            }
         }
-        return trim($value);
+        return $default;
     }
 }
 
