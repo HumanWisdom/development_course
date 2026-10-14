@@ -1309,7 +1309,7 @@ Better communication</a> starts with <b>listening carefully, expressing your fee
                 </h2>
 
                 <h6 class="hs_desc"><b>
-Active <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/insight">listening</a>
+Active <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/site-search/Listening">listening</a>
  means giving someone your full attention and trying to understand what they are communicating rather than simply waiting for your turn to respond.</b> It can involve listening without interrupting, asking clarifying questions, acknowledging their feelings, and reflecting on what they have said.
                 </h6>
 
@@ -1427,8 +1427,8 @@ Trust</a> develops through <b>consistent behavior, honesty, reliability, respect
 
                 </h2>
 
-                <h6 class="hs_desc">
-Empathy helps people understand another person's feelings and perspective without necessarily agreeing with everything they say. Practicing empathy can improve listening, reduce unnecessary misunderstandings, make difficult conversations more constructive, and strengthen emotional connection.
+                <h6 class="hs_desc"><b><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/audiopage/~podcasts~270.mp3/270/T/Why%20empathy%20matters%20and%20how%20we%20can%20develop%20this%20skill/podcast">
+Empathy</a> helps people understand another person's feelings and perspective without necessarily agreeing with everything they say. </b>Practicing empathy can improve listening, reduce unnecessary misunderstandings, make difficult conversations more constructive, and strengthen emotional connection.
                 </h6>
                   <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -1439,8 +1439,8 @@ Empathy helps people understand another person's feelings and perspective withou
 14. How can I improve emotional connection with someone?
                 </h2>
 
-                <h6 class="hs_desc">
-Emotional connection can grow through honest conversations, active listening, empathy, appreciation, shared experiences, quality time, vulnerability, and showing genuine interest in the other person's thoughts and feelings. Small, consistent interactions can be more meaningful than occasional large gestures.
+                <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/site-search/Emotional%20Needs">
+Emotional needs</a> connection can grow through <b>honest conversations, active listening, empathy, appreciation, shared experiences, quality time, vulnerability, and showing genuine interest in the other person's thoughts and feelings.</b> Small, consistent interactions can be more meaningful than occasional large gestures.
                 </h6>
 
                <div class="row">
@@ -1452,8 +1452,8 @@ Emotional connection can grow through honest conversations, active listening, em
 15. How can HappierMe help improve relationships and communication?
                 </h2>
 
-                <h6 class="hs_desc">
-HappierMe provides educational and self-reflection resources designed to help users better understand emotions, communication, relationships, empathy, and personal behavior. Users can explore podcasts, videos, blogs, microlearning, guided journaling, self-awareness exercises, mindfulness practices, and other relationship-focused resources. These tools can help users develop greater self-awareness and learn healthier ways to communicate and respond in relationships.                </h6>
+                <h6 class="hs_desc"><b>
+HappierMe provides educational and self-reflection resources designed to help users better understand emotions, communication, relationships, empathy, and personal behavior.</b> Users can explore podcasts, videos, blogs, microlearning, guided journaling, self-awareness exercises, mindfulness practices, and other relationship-focused resources. These tools can help users develop greater self-awareness and learn healthier ways to communicate and respond in relationships.                </h6>
                       </div>
                     </div>
                   </div>
