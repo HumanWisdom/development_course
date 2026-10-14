@@ -56,7 +56,7 @@
   overflow-y: auto;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
-  padding: 24px 20px 140px;
+  padding: 24px 20px 90px;
   box-sizing: border-box;
 
   /* hide scrollbar visually but keep functionality */
@@ -478,6 +478,10 @@
 
   .raf-divider-text {
     color: #FFFFFF;
+  }
+
+  .raf-social-row {
+    gap: 11px;
   }
 
   .raf-email-card {
