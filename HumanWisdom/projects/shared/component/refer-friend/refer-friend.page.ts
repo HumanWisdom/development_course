@@ -101,8 +101,7 @@ export class ReferFriendPage implements OnInit {
         break;
       case 'instagram':
         this.copyAppLink();
-        this.content = 'Link copied to clipboard! You can paste it in Instagram.';
-        this.enableAlert = true;
+        window.open('https://www.instagram.com/', '_blank');
         return;
       case 'linkedin':
         shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`;
