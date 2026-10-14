@@ -1309,7 +1309,7 @@ Better communication</a> starts with <b>listening carefully, expressing your fee
                 </h2>
 
                 <h6 class="hs_desc"><b>
-Active <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/insight">listening</a>
+Active <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/site-search/Listening">listening</a>
  means giving someone your full attention and trying to understand what they are communicating rather than simply waiting for your turn to respond.</b> It can involve listening without interrupting, asking clarifying questions, acknowledging their feelings, and reflecting on what they have said.
                 </h6>
 
