@@ -248,6 +248,28 @@
     window.location.href = adultsUrl(res.NoOfVisits === 1 ? "/adults/change-topic" : "/adults/today");
   }
 
+  /** Same as LoginSignupPage's constructor: an active adults session skips the signup form. */
+  function redirectIfLoggedIn() {
+    if (!qs("org-signup-form") || !isSameOriginAsAdults()) return false;
+    try {
+      var email = String(localStorage.getItem("email") || "").replace(/"/g, "");
+      var loggedIn =
+        localStorage.getItem("isloggedin") === "T" &&
+        localStorage.getItem("guest") !== "T" &&
+        email !== "guest@humanwisdom.me";
+      if (!loggedIn) return false;
+      if (localStorage.getItem("pricing") === "true") {
+        localStorage.removeItem("pricing");
+        window.location.replace(adultsUrl("/adults/subscription/try-free-and-subscribe"));
+      } else {
+        window.location.replace(adultsUrl("/adults/today"));
+      }
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+
   function setupSocialSignup() {
     var wrap = qs("org-social");
     if (!wrap) return;
@@ -355,17 +377,52 @@
     }
 
     if (social.facebookAppId && fbBtn) {
+      var fbStatus = null;
+
+      var refreshFbStatus = function () {
+        FB.getLoginStatus(function (response) {
+          fbStatus = response;
+        });
+      };
+
       window.fbAsyncInit = function () {
         FB.init({
           appId: social.facebookAppId,
           cookie: true,
           xfbml: false,
+          status: true,
           version: social.facebookApiVersion || "v18.0",
         });
+        refreshFbStatus();
       };
       loadScript("facebook-jssdk", "https://connect.facebook.net/en_US/sdk.js").catch(function () {
         fbBtn.hidden = true;
       });
+
+      var continueWithFacebook = function (authResponse) {
+        busy = true;
+        showError(err, "Signing you in…");
+        FB.api("/me", { fields: "id,email,first_name,last_name" }, function (user) {
+          if (!user || user.error) {
+            fail("Failed to fetch Facebook user information. Please try again.");
+            return;
+          }
+          if (!user.email) {
+            fail("Please use a Facebook account with an email address, or try another method.");
+            return;
+          }
+          verifyAndLogin(
+            "verifyFaceBookTokenAndLogin",
+            {
+              TokenID: authResponse.accessToken,
+              FName: user.first_name || "",
+              LName: user.last_name || "",
+              Email: user.email,
+            },
+            "Facebook"
+          );
+        });
+      };
 
       fbBtn.addEventListener("click", function () {
         if (busy) return;
@@ -373,34 +430,21 @@
           fail("Facebook sign-in is not available. Please refresh the page.");
           return;
         }
+        // Already logged in to Facebook and the app is authorised: skip the dialog.
+        if (fbStatus && fbStatus.status === "connected" && fbStatus.authResponse) {
+          continueWithFacebook(fbStatus.authResponse);
+          return;
+        }
         // FB.login must run synchronously inside the click handler or the popup is blocked.
         FB.login(
           function (response) {
             if (!response.authResponse) {
+              refreshFbStatus();
               if (response.status !== "unknown") fail("Facebook sign-in was cancelled. Please try again.");
               return;
             }
-            var accessToken = response.authResponse.accessToken;
-            FB.api("/me", { fields: "id,email,first_name,last_name" }, function (user) {
-              if (!user || user.error) {
-                fail("Failed to fetch Facebook user information. Please try again.");
-                return;
-              }
-              if (!user.email) {
-                fail("Please use a Facebook account with an email address, or try another method.");
-                return;
-              }
-              verifyAndLogin(
-                "verifyFaceBookTokenAndLogin",
-                {
-                  TokenID: accessToken,
-                  FName: user.first_name || "",
-                  LName: user.last_name || "",
-                  Email: user.email,
-                },
-                "Facebook"
-              );
-            });
+            fbStatus = response;
+            continueWithFacebook(response.authResponse);
           },
           { scope: "email,public_profile" }
         );
@@ -803,6 +847,7 @@
   }
 
   document.addEventListener("DOMContentLoaded", function () {
+    if (redirectIfLoggedIn()) return;
     captureOrgIdFromUrl();
     restoreOrgFromStorage();
     setupGetOrganization();
