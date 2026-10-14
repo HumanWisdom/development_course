@@ -46,7 +46,7 @@
 }
 
 .chat-bot-container {
-  width: 374px;
+  width: 405px;
   background: #ffffff;
   margin: 0 auto;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
@@ -113,7 +113,7 @@
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 374px;
+  width: 405px;
   pointer-events: auto; // Enable clicks on header
 
   .header-content {
@@ -443,7 +443,7 @@
   transform: translateX(-50%);
   background: #FFF7E6;
   z-index: 1001; // Same as header
-  width: 374px;
+  width: 405px;
   pointer-events: auto; // Enable clicks on input area
 
 
@@ -1031,4 +1031,57 @@
       text-decoration: underline !important;
     }
   }
+}
+
+/* Resource cards — Angular-rendered, single-click navigation */
+.resource-cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.resource-card-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  border: none;
+  text-align: left;
+  transition: box-shadow 0.2s ease;
+
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.resource-card-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 16px;
+  flex-shrink: 0;
+}
+
+.resource-card-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.resource-card-title {
+  font-size: 15px;
+  margin-bottom: 4px;
+  color: #333333;
+}
+
+.resource-card-type {
+  font-size: 12px;
+  color: #777777;
+  text-transform: uppercase;
 }
