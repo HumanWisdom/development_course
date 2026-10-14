@@ -317,7 +317,7 @@ Yes. HappierMe includes <a class="blog_highlight_peach td_underline fs_12px" hre
                 </h2>
 
                 <h6 class="hs_desc">
-Yes. Personal growth is a core part of HappierMe. The app helps users develop <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/explore#self-awareness"> self-awareness</a>  <b>, emotional intelligence, confidence, resilience, mindfulness, communication skills, healthier habits, focus, and emotional understanding</b> through short, practical learning and self-reflection activities.                </h6>
+Yes. Personal growth is a core part of HappierMe. The app helps users develop <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/explore#self-awareness">self-awareness</a> <b>, emotional intelligence, confidence, resilience, mindfulness, communication skills, healthier habits, focus, and emotional understanding</b> through short, practical learning and self-reflection activities.                </h6>
 
 
                <div class="row">
@@ -457,7 +457,7 @@ Rather than trying to force every thought to disappear, it can be useful to <b>n
                 </h2>
 
                 <h6 class="hs_desc"> <a class="blog_highlight_peach td_underline fs_12px" 
-                href="https://happierme.app/adults/site-search/Negative%20Thoughts">
+                href="https://happierme.app/adults/guided-meditation/audiopage/https_~~d1tenzemoxuh75.cloudfront.net~guided-meditation~audios~guided-meditation%252B1.11.mp3/11/F/Release-negative-thoughts">
 Negative</a> are a normal part of human experience. They can arise in response to stress, difficult experiences, uncertainty, fears, beliefs, habits, or situations that feel threatening or challenging. Learning to observe thoughts without automatically accepting them as facts can help you develop greater awareness of your thinking patterns.                </h6>
 
                <div class="row">
@@ -470,7 +470,7 @@ Negative</a> are a normal part of human experience. They can arise in response t
                 </h2>
 
                 <h6 class="hs_desc">
-<b> No. A   <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/insight">thought</a> is not necessarily a fact.</b> Thoughts are interpretations of experiences and can sometimes be influenced by emotions, assumptions, past experiences, fears, or habits. Developing self-awareness can help you notice your thoughts and evaluate them rather than automatically believing or acting on them.
+<b> No. A   <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/audiopage/~podcasts~275.mp3/275/T/Why%20do%20our%20thoughts%20feel%20true%3F/podcast">thought</a> is not necessarily a fact.</b> Thoughts are interpretations of experiences and can sometimes be influenced by emotions, assumptions, past experiences, fears, or habits. Developing self-awareness can help you notice your thoughts and evaluate them rather than automatically believing or acting on them.
                 </h6>
 
                <div class="row">
@@ -664,7 +664,7 @@ Stress can affect people differently. Common experiences can include <b> feeling
 
                 </h2>
 
-                <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/site-search/5%20questions%20to%20ask%20if%20you%20are%20anxious">
+                <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/feel-better-now/anxiety">
 Anxiety</a> can involve <b>excessive worry, nervousness, fear, restlessness, difficulty concentrating, feeling on edge, and repeatedly thinking about possible negative outcomes. </b> Some people may also experience physical sensations such as increased heart rate or muscle tension. If symptoms are persistent, severe, or affecting daily life, professional guidance may be appropriate.                </h6>
                   <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -688,7 +688,7 @@ Feeling  <a class="blog_highlight_peach td_underline fs_12px" href="https://happ
 7. Why do I worry so much?
                 </h2>
 
-                <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/site-search/Why%20do%20I%20worry%20about%20what%20others%20think%20of%20me">
+                <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/audiopage/~podcasts~109.mp3/109/T/Why%20do%20I%20worry%20about%20what%20others%20think%20of%20me%3F/podcast">
 Worry</a> can become repetitive when the mind keeps trying to <b> predict, prevent, or control uncertain outcomes.</b> It may be influenced by fear, past experiences, current stress, uncertainty, or habitual thinking patterns. Learning to notice when worry is happening and distinguishing between what you can and cannot control can help you respond more consciously.
                 </h6>
 
@@ -853,7 +853,7 @@ Overthinking</a> can happen when the mind is trying to <b> solve a problem, avoi
                 </h2>
 
                 <h6 class="hs_desc">
-Your mind may repeatedly return to an  <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/site-search/thinking">unresolved situation </a> because it believes there is still something to understand, solve, prevent, or control. When this becomes repetitive without producing useful action, it can turn into an <b> unhelpful thinking loop.</b>
+Your mind may repeatedly return to an  <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/site-search/thinking">unresolved situation</a> because it believes there is still something to understand, solve, prevent, or control. When this becomes repetitive without producing useful action, it can turn into an <b> unhelpful thinking loop.</b>
                 </h6>
 <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -1058,8 +1058,8 @@ Emotions</a> are responses to experiences, situations, thoughts, and perceptions
 2. What is emotional intelligence?
                 </h2>
 
-                <h6 class="hs_desc"><b>
-Emotional intelligence is the ability to recognize, understand, manage, and appropriately express emotions while also understanding the emotions of other people.</b> It involves skills such as self-awareness, emotional regulation, empathy, communication, and relationship management.
+                <h6 class="hs_desc"><b><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/blog-article?sId=60">
+Emotional intelligence</a> is the ability to recognize, understand, manage, and appropriately express emotions while also understanding the emotions of other people.</b> It involves skills such as self-awareness, emotional regulation, empathy, communication, and relationship management.
                 </h6>
 
 
@@ -1073,8 +1073,8 @@ Emotional intelligence is the ability to recognize, understand, manage, and appr
 3. Why is emotional intelligence important?
                 </h2>
 
-                <h6 class="hs_desc">
-Emotional intelligence can help people understand themselves better, manage emotional reactions, communicate more effectively, handle disagreements, build stronger relationships, and make more thoughtful decisions. It is useful in personal relationships, education, work, parenting, and everyday interactions.
+                <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/insight">
+Emotional intelligence</a>can help people <b>understand themselves better, manage emotional reactions, communicate more effectively, handle disagreements, build stronger relationships, and make more thoughtful decisions.</b> It is useful in personal relationships, education, work, parenting, and everyday interactions.
                 </h6>
 <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -1087,7 +1087,7 @@ Emotional intelligence can help people understand themselves better, manage emot
                 </h2>
 
                 <h6 class="hs_desc">
-Start by noticing what you are feeling, what happened before the feeling appeared, what thoughts accompany it, and how you respond to it. Naming emotions, journaling, mindfulness, emotional check-ins, and self-reflection can help you recognize recurring emotional patterns.
+Start by noticing <b> <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/wisdom-shorts/1.9.mp4/T/Exploring%20feelings">what you are feeling</a>, what happened before the feeling appeared, what thoughts accompany it, and how you respond to it.</b> Naming emotions, journaling, mindfulness, emotional check-ins, and self-reflection can help you recognize recurring emotional patterns.
                 </h6>
 
 
@@ -1102,7 +1102,7 @@ Start by noticing what you are feeling, what happened before the feeling appeare
                 </h2>
 
                 <h6 class="hs_desc">
-Sometimes an emotion is easy to recognize, while other times it may feel like a mixture of several emotions. You can start by paying attention to your thoughts, physical sensations, behavior, and the situation that triggered the reaction. Giving the experience a specific name—such as frustration, disappointment, fear, sadness, or excitement—can make it easier to understand.                </h6>
+Sometimes an emotion is easy to recognize, while other times it may feel like a mixture of several emotions. You can start by paying attention to <b> your thoughts, physical sensations, <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/audiopage/~podcasts~296.mp3/296/T/Feelings%20show%20up%20in%20our%20body%20and%20behaviour/podcast">behavior</a>, and the situation that triggered the reaction.</b> Giving the experience a specific name—such as frustration, disappointment, fear, sadness, or excitement—can make it easier to understand.                </h6>
                   <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_web_faq">
@@ -1113,7 +1113,7 @@ Sometimes an emotion is easy to recognize, while other times it may feel like a 
                 </h2>
 
                 <h6 class="hs_desc">
-Emotional intelligence is not about eliminating or suppressing emotions. Instead, it involves recognizing an emotion, understanding what may be causing it, creating space before reacting, and choosing an appropriate response. Mindfulness, breathing exercises, self-reflection, and emotional-awareness practices can help develop this ability.
+Emotional intelligence is not about eliminating or suppressing emotions. Instead, it involves <b> <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/pathway/manage-your-emotions">recognizing an emotion</a>, understanding what may be causing it, creating space before reacting, and choosing an appropriate response.</b> Mindfulness, breathing exercises, self-reflection, and emotional-awareness practices can help develop this ability.
                 </h6>
 
                <div class="row">
@@ -1126,7 +1126,7 @@ Emotional intelligence is not about eliminating or suppressing emotions. Instead
                 </h2>
 
                 <h6 class="hs_desc">
-Continually ignoring or suppressing emotions can make it harder to understand what you are experiencing and may affect how you respond later. A healthier approach is to acknowledge emotions without allowing them to automatically control your actions. Expressing feelings appropriately and reflecting on what they may be communicating can support emotional awareness.
+Continually ignoring or suppressing emotions can make it harder to understand what you are experiencing and may affect how you respond later. A healthier approach is to<b><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/videopage/Introduction-videos-emotions_pathway.mp4/T/Manage%20your%20emotions"> acknowledge emotions</a> without allowing them to automatically control your actions.</b> Expressing feelings appropriately and reflecting on what they may be communicating can support emotional awareness.
                 </h6>
 
                <div class="row">
@@ -1138,8 +1138,8 @@ Continually ignoring or suppressing emotions can make it harder to understand wh
 8. Why do I get angry so easily?
                 </h2>
 
-                <h6 class="hs_desc">
-Anger can be influenced by stress, frustration, unmet expectations, feeling misunderstood, perceived unfairness, fear, hurt, or other underlying emotions. Understanding what happens before an angry reaction can help identify personal triggers and create opportunities to respond differently.
+                <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/anger">
+Anger</a> can be influenced by <b>stress, frustration, unmet expectations, feeling misunderstood, perceived unfairness, fear, hurt, or other underlying emotions.</b> Understanding what happens before an angry reaction can help identify personal triggers and create opportunities to respond differently.
                 </h6>
 
 
@@ -1153,8 +1153,8 @@ Anger can be influenced by stress, frustration, unmet expectations, feeling misu
 
                 </h2>
 
-                <h6 class="hs_desc">
-Managing anger starts with recognizing early signs of anger and identifying the situation, thoughts, or emotions contributing to it. Taking a pause, breathing slowly, stepping away from a heated situation, reflecting before responding, and communicating feelings calmly can help develop healthier responses.
+                <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/curated/youtubelink/1TNtWk_MK9Q%3Dvncbxdfchgvxd">
+Managing anger</a> starts with recognizing <b>early signs of anger and identifying the situation, thoughts, or emotions contributing to it.</b> Taking a pause, breathing slowly, stepping away from a heated situation, reflecting before responding, and communicating feelings calmly can help develop healthier responses.
                 </h6>
                   <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -1166,7 +1166,8 @@ Managing anger starts with recognizing early signs of anger and identifying the 
                 </h2>
 
                 <h6 class="hs_desc">
-The terms are often used interchangeably, but they can be understood slightly differently. Emotions are responses to experiences, while feelings are the conscious experience and interpretation of those emotional responses. Both provide useful information about how we are experiencing a situation.
+The terms are often used interchangeably, but they can be understood slightly differently. <b><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/audiopage/~podcasts~70.mp3/70/T/Managing%20difficult%20emotions/podcast">
+  Emotions</a> are responses to experiences, while feelings are the conscious experience and interpretation of those emotional responses.</b> Both provide useful information about how we are experiencing a situation.
 
                <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -1177,8 +1178,8 @@ The terms are often used interchangeably, but they can be understood slightly di
 11. What is empathy?
                 </h2>
 
-                <h6 class="hs_desc">
-Empathy is the ability to understand or appreciate another person's feelings and perspective. It does not necessarily mean agreeing with someone. Developing empathy can help people listen more effectively, communicate with greater understanding, and build stronger relationships.
+                <h6 class="hs_desc"><b><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/site-search/Empathy">
+Empathy</a> is the ability to understand or appreciate another person's feelings and perspective.</b> It does not necessarily mean agreeing with someone. Developing empathy can help people listen more effectively, communicate with greater understanding, and build stronger relationships.
                 </h6>
 
                <div class="row">
@@ -1191,7 +1192,7 @@ Empathy is the ability to understand or appreciate another person's feelings and
                 </h2>
 
                 <h6 class="hs_desc">
-You can develop empathy by listening without immediately judging or interrupting, becoming curious about another person's perspective, paying attention to their emotions, and considering how a situation may feel from their point of view. Greater self-awareness can also make it easier to understand other people's experiences.
+You can develop empathy by <b> <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/audiopage/~podcasts~270.mp3/270/T/Why%20empathy%20matters%20and%20how%20we%20can%20develop%20this%20skill/podcast">listening without immediately judging</a> or interrupting, becoming curious about another person's perspective, paying attention to their emotions, and considering how a situation may feel from their point of view.</b> Greater self-awareness can also make it easier to understand other people's experiences.
 
 
                <div class="row">
@@ -1205,7 +1206,8 @@ You can develop empathy by listening without immediately judging or interrupting
                 </h2>
 
                 <h6 class="hs_desc">
-Emotional intelligence can help people recognize their own emotional reactions, understand their partner's or another person's perspective, communicate feelings more clearly, manage disagreements, and respond with greater empathy. These skills can support healthier and more respectful relationships.
+Emotional intelligence can help people<b> recognize their own 
+  <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/site-search/intelligence">emotional reactions</a>, understand their partner's or another person's perspective, communicate feelings more clearly, manage disagreements, and respond with greater empathy. </b>These skills can support healthier and more respectful relationships.
                 </h6>
                   <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -1217,7 +1219,7 @@ Emotional intelligence can help people recognize their own emotional reactions, 
                 </h2>
 
                 <h6 class="hs_desc">
-Yes. Emotional intelligence is a set of skills that can be developed through awareness and practice. Activities such as mindfulness, journaling, emotional check-ins, self-reflection, active listening, empathy exercises, and learning to recognize emotional patterns can help strengthen emotional intelligence over time.
+Yes.  <b> <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/site-search/intelligence">Emotional intelligence</a> is a set of skills that can be developed through awareness and practice.</b> Activities such as mindfulness, journaling, emotional check-ins, self-reflection, active listening, empathy exercises, and learning to recognize emotional patterns can help strengthen emotional intelligence over time.
                 </h6>
 
                <div class="row">
@@ -1231,7 +1233,7 @@ Yes. Emotional intelligence is a set of skills that can be developed through awa
                 <h6 class="hs_desc">
 
 
-HappierMe helps users develop emotional awareness and emotional intelligence through practical learning and self-reflection tools. The app provides self-awareness exercises, guided journaling, mindfulness practices, meditation, podcasts, short videos, and microlearning focused on emotions, relationships, communication, and personal growth. Olly AI can also guide users toward relevant expert-curated HappierMe content based on what they are experiencing.
+<b>HappierMe helps users develop emotional awareness and emotional intelligence through practical learning and self-reflection tools.</b> The app provides self-awareness exercises, guided journaling, mindfulness practices, meditation, podcasts, short videos, and microlearning focused on emotions, relationships, communication, and personal growth. Olly AI can also guide users toward relevant expert-curated HappierMe content based on what they are experiencing.
 </h6>
                       </div>
                     </div>

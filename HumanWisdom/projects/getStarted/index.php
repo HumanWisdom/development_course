@@ -119,7 +119,7 @@ hw_lcp_send_preload_headers();
                   </div>
                 </div>
                 <div class="hero-try-free-block">
-                  <a class="hero-try-free-link" id="happiermeTryForFree" href="/organisation-Adv.php?id=org-humanwisdom">
+                  <a class="hero-try-free-link" id="happiermeTryForFree" href="/organisation-signup.php?id=1">
                     <div class="start-your-free-wrapper">
                       <div class="text-wrapper-5">Try HappierMe for free</div>
                     </div>

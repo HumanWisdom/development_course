@@ -889,6 +889,56 @@ button#org-continue-btn.org-btn:disabled {
   cursor: not-allowed;
 }
 
+.org-social {
+  margin-top: 24px;
+}
+
+.org-social .org-flow-rule {
+  margin: 0 0 16px;
+}
+
+.org-social .org-flow-rule span {
+  font-size: 12px;
+}
+
+.org-social-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.org-social-btn,
+.org-social-google {
+  position: relative;
+  width: 44px;
+  height: 44px;
+}
+
+.org-social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0.5px solid rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+}
+
+.org-social-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.org-social-google #org-google-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+}
+
 .org-signup-login {
   margin: 32px 0 0;
   font-size: 12px;
