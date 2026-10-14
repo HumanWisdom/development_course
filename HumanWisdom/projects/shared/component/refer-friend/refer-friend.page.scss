@@ -192,11 +192,11 @@
 }
 
 .raf-copied-toast {
-  text-align: center;
+  text-align: left;
   font-size: 12.5px;
   font-weight: 500;
-  margin-top: -10px;
-  margin-bottom: 16px;
+  margin-top: 4px;
+  margin-bottom: 0;
   padding: 6px 14px;
   border-radius: 12px;
   animation: fadeIn 0.3s ease;
@@ -242,27 +242,24 @@
   align-items: center;
   justify-content: center;
   gap: 24px;
-  padding: 0 20px;
+  padding: 0;
 
   .social-btn {
     background: transparent;
     border: none;
     padding: 0;
+    margin: 0;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    line-height: 0;
 
-  }
-
-  .adult-fb,
-  .adult-ig,
-  .adult-li,
-  .adult-wa,
-  .adult-x {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
+    img {
+      display: block;
+      width: 36px;
+      height: 36px;
+    }
   }
 
   .adult-ig svg {
@@ -276,11 +273,6 @@
     background-color: #0C2B5F;
     color: #ffffff;
     border: none;
-
-    &:hover {
-      background-color: #12397B;
-      transform: scale(1.08);
-    }
   }
 }
 
@@ -333,10 +325,6 @@
           letter-spacing: 0%;
           text-align: left;
         }
-
-        &:focus {
-          box-shadow: 0 0 0 2px rgba(226, 107, 109, 0.4);
-        }
       }
 
       .raf-input-icon {
@@ -352,7 +340,7 @@
 
     .raf-error-msg {
       font-size: 11.5px;
-      color: #e53935;
+      color: inherit;
       margin-top: 4px;
       padding-left: 6px;
     }
@@ -386,19 +374,19 @@
 
   .raf-header-title,
   .raf-title {
-    color: #111111;
+    color: #000000;
   }
 
   .raf-description {
-    color: #383838;
+    color: #000000;
   }
 
   .raf-link-box {
     background-color: #FFE8BB;
-    color: #222222;
+    color: #000000;
 
     .raf-link-text {
-      color: #222222;
+      color: #000000;
     }
 
     .raf-copy-btn {
@@ -408,7 +396,7 @@
 
   .raf-share-btn {
     background-color: #FFE8BB;
-    color: #222222;
+    color: #000000;
   }
   .raf-divider-line {
     background-color: #00000040;
@@ -427,22 +415,21 @@
 
     .raf-input {
       background-color: #FFD889;
-      color: #222222;
+      color: #000000;
       border: 1px solid transparent;
 
       &::placeholder {
         color: #00000080;
         font-weight: 400;
       }
-
-      &:focus {
-        border-color: #E26B6D;
-        box-shadow: 0 0 0 2px rgba(226, 107, 109, 0.2);
-      }
     }
 
     .raf-input-icon {
       color: #00000080;
+    }
+
+    .raf-error-msg {
+      color: #000000 !important;
     }
   }
 }
@@ -464,19 +451,19 @@
   }
 
   .raf-description {
-    color: #C0D3EA;
+    color: #ffffff;
   }
 
   .raf-link-box {
     background-color: #0C2B5F;
-    color: #8EB1D6;
+    color: #ffffff;
 
     .raf-link-text {
-      color: #8EB1D6;
+      color: #ffffff;
     }
 
     .raf-copy-btn {
-      color: #8EB1D6;
+      color: #ffffff;
     }
   }
 
@@ -514,7 +501,7 @@
     }
 
     .raf-error-msg {
-      color: #ff6b6b;
+      color: #ffffff !important;
     }
 
     .raf-submit-btn {
