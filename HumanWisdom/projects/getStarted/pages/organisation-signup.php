@@ -11,8 +11,23 @@ include __DIR__ . '/../includes/organisation_header.php';
 <main class="org-main">
   <div class="org-flow-card org-signup-card" id="org-signup-form">
     <div class="org-signup-head">
-      <h1 class="org-flow-title">Create your account</h1>
-      <div class="org-flow-rule"><span>Let’s get started</span></div>
+      <h1 class="org-flow-title">Welcome to HappierMe!</h1>
+      <p class="org-signup-sub">Create your account and get started</p>
+    </div>
+
+    <div class="org-signup-connect">
+      <div class="org-flow-rule"><span>Connect with</span></div>
+      <div class="org-social-row">
+        <button type="button" class="org-social-btn" aria-label="Continue with Google">
+          <img src="<?= hw_org_h($assets['google']) ?>" alt="" width="24" height="24">
+        </button>
+        <button type="button" class="org-social-btn" aria-label="Continue with Facebook">
+          <img src="<?= hw_org_h($assets['facebook']) ?>" alt="" width="24" height="24">
+        </button>
+        <button type="button" class="org-social-btn" aria-label="Continue with Apple">
+          <img src="<?= hw_org_h($assets['apple']) ?>" alt="" width="24" height="24">
+        </button>
+      </div>
     </div>
 
     <div class="org-signup-fields">
