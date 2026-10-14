@@ -317,7 +317,7 @@ Yes. HappierMe includes <a class="blog_highlight_peach td_underline fs_12px" hre
                 </h2>
 
                 <h6 class="hs_desc">
-Yes. Personal growth is a core part of HappierMe. The app helps users develop <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/explore#self-awareness">self-awareness</a> <b>, emotional intelligence, confidence, resilience, mindfulness, communication skills, healthier habits, focus, and emotional understanding</b> through short, practical learning and self-reflection activities.                </h6>
+Yes. Personal growth is a core part of HappierMe. The app helps users develop <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/explore#self-awareness">self-awareness</a>, <b>emotional intelligence, confidence, resilience, mindfulness, communication skills, healthier habits, focus, and emotional understanding</b> through short, practical learning and self-reflection activities.                </h6>
 
 
                <div class="row">
@@ -754,7 +754,7 @@ Meditation and mindfulness can help people <b> develop greater awareness of thei
                 </h2>
 
                 <h6 class="hs_desc">
-Overthinking can keep attention focused on <b> past events, <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/site-search/problems">possible future problems</a> , or repeatedly analyzing the same situation.</b> This can make a situation feel more overwhelming and make it harder to shift attention toward useful action. Recognizing repetitive thinking patterns can be an important part of developing a healthier response to stress.
+Overthinking can keep attention focused on <b> past events, <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/site-search/problems">possible future problems</a>, or repeatedly analyzing the same situation.</b> This can make a situation feel more overwhelming and make it harder to shift attention toward useful action. Recognizing repetitive thinking patterns can be an important part of developing a healthier response to stress.
 
 
                <div class="row">
@@ -1073,8 +1073,8 @@ Emotional intelligence</a> is the ability to recognize, understand, manage, and 
 3. Why is emotional intelligence important?
                 </h2>
 
-                <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/insight">
-Emotional intelligence</a>can help people <b>understand themselves better, manage emotional reactions, communicate more effectively, handle disagreements, build stronger relationships, and make more thoughtful decisions.</b> It is useful in personal relationships, education, work, parenting, and everyday interactions.
+                <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/wisdom-shorts/1.100.mp4/T/How%20can%20Emotional%20Intelligence%20help%20you%20live%20your%20best%20life%3F">
+Emotional intelligence</a> can help people <b>understand themselves better, manage emotional reactions, communicate more effectively, handle disagreements, build stronger relationships, and make more thoughtful decisions.</b> It is useful in personal relationships, education, work, parenting, and everyday interactions.
                 </h6>
 <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -1126,7 +1126,7 @@ Emotional intelligence is not about eliminating or suppressing emotions. Instead
                 </h2>
 
                 <h6 class="hs_desc">
-Continually ignoring or suppressing emotions can make it harder to understand what you are experiencing and may affect how you respond later. A healthier approach is to<b><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/videopage/Introduction-videos-emotions_pathway.mp4/T/Manage%20your%20emotions"> acknowledge emotions</a> without allowing them to automatically control your actions.</b> Expressing feelings appropriately and reflecting on what they may be communicating can support emotional awareness.
+Continually ignoring or suppressing emotions can make it harder to understand what you are experiencing and may affect how you respond later. A healthier approach is to <b><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/videopage/Introduction-videos-emotions_pathway.mp4/T/Manage%20your%20emotions">acknowledge emotions</a> without allowing them to automatically control your actions.</b> Expressing feelings appropriately and reflecting on what they may be communicating can support emotional awareness.
                 </h6>
 
                <div class="row">
@@ -1269,7 +1269,7 @@ Relationships & Communication
                 </h2>
 
                 <h6 class="hs_desc">
-A healthy relationship is generally built on mutual respect, trust, honest communication, empathy, emotional safety, appropriate boundaries, and a willingness to understand each other. Healthy relationships also allow people to maintain their individuality while supporting each other's wellbeing and growth.
+A healthy  <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/explore#relationships">relationship</a> is generally built on <b>mutual respect, trust, honest communication, empathy, emotional safety, appropriate boundaries, and a willingness to understand each other.</b> Healthy relationships also allow people to maintain their individuality while supporting each other's wellbeing and growth.
                 </h6>
              <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -1280,8 +1280,8 @@ A healthy relationship is generally built on mutual respect, trust, honest commu
 2. Why is communication important in relationships?
                 </h2>
 
-                <h6 class="hs_desc">
-Communication helps people understand each other's thoughts, feelings, needs, expectations, and boundaries. Clear and respectful communication can reduce misunderstandings, strengthen trust, make it easier to resolve disagreements, and create a stronger emotional connection.
+                <h6 class="hs_desc"><b><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/communication">
+Communication</a> helps people understand each other's thoughts, feelings, needs, expectations, and boundaries.</b> Clear and respectful communication can reduce misunderstandings, strengthen trust, make it easier to resolve disagreements, and create a stronger emotional connection.
                 </h6>
 
 
@@ -1295,8 +1295,8 @@ Communication helps people understand each other's thoughts, feelings, needs, ex
 3. How can I communicate better in my relationships?
                 </h2>
 
-                <h6 class="hs_desc">
-Better communication starts with listening carefully, expressing your feelings clearly, avoiding assumptions, asking questions, and giving the other person space to speak. It can also help to discuss difficult topics when both people are calm rather than during an emotionally charged moment.
+                <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/communication">
+Better communication</a> starts with <b>listening carefully, expressing your feelings clearly, avoiding assumptions, asking questions, and giving the other person space to speak.</b> It can also help to discuss difficult topics when both people are calm rather than during an emotionally charged moment.
                 </h6>
 <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -1308,8 +1308,9 @@ Better communication starts with listening carefully, expressing your feelings c
 4. What is active listening?
                 </h2>
 
-                <h6 class="hs_desc">
-Active listening means giving someone your full attention and trying to understand what they are communicating rather than simply waiting for your turn to respond. It can involve listening without interrupting, asking clarifying questions, acknowledging their feelings, and reflecting on what they have said.
+                <h6 class="hs_desc"><b>
+Active <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/insight">listening</a>
+ means giving someone your full attention and trying to understand what they are communicating rather than simply waiting for your turn to respond.</b> It can involve listening without interrupting, asking clarifying questions, acknowledging their feelings, and reflecting on what they have said.
                 </h6>
 
 
@@ -1324,7 +1325,7 @@ Active listening means giving someone your full attention and trying to understa
                 </h2>
 
                 <h6 class="hs_desc">
-To become a better listener, try to give the person your attention, avoid interrupting, reduce distractions, ask questions when something is unclear, and focus on understanding rather than immediately offering advice or defending yourself. Paying attention to both words and emotions can improve the quality of communication.                </h6>
+To become a better  <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/site-search/Listening">listener</a>, try to <b>give the person your attention, avoid interrupting, reduce distractions, ask questions when something is unclear, and focus on understanding rather than immediately offering advice or defending yourself.</b> Paying attention to both words and emotions can improve the quality of communication.                </h6>
                   <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_web_faq">
@@ -1335,7 +1336,7 @@ To become a better listener, try to give the person your attention, avoid interr
                 </h2>
 
                 <h6 class="hs_desc">
-Try to communicate your experience rather than blaming the other person. Explain what happened, how you felt, and what you need or would like to change. Choosing a calm moment and using respectful language can make difficult conversations more productive.
+Try to  <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/site-search/Argument">communicate</a> your experience rather than blaming the other person. Explain <b>what happened, how you felt, and what you need or would like to change.</b> Choosing a calm moment and using respectful language can make difficult conversations more productive.
                 </h6>
 
                <div class="row">
@@ -1347,8 +1348,8 @@ Try to communicate your experience rather than blaming the other person. Explain
 7. Why do misunderstandings happen in relationships?
                 </h2>
 
-                <h6 class="hs_desc">
-Misunderstandings can happen when people make assumptions, communicate indirectly, interpret words differently, fail to listen, or respond based on emotions rather than what was actually said. Past experiences and personal expectations can also influence how someone interprets another person's behavior.
+                <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/wisdom-shorts/1.107.mp4/T/4%20Ways%20Misunderstandings%20Occur">
+Misunderstandings</a> can happen when people <b>make assumptions, communicate indirectly, interpret words differently, fail to listen, or respond based on emotions rather than what was actually said.</b> Past experiences and personal expectations can also influence how someone interprets another person's behavior.
                 </h6>
 
                <div class="row">
@@ -1361,7 +1362,7 @@ Misunderstandings can happen when people make assumptions, communicate indirectl
                 </h2>
 
                 <h6 class="hs_desc">
-Healthy conflict resolution involves listening to both perspectives, staying focused on the issue rather than attacking the person, acknowledging emotions, communicating needs clearly, and looking for a solution that respects both people. Taking a pause when emotions become overwhelming can also help prevent a disagreement from escalating.
+Healthy  <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/curated/youtubelink/PDkVkpJlb6I%3Dvncbxdfchgvxd">conflict</a> resolution involves <b>listening to both perspectives, staying focused on the issue rather than attacking the person, acknowledging emotions, communicating needs clearly, and looking for a solution that respects both people.</b> Taking a pause when emotions become overwhelming can also help prevent a disagreement from escalating.
                 </h6>
 
 
@@ -1376,7 +1377,7 @@ Healthy conflict resolution involves listening to both perspectives, staying foc
                 </h2>
 
                 <h6 class="hs_desc">
-During an argument, try to slow down, listen before responding, avoid insults or personal attacks, focus on the specific issue, and communicate how you feel rather than making broad accusations. If the conversation becomes too heated, taking a temporary break and returning to it when both people are calmer can be helpful.
+During an  <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/site-search/Argument">argument</a>, try to <b>slow down, listen before responding, avoid insults or personal attacks, focus on the specific issue, and communicate how you feel rather than making broad accusations.</b> If the conversation becomes too heated, taking a temporary break and returning to it when both people are calmer can be helpful.
                 </h6>
                   <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -1388,7 +1389,7 @@ During an argument, try to slow down, listen before responding, avoid insults or
                 </h2>
 
                 <h6 class="hs_desc">
-Healthy boundaries are clear limits that communicate what you are comfortable with and what you are not comfortable with. They can involve time, privacy, communication, personal space, physical contact, emotional expectations, finances, or other areas of life. Healthy boundaries should respect both people's needs.
+Healthy boundaries are <b>clear limits that <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/site-search/Argument">communicate</a> what you are comfortable with and what you are not comfortable with. </b>They can involve time, privacy, communication, personal space, physical contact, emotional expectations, finances, or other areas of life. Healthy boundaries should respect both people's needs.
 
                <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -1400,7 +1401,7 @@ Healthy boundaries are clear limits that communicate what you are comfortable wi
                 </h2>
 
                 <h6 class="hs_desc">
-Setting a boundary does not necessarily mean rejecting someone. You can communicate it clearly, calmly, and respectfully, explain what you are comfortable with, and avoid unnecessary blame. Healthy boundaries help people understand each other's expectations and can support more respectful relationships.
+Setting a boundary does not necessarily mean rejecting someone. You can  <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/wisdom-shorts/1.188.mp4/T/Dr%20Manoj%20Krishna.%20Managing%20arguments.">communicate</a> it <b>clearly, calmly, and respectfully</b>, explain what you are comfortable with, and avoid unnecessary blame. Healthy boundaries help people understand each other's expectations and can support more respectful relationships.
                 </h6>
 
                <div class="row">
@@ -1412,8 +1413,8 @@ Setting a boundary does not necessarily mean rejecting someone. You can communic
 12. How can I build trust in a relationship?
                 </h2>
 
-                <h6 class="hs_desc">
-Trust develops through consistent behavior, honesty, reliability, respect, open communication, and following through on commitments. Rebuilding trust after it has been damaged usually requires time, transparency, accountability, and consistent actions rather than words alone.
+                <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/audiopage/~podcasts~155.mp3/155/T/Learning%20to%20trust%20people%20again/podcast">
+Trust</a> develops through <b>consistent behavior, honesty, reliability, respect, open communication, and following through on commitments.</b> Rebuilding trust after it has been damaged usually requires time, transparency, accountability, and consistent actions rather than words alone.
 
 
                <div class="row">
