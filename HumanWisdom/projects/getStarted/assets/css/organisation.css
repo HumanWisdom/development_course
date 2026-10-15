@@ -989,8 +989,8 @@ button#org-continue-btn.org-btn:disabled {
 .org-social-btn,
 .org-social-google {
   position: relative;
-  width: 44px;
-  height: 44px;
+  /* width: 44px;
+  height: 44px; */
 }
 
 .org-social-btn {
@@ -999,8 +999,8 @@ button#org-continue-btn.org-btn:disabled {
   justify-content: center;
   padding: 0;
   border: 0.5px solid rgba(0, 0, 0, 0.5);
-  border-radius: 50%;
-  background: #fff;
+  /* border-radius: 50%; */
+  /* background: #fff; */
   cursor: pointer;
 }
 
