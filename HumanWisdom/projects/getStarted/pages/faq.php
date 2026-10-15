@@ -1895,7 +1895,7 @@ Teenagers & Students
                 </h2>
 
                 <h6 class="hs_desc">
-Teenagers may experience academic pressure, <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/insight">exam stress</a>, social pressure, friendship difficulties, family expectations, changing emotions, self-doubt, comparison, relationship concerns, and uncertainty about the future. Learning to understand and manage these experiences can support overall well-being.                </h6>
+Teenagers may experience academic pressure, <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/wisdom-stories/view-stories?sId=87">exam stress</a>, social pressure, friendship difficulties, family expectations, changing emotions, self-doubt, comparison, relationship concerns, and uncertainty about the future. Learning to understand and manage these experiences can support overall well-being.                </h6>
              <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_web_faq">
@@ -1906,7 +1906,7 @@ Teenagers may experience academic pressure, <a class="blog_highlight_peach td_un
                 </h2>
 
                 <h6 class="hs_desc">
- Students can manage exam stress by creating a realistic study plan, breaking work into smaller tasks, taking regular breaks, getting enough sleep, staying physically active, and using breathing or mindfulness exercises. Understanding anxious thoughts rather than constantly fighting them can also help.                </h6>
+ Students can manage <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/wisdom-stories/view-stories?sId=87">exam stress</a> by creating a realistic study plan, breaking work into smaller tasks, taking regular breaks, getting enough sleep, staying physically active, and using breathing or mindfulness exercises. Understanding anxious thoughts rather than constantly fighting them can also help.                </h6>
 
 
                  <div class="row">
@@ -1919,8 +1919,8 @@ Teenagers may experience academic pressure, <a class="blog_highlight_peach td_un
 3. Why do teenagers overthink so much?
                 </h2>
 
-                <h6 class="hs_desc">
- Overthinking can happen when teenagers are dealing with uncertainty, social expectations, academic pressure, relationships, mistakes, or concerns about how others see them. Repeatedly analyzing situations can become a habit, making it useful to learn how to recognize and interrupt unhelpful thought patterns.                </h6>
+                <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/micro-learning/inner/3">
+ Overthinking</a> can happen when teenagers are dealing with uncertainty, social expectations, academic pressure, relationships, mistakes, or concerns about how others see them. Repeatedly analyzing situations can become a habit, making it useful to learn how to recognize and interrupt unhelpful thought patterns.                </h6>
 <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_web_faq">
@@ -1932,7 +1932,7 @@ Teenagers may experience academic pressure, <a class="blog_highlight_peach td_un
                 </h2>
 
                 <h6 class="hs_desc">
-Recognizing personal values and becoming comfortable making independent choices can help teenagers handle social pressure. It is also useful to understand that fitting in is not always the same as making a healthy or meaningful choice, and supportive relationships can make difficult situations easier to navigate.                </h6>
+Recognizing personal values and becoming comfortable making <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/wisdom-shorts/1.117.mp4/T/5%20ways%20to%20deal%20with%20social%20media%20pressure">independent choices</a> can help teenagers handle social pressure. It is also useful to understand that fitting in is not always the same as making a healthy or meaningful choice, and supportive relationships can make difficult situations easier to navigate.                </h6>
 
 
                <div class="row">
@@ -1945,16 +1945,16 @@ Recognizing personal values and becoming comfortable making independent choices 
 
                 </h2>
 
-                <h6 class="hs_desc">
- Comparison can become stronger during adolescence because friendships, appearance, academic performance, popularity, and social acceptance can feel especially important. Becoming aware of comparison thoughts and focusing on personal growth, strengths, values, and progress can help develop a healthier perspective.              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/comparison">
+ Comparison</a> can become stronger during adolescence because friendships, appearance, academic performance, popularity, and social acceptance can feel especially important. Becoming aware of comparison thoughts and focusing on personal growth, strengths, values, and progress can help develop a healthier perspective.              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_web_faq">
               </div>
             </div>
                 <h2 class="hs_title">
 6. How can students build self-confidence?                </h2>
 
-                <h6 class="hs_desc">
- Self-confidence can develop through self-awareness, learning new skills, taking on manageable challenges, recognizing progress, accepting mistakes as part of learning, and reducing excessive comparison with others. Confidence tends to grow through experience rather than simply through positive thinking.                </h6>
+                <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/wisdom-shorts/1.118.mp4/T/Five%20tips%20to%20build%20your%20self-confidence">
+ Self-confidence</a> can develop through self-awareness, learning new skills, taking on manageable challenges, recognizing progress, accepting mistakes as part of learning, and reducing excessive comparison with others. Confidence tends to grow through experience rather than simply through positive thinking.                </h6>
 
                <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -1965,8 +1965,8 @@ Recognizing personal values and becoming comfortable making independent choices 
 7. How can teenagers handle friendship problems?
                 </h2>
 
-                <h6 class="hs_desc">
- Friendship difficulties can be approached through honest communication, active listening, empathy, and understanding different perspectives. It can also help to recognize personal boundaries and accept that not every disagreement needs to become a permanent conflict.                </h6>
+                <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/wisdom-shorts/1.116.mp4/T/5%20ways%20to%20handle%20friendship%20Issues">
+ Friendship difficulties</a> can be approached through honest communication, active listening, empathy, and understanding different perspectives. It can also help to recognize personal boundaries and accept that not every disagreement needs to become a permanent conflict.                </h6>
 
                <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -1979,7 +1979,7 @@ Recognizing personal values and becoming comfortable making independent choices 
 
                 <h6 class="hs_desc">
 ?
- Students can improve motivation by connecting study goals with something meaningful, breaking large tasks into smaller steps, reducing distractions, creating a consistent routine, and noticing progress. Understanding emotions such as boredom, fear of failure, or overwhelm can also help address what is affecting motivation.
+ Students can improve <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/wisdom-shorts/1.86.mp4/T/5%20Tips%20To%20Stay%20Motivated">motivation</a> by connecting study goals with something meaningful, breaking large tasks into smaller steps, reducing distractions, creating a consistent routine, and noticing progress. Understanding emotions such as boredom, fear of failure, or overwhelm can also help address what is affecting motivation.
                 </h6>
 
 
@@ -1994,7 +1994,7 @@ Recognizing personal values and becoming comfortable making independent choices 
                 </h2>
 
                 <h6 class="hs_desc">
- Managing emotions starts with recognizing and naming what you are feeling rather than immediately reacting to it. Journaling, mindfulness, breathing exercises, talking to a trusted person, physical activity, and reflecting on what triggered the emotion can help teenagers respond more thoughtfully.                </h6>
+ Managing <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/wisdom-shorts/1.181.mp4/T/Tips%20to%20manage%20difficult%20emotions">emotions</a> starts with recognizing and naming what you are feeling rather than immediately reacting to it. Journaling, mindfulness, breathing exercises, talking to a trusted person, physical activity, and reflecting on what triggered the emotion can help teenagers respond more thoughtfully.                </h6>
                   <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_web_faq">
@@ -2004,8 +2004,8 @@ Recognizing personal values and becoming comfortable making independent choices 
 10. How can teenagers deal with bullying or negative comments?
                 </h2>
 
-                <h6 class="hs_desc">
- Bullying and repeated negative treatment should not be dismissed as something a teenager simply has to tolerate. Talking to a trusted parent, teacher, counselor, or other responsible adult can provide support and help address the situation. Building self-awareness and healthy relationships can also support emotional wellbeing.               <div class="row">
+                <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/site-search/Deal%20with%20Bullying">
+ Bullying</a> and repeated negative treatment should not be dismissed as something a teenager simply has to tolerate. Talking to a trusted parent, teacher, counselor, or other responsible adult can provide support and help address the situation. Building self-awareness and healthy relationships can also support emotional wellbeing.               <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_web_faq">
               </div>
@@ -2014,8 +2014,8 @@ Recognizing personal values and becoming comfortable making independent choices 
 11. How can students deal with fear of failure?
                 </h2>
 
-                <h6 class="hs_desc">
- Fear of failure often becomes stronger when mistakes are viewed as evidence of personal inadequacy. Students can develop a healthier approach by separating their identity from individual outcomes, focusing on learning and improvement, setting realistic goals, and treating mistakes as information for future decisions.
+                <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/wisdom-shorts/1.126.mp4/T/5%20questions%20to%20deal%20with%20fear">
+ Fear</a> of failure often becomes stronger when mistakes are viewed as evidence of personal inadequacy. Students can develop a healthier approach by separating their identity from individual outcomes, focusing on learning and improvement, setting realistic goals, and treating mistakes as information for future decisions.
                <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_web_faq">
@@ -2025,8 +2025,8 @@ Recognizing personal values and becoming comfortable making independent choices 
 12. How can teenagers improve their emotional intelligence?
                 </h2>
 
-                <h6 class="hs_desc">
- Emotional intelligence can be developed by learning to recognize emotions, understand what triggers them, manage reactions, listen to others, practice empathy, and communicate feelings clearly. Journaling, mindfulness, self-reflection, and everyday relationship experiences can provide opportunities to practice these skills.
+                <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/audiopage/~podcasts~271.mp3/271/T/Practising%20emotional%20intelligence%20in%20everyday%20life/podcast">
+ Emotional intelligence</a> can be developed by learning to recognize emotions, understand what triggers them, manage reactions, listen to others, practice empathy, and communicate feelings clearly. Journaling, mindfulness, self-reflection, and everyday relationship experiences can provide opportunities to practice these skills.
 
                <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -2038,8 +2038,8 @@ Recognizing personal values and becoming comfortable making independent choices 
 
                 </h2>
 
-                <h6 class="hs_desc">
- Mindfulness can help teenagers become more aware of their thoughts, emotions, and reactions in the present moment. Practices such as mindful breathing, meditation, and body awareness can be useful for managing everyday stress and developing greater self-awareness.                </h6>
+                <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/site-search/Mindfulness">
+ Mindfulness</a> can help teenagers become more aware of their thoughts, emotions, and reactions in the present moment. Practices such as mindful breathing, meditation, and body awareness can be useful for managing everyday stress and developing greater self-awareness.                </h6>
                   <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_web_faq">
@@ -2050,7 +2050,7 @@ Recognizing personal values and becoming comfortable making independent choices 
                 </h2>
 
                 <h6 class="hs_desc">
- When everything feels overwhelming, it can help to pause and identify what is creating the most pressure. Breaking problems into smaller parts, focusing on what can be controlled, taking time to recover, and talking to a trusted adult can make challenges feel more manageable. Persistent or severe emotional difficulties should be discussed with a qualified mental health professional.                </h6>
+ When everything feels <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/wisdom-shorts/1.174.mp4/T/Martha%20Van%20Dam:%20on%20feeling%20overwhelmed">overwhelming</a>, it can help to pause and identify what is creating the most pressure. Breaking problems into smaller parts, focusing on what can be controlled, taking time to recover, and talking to a trusted adult can make challenges feel more manageable. Persistent or severe emotional difficulties should be discussed with a qualified mental health professional.                </h6>
 
                <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -2071,7 +2071,7 @@ Recognizing personal values and becoming comfortable making independent choices 
                       <hr class="hr_style_web_01 hr-darker">
                     </div>
                   </div>
-                   <!-- <div class="accordion-item">
+                   <div class="accordion-item">
                     <h2 class="accordion-header" id="heading_20">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#c20" aria-expanded="false" aria-controls="c20">
@@ -2091,9 +2091,9 @@ Parents & Families
 
                 </h2>
 
-                <h6 class="hs_desc">
+                <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/site-search/Emotional%20Needs">
 
- Emotional wellbeing affects how family members communicate, handle stress, respond to disagreements, and support one another. Developing self-awareness and healthier emotional habits can contribute to more supportive family relationships.
+ Emotional wellbeing</a> affects how family members communicate, handle stress, respond to disagreements, and support one another. Developing self-awareness and healthier emotional habits can contribute to more supportive family relationships.
                 </h6>
              <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -2105,7 +2105,7 @@ Parents & Families
                 </h2>
 
                 <h6 class="hs_desc">
- Parents can start by recognizing their own stress triggers and noticing early signs of frustration or overwhelm. Taking a pause, using breathing or mindfulness practices, communicating calmly, and creating time for rest can make it easier to respond thoughtfully rather than react automatically.                </h6>
+ Parents can start by recognizing their<a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/feel-better-now/stress"> own stress triggers</a> and noticing early signs of frustration or overwhelm. Taking a pause, using breathing or mindfulness practices, communicating calmly, and creating time for rest can make it easier to respond thoughtfully rather than react automatically.                </h6>
 
 
                  <div class="row">
@@ -2120,7 +2120,7 @@ Parents & Families
                 </h2>
 
                 <h6 class="hs_desc">
- Good communication starts with listening without immediately judging, correcting, or giving advice. Parents can ask open questions, acknowledge their child's feelings, explain their own concerns calmly, and create an environment where children feel comfortable expressing themselves.                </h6>
+ Good <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/wisdom-shorts/1.149.mp4/T/Top%20tips%20to%20communicate%20with%20parents">communication</a> starts with listening without immediately judging, correcting, or giving advice. Parents can ask open questions, acknowledge their child's feelings, explain their own concerns calmly, and create an environment where children feel comfortable expressing themselves.                </h6>
 <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_web_faq">
@@ -2131,8 +2131,8 @@ Parents & Families
 4. How can parents understand their teenager better?
                 </h2>
 
-                <h6 class="hs_desc">
- Understanding teenagers involves listening to their experiences and recognizing that academic pressure, friendships, social expectations, identity, and changing emotions can influence their behavior. Curiosity and empathy can be more helpful than assuming that every difficult behavior is simply disobedience.                </h6>
+                <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/curated/youtubelink/z7u69I7h560%3Dvncbxdfchgvxd">
+ Understanding teenagers</a> involves listening to their experiences and recognizing that academic pressure, friendships, social expectations, identity, and changing emotions can influence their behavior. Curiosity and empathy can be more helpful than assuming that every difficult behavior is simply disobedience.                </h6>
 
 
                <div class="row">
@@ -2146,7 +2146,7 @@ Parents & Families
                 </h2>
 
                 <h6 class="hs_desc">
- Parents can pause when emotions are high, avoid insults or personal criticism, listen to the child's perspective, and focus on the specific issue rather than bringing up past mistakes. A calm conversation after everyone has had time to settle can often be more productive.              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+ Parents can pause when emotions are high, avoid insults or personal criticism, listen to the child's perspective, and focus on the specific issue rather than bringing up past mistakes. A calm <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/insight">conversation</a> after everyone has had time to settle can often be more productive.              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_web_faq">
               </div>
             </div>
@@ -2156,7 +2156,7 @@ Parents & Families
                 </h2>
 
                 <h6 class="hs_desc">
- Parents can provide emotional support alongside practical help. Encouraging realistic routines, adequate sleep, breaks, physical activity, and open conversations about worries can help. Focusing only on grades can sometimes increase pressure, so recognizing effort and learning is also important.                </h6>
+ Parents can provide <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/insight">emotional support</a> alongside practical help. Encouraging realistic routines, adequate sleep, breaks, physical activity, and open conversations about worries can help. Focusing only on grades can sometimes increase pressure, so recognizing effort and learning is also important.                </h6>
 
                <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -2164,11 +2164,12 @@ Parents & Families
               </div>
             </div>
                 <h2 class="hs_title">
-7. How can I become more self-aware?
+7. How can parents build trust with their children?
                 </h2>
 
                 <h6 class="hs_desc">
-You can develop self-awareness by regularly observing your thoughts and emotions, reflecting on your experiences, identifying recurring patterns, journaling, practicing mindfulness, and paying attention to how you respond to different situations. Asking yourself thoughtful questions can also help reveal beliefs, needs, and habits that you may not normally notice.
+<a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/audiopage/~podcasts~155.mp3/155/T/Learning%20to%20trust%20people%20again/podcast">
+ Trust</a> develops through consistent behavior, honesty, listening, respect, appropriate boundaries, and keeping commitments. Children are more likely to communicate openly when they feel that they can share difficulties without automatically being judged or punished.
                 </h6>
 
                <div class="row">
@@ -2177,12 +2178,12 @@ You can develop self-awareness by regularly observing your thoughts and emotions
               </div>
             </div>
                 <h2 class="hs_title">
-8. How can I understand what really makes me happy?
+8. How can parents set healthy boundaries with children?
+ 
                 </h2>
 
-                <h6 class="hs_desc">
-Start by paying attention to when you feel engaged, peaceful, connected, fulfilled, or genuinely interested in something rather than focusing only on temporary pleasure. Reflecting on your values, relationships, interests, strengths, and meaningful experiences can help you identify what contributes to your sense of wellbeing.
-                </h6>
+                <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/audiopage/~podcasts~267.mp3/267/T/Setting%20healthy%20boundaries,%20and%20why%20they%20matter./podcast">
+ Healthy boundaries</a> provide clear expectations while respecting the child's age, individuality, and growing independence. Parents can explain the reason behind important boundaries, apply them consistently, listen to concerns, and distinguish between guidance and excessive control.                </h6>
 
 
                <div class="row">
@@ -2191,35 +2192,44 @@ Start by paying attention to when you feel engaged, peaceful, connected, fulfill
               </div>
             </div>
                 <h2 class="hs_title">
-9. What is the difference between happiness and pleasure?
+9. How can parents teach children emotional intelligence?
 
                 </h2>
 
                 <h6 class="hs_desc">
-Pleasure is often a short-term positive experience, while happiness can involve a broader and more lasting sense of wellbeing, contentment, meaning, and connection. Something can be pleasurable without contributing to long-term wellbeing, while meaningful activities may sometimes require effort but provide deeper satisfaction.
-                </h6>
+ Parents can help children develop <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/site-search/Emotional%20intelligence">emotional intelligence</a> by naming emotions, listening to their feelings, discussing what triggered them, demonstrating healthy ways to manage difficult emotions, and encouraging empathy and perspective-taking. Children often learn emotional skills by observing how adults handle their own emotions.                </h6>
                   <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_web_faq">
               </div>
             </div>
                 <h2 class="hs_title">
-10. How does self-awareness improve decision-making?
+10. How can families deal with conflict in a healthy way?
                 </h2>
 
                 <h6 class="hs_desc">
-Self-awareness helps you recognize your emotions, assumptions, motivations, biases, habits, and personal values before making a decision. This can create more space between an automatic reaction and a deliberate choice, helping you make decisions that are more aligned with what matters to you.
+ Healthy <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/curated/youtubelink/PDkVkpJlb6I%3Dvncbxdfchgvxd">family conflict</a> involves listening to different perspectives, avoiding personal attacks, understanding underlying emotions and needs, and working toward solutions rather than simply deciding who is right or wrong. Taking a break when emotions become too intense can also help.               <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_web_faq">
+              </div>
+            </div>
+                <h2 class="hs_title">
+11. How can parents support a child who lacks confidence?
+                </h2>
+
+                <h6 class="hs_desc">
+ Parents can encourage children to try manageable challenges, recognize genuine effort and progress, allow them to make age-appropriate decisions, and avoid constant comparison with other children. <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/site-search/Confidence">Confidence</a> tends to develop through experiences of learning, problem-solving, and being accepted for who they are.
                <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_web_faq">
               </div>
             </div>
                 <h2 class="hs_title">
-11. How can I stop comparing myself with others?
+12. How can parents help children who overthink or worry?
                 </h2>
 
                 <h6 class="hs_desc">
-Comparison often becomes unhelpful when you use another person's life as the standard for judging your own worth or progress. Self-awareness can help you notice when comparison happens, what you are feeling, and what need or insecurity may be behind it. Focusing on your own values, progress, and goals can create a healthier perspective.                </h6>
+ Parents can listen without immediately <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/site-search/overthink">dismissing the worry</a>, help children identify what they are feeling, separate realistic concerns from assumptions, and focus on what can actually be controlled. Age-appropriate mindfulness, journaling, breathing exercises, and supportive conversations can also help.
 
                <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -2227,38 +2237,23 @@ Comparison often becomes unhelpful when you use another person's life as the sta
               </div>
             </div>
                 <h2 class="hs_title">
-12. How can I build more confidence in myself?
-                </h2>
-
-                <h6 class="hs_desc">
-Confidence can grow through self-awareness, developing skills, taking manageable challenges, learning from mistakes, keeping realistic expectations, and recognizing your own progress. Understanding your strengths and limitations can also help you build confidence based on self-acceptance rather than constant comparison.
-
-
-               <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <hr class="hr_style_web_faq">
-              </div>
-            </div>
-                <h2 class="hs_title">
-13. Can mindfulness improve self-awareness?
+13. How can parents balance discipline and emotional support?
 
                 </h2>
 
                 <h6 class="hs_desc">
-Yes. Mindfulness helps you pay attention to your present thoughts, emotions, sensations, and experiences without automatically reacting to them. This can make it easier to recognize recurring emotional and thinking patterns and understand how you respond to different situations.
-                </h6>
+ Discipline and emotional <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/curated/youtubelink/AizLUdCEmcc%3Dvncbxdfchgvxd">support</a> do not have to be opposites. Parents can maintain clear expectations and consequences while still acknowledging a child's emotions and helping them understand the impact of their behavior. The goal is to guide learning and responsibility rather than rely only on fear or punishment.                </h6>
                   <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_web_faq">
               </div>
             </div>
                 <h2 class="hs_title">
-14. How can I find more meaning and purpose in life?
+14. How can families spend more meaningful time together?
                 </h2>
 
                 <h6 class="hs_desc">
-Meaning and purpose can come from different sources, including relationships, contribution, personal values, learning, creativity, work, family, helping others, and pursuing goals that matter to you. Self-awareness can help you identify what you genuinely value and distinguish it from expectations imposed by other people or society.
-                </h6>
+ Meaningful family time does not always require elaborate activities. Shared meals, <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/insight">conversations</a>, walks, games, hobbies, or simply spending time without phones or other distractions can strengthen connection. Consistency and genuine attention are often more important than the length of the activity.                 </h6>
 
                <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -2281,10 +2276,220 @@ HappierMe helps users develop greater self-awareness and build practical habits 
                     </div>
                   </div>
                    <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading_c21">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#c21" aria-expanded="false" aria-controls="c21">
+Habits, Addiction & Behaviour 
+                      </button>
+                    </h2>
+                    <div id="c21" class="accordion-collapse collapse" aria-labelledby="heading_c21"
+                      data-bs-parent="#accordion_faq_about">
+                      <div class="accordion-body">
+      
+                <h2 class="hs_title">
+1. What does it mean to be happy?
+
+
+
+                </h2>
+
+                <h6 class="hs_desc">
+Happiness is more than feeling positive all the time. It can include a sense of wellbeing, contentment, connection, meaning, and the ability to experience and navigate different emotions. A healthy approach to happiness allows space for difficult emotions rather than expecting yourself to feel good every moment.
+                </h6>
+             <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_web_faq">
+              </div>
+            </div>
+                <h2 class="hs_title">
+2. How can I become happier in everyday life?
+                </h2>
+
+                <h6 class="hs_desc">
+Everyday wellbeing can be supported by building meaningful connections, taking care of your physical and emotional needs, practicing gratitude, spending time on activities that matter to you, developing healthy habits, and becoming more aware of your thoughts and emotions. Small, consistent changes can have a meaningful impact over time.
+                </h6>
+
+
+                 <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_web_faq">
+              </div>
+            </div>
+              
+                <h2 class="hs_title">
+3. Why am I not happy even when everything seems fine?
+                </h2>
+
+                <h6 class="hs_desc">
+Happiness is influenced by more than external circumstances. Unresolved emotions, stress, unrealistic expectations, lack of connection, comparison with others, lack of meaning, or being disconnected from your own needs can affect how you feel even when things appear fine from the outside. Self-awareness can help you understand what may be missing.
+                </h6>
+<div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_web_faq">
+              </div>
+            </div>
+               
+                <h2 class="hs_title">
+4. Can happiness be learned?
+                </h2>
+
+                <h6 class="hs_desc">
+Happiness is not a single skill that can simply be learned, but many habits and skills associated with wellbeing can be developed. Self-awareness, mindfulness, gratitude, emotional understanding, healthy relationships, meaningful activities, and healthier thinking patterns can all contribute to a more balanced and fulfilling life.
+                </h6>
+
+
+               <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_web_faq">
+              </div>
+            </div>
+                <h2 class="hs_title">
+5. What is self-awareness?
+
+                </h2>
+
+                <h6 class="hs_desc">
+Self-awareness is the ability to recognize and understand your thoughts, emotions, behaviors, beliefs, strengths, limitations, needs, and patterns. It helps you understand why you respond to situations in certain ways and gives you an opportunity to make more conscious choices.                  <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_web_faq">
+              </div>
+            </div>
+                <h2 class="hs_title">
+6. Why is self-awareness important for happiness?
+                </h2>
+
+                <h6 class="hs_desc">
+Self-awareness can help you understand what genuinely matters to you, what affects your emotional wellbeing, and which habits or patterns may be making life more difficult. When you understand yourself better, you may be better able to make choices that align with your needs, values, relationships, and goals.
+                </h6>
+
+               <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_web_faq">
+              </div>
+            </div>
+                <h2 class="hs_title">
+7. How can I become more self-aware?
+                </h2>
+
+                <h6 class="hs_desc">
+You can develop self-awareness by regularly observing your thoughts and emotions, reflecting on your experiences, identifying recurring patterns, journaling, practicing mindfulness, and paying attention to how you respond to different situations. Asking yourself thoughtful questions can also help reveal beliefs, needs, and habits that you may not normally notice.
+                </h6>
+
+               <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_web_faq">
+              </div>
+            </div>
+                <h2 class="hs_title">
+8. How can I understand what really makes me happy?
+                </h2>
+
+                <h6 class="hs_desc">
+Start by paying attention to when you feel engaged, peaceful, connected, fulfilled, or genuinely interested in something rather than focusing only on temporary pleasure. Reflecting on your values, relationships, interests, strengths, and meaningful experiences can help you identify what contributes to your sense of wellbeing.
+                </h6>
+
+
+               <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_web_faq">
+              </div>
+            </div>
+                <h2 class="hs_title">
+9. What is the difference between happiness and pleasure?
+
+                </h2>
+
+                <h6 class="hs_desc">
+Pleasure is often a short-term positive experience, while happiness can involve a broader and more lasting sense of wellbeing, contentment, meaning, and connection. Something can be pleasurable without contributing to long-term wellbeing, while meaningful activities may sometimes require effort but provide deeper satisfaction.
+                </h6>
+                  <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_web_faq">
+              </div>
+            </div>
+                <h2 class="hs_title">
+10. How does self-awareness improve decision-making?
+                </h2>
+
+                <h6 class="hs_desc">
+Self-awareness helps you recognize your emotions, assumptions, motivations, biases, habits, and personal values before making a decision. This can create more space between an automatic reaction and a deliberate choice, helping you make decisions that are more aligned with what matters to you.
+               <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_web_faq">
+              </div>
+            </div>
+                <h2 class="hs_title">
+11. How can I stop comparing myself with others?
+                </h2>
+
+                <h6 class="hs_desc">
+Comparison often becomes unhelpful when you use another person's life as the standard for judging your own worth or progress. Self-awareness can help you notice when comparison happens, what you are feeling, and what need or insecurity may be behind it. Focusing on your own values, progress, and goals can create a healthier perspective.                </h6>
+
+               <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_web_faq">
+              </div>
+            </div>
+                <h2 class="hs_title">
+12. How can I build more confidence in myself?
+                </h2>
+
+                <h6 class="hs_desc">
+Confidence can grow through self-awareness, developing skills, taking manageable challenges, learning from mistakes, keeping realistic expectations, and recognizing your own progress. Understanding your strengths and limitations can also help you build confidence based on self-acceptance rather than constant comparison.
+
+
+               <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_web_faq">
+              </div>
+            </div>
+                <h2 class="hs_title">
+13. Can mindfulness improve self-awareness?
+
+                </h2>
+
+                <h6 class="hs_desc">
+Yes. Mindfulness helps you pay attention to your present thoughts, emotions, sensations, and experiences without automatically reacting to them. This can make it easier to recognize recurring emotional and thinking patterns and understand how you respond to different situations.
+                </h6>
+                  <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_web_faq">
+              </div>
+            </div>
+                <h2 class="hs_title">
+14. How can I find more meaning and purpose in life?
+                </h2>
+
+                <h6 class="hs_desc">
+Meaning and purpose can come from different sources, including relationships, contribution, personal values, learning, creativity, work, family, helping others, and pursuing goals that matter to you. Self-awareness can help you identify what you genuinely value and distinguish it from expectations imposed by other people or society.
+                </h6>
+
+               <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_web_faq">
+              </div>
+            </div>
+                <h2 class="hs_title">
+15. How does HappierMe support happiness and self-awareness?
+                </h2>
+
+                <h6 class="hs_desc">
+HappierMe helps users develop greater self-awareness and build practical habits that support everyday wellbeing. The app includes guided journaling, wellness surveys, mindfulness practices, meditation, self-awareness exercises, podcasts, videos, microlearning, and personalized guidance through Olly AI. These resources help users explore their thoughts, emotions, habits, relationships, values, and personal growth.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                      <hr class="hr_style_web_01 hr-darker">
+                    </div>
+                  </div>
+                   <div class="accordion-item">
                     <h2 class="accordion-header" id="heading_c17">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#c16" aria-expanded="false" aria-controls="c17">
-Happiness & Self-Awareness — FAQ
+Dealing with Loss 
+
                       </button>
                     </h2>
                     <div id="c17" class="accordion-collapse collapse" aria-labelledby="heading_c17"
@@ -2493,216 +2698,8 @@ HappierMe helps users develop greater self-awareness and build practical habits 
                     <h2 class="accordion-header" id="heading_c17">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#c16" aria-expanded="false" aria-controls="c17">
-Happiness & Self-Awareness — FAQ
-                      </button>
-                    </h2>
-                    <div id="c17" class="accordion-collapse collapse" aria-labelledby="heading_c17"
-                      data-bs-parent="#accordion_faq_about">
-                      <div class="accordion-body">
-      
-                <h2 class="hs_title">
-1. What does it mean to be happy?
+Social Proof 
 
-
-
-                </h2>
-
-                <h6 class="hs_desc">
-Happiness is more than feeling positive all the time. It can include a sense of wellbeing, contentment, connection, meaning, and the ability to experience and navigate different emotions. A healthy approach to happiness allows space for difficult emotions rather than expecting yourself to feel good every moment.
-                </h6>
-             <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <hr class="hr_style_web_faq">
-              </div>
-            </div>
-                <h2 class="hs_title">
-2. How can I become happier in everyday life?
-                </h2>
-
-                <h6 class="hs_desc">
-Everyday wellbeing can be supported by building meaningful connections, taking care of your physical and emotional needs, practicing gratitude, spending time on activities that matter to you, developing healthy habits, and becoming more aware of your thoughts and emotions. Small, consistent changes can have a meaningful impact over time.
-                </h6>
-
-
-                 <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <hr class="hr_style_web_faq">
-              </div>
-            </div>
-              
-                <h2 class="hs_title">
-3. Why am I not happy even when everything seems fine?
-                </h2>
-
-                <h6 class="hs_desc">
-Happiness is influenced by more than external circumstances. Unresolved emotions, stress, unrealistic expectations, lack of connection, comparison with others, lack of meaning, or being disconnected from your own needs can affect how you feel even when things appear fine from the outside. Self-awareness can help you understand what may be missing.
-                </h6>
-<div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <hr class="hr_style_web_faq">
-              </div>
-            </div>
-               
-                <h2 class="hs_title">
-4. Can happiness be learned?
-                </h2>
-
-                <h6 class="hs_desc">
-Happiness is not a single skill that can simply be learned, but many habits and skills associated with wellbeing can be developed. Self-awareness, mindfulness, gratitude, emotional understanding, healthy relationships, meaningful activities, and healthier thinking patterns can all contribute to a more balanced and fulfilling life.
-                </h6>
-
-
-               <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <hr class="hr_style_web_faq">
-              </div>
-            </div>
-                <h2 class="hs_title">
-5. What is self-awareness?
-
-                </h2>
-
-                <h6 class="hs_desc">
-Self-awareness is the ability to recognize and understand your thoughts, emotions, behaviors, beliefs, strengths, limitations, needs, and patterns. It helps you understand why you respond to situations in certain ways and gives you an opportunity to make more conscious choices.                  <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <hr class="hr_style_web_faq">
-              </div>
-            </div>
-                <h2 class="hs_title">
-6. Why is self-awareness important for happiness?
-                </h2>
-
-                <h6 class="hs_desc">
-Self-awareness can help you understand what genuinely matters to you, what affects your emotional wellbeing, and which habits or patterns may be making life more difficult. When you understand yourself better, you may be better able to make choices that align with your needs, values, relationships, and goals.
-                </h6>
-
-               <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <hr class="hr_style_web_faq">
-              </div>
-            </div>
-                <h2 class="hs_title">
-7. How can I become more self-aware?
-                </h2>
-
-                <h6 class="hs_desc">
-You can develop self-awareness by regularly observing your thoughts and emotions, reflecting on your experiences, identifying recurring patterns, journaling, practicing mindfulness, and paying attention to how you respond to different situations. Asking yourself thoughtful questions can also help reveal beliefs, needs, and habits that you may not normally notice.
-                </h6>
-
-               <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <hr class="hr_style_web_faq">
-              </div>
-            </div>
-                <h2 class="hs_title">
-8. How can I understand what really makes me happy?
-                </h2>
-
-                <h6 class="hs_desc">
-Start by paying attention to when you feel engaged, peaceful, connected, fulfilled, or genuinely interested in something rather than focusing only on temporary pleasure. Reflecting on your values, relationships, interests, strengths, and meaningful experiences can help you identify what contributes to your sense of wellbeing.
-                </h6>
-
-
-               <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <hr class="hr_style_web_faq">
-              </div>
-            </div>
-                <h2 class="hs_title">
-9. What is the difference between happiness and pleasure?
-
-                </h2>
-
-                <h6 class="hs_desc">
-Pleasure is often a short-term positive experience, while happiness can involve a broader and more lasting sense of wellbeing, contentment, meaning, and connection. Something can be pleasurable without contributing to long-term wellbeing, while meaningful activities may sometimes require effort but provide deeper satisfaction.
-                </h6>
-                  <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <hr class="hr_style_web_faq">
-              </div>
-            </div>
-                <h2 class="hs_title">
-10. How does self-awareness improve decision-making?
-                </h2>
-
-                <h6 class="hs_desc">
-Self-awareness helps you recognize your emotions, assumptions, motivations, biases, habits, and personal values before making a decision. This can create more space between an automatic reaction and a deliberate choice, helping you make decisions that are more aligned with what matters to you.
-               <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <hr class="hr_style_web_faq">
-              </div>
-            </div>
-                <h2 class="hs_title">
-11. How can I stop comparing myself with others?
-                </h2>
-
-                <h6 class="hs_desc">
-Comparison often becomes unhelpful when you use another person's life as the standard for judging your own worth or progress. Self-awareness can help you notice when comparison happens, what you are feeling, and what need or insecurity may be behind it. Focusing on your own values, progress, and goals can create a healthier perspective.                </h6>
-
-               <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <hr class="hr_style_web_faq">
-              </div>
-            </div>
-                <h2 class="hs_title">
-12. How can I build more confidence in myself?
-                </h2>
-
-                <h6 class="hs_desc">
-Confidence can grow through self-awareness, developing skills, taking manageable challenges, learning from mistakes, keeping realistic expectations, and recognizing your own progress. Understanding your strengths and limitations can also help you build confidence based on self-acceptance rather than constant comparison.
-
-
-               <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <hr class="hr_style_web_faq">
-              </div>
-            </div>
-                <h2 class="hs_title">
-13. Can mindfulness improve self-awareness?
-
-                </h2>
-
-                <h6 class="hs_desc">
-Yes. Mindfulness helps you pay attention to your present thoughts, emotions, sensations, and experiences without automatically reacting to them. This can make it easier to recognize recurring emotional and thinking patterns and understand how you respond to different situations.
-                </h6>
-                  <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <hr class="hr_style_web_faq">
-              </div>
-            </div>
-                <h2 class="hs_title">
-14. How can I find more meaning and purpose in life?
-                </h2>
-
-                <h6 class="hs_desc">
-Meaning and purpose can come from different sources, including relationships, contribution, personal values, learning, creativity, work, family, helping others, and pursuing goals that matter to you. Self-awareness can help you identify what you genuinely value and distinguish it from expectations imposed by other people or society.
-                </h6>
-
-               <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <hr class="hr_style_web_faq">
-              </div>
-            </div>
-                <h2 class="hs_title">
-15. How does HappierMe support happiness and self-awareness?
-                </h2>
-
-                <h6 class="hs_desc">
-HappierMe helps users develop greater self-awareness and build practical habits that support everyday wellbeing. The app includes guided journaling, wellness surveys, mindfulness practices, meditation, self-awareness exercises, podcasts, videos, microlearning, and personalized guidance through Olly AI. These resources help users explore their thoughts, emotions, habits, relationships, values, and personal growth.
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                      <hr class="hr_style_web_01 hr-darker">
-                    </div>
-                  </div>
-                   <div class="accordion-item">
-                    <h2 class="accordion-header" id="heading_c17">
-                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#c16" aria-expanded="false" aria-controls="c17">
-Happiness & Self-Awareness — FAQ
                       </button>
                     </h2>
                     <div id="c17" class="accordion-collapse collapse" aria-labelledby="heading_c17"
@@ -2908,7 +2905,7 @@ HappierMe helps users develop greater self-awareness and build practical habits 
                     </div>
                   </div>
                 </div>
-              </div> -->
+              </div> 
 
               <div id="how_can_the_app_help" class="tab-pane fade in">
                 <h3 class="mtb0px fs_15px fw_400 lh_140p fc_000000" style="text-align:left;">
