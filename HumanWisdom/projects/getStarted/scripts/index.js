@@ -1224,7 +1224,6 @@ if (pricingSelectBtn) {
 
 const PricingSelectBtn1 = document.getElementById('PricingSelectBtn1');
 if (PricingSelectBtn1) {
-    e.preventDefault();
     PricingSelectBtn1.addEventListener('click', function (e) {
         var innerA = e.target.closest("a");
         if (innerA) e.preventDefault();
