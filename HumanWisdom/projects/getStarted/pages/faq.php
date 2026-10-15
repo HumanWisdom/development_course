@@ -1511,7 +1511,7 @@ Everyday wellbeing</a> can be supported by <b>building meaningful connections, t
 3. Why am I not happy even when everything seems fine?
                 </h2>
 
-                <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/insight">
+                <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/happiness">
 Happiness</a> is influenced by more than external circumstances. <b>Unresolved emotions, stress, unrealistic expectations, lack of connection, comparison with others, lack of meaning, or being disconnected from your own needs</b> can affect how you feel even when things appear fine from the outside. Self-awareness can help you understand what may be missing.
                 </h6>
 <div class="row">
@@ -1693,8 +1693,8 @@ Work, Stress & Resilience
 
                 </h2>
 
-                <h6 class="hs_desc">
- Work-related stress is the mental and emotional pressure that can arise from workload, deadlines, uncertainty, workplace relationships, responsibilities, or difficulty maintaining a healthy balance between work and personal life. Some stress can be temporary, but ongoing stress can affect wellbeing, focus, relationships, and daily life.                </h6>
+                <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/feel-better-now/stress">
+ Work-related stress</a> is the mental and emotional pressure that can arise from workload, deadlines, uncertainty, workplace relationships, responsibilities, or difficulty maintaining a healthy balance between work and personal life. Some stress can be temporary, but ongoing stress can affect wellbeing, focus, relationships, and daily life.                </h6>
              <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_web_faq">
@@ -1704,7 +1704,7 @@ Work, Stress & Resilience
 2. Why do I feel stressed at work all the time?                </h2>
 
                 <h6 class="hs_desc">
- Constant work stress can come from heavy workloads, unrealistic expectations, lack of control, workplace conflicts, job uncertainty, perfectionism, difficulty switching off, or not getting enough time to recover. Understanding the underlying causes can help identify what needs to change.                </h6>
+ Constant work stress can come from heavy workloads, unrealistic expectations, lack of control, <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/wisdom-stories/view-stories?sId=100">workplace conflicts</a>, job uncertainty, perfectionism, difficulty switching off, or not getting enough time to recover. Understanding the underlying causes can help identify what needs to change.                </h6>
 
 
                  <div class="row">
@@ -1719,7 +1719,7 @@ Work, Stress & Resilience
                 </h2>
 
                 <h6 class="hs_desc">
- Managing work stress can involve identifying the main sources of pressure, prioritizing tasks, taking regular breaks, setting boundaries, getting enough sleep, staying physically active, and using practices such as mindfulness, breathing exercises, or journaling to create space between stress and your response.                </h6>
+ Managing <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/blog-article?sId=51">work stress</a> can involve identifying the main sources of pressure, prioritizing tasks, taking regular breaks, setting boundaries, getting enough sleep, staying physically active, and using practices such as mindfulness, breathing exercises, or journaling to create space between stress and your response.                </h6>
 <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_web_faq">
@@ -1731,8 +1731,8 @@ Work, Stress & Resilience
                 </h2>
 
                 <h6 class="hs_desc">
-
- Work stress can be a temporary response to demanding situations, while burnout is associated with prolonged or poorly managed workplace stress and can involve emotional or physical exhaustion, reduced motivation, and feeling disconnected from work. Persistent or severe symptoms may require support from a qualified professional.
+<a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/blog-article?sId=51">
+ Work stress</a> can be a temporary response to demanding situations, while burnout is associated with prolonged or poorly managed workplace stress and can involve emotional or physical exhaustion, reduced motivation, and feeling disconnected from work. Persistent or severe symptoms may require support from a qualified professional.
                 </h6>
 
 
@@ -1747,7 +1747,7 @@ Work, Stress & Resilience
                 </h2>
 
                 <h6 class="hs_desc">
- Creating a clear transition between work and personal time can help. Finishing with a short task review, deciding what can wait until tomorrow, reducing work notifications, taking a walk, practicing mindfulness, or spending time on meaningful activities can help the mind shift away from work.              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+ Creating a clear transition between <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/wisdom-shorts/1.98.mp4/T/How%20can%20we%20do%20great%20work%3F">work</a> and personal time can help. Finishing with a short task review, deciding what can wait until tomorrow, reducing work notifications, taking a walk, practicing mindfulness, or spending time on meaningful activities can help the mind shift away from work.              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_web_faq">
               </div>
             </div>
@@ -1755,7 +1755,7 @@ Work, Stress & Resilience
 6. How can I deal with pressure and deadlines at work?                </h2>
 
                 <h6 class="hs_desc">
-Start by separating urgent tasks from important but less immediate ones. Break large tasks into smaller steps, focus on one priority at a time, communicate realistic timelines, and take short recovery breaks. Managing your response to pressure is often as important as managing the workload itself.                </h6>
+Start by separating <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/wisdom-shorts/1.84.mp4/T/Where%20your%20fear%20is,%20there%20your%20work%20is">urgent tasks</a> from important but less immediate ones. Break large tasks into smaller steps, focus on one priority at a time, communicate realistic timelines, and take short recovery breaks. Managing your response to pressure is often as important as managing the workload itself.                </h6>
 
                <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -1765,8 +1765,8 @@ Start by separating urgent tasks from important but less immediate ones. Break l
                 <h2 class="hs_title">
 7. What is resilience and why is it important at work?                </h2>
 
-                <h6 class="hs_desc">
- Resilience is the ability to adapt to difficulties, recover from setbacks, and continue responding constructively when circumstances are challenging. At work, resilience can support emotional balance, problem-solving, adaptability, and the ability to learn from difficult experiences.                </h6>
+                <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/curated/youtubelink/wFWwyNr65YQ%3Dvncbxdfchgvxd">
+ Resilience</a> is the ability to adapt to difficulties, recover from setbacks, and continue responding constructively when circumstances are challenging. At work, resilience can support emotional balance, problem-solving, adaptability, and the ability to learn from difficult experiences.                </h6>
 
                <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -1778,7 +1778,7 @@ Start by separating urgent tasks from important but less immediate ones. Break l
                 </h2>
 
                 <h6 class="hs_desc">
-Yes. Resilience is not simply a fixed personality trait. It can be strengthened through self-awareness, emotional understanding, healthy routines, supportive relationships, realistic thinking, problem-solving, reflection, and learning from setbacks.                </h6>
+Yes. <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/curated/youtubelink/wFWwyNr65YQ%3Dvncbxdfchgvxd">Resilience</a> is not simply a fixed personality trait. It can be strengthened through self-awareness, emotional understanding, healthy routines, supportive relationships, realistic thinking, problem-solving, reflection, and learning from setbacks.                </h6>
 
 
                <div class="row">
@@ -1793,7 +1793,7 @@ Yes. Resilience is not simply a fixed personality trait. It can be strengthened 
                 </h2>
 
                 <h6 class="hs_desc">
- Start by understanding how you respond to pressure. Notice your thoughts, emotions, habits, and reactions, identify what you can control, build healthy recovery routines, maintain supportive relationships, and practice responding to challenges rather than automatically reacting to them.                </h6>
+ Start by understanding <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/audiopage/~podcasts~12.mp3/12/T/Happiness%20at%20Work/podcast">how you respond</a> to pressure. Notice your thoughts, emotions, habits, and reactions, identify what you can control, build healthy recovery routines, maintain supportive relationships, and practice responding to challenges rather than automatically reacting to them.                </h6>
                   <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_web_faq">
@@ -1804,7 +1804,7 @@ Yes. Resilience is not simply a fixed personality trait. It can be strengthened 
                 </h2>
 
                 <h6 class="hs_desc">
- Pause before responding, take a few slow breaths, notice what you are feeling, and separate the facts of the situation from assumptions or immediate emotional reactions. Giving yourself a moment to respond rather than react can help you communicate and make decisions more clearly.               <div class="row">
+ Pause before <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/audiopage/~podcasts~12.mp3/12/T/Happiness%20at%20Work/podcast">responding</a>, take a few slow breaths, notice what you are feeling, and separate the facts of the situation from assumptions or immediate emotional reactions. Giving yourself a moment to respond rather than react can help you communicate and make decisions more clearly.               <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_web_faq">
               </div>
@@ -1814,7 +1814,7 @@ Yes. Resilience is not simply a fixed personality trait. It can be strengthened 
                 </h2>
 
                 <h6 class="hs_desc">
- Try to separate feedback about a specific task or behavior from your overall sense of self-worth. Consider what you can learn, acknowledge what went well, identify what can improve, and use the experience to guide your next action rather than repeatedly replaying the mistake.
+ Try to separate feedback about a specific task or behavior from your overall sense of <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/wisdom-stories/view-stories?sId=99">self-worth</a>. Consider what you can learn, acknowledge what went well, identify what can improve, and use the experience to guide your next action rather than repeatedly replaying the mistake.
                <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_web_faq">
@@ -1825,8 +1825,8 @@ Yes. Resilience is not simply a fixed personality trait. It can be strengthened 
  
                 </h2>
 
-                <h6 class="hs_desc">
- Work-life balance involves creating enough space for work, rest, relationships, physical health, and activities that matter to you. Clear boundaries, realistic priorities, breaks, time away from screens, and being intentional about personal time can help prevent work from taking over everyday life.
+                <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/audiopage/~podcasts~12.mp3/12/T/Happiness%20at%20Work/podcast">
+ Work-life balance</a> involves creating enough space for work, rest, relationships, physical health, and activities that matter to you. Clear boundaries, realistic priorities, breaks, time away from screens, and being intentional about personal time can help prevent work from taking over everyday life.
 
                <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -1838,8 +1838,8 @@ Yes. Resilience is not simply a fixed personality trait. It can be strengthened 
 
                 </h2>
 
-                <h6 class="hs_desc">
- Emotions can influence attention, decision-making, communication, motivation, and relationships at work. Understanding emotions does not mean suppressing them; it means recognizing what you are feeling and choosing a constructive response instead of reacting automatically.                </h6>
+                <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/audiopage/~podcasts~70.mp3/70/T/Managing%20difficult%20emotions/podcast">
+ Emotions</a> can influence attention, decision-making, communication, motivation, and relationships at work. Understanding emotions does not mean suppressing them; it means recognizing what you are feeling and choosing a constructive response instead of reacting automatically.                </h6>
                   <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_web_faq">
@@ -1850,7 +1850,7 @@ Yes. Resilience is not simply a fixed personality trait. It can be strengthened 
                 </h2>
 
                 <h6 class="hs_desc">
- Mindfulness can help people become more aware of thoughts, emotions, and physical sensations without immediately reacting to them. Regular mindfulness practices such as breathing exercises, meditation, and present-moment awareness can support calmer responses to everyday workplace pressure.                </h6>
+ <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/site-search/Mindfulness">Mindfulness</a> can help people become more aware of thoughts, emotions, and physical sensations without immediately reacting to them. Regular mindfulness practices such as breathing exercises, meditation, and present-moment awareness can support calmer responses to everyday workplace pressure.                </h6>
 
                <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -1895,7 +1895,7 @@ Teenagers & Students
                 </h2>
 
                 <h6 class="hs_desc">
-Teenagers may experience academic pressure, exam stress, social pressure, friendship difficulties, family expectations, changing emotions, self-doubt, comparison, relationship concerns, and uncertainty about the future. Learning to understand and manage these experiences can support overall well-being.                </h6>
+Teenagers may experience academic pressure, <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/insight">exam stress</a>, social pressure, friendship difficulties, family expectations, changing emotions, self-doubt, comparison, relationship concerns, and uncertainty about the future. Learning to understand and manage these experiences can support overall well-being.                </h6>
              <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_web_faq">
