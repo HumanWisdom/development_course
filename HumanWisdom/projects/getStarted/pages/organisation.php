@@ -66,13 +66,13 @@ include __DIR__ . '/../includes/organisation_header.php';
       <div class="org-quotes-grid">
         <article class="org-card">
           <div class="org-card-head">
-            <img src="<?= hw_org_h($assets['brenda']) ?>" alt="Brenda McChesney" width="80" height="80">
+            <img src="<?= hw_org_h($assets['martha']) ?>" alt="Martha Van Dam" width="80" height="80">
             <div>
-              <h3>Brenda McChesney</h3>
-              <p>Director, National Family Support Network, USA</p>
+              <h3>Martha Van Dam, </h3>
+              <p>Psychotherapist</p>
             </div>
           </div>
-          <blockquote>“HappierMe is the best app I have found to assist entire families, and the root cause of their struggles, rather than just the symptoms.”</blockquote>
+          <blockquote>“HappierMe provides excellent, easy-to-use resources to help people understand and manage their emotional challenges. I use it myself and recommend it to my clients.”</blockquote>
         </article>
         <article class="org-card">
           <div class="org-card-head">
