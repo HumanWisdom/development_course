@@ -153,6 +153,7 @@ if (!function_exists('hw_org_cdn_assets')) {
             'mind' => $cdn . '/website/working_with_mind.svg',
             'star' => $cdn . '/website/star_vector.svg',
             'brenda' => $cdn . '/assets/webp/Brenda+McChesney.webp',
+            'martha' => $cdn . '/assets/webp/martha.webp',
             'dan' => $cdn . '/assets/webp/testimonial_dan_reidenberg.webp',
             'quote' => $cdn . '/assets/webp/quatation_new.svg',
             'feel' => $s3 . '/website/svgs/heart_feel.svg',
