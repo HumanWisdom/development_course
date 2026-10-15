@@ -884,7 +884,7 @@ body.org-flow .org-main {
 
 .org-social-row {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  /* grid-template-columns: repeat(3, minmax(0, 1fr)); */
   gap: 10px;
   width: 100%;
 }
@@ -893,12 +893,13 @@ body.org-flow .org-main {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 44px;
+  height: 52px;
+  width: 116px;
   margin: 0;
   padding: 0;
   border: 0;
   border-radius: 12px;
-  background: #f4f4f4;
+  background: #F5F5F5;
   cursor: pointer;
 }
 
