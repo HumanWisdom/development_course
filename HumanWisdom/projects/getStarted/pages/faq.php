@@ -1524,8 +1524,8 @@ Happiness</a> is influenced by more than external circumstances. <b>Unresolved e
 4. Can happiness be learned?
                 </h2>
 
-                <h6 class="hs_desc">
-Happiness is not a single skill that can simply be learned, but many habits and skills associated with wellbeing can be developed. Self-awareness, mindfulness, gratitude, emotional understanding, healthy relationships, meaningful activities, and healthier thinking patterns can all contribute to a more balanced and fulfilling life.
+                <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/happiness">
+Happiness</a> is not a single skill that can simply be learned, but <b>many habits and skills associated with wellbeing can be developed.</b> Self-awareness, mindfulness, gratitude, emotional understanding, healthy relationships, meaningful activities, and healthier thinking patterns can all contribute to a more balanced and fulfilling life.
                 </h6>
 
 
@@ -1539,8 +1539,8 @@ Happiness is not a single skill that can simply be learned, but many habits and 
 
                 </h2>
 
-                <h6 class="hs_desc">
-Self-awareness is the ability to recognize and understand your thoughts, emotions, behaviors, beliefs, strengths, limitations, needs, and patterns. It helps you understand why you respond to situations in certain ways and gives you an opportunity to make more conscious choices.                  <div class="row">
+                <h6 class="hs_desc"><b><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/explore#self-awareness">
+Self-awareness</a> is the ability to recognize and understand your thoughts, emotions, behaviors, beliefs, strengths, limitations, needs, and patterns.</b> It helps you understand why you respond to situations in certain ways and gives you an opportunity to make more conscious choices.                  <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_web_faq">
               </div>
@@ -1549,8 +1549,8 @@ Self-awareness is the ability to recognize and understand your thoughts, emotion
 6. Why is self-awareness important for happiness?
                 </h2>
 
-                <h6 class="hs_desc">
-Self-awareness can help you understand what genuinely matters to you, what affects your emotional wellbeing, and which habits or patterns may be making life more difficult. When you understand yourself better, you may be better able to make choices that align with your needs, values, relationships, and goals.
+                <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/explore#self-awareness">
+Self-awareness</a> can help you understand what genuinely matters to you, <b>what affects your emotional wellbeing, and which habits or patterns may be making life more difficult.</b> When you understand yourself better, you may be better able to make choices that align with your needs, values, relationships, and goals.
                 </h6>
 
                <div class="row">
@@ -1563,7 +1563,7 @@ Self-awareness can help you understand what genuinely matters to you, what affec
                 </h2>
 
                 <h6 class="hs_desc">
-You can develop self-awareness by regularly observing your thoughts and emotions, reflecting on your experiences, identifying recurring patterns, journaling, practicing mindfulness, and paying attention to how you respond to different situations. Asking yourself thoughtful questions can also help reveal beliefs, needs, and habits that you may not normally notice.
+You can develop <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/explore#self-awareness">self-awareness</a> by regularly <b>observing your thoughts and emotions, reflecting on your experiences, identifying recurring patterns, journaling, practicing mindfulness, and paying attention to how you respond to different situations.</b> Asking yourself thoughtful questions can also help reveal beliefs, needs, and habits that you may not normally notice.
                 </h6>
 
                <div class="row">
@@ -1576,7 +1576,7 @@ You can develop self-awareness by regularly observing your thoughts and emotions
                 </h2>
 
                 <h6 class="hs_desc">
-Start by paying attention to when you feel engaged, peaceful, connected, fulfilled, or genuinely interested in something rather than focusing only on temporary pleasure. Reflecting on your values, relationships, interests, strengths, and meaningful experiences can help you identify what contributes to your sense of wellbeing.
+Start by paying attention to <b><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/explore#happiness"> when you feel engaged</a>, peaceful, connected, fulfilled, or genuinely interested in something </b>rather than focusing only on temporary pleasure. Reflecting on your values, relationships, interests, strengths, and meaningful experiences can help you identify what contributes to your sense of wellbeing.
                 </h6>
 
 
@@ -1590,8 +1590,8 @@ Start by paying attention to when you feel engaged, peaceful, connected, fulfill
 
                 </h2>
 
-                <h6 class="hs_desc">
-Pleasure is often a short-term positive experience, while happiness can involve a broader and more lasting sense of wellbeing, contentment, meaning, and connection. Something can be pleasurable without contributing to long-term wellbeing, while meaningful activities may sometimes require effort but provide deeper satisfaction.
+                <h6 class="hs_desc"><b>
+Pleasure is often a short-term positive experience, while <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/explore#happiness">happiness</a> can involve a broader and more lasting sense of wellbeing, contentment, meaning, and connection.</b> Something can be pleasurable without contributing to long-term wellbeing, while meaningful activities may sometimes require effort but provide deeper satisfaction.
                 </h6>
                   <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -1603,7 +1603,7 @@ Pleasure is often a short-term positive experience, while happiness can involve 
                 </h2>
 
                 <h6 class="hs_desc">
-Self-awareness helps you recognize your emotions, assumptions, motivations, biases, habits, and personal values before making a decision. This can create more space between an automatic reaction and a deliberate choice, helping you make decisions that are more aligned with what matters to you.
+Self-awareness helps you recognize <b>your emotions, assumptions, motivations, biases, habits, and personal values</b> before <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/making-better-decisions">making a decision</a>. This can create more space between an automatic reaction and a deliberate choice, helping you make decisions that are more aligned with what matters to you.
                <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_web_faq">
@@ -1613,8 +1613,8 @@ Self-awareness helps you recognize your emotions, assumptions, motivations, bias
 11. How can I stop comparing myself with others?
                 </h2>
 
-                <h6 class="hs_desc">
-Comparison often becomes unhelpful when you use another person's life as the standard for judging your own worth or progress. Self-awareness can help you notice when comparison happens, what you are feeling, and what need or insecurity may be behind it. Focusing on your own values, progress, and goals can create a healthier perspective.                </h6>
+                <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/comparison">
+Comparison and envy</a> often becomes unhelpful when you use another person's life as the standard for judging your own worth or progress. Self-awareness can help you notice <b>when comparison happens, what you are feeling, and what need or insecurity may be behind it.</b> Focusing on your own values, progress, and goals can create a healthier perspective.                </h6>
 
                <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -1625,8 +1625,8 @@ Comparison often becomes unhelpful when you use another person's life as the sta
 12. How can I build more confidence in myself?
                 </h2>
 
-                <h6 class="hs_desc">
-Confidence can grow through self-awareness, developing skills, taking manageable challenges, learning from mistakes, keeping realistic expectations, and recognizing your own progress. Understanding your strengths and limitations can also help you build confidence based on self-acceptance rather than constant comparison.
+                <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/site-search/Confidence">
+Confidence</a> can grow through <b>self-awareness, developing skills, taking manageable challenges, learning from mistakes, keeping realistic expectations, and recognizing your own progress.</b> Understanding your strengths and limitations can also help you build confidence based on self-acceptance rather than constant comparison.
 
 
                <div class="row">
@@ -1640,7 +1640,7 @@ Confidence can grow through self-awareness, developing skills, taking manageable
                 </h2>
 
                 <h6 class="hs_desc">
-Yes. Mindfulness helps you pay attention to your present thoughts, emotions, sensations, and experiences without automatically reacting to them. This can make it easier to recognize recurring emotional and thinking patterns and understand how you respond to different situations.
+Yes. <b><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/explore#self-awareness">Mindfulness</a> helps you pay attention to your present thoughts, emotions, sensations, and experiences without automatically reacting to them.<b> This can make it easier to recognize recurring emotional and thinking patterns and understand how you respond to different situations.
                 </h6>
                   <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -1652,7 +1652,7 @@ Yes. Mindfulness helps you pay attention to your present thoughts, emotions, sen
                 </h2>
 
                 <h6 class="hs_desc">
-Meaning and purpose can come from different sources, including relationships, contribution, personal values, learning, creativity, work, family, helping others, and pursuing goals that matter to you. Self-awareness can help you identify what you genuinely value and distinguish it from expectations imposed by other people or society.
+Meaning and <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/site-search/purpose%20in%20life">purpose</a> can come from different sources, including <b>relationships, contribution, personal values, learning, creativity, work, family, helping others, and pursuing goals that matter to you.</b> Self-awareness can help you identify what you genuinely value and distinguish it from expectations imposed by other people or society.
                 </h6>
 
                <div class="row">
@@ -1664,8 +1664,8 @@ Meaning and purpose can come from different sources, including relationships, co
 15. How does HappierMe support happiness and self-awareness?
                 </h2>
 
-                <h6 class="hs_desc">
-HappierMe helps users develop greater self-awareness and build practical habits that support everyday wellbeing. The app includes guided journaling, wellness surveys, mindfulness practices, meditation, self-awareness exercises, podcasts, videos, microlearning, and personalized guidance through Olly AI. These resources help users explore their thoughts, emotions, habits, relationships, values, and personal growth.
+                <h6 class="hs_desc"><b>
+HappierMe helps users develop greater self-awareness and build practical habits that support everyday wellbeing.</b> The app includes guided journaling, wellness surveys, mindfulness practices, meditation, self-awareness exercises, podcasts, videos, microlearning, and personalized guidance through Olly AI. These resources help users explore their thoughts, emotions, habits, relationships, values, and personal growth.
                       
 </h6></div>
                     </div>
