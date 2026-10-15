@@ -171,9 +171,9 @@
               </p>
               <div id="AnnualTypebtn">
                 <div id="PricingSelectBtn1">
-              <!-- <a href="https://happierme.app/pages/splash_options.php" id="startyourfreetrial1"> -->
+              <a href="https://happierme.app/pages/splash_options.php" id="startyourfreetrial1">
                 <div class="div-wrapper-4"><div class="text-wrapper-5">Subscribe now</div></div>
-              <!-- </a> -->
+              </a>
                 </div>
               </div>
             </div>
