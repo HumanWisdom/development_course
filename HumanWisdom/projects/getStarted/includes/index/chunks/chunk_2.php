@@ -147,7 +147,7 @@
                 <!-- Yearly -->
                 <div class="group-7" id="sub-plan-yearly">
                   <div class="rectangle-2"></div>
-                  <div class="div-wrapper-7"><div class="text-wrapper-28">14-day free trial</div></div>
+                  <div class="div-wrapper-7"><div class="text-wrapper-28">10-day free trial</div></div>
                   <div class="div-46">
                     <div class="text-wrapper-29">Yearly</div>
                     <p class="INR-yr-INR">
@@ -161,7 +161,7 @@
                   <div class="rectangle-3"></div>
                   <div class="div-47">
                     <div class="text-wrapper-29">Monthly</div>
-                    <div class="text-wrapper-33">7-day free trial</div>
+                    <div class="text-wrapper-33">10-day free trial</div>
                   </div>
                   <div class="text-wrapper-34" id="monthlyPricingModelHeading">₹300/mo.</div>
                 </div>
@@ -171,9 +171,9 @@
               </p>
               <div id="AnnualTypebtn">
                 <div id="PricingSelectBtn1">
-              <a href="https://happierme.app/pages/splash_options.php" id="startyourfreetrial1">
+              <!-- <a href="https://happierme.app/pages/splash_options.php" id="startyourfreetrial1"> -->
                 <div class="div-wrapper-4"><div class="text-wrapper-5">Subscribe now</div></div>
-              </a>
+              <!-- </a> -->
                 </div>
               </div>
             </div>
