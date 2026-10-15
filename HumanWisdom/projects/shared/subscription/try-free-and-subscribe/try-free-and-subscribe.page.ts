@@ -60,6 +60,12 @@ export class TryFreeAndSubscribePage implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    // Clear any body scroll lock left by the dashboard tour or hamburger
+    document.body.classList.remove('overflow_hidden');
+    document.body.style.removeProperty('overflow');
+    document.documentElement.style.removeProperty('overflow');
+    sessionStorage.setItem('openHamburger', 'false');
+
     if (SharedService.isSubscriber()) {
       this.routeToDashboard();
       return;
@@ -82,6 +88,11 @@ export class TryFreeAndSubscribePage implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     localStorage.setItem("signupfirst", 'F');
+    // Clear any body scroll lock so subsequent pages can scroll normally
+    document.body.classList.remove('overflow_hidden');
+    sessionStorage.setItem('openHamburger', 'false');
+    document.body.style.removeProperty('overflow');
+    document.documentElement.style.removeProperty('overflow');
   }
 
   getUserDetails() {
