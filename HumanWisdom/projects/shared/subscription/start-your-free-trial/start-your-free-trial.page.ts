@@ -213,8 +213,8 @@ share() {
   
       this.closemodal?.nativeElement?.click();
     }
-  
-      navigate(url) {
+
+  navigate(url) {
     this.closemodal?.nativeElement?.click();
     this.router.navigate([url]);
   }
