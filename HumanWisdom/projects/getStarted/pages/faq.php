@@ -2287,27 +2287,25 @@ Habits, Addiction & Behaviour
                       <div class="accordion-body">
       
                 <h2 class="hs_title">
-1. What does it mean to be happy?
+1. What is a habit and how does it develop?
 
 
 
                 </h2>
 
                 <h6 class="hs_desc">
-Happiness is more than feeling positive all the time. It can include a sense of wellbeing, contentment, connection, meaning, and the ability to experience and navigate different emotions. A healthy approach to happiness allows space for difficult emotions rather than expecting yourself to feel good every moment.
-                </h6>
+A habit is a <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/site-search/behaviour">behavior</a> that becomes increasingly automatic through repetition and the situations or cues associated with it. Habits can be helpful or unhelpful, and understanding the triggers and rewards connected to a behavior can make it easier to change.                </h6>
              <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_web_faq">
               </div>
             </div>
                 <h2 class="hs_title">
-2. How can I become happier in everyday life?
+2. Why is it so difficult to break an unhealthy habit?
                 </h2>
 
-                <h6 class="hs_desc">
-Everyday wellbeing can be supported by building meaningful connections, taking care of your physical and emotional needs, practicing gratitude, spending time on activities that matter to you, developing healthy habits, and becoming more aware of your thoughts and emotions. Small, consistent changes can have a meaningful impact over time.
-                </h6>
+                <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/micro-learning/inner/48">
+ Unhealthy habits</a> can become strongly associated with specific emotions, situations, places, people, or times of day. The behavior may also provide a short-term reward such as comfort, distraction, stimulation, or relief, even when it creates longer-term problems.                </h6>
 
 
                  <div class="row">
@@ -2317,12 +2315,11 @@ Everyday wellbeing can be supported by building meaningful connections, taking c
             </div>
               
                 <h2 class="hs_title">
-3. Why am I not happy even when everything seems fine?
+3. How can I change an unhealthy habit?
                 </h2>
 
                 <h6 class="hs_desc">
-Happiness is influenced by more than external circumstances. Unresolved emotions, stress, unrealistic expectations, lack of connection, comparison with others, lack of meaning, or being disconnected from your own needs can affect how you feel even when things appear fine from the outside. Self-awareness can help you understand what may be missing.
-                </h6>
+ Start by identifying when and why the behavior happens. Notice the trigger, the thoughts or emotions involved, and what you get from the behavior. Then introduce a healthier alternative, make the <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/micro-learning/inner/50">unwanted behavior</a> harder to repeat, and practice the new response consistently.                </h6>
 <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_web_faq">
@@ -2330,12 +2327,11 @@ Happiness is influenced by more than external circumstances. Unresolved emotions
             </div>
                
                 <h2 class="hs_title">
-4. Can happiness be learned?
+4. Why do I keep repeating behaviours I know are bad for me?
                 </h2>
 
                 <h6 class="hs_desc">
-Happiness is not a single skill that can simply be learned, but many habits and skills associated with wellbeing can be developed. Self-awareness, mindfulness, gratitude, emotional understanding, healthy relationships, meaningful activities, and healthier thinking patterns can all contribute to a more balanced and fulfilling life.
-                </h6>
+ Knowing that a <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/micro-learning/inner/50">behavior</a> is harmful does not always change an established habit. Emotional triggers, automatic routines, immediate rewards, stress, boredom, and learned patterns can continue to drive behavior. Understanding the pattern can be an important first step toward changing it.                </h6>
 
 
                <div class="row">
@@ -2344,23 +2340,22 @@ Happiness is not a single skill that can simply be learned, but many habits and 
               </div>
             </div>
                 <h2 class="hs_title">
-5. What is self-awareness?
+5. What is the difference between a habit and an addiction?
 
                 </h2>
 
                 <h6 class="hs_desc">
-Self-awareness is the ability to recognize and understand your thoughts, emotions, behaviors, beliefs, strengths, limitations, needs, and patterns. It helps you understand why you respond to situations in certain ways and gives you an opportunity to make more conscious choices.                  <div class="row">
+A habit is a <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/micro-learning/inner/50">repeated behavior</a> that can often be changed with awareness and deliberate practice. Addiction involves a more persistent pattern of compulsive use or behavior despite harmful consequences and may involve difficulty controlling or stopping it. Addiction can require professional assessment and treatment.
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_web_faq">
               </div>
             </div>
                 <h2 class="hs_title">
-6. Why is self-awareness important for happiness?
+6. What are common signs of addictive behaviour?
                 </h2>
 
                 <h6 class="hs_desc">
-Self-awareness can help you understand what genuinely matters to you, what affects your emotional wellbeing, and which habits or patterns may be making life more difficult. When you understand yourself better, you may be better able to make choices that align with your needs, values, relationships, and goals.
-                </h6>
+ Possible signs include repeatedly trying and failing to reduce the<a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/audiopage/~podcasts~296.mp3/296/T/Feelings%20show%20up%20in%20our%20body%20and%20behaviour/podcast"> behavior</a>, feeling unable to control it, continuing despite negative consequences, spending increasing amounts of time on it, neglecting responsibilities or relationships, and experiencing strong urges or cravings. The specific signs vary depending on the substance or behavior.                </h6>
 
                <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -2368,12 +2363,11 @@ Self-awareness can help you understand what genuinely matters to you, what affec
               </div>
             </div>
                 <h2 class="hs_title">
-7. How can I become more self-aware?
+7. Why do people use substances or behaviours to cope with stress?
                 </h2>
 
                 <h6 class="hs_desc">
-You can develop self-awareness by regularly observing your thoughts and emotions, reflecting on your experiences, identifying recurring patterns, journaling, practicing mindfulness, and paying attention to how you respond to different situations. Asking yourself thoughtful questions can also help reveal beliefs, needs, and habits that you may not normally notice.
-                </h6>
+Some people turn to substances or repetitive behaviors because they temporarily reduce <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/micro-learning/inner/110">uncomfortable emotions</a>, provide stimulation, create escape, or offer a sense of relief. However, relying on them as a primary coping strategy can reinforce the pattern and create additional difficulties over time.                </h6>
 
                <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -2381,12 +2375,11 @@ You can develop self-awareness by regularly observing your thoughts and emotions
               </div>
             </div>
                 <h2 class="hs_title">
-8. How can I understand what really makes me happy?
+8. How can I identify the triggers behind an unhealthy behaviour?
                 </h2>
 
                 <h6 class="hs_desc">
-Start by paying attention to when you feel engaged, peaceful, connected, fulfilled, or genuinely interested in something rather than focusing only on temporary pleasure. Reflecting on your values, relationships, interests, strengths, and meaningful experiences can help you identify what contributes to your sense of wellbeing.
-                </h6>
+ Pay attention to what happens immediately before the behavior. Triggers may include particular emotions, thoughts, people, places, times, situations, or physical states such as tiredness or hunger. Journaling or tracking <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/insight">the behavior</a> can help reveal recurring patterns.                </h6>
 
 
                <div class="row">
@@ -2395,35 +2388,44 @@ Start by paying attention to when you feel engaged, peaceful, connected, fulfill
               </div>
             </div>
                 <h2 class="hs_title">
-9. What is the difference between happiness and pleasure?
+9. How can I manage cravings or urges?
 
                 </h2>
 
                 <h6 class="hs_desc">
-Pleasure is often a short-term positive experience, while happiness can involve a broader and more lasting sense of wellbeing, contentment, meaning, and connection. Something can be pleasurable without contributing to long-term wellbeing, while meaningful activities may sometimes require effort but provide deeper satisfaction.
-                </h6>
+ An urge does not necessarily require immediate action. Pausing, noticing the urge without automatically responding, changing your environment, using breathing or mindfulness, delaying the behavior, and choosing another activity can create space for a different response. For <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/insight">substance dependence</a>, professional support may be important.                </h6>
                   <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_web_faq">
               </div>
             </div>
                 <h2 class="hs_title">
-10. How does self-awareness improve decision-making?
+10. Can mindfulness help with unhealthy habits or addictive behaviour?
+                </h2>
+
+                <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/site-search/Mindfulness">
+ Mindfulness</a> can help people notice thoughts, emotions, physical sensations, and urges before automatically acting on them. This increased awareness can create a pause between an urge and a behavior. Mindfulness can be a supportive tool but should not be considered a replacement for treatment when addiction is present.               <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_web_faq">
+              </div>
+            </div>
+                <h2 class="hs_title">
+11. How can I reduce excessive phone or social media use?
                 </h2>
 
                 <h6 class="hs_desc">
-Self-awareness helps you recognize your emotions, assumptions, motivations, biases, habits, and personal values before making a decision. This can create more space between an automatic reaction and a deliberate choice, helping you make decisions that are more aligned with what matters to you.
+ Start by <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/social-media">identifying</a> when and why you reach for your phone, such as boredom, stress, loneliness, or habit. Turning off unnecessary notifications, creating phone-free periods, setting boundaries around specific apps, and replacing scrolling with meaningful activities can help gradually change the pattern.
                <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_web_faq">
               </div>
             </div>
                 <h2 class="hs_title">
-11. How can I stop comparing myself with others?
+12. How can I stop using unhealthy behaviours to escape difficult emotions?
                 </h2>
 
                 <h6 class="hs_desc">
-Comparison often becomes unhelpful when you use another person's life as the standard for judging your own worth or progress. Self-awareness can help you notice when comparison happens, what you are feeling, and what need or insecurity may be behind it. Focusing on your own values, progress, and goals can create a healthier perspective.                </h6>
+ First identify the <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/wisdom-shorts/1.181.mp4/T/Tips%20to%20manage%20difficult%20emotions">emotion</a> you are trying to avoid or change. Instead of immediately acting on the urge, pause and acknowledge the feeling, understand what triggered it, and choose another way to respond, such as talking to someone, exercising, journaling, mindfulness, or taking a short break.
 
                <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -2431,38 +2433,23 @@ Comparison often becomes unhelpful when you use another person's life as the sta
               </div>
             </div>
                 <h2 class="hs_title">
-12. How can I build more confidence in myself?
-                </h2>
-
-                <h6 class="hs_desc">
-Confidence can grow through self-awareness, developing skills, taking manageable challenges, learning from mistakes, keeping realistic expectations, and recognizing your own progress. Understanding your strengths and limitations can also help you build confidence based on self-acceptance rather than constant comparison.
-
-
-               <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <hr class="hr_style_web_faq">
-              </div>
-            </div>
-                <h2 class="hs_title">
-13. Can mindfulness improve self-awareness?
+13. Can behaviour patterns affect relationships and everyday life?
 
                 </h2>
 
                 <h6 class="hs_desc">
-Yes. Mindfulness helps you pay attention to your present thoughts, emotions, sensations, and experiences without automatically reacting to them. This can make it easier to recognize recurring emotional and thinking patterns and understand how you respond to different situations.
-                </h6>
+ Yes. Repeated behaviors can influence communication, trust, responsibilities, <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/audiopage/~podcasts~295.mp3/295/T/How%20our%20feelings%20influence%20our%20future/podcast">finances</a>, health, work, and family relationships. Becoming aware of how a behavior affects both yourself and others can help create motivation for healthier changes.                </h6>
                   <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_web_faq">
               </div>
             </div>
                 <h2 class="hs_title">
-14. How can I find more meaning and purpose in life?
+14. When should someone seek professional help for addiction or unhealthy behaviour?
                 </h2>
 
-                <h6 class="hs_desc">
-Meaning and purpose can come from different sources, including relationships, contribution, personal values, learning, creativity, work, family, helping others, and pursuing goals that matter to you. Self-awareness can help you identify what you genuinely value and distinguish it from expectations imposed by other people or society.
-                </h6>
+                <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/coach/contact">
+Professional support</a> is especially important when a behavior feels difficult to control, continues despite significant harm, affects health, work, studies or relationships, or involves withdrawal, dependence, or safety concerns. A qualified healthcare or mental health professional can help assess the situation and recommend appropriate support.                </h6>
 
                <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -2470,20 +2457,21 @@ Meaning and purpose can come from different sources, including relationships, co
               </div>
             </div>
                 <h2 class="hs_title">
-15. How does HappierMe support happiness and self-awareness?
+15. How can HappierMe help with habits, addiction and behaviour?
                 </h2>
 
                 <h6 class="hs_desc">
-HappierMe helps users develop greater self-awareness and build practical habits that support everyday wellbeing. The app includes guided journaling, wellness surveys, mindfulness practices, meditation, self-awareness exercises, podcasts, videos, microlearning, and personalized guidance through Olly AI. These resources help users explore their thoughts, emotions, habits, relationships, values, and personal growth.
-                      </div>
+ HappierMe provides educational and self-awareness resources that can help users understand thoughts, emotions, triggers, habits, and behavioral patterns. Its tools include guided journaling, mindfulness, meditation, breathing exercises, self-awareness exercises, podcasts, videos, microlearning, and Olly AI. HappierMe is designed as a mental wellness and personal growth resource and is not a replacement for professional addiction treatment or medical care.                      
                     </div>
                   </div>
 
+
+                  
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                       <hr class="hr_style_web_01 hr-darker">
                     </div>
-                  </div>
+                  </div> 
                    <div class="accordion-item">
                     <h2 class="accordion-header" id="heading_c17">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -2897,13 +2885,13 @@ Meaning and purpose can come from different sources, including relationships, co
 HappierMe helps users develop greater self-awareness and build practical habits that support everyday wellbeing. The app includes guided journaling, wellness surveys, mindfulness practices, meditation, self-awareness exercises, podcasts, videos, microlearning, and personalized guidance through Olly AI. These resources help users explore their thoughts, emotions, habits, relationships, values, and personal growth.
                       </div>
                     </div>
-                  </div>
+                  </div> -->
 
-                  <div class="row">
+                  <!-- <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                       <hr class="hr_style_web_01 hr-darker">
                     </div>
-                  </div>
+                  </div> -->
                 </div>
               </div> 
 
