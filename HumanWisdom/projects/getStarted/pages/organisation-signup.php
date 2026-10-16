@@ -31,10 +31,10 @@ include __DIR__ . '/../includes/organisation_header.php';
         </button> -->
         <?php if ($hasSocial) : ?>
       <div class="org-social" id="org-social">
-        <div class="org-flow-rule"><span>Or continue with</span></div>
+        <!-- <div class="org-flow-rule"><span>Or continue with</span></div> -->
         <div class="org-social-buttons">
           <?php if ($social['googleClientId'] !== '') : ?>
-          <div class="org-social-google">
+          <div class="org-social-btn org-social-google">
             <div id="org-google-btn"></div>
           </div>
           <?php endif; ?>

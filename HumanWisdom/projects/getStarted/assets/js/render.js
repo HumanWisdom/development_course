@@ -51,7 +51,9 @@ $(".owl_container:not(.owl_testimonials) .owl-carousel").owlCarousel({
     $(window).resize(function () {
         var isMobile = window.matchMedia("(max-width: 768px)").matches;
         var storeUrl = "https://onelink.to/hsnt8b";
-        var splashUrl = "https://happierme.app/pages/splash_options.php";
+        var host = window.location.hostname;
+        var isLocal = host === "localhost" || host === "127.0.0.1" || host === "[::1]";
+        var splashUrl = isLocal ? "/pages/splash_options.php" : "https://happierme.app/pages/splash_options.php";
         var ollyChatUrl = "https://happierme.app/adults/chat-bot";
         $("#transformDownloadApp").attr("href", isMobile ? storeUrl : splashUrl);
         $("#OllyChatBtn").attr("href", ollyChatUrl);
