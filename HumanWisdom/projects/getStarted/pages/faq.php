@@ -2287,27 +2287,25 @@ Habits, Addiction & Behaviour
                       <div class="accordion-body">
       
                 <h2 class="hs_title">
-1. What does it mean to be happy?
+1. What is a habit and how does it develop?
 
 
 
                 </h2>
 
                 <h6 class="hs_desc">
-Happiness is more than feeling positive all the time. It can include a sense of wellbeing, contentment, connection, meaning, and the ability to experience and navigate different emotions. A healthy approach to happiness allows space for difficult emotions rather than expecting yourself to feel good every moment.
-                </h6>
+A habit is a <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/site-search/behaviour">behavior</a> that becomes increasingly automatic through repetition and the situations or cues associated with it. Habits can be helpful or unhelpful, and understanding the triggers and rewards connected to a behavior can make it easier to change.                </h6>
              <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_web_faq">
               </div>
             </div>
                 <h2 class="hs_title">
-2. How can I become happier in everyday life?
+2. Why is it so difficult to break an unhealthy habit?
                 </h2>
 
-                <h6 class="hs_desc">
-Everyday wellbeing can be supported by building meaningful connections, taking care of your physical and emotional needs, practicing gratitude, spending time on activities that matter to you, developing healthy habits, and becoming more aware of your thoughts and emotions. Small, consistent changes can have a meaningful impact over time.
-                </h6>
+                <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/micro-learning/inner/48">
+ Unhealthy habits</a> can become strongly associated with specific emotions, situations, places, people, or times of day. The behavior may also provide a short-term reward such as comfort, distraction, stimulation, or relief, even when it creates longer-term problems.                </h6>
 
 
                  <div class="row">
@@ -2317,12 +2315,11 @@ Everyday wellbeing can be supported by building meaningful connections, taking c
             </div>
               
                 <h2 class="hs_title">
-3. Why am I not happy even when everything seems fine?
+3. How can I change an unhealthy habit?
                 </h2>
 
                 <h6 class="hs_desc">
-Happiness is influenced by more than external circumstances. Unresolved emotions, stress, unrealistic expectations, lack of connection, comparison with others, lack of meaning, or being disconnected from your own needs can affect how you feel even when things appear fine from the outside. Self-awareness can help you understand what may be missing.
-                </h6>
+ Start by identifying when and why the behavior happens. Notice the trigger, the thoughts or emotions involved, and what you get from the behavior. Then introduce a healthier alternative, make the <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/micro-learning/inner/50">unwanted behavior</a> harder to repeat, and practice the new response consistently.                </h6>
 <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_web_faq">
@@ -2330,12 +2327,11 @@ Happiness is influenced by more than external circumstances. Unresolved emotions
             </div>
                
                 <h2 class="hs_title">
-4. Can happiness be learned?
+4. Why do I keep repeating behaviours I know are bad for me?
                 </h2>
 
                 <h6 class="hs_desc">
-Happiness is not a single skill that can simply be learned, but many habits and skills associated with wellbeing can be developed. Self-awareness, mindfulness, gratitude, emotional understanding, healthy relationships, meaningful activities, and healthier thinking patterns can all contribute to a more balanced and fulfilling life.
-                </h6>
+ Knowing that a <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/micro-learning/inner/50">behavior</a> is harmful does not always change an established habit. Emotional triggers, automatic routines, immediate rewards, stress, boredom, and learned patterns can continue to drive behavior. Understanding the pattern can be an important first step toward changing it.                </h6>
 
 
                <div class="row">
@@ -2344,23 +2340,22 @@ Happiness is not a single skill that can simply be learned, but many habits and 
               </div>
             </div>
                 <h2 class="hs_title">
-5. What is self-awareness?
+5. What is the difference between a habit and an addiction?
 
                 </h2>
 
                 <h6 class="hs_desc">
-Self-awareness is the ability to recognize and understand your thoughts, emotions, behaviors, beliefs, strengths, limitations, needs, and patterns. It helps you understand why you respond to situations in certain ways and gives you an opportunity to make more conscious choices.                  <div class="row">
+A habit is a <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/micro-learning/inner/50">repeated behavior</a> that can often be changed with awareness and deliberate practice. Addiction involves a more persistent pattern of compulsive use or behavior despite harmful consequences and may involve difficulty controlling or stopping it. Addiction can require professional assessment and treatment.
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_web_faq">
               </div>
             </div>
                 <h2 class="hs_title">
-6. Why is self-awareness important for happiness?
+6. What are common signs of addictive behaviour?
                 </h2>
 
                 <h6 class="hs_desc">
-Self-awareness can help you understand what genuinely matters to you, what affects your emotional wellbeing, and which habits or patterns may be making life more difficult. When you understand yourself better, you may be better able to make choices that align with your needs, values, relationships, and goals.
-                </h6>
+ Possible signs include repeatedly trying and failing to reduce the <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/audiopage/~podcasts~296.mp3/296/T/Feelings%20show%20up%20in%20our%20body%20and%20behaviour/podcast">behavior</a>, feeling unable to control it, continuing despite negative consequences, spending increasing amounts of time on it, neglecting responsibilities or relationships, and experiencing strong urges or cravings. The specific signs vary depending on the substance or behavior.                </h6>
 
                <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -2368,12 +2363,11 @@ Self-awareness can help you understand what genuinely matters to you, what affec
               </div>
             </div>
                 <h2 class="hs_title">
-7. How can I become more self-aware?
+7. Why do people use substances or behaviours to cope with stress?
                 </h2>
 
                 <h6 class="hs_desc">
-You can develop self-awareness by regularly observing your thoughts and emotions, reflecting on your experiences, identifying recurring patterns, journaling, practicing mindfulness, and paying attention to how you respond to different situations. Asking yourself thoughtful questions can also help reveal beliefs, needs, and habits that you may not normally notice.
-                </h6>
+Some people turn to substances or repetitive behaviors because they temporarily reduce <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/micro-learning/inner/110">uncomfortable emotions</a>, provide stimulation, create escape, or offer a sense of relief. However, relying on them as a primary coping strategy can reinforce the pattern and create additional difficulties over time.                </h6>
 
                <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -2381,12 +2375,11 @@ You can develop self-awareness by regularly observing your thoughts and emotions
               </div>
             </div>
                 <h2 class="hs_title">
-8. How can I understand what really makes me happy?
+8. How can I identify the triggers behind an unhealthy behaviour?
                 </h2>
 
                 <h6 class="hs_desc">
-Start by paying attention to when you feel engaged, peaceful, connected, fulfilled, or genuinely interested in something rather than focusing only on temporary pleasure. Reflecting on your values, relationships, interests, strengths, and meaningful experiences can help you identify what contributes to your sense of wellbeing.
-                </h6>
+ Pay attention to what happens immediately before the behavior. Triggers may include particular emotions, thoughts, people, places, times, situations, or physical states such as tiredness or hunger. Journaling or tracking <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/micro-learning/inner/50">the behavior</a> can help reveal recurring patterns.                </h6>
 
 
                <div class="row">
@@ -2395,35 +2388,45 @@ Start by paying attention to when you feel engaged, peaceful, connected, fulfill
               </div>
             </div>
                 <h2 class="hs_title">
-9. What is the difference between happiness and pleasure?
+9. How can I manage cravings or urges?
 
                 </h2>
 
                 <h6 class="hs_desc">
-Pleasure is often a short-term positive experience, while happiness can involve a broader and more lasting sense of wellbeing, contentment, meaning, and connection. Something can be pleasurable without contributing to long-term wellbeing, while meaningful activities may sometimes require effort but provide deeper satisfaction.
-                </h6>
+ An urge does not necessarily require immediate action. Pausing, noticing the urge without automatically responding, changing your environment, using breathing or mindfulness, delaying the behavior, and choosing another activity can create space for a different response. For <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/micro-learning/inner/54">substance dependence</a>, professional support may be important.                </h6>
                   <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_web_faq">
               </div>
             </div>
                 <h2 class="hs_title">
-10. How does self-awareness improve decision-making?
+10. Can mindfulness help with unhealthy habits or addictive behaviour?
+                </h2>
+
+                <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/site-search/Mindfulness">
+ Mindfulness</a> can help people notice thoughts, emotions, physical sensations, and urges before automatically acting on them. This increased awareness can create a pause between an urge and a behavior. Mindfulness can be a supportive tool but should not be considered a replacement for treatment when addiction is present.     
+           <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_web_faq">
+              </div>
+            </div>
+                <h2 class="hs_title">
+11. How can I reduce excessive phone or social media use?
                 </h2>
 
                 <h6 class="hs_desc">
-Self-awareness helps you recognize your emotions, assumptions, motivations, biases, habits, and personal values before making a decision. This can create more space between an automatic reaction and a deliberate choice, helping you make decisions that are more aligned with what matters to you.
+ Start by <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/social-media">identifying</a> when and why you reach for your phone, such as boredom, stress, loneliness, or habit. Turning off unnecessary notifications, creating phone-free periods, setting boundaries around specific apps, and replacing scrolling with meaningful activities can help gradually change the pattern.
                <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_web_faq">
               </div>
             </div>
                 <h2 class="hs_title">
-11. How can I stop comparing myself with others?
+12. How can I stop using unhealthy behaviours to escape difficult emotions?
                 </h2>
 
                 <h6 class="hs_desc">
-Comparison often becomes unhelpful when you use another person's life as the standard for judging your own worth or progress. Self-awareness can help you notice when comparison happens, what you are feeling, and what need or insecurity may be behind it. Focusing on your own values, progress, and goals can create a healthier perspective.                </h6>
+ First identify the <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/wisdom-shorts/1.181.mp4/T/Tips%20to%20manage%20difficult%20emotions">emotion</a> you are trying to avoid or change. Instead of immediately acting on the urge, pause and acknowledge the feeling, understand what triggered it, and choose another way to respond, such as talking to someone, exercising, journaling, mindfulness, or taking a short break.
 
                <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -2431,38 +2434,23 @@ Comparison often becomes unhelpful when you use another person's life as the sta
               </div>
             </div>
                 <h2 class="hs_title">
-12. How can I build more confidence in myself?
-                </h2>
-
-                <h6 class="hs_desc">
-Confidence can grow through self-awareness, developing skills, taking manageable challenges, learning from mistakes, keeping realistic expectations, and recognizing your own progress. Understanding your strengths and limitations can also help you build confidence based on self-acceptance rather than constant comparison.
-
-
-               <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <hr class="hr_style_web_faq">
-              </div>
-            </div>
-                <h2 class="hs_title">
-13. Can mindfulness improve self-awareness?
+13. Can behaviour patterns affect relationships and everyday life?
 
                 </h2>
 
                 <h6 class="hs_desc">
-Yes. Mindfulness helps you pay attention to your present thoughts, emotions, sensations, and experiences without automatically reacting to them. This can make it easier to recognize recurring emotional and thinking patterns and understand how you respond to different situations.
-                </h6>
+ Yes. Repeated behaviors can influence communication, trust, responsibilities, <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/audiopage/~podcasts~295.mp3/295/T/How%20our%20feelings%20influence%20our%20future/podcast">finances</a>, health, work, and family relationships. Becoming aware of how a behavior affects both yourself and others can help create motivation for healthier changes.                </h6>
                   <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_web_faq">
               </div>
             </div>
                 <h2 class="hs_title">
-14. How can I find more meaning and purpose in life?
+14. When should someone seek professional help for addiction or unhealthy behaviour?
                 </h2>
 
-                <h6 class="hs_desc">
-Meaning and purpose can come from different sources, including relationships, contribution, personal values, learning, creativity, work, family, helping others, and pursuing goals that matter to you. Self-awareness can help you identify what you genuinely value and distinguish it from expectations imposed by other people or society.
-                </h6>
+                <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/coach/contact">
+Professional support</a> is especially important when a behavior feels difficult to control, continues despite significant harm, affects health, work, studies or relationships, or involves withdrawal, dependence, or safety concerns. A qualified healthcare or mental health professional can help assess the situation and recommend appropriate support.                </h6>
 
                <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -2470,53 +2458,53 @@ Meaning and purpose can come from different sources, including relationships, co
               </div>
             </div>
                 <h2 class="hs_title">
-15. How does HappierMe support happiness and self-awareness?
+15. How can HappierMe help with habits, addiction and behaviour?
                 </h2>
 
                 <h6 class="hs_desc">
-HappierMe helps users develop greater self-awareness and build practical habits that support everyday wellbeing. The app includes guided journaling, wellness surveys, mindfulness practices, meditation, self-awareness exercises, podcasts, videos, microlearning, and personalized guidance through Olly AI. These resources help users explore their thoughts, emotions, habits, relationships, values, and personal growth.
-                      </div>
+ HappierMe provides educational and self-awareness resources that can help users understand thoughts, emotions, triggers, habits, and behavioral patterns. Its tools include guided journaling, mindfulness, meditation, breathing exercises, self-awareness exercises, podcasts, videos, microlearning, and Olly AI. HappierMe is designed as a mental wellness and personal growth resource and is <b>not a replacement for professional addiction treatment or medical care. </b>                     
                     </div>
                   </div>
 
+
+                  
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                       <hr class="hr_style_web_01 hr-darker">
                     </div>
-                  </div>
+                  </div> 
                    <div class="accordion-item">
-                    <h2 class="accordion-header" id="heading_c17">
+                    <h2 class="accordion-header" id="heading_c22">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#c16" aria-expanded="false" aria-controls="c17">
+                        data-bs-target="#c22" aria-expanded="false" aria-controls="c22">
 Dealing with Loss 
 
                       </button>
                     </h2>
-                    <div id="c17" class="accordion-collapse collapse" aria-labelledby="heading_c17"
+                    <div id="c22" class="accordion-collapse collapse" aria-labelledby="heading_c22"
                       data-bs-parent="#accordion_faq_about">
                       <div class="accordion-body">
       
                 <h2 class="hs_title">
-1. What does it mean to be happy?
+1. What is grief, and why does it happen?
 
 
 
                 </h2>
 
-                <h6 class="hs_desc">
-Happiness is more than feeling positive all the time. It can include a sense of wellbeing, contentment, connection, meaning, and the ability to experience and navigate different emotions. A healthy approach to happiness allows space for difficult emotions rather than expecting yourself to feel good every moment.
-                </h6>
+                <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/audiopage/~podcasts~241.mp3/241/T/Grief,%20Identity%20and%20Rebuilding%20your%20life/podcast">
+ Grief</a> is the emotional response to losing someone, something, or a part of life that was important to you. It can involve sadness, anger, confusion, loneliness, guilt, relief, or many emotions at different times. There is no single way to experience grief.                </h6>
              <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_web_faq">
               </div>
             </div>
                 <h2 class="hs_title">
-2. How can I become happier in everyday life?
+2. What are the common emotional responses to loss?
                 </h2>
 
                 <h6 class="hs_desc">
-Everyday wellbeing can be supported by building meaningful connections, taking care of your physical and emotional needs, practicing gratitude, spending time on activities that matter to you, developing healthy habits, and becoming more aware of your thoughts and emotions. Small, consistent changes can have a meaningful impact over time.
+Everyday wellbeing can be  People may experience<a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/micro-learning/inner/42"> sadness</a>, shock, anger, guilt, loneliness, fear, confusion, numbness, or difficulty accepting what happened. These responses can change over time and may come and go rather than follow a predictable pattern. by building meaningful connections, taking care of your physical and emotional needs, practicing gratitude, spending time on activities that matter to you, developing healthy habits, and becoming more aware of your thoughts and emotions. Small, consistent changes can have a meaningful impact over time.
                 </h6>
 
 
@@ -2527,12 +2515,11 @@ Everyday wellbeing can be supported by building meaningful connections, taking c
             </div>
               
                 <h2 class="hs_title">
-3. Why am I not happy even when everything seems fine?
+3. Is there a normal way to grieve?
                 </h2>
 
                 <h6 class="hs_desc">
-Happiness is influenced by more than external circumstances. Unresolved emotions, stress, unrealistic expectations, lack of connection, comparison with others, lack of meaning, or being disconnected from your own needs can affect how you feel even when things appear fine from the outside. Self-awareness can help you understand what may be missing.
-                </h6>
+ There is no single "right" way to grieve. People respond to <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/micro-learning/inner/40">loss</a> differently depending on their relationship with what was lost, their circumstances, personality, previous experiences, support system, and coping style. Grief also does not always follow a fixed sequence or timeline.                </h6>
 <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_web_faq">
@@ -2540,12 +2527,11 @@ Happiness is influenced by more than external circumstances. Unresolved emotions
             </div>
                
                 <h2 class="hs_title">
-4. Can happiness be learned?
+4. How long does grief last?
                 </h2>
 
                 <h6 class="hs_desc">
-Happiness is not a single skill that can simply be learned, but many habits and skills associated with wellbeing can be developed. Self-awareness, mindfulness, gratitude, emotional understanding, healthy relationships, meaningful activities, and healthier thinking patterns can all contribute to a more balanced and fulfilling life.
-                </h6>
+ There is no universal timeline for <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/audiopage/~podcasts~241.mp3/241/T/Grief,%20Identity%20and%20Rebuilding%20your%20life/podcast">grief</a>. Some people begin to feel more able to manage everyday life relatively soon, while others experience grief for much longer. Important dates, memories, or unexpected reminders can sometimes bring strong emotions even after a person has started adjusting.</h6>
 
 
                <div class="row">
@@ -2554,22 +2540,33 @@ Happiness is not a single skill that can simply be learned, but many habits and 
               </div>
             </div>
                 <h2 class="hs_title">
-5. What is self-awareness?
-
+5. How can I cope with the loss of someone I love?
                 </h2>
 
                 <h6 class="hs_desc">
-Self-awareness is the ability to recognize and understand your thoughts, emotions, behaviors, beliefs, strengths, limitations, needs, and patterns. It helps you understand why you respond to situations in certain ways and gives you an opportunity to make more conscious choices.                  <div class="row">
+ Coping can involve allowing yourself to experience emotions rather than expecting yourself to recover quickly. Staying connected with supportive people, maintaining basic routines, getting enough rest, <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/audiopage/~podcasts~294.mp3/294/T/Our%20feelings%20can%20repeat%20in%20patterns/podcast">writing about your feelings</a>, spending time with meaningful memories, and giving yourself space to adjust can all be helpful.              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_web_faq">
+              </div>
+            </div>
+                <h2 class="hs_title">
+6. Is it okay to feel angry after a loss?
+                </h2>
+
+                <h6 class="hs_desc">
+ Yes. Anger can be one of many <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/audiopage/~podcasts~294.mp3/294/T/Our%20feelings%20can%20repeat%20in%20patterns/podcast">emotional responses</a> to loss. A person may feel angry about what happened, circumstances surrounding the loss, other people, themselves, or simply the unfairness of the situation. Recognizing the emotion without acting harmfully on it can help.                </h6>
+
+               <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_web_faq">
               </div>
             </div>
                 <h2 class="hs_title">
-6. Why is self-awareness important for happiness?
+7. Why do I feel guilty after someone dies or after a major loss?
                 </h2>
 
                 <h6 class="hs_desc">
-Self-awareness can help you understand what genuinely matters to you, what affects your emotional wellbeing, and which habits or patterns may be making life more difficult. When you understand yourself better, you may be better able to make choices that align with your needs, values, relationships, and goals.
+<a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/audiopage/~podcasts~294.mp3/294/T/Our%20feelings%20can%20repeat%20in%20patterns/podcast">
+ Guilt</a> can arise from thoughts about things we wish we had said or done differently, decisions we made, or situations we believe we could have changed. These thoughts can feel very real during grief, but feeling responsible does not necessarily mean that you were responsible.
                 </h6>
 
                <div class="row">
@@ -2578,25 +2575,11 @@ Self-awareness can help you understand what genuinely matters to you, what affec
               </div>
             </div>
                 <h2 class="hs_title">
-7. How can I become more self-aware?
+8. Why do I sometimes feel okay after a loss and then suddenly feel sad again?
                 </h2>
 
                 <h6 class="hs_desc">
-You can develop self-awareness by regularly observing your thoughts and emotions, reflecting on your experiences, identifying recurring patterns, journaling, practicing mindfulness, and paying attention to how you respond to different situations. Asking yourself thoughtful questions can also help reveal beliefs, needs, and habits that you may not normally notice.
-                </h6>
-
-               <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <hr class="hr_style_web_faq">
-              </div>
-            </div>
-                <h2 class="hs_title">
-8. How can I understand what really makes me happy?
-                </h2>
-
-                <h6 class="hs_desc">
-Start by paying attention to when you feel engaged, peaceful, connected, fulfilled, or genuinely interested in something rather than focusing only on temporary pleasure. Reflecting on your values, relationships, interests, strengths, and meaningful experiences can help you identify what contributes to your sense of wellbeing.
-                </h6>
+ Grief is often not a steady process. A person may feel relatively okay for a period and then experience strong <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/audiopage/~podcasts~294.mp3/294/T/Our%20feelings%20can%20repeat%20in%20patterns/podcast">sadness</a> after seeing a photograph, hearing a song, visiting a familiar place, or remembering something unexpectedly. These emotional waves can be part of adapting to loss.                </h6>
 
 
                <div class="row">
@@ -2605,35 +2588,48 @@ Start by paying attention to when you feel engaged, peaceful, connected, fulfill
               </div>
             </div>
                 <h2 class="hs_title">
-9. What is the difference between happiness and pleasure?
+9. How can I deal with loneliness after losing someone?
 
                 </h2>
 
                 <h6 class="hs_desc">
-Pleasure is often a short-term positive experience, while happiness can involve a broader and more lasting sense of wellbeing, contentment, meaning, and connection. Something can be pleasurable without contributing to long-term wellbeing, while meaningful activities may sometimes require effort but provide deeper satisfaction.
-                </h6>
+ Acknowledging the loneliness rather than withdrawing completely can help. Staying connected with trusted family members or friends, joining supportive groups, maintaining meaningful routines, and gradually creating new sources of connection can provide emotional support while you adjust.                </h6>
                   <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_web_faq">
               </div>
             </div>
                 <h2 class="hs_title">
-10. How does self-awareness improve decision-making?
+10. How can I support someone who is grieving?
+ 
                 </h2>
 
                 <h6 class="hs_desc">
-Self-awareness helps you recognize your emotions, assumptions, motivations, biases, habits, and personal values before making a decision. This can create more space between an automatic reaction and a deliberate choice, helping you make decisions that are more aligned with what matters to you.
+
+ Listening without trying to immediately <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/audiopage/~podcasts~293.mp3/293/T/Strong%20feelings%20can%20stop%20us%20thinking%20clearly/podcast">fix their pain</a> can be one of the most helpful forms of support. Give them space to talk, acknowledge their feelings, avoid telling them how they should grieve, offer practical help, and continue checking in even after the initial period of support has passed.
                <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_web_faq">
               </div>
             </div>
                 <h2 class="hs_title">
-11. How can I stop comparing myself with others?
+11. Can mindfulness help with grief?
                 </h2>
 
-                <h6 class="hs_desc">
-Comparison often becomes unhelpful when you use another person's life as the standard for judging your own worth or progress. Self-awareness can help you notice when comparison happens, what you are feeling, and what need or insecurity may be behind it. Focusing on your own values, progress, and goals can create a healthier perspective.                </h6>
+                <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/site-search/Mindfulness">
+ Mindfulness</a> can help a grieving person notice thoughts, emotions, and physical sensations without immediately trying to push them away. Breathing, quiet reflection, meditation, or simply paying attention to the present moment can provide small periods of calm while allowing difficult emotions to exist. Mindfulness can help a grieving person notice thoughts, emotions, and physical sensations without immediately trying to push them away. Breathing, quiet reflection, meditation, or simply paying attention to the present moment can provide small periods of calm while allowing difficult emotions to exist. Mindfulness can help a grieving person notice thoughts, emotions, and physical sensations without immediately trying to push them away. Breathing, quiet reflection, meditation, or simply paying attention to the present moment can provide small periods of calm while allowing difficult emotions to exist.
+               <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_web_faq">
+              </div>
+            </div>
+                <h2 class="hs_title">
+12. How can journaling help after a loss?
+                </h2>
+
+                <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/blog-article?sId=57">
+Journaling</a> can provide a private space to express emotions, memories, questions, regrets, and thoughts that may be difficult to communicate aloud. Writing can also help identify changing emotions and reflect on what the relationship or experience meant to you.
+
 
                <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -2641,38 +2637,23 @@ Comparison often becomes unhelpful when you use another person's life as the sta
               </div>
             </div>
                 <h2 class="hs_title">
-12. How can I build more confidence in myself?
-                </h2>
-
-                <h6 class="hs_desc">
-Confidence can grow through self-awareness, developing skills, taking manageable challenges, learning from mistakes, keeping realistic expectations, and recognizing your own progress. Understanding your strengths and limitations can also help you build confidence based on self-acceptance rather than constant comparison.
-
-
-               <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <hr class="hr_style_web_faq">
-              </div>
-            </div>
-                <h2 class="hs_title">
-13. Can mindfulness improve self-awareness?
+13. How can I move forward without forgetting what I lost?
 
                 </h2>
 
                 <h6 class="hs_desc">
-Yes. Mindfulness helps you pay attention to your present thoughts, emotions, sensations, and experiences without automatically reacting to them. This can make it easier to recognize recurring emotional and thinking patterns and understand how you respond to different situations.
-                </h6>
+ Moving forward does not require forgetting. People can continue to value memories, relationships, experiences, or parts of their past while gradually adapting to life after the loss. Creating meaningful rituals, keeping memories, and allowing yourself to experience new moments can help integrate the loss into your life.                </h6>
                   <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_web_faq">
               </div>
             </div>
                 <h2 class="hs_title">
-14. How can I find more meaning and purpose in life?
+14. When should someone seek professional support after a loss?
                 </h2>
 
-                <h6 class="hs_desc">
-Meaning and purpose can come from different sources, including relationships, contribution, personal values, learning, creativity, work, family, helping others, and pursuing goals that matter to you. Self-awareness can help you identify what you genuinely value and distinguish it from expectations imposed by other people or society.
-                </h6>
+                <h6 class="hs_desc"><a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/coach/contact">
+ Professional support</a> can be helpful when grief feels overwhelming or persistent, significantly interferes with everyday functioning, relationships, work or studies, or is accompanied by severe hopelessness or thoughts of self-harm. A qualified mental health professional can provide appropriate support based on the person's circumstances.                </h6>
 
                <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -2680,12 +2661,12 @@ Meaning and purpose can come from different sources, including relationships, co
               </div>
             </div>
                 <h2 class="hs_title">
-15. How does HappierMe support happiness and self-awareness?
+15. How can HappierMe help someone dealing with loss?
                 </h2>
 
                 <h6 class="hs_desc">
-HappierMe helps users develop greater self-awareness and build practical habits that support everyday wellbeing. The app includes guided journaling, wellness surveys, mindfulness practices, meditation, self-awareness exercises, podcasts, videos, microlearning, and personalized guidance through Olly AI. These resources help users explore their thoughts, emotions, habits, relationships, values, and personal growth.
-                      </div>
+ HappierMe provides mental wellness and personal growth resources that can support self-awareness and emotional understanding during difficult periods. Tools such as guided journaling, mindfulness, meditation, breathing exercises, self-awareness content, podcasts, videos, and microlearning can provide ways to reflect on and manage difficult emotions. HappierMe is a wellness resource and is<b> not a replacement for professional grief or mental health support when that is needed.</b>                      
+
                     </div>
                   </div>
 
@@ -2695,39 +2676,37 @@ HappierMe helps users develop greater self-awareness and build practical habits 
                     </div>
                   </div>
                    <div class="accordion-item">
-                    <h2 class="accordion-header" id="heading_c17">
+                    <h2 class="accordion-header" id="heading_c23">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#c16" aria-expanded="false" aria-controls="c17">
+                        data-bs-target="#c23" aria-expanded="false" aria-controls="c23">
 Social Proof 
 
                       </button>
                     </h2>
-                    <div id="c17" class="accordion-collapse collapse" aria-labelledby="heading_c17"
+                    <div id="c23" class="accordion-collapse collapse" aria-labelledby="heading_c23"
                       data-bs-parent="#accordion_faq_about">
                       <div class="accordion-body">
       
                 <h2 class="hs_title">
-1. What does it mean to be happy?
+1. What do people use HappierMe for?
 
 
 
                 </h2>
 
                 <h6 class="hs_desc">
-Happiness is more than feeling positive all the time. It can include a sense of wellbeing, contentment, connection, meaning, and the ability to experience and navigate different emotions. A healthy approach to happiness allows space for difficult emotions rather than expecting yourself to feel good every moment.
-                </h6>
+ People can use HappierMe for everyday mental wellness and personal growth, including managing stress and overthinking, understanding emotions, improving relationships, building self-awareness, developing healthier habits, practicing mindfulness, and learning practical emotional skills.                </h6>
              <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_web_faq">
               </div>
             </div>
                 <h2 class="hs_title">
-2. How can I become happier in everyday life?
+2. Why do people choose HappierMe for mental wellness?
                 </h2>
 
                 <h6 class="hs_desc">
-Everyday wellbeing can be supported by building meaningful connections, taking care of your physical and emotional needs, practicing gratitude, spending time on activities that matter to you, developing healthy habits, and becoming more aware of your thoughts and emotions. Small, consistent changes can have a meaningful impact over time.
-                </h6>
+ HappierMe brings multiple aspects of mental wellness and personal growth into one platform. Instead of focusing only on meditation, it combines educational content, mindfulness, emotional intelligence, relationships, self-awareness, journaling, habit-building, and personalized guidance through Olly AI.                </h6>
 
 
                  <div class="row">
@@ -2737,12 +2716,11 @@ Everyday wellbeing can be supported by building meaningful connections, taking c
             </div>
               
                 <h2 class="hs_title">
-3. Why am I not happy even when everything seems fine?
+3. Is HappierMe useful for people who are new to mindfulness?
                 </h2>
 
                 <h6 class="hs_desc">
-Happiness is influenced by more than external circumstances. Unresolved emotions, stress, unrealistic expectations, lack of connection, comparison with others, lack of meaning, or being disconnected from your own needs can affect how you feel even when things appear fine from the outside. Self-awareness can help you understand what may be missing.
-                </h6>
+ Yes. HappierMe includes beginner-friendly educational content, guided mindfulness, breathing exercises, meditation, short videos, and microlearning resources. Users can explore different approaches and build practices gradually rather than needing previous meditation experience.                </h6>
 <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_web_faq">
@@ -2750,11 +2728,62 @@ Happiness is influenced by more than external circumstances. Unresolved emotions
             </div>
                
                 <h2 class="hs_title">
-4. Can happiness be learned?
+4. What kind of content is available on HappierMe?
                 </h2>
 
                 <h6 class="hs_desc">
-Happiness is not a single skill that can simply be learned, but many habits and skills associated with wellbeing can be developed. Self-awareness, mindfulness, gratitude, emotional understanding, healthy relationships, meaningful activities, and healthier thinking patterns can all contribute to a more balanced and fulfilling life.
+ HappierMe includes short videos, podcasts, blogs, microlearning modules, guided journaling, wellness surveys, meditation, breathing and mindfulness exercises, self-awareness activities, live events, community learning, and other resources related to mental wellness and personal growth.                </h6>
+
+
+               <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_web_faq">
+              </div>
+            </div>
+                <h2 class="hs_title">
+5. What do users get from using HappierMe regularly?
+
+                </h2>
+
+                <h6 class="hs_desc">
+Regular use can provide opportunities to practice self-awareness, reflect on thoughts and emotions, learn about relationships and emotional intelligence, practice mindfulness, and develop healthier habits. The value depends on how consistently and meaningfully a person engages with the available resources.
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_web_faq">
+              </div>
+            </div>
+                <h2 class="hs_title">
+6. Is HappierMe more than a meditation app?
+                </h2>
+
+                <h6 class="hs_desc">
+ Yes. Meditation is one part of HappierMe, but the platform also covers emotional intelligence, self-awareness, relationships, stress and anxiety, habits, personal growth, communication, and everyday life challenges.                </h6>
+
+               <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_web_faq">
+              </div>
+            </div>
+                <h2 class="hs_title">
+7. Does HappierMe provide personalized guidance?
+                </h2>
+
+                <h6 class="hs_desc">
+
+ Yes. Olly AI is built into HappierMe to help users reflect on what they are experiencing and guide them toward relevant expert-curated resources within the HappierMe platform, including videos, podcasts, exercises, microlearning, and meditation.
+                </h6>
+
+               <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_web_faq">
+              </div>
+            </div>
+                <h2 class="hs_title">
+8. What makes Olly AI different from a general AI chatbot?
+                </h2>
+
+                <h6 class="hs_desc">
+
+ Olly AI is designed specifically as a wellness guide within HappierMe. According to HappierMe's approach, it does not search the open internet for information; instead, it guides users toward relevant resources within the HappierMe content ecosystem.
                 </h6>
 
 
@@ -2764,86 +2793,44 @@ Happiness is not a single skill that can simply be learned, but many habits and 
               </div>
             </div>
                 <h2 class="hs_title">
-5. What is self-awareness?
+9. Can HappierMe be used by both teenagers and adults?
 
                 </h2>
 
                 <h6 class="hs_desc">
-Self-awareness is the ability to recognize and understand your thoughts, emotions, behaviors, beliefs, strengths, limitations, needs, and patterns. It helps you understand why you respond to situations in certain ways and gives you an opportunity to make more conscious choices.                  <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <hr class="hr_style_web_faq">
-              </div>
-            </div>
-                <h2 class="hs_title">
-6. Why is self-awareness important for happiness?
-                </h2>
-
-                <h6 class="hs_desc">
-Self-awareness can help you understand what genuinely matters to you, what affects your emotional wellbeing, and which habits or patterns may be making life more difficult. When you understand yourself better, you may be better able to make choices that align with your needs, values, relationships, and goals.
-                </h6>
-
-               <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <hr class="hr_style_web_faq">
-              </div>
-            </div>
-                <h2 class="hs_title">
-7. How can I become more self-aware?
-                </h2>
-
-                <h6 class="hs_desc">
-You can develop self-awareness by regularly observing your thoughts and emotions, reflecting on your experiences, identifying recurring patterns, journaling, practicing mindfulness, and paying attention to how you respond to different situations. Asking yourself thoughtful questions can also help reveal beliefs, needs, and habits that you may not normally notice.
-                </h6>
-
-               <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <hr class="hr_style_web_faq">
-              </div>
-            </div>
-                <h2 class="hs_title">
-8. How can I understand what really makes me happy?
-                </h2>
-
-                <h6 class="hs_desc">
-Start by paying attention to when you feel engaged, peaceful, connected, fulfilled, or genuinely interested in something rather than focusing only on temporary pleasure. Reflecting on your values, relationships, interests, strengths, and meaningful experiences can help you identify what contributes to your sense of wellbeing.
-                </h6>
-
-
-               <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <hr class="hr_style_web_faq">
-              </div>
-            </div>
-                <h2 class="hs_title">
-9. What is the difference between happiness and pleasure?
-
-                </h2>
-
-                <h6 class="hs_desc">
-Pleasure is often a short-term positive experience, while happiness can involve a broader and more lasting sense of wellbeing, contentment, meaning, and connection. Something can be pleasurable without contributing to long-term wellbeing, while meaningful activities may sometimes require effort but provide deeper satisfaction.
-                </h6>
+ Yes. HappierMe has dedicated experiences for teenagers and adults. The teen experience addresses areas such as <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/wisdom-stories/view-stories?sId=103">school stress</a>, social pressure, friendships, emotions, confidence, self-awareness, and relationships, while the adult experience covers broader everyday wellbeing and personal growth.                </h6>
                   <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_web_faq">
               </div>
             </div>
                 <h2 class="hs_title">
-10. How does self-awareness improve decision-making?
+10. What can I explore on HappierMe if I don't know what I need help with?
                 </h2>
 
                 <h6 class="hs_desc">
-Self-awareness helps you recognize your emotions, assumptions, motivations, biases, habits, and personal values before making a decision. This can create more space between an automatic reaction and a deliberate choice, helping you make decisions that are more aligned with what matters to you.
+ Users can start by exploring their thoughts, emotions, <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/site-search/Stress">stress levels</a>, relationships, habits, or general wellbeing. Wellness surveys, self-awareness exercises, guided journaling, and Olly AI can help users identify relevant areas and discover appropriate content.               <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_web_faq">
+              </div>
+            </div>
+                <h2 class="hs_title">
+11. Can HappierMe support everyday mental wellness?
+                </h2>
+
+                <h6 class="hs_desc">
+ Yes. HappierMe is designed for everyday mental wellness rather than only situations involving significant distress. Users can use it for regular reflection, mindfulness, emotional awareness, healthier habits, relationship skills, and personal development.  
                <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_web_faq">
               </div>
             </div>
                 <h2 class="hs_title">
-11. How can I stop comparing myself with others?
+12. Does HappierMe include expert-created content?
                 </h2>
 
                 <h6 class="hs_desc">
-Comparison often becomes unhelpful when you use another person's life as the standard for judging your own worth or progress. Self-awareness can help you notice when comparison happens, what you are feeling, and what need or insecurity may be behind it. Focusing on your own values, progress, and goals can create a healthier perspective.                </h6>
+ HappierMe's resources include expert-curated educational content across areas such as mental wellness, emotional intelligence, relationships, mindfulness, and personal growth. The platform uses this content to help users learn and explore practical approaches to everyday challenges.
 
                <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -2851,38 +2838,23 @@ Comparison often becomes unhelpful when you use another person's life as the sta
               </div>
             </div>
                 <h2 class="hs_title">
-12. How can I build more confidence in myself?
-                </h2>
-
-                <h6 class="hs_desc">
-Confidence can grow through self-awareness, developing skills, taking manageable challenges, learning from mistakes, keeping realistic expectations, and recognizing your own progress. Understanding your strengths and limitations can also help you build confidence based on self-acceptance rather than constant comparison.
-
-
-               <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <hr class="hr_style_web_faq">
-              </div>
-            </div>
-                <h2 class="hs_title">
-13. Can mindfulness improve self-awareness?
+13. Is HappierMe suitable for someone who wants practical tools rather than just information?
 
                 </h2>
 
                 <h6 class="hs_desc">
-Yes. Mindfulness helps you pay attention to your present thoughts, emotions, sensations, and experiences without automatically reacting to them. This can make it easier to recognize recurring emotional and thinking patterns and understand how you respond to different situations.
-                </h6>
+ Yes. Alongside educational content, HappierMe provides practical tools such as guided journaling, mindfulness and breathing exercises, meditation, wellness surveys, self-awareness exercises, and personalized content guidance through Olly AI.                </h6>
                   <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <hr class="hr_style_web_faq">
               </div>
             </div>
                 <h2 class="hs_title">
-14. How can I find more meaning and purpose in life?
+14. How can I evaluate whether HappierMe is right for me?
                 </h2>
 
                 <h6 class="hs_desc">
-Meaning and purpose can come from different sources, including relationships, contribution, personal values, learning, creativity, work, family, helping others, and pursuing goals that matter to you. Self-awareness can help you identify what you genuinely value and distinguish it from expectations imposed by other people or society.
-                </h6>
+ Consider whether you are looking for support with everyday stress, emotional awareness, overthinking, relationships, habits, mindfulness, self-awareness, or personal growth. Exploring the available content and tools can help you determine whether HappierMe fits your needs. It should not be considered a replacement for professional medical or mental health care when that is required.                </h6>
 
                <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -2890,20 +2862,250 @@ Meaning and purpose can come from different sources, including relationships, co
               </div>
             </div>
                 <h2 class="hs_title">
-15. How does HappierMe support happiness and self-awareness?
+15. Why is HappierMe a useful resource for mental wellness and personal growth?
                 </h2>
 
                 <h6 class="hs_desc">
-HappierMe helps users develop greater self-awareness and build practical habits that support everyday wellbeing. The app includes guided journaling, wellness surveys, mindfulness practices, meditation, self-awareness exercises, podcasts, videos, microlearning, and personalized guidance through Olly AI. These resources help users explore their thoughts, emotions, habits, relationships, values, and personal growth.
-                      </div>
+ HappierMe brings together mental wellness education, emotional intelligence, self-awareness, relationships, mindfulness, meditation, journaling, habit-building, and personalized content discovery in one platform. Its focus is on helping people understand themselves better and develop practical skills for handling everyday life more effectively.                      </h6>
                     </div>
-                  </div>
+                  </div> 
 
-                  <div class="row">
+                          <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                       <hr class="hr_style_web_01 hr-darker">
                     </div>
                   </div>
+                   <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading_c24">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#c24" aria-expanded="false" aria-controls="c24">
+Blogs
+
+                      </button>
+                    </h2>
+                    <div id="c24" class="accordion-collapse collapse" aria-labelledby="heading_c24"
+                      data-bs-parent="#accordion_faq_about">
+                      <div class="accordion-body">
+      
+                <h2 class="hs_title">
+1. What does the prevention in mental health actually mean?
+
+
+
+
+                </h2>
+
+                <h6 class="hs_desc">
+Mental health is often spoken about when something has already gone wrong. When stress becomes overwhelming. When anxiety feels unmanageable. When burnout forces us to stop. </h6>
+<a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/blog-article?sId=77 ">Read the full blog here: 
+ </a>
+             <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_web_faq">
+              </div>
+            </div>
+                <h2 class="hs_title">
+2. 10 ways to succeed as a coach ?
+                </h2>
+
+                <h6 class="hs_desc">
+Coaching is about much more than training athletes. It requires decision-making under pressure, managing different personalities, handling expectations, and staying composed in challenging situations.
+ </h6>
+ <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/blog-article?sId=76 ">Read the full blog here: </a> 
+
+
+
+                 <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_web_faq">
+              </div>
+            </div>
+              
+                <h2 class="hs_title">
+3. Have you done the inner work needed to build successful relationships?
+                </h2>
+
+                <h6 class="hs_desc">
+Here are 12 questions to ask yourself to help you figure out which areas need your attention. Explore them with a curious and open mind, not feeling defensive, but with a positive attitude. See what emerges.</h6>
+ <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/blog-article?sId=72 ">Read the full blog here: </a> 
+
+<div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_web_faq">
+              </div>
+            </div>
+               
+
+                <h2 class="hs_title">
+4. How does work stress alarmingly impact your sleep?
+                </h2>
+
+                <h6 class="hs_desc">
+Poor sleep is known to damage physical health by weakening the immune system (NIH).</h6>
+ <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/blog-article?sId=69 ">Read the full blog here: </a> 
+
+               <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_web_faq">
+              </div>
+            </div>
+                <h2 class="hs_title">
+5. What is the hidden link between social media and mental health? 
+
+                </h2>
+
+                <h6 class="hs_desc">
+Social media has become an intrinsic part of daily life, revolutionizing communication, self-expression, and access to information. However, it has also raised concerns about its impact on mental health.   </h6>
+ <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/blog-article?sId=67 ">Read the full blog here: </a> 
+
+ <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_web_faq">
+              </div>
+            </div>
+                <h2 class="hs_title">
+6. How can we effectively tackle the teen suicide crisis? 
+                </h2>
+
+                <h6 class="hs_desc">
+One such statistic in 2024 is this: suicide is now the second leading cause of death among teenagers worldwide.
+
+Let that sink in for a moment. The second leading cause of death — behind only accidents. And even more devastatingly, the numbers are rising.
+ <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/blog-article?sId=65 ">Read the full blog here: </a> 
+
+               <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_web_faq">
+              </div>
+            </div>
+                <h2 class="hs_title">
+7. How can we transform education to meet the needs of students and society?
+                </h2>
+
+                <h6 class="hs_desc">
+
+The world is changing rapidly, at a pace we are struggling to keep up with. Our education system is at a standstill, based as it is in the era of the industrial revolution. We are in the age of the technological revolution, a communication revolution, and an information revolution.                </h6>
+ <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/blog-article?sId=63 ">Read the full blog here: </a> 
+
+               <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_web_faq">
+              </div>
+            </div>
+                <h2 class="hs_title">
+8. What constitutes workplace bullying, and how can organizations address it effectively?
+                </h2>
+
+                <h6 class="hs_desc">
+
+Bullying leaves a lasting impact, but resilience can turn those scars into inspiration. Lady Gaga was bullied for her appearance and love for music, leading her to create the Born This Way Foundation. Ed Sheeran faced taunts for his red hair, glasses, and stutter, channeling his struggles into music and advocacy for self-acceptance                </h6>
+
+ <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/blog-article?sId=70 ">Read the full blog here: </a> 
+
+               <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_web_faq">
+              </div>
+            </div>
+                <h2 class="hs_title">
+9. How can you thrive as a parent?
+
+                </h2>
+
+                <h6 class="hs_desc">
+Parenting is perhaps the most important job we’ll ever do and yet, there is no formal training, no user manual, and no one-size-fits-all formula.
+It can be joyful and fulfilling, but also overwhelming and confusing, especially in today’s fast-paced, always-connected world.
+ <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/blog-article?sId=73 ">Read the full blog here: </a> 
+                  
+<div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_web_faq">
+              </div>
+            </div>
+                <h2 class="hs_title">
+10. Why do leaders fail?
+                </h2>
+
+                <h6 class="hs_desc">
+
+We often hear great stories of leaders and managers who succeed. But what about the other side of the story — the leaders and managers who don’t succeed, the companies that fail, the teams that become dysfunctional, and the people who leave organisations as a result. This causes so much distress to so many people, and is preventable.  </h6>            
+ <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/blog-article?sId=71 ">Read the full blog here: </a> 
+
+<div class="row">
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_web_faq">
+              </div>
+            </div>
+                <h2 class="hs_title">
+11. How does mood tracking improve mental health?
+                </h2>
+
+                <h6 class="hs_desc">
+With everyday pressures, emotional ups and downs are inevitable, and understanding those emotions is the first step to managing them effectively. Mood tracking, a technique that involves regularly recording one’s emotions, has gained popularity for its proven benefits to mental health.   </h6>           
+ <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/blog-article?sId=66 ">Read the full blog here: </a> 
+ 
+<div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_web_faq">
+              </div>
+            </div>
+                <h2 class="hs_title">
+12.How can emotional intelligence be used to address and manage health problems? 
+                </h2>
+
+                <h6 class="hs_desc">
+Emotional intelligence can help people self-regulate their emotions, habits and mental health and reduce healthcare costs</h6>
+ <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/blog-article?sId=60 ">Read the full blog here: </a> 
+               
+<div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_web_faq">
+              </div>
+            </div>
+                <h2 class="hs_title">
+13. How can organizations successfully transform their structure, culture, and processes to achieve lasting change?
+
+                </h2>
+
+                <h6 class="hs_desc">
+The real asset of most organisations is its people. This article explores how promoting self-awareness and self-understanding could transform organisations by helping staff manage their own emotions and mental health, have happier relationships, make better decisions, improve their emotional intelligence and their soft skills.
+
+ <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/blog-article?sId=58 ">Read the full blog here: </a> 
+                 
+<div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_web_faq">
+              </div>
+            </div>
+                <h2 class="hs_title">
+14. What if you had taken the chance, and how is that missed opportunity shaping your relationships today?
+                </h2>
+
+                <h6 class="hs_desc">
+Relationships are the foundation of our long term happiness and we often struggle to be happy in them. Even if one of our relationships is dysfunctional we cannot be happy. This includes relationships between spouses, partners, friends, siblings, at work, or between parents and children.
+ <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/blog-article?sId=56 ">Read the full blog here: </a> 
+               
+<div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <hr class="hr_style_web_faq">
+              </div>
+            </div>
+                <h2 class="hs_title">
+15. How can we overcome stress?
+
+
+                </h2>
+
+                <h6 class="hs_desc">
+Long term stress can impact our mental and physical health, and our performance. It can reduce our life span. This article explores the common barriers we may encounter on our path to preventing and overcoming stress. Understanding them can help us to live a life with much less stress.                    
+  <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/teenagers/blog-article?sId=54 ">Read the full blog here: </a> 
+                 
+</div> 
+
+                  <!-- <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                      <hr class="hr_style_web_01 hr-darker">
+                    </div>
+                  </div> -->
                 </div>
               </div> 
 
