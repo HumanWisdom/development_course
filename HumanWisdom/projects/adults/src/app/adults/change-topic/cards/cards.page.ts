@@ -172,12 +172,11 @@ export class CardsPage implements OnInit {
 
   onContinue() {
     const program = SharedService.getprogramName();
-    if (SharedService.isSubscriber()) {
-      this.router.navigate([`/${program}/today`], { state: { topicId: this.id } });
-    } else {
-      sessionStorage.setItem('subscriptionRedirectUrl', `/${program}/today`);
-      sessionStorage.setItem('subscriptionRedirectState', JSON.stringify({ topicId: this.id }));
-      this.router.navigate(['/subscription/try-free-and-subscribe']);
-    }
+    // if (SharedService.isSubscriber()) {
+    //   this.router.navigate([`/${program}/today`], { state: { topicId: this.id } });
+    // } else {
+    sessionStorage.setItem('subscriptionRedirectUrl', `/${program}/today`);
+    sessionStorage.setItem('subscriptionRedirectState', JSON.stringify({ topicId: this.id }));
+    this.router.navigate([`/${program}/today`], { state: { topicId: this.id } });
   }
 }
