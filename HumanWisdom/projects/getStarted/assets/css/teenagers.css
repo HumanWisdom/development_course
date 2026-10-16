@@ -429,7 +429,7 @@ body.page-teenagers .owl_testimonials .teen-testimonials-footer {
 
 body.page-teenagers .owl_testimonials .teen-testimonials-footer .teen-testimonials-nav {
   position: absolute;
-  right: 0;
+  right: 20px;
   top: 50%;
   transform: translateY(-50%);
   margin-top: 0 !important;
@@ -468,8 +468,9 @@ body.page-teenagers .owl_testimonials .teen-testimonials-footer .sap .chevron-pi
   flex: 0 0 auto !important;
 }
 
-body.page-teenagers .owl_testimonials .teen-testimonials-footer .owl-nav {
-  width: auto;
+body.page-teenagers .owl_testimonials .teen-testimonials-footer .owl-nav,
+body.page-teenagers .owl_testimonials .teen-testimonials-footer .owl-nav.owl-nav-w {
+  width: auto !important;
   justify-content: flex-end;
 }
 

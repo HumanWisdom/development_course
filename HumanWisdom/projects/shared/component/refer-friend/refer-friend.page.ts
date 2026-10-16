@@ -11,54 +11,129 @@ import { Router } from '@angular/router';
   templateUrl: './refer-friend.page.html',
   styleUrls: ['./refer-friend.page.scss'],
 })
-export class ReferFriendPage {
+export class ReferFriendPage implements OnInit {
   email = '';
   name = '';
   content = '';
   enableAlert = false;
   linkCopied = false;
+  nameTouched = false;
+  emailTouched = false;
   emailElmtRegex = new RegExp('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$');
-  isAdults: boolean = true; 
+  isAdults: boolean = true;
+  referralLink: string = 'https://onelink.to/hsnt8b';
+  shareText: string = 'Good things are even better when shared. Check out HappierMe and take a step towards a happier, healthier life together!';
 
-  constructor(private service: AdultsService, private location: Location, public platform: Platform,private router: Router) { 
-    if (SharedService.ProgramId == ProgramType.Adults) {
-      this.isAdults = true;
-    } else {
+  constructor(
+    private service: AdultsService, 
+    private location: Location, 
+    public platform: Platform,
+    private router: Router
+  ) { 
+    this.checkProgramType();
+  }
+
+  ngOnInit() {
+    this.checkProgramType();
+  }
+
+  checkProgramType() {
+    if (this.router.url.includes('/teenagers') || SharedService.ProgramId == ProgramType.Teenagers) {
       this.isAdults = false;
+    } else {
+      this.isAdults = true;
     }
   }
 
   copyAppLink() {
-    const appLink = 'https://onelink.to/hsnt8b';
-    navigator.clipboard.writeText(appLink).catch(() => {
-      // Fallback for environments where clipboard API is unavailable
-      const el = document.createElement('textarea');
-      el.value = appLink;
-      document.body.appendChild(el);
-      el.select();
-      document.execCommand('copy');
-      document.body.removeChild(el);
-    });
-    this.linkCopied = true;
-    setTimeout(() => { this.linkCopied = false; }, 4000);
+    const appLink = this.referralLink;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(appLink).then(() => {
+        this.linkCopied = true;
+        setTimeout(() => { this.linkCopied = false; }, 3000);
+      }).catch(() => {
+        this.fallbackCopy(appLink);
+      });
+    } else {
+      this.fallbackCopy(appLink);
+    }
   }
 
-  sharewhatsapp(){
-    
-    var url ='https://api.whatsapp.com/send'
-   var text="Check out the HappierMe Program: The Best Mental Health App for Stress, Anger & Depression Management";
-    window.open(url + '?text='+encodeURIComponent(text))
+  private fallbackCopy(text: string) {
+    const el = document.createElement('textarea');
+    el.value = text;
+    el.style.position = 'fixed';
+    el.style.opacity = '0';
+    document.body.appendChild(el);
+    el.select();
+    try {
+      document.execCommand('copy');
+      this.linkCopied = true;
+      setTimeout(() => { this.linkCopied = false; }, 3000);
+    } catch (err) {
+      console.error('Copy failed:', err);
+    }
+    document.body.removeChild(el);
   }
+
+  shareViaWeb() {
+    if (navigator.share) {
+      navigator.share({
+        title: 'HappierMe',
+        text: this.shareText,
+        url: this.referralLink,
+      }).catch(() => {
+        // User cancelled or dismissed share
+      });
+    } else {
+      this.copyAppLink();
+    }
+  }
+
+  shareVia(platform: string) {
+    const encodedUrl = encodeURIComponent(this.referralLink);
+    const encodedText = encodeURIComponent(this.shareText);
+    let shareUrl = '';
+
+    switch (platform) {
+      case 'facebook':
+        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
+        break;
+      case 'instagram':
+        this.copyAppLink();
+        window.open('https://www.instagram.com/', '_blank');
+        return;
+      case 'linkedin':
+        shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`;
+        break;
+      case 'whatsapp':
+        shareUrl = `https://api.whatsapp.com/send?text=${encodedText}%20${encodedUrl}`;
+        break;
+      case 'x':
+      case 'twitter':
+        shareUrl = `https://twitter.com/intent/tweet?text=${encodedText}&url=${encodedUrl}`;
+        break;
+    }
+
+    if (shareUrl) {
+      window.open(shareUrl, '_blank');
+    }
+  }
+
+  sharewhatsapp() {
+    this.shareVia('whatsapp');
+  }
+
   keyname(value: any) {
-    this.name = value.value
+    this.name = value ? value.value : '';
   }
 
   keyemail(value: any) {
-    this.email = value.value
+    this.email = value ? value.value : '';
   }
 
   goBack() {
-    this.location.back()
+    this.location.back();
   }
 
   handleTreeSisterClick() {
@@ -67,34 +142,51 @@ export class ReferFriendPage {
   }
 
   submitrefer() {
-      let userId = JSON.parse(localStorage.getItem("userId"))
-      let data = {
-        "UserId": userId,
-        "FriendName": this.name,
-        "FriendEmail": this.email,
-        "ConvertedDate": '',
-      }
-      this.service.referfrd(data).subscribe((res) => {
+    this.nameTouched = true;
+    this.emailTouched = true;
 
+    if (this.disabled()) {
+      return;
+    }
+
+    let userId = JSON.parse(localStorage.getItem("userId") || '0');
+    let data = {
+      "UserId": userId,
+      "FriendName": this.name.trim(),
+      "FriendEmail": this.email.trim(),
+      "ConvertedDate": '',
+    };
+
+    this.service.referfrd(data).subscribe({
+      next: (res) => {
         if (res) {
           this.email = '';
           this.name = '';
-          (<HTMLInputElement>document.getElementById('name')).value = '';
-          (<HTMLInputElement>document.getElementById('email')).value = '';
+          this.nameTouched = false;
+          this.emailTouched = false;
+          const nameEl = document.getElementById('name') as HTMLInputElement;
+          const emailEl = document.getElementById('email') as HTMLInputElement;
+          if (nameEl) nameEl.value = '';
+          if (emailEl) emailEl.value = '';
 
           this.content = 'Mail Sent successfully';
           this.enableAlert = true;
         }
-      })
+      },
+      error: () => {
+        this.content = 'Failed to send invite. Please try again.';
+        this.enableAlert = true;
+      }
+    });
   }
 
-  getAlertcloseEvent(event) {
+  getAlertcloseEvent(event: any) {
     this.content = '';
     this.enableAlert = false;
   }
 
   disabled() {
-    if (this.emailElmtRegex.test(this.email) && this.name.length > 3) {
+    if (this.emailElmtRegex.test(this.email.trim()) && this.name.trim().length >= 3) {
       return false;
     } else {
       return true;
@@ -102,9 +194,12 @@ export class ReferFriendPage {
   }
 
   namevalidation() {
-    if (this.name === '') {
-      return 'Please enter name';
-    } else if (this.name.length < 3) {
+    if (!this.nameTouched) {
+      return '';
+    }
+    if (this.name.trim() === '') {
+      return 'Please enter friend’s name';
+    } else if (this.name.trim().length < 3) {
       return 'Name must be at least 3 characters';
     } else {
       return '';
@@ -112,9 +207,12 @@ export class ReferFriendPage {
   }
 
   emailvalidation() {
-    if (this.email === '') {
-      return 'Please enter email';
-    } else if (!(this.emailElmtRegex.test(this.email))) {
+    if (!this.emailTouched) {
+      return '';
+    }
+    if (this.email.trim() === '') {
+      return 'Please enter friend’s email';
+    } else if (!(this.emailElmtRegex.test(this.email.trim()))) {
       return 'Please enter valid email';
     } else {
       return '';

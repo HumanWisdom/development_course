@@ -12,6 +12,7 @@ $jsPath = hw_asset_url($base . '/assets/js/organisation.js');
 <?php endif; ?>
 <script>
 window.__HW_API__ = <?= json_encode(hw_api_config(), JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS) ?>;
+window.__HW_SOCIAL__ = <?= json_encode(hw_social_config(), JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS) ?>;
 window.__HW_ORG__ = <?= json_encode($org, JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS) ?>;
 window.__HW_ORG_ASSETS__ = <?= json_encode($assets, JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS) ?>;
 window.__HW_ORG_PAGES__ = <?= json_encode([

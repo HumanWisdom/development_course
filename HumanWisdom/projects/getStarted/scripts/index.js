@@ -1,9 +1,19 @@
 
 const userAgent = navigator.userAgent;
 const isLoggedIn = localStorage.getItem('isloggedin') == 'T';
-const url = "https://happierme.app";
-//const url ="https://staging.happierme.app"
-//const url ="http://localhost:4200"
+
+/** Angular app origin: localhost → :4200, staging host → staging, else live */
+function appBaseUrl() {
+    var h = (window.location.hostname || "").toLowerCase();
+    if (h === "localhost" || h === "127.0.0.1" || h === "[::1]") {
+        return "http://localhost:4200";
+    }
+    if (h === "staging.happierme.app" || h.indexOf("staging.") === 0 || h.indexOf(".staging.") !== -1) {
+        return "https://staging.happierme.app";
+    }
+    return "https://happierme.app";
+}
+const url = appBaseUrl();
 
 var _hwApiCfg = typeof window !== "undefined" && window.__HW_API__;
 var HW_API_BASE = (_hwApiCfg && _hwApiCfg.apiBase) || "https://www.humanwisdom.info/api";
@@ -36,6 +46,28 @@ function logevent(e, t, extra) {
 /** Defer full-page navigation so GA4/gtag can send the event before unload (tabs work because they do not navigate). */
 function afterLogNavigate(run, delayMs) {
     setTimeout(run, delayMs == null ? 220 : delayMs);
+}
+
+function isLocalHost() {
+    var h = window.location.hostname;
+    return h === "localhost" || h === "127.0.0.1" || h === "[::1]";
+}
+
+/** On localhost, keep navigation on this origin (rewrite happierme.app absolute URLs). */
+function sameOriginHref(href) {
+    if (!href || !isLocalHost()) return href;
+    if (href.charAt(0) === "/" || href.indexOf("://") === -1) return href;
+    try {
+        var u = new URL(href, window.location.href);
+        if (
+            u.hostname === "happierme.app" ||
+            u.hostname === "www.happierme.app" ||
+            u.hostname === "staging.happierme.app"
+        ) {
+            return u.pathname + u.search + u.hash;
+        }
+    } catch (err) {}
+    return href;
 }
 /** Topic tiles under .div-8 — GA event name per row id (index.php). */
 var TOPICS_HELP_ROW_GA = [
@@ -1207,35 +1239,24 @@ if (tryhappiermeClick[0]) {
     });
 }
 
-const pricingSelectBtn = document.getElementById('PricingSelectBtn');
-if (pricingSelectBtn) {
-    pricingSelectBtn.addEventListener('click', function (e) {
-        var innerA = e.target.closest("a");
-        if (innerA) e.preventDefault();
-        localStorage.setItem('pricing',true);
-        localStorage.setItem('login',false);
-        logevent("click_start_free_trial", "index.php");
-        var href = (innerA && innerA.getAttribute("href")) || "../pages/splash_options.php";
-        afterLogNavigate(function () {
-            window.location.href = href;
-        });
+// Pricing CTAs live in lazy HTML chunks — use delegation so listeners work after inject
+document.addEventListener("click", function (e) {
+    var pricingEl = e.target.closest(
+        "#PricingSelectBtn, #PricingSelectBtn1, a#startyourfreetrial, a#startyourfreetrial1, a#transformStartTrial"
+    );
+    if (!pricingEl) return;
+    var innerA = pricingEl.tagName === "A" ? pricingEl : e.target.closest("a") || pricingEl.querySelector("a");
+    if (innerA) e.preventDefault();
+    localStorage.setItem("pricing", true);
+    localStorage.setItem("login", false);
+    logevent("click_start_free_trial", "index.php");
+    var href = sameOriginHref(
+        (innerA && innerA.getAttribute("href")) || "/pages/splash_options.php"
+    );
+    afterLogNavigate(function () {
+        window.location.href = href;
     });
-}
-
-const PricingSelectBtn1 = document.getElementById('PricingSelectBtn1');
-if (PricingSelectBtn1) {
-    PricingSelectBtn1.addEventListener('click', function (e) {
-        var innerA = e.target.closest("a");
-        if (innerA) e.preventDefault();
-        localStorage.setItem('pricing',true);
-        localStorage.setItem('login',false);
-        logevent("click_start_free_trial", "index.php");
-        var href = (innerA && innerA.getAttribute("href")) || "../pages/splash_options.php";
-        afterLogNavigate(function () {
-            window.location.href = href;
-        });
-    });
-}
+}, true);
 
 
 
@@ -1756,8 +1777,8 @@ nfsnContactForm &&
                         : "googlePlayStore" == e ? (logevent("click_google_play_store_web", "index.php") ,afterLogNavigate(function(){window.location.href="https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US"}))
                         : "community" == e || "community-tab" == e ? logevent("click_community", "index.php")
                         : "youtubeIntro" == e ? logevent("click_youtube_redirect", "index.php")
-                        :  "adultsWeb"==e ? (logevent("click_happierme_for_adults_web", "index.php") , afterLogNavigate(function(){window.location.href="https://happierme.app/adults/intro/intro-carousel"}))
-                        : "teensWeb" == e ? (logevent("click_happierme_for_teens_web", "index.php") ,afterLogNavigate(function(){window.location.href="https://happierme.app/teenagers/intro-carousel"}))
+                        :  "adultsWeb"==e ? (logevent("click_happierme_for_adults_web", "index.php") , afterLogNavigate(function(){window.location.href=url+"/adults/intro/intro-carousel"}))
+                        : "teensWeb" == e ? (logevent("click_happierme_for_teens_web", "index.php") ,afterLogNavigate(function(){window.location.href=url+"/teenagers/intro-carousel"}))
                         : "findoutMore" == e ? (logevent("click_find_out_more", "index.php") ,afterLogNavigate(function(){window.location.href="../pages/teenagers.php"}))
                         : "partnership" == e ? (logevent("click_partnership", "index.php") ,afterLogNavigate(function(){window.location.href="../pages/partnership.php"}))
                         : "whywecreatedvideo" == e ? (logevent("whywecreatedvideo", "index.php"))

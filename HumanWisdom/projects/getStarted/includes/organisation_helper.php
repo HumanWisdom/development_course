@@ -5,6 +5,7 @@
  */
 require_once __DIR__ . '/security_config.php';
 require_once __DIR__ . '/api_config.php';
+require_once __DIR__ . '/social_config.php';
 require_once __DIR__ . '/media_config.php';
 require_once __DIR__ . '/cache_buster.php';
 
@@ -40,7 +41,7 @@ if (!function_exists('hw_org_query_id')) {
 if (!function_exists('hw_org_id')) {
     /**
      * Resolved OrganizationId for the flow:
-     * query param → session (from a prior Adv/landing visit) → default.
+     * query param → session (from a prior Adv/landing visit) → default (1 = HappierMe).
      */
     function hw_org_id()
     {
@@ -49,7 +50,7 @@ if (!function_exists('hw_org_id')) {
             $id = hw_org_sanitize_id($_SESSION['hw_org_id']);
         }
         if ($id === '') {
-            $id = 'org-humanwisdom';
+            $id = '1';
         }
         $_SESSION['hw_org_id'] = $id;
         return $id;
@@ -57,7 +58,7 @@ if (!function_exists('hw_org_id')) {
 }
 
 if (!function_exists('hw_org_defaults')) {
-    function hw_org_defaults($id = 'org-humanwisdom')
+    function hw_org_defaults($id = '1')
     {
         $end = new DateTime('today');
         $end->modify('+7 days');
@@ -152,6 +153,7 @@ if (!function_exists('hw_org_cdn_assets')) {
             'mind' => $cdn . '/website/working_with_mind.svg',
             'star' => $cdn . '/website/star_vector.svg',
             'brenda' => $cdn . '/assets/webp/Brenda+McChesney.webp',
+            'martha' => $cdn . '/assets/webp/martha.webp',
             'dan' => $cdn . '/assets/webp/testimonial_dan_reidenberg.webp',
             'quote' => $cdn . '/assets/webp/quatation_new.svg',
             'feel' => $s3 . '/website/svgs/heart_feel.svg',
@@ -164,6 +166,9 @@ if (!function_exists('hw_org_cdn_assets')) {
             'mail' => $s3 . '/assets/svgs/v_1_4/svg_email.svg',
             'eye' => $s3 . '/assets/svgs/v_1_4/password_hide.svg',
             'eye_show' => $s3 . '/assets/svgs/v_1_4/password_show.svg',
+            'google' => $s3 . '/assets/svgs/v1_3/cw_google.svg',
+            'facebook' => $s3 . '/assets/svgs/v1_3/cw_facebook.svg',
+            'apple' => $s3 . '/assets/svgs/v_1_4/cw_apple.svg',
             'tick' => $s3 . '/assets/svgs/v1_3/tick_white.svg',
             'success_check' => $s3 . '/assets/svgs/v_1_4/welldone!adultss.svg',
             'calendar' => $s3 . '/website/svgs/calender.svg',
