@@ -10,13 +10,26 @@ require_once __DIR__ . '/media_config.php';
 require_once __DIR__ . '/cache_buster.php';
 
 if (!function_exists('hw_org_base')) {
+    /**
+     * Site-root-relative base for assets/links.
+     * Must be absolute-from-root ("" or "/subdir") so PATH_INFO URLs like
+     * /organisation-Adv.php/nfsn do not resolve ./assets to /organisation-Adv.php/assets.
+     */
     function hw_org_base()
     {
         if (!empty($GLOBALS['HW_ORG_BASE'])) {
             return rtrim((string) $GLOBALS['HW_ORG_BASE'], '/');
         }
         $script = str_replace('\\', '/', $_SERVER['SCRIPT_NAME'] ?? '');
-        return preg_match('#/pages/#', $script) ? '..' : '.';
+        if (preg_match('#/pages/#', $script)) {
+            $root = dirname(dirname($script));
+        } else {
+            $root = dirname($script);
+        }
+        if ($root === '/' || $root === '\\' || $root === '.' || $root === '') {
+            return '';
+        }
+        return rtrim($root, '/');
     }
 }
 
@@ -27,14 +40,46 @@ if (!function_exists('hw_org_sanitize_id')) {
     }
 }
 
-if (!function_exists('hw_org_query_id')) {
-    /** OrganizationId from ?id= only (empty when the query param is absent). */
-    function hw_org_query_id()
+if (!function_exists('hw_org_path_id')) {
+    /**
+     * OrganizationId from PATH_INFO / pretty URL, e.g.
+     * /organisation-Adv.php/happierme → happierme
+     */
+    function hw_org_path_id()
     {
-        if (!isset($_GET['id'])) {
+        $pathInfo = isset($_SERVER['PATH_INFO']) ? (string) $_SERVER['PATH_INFO'] : '';
+        if ($pathInfo !== '' && $pathInfo !== '/') {
+            $segment = trim(explode('/', ltrim($pathInfo, '/'))[0]);
+            return hw_org_sanitize_id($segment);
+        }
+
+        // Fallback when PATH_INFO is not populated (some proxies / rewrite setups).
+        $uri = isset($_SERVER['REQUEST_URI']) ? (string) $_SERVER['REQUEST_URI'] : '';
+        $uriPath = parse_url($uri, PHP_URL_PATH);
+        if (!is_string($uriPath) || $uriPath === '') {
             return '';
         }
-        return hw_org_sanitize_id($_GET['id']);
+        if (preg_match('#/(?:organisation(?:-Adv)?\.php)/([a-zA-Z0-9_-]+)(?:/|$)#', $uriPath, $m)) {
+            return hw_org_sanitize_id($m[1]);
+        }
+        return '';
+    }
+}
+
+if (!function_exists('hw_org_query_id')) {
+    /**
+     * OrganizationId from ?id=… or /organisation-Adv.php/{id}
+     * (empty when neither is present).
+     */
+    function hw_org_query_id()
+    {
+        if (isset($_GET['id'])) {
+            $id = hw_org_sanitize_id($_GET['id']);
+            if ($id !== '') {
+                return $id;
+            }
+        }
+        return hw_org_path_id();
     }
 }
 
@@ -131,10 +176,11 @@ if (!function_exists('hw_org_page')) {
     {
         $base = hw_org_base();
         $file = $name . '.php' . hw_org_qs($extra, $withId);
-        if ($base === '..') {
-            return $file;
+        // Always root-relative so /organisation-Adv.php/{id} does not break links.
+        if ($base === '') {
+            return '/' . $file;
         }
-        return $file;
+        return $base . '/' . $file;
     }
 }
 
@@ -183,7 +229,7 @@ if (!function_exists('hw_org_cdn_assets')) {
             'playstore_url' => 'https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US',
             'onelink' => 'https://onelink.to/hsnt8b',
             'web_app' => 'https://happierme.app/pages/splash_options.php',
-            'login' => hw_org_base() === '..' ? 'splash_options.php' : 'pages/splash_options.php',
+            'login' => hw_org_base() . '/pages/splash_options.php',
         ];
     }
 }
@@ -247,8 +293,8 @@ if (!function_exists('hw_org_http_get')) {
 if (!function_exists('hw_org_fetch')) {
     /**
      * Loads org branding for the campaign pages.
-     * Calls GET /api/GetOrganization/{OrganizationId} ONLY when ?id= is present;
-     * otherwise reuses session cache / defaults (no API call).
+     * Calls GET /api/GetOrganization/{OrganizationId} ONLY when ?id= or
+     * /organisation-Adv.php/{id} is present; otherwise reuses session cache / defaults.
      */
     function hw_org_fetch($id = null)
     {
