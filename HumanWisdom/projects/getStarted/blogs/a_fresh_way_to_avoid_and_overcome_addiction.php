@@ -40,9 +40,9 @@
                   <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
                     Mental health
                   </button>
-                  <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
+                  <!-- <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
                     Breathing & Meditation
-                  </button>
+                  </button> -->
                 </div>
 
               
