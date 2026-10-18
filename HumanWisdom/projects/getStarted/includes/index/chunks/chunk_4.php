@@ -62,7 +62,7 @@
           </div>
           <div class="transform-cta-actions">
             <div class="try-free-stack transform-cta-trial">
-              <a href="/organisation-signup.php?id=1" id="transformStartTrial">
+              <a href="/pages/splash_options.php" id="transformStartTrial">
                 <div class="div-wrapper-4 transform-cta-btn"><div class="text-wrapper-5">Start your free trial</div></div>
               </a>
               <p class="try-free-no-card">(No credit card needed)</p>

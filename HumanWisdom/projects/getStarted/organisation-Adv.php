@@ -1,2 +1,3 @@
 <?php
-require __DIR__ . '/pages/organisation-Adv.php';
+$orgStep = 'adv';
+require __DIR__ . '/pages/organisation.php';
