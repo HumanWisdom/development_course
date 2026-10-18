@@ -38,7 +38,7 @@
           <div class="blog-footer">
            
             <a href="https://happierme.app/blogs/blog_index.php" id="viewAllBlogs" class="blog-more">
-              <span>See all posts</span>
+              <span>View all blogs</span>
               <span class="chevron-pink"><span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span>
             </a>
                <div class="coaches-nav-btns">

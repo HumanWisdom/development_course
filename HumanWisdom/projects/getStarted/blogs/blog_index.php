@@ -514,7 +514,7 @@
       font-size: 36px;
       font-weight: 600;
       line-height: 140%;
-      color: #834B66;
+      color: rgba(128, 51, 88, 1);
       text-align: center;
       text-decoration: none;
     }
