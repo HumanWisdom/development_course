@@ -17,6 +17,13 @@ export class PartnershipIndexPage implements OnInit {
   public isHowItWorks: boolean = false;
   public isOtherBenefits: boolean = false;
   public isPartnerFaq = false;
+  public faq1 = false;
+  public faq2 = false;
+  public faq3 = false;
+  public faq4 = false;
+  public faq5 = false;
+  public faq6 = false;
+  public showFaqs = false;
   cardlist = [];
   countryCode: any;
   isPartner = false;
