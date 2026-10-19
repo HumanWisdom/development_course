@@ -832,36 +832,46 @@
     } catch (e) {}
   }
 
-  function stripIdQueryParam() {
-    stripQueryParams(["id"]);
-  }
-
   function stripEmailQueryParam() {
     stripQueryParams(["email"]);
   }
 
-  /** Org id from /organisation-Adv.php/happierme (PATH_INFO style). */
+  /** Org id from /free.php/happierme (PATH_INFO style). */
   function orgIdFromPath() {
     try {
       var path = String(window.location.pathname || "");
-      var match = path.match(/\/(?:organisation(?:-Adv)?\.php)\/([a-zA-Z0-9_-]+)\/?$/i);
+      var match = path.match(/\/(?:free|organisation(?:-Adv)?)\.php\/([a-zA-Z0-9_-]+)\/?$/i);
       return match ? match[1] : "";
     } catch (e) {
       return "";
     }
   }
 
-  /** Normalize /organisation-Adv.php/happierme → /organisation-Adv.php (keep query/hash). */
-  function stripOrgIdFromPath() {
+  /**
+   * On /free.php?id=nfsn → /free.php/nfsn so the org id stays visible in the path.
+   * Does not remove an id that is already in the path.
+   */
+  function preferPathOrgId(id) {
+    if (!id) return;
     try {
       var url = new URL(window.location.href);
-      var nextPath = url.pathname.replace(
-        /(\/(?:organisation(?:-Adv)?\.php))\/[a-zA-Z0-9_-]+\/?$/i,
-        "$1"
-      );
-      if (nextPath === url.pathname) return;
-      url.pathname = nextPath;
-      window.history.replaceState({}, "", url.pathname + url.search + url.hash);
+      var pathMatch = url.pathname.match(/^(.*\/(?:free|organisation(?:-Adv)?)\.php)(?:\/[a-zA-Z0-9_-]+)?\/?$/i);
+      if (!pathMatch) return;
+
+      var scriptBase = pathMatch[1].replace(/organisation-Adv\.php$/i, "free.php");
+      var nextPath = scriptBase + "/" + id;
+      var changed = false;
+
+      if (url.pathname !== nextPath) {
+        url.pathname = nextPath;
+        changed = true;
+      }
+      if (url.searchParams.has("id")) {
+        url.searchParams.delete("id");
+        changed = true;
+      }
+      if (!changed) return;
+      window.history.replaceState({}, "", url.pathname + (url.search ? url.search : "") + url.hash);
     } catch (e) {}
   }
 
@@ -877,14 +887,13 @@
       localStorage.setItem("OrganizationId", id);
       localStorage.setItem("hw_org_id", id);
     } catch (e) {}
-    stripIdQueryParam();
-    stripOrgIdFromPath();
+    preferPathOrgId(id);
     return id;
   }
 
   /**
    * Call GET /api/GetOrganization/{OrganizationId} using localStorage only.
-   * If the URL still has ?id= or /{id} path, it is saved once then cleaned from the address bar.
+   * Org id in /free.php/{id} (or ?id=) is kept in the address bar.
    */
   function setupGetOrganization() {
     captureOrgIdFromUrl();

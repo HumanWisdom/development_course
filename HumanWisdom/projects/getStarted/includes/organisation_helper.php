@@ -13,7 +13,7 @@ if (!function_exists('hw_org_base')) {
     /**
      * Site-root-relative base for assets/links.
      * Must be absolute-from-root ("" or "/subdir") so PATH_INFO URLs like
-     * /organisation-Adv.php/nfsn do not resolve ./assets to /organisation-Adv.php/assets.
+     * /free.php/nfsn do not resolve ./assets to /free.php/assets.
      */
     function hw_org_base()
     {
@@ -43,7 +43,7 @@ if (!function_exists('hw_org_sanitize_id')) {
 if (!function_exists('hw_org_path_id')) {
     /**
      * OrganizationId from PATH_INFO / pretty URL, e.g.
-     * /organisation-Adv.php/happierme → happierme
+     * /free.php/happierme → happierme
      */
     function hw_org_path_id()
     {
@@ -59,7 +59,7 @@ if (!function_exists('hw_org_path_id')) {
         if (!is_string($uriPath) || $uriPath === '') {
             return '';
         }
-        if (preg_match('#/(?:organisation(?:-Adv)?\.php)/([a-zA-Z0-9_-]+)(?:/|$)#', $uriPath, $m)) {
+        if (preg_match('#/(?:free|organisation(?:-Adv)?)\.php/([a-zA-Z0-9_-]+)(?:/|$)#', $uriPath, $m)) {
             return hw_org_sanitize_id($m[1]);
         }
         return '';
@@ -68,7 +68,7 @@ if (!function_exists('hw_org_path_id')) {
 
 if (!function_exists('hw_org_query_id')) {
     /**
-     * OrganizationId from ?id=… or /organisation-Adv.php/{id}
+     * OrganizationId from ?id=… or /free.php/{id}
      * (empty when neither is present).
      */
     function hw_org_query_id()
@@ -170,13 +170,13 @@ if (!function_exists('hw_org_qs')) {
 
 if (!function_exists('hw_org_page')) {
     /**
-     * @param bool $withId Include ?id=… — true for organisation-Adv / organisation only
+     * @param bool $withId Include ?id=… — true for free / organisation only
      */
     function hw_org_page($name, $extra = [], $withId = false)
     {
         $base = hw_org_base();
         $file = $name . '.php' . hw_org_qs($extra, $withId);
-        // Always root-relative so /organisation-Adv.php/{id} does not break links.
+        // Always root-relative so /free.php/{id} does not break links.
         if ($base === '') {
             return '/' . $file;
         }
@@ -294,7 +294,7 @@ if (!function_exists('hw_org_fetch')) {
     /**
      * Loads org branding for the campaign pages.
      * Calls GET /api/GetOrganization/{OrganizationId} ONLY when ?id= or
-     * /organisation-Adv.php/{id} is present; otherwise reuses session cache / defaults.
+     * /free.php/{id} is present; otherwise reuses session cache / defaults.
      */
     function hw_org_fetch($id = null)
     {

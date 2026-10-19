@@ -19,7 +19,7 @@ window.__HW_ORG_STEP__ = <?= json_encode($orgStep, JSON_UNESCAPED_SLASHES | JSON
 window.__HW_ORG_STEP_META__ = <?= json_encode($stepMeta, JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS) ?>;
 window.__HW_ORG_PAGES__ = <?= json_encode([
     // Kept for entry-point deep links; in-app navigation no longer changes the URL.
-    'adv' => hw_org_page('organisation-Adv'),
+    'adv' => hw_org_page('free'),
     'landing' => hw_org_page('organisation'),
     'signup' => hw_org_page('organisation-signup'),
     'otp' => hw_org_page('organisation-otp'),
