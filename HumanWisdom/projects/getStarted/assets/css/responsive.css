@@ -995,7 +995,7 @@
   .tab-content a,
   .tab-content .td_underline {
     text-align: center !important;
-    display: flex !important;
+    /* display: flex !important; */
     justify-content: center !important;
     align-items: center !important;
     margin: 0 auto !important;

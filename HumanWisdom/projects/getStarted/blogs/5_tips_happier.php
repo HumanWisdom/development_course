@@ -31,6 +31,12 @@
                 <h1 class="mtb0px fs_36px fw_500 lh_140p fc_000000">
                 5 Tips to Be Happier in 2026
 
+
+
+
+
+
+
                 </h1>
               </div>
             </div>
@@ -53,7 +59,7 @@
 
             <div class="row mt20px rmb80px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <img src="https://miro.medium.com/v2/resize:fit:1200/1*feV0D7GkmTMpUA1OUjGh2A.png" class="img-responsive" alt="5 tips to be happier in 2026">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/91.webp" class="img-responsive" alt="5 tips to be happier in 2026">
               </div>
             </div>
 
@@ -116,12 +122,17 @@
                 To find out more, explore the <a class="blog_highlight_peach" href="https://happierme.app/adults/wisdom-exercise">Awareness exercises</a> section.
                 </h4>
 
-                <div class="row mt20px rmb80px">
+
+                  <iframe id="youtubeIntro" loading="lazy" title="youtubeIntro"
+            src="https://www.youtube.com/embed/7237BsN5cio?si=w_bWTli4PpmOrfxo"
+            class="cvideo_b yt-embed" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen
+            onclick="return logevent('click_play_video_home', 'index.php')"></iframe>
+                <!-- <div class="row mt20px rmb80px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                     <img src="https://miro.medium.com/v2/resize:fit:1358/format:webp/1*wnwv2errErKcVBbfaGScig.png" class="img-responsive" alt="Being curious about your own mind">
                   </div>
-                </div>
-
+                </div> -->
+<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/7237BsN5cio?si=w_bWTli4PpmOrfxo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
                 <h4 class="mtb0px blog_sub_title">
                 3. Be Curious, Keep Learning About Yourself
                 </h4>
@@ -176,10 +187,8 @@
 
                 <h4 class="mtb0px blog_desc">
                 To find out more, explore the module on <a class="blog_highlight_peach" href="https://happierme.app/adults/nature">Nature Meditations</a>.
-                <br><br>
-                To find out more, visit
-                <a class="blog_highlight_peach" href="https://happierme.app"> https://happierme.app, </a>or download HappierMe from the app stores. There is a free trial.
-                </h4>
+               
+               
 
               </div>
 
