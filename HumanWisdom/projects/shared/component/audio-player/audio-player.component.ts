@@ -27,12 +27,17 @@ export class AudioPlayerComponent implements OnInit, OnDestroy  {
 
   setAudioControlsBackground() {
     const backgroundColor = this.isAdults ? '#FFE8BB' : '#0C2B5F';
-  
+    const playButtonColor = this.isAdults ? '#ED7D6F' : '#ee9596';
+
     // Create a new <style> element
     const style = document.createElement('style');
     style.textContent = `
       audio::-webkit-media-controls-enclosure {
         background: ${backgroundColor} !important;
+      }
+      audio::-webkit-media-controls-play-button {
+        background-color: ${playButtonColor} !important;
+        border-radius: 50% !important;
       }
     `;
   

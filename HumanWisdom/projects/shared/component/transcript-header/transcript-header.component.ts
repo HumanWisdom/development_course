@@ -1,5 +1,6 @@
 import { Component, OnInit,Input,Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 import {AdultsService} from "../../../adults/src/app/adults/adults.service"
 import { NgNavigatorShareService } from 'ng-navigator-share';
 import { Platform } from "@angular/cdk/platform";
@@ -44,6 +45,7 @@ export class TranscriptHeaderComponent implements OnInit {
   isAdults: boolean = true; 
 
   constructor(private router: Router,
+    private location: Location,
     private service:AdultsService,
     public platform: Platform,
     private ngNavigatorShareService: NgNavigatorShareService,
@@ -146,15 +148,16 @@ export class TranscriptHeaderComponent implements OnInit {
   }
   
   goToAudio(){
-    let progNamePath = this.progName == "teenagers" ?  '/' : '/adults/';
-    if (this.urlT)
-    {
-      this.router.navigate([progNamePath + this.audioPage], {queryParams:{t:this.urlT}})
-
+    // Use browser back to return to the audio page without pushing a new entry
+    // onto the navigation stack. Navigating forward would create a back/transcript loop.
+    if (this.urlT) {
+      // Shared link: we must navigate explicitly because there may be no back history
+      let progNamePath = this.progName == "teenagers" ? '/' : '/adults/';
+      let audioPath = this.audioPage.startsWith('/') ? this.audioPage : '/' + this.audioPage;
+      this.router.navigate([progNamePath.replace(/\/$/, '') + audioPath], {queryParams: {t: this.urlT}});
+    } else {
+      this.location.back();
     }
-
-    else
-      this.router.navigate([progNamePath + this.audioPage])
   }
   addNote(){
     this.service.submitJournal({
