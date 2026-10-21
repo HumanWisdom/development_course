@@ -4,7 +4,10 @@
   var org = window.__HW_ORG__ || {};
   var pages = window.__HW_ORG_PAGES__ || {};
   var assets = window.__HW_ORG_ASSETS__ || {};
+  var stepMeta = window.__HW_ORG_STEP_META__ || {};
+  var currentStep = window.__HW_ORG_STEP__ || "landing";
   var apiBase = (window.__HW_API__ && window.__HW_API__.apiBase) || "https://www.humanwisdom.info/api";
+  var onEnterOtp = null;
 
   function qs(id) {
     return document.getElementById(id);
@@ -19,7 +22,53 @@
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(value || "").trim());
   }
 
+  /** Switch step in-place — does not change the browser URL. */
+  function showStep(pageKey) {
+    var panels = document.querySelectorAll("[data-org-step]");
+    if (!panels.length) return false;
+
+    var found = false;
+    panels.forEach(function (panel) {
+      var match = panel.getAttribute("data-org-step") === pageKey;
+      panel.hidden = !match;
+      if (match) found = true;
+    });
+    if (!found) return false;
+
+    var meta = stepMeta[pageKey] || {};
+    if (meta.body) document.body.className = meta.body;
+    if (meta.title) document.title = meta.title;
+
+    var footer = document.querySelector(".org-footer");
+    if (footer) footer.hidden = !meta.copyright;
+
+    var partnerImg = document.querySelector(".org-partner-logo");
+    if (partnerImg) {
+      var showPartner = !!meta.partner && Number(org.showPartnerLogo) === 1;
+      partnerImg.hidden = !showPartner;
+    }
+
+    currentStep = pageKey;
+    window.__HW_ORG_STEP__ = pageKey;
+
+    if (pageKey === "otp" && typeof onEnterOtp === "function") {
+      onEnterOtp();
+    }
+    if (pageKey === "signup") {
+      redirectIfLoggedIn();
+    }
+
+    try {
+      window.scrollTo(0, 0);
+    } catch (e) {}
+    return true;
+  }
+
   function go(pageKey, extra) {
+    // In-page SPA navigation — keep the current URL as-is.
+    if (showStep(pageKey)) return;
+
+    // Fallback for pages that are not embedded in this document.
     var href = pages[pageKey];
     if (!href) return;
     if (extra) {
@@ -31,6 +80,17 @@
       return;
     }
     window.location.href = href;
+  }
+
+  function setupInPageNav() {
+    document.addEventListener("click", function (e) {
+      var el = e.target.closest("[data-org-go]");
+      if (!el) return;
+      var key = el.getAttribute("data-org-go");
+      if (!key) return;
+      e.preventDefault();
+      go(key);
+    });
   }
 
   function setupPasswordToggle(inputId, btnId) {
@@ -250,6 +310,7 @@
 
   /** Same as LoginSignupPage's constructor: an active adults session skips the signup form. */
   function redirectIfLoggedIn() {
+    if (currentStep !== "signup") return false;
     if (!qs("org-signup-form") || !isSameOriginAsAdults()) return false;
     try {
       var email = String(localStorage.getItem("email") || "").replace(/"/g, "");
@@ -516,37 +577,25 @@
     var err = qs("org-otp-error");
     var timerEl = qs("org-otp-timer");
     var resend = qs("org-resend");
-    var back = qs("org-otp-back");
     var verifying = false;
-
-    // Email for /verificationCode comes from localStorage only (no ?email= in URL)
-    stripEmailQueryParam();
-    var email = getAccountEmailFromLocalStorage();
-
-    if (emailEl && email) {
-      emailEl.textContent = email;
-    }
-
-    if (!email) {
-      showError(err, "Missing account email. Please create your account again.");
-    }
-
+    var email = "";
     var remaining = 30;
     var tick = null;
-    startTimer();
+    var resending = false;
 
-    inputs.forEach(function (input, i) {
-      input.addEventListener("input", function () {
-        input.value = input.value.replace(/\D/g, "").slice(0, 1);
-        if (input.value && inputs[i + 1]) inputs[i + 1].focus();
-        maybeSubmit();
-      });
-      input.addEventListener("keydown", function (e) {
-        if (e.key === "Backspace" && !input.value && inputs[i - 1]) {
-          inputs[i - 1].focus();
-        }
-      });
-    });
+    function refreshEmail() {
+      stripEmailQueryParam();
+      email = getAccountEmailFromLocalStorage();
+      if (emailEl && email) {
+        emailEl.textContent = email;
+      }
+      if (!email) {
+        showError(err, "Missing account email. Please create your account again.");
+      } else {
+        showError(err, "");
+      }
+      return email;
+    }
 
     function code() {
       return inputs.map(function (el) {
@@ -561,6 +610,42 @@
       if (inputs[0]) inputs[0].focus();
       verifying = false;
     }
+
+    function startTimer() {
+      remaining = 30;
+      if (timerEl) timerEl.textContent = "(00:30)";
+      clearInterval(tick);
+      tick = setInterval(function () {
+        remaining -= 1;
+        if (remaining <= 0) {
+          remaining = 0;
+          clearInterval(tick);
+        }
+        if (timerEl) {
+          timerEl.textContent = "(00:" + String(remaining).padStart(2, "0") + ")";
+        }
+      }, 1000);
+    }
+
+    // Called each time the OTP step becomes visible.
+    onEnterOtp = function () {
+      refreshEmail();
+      resetOtpInputs();
+      startTimer();
+    };
+
+    inputs.forEach(function (input, i) {
+      input.addEventListener("input", function () {
+        input.value = input.value.replace(/\D/g, "").slice(0, 1);
+        if (input.value && inputs[i + 1]) inputs[i + 1].focus();
+        maybeSubmit();
+      });
+      input.addEventListener("keydown", function (e) {
+        if (e.key === "Backspace" && !input.value && inputs[i - 1]) {
+          inputs[i - 1].focus();
+        }
+      });
+    });
 
     // Same contract as adult-dashboard verifyCode(): POST /verificationCode { Email, VCode }
     function maybeSubmit() {
@@ -611,23 +696,6 @@
         });
     }
 
-    function startTimer() {
-      remaining = 30;
-      if (timerEl) timerEl.textContent = "(00:30)";
-      clearInterval(tick);
-      tick = setInterval(function () {
-        remaining -= 1;
-        if (remaining <= 0) {
-          remaining = 0;
-          clearInterval(tick);
-        }
-        if (timerEl) {
-          timerEl.textContent = "(00:" + String(remaining).padStart(2, "0") + ")";
-        }
-      }, 1000);
-    }
-
-    var resending = false;
     if (resend) {
       resend.addEventListener("click", function (e) {
         e.preventDefault();
@@ -670,11 +738,9 @@
           });
       });
     }
-    if (back) {
-      back.addEventListener("click", function (e) {
-        e.preventDefault();
-        go("signup");
-      });
+
+    if (currentStep === "otp") {
+      onEnterOtp();
     }
   }
 
@@ -725,7 +791,8 @@
       ".svg";
     var partnerImg = document.querySelector(".org-partner-logo");
     if (partnerImg) {
-      if (org.showPartnerLogo) {
+      var stepAllowsPartner = !!(stepMeta[currentStep] || {}).partner;
+      if (org.showPartnerLogo && stepAllowsPartner) {
         partnerImg.src = org.partnerLogo;
         partnerImg.alt = name;
         partnerImg.hidden = false;
@@ -765,16 +832,51 @@
     } catch (e) {}
   }
 
-  function stripIdQueryParam() {
-    stripQueryParams(["id"]);
-  }
-
   function stripEmailQueryParam() {
     stripQueryParams(["email"]);
   }
 
+  /** Org id from /free.php/happierme (PATH_INFO style). */
+  function orgIdFromPath() {
+    try {
+      var path = String(window.location.pathname || "");
+      var match = path.match(/\/(?:free|organisation(?:-Adv)?)\.php\/([a-zA-Z0-9_-]+)\/?$/i);
+      return match ? match[1] : "";
+    } catch (e) {
+      return "";
+    }
+  }
+
+  /**
+   * On /free.php?id=nfsn → /free.php/nfsn so the org id stays visible in the path.
+   * Does not remove an id that is already in the path.
+   */
+  function preferPathOrgId(id) {
+    if (!id) return;
+    try {
+      var url = new URL(window.location.href);
+      var pathMatch = url.pathname.match(/^(.*\/(?:free|organisation(?:-Adv)?)\.php)(?:\/[a-zA-Z0-9_-]+)?\/?$/i);
+      if (!pathMatch) return;
+
+      var scriptBase = pathMatch[1].replace(/organisation-Adv\.php$/i, "free.php");
+      var nextPath = scriptBase + "/" + id;
+      var changed = false;
+
+      if (url.pathname !== nextPath) {
+        url.pathname = nextPath;
+        changed = true;
+      }
+      if (url.searchParams.has("id")) {
+        url.searchParams.delete("id");
+        changed = true;
+      }
+      if (!changed) return;
+      window.history.replaceState({}, "", url.pathname + (url.search ? url.search : "") + url.hash);
+    } catch (e) {}
+  }
+
   function captureOrgIdFromUrl() {
-    var id = new URLSearchParams(window.location.search).get("id");
+    var id = new URLSearchParams(window.location.search).get("id") || orgIdFromPath();
     if (!id) return "";
     id = String(id).trim().replace(/[^a-zA-Z0-9_-]/g, "");
     if (!id) return "";
@@ -785,13 +887,13 @@
       localStorage.setItem("OrganizationId", id);
       localStorage.setItem("hw_org_id", id);
     } catch (e) {}
-    stripIdQueryParam();
+    preferPathOrgId(id);
     return id;
   }
 
   /**
    * Call GET /api/GetOrganization/{OrganizationId} using localStorage only.
-   * If the URL still has ?id=, it is saved once then removed from the address bar.
+   * Org id in /free.php/{id} (or ?id=) is kept in the address bar.
    */
   function setupGetOrganization() {
     captureOrgIdFromUrl();
@@ -847,6 +949,7 @@
   }
 
   document.addEventListener("DOMContentLoaded", function () {
+    setupInPageNav();
     if (redirectIfLoggedIn()) return;
     captureOrgIdFromUrl();
     restoreOrgFromStorage();

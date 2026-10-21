@@ -1,2 +1,3 @@
 <?php
-require __DIR__ . '/pages/organisation-download.php';
+$orgStep = 'download';
+require __DIR__ . '/pages/organisation.php';
