@@ -141,7 +141,7 @@ Blogs 15 -FAQ
           </div> 
 
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 col-12  hs_bg" data-aos="fade-up" data-aos-delay="300">
-            <div class="tab-content tc_faqs desktop">
+            <div class="tab-content tc_faqs ">
               <div id="about_happierme" class="tab-pane fade in active">
                  <h3 class="mtb30px fs_18px fw_600 lh_140p fc_000000" style="text-align:left;">
 
@@ -2504,7 +2504,7 @@ Dealing with Loss
                 </h2>
 
                 <h6 class="hs_desc">
-Everyday wellbeing can be  People may experience<a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/micro-learning/inner/42">sadness</a>, shock, anger, guilt, loneliness, fear, confusion, numbness, or difficulty accepting what happened. These responses can change over time and may come and go rather than follow a predictable pattern. by building meaningful connections, taking care of your physical and emotional needs, practicing gratitude, spending time on activities that matter to you, developing healthy habits, and becoming more aware of your thoughts and emotions. Small, consistent changes can have a meaningful impact over time.
+Everyday wellbeing can be  People may experience <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/micro-learning/inner/42">sadness</a>, shock, anger, guilt, loneliness, fear, confusion, numbness, or difficulty accepting what happened. These responses can change over time and may come and go rather than follow a predictable pattern. by building meaningful connections, taking care of your physical and emotional needs, practicing gratitude, spending time on activities that matter to you, developing healthy habits, and becoming more aware of your thoughts and emotions. Small, consistent changes can have a meaningful impact over time.
                 </h6>
 
 
@@ -2621,7 +2621,8 @@ Everyday wellbeing can be  People may experience<a class="blog_highlight_peach t
 
                 <h6 class="hs_desc">
                   <a class="blog_highlight_peach td_underline fs_12px" href="https://happierme.app/adults/site-search/Mindfulness">
- Mindfulness</a> can help a grieving person notice thoughts, emotions, and physical sensations without immediately trying to push them away. Breathing, quiet reflection, meditation, or simply paying attention to the present moment can provide small periods of calm while allowing difficult emotions to exist. Mindfulness can help a grieving person notice thoughts, emotions, and physical sensations without immediately trying to push them away. Breathing, quiet reflection, meditation, or simply paying attention to the present moment can provide small periods of calm while allowing difficult emotions to exist.
+ Mindfulness</a> can help a grieving person notice thoughts, emotions, and physical sensations without immediately trying to push them away. Breathing, quiet reflection, meditation, or simply paying attention to the present moment can provide small periods of calm while allowing difficult emotions to exist.</h6>
+
 
  <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
