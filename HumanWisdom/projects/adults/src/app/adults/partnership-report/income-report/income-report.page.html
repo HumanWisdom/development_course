@@ -36,7 +36,7 @@
                   <a class=" w100">
                     <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/backgrounds/topics_v3_01.svg"
                       class="img-responsive w100"> -->
-                    <div class="row  p_rc bg_803358 ">
+                    <div class="row  p_rc p_rc_gradient ">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ">
                         <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mb10px">
@@ -46,11 +46,15 @@
                           </div>
 
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ">
-                            <button type="button" class="btn_pr_code d-flex" title="{{getTittle()}}" >
+                            <button type="button" class="btn_pr_code d-flex" title="{{getTittle()}}">
                               {{this.partnershipReport.AffRefCode}}
                               <a (click)="copyTextHeader(partnershipReport.AffRefCode,'code')" class="btn-copy-icon">
-                                <img *ngIf="isCopyHeader" style="height: 16px;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/copy_codead.svg" alt="" class="img-responsive"/> 
-                                <img *ngIf="!isCopyHeader" style="height: 16px;" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/copy_codead.svg" alt="" class="img-responsive"/> 
+                                <img *ngIf="isCopyHeader" style="height: 16px;"
+                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/copy_codead.svg"
+                                  alt="" class="img-responsive" />
+                                <img *ngIf="!isCopyHeader" style="height: 16px;"
+                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/copy_codead.svg"
+                                  alt="" class="img-responsive" />
                               </a>
                             </button>
                           </div>
@@ -58,8 +62,7 @@
 
                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 h-100 pr0px center_flex">
                           <a class="" (click)="share(partnershipReport.AffRefCode,'code')">
-                            <img
-                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/share.svg"
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/partshare.svg"
                               class="img-responsive">
                           </a>
                         </div>
@@ -69,29 +72,35 @@
                 </div>
               </div>
 
-              
+
               <div class="row mt20px">
                 <div class="mt10px mb5px fw_500 lh_150p fc_000000">
-                 <h4>Partnership referral link</h4>
+                  <h4>Partnership referral link</h4>
                 </div>
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                  <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 center_flex box_blue_01">
+                  <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 center_flex box_blue_01 referral-link-box">
                     <div class="w100p">
-                     
+
                       <h4 class="fw_500 fs_12px lh_150p fc_000000 mtb0px p_rc align-content-center">
                         {{this.partnershipReport.ReferralLink}}
                       </h4>
                     </div>
                     <div class="div_copy_rc">
-                      <a (click)="copyText(partnershipReport.ReferralLink,'link')" >
-                        <img *ngIf="isReferraLinkCopy" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/copy_codead.svg" alt="" class="img-responsive"/> 
-                        <img *ngIf="!isReferraLinkCopy" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/copy_codead.svg" alt="" class="img-responsive"/> 
+                      <a (click)="copyText(partnershipReport.ReferralLink,'link')">
+                        <img *ngIf="isReferraLinkCopy"
+                          src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/copy_codead.svg"
+                          alt="" class="img-responsive" />
+                        <img *ngIf="!isReferraLinkCopy"
+                          src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/copy_codead.svg"
+                          alt="" class="img-responsive" />
                       </a>
                     </div>
                   </div>
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
                     <a>
-                      <img (click)="share(partnershipReport.ReferralLink,'link')" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/share.svg" alt="" class="img-responsive"/> 
+                      <img (click)="share(partnershipReport.ReferralLink,'link')"
+                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/share.svg" alt=""
+                        class="img-responsive" />
                     </a>
                   </div>
                 </div>
@@ -177,7 +186,8 @@
                             Request to withdraw
                           </h4>
                         </a>
-                        <h4 class="mt20px mb0px fs_12px fw_400 lh_100p fc_ED7D6F" *ngIf="(partnershipReport.BalanceAmt<100)">
+                        <h4 class="mt20px mb0px fs_12px fw_400 lh_100p fc_ED7D6F"
+                          *ngIf="(partnershipReport.BalanceAmt<100)">
                           Reach $100 to get paid
                         </h4>
                       </div>
@@ -227,25 +237,29 @@
               <!-- /balance -->
               <ng-container *ngIf="partnershipReport.IncomeActivity.length==0">
                 <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 plr20px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <hr class="hr_style_v3_01">
                   </div>
                 </div>
-                <div class="row mtb40px">
+                <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12 p0">
                     <div class="row">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-                        <img
-                          src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/share_no_partner.svg"
-                          alt="" class="img-responsive" />
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/inunion.svg" alt=""
+                          class="img-responsive inunion-empty-state" />
                       </div>
                     </div>
 
-                    <div class="row mt20px mb40px">
+                    <div class="row mt20px">
                       <div class="col-md-12 col-sm-12 col-xs-12 p0">
                         <h4 class="mtb0px fs_12px fw_400 lh_150p fc_000000 tcenter">
-                          You have not recievd any referral Income
+                          You have not received any referral Income
                         </h4>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <hr class="hr_style_v3_01">
                       </div>
                     </div>
                   </div>
@@ -279,9 +293,8 @@
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 pr0px tright"
                       (click)="share(partnershipReport.AffRefCode,'code')">
                       <a>
-                        <img
-                          src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/share.svg"
-                          alt="" class="img-responsive">
+                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/share.svg" alt=""
+                          class="img-responsive">
                       </a>
                     </div>
                   </div>
@@ -383,9 +396,7 @@
               <div class="row mt20px">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                   <a class="prelative">
-                    <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/backgrounds/topics_v3_01.svg"
-                      class="img-responsive w100">
-                    <div class="row box_v3_02">
+                    <div class="row box_v3_02_grad">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
                         <div class="row">
@@ -458,7 +469,7 @@
 
                 <body id="partnershipReport"
                   style="font-family: Arial, sans-serif; margin: 0;  background:#FFF7E6 !important;color: black;">
-                  
+
                   <style>
                     html,
                     body {
@@ -491,11 +502,12 @@
                       /* Center the image */
                     }
                   </style>
-                  
+
                   <header>
                     <div style="display: flex; justify-content: space-between;">
                       <div>
-                        <img style="float: left;margin-top: 10px;margin-left:20px;height: 50px;width: 200px;" width="12%" 
+                        <img style="float: left;margin-top: 10px;margin-left:20px;height: 50px;width: 200px;"
+                          width="12%"
                           src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTA0IiBoZWlnaHQ9IjMwIiB2aWV3Qm94PSIwIDAgMTA0IDMwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8ZyBjbGlwLXBhdGg9InVybCgjY2xpcDBfMF8xODQ2KSI+CjxwYXRoIGQ9Ik0xNS4wMDQ4IDExLjQ5MjFDMTEuMzM5MSAxMS40OTIxIDguMzY3NDMgMTQuNDYyOCA4LjM2NzQzIDE4LjEyNzNDOC4zNjc0MyAyMS43OTE4IDExLjMzOTEgMjQuNzYyNSAxNS4wMDQ4IDI0Ljc2MjVDMTguNjcwNSAyNC43NjI1IDIxLjY0MjEgMjEuNzkxOCAyMS42NDIxIDE4LjEyNzNDMjEuNjQyMSAxNC40NjI4IDE4LjY3MDUgMTEuNDkyMSAxNS4wMDQ4IDExLjQ5MjFaIiBmaWxsPSIjRUQ3RDZGIi8+CjxwYXRoIGQ9Ik0xNS4wMDQ5IDBDNi43MTc5MiAwIDAgNi43MTU3MyAwIDE1QzAgMjMuMjg0MyA2LjcxNzkyIDMwIDE1LjAwNDkgMzBDMjMuMjkxOCAzMCAzMC4wMDk4IDIzLjI4NDMgMzAuMDA5OCAxNUMzMC4wMDk4IDYuNzE1NzMgMjMuMjkxOCAwIDE1LjAwNDkgMFpNMTUuMDA0OSAyNC43NTkxQzguNTE5NDcgMjQuNzU5MSAzLjI2MjAzIDE5LjUwMzQgMy4yNjIwMyAxMy4wMjAxQzMuMjYyMDMgNi41MzY4IDguNTE5NDcgMS4yODEwNiAxNS4wMDQ5IDEuMjgxMDZDMjEuNDkwMyAxLjI4MTA2IDI2Ljc0NzcgNi41MzY4MiAyNi43NDc3IDEzLjAyMDFDMjYuNzQ3NyAxOS41MDM0IDIxLjQ5MDMgMjQuNzU5MSAxNS4wMDQ5IDI0Ljc1OTFaIiBmaWxsPSIjODAzMzU4Ii8+CjxwYXRoIGQ9Ik0yNS42NDE3IDE0LjUxMjlDMjUuNjQxNyA4LjY0MDIxIDIwLjg3OTQgMy44Nzk0NiAxNS4wMDQ4IDMuODc5NDZDOS4xMzAyMiAzLjg3OTQ2IDQuMzY3OTIgOC42NDAyMSA0LjM2NzkyIDE0LjUxMjlDNC4zNjc5MiAyMC4zODU1IDkuMTMwMjIgMjUuMTQ2MyAxNS4wMDQ4IDI1LjE0NjNDMjAuODc5NCAyNS4xNDYzIDI1LjY0MTcgMjAuMzg1NiAyNS42NDE3IDE0LjUxMjlaTTIzLjMyOTIgMTUuOTE2NEMyMy4zMjkyIDIwLjUxMjQgMTkuNjAyMyAyNC4yMzgxIDE1LjAwNDggMjQuMjM4MUMxMC40MDczIDI0LjIzODEgNi42ODAzNiAyMC41MTI0IDYuNjgwMzYgMTUuOTE2NEM2LjY4MDM2IDExLjMyMDUgMTAuNDA3NCA3LjU5NDY4IDE1LjAwNDggNy41OTQ2OEMxOS42MDIyIDcuNTk0NjggMjMuMzI5MiAxMS4zMjA0IDIzLjMyOTIgMTUuOTE2NFoiIGZpbGw9IiNENzU4NkIiLz4KPHBhdGggZD0iTTM3LjYzOTIgMTkuMzcwNlYxMC44NDk0SDM5LjEyNjJWMTQuMzU1SDQzLjEyNDdWMTAuODQ5NEg0NC42MTE3VjE5LjM3MDZINDMuMTUzOVYxNS42NDI2SDM5LjE1NTRWMTkuMzcwNkgzNy42MzkyWiIgZmlsbD0iIzgwMzM1OCIvPgo8cGF0aCBkPSJNNDkuNzAyMSAxOS41MDUyQzQ5LjIxNDQgMTkuNTA1MiA0OC43NzcxIDE5LjQxNzQgNDguMzkwNyAxOS4yNDE4QzQ4LjAwNDMgMTkuMDY2MyA0Ny42OTQgMTguODMyMSA0Ny40NTk4IDE4LjUzOTVDNDcuMjI1NyAxOC4yNDY5IDQ3LjA0ODMgMTcuOTIwOSA0Ni45MjcxIDE3LjU2MjJDNDYuODA1OSAxNy4yMDM0IDQ2Ljc0NTYgMTYuODI2NSA0Ni43NDU2IDE2LjQzMjZDNDYuNzQ1NiAxNi4wMTU0IDQ2LjgwODMgMTUuNjE4IDQ2LjkzMjkgMTUuMjQxN0M0Ny4wNTc2IDE0Ljg2NTQgNDcuMjQwMyAxNC41MjM2IDQ3LjQ4MDMgMTQuMjE3NUM0Ny43MjA0IDEzLjkxMTQgNDguMDM3NyAxMy42Njc0IDQ4LjQzMTcgMTMuNDg1OUM0OC44MjU2IDEzLjMwNDUgNDkuMjcyOSAxMy4yMTM4IDQ5Ljc3MjMgMTMuMjEzOEM1MC40OTgzIDEzLjIxMzggNTEuMDU2MiAxMy40NzcyIDUxLjQ0NjcgMTQuMDAzOVYxMy4zNjZINTIuODY5M1YxOS4zNzA2SDUxLjQxMTVWMTguNTUxMkM1MC45NzQyIDE5LjE4NzQgNTAuNDA0NiAxOS41MDUyIDQ5LjcwMjEgMTkuNTA1MlpNNDkuODgzNiAxOC4zMzQ3QzUwLjQ0NTYgMTguMzM0NyA1MC44NTQyIDE4LjE1NjIgNTEuMTEgMTcuNzk5MkM1MS4zNjU5IDE3LjQ0MjIgNTEuNDkzNSAxNi45NjUyIDUxLjQ5MzUgMTYuMzY4M0M1MS40OTM1IDE1Ljc1NTUgNTEuMzU3NyAxNS4yNzI3IDUxLjA4NjYgMTQuOTE5OEM1MC44MTU2IDE0LjU2NjkgNTAuNDA0NiAxNC4zOTAyIDQ5Ljg1NDMgMTQuMzkwMkM0OS4zMTU3IDE0LjM5MDIgNDguOTAyOSAxNC41Njc1IDQ4LjYxNjEgMTQuOTIyN0M0OC4zMjkyIDE1LjI3OCA0OC4xODU4IDE1Ljc1NTUgNDguMTg1OCAxNi4zNTY2QzQ4LjE4NTggMTYuOTU3NyA0OC4zMjkyIDE3LjQzNzYgNDguNjE2MSAxNy43OTYzQzQ4LjkwMjkgMTguMTU1MSA0OS4zMjU2IDE4LjMzNDcgNDkuODgzNiAxOC4zMzQ3WiIgZmlsbD0iIzgwMzM1OCIvPgo8cGF0aCBkPSJNNTQuOTkyMSAyMS42ODIzVjE1LjM4NUM1NC45OTIxIDE1LjAzOCA1NC45NTUyIDE0LjM2NSA1NC44ODA5IDEzLjM2Nkg1Ni40MjA1VjE0LjIyNjNDNTYuNDY3NCAxNC4wMDggNTYuNjYzNSAxMy43ODQ0IDU3LjAwODkgMTMuNTU2MkM1Ny4zNTQzIDEzLjMyNzkgNTcuNzc3IDEzLjIxMzggNTguMjc2NCAxMy4yMTM4QzU4LjgwMzMgMTMuMjEzOCA1OS4yNjg3IDEzLjM1ODkgNTkuNjcyNiAxMy42NDk4QzYwLjA3NjYgMTMuOTQwNyA2MC4zODEgMTQuMzE4MSA2MC41ODU5IDE0Ljc4MjJDNjAuNzkwOCAxNS4yNDY0IDYwLjg5MzMgMTUuNzUyIDYwLjg5MzMgMTYuMjk4QzYwLjg5MzMgMTYuNzA3NyA2MC44MzMgMTcuMTAyNyA2MC43MTE4IDE3LjQ4MzFDNjAuNTkwNiAxNy44NjM2IDYwLjQxOTEgMTguMjA0NyA2MC4xOTY2IDE4LjUwNzNDNTkuOTc0MiAxOC44MDk5IDU5LjY4OSAxOS4wNTE2IDU5LjM0MTkgMTkuMjMzQzU4Ljk5NDggMTkuNDE0NCA1OC42MTE5IDE5LjUwNTIgNTguMTk0NCAxOS41MDUyQzU3LjcyMiAxOS41MDUyIDU3LjMyMDQgMTkuMzk0IDU2Ljk4ODUgMTkuMTcxNkM1Ni42NTY1IDE4Ljk0OTIgNTYuNDY3NCAxOC43NDAzIDU2LjQyMDYgMTguNTQ1NFYyMS42ODIzTDU0Ljk5MjEgMjEuNjgyM1pNNTcuODYwNyAxOC4zMzQ3QzU4LjEzIDE4LjMzNDcgNTguMzY1NCAxOC4yODA5IDU4LjU2NjIgMTguMTczOEM1OC43NjcgMTguMDY2NyA1OC45MjUgMTcuOTE5MiA1OS4wNDA0IDE3LjczMTlDNTkuMTU1NyAxNy41NDQ2IDU5LjI0MTIgMTcuMzM2OSA1OS4yOTggMTcuMTA4NkM1OS4zNTQ4IDE2Ljg4MDQgNTkuMzgyOSAxNi42MzE3IDU5LjM4MjkgMTYuMzYyNEM1OS4zODI5IDE1Ljk5MiA1OS4zMzE5IDE1LjY2MTkgNTkuMjMwNiAxNS4zNzM0QzU5LjEyOTQgMTUuMDg0OSA1OC45NjAyIDE0Ljg0ODQgNTguNzI0MyAxNC42NjUyQzU4LjQ4ODMgMTQuNDgyMSA1OC4xOTg1IDE0LjM5MDIgNTcuODU0OSAxNC4zOTAyQzU3LjUxNTQgMTQuMzkwMiA1Ny4yMjg1IDE0LjQ4MDkgNTYuOTk0MyAxNC42NjIzQzU2Ljc2MDEgMTQuODQzNyA1Ni41OTIxIDE1LjA3NjEgNTYuNDkwOCAxNS4zNTg4QzU2LjM4OTUgMTUuNjQxNCA1Ni4zMzg2IDE1Ljk2NjIgNTYuMzM4NiAxNi4zMzMyQzU2LjMzODYgMTYuNjA2NSA1Ni4zNjY3IDE2Ljg1ODcgNTYuNDIzNSAxNy4wOTExQzU2LjQ4MDMgMTcuMzIzNCA1Ni41NjY5IDE3LjUzNDEgNTYuNjg0IDE3LjcyMzFDNTYuODAxMSAxNy45MTIyIDU2Ljk2MDMgMTguMDYxNCA1Ny4xNjExIDE4LjE3MDhDNTcuMzYxOSAxOC4yODAzIDU3LjU5NTUgMTguMzM0NyA1Ny44NjA3IDE4LjMzNDdaIiBmaWxsPSIjODAzMzU4Ii8+CjxwYXRoIGQ9Ik02Mi44MjggMjEuNjgyM1YxNS4zODVDNjIuODI4IDE1LjAzOCA2Mi43OTExIDE0LjM2NSA2Mi43MTY4IDEzLjM2Nkg2NC4yNTY1VjE0LjIyNjNDNjQuMzAzMyAxNC4wMDggNjQuNDk5NCAxMy43ODQ0IDY0Ljg0NDggMTMuNTU2MkM2NS4xOTAyIDEzLjMyNzkgNjUuNjEyOSAxMy4yMTM4IDY2LjExMjMgMTMuMjEzOEM2Ni42MzkyIDEzLjIxMzggNjcuMTA0NiAxMy4zNTg5IDY3LjUwODYgMTMuNjQ5OEM2Ny45MTI1IDEzLjk0MDcgNjguMjE3IDE0LjMxODEgNjguNDIxOSAxNC43ODIyQzY4LjYyNjggMTUuMjQ2NCA2OC43MjkyIDE1Ljc1MiA2OC43MjkyIDE2LjI5OEM2OC43MjkyIDE2LjcwNzcgNjguNjY4OSAxNy4xMDI3IDY4LjU0NzcgMTcuNDgzMUM2OC40MjY1IDE3Ljg2MzYgNjguMjU1IDE4LjIwNDcgNjguMDMyNSAxOC41MDczQzY3LjgxMDEgMTguODA5OSA2Ny41MjUgMTkuMDUxNiA2Ny4xNzc4IDE5LjIzM0M2Ni44MzA3IDE5LjQxNDQgNjYuNDQ3OCAxOS41MDUyIDY2LjAzMDQgMTkuNTA1MkM2NS41NTc5IDE5LjUwNTIgNjUuMTU2MyAxOS4zOTQgNjQuODI0NCAxOS4xNzE2QzY0LjQ5MjQgMTguOTQ5MiA2NC4zMDM0IDE4Ljc0MDMgNjQuMjU2NSAxOC41NDU0VjIxLjY4MjNMNjIuODI4IDIxLjY4MjNaTTY1LjY5NjcgMTguMzM0N0M2NS45NjYgMTguMzM0NyA2Ni4yMDEzIDE4LjI4MDkgNjYuNDAyMSAxOC4xNzM4QzY2LjYwMjkgMTguMDY2NyA2Ni43NjEgMTcuOTE5MiA2Ni44NzYzIDE3LjczMTlDNjYuOTkxNyAxNy41NDQ2IDY3LjA3NzEgMTcuMzM2OSA2Ny4xMzM5IDE3LjEwODZDNjcuMTkwNyAxNi44ODA0IDY3LjIxODggMTYuNjMxNyA2Ny4yMTg4IDE2LjM2MjRDNjcuMjE4OCAxNS45OTIgNjcuMTY3OSAxNS42NjE5IDY3LjA2NjYgMTUuMzczNEM2Ni45NjUzIDE1LjA4NDkgNjYuNzk2MSAxNC44NDg0IDY2LjU2MDIgMTQuNjY1MkM2Ni4zMjQzIDE0LjQ4MjEgNjYuMDM0NSAxNC4zOTAyIDY1LjY5MDggMTQuMzkwMkM2NS4zNTEzIDE0LjM5MDIgNjUuMDY0NCAxNC40ODA5IDY0LjgzMDIgMTQuNjYyM0M2NC41OTYxIDE0Ljg0MzcgNjQuNDI4IDE1LjA3NjEgNjQuMzI2OCAxNS4zNTg4QzY0LjIyNTUgMTUuNjQxNCA2NC4xNzQ1IDE1Ljk2NjIgNjQuMTc0NSAxNi4zMzMyQzY0LjE3NDUgMTYuNjA2NSA2NC4yMDI2IDE2Ljg1ODcgNjQuMjU5NCAxNy4wOTExQzY0LjMxNjIgMTcuMzIzNCA2NC40MDI4IDE3LjUzNDEgNjQuNTE5OSAxNy43MjMxQzY0LjYzNyAxNy45MTIyIDY0Ljc5NjMgMTguMDYxNCA2NC45OTcxIDE4LjE3MDhDNjUuMTk3OSAxOC4yODAzIDY1LjQzMTUgMTguMzM0NyA2NS42OTY3IDE4LjMzNDdaIiBmaWxsPSIjODAzMzU4Ii8+CjxwYXRoIGQ9Ik03MC41NTg4IDEyLjEyNTJWMTAuODQ5NEg3MS45NjM5VjEyLjEyNTJINzAuNTU4OFpNNzAuNTY0NyAxOS4zNzA2VjEzLjM2Nkg3MS45NjM5VjE5LjM3MDZINzAuNTY0N1oiIGZpbGw9IiM4MDMzNTgiLz4KPHBhdGggZD0iTTc3LjA3ODMgMTkuNTA1MkM3Ni4wNjcyIDE5LjUwNTIgNzUuMjcwNCAxOS4yMTY3IDc0LjY4NjggMTguNjM5Qzc0LjEwMzEgMTguMDYxNCA3My44MTE1IDE3LjMwNjQgNzMuODExNSAxNi4zNzQxQzczLjgxMTUgMTUuOTUyOCA3My44ODE4IDE1LjU1MyA3NC4wMjIzIDE1LjE3NDRDNzQuMTYyOCAxNC43OTU3IDc0LjM2MDcgMTQuNDYwNCA3NC42MTY1IDE0LjE2NzhDNzQuODcyMyAxMy44NzUxIDc1LjE5NjEgMTMuNjQyOCA3NS41ODgzIDEzLjQ3MTNDNzUuOTgwNSAxMy4yOTk4IDc2LjQxNDkgMTMuMjEzOCA3Ni44OTA5IDEzLjIxMzhDNzcuMzY2OSAxMy4yMTM4IDc3Ljc4MjUgMTMuMjk1NyA3OC4xMzc5IDEzLjQ1OTZDNzguNDkzMiAxMy42MjM1IDc4Ljc3NDIgMTMuODUyOSA3OC45ODA5IDE0LjE0NzJDNzkuMTg3NSAxNC40NDE2IDc5LjM0MDkgMTQuNzcyMyA3OS40NDA1IDE1LjEzOTNDNzkuNTQgMTUuNTA2MiA3OS41ODk3IDE1LjkxMTggNzkuNTg5NyAxNi4zNTY2Qzc5LjU4OTcgMTYuNDY5NSA3OS41Nzk4IDE2LjU1NTYgNzkuNTYwNSAxNi42MTQxSDc1LjM0NTNDNzUuMzY4OCAxNy4xOTkzIDc1LjU0NzMgMTcuNjMyNCA3NS44ODEgMTcuOTEzM0M3Ni4yMTQ3IDE4LjE5NDIgNzYuNjU4NSAxOC4zMzQ3IDc3LjIxMjkgMTguMzM0N0M3Ny44NjA5IDE4LjMzNDcgNzguNDkzMiAxOC4xMTk5IDc5LjEwOTcgMTcuNjkwOUw3OS41MDE5IDE4Ljc0NDRDNzkuMTIzMSAxOS4wMDYgNzguNzQyIDE5LjE5OCA3OC4zNTc0IDE5LjMyMDlDNzcuOTcyOCAxOS40NDM4IDc3LjU0NjYgMTkuNTA1MiA3Ny4wNzgzIDE5LjUwNTJaTTc1LjM2MjkgMTUuNjQ4NEg3OC4zNDg2Qzc4LjI3ODQgMTUuMjIzIDc4LjEyMDMgMTQuODk3NiA3Ny44NzQ0IDE0LjY3MTFDNzcuNjI4NiAxNC40NDQ2IDc3LjMyODIgMTQuMzMxNiA3Ni45NzI5IDE0LjMzMTZDNzYuNTU1NSAxNC4zMzE2IDc2LjIwNTkgMTQuNDQ4NyA3NS45MjQ5IDE0LjY4MjhDNzUuNjQzOSAxNC45MTY5IDc1LjQ1NjYgMTUuMjM4OCA3NS4zNjI5IDE1LjY0ODRaIiBmaWxsPSIjODAzMzU4Ii8+CjxwYXRoIGQ9Ik04MS41NzE0IDE5LjM3MDZWMTQuODg3NkM4MS41NzE0IDE0LjY1MzUgODEuNTYxNSAxNC40MDk0IDgxLjU0MjIgMTQuMTU2MUM4MS41MjI4IDEzLjkwMjcgODEuNTAyOSAxMy43MDcyIDgxLjQ4MzYgMTMuNTcwOEw4MS40NTQzIDEzLjM2Nkg4Mi45OTk5VjE0LjE1NjFDODMuMjM4MiAxMy44NDQxIDgzLjQ3NTMgMTMuNjA4OCA4My43MTEyIDEzLjQ1MDhDODMuOTQ3MSAxMy4yOTI4IDg0LjIxMzUgMTMuMjEzOCA4NC41MTAzIDEzLjIxMzhDODQuNjg1OSAxMy4yMTM4IDg0Ljg4NSAxMy4yNDMxIDg1LjEwNzQgMTMuMzAxNlYxNC41NzE2Qzg0Ljg0NTggMTQuNDg1NSA4NC42MDQgMTQuNDQyOCA4NC4zODE1IDE0LjQ0MjhDODMuOTc5MyAxNC40NDI4IDgzLjY1MTUgMTQuNTczNCA4My4zOTggMTQuODM0OUM4My4xNDQ1IDE1LjA5NjUgODMuMDE3NCAxNS40NzQ2IDgzLjAxNzQgMTUuOTcwM1YxOS4zNzA2TDgxLjU3MTQgMTkuMzcwNloiIGZpbGw9IiM4MDMzNTgiLz4KPHBhdGggZD0iTTg2LjY4NTggMTkuMzcwNlYxMC44NDk0SDg4LjQzMDRDODguNTUxNiAxMS4xMTg2IDg4Ljk3OTUgMTIuMDcyNiA4OS43MTU0IDEzLjcxMTJDOTAuNDUxMyAxNS4zNDk5IDkxLjAxNjIgMTYuNjAwNiA5MS40MTAyIDE3LjQ2MjdDOTEuNzEwNiAxNi44MTEzIDkyLjAyMDMgMTYuMTI3MSA5Mi4zMzgyIDE1LjQxMTRDOTIuNjU2IDE0LjY5NTYgOTMuMDIzMSAxMy44NjM0IDkzLjQzODggMTIuOTE1M0M5My44NTQ0IDExLjk2NzIgOTQuMTU3NyAxMS4yNzg0IDk0LjM0OTEgMTAuODQ5NEg5Ni4wOTM3VjE5LjM3MDVIOTQuNzAwNFYxMy4yODRDOTQuNDkzNyAxMy43MzI5IDkzLjU3ODEgMTUuNzYxMyA5MS45NTQ3IDE5LjM3MDVIOTAuODZDOTAuNjU2OCAxOC45MjU4IDkwLjM3MjMgMTguMjk0OSA5MC4wMDUyIDE3LjQ3NzNDODkuNjM4MiAxNi42NTk3IDg5LjMwMjcgMTUuOTE4OCA4OC45OTgzIDE1LjI1MzNDODguNjkzOSAxNC41ODc5IDg4LjQwMTEgMTMuOTY0NiA4OC4xMjAxIDEzLjM4MzVWMTkuMzcwNUw4Ni42ODU4IDE5LjM3MDZaIiBmaWxsPSIjODAzMzU4Ii8+CjxwYXRoIGQ9Ik0xMDEuNDg4IDE5LjUwNTJDMTAwLjQ3NyAxOS41MDUyIDk5LjY4MDYgMTkuMjE2NyA5OS4wOTY5IDE4LjYzOUM5OC41MTMyIDE4LjA2MTQgOTguMjIxNyAxNy4zMDY0IDk4LjIyMTcgMTYuMzc0MUM5OC4yMjE3IDE1Ljk1MjggOTguMjkxOSAxNS41NTMgOTguNDMyNCAxNS4xNzQ0Qzk4LjU3MjkgMTQuNzk1NyA5OC43NzA4IDE0LjQ2MDQgOTkuMDI2NiAxNC4xNjc4Qzk5LjI4MjUgMTMuODc1MSA5OS42MDYyIDEzLjY0MjggOTkuOTk4NSAxMy40NzEzQzEwMC4zOTEgMTMuMjk5OCAxMDAuODI1IDEzLjIxMzggMTAxLjMwMSAxMy4yMTM4QzEwMS43NzcgMTMuMjEzOCAxMDIuMTkzIDEzLjI5NTcgMTAyLjU0OCAxMy40NTk2QzEwMi45MDMgMTMuNjIzNSAxMDMuMTg0IDEzLjg1MjkgMTAzLjM5MSAxNC4xNDcyQzEwMy41OTggMTQuNDQxNiAxMDMuNzUxIDE0Ljc3MjMgMTAzLjg1MSAxNS4xMzkzQzEwMy45NSAxNS41MDYyIDEwNCAxNS45MTE4IDEwNCAxNi4zNTY2QzEwNCAxNi40Njk1IDEwMy45OSAxNi41NTU2IDEwMy45NzEgMTYuNjE0MUg5OS43NTU1Qzk5Ljc3ODkgMTcuMTk5MyA5OS45NTc1IDE3LjYzMjQgMTAwLjI5MSAxNy45MTMzQzEwMC42MjUgMTguMTk0MiAxMDEuMDY5IDE4LjMzNDcgMTAxLjYyMyAxOC4zMzQ3QzEwMi4yNzEgMTguMzM0NyAxMDIuOTAzIDE4LjExOTkgMTAzLjUyIDE3LjY5MDlMMTAzLjkxMiAxOC43NDQ0QzEwMy41MzMgMTkuMDA2IDEwMy4xNTIgMTkuMTk4IDEwMi43NjggMTkuMzIwOUMxMDIuMzgzIDE5LjQ0MzggMTAxLjk1NyAxOS41MDUyIDEwMS40ODggMTkuNTA1MlpNOTkuNzczMSAxNS42NDg0SDEwMi43NTlDMTAyLjY4OSAxNS4yMjMgMTAyLjUzIDE0Ljg5NzYgMTAyLjI4NSAxNC42NzExQzEwMi4wMzkgMTQuNDQ0NiAxMDEuNzM4IDE0LjMzMTYgMTAxLjM4MyAxNC4zMzE2QzEwMC45NjYgMTQuMzMxNiAxMDAuNjE2IDE0LjQ0ODcgMTAwLjMzNSAxNC42ODI4QzEwMC4wNTQgMTQuOTE2OSA5OS44NjY4IDE1LjIzODggOTkuNzczMSAxNS42NDg0WiIgZmlsbD0iIzgwMzM1OCIvPgo8L2c+CjxkZWZzPgo8Y2xpcFBhdGggaWQ9ImNsaXAwXzBfMTg0NiI+CjxyZWN0IHdpZHRoPSIxMDQiIGhlaWdodD0iMzAiIGZpbGw9IndoaXRlIi8+CjwvY2xpcFBhdGg+CjwvZGVmcz4KPC9zdmc+Cg==" />
 
                         <!-- <span style="font-size: 13pt; text-align: left;margin-top: 18px;top: 16px; position: relative; ">
@@ -506,7 +518,7 @@
 
                     <h2 style="text-align: center; font-weight: 300; padding: 10px;">Partnership Income Activity</h2>
                   </header>
-                 
+
                   <div>
                     <div class="pdf-content" style="border: white;border: 1px solid;padding: 8px;
                       border-radius: 8px;width: 95%;margin-left: 16px;margin-right: 2px;">
@@ -517,8 +529,9 @@
                         ${{partnershipReport.WithdrawnAmt+partnershipReport.BalanceAmt | number}}
                       </p>
                     </div>
-                    <div style="border:  1px solid #ddd; width: 57%; border-collapse: collapse;margin-left: 5%;  margin-top: 8%">
-                      <span style="font-size: 300ox;padding: 1px;" >Monthly Withdrawals</span>
+                    <div
+                      style="border:  1px solid #ddd; width: 57%; border-collapse: collapse;margin-left: 5%;  margin-top: 8%">
+                      <span style="font-size: 300ox;padding: 1px;">Monthly Withdrawals</span>
                     </div>
                     <div style="display: flex;;margin-left: 5%;">
                       <table style="width: 60%; border-collapse: collapse; margin-bottom: 20px; padding: 2px;">
@@ -547,7 +560,7 @@
                           <tr style="border: 1;">
                             <td style="border: 1px solid #ddd; padding: 5px; font-weight: 300; color:white;">Total</td>
                             <td style="border: 1px solid #ddd; padding: 5px; font-weight: 300; color:white;">
-                             {{ partnershipReport.WithdrawnAmt }}
+                              {{ partnershipReport.WithdrawnAmt }}
                             </td>
                           </tr>
                         </tfoot>
@@ -555,7 +568,8 @@
 
                     </div>
 
-                    <div style="border: 1px solid #ddd; width: 90%; border-collapse: collapse;margin-left: 5%;margin-top: 5%;">
+                    <div
+                      style="border: 1px solid #ddd; width: 90%; border-collapse: collapse;margin-left: 5%;margin-top: 5%;">
                       <span style="font-size: 300ox;padding: 1px;">Monthly Earnings</span>
                     </div>
                     <div style="display: flex;align-items: center;justify-content: center; ">
@@ -573,7 +587,8 @@
                           <ng-container *ngFor="let item of tableData">
                             <ng-container *ngFor="let val of item[1][1].dates">
                               <tr>
-                                <td style="border: 1px solid #ddd; padding: 10px;">{{val.date}} {{val.month}} {{val.year}}</td>
+                                <td style="border: 1px solid #ddd; padding: 10px;">{{val.date}} {{val.month}}
+                                  {{val.year}}</td>
                                 <td style="border: 1px solid #ddd; padding: 10px;"> {{val.PartnerName}}</td>
                                 <td style="border: 1px solid #ddd; padding: 10px;"> {{val.SubscriptionId}}</td>
                                 <td style="border: 1px solid #ddd; padding: 10px;"> {{val.Comm_Earned==''?'0':
@@ -588,7 +603,8 @@
                             <td style="border: 1px solid #ddd; padding: 5px;font-weight: 300;color:white;">Total</td>
                             <td style="border: 1px solid #ddd; padding: 5px;font-weight: 300;color:white;"> </td>
                             <td style="border: 1px solid #ddd; padding: 5px;font-weight: 300;color:white;"></td>
-                            <td style="border: 1px solid #ddd; padding: 5px;font-weight: 300;color:white;">{{ totalRevenu | number}}
+                            <td style="border: 1px solid #ddd; padding: 5px;font-weight: 300;color:white;">{{
+                              totalRevenu | number}}
                             </td>
                           </tr>
                         </tfoot>
