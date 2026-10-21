@@ -2107,7 +2107,7 @@ Work</button>
             </div>
 
 
-                      </div>
+                      
    <div class="clearfix"></div>
 
 
@@ -2142,7 +2142,7 @@ Work</button>
                
               </a>
             </div>
-
+</div>
           <div class="blog-empty is-hidden" id="blog-empty">No articles match your search.</div>
 
           <div class="btn-container">
