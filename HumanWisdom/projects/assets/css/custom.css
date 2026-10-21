@@ -11444,7 +11444,8 @@ btn:active {
 
 .tcenter {
   text-align: center !important;
-  text-align: -webkit-center !important;  /* not valid anymore */
+  text-align: -webkit-center !important;
+  /* not valid anymore */
 }
 
 /* Redeem landing only: -webkit-center shrink-wraps this screen on iOS Safari.
@@ -30958,7 +30959,7 @@ svg path
 
 .wec_ul li {
   margin-bottom: 15px;
-    font-size: 18px;
+  font-size: 18px;
 
 }
 
@@ -36220,7 +36221,7 @@ li ol > li:before {
   background: #FFE8BB !important;
   border-radius: 12px;
   padding: 20px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
   position: relative;
   margin-bottom: 16px;
 }
@@ -36266,7 +36267,7 @@ li ol > li:before {
   font-size: 12px;
   font-weight: 400;
   line-height: 1.4;
-  color: rgba(0,0,0,0.5) !important;
+  color: rgba(0, 0, 0, 0.5) !important;
   margin: 0 0 2px 0;
 }
 
@@ -36276,7 +36277,7 @@ li ol > li:before {
   gap: 4px;
   font-size: 12px;
   font-weight: 400;
-  color: rgba(0,0,0,0.5) !important;
+  color: rgba(0, 0, 0, 0.5) !important;
   margin: 6px 0 0 0;
 }
 
@@ -36904,7 +36905,7 @@ section>.row {
   font-weight: 600;
   line-height: 150%;
   text-align: center;
-  color: #FFFFFF;
+  color: #FFFFFF !important;
 }
 
 .partnership_tab>li>a:hover {
@@ -36920,7 +36921,7 @@ section>.row {
   font-weight: 400;
   font-size: 15px;
   line-height: 140%;
-  color: #000;
+  color: #000 !important;
   text-align: center;
   border: 0;
 }
@@ -36957,13 +36958,11 @@ section>.row {
 .hiw-connector {
   width: 2px;
   height: 20px;
-  background: repeating-linear-gradient(
-    to bottom,
-    #D7586B 0px,
-    #D7586B 4px,
-    transparent 4px,
-    transparent 8px
-  );
+  background: repeating-linear-gradient(to bottom,
+      #D7586B 0px,
+      #D7586B 4px,
+      transparent 4px,
+      transparent 8px);
   margin: 6px 0 6px 21px;
 }
 
@@ -37001,6 +37000,7 @@ section>.row {
 .pa-faq-q:last-child {
   margin-bottom: 0;
 }
+
 /* ── /How it works ── */
 .hr_style_v3_12 {
   border: 1px solid #000000;
