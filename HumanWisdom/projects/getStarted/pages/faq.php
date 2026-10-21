@@ -1241,9 +1241,7 @@ Yes.  <b> <a class="blog_highlight_peach td_underline fs_12px" href="https://hap
 
 
 
-                      </div>
-                    </div>
-                  </div>
+                     
 
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
@@ -3509,6 +3507,9 @@ Long term stress can impact our mental and physical health, and our performance.
 
         </div>
       </div>
+       </div>
+                    </div>
+                  </div>
       <!-- /desktop -->
 
       <!-- mobile -->
