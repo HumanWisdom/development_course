@@ -263,11 +263,14 @@ body:has(#menu:checked) .owl-animation-wrapper {
   vertical-align: bottom;
 }
 
-/* Cloud Container - OLLY_HI only: fade in on open, fade out on close */
+/* Cloud Container - OLLY_HI only: fade in on open, fade out on close.
+   Desktop owl is height 100px then scale(0.7) from the bottom, so the beak
+   sits lower than the layout box. These offsets put the tail on the beak,
+   matching the Today page, with the tail 1px closer to the beak. */
 .owl-cloud-container {
   position: absolute;
-  top: -102px;
-  left: -45%;
+  top: -82px;
+  left: calc(-46% + 9px);
   transform: translateX(-50%);
   z-index: 1001;
   display: flex;
@@ -392,9 +395,11 @@ body:has(#menu:checked) .owl-animation-wrapper {
     object-fit: contain;
   }
 
+  /* Tail on the beak, same relationship as desktop. The 140px bubble
+     was sitting on the face (tail ~17px below the beak). */
   .owl-cloud-container {
-    top: -55px;
-    left: -35%;
+    top: -82px;
+    left: calc(-35% - 19px);
     transform: translateX(-50%);
     width: 140px;
     height: 110px;
