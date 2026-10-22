@@ -139,12 +139,17 @@
 
                   <div class="row mb10px">
                     <div class="col-md-12 col-sm-12 col-xs-12 p0" *ngIf="LinkBankAccount!='Paypal'">
-                      <div>
-                        <select type="text" name="threadlist" id="threadlist" class="sp_fc"
-                          [(ngModel)]="paymentBank.CountryId" #mySelect (change)='onChange(mySelect.value)'>
-                          <option [value]="0">Select Country</option>
-                          <option *ngFor="let titl of countryList" [value]="titl.CID">{{titl.Country}}</option>
-                        </select>
+                      <div class="custom-select-wrapper" [class.open]="isCountryDropdownOpen">
+                        <div class="custom-select-trigger sp_fc" (click)="toggleCountryDropdown()">
+                          <span>{{ getSelectedCountryName() }}</span>
+                          <svg class="custom-select-arrow" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1l5 5 5-5" stroke="#80745D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                        </div>
+                        <div class="custom-select-options" *ngIf="isCountryDropdownOpen">
+                          <div class="custom-select-option" [class.selected]="paymentBank.CountryId == 0" (click)="selectCountry(0, 'Select Country')">Select Country</div>
+                          <div class="custom-select-option" *ngFor="let titl of countryList" [class.selected]="paymentBank.CountryId == titl.CID" (click)="selectCountry(titl.CID, titl.Country)">{{titl.Country}}</div>
+                        </div>
                       </div>
                     </div>
                   </div>
