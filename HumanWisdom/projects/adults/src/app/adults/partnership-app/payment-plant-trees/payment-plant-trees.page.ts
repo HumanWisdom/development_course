@@ -18,13 +18,31 @@ export class PaymentPlantTreesPage implements OnInit {
   }
 
   copyText(): void {
-    navigator.clipboard.writeText(this.referralCode).catch(() => {
-      console.error("Unable to copy text");
-    });
-    this.isCopy=false;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(this.referralCode).catch(() => this.fallbackCopy(this.referralCode));
+    } else {
+      this.fallbackCopy(this.referralCode);
+    }
+    this.isCopy = false;
     setTimeout(() => {
-      this.isCopy=true;
+      this.isCopy = true;
     }, 4000);
+  }
+
+  private fallbackCopy(text: string): void {
+    const el = document.createElement('textarea');
+    el.value = text;
+    el.style.position = 'fixed';
+    el.style.opacity = '0';
+    document.body.appendChild(el);
+    el.focus();
+    el.select();
+    try {
+      document.execCommand('copy');
+    } catch (err) {
+      console.error('Copy failed:', err);
+    }
+    document.body.removeChild(el);
   }
   
   share(){
