@@ -153,15 +153,15 @@
   background: rgba(0, 0, 0, 0.6);
 }
 
-/* Tablet / mobile — Figma "Owl wings down": 65.73 × 72.58 */
+/* Mobile only — same size as desktop Figma owl: 87.73 × 82.58 */
 @media (max-width: 768px) {
 
   .owl-video,
   .owl-gif {
-    width: 65.73px;
-    height: 72.58px;
-    max-width: 65.73px;
-    max-height: 72.58px;
+    width: 87.73px;
+    height: 82.58px;
+    max-width: 87.73px;
+    max-height: 82.58px;
   }
 
   :host {
@@ -174,10 +174,10 @@
 
   .owl-video,
   .owl-gif {
-    width: 65.73px;
-    height: 72.58px;
-    max-width: 65.73px;
-    max-height: 72.58px;
+    width: 87.73px;
+    height: 82.58px;
+    max-width: 87.73px;
+    max-height: 82.58px;
   }
 
   :host {
@@ -190,10 +190,10 @@
 
   .owl-video,
   .owl-gif {
-    width: 65.73px;
-    height: 72.58px;
-    max-width: 65.73px;
-    max-height: 72.58px;
+    width: 87.73px;
+    height: 82.58px;
+    max-width: 87.73px;
+    max-height: 82.58px;
   }
 
   :host {
@@ -206,10 +206,10 @@
 
   .owl-video,
   .owl-gif {
-    width: 65.73px;
-    height: 72.58px;
-    max-width: 65.73px;
-    max-height: 72.58px;
+    width: 87.73px;
+    height: 82.58px;
+    max-width: 87.73px;
+    max-height: 82.58px;
   }
 
   :host {
@@ -263,11 +263,14 @@ body:has(#menu:checked) .owl-animation-wrapper {
   vertical-align: bottom;
 }
 
-/* Cloud Container - OLLY_HI only: fade in on open, fade out on close */
+/* Cloud Container - OLLY_HI only: fade in on open, fade out on close.
+   Desktop owl is height 100px then scale(0.7) from the bottom, so the beak
+   sits lower than the layout box. These offsets put the tail on the beak,
+   matching the Today page, with the tail 1px closer to the beak. */
 .owl-cloud-container {
   position: absolute;
-  top: -102px;
-  left: -45%;
+  top: -82px;
+  left: calc(-46% + 9px);
   transform: translateX(-50%);
   z-index: 1001;
   display: flex;
@@ -383,18 +386,20 @@ body:has(#menu:checked) .owl-animation-wrapper {
     filter: contrast(1.1) brightness(1.05);
   }
 
-  /* Figma mobile: Owl wings down 65.73 × 72.58 (adults + teens) */
+  /* Mobile only: same desktop size for adults and teens (87.73 × 82.58) */
   .static-owl-image {
-    width: 65.73px;
-    height: 72.58px;
-    max-width: 65.73px;
+    width: 87.73px;
+    height: 82.58px;
+    max-width: 87.73px;
     transform: none;
     object-fit: contain;
   }
 
+  /* Tail on the beak, same relationship as desktop. The 140px bubble
+     was sitting on the face (tail ~17px below the beak). */
   .owl-cloud-container {
-    top: -55px;
-    left: -35%;
+    top: -82px;
+    left: calc(-35% - 19px);
     transform: translateX(-50%);
     width: 140px;
     height: 110px;
@@ -409,7 +414,7 @@ body:has(#menu:checked) .owl-animation-wrapper {
 
 }
 
-/* Teenagers: same Figma mobile size as adults (65.73 × 72.58) */
+/* Teenagers mobile: same desktop size as adults (87.73 × 82.58) */
 @media (max-width: 1024px) {
   :host(.teenager-theme) .static-owl-container {
     align-items: center;
@@ -418,19 +423,19 @@ body:has(#menu:checked) .owl-animation-wrapper {
 
   :host(.teenager-theme) .static-owl-image {
     transform-origin: bottom center;
-    width: 65.73px;
-    height: 72.58px;
-    max-width: 65.73px;
+    width: 87.73px;
+    height: 82.58px;
+    max-width: 87.73px;
     transform: none;
     object-fit: contain;
   }
 
   :host(.teenager-theme) .owl-gif {
     margin-right: 0;
-    width: 65.73px;
-    height: 72.58px;
-    max-width: 65.73px;
-    max-height: 72.58px;
+    width: 87.73px;
+    height: 82.58px;
+    max-width: 87.73px;
+    max-height: 82.58px;
   }
 
   :host(.teenager-theme) .owl-cloud-container {
