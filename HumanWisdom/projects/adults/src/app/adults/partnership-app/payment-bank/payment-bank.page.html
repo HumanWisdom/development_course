@@ -12,102 +12,98 @@
         <div class="x_panel p0">
           <div class="x_content p0">
             <form>
-              <div class="row center_flex mt40px">
+              <div class="row center_flex mt10px">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <div class="row div_pdollar">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/partnership/dollar.svg" alt="" class="img-responsive"/> 
-                      </div>
-                      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 pl20px pr0px">
-                        <h4 class="fw_500 fs_12px lh_150p fc_000000 mtb0px">
-                          Receive an income from the partnership program
-                        </h4>
-                      </div>
+
+                  <!-- heading block -->
+                  <div class="row mb30px">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                      <h4 class="fw_600 fs_24px lh_150p fc_000000 mt0px mb5px">
+                        Spread some happiness!
+                      </h4>
+                      <p class="fw_400 fs_15px lh_150p fc_000000 mtb0px">
+                        Before we proceed, tell us how you would like to receive your partnership income.
+                      </p>
                     </div>
                   </div>
+                  <!-- /heading block -->
 
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                      <hr class="hr_style_v3_05 mtb20px">
-                    </div>
-                  </div>
-
-                  <!-- svg checkbox -->
+                  <!-- bank account row -->
                   <div class="row chk_partnership_paytype">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 flex_ai">
                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tleft">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/partnership/bank.svg" class="img-responsive">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/adbank.svg"
+                            class="img-responsive">
                         </div>
-
                         <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                           <span class="mtb0px fs_15px fw_400 lh_150p fc_000000 ellipsis">
                             Link bank account
-                           </span>
+                          </span>
                         </div>
                       </div>
-                      
                       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright flex_end">
-                        <input class="inp-cbx" #bank id="chk_01" name="chk_01" type="checkbox" [value]="false" (change)="bankChecked($event,'bank')" [(ngModel)]="isBankAccount">
-                        <label class="checkbox_partnership mt0px" for="chk_01">
-                          <span>
-                            <svg width="12px" height="10px">
-                              <use xlink:href="#check"></use>
-                            </svg>
-                          </span>
-                        </label>
+                        <span class="pay-radio-icon" [class.active]="isBankAccount" (click)="bankChecked(null,'bank')">
+                          <!-- active: pink filled + white tick -->
+                          <svg *ngIf="isBankAccount" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="12" fill="#ED7D6F" />
+                            <polyline points="6,12.5 10,16.5 18,7.5" stroke="white" stroke-width="2"
+                              stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          <!-- inactive: grey border circle + grey tick outline -->
+                          <svg *ngIf="!isBankAccount" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="11.25" stroke="#80745D" stroke-width="1.5" />
+                            <polyline points="6,12.5 10,16.5 18,7.5" stroke="#80745D" stroke-width="1.5"
+                              stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                        </span>
                       </div>
                     </div>
                   </div>
+                  <!-- /bank account row -->
 
-                  <!--SVG Sprites-->
-                  <svg class="inline-svg">
-                    <symbol id="check" viewbox="0 0 12 10">
-                      <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                    </symbol>
-                  </svg>
-                  <!-- /svg checkbox -->
-
-                  <!-- svg checkbox -->
+                  <!-- paypal row -->
                   <div class="row chk_partnership_paytype mt10px">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 flex_ai">
                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tleft">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/partnership/paypal.svg" class="img-responsive">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/adicn_paypal.svg"
+                            class="img-responsive">
                         </div>
-
                         <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
                           <span class="mtb0px fs_15px fw_400 lh_150p fc_000000 ellipsis">
                             Paypal
-                           </span>
+                          </span>
                         </div>
                       </div>
-                      
                       <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright flex_end">
-                        <input class="inp-cbx" id="chk_02" name="chk_02" type="checkbox" [value]="isPaypalChecked" (change)="payPalbtn($event,'paypal')" [(ngModel)]="isPaypalChecked">
-                        <label class="checkbox_partnership mt0px" for="chk_02">
-                          <span>
-                            <svg width="12px" height="10px">
-                              <use xlink:href="#check"></use>
-                            </svg>
-                          </span>
-                        </label>
+                        <span class="pay-radio-icon" [class.active]="isPaypalChecked"
+                          (click)="payPalbtn(null,'paypal')">
+                          <!-- active: pink filled + white tick -->
+                          <svg *ngIf="isPaypalChecked" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="12" fill="#ED7D6F" />
+                            <polyline points="6,12.5 10,16.5 18,7.5" stroke="white" stroke-width="2"
+                              stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          <!-- inactive: grey border circle + grey tick outline -->
+                          <svg *ngIf="!isPaypalChecked" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="11.25" stroke="#80745D" stroke-width="1.5" />
+                            <polyline points="6,12.5 10,16.5 18,7.5" stroke="#80745D" stroke-width="1.5"
+                              stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                        </span>
                       </div>
                     </div>
                   </div>
-
-                  <!--SVG Sprites-->
-                  <svg class="inline-svg">
-                    <symbol id="check" viewbox="0 0 12 10">
-                      <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                    </symbol>
-                  </svg>
-                  <!-- /svg checkbox -->
+                  <!-- /paypal row -->
 
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                      <hr class="hr_style_v3_05 mtb20px">
+                      <hr style="border: 1px solid #FFFFFF40; margin-top: 30px; margin-bottom: 30px;">
                     </div>
                   </div>
 
@@ -141,10 +137,11 @@
                     </div>
                   </div> -->
 
-                  <div class="row mb10px">                    
-                    <div class="col-md-12 col-sm-12 col-xs-12 p0" *ngIf="LinkBankAccount!='Paypal'" >
+                  <div class="row mb10px">
+                    <div class="col-md-12 col-sm-12 col-xs-12 p0" *ngIf="LinkBankAccount!='Paypal'">
                       <div>
-                        <select type="text" name="threadlist" id="threadlist" class="sp_fc" [(ngModel)]="paymentBank.CountryId" #mySelect (change)='onChange(mySelect.value)'>
+                        <select type="text" name="threadlist" id="threadlist" class="sp_fc"
+                          [(ngModel)]="paymentBank.CountryId" #mySelect (change)='onChange(mySelect.value)'>
                           <option [value]="0">Select Country</option>
                           <option *ngFor="let titl of countryList" [value]="titl.CID">{{titl.Country}}</option>
                         </select>
@@ -152,42 +149,61 @@
                     </div>
                   </div>
 
-                  <div class="row mb10px" *ngIf="LinkBankAccount!='Paypal'">                    
+                  <div class="row mb10px" *ngIf="LinkBankAccount!='Paypal'">
                     <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                      <input type="text" class="sp_fc" id="BankName" name="BankName" maxlength="100" [(ngModel)]="paymentBank.BankName" placeholder="Bank Name">
+                      <input type="text" class="sp_fc" id="BankName" name="BankName" maxlength="100"
+                        [(ngModel)]="paymentBank.BankName" placeholder="Bank Name">
                     </div>
                   </div>
 
-                  <div class="row mb10px" *ngIf="LinkBankAccount!='Paypal'">                    
+                  <div class="row mb10px" *ngIf="LinkBankAccount!='Paypal'">
                     <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                      <input type="text" class="sp_fc" id="Acc_Number" name="Acc_Number"  [(ngModel)]="paymentBank.Acc_Number"  maxlength="100"  placeholder="Bank Account number">
+                      <input type="text" class="sp_fc" id="Acc_Number" name="Acc_Number"
+                        [(ngModel)]="paymentBank.Acc_Number" maxlength="100" placeholder="Bank Account number">
                     </div>
                   </div>
 
-                  <div class="row mb10px" *ngIf="LinkBankAccount!='Paypal'">                    
+                  <div class="row mb10px" *ngIf="LinkBankAccount!='Paypal'">
                     <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                      <input type="text" class="sp_fc" id="Swift" name="Swift" [(ngModel)]="paymentBank.IBAN_SWIFT_RoutingNo" maxlength="100"  [placeholder]="getPlaceHolder()">
+                      <input type="text" class="sp_fc" id="Swift" name="Swift"
+                        [(ngModel)]="paymentBank.IBAN_SWIFT_RoutingNo" maxlength="100" [placeholder]="getPlaceHolder()">
                     </div>
                   </div>
-                
-                  <div class="row mb10px" *ngIf="LinkBankAccount=='Paypal'">                    
+
+                  <div class="row mb10px" *ngIf="LinkBankAccount=='Paypal'">
                     <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                      <input type="text" class="sp_fc" id="PaypalId" name="PaypalId" [(ngModel)]="paymentBank.PayPalID" maxlength="30" placeholder="PayPalId">
+                      <input type="text" class="sp_fc" id="PaypalId" name="PaypalId" [(ngModel)]="paymentBank.PayPalID"
+                        maxlength="30" placeholder="PayPalId">
                     </div>
                   </div>
-         
+
+                  <!-- info text block -->
+                  <div class="row mt30px">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+                      <p class="fw_400 fs_15px lh_150p fc_000000 mtb0px">
+                        <a (click)="clickHereInfo()" class="fw_600 fs_15px lh_150p fc_ED7D6F">Click here</a> for more
+                        information on how the Partnership Program works
+                      </p>
+                      <p class="fw_400 fs_15px lh_150p fc_ED7D6F mt30px mb0px">
+                        <a (click)="doThisLater()" class="fw_600 fs_15px lh_150p fc_ED7D6F underline">I will do this
+                          later</a>
+                      </p>
+                    </div>
+                  </div>
+                  <!-- /info text block -->
+
                 </div>
               </div>
-                
+
               <div class="row">
                 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter p0 row_bp col_cw">
                   <a>
-                    <button type="button" class="btn btn_tfas" (click)="Submit()" >
+                    <button type="button" class="btn btn_tfas" (click)="Submit()">
                       Submit
                     </button>
                   </a>
                 </div>
-              </div>   
+              </div>
 
               <div class="pagebreak"></div>
 
@@ -198,11 +214,11 @@
     </div>
   </div>
 </div>
-<div class="row" style="display: none;">                  
+<div class="row" style="display: none;">
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0">
-    <button type="button" class="btn btn_v3_nt_post" #postModal data-toggle="modal" data-target="#posted_successfully">                      
-     InfoModal
-    </button>  
+    <button type="button" class="btn btn_v3_nt_post" #postModal data-toggle="modal" data-target="#posted_successfully">
+      InfoModal
+    </button>
   </div>
 </div>
 
@@ -213,15 +229,18 @@
 
       <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12 p0">
-          <button type="button" class="btn_popup_close m0px" (click)="closePost()" data-dismiss="modal" aria-label="close">
-            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/v3_close_modal.svg" class="img-responsive fright">
+          <button type="button" class="btn_popup_close m0px" (click)="closePost()" data-dismiss="modal"
+            aria-label="close">
+            <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/v3_close_modal.svg"
+              class="img-responsive fright">
           </button>
         </div>
       </div>
-      
+
       <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/v3_tick_successfull.svg" class="img-responsive">
+          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/v3_tick_successfull.svg"
+            class="img-responsive">
         </div>
       </div>
 

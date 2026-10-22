@@ -22,9 +22,13 @@ export class PaymentIncomePage implements OnInit {
   ngOnInit() {
   }
   copyText(text, type): void {
-    navigator.clipboard.writeText(text).catch(() => {
-      console.error("Unable to copy text");
-    });
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).catch(() => {
+        this.fallbackCopy(text);
+      });
+    } else {
+      this.fallbackCopy(text);
+    }
     if (type == 'link') {
       this.isReferraLinkCopy = false;
     } else {
@@ -37,6 +41,22 @@ export class PaymentIncomePage implements OnInit {
         this.isCopy = true;
       }
     }, 4000);
+  }
+
+  private fallbackCopy(text: string): void {
+    const el = document.createElement('textarea');
+    el.value = text;
+    el.style.position = 'fixed';
+    el.style.opacity = '0';
+    document.body.appendChild(el);
+    el.focus();
+    el.select();
+    try {
+      document.execCommand('copy');
+    } catch (err) {
+      console.error('Copy failed:', err);
+    }
+    document.body.removeChild(el);
   }
 
   share(type) {
