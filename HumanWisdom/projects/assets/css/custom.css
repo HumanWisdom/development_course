@@ -36242,8 +36242,8 @@ li ol > li:before {
 }
 
 .testimonial-card__quot-icon {
-  width: 28px;
-  height: 28px;
+  /* width: 28px;
+  height: 28px; */
   flex-shrink: 0;
 }
 
