@@ -1,5 +1,5 @@
 import { Location } from '@angular/common';
-import { AfterContentInit, AfterViewInit, Component,ViewChild, OnInit } from '@angular/core';
+import { AfterContentInit, AfterViewInit, Component, HostListener, ViewChild, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { faTheRedYeti } from '@fortawesome/free-brands-svg-icons';
 import { OnboardingService } from '../../../../../../shared/services/onboarding.service';
@@ -181,6 +181,42 @@ export class PaymentBankPage implements OnInit {
     return this.PlaceHolderRouter;
   }
   back() {
+    this.location.back();
+  }
+
+  isCountryDropdownOpen: boolean = false;
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent) {
+    const target = event.target as HTMLElement;
+    if (!target.closest('.custom-select-wrapper')) {
+      this.isCountryDropdownOpen = false;
+    }
+  }
+
+  toggleCountryDropdown() {
+    this.isCountryDropdownOpen = !this.isCountryDropdownOpen;
+  }
+
+  selectCountry(cid: number, name: string) {
+    this.paymentBank.CountryId = cid;
+    this.onChange(cid);
+    this.isCountryDropdownOpen = false;
+  }
+
+  getSelectedCountryName(): string {
+    if (!this.paymentBank || this.paymentBank.CountryId == 0) return 'Select Country';
+    const found = this.countryList?.find(c => c.CID == this.paymentBank.CountryId);
+    return found ? found.Country : 'Select Country';
+  }
+
+  clickHereInfo() {
+    this.router.navigate(['adults/partnership-webpage/partnership-index'], {
+      state: { fromPaymentBank: true }
+    });
+  }
+
+  doThisLater() {
     this.location.back();
   }
 
