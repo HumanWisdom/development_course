@@ -2105,6 +2105,77 @@ Work</button>
                
               </a>
             </div>
+
+
+                      
+   <div class="clearfix"></div>
+
+
+              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="1100">
+
+            <a class="BlogCard" href="5_tips_happier.php">
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/91.webp" class="img-responsive img_blogs" alt="Blog_img">
+                  </div>
+                </div>
+
+                <div class="row mt20px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp"> Mental health</button>
+
+
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                    <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">5 Tips to Be Happier in 2026
+
+
+
+
+
+</h4>
+                  </div>
+                </div>
+               
+              </a>
+            </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="1100">
+
+            <a class="BlogCard" href="better_doctor.php">
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/92.webp" class="img-responsive img_blogs" alt="Blog_img">
+                  </div>
+                </div>
+
+                <div class="row mt20px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp"> Mental health</button>
+
+
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                    <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">Self-knowledge can make you a better doctor
+
+
+
+
+
+
+</h4>
+                  </div>
+                </div>
+               
+              </a>
+            </div>
+</div>
           <div class="blog-empty is-hidden" id="blog-empty">No articles match your search.</div>
 
           <div class="btn-container">

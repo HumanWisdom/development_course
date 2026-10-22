@@ -11,3 +11,37 @@
   height: 15px;
   margin-left: 5px !important;
 }
+
+/* Partnership Referral Code card – gradient replaces solid purple */
+.p_rc_gradient {
+  background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
+}
+
+/* Referral link input box only */
+.referral-link-box {
+  max-height: 50px;
+  border-radius: 16px !important;
+  overflow: hidden;
+}
+
+/* Stats bar – replaces the old SVG background image */
+.box_v3_02_grad {
+  background: linear-gradient(180deg, #803358 0%, #230F40 100%);
+  border-radius: 12px;
+  padding: 16px 0;
+  width: 100%;
+}
+
+/* Empty state icon in INCOME ACTIVITY */
+.inunion-empty-state {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  display: block;
+}
+
+.btn-copy-icon img,
+.div_copy_rc a,
+.div_copy_01 img {
+  cursor: pointer;
+}

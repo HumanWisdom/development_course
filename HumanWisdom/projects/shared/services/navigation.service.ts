@@ -253,6 +253,13 @@ export class NavigationService {
     if (url.includes('wisdom-survey') || url.includes('wellness-survey')) {
       return true;
     }
+    // Transcript pages (e.g. s603t, s537t) are overlays of their audio page.
+    // They must never appear as a back-navigation destination.
+    const segments = url.split('/');
+    const lastSeg = segments[segments.length - 1].split('?')[0];
+    if (/^s\d+t$/.test(lastSeg)) {
+      return true;
+    }
    }
 
 

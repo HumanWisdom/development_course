@@ -1,3 +1,66 @@
+/* How It Works – layout */
+.hiw-card {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Each row = left column (icon + connector) + right column (text) */
+.hiw-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+/* Left column: icon on top, connector below it, both centred */
+.hiw-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* Step icon circular background */
+.hiw-step__icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  border-radius: 50%;
+  background: #FFFFFF1A;
+  flex-shrink: 0;
+}
+
+/* Vertical connector – solid, 2px, black 10% opacity, grows to fill space between icons */
+.hiw-connector {
+  flex: 1;
+  width: 2px;
+  min-height: 20px;
+  border-left: 2px solid rgba(0, 0, 0, 0.10);
+}
+
+/* Right column: text sits beside the icon */
+.hiw-right {
+  padding-top: 4px;
+  padding-bottom: 16px;
+  flex: 1;
+}
+
+/* Last row has no connector so no bottom padding needed */
+.hiw-row--last .hiw-right {
+  padding-bottom: 0;
+}
+
+/* "When someone subscribes" highlight box */
+.hiw-referral-box {
+  width: 295px;
+  max-width: 100%;
+  border-radius: 12px;
+  padding: 10px 16px;
+  background: #FFFFFF1A;
+  margin-bottom: 12px;
+}
+
 .odiv,
 .odiv_pathway,
 .odiv_wfgi,
