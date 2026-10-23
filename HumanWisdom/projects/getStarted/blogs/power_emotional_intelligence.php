@@ -147,9 +147,9 @@
                 <h4 class="mtb0px blog_desc">
                     <span class="blog_highlight_black">Mindfulness practices:</span>
                     Techniques like
-                    <a href="https://happierme.app/adults/meditation" class="blog_highlight_peach td_underline" target="_blank">meditation</a>
+meditation
                     and
-                    <a href="https://happierme.app/adults/journal" class="blog_highlight_peach td_underline" target="_blank">journaling</a>
+                   journaling
                     can enhance self-awareness and emotional regulation.
                 </h4>
 
@@ -158,7 +158,7 @@
                     Seeking feedback and learning from experiences strengthen adaptability.
                 </h4>
 
-                <h4 class="mtb0px blog_desc">
+                <h4  style=" padding-bottom:20px;" class="mtb0px blog_desc">
                     <span class="blog_highlight_black">Building support networks:</span>
                     Surrounding oneself with positive influences encourages growth and resilience.
                 </h4>
