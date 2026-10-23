@@ -51,8 +51,8 @@
                           </h4>
                         </div>
                         <div class="div_copy_rc">
-                          <a>
-                            <img *ngIf="isCopy" (click)="copyText(referralCode,'code')" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/copy_codead.svg" alt="" class="img-responsive"/> 
+                          <a (click)="copyText(referralCode,'code')">
+                            <img *ngIf="isCopy" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/copy_codead.svg" alt="" class="img-responsive"/> 
                             <img *ngIf="!isCopy" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/copy_codead.svg" alt="" class="img-responsive"/> 
                           </a>
                         </div>
@@ -73,8 +73,8 @@
                           </h4>
                         </div>
                         <div class="div_copy_rc">
-                          <a>
-                            <img *ngIf="isReferraLinkCopy" (click)="copyText(ReferralLink,'link')" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/copy_codead.svg" alt="" class="img-responsive"/> 
+                          <a (click)="copyText(ReferralLink,'link')">
+                            <img *ngIf="isReferraLinkCopy" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/copy_codead.svg" alt="" class="img-responsive"/> 
                             <img *ngIf="!isReferraLinkCopy" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/copy_codead.svg" alt="" class="img-responsive"/> 
                           </a>
                         </div>

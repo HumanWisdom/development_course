@@ -1,0 +1,108 @@
+.pay-radio-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+
+  svg {
+    display: block;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+}
+
+// Dropdown arrow colour #80745D
+select.sp_fc {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2380745D' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px !important;
+}
+
+// Remove outer border from all inputs and selects
+.sp_fc {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+// Custom dropdown
+.custom-select-wrapper {
+  position: relative;
+  width: 100%;
+
+  .custom-select-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    user-select: none;
+    padding: 12px 14px;
+    height: 50px;
+    width: 100%;
+    border-radius: 16px;
+    background: #FFE8BB;
+    font-size: 15px;
+    font-weight: 400;
+    color: #000;
+
+    .custom-select-arrow {
+      flex-shrink: 0;
+      transition: transform 0.2s ease;
+    }
+  }
+
+  &.open .custom-select-trigger .custom-select-arrow {
+    transform: rotate(180deg);
+  }
+
+  .custom-select-options {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    background: #FFE8BB;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    z-index: 9999;
+    max-height: 350px;
+    overflow-y: auto;
+
+    .custom-select-option {
+      padding: 12px 14px;
+      font-size: 15px;
+      font-weight: 400;
+      color: #000;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #FFD889;
+      }
+
+      &.selected {
+        background-color: #FFD889;
+        font-weight: 500;
+      }
+
+      &:first-child {
+        border-radius: 12px 12px 0 0;
+      }
+
+      &:last-child {
+        border-radius: 0 0 12px 12px;
+      }
+    }
+  }
+}
+
+// Dropdown option hover & selected colour
+select.sp_fc option:hover,
+select.sp_fc option:focus,
+select.sp_fc option:checked {
+  background-color: #FFD889 !important;
+  color: #000 !important;
+}
