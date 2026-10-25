@@ -6,12 +6,13 @@ $useOrgLogo = !empty($useOrgLogo);
 $logoSrc = $useOrgLogo ? $org['logo'] : $assets['logo_default'];
 $logoAlt = $useOrgLogo ? $org['name'] : 'HappierMe';
 $partnerLogoSlot = !empty($partnerLogoSlot);
-$showPartnerLogo = $partnerLogoSlot && (int) ($org['showPartnerLogo'] ?? 0) === 1;
+$forceHidePartner = !empty($forceHidePartner);
+$showPartnerLogo = $partnerLogoSlot && !$forceHidePartner && (int) ($org['showPartnerLogo'] ?? 0) === 1;
 $partnerLogoSrc = $org['partnerLogo'] ?? hw_org_partner_logo_url($org['id'] ?? '');
 ?>
 <header class="org-header">
   <div class="org-header-inner">
-    <a class="org-logo-link" href="<?= hw_org_h($headerHome) ?>" aria-label="<?= hw_org_h($logoAlt) ?>">
+    <a class="org-logo-link" href="<?= hw_org_h($headerHome) ?>" data-org-go="landing" aria-label="<?= hw_org_h($logoAlt) ?>">
       <img
         class="org-logo"
         src="<?= hw_org_h($logoSrc) ?>"

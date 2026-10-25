@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 import { NgNavigatorShareService } from 'ng-navigator-share';
 import { Platform } from '@angular/cdk/platform';
 import { OnboardingService } from '../../../../../../shared/services/onboarding.service';
@@ -17,13 +18,20 @@ export class PartnershipIndexPage implements OnInit {
   public isHowItWorks: boolean = false;
   public isOtherBenefits: boolean = false;
   public isPartnerFaq = false;
+  public faq1 = false;
+  public faq2 = false;
+  public faq3 = false;
+  public faq4 = false;
+  public faq5 = false;
+  public faq6 = false;
+  public showFaqs = false;
   cardlist = [];
   countryCode: any;
   isPartner = false;
   public isLoggedIn = false
   isScroll = false;
 
-  constructor(private router: Router, private services: OnboardingService,
+  constructor(private router: Router, private location: Location, private services: OnboardingService,
     private ngNavigatorShareService: NgNavigatorShareService, public platform: Platform,public logeventservice: LogEventService
   ) {
     let login: any = localStorage.getItem("isloggedin");
@@ -141,6 +149,10 @@ export class PartnershipIndexPage implements OnInit {
   }
 
   goBack() {
-    this.router.navigate(['/adults/today']);
+    if (window.history.state && window.history.state.fromPaymentBank) {
+      this.location.back();
+    } else {
+      this.router.navigate(['/adults/today']);
+    }
   }
 }

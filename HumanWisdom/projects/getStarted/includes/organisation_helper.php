@@ -10,13 +10,34 @@ require_once __DIR__ . '/media_config.php';
 require_once __DIR__ . '/cache_buster.php';
 
 if (!function_exists('hw_org_base')) {
+    /**
+     * Site-root-relative base for assets/links.
+     * Must be absolute-from-root ("" or "/subdir") so PATH_INFO URLs like
+     * /free.php/nfsn do not resolve ./assets to /free.php/assets.
+     */
     function hw_org_base()
     {
         if (!empty($GLOBALS['HW_ORG_BASE'])) {
             return rtrim((string) $GLOBALS['HW_ORG_BASE'], '/');
         }
         $script = str_replace('\\', '/', $_SERVER['SCRIPT_NAME'] ?? '');
-        return preg_match('#/pages/#', $script) ? '..' : '.';
+        if (preg_match('#/pages/#', $script)) {
+            $root = dirname(dirname($script));
+        } else {
+            $root = dirname($script);
+        }
+        if ($root === '/' || $root === '\\' || $root === '.' || $root === '') {
+            return '';
+        }
+        return rtrim($root, '/');
+    }
+}
+
+if (!function_exists('hw_org_default_id')) {
+    /** Used when /free.php or /organisation.php is opened with no org id. */
+    function hw_org_default_id()
+    {
+        return 'happierme';
     }
 }
 
@@ -27,21 +48,53 @@ if (!function_exists('hw_org_sanitize_id')) {
     }
 }
 
-if (!function_exists('hw_org_query_id')) {
-    /** OrganizationId from ?id= only (empty when the query param is absent). */
-    function hw_org_query_id()
+if (!function_exists('hw_org_path_id')) {
+    /**
+     * OrganizationId from PATH_INFO / pretty URL, e.g.
+     * /free.php/happierme → happierme
+     */
+    function hw_org_path_id()
     {
-        if (!isset($_GET['id'])) {
+        $pathInfo = isset($_SERVER['PATH_INFO']) ? (string) $_SERVER['PATH_INFO'] : '';
+        if ($pathInfo !== '' && $pathInfo !== '/') {
+            $segment = trim(explode('/', ltrim($pathInfo, '/'))[0]);
+            return hw_org_sanitize_id($segment);
+        }
+
+        // Fallback when PATH_INFO is not populated (some proxies / rewrite setups).
+        $uri = isset($_SERVER['REQUEST_URI']) ? (string) $_SERVER['REQUEST_URI'] : '';
+        $uriPath = parse_url($uri, PHP_URL_PATH);
+        if (!is_string($uriPath) || $uriPath === '') {
             return '';
         }
-        return hw_org_sanitize_id($_GET['id']);
+        if (preg_match('#/(?:free|organisation(?:-Adv)?)\.php/([a-zA-Z0-9_-]+)(?:/|$)#', $uriPath, $m)) {
+            return hw_org_sanitize_id($m[1]);
+        }
+        return '';
+    }
+}
+
+if (!function_exists('hw_org_query_id')) {
+    /**
+     * OrganizationId from ?id=… or /free.php/{id}
+     * (empty when neither is present).
+     */
+    function hw_org_query_id()
+    {
+        if (isset($_GET['id'])) {
+            $id = hw_org_sanitize_id($_GET['id']);
+            if ($id !== '') {
+                return $id;
+            }
+        }
+        return hw_org_path_id();
     }
 }
 
 if (!function_exists('hw_org_id')) {
     /**
      * Resolved OrganizationId for the flow:
-     * query param → session (from a prior Adv/landing visit) → default (1 = HappierMe).
+     * query param / path → session → default (happierme).
      */
     function hw_org_id()
     {
@@ -50,16 +103,55 @@ if (!function_exists('hw_org_id')) {
             $id = hw_org_sanitize_id($_SESSION['hw_org_id']);
         }
         if ($id === '') {
-            $id = '1';
+            $id = hw_org_default_id();
         }
         $_SESSION['hw_org_id'] = $id;
         return $id;
     }
 }
 
-if (!function_exists('hw_org_defaults')) {
-    function hw_org_defaults($id = '1')
+if (!function_exists('hw_org_ensure_route_id')) {
+    /**
+     * On /free.php and /organisation.php, put the org id in the path.
+     * Missing id → happierme, e.g. /free.php → /free.php/happierme
+     */
+    function hw_org_ensure_route_id()
     {
+        $file = basename(str_replace('\\', '/', $_SERVER['SCRIPT_NAME'] ?? ''));
+        if ($file !== 'free.php' && $file !== 'organisation.php') {
+            return;
+        }
+
+        $id = hw_org_query_id();
+        if ($id === '') {
+            $id = hw_org_default_id();
+        }
+
+        $pathId = hw_org_path_id();
+        $hasQueryId = isset($_GET['id']) && hw_org_sanitize_id($_GET['id']) !== '';
+        if ($pathId === $id && !$hasQueryId) {
+            return;
+        }
+
+        $base = hw_org_base();
+        $target = ($base === '' ? '' : $base) . '/' . $file . '/' . rawurlencode($id);
+        $query = $_GET;
+        unset($query['id']);
+        if (!empty($query)) {
+            $target .= '?' . http_build_query($query);
+        }
+
+        header('Location: ' . $target, true, 302);
+        exit;
+    }
+}
+
+if (!function_exists('hw_org_defaults')) {
+    function hw_org_defaults($id = null)
+    {
+        if ($id === null || $id === '') {
+            $id = hw_org_default_id();
+        }
         $end = new DateTime('today');
         $end->modify('+7 days');
         return [
@@ -125,16 +217,17 @@ if (!function_exists('hw_org_qs')) {
 
 if (!function_exists('hw_org_page')) {
     /**
-     * @param bool $withId Include ?id=… — true for organisation-Adv / organisation only
+     * @param bool $withId Include ?id=… — true for free / organisation only
      */
     function hw_org_page($name, $extra = [], $withId = false)
     {
         $base = hw_org_base();
         $file = $name . '.php' . hw_org_qs($extra, $withId);
-        if ($base === '..') {
-            return $file;
+        // Always root-relative so /free.php/{id} does not break links.
+        if ($base === '') {
+            return '/' . $file;
         }
-        return $file;
+        return $base . '/' . $file;
     }
 }
 
@@ -183,7 +276,7 @@ if (!function_exists('hw_org_cdn_assets')) {
             'playstore_url' => 'https://play.google.com/store/apps/details?id=io.humanwisdom.me&hl=en&gl=US',
             'onelink' => 'https://onelink.to/hsnt8b',
             'web_app' => 'https://happierme.app/pages/splash_options.php',
-            'login' => hw_org_base() === '..' ? 'splash_options.php' : 'pages/splash_options.php',
+            'login' => hw_org_base() . '/pages/splash_options.php',
         ];
     }
 }
@@ -247,8 +340,8 @@ if (!function_exists('hw_org_http_get')) {
 if (!function_exists('hw_org_fetch')) {
     /**
      * Loads org branding for the campaign pages.
-     * Calls GET /api/GetOrganization/{OrganizationId} ONLY when ?id= is present;
-     * otherwise reuses session cache / defaults (no API call).
+     * Calls GET /api/GetOrganization/{OrganizationId} ONLY when ?id= or
+     * /free.php/{id} is present; otherwise reuses session cache / defaults.
      */
     function hw_org_fetch($id = null)
     {

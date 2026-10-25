@@ -90,8 +90,8 @@
 // }
 
 audio::-webkit-media-controls-play-button {
-  background-color: #178da8 !important;
-  border-radius: 15px;
+  background-color: #ED7D6F !important;
+  border-radius: 50% !important;
 }
 
 audio::-webkit-media-controls-current-time-display {
@@ -134,9 +134,7 @@ audio::-ms-thumb {
 }
 
 /* Customize other audio player controls */
-audio::-webkit-media-controls-panel {
-  filter: invert(1);
-}
+/* Removed filter: invert(1) - it caused a dark flash on load before JS applied the correct enclosure color */
 
 audio::-webkit-media-controls-play-button {
   color: white; /* For Chrome and Safari */
@@ -179,7 +177,7 @@ color: white; /* Set the color of the pause icon */
 }
 
 audio::-webkit-media-controls-enclosure {
-  background: rgb(18, 15, 64);
+  background: #FFE8BB;
 }
 
 #aud1
