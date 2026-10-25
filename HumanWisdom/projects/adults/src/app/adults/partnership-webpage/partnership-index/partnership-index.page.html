@@ -1,10 +1,10 @@
-<!-- top navigation -->
+﻿<!-- top navigation -->
 <div class="row center_flex">
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw">
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
       <a class="" (click)="goBack()">
         <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/back.svg" alt="" class="p0">
-        
+
       </a>
     </div>
 
@@ -16,7 +16,7 @@
 
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
       <a href="#" class="dropdown-bs-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-               <!-- disabled as  popup not working -->
+        <!-- disabled as  popup not working -->
 
         <!-- <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/viewmore.svg" alt="" class="p0"/> -->
       </a>
@@ -57,36 +57,38 @@
   <!-- Class -->
   <div class="cw100p">
     <div class="row center_flex">
-        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 sc_01 bg_FFF7E6 col_cw">
-          <div class="x_panel p0">
-            <div class="x_content p0">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 p0 sc_01 bg_FFF7E6 col_cw">
+        <div class="x_panel p0">
+          <div class="x_content p0">
 
-              <div class="row center_flex bg_black">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/partnership/partnership_app_index_a.webp" alt="" class="img-responsive w100">
-                </div>
+            <div class="row center_flex bg_black">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <img
+                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/partnership/partnership_app_index_a.webp"
+                  alt="" class="img-responsive w100">
               </div>
+            </div>
 
-              <div class="container">
-                <ul class="nav nav-tabs partnership_tab flex_ai mt30px mlr20pxi">
-                  <li [ngClass]="{'active':!isHowItWorks}">
-                    <a data-bs-toggle="tab" (click)="enabledtab('whybepartner')">
-                      Why be a partner
-                    </a>
-                  </li>
-                  <li [ngClass]="{'active':isHowItWorks}">
-                    <a (click)="enabledtab('howitworks')" data-bs-toggle="tab">
-                      How it works
-                    </a>
-                  </li>
-                </ul>
+            <div class="container">
+              <ul class="nav nav-tabs partnership_tab flex_ai mt30px mlr20pxi">
+                <li [ngClass]="{'active':!isHowItWorks}">
+                  <a data-bs-toggle="tab" (click)="enabledtab('whybepartner')">
+                    Why be a partner
+                  </a>
+                </li>
+                <li [ngClass]="{'active':isHowItWorks}">
+                  <a (click)="enabledtab('howitworks')" data-bs-toggle="tab">
+                    How it works
+                  </a>
+                </li>
+              </ul>
 
-                <div class="tab-content plr20px">
-                  <!-- tab1 -->
-                  <div id="tab1" class="tab-pane fade in active" *ngIf="!isHowItWorks">
-                    <form>
+              <div class="tab-content plr20px">
+                <!-- tab1 -->
+                <div id="tab1" class="tab-pane fade in active" *ngIf="!isHowItWorks">
+                  <form>
 
-                      <!-- <div class="row mt30px mb10px">
+                    <!-- <div class="row mt30px mb10px">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                           <h4 class="mtb0px fs_24px fw_600 lh_150p fc_000000">
                             Spread the benefits of wisdom
@@ -106,142 +108,149 @@
 
                           <p class="fs_15px fw_400 lh_140p fc_000000" *ngIf="!isLoggedIn">
                             To join our next meeting about the partnership program -
-                            <a (click)="registerhere()" class="fc_e58d82 underline" target="_blank">
+                            <a (click)="registerhere()" class="fc_ED7D6F underline" target="_blank">
                               Register here
                             </a>
                           </p>
                         </div>
                       </div> -->
 
-                      <div class="row mt30px mb10px">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                          <h4 class="mtb0px fs_24px fw_600 lh_150p fc_000000">
-                            <!-- Share HappierMe with others and help them be happier -->
-                            Spread some happiness and earn an income
-                          </h4>
-                        </div>
+                    <div class="row mt30px mb10px">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <h4 class="mtb0px fs_24px fw_600 lh_150p fc_000000">
+                          <!-- Share HappierMe with others and help them be happier -->
+                          Spread some happiness and earn an income
+                        </h4>
                       </div>
+                    </div>
 
-                      <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                          <!-- <p class="fs_15px fw_400 lh_140p fc_000000">
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <!-- <p class="fs_15px fw_400 lh_140p fc_000000">
                             The HappierMe app helps people to understand their thoughts, feelings and actions and be mentally healthy, have happier relationships and succeed in life. 
                           </p> -->
 
-                          <p class="fs_15px fw_400 lh_140p fc_000000">
-                            We developed the HappierMe Partnership Program to develop a community of users to help us spread some happiness in the world. We invite you to join us and find out how it can help you, help others, and make the world a better place. You can also earn an income.
-                          </p>
+                        <p class="fs_15px fw_400 lh_140p fc_000000">
+                          We developed the HappierMe Partnership Program to develop a community of users to help us
+                          spread some happiness in the world. We invite you to join us and find out how it can help you,
+                          help others, and make the world a better place. You can also earn an income.
+                        </p>
 
                         <!--   <p class="fs_15px fw_400 lh_140p fc_000000">
                             To join our next meeting which explains the partnership program in detail - 
-                            <a class="fc_e58d82 underline" target="_blank" href="https://forms.gle/sY9G47sXNZv4RLam6">
+                            <a class="fc_ED7D6F underline" target="_blank" href="https://forms.gle/sY9G47sXNZv4RLam6">
                               Register here
                             </a>
                           </p> -->
-                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row partnership_row mtb30px">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mb20px">
+                        <a>
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/whelp.svg"
+                                class="img-responsive">
+                            </div>
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                              <div class="row box_02">
+                                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                  <h4 class="fw_600 fs_15px lh_150p fc_000000 mt0px mb5px">
+                                    Help others
+                                  </h4>
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                  <h6 class="fw_400 fs_12px lh_160p fc_000000 mtb0px">
+                                    Help others be mentally healthy, have excellent relationships, and live their best
+                                    lives.
+                                  </h6>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
                       </div>
 
-                      <div class="row partnership_row mtb30px">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mb20px">
-                          <a>
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/p_why_01.svg" class="img-responsive">
-                              </div>
-                              <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                                <div class="row box_02">
-                                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                    <h4 class="fw_600 fs_15px lh_150p fc_000000 mt0px mb5px">
-                                      Help others
-                                    </h4>
-                                  </div>
-                                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                    <h6 class="fw_400 fs_12px lh_160p fc_000000_0_5 mtb0px">
-                                      Help others be mentally healthy, have excellent relationships, and live their best lives.
-                                    </h6>
-                                  </div>
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mb20px">
+                        <a>
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/wmake.svg"
+                                class="img-responsive">
+                            </div>
+
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                              <div class="row box_02">
+                                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                  <h4 class="fw_600 fs_15px lh_150p fc_000000 mt0px mb5px">
+                                    Make the world happier
+                                  </h4>
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                  <h6 class="fw_400 fs_12px lh_160p fc_000000 mtb0px">
+                                    If you are happy and at peace, you can contribute to a more peaceful world.
+                                  </h6>
                                 </div>
                               </div>
                             </div>
-                          </a>
-                        </div>
+                          </div>
+                        </a>
+                      </div>
 
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mb20px"> 
-                          <a>
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/p_why_02.svg" class="img-responsive">
-                              </div>
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mb20px">
+                        <a>
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/wgreen.svg"
+                                class="img-responsive">
+                            </div>
 
-                              <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                                <div class="row box_02">
-                                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                    <h4 class="fw_600 fs_15px lh_150p fc_000000 mt0px mb5px">
-                                      Make the world happier
-                                    </h4>
-                                  </div>
-                                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                    <h6 class="fw_400 fs_12px lh_160p fc_000000_0_5 mtb0px">
-                                      If you are happy and at peace, you can contribute to a more peaceful world.
-                                    </h6>
-                                  </div>
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                              <div class="row box_02">
+                                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                  <h4 class="fw_600 fs_15px lh_150p fc_000000 mt0px mb5px">
+                                    Make the world greener
+                                  </h4>
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                  <h6 class="fw_400 fs_12px lh_160p fc_000000 mtb0px">
+                                    HappierMe, in partnership with TreeSisters, plants a tree for every subscription.
+                                  </h6>
                                 </div>
                               </div>
                             </div>
-                          </a>
-                        </div>
+                          </div>
+                        </a>
+                      </div>
 
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mb20px"> 
-                          <a>
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/p_why_03.svg" class="img-responsive">
-                              </div>
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <a>
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
+                              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/wearn.svg"
+                                class="img-responsive">
+                            </div>
 
-                              <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                                <div class="row box_02">
-                                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                    <h4 class="fw_600 fs_15px lh_150p fc_000000 mt0px mb5px">
-                                      Make the world greener
-                                    </h4>
-                                  </div>
-                                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                    <h6 class="fw_400 fs_12px lh_160p fc_000000_0_5 mtb0px">
-                                      HappierMe, in partnership with TreeSisters, plants a tree for every subscription.
-                                    </h6>
-                                  </div>
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
+                              <div class="row box_02">
+                                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                  <h4 class="fw_600 fs_15px lh_150p fc_000000 mt0px mb5px">
+                                    Earn an income
+                                  </h4>
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                                  <h6 class="fw_400 fs_12px lh_160p fc_000000 mtb0px">
+                                    Earn 20% from any subscription made using your partner link. No strings attached.
+                                  </h6>
                                 </div>
                               </div>
                             </div>
-                          </a>
-                        </div>
-    
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                          <a>
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                              <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/p_why_04.svg" class="img-responsive">
-                              </div>
+                          </div>
+                        </a>
+                      </div>
 
-                              <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                                <div class="row box_02">
-                                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                    <h4 class="fw_600 fs_15px lh_150p fc_000000 mt0px mb5px">
-                                      Earn an income
-                                    </h4>
-                                  </div>
-                                  <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                    <h6 class="fw_400 fs_12px lh_160p fc_000000_0_5 mtb0px">
-                                      Earn 20% from any subscription made using your partner link. No strings attached.
-                                    </h6>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </a>
-                        </div>
-    
-                        <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mb20px">
+                      <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mb20px">
                           <a>
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
@@ -256,7 +265,7 @@
                                     </h4>
                                   </div>
                                   <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                    <h6 class="fw_400 fs_12px lh_160p fc_000000_0_5 mtb0px">
+                                    <h6 class="fw_400 fs_12px lh_160p fc_000000 mtb0px">
                                       Participate in live events with eminent speakers from around the world.
                                     </h6>
                                   </div>
@@ -281,8 +290,8 @@
                                     </h4>
                                   </div>
                                   <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                                    <h6 class="fw_400 fs_12px lh_160p fc_000000_0_5 mtb0px">
-                                      Get a free copy of the e-book ‘Stress-free’ by Dr Manoj Krishna.
+                                    <h6 class="fw_400 fs_12px lh_160p fc_000000 mtb0px">
+                                      Get a free copy of the e-book â€˜Stress-freeâ€™ by Dr Manoj Krishna.
                                     </h6>
                                   </div>
                                 </div>
@@ -290,75 +299,80 @@
                             </div>
                           </a>
                         </div> -->
+                    </div>
+
+                    <div class="row mb10px">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <h4 class="mtb0px fw_600 fs_18px lh_150p fc_000000">
+                          How will it help people?
+                        </h4>
                       </div>
+                    </div>
 
-                      <div class="row mb10px">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                          <h4 class="mtb0px fw_600 fs_18px lh_150p fc_000000">
-                            How will it help people?
-                          </h4>
-                        </div>
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <p class="fw_400 fs_14px lh_150p fc_000000 mb10px">
+                          The wisdom which comes from understanding ourselves, can help us prevent and more easily solve
+                          the problems we face. It can help us:
+                        </p>
+
+                        <ul class="fw_400 fs_14px lh_150p fc_000000 p_ul">
+                          <li>
+                            Be emotionally intelligent
+                          </li>
+
+                          <li>
+                            Manage your own mental health
+                          </li>
+
+                          <li>
+                            Have happier relationships
+                          </li>
+
+                          <li>
+                            Deal with addiction
+                          </li>
+
+                          <li>
+                            Develop the soft skills to succeed at work
+                          </li>
+                        </ul>
                       </div>
+                    </div>
 
-                      <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                          <p class="fw_400 fs_14px lh_150p fc_000000 mb10px">
-                            The wisdom which comes from understanding ourselves, can help us prevent and more easily solve the problems we face. It can help us:
-                          </p>
-
-                          <ul class="fw_400 fs_14px lh_150p fc_000000 p_ul">
-                            <li>
-                              Be emotionally intelligent
-                            </li>
-
-                            <li>
-                              Manage your own mental health
-                            </li>
-
-                            <li>
-                              Have happier relationships
-                            </li>
-
-                            <li>
-                              Deal with addiction
-                            </li>
-
-                            <li>
-                              Develop the soft skills to succeed at work
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-
-                      <!-- <div class="row">
+                    <!-- <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12 p0">
                           <video controls playinline class="cvideo" poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/tiles/partnership/pp_video_01.svg" controlsList="nodownload">
                             <source src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/partnership/videos/partnership_program_01.mp4" type="video/mp4"> -->
-                            <!-- <div class="play_black_ac">
+                    <!-- <div class="play_black_ac">
                               <img
                                 src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/play_black.svg"
                                 class="img-responsive">
                             </div> -->
-                          <!-- </video>
+                    <!-- </video>
                         </div>
                       </div> -->
 
-                      <div class="row mt20px">
-                        <div class="col-md-12 col-sm-12 col-xs-12 p0">
-                          <video controls playinline class="cvideo" poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/tiles/partnership/pp_video_02.png" controlsList="nodownload">
-                            <source src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/partnership/videos/partnership_program_02.mp4" type="video/mp4">
-                          </video>
-                        </div>
+                    <div class="row mt10px">
+                      <div class="col-md-12 col-sm-12 col-xs-12 p0">
+                        <video controls playinline class="cvideo"
+                          poster="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/tiles/partnership/pp_video_02.png"
+                          controlsList="nodownload">
+                          <source
+                            src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/partnership/videos/partnership_program_02.mp4"
+                            type="video/mp4">
+                        </video>
                       </div>
+                    </div>
 
-                      <!-- <div class="row">
+                    <!-- <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12 tleft pititle">
                           <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/icons/quotation.svg" alt="" class="img-responsive"/>
                         </div>
                       </div> -->
 
-                      <!-- carousel -->
-                      <!-- <div class="row">
+                    <!-- carousel -->
+                    <!-- <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12 tleft pititle">
                           <div class="container">
                             <div id="partnershipc" class="carousel slide" data-ride="carousel" data-interval="3000000">
@@ -429,9 +443,9 @@
                           </div>
                         </div>
                       </div> -->
-                      <!-- /carousel -->
+                    <!-- /carousel -->
 
-                      <!-- <div class="row mr-10px">
+                    <!-- <div class="row mr-10px">
                         <div class="col-md-12 col-sm-12 col-xs-12 ghn p0 partnershipd">
 
                           <div class="col-md-10 col-sm-10 col-xs-10 prelative">
@@ -605,938 +619,299 @@
                         </div>
                       </div> -->
 
-                      <div class="row mt30px">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                          <h4 class="mtb0px fw_600 fs_18px lh_150p fc_000000">
-                            Testimonial
+                    <div class="row mt30px">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <h4 class="mtb0px fw_600 fs_18px lh_150p fc_000000">
+                          Testimonial
+                        </h4>
+                      </div>
+                    </div>
+
+                    <!-- testimonials -->
+                    <div class="row mt20px">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+
+                        <!-- Garry Prigg -->
+                        <div class="testimonial-card">
+                          <div class="testimonial-card__top">
+                            <img
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_garry_prigg.webp"
+                              alt="Garry Prigg" class="testimonial-card__avatar" />
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/partquet.svg"
+                              alt="" class="testimonial-card__quot-icon" />
+                          </div>
+                          <p class="testimonial-card__text">The HappierMe app is a pre-eminent asset for people of all
+                            ages. It changes peoples lives by assisting them to better know themselves and live with
+                            peace, love, harmony, and fulfilment. It is a wonderful gift to humanity.</p>
+                          <p class="testimonial-card__name">Garry Prigg</p>
+                          <p class="testimonial-card__role">Transformational life coach</p>
+                          <p class="testimonial-card__location"><img
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/location-pin.svg"
+                              alt="" class="testimonial-card__loc-icon" /> Australia</p>
+                        </div>
+
+                        <!-- Adam Beagley -->
+                        <div class="testimonial-card">
+                          <div class="testimonial-card__top">
+                            <img
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_adam_beagley.webp"
+                              alt="Adam Beagley" class="testimonial-card__avatar" />
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/partquet.svg"
+                              alt="" class="testimonial-card__quot-icon" />
+                          </div>
+                          <p class="testimonial-card__text">HappierMe has helped me become emotionally intelligent. I
+                            used to be shy, passive and fearful. The app has transformed my way of thinking and relieved
+                            me of my anxiety. Whatever you struggle with, there are modules to help.</p>
+                          <p class="testimonial-card__name">Adam Beagley</p>
+                          <p class="testimonial-card__role">Student</p>
+                        </div>
+
+                        <!-- Laura Toop -->
+                        <div class="testimonial-card">
+                          <div class="testimonial-card__top">
+                            <img
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_laura_toop.webp"
+                              alt="Laura Toop" class="testimonial-card__avatar" />
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/partquet.svg"
+                              alt="" class="testimonial-card__quot-icon" />
+                          </div>
+                          <p class="testimonial-card__text">Oh how I wish I had had this app available to me when my
+                            life imploded many years ago. In fact, I wish I had had access as a child. It would have
+                            made a significant difference to the decisions I made.</p>
+                          <p class="testimonial-card__name">Laura Toop</p>
+                          <p class="testimonial-card__role">Life Leadership Coach, UK</p>
+                        </div>
+
+                        <!-- Julie Goodfellow -->
+                        <div class="testimonial-card">
+                          <div class="testimonial-card__top">
+                            <img
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_julie_goodfellow.webp"
+                              alt="Julie Goodfellow" class="testimonial-card__avatar" />
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/partquet.svg"
+                              alt="" class="testimonial-card__quot-icon" />
+                          </div>
+                          <p class="testimonial-card__text">I subscribed to the HappierMe app for all my staff because I
+                            have seen how enlightening and transformative it is to understand my reactions to
+                            situations, and my personal emotions such as anxiety, depression and anger.</p>
+                          <p class="testimonial-card__name">Julie Goodfellow</p>
+                          <p class="testimonial-card__role">Head Teacher, UK</p>
+                        </div>
+
+                        <!-- Carolyn King -->
+                        <div class="testimonial-card">
+                          <div class="testimonial-card__top">
+                            <img
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_carolyn_king.webp"
+                              alt="Carolyn King" class="testimonial-card__avatar" />
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/partquet.svg"
+                              alt="" class="testimonial-card__quot-icon" />
+                          </div>
+                          <p class="testimonial-card__text">I absolutely love the HappierMe app. It has enabled me to
+                            really go on a journey of self-exploration. It covers so many different aspects of how our
+                            mind works in the real world.</p>
+                          <p class="testimonial-card__name">Carolyn King</p>
+                          <p class="testimonial-card__role">Kinesiologist, Australia</p>
+                        </div>
+
+                        <!-- Chandra Ramamurthy -->
+                        <div class="testimonial-card">
+                          <div class="testimonial-card__top">
+                            <img
+                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_chandra_ramamurthy.webp"
+                              alt="Chandra Ramamurthy" class="testimonial-card__avatar" />
+                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/partquet.svg"
+                              alt="" class="testimonial-card__quot-icon" />
+                          </div>
+                          <p class="testimonial-card__text">The past few months of using the app have been life
+                            affirming. I have only two words after using the app - GAME CHANGER! This app needs to be
+                            scaled up, to reach every school and workplace.</p>
+                          <p class="testimonial-card__name">Chandra Ramamurthy</p>
+                          <p class="testimonial-card__role">Clinical Psychologist, India</p>
+                        </div>
+
+                      </div>
+                    </div>
+                    <!-- /testimonials -->
+
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <a (click)="scroll_to_obs()">
+                          <h4 class="fs_15px fw_600 lh_150p fc_ED7D6F vpb">
+                            View Partnership Benefits
                           </h4>
-                        </div>
+                        </a>
                       </div>
+                    </div>
 
-                      <!-- testimonials -->
-                      <div class="row mr-20pxi mt30px">
-                        <div class="col-md-12 col-sm-12 col-xs-12 pl0px odiv img_dtestimonials">
-                          <div class="col-md-10 col-sm-10 col-xs-10 prelative">
-                            <div class="row">
-                              <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_adam_beagley.webp" alt="" class="img-responsive"/>
-                              </div>
-                            </div>
-          
-                            <div class="row ltestimonials">
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <h4 class="fw_400 fs_15px lh_140p fc_ffffff mt10px mb5px ">
-                                  Adam Beagley
-                                </h4>
-                              </div>
-          
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <h6 class="fw_400 fs_14px lh_140p fc_ffffff ttuppercase mt0px mb20px">
-                                  STUDENT, UK
-                                </h6>
-                              </div>
-          
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <p class="fw_400 fs_15px lh_140p fc_ffffff italic tleft mb0px ttxt">
-                                  HappierMe has helped me become emotionally intelligent. I used to be shy, passive and fearful. The app has transformed my way of thinking and relieved ...
-                                </p>
-                              </div>
-          
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <a (click)="readMore('Adam')">
-                                  <h4 class="fw_600 fs_14px lh_140p fc_ffffff ttuppercase mt20px mb0px tright">
-                                    READ MORE
-                                  </h4>
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-              
-                          <div class="col-md-10 col-sm-10 col-xs-10 prelative">
-                            <div class="row">
-                              <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_laura_toop.webp" alt="" class="img-responsive"/>
-                              </div>
-                            </div>
-          
-                            <div class="row ltestimonials">
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <h4 class="fw_400 fs_15px lh_140p fc_ffffff mt10px mb5px ">
-                                  Laura Toop
-                                </h4>
-                              </div>
-          
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <h6 class="fw_400 fs_14px lh_140p fc_ffffff ttuppercase mt0px mb20px">
-                                  LIFE LEADERSHIP COACH, UK
-                                </h6>
-                              </div>
-          
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <p class="fw_400 fs_15px lh_140p fc_ffffff italic tleft mb0px ttxt">
-                                  Oh how I wish I had had this app available to me when my life imploded many years ago. In fact, I wish I had had access as a child. It would have made a sign...
-                                </p>
-                              </div>
-          
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <a (click)="readMore('Laura')">
-                                  <h4 class="fw_600 fs_14px lh_140p fc_ffffff ttuppercase mt20px mb0px tright">
-                                    READ MORE
-                                  </h4>
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-          
-                          <div class="col-md-10 col-sm-10 col-xs-10 prelative">
-                            <div class="row">
-                              <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_julie_goodfellow.webp" alt="" class="img-responsive"/>
-                              </div>
-                            </div>
-          
-                            <div class="row ltestimonials">
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <h4 class="fw_400 fs_15px lh_140p fc_ffffff mt10px mb5px ">
-                                  Julie Goodfellow
-                                </h4>
-                              </div>
-          
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <h6 class="fw_400 fs_14px lh_140p fc_ffffff ttuppercase mt0px mb20px">
-                                  HEAD TEACHER, UK
-                                </h6>
-                              </div>
-          
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <p class="fw_400 fs_15px lh_140p fc_ffffff italic tleft mb0px ttxt">
-                                  I subscribed to the HappierMe app for all my staff because I have seen how enlightening and transformative it is to understand my reactions...
-                                </p>
-                              </div>
-          
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <a (click)="readMore('Julie')">
-                                  <h4 class="fw_600 fs_14px lh_140p fc_ffffff ttuppercase mt20px mb0px tright">
-                                    READ MORE
-                                  </h4>
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-          
-                          <div class="col-md-10 col-sm-10 col-xs-10 prelative">
-                            <div class="row">
-                              <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_carolyn_king.webp" alt="" class="img-responsive"/>
-                              </div>
-                            </div>
-          
-                            <div class="row ltestimonials">
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <h4 class="fw_400 fs_15px lh_140p fc_ffffff mt10px mb5px ">
-                                  Carolyn King
-                                </h4>
-                              </div>
-          
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <h6 class="fw_400 fs_14px lh_140p fc_ffffff ttuppercase mt0px mb20px">
-                                  KINESIOLOGIST, Australia
-                                </h6>
-                              </div>
-          
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <p class="fw_400 fs_15px lh_140p fc_ffffff italic tleft mb0px ttxt">
-                                  "I absolutely love the HappierMe app.
-                                  It has enabled me to really go on a journey of self-exploration. It covers so many different aspect...
-                                </p>
-                              </div>
-          
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <a (click)="readMore('Carolyn')">
-                                  <h4 class="fw_600 fs_14px lh_140p fc_ffffff ttuppercase mt20px mb0px tright">
-                                    READ MORE
-                                  </h4>
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-          
-                          <div class="col-md-10 col-sm-10 col-xs-10 prelative">
-                            <div class="row">
-                              <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_chandra_ramamurthy.webp" alt="" class="img-responsive"/>
-                              </div>
-                            </div>
-          
-                            <div class="row ltestimonials">
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <h4 class="fw_400 fs_15px lh_140p fc_ffffff mt10px mb5px ">
-                                  Chandra Ramamurthy
-                                </h4>
-                              </div>
-          
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <h6 class="fw_400 fs_14px lh_140p fc_ffffff ttuppercase mt0px mb20px">
-                                  CLINICAL PSYCHOLOGIST, India
-                                </h6>
-                              </div>
-          
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <p class="fw_400 fs_15px lh_140p fc_ffffff italic tleft mb0px ttxt">
-                                  The past few months of using the app have been life affirming. I have only two words after using the app - GAME CHANGER! This app needs to be scaled up, to...
-                                </p>
-                              </div>
-          
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <a (click)="readMore('Chandra')">
-                                  <h4 class="fw_600 fs_14px lh_140p fc_ffffff ttuppercase mt20px mb0px tright">
-                                    READ MORE
-                                  </h4>
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-          
-                          <div class="col-md-10 col-sm-10 col-xs-10 prelative">
-                            <div class="row">
-                              <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_suzanne_oades.webp" alt="" class="img-responsive"/>
-                              </div>
-                            </div>
-          
-                            <div class="row ltestimonials">
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <h4 class="fw_400 fs_15px lh_140p fc_ffffff mt10px mb5px ">
-                                  Suzanne Oades
-                                </h4>
-                              </div>
-          
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <h6 class="fw_400 fs_14px lh_140p fc_ffffff ttuppercase mt0px mb20px">
-                                  PSYCHOTHERAPIST, UK
-                                </h6>
-                              </div>
-          
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <p class="fw_400 fs_15px lh_140p fc_ffffff italic tleft mb0px ttxt">
-                                  By knowing more about how my mind works, I have learned to make better choices in how I think, behave and act. The HappierMe app is a space...
-                                </p>
-                              </div>
-          
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <a (click)="readMore('Suzanne')">
-                                  <h4 class="fw_600 fs_14px lh_140p fc_ffffff ttuppercase mt20px mb0px tright">
-                                    READ MORE
-                                  </h4>
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-          
-                          <div class="col-md-10 col-sm-10 col-xs-10 prelative">
-                            <div class="row">
-                              <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_tinamarie_rodriguez.webp" alt="" class="img-responsive"/>
-                              </div>
-                            </div>
-          
-                            <div class="row ltestimonials">
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <h4 class="fw_400 fs_15px lh_140p fc_ffffff mt10px mb5px ">
-                                  Tinamarie Rodriguez
-                                </h4>
-                              </div>
-          
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <h6 class="fw_400 fs_14px lh_140p fc_ffffff ttuppercase mt0px mb20px">
-                                  LIFE COACH, USA
-                                </h6>
-                              </div>
-          
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <p class="fw_400 fs_15px lh_140p fc_ffffff italic tleft mb0px ttxt">
-                                  This app is exactly what each and every person in the world needs every day. It will give each person the tools to lead a purposeful and fulfilling life.
-                                </p>
-                              </div>
-          
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <a (click)="readMore('Tinamarie')">
-                                  <h4 class="fw_600 fs_14px lh_140p fc_ffffff ttuppercase mt20px mb0px tright">
-                                    READ MORE
-                                  </h4>
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-          
-                          <div class="col-md-10 col-sm-10 col-xs-10 prelative">
-                            <div class="row">
-                              <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_dominic_curran.webp" alt="" class="img-responsive"/>
-                              </div>
-                            </div>
-          
-                            <div class="row ltestimonials">
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <h4 class="fw_400 fs_15px lh_140p fc_ffffff mt10px mb5px ">
-                                  Dominic Curran
-                                </h4>
-                              </div>
-          
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <h6 class="fw_400 fs_14px lh_140p fc_ffffff ttuppercase mt0px mb20px">
-                                  TEACHER, England
-                                </h6>
-                              </div>
-          
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <p class="fw_400 fs_15px lh_140p fc_ffffff italic tleft mb0px ttxt">
-                                  The HappierMe app has helped me to look at what I think, and helped me to question why I think in certain ways. This understanding has transformed ...
-                                </p>
-                              </div>
-          
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <a (click)="readMore('Dominic')">
-                                  <h4 class="fw_600 fs_14px lh_140p fc_ffffff ttuppercase mt20px mb0px tright">
-                                    READ MORE
-                                  </h4>
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-          
-                          <div class="col-md-10 col-sm-10 col-xs-10 prelative">
-                            <div class="row">
-                              <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_anthony_seldon.webp" alt="" class="img-responsive"/>
-                              </div>
-                            </div>
-          
-                            <div class="row ltestimonials">
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <h4 class="fw_400 fs_15px lh_140p fc_ffffff mt10px mb5px ">
-                                  Sir Anthony Seldon
-                                </h4>
-                              </div>
-          
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <h6 class="fw_400 fs_14px lh_140p fc_ffffff ttuppercase mt0px mb20px">
-                                  EDUCATIONALIST & HISTORIAN, UK
-                                </h6>
-                              </div>
-          
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <p class="fw_400 fs_15px lh_140p fc_ffffff italic tleft mb0px ttxt">
-                                  After a lifetime in education, I think there is an urgent need for solutions to help students deal with problems like stress, anxiety, addiction and conflict in their rel...
-                                </p>
-                              </div>
-          
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <a (click)="readMore('Anthony')">
-                                  <h4 class="fw_600 fs_14px lh_140p fc_ffffff ttuppercase mt20px mb0px tright">
-                                    READ MORE
-                                  </h4>
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-          
-                          <div class="col-md-10 col-sm-10 col-xs-10 prelative">
-                            <div class="row">
-                              <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_tim_merrick.webp" alt="" class="img-responsive"/>
-                              </div>
-                            </div>
-          
-                            <div class="row ltestimonials">
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <h4 class="fw_400 fs_15px lh_140p fc_ffffff mt10px mb5px ">
-                                  Tim Merrick
-                                </h4>
-                              </div>
-          
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <h6 class="fw_400 fs_14px lh_140p fc_ffffff ttuppercase mt0px mb20px">
-                                  EXECUTIVE COACH, USA
-                                </h6>
-                              </div>
-          
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <p class="fw_400 fs_15px lh_140p fc_ffffff italic tleft mb0px ttxt">
-                                  It’s so easy to get caught up in all the things we have to do, want to do, and should do. What we gain in productivity we lose in self-awareness, meaning, and satisf...
-                                </p>
-                              </div>
-          
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <a (click)="readMore('Merrick')">
-                                  <h4 class="fw_600 fs_14px lh_140p fc_ffffff ttuppercase mt20px mb0px tright">
-                                    READ MORE
-                                  </h4>
-                                </a>
-                              </div>
-                            </div>
-                          </div> 
-          
-                          <div class="col-md-10 col-sm-10 col-xs-10 prelative">
-                            <div class="row">
-                              <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_jo_thackwray.webp" alt="" class="img-responsive"/>
-                              </div>
-                            </div>
-          
-                            <div class="row ltestimonials">
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <h4 class="fw_400 fs_15px lh_140p fc_ffffff mt10px mb5px ">
-                                  Jo Thackwray
-                                </h4>
-                              </div>
-          
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <h6 class="fw_400 fs_14px lh_140p fc_ffffff ttuppercase mt0px mb20px">
-                                  LIFE COACH, UK
-                                </h6>
-                              </div>
-          
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <p class="fw_400 fs_15px lh_140p fc_ffffff italic tleft mb0px ttxt">
-                                  This is a world changing project I am so pleased and privileged to be involved in. To inspire the next generation to be in tune with their own wisdom will truly be w...
-                                </p>
-                              </div>
-          
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <a (click)="readMore('Thackwray')">
-                                  <h4 class="fw_600 fs_14px lh_140p fc_ffffff ttuppercase mt20px mb0px tright">
-                                    READ MORE
-                                  </h4>
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-          
-                          <div class="col-md-10 col-sm-10 col-xs-10 prelative">
-                            <div class="row">
-                              <div class="col-md-12 col-sm-12 col-xs-12 tcenter">
-                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_saakshi_singla.webp" alt="" class="img-responsive"/>
-                              </div>
-                            </div>
-          
-                            <div class="row ltestimonials">
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <h4 class="fw_400 fs_15px lh_140p fc_ffffff mt10px mb5px ">
-                                  Saakshi Singla
-                                </h4>
-                              </div>
-          
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <h6 class="fw_400 fs_14px lh_140p fc_ffffff ttuppercase mt0px mb20px">
-                                  PSYCHOLOGIST & COUNSELLOR, India
-                                </h6>
-                              </div>
-          
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <p class="fw_400 fs_15px lh_140p fc_ffffff italic tleft mb0px ttxt">
-                                  HappierMe is what today’s world, which is full of stress, needs so so desperately. I have been using the HappierMe app in my counseling practice a...
-                                </p>
-                              </div>
-          
-                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <a (click)="readMore('Saakshi')">
-                                  <h4 class="fw_600 fs_14px lh_140p fc_ffffff ttuppercase mt20px mb0px tright">
-                                    READ MORE
-                                  </h4>
-                                </a>
-                              </div>
-                            </div>
-                          </div> 
-          
-                        </div>
+                    <div class="row" *ngIf="!isPartner">
+                      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter p0 row_bp col_cw">
+                        <a>
+                          <button type="button" (click)="BecomeAPartner()" class="btn mb0 btn_bp w100">
+                            Become a Partner
+                          </button>
+                        </a>
                       </div>
-                      <!-- /testimonials -->
+                    </div>
 
-                      <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                          <a (click)="scroll_to_obs()">
-                            <h4 class="fs_15px fw_600 lh_150p fc_D7586B vpb">
-                              View Partnership Benefits
-                            </h4>
-                          </a>
-                        </div>
-                      </div>
-
-                      <div class="row" *ngIf="!isPartner">
-                        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter p0 row_bp col_cw">
-                          <a>
-                            <button type="button" (click)="BecomeAPartner()" class="btn mb0 btn_bp w100">
-                              Become a Partner
-                            </button>
-                          </a>
-                        </div>
-                      </div>
-
-                    </form>
-                  </div>
-                  <!-- /tab1 -->
-
-                  <!-- tab2 -->
-                  <div id="tab2" class="tab-pane fade in active" *ngIf="isHowItWorks">
-                    <form>
-
-                      <div class="row mt20px mb0px">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                          <p class="mb0px fs_15px fw_500 lh_150p fc_000000">
-                            <!-- To become a partner and continue to get the benefits of partnership, you need to be an active subscriber. -->
-                            Here’s how you will receive your Partnership benefits
-                          </p>
-
-                          <!-- <p class="fs_15px fw_500 lh_150p fc_000000">
-                            There are 2 ways to receive your partnership benefits. Click below to find out more:
-                          </p> -->
-                        </div>
-                      </div>
-
-                      <!-- partnership tree plant -->
-                      <!-- <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-
-                          <div class="">
-                            <div class="panel-group" id="tree_plant">
-                              <div class="panel panel-default">
-                                <div class="panel-heading">
-                                  <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#pa_tree_plant">
-                                      <div class="row">
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                                          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/partnership_plant_tree.svg" alt="" class="img-responsive"/>
-                                          </div>
-                                          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                                            <h4 class="mtb0px fs_14px fw_500 lh_150p fc_000000">
-                                              Have a tree planted for every subscription made using your referral code
-                                            </h4>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </a>
-                                  </h4>
-                                </div>
-                                <div id="pa_tree_plant" class="panel-collapse collapse">
-                                  <div class="panel-body fs_14px fw_400 lh_150p fc_000000">
-
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <hr class="hr_style_v3_04">
-                                      </div>
-                                    </div>
-
-                                    <div class="row mtb20px">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/pw_treesisters.svg" alt="" class="img-responsive">
-                                      </div>
-                                    </div>
-
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <p>
-                                          As part of our mission to help make the world a better place, we have partnered with Treesisters, a social change and reforestation charity that works towards tropical forest restoration.
-                                        </p>
-
-                                        <p>
-                                          Share your referral code with others. They will get a 10% discount on their subscription, and we plant a tree for every person who gets a subscription using your code.
-                                        </p>
-                                      </div>
-                                    </div>
-
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-
-                        </div>
-                      </div> -->
-                      <!-- /partnership tree plant -->
-
-                      <!-- <div class="row mtb15px">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                          <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 p0">
-                            <hr class="hr_style_v3_05">
-                          </div>
-                          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                            <h4 class="mtb0px fs_15px fw_400 lh_150p fc_a0a3bd tcenter">
-                              OR
-                            </h4>
-                          </div>
-                          <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 p0">
-                            <hr class="hr_style_v3_05">
-                          </div>
-                        </div>
-                      </div> -->
-
-                      <!-- partnership income -->
-                      <div class="row mtb30px partnership_income_div">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/partnership_income_infographics.svg" alt="" class="img-responsive w100"/>
-                        </div>
-                      </div>
-
-                      <!-- <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-
-                          <div class="">
-                            <div class="panel-group" id="tree_plant">
-                              <div class="panel panel-default">
-                                <div class="panel-heading">
-                                  <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#pa_income">
-                                      <div class="row">
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                                          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-                                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/partnership_income.svg" alt="" class="img-responsive"/>
-                                          </div>
-                                          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-                                            <h4 class="mtb0px fs_14px fw_500 lh_150p fc_000000">
-                                              Receive an income from the partnership program
-                                            </h4>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </a>
-                                  </h4>
-                                </div>
-                                <div id="pa_income" class="panel-collapse collapse">
-                                  <div class="panel-body fw_400 fs_15px lh_140p fc_243949">
-
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <h4 class="fs_18px fw_600 lh_150p fc_000000 mtb20px">
-                                          How can you earn an income as a partner?
-                                        </h4>
-                                      </div>
-                                    </div>
-
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/partnership_income_infographics.svg" alt="" class="img-responsive"/>
-                                      </div>
-                                    </div>
-
-                                  </div>
-
-                                  <div class="row fs_14px fw_400 lh_150p fc_000000 mtb30px">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                      <p class="">
-                                        If you introduce just 3 partners, and each of them introduces 3 other partners and so on, in level 7 you will be getting an income from 2,187 people. You can introduce as many partners as you like. Each person who subscribes is given an option to join our partner program.
-                                      </p>
-
-                                      <ul class="m0px">
-                                        <li>
-                                          There is no other fee, no targets to meet, and no pressure to sell.
-                                        </li>
-
-                                        <li>
-                                          You are not selling the app to others. You just need to introduce the app to your network, and we will provide you with the artwork to share. The app is free to browse and users only buy if they want to unlock the full content. If they wish to become partners, we will invite them to a monthly zoom call where we explain the program in detail.
-                                        </li>
-
-                                        <li>
-                                          To continue getting the income from your partners, all you need to do is have an active subscription.
-                                        </li>
-                                      </ul>
-                                    </div>
-                                  </div>
-
-                                  <div class="row chtl">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                      <h4 class="mtb0px fs_14px fw_400 lh_150p fc_000000">
-                                        <a routerLink="/partnership-webpage/illustration">
-                                          <span class="underline fw_600 fc_e58d82">Click here</span>
-                                        </a>
-                                        to find an example of how much you could earn
-                                      </h4>
-                                    </div>
-                                  </div>
-
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-
-                        </div>
-                      </div> -->
-                      <!-- /partnership income -->
-
-                      <!-- other benefits -->
-                      <!-- <div class="row mtb30px" #other_benefits>
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-
-                          <div class="">
-                            <div class="panel-group" id="obfaqs">
-                              <div class="panel panel-default">
-                                <div class="panel-heading">
-                                  <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" (click)="otherBenefitsClick()">
-                                      <div class="row">
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                          <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000">
-                                            Other benefits
-                                          </h4>
-                                        </div>
-                                      </div>
-                                    </a>
-                                  </h4>
-                                </div>
-                                <div id="pa_other_benefits"  *ngIf="isOtherBenefits"  class="panel-collapse collapse in">
-                                  <div class="panel-body">
-
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/humanwisdom_live.svg" alt="" class="img-responsive w100"/>
-                                      </div>
-                                    </div>
-
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <h4 class="mtb20px fs_14px fw_400 lh_150p fc_000000">
-                                          We will invite you to special partner events – like our HappierMe Live events on popular subjects, and smaller group discussions.
-                                        </h4>
-                                      </div>
-                                    </div>
-
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/stress_free.svg" alt="" class="img-responsive w100"/>
-                                      </div>
-                                    </div>
-
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <h4 class="mt20px mb0px fs_14px fw_400 lh_150p fc_000000">
-                                          You will get a free e-book Stress Free, authored by 
-                                          <span class="fw_600 fc_e58d82">
-                                            Manoj Krishna
-                                          </span>
-                                        </h4>
-                                      </div>
-                                    </div>
-
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <hr class="hr_style_v3_02">
-                                      </div>
-                                    </div>
-
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <h4 class="mtb0px fs_14px fw_400 lh_150p fc_000000">
-                                          Besides, be the first to know of new developments. Get involved and help us improve.
-                                        </h4>
-                                      </div>
-                                    </div>
-
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <h4 class="fw_400 fs_15px lh_140p fc_5d5d5d mtb10px">
-                                          Join our monthly Zoom call to find out more about the partnership program and the HappierMe Project.
-                                          <a>
-                                            <span class="fw_400 fs_15px lh_140p fc_5d5d5d bold underline">
-                                              Details here.
-                                            </span>
-                                          </a>
-                                        </h4>
-                                      </div>
-                                    </div> -->
-
-                                  <!-- </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-
-                        </div>
-                      </div> -->
-                      <!-- /other benefits -->
-
-                      <!-- faqs -->
-                      <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-
-                          <div class="">
-                            <div class="panel-group" id="obfaqs">
-                              <div class="panel panel-default">
-                                <div class="panel-heading">
-                                  <h4 class="panel-title">
-                                    <a class="collapsed" href="" aria-expanded="true">
-                                      <div class="row">
-                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                          <h4 class="mtb0px fs_18px fw_600 lh_150p fc_000000">
-                                            FAQs
-                                          </h4>
-                                        </div>
-                                      </div>
-                                    </a>
-                                  </h4>
-                                </div>
-                                <div id="pa_faqs" data-bs-parent="#panel-title" class="">
-                                  <div class="panel-body">
-
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <h4 class="mt0px mb10px fs_15px fw_600 lh_150p fc_000000">
-                                          Why have we created this program?
-                                        </h4>
-                                      </div>
-                                    </div>
-
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <h4 class="mtb0px fs_12px fw_400 lh_150p fc_000000">
-                                          Our intention is to create a community of users who want to help others and make the world a happier place. Rewarding our users who share the app with their friends allows us to keep the cost of the app down.
-                                        </h4>
-                                      </div>
-                                    </div>
-
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <h4 class="mt20px mb10px fs_15px fw_600 lh_150p fc_000000">
-                                          Is my income guaranteed?
-                                        </h4>
-                                      </div>
-                                    </div>
-
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <h4 class="mtb0px fs_12px fw_400 lh_150p fc_000000">
-                                          No. It depends on the sales of the app.
-                                        </h4>
-                                      </div>
-                                    </div>
-
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <h4 class="mt20px mb10px fs_15px fw_600 lh_150p fc_000000">
-                                          Do I need to do any selling?
-                                        </h4>
-                                      </div>
-                                    </div>
-
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <h4 class="mtb0px fs_12px fw_400 lh_150p fc_000000">
-                                          No. All you need to do is introduce the app to your network or to organisations. It’s like sharing a movie you like with friends. They sign up for the free trial and if they like it, they can subscribe.
-                                        </h4>
-                                      </div>
-                                    </div>
-
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <h4 class="mt20px mb10px fs_15px fw_600 lh_150p fc_000000">
-                                          How do I become a partner and introduce others?
-                                        </h4>
-                                      </div>
-                                    </div>
-
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <h4 class="mtb0px fs_12px fw_400 lh_150p fc_000000">
-                                          First, you subscribe to the app. Then you go to the menu (top right in the app) and click ‘become a partner’. You will get a partnership code and link you can share with others.
-                                        </h4>
-                                      </div>
-                                    </div>
-
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <h4 class="mt20px mb10px fs_15px fw_600 lh_150p fc_000000">
-                                          How can I share my link with others?
-                                        </h4>
-                                      </div>
-                                    </div>
-
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <h4 class="mtb0px fs_12px fw_400 lh_150p fc_000000">
-                                          You can email people or post the link on social media. Take a screenshot of the app and share it on your social media with your comments and your link.
-                                        </h4>
-                                      </div>
-                                    </div>
-
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <h4 class="mt20px mb10px fs_15px fw_600 lh_150p fc_000000">
-                                          How can I track my income?
-                                        </h4>
-                                      </div>
-                                    </div>
-
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <h4 class="mtb0px fs_12px fw_400 lh_150p fc_000000">
-                                          Click on ‘My partnership’ in the partnership program (found in the menu in the app - top right). Here you can access your revenue report.
-                                        </h4>
-                                      </div>
-                                    </div>
-
-                                    <!-- <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <h4 class="mt20px mb10px fs_15px fw_600 lh_150p fc_000000">
-                                          7.	Are my details going to be shared with other partners?
-                                        </h4>
-                                      </div>
-                                    </div>
-
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <h4 class="mtb0px fs_12px fw_400 lh_150p fc_000000">
-                                          No. We will not share your details with others. You will only know the people you introduced, and who introduced you.
-                                        </h4>
-                                      </div>
-                                    </div>
-
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <h4 class="mt20px mb10px fs_15px fw_600 lh_150p fc_000000">
-                                          8.	How can I see how much my income is?
-                                        </h4>
-                                      </div>
-                                    </div>
-
-                                    <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                        <h4 class="mtb0px fs_12px fw_400 lh_150p fc_000000">
-                                          You can see your revenue report in the app.
-                                        </h4>
-                                      </div>
-                                    </div> -->
-
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-
-                        </div>
-                      </div>
-                      <!-- /faqs -->
-
-                      <div class="row" *ngIf="!isPartner">
-                        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter p0 row_bp col_cw">
-                          <a>
-                            <button type="button" (click)="BecomeAPartner()" class="btn mb0 btn_bp w100">
-                              Become a Partner
-                            </button>
-                          </a>
-                        </div>
-                      </div>
-
-                    </form>
-                  </div>
-                  <!-- /tab2 -->
+                  </form>
                 </div>
+                <!-- /tab1 -->
+
+                <!-- tab2 -->
+                <div id="tab2" class="tab-pane fade in active" *ngIf="isHowItWorks">
+                  <form>
+                    <div class="row mt20px mb20px">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <p class="mb0px fs_15px fw_500 lh_150p fc_000000">Here's how you will receive your Partnership
+                          benefits</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <div class="hiw-card">
+
+                          <!-- Step 1 -->
+                          <div class="hiw-row">
+                            <div class="hiw-left">
+                              <div class="hiw-step__icon-wrap">
+                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/hstep1.svg"
+                                  alt="Step 1" />
+                              </div>
+                              <div class="hiw-connector"></div>
+                            </div>
+                            <div class="hiw-right">
+                              <h4 class="fw_500 fs_15px lh_150p fc_000000 mt0px mb5px">Step 1</h4>
+                              <p class="fw_400 fs_12px lh_150p fc_000000 mtb0px">You subscribe to HappierMe Premium and
+                                become a partner</p>
+                            </div>
+                          </div>
+
+                          <!-- Step 2 -->
+                          <div class="hiw-row">
+                            <div class="hiw-left">
+                              <div class="hiw-step__icon-wrap">
+                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/hstep2.svg"
+                                  alt="Step 2" />
+                              </div>
+                              <div class="hiw-connector"></div>
+                            </div>
+                            <div class="hiw-right">
+                              <h4 class="fw_500 fs_15px lh_150p fc_000000 mt0px mb5px">Step 2</h4>
+                              <p class="fw_400 fs_12px lh_150p fc_000000 mtb0px">Share your partnership link or code
+                                with other users or organisations</p>
+                            </div>
+                          </div>
+
+                          <!-- Step 3 -->
+                          <div class="hiw-row">
+                            <div class="hiw-left">
+                              <div class="hiw-step__icon-wrap">
+                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/hstep3.svg"
+                                  alt="Step 3" />
+                              </div>
+                              <div class="hiw-connector"></div>
+                            </div>
+                            <div class="hiw-right">
+                              <h4 class="fw_500 fs_15px lh_150p fc_000000 mt0px mb5px">Step 3</h4>
+                              <p class="fw_400 fs_12px lh_150p fc_000000 mtb0px">They can start their free trial</p>
+                            </div>
+                          </div>
+
+                          <!-- When someone subscribes label -->
+                          <div class="hiw-referral-box">
+                            <p class="fw_600 fs_14px lh_150p fc_000000 mtb0px">When someone subscribes using your
+                              referral code or link:</p>
+                          </div>
+
+                          <!-- Step 4 -->
+                          <div class="hiw-row hiw-row--last">
+                            <div class="hiw-left">
+                              <div class="hiw-step__icon-wrap">
+                                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/hstep1.svg"
+                                  alt="Step 4" class="" />
+                              </div>
+                            </div>
+                            <div class="hiw-right">
+                              <p class="fw_400 fs_12px lh_150p fc_000000 mt0px mb10px">You will get 20% of the net
+                                payment when someone subscribes using your link. If they subscribe using your code they
+                                will get a 10% discount and you get 20% of the net payment.</p>
+                              <p class="fw_500 fs_12px lh_150p fc_ED7D6F mtb0px">You get 20% of the subscription fee.
+                              </p>
+                              <p class="fw_500 fs_12px lh_150p fc_ED7D6F mb0px">They get 10% discount.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row mt30px" id="pa_faqs">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                        <div class="pa-faq-block" (click)="showFaqs=!showFaqs">
+                          <div class="pa-faq-block__header">
+                            <span class="fw_600 fs_18px lh_150p fc_000000">FAQs</span>
+                            <span class="pa-faq-block__icon">{{ showFaqs ? "-" : "+" }}</span>
+                          </div>
+                          <div class="pa-faq-block__body" *ngIf="showFaqs">
+                            <div class="pa-faq-q">
+                              <p class="fw_600 fs_15px lh_150p fc_000000 mb5px">Why have we created this program?</p>
+                              <p class="fw_400 fs_12px lh_150p fc_000000 mtb0px">Our intention is to create a community
+                                of users who want to help others and make the world a happier place. Rewarding our users
+                                who share the app with their friends allows us to keep the cost of the app down.</p>
+                            </div>
+                            <div class="pa-faq-q">
+                              <p class="fw_600 fs_15px lh_150p fc_000000 mb5px">Is my income guaranteed?</p>
+                              <p class="fw_400 fs_12px lh_150p fc_000000 mtb0px">No. It depends on the sales of the app.
+                              </p>
+                            </div>
+                            <div class="pa-faq-q">
+                              <p class="fw_600 fs_15px lh_150p fc_000000 mb5px">Do I need to do any selling?</p>
+                              <p class="fw_400 fs_12px lh_150p fc_000000 mtb0px">No. All you need to do is introduce the
+                                app to your network or to organisations. It is like sharing a movie you like with
+                                friends. They sign up for the free trial and if they like it, they can subscribe.</p>
+                            </div>
+                            <div class="pa-faq-q">
+                              <p class="fw_600 fs_15px lh_150p fc_000000 mb5px">How do I become a partner and introduce
+                                others?</p>
+                              <p class="fw_400 fs_12px lh_150p fc_000000 mtb0px">First, you subscribe to the app. Then
+                                go to the menu (top right in the app) and click become a partner. You will get a
+                                partnership code and link you can share with others.</p>
+                            </div>
+                            <div class="pa-faq-q">
+                              <p class="fw_600 fs_15px lh_150p fc_000000 mb5px">How can I share my link with others?</p>
+                              <p class="fw_400 fs_12px lh_150p fc_000000 mtb0px">You can email people or post the link
+                                on social media. Take a screenshot of the app and share it on your social media with
+                                your comments and your link.</p>
+                            </div>
+                            <div class="pa-faq-q">
+                              <p class="fw_600 fs_15px lh_150p fc_000000 mb5px">How can I track my income?</p>
+                              <p class="fw_400 fs_12px lh_150p fc_000000 mtb0px">Click on My partnership in the
+                                partnership program (found in the menu in the app - top right). Here you can access your
+                                revenue report.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row" *ngIf="!isPartner">
+                      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tcenter p0 row_bp col_cw">
+                        <a>
+                          <button type="button" (click)="BecomeAPartner()" class="btn mb0 btn_bp w100">
+                            Become a Partner
+                          </button>
+                        </a>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <!-- /tab2 -->
               </div>
-
-              <div class="pagebreak"></div>
-
             </div>
+
+            <div class="pagebreak"></div>
+
           </div>
         </div>
+      </div>
     </div>
   </div>
   <!--/Class -->

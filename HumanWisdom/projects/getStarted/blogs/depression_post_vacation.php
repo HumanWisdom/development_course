@@ -208,9 +208,7 @@
                 <h4 class="mtb0px blog_desc">
                 <b>Should I seek professional help for persistent post-vacation blues?</b><br>
                 If feelings of sadness or anxiety persist for weeks, consulting a therapist or counselor may be worthwhile. HappierMe can complement professional help with its supportive tools.
-                <br><br>
-                To find out more, visit
-                <a class="blog_highlight_peach" href="https://happierme.app"> https://happierme.app, </a>or download HappierMe from the app stores. There is a free trial.
+              
                 </h4>
 
               </div>
