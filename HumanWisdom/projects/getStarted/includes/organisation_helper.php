@@ -33,6 +33,14 @@ if (!function_exists('hw_org_base')) {
     }
 }
 
+if (!function_exists('hw_org_default_id')) {
+    /** Used when /free.php or /organisation.php is opened with no org id. */
+    function hw_org_default_id()
+    {
+        return 'happierme';
+    }
+}
+
 if (!function_exists('hw_org_sanitize_id')) {
     function hw_org_sanitize_id($id)
     {
@@ -86,7 +94,7 @@ if (!function_exists('hw_org_query_id')) {
 if (!function_exists('hw_org_id')) {
     /**
      * Resolved OrganizationId for the flow:
-     * query param → session (from a prior Adv/landing visit) → default (1 = HappierMe).
+     * query param / path → session → default (happierme).
      */
     function hw_org_id()
     {
@@ -95,16 +103,55 @@ if (!function_exists('hw_org_id')) {
             $id = hw_org_sanitize_id($_SESSION['hw_org_id']);
         }
         if ($id === '') {
-            $id = '1';
+            $id = hw_org_default_id();
         }
         $_SESSION['hw_org_id'] = $id;
         return $id;
     }
 }
 
-if (!function_exists('hw_org_defaults')) {
-    function hw_org_defaults($id = '1')
+if (!function_exists('hw_org_ensure_route_id')) {
+    /**
+     * On /free.php and /organisation.php, put the org id in the path.
+     * Missing id → happierme, e.g. /free.php → /free.php/happierme
+     */
+    function hw_org_ensure_route_id()
     {
+        $file = basename(str_replace('\\', '/', $_SERVER['SCRIPT_NAME'] ?? ''));
+        if ($file !== 'free.php' && $file !== 'organisation.php') {
+            return;
+        }
+
+        $id = hw_org_query_id();
+        if ($id === '') {
+            $id = hw_org_default_id();
+        }
+
+        $pathId = hw_org_path_id();
+        $hasQueryId = isset($_GET['id']) && hw_org_sanitize_id($_GET['id']) !== '';
+        if ($pathId === $id && !$hasQueryId) {
+            return;
+        }
+
+        $base = hw_org_base();
+        $target = ($base === '' ? '' : $base) . '/' . $file . '/' . rawurlencode($id);
+        $query = $_GET;
+        unset($query['id']);
+        if (!empty($query)) {
+            $target .= '?' . http_build_query($query);
+        }
+
+        header('Location: ' . $target, true, 302);
+        exit;
+    }
+}
+
+if (!function_exists('hw_org_defaults')) {
+    function hw_org_defaults($id = null)
+    {
+        if ($id === null || $id === '') {
+            $id = hw_org_default_id();
+        }
         $end = new DateTime('today');
         $end->modify('+7 days');
         return [

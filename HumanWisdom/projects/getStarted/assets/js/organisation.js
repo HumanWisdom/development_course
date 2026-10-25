@@ -4,6 +4,7 @@
   var org = window.__HW_ORG__ || {};
   var pages = window.__HW_ORG_PAGES__ || {};
   var assets = window.__HW_ORG_ASSETS__ || {};
+  var DEFAULT_ORG_ID = "happierme";
   var stepMeta = window.__HW_ORG_STEP_META__ || {};
   var currentStep = window.__HW_ORG_STEP__ || "landing";
   var apiBase = (window.__HW_API__ && window.__HW_API__.apiBase) || "https://www.humanwisdom.info/api";
@@ -847,6 +848,14 @@
     }
   }
 
+  function isFreeOrOrganisationEntry() {
+    try {
+      return /\/(?:free|organisation)\.php(?:\/|$)/i.test(String(window.location.pathname || ""));
+    } catch (e) {
+      return false;
+    }
+  }
+
   /**
    * On /free.php?id=nfsn → /free.php/nfsn so the org id stays visible in the path.
    * Does not remove an id that is already in the path.
@@ -877,8 +886,10 @@
 
   function captureOrgIdFromUrl() {
     var id = new URLSearchParams(window.location.search).get("id") || orgIdFromPath();
-    if (!id) return "";
-    id = String(id).trim().replace(/[^a-zA-Z0-9_-]/g, "");
+    id = String(id || "").trim().replace(/[^a-zA-Z0-9_-]/g, "");
+    if (!id && isFreeOrOrganisationEntry()) {
+      id = DEFAULT_ORG_ID;
+    }
     if (!id) return "";
     try {
       if (getStoredOrganizationId() !== id) {

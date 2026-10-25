@@ -4,6 +4,7 @@
  * Entry wrappers set $orgStep (adv|landing|signup|otp|success|continue|download).
  */
 require_once __DIR__ . '/../includes/organisation_helper.php';
+hw_org_ensure_route_id();
 
 if (!isset($orgStep) || $orgStep === '') {
     $orgStep = 'landing';
