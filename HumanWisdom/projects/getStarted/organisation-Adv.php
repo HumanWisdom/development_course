@@ -5,10 +5,11 @@
 require_once __DIR__ . '/includes/organisation_helper.php';
 
 $id = hw_org_query_id();
-$target = hw_org_base() === '' ? '/free.php' : (hw_org_base() . '/free.php');
-if ($id !== '') {
-    $target .= '/' . rawurlencode($id);
+if ($id === '') {
+    $id = hw_org_default_id();
 }
+$target = hw_org_base() === '' ? '/free.php' : (hw_org_base() . '/free.php');
+$target .= '/' . rawurlencode($id);
 
 $query = $_GET;
 unset($query['id']);
