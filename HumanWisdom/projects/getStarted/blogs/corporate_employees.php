@@ -38,7 +38,7 @@
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
                   <button class="mtb0px fs_12px fw_400 lh_150p fc_803358 btn_blogp">
-                    Corporate Culture
+                   Mental health
                   </button>
                 </div>
 
@@ -48,7 +48,7 @@
 
             <div class="row mt20px rmb80px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <img src="https://miro.medium.com/v2/resize:fit:1200/1*FJOOjjL9m0ivaQ6ZATfidA.png" class="img-responsive" alt="Mental health struggles among corporate employees" >
+                <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/94.webp" class="img-responsive" alt="Mental health struggles among corporate employees" >
               </div>
             </div>
 
@@ -129,6 +129,13 @@
                     <a href="https://happierme.app/adults/fear-anxiety" class="blog_highlight_peach td_underline" target="_blank">anxiety</a>
                     levels and decreased job satisfaction.
                 </h4>
+
+
+  <div class="row mtb20px rm80px">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/86_new.webp" class="img-responsive" alt="Resilience and emotional intelligence" >
+              </div>
+            </div>
 
                 <!-- HappierMe -->
                 <h4 class="mtb0px blog_sub_title">
