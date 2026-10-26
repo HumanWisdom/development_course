@@ -753,15 +753,25 @@
     return "https://d1tenzemoxuh75.cloudfront.net/" + logoUrl.replace(/^\//, "");
   }
 
+  function formatTrialEnds(freeDays) {
+    var end = new Date();
+    end.setHours(0, 0, 0, 0);
+    end.setDate(end.getDate() + (parseInt(freeDays, 10) || 0));
+    var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    return end.getDate() + " " + months[end.getMonth()] + " " + end.getFullYear();
+  }
+
   function applyOrganization(row, id, rawResponse) {
     var freeDays = parseInt(row.FreeDays_Count, 10);
     if (!freeDays || freeDays < 1) freeDays = 7;
+    var trialEnds = formatTrialEnds(freeDays);
     var name = row.OrganizationName || "HappierMe";
     var logo = orgLogoUrl(row.LogoUrl);
     org.id = id;
     org.name = name;
     org.logo = logo;
     org.freeDays = freeDays;
+    org.trialEnds = trialEnds;
     org.isActive = row.IsActive != null ? Number(row.IsActive) : 1;
     window.__HW_ORG__ = org;
 
@@ -803,6 +813,9 @@
     }
     document.querySelectorAll("[data-org-free-days]").forEach(function (el) {
       el.textContent = String(freeDays);
+    });
+    document.querySelectorAll("[data-org-trial-ends]").forEach(function (el) {
+      el.textContent = trialEnds;
     });
     document.querySelectorAll("[data-org-copy]").forEach(function (el) {
       var value = row[el.getAttribute("data-org-copy")];
