@@ -850,20 +850,26 @@
     stripQueryParams(["email"]);
   }
 
-  /** Org id from /free.php/happierme (PATH_INFO style). */
+  function normalizeOrgId(id) {
+    id = String(id || "").trim().replace(/[^a-zA-Z0-9_-]/g, "");
+    if (!id || id === "1") return DEFAULT_ORG_ID;
+    return id;
+  }
+
+  /** Org id from /free.php/happierme or /organisation-signup.php/happierme. */
   function orgIdFromPath() {
     try {
       var path = String(window.location.pathname || "");
-      var match = path.match(/\/(?:free|organisation(?:-Adv)?)\.php\/([a-zA-Z0-9_-]+)\/?$/i);
+      var match = path.match(/\/(?:free|organisation(?:-[A-Za-z]+)?)\.php\/([a-zA-Z0-9_-]+)\/?$/i);
       return match ? match[1] : "";
     } catch (e) {
       return "";
     }
   }
 
-  function isFreeOrOrganisationEntry() {
+  function isOrgFlowEntry() {
     try {
-      return /\/(?:free|organisation)\.php(?:\/|$)/i.test(String(window.location.pathname || ""));
+      return /\/(?:free|organisation(?:-signup)?)\.php(?:\/|$)/i.test(String(window.location.pathname || ""));
     } catch (e) {
       return false;
     }
@@ -877,7 +883,7 @@
     if (!id) return;
     try {
       var url = new URL(window.location.href);
-      var pathMatch = url.pathname.match(/^(.*\/(?:free|organisation(?:-Adv)?)\.php)(?:\/[a-zA-Z0-9_-]+)?\/?$/i);
+      var pathMatch = url.pathname.match(/^(.*\/(?:free|organisation(?:-[A-Za-z]+)?)\.php)(?:\/[a-zA-Z0-9_-]+)?\/?$/i);
       if (!pathMatch) return;
 
       var scriptBase = pathMatch[1].replace(/organisation-Adv\.php$/i, "free.php");
@@ -900,8 +906,10 @@
   function captureOrgIdFromUrl() {
     var id = new URLSearchParams(window.location.search).get("id") || orgIdFromPath();
     id = String(id || "").trim().replace(/[^a-zA-Z0-9_-]/g, "");
-    if (!id && isFreeOrOrganisationEntry()) {
+    if (!id && isOrgFlowEntry()) {
       id = DEFAULT_ORG_ID;
+    } else if (id) {
+      id = normalizeOrgId(id);
     }
     if (!id) return "";
     try {
