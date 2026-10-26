@@ -48,6 +48,21 @@ if (!function_exists('hw_org_sanitize_id')) {
     }
 }
 
+if (!function_exists('hw_org_normalize_id')) {
+    /**
+     * Legacy homepage links used ?id=1 for HappierMe.
+     * GetOrganization/1 is not the happierme campaign (10 free days).
+     */
+    function hw_org_normalize_id($id)
+    {
+        $id = hw_org_sanitize_id($id);
+        if ($id === '' || $id === '1') {
+            return hw_org_default_id();
+        }
+        return $id;
+    }
+}
+
 if (!function_exists('hw_org_path_id')) {
     /**
      * OrganizationId from PATH_INFO / pretty URL, e.g.
@@ -58,7 +73,7 @@ if (!function_exists('hw_org_path_id')) {
         $pathInfo = isset($_SERVER['PATH_INFO']) ? (string) $_SERVER['PATH_INFO'] : '';
         if ($pathInfo !== '' && $pathInfo !== '/') {
             $segment = trim(explode('/', ltrim($pathInfo, '/'))[0]);
-            return hw_org_sanitize_id($segment);
+            return hw_org_normalize_id($segment);
         }
 
         // Fallback when PATH_INFO is not populated (some proxies / rewrite setups).
@@ -67,8 +82,8 @@ if (!function_exists('hw_org_path_id')) {
         if (!is_string($uriPath) || $uriPath === '') {
             return '';
         }
-        if (preg_match('#/(?:free|organisation(?:-Adv)?)\.php/([a-zA-Z0-9_-]+)(?:/|$)#', $uriPath, $m)) {
-            return hw_org_sanitize_id($m[1]);
+        if (preg_match('#/(?:free|organisation(?:-[A-Za-z]+)?)\.php/([a-zA-Z0-9_-]+)(?:/|$)#', $uriPath, $m)) {
+            return hw_org_normalize_id($m[1]);
         }
         return '';
     }
@@ -82,7 +97,7 @@ if (!function_exists('hw_org_query_id')) {
     function hw_org_query_id()
     {
         if (isset($_GET['id'])) {
-            $id = hw_org_sanitize_id($_GET['id']);
+            $id = hw_org_normalize_id($_GET['id']);
             if ($id !== '') {
                 return $id;
             }
@@ -100,7 +115,7 @@ if (!function_exists('hw_org_id')) {
     {
         $id = hw_org_query_id();
         if ($id === '' && !empty($_SESSION['hw_org_id'])) {
-            $id = hw_org_sanitize_id($_SESSION['hw_org_id']);
+            $id = hw_org_normalize_id($_SESSION['hw_org_id']);
         }
         if ($id === '') {
             $id = hw_org_default_id();
@@ -118,7 +133,8 @@ if (!function_exists('hw_org_ensure_route_id')) {
     function hw_org_ensure_route_id()
     {
         $file = basename(str_replace('\\', '/', $_SERVER['SCRIPT_NAME'] ?? ''));
-        if ($file !== 'free.php' && $file !== 'organisation.php') {
+        $entryFiles = ['free.php', 'organisation.php', 'organisation-signup.php'];
+        if (!in_array($file, $entryFiles, true)) {
             return;
         }
 
@@ -356,7 +372,7 @@ if (!function_exists('hw_org_fetch')) {
             return hw_org_defaults(hw_org_id());
         }
 
-        $id = hw_org_sanitize_id($forceApi ? $id : $queryId);
+        $id = hw_org_normalize_id($forceApi ? $id : $queryId);
         if ($id === '') {
             return hw_org_defaults(hw_org_id());
         }
