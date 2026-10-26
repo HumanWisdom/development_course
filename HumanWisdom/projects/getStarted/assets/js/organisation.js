@@ -4,6 +4,7 @@
   var org = window.__HW_ORG__ || {};
   var pages = window.__HW_ORG_PAGES__ || {};
   var assets = window.__HW_ORG_ASSETS__ || {};
+  var DEFAULT_ORG_ID = "happierme";
   var stepMeta = window.__HW_ORG_STEP_META__ || {};
   var currentStep = window.__HW_ORG_STEP__ || "landing";
   var apiBase = (window.__HW_API__ && window.__HW_API__.apiBase) || "https://www.humanwisdom.info/api";
@@ -752,15 +753,25 @@
     return "https://d1tenzemoxuh75.cloudfront.net/" + logoUrl.replace(/^\//, "");
   }
 
+  function formatTrialEnds(freeDays) {
+    var end = new Date();
+    end.setHours(0, 0, 0, 0);
+    end.setDate(end.getDate() + (parseInt(freeDays, 10) || 0));
+    var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    return end.getDate() + " " + months[end.getMonth()] + " " + end.getFullYear();
+  }
+
   function applyOrganization(row, id, rawResponse) {
     var freeDays = parseInt(row.FreeDays_Count, 10);
     if (!freeDays || freeDays < 1) freeDays = 7;
+    var trialEnds = formatTrialEnds(freeDays);
     var name = row.OrganizationName || "HappierMe";
     var logo = orgLogoUrl(row.LogoUrl);
     org.id = id;
     org.name = name;
     org.logo = logo;
     org.freeDays = freeDays;
+    org.trialEnds = trialEnds;
     org.isActive = row.IsActive != null ? Number(row.IsActive) : 1;
     window.__HW_ORG__ = org;
 
@@ -803,6 +814,9 @@
     document.querySelectorAll("[data-org-free-days]").forEach(function (el) {
       el.textContent = String(freeDays);
     });
+    document.querySelectorAll("[data-org-trial-ends]").forEach(function (el) {
+      el.textContent = trialEnds;
+    });
     document.querySelectorAll("[data-org-copy]").forEach(function (el) {
       var value = row[el.getAttribute("data-org-copy")];
       if (value != null && String(value).trim() !== "") {
@@ -836,14 +850,28 @@
     stripQueryParams(["email"]);
   }
 
-  /** Org id from /free.php/happierme (PATH_INFO style). */
+  function normalizeOrgId(id) {
+    id = String(id || "").trim().replace(/[^a-zA-Z0-9_-]/g, "");
+    if (!id || id === "1") return DEFAULT_ORG_ID;
+    return id;
+  }
+
+  /** Org id from /free.php/happierme or /organisation-signup.php/happierme. */
   function orgIdFromPath() {
     try {
       var path = String(window.location.pathname || "");
-      var match = path.match(/\/(?:free|organisation(?:-Adv)?)\.php\/([a-zA-Z0-9_-]+)\/?$/i);
+      var match = path.match(/\/(?:free|organisation(?:-[A-Za-z]+)?)\.php\/([a-zA-Z0-9_-]+)\/?$/i);
       return match ? match[1] : "";
     } catch (e) {
       return "";
+    }
+  }
+
+  function isOrgFlowEntry() {
+    try {
+      return /\/(?:free|organisation(?:-signup)?)\.php(?:\/|$)/i.test(String(window.location.pathname || ""));
+    } catch (e) {
+      return false;
     }
   }
 
@@ -855,7 +883,7 @@
     if (!id) return;
     try {
       var url = new URL(window.location.href);
-      var pathMatch = url.pathname.match(/^(.*\/(?:free|organisation(?:-Adv)?)\.php)(?:\/[a-zA-Z0-9_-]+)?\/?$/i);
+      var pathMatch = url.pathname.match(/^(.*\/(?:free|organisation(?:-[A-Za-z]+)?)\.php)(?:\/[a-zA-Z0-9_-]+)?\/?$/i);
       if (!pathMatch) return;
 
       var scriptBase = pathMatch[1].replace(/organisation-Adv\.php$/i, "free.php");
@@ -877,8 +905,12 @@
 
   function captureOrgIdFromUrl() {
     var id = new URLSearchParams(window.location.search).get("id") || orgIdFromPath();
-    if (!id) return "";
-    id = String(id).trim().replace(/[^a-zA-Z0-9_-]/g, "");
+    id = String(id || "").trim().replace(/[^a-zA-Z0-9_-]/g, "");
+    if (!id && isOrgFlowEntry()) {
+      id = DEFAULT_ORG_ID;
+    } else if (id) {
+      id = normalizeOrgId(id);
+    }
     if (!id) return "";
     try {
       if (getStoredOrganizationId() !== id) {

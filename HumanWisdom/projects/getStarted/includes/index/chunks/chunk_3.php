@@ -266,7 +266,7 @@
       <!-- CTA after tools -->
       <div id="AnnualType">
         <div id="PricingSelectBtn">
-      <a href="/organisation-signup.php?id=1" id="startyourfreetrial">
+      <a href="/organisation-signup.php/happierme" id="startyourfreetrial">
         <div class="div-wrapper-4" style="margin:0 auto;"><div class="text-wrapper-5">Try HappierMe for free</div></div>
       </a>
         </div>
