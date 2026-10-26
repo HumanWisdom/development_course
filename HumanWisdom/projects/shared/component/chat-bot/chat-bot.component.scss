@@ -132,7 +132,7 @@
 
   .bot-title {
     font-size: 24px;
-    font-weight: 700;
+    font-weight: 600;
     color: #ffffff;
     margin: 0;
   }
@@ -1041,10 +1041,11 @@
   margin-top: 8px;
 }
 
+
 .resource-card-btn {
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   padding: 12px;
   border-radius: 12px;
   background-color: #ffffff;
@@ -1076,8 +1077,10 @@
 
 .resource-card-title {
   font-size: 15px;
-  margin-bottom: 4px;
+  // margin-bottom: 4px;
   color: #333333;
+  font-weight: 600;
+  line-height: 130%;
 }
 
 .resource-card-type {
