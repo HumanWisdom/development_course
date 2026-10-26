@@ -77,7 +77,7 @@
 
                 <h4 class="mtb0px blog_desc">
                     The mental health struggles of corporate employees are exacerbated by systemic factors inherent to the sector. A survey from the WHO reveals that high workloads and a lack of flexibility are common stressors among corporate employees, contributing significantly to
-                    <a href="https://happierme.app/adults/site-search/burnout" class="blog_highlight_peach td_underline" target="_blank">burnout</a>,
+                    burnout,
                     a condition now classified as an occupational phenomenon.
                 </h4>
 
@@ -91,7 +91,7 @@
 
                 <h4 class="mtb0px blog_desc">
                     The fast-paced nature of corporate jobs often leads to chronic
-                    <a href="https://happierme.app/adults/stress" class="blog_highlight_peach td_underline" target="_blank">stress</a>,
+                    stress,
                     sleep deprivation, and strained relationships, all of which fuel mental health problems. For instance, findings indicate that employees in high-stress roles are at a heightened risk of substance use disorders, which are often a coping mechanism for excessive work pressure.
                 </h4>
 
@@ -105,7 +105,7 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                    Corporate employees face unique challenges compared to other sectors. The rise of hybrid and remote work models has blurred boundaries between personal and professional lives, fostering a culture of being 'always available.'
+                    Corporate employees face unique challenges compared to other sectors. The rise of hybrid and remote work models has blurred boundaries between personal and professional lives, fostering a culture of being "always available."
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -126,12 +126,12 @@
 
                 <h4 class="mtb0px blog_desc">
                     Moreover, the competitive environment in corporate settings fosters job insecurity, which is linked to heightened
-                    <a href="https://happierme.app/adults/fear-anxiety" class="blog_highlight_peach td_underline" target="_blank">anxiety</a>
+                    anxiety
                     levels and decreased job satisfaction.
                 </h4>
 
 
-  <div class="row mtb20px rm80px">
+  <div class="row mt20px rm80px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/86_new.webp" class="img-responsive" alt="Resilience and emotional intelligence" >
               </div>
@@ -152,10 +152,10 @@
 
                 <h4 class="mtb0px blog_desc">
                     It helps users feel better through guided
-                    <a href="https://happierme.app/adults/meditation" class="blog_highlight_peach td_underline" target="_blank">meditations</a>,
-                    <a href="https://happierme.app/adults/journal" class="blog_highlight_peach td_underline" target="_blank">journaling</a>,
+              meditations,
+journaling,
                     and
-                    <a href="https://happierme.app/adults/breathing" class="blog_highlight_peach td_underline" target="_blank">breathing exercises</a>.
+breathing exercises.
                     It then empowers people to develop their self-awareness and emotional intelligence to manage their own mental health, have happier relationships, deal with addiction and develop their communication and leadership skills.
                 </h4>
 
@@ -182,7 +182,10 @@
                     </span>
                     and a host of features including an online journal, a forum for peer support, an extensive library of podcasts, meditations and videos, it's a one-stop solution for a happier life.
                 </h4>
-
+ <iframe id="youtubeIntro" loading="lazy" title="youtubeIntro"
+            src="https://www.youtube.com/embed/y5hd9MHnUyM?si=YOFWYNpc4seBRw3U"
+            class="cvideo_b yt-embed" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen
+            onclick="return logevent('click_play_video_home', 'index.php')"></iframe>
                 <!-- Prevention -->
                 <h4 class="mtb0px blog_sub_title">
                     Prevention is so much easier
@@ -226,7 +229,7 @@
                     5. <a href="https://happierme.app/blogs/how_to_manage_your_own_mental_health.php" class="blog_highlight_peach td_underline" target="_blank">How to manage your own mental health</a>
                     <br>
                     6. Subscribe to our
-                    <a href="https://happierme.app/adults/newsletter-signup" class="blog_highlight_peach td_underline" target="_blank">newsletter</a>
+                    <a href="https://happierme.app/pages/newsletter.php" class="blog_highlight_peach td_underline" target="_blank">newsletter</a>
                     <br>
                     7. Follow us on
                     <a href="https://www.instagram.com/happierme_app/" class="blog_highlight_peach td_underline" target="_blank">social media</a>
