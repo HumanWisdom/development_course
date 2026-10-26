@@ -24335,7 +24335,7 @@ a {
   font-weight: 600;
   font-style: normal;
   line-height: 160%;
-  color: #EE9596;
+  color: #EE9596 !important;
   text-decoration: underline;
 }
 .read-text-label {
