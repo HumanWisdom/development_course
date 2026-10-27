@@ -122,10 +122,7 @@ export class AppComponent implements OnDestroy {
     // Subscribe to nav visibility (e.g. Olly questions view hides the global nav)
     this.navVisibleSubscription = this.commonService.isNavVisible$.subscribe((visible) => {
       this.isNavVisibleGlobal = visible;
-      // When on the Today page, update isShowHeader in real time
-      if (this.router.url.includes('repeat-user/my-daily-practice') || this.router.url.includes('/today')) {
-        this.isShowHeader = visible;
-      }
+      this.updateLayoutState();
     });
     
     SharedService.isIos = SharedService.initializeIosCheck(this.platform);
@@ -165,6 +162,7 @@ export class AppComponent implements OnDestroy {
       this.services.previousUrl = this.services.currentUrl;
       this.services.currentUrl = event.url;
       this.services.ensureModuleContextForUrl(event.url);
+      this.updateLayoutState();
     });
     this.initializeApp();
     this.getFreeScreens();
@@ -424,27 +422,70 @@ export class AppComponent implements OnDestroy {
     }
   }
 
-  enableFooter() {
+  /**
+   * Pure getter — safe to call from templates without side effects.
+   * Layout state (isShowHeader, dash, journal, etc.) is computed in updateLayoutState().
+   */
+  enableFooter(): boolean {
     if (this.isSearchActiveGlobal) {
       return false;
     }
-    if (this.router.url == "/adults/search" || this.router.url == "/search" 
-      || this.router.url.includes('/adults/site-search/') ||
-      this.router.url.includes('/adults/search') || this.router.url.includes('/adults/learn')) {
-      this.dash = false
-      this.journal = false
+    const url = this.router.url;
+    if (url == "/adults/search" || url == "/search"
+      || url.includes('/adults/site-search/')
+      || url.includes('/adults/search') || url.includes('/adults/learn')) {
+      return true;
+    }
+    if (url.includes("home") || url.includes("explore") || url == "/adults") {
+      return true;
+    }
+    if (url.includes('repeat-user/my-daily-practice') || url.includes('/today')) {
+      return true;
+    }
+    if (url.includes('/repeat-user')) {
+      return true;
+    }
+    if ((url == "/adults/journal")
+      || (url.includes('/journal') && !url.includes('/journal/'))
+      || (url.indexOf('/adults/note') > -1)) {
+      return true;
+    }
+    if (url.includes('/forum')) {
+      return true;
+    }
+    if (url == "/onboarding/user-profile" || url.includes('/profile-edit')) {
+      return true;
+    }
+    if (url == "/adults/notification") {
+      return true;
+    }
+    return false;
+  }
+
+  /**
+   * Computes all layout state (header visibility, bottom nav tabs, etc.) based on
+   * the current router URL. Called from NavigationEnd and isNavVisible$ subscriptions
+   * rather than during change detection, preventing NG0100 errors.
+   */
+  private updateLayoutState(): void {
+    const url = this.router.url;
+
+    if (url == "/adults/search" || url == "/search"
+      || url.includes('/adults/site-search/')
+      || url.includes('/adults/search') || url.includes('/adults/learn')) {
+      this.dash = false;
+      this.journal = false;
       this.fourm = false;
       this.search = false;
       this.learn = true;
       this.enableprofile = false;
-      this.routeid='search';
+      this.routeid = 'search';
       this.isEnableHam = true;
       this.enableplaystore = false;
-      this.isShowHeader=true;
+      this.isShowHeader = true;
       this.isLoginPage = false;
-      return true;
     }
-    else if (this.router.url.includes("home") || this.router.url.includes("explore") || this.router.url == "/adults") {
+    else if (url.includes("home") || url.includes("explore") || url == "/adults") {
       this.dash = false;
       this.journal = false;
       this.search = true;
@@ -453,16 +494,15 @@ export class AppComponent implements OnDestroy {
       this.enableprofile = false;
       this.isEnableHam = true;
       let ban = localStorage.getItem('enablebanner');
-      if ((ban === null || ban === 'T') && !this.router.url.includes("explore")) {
-       this.enableplaystore = true;
+      if ((ban === null || ban === 'T') && !url.includes("explore")) {
+        this.enableplaystore = true;
       } else {
         this.enableplaystore = false;
       }
       this.isShowHeader = this.commonService.isHeaderVisibleOnScroll;
       this.isLoginPage = false;
-      return true;
     }
-    else if (this.router.url.includes('repeat-user/my-daily-practice') || this.router.url.includes('/today')) {
+    else if (url.includes('repeat-user/my-daily-practice') || url.includes('/today')) {
       this.dash = true;
       this.journal = false;
       this.search = false;
@@ -478,9 +518,8 @@ export class AppComponent implements OnDestroy {
       }
       this.isShowHeader = this.isNavVisibleGlobal;
       this.isLoginPage = false;
-      return true;
     }
-    else if (this.router.url.includes('/repeat-user')) {
+    else if (url.includes('/repeat-user')) {
       this.dash = false;
       this.journal = false;
       this.search = false;
@@ -491,12 +530,11 @@ export class AppComponent implements OnDestroy {
       this.enableplaystore = false;
       this.isShowHeader = true;
       this.isLoginPage = false;
-      return true;
     }
-    else if ((this.router.url == "/adults/journal")  ||
-      (this.router.url.includes('/journal') && !this.router.url.includes('/journal/')) ||
-      (this.router.url.indexOf('/adults/note') > -1)) {
-      this.dash = false
+    else if ((url == "/adults/journal")
+      || (url.includes('/journal') && !url.includes('/journal/'))
+      || (url.indexOf('/adults/note') > -1)) {
+      this.dash = false;
       this.journal = true;
       this.search = false;
       this.learn = false;
@@ -504,68 +542,65 @@ export class AppComponent implements OnDestroy {
       this.enableprofile = false;
       this.isEnableHam = false;
       this.enableplaystore = false;
-      this.isShowHeader=false;
+      this.isShowHeader = false;
       this.isLoginPage = false;
-      return true;
     }
-    else if (this.router.url.includes('/forum')) {
-      this.dash = false
-      this.journal = false
+    else if (url.includes('/forum')) {
+      this.dash = false;
+      this.journal = false;
       this.fourm = true;
       this.enableprofile = false;
-      this.journal = false;
       this.isEnableHam = false;
       this.search = false;
       this.learn = false;
       this.enableplaystore = false;
-      this.isShowHeader=false;
+      this.isShowHeader = false;
       this.isLoginPage = false;
-      return true;
     }
-   else if (this.router.url == "/onboarding/user-profile"
-      || this.router.url.includes('/profile-edit')) {
-      this.dash = false
-      this.journal = false
+    else if (url == "/onboarding/user-profile"
+      || url.includes('/profile-edit')) {
+      this.dash = false;
+      this.journal = false;
       this.fourm = false;
       this.enableprofile = true;
       this.search = false;
       this.learn = false;
       this.isEnableHam = false;
       this.enableplaystore = false;
-      this.isShowHeader=false;
+      this.isShowHeader = false;
       this.isLoginPage = false;
-      return true;
     }
-  else if (this.router.url == "/adults/notification") {
-    this.dash = false
-    this.journal = false
-    this.fourm = false;
-    this.enableprofile = false;
-    this.search = false;
-    this.learn = false;
-    this.isEnableHam = false;
-    this.enableplaystore = false;
-    this.isShowHeader=false;
-    this.isLoginPage = false;
-    return true;
-  }
-  else if (this.router.url == "/adults/onboarding/login") {
-    this.isLoginPage = true;
-  }
-  else if (this.router.url.includes('/adults/chat-bot') || this.router.url.includes('/adults/olly-landing')) {
-    this.dash = false;
-    this.journal = false;
-    this.fourm = false;
-    this.search = false;
-    this.enableprofile = false;
-    this.isEnableHam = false;
-    this.enableplaystore = false;
-    this.isShowHeader = false;
-    this.isLoginPage = false;
-    return false;
-  }
-    this.isShowHeader=false;
-    return false;
+    else if (url == "/adults/notification") {
+      this.dash = false;
+      this.journal = false;
+      this.fourm = false;
+      this.enableprofile = false;
+      this.search = false;
+      this.learn = false;
+      this.isEnableHam = false;
+      this.enableplaystore = false;
+      this.isShowHeader = false;
+      this.isLoginPage = false;
+    }
+    else if (url.includes('/adults/onboarding/login') || url == "/adults/onboarding/login") {
+      this.isLoginPage = true;
+      this.isShowHeader = false;
+      this.enableplaystore = false;
+    }
+    else if (url.includes('/adults/chat-bot') || url.includes('/adults/olly-landing')) {
+      this.dash = false;
+      this.journal = false;
+      this.fourm = false;
+      this.search = false;
+      this.enableprofile = false;
+      this.isEnableHam = false;
+      this.enableplaystore = false;
+      this.isShowHeader = false;
+      this.isLoginPage = false;
+    }
+    else {
+      this.isShowHeader = false;
+    }
   }
 
 

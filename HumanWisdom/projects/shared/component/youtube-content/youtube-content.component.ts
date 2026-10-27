@@ -20,7 +20,7 @@ export class YoutubeContentComponent implements OnInit, OnDestroy {
   public isAdults: boolean = true;
   public imgUrl: string = '';
   public isPlaying: boolean = false;
-  public autoPlay: boolean = false;
+  public autoPlay: boolean = true;
   public isCcOn: boolean = false;
   public isFullscreen: boolean = false;
   public isPaused: boolean = false;
@@ -94,6 +94,8 @@ export class YoutubeContentComponent implements OnInit, OnDestroy {
       accesscode = this.linkcode.split('%3D')[1];
       this.linkcode = this.linkcode.split('%3D')[0];
     }
+    if (accesscode && accesscode.includes('?')) accesscode = accesscode.split('?')[0];
+    if (accesscode && accesscode.includes('&')) accesscode = accesscode.split('&')[0];
     if (this.linkcode && this.linkcode.includes('?')) this.linkcode = this.linkcode.split('?')[0];
     if (this.linkcode && this.linkcode.includes('&')) this.linkcode = this.linkcode.split('&')[0];
 
@@ -122,13 +124,14 @@ export class YoutubeContentComponent implements OnInit, OnDestroy {
       if (window.history.state.title) this.title = window.history.state.title;
       if (window.history.state.headerTitle) {
         this.headerTitle = window.history.state.headerTitle;
-        localStorage.setItem('youtubelinkHeaderTitle', this.headerTitle);
       }
       if (window.history.state.imgUrl) {
         this.imgUrl = window.history.state.imgUrl;
         localStorage.setItem('youtubelinkImgUrl', this.imgUrl);
       }
-      if (window.history.state.autoPlay) this.autoPlay = true;
+      if (typeof window.history.state.autoPlay === 'boolean') {
+        this.autoPlay = window.history.state.autoPlay;
+      }
     }
 
     if (!this.imgUrl) {
@@ -137,13 +140,7 @@ export class YoutubeContentComponent implements OnInit, OnDestroy {
     }
 
     if (!window.history.state?.headerTitle) {
-      const fromIndex = localStorage.getItem('fromIndex') === 'true';
-      if (fromIndex) {
-        const savedHeader = localStorage.getItem('youtubelinkHeaderTitle');
-        if (savedHeader && savedHeader !== 'null') this.headerTitle = savedHeader;
-      } else {
-        this.headerTitle = 'Events';
-      }
+      this.headerTitle = 'Events';
     }
 
     this.isAdults = SharedService.ProgramId == ProgramType.Adults;
@@ -175,6 +172,9 @@ export class YoutubeContentComponent implements OnInit, OnDestroy {
 
       if (data.event === 'onReady') {
         this.ngZone.run(() => {
+          this.sendYtCommand('unMute', []);
+          this.sendYtCommand('setVolume', [100]);
+          this.sendYtCommand('playVideo', []);
           this.sendYtCommand('getDuration', []);
           this.sendYtCommand('getCurrentTime', []);
           this.cdr.detectChanges();
@@ -204,7 +204,7 @@ export class YoutubeContentComponent implements OnInit, OnDestroy {
     document.addEventListener('MSFullscreenChange', this.onFullscreenChange);
     window.addEventListener('message', this.onMessage);
 
-    if (this.autoPlay || window.history.state?.title) {
+    if (this.linkcode && this.autoPlay !== false) {
       this.playVideo();
     } else {
       this.isPlaying = false;
@@ -271,6 +271,11 @@ export class YoutubeContentComponent implements OnInit, OnDestroy {
                   event.target.unloadModule('captions');
                 } catch (e) {}
               }
+              try {
+                event.target.unMute();
+                event.target.setVolume(100);
+                event.target.playVideo();
+              } catch (e) {}
               this.cdr.detectChanges();
             });
           },
@@ -362,9 +367,8 @@ export class YoutubeContentComponent implements OnInit, OnDestroy {
     this.duration = 0;
     this.progressPercent = 0;
 
-    const origin = window.location.origin; // raw origin — NOT encoded, YouTube uses this to validate postMessage
-    // cc_load_policy=0 by default — CC off until user presses CC button
-    const code = `https://www.youtube.com/embed/${this.linkcode}?autoplay=1&controls=0&cc_load_policy=0&rel=0&modestbranding=1&iv_load_policy=3&showinfo=0&enablejsapi=1&fs=0&playsinline=1&widget_referrer=${encodeURIComponent(origin)}&origin=${encodeURIComponent(origin)}`;
+    const origin = window.location.origin;
+    const code = `https://www.youtube.com/embed/${this.linkcode}?autoplay=1&mute=0&controls=0&cc_load_policy=0&rel=0&modestbranding=1&iv_load_policy=3&showinfo=0&enablejsapi=1&fs=0&playsinline=1&widget_referrer=${encodeURIComponent(origin)}&origin=${origin}`;
     this.videoLink = this.getSafeUrl(code);
 
     setTimeout(() => this.loadYtSdk(), 500);
@@ -472,6 +476,12 @@ export class YoutubeContentComponent implements OnInit, OnDestroy {
       localStorage.removeItem('relationshipsEventSource');
       const prefix = this.isAdults ? '/adults' : '/teenagers';
       this.router.navigate([prefix + '/relationships/s47000']);
+      return;
+    }
+
+    if (this.headerTitle === 'In-depth conversation' || this.headerTitle === 'Events' || localStorage.getItem('youtubelinkHeaderTitle') === 'In-depth conversation') {
+      const prefix = this.isAdults ? '/adults' : '/teenagers';
+      this.router.navigate([prefix + '/events/events-index']);
       return;
     }
 

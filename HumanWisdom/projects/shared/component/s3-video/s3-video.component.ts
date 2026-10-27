@@ -112,6 +112,16 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
   public hasUserSwiped = false;
   private hasPromptShownForCurrentVideo = false;
   public videoReady = false; // hides video element until browser has enough data to play
+  public isMuted = false;
+  public showSoundHint = false;
+  private soundHintTimer: any = null;
+  private audioGestureArmed = false;
+  private readonly gestureEvents = ['click', 'pointerdown', 'touchstart', 'mousedown', 'keydown'];
+
+  // Bound once so addEventListener / removeEventListener share the same reference
+  private readonly _onUserGesture = (): void => {
+    this.unmuteActiveVideo();
+  };
 
   // ── Drag-to-swipe state ──────────────────────────────────────────────────
   private dragStartY = 0;
@@ -548,11 +558,16 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
         }
       });
     } catch (_) { /* ignore */ }
+
+    this.disarmUnmuteOnGesture();
   }
 
   public ensureAutoPlay(): void {
     const playbackId = ++this.currentPlaybackId;
     this.clearTimers();
+    // Armed from the very first attempt: the first tap/scroll on the page is a real
+    // user gesture and is what lets the browser play the short with sound.
+    this.armUnmuteOnGesture();
     this.safeTimeout(() => {
       this.playActiveVideo(playbackId);
     }, 50);
@@ -565,9 +580,7 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
     }
 
     // Locate the video element for the current slide
-    const video = (this.videoPlayer?.nativeElement as HTMLVideoElement | undefined)
-      || (document.querySelector('.video-wrapper video') as HTMLVideoElement | null)
-      || (document.querySelector('video') as HTMLVideoElement | null);
+    const video = this.findActiveVideo();
 
     if (!video) {
       // Retry once if Angular hasn't completed DOM insertion yet
@@ -598,27 +611,163 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
     this.activeVideoElement = video;
     this.trackedVideos.add(video);
 
+    // Always try unmuted first, so the short plays WITH sound whenever the browser allows it
     video.muted = false;
+    video.volume = 1;
     this.checkVideoOrientation(video);
 
-    const playPromise = video.play();
-    if (playPromise !== undefined) {
-      playPromise.catch(err => {
-        console.warn('Initial autoplay attempt blocked, retrying unmuted:', err);
-        if (playbackId === this.currentPlaybackId && video) {
-          setTimeout(() => {
-            if (playbackId === this.currentPlaybackId && video) {
-              video.muted = false;
-              video.play().catch(secondErr => {
-                console.warn('Second play attempt failed, fallback to muted autoplay:', secondErr);
-                video.muted = true;
-                video.play().catch(_ => {});
-              });
-            }
-          }, 50);
-        }
-      });
+    let playPromise: Promise<void> | undefined;
+    try {
+      playPromise = video.play();
+    } catch (_) {
+      playPromise = undefined;
     }
+    if (playPromise === undefined) {
+      return;
+    }
+    playPromise.then(() => {
+      if (playbackId === this.currentPlaybackId && !video.muted) {
+        // Sound is on — nothing left to unlock
+        this.disarmUnmuteOnGesture();
+      }
+    }).catch(err => {
+      if (playbackId !== this.currentPlaybackId) {
+        return;
+      }
+      this.handleBlockedAudio(video, playbackId, err);
+    });
+  }
+
+  /**
+   * Two very different things can reject an unmuted play():
+   *  - NotAllowedError: browser autoplay policy. Only a real user gesture can bring
+   *    the audio back, so the short keeps playing and the audio returns on that gesture.
+   *  - AbortError / NotSupportedError: the media was not ready yet (load race). Sound is
+   *    allowed here, so the unmute is retried as soon as the buffer can actually play.
+   */
+  private handleBlockedAudio(video: HTMLVideoElement, playbackId: number, err: any): void {
+    this.playMuted(video);
+    this.armUnmuteOnGesture();
+
+    if (err?.name === 'NotAllowedError') {
+      console.warn('Unmuted autoplay blocked by browser policy — audio restored on first tap:', err);
+      return;
+    }
+
+    console.warn('Autoplay interrupted while loading — retrying with sound:', err);
+    this.retryUnmuteWhenReady(video, playbackId);
+  }
+
+  /** Retry the unmuted play once the media can actually play (bounded, max ~2.4s). */
+  private retryUnmuteWhenReady(video: HTMLVideoElement, playbackId: number, attempt = 0): void {
+    if (playbackId !== this.currentPlaybackId || video !== this.activeVideoElement || !video.muted) {
+      return;
+    }
+    if (video.readyState >= 2 || attempt >= 8) {
+      this.unmuteActiveVideo();
+      return;
+    }
+    this.safeTimeout(() => this.retryUnmuteWhenReady(video, playbackId, attempt + 1), 300);
+  }
+
+  /** Keep the short moving silently so the user never stares at a frozen frame. */
+  private playMuted(video: HTMLVideoElement): void {
+    video.muted = true;
+    this.isMuted = true;
+    this.showSoundHintBriefly();
+    try {
+      const mutedPlay = video.play();
+      if (mutedPlay !== undefined) {
+        mutedPlay.catch(() => { /* ignore */ });
+      }
+    } catch (_) { /* ignore */ }
+  }
+
+  /** Show the tiny "Tap for sound" pill for a few seconds then auto-dismiss. */
+  private showSoundHintBriefly(): void {
+    this.clearSoundHintTimer();
+    this.showSoundHint = true;
+    this.soundHintTimer = setTimeout(() => {
+      this.showSoundHint = false;
+      this.soundHintTimer = null;
+    }, 4000);
+  }
+
+  private clearSoundHintTimer(): void {
+    if (this.soundHintTimer) {
+      clearTimeout(this.soundHintTimer);
+      this.soundHintTimer = null;
+    }
+  }
+
+  /** Restore audio on the active short. Safe to call anytime or from a user gesture. */
+  public unmuteActiveVideo(): void {
+    const video = (this.activeVideoElement as HTMLVideoElement | null) || this.findActiveVideo();
+    if (!video) return;
+
+    video.muted = false;
+    video.volume = 1;
+    this.isMuted = false;
+    this.showSoundHint = false;
+    this.clearSoundHintTimer();
+
+    if (video.paused) {
+      video.play().then(() => {
+        this.disarmUnmuteOnGesture();
+      }).catch(err => {
+        console.warn('Play after unmute failed:', err);
+      });
+    } else {
+      this.disarmUnmuteOnGesture();
+    }
+  }
+
+  public toggleAudio(event?: Event): void {
+    if (event) {
+      event.stopPropagation();
+      event.preventDefault();
+    }
+    const video = (this.activeVideoElement as HTMLVideoElement | null) || this.findActiveVideo();
+    if (!video) return;
+
+    if (video.muted) {
+      this.unmuteActiveVideo();
+    } else {
+      video.muted = true;
+      this.isMuted = true;
+    }
+  }
+
+  onVolumeChange(event: any): void {
+    const video = event?.target as HTMLVideoElement | undefined;
+    if (video) {
+      this.isMuted = video.muted;
+      if (!video.muted) {
+        this.disarmUnmuteOnGesture();
+      }
+    }
+  }
+
+  private findActiveVideo(): HTMLVideoElement | null {
+    return (this.videoPlayer?.nativeElement as HTMLVideoElement | undefined)
+      || (document.querySelector('.video-wrapper video') as HTMLVideoElement | null)
+      || (document.querySelector('video') as HTMLVideoElement | null);
+  }
+
+  private armUnmuteOnGesture(): void {
+    if (this.audioGestureArmed || typeof document === 'undefined') return;
+    this.audioGestureArmed = true;
+    this.gestureEvents.forEach(name =>
+      document.addEventListener(name, this._onUserGesture, { capture: true, passive: true })
+    );
+  }
+
+  private disarmUnmuteOnGesture(): void {
+    if (!this.audioGestureArmed || typeof document === 'undefined') return;
+    this.audioGestureArmed = false;
+    this.gestureEvents.forEach(name =>
+      document.removeEventListener(name, this._onUserGesture, { capture: true } as EventListenerOptions)
+    );
   }
 
   getSafeUrl(url: string) {
@@ -901,7 +1050,9 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
   ngOnDestroy(): void {
     // Kill every video in the DOM and memory — no ghost audio after leaving the page
     this.clearTimers();
+    this.clearSoundHintTimer();
     this.currentPlaybackId++;
+    this.disarmUnmuteOnGesture();
     this.stopAllVideos(false);
 
     if (this.routerSub) {
@@ -948,6 +1099,10 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
 
   // UI events from template
   onVideoClick(): void {
+    const video = (this.activeVideoElement as HTMLVideoElement | null) || this.findActiveVideo();
+    if (video && video.muted) {
+      this.unmuteActiveVideo();
+    }
     this.trackVideoClickIfApplicable();
   }
 
@@ -955,6 +1110,10 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
     this.videoReady = true;
     const targetVideo = event?.target as HTMLVideoElement | undefined;
     if (targetVideo) {
+      this.isMuted = targetVideo.muted;
+      if (!targetVideo.muted) {
+        this.disarmUnmuteOnGesture();
+      }
       this.trackedVideos.add(targetVideo);
       this.activeVideoElement = targetVideo;
 
