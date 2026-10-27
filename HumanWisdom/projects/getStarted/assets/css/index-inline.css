@@ -3281,17 +3281,17 @@ nav a:hover {
     width: 211px;
     max-width: 100%;
     height: 306px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: -25px;
+    margin-right: 49px;
     align-self: center;
     object-fit: contain;
     object-position: center center;
     flex-shrink: 0;
   }
-  /* Same centering as the live index hero: 170px line, 45px from the image’s left edge. */
+  /* Centered under the phone after the image’s -25px left margin (Figma 335px frame). */
   .web_home_divlanding .hero-phone-caption {
     width: 170px;
-    margin-left: 45px;
+    margin-left: 20px;
   }
 
   .div-3 { max-width: 100%; text-align: center; align-items: center; gap: 18px; }

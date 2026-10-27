@@ -426,8 +426,8 @@ body .web_home_divlanding p.hero-no-card-note:hover {
     width: 211px;
     max-width: min(211px, 100%);
     height: 306px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: -25px;
+    margin-right: 49px;
     align-self: center;
     object-fit: contain;
     object-position: center center;
@@ -435,7 +435,8 @@ body .web_home_divlanding p.hero-no-card-note:hover {
   }
   .web_home_divlanding .hero-phone-caption {
     width: 170px;
-    margin-left: 45px;
+    /* Image is pulled left 25px; 20px keeps this line centered under the phone. */
+    margin-left: 20px;
   }
   .web_home_divlanding .div-3 {
     width: min(335px, calc(100% - 40px));
@@ -608,8 +609,8 @@ body .web_home_divlanding p.hero-no-card-note:hover {
   }
   .frame-wrapper.web_home_divlanding #hw-website-subtitle { font-size: 12px !important; line-height: 140% !important; }
   .web_home_divlanding .new-app-adults-teen {
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: -25px;
+    margin-right: 49px;
   }
 }
 

@@ -120,7 +120,9 @@ export class TnDashboardV03Component implements OnInit, OnChanges, OnDestroy {
 
   getIsSubscriber() {
     let sub: any = localStorage.getItem("Subscriber");
-    if (sub == '1') {
+    let subType: any = localStorage.getItem("SubscriberType");
+
+    if (sub == '1' && subType != 'Free Trial') {
       this.subscriber = true;
       this.isShowbookMark = true;
     } else {

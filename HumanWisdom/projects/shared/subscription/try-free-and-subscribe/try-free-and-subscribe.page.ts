@@ -66,7 +66,7 @@ export class TryFreeAndSubscribePage implements OnInit, OnDestroy {
     document.documentElement.style.removeProperty('overflow');
     sessionStorage.setItem('openHamburger', 'false');
 
-    if (SharedService.isSubscriber()) {
+    if (SharedService.isSubscriber() && localStorage.getItem("SubscriberType") != 'Free Trial') {
       this.routeToDashboard();
       return;
     }
