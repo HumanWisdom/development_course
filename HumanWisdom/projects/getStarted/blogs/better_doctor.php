@@ -264,7 +264,7 @@
                     2. <a href="https://happierme.app/blogs/how_to_manage_your_own_mental_health.php" class="blog_highlight_peach td_underline" target="_blank">How to manage your own mental health</a>
                     <br>
                     3. Subscribe to our
-                    <a href="https://happierme.app/adults/newsletter-signup" class="blog_highlight_peach td_underline" target="_blank">newsletter</a>
+                    <a href="https://happierme.app/pages/newsletter.php" class="blog_highlight_peach td_underline" target="_blank">newsletter</a>
                     <br>
                     4. Follow us on
                     <a href="https://www.instagram.com/happierme_app/" class="blog_highlight_peach td_underline" target="_blank">social media</a>

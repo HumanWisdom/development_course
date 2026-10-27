@@ -4,6 +4,7 @@
  * Entry wrappers set $orgStep (adv|landing|signup|otp|success|continue|download).
  */
 require_once __DIR__ . '/../includes/organisation_helper.php';
+hw_org_ensure_route_id();
 
 if (!isset($orgStep) || $orgStep === '') {
     $orgStep = 'landing';
@@ -284,8 +285,7 @@ include __DIR__ . '/../includes/organisation_header.php';
       <p class="org-error" id="org-signup-error"></p>
       <button type="button" class="org-btn org-btn-block" id="org-continue-btn" disabled>Continue</button>
 
-      
-      <!-- <p class="org-signup-login">Already have an account? <a href="<?= hw_org_h($assets['login']) ?>">Login</a></p> -->
+      <p class="org-signup-login">Already have an account? <a href="<?= hw_org_h($assets['login']) ?>">Login</a></p>
     </div>
   </div>
 </main>
@@ -340,11 +340,11 @@ include __DIR__ . '/../includes/organisation_header.php';
         <img class="org-trial-icon" src="<?= hw_org_h($assets['calendar']) ?>" alt="" width="60" height="60">
         <p class="org-trial-copy">
           <span>You have</span>
-          <span><strong><?= $freeDays ?> days</strong> of</span>
+          <span><strong><span data-org-free-days><?= $freeDays ?></span> days</strong> of</span>
           <span>free access</span>
         </p>
       </div>
-      <p class="org-trial-ends">Trial ends on <?= hw_org_h($org['trialEnds']) ?></p>
+      <p class="org-trial-ends">Trial ends on <span data-org-trial-ends><?= hw_org_h($org['trialEnds']) ?></span></p>
     </div>
 
     <a class="org-btn org-btn-block" href="#" data-org-go="continue">Continue</a>
