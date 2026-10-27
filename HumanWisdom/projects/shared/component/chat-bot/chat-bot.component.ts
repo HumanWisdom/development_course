@@ -52,6 +52,18 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
   userAvatarUrl: string = '';
   private preloadedQuery: string | null = null;
 
+  // Set when a card/link was opened on pointer-up so the trailing click is ignored
+  private cardNavigationGuardUntil = 0;
+  // Pointer-down position, used to ignore drags / text selection gestures
+  private pointerDownX = 0;
+  private pointerDownY = 0;
+  private static readonly CARD_CLICK_DRAG_TOLERANCE = 10;
+  // A card is a short block holding a thumbnail and one link — never the whole bubble
+  private static readonly CARD_MAX_HEIGHT = 220;
+  // Sanitized HTML is cached so the same SafeHtml instance is reused across CD cycles
+  private sanitizedHtmlCache = new Map<string, SafeHtml>();
+  private static readonly SANITIZED_HTML_CACHE_LIMIT = 300;
+
   constructor(
     private chatbotService: ChatbotService,
     public chatStore: ChatStore,
@@ -88,6 +100,7 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     this.messagesSubscription = this.chatStore.messages$.subscribe(
       messages => {
         this.messages = messages;
+        this.pruneSanitizedHtmlCache(messages);
         
         // Debug: Log messages with suggestions
         messages.forEach((msg, index) => {
@@ -506,43 +519,167 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
    */
   onMessageContentClick(event: Event): void {
     const target = event.target as HTMLElement;
-    console.log('[ChatBot Click] event.target:', target.tagName, target.className);
-
-    // Check if clicked element is an anchor tag or inside one
-    const anchor = target.closest('a') as HTMLAnchorElement;
-    console.log('[ChatBot Click] closest <a> found:', !!anchor, anchor?.outerHTML?.slice(0, 200));
-
-    if (anchor) {
-      const href = anchor.getAttribute('href') || anchor.href;
-      console.log('[ChatBot Click] href attr:', anchor.getAttribute('href'));
-      console.log('[ChatBot Click] anchor.href (resolved):', anchor.href);
-      console.log('[ChatBot Click] data-path:', anchor.getAttribute('data-path'));
-
-      if (href && href !== '#' && !href.startsWith('javascript:')) {
-        event.preventDefault();
-        event.stopPropagation();
-        
-        const path = anchor.getAttribute('data-path');
-        const clickedUrl = anchor.href || href;
-
-        console.log('[ChatBot Click] ✅ Navigating — data-path:', path, '| fallback url:', clickedUrl);
-        
-        // Track the click in background (fire-and-forget)
-        if (clickedUrl) {
-          this.chatbotService.trackLinkClick(clickedUrl).subscribe({
-            next: (response) => console.log('[ChatBot Click] tracked ok:', response),
-            error: (error) => console.error('[ChatBot Click] tracking error:', error)
-          });
-        }
-        
-        // Navigate immediately using pre-extracted path
-        this.navigateToCard(path || clickedUrl);
-      } else {
-        console.warn('[ChatBot Click] ⚠️ href blocked — value:', href);
-      }
-    } else {
-      console.warn('[ChatBot Click] ⚠️ No <a> found for target:', target.tagName, '| parent chain:', target.parentElement?.tagName, target.parentElement?.parentElement?.tagName);
+    if (!target) {
+      return;
     }
+
+    // A pointer-up on the same card already navigated — ignore the trailing click
+    if (Date.now() < this.cardNavigationGuardUntil) {
+      event.preventDefault();
+      event.stopPropagation();
+      return;
+    }
+
+    const link = this.resolveChatLink(target, event);
+    if (link && this.openChatLink(link)) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+  }
+
+  /** Remember where the gesture started, so pointer-up can tell a tap from a drag. */
+  onMessageContentPointerDown(event: PointerEvent): void {
+    this.pointerDownX = event.clientX;
+    this.pointerDownY = event.clientY;
+  }
+
+  /**
+   * Pointer-up safety net for cards.
+   *
+   * Cards inside the bot bubble used to open only on some clicks: the click handler
+   * needs mousedown and mouseup on the same node, and the API's card link does not
+   * always cover the visible card (padding/title/type were dead areas), while the
+   * streamed bubble keeps re-rendering. pointerup always fires on the element under
+   * the pointer, so the whole card opens on the very first press — and it does not
+   * fire when the gesture is a scroll.
+   */
+  onMessageContentPointerUp(event: PointerEvent): void {
+    const target = event.target as HTMLElement | null;
+
+    if (!target || event.button !== 0) {
+      return;
+    }
+
+    // Scrolling / selecting text moves the pointer — that must not open a card
+    const movedX = Math.abs(event.clientX - this.pointerDownX);
+    const movedY = Math.abs(event.clientY - this.pointerDownY);
+    if (movedX > ChatBotComponent.CARD_CLICK_DRAG_TOLERANCE || movedY > ChatBotComponent.CARD_CLICK_DRAG_TOLERANCE) {
+      return;
+    }
+
+    const link = this.resolveChatLink(target, event);
+    if (!link || !this.openChatLink(link)) {
+      return;
+    }
+
+    // Suppress the click that follows this gesture, so we never navigate twice
+    this.cardNavigationGuardUntil = Date.now() + 1200;
+  }
+
+  /**
+   * Find what the user aimed at: a plain link, or the resource card under the pointer.
+   * Nothing is resolved when the gesture did not land on a card, so ordinary message
+   * text stays inert.
+   */
+  private resolveChatLink(target: HTMLElement, event?: Event): HTMLElement | null {
+    const bubble = target.closest('.bot-message-content') as HTMLElement | null;
+    const direct = target.closest('a[href], a[data-path], [data-path]') as HTMLElement | null;
+
+    // Only links that live inside the bubble count — never a stray ancestor wrapper
+    if (direct && (!bubble || bubble.contains(direct))) {
+      return direct;
+    }
+
+    const isMouseEvent = typeof MouseEvent !== 'undefined' && event instanceof MouseEvent;
+    const cardLink = this.findCardLinkAtPoint(target, isMouseEvent ? (event as MouseEvent).clientX : undefined,
+      isMouseEvent ? (event as MouseEvent).clientY : undefined);
+
+    return cardLink ?? this.findCardLink(target);
+  }
+
+  /**
+   * Resolve the card link by locating the backend-injected `.resource-card` block that
+   * contains the pointer position. Works even when the card's own anchor only covers
+   * part of the card, or when the event target is the bubble itself.
+   */
+  private findCardLinkAtPoint(target: HTMLElement, clientX?: number, clientY?: number): HTMLElement | null {
+    const bubble = target.closest('.bot-message-content') as HTMLElement | null;
+    if (!bubble) {
+      return null;
+    }
+
+    const cards = Array.from(bubble.querySelectorAll('.resource-card')) as HTMLElement[];
+    if (cards.length === 0) {
+      return null;
+    }
+
+    const linkOf = (card: HTMLElement): HTMLElement | null =>
+      card.querySelector('a[href], a[data-path], [data-path]') as HTMLElement | null;
+
+    if (typeof clientX === 'number' && typeof clientY === 'number') {
+      for (const card of cards) {
+        const rect = card.getBoundingClientRect();
+        if (clientX >= rect.left && clientX <= rect.right && clientY >= rect.top && clientY <= rect.bottom) {
+          return linkOf(card);
+        }
+      }
+      return null;
+    }
+
+    // Keyboard activation carries no coordinates — only a single card is unambiguous
+    return cards.length === 1 ? linkOf(cards[0]) : null;
+  }
+
+  /**
+   * Fallback for card markup without a `.resource-card` wrapper.
+   * Walks up only while the ancestor holds exactly one link plus a thumbnail, so a
+   * click on ordinary message text can never trigger a card navigation.
+   */
+  private findCardLink(target: HTMLElement): HTMLElement | null {
+    let element: HTMLElement | null = target;
+
+    while (element && !element.classList.contains('bot-message-content')) {
+      const links = element.querySelectorAll('a[href], a[data-path], [data-path]');
+
+      if (links.length > 1) {
+        return null; // several cards in one container — ambiguous
+      }
+
+      if (links.length === 1 && element.querySelector('img')
+        && element.getBoundingClientRect().height <= ChatBotComponent.CARD_MAX_HEIGHT) {
+        return links[0] as HTMLElement;
+      }
+
+      element = element.parentElement;
+    }
+
+    return null;
+  }
+
+  /** Track + navigate for a link inside a bot message. Returns false when unusable. */
+  private openChatLink(element: HTMLElement): boolean {
+    const path = element.getAttribute('data-path');
+    const href = element.getAttribute('href') || '';
+
+    // Card markup from the backend sometimes ships href="#" (or no href at all)
+    // and relies on data-path — treat that as a valid target too.
+    const hasNavigableHref = !!href && href !== '#' && !href.startsWith('javascript:');
+    if (!path && !hasNavigableHref) {
+      return false;
+    }
+
+    const resolvedHref = hasNavigableHref ? ((element as HTMLAnchorElement).href || href) : '';
+
+    // Track the click in background (fire-and-forget)
+    if (resolvedHref) {
+      this.chatbotService.trackLinkClick(resolvedHref).subscribe({
+        next: () => { /* tracking only */ },
+        error: () => { /* tracking must never block navigation */ }
+      });
+    }
+
+    this.navigateToCard(path || resolvedHref);
+    return true;
   }
 
   /**
@@ -851,11 +988,54 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   sanitizeHtml(html: string): SafeHtml {
+    const content = html || '';
+
+    // Returning the SAME SafeHtml instance for the same content keeps Angular from
+    // re-writing innerHTML on every change-detection cycle. Without this the bubble's
+    // DOM is rebuilt constantly, which drops the card's mousedown/mouseup pair and
+    // makes one click behave like none.
+    const cached = this.sanitizedHtmlCache.get(content);
+    if (cached) {
+      return cached;
+    }
+
     // Strip target/rel so no new tab opens
-    const cleaned = html
+    const cleaned = content
       .replace(/target\s*=\s*["'][^"']*["']/gi, '')
       .replace(/rel\s*=\s*["'][^"']*["']/gi, '');
-    return this.sanitizer.bypassSecurityTrustHtml(cleaned);
+    const safeHtml = this.sanitizer.bypassSecurityTrustHtml(cleaned);
+
+    this.sanitizedHtmlCache.set(content, safeHtml);
+    if (this.sanitizedHtmlCache.size > ChatBotComponent.SANITIZED_HTML_CACHE_LIMIT) {
+      const oldestKey = this.sanitizedHtmlCache.keys().next().value;
+      if (oldestKey !== undefined) {
+        this.sanitizedHtmlCache.delete(oldestKey);
+      }
+    }
+
+    return safeHtml;
+  }
+
+  /**
+   * Keep message DOM stable when the store replaces a message object.
+   * Re-creating the bubble on every store update is what made cards need several clicks.
+   */
+  trackByMessageId(index: number, message: ChatMessage): string {
+    return message.id || String(index);
+  }
+
+  /** Drop cached HTML of messages that are no longer on screen (e.g. streaming tokens). */
+  private pruneSanitizedHtmlCache(messages: ChatMessage[]): void {
+    if (this.sanitizedHtmlCache.size <= messages.length) {
+      return;
+    }
+
+    const activeContents = new Set(messages.map(message => message.content || ''));
+    this.sanitizedHtmlCache.forEach((_value, key) => {
+      if (!activeContents.has(key)) {
+        this.sanitizedHtmlCache.delete(key);
+      }
+    });
   }
 
   styleAnchorTags(): void {
@@ -875,6 +1055,7 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
           htmlAnchor.style.color = '#1976d2';
           htmlAnchor.style.textDecoration = 'underline';
           htmlAnchor.style.cursor = 'pointer';
+          htmlAnchor.style.fontWeight = '500';
         }
       });
     }, 100);
