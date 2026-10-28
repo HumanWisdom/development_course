@@ -38,7 +38,7 @@
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
                   <button class="mtb0px fs_12px fw_400 lh_150p fc_803358 btn_blogp">
-                    Lawyers
+                    Mental health
                   </button>
                 </div>
 
@@ -83,13 +83,13 @@
 
                 <h4 class="mtb0px blog_desc">
                     Lawyers operate in an environment of constant scrutiny, high expectations, and adversarial conflict. The competitive nature of the profession fosters a culture where having a mental health issue is seen as a liability. This often leads attorneys to hide mental health struggles, fearing professional repercussions. For example, untreated
-                    <a href="https://happierme.app/adults/fear-anxiety" class="blog_highlight_peach td_underline" target="_blank">anxiety</a>
+                    anxiety
                     or depression may result in diminished productivity, strained client relationships, and even ethical lapses, posing risks not just to the individual but also to their firms.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
                     The pressure to meet billable hour requirements and maintain profitability adds another layer of
-                    <a href="https://happierme.app/adults/stress" class="blog_highlight_peach td_underline" target="_blank">stress</a>.
+                    stress.
                     Associates, in particular, grapple with long hours, isolation, and relentless workloads, while partners bear the weight of maintaining client trust and the firm's reputation. For women and minority lawyers, systemic inequities exacerbate the issue. Although mental health outcomes for these groups have improved recently, disparities in support and representation persist, highlighting an urgent need for equitable wellness initiatives.
                 </h4>
 
@@ -130,10 +130,10 @@
 
                 <h4 class="mtb0px blog_desc">
                     It helps users feel better through guided
-                    <a href="https://happierme.app/adults/meditation" class="blog_highlight_peach td_underline" target="_blank">meditations</a>,
-                    <a href="https://happierme.app/adults/journal" class="blog_highlight_peach td_underline" target="_blank">journaling</a>,
+meditations,
+journaling,
                     and
-                    <a href="https://happierme.app/adults/breathing" class="blog_highlight_peach td_underline" target="_blank">breathing exercises</a>.
+breathing exercises.
                     It then empowers people to develop their self-awareness and emotional intelligence to manage their own mental health, have happier relationships, deal with addiction and develop their communication and leadership skills.
                 </h4>
 
@@ -164,7 +164,7 @@
               </div>
             </div>
 
-            <div class="row mt20px rmb80px">
+            <div class="row mt20px mb10px rm80px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/90_new.webp" class="img-responsive" alt="Toward a healthier legal community" >
               </div>
