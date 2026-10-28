@@ -24572,7 +24572,7 @@ a {
   margin: 0;
   border: 0;
   height: 40px;
-  width: 92px;
+  width: 115px;
   background: #FFF;
   border-radius: 20px;
   font-weight: 600;
@@ -37868,6 +37868,8 @@ div.contentdiv p {
   background: #A54265 !important;
   background-color: #A54265 !important;
   color: #ffffff !important;
+  display: flex !important;
+  align-items: flex-start !important;
 }
 
 .chat-thumbnails .resource-card:hover,
@@ -37887,6 +37889,23 @@ div.contentdiv p {
   color: #ffffff !important;
 }
 
+.chat-thumbnails .resource-card img,
+.resource-card img {
+  align-self: flex-start !important;
+  margin-top: 0 !important;
+  vertical-align: top !important;
+}
+
+.chat-thumbnails .resource-card > div,
+.resource-card > div,
+.chat-thumbnails .resource-card .resource-card-info,
+.resource-card .resource-card-info {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  align-self: flex-start !important;
+}
+
 .chat-thumbnails .resource-card strong,
 .resource-card strong,
 .chat-thumbnails .resource-card b,
@@ -37897,7 +37916,13 @@ div.contentdiv p {
 .resource-card div,
 .chat-thumbnails .resource-card .resource-card-title,
 .resource-card .resource-card-title {
+  font-size: 15px !important;
   color: #ffffff !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  line-height: 130%;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
 }
 
 .chat-thumbnails .resource-card span,
@@ -37908,9 +37933,12 @@ div.contentdiv p {
 .resource-card .resource-card-type,
 .chat-thumbnails .resource-card a span,
 .resource-card a span {
+  font-size: 12px !important;
+  font-weight: normal !important;
   color: rgba(255, 255, 255, 0.5) !important;
+  text-decoration: none !important;
+  margin-top: 4px;
 }
-
 
 
 .resource-item {

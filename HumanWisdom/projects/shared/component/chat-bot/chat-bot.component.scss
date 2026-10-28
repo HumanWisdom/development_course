@@ -684,6 +684,26 @@
   }
 }
 
+:host ::ng-deep .bot-message-content .resource-card a,
+:host ::ng-deep .bot-message-content a.resource-card,
+:host ::ng-deep .resource-card a,
+:host ::ng-deep a.resource-card {
+  color: #000000 !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+
+  * {
+    text-decoration: none !important;
+  }
+
+  &:hover,
+  &:visited,
+  &:link {
+    color: #000000 !important;
+    text-decoration: none !important;
+  }
+}
+
 // Feedback buttons (Thumbs up/down) - placed OUTSIDE the chat bubble
 .feedback-container {
   display: flex;
@@ -1035,7 +1055,7 @@
   }
 }
 
-/* Resource cards — Angular-rendered, single-click navigation */
+/* Resource cards — Angular-rendered & Backend-injected HTML */
 .resource-cards-container {
   display: flex;
   flex-direction: column;
@@ -1043,11 +1063,13 @@
   margin-top: 8px;
 }
 
-
+:host ::ng-deep .chat-thumbnails .resource-card,
+:host ::ng-deep .resource-card,
+.resource-cards-container .resource-card-btn,
 .resource-card-btn {
   position: relative;
-  display: flex;
-  align-items: flex-start;
+  display: flex !important;
+  align-items: flex-start !important;
   padding: 12px;
   border-radius: 12px;
   background-color: #ffffff;
@@ -1055,10 +1077,80 @@
   cursor: pointer;
   border: none;
   text-align: left;
+  text-decoration: none !important;
   transition: box-shadow 0.2s ease;
 
   &:hover {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  a {
+    color: #000000 !important;
+    text-decoration: none !important;
+    cursor: pointer !important;
+
+    &:hover,
+    &:visited,
+    &:link {
+      color: #000000 !important;
+      text-decoration: none !important;
+    }
+  }
+
+  img,
+  .resource-card-img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 16px;
+    margin-top: 0 !important;
+    align-self: flex-start !important;
+    flex-shrink: 0;
+    vertical-align: top;
+    display: block;
+  }
+
+  a:has(img) {
+    display: flex !important;
+    align-self: flex-start !important;
+    margin-top: 0 !important;
+    line-height: 0;
+    flex-shrink: 0;
+  }
+
+  .resource-card-info,
+  > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start !important;
+    align-self: flex-start !important;
+  }
+
+  strong,
+  b,
+  p,
+  .resource-card-title {
+    font-size: 15px !important;
+    /* margin-bottom: 4px; */
+    color: #000000 !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+    line-height: 130%;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  span,
+  small,
+  .resource-card-type,
+  a span {
+    font-size: 12px !important;
+    font-weight: normal;
+    color: #777777 !important;
+    text-transform: uppercase;
+    text-decoration: none !important;
+    margin-top: 4px;
   }
 }
 
@@ -1068,25 +1160,35 @@
   object-fit: cover;
   border-radius: 8px;
   margin-right: 16px;
+  margin-top: 0 !important;
+  align-self: flex-start !important;
   flex-shrink: 0;
+  vertical-align: top;
+  display: block;
 }
 
 .resource-card-info {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start !important;
+  align-self: flex-start !important;
 }
 
 .resource-card-title {
-  font-size: 15px;
-  // margin-bottom: 4px;
-  color: #333333;
-  font-weight: 600;
+  font-size: 15px !important;
+  /* margin-bottom: 4px; */
+  color: #000000 !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
   line-height: 130%;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
 }
 
 .resource-card-type {
-  font-size: 12px;
-  color: #777777;
+  font-size: 12px !important;
+  font-weight: normal;
+  color: #777777 !important;
   text-transform: uppercase;
+  margin-top: 4px;
 }
