@@ -1,7 +1,7 @@
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { BrowserModule, HammerModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
+import { Injectable, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxCircularPlayerModule } from 'ngx-circular-player';
@@ -117,6 +117,7 @@ import { ChatbotService } from './services/chatbot.service';
 import { S157001Page } from './component/s157001/s157001.page';
 import {SocialLoginPage} from './component/social-login/social-login.component';
 import { WellnessSurveyIntroPage } from './component/wellness-survey-intro/wellness-survey-intro.page';
+@Injectable()
 export class MyHammerConfig extends HammerGestureConfig {
   overrides = <any> {
     swipe: { direction: Hammer.DIRECTION_ALL },

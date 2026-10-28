@@ -19,9 +19,9 @@
         <p>for completing the <b>{{ moduleName && capitalizeFirstLetter(moduleName) }}</b> module on {{ getTodayDate() }}</p>
       </div>
       <div class="footer">
-        <div *ngIf="isAdults;else isTeenagers" class="row center_flex logo-container">
-          <span class="cert-logo"></span>
-          <span class="cert-txt4">HappierMe</span>
+        <div *ngIf="isAdults;else isTeenagers" class="cert-brand">
+          <img class="cert-brand-icon" src="https://d1tenzemoxuh75.cloudfront.net/assets/images/logo/logo_favicon_transparent.png" alt="">
+          <span class="cert-brand-name">HappierMe</span>
         </div>
         <ng-template #isTeenagers>
           <span class="cert-logo"></span>

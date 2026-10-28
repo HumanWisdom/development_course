@@ -395,11 +395,10 @@ body:has(#menu:checked) .owl-animation-wrapper {
     object-fit: contain;
   }
 
-  /* Tail on the beak, same relationship as desktop. The 140px bubble
-     was sitting on the face (tail ~17px below the beak). */
+  /* Mobile only: pull the bubble down and toward Olly so the tail sits nearer the beak. */
   .owl-cloud-container {
-    top: -82px;
-    left: calc(-35% - 19px);
+    top: -76px;
+    left: calc(-35% - 2px);
     transform: translateX(-50%);
     width: 140px;
     height: 110px;

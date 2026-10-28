@@ -215,9 +215,7 @@
 video::-webkit-media-controls-volume-slider {
   display: none !important;
 }
-video::-webkit-media-controls-mute-button {
-  display: none !important;
-}
+/* Keep the native mute toggle reachable so audio can never be stuck off */
 video::-internal-media-controls-overflow-button {
   display: none !important;
 }
@@ -281,3 +279,76 @@ video.cvideo_01.invert-controls {
   margin: 0 !important;
   font-size: 22px !important;
 }
+
+.video-box-relative {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+}
+
+/* ── Tiny floating "Tap for sound" hint ─────────────────────── */
+.sound-hint {
+  position: absolute;
+  top: 32px;
+  right: 16px;
+  z-index: 50;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  animation: hintFadeIn 0.35s ease forwards;
+  pointer-events: auto;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.85);
+    transform: scale(1.05);
+    border-color: rgba(255, 255, 255, 0.35);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  svg {
+    width: 13px;
+    height: 13px;
+    stroke: #fff;
+    stroke-width: 2.2;
+    flex-shrink: 0;
+  }
+
+  span {
+    color: #fff;
+    font-size: 11px;
+    line-height: 1;
+    white-space: nowrap;
+  }
+}
+
+@keyframes hintFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+

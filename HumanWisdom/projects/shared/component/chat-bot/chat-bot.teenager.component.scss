@@ -665,6 +665,7 @@
   color: inherit !important;
   text-decoration: underline !important;
   cursor: pointer !important;
+  font-weight: 500 !important;
 
   &:hover {
      color: #EE9596 !important;
@@ -957,6 +958,47 @@
           color: #EE9596 !important;
           text-decoration: underline !important;
         }
+      }
+    }
+
+    // Resource cards (Backend HTML injected & Angular component)
+    ::ng-deep .chat-thumbnails .resource-card,
+    ::ng-deep .resource-card,
+    .resource-cards-container .resource-card-btn,
+    .resource-card-btn {
+      background: #A54265 !important;
+      background-color: #A54265 !important;
+      color: #ffffff !important;
+
+      &:hover {
+        background: #A54265 !important;
+        background-color: #A54265 !important;
+      }
+
+      a {
+        color: #ffffff !important;
+        text-decoration: none !important;
+
+        &:visited {
+          color: #ffffff !important;
+        }
+      }
+
+      strong,
+      b,
+      p,
+      div,
+      .resource-card-title {
+        color: #ffffff !important;
+        font-weight: 600 !important;
+        margin-bottom: 0 !important;
+      }
+
+      span,
+      small,
+      .resource-card-type,
+      a span {
+        color: rgba(255, 255, 255, 0.5) !important;
       }
     }
 }

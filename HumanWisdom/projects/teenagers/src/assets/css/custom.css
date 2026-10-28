@@ -37863,6 +37863,55 @@ div.contentdiv p {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+.chat-thumbnails .resource-card,
+.resource-card {
+  background: #A54265 !important;
+  background-color: #A54265 !important;
+  color: #ffffff !important;
+}
+
+.chat-thumbnails .resource-card:hover,
+.resource-card:hover {
+  background: #A54265 !important;
+  background-color: #A54265 !important;
+}
+
+.chat-thumbnails .resource-card a,
+.resource-card a {
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+
+.chat-thumbnails .resource-card a:visited,
+.resource-card a:visited {
+  color: #ffffff !important;
+}
+
+.chat-thumbnails .resource-card strong,
+.resource-card strong,
+.chat-thumbnails .resource-card b,
+.resource-card b,
+.chat-thumbnails .resource-card p,
+.resource-card p,
+.chat-thumbnails .resource-card div,
+.resource-card div,
+.chat-thumbnails .resource-card .resource-card-title,
+.resource-card .resource-card-title {
+  color: #ffffff !important;
+}
+
+.chat-thumbnails .resource-card span,
+.resource-card span,
+.chat-thumbnails .resource-card small,
+.resource-card small,
+.chat-thumbnails .resource-card .resource-card-type,
+.resource-card .resource-card-type,
+.chat-thumbnails .resource-card a span,
+.resource-card a span {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+
 
 .resource-item {
   background: #60BEC2;

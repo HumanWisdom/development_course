@@ -1,6 +1,6 @@
 import { PlatformModule } from '@angular/cdk/platform';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { APP_INITIALIZER, CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { APP_INITIALIZER, CUSTOM_ELEMENTS_SCHEMA, Injectable, NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -42,6 +42,7 @@ import { AuthModule } from 'angular-auth-oidc-client';
 import { buildAwsCognitoAuthConfig } from '../../../shared/config/aws-cognito-auth.config';
 import { awsSsoCallbackInitializer, awsSsoStorageCleanupInitializer } from '../../../shared/config/aws-sso.initializer';
 import { OidcSecurityService } from 'angular-auth-oidc-client';
+@Injectable()
 export class MyHammerConfig extends HammerGestureConfig {
     overrides = <any> {
       swipe: { direction: Hammer.DIRECTION_ALL },
