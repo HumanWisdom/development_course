@@ -1000,9 +1000,14 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     // Strip target/rel so no new tab opens
-    const cleaned = content
+    let cleaned = content
       .replace(/target\s*=\s*["'][^"']*["']/gi, '')
       .replace(/rel\s*=\s*["'][^"']*["']/gi, '');
+
+    // Ensure backend-injected cards are top-aligned
+    if (cleaned.includes('resource-card')) {
+      cleaned = cleaned.replace(/align-items\s*:\s*center/gi, 'align-items: flex-start');
+    }
     const safeHtml = this.sanitizer.bypassSecurityTrustHtml(cleaned);
 
     this.sanitizedHtmlCache.set(content, safeHtml);
@@ -1050,12 +1055,17 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
         htmlAnchor.removeAttribute('rel');
 
         // Styling only — NO addEventListener click (delegation handles it, no duplicates)
-        const isCard = (htmlAnchor.getAttribute('style') || '').includes('position: absolute');
+        const isCard = !!htmlAnchor.closest('.resource-card') ||
+                      htmlAnchor.classList.contains('resource-card') ||
+                      (htmlAnchor.getAttribute('style') || '').includes('position: absolute');
         if (!isCard) {
           htmlAnchor.style.color = '#1976d2';
           htmlAnchor.style.textDecoration = 'underline';
           htmlAnchor.style.cursor = 'pointer';
           htmlAnchor.style.fontWeight = '500';
+        } else {
+          htmlAnchor.style.textDecoration = 'none';
+          htmlAnchor.style.cursor = 'pointer';
         }
       });
     }, 100);
