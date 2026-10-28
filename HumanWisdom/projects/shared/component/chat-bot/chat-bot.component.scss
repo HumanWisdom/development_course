@@ -475,6 +475,7 @@
       outline: none;
       padding: 12px 8px;
       font-size: 14px;
+      color: #000000;
       background: transparent;
       text-align: left;
       pointer-events: auto; // Enable typing in input
@@ -622,7 +623,7 @@
     color: inherit !important;
     text-decoration: underline !important;
     cursor: pointer !important;
-    font-weight: normal !important;
+    font-weight: 500 !important;
     
     &:hover {
       color: inherit !important;
@@ -668,6 +669,7 @@
   text-decoration: underline !important;
   cursor: pointer !important;
   pointer-events: auto !important;
+  font-weight: 500 !important;
 
   * {
     cursor: pointer !important;
