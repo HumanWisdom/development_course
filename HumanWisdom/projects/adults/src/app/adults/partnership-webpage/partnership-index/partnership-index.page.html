@@ -145,7 +145,7 @@
                       </div>
                     </div>
 
-                    <div class="row partnership_row mtb30px">
+                    <div class="row partnership_row mtb30px" id="pa_benefits">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mb20px">
                         <a>
                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
@@ -241,7 +241,7 @@
                                 </div>
                                 <div class="col-md-12 col-sm-12 col-xs-12 p0">
                                   <h6 class="fw_400 fs_12px lh_160p fc_000000 mtb0px">
-                                    Earn 20% from any subscription made using your partner link. No strings attached.
+                                    Earn 20% from any subscription made using your partner code. No strings attached.
                                   </h6>
                                 </div>
                               </div>
@@ -646,8 +646,8 @@
                           <p class="testimonial-card__name">Garry Prigg</p>
                           <p class="testimonial-card__role">Transformational life coach</p>
                           <p class="testimonial-card__location"><img
-                              src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/location-pin.svg"
-                              alt="" class="testimonial-card__loc-icon" /> Australia</p>
+                              src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/location-pin.svg" alt=""
+                              class="testimonial-card__loc-icon" /> Australia</p>
                         </div>
 
                         <!-- Adam Beagley -->
@@ -666,6 +666,7 @@
                           <p class="testimonial-card__role">Student</p>
                         </div>
 
+                        <div *ngIf="showAllTestimonials">
                         <!-- Laura Toop -->
                         <div class="testimonial-card">
                           <div class="testimonial-card__top">
@@ -729,6 +730,15 @@
                           <p class="testimonial-card__name">Chandra Ramamurthy</p>
                           <p class="testimonial-card__role">Clinical Psychologist, India</p>
                         </div>
+                        </div>
+
+                        <!-- View More / View Less -->
+                        <div class="view-more-toggle" (click)="toggleTestimonials()">
+                          <span class="view-more-toggle__text">{{ showAllTestimonials ? 'View Less' : 'View More' }}</span>
+                          <svg class="view-more-toggle__icon" [class.expanded]="showAllTestimonials" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1l5 5 5-5" stroke="#000000BF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                        </div>
 
                       </div>
                     </div>
@@ -736,9 +746,9 @@
 
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <a (click)="scroll_to_obs()">
+                        <a (click)="scroll_to_hiw()">
                           <h4 class="fs_15px fw_600 lh_150p fc_ED7D6F vpb">
-                            View Partnership Benefits
+                            View how the Partnership works
                           </h4>
                         </a>
                       </div>
@@ -769,7 +779,7 @@
                     </div>
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                        <div class="hiw-card">
+                        <div class="hiw-card" id="pa_hiw">
 
                           <!-- Step 1 -->
                           <div class="hiw-row">
@@ -798,7 +808,7 @@
                             </div>
                             <div class="hiw-right">
                               <h4 class="fw_500 fs_15px lh_150p fc_000000 mt0px mb5px">Step 2</h4>
-                              <p class="fw_400 fs_12px lh_150p fc_000000 mtb0px">Share your partnership link or code
+                              <p class="fw_400 fs_12px lh_150p fc_000000 mtb0px">Share your partnership code
                                 with other users or organisations</p>
                             </div>
                           </div>
@@ -821,7 +831,7 @@
                           <!-- When someone subscribes label -->
                           <div class="hiw-referral-box">
                             <p class="fw_600 fs_14px lh_150p fc_000000 mtb0px">When someone subscribes using your
-                              referral code or link:</p>
+                              referral code:</p>
                           </div>
 
                           <!-- Step 4 -->
@@ -834,8 +844,8 @@
                             </div>
                             <div class="hiw-right">
                               <p class="fw_400 fs_12px lh_150p fc_000000 mt0px mb10px">You will get 20% of the net
-                                payment when someone subscribes using your link. If they subscribe using your code they
-                                will get a 10% discount and you get 20% of the net payment.</p>
+                                payment when someone subscribes using your code. They will get a 10% discount and you
+                                get 20% of the net payment.</p>
                               <p class="fw_500 fs_12px lh_150p fc_ED7D6F mtb0px">You get 20% of the subscription fee.
                               </p>
                               <p class="fw_500 fs_12px lh_150p fc_ED7D6F mb0px">They get 10% discount.</p>
@@ -874,13 +884,13 @@
                                 others?</p>
                               <p class="fw_400 fs_12px lh_150p fc_000000 mtb0px">First, you subscribe to the app. Then
                                 go to the menu (top right in the app) and click become a partner. You will get a
-                                partnership code and link you can share with others.</p>
+                                partnership code you can share with others.</p>
                             </div>
                             <div class="pa-faq-q">
-                              <p class="fw_600 fs_15px lh_150p fc_000000 mb5px">How can I share my link with others?</p>
-                              <p class="fw_400 fs_12px lh_150p fc_000000 mtb0px">You can email people or post the link
+                              <p class="fw_600 fs_15px lh_150p fc_000000 mb5px">How can I share my code with others?</p>
+                              <p class="fw_400 fs_12px lh_150p fc_000000 mtb0px">You can email people or post the code
                                 on social media. Take a screenshot of the app and share it on your social media with
-                                your comments and your link.</p>
+                                your comments and your code.</p>
                             </div>
                             <div class="pa-faq-q">
                               <p class="fw_600 fs_15px lh_150p fc_000000 mb5px">How can I track my income?</p>
@@ -890,6 +900,15 @@
                             </div>
                           </div>
                         </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <a (click)="scroll_to_benefits()">
+                          <h4 class="fs_15px fw_600 lh_150p fc_ED7D6F vpb">
+                            View Partnership Benefits
+                          </h4>
+                        </a>
                       </div>
                     </div>
                     <div class="row" *ngIf="!isPartner">
