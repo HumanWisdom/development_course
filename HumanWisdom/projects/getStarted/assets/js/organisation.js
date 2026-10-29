@@ -234,7 +234,10 @@
   }
 
   function decodeJwt(token) {
-    var base64 = String(token || "").split(".")[1].replace(/-/g, "+").replace(/_/g, "/");
+    var parts = String(token || "").split(".");
+    if (parts.length < 2) throw new Error("invalid token");
+    var base64 = parts[1].replace(/-/g, "+").replace(/_/g, "/");
+    while (base64.length % 4) base64 += "=";
     var json = decodeURIComponent(
       atob(base64)
         .split("")
@@ -244,6 +247,23 @@
         .join("")
     );
     return JSON.parse(json);
+  }
+
+  function unwrapApiData(data) {
+    if (Array.isArray(data)) return data[0] || null;
+    return data;
+  }
+
+  function apiErrorMessage(data, fallback) {
+    if (!data) return fallback;
+    if (typeof data === "string" && data.trim()) return data;
+    return (
+      data.RecordExistMsg ||
+      data.recordExistMsg ||
+      data.Message ||
+      data.message ||
+      fallback
+    );
   }
 
   function adultsUrl(path) {
@@ -309,6 +329,14 @@
     window.location.href = adultsUrl(res.NoOfVisits === 1 ? "/adults/change-topic" : "/adults/today");
   }
 
+  /** Same destination as email OTP success — stay on the website. */
+  function finishSocialSignup(res) {
+    try {
+      storeAdultsSession(res);
+    } catch (e) {}
+    go("success");
+  }
+
   /** Same as LoginSignupPage's constructor: an active adults session skips the signup form. */
   function redirectIfLoggedIn() {
     if (currentStep !== "signup") return false;
@@ -369,24 +397,20 @@
             });
         })
         .then(function (result) {
-          var data = result.data;
-          if (!result.ok || !data || typeof data !== "object") {
-            fail((data && data.Message) || provider + " sign-in failed. Please try again.");
+          var data = unwrapApiData(result.data);
+          if (data && typeof data === "object" && data.access_token) {
+            if (data.UserId === 0) {
+              fail("We couldn't sign you in with " + provider + ". Please try again.");
+              return;
+            }
+            if (data.UserId === -1) {
+              fail("Email was not verified. Please sign up again with the same email to verify it.");
+              return;
+            }
+            finishSocialSignup(data);
             return;
           }
-          if (data.UserId === 0) {
-            fail("We couldn't sign you in with " + provider + ". Please try again.");
-            return;
-          }
-          if (data.UserId === -1) {
-            fail("Email was not verified. Please sign up again with the same email to verify it.");
-            return;
-          }
-          if (!data.access_token) {
-            fail(provider + " sign-in failed. Please try again.");
-            return;
-          }
-          loginToAdults(data);
+          fail(apiErrorMessage(data || result.data, provider + " sign-in failed. Please try again."));
         })
         .catch(function () {
           fail("Internal Server Error");
@@ -402,16 +426,15 @@
             cancel_on_tap_outside: true,
             callback: function (response) {
               if (busy) return;
-              var payload;
-              try {
-                payload = decodeJwt(response.credential);
-              } catch (e) {
+              if (!response || !response.credential) {
                 fail("Google sign-in failed. Please try again.");
                 return;
               }
-              if (!payload.email) {
-                fail("Unable to retrieve email from Google account. Please try again.");
-                return;
+              var payload = {};
+              try {
+                payload = decodeJwt(response.credential) || {};
+              } catch (e) {
+                payload = {};
               }
               verifyAndLogin(
                 "verifyGoogleTokenAndLogin",
@@ -419,7 +442,7 @@
                   TokenID: response.credential,
                   FName: payload.given_name || "",
                   LName: payload.family_name || "",
-                  Email: payload.email,
+                  Email: payload.email || "",
                 },
                 "Google"
               );
