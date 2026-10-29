@@ -51,13 +51,8 @@
                             <polyline points="6,12.5 10,16.5 18,7.5" stroke="white" stroke-width="2"
                               stroke-linecap="round" stroke-linejoin="round" />
                           </svg>
-                          <!-- inactive: grey border circle + grey tick outline -->
-                          <svg *ngIf="!isBankAccount" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="12" cy="12" r="11.25" stroke="#80745D" stroke-width="1.5" />
-                            <polyline points="6,12.5 10,16.5 18,7.5" stroke="#80745D" stroke-width="1.5"
-                              stroke-linecap="round" stroke-linejoin="round" />
-                          </svg>
+                          <!-- inactive: border: 1.5px solid #ED7D6F, 20px x 20px -->
+                          <span *ngIf="!isBankAccount" class="radio-unselected"></span>
                         </span>
                       </div>
                     </div>
@@ -88,13 +83,8 @@
                             <polyline points="6,12.5 10,16.5 18,7.5" stroke="white" stroke-width="2"
                               stroke-linecap="round" stroke-linejoin="round" />
                           </svg>
-                          <!-- inactive: grey border circle + grey tick outline -->
-                          <svg *ngIf="!isPaypalChecked" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="12" cy="12" r="11.25" stroke="#80745D" stroke-width="1.5" />
-                            <polyline points="6,12.5 10,16.5 18,7.5" stroke="#80745D" stroke-width="1.5"
-                              stroke-linecap="round" stroke-linejoin="round" />
-                          </svg>
+                          <!-- inactive: border: 1.5px solid #ED7D6F, 20px x 20px -->
+                          <span *ngIf="!isPaypalChecked" class="radio-unselected"></span>
                         </span>
                       </div>
                     </div>

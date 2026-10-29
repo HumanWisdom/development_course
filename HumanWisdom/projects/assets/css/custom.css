@@ -19052,7 +19052,7 @@ ngx-circular-player svg {
 .cvideo {
   width: 100%;
   max-height: 100%;
-  border-radius: 0;
+  border-radius: 16px;
 }
 
 /* /video player */
@@ -38041,6 +38041,7 @@ span {
   background: #FFE8BB;
   padding: 24px;
   margin: 30px 10px;
+  border-radius: 16px;
 }
 
 .partnership_income_div {
@@ -38774,8 +38775,8 @@ div.contentdiv p {
   flex-shrink: 0 !important;
 }
 
-.chat-thumbnails .resource-card > div,
-.resource-card > div,
+.chat-thumbnails .resource-card>div,
+.resource-card>div,
 .chat-thumbnails .resource-card .resource-card-info,
 .resource-card .resource-card-info {
   display: flex !important;

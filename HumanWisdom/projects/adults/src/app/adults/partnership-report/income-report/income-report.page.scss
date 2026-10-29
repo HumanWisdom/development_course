@@ -17,11 +17,58 @@
   background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
 }
 
-/* Referral link input box only */
-.referral-link-box {
-  max-height: 50px;
-  border-radius: 16px !important;
-  overflow: hidden;
+/* Partnership Referral Code card – spacing matched to Figma */
+.p_rc.p_rc_gradient {
+  height: auto;
+  padding: 16px 12px;
+  border-radius: 12px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Plain flex body – title + code on the left, share icon pinned right */
+.prc-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: 100%;
+}
+
+.prc-body__text {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.prc-body__text h4 {
+  font-size: 16px;
+  letter-spacing: normal;
+}
+
+.prc-body__share {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prc-body .mb10px {
+  margin: 0 0 16px !important;
+}
+
+.prc-body .btn_pr_code {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: -moz-fit-content;
+    width: fit-content;
+    height: 32px;
+    margin: 0;
+    padding: 0 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 22;
+    letter-spacing: 0.06em;
 }
 
 /* Stats bar – replaces the old SVG background image */
@@ -44,4 +91,7 @@
 .div_copy_rc a,
 .div_copy_01 img {
   cursor: pointer;
+}
+.mb8px{
+  margin-bottom: 8px;
 }

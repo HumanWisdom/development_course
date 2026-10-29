@@ -17,6 +17,7 @@ export class PartnershipIndexPage implements OnInit {
 
   public isHowItWorks: boolean = false;
   public isOtherBenefits: boolean = false;
+  public showAllTestimonials: boolean = false;
   public isPartnerFaq = false;
   public faq1 = false;
   public faq2 = false;
@@ -74,6 +75,35 @@ export class PartnershipIndexPage implements OnInit {
     else {
       this.isHowItWorks = true;
     }
+  }
+
+  toggleTestimonials() {
+    this.showAllTestimonials = !this.showAllTestimonials;
+  }
+
+  scroll_to_hiw(): void {
+    this.isHowItWorks = true;
+    setTimeout(() => {
+      this.scroll_to_id('pa_hiw');
+    }, 150);
+  }
+
+  scroll_to_benefits(): void {
+    this.isHowItWorks = false;
+    setTimeout(() => {
+      this.scroll_to_id('pa_benefits');
+    }, 150);
+  }
+
+  scroll_to_id(id: string): void {
+    const el = document.getElementById(id);
+    if (!el) {
+      return;
+    }
+    window.scrollTo({
+      behavior: 'smooth',
+      top: el.getBoundingClientRect().top - document.body.getBoundingClientRect().top - 120,
+    });
   }
 
   otherBenefitsClick() {
