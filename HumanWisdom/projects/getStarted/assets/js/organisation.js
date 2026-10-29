@@ -309,6 +309,14 @@
     window.location.href = adultsUrl(res.NoOfVisits === 1 ? "/adults/change-topic" : "/adults/today");
   }
 
+  /** Same destination as email OTP success — stay on the website. */
+  function finishSocialSignup(res) {
+    try {
+      storeAdultsSession(res);
+    } catch (e) {}
+    go("success");
+  }
+
   /** Same as LoginSignupPage's constructor: an active adults session skips the signup form. */
   function redirectIfLoggedIn() {
     if (currentStep !== "signup") return false;
@@ -386,7 +394,7 @@
             fail(provider + " sign-in failed. Please try again.");
             return;
           }
-          loginToAdults(data);
+          finishSocialSignup(data);
         })
         .catch(function () {
           fail("Internal Server Error");
