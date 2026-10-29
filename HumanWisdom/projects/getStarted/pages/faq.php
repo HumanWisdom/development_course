@@ -47,117 +47,112 @@ Frequently asked questions (FAQ)            </h2>
           
 
           <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col-12 pr20px" data-aos="fade-up" data-aos-delay="200">
-             <ul class="nav nav-tabs m0px tab_faqs">
-              <li class="active">
-                <a data-toggle="tab" href="#about_happierme" class="active">
-                  About HappierMe
-                </a>
-              </li>
+           <ul class="nav nav-tabs m0px tab_faqs">
+  
+  <li class="active show">
+    <a class="active show" data-bs-toggle="tab" data-bs-target="#c11" aria-expanded="true" aria-controls="c11">
+      About HappierMe
+    </a>
+  </li>
 
-              <li style="font_size=18px;">
-                <a data-toggle="tab" href="#how_can_the_app_help">
-                Understanding Your Mind 
+  <li>
+    <a data-bs-toggle="tab" aria-expanded="false" data-bs-target="#c12" aria-controls="c12">
+      Understanding Your Mind 
+    </a>
+  </li>
 
-                </a>
-              </li>
+  <li>
+    <a href="#app_features" data-bs-toggle="tab" aria-expanded="false" data-bs-target="#c13" aria-controls="c13">
+      Stress & Anxiety 
+    </a>
+  </li>
 
-              <li>
-                <a data-toggle="tab" href="#app_features">
-                 Stress & Anxiety 
+  <li>
+    <a href="#teenage_program" data-bs-toggle="tab" aria-expanded="false" data-bs-target="#c14" aria-controls="c14">
+      Overthinking & Negative Thoughts 
+    </a>
+  </li>
 
-                </a>
-              </li>
+  <li>
+    <a href="#support" data-bs-toggle="tab" aria-expanded="false" data-bs-target="#c15" aria-controls="c15">
+      Feelings & Emotional Intelligence 
+    </a>
+  </li>
+  
+  <li>
+    <a href="#support" data-bs-toggle="tab" aria-expanded="false" data-bs-target="#c16" aria-controls="c16">
+      Relationships & Communication 
+    </a>
+  </li>
+  
+  <li>
+    <a href="#support" data-bs-toggle="tab" aria-expanded="false" data-bs-target="#c17" aria-controls="c17">
+      Happiness & Self-Awareness
+    </a>
+  </li>
+  
+  <li>
+    <a href="#support" data-bs-toggle="tab" aria-expanded="false" data-bs-target="#c18" aria-controls="c18">
+      Work, Stress & Resilience 
+    </a>
+  </li>
+  
+  <li>
+    <a href="#support" data-bs-toggle="tab" aria-expanded="false" data-bs-target="#c19" aria-controls="c19">
+      Teenagers & Students 
+    </a>
+  </li>
+  
+  <li>
+    <a href="#support" data-bs-toggle="tab" aria-expanded="false" data-bs-target="#c20" aria-controls="c20">
+      Parents & Families 
+    </a>
+  </li>
+  
+  <li>
+    <a href="#support" data-bs-toggle="tab" aria-expanded="false" data-bs-target="#c21" aria-controls="c21">
+      Habits, Addiction & Behaviour 
+    </a>
+  </li>
 
-              <li>
-                <a data-toggle="tab" href="#teenage_program">
-Overthinking & Negative Thoughts 
-                </a>
-              </li>
-
-              <li>
-                <a data-toggle="tab" href="#support">
-Feelings & Emotional Intelligence 
-                </a>
-              </li>
-               <li>
-                <a data-toggle="tab" href="#support">
-Relationships & Communication 
-
-                </a>
-              </li>
-               <li>
-                <a data-toggle="tab" href="#support">
-Happiness & Self-Awareness
-
-                </a>
-              </li>
-               <li>
-                <a data-toggle="tab" href="#support">
-Work, Stress & Resilience 
-
-                </a>
-              </li>
-               <li>
-                <a data-toggle="tab" href="#support">
-Teenagers & Students 
-
-                </a>
-              </li>
-               <li>
-                <a data-toggle="tab" href="#support">
-Parents & Families 
-
-                </a>
-              </li>
-               <li>
-                <a data-toggle="tab" href="#support">
-Habits, Addiction & Behaviour 
-
-                </a>
-              </li>
-
-               <li>
-                <a data-toggle="tab" href="#support">
-Dealing with Loss 
-
-
-                </a>
-              </li>
-               <li>
-                <a data-toggle="tab" href="#support">
-Social Proof 
-
-
-                </a>
-              </li>
-               <li>
-                <a data-toggle="tab" href="#support">
-Blogs 
-
-
-                </a>
-              </li>
-              
-            </ul> 
+  <li>
+    <a href="#support" data-bs-toggle="tab" aria-expanded="false" data-bs-target="#c22" aria-controls="c22">
+      Dealing with Loss 
+    </a>
+  </li>
+  
+  <li>
+    <a href="#support" data-bs-toggle="tab" aria-expanded="false" data-bs-target="#c23" aria-controls="c23">
+      Social Proof 
+    </a>
+  </li>
+  
+  <li>
+    <a href="#support" data-bs-toggle="tab" aria-expanded="false" data-bs-target="#c24" aria-controls="c24">
+      Blogs 
+    </a>
+  </li>
+  
+</ul>
           </div> 
 
           <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 col-12 pl20px " data-aos="fade-up" data-aos-delay="300">
             <div class="tab-content tc_faqs ">
-              <div id="about_happierme" class="tab-pane fade in active">
-                 <h3 class="mtb30px fs_18px fw_600 lh_140p fc_000000" style="text-align:left;">
+              <div id="about_happierme" >
+             <!--     <h3 class="mtb10px fs_18px fw_600 lh_140p fc_000000" style="text-align:left;">
 
-                  </h3>
+                  </h3> -->
                 <div class="accordion" id="accordion_faq_about">
                   <div class="accordion-item">
 
-                    <h2 class="accordion-header" id="heading_c11">
+                <!--     <h2 class="accordion-header" id="heading_c11">
                       
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c11"
                         aria-expanded="true" aria-controls="c11">
                        About HappierMe 
                       </button>
-                    </h2>
-                    <div id="c11" class="accordion-collapse collapse " aria-labelledby="heading_c11"
+                    </h2> -->
+                    <div id="c11" class="accordion-collapse collapse show"  
                       data-bs-parent="#accordion_faq_about">
                       <div class="accordion-body">
                        <!-- <b> HappierMe is an all-in-one mental wellness and personal growth app designed to help people handle everyday life challenges more effectively.</b>It combines mental wellness education, mindfulness, meditation, journaling, emotional intelligence, relationship support, habit-building, and self-awareness tools in one app. HappierMe is designed for both teenagers and adults and provides practical resources that users can explore in just a few minutes a day. -->
@@ -366,21 +361,21 @@ No. HappierMe is a mental wellness and personal growth app and is not intended t
                     </div>
                   </div>
 
-                  <div class="row">
+                 <!--  <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                       <hr class="hr_style_web_01 hr-darker">
                     </div>
-                  </div>
+                  </div> -->
 
                   <div class="accordion-item">
-                    <h2 class="accordion-header" id="heading_c12">
+                   <!--  <h2 class="accordion-header" id="heading_c12">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#c12" aria-expanded="false" aria-controls="c12">
 Understanding Your Mind 
 
                       </button>
-                    </h2>
-                    <div id="c12" class="accordion-collapse collapse" aria-labelledby="heading_c12"
+                    </h2> -->
+                    <div id="c12" class="accordion-collapse collapse" 
                       data-bs-parent="#accordion_faq_about">
                       <div class="accordion-body">
 
@@ -586,20 +581,20 @@ HappierMe helps users develop greater self-awareness through practical education
                     </div>
                   </div>
 
-                  <div class="row">
+               <!--    <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                       <hr class="hr_style_web_01 hr-darker">
                     </div>
-                  </div>
+                  </div> -->
 
                   <div class="accordion-item">
-                    <h2 class="accordion-header" id="heading_c13">
+                   <!--  <h2 class="accordion-header" id="heading_c13">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#c13" aria-expanded="false" aria-controls="c13">
 Stress & Anxiety 
                       </button>
-                    </h2>
-                    <div id="c13" class="accordion-collapse collapse" aria-labelledby="heading_c13"
+                    </h2> -->
+                    <div id="c13" class="accordion-collapse collapse"  
                       data-bs-parent="#accordion_faq_about">
                       <div class="accordion-body">
       <h2 class="hs_title">
@@ -801,21 +796,21 @@ Consider seeking professional support when stress or anxiety is <b> persistent, 
                     </div>
                   </div>
 
-                  <div class="row">
+               <!--    <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                       <hr class="hr_style_web_01 hr-darker">
                     </div>
-                  </div>
+                  </div> -->
 
 
                   <div class="accordion-item">
-                    <h2 class="accordion-header" id="heading_c14">
+                  <!--   <h2 class="accordion-header" id="heading_c14">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#c14" aria-expanded="false" aria-controls="c14">
 Overthinking & Negative Thoughts
 
                       </button>
-                    </h2>
+                    </h2> -->
                     <div id="c14" class="accordion-collapse collapse" aria-labelledby="heading_c14"
                       data-bs-parent="#accordion_faq_about">
                       <div class="accordion-body">
@@ -1021,23 +1016,23 @@ Yes.<b> <a class="blog_highlight_peach td_underline fs_12px" href="https://happi
 
 
                   
-
+<!-- 
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                       <hr class="hr_style_web_01 hr-darker">
                     </div>
-                  </div>
+                  </div> -->
 
 
                   
                   <div class="accordion-item">
-                    <h2 class="accordion-header" id="heading_c15">
+                   <!--  <h2 class="accordion-header" id="heading_c15">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#c15" aria-expanded="false" aria-controls="c15">
 Feelings & Emotional Intelligence 
                       </button>
-                    </h2>
-                    <div id="c15" class="accordion-collapse collapse" aria-labelledby="heading_c15"
+                    </h2> -->
+                    <div id="c15" class="accordion-collapse collapse"  
                       data-bs-parent="#accordion_faq_about">
                       <div class="accordion-body">
   <h2 class="hs_title">
@@ -1244,19 +1239,19 @@ Yes.  <b> <a class="blog_highlight_peach td_underline fs_12px" href="https://hap
 
                      
 
-                  <div class="row">
+              <!--     <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                       <hr class="hr_style_web_01 hr-darker">
                     </div>
-                  </div>
+                  </div> -->
                   <div class="accordion-item">
-                    <h2 class="accordion-header" id="heading_c16">
+                 <!--    <h2 class="accordion-header" id="heading_c16">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#c16" aria-expanded="false" aria-controls="c16">
 Relationships & Communication 
                       </button>
-                    </h2>
-                    <div id="c16" class="accordion-collapse collapse" aria-labelledby="heading_c16"
+                    </h2> -->
+                    <div id="c16" class="accordion-collapse collapse"  
                       data-bs-parent="#accordion_faq_about">
                       <div class="accordion-body">
       
@@ -1457,22 +1452,22 @@ HappierMe provides educational and self-reflection resources designed to help us
                     </div>
                   </div>
 
-                  <div class="row">
+              <!--     <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                       <hr class="hr_style_web_01 hr-darker">
                     </div>
                   </div>
-
+ -->
 
 
                    <div class="accordion-item">
-                    <h2 class="accordion-header" id="heading_c17">
+                   <!--  <h2 class="accordion-header" id="heading_c17">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#c17" aria-expanded="false" aria-controls="c17">
 Happiness & Self-Awareness 
                       </button>
-                    </h2>
-                    <div id="c17" class="accordion-collapse collapse" aria-labelledby="heading_c17"
+                    </h2> -->
+                    <div id="c17" class="accordion-collapse collapse"  
                       data-bs-parent="#accordion_faq_about">
                       <div class="accordion-body">
       
@@ -1670,19 +1665,19 @@ HappierMe helps users develop greater self-awareness and build practical habits 
                     </div>
                   </div>
 
-                  <div class="row">
+                <!--   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                       <hr class="hr_style_web_01 hr-darker">
                     </div>
-                  </div>
+                  </div> -->
                    <div class="accordion-item">
-                    <h2 class="accordion-header" id="heading_c18">
+                   <!--  <h2 class="accordion-header" id="heading_c18">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#c18" aria-expanded="false" aria-controls="c18">
 Work, Stress & Resilience
                       </button>
-                    </h2>
-                    <div id="c18" class="accordion-collapse collapse" aria-labelledby="heading_c18"
+                    </h2> -->
+                    <div id="c18" class="accordion-collapse collapse"  
                       data-bs-parent="#accordion_faq_about">
                       <div class="accordion-body">
       
@@ -1869,20 +1864,20 @@ Yes. <a class="blog_highlight_peach td_underline fs_12px" href="https://happierm
                     </div>
                   
 
-                  <div class="row">
+                <!--   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                       <hr class="hr_style_web_01 hr-darker">
                     </div>
-                  </div>
+                  </div> -->
                    <div class="accordion-item">
-                    <h2 class="accordion-header" id="heading_c19">
+                   <!--  <h2 class="accordion-header" id="heading_c19">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#c19" aria-expanded="false" aria-controls="c19">
 Teenagers & Students 
 
                       </button>
-                    </h2>
-                    <div id="c19" class="accordion-collapse collapse" aria-labelledby="heading_c19"
+                    </h2> -->
+                    <div id="c19" class="accordion-collapse collapse"  
                       data-bs-parent="#accordion_faq_about">
                       <div class="accordion-body">
       
@@ -2065,20 +2060,20 @@ Recognizing personal values and becoming comfortable making <a class="blog_highl
                     </div>
                   </div>
 
-                  <div class="row">
+                 <!--  <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                       <hr class="hr_style_web_01 hr-darker">
                     </div>
-                  </div>
+                  </div> -->
                    <div class="accordion-item">
-                    <h2 class="accordion-header" id="heading_20">
+                    <!-- <h2 class="accordion-header" id="heading_20">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#c20" aria-expanded="false" aria-controls="c20">
 Parents & Families 
 
                       </button>
-                    </h2>
-                    <div id="c20" class="accordion-collapse collapse" aria-labelledby="heading_c20"
+                    </h2> -->
+                    <div id="c20" class="accordion-collapse collapse"  
                       data-bs-parent="#accordion_faq_about">
                       <div class="accordion-body">
       
@@ -2269,19 +2264,19 @@ HappierMe helps users develop greater self-awareness and build practical habits 
                     </div>
                   </div>
 
-                  <div class="row">
+                 <!--  <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                       <hr class="hr_style_web_01 hr-darker">
                     </div>
-                  </div>
+                  </div> -->
                    <div class="accordion-item">
-                    <h2 class="accordion-header" id="heading_c21">
+                   <!--  <h2 class="accordion-header" id="heading_c21">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#c21" aria-expanded="false" aria-controls="c21">
 Habits, Addiction & Behaviour 
                       </button>
-                    </h2>
-                    <div id="c21" class="accordion-collapse collapse" aria-labelledby="heading_c21"
+                    </h2> -->
+                    <div id="c21" class="accordion-collapse collapse"  
                       data-bs-parent="#accordion_faq_about">
                       <div class="accordion-body">
       
@@ -2467,20 +2462,20 @@ Professional support</a> is especially important when a behavior feels difficult
 
 
                   
-                  <div class="row">
+                <!--   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                       <hr class="hr_style_web_01 hr-darker">
                     </div>
-                  </div> 
+                  </div>  -->
                    <div class="accordion-item">
-                    <h2 class="accordion-header" id="heading_c22">
+                   <!--  <h2 class="accordion-header" id="heading_c22">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#c22" aria-expanded="false" aria-controls="c22">
 Dealing with Loss 
 
                       </button>
-                    </h2>
-                    <div id="c22" class="accordion-collapse collapse" aria-labelledby="heading_c22"
+                    </h2> -->
+                    <div id="c22" class="accordion-collapse collapse"  
                       data-bs-parent="#accordion_faq_about">
                       <div class="accordion-body">
       
@@ -2675,20 +2670,20 @@ Journaling</a> can provide a private space to express emotions, memories, questi
                     </div>
                   </div>
 
-                  <div class="row">
+                  <!-- <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                       <hr class="hr_style_web_01 hr-darker">
                     </div>
-                  </div>
+                  </div> -->
                    <div class="accordion-item">
-                    <h2 class="accordion-header" id="heading_c23">
+                  <!--   <h2 class="accordion-header" id="heading_c23">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#c23" aria-expanded="false" aria-controls="c23">
 Social Proof 
 
                       </button>
-                    </h2>
-                    <div id="c23" class="accordion-collapse collapse" aria-labelledby="heading_c23"
+                    </h2> -->
+                    <div id="c23" class="accordion-collapse collapse"  
                       data-bs-parent="#accordion_faq_about">
                       <div class="accordion-body">
       
@@ -2875,20 +2870,20 @@ Regular use can provide opportunities to practice <a class="blog_highlight_peach
                     </div>
                   </div> 
 
-                          <div class="row">
+                         <!--  <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                       <hr class="hr_style_web_01 hr-darker">
                     </div>
-                  </div>
+                  </div> -->
                    <div class="accordion-item">
-                    <h2 class="accordion-header" id="heading_c24">
+              <!--       <h2 class="accordion-header" id="heading_c24">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#c24" aria-expanded="false" aria-controls="c24">
 Blogs
 
                       </button>
-                    </h2>
-                    <div id="c24" class="accordion-collapse collapse" aria-labelledby="heading_c24"
+                    </h2> -->
+                    <div id="c24" class="accordion-collapse collapse"  
                       data-bs-parent="#accordion_faq_about">
                       <div class="accordion-body">
       
