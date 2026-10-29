@@ -92,7 +92,7 @@
 
                 <h4 class="mtb0px blog_desc">
                     Overcrowded classrooms, limited resources and the emotional labour of supporting students through their own difficulties all take their toll. The lingering effects of the COVID-19 pandemic, including hybrid teaching, technology problems and concerns about safety, have added further
-                    <a href="https://happierme.app/adults/stress" class="blog_highlight_peach td_underline" target="_blank">stress</a>.
+                    stress.
                 </h4>
 
                 <!-- Impact -->
@@ -102,7 +102,7 @@
 
                 <h4 class="mtb0px blog_desc">
                     Educator
-                    <a href="https://happierme.app/adults/site-search/burnout" class="blog_highlight_peach td_underline" target="_blank">burnout</a>
+                    burnout
                     reduces job performance, lowers student engagement and drives staff turnover.
                     <span class="blog_highlight_black">
                         Nearly 30% of new teachers leave the profession within five years,
@@ -118,25 +118,28 @@
                 <h4 class="mtb0px blog_sub_title">
                     Breaking the cycle
                 </h4>
+                <h4 class="mtb0px blog_desc">
+                Addressing the mental health crisis in education requires a multifaceted approach:
+                </h4>
 
                 <h4 class="mtb0px blog_desc">
                     <span class="blog_highlight_black">Workplace policies:</span>
-                    Reduce workloads, offer flexible schedules and protect adequate planning time.
+                    Schools and educational institutions must prioritize mental health by implementing policies that support educators. This could include reducing workloads, offering flexible schedules, and ensuring adequate planning time.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
                     <span class="blog_highlight_black">Access to resources:</span>
-                    Provide mental health training, counselling and stress management workshops.
+                   Providing mental health training, counseling services, and stress management workshops can equip educators with tools to cope.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
                     <span class="blog_highlight_black">Peer support networks:</span>
-                    Build collaboration and community among staff to reduce isolation.
+                   Encouraging collaboration and support among educators can foster a sense of community, reducing feelings of isolation.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
                     <span class="blog_highlight_black">Systemic change:</span>
-                    Increase funding, reduce class sizes and address teacher shortages.
+                    Policymakers must invest in education by increasing funding, reducing class sizes, and addressing teacher shortages to alleviate the systemic pressures contributing to burnout.
                 </h4>
 
 
@@ -156,10 +159,10 @@
 
                 <h4 class="mtb0px blog_desc">
                     It helps educators feel better through guided
-                    <a href="https://happierme.app/adults/meditation" class="blog_highlight_peach td_underline" target="_blank">meditations</a>,
-                    <a href="https://happierme.app/adults/journal" class="blog_highlight_peach td_underline" target="_blank">journaling</a>,
+                    meditations,
+                    journaling,
                     and
-                    <a href="https://happierme.app/adults/breathing" class="blog_highlight_peach td_underline" target="_blank">breathing exercises</a>.
+    breathing exercises.
                     It then empowers them to develop their self-awareness and emotional intelligence to manage their own mental health, have happier relationships and develop their communication and leadership skills.
                 </h4>
 
@@ -222,7 +225,7 @@
                     5. <a href="https://happierme.app/blogs/how_to_manage_your_own_mental_health.php" class="blog_highlight_peach td_underline" target="_blank">How to manage your own mental health</a>
                     <br>
                     6. Subscribe to our
-                    <a href="https://happierme.app/adults/newsletter-signup" class="blog_highlight_peach td_underline" target="_blank">newsletter</a>
+                    <a href="happierme.app/pages/newsletter.php" class="blog_highlight_peach td_underline" target="_blank">newsletter</a>
                     <br>
                     7. Follow us on
                     <a href="https://www.instagram.com/happierme_app/" class="blog_highlight_peach td_underline" target="_blank">social media</a>
