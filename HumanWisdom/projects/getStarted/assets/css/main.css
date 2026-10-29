@@ -3227,7 +3227,7 @@ body.page-newsletter .newsletter-subtitle:hover {
   border: 0;
   gap: 12px;
   margin: 0;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 500;
   line-height: 150%;
   text-transform: uppercase;
@@ -3918,6 +3918,7 @@ audio::-webkit-media-controls-enclosure {
   background: #FFF7E6;
   padding: 60px;
   border-radius: 20px;
+  margin: 50px;
 }
 
 .hs_bg h4 {
@@ -5253,7 +5254,7 @@ input[type="password" i]::-ms-reveal {
   background: transparent;
   border: none;
   padding: 0;
-  font-size: 15px;
+  font-size: 21px;
   font-weight: 600;
   line-height: 150%;
   color: #000;

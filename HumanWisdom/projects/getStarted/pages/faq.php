@@ -31,116 +31,117 @@
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ">
                 <!-- faqs -->
     <section class="faqqq">
-      <div class="section-header mt-sm-3">
+      <div class="section-headerfaq mt-sm-3">
         <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-            <!-- <h2 class="mtb0px fs_24px fw_600 lh_120p">
-              Frequently asked questions
-            </h2> -->
+           
           </div>
         </div>
       </div>
 
       <!-- desktop -->
-      <div class="row center_flex prelative display_m_none">
-        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 col-10  p0 d-flex fixed_w ">
+      <div class="row  prelative display_m_none hs_bg">
+         <h2 class="mtb20px fs_36px fw_400 lh_180p">
+Frequently asked questions (FAQ)            </h2> 
+        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 col-10  p0 d-flex fixed_w  ">
+          
 
-           <div class="col-lg-1 col-md-1 col-sm-12 col-xs-12 col-12 p0" data-aos="fade-up" data-aos-delay="200">
-            <!-- <ul class="nav nav-tabs m0px tab_faqs">
+          <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col-12 pr20px" data-aos="fade-up" data-aos-delay="200">
+             <ul class="nav nav-tabs m0px tab_faqs">
               <li class="active">
                 <a data-toggle="tab" href="#about_happierme" class="active">
                   About HappierMe
                 </a>
               </li>
 
-              <li>
+              <li style="font_size=18px;">
                 <a data-toggle="tab" href="#how_can_the_app_help">
-                Understanding Your Mind — FAQ
+                Understanding Your Mind 
 
                 </a>
               </li>
 
               <li>
                 <a data-toggle="tab" href="#app_features">
-                 Stress & Anxiety — FAQ
+                 Stress & Anxiety 
 
                 </a>
               </li>
 
               <li>
                 <a data-toggle="tab" href="#teenage_program">
-Overthinking & Negative Thoughts — FAQ
+Overthinking & Negative Thoughts 
                 </a>
               </li>
 
               <li>
                 <a data-toggle="tab" href="#support">
-Feelings & Emotional Intelligence — FAQ
+Feelings & Emotional Intelligence 
                 </a>
               </li>
                <li>
                 <a data-toggle="tab" href="#support">
-Relationships & Communication — FAQ
-
-                </a>
-              </li>
-               <li>
-                <a data-toggle="tab" href="#support">
-Happiness & Self-Awareness — FAQ
+Relationships & Communication 
 
                 </a>
               </li>
                <li>
                 <a data-toggle="tab" href="#support">
-Work, Stress & Resilience — 15 FAQs
+Happiness & Self-Awareness
 
                 </a>
               </li>
                <li>
                 <a data-toggle="tab" href="#support">
-Teenagers & Students — 15 FAQs
+Work, Stress & Resilience 
 
                 </a>
               </li>
                <li>
                 <a data-toggle="tab" href="#support">
-Parents & Families — 15 FAQs
+Teenagers & Students 
 
                 </a>
               </li>
                <li>
                 <a data-toggle="tab" href="#support">
-Habits, Addiction & Behaviour — 15 FAQs
+Parents & Families 
+
+                </a>
+              </li>
+               <li>
+                <a data-toggle="tab" href="#support">
+Habits, Addiction & Behaviour 
 
                 </a>
               </li>
 
                <li>
                 <a data-toggle="tab" href="#support">
-Dealing with Loss — 15 FAQs
-
-
-                </a>
-              </li>
-               <li>
-                <a data-toggle="tab" href="#support">
-Social Proof — 15 FAQs
+Dealing with Loss 
 
 
                 </a>
               </li>
                <li>
                 <a data-toggle="tab" href="#support">
-Blogs 15 -FAQ
+Social Proof 
+
+
+                </a>
+              </li>
+               <li>
+                <a data-toggle="tab" href="#support">
+Blogs 
 
 
                 </a>
               </li>
               
-            </ul> -->
+            </ul> 
           </div> 
 
-          <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 col-12  hs_bg" data-aos="fade-up" data-aos-delay="300">
+          <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 col-12 pl20px " data-aos="fade-up" data-aos-delay="300">
             <div class="tab-content tc_faqs ">
               <div id="about_happierme" class="tab-pane fade in active">
                  <h3 class="mtb30px fs_18px fw_600 lh_140p fc_000000" style="text-align:left;">
