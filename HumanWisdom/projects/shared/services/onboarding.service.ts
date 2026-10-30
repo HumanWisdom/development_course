@@ -356,6 +356,11 @@ export class OnboardingService {
     return this.http.post(this.path + `/verificationCode`, data)
   }
 
+  resendCode(email: any): Observable<any> {
+
+    return this.http.post(this.path + `/ResendverificationCode`, { Email: email })
+  }
+
   socialLearner(data: any): Observable<any> {
 
     return this.http.post(this.path + `/LearnerSocial`, data)

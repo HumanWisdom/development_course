@@ -5,6 +5,8 @@ import { AuthGuard } from '../auth.guard';
 import { EnableRouteGuard } from '../enable-route.guard';
 import { ActiveGuard } from '../active.guard';
 import { LoginSignupPage } from '../../../../shared/component/login-signup/login-signup.page';
+import { SignupVerifyPage } from '../../../../shared/component/signup-verify/signup-verify.page';
+import { SignupSuccessPage } from '../../../../shared/component/signup-success/signup-success.page';
 
 const routes: Routes = [
   {
@@ -33,6 +35,14 @@ const routes: Routes = [
     path: 'login',
    // canActivate: [autoLoginGuard],
     component:LoginSignupPage
+  },
+  {
+    path: 'verify-email',
+    component: SignupVerifyPage
+  },
+  {
+    path: 'all-set',
+    component: SignupSuccessPage
   },
  /*  {
     path: 'activationkey',
