@@ -1607,6 +1607,7 @@
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;
+    font-size: 15px !important;
   }
 
   /* Bootstrap 5 Accordion - Collapsed state - chevron down */
