@@ -284,7 +284,9 @@ export class AppComponent implements OnDestroy {
       this.isLoginPage = false;
       return true;
     }
-    if (this.router.url == "/teenagers/onboarding/login") {
+    if (this.router.url == "/teenagers/onboarding/login"
+      || this.router.url.includes('/teenagers/onboarding/verify-email')
+      || this.router.url.includes('/teenagers/onboarding/all-set')) {
       this.isLoginPage = true;
     }
     if (this.router.url.includes('/teenagers/chat-bot') || this.router.url.includes('/teenagers/olly-landing')) {

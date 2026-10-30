@@ -1,0 +1,181 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
+  color: #000;
+}
+
+/* Keep the standard shell scrollable, like the login page does */
+.right_col.mc_03 {
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
+
+.success_col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* sc_01_home is 110vh tall and .center_flex centres its children, which left the
+   dark teenagers column floating with a gap above and below it */
+.row.center_flex {
+  align-items: stretch;
+}
+
+.success_col.sc_01_home {
+  min-height: 100vh;
+}
+
+.success_card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  text-align: center;
+}
+
+.success_art {
+  display: block;
+  width: 136px;
+  height: 80px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.success_heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.success_title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #000;
+}
+
+.success_sub {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.trial_card {
+  width: 100%;
+  box-sizing: border-box;
+  background: #ffe8bb;
+  border-radius: 16px;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.trial_top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.trial_icon {
+  display: block;
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.trial_copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
+  margin: 0;
+  min-width: 0;
+  text-align: left;
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #000;
+
+  span {
+    display: block;
+  }
+
+  strong {
+    font-weight: 600;
+  }
+}
+
+.trial_ends {
+  align-self: stretch;
+  width: 100%;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #000;
+}
+
+.success_actions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+}
+
+.btn_primary {
+  width: 100%;
+  height: 50px;
+  box-sizing: border-box;
+  border-radius: 100px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.btn_primary {
+  border: 0;
+  color: #fff;
+  background: linear-gradient(180deg, #ed7d6f 0%, #d7586b 100%);
+}
+
+/* Teenagers paint the column dark blue, so the copy switches to white there */
+.teens_theme {
+  .success_title {
+    color: #fff;
+  }
+
+  .success_sub {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .trial_card {
+    background: #0c2b5f;
+  }
+
+  .trial_copy,
+  .trial_ends {
+    color: #fff;
+  }
+}
+.sc_01_home {
+    padding: 60px 40px;
+}
