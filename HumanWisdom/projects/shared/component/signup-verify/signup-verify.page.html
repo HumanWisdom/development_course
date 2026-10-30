@@ -1,0 +1,42 @@
+<div class="right_col mc_03 verify_shell">
+  <div class="cw100p">
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01_home col_cw verify_col"
+        [class.teens_theme]="!isAdults">
+        <div class="verify_card">
+          <div class="verify_heading">
+            <h1 class="verify_title">Verify your email</h1>
+            <p class="verify_sub">
+              We've sent a 6-digit code to
+              <span class="verify_email">{{ email }}</span>
+            </p>
+          </div>
+
+          <div class="otp_row" [class.otp_row_error]="codeError">
+            <input *ngFor="let i of otpIndexes; trackBy: trackByIndex" #otpInput type="text" inputmode="numeric"
+              class="otp_input" maxlength="1" [value]="digits[i]" [disabled]="isVerifying" autocomplete="one-time-code"
+              [attr.aria-label]="'Digit ' + (i + 1)" (input)="onDigitInput($event, i)" (keydown)="onKeyDown($event, i)"
+              (paste)="onPaste($event)">
+          </div>
+
+          <p class="verify_error" *ngIf="errorMessage">{{ errorMessage }}</p>
+          <p class="verify_info" *ngIf="!errorMessage && infoMessage">{{ infoMessage }}</p>
+
+          <div class="verify_help">
+            <p class="verify_help_copy">
+              Didn't receive the code?<br>
+              Remember to check your spam folder too
+            </p>
+            <div class="verify_resend">
+              <a class="verify_link" [class.verify_link_disabled]="!canResend" (click)="resendCode()"
+                (keydown.enter)="resendCode()" tabindex="0">Resend code</a>
+              <p class="verify_timer" *ngIf="resendTimer > 0">({{ timerLabel }})</p>
+            </div>
+          </div>
+
+          <a class="verify_link verify_back" (click)="goBack()" (keydown.enter)="goBack()" tabindex="0">Back</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

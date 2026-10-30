@@ -76,7 +76,7 @@ export class ChangeTopicPage implements OnInit {
     this.getIntroDashboardStatus();
     let loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
 
-    let NoOfVisits = loginResponse.NoOfVisits
+    let NoOfVisits = loginResponse?.NoOfVisits ?? 0
     console.log("NoofVisits:" + NoOfVisits)
 
     const { routedFromLogin } = window.history.state;

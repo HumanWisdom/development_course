@@ -20,6 +20,7 @@ import { take } from 'rxjs/operators';
 import { AWS_SSO_LOGIN_METHOD, LOGIN_METHOD_STORAGE_KEY, clearStaleAwsCognitoOidcCache, isAwsSsoLoginVisible } from '../../config/aws-cognito.config';
 import { markLoginCompleted } from '../../config/session-auth.config';
 import { OrgSsoService } from '../../services/org-sso.service';
+import { SignupCredentialsService } from '../../services/signup-credentials.service';
 import { OrgSsoDiscoverResult } from '../../models/org-sso.model';
 declare var $: any;
 declare var google: any;
@@ -476,7 +477,8 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
     private commonService: CommonService,
     private homeStateService: HomeStateService,
     private oidcSecurityService: OidcSecurityService,
-    private orgSsoService: OrgSsoService
+    private orgSsoService: OrgSsoService,
+    private signupCredentials: SignupCredentialsService
   ) {
     this.loadRecaptchaScript();
     this.initializeRegistrationForm();
@@ -761,6 +763,25 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
     return i;
   }
 
+  // Clears any session left over from a previous user on this device
+  private resetPreviousSession() {
+    [
+      "isloggedin",
+      "remember",
+      "token",
+      "userId",
+      "userID",
+      "loginResponse",
+      "userName",
+      "userEmail",
+      "userDetails",
+      "freeScreens",
+      "signupLoginOk",
+    ].forEach((key) => localStorage.removeItem(key));
+    sessionStorage.removeItem("loginResponse");
+    sessionStorage.removeItem("loginCompletedAt");
+  }
+
   signup() {
     this.service
       .addUser({
@@ -779,15 +800,19 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
             this.signUser = res;
             this.email = this.registrationForm.get("email").value;
             this.password = this.registrationForm.get("ogpassword").value;
+            // A brand new account must not inherit a session already open on this device
+            this.resetPreviousSession();
             localStorage.setItem("signUser", JSON.stringify(this.signUser));
-            this.initializeRegistrationForm();
-            this.content = Constant.AccountCreated;
-            this.enableAlert = true;
+            localStorage.setItem("signupEmail", this.email);
             localStorage.setItem(
               "signupfirst",
               'T'
             );
+            // Kept in memory only so the verify screen can log the user in after the OTP check
+            this.signupCredentials.set(this.email, this.password);
+            this.initializeRegistrationForm();
             this.logeventservice.logEvent('email_signup_complete');
+            this.routeToVerifyEmail();
           }
         },
         (error) => {
@@ -804,6 +829,13 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
           }*/
         }
       );
+  }
+
+  routeToVerifyEmail() {
+    const onboardingRoute = this.isAdults ? '/adults/onboarding' : '/teenagers/onboarding';
+    this.router.navigate([`${onboardingRoute}/verify-email`], {
+      state: { email: this.email, userId: this.signUser },
+    });
   }
 
   verifyCode() {

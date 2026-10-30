@@ -96,7 +96,7 @@
 
               </div>
               <div class="why-different-card-body">
-                <h3 class="why-different-card-title">Build inner skills</h3>
+                <h3 class="why-different-card-title">Build skills for life</h3>
                 <p class="why-different-card-desc">Self-awareness, emotional intelligence and healthier habits</p>
               </div>
             </article>

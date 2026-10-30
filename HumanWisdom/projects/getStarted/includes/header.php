@@ -130,6 +130,18 @@ if (!hw_page_assets_flag('css', 'header_in_critical')) :
     }
   }
   @media (min-width: 768px) {
+    .header a#headerTryForFree.btn_tff {
+      width: 154px;
+      height: 48px;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Poppins, sans-serif;
+      font-weight: 600;
+      font-size: 15px;
+      line-height: 140%;
+      letter-spacing: 0;
+      text-align: center;
+    }
     .header_fixed .navbar > ul > li > a:hover {
       text-decoration: none !important;
     }
@@ -210,6 +222,7 @@ if (!hw_page_assets_flag('css', 'header_in_critical')) :
             <li><a href="../blogs/blog_index.php" id="blogs" class="nav">Blog</a></li>
             <li><a id="pricing" class="nav" href="../index.php#div_subscription">Pricing</a></li>
             <li><a id="events" class="nav" href="https://happierme.app/adults/events" target="_self" rel="noopener noreferrer">Events</a></li>
+            <li><a id="loginClick" class="nav" href="../pages/splash_options.php">Login</a></li>
             <li class="header_nav_mobile_only">
               <a id="teenagersHeaderClick_mobile" class="nav" href="../pages/teenagers.php">For Teenagers</a>
             </li>
@@ -257,7 +270,7 @@ if (!hw_page_assets_flag('css', 'header_in_critical')) :
             background: linear-gradient(180deg, #da7d71 0%, #bf5061 100%) !important;
           }
         </style>
-        <a class="btn_tff btn_tff_tn btn_popup no-underline-hover" id="headerTryForFree" href="https://onelink.to/hsnt8b">Go to app</a>
+        <a class="btn_tff btn_tff_tn btn_popup no-underline-hover" id="headerTryForFree" href="https://onelink.to/hsnt8b">Get the app</a>
         <i class="mobile-nav-toggle mobile-nav-show bi bi-list" role="button" aria-label="Open menu" tabindex="0"></i>
       </div>
 
