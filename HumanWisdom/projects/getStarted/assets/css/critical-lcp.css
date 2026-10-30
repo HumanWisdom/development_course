@@ -714,3 +714,139 @@ body .web_home_divlanding p.hero-no-card-note:hover {
     align-items: flex-start !important;
   }
 }
+
+/* Meet Olly hero — first paint (full rules also in index-inline.css) */
+.frame-wrapper.web_home_divlanding {
+  box-sizing: border-box;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  height: auto !important;
+  min-height: 0 !important;
+  padding-top: 209px !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  padding-bottom: 40px !important;
+}
+.meetolly-hero {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  height: auto;
+  width: min(1340px, 100%);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  padding: 0 50px;
+}
+.meetolly-hero-media {
+  flex: 1 1 600px;
+  max-width: 600px;
+  min-width: 0;
+  aspect-ratio: 600 / 450;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.meetolly-hero-media img {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  display: block;
+}
+.meetolly-hero-copy {
+  flex: 1 1 500px;
+  max-width: 500px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+}
+.meetolly-intro,
+.meetolly-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+.meetolly-intro { gap: 30px; }
+.meetolly-text { gap: 18px; }
+.meetolly-rating {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  color: #fff7e6;
+  font-family: Poppins, Helvetica, sans-serif;
+}
+.meetolly-stars { display: inline-flex; align-items: center; gap: 7px; }
+.meetolly-hero .hero-star,
+.meetolly-hero .hero-app-icon { display: block; flex-shrink: 0; max-width: none; }
+.meetolly-hero .hero-app-icon { margin-left: 12px; }
+.meetolly-rating-label { margin-left: 5px; font-size: 12px; font-weight: 400; line-height: 1.4; color: #fff7e6; white-space: nowrap; }
+.meetolly-rating-label strong { font-size: 15px; font-weight: 700; }
+.meetolly-title {
+  margin: 0;
+  font-family: Poppins, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: clamp(32px, 3.26vw, 47px);
+  line-height: 1.3;
+  color: #fff7e6;
+  text-align: left;
+}
+.meetolly-subtitle,
+.meetolly-subtitle:hover,
+.meetolly-cta-note,
+.meetolly-cta-note:hover {
+  margin: 0;
+  font-family: Poppins, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #fff7e6 !important;
+  -webkit-text-fill-color: #fff7e6 !important;
+  text-align: left;
+  text-decoration: none !important;
+}
+.meetolly-cta-note,
+.meetolly-cta-note:hover {
+  font-size: 15px;
+  text-align: center;
+}
+.meetolly-cta { display: flex; flex-direction: column; align-items: center; gap: 9px; width: fit-content; max-width: 100%; }
+.meetolly-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 18px 40px;
+  border-radius: 35px;
+  background: linear-gradient(180deg, rgba(237, 125, 111, 1) 0%, rgba(215, 88, 107, 1) 100%);
+  color: #fff;
+  font-family: Poppins, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.meetolly-cta-note { width: 100%; }
+@media (max-width: 1023px) {
+  .frame-wrapper.web_home_divlanding { min-height: 0; }
+  .meetolly-hero { flex-direction: column; align-items: center; gap: 32px; padding: 0 20px; }
+  .meetolly-hero-media, .meetolly-hero-copy { width: 100%; max-width: 600px; flex-basis: auto; }
+  .meetolly-hero-copy { max-width: 500px; gap: 28px; }
+  .meetolly-subtitle-br { display: inline; }
+  .meetolly-cta { width: 100%; }
+  .meetolly-cta-btn { width: 100%; white-space: normal; font-size: 20px; }
+}
+@media (max-width: 767px) {
+  .frame-wrapper.web_home_divlanding { padding-top: 112px !important; min-height: 0; }
+  .meetolly-hero { gap: 24px; padding: 0 16px; }
+  .meetolly-title { font-size: 32px; }
+  .meetolly-subtitle { font-size: 16px; }
+  .meetolly-cta-btn { font-size: 18px; padding: 16px 20px; }
+}
