@@ -3919,6 +3919,7 @@ audio::-webkit-media-controls-enclosure {
   padding: 60px;
   border-radius: 20px;
   margin: 50px;
+  padding-top: 20px;
 }
 
 .hs_bg h4 {
@@ -5208,7 +5209,7 @@ input[type="password" i]::-ms-reveal {
 .tab_faqs.nav-tabs>li.active>a {
   color: #803358 !important;
   font-weight: 600;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 .tab_faqs.nav-tabs>li>a {
