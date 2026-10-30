@@ -9,7 +9,9 @@ $hw_lcp_banner_desktop = hw_lcp_image_url('banner_desktop', '1x');
 $hw_lcp_banner_mobile = hw_lcp_image_url('banner_mobile', '1x');
 $hw_lcp_banner_desktop_srcset = hw_lcp_image_srcset('banner_desktop');
 $hw_lcp_banner_mobile_srcset = hw_lcp_image_srcset('banner_mobile');
-hw_lcp_send_preload_headers();
+if (!headers_sent()) {
+    header('Link: <https://d1tenzemoxuh75.cloudfront.net/website/meetolly.webp>; rel=preload; as=image; type=image/webp; fetchpriority=high', false);
+}
 ?>
 
 <!DOCTYPE html>
@@ -17,9 +19,8 @@ hw_lcp_send_preload_headers();
  <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- LCP: discover image before title, schema, and critical CSS -->
-  <link rel="preload" as="image" type="image/webp" href="<?= htmlspecialchars($hw_lcp_banner_desktop, ENT_QUOTES, 'UTF-8'); ?>" imagesrcset="<?= $hw_lcp_banner_desktop_srcset ?>" imagesizes="<?= hw_lcp_image_sizes('banner_desktop'); ?>" fetchpriority="high" media="(min-width: 821px)" />
-  <link rel="preload" as="image" type="image/webp" href="<?= htmlspecialchars($hw_lcp_banner_mobile, ENT_QUOTES, 'UTF-8'); ?>" imagesrcset="<?= $hw_lcp_banner_mobile_srcset ?>" imagesizes="<?= hw_lcp_image_sizes('banner_mobile'); ?>" fetchpriority="high" media="(max-width: 820px)" />
+  <!-- LCP: new hero image -->
+  <link rel="preload" as="image" type="image/webp" href="https://d1tenzemoxuh75.cloudfront.net/website/meetolly.webp" fetchpriority="high" />
   <title>Mental Wellbeing, Self-awareness and Life Skills | HappierMe</title>
   <meta name="title" content="Mental Wellbeing, Self-awareness and Life Skills | HappierMe">
   <meta name="description"
@@ -74,6 +75,41 @@ hw_lcp_send_preload_headers();
 
       <!-- ===== HERO ===== -->
       <div class="frame-wrapper web_home_divlanding" style="background: linear-gradient(180deg, #803358 0%, #230F40 100%) no-repeat; background-size: cover;">
+        <div class="meetolly-hero">
+          <div class="meetolly-hero-media">
+            <img
+              src="https://d1tenzemoxuh75.cloudfront.net/website/meetolly.webp"
+              width="600"
+              height="450"
+              fetchpriority="high"
+              decoding="sync"
+              alt="Meet Olly, your personal guide to a happier you.">
+          </div>
+          <div class="meetolly-hero-copy">
+            <div class="meetolly-intro">
+              <p class="meetolly-rating" role="group" aria-label="4.8 App store rating">
+                <span class="meetolly-stars" aria-hidden="true">
+                  <img class="hero-star" src="assets/svgs/hero-rating-star.svg" width="16" height="16" alt="">
+                  <img class="hero-star" src="assets/svgs/hero-rating-star.svg" width="16" height="16" alt="">
+                  <img class="hero-star" src="assets/svgs/hero-rating-star.svg" width="16" height="16" alt="">
+                  <img class="hero-star" src="assets/svgs/hero-rating-star.svg" width="16" height="16" alt="">
+                  <img class="hero-star" src="assets/svgs/hero-rating-star.svg" width="16" height="16" alt="">
+                </span>
+                <img class="hero-app-icon" src="assets/svgs/hero-rating-apple.svg" width="17" height="20" alt="" aria-hidden="true">
+                <span class="meetolly-rating-label"><strong>4.8</strong> App store rating</span>
+              </p>
+              <div class="meetolly-text">
+                <h1 class="meetolly-title">Understand yourself and feel happier.</h1>
+                <p class="meetolly-subtitle">Discover why you think and feel the way you do.<br class="meetolly-subtitle-br"> Feel less stressed, build better relationships, and thrive at work and in life.</p>
+              </div>
+            </div>
+            <div class="meetolly-cta">
+              <a class="meetolly-cta-btn" id="happiermeTryForFree" href="/organisation-signup.php/happierme">Try the app free for 10 days</a>
+              <p class="meetolly-cta-note">No credit card required</p>
+            </div>
+          </div>
+        </div>
+        <?php if (false): /* Existing banner kept, not rendered. */ ?>
         <div class="div-wrapper">
           <div class="div">
             <div class="div-2">
@@ -130,6 +166,7 @@ hw_lcp_send_preload_headers();
             </div>
           </div>
         </div>
+        <?php endif; ?>
       </div>
 
       <?php include __DIR__ . '/includes/index/orcha_strip.php'; ?>
