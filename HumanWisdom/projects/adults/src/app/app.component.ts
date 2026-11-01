@@ -582,7 +582,8 @@ export class AppComponent implements OnDestroy {
       this.isShowHeader = false;
       this.isLoginPage = false;
     }
-    else if (url.includes('/adults/onboarding/login') || url == "/adults/onboarding/login") {
+    else if (url.includes('/adults/onboarding/login') || url == "/adults/onboarding/login"
+      || url.includes('/adults/onboarding/verify-email') || url.includes('/adults/onboarding/all-set')) {
       this.isLoginPage = true;
       this.isShowHeader = false;
       this.enableplaystore = false;

@@ -90,7 +90,7 @@ export class ChangeTopicPage implements OnInit {
       loginResponse = JSON.parse(sessionStorage.getItem("loginResponse"))
       localStorage.setItem("loginResponse",JSON.stringify(loginResponse));
     }
-    let NoOfVisits = loginResponse.NoOfVisits
+    let NoOfVisits = loginResponse?.NoOfVisits ?? 0;
     console.log("NoofVisits:" + NoOfVisits )
         this.isRoutedFromLogin = (NoOfVisits.toString() === '1' || window.history.state.routedFromLogin) ? true : false;
     this.getIntroDashboardStatus();

@@ -24335,7 +24335,7 @@ a {
   font-weight: 600;
   font-style: normal;
   line-height: 160%;
-  color: #EE9596 !important;
+  color: #D7586B !important;
   text-decoration: underline;
 }
 .read-text-label {
@@ -32436,7 +32436,7 @@ body * {
 }
 
 .hr_style_v3_02 {
-  border: 1px solid #FFFFFF;
+  border: 1px solid #000;
   opacity: 0.1;
   margin: 20px 0;
 }
@@ -35266,11 +35266,15 @@ background: linear-gradient(180deg, #F17071 0%, #DE6768 100%);
   width: 100%;
   height: 40px;
   border-radius: 100px;
-  background: #FFF !important;
+  color: #FFFFFF !important;
+
+  background: linear-gradient(180deg, #EE9596 0%, #F17071 100%);
+
+  /* background: #FFF !important; */
   font-size: 15px;
   font-weight: 600;
   line-height: 150%;
-  color: #ee9596 !important;
+  /* color: #ee9596 !important; */
   text-align: center;
 }
 

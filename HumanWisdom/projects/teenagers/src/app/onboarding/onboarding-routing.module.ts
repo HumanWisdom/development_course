@@ -2,11 +2,21 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { autoLoginGuard } from '../onboarding/auto-login-guard';
 import {EnableRouteGuard} from '../../../../shared/enable-route.guard'
+import { SignupVerifyPage } from '../../../../shared/component/signup-verify/signup-verify.page';
+import { SignupSuccessPage } from '../../../../shared/component/signup-success/signup-success.page';
 const routes: Routes = [
   {
     path: 'login',
     canActivate: [autoLoginGuard],
     loadChildren: () => import('./login-signup/login-signup.module').then(m => m.LoginSignupPageModule)
+  },
+  {
+    path: 'verify-email',
+    component: SignupVerifyPage
+  },
+  {
+    path: 'all-set',
+    component: SignupSuccessPage
   },
   {
     path: 'signup',

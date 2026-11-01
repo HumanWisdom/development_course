@@ -1,0 +1,34 @@
+<div class="right_col mc_03 success_shell">
+  <div class="cw100p">
+    <div class="row center_flex">
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01_home col_cw success_col"
+        [class.teens_theme]="!isAdults">
+        <div class="success_card">
+          <img class="success_art" [src]="artUrl" alt="Account created" />
+
+          <div class="success_heading">
+            <h1 class="success_title">You're all set!</h1>
+            <p class="success_sub">Your account has been created successfully</p>
+          </div>
+
+          <div class="trial_card">
+            <div class="trial_top">
+              <img class="trial_icon" [src]="trialIconUrl" alt="Free trial" />
+
+              <p class="trial_copy">
+                <span>You have</span>
+                <span><strong>{{ freeDays }} days</strong> of</span>
+                <span>free access</span>
+              </p>
+            </div>
+            <p class="trial_ends">Trial ends on <span>{{ trialEndDate }}</span></p>
+          </div>
+
+          <div class="success_actions">
+            <button type="button" class="btn_primary" (click)="continueToTopic()">Continue</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
