@@ -86,6 +86,7 @@ if (!function_exists('hw_social_config')) {
             'facebookApiVersion' => hw_social_env('HW_FACEBOOK_API_VERSION', 'v18.0'),
             'appleClientId' => hw_social_env('HW_APPLE_CLIENT_ID', 'humanwisdom.web.service'),
             'appleRedirectUri' => hw_social_env('HW_APPLE_REDIRECT_URI', $apiBase . '/verifyAppleToken_htmlAdults'),
+            'appleRedirectUriTeens' => hw_social_env('HW_APPLE_REDIRECT_URI_TEENS', $apiBase . '/verifyAppleToken_htmlTeens'),
             'adultsAppUrl' => rtrim(hw_social_env('HW_ADULTS_APP_URL', hw_social_current_origin()), '/'),
         ];
         return $cfg;

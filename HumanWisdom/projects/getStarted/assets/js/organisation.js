@@ -664,100 +664,25 @@
     }
 
     if (social.appleClientId && appleBtn) {
-      var appleReady = false;
-
-      function appleRedirectUri() {
-        var uri = social.appleRedirectUri || "";
-        if (getProgram() === "teenagers") {
-          uri = uri.replace("verifyAppleToken_htmlAdults", "verifyAppleToken_htmlTeens");
-        }
-        return uri;
-      }
-
-      function initApple() {
-        if (typeof AppleID === "undefined" || !AppleID.auth) return false;
-        AppleID.auth.init({
-          clientId: social.appleClientId,
-          scope: "name email",
-          redirectURI: appleRedirectUri(),
-          usePopup: true,
-          state: org.id || getStoredOrganizationId() || "",
-        });
-        appleReady = true;
-        return true;
-      }
-
-      function handleAppleAuth(data) {
-        if (busy) return;
-        var auth = (data && data.authorization) || {};
-        var token = auth.id_token;
-        if (!token) {
-          fail("Apple sign-in failed. Please try again.");
-          return;
-        }
-        var payload = {};
-        try {
-          payload = decodeJwt(token) || {};
-        } catch (e) {
-          payload = {};
-        }
-        var user = (data && data.user) || {};
-        var name = user.name || {};
-        verifyAndLogin(
-          "verifyAppleTokenAndLogin",
-          {
-            TokenID: token,
-            FName: name.firstName || payload.given_name || "",
-            LName: name.lastName || payload.family_name || "",
-            Email: user.email || payload.email || "",
-          },
-          "Apple"
-        );
-      }
-
-      loadScript(
-        "apple-signin-script",
-        "https://appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/en_US/appleid.auth.js"
-      )
-        .then(function () {
-          initApple();
-          document.addEventListener("AppleIDSignInOnSuccess", function (event) {
-            handleAppleAuth(event.detail);
-          });
-          document.addEventListener("AppleIDSignInOnFailure", function (event) {
-            var code = String((event.detail && (event.detail.error || event.detail.message)) || "");
-            if (/popup_closed|user_cancel|popup_closed_by_user/i.test(code)) {
-              busy = false;
-              showError(err, "");
-              return;
-            }
-            if (!busy) fail("Apple sign-in failed. Please try again.");
-          });
-        })
-        .catch(function () {});
-
       appleBtn.addEventListener("click", function () {
         if (busy) return;
         try {
           localStorage.setItem("appleLogin", "T");
         } catch (e) {}
-        if (!appleReady && !initApple()) {
-          fail("Apple sign-in is not available. Please refresh the page.");
-          return;
-        }
-        initApple();
-        AppleID.auth
-          .signIn()
-          .then(handleAppleAuth)
-          .catch(function (appleErr) {
-            var code = String((appleErr && (appleErr.error || appleErr.message)) || "");
-            if (/popup_closed|user_cancel|popup_closed_by_user/i.test(code)) {
-              busy = false;
-              showError(err, "");
-              return;
-            }
-            fail("Apple sign-in failed. Please try again.");
-          });
+        // Same authorize URL as LoginSignupPage.signInWithApple.
+        var clientId = social.appleClientId || "humanwisdom.web.service";
+        var redirectUri =
+          getProgram() === "teenagers"
+            ? social.appleRedirectUriTeens || social.appleRedirectUri
+            : social.appleRedirectUri;
+        window.open(
+          "https://appleid.apple.com/auth/authorize?client_id=" +
+            clientId +
+            "&redirect_uri=" +
+            encodeURIComponent(redirectUri) +
+            "&response_type=code id_token&scope=name email&response_mode=form_post",
+          "_self"
+        );
       });
     }
   }
