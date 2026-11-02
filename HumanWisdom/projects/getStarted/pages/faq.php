@@ -313,7 +313,7 @@
 
                                                                                 <h6 class="hs_desc">
                                                                                     Yes. HappierMe includes a <a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/pages/teenagers.php">
                                                                                         dedicated teen section</a>
                                                                                     designed around challenges teenagers
@@ -444,7 +444,7 @@
                                                                                     HappierMe provides <b> educational
                                                                                         resources and practical tools
                                                                                         for managing everyday <a
-                                                                                            class="blog_highlight_peach td_underline fs_12px"
+                                                                                            class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/stress">stress</a>,
                                                                                         anxiety, overthinking, and
                                                                                         emotional challenges.</b> Users
@@ -469,7 +469,7 @@
 
                                                                                 <h6 class="hs_desc">
                                                                                     Yes. HappierMe includes <a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/explore#relationships">
                                                                                         relationship</a> <b> - focused
                                                                                         educational content and
@@ -499,7 +499,7 @@
                                                                                     Yes. Personal growth is a core part
                                                                                     of HappierMe. The app helps users
                                                                                     develop <a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/explore#self-awareness">self-awareness</a>,
                                                                                     <b>emotional intelligence,
                                                                                         confidence, resilience,
@@ -525,7 +525,7 @@
 
                                                                                 <h6 class="hs_desc">
                                                                                     Yes. HappierMe can provide <a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/chat-bot">personalized
                                                                                         guidance through Olly AI</a>,
                                                                                     which helps users reflect on their
@@ -549,7 +549,7 @@
                                                                                 <h6 class="hs_desc">
                                                                                     Yes. HappierMe is designed to
                                                                                     support small, <a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/guided-journeys/12">consistent
                                                                                         daily practices</a> rather than
                                                                                     requiring long sessions. Users can
@@ -582,7 +582,7 @@
                                                                                         wellness and personal growth app
                                                                                         and is not intended to replace
                                                                                         professional medical or</b> <a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/feel-better-now">mental
                                                                                         health care</a>. It provides
                                                                                     educational content, self-reflection
@@ -639,7 +639,7 @@
                                                                                     Understanding your mind means
                                                                                     becoming more aware of <b>your
                                                                                         thoughts, <a
-                                                                                            class="blog_highlight_peach td_underline fs_12px"
+                                                                                            class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/explore#emotions">
                                                                                             emotions</a>, reactions,
                                                                                         beliefs, habits, and patterns of
@@ -665,7 +665,7 @@
                                                                                 <h6 class="hs_desc">
                                                                                     Understanding your mind can help you
                                                                                     become more aware of <a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/videopage/Introduction-videos-mind_pathway.mp4/T/Understand%20how%20your%20mind%20works%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20">
                                                                                         why you think</a><b>, feel, and
                                                                                         behave in certain ways.</b>
@@ -693,7 +693,7 @@
 
                                                                                 <h6 class="hs_desc">
                                                                                     You can develop <a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/explore#self-awareness">
                                                                                         self-awareness</a> by regularly
                                                                                     paying attention to your <b>
@@ -718,7 +718,7 @@
                                                                                 </h2>
 
                                                                                 <h6 class="hs_desc"><a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/micro-learning/inner/3">
                                                                                         Overthinking</a> often involves
                                                                                     repeatedly analyzing a situation,
@@ -757,7 +757,7 @@
                                                                                     self-awareness practices, and
                                                                                     focusing on what you can control can
                                                                                     help <a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/micro-learning/inner/3">
                                                                                         develop healthier responses</a>
                                                                                     to repetitive thinking. </h6>
@@ -772,7 +772,7 @@
                                                                                 </h2>
 
                                                                                 <h6 class="hs_desc"> <a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/guided-meditation/audiopage/https_~~d1tenzemoxuh75.cloudfront.net~guided-meditation~audios~guided-meditation%252B1.11.mp3/11/F/Release-negative-thoughts">
                                                                                         Negative</a> are a normal part
                                                                                     of human experience. They can arise
@@ -798,7 +798,7 @@
 
                                                                                 <h6 class="hs_desc">
                                                                                     <b> No. A <a
-                                                                                            class="blog_highlight_peach td_underline fs_12px"
+                                                                                            class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/audiopage/~podcasts~275.mp3/275/T/Why%20do%20our%20thoughts%20feel%20true%3F/podcast">thought</a>
                                                                                         is not necessarily a fact.</b>
                                                                                     Thoughts are interpretations of
@@ -826,7 +826,7 @@
                                                                                 <h6 class="hs_desc">
                                                                                     Start by noticing <b> what you are
                                                                                         feeling, <a
-                                                                                            class="blog_highlight_peach td_underline fs_12px"
+                                                                                            class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/videopage/Introduction-videos-managing_cdp.mp4/T/Manage%20your%20emotions">
                                                                                             when it happens</a>, what
                                                                                         triggered it, what thoughts
@@ -854,7 +854,7 @@
 
                                                                                 <h6 class="hs_desc">
                                                                                     Emotional <a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/audiopage/~podcasts~141.mp3/141/T/Where%20do%20our%20reactions%20come%20from/podcast">reactions</a>
                                                                                     can be influenced by many factors,
                                                                                     including <b> past experiences,
@@ -879,7 +879,7 @@
                                                                                 <h6 class="hs_desc">
                                                                                     The goal is not necessarily to
                                                                                     eliminate or suppress
-                                                                                    <a class="blog_highlight_peach td_underline fs_12px"
+                                                                                    <a class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/pathway/manage-your-emotions">
                                                                                         emotions</a>. A healthier
                                                                                     approach is to <b> notice,
@@ -904,7 +904,7 @@
                                                                                     </h2>
 
                                                                                     <h6 class="hs_desc">
-                                                                                        <a class="blog_highlight_peach td_underline fs_12px"
+                                                                                        <a class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/explore#self-awareness">
                                                                                             Self-awareness</a> is the
                                                                                         ability to recognize and
@@ -940,7 +940,7 @@
                                                                                         </b> rather than automatically
                                                                                         following it. You can then
                                                                                         examine the <a
-                                                                                            class="blog_highlight_peach td_underline fs_12px"
+                                                                                            class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/insight">thoughts</a>,
                                                                                         emotions, assumptions, and
                                                                                         behaviors involved and practice
@@ -995,7 +995,7 @@
 
                                                                                         <h6 class="hs_desc">
                                                                                             Yes. <b> <a
-                                                                                                    class="blog_highlight_peach td_underline fs_12px"
+                                                                                                    class="blog_highlight_peach td_underline fs_15px"
                                                                                                     href="https://happierme.app/adults/site-search/Mindfulness">Mindfulness</a>
                                                                                                 involves paying
                                                                                                 attention to your
@@ -1033,7 +1033,7 @@
                                                                                                 and self-reflection
                                                                                                 tools.</b> The app
                                                                                             includes guided journaling,
-                                                                                            <a class="blog_highlight_peach td_underline fs_12px"
+                                                                                            <a class="blog_highlight_peach td_underline fs_15px"
                                                                                                 href="https://happierme.app/adults/wisdom-survey">
                                                                                                 wellness surveys</a>,
                                                                                             mindfulness practices,
@@ -1082,7 +1082,7 @@
                                                                                 </h2>
 
                                                                                 <h6 class="hs_desc"><b>
-                                                                                        <a class="blog_highlight_peach td_underline fs_12px"
+                                                                                        <a class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/feel-better-now/stress">
                                                                                             Stress</a> is the mind and
                                                                                         body's response to situations
@@ -1108,7 +1108,7 @@
                                                                                 </h2>
 
                                                                                 <h6 class="hs_desc"><b><a
-                                                                                            class="blog_highlight_peach td_underline fs_12px"
+                                                                                            class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/fear-anxiety">
                                                                                             Anxiety</a> is a feeling of
                                                                                         worry, fear, nervousness, or
@@ -1136,12 +1136,12 @@
                                                                                 </h2>
 
                                                                                 <h6 class="hs_desc"><a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/feel-better-now/stress">
                                                                                         Stress</a> is often connected to
                                                                                     a <b> specific challenge, demand, or
                                                                                         situation</a>, while <a
-                                                                                            class="blog_highlight_peach td_underline fs_12px"
+                                                                                            class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/feel-better-now/anxiety">anxiety</a>
                                                                                         can continue even when there is
                                                                                         no immediate or clearly
@@ -1192,7 +1192,7 @@
                                                                                 </h2>
 
                                                                                 <h6 class="hs_desc"><a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/feel-better-now/anxiety">
                                                                                         Anxiety</a> can involve
                                                                                     <b>excessive worry, nervousness,
@@ -1221,7 +1221,7 @@
 
                                                                                 <h6 class="hs_desc">
                                                                                     Feeling <a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/feel-better-now/stress">stressed
                                                                                         frequently</a> can have many
                                                                                     possible causes, including <b>
@@ -1248,7 +1248,7 @@
                                                                                 </h2>
 
                                                                                 <h6 class="hs_desc"><a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/audiopage/~podcasts~109.mp3/109/T/Why%20do%20I%20worry%20about%20what%20others%20think%20of%20me%3F/podcast">
                                                                                         Worry</a> can become repetitive
                                                                                     when the mind keeps trying to <b>
@@ -1277,7 +1277,7 @@
 
                                                                                 <h6 class="hs_desc">
                                                                                     Everyday <a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/site-search/Reduce%20your%20stress%20live%20longer">stress</a>
                                                                                     may be supported through healthy
                                                                                     practices such as <b> regular
@@ -1309,7 +1309,7 @@
 
                                                                                 <h6 class="hs_desc">
                                                                                     When you feel overwhelmed, start by
-                                                                                    <b> <a class="blog_highlight_peach td_underline fs_12px"
+                                                                                    <b> <a class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/site-search/Calm%20your%20mind">slowing
                                                                                             down</a> and bringing your
                                                                                         attention to the present moment.
@@ -1334,7 +1334,7 @@
                                                                                 </h2>
 
                                                                                 <h6 class="hs_desc"><a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/breathing">
                                                                                         Breathing exercises</a> can be a
                                                                                     simple way to <b> slow down, focus
@@ -1390,7 +1390,7 @@
                                                                                     <h6 class="hs_desc">
                                                                                         Overthinking can keep attention
                                                                                         focused on <b> past events, <a
-                                                                                                class="blog_highlight_peach td_underline fs_12px"
+                                                                                                class="blog_highlight_peach td_underline fs_15px"
                                                                                                 href="https://happierme.app/adults/site-search/problems">possible
                                                                                                 future problems</a>, or
                                                                                             repeatedly analyzing the
@@ -1424,7 +1424,7 @@
                                                                                             control, <b> what you can
                                                                                                 influence, and what you
                                                                                                 cannot control.</b> <a
-                                                                                                class="blog_highlight_peach td_underline fs_12px"
+                                                                                                class="blog_highlight_peach td_underline fs_15px"
                                                                                                 href="https://happierme.app/adults/site-search/focus">Focus</a>
                                                                                             your energy on actions
                                                                                             within your control and
@@ -1452,7 +1452,7 @@
 
                                                                                         <h6 class="hs_desc"><b>
                                                                                                 HappierMe provides <a
-                                                                                                    class="blog_highlight_peach td_underline fs_12px"
+                                                                                                    class="blog_highlight_peach td_underline fs_15px"
                                                                                                     href="https://happierme.app/adults/blog-article?sId=45">
                                                                                                     practical wellness
                                                                                                     resources</a> that
@@ -1499,7 +1499,7 @@
                                                                                                 relationships, work,
                                                                                                 school, or sleep.</b> A
                                                                                             qualified mental health or
-                                                                                            <a class="blog_highlight_peach td_underline fs_12px"
+                                                                                            <a class="blog_highlight_peach td_underline fs_15px"
                                                                                                 href="https://happierme.app/adults/coach">healthcare
                                                                                                 professional</a> can
                                                                                             help assess what you are
@@ -1544,7 +1544,7 @@
                                                                                 </h2>
 
                                                                                 <h6 class="hs_desc"><b><a
-                                                                                            class="blog_highlight_peach td_underline fs_12px"
+                                                                                            class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/wisdom-shorts/1.219.mp4/T/Overthinking%20what%20people%20think">
                                                                                             Overthinking</a> is a
                                                                                         pattern of repeatedly analyzing,
@@ -1569,7 +1569,7 @@
                                                                                 </h2>
 
                                                                                 <h6 class="hs_desc"><a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/site-search/Overthinking%20what%20people%20think">
                                                                                         Overthinking</a> can happen when
                                                                                     the mind is trying to <b> solve a
@@ -1599,7 +1599,7 @@
                                                                                 <h6 class="hs_desc">
                                                                                     Your mind may repeatedly return to
                                                                                     an <a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/teenagers/site-search/thinking">unresolved
                                                                                         situation</a> because it
                                                                                     believes there is still something to
@@ -1626,7 +1626,7 @@
                                                                                     when you feel <b> regret,
                                                                                         embarrassment, guilt,
                                                                                         disappointment, anger, or <a
-                                                                                            class="blog_highlight_peach td_underline fs_12px"
+                                                                                            class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/teenagers/site-search/thinking">uncertainty
                                                                                             about what happened</a>.</b>
                                                                                     You may repeatedly analyze what you
@@ -1674,7 +1674,7 @@
 
                                                                                 <h6 class="hs_desc"><b>
                                                                                         Yes. <a
-                                                                                            class="blog_highlight_peach td_underline fs_12px"
+                                                                                            class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/teenagers/site-search/thoughts">Negative
                                                                                             thoughts</a> are a normal
                                                                                         part of human thinking.</b>
@@ -1699,7 +1699,7 @@
 
                                                                                 <h6 class="hs_desc">
                                                                                     Not necessarily. A <a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/teenagers/site-search/thoughts">negative
                                                                                         thought</a> can occur
                                                                                     occasionally and pass naturally.
@@ -1723,7 +1723,7 @@
 
                                                                                 <h6 class="hs_desc"><b>
                                                                                         Not necessarily. A <a
-                                                                                            class="blog_highlight_peach td_underline fs_12px"
+                                                                                            class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/teenagers/site-search/thoughts">thought</a>
                                                                                         is an interpretation, not
                                                                                         automatically a fact.</b>
@@ -1750,7 +1750,7 @@
 
                                                                                 <h6 class="hs_desc">
                                                                                     Trying to force <a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/guided-meditation/audiopage/https_~~d1tenzemoxuh75.cloudfront.net~guided-meditation~audios~guided-meditation%252B1.11.mp3/11/F/Release-negative-thoughts">negative
                                                                                         thoughts to disappear</a> can
                                                                                     sometimes make you more focused on
@@ -1777,7 +1777,7 @@
                                                                                 </h2>
 
                                                                                 <h6 class="hs_desc"><a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/teenagers/site-search/sleep">
                                                                                         Nighttime</a> can make
                                                                                     repetitive thinking feel stronger
@@ -1807,7 +1807,7 @@
                                                                                     conversation, try noticing <b>what
                                                                                         you are hoping to understand,
                                                                                         change, or <a
-                                                                                            class="blog_highlight_peach td_underline fs_12px"
+                                                                                            class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/site-search/prevent">prevent</a></b>
                                                                                     by replaying it. Ask yourself
                                                                                     whether there is a useful action you
@@ -1831,7 +1831,7 @@
 
                                                                                 <h6 class="hs_desc">
                                                                                     Concern about other <a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/wisdom-shorts/1.219.mp4/T/Overthinking%20what%20people%20think">people's
                                                                                         opinions</a> can be influenced
                                                                                     by <b>self-doubt, past experiences,
@@ -1863,7 +1863,7 @@
                                                                                     <h6 class="hs_desc">
                                                                                         Start by <b>recognizing that you
                                                                                             are in an <a
-                                                                                                class="blog_highlight_peach td_underline fs_12px"
+                                                                                                class="blog_highlight_peach td_underline fs_15px"
                                                                                                 href="https://happierme.app/adults/micro-learning/inner/3">overthinking
                                                                                                 loop</a></b>. Then
                                                                                         identify the thought or concern,
@@ -1892,7 +1892,7 @@
 
                                                                                     <h6 class="hs_desc">
                                                                                         Yes.<b> <a
-                                                                                                class="blog_highlight_peach td_underline fs_12px"
+                                                                                                class="blog_highlight_peach td_underline fs_15px"
                                                                                                 href="https://happierme.app/adults/micro-learning/inner/34">
                                                                                                 Mindfulness</a> can help
                                                                                             you become more aware of
@@ -1975,7 +1975,7 @@
                                                                                 </h2>
 
                                                                                 <h6 class="hs_desc"><b><a
-                                                                                            class="blog_highlight_peach td_underline fs_12px"
+                                                                                            class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/explore#emotions">
                                                                                             Emotions</a> are responses
                                                                                         to experiences, situations,
@@ -1999,7 +1999,7 @@
                                                                                 </h2>
 
                                                                                 <h6 class="hs_desc"><b><a
-                                                                                            class="blog_highlight_peach td_underline fs_12px"
+                                                                                            class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/blog-article?sId=60">
                                                                                             Emotional intelligence</a>
                                                                                         is the ability to recognize,
@@ -2027,7 +2027,7 @@
                                                                                 </h2>
 
                                                                                 <h6 class="hs_desc"><a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/wisdom-shorts/1.100.mp4/T/How%20can%20Emotional%20Intelligence%20help%20you%20live%20your%20best%20life%3F">
                                                                                         Emotional intelligence</a> can
                                                                                     help people <b>understand themselves
@@ -2055,7 +2055,7 @@
 
                                                                                 <h6 class="hs_desc">
                                                                                     Start by noticing <b> <a
-                                                                                            class="blog_highlight_peach td_underline fs_12px"
+                                                                                            class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/wisdom-shorts/1.9.mp4/T/Exploring%20feelings">what
                                                                                             you are feeling</a>, what
                                                                                         happened before the feeling
@@ -2089,7 +2089,7 @@
                                                                                     emotions. You can start by paying
                                                                                     attention to <b> your thoughts,
                                                                                         physical sensations, <a
-                                                                                            class="blog_highlight_peach td_underline fs_12px"
+                                                                                            class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/audiopage/~podcasts~296.mp3/296/T/Feelings%20show%20up%20in%20our%20body%20and%20behaviour/podcast">behavior</a>,
                                                                                         and the situation that triggered
                                                                                         the reaction.</b> Giving the
@@ -2111,7 +2111,7 @@
                                                                                     Emotional intelligence is not about
                                                                                     eliminating or suppressing emotions.
                                                                                     Instead, it involves <b> <a
-                                                                                            class="blog_highlight_peach td_underline fs_12px"
+                                                                                            class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/pathway/manage-your-emotions">recognizing
                                                                                             an emotion</a>,
                                                                                         understanding what may be
@@ -2141,7 +2141,7 @@
                                                                                     understand what you are experiencing
                                                                                     and may affect how you respond
                                                                                     later. A healthier approach is to
-                                                                                    <b><a class="blog_highlight_peach td_underline fs_12px"
+                                                                                    <b><a class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/videopage/Introduction-videos-emotions_pathway.mp4/T/Manage%20your%20emotions">acknowledge
                                                                                             emotions</a> without
                                                                                         allowing them to automatically
@@ -2163,7 +2163,7 @@
                                                                                 </h2>
 
                                                                                 <h6 class="hs_desc"><a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/anger">
                                                                                         Anger</a> can be influenced by
                                                                                     <b>stress, frustration, unmet
@@ -2191,7 +2191,7 @@
                                                                                 </h2>
 
                                                                                 <h6 class="hs_desc"><a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/curated/youtubelink/1TNtWk_MK9Q%3Dvncbxdfchgvxd">
                                                                                         Managing anger</a> starts with
                                                                                     recognizing <b>early signs of anger
@@ -2219,7 +2219,7 @@
                                                                                     The terms are often used
                                                                                     interchangeably, but they can be
                                                                                     understood slightly differently.
-                                                                                    <b><a class="blog_highlight_peach td_underline fs_12px"
+                                                                                    <b><a class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/audiopage/~podcasts~70.mp3/70/T/Managing%20difficult%20emotions/podcast">
                                                                                             Emotions</a> are responses
                                                                                         to experiences, while feelings
@@ -2241,7 +2241,7 @@
                                                                                     </h2>
 
                                                                                     <h6 class="hs_desc"><b><a
-                                                                                                class="blog_highlight_peach td_underline fs_12px"
+                                                                                                class="blog_highlight_peach td_underline fs_15px"
                                                                                                 href="https://happierme.app/adults/site-search/Empathy">
                                                                                                 Empathy</a> is the
                                                                                             ability to understand or
@@ -2270,7 +2270,7 @@
 
                                                                                     <h6 class="hs_desc">
                                                                                         You can develop empathy by <b>
-                                                                                            <a class="blog_highlight_peach td_underline fs_12px"
+                                                                                            <a class="blog_highlight_peach td_underline fs_15px"
                                                                                                 href="https://happierme.app/adults/audiopage/~podcasts~270.mp3/270/T/Why%20empathy%20matters%20and%20how%20we%20can%20develop%20this%20skill/podcast">listening
                                                                                                 without immediately
                                                                                                 judging</a> or
@@ -2304,7 +2304,7 @@
                                                                                             Emotional intelligence can
                                                                                             help people<b> recognize
                                                                                                 their own
-                                                                                                <a class="blog_highlight_peach td_underline fs_12px"
+                                                                                                <a class="blog_highlight_peach td_underline fs_15px"
                                                                                                     href="https://happierme.app/adults/site-search/intelligence">emotional
                                                                                                     reactions</a>,
                                                                                                 understand their
@@ -2333,7 +2333,7 @@
 
                                                                                         <h6 class="hs_desc">
                                                                                             Yes. <b> <a
-                                                                                                    class="blog_highlight_peach td_underline fs_12px"
+                                                                                                    class="blog_highlight_peach td_underline fs_15px"
                                                                                                     href="https://happierme.app/adults/site-search/intelligence">Emotional
                                                                                                     intelligence</a> is
                                                                                                 a set of skills that can
@@ -2422,7 +2422,7 @@
 
                                                                                 <h6 class="hs_desc">
                                                                                     A healthy <a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/explore#relationships">relationship</a>
                                                                                     is generally built on <b>mutual
                                                                                         respect, trust, honest
@@ -2447,7 +2447,7 @@
                                                                                 </h2>
 
                                                                                 <h6 class="hs_desc"><b><a
-                                                                                            class="blog_highlight_peach td_underline fs_12px"
+                                                                                            class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/communication">
                                                                                             Communication</a> helps
                                                                                         people understand each other's
@@ -2475,7 +2475,7 @@
                                                                                 </h2>
 
                                                                                 <h6 class="hs_desc"><a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/communication">
                                                                                         Better communication</a> starts
                                                                                     with <b>listening carefully,
@@ -2501,7 +2501,7 @@
 
                                                                                 <h6 class="hs_desc"><b>
                                                                                         Active <a
-                                                                                            class="blog_highlight_peach td_underline fs_12px"
+                                                                                            class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/site-search/Listening">listening</a>
                                                                                         means giving someone your full
                                                                                         attention and trying to
@@ -2530,7 +2530,7 @@
 
                                                                                 <h6 class="hs_desc">
                                                                                     To become a better <a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/site-search/Listening">listener</a>,
                                                                                     try to <b>give the person your
                                                                                         attention, avoid interrupting,
@@ -2556,7 +2556,7 @@
 
                                                                                 <h6 class="hs_desc">
                                                                                     Try to <a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/site-search/Argument">communicate</a>
                                                                                     your experience rather than blaming
                                                                                     the other person. Explain <b>what
@@ -2580,7 +2580,7 @@
                                                                                 </h2>
 
                                                                                 <h6 class="hs_desc"><a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/wisdom-shorts/1.107.mp4/T/4%20Ways%20Misunderstandings%20Occur">
                                                                                         Misunderstandings</a> can happen
                                                                                     when people <b>make assumptions,
@@ -2608,7 +2608,7 @@
 
                                                                                 <h6 class="hs_desc">
                                                                                     Healthy <a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/curated/youtubelink/PDkVkpJlb6I%3Dvncbxdfchgvxd">conflict</a>
                                                                                     resolution involves <b>listening to
                                                                                         both perspectives, staying
@@ -2638,7 +2638,7 @@
 
                                                                                 <h6 class="hs_desc">
                                                                                     During an <a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/site-search/Argument">argument</a>,
                                                                                     try to <b>slow down, listen before
                                                                                         responding, avoid insults or
@@ -2665,7 +2665,7 @@
                                                                                 <h6 class="hs_desc">
                                                                                     Healthy boundaries are <b>clear
                                                                                         limits that <a
-                                                                                            class="blog_highlight_peach td_underline fs_12px"
+                                                                                            class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/site-search/Argument">communicate</a>
                                                                                         what you are comfortable with
                                                                                         and what you are not comfortable
@@ -2692,7 +2692,7 @@
                                                                                         Setting a boundary does not
                                                                                         necessarily mean rejecting
                                                                                         someone. You can <a
-                                                                                            class="blog_highlight_peach td_underline fs_12px"
+                                                                                            class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/wisdom-shorts/1.188.mp4/T/Dr%20Manoj%20Krishna.%20Managing%20arguments.">communicate</a>
                                                                                         it <b>clearly, calmly, and
                                                                                             respectfully</b>, explain
@@ -2717,7 +2717,7 @@
                                                                                     </h2>
 
                                                                                     <h6 class="hs_desc"><a
-                                                                                            class="blog_highlight_peach td_underline fs_12px"
+                                                                                            class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/audiopage/~podcasts~155.mp3/155/T/Learning%20to%20trust%20people%20again/podcast">
                                                                                             Trust</a> develops through
                                                                                         <b>consistent behavior, honesty,
@@ -2745,7 +2745,7 @@
                                                                                         </h2>
 
                                                                                         <h6 class="hs_desc"><b><a
-                                                                                                    class="blog_highlight_peach td_underline fs_12px"
+                                                                                                    class="blog_highlight_peach td_underline fs_15px"
                                                                                                     href="https://happierme.app/adults/audiopage/~podcasts~270.mp3/270/T/Why%20empathy%20matters%20and%20how%20we%20can%20develop%20this%20skill/podcast">
                                                                                                     Empathy</a> helps
                                                                                                 people understand
@@ -2776,7 +2776,7 @@
                                                                                         </h2>
 
                                                                                         <h6 class="hs_desc"><a
-                                                                                                class="blog_highlight_peach td_underline fs_12px"
+                                                                                                class="blog_highlight_peach td_underline fs_15px"
                                                                                                 href="https://happierme.app/adults/site-search/Emotional%20Needs">
                                                                                                 Emotional needs</a>
                                                                                             connection can grow through
@@ -2863,7 +2863,7 @@
                                                                                 </h2>
 
                                                                                 <h6 class="hs_desc"><b><a
-                                                                                            class="blog_highlight_peach td_underline fs_12px"
+                                                                                            class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/explore#happiness">
                                                                                             Happiness</a> is more than
                                                                                         feeling positive all the time.
@@ -2888,7 +2888,7 @@
                                                                                 </h2>
 
                                                                                 <h6 class="hs_desc"><a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/audiopage/~podcasts~83.mp3/83/T/Being%20happier/podcast">
                                                                                         Everyday wellbeing</a> can be
                                                                                     supported by <b>building meaningful
@@ -2918,7 +2918,7 @@
                                                                                 </h2>
 
                                                                                 <h6 class="hs_desc"><a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/happiness">
                                                                                         Happiness</a> is influenced by
                                                                                     more than external circumstances.
@@ -2945,7 +2945,7 @@
                                                                                 </h2>
 
                                                                                 <h6 class="hs_desc"><a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/happiness">
                                                                                         Happiness</a> is not a single
                                                                                     skill that can simply be learned,
@@ -2973,7 +2973,7 @@
                                                                                 </h2>
 
                                                                                 <h6 class="hs_desc"><b><a
-                                                                                            class="blog_highlight_peach td_underline fs_12px"
+                                                                                            class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/explore#self-awareness">
                                                                                             Self-awareness</a> is the
                                                                                         ability to recognize and
@@ -2997,7 +2997,7 @@
                                                                                     </h2>
 
                                                                                     <h6 class="hs_desc"><a
-                                                                                            class="blog_highlight_peach td_underline fs_12px"
+                                                                                            class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/explore#self-awareness">
                                                                                             Self-awareness</a> can help
                                                                                         you understand what genuinely
@@ -3027,7 +3027,7 @@
 
                                                                                     <h6 class="hs_desc">
                                                                                         You can develop <a
-                                                                                            class="blog_highlight_peach td_underline fs_12px"
+                                                                                            class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/explore#self-awareness">self-awareness</a>
                                                                                         by regularly <b>observing your
                                                                                             thoughts and emotions,
@@ -3058,7 +3058,7 @@
 
                                                                                     <h6 class="hs_desc">
                                                                                         Start by paying attention to
-                                                                                        <b><a class="blog_highlight_peach td_underline fs_12px"
+                                                                                        <b><a class="blog_highlight_peach td_underline fs_15px"
                                                                                                 href="https://happierme.app/adults/explore#happiness">
                                                                                                 when you feel
                                                                                                 engaged</a>, peaceful,
@@ -3092,7 +3092,7 @@
                                                                                             Pleasure is often a
                                                                                             short-term positive
                                                                                             experience, while <a
-                                                                                                class="blog_highlight_peach td_underline fs_12px"
+                                                                                                class="blog_highlight_peach td_underline fs_15px"
                                                                                                 href="https://happierme.app/adults/explore#happiness">happiness</a>
                                                                                             can involve a broader and
                                                                                             more lasting sense of
@@ -3123,7 +3123,7 @@
                                                                                             assumptions, motivations,
                                                                                             biases, habits, and personal
                                                                                             values</b> before <a
-                                                                                            class="blog_highlight_peach td_underline fs_12px"
+                                                                                            class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/making-better-decisions">making
                                                                                             a decision</a>. This can
                                                                                         create more space between an
@@ -3145,7 +3145,7 @@
                                                                                         </h2>
 
                                                                                         <h6 class="hs_desc"><a
-                                                                                                class="blog_highlight_peach td_underline fs_12px"
+                                                                                                class="blog_highlight_peach td_underline fs_15px"
                                                                                                 href="https://happierme.app/adults/comparison">
                                                                                                 Comparison and envy</a>
                                                                                             often becomes unhelpful when
@@ -3176,7 +3176,7 @@
                                                                                         </h2>
 
                                                                                         <h6 class="hs_desc"><a
-                                                                                                class="blog_highlight_peach td_underline fs_12px"
+                                                                                                class="blog_highlight_peach td_underline fs_15px"
                                                                                                 href="https://happierme.app/adults/site-search/Confidence">
                                                                                                 Confidence</a> can grow
                                                                                             through <b>self-awareness,
@@ -3210,7 +3210,7 @@
 
                                                                                             <h6 class="hs_desc">
                                                                                                 Yes. <b><a
-                                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                                         href="https://happierme.app/adults/explore#self-awareness">Mindfulness</a>
                                                                                                     helps you pay
                                                                                                     attention to your
@@ -3247,7 +3247,7 @@
 
                                                                                             <h6 class="hs_desc">
                                                                                                 Meaning and <a
-                                                                                                    class="blog_highlight_peach td_underline fs_12px"
+                                                                                                    class="blog_highlight_peach td_underline fs_15px"
                                                                                                     href="https://happierme.app/adults/site-search/purpose%20in%20life">purpose</a>
                                                                                                 can come from different
                                                                                                 sources, including
@@ -3335,7 +3335,7 @@
                                                                                 </h2>
 
                                                                                 <h6 class="hs_desc"><a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/feel-better-now/stress">
                                                                                         Work-related stress</a> is the
                                                                                     mental and emotional pressure that
@@ -3362,7 +3362,7 @@
                                                                                     Constant work stress can come from
                                                                                     heavy workloads, unrealistic
                                                                                     expectations, lack of control, <a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/wisdom-stories/view-stories?sId=100">workplace
                                                                                         conflicts</a>, job uncertainty,
                                                                                     perfectionism, difficulty switching
@@ -3386,7 +3386,7 @@
 
                                                                                 <h6 class="hs_desc">
                                                                                     Managing <a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/blog-article?sId=51">work
                                                                                         stress</a> can involve
                                                                                     identifying the main sources of
@@ -3411,7 +3411,7 @@
                                                                                 </h2>
 
                                                                                 <h6 class="hs_desc">
-                                                                                    <a class="blog_highlight_peach td_underline fs_12px"
+                                                                                    <a class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/blog-article?sId=51">
                                                                                         Work stress</a> can be a
                                                                                     temporary response to demanding
@@ -3441,7 +3441,7 @@
 
                                                                                 <h6 class="hs_desc">
                                                                                     Creating a clear transition between
-                                                                                    <a class="blog_highlight_peach td_underline fs_12px"
+                                                                                    <a class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/wisdom-shorts/1.98.mp4/T/How%20can%20we%20do%20great%20work%3F">work</a>
                                                                                     and personal time can help.
                                                                                     Finishing with a short task review,
@@ -3451,10 +3451,13 @@
                                                                                     practicing mindfulness, or spending
                                                                                     time on meaningful activities can
                                                                                     help the mind shift away from work.
-                                                                                    <div
-                                                                                        class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                                                                                        <hr class="hr_style_web_faq">
-                                                                                    </div>
+                                                                                   </h6>
+
+                                                                            <div class="row">
+                                                                                <div
+                                                                                    class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                    <hr class="hr_style_web_faq">
+                                                                                </div>
                                                                             </div>
                                                                             <h2 class="hs_title">
                                                                                 6. How can I deal with pressure and
@@ -3462,7 +3465,7 @@
 
                                                                             <h6 class="hs_desc">
                                                                                 Start by separating <a
-                                                                                    class="blog_highlight_peach td_underline fs_12px"
+                                                                                    class="blog_highlight_peach td_underline fs_15px"
                                                                                     href="https://happierme.app/adults/wisdom-shorts/1.84.mp4/T/Where%20your%20fear%20is,%20there%20your%20work%20is">urgent
                                                                                     tasks</a> from important but less
                                                                                 immediate ones. Break large tasks into
@@ -3484,7 +3487,7 @@
                                                                                 important at work? </h2>
 
                                                                             <h6 class="hs_desc"><a
-                                                                                    class="blog_highlight_peach td_underline fs_12px"
+                                                                                    class="blog_highlight_peach td_underline fs_15px"
                                                                                     href="https://happierme.app/adults/curated/youtubelink/wFWwyNr65YQ%3Dvncbxdfchgvxd">
                                                                                     Resilience</a> is the ability to
                                                                                 adapt to difficulties, recover from
@@ -3508,7 +3511,7 @@
 
                                                                             <h6 class="hs_desc">
                                                                                 Yes. <a
-                                                                                    class="blog_highlight_peach td_underline fs_12px"
+                                                                                    class="blog_highlight_peach td_underline fs_15px"
                                                                                     href="https://happierme.app/adults/curated/youtubelink/wFWwyNr65YQ%3Dvncbxdfchgvxd">Resilience</a>
                                                                                 is not simply a fixed personality trait.
                                                                                 It can be strengthened through
@@ -3534,7 +3537,7 @@
 
                                                                             <h6 class="hs_desc">
                                                                                 Start by understanding <a
-                                                                                    class="blog_highlight_peach td_underline fs_12px"
+                                                                                    class="blog_highlight_peach td_underline fs_15px"
                                                                                     href="https://happierme.app/adults/audiopage/~podcasts~12.mp3/12/T/Happiness%20at%20Work/podcast">how
                                                                                     you respond</a> to pressure. Notice
                                                                                 your thoughts, emotions, habits, and
@@ -3557,7 +3560,7 @@
 
                                                                             <h6 class="hs_desc">
                                                                                 Pause before <a
-                                                                                    class="blog_highlight_peach td_underline fs_12px"
+                                                                                    class="blog_highlight_peach td_underline fs_15px"
                                                                                     href="https://happierme.app/adults/audiopage/~podcasts~12.mp3/12/T/Happiness%20at%20Work/podcast">responding</a>,
                                                                                 take a few slow breaths, notice what you
                                                                                 are feeling, and separate the facts of
@@ -3581,7 +3584,7 @@
                                                                                     Try to separate feedback about a
                                                                                     specific task or behavior from your
                                                                                     overall sense of <a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/wisdom-stories/view-stories?sId=99">self-worth</a>.
                                                                                     Consider what you can learn,
                                                                                     acknowledge what went well, identify
@@ -3603,7 +3606,7 @@
                                                                                     </h2>
 
                                                                                     <h6 class="hs_desc"><a
-                                                                                            class="blog_highlight_peach td_underline fs_12px"
+                                                                                            class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/audiopage/~podcasts~12.mp3/12/T/Happiness%20at%20Work/podcast">
                                                                                             Work-life balance</a>
                                                                                         involves creating enough space
@@ -3631,7 +3634,7 @@
                                                                                         </h2>
 
                                                                                         <h6 class="hs_desc"><a
-                                                                                                class="blog_highlight_peach td_underline fs_12px"
+                                                                                                class="blog_highlight_peach td_underline fs_15px"
                                                                                                 href="https://happierme.app/adults/audiopage/~podcasts~70.mp3/70/T/Managing%20difficult%20emotions/podcast">
                                                                                                 Emotions</a> can
                                                                                             influence attention,
@@ -3659,7 +3662,7 @@
                                                                                         </h2>
 
                                                                                         <h6 class="hs_desc">
-                                                                                            <a class="blog_highlight_peach td_underline fs_12px"
+                                                                                            <a class="blog_highlight_peach td_underline fs_15px"
                                                                                                 href="https://happierme.app/adults/site-search/Mindfulness">Mindfulness</a>
                                                                                             can help people become more
                                                                                             aware of thoughts, emotions,
@@ -3740,7 +3743,7 @@
                                                                                 <h6 class="hs_desc">
                                                                                     Teenagers may experience academic
                                                                                     pressure, <a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/teenagers/wisdom-stories/view-stories?sId=87">exam
                                                                                         stress</a>, social pressure,
                                                                                     friendship difficulties, family
@@ -3763,7 +3766,7 @@
 
                                                                                 <h6 class="hs_desc">
                                                                                     Students can manage <a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/teenagers/wisdom-stories/view-stories?sId=87">exam
                                                                                         stress</a> by creating a
                                                                                     realistic study plan, breaking work
@@ -3789,7 +3792,7 @@
                                                                                 </h2>
 
                                                                                 <h6 class="hs_desc"><a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/teenagers/micro-learning/inner/3">
                                                                                         Overthinking</a> can happen when
                                                                                     teenagers are dealing with
@@ -3816,7 +3819,7 @@
                                                                                 <h6 class="hs_desc">
                                                                                     Recognizing personal values and
                                                                                     becoming comfortable making <a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/teenagers/wisdom-shorts/1.117.mp4/T/5%20ways%20to%20deal%20with%20social%20media%20pressure">independent
                                                                                         choices</a> can help teenagers
                                                                                     handle social pressure. It is also
@@ -3841,7 +3844,7 @@
                                                                                 </h2>
 
                                                                                 <h6 class="hs_desc"><a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/teenagers/comparison">
                                                                                         Comparison</a> can become
                                                                                     stronger during adolescence because
@@ -3862,7 +3865,7 @@
                                                                                 self-confidence? </h2>
 
                                                                             <h6 class="hs_desc"><a
-                                                                                    class="blog_highlight_peach td_underline fs_12px"
+                                                                                    class="blog_highlight_peach td_underline fs_15px"
                                                                                     href="https://happierme.app/teenagers/wisdom-shorts/1.118.mp4/T/Five%20tips%20to%20build%20your%20self-confidence">
                                                                                     Self-confidence</a> can develop
                                                                                 through self-awareness, learning new
@@ -3886,7 +3889,7 @@
                                                                             </h2>
 
                                                                             <h6 class="hs_desc"><a
-                                                                                    class="blog_highlight_peach td_underline fs_12px"
+                                                                                    class="blog_highlight_peach td_underline fs_15px"
                                                                                     href="https://happierme.app/teenagers/wisdom-shorts/1.116.mp4/T/5%20ways%20to%20handle%20friendship%20Issues">
                                                                                     Friendship difficulties</a> can be
                                                                                 approached through honest communication,
@@ -3911,7 +3914,7 @@
                                                                             <h6 class="hs_desc">
                                                                                 ?
                                                                                 Students can improve <a
-                                                                                    class="blog_highlight_peach td_underline fs_12px"
+                                                                                    class="blog_highlight_peach td_underline fs_15px"
                                                                                     href="https://happierme.app/teenagers/wisdom-shorts/1.86.mp4/T/5%20Tips%20To%20Stay%20Motivated">motivation</a>
                                                                                 by connecting study goals with something
                                                                                 meaningful, breaking large tasks into
@@ -3938,7 +3941,7 @@
 
                                                                             <h6 class="hs_desc">
                                                                                 Managing <a
-                                                                                    class="blog_highlight_peach td_underline fs_12px"
+                                                                                    class="blog_highlight_peach td_underline fs_15px"
                                                                                     href="https://happierme.app/teenagers/wisdom-shorts/1.181.mp4/T/Tips%20to%20manage%20difficult%20emotions">emotions</a>
                                                                                 starts with recognizing and naming what
                                                                                 you are feeling rather than immediately
@@ -3960,7 +3963,7 @@
                                                                             </h2>
 
                                                                             <h6 class="hs_desc"><a
-                                                                                    class="blog_highlight_peach td_underline fs_12px"
+                                                                                    class="blog_highlight_peach td_underline fs_15px"
                                                                                     href="https://happierme.app/teenagers/site-search/Deal%20with%20Bullying">
                                                                                     Bullying</a> and repeated negative
                                                                                 treatment should not be dismissed as
@@ -3983,7 +3986,7 @@
                                                                                 </h2>
 
                                                                                 <h6 class="hs_desc"><a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/teenagers/wisdom-shorts/1.126.mp4/T/5%20questions%20to%20deal%20with%20fear">
                                                                                         Fear</a> of failure often
                                                                                     becomes stronger when mistakes are
@@ -4008,7 +4011,7 @@
                                                                                     </h2>
 
                                                                                     <h6 class="hs_desc"><a
-                                                                                            class="blog_highlight_peach td_underline fs_12px"
+                                                                                            class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/teenagers/audiopage/~podcasts~271.mp3/271/T/Practising%20emotional%20intelligence%20in%20everyday%20life/podcast">
                                                                                             Emotional intelligence</a>
                                                                                         can be developed by learning to
@@ -4037,7 +4040,7 @@
                                                                                         </h2>
 
                                                                                         <h6 class="hs_desc"><a
-                                                                                                class="blog_highlight_peach td_underline fs_12px"
+                                                                                                class="blog_highlight_peach td_underline fs_15px"
                                                                                                 href="https://happierme.app/teenagers/site-search/Mindfulness">
                                                                                                 Mindfulness</a> can help
                                                                                             teenagers become more aware
@@ -4066,7 +4069,7 @@
 
                                                                                         <h6 class="hs_desc">
                                                                                             When everything feels <a
-                                                                                                class="blog_highlight_peach td_underline fs_12px"
+                                                                                                class="blog_highlight_peach td_underline fs_15px"
                                                                                                 href="https://happierme.app/teenagers/wisdom-shorts/1.174.mp4/T/Martha%20Van%20Dam:%20on%20feeling%20overwhelmed">overwhelming</a>,
                                                                                             it can help to pause and
                                                                                             identify what is creating
@@ -4145,7 +4148,7 @@
                                                                                 </h2>
 
                                                                                 <h6 class="hs_desc"><a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/teenagers/site-search/Emotional%20Needs">
 
                                                                                         Emotional wellbeing</a> affects
@@ -4172,7 +4175,7 @@
                                                                                 <h6 class="hs_desc">
                                                                                     Parents can start by recognizing
                                                                                     their<a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/teenagers/feel-better-now/stress">
                                                                                         own stress triggers</a> and
                                                                                     noticing early signs of frustration
@@ -4199,7 +4202,7 @@
 
                                                                                 <h6 class="hs_desc">
                                                                                     Good <a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/teenagers/wisdom-shorts/1.149.mp4/T/Top%20tips%20to%20communicate%20with%20parents">communication</a>
                                                                                     starts with listening without
                                                                                     immediately judging, correcting, or
@@ -4222,7 +4225,7 @@
                                                                                 </h2>
 
                                                                                 <h6 class="hs_desc"><a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/teenagers/curated/youtubelink/z7u69I7h560%3Dvncbxdfchgvxd">
                                                                                         Understanding teenagers</a>
                                                                                     involves listening to their
@@ -4256,7 +4259,7 @@
                                                                                     perspective, and focus on the
                                                                                     specific issue rather than bringing
                                                                                     up past mistakes. A calm <a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/insight">conversation</a>
                                                                                     after everyone has had time to
                                                                                     settle can often be more productive.
@@ -4273,7 +4276,7 @@
 
                                                                             <h6 class="hs_desc">
                                                                                 Parents can provide <a
-                                                                                    class="blog_highlight_peach td_underline fs_12px"
+                                                                                    class="blog_highlight_peach td_underline fs_15px"
                                                                                     href="https://happierme.app/adults/insight">emotional
                                                                                     support</a> alongside practical
                                                                                 help. Encouraging realistic routines,
@@ -4296,7 +4299,7 @@
                                                                             </h2>
 
                                                                             <h6 class="hs_desc">
-                                                                                <a class="blog_highlight_peach td_underline fs_12px"
+                                                                                <a class="blog_highlight_peach td_underline fs_15px"
                                                                                     href="https://happierme.app/teenagers/audiopage/~podcasts~155.mp3/155/T/Learning%20to%20trust%20people%20again/podcast">
                                                                                     Trust</a> develops through
                                                                                 consistent behavior, honesty, listening,
@@ -4321,7 +4324,7 @@
                                                                             </h2>
 
                                                                             <h6 class="hs_desc"><a
-                                                                                    class="blog_highlight_peach td_underline fs_12px"
+                                                                                    class="blog_highlight_peach td_underline fs_15px"
                                                                                     href="https://happierme.app/teenagers/audiopage/~podcasts~267.mp3/267/T/Setting%20healthy%20boundaries,%20and%20why%20they%20matter./podcast">
                                                                                     Healthy boundaries</a> provide clear
                                                                                 expectations while respecting the
@@ -4347,7 +4350,7 @@
 
                                                                             <h6 class="hs_desc">
                                                                                 Parents can help children develop <a
-                                                                                    class="blog_highlight_peach td_underline fs_12px"
+                                                                                    class="blog_highlight_peach td_underline fs_15px"
                                                                                     href="https://happierme.app/teenagers/site-search/Emotional%20intelligence">emotional
                                                                                     intelligence</a> by naming emotions,
                                                                                 listening to their feelings, discussing
@@ -4370,7 +4373,7 @@
 
                                                                             <h6 class="hs_desc">
                                                                                 Healthy <a
-                                                                                    class="blog_highlight_peach td_underline fs_12px"
+                                                                                    class="blog_highlight_peach td_underline fs_15px"
                                                                                     href="https://happierme.app/teenagers/curated/youtubelink/PDkVkpJlb6I%3Dvncbxdfchgvxd">family
                                                                                     conflict</a> involves listening to
                                                                                 different perspectives, avoiding
@@ -4397,7 +4400,7 @@
                                                                                     them to make age-appropriate
                                                                                     decisions, and avoid constant
                                                                                     comparison with other children. <a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/teenagers/site-search/Confidence">Confidence</a>
                                                                                     tends to develop through experiences
                                                                                     of learning, problem-solving, and
@@ -4417,7 +4420,7 @@
                                                                                     <h6 class="hs_desc">
                                                                                         Parents can listen without
                                                                                         immediately <a
-                                                                                            class="blog_highlight_peach td_underline fs_12px"
+                                                                                            class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/teenagers/site-search/overthink">dismissing
                                                                                             the worry</a>, help children
                                                                                         identify what they are feeling,
@@ -4445,7 +4448,7 @@
 
                                                                                         <h6 class="hs_desc">
                                                                                             Discipline and emotional <a
-                                                                                                class="blog_highlight_peach td_underline fs_12px"
+                                                                                                class="blog_highlight_peach td_underline fs_15px"
                                                                                                 href="https://happierme.app/teenagers/curated/youtubelink/AizLUdCEmcc%3Dvncbxdfchgvxd">support</a>
                                                                                             do not have to be opposites.
                                                                                             Parents can maintain clear
@@ -4476,7 +4479,7 @@
                                                                                             Meaningful family time does
                                                                                             not always require elaborate
                                                                                             activities. Shared meals, <a
-                                                                                                class="blog_highlight_peach td_underline fs_12px"
+                                                                                                class="blog_highlight_peach td_underline fs_15px"
                                                                                                 href="https://happierme.app/adults/insight">conversations</a>,
                                                                                             walks, games, hobbies, or
                                                                                             simply spending time without
@@ -4550,7 +4553,7 @@
 
                                                                                 <h6 class="hs_desc">
                                                                                     A habit is a <a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/teenagers/site-search/behaviour">behavior</a>
                                                                                     that becomes increasingly automatic
                                                                                     through repetition and the
@@ -4572,7 +4575,7 @@
                                                                                 </h2>
 
                                                                                 <h6 class="hs_desc"><a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/teenagers/micro-learning/inner/48">
                                                                                         Unhealthy habits</a> can become
                                                                                     strongly associated with specific
@@ -4604,7 +4607,7 @@
                                                                                     involved, and what you get from the
                                                                                     behavior. Then introduce a healthier
                                                                                     alternative, make the <a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/teenagers/micro-learning/inner/50">unwanted
                                                                                         behavior</a> harder to repeat,
                                                                                     and practice the new response
@@ -4623,7 +4626,7 @@
 
                                                                                 <h6 class="hs_desc">
                                                                                     Knowing that a <a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/teenagers/micro-learning/inner/50">behavior</a>
                                                                                     is harmful does not always change an
                                                                                     established habit. Emotional
@@ -4649,7 +4652,7 @@
 
                                                                                 <h6 class="hs_desc">
                                                                                     A habit is a <a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/teenagers/micro-learning/inner/50">repeated
                                                                                         behavior</a> that can often be
                                                                                     changed with awareness and
@@ -4674,7 +4677,7 @@
                                                                             <h6 class="hs_desc">
                                                                                 Possible signs include repeatedly trying
                                                                                 and failing to reduce the <a
-                                                                                    class="blog_highlight_peach td_underline fs_12px"
+                                                                                    class="blog_highlight_peach td_underline fs_15px"
                                                                                     href="https://happierme.app/teenagers/audiopage/~podcasts~296.mp3/296/T/Feelings%20show%20up%20in%20our%20body%20and%20behaviour/podcast">behavior</a>,
                                                                                 feeling unable to control it, continuing
                                                                                 despite negative consequences, spending
@@ -4700,7 +4703,7 @@
                                                                                 Some people turn to substances or
                                                                                 repetitive behaviors because they
                                                                                 temporarily reduce <a
-                                                                                    class="blog_highlight_peach td_underline fs_12px"
+                                                                                    class="blog_highlight_peach td_underline fs_15px"
                                                                                     href="https://happierme.app/adults/micro-learning/inner/110">uncomfortable
                                                                                     emotions</a>, provide stimulation,
                                                                                 create escape, or offer a sense of
@@ -4728,7 +4731,7 @@
                                                                                 times, situations, or physical states
                                                                                 such as tiredness or hunger. Journaling
                                                                                 or tracking <a
-                                                                                    class="blog_highlight_peach td_underline fs_12px"
+                                                                                    class="blog_highlight_peach td_underline fs_15px"
                                                                                     href="https://happierme.app/adults/micro-learning/inner/50">the
                                                                                     behavior</a> can help reveal
                                                                                 recurring patterns. </h6>
@@ -4754,7 +4757,7 @@
                                                                                 behavior, and choosing another activity
                                                                                 can create space for a different
                                                                                 response. For <a
-                                                                                    class="blog_highlight_peach td_underline fs_12px"
+                                                                                    class="blog_highlight_peach td_underline fs_15px"
                                                                                     href="https://happierme.app/adults/micro-learning/inner/54">substance
                                                                                     dependence</a>, professional support
                                                                                 may be important. </h6>
@@ -4770,7 +4773,7 @@
                                                                             </h2>
 
                                                                             <h6 class="hs_desc"><a
-                                                                                    class="blog_highlight_peach td_underline fs_12px"
+                                                                                    class="blog_highlight_peach td_underline fs_15px"
                                                                                     href="https://happierme.app/adults/site-search/Mindfulness">
                                                                                     Mindfulness</a> can help people
                                                                                 notice thoughts, emotions, physical
@@ -4794,7 +4797,7 @@
 
                                                                                 <h6 class="hs_desc">
                                                                                     Start by <a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/social-media">identifying</a>
                                                                                     when and why you reach for your
                                                                                     phone, such as boredom, stress,
@@ -4820,7 +4823,7 @@
 
                                                                                     <h6 class="hs_desc">
                                                                                         First identify the <a
-                                                                                            class="blog_highlight_peach td_underline fs_12px"
+                                                                                            class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/wisdom-shorts/1.181.mp4/T/Tips%20to%20manage%20difficult%20emotions">emotion</a>
                                                                                         you are trying to avoid or
                                                                                         change. Instead of immediately
@@ -4851,7 +4854,7 @@
                                                                                             Yes. Repeated behaviors can
                                                                                             influence communication,
                                                                                             trust, responsibilities, <a
-                                                                                                class="blog_highlight_peach td_underline fs_12px"
+                                                                                                class="blog_highlight_peach td_underline fs_15px"
                                                                                                 href="https://happierme.app/adults/audiopage/~podcasts~295.mp3/295/T/How%20our%20feelings%20influence%20our%20future/podcast">finances</a>,
                                                                                             health, work, and family
                                                                                             relationships. Becoming
@@ -4875,7 +4878,7 @@
                                                                                         </h2>
 
                                                                                         <h6 class="hs_desc"><a
-                                                                                                class="blog_highlight_peach td_underline fs_12px"
+                                                                                                class="blog_highlight_peach td_underline fs_15px"
                                                                                                 href="https://happierme.app/adults/coach/contact">
                                                                                                 Professional support</a>
                                                                                             is especially important when
@@ -4958,7 +4961,7 @@
                                                                                 </h2>
 
                                                                                 <h6 class="hs_desc"><a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/audiopage/~podcasts~241.mp3/241/T/Grief,%20Identity%20and%20Rebuilding%20your%20life/podcast">
                                                                                         Grief</a> is the emotional
                                                                                     response to losing someone,
@@ -4983,7 +4986,7 @@
                                                                                 <h6 class="hs_desc">
                                                                                     Everyday wellbeing can be People may
                                                                                     experience <a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/micro-learning/inner/42">sadness</a>,
                                                                                     shock, anger, guilt, loneliness,
                                                                                     fear, confusion, numbness, or
@@ -5018,7 +5021,7 @@
                                                                                 <h6 class="hs_desc">
                                                                                     There is no single "right" way to
                                                                                     grieve. People respond to <a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/micro-learning/inner/40">loss</a>
                                                                                     differently depending on their
                                                                                     relationship with what was lost,
@@ -5040,7 +5043,7 @@
 
                                                                                 <h6 class="hs_desc">
                                                                                     There is no universal timeline for
-                                                                                    <a class="blog_highlight_peach td_underline fs_12px"
+                                                                                    <a class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/audiopage/~podcasts~241.mp3/241/T/Grief,%20Identity%20and%20Rebuilding%20your%20life/podcast">grief</a>.
                                                                                     Some people begin to feel more able
                                                                                     to manage everyday life relatively
@@ -5071,7 +5074,7 @@
                                                                                     quickly. Staying connected with
                                                                                     supportive people, maintaining basic
                                                                                     routines, getting enough rest, <a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/audiopage/~podcasts~294.mp3/294/T/Our%20feelings%20can%20repeat%20in%20patterns/podcast">writing
                                                                                         about your feelings</a>,
                                                                                     spending time with meaningful
@@ -5088,7 +5091,7 @@
 
                                                                             <h6 class="hs_desc">
                                                                                 Yes. Anger can be one of many <a
-                                                                                    class="blog_highlight_peach td_underline fs_12px"
+                                                                                    class="blog_highlight_peach td_underline fs_15px"
                                                                                     href="https://happierme.app/adults/audiopage/~podcasts~294.mp3/294/T/Our%20feelings%20can%20repeat%20in%20patterns/podcast">emotional
                                                                                     responses</a> to loss. A person may
                                                                                 feel angry about what happened,
@@ -5110,7 +5113,7 @@
                                                                             </h2>
 
                                                                             <h6 class="hs_desc">
-                                                                                <a class="blog_highlight_peach td_underline fs_12px"
+                                                                                <a class="blog_highlight_peach td_underline fs_15px"
                                                                                     href="https://happierme.app/adults/audiopage/~podcasts~294.mp3/294/T/Our%20feelings%20can%20repeat%20in%20patterns/podcast">
                                                                                     Guilt</a> can arise from thoughts
                                                                                 about things we wish we had said or done
@@ -5137,7 +5140,7 @@
                                                                                 Grief is often not a steady process. A
                                                                                 person may feel relatively okay for a
                                                                                 period and then experience strong <a
-                                                                                    class="blog_highlight_peach td_underline fs_12px"
+                                                                                    class="blog_highlight_peach td_underline fs_15px"
                                                                                     href="https://happierme.app/adults/audiopage/~podcasts~294.mp3/294/T/Our%20feelings%20can%20repeat%20in%20patterns/podcast">sadness</a>
                                                                                 after seeing a photograph, hearing a
                                                                                 song, visiting a familiar place, or
@@ -5160,7 +5163,7 @@
 
                                                                             <h6 class="hs_desc">
                                                                                 Acknowledging the
-                                                                                <a class="blog_highlight_peach td_underline fs_12px"
+                                                                                <a class="blog_highlight_peach td_underline fs_15px"
                                                                                     href="https://happierme.app/adults/loneliness">
 
                                                                                     loneliness</a> rather than
@@ -5187,7 +5190,7 @@
                                                                             <h6 class="hs_desc">
 
                                                                                 Listening without trying to immediately
-                                                                                <a class="blog_highlight_peach td_underline fs_12px"
+                                                                                <a class="blog_highlight_peach td_underline fs_15px"
                                                                                     href="https://happierme.app/adults/audiopage/~podcasts~293.mp3/293/T/Strong%20feelings%20can%20stop%20us%20thinking%20clearly/podcast">fix
                                                                                     their pain</a> can be one of the
                                                                                 most helpful forms of support. Give them
@@ -5207,7 +5210,7 @@
                                                                                 </h2>
 
                                                                                 <h6 class="hs_desc">
-                                                                                    <a class="blog_highlight_peach td_underline fs_12px"
+                                                                                    <a class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/site-search/Mindfulness">
                                                                                         Mindfulness</a> can help a
                                                                                     grieving person notice thoughts,
@@ -5234,7 +5237,7 @@
                                                                                 </h2>
 
                                                                                 <h6 class="hs_desc"><a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/blog-article?sId=57">
                                                                                         Journaling</a> can provide a
                                                                                     private space to express emotions,
@@ -5285,7 +5288,7 @@
                                                                                     </h2>
 
                                                                                     <h6 class="hs_desc"><a
-                                                                                            class="blog_highlight_peach td_underline fs_12px"
+                                                                                            class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/coach/contact">
                                                                                             Professional support</a> can
                                                                                         be helpful when grief feels
@@ -5457,7 +5460,7 @@
                                                                                 <h6 class="hs_desc">
                                                                                     Regular use can provide
                                                                                     opportunities to practice <a
-                                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/explore#self-awareness">self-awareness</a>,
                                                                                     reflect on thoughts and emotions,
                                                                                     learn about relationships and
@@ -5546,7 +5549,7 @@
                                                                                 Yes. HappierMe has dedicated experiences
                                                                                 for teenagers and adults. The teen
                                                                                 experience addresses areas such as <a
-                                                                                    class="blog_highlight_peach td_underline fs_12px"
+                                                                                    class="blog_highlight_peach td_underline fs_15px"
                                                                                     href="https://happierme.app/teenagers/wisdom-stories/view-stories?sId=103">school
                                                                                     stress</a>, social pressure,
                                                                                 friendships, emotions, confidence,
@@ -5568,7 +5571,7 @@
                                                                             <h6 class="hs_desc">
                                                                                 Users can start by exploring their
                                                                                 thoughts, emotions, <a
-                                                                                    class="blog_highlight_peach td_underline fs_12px"
+                                                                                    class="blog_highlight_peach td_underline fs_15px"
                                                                                     href="https://happierme.app/adults/site-search/Stress">stress
                                                                                     levels</a>, relationships, habits,
                                                                                 or general wellbeing. Wellness surveys,
@@ -5743,7 +5746,7 @@
                                                                                     overwhelming. When anxiety feels
                                                                                     unmanageable. When burnout forces us
                                                                                     to stop. </h6>
-                                                                                <a class="blog_highlight_peach td_underline fs_12px"
+                                                                                <a class="blog_highlight_peach td_underline fs_15px"
                                                                                     href="https://happierme.app/teenagers/blog-article?sId=77 ">Read
                                                                                     the full blog here:
                                                                                 </a>
@@ -5765,7 +5768,7 @@
                                                                                     handling expectations, and staying
                                                                                     composed in challenging situations.
                                                                                 </h6>
-                                                                                <a class="blog_highlight_peach td_underline fs_12px"
+                                                                                <a class="blog_highlight_peach td_underline fs_15px"
                                                                                     href="https://happierme.app/teenagers/blog-article?sId=76 ">Read
                                                                                     the full blog here: </a>
 
@@ -5792,7 +5795,7 @@
                                                                                     mind, not feeling defensive, but
                                                                                     with a positive attitude. See what
                                                                                     emerges.</h6>
-                                                                                <a class="blog_highlight_peach td_underline fs_12px"
+                                                                                <a class="blog_highlight_peach td_underline fs_15px"
                                                                                     href="https://happierme.app/teenagers/blog-article?sId=72 ">Read
                                                                                     the full blog here: </a>
 
@@ -5813,7 +5816,7 @@
                                                                                     Poor sleep is known to damage
                                                                                     physical health by weakening the
                                                                                     immune system (NIH).</h6>
-                                                                                <a class="blog_highlight_peach td_underline fs_12px"
+                                                                                <a class="blog_highlight_peach td_underline fs_15px"
                                                                                     href="https://happierme.app/teenagers/blog-article?sId=69 ">Read
                                                                                     the full blog here: </a>
 
@@ -5836,7 +5839,7 @@
                                                                                     access to information. However, it
                                                                                     has also raised concerns about its
                                                                                     impact on mental health. </h6>
-                                                                                <a class="blog_highlight_peach td_underline fs_12px"
+                                                                                <a class="blog_highlight_peach td_underline fs_15px"
                                                                                     href="https://happierme.app/teenagers/blog-article?sId=67 ">Read
                                                                                     the full blog here: </a>
 
@@ -5860,7 +5863,7 @@
                                                                                 only accidents. And even more
                                                                                 devastatingly, the numbers are rising.
                                                                             </h6>
-                                                                            <a class="blog_highlight_peach td_underline fs_12px"
+                                                                            <a class="blog_highlight_peach td_underline fs_15px"
                                                                                 href="https://happierme.app/teenagers/blog-article?sId=65 ">Read
                                                                                 the full blog here: </a>
 
@@ -5885,7 +5888,7 @@
                                                                                 communication revolution, and an
                                                                                 information revolution.
                                                                             </h6>
-                                                                            <a class="blog_highlight_peach td_underline fs_12px"
+                                                                            <a class="blog_highlight_peach td_underline fs_15px"
                                                                                 href="https://happierme.app/teenagers/blog-article?sId=63 ">Read
                                                                                 the full blog here: </a>
 
@@ -5913,7 +5916,7 @@
                                                                                 advocacy for self-acceptance
                                                                             </h6>
 
-                                                                            <a class="blog_highlight_peach td_underline fs_12px"
+                                                                            <a class="blog_highlight_peach td_underline fs_15px"
                                                                                 href="https://happierme.app/teenagers/blog-article?sId=70 ">Read
                                                                                 the full blog here: </a>
 
@@ -5938,7 +5941,7 @@
                                                                                 especially in today’s fast-paced,
                                                                                 always-connected world.
                                                                             </h6>
-                                                                            <a class="blog_highlight_peach td_underline fs_12px"
+                                                                            <a class="blog_highlight_peach td_underline fs_15px"
                                                                                 href="https://happierme.app/teenagers/blog-article?sId=73 ">Read
                                                                                 the full blog here: </a>
 
@@ -5963,7 +5966,7 @@
                                                                                 causes so much distress to so many
                                                                                 people, and is preventable.
                                                                             </h6>
-                                                                            <a class="blog_highlight_peach td_underline fs_12px"
+                                                                            <a class="blog_highlight_peach td_underline fs_15px"
                                                                                 href="https://happierme.app/teenagers/blog-article?sId=71 ">Read
                                                                                 the full blog here: </a>
 
@@ -5987,7 +5990,7 @@
                                                                                 regularly recording one’s emotions, has
                                                                                 gained popularity for its proven
                                                                                 benefits to mental health. </h6>
-                                                                            <a class="blog_highlight_peach td_underline fs_12px"
+                                                                            <a class="blog_highlight_peach td_underline fs_15px"
                                                                                 href="https://happierme.app/teenagers/blog-article?sId=66 ">Read
                                                                                 the full blog here: </a>
 
@@ -6009,7 +6012,7 @@
                                                                                 mental health and reduce healthcare
                                                                                 costs
                                                                             </h6>
-                                                                            <a class="blog_highlight_peach td_underline fs_12px"
+                                                                            <a class="blog_highlight_peach td_underline fs_15px"
                                                                                 href="https://happierme.app/teenagers/blog-article?sId=60 ">Read
                                                                                 the full blog here: </a>
 
@@ -6037,7 +6040,7 @@
                                                                                 decisions, improve their emotional
                                                                                 intelligence and their soft skills.
                                                                             </h6>
-                                                                            <a class="blog_highlight_peach td_underline fs_12px"
+                                                                            <a class="blog_highlight_peach td_underline fs_15px"
                                                                                 href="https://happierme.app/teenagers/blog-article?sId=58 ">Read
                                                                                 the full blog here: </a>
 
@@ -6063,7 +6066,7 @@
                                                                                 partners, friends, siblings, at work, or
                                                                                 between parents and children.
                                                                             </h6>
-                                                                            <a class="blog_highlight_peach td_underline fs_12px"
+                                                                            <a class="blog_highlight_peach td_underline fs_15px"
                                                                                 href="https://happierme.app/teenagers/blog-article?sId=56 ">Read
                                                                                 the full blog here: </a>
 
@@ -6088,7 +6091,7 @@
                                                                                 Understanding them can help us to live a
                                                                                 life with much less stress.
                                                                             </h6>
-                                                                            <a class="blog_highlight_peach td_underline fs_12px"
+                                                                            <a class="blog_highlight_peach td_underline fs_15px"
                                                                                 href="https://happierme.app/teenagers/blog-article?sId=54 ">Read
                                                                                 the full blog here: </a>
 
@@ -6713,7 +6716,7 @@
 
                                                             <h6 class="hs_desc">
                                                                 Yes. HappierMe includes a <a
-                                                                    class="blog_highlight_peach td_underline fs_12px"
+                                                                    class="blog_highlight_peach td_underline fs_15px"
                                                                     href="https://happierme.app/pages/teenagers.php">
                                                                     dedicated teen section</a> designed around
                                                                 challenges teenagers commonly experience, including
@@ -6814,7 +6817,7 @@
                                                             <h6 class="hs_desc">
                                                                 HappierMe provides <b> educational resources and
                                                                     practical tools for managing everyday <a
-                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                         href="https://happierme.app/adults/stress">stress</a>,
                                                                     anxiety, overthinking, and emotional challenges.</b>
                                                                 Users can explore mindfulness practices, meditation,
@@ -6835,7 +6838,7 @@
 
                                                             <h6 class="hs_desc">
                                                                 Yes. HappierMe includes <a
-                                                                    class="blog_highlight_peach td_underline fs_12px"
+                                                                    class="blog_highlight_peach td_underline fs_15px"
                                                                     href="https://happierme.app/adults/explore#relationships">
                                                                     relationship</a> <b> - focused educational content
                                                                     and practical resources </b> designed to help users
@@ -6857,7 +6860,7 @@
                                                             <h6 class="hs_desc">
                                                                 Yes. Personal growth is a core part of HappierMe. The
                                                                 app helps users develop <a
-                                                                    class="blog_highlight_peach td_underline fs_12px"
+                                                                    class="blog_highlight_peach td_underline fs_15px"
                                                                     href="https://happierme.app/adults/explore#self-awareness">self-awareness</a>,
                                                                 <b>emotional intelligence, confidence, resilience,
                                                                     mindfulness, communication skills, healthier habits,
@@ -6879,7 +6882,7 @@
 
                                                             <h6 class="hs_desc">
                                                                 Yes. HappierMe can provide <a
-                                                                    class="blog_highlight_peach td_underline fs_12px"
+                                                                    class="blog_highlight_peach td_underline fs_15px"
                                                                     href="https://happierme.app/adults/chat-bot">personalized
                                                                     guidance through Olly AI</a>, which helps users
                                                                 reflect on their needs and directs them toward relevant
@@ -6898,7 +6901,7 @@
 
                                                             <h6 class="hs_desc">
                                                                 Yes. HappierMe is designed to support small, <a
-                                                                    class="blog_highlight_peach td_underline fs_12px"
+                                                                    class="blog_highlight_peach td_underline fs_15px"
                                                                     href="https://happierme.app/adults/guided-journeys/12">consistent
                                                                     daily practices</a> rather than requiring long
                                                                 sessions. Users can spend a few minutes exploring
@@ -6924,7 +6927,7 @@
                                                                     No. HappierMe is a mental wellness and personal
                                                                     growth app and is not intended to replace
                                                                     professional medical or</b> <a
-                                                                    class="blog_highlight_peach td_underline fs_12px"
+                                                                    class="blog_highlight_peach td_underline fs_15px"
                                                                     href="https://happierme.app/adults/feel-better-now">mental
                                                                     health care</a>. It provides educational content,
                                                                 self-reflection tools, mindfulness practices, and
@@ -6973,7 +6976,7 @@
                                                             <h6 class="hs_desc">
                                                                 Understanding your mind means becoming more aware of
                                                                 <b>your thoughts, <a
-                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                         href="https://happierme.app/adults/explore#emotions">
                                                                         emotions</a>, reactions, beliefs, habits, and
                                                                     patterns of behavior </b>. It helps you recognize
@@ -6993,7 +6996,7 @@
 
                                                             <h6 class="hs_desc">
                                                                 Understanding your mind can help you become more aware
-                                                                of <a class="blog_highlight_peach td_underline fs_12px"
+                                                                of <a class="blog_highlight_peach td_underline fs_15px"
                                                                     href="https://happierme.app/adults/videopage/Introduction-videos-mind_pathway.mp4/T/Understand%20how%20your%20mind%20works%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20">
                                                                     why you think</a><b>, feel, and behave in certain
                                                                     ways.</b> Greater self-awareness can support better
@@ -7016,7 +7019,7 @@
 
                                                             <h6 class="hs_desc">
                                                                 You can develop <a
-                                                                    class="blog_highlight_peach td_underline fs_12px"
+                                                                    class="blog_highlight_peach td_underline fs_15px"
                                                                     href="https://happierme.app/adults/explore#self-awareness">
                                                                     self-awareness</a> by regularly paying attention to
                                                                 your <b> thoughts, emotions, reactions, habits, and
@@ -7036,7 +7039,7 @@
                                                             </h2>
 
                                                             <h6 class="hs_desc"><a
-                                                                    class="blog_highlight_peach td_underline fs_12px"
+                                                                    class="blog_highlight_peach td_underline fs_15px"
                                                                     href="https://happierme.app/adults/micro-learning/inner/3">
                                                                     Overthinking</a> often involves repeatedly analyzing
                                                                 a situation, decision, conversation, or possible future
@@ -7065,7 +7068,7 @@
                                                                     thinking is actually helping you.</b> Mindfulness,
                                                                 journaling, breathing exercises, self-awareness
                                                                 practices, and focusing on what you can control can help
-                                                                <a class="blog_highlight_peach td_underline fs_12px"
+                                                                <a class="blog_highlight_peach td_underline fs_15px"
                                                                     href="https://happierme.app/adults/micro-learning/inner/3">
                                                                     develop healthier responses</a> to repetitive
                                                                 thinking.
@@ -7080,7 +7083,7 @@
                                                             </h2>
 
                                                             <h6 class="hs_desc"> <a
-                                                                    class="blog_highlight_peach td_underline fs_12px"
+                                                                    class="blog_highlight_peach td_underline fs_15px"
                                                                     href="https://happierme.app/adults/guided-meditation/audiopage/https_~~d1tenzemoxuh75.cloudfront.net~guided-meditation~audios~guided-meditation%252B1.11.mp3/11/F/Release-negative-thoughts">
                                                                     Negative</a> are a normal part of human experience.
                                                                 They can arise in response to stress, difficult
@@ -7101,7 +7104,7 @@
 
                                                             <h6 class="hs_desc">
                                                                 <b> No. A <a
-                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                         href="https://happierme.app/adults/audiopage/~podcasts~275.mp3/275/T/Why%20do%20our%20thoughts%20feel%20true%3F/podcast">thought</a>
                                                                     is not necessarily a fact.</b> Thoughts are
                                                                 interpretations of experiences and can sometimes be
@@ -7122,7 +7125,7 @@
 
                                                             <h6 class="hs_desc">
                                                                 Start by noticing <b> what you are feeling, <a
-                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                         href="https://happierme.app/adults/videopage/Introduction-videos-managing_cdp.mp4/T/Manage%20your%20emotions">
                                                                         when it happens</a>, what triggered it, what
                                                                     thoughts accompany it, and how you respond.</b>
@@ -7144,7 +7147,7 @@
 
                                                             <h6 class="hs_desc">
                                                                 Emotional <a
-                                                                    class="blog_highlight_peach td_underline fs_12px"
+                                                                    class="blog_highlight_peach td_underline fs_15px"
                                                                     href="https://happierme.app/adults/audiopage/~podcasts~141.mp3/141/T/Where%20do%20our%20reactions%20come%20from/podcast">reactions</a>
                                                                 can be influenced by many factors, including <b> past
                                                                     experiences, beliefs, expectations, fears, habits,
@@ -7164,7 +7167,7 @@
 
                                                             <h6 class="hs_desc">
                                                                 The goal is not necessarily to eliminate or suppress
-                                                                <a class="blog_highlight_peach td_underline fs_12px"
+                                                                <a class="blog_highlight_peach td_underline fs_15px"
                                                                     href="https://happierme.app/adults/pathway/manage-your-emotions">
                                                                     emotions</a>. A healthier approach is to <b> notice,
                                                                     understand, and respond to emotions rather than
@@ -7183,7 +7186,7 @@
                                                                 </h2>
 
                                                                 <h6 class="hs_desc">
-                                                                    <a class="blog_highlight_peach td_underline fs_12px"
+                                                                    <a class="blog_highlight_peach td_underline fs_15px"
                                                                         href="https://happierme.app/adults/explore#self-awareness">
                                                                         Self-awareness</a> is the ability to recognize
                                                                     and understand your thoughts, emotions, behaviors,
@@ -7208,7 +7211,7 @@
                                                                     The first step is to <b> notice and understand the
                                                                         pattern </b> rather than automatically following
                                                                     it. You can then examine the <a
-                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                         href="https://happierme.app/adults/insight">thoughts</a>,
                                                                     emotions, assumptions, and behaviors involved and
                                                                     practice alternative ways of responding. Journaling,
@@ -7249,7 +7252,7 @@
 
                                                                 <h6 class="hs_desc">
                                                                     Yes. <b> <a
-                                                                            class="blog_highlight_peach td_underline fs_12px"
+                                                                            class="blog_highlight_peach td_underline fs_15px"
                                                                             href="https://happierme.app/adults/site-search/Mindfulness">Mindfulness</a>
                                                                         involves paying attention to your present
                                                                         experience with greater awareness and less
@@ -7276,7 +7279,7 @@
                                                                         self-awareness through practical educational and
                                                                         self-reflection tools.</b> The app includes
                                                                     guided journaling,
-                                                                    <a class="blog_highlight_peach td_underline fs_12px"
+                                                                    <a class="blog_highlight_peach td_underline fs_15px"
                                                                         href="https://happierme.app/adults/wisdom-survey">
                                                                         wellness surveys</a>, mindfulness practices,
                                                                     meditation, breathing exercises, self-awareness
@@ -7319,7 +7322,7 @@
                                                             </h2>
 
                                                             <h6 class="hs_desc"><b>
-                                                                    <a class="blog_highlight_peach td_underline fs_12px"
+                                                                    <a class="blog_highlight_peach td_underline fs_15px"
                                                                         href="https://happierme.app/adults/feel-better-now/stress">
                                                                         Stress</a> is the mind and body's response to
                                                                     situations that feel demanding, challenging,
@@ -7339,7 +7342,7 @@
                                                             </h2>
 
                                                             <h6 class="hs_desc"><b><a
-                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                         href="https://happierme.app/adults/fear-anxiety">
                                                                         Anxiety</a> is a feeling of worry, fear,
                                                                     nervousness, or uneasiness that can arise when we
@@ -7362,11 +7365,11 @@
                                                             </h2>
 
                                                             <h6 class="hs_desc"><a
-                                                                    class="blog_highlight_peach td_underline fs_12px"
+                                                                    class="blog_highlight_peach td_underline fs_15px"
                                                                     href="https://happierme.app/adults/feel-better-now/stress">
                                                                     Stress</a> is often connected to a specific
                                                                     challenge, demand, or situation</a>, while <a
-                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                         href="https://happierme.app/adults/feel-better-now/anxiety">anxiety</a>
                                                                     can continue even when there is no immediate or
                                                                     clearly identifiable threat. They can also
@@ -7407,7 +7410,7 @@
                                                             </h2>
 
                                                             <h6 class="hs_desc"><a
-                                                                    class="blog_highlight_peach td_underline fs_12px"
+                                                                    class="blog_highlight_peach td_underline fs_15px"
                                                                     href="https://happierme.app/adults/feel-better-now/anxiety">
                                                                     Anxiety</a> can involve <b>excessive worry,
                                                                     nervousness, fear, restlessness, difficulty
@@ -7428,7 +7431,7 @@
 
                                                             <h6 class="hs_desc">
                                                                 Feeling <a
-                                                                    class="blog_highlight_peach td_underline fs_12px"
+                                                                    class="blog_highlight_peach td_underline fs_15px"
                                                                     href="https://happierme.app/adults/feel-better-now/stress">stressed
                                                                     frequently</a> can have many possible causes,
                                                                 including <b> ongoing responsibilities, work or academic
@@ -7449,7 +7452,7 @@
                                                             </h2>
 
                                                             <h6 class="hs_desc"><a
-                                                                    class="blog_highlight_peach td_underline fs_12px"
+                                                                    class="blog_highlight_peach td_underline fs_15px"
                                                                     href="https://happierme.app/adults/audiopage/~podcasts~109.mp3/109/T/Why%20do%20I%20worry%20about%20what%20others%20think%20of%20me%3F/podcast">
                                                                     Worry</a> can become repetitive when the mind keeps
                                                                 trying to <b> predict, prevent, or control uncertain
@@ -7471,7 +7474,7 @@
 
                                                             <h6 class="hs_desc">
                                                                 Everyday <a
-                                                                    class="blog_highlight_peach td_underline fs_12px"
+                                                                    class="blog_highlight_peach td_underline fs_15px"
                                                                     href="https://happierme.app/adults/site-search/Reduce%20your%20stress%20live%20longer">stress</a>
                                                                 may be supported through healthy practices such as <b>
                                                                     regular physical activity, adequate sleep,
@@ -7496,7 +7499,7 @@
 
                                                             <h6 class="hs_desc">
                                                                 When you feel overwhelmed, start by <b> <a
-                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                         href="https://happierme.app/adults/site-search/Calm%20your%20mind">slowing
                                                                         down</a> and bringing your attention to the
                                                                     present moment. </b> Taking a few mindful breaths,
@@ -7516,7 +7519,7 @@
                                                             </h2>
 
                                                             <h6 class="hs_desc"><a
-                                                                    class="blog_highlight_peach td_underline fs_12px"
+                                                                    class="blog_highlight_peach td_underline fs_15px"
                                                                     href="https://happierme.app/adults/breathing">
                                                                     Breathing exercises</a> can be a simple way to <b>
                                                                     slow down, focus attention on the present moment,
@@ -7561,7 +7564,7 @@
                                                                 <h6 class="hs_desc">
                                                                     Overthinking can keep attention focused on <b> past
                                                                         events, <a
-                                                                            class="blog_highlight_peach td_underline fs_12px"
+                                                                            class="blog_highlight_peach td_underline fs_15px"
                                                                             href="https://happierme.app/adults/site-search/problems">possible
                                                                             future problems</a>, or repeatedly analyzing
                                                                         the same situation.</b> This can make a
@@ -7587,7 +7590,7 @@
                                                                         A useful starting point is to separate what you
                                                                         can control, <b> what you can influence, and
                                                                             what you cannot control.</b> <a
-                                                                            class="blog_highlight_peach td_underline fs_12px"
+                                                                            class="blog_highlight_peach td_underline fs_15px"
                                                                             href="https://happierme.app/adults/site-search/focus">Focus</a>
                                                                         your energy on actions within your control and
                                                                         practice accepting uncertainty where you cannot
@@ -7609,7 +7612,7 @@
 
                                                                     <h6 class="hs_desc"><b>
                                                                             HappierMe provides <a
-                                                                                class="blog_highlight_peach td_underline fs_12px"
+                                                                                class="blog_highlight_peach td_underline fs_15px"
                                                                                 href="https://happierme.app/adults/blog-article?sId=45">
                                                                                 practical wellness resources</a> that
                                                                             can help users understand and manage
@@ -7641,7 +7644,7 @@
                                                                             everyday activities, relationships, work,
                                                                             school, or sleep.</b> A qualified mental
                                                                         health or
-                                                                        <a class="blog_highlight_peach td_underline fs_12px"
+                                                                        <a class="blog_highlight_peach td_underline fs_15px"
                                                                             href="https://happierme.app/adults/coach">healthcare
                                                                             professional</a> can help assess what you
                                                                         are experiencing and recommend appropriate
@@ -8336,7 +8339,7 @@
 
                                                         <h6 class="hs_desc">
                                                             A healthy <a
-                                                                class="blog_highlight_peach td_underline fs_12px"
+                                                                class="blog_highlight_peach td_underline fs_15px"
                                                                 href="https://happierme.app/adults/explore#relationships">relationship</a>
                                                             is generally built on <b>mutual respect, trust,
                                                                 honest communication, empathy, emotional safety,
@@ -8355,7 +8358,7 @@
                                                         </h2>
 
                                                         <h6 class="hs_desc"><b><a
-                                                                    class="blog_highlight_peach td_underline fs_12px"
+                                                                    class="blog_highlight_peach td_underline fs_15px"
                                                                     href="https://happierme.app/adults/communication">
                                                                     Communication</a> helps people understand
                                                                 each other's thoughts, feelings, needs,
@@ -8378,7 +8381,7 @@
                                                         </h2>
 
                                                         <h6 class="hs_desc"><a
-                                                                class="blog_highlight_peach td_underline fs_12px"
+                                                                class="blog_highlight_peach td_underline fs_15px"
                                                                 href="https://happierme.app/adults/communication">
                                                                 Better communication</a> starts with
                                                             <b>listening carefully, expressing your feelings
@@ -8400,7 +8403,7 @@
 
                                                         <h6 class="hs_desc"><b>
                                                                 Active <a
-                                                                    class="blog_highlight_peach td_underline fs_12px"
+                                                                    class="blog_highlight_peach td_underline fs_15px"
                                                                     href="https://happierme.app/adults/site-search/Listening">listening</a>
                                                                 means giving someone your full attention and
                                                                 trying to understand what they are communicating
@@ -8424,7 +8427,7 @@
 
                                                         <h6 class="hs_desc">
                                                             To become a better <a
-                                                                class="blog_highlight_peach td_underline fs_12px"
+                                                                class="blog_highlight_peach td_underline fs_15px"
                                                                 href="https://happierme.app/adults/site-search/Listening">listener</a>,
                                                             try to <b>give the person your attention, avoid
                                                                 interrupting, reduce distractions, ask questions
@@ -8444,7 +8447,7 @@
                                                         </h2>
 
                                                         <h6 class="hs_desc">
-                                                            Try to <a class="blog_highlight_peach td_underline fs_12px"
+                                                            Try to <a class="blog_highlight_peach td_underline fs_15px"
                                                                 href="https://happierme.app/adults/site-search/Argument">communicate</a>
                                                             your experience rather than blaming the other
                                                             person. Explain <b>what happened, how you felt, and
@@ -8463,7 +8466,7 @@
                                                         </h2>
 
                                                         <h6 class="hs_desc"><a
-                                                                class="blog_highlight_peach td_underline fs_12px"
+                                                                class="blog_highlight_peach td_underline fs_15px"
                                                                 href="https://happierme.app/adults/wisdom-shorts/1.107.mp4/T/4%20Ways%20Misunderstandings%20Occur">
                                                                 Misunderstandings</a> can happen when people
                                                             <b>make assumptions, communicate indirectly,
@@ -8484,7 +8487,7 @@
                                                         </h2>
 
                                                         <h6 class="hs_desc">
-                                                            Healthy <a class="blog_highlight_peach td_underline fs_12px"
+                                                            Healthy <a class="blog_highlight_peach td_underline fs_15px"
                                                                 href="https://happierme.app/adults/curated/youtubelink/PDkVkpJlb6I%3Dvncbxdfchgvxd">conflict</a>
                                                             resolution involves <b>listening to both
                                                                 perspectives, staying focused on the issue
@@ -8509,7 +8512,7 @@
 
                                                         <h6 class="hs_desc">
                                                             During an <a
-                                                                class="blog_highlight_peach td_underline fs_12px"
+                                                                class="blog_highlight_peach td_underline fs_15px"
                                                                 href="https://happierme.app/adults/site-search/Argument">argument</a>,
                                                             try to <b>slow down, listen before responding, avoid
                                                                 insults or personal attacks, focus on the
@@ -8530,7 +8533,7 @@
 
                                                         <h6 class="hs_desc">
                                                             Healthy boundaries are <b>clear limits that <a
-                                                                    class="blog_highlight_peach td_underline fs_12px"
+                                                                    class="blog_highlight_peach td_underline fs_15px"
                                                                     href="https://happierme.app/adults/site-search/Argument">communicate</a>
                                                                 what you are comfortable with and what you are
                                                                 not comfortable with. </b>They can involve time,
@@ -8552,7 +8555,7 @@
                                                             <h6 class="hs_desc">
                                                                 Setting a boundary does not necessarily mean
                                                                 rejecting someone. You can <a
-                                                                    class="blog_highlight_peach td_underline fs_12px"
+                                                                    class="blog_highlight_peach td_underline fs_15px"
                                                                     href="https://happierme.app/adults/wisdom-shorts/1.188.mp4/T/Dr%20Manoj%20Krishna.%20Managing%20arguments.">communicate</a>
                                                                 it <b>clearly, calmly, and respectfully</b>,
                                                                 explain what you are comfortable with, and avoid
@@ -8571,7 +8574,7 @@
                                                             </h2>
 
                                                             <h6 class="hs_desc"><a
-                                                                    class="blog_highlight_peach td_underline fs_12px"
+                                                                    class="blog_highlight_peach td_underline fs_15px"
                                                                     href="https://happierme.app/adults/audiopage/~podcasts~155.mp3/155/T/Learning%20to%20trust%20people%20again/podcast">
                                                                     Trust</a> develops through <b>consistent
                                                                     behavior, honesty, reliability, respect,
@@ -8594,7 +8597,7 @@
                                                                 </h2>
 
                                                                 <h6 class="hs_desc"><b><a
-                                                                            class="blog_highlight_peach td_underline fs_12px"
+                                                                            class="blog_highlight_peach td_underline fs_15px"
                                                                             href="https://happierme.app/adults/audiopage/~podcasts~270.mp3/270/T/Why%20empathy%20matters%20and%20how%20we%20can%20develop%20this%20skill/podcast">
                                                                             Empathy</a> helps people understand
                                                                         another person's feelings and
@@ -8617,7 +8620,7 @@
                                                                 </h2>
 
                                                                 <h6 class="hs_desc"><a
-                                                                        class="blog_highlight_peach td_underline fs_12px"
+                                                                        class="blog_highlight_peach td_underline fs_15px"
                                                                         href="https://happierme.app/adults/site-search/Emotional%20Needs">
                                                                         Emotional needs</a> connection can grow
                                                                     through <b>honest conversations, active
@@ -8684,7 +8687,7 @@
                                                         </h2>
 
                                                         <h6 class="hs_desc"><b><a
-                                                                    class="blog_highlight_peach td_underline fs_12px"
+                                                                    class="blog_highlight_peach td_underline fs_15px"
                                                                     href="https://happierme.app/adults/explore#happiness">
                                                                     Happiness</a> is more than feeling positive
                                                                 all the time. </b>It can include a sense of
@@ -8704,7 +8707,7 @@
                                                         </h2>
 
                                                         <h6 class="hs_desc"><a
-                                                                class="blog_highlight_peach td_underline fs_12px"
+                                                                class="blog_highlight_peach td_underline fs_15px"
                                                                 href="https://happierme.app/adults/audiopage/~podcasts~83.mp3/83/T/Being%20happier/podcast">
                                                                 Everyday wellbeing</a> can be supported by
                                                             <b>building meaningful connections, taking care of
@@ -8729,7 +8732,7 @@
                                                         </h2>
 
                                                         <h6 class="hs_desc"><a
-                                                                class="blog_highlight_peach td_underline fs_12px"
+                                                                class="blog_highlight_peach td_underline fs_15px"
                                                                 href="https://happierme.app/adults/happiness">
                                                                 Happiness</a> is influenced by more than
                                                             external circumstances. <b>Unresolved emotions,
@@ -8751,7 +8754,7 @@
                                                         </h2>
 
                                                         <h6 class="hs_desc"><a
-                                                                class="blog_highlight_peach td_underline fs_12px"
+                                                                class="blog_highlight_peach td_underline fs_15px"
                                                                 href="https://happierme.app/adults/happiness">
                                                                 Happiness</a> is not a single skill that can
                                                             simply be learned, but <b>many habits and skills
@@ -8774,7 +8777,7 @@
                                                         </h2>
 
                                                         <h6 class="hs_desc"><b><a
-                                                                    class="blog_highlight_peach td_underline fs_12px"
+                                                                    class="blog_highlight_peach td_underline fs_15px"
                                                                     href="https://happierme.app/adults/explore#self-awareness">
                                                                     Self-awareness</a> is the ability to
                                                                 recognize and understand your thoughts,
@@ -8795,7 +8798,7 @@
                                                         </h2>
 
                                                         <h6 class="hs_desc"><a
-                                                                class="blog_highlight_peach td_underline fs_12px"
+                                                                class="blog_highlight_peach td_underline fs_15px"
                                                                 href="https://happierme.app/adults/explore#self-awareness">
                                                                 Self-awareness</a> can help you understand
                                                             what genuinely matters to you, <b>what affects
@@ -8818,7 +8821,7 @@
 
                                                         <h6 class="hs_desc">
                                                             You can develop <a
-                                                                class="blog_highlight_peach td_underline fs_12px"
+                                                                class="blog_highlight_peach td_underline fs_15px"
                                                                 href="https://happierme.app/adults/explore#self-awareness">self-awareness</a>
                                                             by regularly <b>observing your thoughts and
                                                                 emotions, reflecting on your experiences,
@@ -8842,7 +8845,7 @@
 
                                                         <h6 class="hs_desc">
                                                             Start by paying attention to <b><a
-                                                                    class="blog_highlight_peach td_underline fs_12px"
+                                                                    class="blog_highlight_peach td_underline fs_15px"
                                                                     href="https://happierme.app/adults/explore#happiness">
                                                                     when you feel engaged</a>, peaceful,
                                                                 connected, fulfilled, or genuinely
@@ -8869,7 +8872,7 @@
                                                         <h6 class="hs_desc"><b>
                                                                 Pleasure is often a short-term positive
                                                                 experience, while <a
-                                                                    class="blog_highlight_peach td_underline fs_12px"
+                                                                    class="blog_highlight_peach td_underline fs_15px"
                                                                     href="https://happierme.app/adults/explore#happiness">happiness</a>
                                                                 can involve a broader and more lasting sense
                                                                 of wellbeing, contentment, meaning, and
@@ -8892,7 +8895,7 @@
                                                             Self-awareness helps you recognize <b>your
                                                                 emotions, assumptions, motivations, biases,
                                                                 habits, and personal values</b> before <a
-                                                                class="blog_highlight_peach td_underline fs_12px"
+                                                                class="blog_highlight_peach td_underline fs_15px"
                                                                 href="https://happierme.app/adults/making-better-decisions">making
                                                                 a decision</a>. This can create more space
                                                             between an automatic reaction and a deliberate
@@ -8910,7 +8913,7 @@
                                                         </h2>
 
                                                         <h6 class="hs_desc"><a
-                                                                class="blog_highlight_peach td_underline fs_12px"
+                                                                class="blog_highlight_peach td_underline fs_15px"
                                                                 href="https://happierme.app/adults/comparison">
                                                                 Comparison and envy</a> often becomes
                                                             unhelpful when you use another person's life
@@ -8933,7 +8936,7 @@
                                                         </h2>
 
                                                         <h6 class="hs_desc"><a
-                                                                class="blog_highlight_peach td_underline fs_12px"
+                                                                class="blog_highlight_peach td_underline fs_15px"
                                                                 href="https://happierme.app/adults/site-search/Confidence">
                                                                 Confidence</a> can grow through
                                                             <b>self-awareness, developing skills, taking
@@ -8958,7 +8961,7 @@
                                                         </h2>
 
                                                         <h6 class="hs_desc">
-                                                            Yes. <b><a class="blog_highlight_peach td_underline fs_12px"
+                                                            Yes. <b><a class="blog_highlight_peach td_underline fs_15px"
                                                                     href="https://happierme.app/adults/explore#self-awareness">Mindfulness</a>
                                                                 helps you pay attention to your
                                                                 present thoughts, emotions,
@@ -8982,7 +8985,7 @@
 
                                                         <h6 class="hs_desc">
                                                             Meaning and <a
-                                                                class="blog_highlight_peach td_underline fs_12px"
+                                                                class="blog_highlight_peach td_underline fs_15px"
                                                                 href="https://happierme.app/adults/site-search/purpose%20in%20life">purpose</a>
                                                             can come from different sources,
                                                             including <b>relationships,
@@ -9338,15 +9341,25 @@
                                                 </div>
                                               </div>
 
+
+                                                <!-- <div class="panel panel-default">
+                                                  <div class="panel-heading">
+                                                      <h4 class="panel-title">
+                                                          <a class="accordion-toggle" data-toggle="collapse"
+                                                              data-parent="#accordion_faq_2" href="#cm24">
+                                                              Work, Stress & Resilience
+                                                          </a>
+                                                      </h4>
+                                                  </div> -->
                                             <div class="panel panel-default">
                                                 <div class="panel-heading">
                                                     <h4 class="panel-title">
                                                         <a class="accordion-toggle" data-toggle="collapse"
-                                                            data-parent="#accordion_faq_2" href="#cm31">
+                                                            data-parent="#accordion_faq_2" href="#cm25">
                                                             Teenagers & Students </a>
                                                     </h4>
                                                 </div>
-                                                <div id="cm31" class="panel-collapse collapse">
+                                                <div id="cm25" class="panel-collapse collapse">
                                                     <div class="panel-body">
                                                         <h2 class="hs_title">
                                                             1. What are the common mental and emotional
@@ -9438,11 +9451,12 @@
                                                             feel especially important. Becoming aware of
                                                             comparison thoughts and focusing on personal growth,
                                                             strengths, values, and progress can help develop a
-                                                            healthier perspective. <div
-                                                                class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                            healthier perspective. </h6>
+                                                             <div class="row">
+                                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                                                 <hr class="hr_style_web_faq">
                                                             </div>
-                                                    </div>
+                                                        </div>
                                                     <h2 class="hs_title">
                                                         6. How can students build self-confidence? </h2>
 
@@ -9627,16 +9641,2099 @@
                                                                     self-awareness exercises, and Olly AI to
                                                                     guide users toward relevant expert-curated
                                                                     resources.
-                                                                </h6>
-                                                </div>
-                                            </div>
-                                            <!-- </div> -->
+                                                               </h6>
+                                                          <div class="row">
+                                                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                  <hr class="hr_style_web_faq">
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                              </div>
 
-                                            <div class="row">
+                                              <div class="row">
                                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                                                     <hr class="hr_style_web_01">
                                                 </div>
-                                            </div>
+                                              </div>
+
+
+                                              <div class="panel panel-default">
+                                                  <div class="panel-heading">
+                                                      <h4 class="panel-title">
+                                                          <a class="accordion-toggle" data-toggle="collapse"
+                                                              data-parent="#accordion_faq_2" href="#cm26">
+                                                                Parents & Families
+                                                          </a>
+                                                      </h4>
+                                                  </div>
+                                                  <div id="cm26" class="panel-collapse collapse">
+                                                      <div class="panel-body">
+                                                         
+
+
+                                                        <h2 class="hs_title">
+                                                                                    1. Why is emotional wellbeing
+                                                                                    important for parents and families?
+
+
+
+
+                                                                                </h2>
+
+                                                                                <h6 class="hs_desc"><a
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
+                                                                                        href="https://happierme.app/teenagers/site-search/Emotional%20Needs">
+
+                                                                                        Emotional wellbeing</a> affects
+                                                                                    how family members communicate,
+                                                                                    handle stress, respond to
+                                                                                    disagreements, and support one
+                                                                                    another. Developing self-awareness
+                                                                                    and healthier emotional habits can
+                                                                                    contribute to more supportive family
+                                                                                    relationships.
+                                                                                </h6>
+                                                                                <div class="row">
+                                                                                    <div
+                                                                                        class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                        <hr class="hr_style_web_faq">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <h2 class="hs_title">
+                                                                                    2. How can parents manage stress
+                                                                                    without taking it out on their
+                                                                                    children?
+                                                                                </h2>
+
+                                                                                <h6 class="hs_desc">
+                                                                                    Parents can start by recognizing
+                                                                                    their<a
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
+                                                                                        href="https://happierme.app/teenagers/feel-better-now/stress">
+                                                                                        own stress triggers</a> and
+                                                                                    noticing early signs of frustration
+                                                                                    or overwhelm. Taking a pause, using
+                                                                                    breathing or mindfulness practices,
+                                                                                    communicating calmly, and creating
+                                                                                    time for rest can make it easier to
+                                                                                    respond thoughtfully rather than
+                                                                                    react automatically. </h6>
+
+
+                                                                                <div class="row">
+                                                                                    <div
+                                                                                        class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                        <hr class="hr_style_web_faq">
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <h2 class="hs_title">
+                                                                                    3. How can parents communicate
+                                                                                    better with their children?
+
+                                                                                </h2>
+
+                                                                                <h6 class="hs_desc">
+                                                                                    Good <a
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
+                                                                                        href="https://happierme.app/teenagers/wisdom-shorts/1.149.mp4/T/Top%20tips%20to%20communicate%20with%20parents">communication</a>
+                                                                                    starts with listening without
+                                                                                    immediately judging, correcting, or
+                                                                                    giving advice. Parents can ask open
+                                                                                    questions, acknowledge their child's
+                                                                                    feelings, explain their own concerns
+                                                                                    calmly, and create an environment
+                                                                                    where children feel comfortable
+                                                                                    expressing themselves. </h6>
+                                                                                <div class="row">
+                                                                                    <div
+                                                                                        class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                        <hr class="hr_style_web_faq">
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <h2 class="hs_title">
+                                                                                    4. How can parents understand their
+                                                                                    teenager better?
+                                                                                </h2>
+
+                                                                                <h6 class="hs_desc"><a
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
+                                                                                        href="https://happierme.app/teenagers/curated/youtubelink/z7u69I7h560%3Dvncbxdfchgvxd">
+                                                                                        Understanding teenagers</a>
+                                                                                    involves listening to their
+                                                                                    experiences and recognizing that
+                                                                                    academic pressure, friendships,
+                                                                                    social expectations, identity, and
+                                                                                    changing emotions can influence
+                                                                                    their behavior. Curiosity and
+                                                                                    empathy can be more helpful than
+                                                                                    assuming that every difficult
+                                                                                    behavior is simply disobedience.
+                                                                                </h6>
+
+
+                                                                                <div class="row">
+                                                                                    <div
+                                                                                        class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                        <hr class="hr_style_web_faq">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <h2 class="hs_title">
+                                                                                    5. How should parents handle
+                                                                                    arguments with their children?
+
+                                                                                </h2>
+
+                                                                                <h6 class="hs_desc">
+                                                                                    Parents can pause when emotions are
+                                                                                    high, avoid insults or personal
+                                                                                    criticism, listen to the child's
+                                                                                    perspective, and focus on the
+                                                                                    specific issue rather than bringing
+                                                                                    up past mistakes. A calm <a
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
+                                                                                        href="https://happierme.app/adults/insight">conversation</a>
+                                                                                    after everyone has had time to
+                                                                                    settle can often be more productive.</h6>
+                                                                                   <div class="row">
+                                                                                    <div
+                                                                                        class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                        <hr class="hr_style_web_faq">
+                                                                                    </div>
+                                                                            </div>
+                                                                            <h2 class="hs_title">
+                                                                                6. How can parents help children deal
+                                                                                with exam or school stress?
+
+                                                                            </h2>
+
+                                                                            <h6 class="hs_desc">
+                                                                                Parents can provide <a
+                                                                                    class="blog_highlight_peach td_underline fs_15px"
+                                                                                    href="https://happierme.app/adults/insight">emotional
+                                                                                    support</a> alongside practical
+                                                                                help. Encouraging realistic routines,
+                                                                                adequate sleep, breaks, physical
+                                                                                activity, and open conversations about
+                                                                                worries can help. Focusing only on
+                                                                                grades can sometimes increase pressure,
+                                                                                so recognizing effort and learning is
+                                                                                also important. </h6>
+
+                                                                            <div class="row">
+                                                                                <div
+                                                                                    class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                    <hr class="hr_style_web_faq">
+                                                                                </div>
+                                                                            </div>
+                                                                            <h2 class="hs_title">
+                                                                                7. How can parents build trust with
+                                                                                their children?
+                                                                            </h2>
+
+                                                                            <h6 class="hs_desc">
+                                                                                <a class="blog_highlight_peach td_underline fs_15px"
+                                                                                    href="https://happierme.app/teenagers/audiopage/~podcasts~155.mp3/155/T/Learning%20to%20trust%20people%20again/podcast">
+                                                                                    Trust</a> develops through
+                                                                                consistent behavior, honesty, listening,
+                                                                                respect, appropriate boundaries, and
+                                                                                keeping commitments. Children are more
+                                                                                likely to communicate openly when they
+                                                                                feel that they can share difficulties
+                                                                                without automatically being judged or
+                                                                                punished.
+                                                                            </h6>
+
+                                                                            <div class="row">
+                                                                                <div
+                                                                                    class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                    <hr class="hr_style_web_faq">
+                                                                                </div>
+                                                                            </div>
+                                                                            <h2 class="hs_title">
+                                                                                8. How can parents set healthy
+                                                                                boundaries with children?
+
+                                                                            </h2>
+
+                                                                            <h6 class="hs_desc"><a
+                                                                                    class="blog_highlight_peach td_underline fs_15px"
+                                                                                    href="https://happierme.app/teenagers/audiopage/~podcasts~267.mp3/267/T/Setting%20healthy%20boundaries,%20and%20why%20they%20matter./podcast">
+                                                                                    Healthy boundaries</a> provide clear
+                                                                                expectations while respecting the
+                                                                                child's age, individuality, and growing
+                                                                                independence. Parents can explain the
+                                                                                reason behind important boundaries,
+                                                                                apply them consistently, listen to
+                                                                                concerns, and distinguish between
+                                                                                guidance and excessive control. </h6>
+
+
+                                                                            <div class="row">
+                                                                                <div
+                                                                                    class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                    <hr class="hr_style_web_faq">
+                                                                                </div>
+                                                                            </div>
+                                                                            <h2 class="hs_title">
+                                                                                9. How can parents teach children
+                                                                                emotional intelligence?
+
+                                                                            </h2>
+
+                                                                            <h6 class="hs_desc">
+                                                                                Parents can help children develop <a
+                                                                                    class="blog_highlight_peach td_underline fs_15px"
+                                                                                    href="https://happierme.app/teenagers/site-search/Emotional%20intelligence">emotional
+                                                                                    intelligence</a> by naming emotions,
+                                                                                listening to their feelings, discussing
+                                                                                what triggered them, demonstrating
+                                                                                healthy ways to manage difficult
+                                                                                emotions, and encouraging empathy and
+                                                                                perspective-taking. Children often learn
+                                                                                emotional skills by observing how adults
+                                                                                handle their own emotions. </h6>
+                                                                            <div class="row">
+                                                                                <div
+                                                                                    class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                    <hr class="hr_style_web_faq">
+                                                                                </div>
+                                                                            </div>
+                                                                            <h2 class="hs_title">
+                                                                                10. How can families deal with conflict
+                                                                                in a healthy way?
+                                                                            </h2>
+
+                                                                            <h6 class="hs_desc">
+                                                                                Healthy <a
+                                                                                    class="blog_highlight_peach td_underline fs_15px"
+                                                                                    href="https://happierme.app/teenagers/curated/youtubelink/PDkVkpJlb6I%3Dvncbxdfchgvxd">family
+                                                                                    conflict</a> involves listening to
+                                                                                different perspectives, avoiding
+                                                                                personal attacks, understanding
+                                                                                underlying emotions and needs, and
+                                                                                working toward solutions rather than
+                                                                                simply deciding who is right or wrong.
+                                                                                Taking a break when emotions become too
+                                                                                intense can also help. <div class="row">
+                                                                                    <div
+                                                                                        class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                        <hr class="hr_style_web_faq">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <h2 class="hs_title">
+                                                                                    11. How can parents support a child
+                                                                                    who lacks confidence?
+                                                                                </h2>
+
+                                                                                <h6 class="hs_desc">
+                                                                                    Parents can encourage children to
+                                                                                    try manageable challenges, recognize
+                                                                                    genuine effort and progress, allow
+                                                                                    them to make age-appropriate
+                                                                                    decisions, and avoid constant
+                                                                                    comparison with other children. <a
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
+                                                                                        href="https://happierme.app/teenagers/site-search/Confidence">Confidence</a>
+                                                                                    tends to develop through experiences
+                                                                                    of learning, problem-solving, and
+                                                                                    being accepted for who they are.
+                                                                                    <div class="row">
+                                                                                        <div
+                                                                                            class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                            <hr
+                                                                                                class="hr_style_web_faq">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <h2 class="hs_title">
+                                                                                        12. How can parents help
+                                                                                        children who overthink or worry?
+                                                                                    </h2>
+
+                                                                                    <h6 class="hs_desc">
+                                                                                        Parents can listen without
+                                                                                        immediately <a
+                                                                                            class="blog_highlight_peach td_underline fs_15px"
+                                                                                            href="https://happierme.app/teenagers/site-search/overthink">dismissing
+                                                                                            the worry</a>, help children
+                                                                                        identify what they are feeling,
+                                                                                        separate realistic concerns from
+                                                                                        assumptions, and focus on what
+                                                                                        can actually be controlled.
+                                                                                        Age-appropriate mindfulness,
+                                                                                        journaling, breathing exercises,
+                                                                                        and supportive conversations can
+                                                                                        also help.
+
+                                                                                        <div class="row">
+                                                                                            <div
+                                                                                                class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                                <hr
+                                                                                                    class="hr_style_web_faq">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <h2 class="hs_title">
+                                                                                            13. How can parents balance
+                                                                                            discipline and emotional
+                                                                                            support?
+
+                                                                                        </h2>
+
+                                                                                        <h6 class="hs_desc">
+                                                                                            Discipline and emotional <a
+                                                                                                class="blog_highlight_peach td_underline fs_15px"
+                                                                                                href="https://happierme.app/teenagers/curated/youtubelink/AizLUdCEmcc%3Dvncbxdfchgvxd">support</a>
+                                                                                            do not have to be opposites.
+                                                                                            Parents can maintain clear
+                                                                                            expectations and
+                                                                                            consequences while still
+                                                                                            acknowledging a child's
+                                                                                            emotions and helping them
+                                                                                            understand the impact of
+                                                                                            their behavior. The goal is
+                                                                                            to guide learning and
+                                                                                            responsibility rather than
+                                                                                            rely only on fear or
+                                                                                            punishment. </h6>
+                                                                                        <div class="row">
+                                                                                            <div
+                                                                                                class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                                <hr
+                                                                                                    class="hr_style_web_faq">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <h2 class="hs_title">
+                                                                                            14. How can families spend
+                                                                                            more meaningful time
+                                                                                            together?
+                                                                                        </h2>
+
+                                                                                        <h6 class="hs_desc">
+                                                                                            Meaningful family time does
+                                                                                            not always require elaborate
+                                                                                            activities. Shared meals, <a
+                                                                                                class="blog_highlight_peach td_underline fs_15px"
+                                                                                                href="https://happierme.app/adults/insight">conversations</a>,
+                                                                                            walks, games, hobbies, or
+                                                                                            simply spending time without
+                                                                                            phones or other distractions
+                                                                                            can strengthen connection.
+                                                                                            Consistency and genuine
+                                                                                            attention are often more
+                                                                                            important than the length of
+                                                                                            the activity. </h6>
+
+                                                                                        <div class="row">
+                                                                                            <div
+                                                                                                class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                                <hr
+                                                                                                    class="hr_style_web_faq">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <h2 class="hs_title">
+                                                                                            15. How does HappierMe
+                                                                                            support happiness and
+                                                                                            self-awareness?
+                                                                                        </h2>
+
+                                                                                        <h6 class="hs_desc">
+                                                                                            HappierMe helps users
+                                                                                            develop greater
+                                                                                            self-awareness and build
+                                                                                            practical habits that
+                                                                                            support everyday wellbeing.
+                                                                                            The app includes guided
+                                                                                            journaling, wellness
+                                                                                            surveys, mindfulness
+                                                                                            practices, meditation,
+                                                                                            self-awareness exercises,
+                                                                                            podcasts, videos,
+                                                                                            microlearning, and
+                                                                                            personalized guidance
+                                                                                            through Olly AI. These
+                                                                                            resources help users explore
+                                                                                            their thoughts, emotions,
+                                                                                            habits, relationships,
+                                                                                        </h6>
+                                                          <div class="row">
+                                                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                  <hr class="hr_style_web_faq">
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+
+                                              <div class="row">
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                                                    <hr class="hr_style_web_01">
+                                                </div>
+                                              </div>
+
+
+                                                 <div class="panel panel-default">
+                                                  <div class="panel-heading">
+                                                      <h4 class="panel-title">
+                                                          <a class="accordion-toggle" data-toggle="collapse"
+                                                              data-parent="#accordion_faq_2" href="#cm27">
+                                                               Habits, Addiction & Behaviour
+                                                          </a>
+                                                      </h4>
+                                                  </div>
+                                                  <div id="cm27" class="panel-collapse collapse">
+                                                      <div class="panel-body">
+                                                            
+
+                                                       <h2 class="hs_title">
+                                                                                    1. What is a habit and how does it
+                                                                                    develop?
+
+
+
+                                                                                </h2>
+
+                                                                                <h6 class="hs_desc">
+                                                                                    A habit is a <a
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
+                                                                                        href="https://happierme.app/teenagers/site-search/behaviour">behavior</a>
+                                                                                    that becomes increasingly automatic
+                                                                                    through repetition and the
+                                                                                    situations or cues associated with
+                                                                                    it. Habits can be helpful or
+                                                                                    unhelpful, and understanding the
+                                                                                    triggers and rewards connected to a
+                                                                                    behavior can make it easier to
+                                                                                    change. </h6>
+                                                                                <div class="row">
+                                                                                    <div
+                                                                                        class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                        <hr class="hr_style_web_faq">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <h2 class="hs_title">
+                                                                                    2. Why is it so difficult to break
+                                                                                    an unhealthy habit?
+                                                                                </h2>
+
+                                                                                <h6 class="hs_desc"><a
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
+                                                                                        href="https://happierme.app/teenagers/micro-learning/inner/48">
+                                                                                        Unhealthy habits</a> can become
+                                                                                    strongly associated with specific
+                                                                                    emotions, situations, places,
+                                                                                    people, or times of day. The
+                                                                                    behavior may also provide a
+                                                                                    short-term reward such as comfort,
+                                                                                    distraction, stimulation, or relief,
+                                                                                    even when it creates longer-term
+                                                                                    problems. </h6>
+
+
+                                                                                <div class="row">
+                                                                                    <div
+                                                                                        class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                        <hr class="hr_style_web_faq">
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <h2 class="hs_title">
+                                                                                    3. How can I change an unhealthy
+                                                                                    habit?
+                                                                                </h2>
+
+                                                                                <h6 class="hs_desc">
+                                                                                    Start by identifying when and why
+                                                                                    the behavior happens. Notice the
+                                                                                    trigger, the thoughts or emotions
+                                                                                    involved, and what you get from the
+                                                                                    behavior. Then introduce a healthier
+                                                                                    alternative, make the <a
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
+                                                                                        href="https://happierme.app/teenagers/micro-learning/inner/50">unwanted
+                                                                                        behavior</a> harder to repeat,
+                                                                                    and practice the new response
+                                                                                    consistently. </h6>
+                                                                                <div class="row">
+                                                                                    <div
+                                                                                        class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                        <hr class="hr_style_web_faq">
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <h2 class="hs_title">
+                                                                                    4. Why do I keep repeating
+                                                                                    behaviours I know are bad for me?
+                                                                                </h2>
+
+                                                                                <h6 class="hs_desc">
+                                                                                    Knowing that a <a
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
+                                                                                        href="https://happierme.app/teenagers/micro-learning/inner/50">behavior</a>
+                                                                                    is harmful does not always change an
+                                                                                    established habit. Emotional
+                                                                                    triggers, automatic routines,
+                                                                                    immediate rewards, stress, boredom,
+                                                                                    and learned patterns can continue to
+                                                                                    drive behavior. Understanding the
+                                                                                    pattern can be an important first
+                                                                                    step toward changing it. </h6>
+
+
+                                                                                <div class="row">
+                                                                                    <div
+                                                                                        class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                        <hr class="hr_style_web_faq">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <h2 class="hs_title">
+                                                                                    5. What is the difference between a
+                                                                                    habit and an addiction?
+
+                                                                                </h2>
+
+                                                                                <h6 class="hs_desc">
+                                                                                    A habit is a <a
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
+                                                                                        href="https://happierme.app/teenagers/micro-learning/inner/50">repeated
+                                                                                        behavior</a> that can often be
+                                                                                    changed with awareness and
+                                                                                    deliberate practice. Addiction
+                                                                                    involves a more persistent pattern
+                                                                                    of compulsive use or behavior
+                                                                                    despite harmful consequences and may
+                                                                                    involve difficulty controlling or
+                                                                                    stopping it. Addiction can require
+                                                                                    professional assessment and
+                                                                                    treatment.</h6>
+                                                                                   <div class="row">
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                                                    <hr class="hr_style_web_01">
+                                                </div>
+                                              </div>
+                                                                            <h2 class="hs_title">
+                                                                                6. What are common signs of addictive
+                                                                                behaviour?
+                                                                            </h2>
+
+                                                                            <h6 class="hs_desc">
+                                                                                Possible signs include repeatedly trying
+                                                                                and failing to reduce the <a
+                                                                                    class="blog_highlight_peach td_underline fs_15px"
+                                                                                    href="https://happierme.app/teenagers/audiopage/~podcasts~296.mp3/296/T/Feelings%20show%20up%20in%20our%20body%20and%20behaviour/podcast">behavior</a>,
+                                                                                feeling unable to control it, continuing
+                                                                                despite negative consequences, spending
+                                                                                increasing amounts of time on it,
+                                                                                neglecting responsibilities or
+                                                                                relationships, and experiencing strong
+                                                                                urges or cravings. The specific signs
+                                                                                vary depending on the substance or
+                                                                                behavior. </h6>
+
+                                                                            <div class="row">
+                                                                                <div
+                                                                                    class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                    <hr class="hr_style_web_faq">
+                                                                                </div>
+                                                                            </div>
+                                                                            <h2 class="hs_title">
+                                                                                7. Why do people use substances or
+                                                                                behaviours to cope with stress?
+                                                                            </h2>
+
+                                                                            <h6 class="hs_desc">
+                                                                                Some people turn to substances or
+                                                                                repetitive behaviors because they
+                                                                                temporarily reduce <a
+                                                                                    class="blog_highlight_peach td_underline fs_15px"
+                                                                                    href="https://happierme.app/adults/micro-learning/inner/110">uncomfortable
+                                                                                    emotions</a>, provide stimulation,
+                                                                                create escape, or offer a sense of
+                                                                                relief. However, relying on them as a
+                                                                                primary coping strategy can reinforce
+                                                                                the pattern and create additional
+                                                                                difficulties over time. </h6>
+
+                                                                            <div class="row">
+                                                                                <div
+                                                                                    class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                    <hr class="hr_style_web_faq">
+                                                                                </div>
+                                                                            </div>
+                                                                            <h2 class="hs_title">
+                                                                                8. How can I identify the triggers
+                                                                                behind an unhealthy behaviour?
+                                                                            </h2>
+
+                                                                            <h6 class="hs_desc">
+                                                                                Pay attention to what happens
+                                                                                immediately before the behavior.
+                                                                                Triggers may include particular
+                                                                                emotions, thoughts, people, places,
+                                                                                times, situations, or physical states
+                                                                                such as tiredness or hunger. Journaling
+                                                                                or tracking <a
+                                                                                    class="blog_highlight_peach td_underline fs_15px"
+                                                                                    href="https://happierme.app/adults/micro-learning/inner/50">the
+                                                                                    behavior</a> can help reveal
+                                                                                recurring patterns. </h6>
+
+
+                                                                            <div class="row">
+                                                                                <div
+                                                                                    class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                    <hr class="hr_style_web_faq">
+                                                                                </div>
+                                                                            </div>
+                                                                            <h2 class="hs_title">
+                                                                                9. How can I manage cravings or urges?
+
+                                                                            </h2>
+
+                                                                            <h6 class="hs_desc">
+                                                                                An urge does not necessarily require
+                                                                                immediate action. Pausing, noticing the
+                                                                                urge without automatically responding,
+                                                                                changing your environment, using
+                                                                                breathing or mindfulness, delaying the
+                                                                                behavior, and choosing another activity
+                                                                                can create space for a different
+                                                                                response. For <a
+                                                                                    class="blog_highlight_peach td_underline fs_15px"
+                                                                                    href="https://happierme.app/adults/micro-learning/inner/54">substance
+                                                                                    dependence</a>, professional support
+                                                                                may be important. </h6>
+                                                                            <div class="row">
+                                                                                <div
+                                                                                    class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                    <hr class="hr_style_web_faq">
+                                                                                </div>
+                                                                            </div>
+                                                                            <h2 class="hs_title">
+                                                                                10. Can mindfulness help with unhealthy
+                                                                                habits or addictive behaviour?
+                                                                            </h2>
+
+                                                                            <h6 class="hs_desc"><a
+                                                                                    class="blog_highlight_peach td_underline fs_15px"
+                                                                                    href="https://happierme.app/adults/site-search/Mindfulness">
+                                                                                    Mindfulness</a> can help people
+                                                                                notice thoughts, emotions, physical
+                                                                                sensations, and urges before
+                                                                                automatically acting on them. This
+                                                                                increased awareness can create a pause
+                                                                                between an urge and a behavior.
+                                                                                Mindfulness can be a supportive tool but
+                                                                                should not be considered a replacement
+                                                                                for treatment when addiction is present.
+                                                                                <div class="row">
+                                                                                    <div
+                                                                                        class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                        <hr class="hr_style_web_faq">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <h2 class="hs_title">
+                                                                                    11. How can I reduce excessive phone
+                                                                                    or social media use?
+                                                                                </h2>
+
+                                                                                <h6 class="hs_desc">
+                                                                                    Start by <a
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
+                                                                                        href="https://happierme.app/adults/social-media">identifying</a>
+                                                                                    when and why you reach for your
+                                                                                    phone, such as boredom, stress,
+                                                                                    loneliness, or habit. Turning off
+                                                                                    unnecessary notifications, creating
+                                                                                    phone-free periods, setting
+                                                                                    boundaries around specific apps, and
+                                                                                    replacing scrolling with meaningful
+                                                                                    activities can help gradually change
+                                                                                    the pattern.
+                                                                                    <div class="row">
+                                                                                        <div
+                                                                                            class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                            <hr
+                                                                                                class="hr_style_web_faq">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <h2 class="hs_title">
+                                                                                        12. How can I stop using
+                                                                                        unhealthy behaviours to escape
+                                                                                        difficult emotions?
+                                                                                    </h2>
+
+                                                                                    <h6 class="hs_desc">
+                                                                                        First identify the <a
+                                                                                            class="blog_highlight_peach td_underline fs_15px"
+                                                                                            href="https://happierme.app/adults/wisdom-shorts/1.181.mp4/T/Tips%20to%20manage%20difficult%20emotions">emotion</a>
+                                                                                        you are trying to avoid or
+                                                                                        change. Instead of immediately
+                                                                                        acting on the urge, pause and
+                                                                                        acknowledge the feeling,
+                                                                                        understand what triggered it,
+                                                                                        and choose another way to
+                                                                                        respond, such as talking to
+                                                                                        someone, exercising, journaling,
+                                                                                        mindfulness, or taking a short
+                                                                                        break.
+
+                                                                                        <div class="row">
+                                                                                            <div
+                                                                                                class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                                <hr
+                                                                                                    class="hr_style_web_faq">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <h2 class="hs_title">
+                                                                                            13. Can behaviour patterns
+                                                                                            affect relationships and
+                                                                                            everyday life?
+
+                                                                                        </h2>
+
+                                                                                        <h6 class="hs_desc">
+                                                                                            Yes. Repeated behaviors can
+                                                                                            influence communication,
+                                                                                            trust, responsibilities, <a
+                                                                                                class="blog_highlight_peach td_underline fs_15px"
+                                                                                                href="https://happierme.app/adults/audiopage/~podcasts~295.mp3/295/T/How%20our%20feelings%20influence%20our%20future/podcast">finances</a>,
+                                                                                            health, work, and family
+                                                                                            relationships. Becoming
+                                                                                            aware of how a behavior
+                                                                                            affects both yourself and
+                                                                                            others can help create
+                                                                                            motivation for healthier
+                                                                                            changes. </h6>
+                                                                                        <div class="row">
+                                                                                            <div
+                                                                                                class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                                <hr
+                                                                                                    class="hr_style_web_faq">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <h2 class="hs_title">
+                                                                                            14. When should someone seek
+                                                                                            professional help for
+                                                                                            addiction or unhealthy
+                                                                                            behaviour?
+                                                                                        </h2>
+
+                                                                                        <h6 class="hs_desc"><a
+                                                                                                class="blog_highlight_peach td_underline fs_15px"
+                                                                                                href="https://happierme.app/adults/coach/contact">
+                                                                                                Professional support</a>
+                                                                                            is especially important when
+                                                                                            a behavior feels difficult
+                                                                                            to control, continues
+                                                                                            despite significant harm,
+                                                                                            affects health, work,
+                                                                                            studies or relationships, or
+                                                                                            involves withdrawal,
+                                                                                            dependence, or safety
+                                                                                            concerns. A qualified
+                                                                                            healthcare or mental health
+                                                                                            professional can help assess
+                                                                                            the situation and recommend
+                                                                                            appropriate support. </h6>
+
+                                                                                        <div class="row">
+                                                                                            <div
+                                                                                                class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                                <hr
+                                                                                                    class="hr_style_web_faq">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <h2 class="hs_title">
+                                                                                            15. How can HappierMe help
+                                                                                            with habits, addiction and
+                                                                                            behaviour?
+                                                                                        </h2>
+
+                                                                                        <h6 class="hs_desc">
+                                                                                            HappierMe provides
+                                                                                            educational and
+                                                                                            self-awareness resources
+                                                                                            that can help users
+                                                                                            understand thoughts,
+                                                                                            emotions, triggers, habits,
+                                                                                            and behavioral patterns. Its
+                                                                                            tools include guided
+                                                                                            journaling, mindfulness,
+                                                                                            meditation, breathing
+                                                                                            exercises, self-awareness
+                                                                                            exercises, podcasts, videos,
+                                                                                            microlearning, and Olly AI.
+                                                                                            HappierMe is designed as a
+                                                                                            mental wellness and personal
+                                                                                            growth resource and is
+                                                                                            <b>not a replacement for
+                                                                                                professional addiction
+                                                                                                treatment or medical
+                                                                                                care. </b> </h6>
+                                                          <div class="row">
+                                                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                  <hr class="hr_style_web_faq">
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+
+                                              <div class="row">
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                                                    <hr class="hr_style_web_01">
+                                                </div>
+                                              </div>
+
+                                                 <div class="panel panel-default">
+                                                  <div class="panel-heading">
+                                                      <h4 class="panel-title">
+                                                          <a class="accordion-toggle" data-toggle="collapse"
+                                                              data-parent="#accordion_faq_2" href="#cm28">
+                                                                Dealing with Loss
+                                                          </a>
+                                                      </h4>
+                                                  </div>
+                                                  <div id="cm28" class="panel-collapse collapse">
+                                                      <div class="panel-body">
+                                                         
+
+                                                         <h2 class="hs_title">
+                                                                                    1. What is grief, and why does it
+                                                                                    happen?
+
+
+
+                                                                                </h2>
+
+                                                                                <h6 class="hs_desc"><a
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
+                                                                                        href="https://happierme.app/adults/audiopage/~podcasts~241.mp3/241/T/Grief,%20Identity%20and%20Rebuilding%20your%20life/podcast">
+                                                                                        Grief</a> is the emotional
+                                                                                    response to losing someone,
+                                                                                    something, or a part of life that
+                                                                                    was important to you. It can involve
+                                                                                    sadness, anger, confusion,
+                                                                                    loneliness, guilt, relief, or many
+                                                                                    emotions at different times. There
+                                                                                    is no single way to experience
+                                                                                    grief. </h6>
+                                                                                <div class="row">
+                                                                                    <div
+                                                                                        class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                        <hr class="hr_style_web_faq">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <h2 class="hs_title">
+                                                                                    2. What are the common emotional
+                                                                                    responses to loss?
+                                                                                </h2>
+
+                                                                                <h6 class="hs_desc">
+                                                                                    Everyday wellbeing can be People may
+                                                                                    experience <a
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
+                                                                                        href="https://happierme.app/adults/micro-learning/inner/42">sadness</a>,
+                                                                                    shock, anger, guilt, loneliness,
+                                                                                    fear, confusion, numbness, or
+                                                                                    difficulty accepting what happened.
+                                                                                    These responses can change over time
+                                                                                    and may come and go rather than
+                                                                                    follow a predictable pattern. by
+                                                                                    building meaningful connections,
+                                                                                    taking care of your physical and
+                                                                                    emotional needs, practicing
+                                                                                    gratitude, spending time on
+                                                                                    activities that matter to you,
+                                                                                    developing healthy habits, and
+                                                                                    becoming more aware of your thoughts
+                                                                                    and emotions. Small, consistent
+                                                                                    changes can have a meaningful impact
+                                                                                    over time.
+                                                                                </h6>
+
+
+                                                                                <div class="row">
+                                                                                    <div
+                                                                                        class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                        <hr class="hr_style_web_faq">
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <h2 class="hs_title">
+                                                                                    3. Is there a normal way to grieve?
+                                                                                </h2>
+
+                                                                                <h6 class="hs_desc">
+                                                                                    There is no single "right" way to
+                                                                                    grieve. People respond to <a
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
+                                                                                        href="https://happierme.app/adults/micro-learning/inner/40">loss</a>
+                                                                                    differently depending on their
+                                                                                    relationship with what was lost,
+                                                                                    their circumstances, personality,
+                                                                                    previous experiences, support
+                                                                                    system, and coping style. Grief also
+                                                                                    does not always follow a fixed
+                                                                                    sequence or timeline. </h6>
+                                                                                <div class="row">
+                                                                                    <div
+                                                                                        class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                        <hr class="hr_style_web_faq">
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <h2 class="hs_title">
+                                                                                    4. How long does grief last?
+                                                                                </h2>
+
+                                                                                <h6 class="hs_desc">
+                                                                                    There is no universal timeline for
+                                                                                    <a class="blog_highlight_peach td_underline fs_15px"
+                                                                                        href="https://happierme.app/adults/audiopage/~podcasts~241.mp3/241/T/Grief,%20Identity%20and%20Rebuilding%20your%20life/podcast">grief</a>.
+                                                                                    Some people begin to feel more able
+                                                                                    to manage everyday life relatively
+                                                                                    soon, while others experience grief
+                                                                                    for much longer. Important dates,
+                                                                                    memories, or unexpected reminders
+                                                                                    can sometimes bring strong emotions
+                                                                                    even after a person has started
+                                                                                    adjusting.
+                                                                                </h6>
+
+
+                                                                                <div class="row">
+                                                                                    <div
+                                                                                        class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                        <hr class="hr_style_web_faq">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <h2 class="hs_title">
+                                                                                    5. How can I cope with the loss of
+                                                                                    someone I love?
+                                                                                </h2>
+
+                                                                                <h6 class="hs_desc">
+                                                                                    Coping can involve allowing yourself
+                                                                                    to experience emotions rather than
+                                                                                    expecting yourself to recover
+                                                                                    quickly. Staying connected with
+                                                                                    supportive people, maintaining basic
+                                                                                    routines, getting enough rest, <a
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
+                                                                                        href="https://happierme.app/adults/audiopage/~podcasts~294.mp3/294/T/Our%20feelings%20can%20repeat%20in%20patterns/podcast">writing
+                                                                                        about your feelings</a>,
+                                                                                    spending time with meaningful
+                                                                                    memories, and giving yourself space
+                                                                                    to adjust can all be helpful.</h6>
+                                                                                    <div class="row">
+                                                                                <div
+                                                                                    class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                    <hr class="hr_style_web_faq">
+                                                                                </div>
+                                                                            </div>
+                                                                            <h2 class="hs_title">
+                                                                                6. Is it okay to feel angry after a
+                                                                                loss?
+                                                                            </h2>
+
+                                                                            <h6 class="hs_desc">
+                                                                                Yes. Anger can be one of many <a
+                                                                                    class="blog_highlight_peach td_underline fs_15px"
+                                                                                    href="https://happierme.app/adults/audiopage/~podcasts~294.mp3/294/T/Our%20feelings%20can%20repeat%20in%20patterns/podcast">emotional
+                                                                                    responses</a> to loss. A person may
+                                                                                feel angry about what happened,
+                                                                                circumstances surrounding the loss,
+                                                                                other people, themselves, or simply the
+                                                                                unfairness of the situation. Recognizing
+                                                                                the emotion without acting harmfully on
+                                                                                it can help. </h6>
+
+                                                                            <div class="row">
+                                                                                <div
+                                                                                    class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                    <hr class="hr_style_web_faq">
+                                                                                </div>
+                                                                            </div>
+                                                                            <h2 class="hs_title">
+                                                                                7. Why do I feel guilty after someone
+                                                                                dies or after a major loss?
+                                                                            </h2>
+
+                                                                            <h6 class="hs_desc">
+                                                                                <a class="blog_highlight_peach td_underline fs_15px"
+                                                                                    href="https://happierme.app/adults/audiopage/~podcasts~294.mp3/294/T/Our%20feelings%20can%20repeat%20in%20patterns/podcast">
+                                                                                    Guilt</a> can arise from thoughts
+                                                                                about things we wish we had said or done
+                                                                                differently, decisions we made, or
+                                                                                situations we believe we could have
+                                                                                changed. These thoughts can feel very
+                                                                                real during grief, but feeling
+                                                                                responsible does not necessarily mean
+                                                                                that you were responsible.
+                                                                            </h6>
+
+                                                                            <div class="row">
+                                                                                <div
+                                                                                    class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                    <hr class="hr_style_web_faq">
+                                                                                </div>
+                                                                            </div>
+                                                                            <h2 class="hs_title">
+                                                                                8. Why do I sometimes feel okay after a
+                                                                                loss and then suddenly feel sad again?
+                                                                            </h2>
+
+                                                                            <h6 class="hs_desc">
+                                                                                Grief is often not a steady process. A
+                                                                                person may feel relatively okay for a
+                                                                                period and then experience strong <a
+                                                                                    class="blog_highlight_peach td_underline fs_15px"
+                                                                                    href="https://happierme.app/adults/audiopage/~podcasts~294.mp3/294/T/Our%20feelings%20can%20repeat%20in%20patterns/podcast">sadness</a>
+                                                                                after seeing a photograph, hearing a
+                                                                                song, visiting a familiar place, or
+                                                                                remembering something unexpectedly.
+                                                                                These emotional waves can be part of
+                                                                                adapting to loss. </h6>
+
+
+                                                                            <div class="row">
+                                                                                <div
+                                                                                    class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                    <hr class="hr_style_web_faq">
+                                                                                </div>
+                                                                            </div>
+                                                                            <h2 class="hs_title">
+                                                                                9. How can I deal with loneliness after
+                                                                                losing someone?
+
+                                                                            </h2>
+
+                                                                            <h6 class="hs_desc">
+                                                                                Acknowledging the
+                                                                                <a class="blog_highlight_peach td_underline fs_15px"
+                                                                                    href="https://happierme.app/adults/loneliness">
+
+                                                                                    loneliness</a> rather than
+                                                                                withdrawing completely can help. Staying
+                                                                                connected with trusted family members or
+                                                                                friends, joining supportive groups,
+                                                                                maintaining meaningful routines, and
+                                                                                gradually creating new sources of
+                                                                                connection can provide emotional support
+                                                                                while you adjust.
+                                                                            </h6>
+                                                                            <div class="row">
+                                                                                <div
+                                                                                    class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                    <hr class="hr_style_web_faq">
+                                                                                </div>
+                                                                            </div>
+                                                                            <h2 class="hs_title">
+                                                                                10. How can I support someone who is
+                                                                                grieving?
+
+                                                                            </h2>
+
+                                                                            <h6 class="hs_desc">
+
+                                                                                Listening without trying to immediately
+                                                                                <a class="blog_highlight_peach td_underline fs_15px"
+                                                                                    href="https://happierme.app/adults/audiopage/~podcasts~293.mp3/293/T/Strong%20feelings%20can%20stop%20us%20thinking%20clearly/podcast">fix
+                                                                                    their pain</a> can be one of the
+                                                                                most helpful forms of support. Give them
+                                                                                space to talk, acknowledge their
+                                                                                feelings, avoid telling them how they
+                                                                                should grieve, offer practical help, and
+                                                                                continue checking in even after the
+                                                                                initial period of support has passed.
+                                                                                <div class="row">
+                                                                                    <div
+                                                                                        class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                        <hr class="hr_style_web_faq">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <h2 class="hs_title">
+                                                                                    11. Can mindfulness help with grief?
+                                                                                </h2>
+
+                                                                                <h6 class="hs_desc">
+                                                                                    <a class="blog_highlight_peach td_underline fs_15px"
+                                                                                        href="https://happierme.app/adults/site-search/Mindfulness">
+                                                                                        Mindfulness</a> can help a
+                                                                                    grieving person notice thoughts,
+                                                                                    emotions, and physical sensations
+                                                                                    without immediately trying to push
+                                                                                    them away. Breathing, quiet
+                                                                                    reflection, meditation, or simply
+                                                                                    paying attention to the present
+                                                                                    moment can provide small periods of
+                                                                                    calm while allowing difficult
+                                                                                    emotions to exist.
+                                                                                </h6>
+
+
+                                                                                <div class="row">
+                                                                                    <div
+                                                                                        class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                        <hr class="hr_style_web_faq">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <h2 class="hs_title">
+                                                                                    12. How can journaling help after a
+                                                                                    loss?
+                                                                                </h2>
+
+                                                                                <h6 class="hs_desc"><a
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
+                                                                                        href="https://happierme.app/adults/blog-article?sId=57">
+                                                                                        Journaling</a> can provide a
+                                                                                    private space to express emotions,
+                                                                                    memories, questions, regrets, and
+                                                                                    thoughts that may be difficult to
+                                                                                    communicate aloud. Writing can also
+                                                                                    help identify changing emotions and
+                                                                                    reflect on what the relationship or
+                                                                                    experience meant to you.
+
+
+                                                                                    <div class="row">
+                                                                                        <div
+                                                                                            class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                            <hr
+                                                                                                class="hr_style_web_faq">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <h2 class="hs_title">
+                                                                                        13. How can I move forward
+                                                                                        without forgetting what I lost?
+
+                                                                                    </h2>
+
+                                                                                    <h6 class="hs_desc">
+                                                                                        Moving forward does not require
+                                                                                        forgetting. People can continue
+                                                                                        to value memories,
+                                                                                        relationships, experiences, or
+                                                                                        parts of their past while
+                                                                                        gradually adapting to life after
+                                                                                        the loss. Creating meaningful
+                                                                                        rituals, keeping memories, and
+                                                                                        allowing yourself to experience
+                                                                                        new moments can help integrate
+                                                                                        the loss into your life. </h6>
+                                                                                    <div class="row">
+                                                                                        <div
+                                                                                            class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                            <hr
+                                                                                                class="hr_style_web_faq">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <h2 class="hs_title">
+                                                                                        14. When should someone seek
+                                                                                        professional support after a
+                                                                                        loss?
+                                                                                    </h2>
+
+                                                                                    <h6 class="hs_desc"><a
+                                                                                            class="blog_highlight_peach td_underline fs_15px"
+                                                                                            href="https://happierme.app/adults/coach/contact">
+                                                                                            Professional support</a> can
+                                                                                        be helpful when grief feels
+                                                                                        overwhelming or persistent,
+                                                                                        significantly interferes with
+                                                                                        everyday functioning,
+                                                                                        relationships, work or studies,
+                                                                                        or is accompanied by severe
+                                                                                        hopelessness or thoughts of
+                                                                                        self-harm. A qualified mental
+                                                                                        health professional can provide
+                                                                                        appropriate support based on the
+                                                                                        person's circumstances. </h6>
+
+                                                                                    <div class="row">
+                                                                                        <div
+                                                                                            class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                            <hr
+                                                                                                class="hr_style_web_faq">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <h2 class="hs_title">
+                                                                                        15. How can HappierMe help
+                                                                                        someone dealing with loss?
+                                                                                    </h2>
+
+                                                                                    <h6 class="hs_desc">
+                                                                                        HappierMe provides mental
+                                                                                        wellness and personal growth
+                                                                                        resources that can support
+                                                                                        self-awareness and emotional
+                                                                                        understanding during difficult
+                                                                                        periods. Tools such as guided
+                                                                                        journaling, mindfulness,
+                                                                                        meditation, breathing exercises,
+                                                                                        self-awareness content,
+                                                                                        podcasts, videos, and
+                                                                                        microlearning can provide ways
+                                                                                        to reflect on and manage
+                                                                                        difficult emotions. HappierMe is
+                                                                                        a wellness resource and is<b>
+                                                                                            not a replacement for
+                                                                                            professional grief or mental
+                                                                                            health support when that is
+                                                                                            needed.</b></h6>
+                                                          <div class="row">
+                                                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                  <hr class="hr_style_web_faq">
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+
+                                              <div class="row">
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                                                    <hr class="hr_style_web_01">
+                                                </div>
+                                              </div>
+                                                 <div class="panel panel-default">
+                                                  <div class="panel-heading">
+                                                      <h4 class="panel-title">
+                                                          <a class="accordion-toggle" data-toggle="collapse"
+                                                              data-parent="#accordion_faq_2" href="#cm29">
+                                                                Social Proof
+                                                          </a>
+                                                      </h4>
+                                                  </div>
+                                                  <div id="cm29" class="panel-collapse collapse">
+                                                      <div class="panel-body">
+                                                           
+
+                                                      
+                                                                                <h2 class="hs_title">
+                                                                                    1. What do people use HappierMe for?
+
+
+
+                                                                                </h2>
+
+                                                                                <h6 class="hs_desc">
+                                                                                    People can use HappierMe for
+                                                                                    everyday mental wellness and
+                                                                                    personal growth, including managing
+                                                                                    stress and overthinking,
+                                                                                    understanding emotions, improving
+                                                                                    relationships, building
+                                                                                    self-awareness, developing healthier
+                                                                                    habits, practicing mindfulness, and
+                                                                                    learning practical emotional skills.
+                                                                                </h6>
+                                                                                <div class="row">
+                                                                                    <div
+                                                                                        class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                        <hr class="hr_style_web_faq">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <h2 class="hs_title">
+                                                                                    2. Why do people choose HappierMe
+                                                                                    for mental wellness?
+                                                                                </h2>
+
+                                                                                <h6 class="hs_desc">
+                                                                                    HappierMe brings multiple aspects of
+                                                                                    mental wellness and personal growth
+                                                                                    into one platform. Instead of
+                                                                                    focusing only on meditation, it
+                                                                                    combines educational content,
+                                                                                    mindfulness, emotional intelligence,
+                                                                                    relationships, self-awareness,
+                                                                                    journaling, habit-building, and
+                                                                                    personalized guidance through Olly
+                                                                                    AI. </h6>
+
+
+                                                                                <div class="row">
+                                                                                    <div
+                                                                                        class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                        <hr class="hr_style_web_faq">
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <h2 class="hs_title">
+                                                                                    3. Is HappierMe useful for people
+                                                                                    who are new to mindfulness?
+                                                                                </h2>
+
+                                                                                <h6 class="hs_desc">
+                                                                                    Yes. HappierMe includes
+                                                                                    beginner-friendly educational
+                                                                                    content, guided mindfulness,
+                                                                                    breathing exercises, meditation,
+                                                                                    short videos, and microlearning
+                                                                                    resources. Users can explore
+                                                                                    different approaches and build
+                                                                                    practices gradually rather than
+                                                                                    needing previous meditation
+                                                                                    experience. </h6>
+                                                                                <div class="row">
+                                                                                    <div
+                                                                                        class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                        <hr class="hr_style_web_faq">
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <h2 class="hs_title">
+                                                                                    4. What kind of content is available
+                                                                                    on HappierMe?
+                                                                                </h2>
+
+                                                                                <h6 class="hs_desc">
+                                                                                    HappierMe includes short videos,
+                                                                                    podcasts, blogs, microlearning
+                                                                                    modules, guided journaling, wellness
+                                                                                    surveys, meditation, breathing and
+                                                                                    mindfulness exercises,
+                                                                                    self-awareness activities, live
+                                                                                    events, community learning, and
+                                                                                    other resources related to mental
+                                                                                    wellness and personal growth. </h6>
+
+
+                                                                                <div class="row">
+                                                                                    <div
+                                                                                        class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                        <hr class="hr_style_web_faq">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <h2 class="hs_title">
+                                                                                    5. What do users get from using
+                                                                                    HappierMe regularly?
+
+                                                                                </h2>
+
+                                                                                <h6 class="hs_desc">
+                                                                                    Regular use can provide
+                                                                                    opportunities to practice <a
+                                                                                        class="blog_highlight_peach td_underline fs_15px"
+                                                                                        href="https://happierme.app/adults/explore#self-awareness">self-awareness</a>,
+                                                                                    reflect on thoughts and emotions,
+                                                                                    learn about relationships and
+                                                                                    emotional intelligence, practice
+                                                                                    mindfulness, and develop healthier
+                                                                                    habits. The value depends on how
+                                                                                    consistently and meaningfully a
+                                                                                    person engages with the available
+                                                                                    resources.</h6>
+                                                                                   <div class="row">
+                                                                                    <div
+                                                                                        class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                        <hr class="hr_style_web_faq">
+                                                                                    </div>
+                                                                                </div>
+                                                                            <h2 class="hs_title">
+                                                                                6. Is HappierMe more than a meditation
+                                                                                app?
+                                                                            </h2>
+
+                                                                            <h6 class="hs_desc">
+                                                                                Yes. Meditation is one part of
+                                                                                HappierMe, but the platform also covers
+                                                                                emotional intelligence, self-awareness,
+                                                                                relationships, stress and anxiety,
+                                                                                habits, personal growth, communication,
+                                                                                and everyday life challenges. </h6>
+
+                                                                            <div class="row">
+                                                                                <div
+                                                                                    class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                    <hr class="hr_style_web_faq">
+                                                                                </div>
+                                                                            </div>
+                                                                            <h2 class="hs_title">
+                                                                                7. Does HappierMe provide personalized
+                                                                                guidance?
+                                                                            </h2>
+
+                                                                            <h6 class="hs_desc">
+
+                                                                                Yes. Olly AI is built into HappierMe to
+                                                                                help users reflect on what they are
+                                                                                experiencing and guide them toward
+                                                                                relevant expert-curated resources within
+                                                                                the HappierMe platform, including
+                                                                                videos, podcasts, exercises,
+                                                                                microlearning, and meditation.
+                                                                            </h6>
+
+                                                                            <div class="row">
+                                                                                <div
+                                                                                    class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                    <hr class="hr_style_web_faq">
+                                                                                </div>
+                                                                            </div>
+                                                                            <h2 class="hs_title">
+                                                                                8. What makes Olly AI different from a
+                                                                                general AI chatbot?
+                                                                            </h2>
+
+                                                                            <h6 class="hs_desc">
+
+                                                                                Olly AI is designed specifically as a
+                                                                                wellness guide within HappierMe.
+                                                                                According to HappierMe's approach, it
+                                                                                does not search the open internet for
+                                                                                information; instead, it guides users
+                                                                                toward relevant resources within the
+                                                                                HappierMe content ecosystem.
+                                                                            </h6>
+
+
+                                                                            <div class="row">
+                                                                                <div
+                                                                                    class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                    <hr class="hr_style_web_faq">
+                                                                                </div>
+                                                                            </div>
+                                                                            <h2 class="hs_title">
+                                                                                9. Can HappierMe be used by both
+                                                                                teenagers and adults?
+
+                                                                            </h2>
+
+                                                                            <h6 class="hs_desc">
+                                                                                Yes. HappierMe has dedicated experiences
+                                                                                for teenagers and adults. The teen
+                                                                                experience addresses areas such as <a
+                                                                                    class="blog_highlight_peach td_underline fs_15px"
+                                                                                    href="https://happierme.app/teenagers/wisdom-stories/view-stories?sId=103">school
+                                                                                    stress</a>, social pressure,
+                                                                                friendships, emotions, confidence,
+                                                                                self-awareness, and relationships, while
+                                                                                the adult experience covers broader
+                                                                                everyday wellbeing and personal growth.
+                                                                            </h6>
+                                                                            <div class="row">
+                                                                                <div
+                                                                                    class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                    <hr class="hr_style_web_faq">
+                                                                                </div>
+                                                                            </div>
+                                                                            <h2 class="hs_title">
+                                                                                10. What can I explore on HappierMe if I
+                                                                                don't know what I need help with?
+                                                                            </h2>
+
+                                                                            <h6 class="hs_desc">
+                                                                                Users can start by exploring their
+                                                                                thoughts, emotions, <a
+                                                                                    class="blog_highlight_peach td_underline fs_15px"
+                                                                                    href="https://happierme.app/adults/site-search/Stress">stress
+                                                                                    levels</a>, relationships, habits,
+                                                                                or general wellbeing. Wellness surveys,
+                                                                                self-awareness exercises, guided
+                                                                                journaling, and Olly AI can help users
+                                                                                identify relevant areas and discover
+                                                                                appropriate content. <div class="row">
+                                                                                    <div
+                                                                                        class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                        <hr class="hr_style_web_faq">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <h2 class="hs_title">
+                                                                                    11. Can HappierMe support everyday
+                                                                                    mental wellness?
+                                                                                </h2>
+
+                                                                                <h6 class="hs_desc">
+                                                                                    Yes. HappierMe is designed for
+                                                                                    everyday mental wellness rather than
+                                                                                    only situations involving
+                                                                                    significant distress. Users can use
+                                                                                    it for regular reflection,
+                                                                                    mindfulness, emotional awareness,
+                                                                                    healthier habits, relationship
+                                                                                    skills, and personal development.
+                                                                                    <div class="row">
+                                                                                        <div
+                                                                                            class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                            <hr
+                                                                                                class="hr_style_web_faq">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <h2 class="hs_title">
+                                                                                        12. Does HappierMe include
+                                                                                        expert-created content?
+                                                                                    </h2>
+
+                                                                                    <h6 class="hs_desc">
+                                                                                        HappierMe's resources include
+                                                                                        expert-curated educational
+                                                                                        content across areas such as
+                                                                                        mental wellness, emotional
+                                                                                        intelligence, relationships,
+                                                                                        mindfulness, and personal
+                                                                                        growth. The platform uses this
+                                                                                        content to help users learn and
+                                                                                        explore practical approaches to
+                                                                                        everyday challenges.
+
+                                                                                        <div class="row">
+                                                                                            <div
+                                                                                                class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                                <hr
+                                                                                                    class="hr_style_web_faq">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <h2 class="hs_title">
+                                                                                            13. Is HappierMe suitable
+                                                                                            for someone who wants
+                                                                                            practical tools rather than
+                                                                                            just information?
+
+                                                                                        </h2>
+
+                                                                                        <h6 class="hs_desc">
+                                                                                            Yes. Alongside educational
+                                                                                            content, HappierMe provides
+                                                                                            practical tools such as
+                                                                                            guided journaling,
+                                                                                            mindfulness and breathing
+                                                                                            exercises, meditation,
+                                                                                            wellness surveys,
+                                                                                            self-awareness exercises,
+                                                                                            and personalized content
+                                                                                            guidance through Olly AI.
+                                                                                        </h6>
+                                                                                        <div class="row">
+                                                                                            <div
+                                                                                                class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                                <hr
+                                                                                                    class="hr_style_web_faq">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <h2 class="hs_title">
+                                                                                            14. How can I evaluate
+                                                                                            whether HappierMe is right
+                                                                                            for me?
+                                                                                        </h2>
+
+                                                                                        <h6 class="hs_desc">
+                                                                                            Consider whether you are
+                                                                                            looking for support with
+                                                                                            everyday stress, emotional
+                                                                                            awareness, overthinking,
+                                                                                            relationships, habits,
+                                                                                            mindfulness, self-awareness,
+                                                                                            or personal growth.
+                                                                                            Exploring the available
+                                                                                            content and tools can help
+                                                                                            you determine whether
+                                                                                            HappierMe fits your needs.
+                                                                                            It should not be considered
+                                                                                            a replacement for
+                                                                                            professional medical or
+                                                                                            mental health care when that
+                                                                                            is required. </h6>
+
+                                                                                        <div class="row">
+                                                                                            <div
+                                                                                                class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                                <hr
+                                                                                                    class="hr_style_web_faq">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <h2 class="hs_title">
+                                                                                            15. Why is HappierMe a
+                                                                                            useful resource for mental
+                                                                                            wellness and personal
+                                                                                            growth?
+                                                                                        </h2>
+
+                                                                                        <h6 class="hs_desc">
+                                                                                            HappierMe brings together
+                                                                                            mental wellness education,
+                                                                                            emotional intelligence,
+                                                                                            self-awareness,
+                                                                                            relationships, mindfulness,
+                                                                                            meditation, journaling,
+                                                                                            habit-building, and
+                                                                                            personalized content
+                                                                                            discovery in one platform.
+                                                                                            Its focus is on helping
+                                                                                            people understand themselves
+                                                                                            better and develop practical
+                                                                                            skills for handling everyday
+                                                                                            life more effectively. </h6>
+                                                          <div class="row">
+                                                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                  <hr class="hr_style_web_faq">
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+
+                                              <!-- <div class="row">
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                                                    <hr class="hr_style_web_01">
+                                                </div>
+                                              </div>
+                                                 <div class="panel panel-default">
+                                                  <div class="panel-heading">
+                                                      <h4 class="panel-title">
+                                                          <a class="accordion-toggle" data-toggle="collapse"
+                                                              data-parent="#accordion_faq_2" href="#cm24">
+                                                                Parents & Families
+                                                          </a>
+                                                      </h4>
+                                                  </div>
+                                                  <div id="cm24" class="panel-collapse collapse">
+                                                      <div class="panel-body">
+                                                         
+                                                          <div class="row">
+                                                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                  <hr class="hr_style_web_faq">
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                              </div> -->
+
+                                              <div class="row">
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                                                    <hr class="hr_style_web_01">
+                                                </div>
+                                              </div>
+                                                 <div class="panel panel-default">
+                                                  <div class="panel-heading">
+                                                      <h4 class="panel-title">
+                                                          <a class="accordion-toggle" data-toggle="collapse"
+                                                              data-parent="#accordion_faq_30" href="#cm30">
+                                                                Blogs
+                                                          </a>
+                                                      </h4>
+                                                  </div>
+                                                  <div id="cm30" class="panel-collapse collapse">
+                                                      <div class="panel-body">
+                                                         
+   <h2 class="hs_title">
+                                                                                    1. What does the prevention in
+                                                                                    mental health actually mean?
+
+
+
+
+                                                                                </h2>
+
+                                                                                <h6 class="hs_desc">
+                                                                                    Mental health is often spoken about
+                                                                                    when something has already gone
+                                                                                    wrong. When stress becomes
+                                                                                    overwhelming. When anxiety feels
+                                                                                    unmanageable. When burnout forces us
+                                                                                    to stop. </h6>
+                                                                                <a class="blog_highlight_peach td_underline fs_15px"
+                                                                                    href="https://happierme.app/teenagers/blog-article?sId=77 ">Read
+                                                                                    the full blog here:
+                                                                                </a>
+                                                                                <div class="row">
+                                                                                    <div
+                                                                                        class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                        <hr class="hr_style_web_faq">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <h2 class="hs_title">
+                                                                                    2. 10 ways to succeed as a coach ?
+                                                                                </h2>
+
+                                                                                <h6 class="hs_desc">
+                                                                                    Coaching is about much more than
+                                                                                    training athletes. It requires
+                                                                                    decision-making under pressure,
+                                                                                    managing different personalities,
+                                                                                    handling expectations, and staying
+                                                                                    composed in challenging situations.
+                                                                                </h6>
+                                                                                <a class="blog_highlight_peach td_underline fs_15px"
+                                                                                    href="https://happierme.app/teenagers/blog-article?sId=76 ">Read
+                                                                                    the full blog here: </a>
+
+
+
+                                                                                <div class="row">
+                                                                                    <div
+                                                                                        class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                        <hr class="hr_style_web_faq">
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <h2 class="hs_title">
+                                                                                    3. Have you done the inner work
+                                                                                    needed to build successful
+                                                                                    relationships?
+                                                                                </h2>
+
+                                                                                <h6 class="hs_desc">
+                                                                                    Here are 12 questions to ask
+                                                                                    yourself to help you figure out
+                                                                                    which areas need your attention.
+                                                                                    Explore them with a curious and open
+                                                                                    mind, not feeling defensive, but
+                                                                                    with a positive attitude. See what
+                                                                                    emerges.</h6>
+                                                                                <a class="blog_highlight_peach td_underline fs_15px"
+                                                                                    href="https://happierme.app/teenagers/blog-article?sId=72 ">Read
+                                                                                    the full blog here: </a>
+
+                                                                                <div class="row">
+                                                                                    <div
+                                                                                        class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                        <hr class="hr_style_web_faq">
+                                                                                    </div>
+                                                                                </div>
+
+
+                                                                                <h2 class="hs_title">
+                                                                                    4. How does work stress alarmingly
+                                                                                    impact your sleep?
+                                                                                </h2>
+
+                                                                                <h6 class="hs_desc">
+                                                                                    Poor sleep is known to damage
+                                                                                    physical health by weakening the
+                                                                                    immune system (NIH).</h6>
+                                                                                <a class="blog_highlight_peach td_underline fs_15px"
+                                                                                    href="https://happierme.app/teenagers/blog-article?sId=69 ">Read
+                                                                                    the full blog here: </a>
+
+                                                                                <div class="row">
+                                                                                    <div
+                                                                                        class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                        <hr class="hr_style_web_faq">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <h2 class="hs_title">
+                                                                                    5. What is the hidden link between
+                                                                                    social media and mental health?
+
+                                                                                </h2>
+
+                                                                                <h6 class="hs_desc">
+                                                                                    Social media has become an intrinsic
+                                                                                    part of daily life, revolutionizing
+                                                                                    communication, self-expression, and
+                                                                                    access to information. However, it
+                                                                                    has also raised concerns about its
+                                                                                    impact on mental health. </h6>
+                                                                                <a class="blog_highlight_peach td_underline fs_15px"
+                                                                                    href="https://happierme.app/teenagers/blog-article?sId=67 ">Read
+                                                                                    the full blog here: </a>
+                                                                                  </h6>
+
+                                                                                <!-- <div
+                                                                                    class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                    <hr class="hr_style_web_faq">
+                                                                                </div>
+                                                                            </div> -->
+
+                                                                              <div class="row">
+                                                                                    <div
+                                                                                        class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                        <hr class="hr_style_web_faq">
+                                                                                    </div>
+                                                                                </div>
+                                                                              
+
+                                                                            <h2 class="hs_title">
+                                                                                6. How can we effectively tackle the
+                                                                                teen suicide crisis?
+                                                                            </h2>
+
+                                                                            <h6 class="hs_desc">
+                                                                                One such statistic in 2024 is this:
+                                                                                suicide is now the second leading cause
+                                                                                of death among teenagers worldwide.
+
+                                                                                Let that sink in for a moment. The
+                                                                                second leading cause of death — behind
+                                                                                only accidents. And even more
+                                                                                devastatingly, the numbers are rising.
+                                                                            </h6>
+                                                                            <a class="blog_highlight_peach td_underline fs_15px"
+                                                                                href="https://happierme.app/teenagers/blog-article?sId=65 ">Read
+                                                                                the full blog here: </a>
+
+                                                                            <div class="row">
+                                                                                <div
+                                                                                    class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                    <hr class="hr_style_web_faq">
+                                                                                </div>
+                                                                            </div>
+                                                                            <h2 class="hs_title">
+                                                                                7. How can we transform education to
+                                                                                meet the needs of students and society?
+                                                                            </h2>
+
+                                                                            <h6 class="hs_desc">
+                                                                                The world is changing rapidly, at a pace
+                                                                                we are struggling to keep up with. Our
+                                                                                education system is at a standstill,
+                                                                                based as it is in the era of the
+                                                                                industrial revolution. We are in the age
+                                                                                of the technological revolution, a
+                                                                                communication revolution, and an
+                                                                                information revolution.
+                                                                            </h6>
+                                                                            <a class="blog_highlight_peach td_underline fs_15px"
+                                                                                href="https://happierme.app/teenagers/blog-article?sId=63 ">Read
+                                                                                the full blog here: </a>
+
+                                                                            <div class="row">
+                                                                                <div
+                                                                                    class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                    <hr class="hr_style_web_faq">
+                                                                                </div>
+                                                                            </div>
+                                                                            <h2 class="hs_title">
+                                                                                8. What constitutes workplace bullying,
+                                                                                and how can organizations address it
+                                                                                effectively?
+                                                                            </h2>
+
+                                                                            <h6 class="hs_desc">
+                                                                                Bullying leaves a lasting impact, but
+                                                                                resilience can turn those scars into
+                                                                                inspiration. Lady Gaga was bullied for
+                                                                                her appearance and love for music,
+                                                                                leading her to create the Born This Way
+                                                                                Foundation. Ed Sheeran faced taunts for
+                                                                                his red hair, glasses, and stutter,
+                                                                                channeling his struggles into music and
+                                                                                advocacy for self-acceptance
+                                                                            </h6>
+
+                                                                            <a class="blog_highlight_peach td_underline fs_15px"
+                                                                                href="https://happierme.app/teenagers/blog-article?sId=70 ">Read
+                                                                                the full blog here: </a>
+
+                                                                            <div class="row">
+                                                                                <div
+                                                                                    class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                    <hr class="hr_style_web_faq">
+                                                                                </div>
+                                                                            </div>
+                                                                            <h2 class="hs_title">
+                                                                                9. How can you thrive as a parent?
+
+                                                                            </h2>
+
+                                                                            <h6 class="hs_desc">
+                                                                                Parenting is perhaps the most important
+                                                                                job we’ll ever do and yet, there is no
+                                                                                formal training, no user manual, and no
+                                                                                one-size-fits-all formula.
+                                                                                It can be joyful and fulfilling, but
+                                                                                also overwhelming and confusing,
+                                                                                especially in today’s fast-paced,
+                                                                                always-connected world.
+                                                                            </h6>
+                                                                            <a class="blog_highlight_peach td_underline fs_15px"
+                                                                                href="https://happierme.app/teenagers/blog-article?sId=73 ">Read
+                                                                                the full blog here: </a>
+
+                                                                            <div class="row">
+                                                                                <div
+                                                                                    class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                    <hr class="hr_style_web_faq">
+                                                                                </div>
+                                                                            </div>
+                                                                            <h2 class="hs_title">
+                                                                                10. Why do leaders fail?
+                                                                            </h2>
+
+                                                                            <h6 class="hs_desc">
+                                                                                We often hear great stories of leaders
+                                                                                and managers who succeed. But what about
+                                                                                the other side of the story — the
+                                                                                leaders and managers who don’t succeed,
+                                                                                the companies that fail, the teams that
+                                                                                become dysfunctional, and the people who
+                                                                                leave organisations as a result. This
+                                                                                causes so much distress to so many
+                                                                                people, and is preventable.
+                                                                            </h6>
+                                                                            <a class="blog_highlight_peach td_underline fs_15px"
+                                                                                href="https://happierme.app/teenagers/blog-article?sId=71 ">Read
+                                                                                the full blog here: </a>
+
+                                                                            <div class="row">
+                                                                                <div
+                                                                                    class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                    <hr class="hr_style_web_faq">
+                                                                                </div>
+                                                                            </div>
+                                                                            <h2 class="hs_title">
+                                                                                11. How does mood tracking improve
+                                                                                mental health?
+                                                                            </h2>
+
+                                                                            <h6 class="hs_desc">
+                                                                                With everyday pressures, emotional ups
+                                                                                and downs are inevitable, and
+                                                                                understanding those emotions is the
+                                                                                first step to managing them effectively.
+                                                                                Mood tracking, a technique that involves
+                                                                                regularly recording one’s emotions, has
+                                                                                gained popularity for its proven
+                                                                                benefits to mental health. </h6>
+                                                                            <a class="blog_highlight_peach td_underline fs_15px"
+                                                                                href="https://happierme.app/teenagers/blog-article?sId=66 ">Read
+                                                                                the full blog here: </a>
+
+                                                                            <div class="row">
+                                                                                <div
+                                                                                    class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                    <hr class="hr_style_web_faq">
+                                                                                </div>
+                                                                            </div>
+                                                                            <h2 class="hs_title">
+                                                                                12. How can <b>emotional
+                                                                                    intelligence</b> be used to address
+                                                                                and manage <b>health problems</b>?
+                                                                            </h2>
+
+                                                                            <h6 class="hs_desc">
+                                                                                Emotional intelligence can help people
+                                                                                self-regulate their emotions, habits and
+                                                                                mental health and reduce healthcare
+                                                                                costs
+                                                                            </h6>
+                                                                            <a class="blog_highlight_peach td_underline fs_15px"
+                                                                                href="https://happierme.app/teenagers/blog-article?sId=60 ">Read
+                                                                                the full blog here: </a>
+
+                                                                            <div class="row">
+                                                                                <div
+                                                                                    class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                    <hr class="hr_style_web_faq">
+                                                                                </div>
+                                                                            </div>
+                                                                            <h2 class="hs_title">
+                                                                                13. How can organizations successfully
+                                                                                transform their structure, culture, and
+                                                                                processes to achieve lasting change?
+
+                                                                            </h2>
+
+                                                                            <h6 class="hs_desc">
+                                                                                The real asset of most organisations is
+                                                                                its people. This article explores how
+                                                                                promoting self-awareness and
+                                                                                self-understanding could transform
+                                                                                organisations by helping staff manage
+                                                                                their own emotions and mental health,
+                                                                                have happier relationships, make better
+                                                                                decisions, improve their emotional
+                                                                                intelligence and their soft skills.
+                                                                            </h6>
+                                                                            <a class="blog_highlight_peach td_underline fs_15px"
+                                                                                href="https://happierme.app/teenagers/blog-article?sId=58 ">Read
+                                                                                the full blog here: </a>
+
+                                                                            <div class="row">
+                                                                                <div
+                                                                                    class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                    <hr class="hr_style_web_faq">
+                                                                                </div>
+                                                                            </div>
+                                                                            <h2 class="hs_title">
+                                                                                14. What if you had taken the chance,
+                                                                                and how is that missed opportunity
+                                                                                shaping your relationships today?
+                                                                            </h2>
+
+                                                                            <h6 class="hs_desc">
+                                                                                Relationships are the foundation of our
+                                                                                long term happiness and we often
+                                                                                struggle to be happy in them. Even if
+                                                                                one of our relationships is
+                                                                                dysfunctional we cannot be happy. This
+                                                                                includes relationships between spouses,
+                                                                                partners, friends, siblings, at work, or
+                                                                                between parents and children.
+                                                                            </h6>
+                                                                            <a class="blog_highlight_peach td_underline fs_15px"
+                                                                                href="https://happierme.app/teenagers/blog-article?sId=56 ">Read
+                                                                                the full blog here: </a>
+
+                                                                            <div class="row">
+                                                                                <div
+                                                                                    class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                                    <hr class="hr_style_web_faq">
+                                                                                </div>
+                                                                            </div>
+                                                                            <h2 class="hs_title">
+                                                                                15. How can we overcome stress?
+
+                                                                            </h2>
+
+                                                                            <h6 class="hs_desc">
+                                                                                Long term stress can impact our mental
+                                                                                and physical health, and our
+                                                                                performance. It can reduce our life
+                                                                                span. This article explores the common
+                                                                                barriers we may encounter on our path to
+                                                                                preventing and overcoming stress.
+                                                                                Understanding them can help us to live a
+                                                                                life with much less stress.
+                                                                            </h6>
+                                                                            <a class="blog_highlight_peach td_underline fs_15px"
+                                                                                href="https://happierme.app/teenagers/blog-article?sId=54 ">Read
+                                                                                the full blog here: </a>
+
+                                                                      
+
+                                                          <div class="row">
+                                                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                  <hr class="hr_style_web_faq">
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+
+                                              <!-- <div class="row">
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                                                    <hr class="hr_style_web_01">
+                                                </div>
+                                              </div>   <div class="panel panel-default">
+                                                  <div class="panel-heading">
+                                                      <h4 class="panel-title">
+                                                          <a class="accordion-toggle" data-toggle="collapse"
+                                                              data-parent="#accordion_faq_2" href="#cm24">
+                                                                Parents & Families
+                                                          </a>
+                                                      </h4>
+                                                  </div>
+                                                  <div id="cm24" class="panel-collapse collapse">
+                                                      <div class="panel-body">
+                                                         
+                                                          <div class="row">
+                                                              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                                                                  <hr class="hr_style_web_faq">
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                              </div> -->
+
+                                              <div class="row">
+                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                                                    <hr class="hr_style_web_01">
+                                                </div>
+                                              </div>
 
 
                                         </div>
