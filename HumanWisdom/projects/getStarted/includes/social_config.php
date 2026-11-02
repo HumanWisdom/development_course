@@ -78,11 +78,15 @@ if (!function_exists('hw_social_config')) {
         $apiBase = rtrim(hw_api_config()['apiBase'], '/');
 
         $cfg = [
-            'googleClientId' => hw_social_env('HW_GOOGLE_CLIENT_ID'),
-            'facebookAppId' => hw_social_env('HW_FACEBOOK_APP_ID'),
+            'googleClientId' => hw_social_env(
+                'HW_GOOGLE_CLIENT_ID',
+                '907009432190-v7bpjvuurie68eakqf5neovb5oj3h0b0.apps.googleusercontent.com'
+            ),
+            'facebookAppId' => hw_social_env('HW_FACEBOOK_APP_ID', '238869214957032'),
             'facebookApiVersion' => hw_social_env('HW_FACEBOOK_API_VERSION', 'v18.0'),
-            'appleClientId' => hw_social_env('HW_APPLE_CLIENT_ID'),
+            'appleClientId' => hw_social_env('HW_APPLE_CLIENT_ID', 'humanwisdom.web.service'),
             'appleRedirectUri' => hw_social_env('HW_APPLE_REDIRECT_URI', $apiBase . '/verifyAppleToken_htmlAdults'),
+            'appleRedirectUriTeens' => hw_social_env('HW_APPLE_REDIRECT_URI_TEENS', $apiBase . '/verifyAppleToken_htmlTeens'),
             'adultsAppUrl' => rtrim(hw_social_env('HW_ADULTS_APP_URL', hw_social_current_origin()), '/'),
         ];
         return $cfg;

@@ -57,6 +57,9 @@
     }
     if (pageKey === "signup") {
       redirectIfLoggedIn();
+      if (typeof renderGoogleButton === "function") {
+        setTimeout(renderGoogleButton, 0);
+      }
     }
 
     try {
@@ -89,6 +92,8 @@
       if (!el) return;
       var key = el.getAttribute("data-org-go");
       if (!key) return;
+      var program = el.getAttribute("data-org-program");
+      if (program) setProgram(program);
       e.preventDefault();
       go(key);
     });
@@ -258,12 +263,19 @@
     if (!data) return fallback;
     if (typeof data === "string" && data.trim()) return data;
     return (
+      data.RecordExistsMsg ||
       data.RecordExistMsg ||
+      data.recordExistsMsg ||
       data.recordExistMsg ||
+      data.Errors ||
       data.Message ||
       data.message ||
       fallback
     );
+  }
+
+  function hasAccessToken(data) {
+    return !!(data && String(data.access_token || "").trim());
   }
 
   function adultsUrl(path) {
@@ -317,24 +329,99 @@
     ls.setItem("audio", JSON.stringify(4));
   }
 
-  function loginToAdults(res) {
-    // Different origin means no shared localStorage; adults /social-login verifies the token itself.
-    if (!isSameOriginAsAdults()) {
-      window.location.href = adultsUrl("/adults/social-login?authtoken=" + encodeURIComponent(res.access_token));
-      return;
-    }
+  function setProgram(name) {
     try {
-      storeAdultsSession(res);
+      localStorage.setItem("hw_org_program", name === "teenagers" ? "teenagers" : "adults");
     } catch (e) {}
-    window.location.href = adultsUrl(res.NoOfVisits === 1 ? "/adults/change-topic" : "/adults/today");
   }
 
-  /** Same destination as email OTP success — stay on the website. */
-  function finishSocialSignup(res) {
+  function getProgram() {
     try {
-      storeAdultsSession(res);
+      return localStorage.getItem("hw_org_program") === "teenagers" ? "teenagers" : "adults";
+    } catch (e) {
+      return "adults";
+    }
+  }
+
+  function isNewUser(res) {
+    if (!res) return true;
+    var visits = parseInt(res.NoOfVisits, 10);
+    if (visits === 1) return true;
+    if (visits > 1) return false;
+    var msg = String(res.RecordExistsMsg || res.RecordExistMsg || "");
+    if (/already registered/i.test(msg)) return false;
+    return true;
+  }
+
+  function rememberLoginResponse(res) {
+    if (!res) return;
+    try {
+      sessionStorage.setItem("hw_org_login_response", JSON.stringify(res));
     } catch (e) {}
-    go("success");
+  }
+
+  function getRememberedLoginResponse() {
+    try {
+      var raw = sessionStorage.getItem("hw_org_login_response") || localStorage.getItem("loginResponse");
+      return raw ? JSON.parse(raw) : null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  /**
+   * Same destinations as LoginSignupPage.setUpLoginConfiguration:
+   * new user → /{program}/change-topic, returning user → /{program}/today
+   */
+  function navigateToApp(res, asNewUser) {
+    var program = getProgram();
+    var isNew = asNewUser === true || (asNewUser !== false && isNewUser(res));
+    var path;
+    if (isNew) {
+      if (program === "teenagers") {
+        try {
+          localStorage.setItem("isFromSignupFlow", "T");
+        } catch (e) {}
+        path = "/teenagers/change-topic";
+      } else {
+        path = "/adults/change-topic";
+      }
+    } else {
+      path = "/" + program + "/today";
+    }
+
+    var token = res && String(res.access_token || "").trim();
+    if (token && isSameOriginAsAdults()) {
+      try {
+        storeAdultsSession(res);
+      } catch (e) {}
+      window.location.href = adultsUrl(path);
+      return;
+    }
+    if (token) {
+      window.location.href = adultsUrl("/" + program + "/social-login?authtoken=" + encodeURIComponent(token));
+      return;
+    }
+    window.location.href = adultsUrl(path);
+  }
+
+  function loginToAdults(res) {
+    navigateToApp(res, isNewUser(res));
+  }
+
+  /** New social user stays on the All set screen; existing user goes to adults/teenagers. */
+  function finishSocialSignup(res) {
+    rememberLoginResponse(res);
+    try {
+      if (hasAccessToken(res)) {
+        storeAdultsSession(res);
+      }
+    } catch (e) {}
+    if (isNewUser(res)) {
+      go("success");
+      return;
+    }
+    navigateToApp(res, false);
   }
 
   /** Same as LoginSignupPage's constructor: an active adults session skips the signup form. */
@@ -350,14 +437,31 @@
       if (!loggedIn) return false;
       if (localStorage.getItem("pricing") === "true") {
         localStorage.removeItem("pricing");
-        window.location.replace(adultsUrl("/adults/subscription/try-free-and-subscribe"));
+        window.location.replace(adultsUrl("/" + getProgram() + "/subscription/try-free-and-subscribe"));
       } else {
-        window.location.replace(adultsUrl("/adults/today"));
+        window.location.replace(adultsUrl("/" + getProgram() + "/today"));
       }
       return true;
     } catch (e) {
       return false;
     }
+  }
+
+  function setupContinueToApp() {
+    var btn = qs("org-continue-to-app");
+    if (!btn) return;
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      navigateToApp(getRememberedLoginResponse(), true);
+    });
+  }
+
+  var googleReady = false;
+  var renderGoogleButton = function () {};
+
+  function isSignupVisible() {
+    var panel = document.querySelector('[data-org-step="signup"]');
+    return !!(panel && !panel.hidden);
   }
 
   function setupSocialSignup() {
@@ -398,26 +502,33 @@
         })
         .then(function (result) {
           var data = unwrapApiData(result.data);
-          if (data && typeof data === "object" && data.access_token) {
-            if (data.UserId === 0) {
-              fail("We couldn't sign you in with " + provider + ". Please try again.");
-              return;
-            }
-            if (data.UserId === -1) {
-              fail("Email was not verified. Please sign up again with the same email to verify it.");
-              return;
-            }
+          if (!data || typeof data !== "object") {
+            fail(apiErrorMessage(result.data, provider + " sign-in failed. Please try again."));
+            return;
+          }
+          if (data.UserId === 0) {
+            fail("We couldn't sign you in with " + provider + ". Please try again.");
+            return;
+          }
+          if (data.UserId === -1) {
+            fail("Email was not verified. Please sign up again with the same email to verify it.");
+            return;
+          }
+          // Same as before: a real UserId means the API recognised the account.
+          // access_token can be empty when the email already exists without social login.
+          if (parseInt(data.UserId, 10) > 0) {
             finishSocialSignup(data);
             return;
           }
-          fail(apiErrorMessage(data || result.data, provider + " sign-in failed. Please try again."));
+          fail(apiErrorMessage(data, provider + " sign-in failed. Please try again."));
         })
         .catch(function () {
           fail("Internal Server Error");
         });
     }
 
-    if (social.googleClientId && qs("org-google-btn")) {
+    var googleBtn = qs("org-google-custom");
+    if (social.googleClientId && googleBtn) {
       loadScript("google-signin-script", "https://accounts.google.com/gsi/client")
         .then(function () {
           google.accounts.id.initialize({
@@ -448,18 +559,34 @@
               );
             },
           });
-          google.accounts.id.renderButton(qs("org-google-btn"), {
-            type: "icon",
-            shape: "circle",
-            theme: "outline",
-            size: "large",
-          });
+          googleReady = true;
+          renderGoogleButton();
         })
-        .catch(function () {
-          var g = wrap.querySelector(".org-social-google");
-          if (g) g.hidden = true;
-        });
+        .catch(function () {});
+
+      googleBtn.addEventListener("click", function () {
+        if (busy) return;
+        if (!googleReady || typeof google === "undefined" || !google.accounts) {
+          fail("Google sign-in is not available. Please refresh the page.");
+          return;
+        }
+        google.accounts.id.prompt();
+      });
     }
+
+    renderGoogleButton = function () {
+      var host = qs("org-google-btn");
+      if (!host || !googleReady || typeof google === "undefined" || !google.accounts) return;
+      if (!isSignupVisible()) return;
+      host.innerHTML = "";
+      google.accounts.id.renderButton(host, {
+        type: "standard",
+        theme: "outline",
+        size: "large",
+        width: 116,
+        text: "signin_with",
+      });
+    };
 
     if (social.facebookAppId && fbBtn) {
       var fbStatus = null;
@@ -539,20 +666,23 @@
     if (social.appleClientId && appleBtn) {
       appleBtn.addEventListener("click", function () {
         if (busy) return;
-        busy = true;
         try {
           localStorage.setItem("appleLogin", "T");
         } catch (e) {}
-        // Apple posts to the API, which creates the user and redirects to /adults/social-login?authtoken=…
-        var params = new URLSearchParams({
-          client_id: social.appleClientId,
-          redirect_uri: social.appleRedirectUri,
-          response_type: "code id_token",
-          scope: "name email",
-          response_mode: "form_post",
-          state: org.id || getStoredOrganizationId() || "",
-        });
-        window.location.href = "https://appleid.apple.com/auth/authorize?" + params.toString();
+        // Same authorize URL as LoginSignupPage.signInWithApple.
+        var clientId = social.appleClientId || "humanwisdom.web.service";
+        var redirectUri =
+          getProgram() === "teenagers"
+            ? social.appleRedirectUriTeens || social.appleRedirectUri
+            : social.appleRedirectUri;
+        window.open(
+          "https://appleid.apple.com/auth/authorize?client_id=" +
+            clientId +
+            "&redirect_uri=" +
+            encodeURIComponent(redirectUri) +
+            "&response_type=code id_token&scope=name email&response_mode=form_post",
+          "_self"
+        );
       });
     }
   }
@@ -1012,5 +1142,6 @@
     setupSignup();
     setupSocialSignup();
     setupOtp();
+    setupContinueToApp();
   });
 })();

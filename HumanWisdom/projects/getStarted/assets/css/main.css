@@ -3249,11 +3249,11 @@ body.page-newsletter .newsletter-subtitle:hover {
 .tab_faqs>li.active>a:focus,
 .tab_faqs>li.active>a:hover {
   background: transparent;
-  padding: 0 0 20px 0;
+  padding: 0 0 30px 0;
   border: 0;
   margin: 0;
   gap: 12px;
-  font-weight: 600;
+  font-weight: 500;
   color: #834B66;
   text-decoration: none;
   transition: all 0.3s ease;
@@ -3927,7 +3927,7 @@ audio::-webkit-media-controls-enclosure {
 }
 
 .hs_desc {
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 400;
   line-height: 160%;
   color: #000 !important; 
@@ -3944,9 +3944,9 @@ audio::-webkit-media-controls-enclosure {
 }
 
 .hs_title {
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 160%;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 150%;
   color: #000;
   margin-bottom: 12px !important;
 }
