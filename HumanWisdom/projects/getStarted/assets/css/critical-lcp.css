@@ -724,10 +724,10 @@ body .web_home_divlanding p.hero-no-card-note:hover {
   justify-content: flex-start !important;
   height: auto !important;
   min-height: 0 !important;
-  padding-top: 209px !important;
+  padding-top: 250px !important; /* 170px fixed header + 80px */
   padding-left: 0 !important;
   padding-right: 0 !important;
-  padding-bottom: 40px !important;
+  padding-bottom: 80px !important;
 }
 .meetolly-hero {
   box-sizing: border-box;
@@ -835,7 +835,7 @@ body .web_home_divlanding p.hero-no-card-note:hover {
 }
 .meetolly-cta-note { width: 100%; }
 @media (max-width: 1023px) {
-  .frame-wrapper.web_home_divlanding { min-height: 0; }
+  .frame-wrapper.web_home_divlanding { min-height: 0; padding-top: 209px !important; padding-bottom: 40px !important; }
   .meetolly-hero { flex-direction: column; align-items: center; gap: 32px; padding: 0 20px; }
   .meetolly-hero-media, .meetolly-hero-copy { width: 100%; max-width: 600px; flex-basis: auto; }
   .meetolly-hero-copy { max-width: 500px; gap: 28px; }
