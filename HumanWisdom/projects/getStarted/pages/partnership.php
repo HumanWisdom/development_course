@@ -37,6 +37,29 @@
     <!-- End Google Tag Manager -->
 
     <style>
+      /* Match index / header CTAs (Get the app, Try HappierMe for free) */
+      button.btn_tff_a,
+      a.btn_tff_a,
+      button.btn_tff_a:focus,
+      a.btn_tff_a:focus {
+        color: #ffffff !important;
+        -webkit-text-fill-color: #ffffff !important;
+        background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%) !important;
+        border: 0;
+      }
+
+      button.btn_tff_a:hover,
+      a.btn_tff_a:hover,
+      button.btn_tff_a:focus:hover,
+      a.btn_tff_a:focus:hover,
+      button.btn_tff_a:active,
+      a.btn_tff_a:active {
+        color: #ffffff !important;
+        -webkit-text-fill-color: #ffffff !important;
+        background: linear-gradient(180deg, #da7d71 0%, #bf5061 100%) !important;
+        text-decoration: none !important;
+      }
+
       @media (max-width: 767px) {
 
         /* Force White Plus/Minus Icons on Mobile Accordion - Override SVG from main.css */
@@ -130,7 +153,7 @@
           <div class="row center_flex absolute_desc_pship absolute_desc_m display_m_none" data-aos="fade-up" data-aos-delay="500">
             <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10  col-10 p0 tleft">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 p0 mt20px">
-                <h1 class="mtb0px fs_36px fw_600 lh_140p fc_834b66">
+                <h1 class="mtb0px fs_36px fw_600 lh_140p fc_000000">
                   Spread some happiness!
                 </h1>
               </div>
@@ -162,7 +185,7 @@
       <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
         <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10  col-10 p0 tcenter">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 p0 mt20px">
-            <h1 class="mtb0px fs_27px fw_600 lh_140p fc_834b66">
+            <h1 class="mtb0px fs_27px fw_600 lh_140p fc_000000">
               Spread some happiness!
             </h1>
           </div>
@@ -190,7 +213,7 @@
       <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
         <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10  col-10 p0 tcenter">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 p0 mtb20px">
-            <h1 class="mtb0px fs_36px fw_600 lh_120p fc_834b66">
+            <h1 class="mtb0px fs_36px fw_600 lh_120p fc_000000">
               HappierMe Partnerships
             </h1>
           </div>
@@ -212,7 +235,7 @@
         <div class="section-header">
           <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10  col-10 p0">
-              <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
+              <h2 class="mtb0px fs_24px fw_600 lh_120p fc_000000">
                 How it works
               </h2>
             </div>
@@ -243,7 +266,7 @@
         <div class="section-header">
           <div class="row center_flex tcenter" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10  col-10 p0">
-              <h2 class="mtb0px fs_24px fw_600 lh_120p fc_834b66">
+              <h2 class="mtb0px fs_24px fw_600 lh_120p fc_000000">
                 Why become a partner?
               </h2>
             </div>
