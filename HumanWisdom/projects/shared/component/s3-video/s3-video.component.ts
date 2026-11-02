@@ -21,6 +21,7 @@ import {
   transition,
 } from '@angular/animations';
 import { SharedService } from '../../services/shared.service';
+import { Constant } from '../../services/constant';
 import { CommonService } from '../../services/common.service';
 import { ProgramType } from '../../models/program-model';
 import { Subscription } from 'rxjs';
@@ -910,6 +911,16 @@ export class S3VideoComponent implements OnInit, OnDestroy, AfterViewInit {
 
     document.body.style.removeProperty('overflow');
     document.documentElement.style.removeProperty('overflow');
+
+    // A video opened from Olly returns to Olly — the wisdom-shorts listing/guarded pages
+    // behind it can redirect a non-subscriber to the trial page instead
+    const chatBotUrl = SharedService.getDataFromLocalStorage(Constant.ChatBotReturnUrl);
+    if (chatBotUrl && chatBotUrl.includes('chat-bot') && chatBotUrl !== this.router.url) {
+      localStorage.removeItem(Constant.ChatBotReturnUrl);
+      this.router.navigateByUrl(chatBotUrl);
+      return;
+    }
+
     const url = this.navigationService.navigateToBackLink();
     if (url != null) {
       this.router.navigateByUrl(url);

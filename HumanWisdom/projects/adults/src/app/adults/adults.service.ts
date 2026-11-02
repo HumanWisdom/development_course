@@ -593,12 +593,13 @@ initialLoginWithGuestUser(id: string = ''): Observable<any> {
   const saveUsername = JSON.parse(localStorage.getItem("saveUsername") || 'false');
   const mediaUrl = "https://d1tenzemoxuh75.cloudfront.net";
 
-  return this.services.emailLogin(email, password).pipe(
+  // Silent guest login, also used as the app initializer for visitors who are not
+  // signed in. It keeps the Olly conversation that belongs to this browser session.
+  return this.services.emailLogin(email, password, true).pipe(
     tap(res => {
       const isGuest = res.Email === email;
       const name = localStorage.getItem("nameupdate") || res.Name;
       const namedata = name.split(' ');
-      this.chatStore.clearChat();
       const loginResponse = res;
       const userId = res.UserId;
       const userName = res.Name;

@@ -67,6 +67,14 @@ export class StartYourFreeTrialPage implements OnInit {
 
   back() {
     this.logeventservice.logEvent('click_back');
+
+    // Opened from Olly (e.g. a locked video the guard redirected here) — go back to the chat
+    const chatBotUrl = SharedService.getDataFromLocalStorage(Constant.ChatBotReturnUrl);
+    if (chatBotUrl && chatBotUrl.includes('chat-bot') && chatBotUrl != this.router.url) {
+      localStorage.removeItem(Constant.ChatBotReturnUrl);
+      this.router.navigateByUrl(chatBotUrl);
+      return;
+    }
     
     // Check if we came from a video page by looking at the lastNavSource
     const lastNavSource = localStorage.getItem('lastNavSource');
