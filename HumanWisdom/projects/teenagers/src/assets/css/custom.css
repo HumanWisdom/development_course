@@ -24335,7 +24335,7 @@ a {
   font-weight: 600;
   font-style: normal;
   line-height: 160%;
-  color: #D7586B !important;
+  color: #EE9596 !important;
   text-decoration: underline;
 }
 .read-text-label {
@@ -24349,6 +24349,7 @@ a {
 
  .blog_highlight_peach:hover{
   color: #f17071 !important;
+  
   
    text-decoration: underline; 
 } 
@@ -35250,11 +35251,12 @@ background: linear-gradient(180deg, #F17071 0%, #DE6768 100%);
   width: 100%;
   border-radius: 100px;
   border: 1px solid rgba(255, 255, 255, 0.25);
-  background: #0C2B5F;
+  background: #ffF;
   font-size: 15px;
   font-weight: 400;
   line-height: 150%;
-  color: rgba(255, 255, 255, 0.50);
+  color:#000000;
+  /* color: rgba(255, 255, 255, 0.50); */
   text-align: left;
   padding: 10px 20px;
 }
