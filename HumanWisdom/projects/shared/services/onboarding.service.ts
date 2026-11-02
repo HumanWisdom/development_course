@@ -34,6 +34,8 @@ export class OnboardingService {
   private accessToken: string | null = null;
   public countryData:any;
   public userDetails:any;
+  // Account shared by every visitor who has not signed up
+  private readonly GUEST_EMAIL = 'guest@humanwisdom.me';
   // Subscribe to the Subject
   constructor(private http: HttpClient, handler: HttpBackend, public toastr: ToastrService,private ngZone: NgZone,public chatStore:ChatStore) {
     // this.http =  new HttpClient(handler);
@@ -274,8 +276,20 @@ export class OnboardingService {
     return this.http.post(this.path + '/verifyFaceBookTokenAndLogin', data)
   }
 
-  emailLogin(email: any, password: any): Observable<any> {
+  /**
+   * Log in with email + password.
+   *
+   * The chat is cleared whenever a real account signs in, because that is a new
+   * conversation. The shared guest account is not a user change: it is silently
+   * re-authenticated on app start, when a screen is opened and on the guest
+   * dashboard, and none of those may reset a chat already in progress.
+   *
+   * @param preserveChat force-keep the current Olly conversation
+   */
+  emailLogin(email: any, password: any, preserveChat: boolean = false): Observable<any> {
+    if (!preserveChat && email !== this.GUEST_EMAIL) {
       this.chatStore.clearChat();
+    }
     let param1 = new HttpParams().set("email", email)
       .set("pwd", password).set("ProgID", SharedService.ProgramId)
     return this.http.get(this.path + '/login', { params: param1 })
@@ -566,7 +580,8 @@ export class OnboardingService {
     let mediaAudio = "https://d1tenzemoxuh75.cloudfront.net"
     let mediaVideo = "https://d1tenzemoxuh75.cloudfront.net"
     let saveUsername = JSON.parse(localStorage.getItem("saveUsername"))
-    this.emailLogin(email, password)
+    // Guest login must never reset a conversation that is already in progress
+    this.emailLogin(email, password, true)
       .subscribe(
         res => {
           loginResponse = res

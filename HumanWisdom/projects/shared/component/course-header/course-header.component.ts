@@ -8,6 +8,7 @@ import { SharedService } from "../../services/shared.service";
 import { NavigationService } from "../../services/navigation.service";
 import { Location } from '@angular/common';
 import { ModalService } from "../../services/modal.service";
+import { Constant } from "../../services/constant";
 
 
 @Component({
@@ -173,6 +174,15 @@ export class CourseHeaderComponent implements OnInit {
     this.router.navigate(['/' + this.programName + '/coursenote', { path: this.path }])
   }
   goToToc() {
+    // Content opened from Olly goes back to Olly. The module TOC behind it is guarded
+    // for non-subscribers, so following it lands the user on the trial page instead.
+    const chatBotUrl = SharedService.getDataFromLocalStorage(Constant.ChatBotReturnUrl);
+    if (chatBotUrl && chatBotUrl.includes('chat-bot') && chatBotUrl !== this.router.url) {
+      localStorage.removeItem(Constant.ChatBotReturnUrl);
+      this.router.navigateByUrl(chatBotUrl);
+      return;
+    }
+
     const fromMicroLearningEnd = localStorage.getItem('fromMicroLearningEnd');
     const lastNavSource = localStorage.getItem('lastNavSource');
 

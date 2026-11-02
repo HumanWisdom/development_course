@@ -58,7 +58,8 @@ const initialState: ChatState = {
  * 
  * Features:
  * - Centralized state management for chat messages
- * - Session persistence with localStorage
+ * - Session persistence: guests keep their chat in sessionStorage (one browser
+ *   session, gone when the tab closes), signed-in users in localStorage
  * - Immutable state updates
  * - Reactive selectors for components
  */
@@ -68,6 +69,8 @@ const initialState: ChatState = {
 export class ChatStore extends ComponentStore<ChatState> {
   private readonly STORAGE_KEY = 'chatbot_session';
   private readonly SESSION_EXPIRY_HOURS = 24;
+  // Backend id shared by every visitor who is not signed in
+  private readonly GUEST_USER_ID = 563;
 
   constructor() {
     super(initialState);
@@ -602,7 +605,28 @@ export class ChatStore extends ComponentStore<ChatState> {
   // ========================================
 
   /**
-   * Save state to localStorage
+   * Where the current conversation lives.
+   *
+   * Guests have no server-side history to fall back on, so their chat has to
+   * survive in-app navigation and reloads but must not outlive the browser
+   * session — sessionStorage gives exactly that. Signed-in users keep the
+   * longer-lived localStorage copy.
+   */
+  private get activeStorage(): Storage {
+    return this.isGuestUser() ? sessionStorage : localStorage;
+  }
+
+  /** No signed-in flag, no stored id yet, id 0, or the shared guest account */
+  private isGuestUser(): boolean {
+    if (localStorage.getItem('isloggedin') === 'T') {
+      return false;
+    }
+    const userId = SharedService.getUserId();
+    return !userId || userId <= 0 || userId === this.GUEST_USER_ID;
+  }
+
+  /**
+   * Save state to the storage that matches the current user type
    */
   private persistToStorage(state: ChatState): void {
     try {
@@ -614,18 +638,18 @@ export class ChatStore extends ComponentStore<ChatState> {
         })),
         lastUpdated: state.lastUpdated.toISOString()
       });
-      localStorage.setItem(this.STORAGE_KEY, serialized);
+      this.activeStorage.setItem(this.STORAGE_KEY, serialized);
     } catch (error) {
-      console.error('Error saving chat session to localStorage:', error);
+      console.error('Error saving chat session:', error);
     }
   }
 
   /**
-   * Load state from localStorage
+   * Load state from the storage that matches the current user type
    */
   private loadSessionFromStorage(): void {
     try {
-      const stored = localStorage.getItem(this.STORAGE_KEY);
+      const stored = this.activeStorage.getItem(this.STORAGE_KEY);
       if (!stored) {
         // If no stored session, welcome messages will be initialized by ChatbotService
         return;
@@ -647,32 +671,26 @@ export class ChatStore extends ComponentStore<ChatState> {
         timestamp: new Date(msg.timestamp)
       }));
 
-      // Check if program type has changed
-      const storedProgramType = parsed.programType !== undefined ? parsed.programType : null;
-      const currentProgramType = SharedService.ProgramId;
-
       // Check if user has changed (guest vs logged-in)
       const storedUserId: number | null = 
         typeof parsed.userId === 'number' ? parsed.userId : null;
       const currentUserId = SharedService.getUserId();
 
-      // Clear session if user has changed (e.g., new user logged in or user logged out)
-      if (storedUserId !== null && storedUserId !== currentUserId) {
+      // Clear session if user has changed (e.g., new user logged in or user logged out).
+      // Guests all share one backend id, so guest-to-guest is not a change.
+      if (storedUserId !== null && storedUserId !== currentUserId
+          && !(this.isGuestId(storedUserId) && this.isGuestId(currentUserId))) {
         console.log('User change detected. Clearing session.');
         this.clearStorage();
         return;
       }
 
-      // If program type changed, clear the chat
-      if (storedProgramType !== null && storedProgramType !== currentProgramType) {
-        console.log('Program type changed from', storedProgramType, 'to', currentProgramType, '- clearing chat');
-        this.clearStorage();
-        // Welcome messages will be initialized by ChatbotService
-        return;
-      }
+      // The program type is only reliable once the app component has set it, and
+      // ChatBotComponent checks it again on entry, so the chat is never dropped
+      // here just because the id is not initialised yet.
+      const storedProgramType = parsed.programType !== undefined ? parsed.programType : null;
 
-      // Restore state - if programType or userId are missing (legacy data), set them to current
-      const programTypeToRestore = storedProgramType !== null ? storedProgramType : currentProgramType;
+      // Restore state - if userId is missing (legacy data), set it to the current one
       const userIdToRestore =
         storedUserId !== null
           ? storedUserId
@@ -684,16 +702,16 @@ export class ChatStore extends ComponentStore<ChatState> {
         isTyping: false,
         lastUpdated,
         activeSuggestions: parsed.activeSuggestions || [],
-        programType: programTypeToRestore,
+        programType: storedProgramType,
         userId: userIdToRestore
       });
-      
-      // If programType or userId were missing, persist updated state
-      if (storedProgramType === null || storedUserId === null) {
+
+      // If userId was missing, persist updated state
+      if (storedUserId === null) {
         this.persistToStorage(this.get());
       }
     } catch (error) {
-      console.error('Error loading chat session from localStorage:', error);
+      console.error('Error loading chat session from storage:', error);
       this.clearStorage();
     }
     
@@ -701,14 +719,24 @@ export class ChatStore extends ComponentStore<ChatState> {
     // This is handled by ChatbotService.ensureWelcomeMessages() when component loads
   }
 
+  /** Guest ids: no id, 0, or the shared guest account */
+  private isGuestId(userId: number | null): boolean {
+    return userId === null || userId <= 0 || userId === this.GUEST_USER_ID;
+  }
+
   /**
-   * Clear localStorage
+   * Clear the stored session from both storages
    */
   private clearStorage(): void {
     try {
       localStorage.removeItem(this.STORAGE_KEY);
     } catch (error) {
       console.error('Error clearing chat session from localStorage:', error);
+    }
+    try {
+      sessionStorage.removeItem(this.STORAGE_KEY);
+    } catch (error) {
+      console.error('Error clearing chat session from sessionStorage:', error);
     }
   }
 

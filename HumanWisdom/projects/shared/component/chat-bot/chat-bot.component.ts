@@ -85,6 +85,9 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    // We are back inside Olly — the pending "return to Olly" marker has served its purpose
+    localStorage.removeItem(Constant.ChatBotReturnUrl);
+
     this.setUserAvatar();
 
     // Check if program type has changed and clear chat if needed
@@ -1277,6 +1280,9 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
 
       // Save current chatbot URL so subscription page back button returns here
       SharedService.setDataInLocalStorage(Constant.NaviagtedFrom, this.router.url);
+      // Content opened from Olly must come back to Olly: the module page behind it is
+      // guarded for non-subscribers and would otherwise bounce the user to the trial page
+      SharedService.setDataInLocalStorage(Constant.ChatBotReturnUrl, this.router.url);
 
       this.router.navigateByUrl(path);
     });
