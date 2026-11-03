@@ -3230,7 +3230,7 @@ body.page-newsletter .newsletter-subtitle:hover {
   font-size: 18px;
   font-weight: 500;
   line-height: 150%;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   color: #D7586B;
   text-decoration: underline;
   transition: all 0.3s ease;
