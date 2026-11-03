@@ -38,7 +38,7 @@
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
                   <button class="mtb0px fs_12px fw_400 lh_150p fc_803358 btn_blogp">
-                    AI
+                    Work
                   </button>
                 </div>
 
@@ -48,7 +48,7 @@
 
             <div class="row mt20px rmb80px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <img src="https://substack-post-media.s3.amazonaws.com/public/images/323a3093-8a07-42ce-ae9d-ae6fd81e2679_1920x1080.jpeg" class="img-responsive" alt="Alongside AI, are we investing enough in HI (Human Intelligence)?" >
+                <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/97.webp" class="img-responsive" alt="Alongside AI, are we investing enough in HI (Human Intelligence)?" >
               </div>
             </div>
 
@@ -77,7 +77,7 @@
 
                 <h4 class="mtb0px blog_desc">
                     Gallup's
-                    <a href="https://www.gallup.com/workplace/697904/state-of-the-global-workplace-globaldata.aspx" class="blog_highlight_peach td_underline" target="_blank">State of the Global Workplace 2026</a>
+                    State of the Global Workplace 2026
                     report puts
                     <span class="blog_highlight_black">
                         employee engagement at just 12% in Europe and 20% globally.
@@ -91,7 +91,7 @@
 
                 <h4 class="mtb0px blog_desc">
                     Gallup's
-                    <a href="https://www.gallup.com/workplace/321725/gallup-q12-meta-analysis-report.aspx" class="blog_highlight_peach td_underline" target="_blank">research</a>
+                    research
                     links higher team engagement to stronger productivity and profitability, and to lower absenteeism and turnover. Efficient processes matter, but so does supporting the people who work within them. Gallup estimates that
                     <span class="blog_highlight_black">
                         low engagement cost the global economy around $10 trillion in lost productivity in 2025.
@@ -105,7 +105,7 @@
 
                 <h4 class="mtb0px blog_desc">
                     Many of the people I spoke with felt
-                    <a href="https://happierme.app/adults/fear-anxiety" class="blog_highlight_peach td_underline" target="_blank">anxious</a>
+                    anxious
                     about AI. They worried about losing their jobs, about how their roles would change, and about keeping up. Where AI is used to monitor performance, employees may experience it as support, or as surveillance.
                 </h4>
 
@@ -131,7 +131,7 @@
 
                 <h4 class="mtb0px blog_desc">
                     At its core is a deeper
-                    <a href="https://happierme.app/adults/home#self-awareness" class="blog_highlight_peach td_underline" target="_blank">self-awareness</a>:
+                    self-awareness:
                     noticing the automatic reactions shaped by our past experiences, expectations and fears. A brief email can feel like rejection. A colleague's promotion can trigger comparison. Change can become tangled up with fears about our own worth.
                 </h4>
 
@@ -145,7 +145,7 @@
                         Separating what actually happened from the meaning we attach to it
                     </span>
                     can reduce
-                    <a href="https://happierme.app/adults/stress" class="blog_highlight_peach td_underline" target="_blank">stress</a>
+                    stress
                     and anxiety, help us handle disagreement better, and stop everyday friction from turning into lasting conflict.
                 </h4>
 
@@ -187,13 +187,13 @@
                 <h4 class="mtb0px blog_desc">
                     <span class="blog_highlight_black">Embed it in everyday work:</span>
                     Managers practising listening and
-                    <a href="https://happierme.app/adults/communication" class="blog_highlight_peach td_underline" target="_blank">constructive feedback</a>,
+                    constructive feedback,
                     teams reflecting on difficult interactions, and employees given the time and support to apply what they learn.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
                     A workshop can start the process, but it is reflection, practice and reinforcement that sustain it. This is the focus of our work at
-                    <a href="https://happierme.app/" class="blog_highlight_peach td_underline" target="_blank">HappierMe</a>:
+                    HappierMe:
                     building self-understanding and emotional skills through reflection and daily practice.
                 </h4>
 
