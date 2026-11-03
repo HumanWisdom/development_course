@@ -8,6 +8,7 @@ import { Constant } from '../../services/constant';
 import { SharedService } from '../../services/shared.service';
 import { ProgramType } from '../../models/program-model';
 import { Location } from '@angular/common';
+import { NavigationService } from '../../services/navigation.service';
 
 declare var Stripe: any;
 @Component({
@@ -50,7 +51,8 @@ export class SubscriptionPaymentPage implements AfterViewInit {
   constructor(private readonly service: OnboardingService,
     private readonly location: Location,
     public logeventservice: LogEventService,
-    private readonly router: Router) {
+    private readonly router: Router,
+    private readonly navigationService: NavigationService) {
     this.getCountry()
     this.amount = localStorage.getItem('totalAmount');
 
@@ -357,15 +359,15 @@ export class SubscriptionPaymentPage implements AfterViewInit {
 
   back() {
     // Check if user came from subscription flow (free trial ended)
-    const previousUrl = this.location.getState();
     const cameFromSubscription = localStorage.getItem('cameFromSubscription') === 'true';
-    
+
     if (cameFromSubscription) {
-      // Navigate back to subscription flow
-      this.router.navigate([`/${SharedService.getprogramName()}/subscription/proceed-to-payment`]);
+      // Back to the subscription flow
+      this.navigationService.goBackInApp(`/${SharedService.getprogramName()}/subscription/proceed-to-payment`);
     } else {
-      // Navigate back to regular onboarding flow
-      this.router.navigate([`/${SharedService.getprogramName()}/onboarding/viewcart`]);
+      // Back to the onboarding funnel (add-to-cart -> viewcart -> payment),
+      // consuming the history entry so the funnel can never loop on itself
+      this.navigationService.goBackThroughOnboardingFunnel(`/${SharedService.getprogramName()}/onboarding/viewcart`);
     }
   }
 
