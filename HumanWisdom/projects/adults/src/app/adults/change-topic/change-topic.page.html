@@ -39,7 +39,7 @@
             <div class="div_ct">
               <div class="row">
                 <div class="col-xs-12 card-container">
-                  <div (click)="updateList(item.id,item.name)" class="topic-card-wrapper"
+                  <div (click)="updateList(item)" class="topic-card-wrapper"
                     *ngFor="let item of changeTopicList">
                     <button class="topic-card" [class.selected]="item.id == selectedId">
                       <span class="fw_500 fs_15px lh_140p fc_000000">
