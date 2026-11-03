@@ -137,13 +137,13 @@ export class ChangeTopicPage implements OnInit {
     }
   }
 
-  update() {
+  update(item: any) {
     console.log("update")
     this.service.AddUserPreference(this.selectedId).subscribe(res => {
       if (res) {
-        this.logeventservice.logEvent('click_pick_topic_' + this.selectedname);
-        this.router.navigate(['/adults/change-topic/cards', this.selectedId], {
-          state: { routedFromLogin: this.isRoutedFromLogin }
+        this.logeventservice.logEvent('click_pick_topic_' + item.name);
+        this.router.navigate(['/adults/change-topic/cards', item.id], {
+          state: { routedFromLogin: this.isRoutedFromLogin, title: item.title , subtitle: item.Subtitle }
         });
       }
     });
@@ -175,14 +175,14 @@ export class ChangeTopicPage implements OnInit {
     }
   }
 
-  updateList(id,name) {
-    this.selectedId = id;
-    this.selectedname=name;
+  updateList(item: any) {
+    this.selectedId = item.id;
+    this.selectedname = item.name;
 
-    if (parseInt(id) > 0) {
+    if (parseInt(item.id) > 0) {
       this.isSelected = true;
     }
-    this.update();
+    this.update(item);
   }
 
   redirectToDashboard(name){

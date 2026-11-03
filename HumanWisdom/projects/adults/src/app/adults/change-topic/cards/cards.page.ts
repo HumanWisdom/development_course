@@ -16,6 +16,8 @@ export class CardsPage implements OnInit {
   isAdults: boolean = true;
   isRoutedFromLogin: boolean = false;
   isLoading: boolean = true;
+  Title: string = "";
+  Subtitle: string = "";
 
   constructor(
     private route: ActivatedRoute,
@@ -29,6 +31,8 @@ export class CardsPage implements OnInit {
     const navigation = this.router.getCurrentNavigation();
     if (navigation?.extras?.state) {
       this.isRoutedFromLogin = navigation.extras.state.routedFromLogin;
+        this.Title = navigation.extras.state.title;
+      this.Subtitle = navigation.extras.state.subtitle;
     } else {
       // Fallback logic check
       let loginResponse = JSON.parse(localStorage.getItem("loginResponse") || sessionStorage.getItem("loginResponse") || "null");

@@ -916,11 +916,13 @@
   .tab-content {
     padding: 10px 0 !important;
     text-align: center !important;
-    width: 104%;
+    width: 100%;
+    max-width: 100%;
   }
 
   .dfooter {
-    width: 104%;
+    width: 100%;
+    max-width: 100%;
   }
 
   .tab-content .row.center_flex {
@@ -2134,7 +2136,8 @@
 
   .div_subscriptionnew {
     text-align: center;
-    width: 104%;
+    width: 100%;
+    max-width: 100%;
   }
 
   .div_subscriptionnew .container-fluid {

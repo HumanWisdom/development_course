@@ -53,7 +53,7 @@
         </div>
       </div>
 
-      <!-- ===== READY TO TRANSFORM ===== -->
+      <!-- ===== READY TO TRANSFORM =====
       <section class="transform-cta-section index-lazy-section">
         <div class="transform-cta-inner">
           <div class="transform-cta-text">
@@ -73,6 +73,7 @@
           </div>
         </div>
       </section>
+      -->
 
       <!-- ===== FAQ ===== -->
       <!-- Desktop FAQ -->
