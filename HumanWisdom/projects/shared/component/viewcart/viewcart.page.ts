@@ -7,6 +7,7 @@ import { LogEventService } from '../../services/log-event.service';
 import { ForumService } from '../../forum/forum.service';
 import { SharedService } from '../../services/shared.service';
 import { ProgramType } from '../../models/program-model';
+import { NavigationService } from '../../services/navigation.service';
 @Component({
   selector: 'app-viewcart',
   templateUrl: './viewcart.page.html',
@@ -62,7 +63,8 @@ export class ViewcartPage implements OnInit {
     private service: OnboardingService,
     private location: Location,
     public logeventservice: LogEventService,
-    private forumservice: ForumService
+    private forumservice: ForumService,
+    private navigationService: NavigationService
   ) {
     let res = localStorage.getItem("isloggedin")
     if (res !== 'T') this.router.navigate([`/${SharedService.getprogramName()}/onboarding/login`], { replaceUrl: true, skipLocationChange: true })
@@ -87,11 +89,7 @@ export class ViewcartPage implements OnInit {
     this.isUpgradeToPremium = localStorage.getItem('upgradeToPremium');
     this.userEmail = JSON.parse(localStorage.getItem("userEmail"))
     localStorage.setItem("couponid", '0')
-    console.log("save username", this.saveUsername)
-    if (this.saveUsername == false)
-      this.userId = JSON.parse(sessionStorage.getItem("userId"))
-    else
-      this.userId = JSON.parse(localStorage.getItem("userId"))
+    this.userId = this.resolveUserId();
     if (localStorage.getItem('personalised') === 'T') {
       this.personalisedaddcart()
     }
@@ -112,7 +110,32 @@ export class ViewcartPage implements OnInit {
     this.enableAlert = false;
   }
 
+  /**
+   * The cart is reached from the nav bar flow, where the per tab sessionStorage
+   * login state can be empty even though the user is logged in (localStorage
+   * still holds the user), so every stored id is consulted before the cart
+   * calls run with a blank UserId.
+   */
+  resolveUserId() {
+    const storedIds = this.saveUsername
+      ? [localStorage.getItem("userId"), sessionStorage.getItem("userId")]
+      : [sessionStorage.getItem("userId"), localStorage.getItem("userId")];
+
+    for (const storedId of storedIds) {
+      if (!storedId || storedId === 'null' || storedId === 'undefined') continue;
+      try {
+        const id = JSON.parse(storedId);
+        if (id) return id;
+      } catch (e) {
+        const id = Number.parseInt(storedId);
+        if (id) return id;
+      }
+    }
+    return SharedService.getUserId() || null;
+  }
+
   viewCart() {
+    if (!this.userId) return;
     this.service.viewCart({ "Id": this.userId })
       .subscribe(res => {
 
@@ -366,7 +389,11 @@ export class ViewcartPage implements OnInit {
           }
         }
         this.totalPrice();
-        if (this.cartList.length === 0) this.router.navigate([`/${SharedService.getprogramName()}/onboarding/add-to-cart`]);
+        if (this.cartList.length === 0) {
+          // Cart is now empty, so step back through the funnel instead of pushing
+          // a new entry: add-to-cart -> viewcart -> back stays reversible
+          this.navigationService.goBackThroughOnboardingFunnel(`/${SharedService.getprogramName()}/onboarding/add-to-cart`);
+        }
       })
    
   }
@@ -604,7 +631,9 @@ export class ViewcartPage implements OnInit {
   }
 
   back() {
-    this.router.navigate([`/${SharedService.getprogramName()}/onboarding/add-to-cart`]);
+    // Consume the history entry instead of pushing add-to-cart, otherwise
+    // add-to-cart -> viewcart -> back -> add-to-cart -> back loops forever.
+    this.navigationService.goBackThroughOnboardingFunnel(`/${SharedService.getprogramName()}/onboarding/add-to-cart`);
   }
 
 }
