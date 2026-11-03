@@ -29,7 +29,7 @@
             <div class="row rmb80px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <h1 class="mtb0px fs_36px fw_500 lh_140p fc_000000">
-                10 Proven Tips for a Healthy Relationship in 2025
+                10 Proven Tips for a Healthy Relationship 
 
                 </h1>
               </div>

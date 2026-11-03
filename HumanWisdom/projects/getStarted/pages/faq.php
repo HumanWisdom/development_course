@@ -606,12 +606,12 @@
                                                                         </div>
                                                                     </div>
 
-                                                                    <div class="row">
+                                                                    <!-- <div class="row">
                                                                         <div
                                                                             class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                                                                             <hr class="hr_style_web_01 hr-darker">
                                                                         </div>
-                                                                    </div>
+                                                                    </div> -->
 
 
                                                                     <div class="accordion-item">
@@ -6593,7 +6593,7 @@
                                 <div class="row " data-aos="fade-up" data-aos-delay="100">
                                     <div class="col-12 pl20px">
 
-                                        <h2 class="mtb20px fs_36px fw_400 lh_180p">
+                                        <h2 class="mt10px fs_36px fw_400 lh_180p">
                                             Frequently asked questions (FAQ)
                                         </h2>
                                     </div>
@@ -6936,12 +6936,12 @@
                                                                 concerns should seek appropriate support from a
                                                                 qualified healthcare or mental health professional.
                                                             </h6>
-                                                            <div class="row">
+                                                            <!-- <div class="row">
                                                                 <div
                                                                     class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                                                                     <hr class="hr_style_web_01">
                                                                 </div>
-                                                            </div>
+                                                            </div> -->
 
                                                         </div>
                                                     </div>
@@ -9025,11 +9025,11 @@
                                                             growth.
 
                                                         </h6>
-                                                        <div class="row">
+                                                        <!-- <div class="row">
                                                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                                                                 <hr class="hr_style_web_01">
                                                             </div>
-                                                        </div>
+                                                        </div> -->
 
                                                     </div>
                                                 </div>
@@ -9326,11 +9326,11 @@
                                                               expert-curated resources.
 
                                                           </h6>
-                                                          <div class="row">
+                                                          <!-- <div class="row">
                                                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                                                   <hr class="hr_style_web_faq">
                                                               </div>
-                                                          </div>
+                                                          </div> -->
                                                       </div>
                                                   </div>
                                               </div>
@@ -9642,11 +9642,11 @@
                                                                     guide users toward relevant expert-curated
                                                                     resources.
                                                                </h6>
-                                                          <div class="row">
+                                                          <!-- <div class="row">
                                                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                                                   <hr class="hr_style_web_faq">
                                                               </div>
-                                                          </div>
+                                                          </div> -->
                                                       </div>
                                                   </div>
                                               </div>
@@ -10057,11 +10057,11 @@
                                                                                             their thoughts, emotions,
                                                                                             habits, relationships,
                                                                                         </h6>
-                                                          <div class="row">
+                                                          <!-- <div class="row">
                                                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                                                   <hr class="hr_style_web_faq">
                                                               </div>
-                                                          </div>
+                                                          </div> -->
                                                       </div>
                                                   </div>
                                               </div>
@@ -10472,11 +10472,11 @@
                                                                                                 professional addiction
                                                                                                 treatment or medical
                                                                                                 care. </b> </h6>
-                                                          <div class="row">
+                                                          <!-- <div class="row">
                                                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                                                   <hr class="hr_style_web_faq">
                                                               </div>
-                                                          </div>
+                                                          </div> -->
                                                       </div>
                                                   </div>
                                               </div>
@@ -10884,11 +10884,11 @@
                                                                                             professional grief or mental
                                                                                             health support when that is
                                                                                             needed.</b></h6>
-                                                          <div class="row">
+                                                          <!-- <div class="row">
                                                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                                                   <hr class="hr_style_web_faq">
                                                               </div>
-                                                          </div>
+                                                          </div> -->
                                                       </div>
                                                   </div>
                                               </div>
@@ -11266,11 +11266,11 @@
                                                                                             better and develop practical
                                                                                             skills for handling everyday
                                                                                             life more effectively. </h6>
-                                                          <div class="row">
+                                                          <!-- <div class="row">
                                                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                                                   <hr class="hr_style_web_faq">
                                                               </div>
-                                                          </div>
+                                                          </div> -->
                                                       </div>
                                                   </div>
                                               </div>
@@ -11695,11 +11695,11 @@
 
                                                                       
 
-                                                          <div class="row">
+                                                          <!-- <div class="row">
                                                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                                                   <hr class="hr_style_web_faq">
                                                               </div>
-                                                          </div>
+                                                          </div> -->
                                                       </div>
                                                   </div>
                                               </div>
