@@ -21,29 +21,39 @@ export class AdultsService {
   personalisedforyoulist = [
         {
           id: "2",
-          name: 'Manage your mental health'
+          name: 'Less stress and anxiety',
+          title: 'Understand stress.<br>Feel calmer.',
+          Subtitle:'Find out how to navigate challenges with less stress and more confidence'
         },
         {
           id: "1",
-          name: 'Work and Leadership'
+          name: 'Flourish at work',
+          title: 'Be happier and more <br> fulfilled at work.',
+          Subtitle: 'Manage pressure, make better decisions and work well with others.'
         },
         {
           id: "3",
-          name: 'Relationships'
+          name: 'Stronger Relationships',
+          title: 'Understand yourself <br> and others better.',
+          Subtitle: 'Reduce conflict, communicate better and build closer relationships.'
         },
         {
           id: "4",
-          name: 'Be happier'
+          name: 'Feel happier',
+          title: 'Discover a happier way to live.',
+          Subtitle: 'Find more happiness within yourself, whatever life brings.'
         },
-        {
+      /*   {
           id: "8",
           name: 'Manage your emotions',
-        },
+        }, */
         {
           id: "18",
-          name: 'For parents',
+          name: 'Thrive as a parent',
+          title: 'Build a happier family.',
+          Subtitle: 'Help children be emotionally healthy and happy, while looking after your own wellbeing.'
         },
-        {
+      /*   {
              id: "19",
            name: 'Develop your self awareness',
         },
@@ -54,10 +64,12 @@ export class AdultsService {
         {
           id: "6",
           name: 'Deal with loss'
-        },
+        }, */
          {
           id: "5",
-          name: 'Habits and addictions'
+          name: 'Change unwanted habits',
+          title: 'Change addictive habits.<br/> Change your life.',
+          Subtitle: 'Discover the unseen drivers behind your habits and how you can break free.'
         }
   ]
 

@@ -4382,7 +4382,7 @@ nav a:hover {
   margin-right: auto;
 }
 
-/* Meet Olly hero — 40px below the nav, 40px above the logo strip */
+/* Meet Olly hero — 80px purple above the photo, 80px below it (1440 frame) */
 .frame-wrapper.web_home_divlanding {
   box-sizing: border-box;
   display: flex !important;
@@ -4391,10 +4391,10 @@ nav a:hover {
   justify-content: flex-start !important;
   height: auto !important;
   min-height: 0 !important;
-  padding-top: 209px !important; /* 169px fixed header + 40px */
+  padding-top: 250px !important; /* 170px fixed header + 80px */
   padding-left: 0 !important;
   padding-right: 0 !important;
-  padding-bottom: 40px !important;
+  padding-bottom: 80px !important;
 }
 .meetolly-hero {
   box-sizing: border-box;
@@ -4559,6 +4559,7 @@ nav a:hover {
 @media (max-width: 1023px) {
   .frame-wrapper.web_home_divlanding {
     min-height: 0;
+    padding-top: 209px !important;
     padding-bottom: 40px !important;
   }
   .meetolly-hero {
@@ -4595,20 +4596,43 @@ nav a:hover {
     min-height: 0;
   }
   .meetolly-hero {
-    gap: 24px;
-    padding: 0 16px;
+    gap: 18px;
+    padding: 0 20px;
   }
-  .meetolly-intro {
+  .meetolly-hero-media,
+  .meetolly-hero-copy {
+    width: 100%;
+    max-width: 335px;
+  }
+  .meetolly-hero-copy,
+  .meetolly-intro,
+  .meetolly-text {
+    align-items: center;
     gap: 18px;
   }
-  .meetolly-text {
-    gap: 12px;
+  .meetolly-rating {
+    justify-content: center;
+    width: 100%;
+  }
+  .meetolly-title,
+  .meetolly-subtitle {
+    text-align: center;
   }
   .meetolly-title {
-    font-size: 32px;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: 0;
   }
   .meetolly-subtitle {
-    font-size: 16px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 140%;
+    letter-spacing: 0;
+    text-align: center;
+  }
+  .meetolly-cta {
+    width: 100%;
   }
   .meetolly-cta-btn {
     font-size: 18px;

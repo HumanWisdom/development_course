@@ -23,35 +23,38 @@ export class TeenagersService {
   personalisedforyoulist = [
     {
       id: '10',
-      name: 'Manage your mental health'
+      name: 'Less stress and anxiety',
+      title: 'Understand stress. Feel calmer.',
+      Subtitle:'Find out how to navigate challenges with less stress and more confidence'
     },
     {
       id: '17',
-      name: 'Succeed in life'
+      name: 'Flourish at school',
+      
     },
     {
       id: '11',
-      name: 'Relationships'
+      name: 'Stonger relationships'
     },
     {
       id: '13',
-      name: 'Be happier'
+      name: 'Feel happier'
     },
     {
       id: '14',
       name: 'Manage your emotions'
     },
-    {
+  /*   {
       id: '20',
       name: 'Develop your self awareness'
-    },
+    }, 
     {
       id: '12',
       name: 'Feel calm'
-    },
+    },*/
     {
       id: '15',
-      name: 'Overcome unhelpful habits'
+      name: 'Change unwanted habits'
     }
   ]
 
