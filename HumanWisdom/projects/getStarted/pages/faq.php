@@ -52,7 +52,7 @@
                                                 <div class="row " data-aos="fade-up" data-aos-delay="100">
                                                     <div class="col-12 p0">
 
-                                                        <h2 class="mtb20px fs_36px fw_400 lh_180p">
+                                                        <h2 class="mtb30px  fs_36px fw_400 lh_180p">
                                                             Frequently asked questions (FAQ)
                                                         </h2>
                                                     </div>
@@ -63,7 +63,7 @@
                                                         <ul class="nav nav-tabs m0px tab_faqs">
 
                                                             <li class="active show">
-                                                                <a class="active show" data-bs-toggle="tab"
+                                                                <a   style="text-transform:capitalize" class="active show" data-bs-toggle="tab"
                                                                     data-bs-target="#c11" aria-expanded="true"
                                                                     aria-controls="c11">
                                                                     About HappierMe
@@ -71,14 +71,14 @@
                                                             </li>
 
                                                             <li>
-                                                                <a data-bs-toggle="tab" aria-expanded="false"
+                                                                <a   style="text-transform:capitalize" data-bs-toggle="tab" aria-expanded="false"
                                                                     data-bs-target="#c12" aria-controls="c12">
                                                                     Understanding Your Mind
                                                                 </a>
                                                             </li>
 
                                                             <li>
-                                                                <a href="#app_features" data-bs-toggle="tab"
+                                                                <a   style="text-transform:capitalize" href="#app_features" data-bs-toggle="tab"
                                                                     aria-expanded="false" data-bs-target="#c13"
                                                                     aria-controls="c13">
                                                                     Stress & Anxiety
@@ -86,7 +86,7 @@
                                                             </li>
 
                                                             <li>
-                                                                <a href="#teenage_program" data-bs-toggle="tab"
+                                                                <a   style="text-transform:capitalize" href="#teenage_program" data-bs-toggle="tab"
                                                                     aria-expanded="false" data-bs-target="#c14"
                                                                     aria-controls="c14">
                                                                     Overthinking & Negative Thoughts
@@ -94,7 +94,7 @@
                                                             </li>
 
                                                             <li>
-                                                                <a href="#support" data-bs-toggle="tab"
+                                                                <a   style="text-transform:capitalize" href="#support" data-bs-toggle="tab"
                                                                     aria-expanded="false" data-bs-target="#c15"
                                                                     aria-controls="c15">
                                                                     Feelings & Emotional Intelligence
@@ -102,7 +102,7 @@
                                                             </li>
 
                                                             <li>
-                                                                <a href="#support" data-bs-toggle="tab"
+                                                                <a   style="text-transform:capitalize" href="#support" data-bs-toggle="tab"
                                                                     aria-expanded="false" data-bs-target="#c16"
                                                                     aria-controls="c16">
                                                                     Relationships & Communication
@@ -110,7 +110,7 @@
                                                             </li>
 
                                                             <li>
-                                                                <a href="#support" data-bs-toggle="tab"
+                                                                <a   style="text-transform:capitalize" href="#support" data-bs-toggle="tab"
                                                                     aria-expanded="false" data-bs-target="#c17"
                                                                     aria-controls="c17">
                                                                     Happiness & Self-Awareness
@@ -118,7 +118,7 @@
                                                             </li>
 
                                                             <li>
-                                                                <a href="#support" data-bs-toggle="tab"
+                                                                <a  style="text-transform:capitalize" href="#support" data-bs-toggle="tab"
                                                                     aria-expanded="false" data-bs-target="#c18"
                                                                     aria-controls="c18">
                                                                     Work, Stress & Resilience
@@ -126,7 +126,7 @@
                                                             </li>
 
                                                             <li>
-                                                                <a href="#support" data-bs-toggle="tab"
+                                                                <a   style="text-transform:capitalize"href="#support" data-bs-toggle="tab"
                                                                     aria-expanded="false" data-bs-target="#c19"
                                                                     aria-controls="c19">
                                                                     Teenagers & Students
@@ -134,7 +134,7 @@
                                                             </li>
 
                                                             <li>
-                                                                <a href="#support" data-bs-toggle="tab"
+                                                                <a    style="text-transform:capitalize" href="#support" data-bs-toggle="tab"
                                                                     aria-expanded="false" data-bs-target="#c20"
                                                                     aria-controls="c20">
                                                                     Parents & Families
@@ -142,7 +142,7 @@
                                                             </li>
 
                                                             <li>
-                                                                <a href="#support" data-bs-toggle="tab"
+                                                                <a   style="text-transform:capitalize" href="#support" data-bs-toggle="tab"
                                                                     aria-expanded="false" data-bs-target="#c21"
                                                                     aria-controls="c21">
                                                                     Habits, Addiction & Behaviour
@@ -150,7 +150,7 @@
                                                             </li>
 
                                                             <li>
-                                                                <a href="#support" data-bs-toggle="tab"
+                                                                <a  style="text-transform:capitalize" href="#support" data-bs-toggle="tab"
                                                                     aria-expanded="false" data-bs-target="#c22"
                                                                     aria-controls="c22">
                                                                     Dealing with Loss
@@ -158,7 +158,7 @@
                                                             </li>
 
                                                             <li>
-                                                                <a href="#support" data-bs-toggle="tab"
+                                                                <a  style="text-transform:capitalize"  href="#support" data-bs-toggle="tab"
                                                                     aria-expanded="false" data-bs-target="#c23"
                                                                     aria-controls="c23">
                                                                     Social Proof
@@ -166,7 +166,7 @@
                                                             </li>
 
                                                             <li>
-                                                                <a href="#support" data-bs-toggle="tab"
+                                                                <a  style="text-transform:capitalize"href="#support" data-bs-toggle="tab"
                                                                     aria-expanded="false" data-bs-target="#c24"
                                                                     aria-controls="c24">
                                                                     Blogs
@@ -196,13 +196,13 @@
                                                                             class="accordion-collapse collapse show"
                                                                             data-bs-parent="#accordion_faq_about">
                                                                             <div class="accordion-body">
-                                                                                <!-- <b> HappierMe is an all-in-one mental wellness and personal growth app designed to help people handle everyday life challenges more effectively.</b>It combines mental wellness education, mindfulness, meditation, journaling, emotional intelligence, relationship support, habit-building, and self-awareness tools in one app. HappierMe is designed for both teenagers and adults and provides practical resources that users can explore in just a few minutes a day. -->
+                                                                                <!-- <b style="font-weight:600";> HappierMe is an all-in-one mental wellness and personal growth app designed to help people handle everyday life challenges more effectively.</b>It combines mental wellness education, mindfulness, meditation, journaling, emotional intelligence, relationship support, habit-building, and self-awareness tools in one app. HappierMe is designed for both teenagers and adults and provides practical resources that users can explore in just a few minutes a day. -->
 
                                                                                 <h2 class="hs_title">
                                                                                     1. What is HappierMe?
                                                                                 </h2>
 
-                                                                                <h6 class="hs_desc"><b>HappierMe is an
+                                                                                <h6 class="hs_desc"><b style="font-weight:600";>HappierMe is an
                                                                                         all-in-one mental wellness and
                                                                                         personal growth app designed to
                                                                                         help people handle everyday life
@@ -232,7 +232,7 @@
                                                                                 <h6 class="hs_desc">
                                                                                     HappierMe helps users work on a wide
                                                                                     range of everyday challenges,
-                                                                                    including <b> stress, anxiety,
+                                                                                    including <b style="font-weight:600";> stress, anxiety,
                                                                                         overthinking, emotional
                                                                                         difficulties, relationships,
                                                                                         unhealthy habits, sleep,
@@ -259,7 +259,7 @@
                                                                                 </h2>
 
                                                                                 <h6 class="hs_desc">
-                                                                                    <b>HappierMe is more than a
+                                                                                    <b style="font-weight:600";>HappierMe is more than a
                                                                                         meditation app.</b> While it
                                                                                     includes meditation, breathing
                                                                                     exercises, and mindfulness
@@ -286,7 +286,7 @@
                                                                                 </h2>
 
                                                                                 <h6 class="hs_desc">
-                                                                                    HappierMe is designed for <b> both
+                                                                                    HappierMe is designed for <b style="font-weight:600";> both
                                                                                         teenagers and adults.</b> The
                                                                                     app has separate experiences and
                                                                                     content areas for teens and adults,
@@ -338,7 +338,7 @@
                                                                                 </h2>
 
                                                                                 <h6 class="hs_desc">
-                                                                                    HappierMe brings <b> mental
+                                                                                    HappierMe brings <b style="font-weight:600";> mental
                                                                                         wellness, emotional
                                                                                         intelligence, relationships,
                                                                                         mindfulness, personal growth,
@@ -364,7 +364,7 @@
                                                                                 </h2>
 
                                                                                 <h6 class="hs_desc">
-                                                                                    HappierMe includes <b> AI-guided
+                                                                                    HappierMe includes <b style="font-weight:600";> AI-guided
                                                                                         content discovery, podcasts,
                                                                                         blogs, short videos,
                                                                                         microlearning modules, guided
@@ -391,7 +391,7 @@
                                                                                 </h2>
 
                                                                                 <h6 class="hs_desc">
-                                                                                    <b>Olly AI is the AI-powered
+                                                                                    <b style="font-weight:600";>Olly AI is the AI-powered
                                                                                         wellness guide built into
                                                                                         HappierMe. </b> It helps users
                                                                                     reflect on what they are
@@ -419,7 +419,7 @@
                                                                                 </h2>
 
                                                                                 <h6 class="hs_desc">
-                                                                                    <b>No. Olly AI does not source its
+                                                                                    <b style="font-weight:600";>No. Olly AI does not source its
                                                                                         guidance from the open
                                                                                         internet.</b> It is designed to
                                                                                     guide users toward expert-curated
@@ -441,7 +441,7 @@
                                                                                 </h2>
 
                                                                                 <h6 class="hs_desc">
-                                                                                    HappierMe provides <b> educational
+                                                                                    HappierMe provides <b style="font-weight:600";> educational
                                                                                         resources and practical tools
                                                                                         for managing everyday <a
                                                                                             class="blog_highlight_peach td_underline fs_15px"
@@ -471,7 +471,7 @@
                                                                                     Yes. HappierMe includes <a
                                                                                         class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/explore#relationships">
-                                                                                        relationship</a> <b> - focused
+                                                                                        relationship</a> <b style="font-weight:600";> - focused
                                                                                         educational content and
                                                                                         practical resources </b>
                                                                                     designed to help users better
@@ -501,7 +501,7 @@
                                                                                     develop <a
                                                                                         class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/explore#self-awareness">self-awareness</a>,
-                                                                                    <b>emotional intelligence,
+                                                                                    <b style="font-weight:600";>emotional intelligence,
                                                                                         confidence, resilience,
                                                                                         mindfulness, communication
                                                                                         skills, healthier habits, focus,
@@ -576,7 +576,7 @@
                                                                                 </h2>
 
                                                                                 <h6 class="hs_desc">
-                                                                                    <b>
+                                                                                    <b style="font-weight:600";>
 
                                                                                         No. HappierMe is a mental
                                                                                         wellness and personal growth app
@@ -637,7 +637,7 @@
 
                                                                                 <h6 class="hs_desc">
                                                                                     Understanding your mind means
-                                                                                    becoming more aware of <b>your
+                                                                                    becoming more aware of <b style="font-weight:600";>your
                                                                                         thoughts, <a
                                                                                             class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/explore#emotions">
@@ -667,7 +667,7 @@
                                                                                     become more aware of <a
                                                                                         class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/videopage/Introduction-videos-mind_pathway.mp4/T/Understand%20how%20your%20mind%20works%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20">
-                                                                                        why you think</a><b>, feel, and
+                                                                                        why you think</a><b style="font-weight:600";>, feel, and
                                                                                         behave in certain ways.</b>
                                                                                     Greater self-awareness can support
                                                                                     better emotional regulation,
@@ -696,7 +696,7 @@
                                                                                         class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/explore#self-awareness">
                                                                                         self-awareness</a> by regularly
-                                                                                    paying attention to your <b>
+                                                                                    paying attention to your <b style="font-weight:600";>
                                                                                         thoughts, emotions, reactions,
                                                                                         habits, and behaviors.</b>
                                                                                     Practices such as journaling,
@@ -748,7 +748,7 @@
                                                                                 <h6 class="hs_desc">
                                                                                     Rather than trying to force every
                                                                                     thought to disappear, it can be
-                                                                                    useful to <b>notice the thought,
+                                                                                    useful to <b style="font-weight:600";>notice the thought,
                                                                                         understand the emotion behind
                                                                                         it, and examine whether the
                                                                                         thinking is actually helping
@@ -797,7 +797,7 @@
                                                                                 </h2>
 
                                                                                 <h6 class="hs_desc">
-                                                                                    <b> No. A <a
+                                                                                    <b style="font-weight:600";> No. A <a
                                                                                             class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/audiopage/~podcasts~275.mp3/275/T/Why%20do%20our%20thoughts%20feel%20true%3F/podcast">thought</a>
                                                                                         is not necessarily a fact.</b>
@@ -824,7 +824,7 @@
                                                                                 </h2>
 
                                                                                 <h6 class="hs_desc">
-                                                                                    Start by noticing <b> what you are
+                                                                                    Start by noticing <b style="font-weight:600";> what you are
                                                                                         feeling, <a
                                                                                             class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/videopage/Introduction-videos-managing_cdp.mp4/T/Manage%20your%20emotions">
@@ -857,7 +857,7 @@
                                                                                         class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/audiopage/~podcasts~141.mp3/141/T/Where%20do%20our%20reactions%20come%20from/podcast">reactions</a>
                                                                                     can be influenced by many factors,
-                                                                                    including <b> past experiences,
+                                                                                    including <b style="font-weight:600";> past experiences,
                                                                                         beliefs, expectations, fears,
                                                                                         habits, current circumstances,
                                                                                         and the meaning we give to an
@@ -882,7 +882,7 @@
                                                                                     <a class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/pathway/manage-your-emotions">
                                                                                         emotions</a>. A healthier
-                                                                                    approach is to <b> notice,
+                                                                                    approach is to <b style="font-weight:600";> notice,
                                                                                         understand, and respond to
                                                                                         emotions rather than
                                                                                         automatically reacting to them.
@@ -935,7 +935,7 @@
                                                                                     </h2>
 
                                                                                     <h6 class="hs_desc">
-                                                                                        The first step is to <b> notice
+                                                                                        The first step is to <b style="font-weight:600";> notice
                                                                                             and understand the pattern
                                                                                         </b> rather than automatically
                                                                                         following it. You can then
@@ -969,7 +969,7 @@
                                                                                             Understanding behavior
                                                                                             involves looking beyond the
                                                                                             behavior itself and
-                                                                                            exploring the <b> thoughts,
+                                                                                            exploring the <b style="font-weight:600";> thoughts,
                                                                                                 emotions, beliefs,
                                                                                                 experiences, habits,
                                                                                                 needs, and triggers </b>
@@ -994,7 +994,7 @@
                                                                                         </h2>
 
                                                                                         <h6 class="hs_desc">
-                                                                                            Yes. <b> <a
+                                                                                            Yes. <b style="font-weight:600";> <a
                                                                                                     class="blog_highlight_peach td_underline fs_15px"
                                                                                                     href="https://happierme.app/adults/site-search/Mindfulness">Mindfulness</a>
                                                                                                 involves paying
@@ -1025,7 +1025,7 @@
                                                                                         </h2>
 
                                                                                         <h6 class="hs_desc">
-                                                                                            <b>
+                                                                                            <b style="font-weight:600";>
                                                                                                 HappierMe helps users
                                                                                                 develop greater
                                                                                                 self-awareness through
@@ -1052,7 +1052,7 @@
                                                                                             everyday life.
                                                                                         </h6>
 
-                                                                                        <!-- HappierMe helps users work on a wide range of everyday challenges, including     <b> stress, anxiety, overthinking, emotional difficulties, relationships, unhealthy habits, sleep, confidence, self-awareness, focus, and personal growth.</b> The app provides educational content and practical exercises to help users better understand their thoughts, emotions, behaviors, and relationships. -->
+                                                                                        <!-- HappierMe helps users work on a wide range of everyday challenges, including     <b style="font-weight:600";> stress, anxiety, overthinking, emotional difficulties, relationships, unhealthy habits, sleep, confidence, self-awareness, focus, and personal growth.</b> The app provides educational content and practical exercises to help users better understand their thoughts, emotions, behaviors, and relationships. -->
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -1081,7 +1081,7 @@
 
                                                                                 </h2>
 
-                                                                                <h6 class="hs_desc"><b>
+                                                                                <h6 class="hs_desc"><b style="font-weight:600";>
                                                                                         <a class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/feel-better-now/stress">
                                                                                             Stress</a> is the mind and
@@ -1107,7 +1107,7 @@
                                                                                     2. What is anxiety?
                                                                                 </h2>
 
-                                                                                <h6 class="hs_desc"><b><a
+                                                                                <h6 class="hs_desc"><b style="font-weight:600";><a
                                                                                             class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/fear-anxiety">
                                                                                             Anxiety</a> is a feeling of
@@ -1139,7 +1139,7 @@
                                                                                         class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/feel-better-now/stress">
                                                                                         Stress</a> is often connected to
-                                                                                    a <b> specific challenge, demand, or
+                                                                                    a <b style="font-weight:600";> specific challenge, demand, or
                                                                                         situation</a>, while <a
                                                                                             class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/feel-better-now/anxiety">anxiety</a>
@@ -1166,7 +1166,7 @@
                                                                                 <h6 class="hs_desc">
                                                                                     Stress can affect people
                                                                                     differently. Common experiences can
-                                                                                    include <b> feeling overwhelmed,
+                                                                                    include <b style="font-weight:600";> feeling overwhelmed,
                                                                                         difficulty relaxing,
                                                                                         irritability, racing thoughts,
                                                                                         trouble concentrating, changes
@@ -1195,7 +1195,7 @@
                                                                                         class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/feel-better-now/anxiety">
                                                                                         Anxiety</a> can involve
-                                                                                    <b>excessive worry, nervousness,
+                                                                                    <b style="font-weight:600";>excessive worry, nervousness,
                                                                                         fear, restlessness, difficulty
                                                                                         concentrating, feeling on edge,
                                                                                         and repeatedly thinking about
@@ -1224,7 +1224,7 @@
                                                                                         class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/feel-better-now/stress">stressed
                                                                                         frequently</a> can have many
-                                                                                    possible causes, including <b>
+                                                                                    possible causes, including <b style="font-weight:600";>
                                                                                         ongoing responsibilities, work
                                                                                         or academic pressure,
                                                                                         relationship difficulties,
@@ -1251,7 +1251,7 @@
                                                                                         class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/audiopage/~podcasts~109.mp3/109/T/Why%20do%20I%20worry%20about%20what%20others%20think%20of%20me%3F/podcast">
                                                                                         Worry</a> can become repetitive
-                                                                                    when the mind keeps trying to <b>
+                                                                                    when the mind keeps trying to <b style="font-weight:600";>
                                                                                         predict, prevent, or control
                                                                                         uncertain outcomes.</b> It may
                                                                                     be influenced by fear, past
@@ -1280,7 +1280,7 @@
                                                                                         class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/site-search/Reduce%20your%20stress%20live%20longer">stress</a>
                                                                                     may be supported through healthy
-                                                                                    practices such as <b> regular
+                                                                                    practices such as <b style="font-weight:600";> regular
                                                                                         physical activity, adequate
                                                                                         sleep, mindfulness, breathing
                                                                                         exercises, meditation,
@@ -1309,7 +1309,7 @@
 
                                                                                 <h6 class="hs_desc">
                                                                                     When you feel overwhelmed, start by
-                                                                                    <b> <a class="blog_highlight_peach td_underline fs_15px"
+                                                                                    <b style="font-weight:600";> <a class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/site-search/Calm%20your%20mind">slowing
                                                                                             down</a> and bringing your
                                                                                         attention to the present moment.
@@ -1337,7 +1337,7 @@
                                                                                         class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/breathing">
                                                                                         Breathing exercises</a> can be a
-                                                                                    simple way to <b> slow down, focus
+                                                                                    simple way to <b style="font-weight:600";> slow down, focus
                                                                                         attention on the present moment,
                                                                                         and create a sense of calm.</b>
                                                                                     They can be incorporated into a
@@ -1362,7 +1362,7 @@
 
                                                                                     <h6 class="hs_desc">
                                                                                         Meditation and mindfulness can
-                                                                                        help people <b> develop greater
+                                                                                        help people <b style="font-weight:600";> develop greater
                                                                                             awareness of their thoughts,
                                                                                             emotions, and present-moment
                                                                                             experiences. </b> Regular
@@ -1389,7 +1389,7 @@
 
                                                                                     <h6 class="hs_desc">
                                                                                         Overthinking can keep attention
-                                                                                        focused on <b> past events, <a
+                                                                                        focused on <b style="font-weight:600";> past events, <a
                                                                                                 class="blog_highlight_peach td_underline fs_15px"
                                                                                                 href="https://happierme.app/adults/site-search/problems">possible
                                                                                                 future problems</a>, or
@@ -1421,7 +1421,7 @@
                                                                                         <h6 class="hs_desc">
                                                                                             A useful starting point is
                                                                                             to separate what you can
-                                                                                            control, <b> what you can
+                                                                                            control, <b style="font-weight:600";> what you can
                                                                                                 influence, and what you
                                                                                                 cannot control.</b> <a
                                                                                                 class="blog_highlight_peach td_underline fs_15px"
@@ -1450,7 +1450,7 @@
                                                                                             with stress and anxiety?
                                                                                         </h2>
 
-                                                                                        <h6 class="hs_desc"><b>
+                                                                                        <h6 class="hs_desc"><b style="font-weight:600";>
                                                                                                 HappierMe provides <a
                                                                                                     class="blog_highlight_peach td_underline fs_15px"
                                                                                                     href="https://happierme.app/adults/blog-article?sId=45">
@@ -1491,7 +1491,7 @@
                                                                                         <h6 class="hs_desc">
                                                                                             Consider seeking
                                                                                             professional support when
-                                                                                            stress or anxiety is <b>
+                                                                                            stress or anxiety is <b style="font-weight:600";>
                                                                                                 persistent, severe,
                                                                                                 difficult to manage, or
                                                                                                 interfering with
@@ -1543,7 +1543,7 @@
 
                                                                                 </h2>
 
-                                                                                <h6 class="hs_desc"><b><a
+                                                                                <h6 class="hs_desc"><b style="font-weight:600";><a
                                                                                             class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/wisdom-shorts/1.219.mp4/T/Overthinking%20what%20people%20think">
                                                                                             Overthinking</a> is a
@@ -1572,7 +1572,7 @@
                                                                                         class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/site-search/Overthinking%20what%20people%20think">
                                                                                         Overthinking</a> can happen when
-                                                                                    the mind is trying to <b> solve a
+                                                                                    the mind is trying to <b style="font-weight:600";> solve a
                                                                                         problem, avoid a mistake,
                                                                                         predict the future, gain
                                                                                         certainty, or protect you from
@@ -1606,7 +1606,7 @@
                                                                                     understand, solve, prevent, or
                                                                                     control. When this becomes
                                                                                     repetitive without producing useful
-                                                                                    action, it can turn into an <b>
+                                                                                    action, it can turn into an <b style="font-weight:600";>
                                                                                         unhelpful thinking loop.</b>
                                                                                 </h6>
                                                                                 <div class="row">
@@ -1623,7 +1623,7 @@
 
                                                                                 <h6 class="hs_desc">
                                                                                     The mind can replay past situations
-                                                                                    when you feel <b> regret,
+                                                                                    when you feel <b style="font-weight:600";> regret,
                                                                                         embarrassment, guilt,
                                                                                         disappointment, anger, or <a
                                                                                             class="blog_highlight_peach td_underline fs_15px"
@@ -1652,7 +1652,7 @@
 
                                                                                 <h6 class="hs_desc">
                                                                                     Worrying about the future can be the
-                                                                                    mind's attempt to <b>prepare for
+                                                                                    mind's attempt to <b style="font-weight:600";>prepare for
                                                                                         uncertainty or prevent something
                                                                                         from going wrong.</b> However,
                                                                                     repeatedly imagining negative
@@ -1672,7 +1672,7 @@
                                                                                     6. Are negative thoughts normal?
                                                                                 </h2>
 
-                                                                                <h6 class="hs_desc"><b>
+                                                                                <h6 class="hs_desc"><b style="font-weight:600";>
                                                                                         Yes. <a
                                                                                             class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/teenagers/site-search/thoughts">Negative
@@ -1703,7 +1703,7 @@
                                                                                         href="https://happierme.app/teenagers/site-search/thoughts">negative
                                                                                         thought</a> can occur
                                                                                     occasionally and pass naturally.
-                                                                                    <b>Negative thinking</b> refers more
+                                                                                    <b style="font-weight:600";>Negative thinking</b> refers more
                                                                                     to recurring patterns in which the
                                                                                     mind consistently interprets
                                                                                     situations through pessimistic,
@@ -1721,7 +1721,7 @@
                                                                                     8. Are my negative thoughts true?
                                                                                 </h2>
 
-                                                                                <h6 class="hs_desc"><b>
+                                                                                <h6 class="hs_desc"><b style="font-weight:600";>
                                                                                         Not necessarily. A <a
                                                                                             class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/teenagers/site-search/thoughts">thought</a>
@@ -1754,7 +1754,7 @@
                                                                                         href="https://happierme.app/adults/guided-meditation/audiopage/https_~~d1tenzemoxuh75.cloudfront.net~guided-meditation~audios~guided-meditation%252B1.11.mp3/11/F/Release-negative-thoughts">negative
                                                                                         thoughts to disappear</a> can
                                                                                     sometimes make you more focused on
-                                                                                    them. Instead, you can practice<b>
+                                                                                    them. Instead, you can practice<b style="font-weight:600";>
                                                                                         noticing the thought,
                                                                                         identifying the emotion behind
                                                                                         it, questioning whether it is
@@ -1804,7 +1804,7 @@
 
                                                                                 <h6 class="hs_desc">
                                                                                     If you repeatedly replay a
-                                                                                    conversation, try noticing <b>what
+                                                                                    conversation, try noticing <b style="font-weight:600";>what
                                                                                         you are hoping to understand,
                                                                                         change, or <a
                                                                                             class="blog_highlight_peach td_underline fs_15px"
@@ -1834,7 +1834,7 @@
                                                                                         class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/wisdom-shorts/1.219.mp4/T/Overthinking%20what%20people%20think">people's
                                                                                         opinions</a> can be influenced
-                                                                                    by <b>self-doubt, past experiences,
+                                                                                    by <b style="font-weight:600";>self-doubt, past experiences,
                                                                                         fear of rejection, or a strong
                                                                                         desire for approval</b>.
                                                                                     Developing self-awareness can help
@@ -1861,7 +1861,7 @@
                                                                                     </h2>
 
                                                                                     <h6 class="hs_desc">
-                                                                                        Start by <b>recognizing that you
+                                                                                        Start by <b style="font-weight:600";>recognizing that you
                                                                                             are in an <a
                                                                                                 class="blog_highlight_peach td_underline fs_15px"
                                                                                                 href="https://happierme.app/adults/micro-learning/inner/3">overthinking
@@ -1891,7 +1891,7 @@
                                                                                     </h2>
 
                                                                                     <h6 class="hs_desc">
-                                                                                        Yes.<b> <a
+                                                                                        Yes.<b style="font-weight:600";> <a
                                                                                                 class="blog_highlight_peach td_underline fs_15px"
                                                                                                 href="https://happierme.app/adults/micro-learning/inner/34">
                                                                                                 Mindfulness</a> can help
@@ -1974,7 +1974,7 @@
 
                                                                                 </h2>
 
-                                                                                <h6 class="hs_desc"><b><a
+                                                                                <h6 class="hs_desc"><b style="font-weight:600";><a
                                                                                             class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/explore#emotions">
                                                                                             Emotions</a> are responses
@@ -1998,7 +1998,7 @@
                                                                                     2. What is emotional intelligence?
                                                                                 </h2>
 
-                                                                                <h6 class="hs_desc"><b><a
+                                                                                <h6 class="hs_desc"><b style="font-weight:600";><a
                                                                                             class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/blog-article?sId=60">
                                                                                             Emotional intelligence</a>
@@ -2030,7 +2030,7 @@
                                                                                         class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/wisdom-shorts/1.100.mp4/T/How%20can%20Emotional%20Intelligence%20help%20you%20live%20your%20best%20life%3F">
                                                                                         Emotional intelligence</a> can
-                                                                                    help people <b>understand themselves
+                                                                                    help people <b style="font-weight:600";>understand themselves
                                                                                         better, manage emotional
                                                                                         reactions, communicate more
                                                                                         effectively, handle
@@ -2054,7 +2054,7 @@
                                                                                 </h2>
 
                                                                                 <h6 class="hs_desc">
-                                                                                    Start by noticing <b> <a
+                                                                                    Start by noticing <b style="font-weight:600";> <a
                                                                                             class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/wisdom-shorts/1.9.mp4/T/Exploring%20feelings">what
                                                                                             you are feeling</a>, what
@@ -2087,7 +2087,7 @@
                                                                                     recognize, while other times it may
                                                                                     feel like a mixture of several
                                                                                     emotions. You can start by paying
-                                                                                    attention to <b> your thoughts,
+                                                                                    attention to <b style="font-weight:600";> your thoughts,
                                                                                         physical sensations, <a
                                                                                             class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/audiopage/~podcasts~296.mp3/296/T/Feelings%20show%20up%20in%20our%20body%20and%20behaviour/podcast">behavior</a>,
@@ -2110,7 +2110,7 @@
                                                                                 <h6 class="hs_desc">
                                                                                     Emotional intelligence is not about
                                                                                     eliminating or suppressing emotions.
-                                                                                    Instead, it involves <b> <a
+                                                                                    Instead, it involves <b style="font-weight:600";> <a
                                                                                             class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/pathway/manage-your-emotions">recognizing
                                                                                             an emotion</a>,
@@ -2141,7 +2141,7 @@
                                                                                     understand what you are experiencing
                                                                                     and may affect how you respond
                                                                                     later. A healthier approach is to
-                                                                                    <b><a class="blog_highlight_peach td_underline fs_15px"
+                                                                                    <b style="font-weight:600";><a class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/videopage/Introduction-videos-emotions_pathway.mp4/T/Manage%20your%20emotions">acknowledge
                                                                                             emotions</a> without
                                                                                         allowing them to automatically
@@ -2166,7 +2166,7 @@
                                                                                         class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/anger">
                                                                                         Anger</a> can be influenced by
-                                                                                    <b>stress, frustration, unmet
+                                                                                    <b style="font-weight:600";>stress, frustration, unmet
                                                                                         expectations, feeling
                                                                                         misunderstood, perceived
                                                                                         unfairness, fear, hurt, or other
@@ -2194,7 +2194,7 @@
                                                                                         class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/curated/youtubelink/1TNtWk_MK9Q%3Dvncbxdfchgvxd">
                                                                                         Managing anger</a> starts with
-                                                                                    recognizing <b>early signs of anger
+                                                                                    recognizing <b style="font-weight:600";>early signs of anger
                                                                                         and identifying the situation,
                                                                                         thoughts, or emotions
                                                                                         contributing to it.</b> Taking a
@@ -2219,7 +2219,7 @@
                                                                                     The terms are often used
                                                                                     interchangeably, but they can be
                                                                                     understood slightly differently.
-                                                                                    <b><a class="blog_highlight_peach td_underline fs_15px"
+                                                                                    <b style="font-weight:600";><a class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/audiopage/~podcasts~70.mp3/70/T/Managing%20difficult%20emotions/podcast">
                                                                                             Emotions</a> are responses
                                                                                         to experiences, while feelings
@@ -2240,7 +2240,7 @@
                                                                                         11. What is empathy?
                                                                                     </h2>
 
-                                                                                    <h6 class="hs_desc"><b><a
+                                                                                    <h6 class="hs_desc"><b style="font-weight:600";><a
                                                                                                 class="blog_highlight_peach td_underline fs_15px"
                                                                                                 href="https://happierme.app/adults/site-search/Empathy">
                                                                                                 Empathy</a> is the
@@ -2269,7 +2269,7 @@
                                                                                     </h2>
 
                                                                                     <h6 class="hs_desc">
-                                                                                        You can develop empathy by <b>
+                                                                                        You can develop empathy by <b style="font-weight:600";>
                                                                                             <a class="blog_highlight_peach td_underline fs_15px"
                                                                                                 href="https://happierme.app/adults/audiopage/~podcasts~270.mp3/270/T/Why%20empathy%20matters%20and%20how%20we%20can%20develop%20this%20skill/podcast">listening
                                                                                                 without immediately
@@ -2302,7 +2302,7 @@
 
                                                                                         <h6 class="hs_desc">
                                                                                             Emotional intelligence can
-                                                                                            help people<b> recognize
+                                                                                            help people<b style="font-weight:600";> recognize
                                                                                                 their own
                                                                                                 <a class="blog_highlight_peach td_underline fs_15px"
                                                                                                     href="https://happierme.app/adults/site-search/intelligence">emotional
@@ -2332,7 +2332,7 @@
                                                                                         </h2>
 
                                                                                         <h6 class="hs_desc">
-                                                                                            Yes. <b> <a
+                                                                                            Yes. <b style="font-weight:600";> <a
                                                                                                     class="blog_highlight_peach td_underline fs_15px"
                                                                                                     href="https://happierme.app/adults/site-search/intelligence">Emotional
                                                                                                     intelligence</a> is
@@ -2366,7 +2366,7 @@
                                                                                         <h6 class="hs_desc">
 
 
-                                                                                            <b>HappierMe helps users
+                                                                                            <b style="font-weight:600";>HappierMe helps users
                                                                                                 develop emotional
                                                                                                 awareness and emotional
                                                                                                 intelligence through
@@ -2424,7 +2424,7 @@
                                                                                     A healthy <a
                                                                                         class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/explore#relationships">relationship</a>
-                                                                                    is generally built on <b>mutual
+                                                                                    is generally built on <b style="font-weight:600";>mutual
                                                                                         respect, trust, honest
                                                                                         communication, empathy,
                                                                                         emotional safety, appropriate
@@ -2446,7 +2446,7 @@
                                                                                     relationships?
                                                                                 </h2>
 
-                                                                                <h6 class="hs_desc"><b><a
+                                                                                <h6 class="hs_desc"><b style="font-weight:600";><a
                                                                                             class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/communication">
                                                                                             Communication</a> helps
@@ -2478,7 +2478,7 @@
                                                                                         class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/communication">
                                                                                         Better communication</a> starts
-                                                                                    with <b>listening carefully,
+                                                                                    with <b style="font-weight:600";>listening carefully,
                                                                                         expressing your feelings
                                                                                         clearly, avoiding assumptions,
                                                                                         asking questions, and giving the
@@ -2499,7 +2499,7 @@
                                                                                     4. What is active listening?
                                                                                 </h2>
 
-                                                                                <h6 class="hs_desc"><b>
+                                                                                <h6 class="hs_desc"><b style="font-weight:600";>
                                                                                         Active <a
                                                                                             class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/site-search/Listening">listening</a>
@@ -2532,7 +2532,7 @@
                                                                                     To become a better <a
                                                                                         class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/site-search/Listening">listener</a>,
-                                                                                    try to <b>give the person your
+                                                                                    try to <b style="font-weight:600";>give the person your
                                                                                         attention, avoid interrupting,
                                                                                         reduce distractions, ask
                                                                                         questions when something is
@@ -2559,7 +2559,7 @@
                                                                                         class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/site-search/Argument">communicate</a>
                                                                                     your experience rather than blaming
-                                                                                    the other person. Explain <b>what
+                                                                                    the other person. Explain <b style="font-weight:600";>what
                                                                                         happened, how you felt, and what
                                                                                         you need or would like to
                                                                                         change.</b> Choosing a calm
@@ -2583,7 +2583,7 @@
                                                                                         class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/wisdom-shorts/1.107.mp4/T/4%20Ways%20Misunderstandings%20Occur">
                                                                                         Misunderstandings</a> can happen
-                                                                                    when people <b>make assumptions,
+                                                                                    when people <b style="font-weight:600";>make assumptions,
                                                                                         communicate indirectly,
                                                                                         interpret words differently,
                                                                                         fail to listen, or respond based
@@ -2610,7 +2610,7 @@
                                                                                     Healthy <a
                                                                                         class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/curated/youtubelink/PDkVkpJlb6I%3Dvncbxdfchgvxd">conflict</a>
-                                                                                    resolution involves <b>listening to
+                                                                                    resolution involves <b style="font-weight:600";>listening to
                                                                                         both perspectives, staying
                                                                                         focused on the issue rather than
                                                                                         attacking the person,
@@ -2640,7 +2640,7 @@
                                                                                     During an <a
                                                                                         class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/site-search/Argument">argument</a>,
-                                                                                    try to <b>slow down, listen before
+                                                                                    try to <b style="font-weight:600";>slow down, listen before
                                                                                         responding, avoid insults or
                                                                                         personal attacks, focus on the
                                                                                         specific issue, and communicate
@@ -2663,7 +2663,7 @@
                                                                                 </h2>
 
                                                                                 <h6 class="hs_desc">
-                                                                                    Healthy boundaries are <b>clear
+                                                                                    Healthy boundaries are <b style="font-weight:600";>clear
                                                                                         limits that <a
                                                                                             class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/site-search/Argument">communicate</a>
@@ -2694,7 +2694,7 @@
                                                                                         someone. You can <a
                                                                                             class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/wisdom-shorts/1.188.mp4/T/Dr%20Manoj%20Krishna.%20Managing%20arguments.">communicate</a>
-                                                                                        it <b>clearly, calmly, and
+                                                                                        it <b style="font-weight:600";>clearly, calmly, and
                                                                                             respectfully</b>, explain
                                                                                         what you are comfortable with,
                                                                                         and avoid unnecessary blame.
@@ -2720,7 +2720,7 @@
                                                                                             class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/audiopage/~podcasts~155.mp3/155/T/Learning%20to%20trust%20people%20again/podcast">
                                                                                             Trust</a> develops through
-                                                                                        <b>consistent behavior, honesty,
+                                                                                        <b style="font-weight:600";>consistent behavior, honesty,
                                                                                             reliability, respect, open
                                                                                             communication, and following
                                                                                             through on commitments.</b>
@@ -2744,7 +2744,7 @@
 
                                                                                         </h2>
 
-                                                                                        <h6 class="hs_desc"><b><a
+                                                                                        <h6 class="hs_desc"><b style="font-weight:600";><a
                                                                                                     class="blog_highlight_peach td_underline fs_15px"
                                                                                                     href="https://happierme.app/adults/audiopage/~podcasts~270.mp3/270/T/Why%20empathy%20matters%20and%20how%20we%20can%20develop%20this%20skill/podcast">
                                                                                                     Empathy</a> helps
@@ -2780,7 +2780,7 @@
                                                                                                 href="https://happierme.app/adults/site-search/Emotional%20Needs">
                                                                                                 Emotional needs</a>
                                                                                             connection can grow through
-                                                                                            <b>honest conversations,
+                                                                                            <b style="font-weight:600";>honest conversations,
                                                                                                 active listening,
                                                                                                 empathy, appreciation,
                                                                                                 shared experiences,
@@ -2808,7 +2808,7 @@
                                                                                             communication?
                                                                                         </h2>
 
-                                                                                        <h6 class="hs_desc"><b>
+                                                                                        <h6 class="hs_desc"><b style="font-weight:600";>
                                                                                                 HappierMe provides
                                                                                                 educational and
                                                                                                 self-reflection
@@ -2862,7 +2862,7 @@
 
                                                                                 </h2>
 
-                                                                                <h6 class="hs_desc"><b><a
+                                                                                <h6 class="hs_desc"><b style="font-weight:600";><a
                                                                                             class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/explore#happiness">
                                                                                             Happiness</a> is more than
@@ -2891,7 +2891,7 @@
                                                                                         class="blog_highlight_peach td_underline fs_15px"
                                                                                         href="https://happierme.app/adults/audiopage/~podcasts~83.mp3/83/T/Being%20happier/podcast">
                                                                                         Everyday wellbeing</a> can be
-                                                                                    supported by <b>building meaningful
+                                                                                    supported by <b style="font-weight:600";>building meaningful
                                                                                         connections, taking care of your
                                                                                         physical and emotional needs,
                                                                                         practicing gratitude, spending
@@ -2922,7 +2922,7 @@
                                                                                         href="https://happierme.app/adults/happiness">
                                                                                         Happiness</a> is influenced by
                                                                                     more than external circumstances.
-                                                                                    <b>Unresolved emotions, stress,
+                                                                                    <b style="font-weight:600";>Unresolved emotions, stress,
                                                                                         unrealistic expectations, lack
                                                                                         of connection, comparison with
                                                                                         others, lack of meaning, or
@@ -2949,7 +2949,7 @@
                                                                                         href="https://happierme.app/adults/happiness">
                                                                                         Happiness</a> is not a single
                                                                                     skill that can simply be learned,
-                                                                                    but <b>many habits and skills
+                                                                                    but <b style="font-weight:600";>many habits and skills
                                                                                         associated with wellbeing can be
                                                                                         developed.</b> Self-awareness,
                                                                                     mindfulness, gratitude, emotional
@@ -2972,7 +2972,7 @@
 
                                                                                 </h2>
 
-                                                                                <h6 class="hs_desc"><b><a
+                                                                                <h6 class="hs_desc"><b style="font-weight:600";><a
                                                                                             class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/explore#self-awareness">
                                                                                             Self-awareness</a> is the
@@ -3001,7 +3001,7 @@
                                                                                             href="https://happierme.app/adults/explore#self-awareness">
                                                                                             Self-awareness</a> can help
                                                                                         you understand what genuinely
-                                                                                        matters to you, <b>what affects
+                                                                                        matters to you, <b style="font-weight:600";>what affects
                                                                                             your emotional wellbeing,
                                                                                             and which habits or patterns
                                                                                             may be making life more
@@ -3029,7 +3029,7 @@
                                                                                         You can develop <a
                                                                                             class="blog_highlight_peach td_underline fs_15px"
                                                                                             href="https://happierme.app/adults/explore#self-awareness">self-awareness</a>
-                                                                                        by regularly <b>observing your
+                                                                                        by regularly <b style="font-weight:600";>observing your
                                                                                             thoughts and emotions,
                                                                                             reflecting on your
                                                                                             experiences, identifying
@@ -3058,7 +3058,7 @@
 
                                                                                     <h6 class="hs_desc">
                                                                                         Start by paying attention to
-                                                                                        <b><a class="blog_highlight_peach td_underline fs_15px"
+                                                                                        <b style="font-weight:600";><a class="blog_highlight_peach td_underline fs_15px"
                                                                                                 href="https://happierme.app/adults/explore#happiness">
                                                                                                 when you feel
                                                                                                 engaged</a>, peaceful,
@@ -3088,7 +3088,7 @@
 
                                                                                     </h2>
 
-                                                                                    <h6 class="hs_desc"><b>
+                                                                                    <h6 class="hs_desc"><b style="font-weight:600";>
                                                                                             Pleasure is often a
                                                                                             short-term positive
                                                                                             experience, while <a
@@ -3119,7 +3119,7 @@
 
                                                                                     <h6 class="hs_desc">
                                                                                         Self-awareness helps you
-                                                                                        recognize <b>your emotions,
+                                                                                        recognize <b style="font-weight:600";>your emotions,
                                                                                             assumptions, motivations,
                                                                                             biases, habits, and personal
                                                                                             values</b> before <a
@@ -3153,7 +3153,7 @@
                                                                                             life as the standard for
                                                                                             judging your own worth or
                                                                                             progress. Self-awareness can
-                                                                                            help you notice <b>when
+                                                                                            help you notice <b style="font-weight:600";>when
                                                                                                 comparison happens, what
                                                                                                 you are feeling, and
                                                                                                 what need or insecurity
@@ -3179,7 +3179,7 @@
                                                                                                 class="blog_highlight_peach td_underline fs_15px"
                                                                                                 href="https://happierme.app/adults/site-search/Confidence">
                                                                                                 Confidence</a> can grow
-                                                                                            through <b>self-awareness,
+                                                                                            through <b style="font-weight:600";>self-awareness,
                                                                                                 developing skills,
                                                                                                 taking manageable
                                                                                                 challenges, learning
@@ -3209,7 +3209,7 @@
                                                                                             </h2>
 
                                                                                             <h6 class="hs_desc">
-                                                                                                Yes. <b><a
+                                                                                                Yes. <b style="font-weight:600";><a
                                                                                                         class="blog_highlight_peach td_underline fs_15px"
                                                                                                         href="https://happierme.app/adults/explore#self-awareness">Mindfulness</a>
                                                                                                     helps you pay
@@ -3219,7 +3219,7 @@
                                                                                                     sensations, and
                                                                                                     experiences without
                                                                                                     automatically
-                                                                                                    reacting to them.<b>
+                                                                                                    reacting to them.<b style="font-weight:600";>
                                                                                                         This can make it
                                                                                                         easier to
                                                                                                         recognize
@@ -3251,7 +3251,7 @@
                                                                                                     href="https://happierme.app/adults/site-search/purpose%20in%20life">purpose</a>
                                                                                                 can come from different
                                                                                                 sources, including
-                                                                                                <b>relationships,
+                                                                                                <b style="font-weight:600";>relationships,
                                                                                                     contribution,
                                                                                                     personal values,
                                                                                                     learning,
@@ -3281,7 +3281,7 @@
                                                                                                 self-awareness?
                                                                                             </h2>
 
-                                                                                            <h6 class="hs_desc"><b>
+                                                                                            <h6 class="hs_desc"><b style="font-weight:600";>
                                                                                                     HappierMe helps
                                                                                                     users develop
                                                                                                     greater
@@ -4925,7 +4925,7 @@
                                                                                             HappierMe is designed as a
                                                                                             mental wellness and personal
                                                                                             growth resource and is
-                                                                                            <b>not a replacement for
+                                                                                            <b style="font-weight:600";>not a replacement for
                                                                                                 professional addiction
                                                                                                 treatment or medical
                                                                                                 care. </b>
@@ -5329,7 +5329,7 @@
                                                                                         microlearning can provide ways
                                                                                         to reflect on and manage
                                                                                         difficult emotions. HappierMe is
-                                                                                        a wellness resource and is<b>
+                                                                                        a wellness resource and is<b style="font-weight:600";>
                                                                                             not a replacement for
                                                                                             professional grief or mental
                                                                                             health support when that is
@@ -6001,9 +6001,9 @@
                                                                                 </div>
                                                                             </div>
                                                                             <h2 class="hs_title">
-                                                                                12. How can <b>emotional
+                                                                                12. How can <b style="font-weight:600";>emotional
                                                                                     intelligence</b> be used to address
-                                                                                and manage <b>health problems</b>?
+                                                                                and manage <b style="font-weight:600";>health problems</b>?
                                                                             </h2>
 
                                                                             <h6 class="hs_desc">
@@ -6620,7 +6620,7 @@
                                                 <div id="cm11" class="panel-collapse collapse">
                                                     <div class="panel-body">
                                                         <div class="accordion-body">
-                                                            <!-- <b> HappierMe is an all-in-one mental wellness and personal growth app designed to help people handle everyday life challenges more effectively.</b>It combines mental wellness education, mindfulness, meditation, journaling, emotional intelligence, relationship support, habit-building, and self-awareness tools in one app. HappierMe is designed for both teenagers and adults and provides practical resources that users can explore in just a few minutes a day. -->
+                                                            <!-- <b style="font-weight:600";> HappierMe is an all-in-one mental wellness and personal growth app designed to help people handle everyday life challenges more effectively.</b>It combines mental wellness education, mindfulness, meditation, journaling, emotional intelligence, relationship support, habit-building, and self-awareness tools in one app. HappierMe is designed for both teenagers and adults and provides practical resources that users can explore in just a few minutes a day. -->
 
                                                             <h2 class="hs_title">
                                                                 1. What is HappierMe?
@@ -6629,7 +6629,7 @@
 
                                                             </h2>
 
-                                                            <h6 class="hs_desc"><b>
+                                                            <h6 class="hs_desc"><b style="font-weight:600";>
                                                                     HappierMe is an all-in-one mental wellness and
                                                                     personal growth app designed to help people handle
                                                                     everyday life challenges more effectively.</b> It
@@ -6651,7 +6651,7 @@
 
                                                             <h6 class="hs_desc">
                                                                 HappierMe helps users work on a wide range of everyday
-                                                                challenges, including <b> stress, anxiety, overthinking,
+                                                                challenges, including <b style="font-weight:600";> stress, anxiety, overthinking,
                                                                     emotional difficulties, relationships, unhealthy
                                                                     habits, sleep, confidence, self-awareness, focus,
                                                                     and personal growth.</b> The app provides
@@ -6673,7 +6673,7 @@
                                                             </h2>
 
                                                             <h6 class="hs_desc">
-                                                                <b>
+                                                                <b style="font-weight:600";>
 
                                                                     HappierMe is more than a meditation app.</b> While
                                                                 it includes meditation, breathing exercises, and
@@ -6694,7 +6694,7 @@
                                                                 4. Who is HappierMe designed for?
                                                             </h2>
 
-                                                            <h6 class="hs_desc">HappierMe is designed for <b> both
+                                                            <h6 class="hs_desc">HappierMe is designed for <b style="font-weight:600";> both
                                                                         teenagers and adults.</b> The app has separate
                                                                     experiences and content areas for teens and adults,
                                                                     addressing age-relevant challenges such as exam
@@ -6737,7 +6737,7 @@
                                                             </h2>
 
                                                             <h6 class="hs_desc">
-                                                                HappierMe brings <b> mental wellness, emotional
+                                                                HappierMe brings <b style="font-weight:600";> mental wellness, emotional
                                                                     intelligence, relationships, mindfulness, personal
                                                                     growth, habit-building, and educational content
                                                                     together in one app.</b> Instead of focusing only on
@@ -6757,7 +6757,7 @@
                                                             </h2>
 
                                                             <h6 class="hs_desc">
-                                                                HappierMe includes <b> AI-guided content discovery,
+                                                                HappierMe includes <b style="font-weight:600";> AI-guided content discovery,
                                                                     podcasts, blogs, short videos, microlearning
                                                                     modules, guided journaling, wellness surveys,
                                                                     meditation, breathing exercises, mindfulness
@@ -6777,7 +6777,7 @@
                                                             </h2>
 
                                                             <h6 class="hs_desc">
-                                                                <b> Olly AI is the AI-powered wellness guide built into
+                                                                <b style="font-weight:600";> Olly AI is the AI-powered wellness guide built into
                                                                     HappierMe. </b> It helps users reflect on what they
                                                                 are experiencing and guides them toward relevant
                                                                 expert-curated resources within the HappierMe platform.
@@ -6797,7 +6797,7 @@
 
                                                             </h2>
 
-                                                            <h6 class="hs_desc"> <b>
+                                                            <h6 class="hs_desc"> <b style="font-weight:600";>
                                                                     No. Olly AI does not source its guidance from the
                                                                     open internet.</b> It is designed to guide users
                                                                 toward expert-curated content available within the
@@ -6815,7 +6815,7 @@
                                                             </h2>
 
                                                             <h6 class="hs_desc">
-                                                                HappierMe provides <b> educational resources and
+                                                                HappierMe provides <b style="font-weight:600";> educational resources and
                                                                     practical tools for managing everyday <a
                                                                         class="blog_highlight_peach td_underline fs_15px"
                                                                         href="https://happierme.app/adults/stress">stress</a>,
@@ -6840,7 +6840,7 @@
                                                                 Yes. HappierMe includes <a
                                                                     class="blog_highlight_peach td_underline fs_15px"
                                                                     href="https://happierme.app/adults/explore#relationships">
-                                                                    relationship</a> <b> - focused educational content
+                                                                    relationship</a> <b style="font-weight:600";> - focused educational content
                                                                     and practical resources </b> designed to help users
                                                                 better understand communication, emotions, empathy,
                                                                 self-awareness, and relationship patterns. The goal is
@@ -6862,7 +6862,7 @@
                                                                 app helps users develop <a
                                                                     class="blog_highlight_peach td_underline fs_15px"
                                                                     href="https://happierme.app/adults/explore#self-awareness">self-awareness</a>,
-                                                                <b>emotional intelligence, confidence, resilience,
+                                                                <b style="font-weight:600";>emotional intelligence, confidence, resilience,
                                                                     mindfulness, communication skills, healthier habits,
                                                                     focus, and emotional understanding</b> through
                                                                 short, practical learning and self-reflection
@@ -6922,7 +6922,7 @@
                                                             </h2>
 
                                                             <h6 class="hs_desc">
-                                                                <b>
+                                                                <b style="font-weight:600";>
 
                                                                     No. HappierMe is a mental wellness and personal
                                                                     growth app and is not intended to replace
@@ -6975,7 +6975,7 @@
 
                                                             <h6 class="hs_desc">
                                                                 Understanding your mind means becoming more aware of
-                                                                <b>your thoughts, <a
+                                                                <b style="font-weight:600";>your thoughts, <a
                                                                         class="blog_highlight_peach td_underline fs_15px"
                                                                         href="https://happierme.app/adults/explore#emotions">
                                                                         emotions</a>, reactions, beliefs, habits, and
@@ -6998,7 +6998,7 @@
                                                                 Understanding your mind can help you become more aware
                                                                 of <a class="blog_highlight_peach td_underline fs_15px"
                                                                     href="https://happierme.app/adults/videopage/Introduction-videos-mind_pathway.mp4/T/Understand%20how%20your%20mind%20works%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20">
-                                                                    why you think</a><b>, feel, and behave in certain
+                                                                    why you think</a><b style="font-weight:600";>, feel, and behave in certain
                                                                     ways.</b> Greater self-awareness can support better
                                                                 emotional regulation, healthier relationships, improved
                                                                 decision-making, and personal growth. It can also help
@@ -7022,7 +7022,7 @@
                                                                     class="blog_highlight_peach td_underline fs_15px"
                                                                     href="https://happierme.app/adults/explore#self-awareness">
                                                                     self-awareness</a> by regularly paying attention to
-                                                                your <b> thoughts, emotions, reactions, habits, and
+                                                                your <b style="font-weight:600";> thoughts, emotions, reactions, habits, and
                                                                     behaviors.</b> Practices such as journaling,
                                                                 mindfulness, meditation, self-reflection, emotional
                                                                 check-ins, and guided exercises can help you notice
@@ -7063,7 +7063,7 @@
 
                                                             <h6 class="hs_desc">
                                                                 Rather than trying to force every thought to disappear,
-                                                                it can be useful to <b>notice the thought, understand
+                                                                it can be useful to <b style="font-weight:600";>notice the thought, understand
                                                                     the emotion behind it, and examine whether the
                                                                     thinking is actually helping you.</b> Mindfulness,
                                                                 journaling, breathing exercises, self-awareness
@@ -7103,7 +7103,7 @@
                                                             </h2>
 
                                                             <h6 class="hs_desc">
-                                                                <b> No. A <a
+                                                                <b style="font-weight:600";> No. A <a
                                                                         class="blog_highlight_peach td_underline fs_15px"
                                                                         href="https://happierme.app/adults/audiopage/~podcasts~275.mp3/275/T/Why%20do%20our%20thoughts%20feel%20true%3F/podcast">thought</a>
                                                                     is not necessarily a fact.</b> Thoughts are
@@ -7124,7 +7124,7 @@
                                                             </h2>
 
                                                             <h6 class="hs_desc">
-                                                                Start by noticing <b> what you are feeling, <a
+                                                                Start by noticing <b style="font-weight:600";> what you are feeling, <a
                                                                         class="blog_highlight_peach td_underline fs_15px"
                                                                         href="https://happierme.app/adults/videopage/Introduction-videos-managing_cdp.mp4/T/Manage%20your%20emotions">
                                                                         when it happens</a>, what triggered it, what
@@ -7149,7 +7149,7 @@
                                                                 Emotional <a
                                                                     class="blog_highlight_peach td_underline fs_15px"
                                                                     href="https://happierme.app/adults/audiopage/~podcasts~141.mp3/141/T/Where%20do%20our%20reactions%20come%20from/podcast">reactions</a>
-                                                                can be influenced by many factors, including <b> past
+                                                                can be influenced by many factors, including <b style="font-weight:600";> past
                                                                     experiences, beliefs, expectations, fears, habits,
                                                                     current circumstances, and the meaning we give to an
                                                                     event.</b> Understanding these patterns can help you
@@ -7169,7 +7169,7 @@
                                                                 The goal is not necessarily to eliminate or suppress
                                                                 <a class="blog_highlight_peach td_underline fs_15px"
                                                                     href="https://happierme.app/adults/pathway/manage-your-emotions">
-                                                                    emotions</a>. A healthier approach is to <b> notice,
+                                                                    emotions</a>. A healthier approach is to <b style="font-weight:600";> notice,
                                                                     understand, and respond to emotions rather than
                                                                     automatically reacting to them. </b> Mindfulness,
                                                                 breathing practices, self-reflection, journaling, and
@@ -7208,7 +7208,7 @@
                                                                 </h2>
 
                                                                 <h6 class="hs_desc">
-                                                                    The first step is to <b> notice and understand the
+                                                                    The first step is to <b style="font-weight:600";> notice and understand the
                                                                         pattern </b> rather than automatically following
                                                                     it. You can then examine the <a
                                                                         class="blog_highlight_peach td_underline fs_15px"
@@ -7233,7 +7233,7 @@
 
                                                                 <h6 class="hs_desc">
                                                                     Understanding behavior involves looking beyond the
-                                                                    behavior itself and exploring the <b> thoughts,
+                                                                    behavior itself and exploring the <b style="font-weight:600";> thoughts,
                                                                         emotions, beliefs, experiences, habits, needs,
                                                                         and triggers </b> that may influence it.
                                                                     Self-reflection and journaling can help you identify
@@ -7251,7 +7251,7 @@
                                                                 </h2>
 
                                                                 <h6 class="hs_desc">
-                                                                    Yes. <b> <a
+                                                                    Yes. <b style="font-weight:600";> <a
                                                                             class="blog_highlight_peach td_underline fs_15px"
                                                                             href="https://happierme.app/adults/site-search/Mindfulness">Mindfulness</a>
                                                                         involves paying attention to your present
@@ -7274,7 +7274,7 @@
                                                                 </h2>
 
                                                                 <h6 class="hs_desc">
-                                                                    <b>
+                                                                    <b style="font-weight:600";>
                                                                         HappierMe helps users develop greater
                                                                         self-awareness through practical educational and
                                                                         self-reflection tools.</b> The app includes
@@ -7321,7 +7321,7 @@
 
                                                             </h2>
 
-                                                            <h6 class="hs_desc"><b>
+                                                            <h6 class="hs_desc"><b style="font-weight:600";>
                                                                     <a class="blog_highlight_peach td_underline fs_15px"
                                                                         href="https://happierme.app/adults/feel-better-now/stress">
                                                                         Stress</a> is the mind and body's response to
@@ -7341,7 +7341,7 @@
                                                                 2. What is anxiety?
                                                             </h2>
 
-                                                            <h6 class="hs_desc"><b><a
+                                                            <h6 class="hs_desc"><b style="font-weight:600";><a
                                                                         class="blog_highlight_peach td_underline fs_15px"
                                                                         href="https://happierme.app/adults/fear-anxiety">
                                                                         Anxiety</a> is a feeling of worry, fear,
@@ -7389,7 +7389,7 @@
 
                                                             <h6 class="hs_desc">
                                                                 Stress can affect people differently. Common experiences
-                                                                can include <b> feeling overwhelmed, difficulty
+                                                                can include <b style="font-weight:600";> feeling overwhelmed, difficulty
                                                                     relaxing, irritability, racing thoughts, trouble
                                                                     concentrating, changes in sleep, feeling tense, and
                                                                     becoming emotionally exhausted.</b> Physical
@@ -7412,7 +7412,7 @@
                                                             <h6 class="hs_desc"><a
                                                                     class="blog_highlight_peach td_underline fs_15px"
                                                                     href="https://happierme.app/adults/feel-better-now/anxiety">
-                                                                    Anxiety</a> can involve <b>excessive worry,
+                                                                    Anxiety</a> can involve <b style="font-weight:600";>excessive worry,
                                                                     nervousness, fear, restlessness, difficulty
                                                                     concentrating, feeling on edge, and repeatedly
                                                                     thinking about possible negative outcomes. </b> Some
@@ -7434,7 +7434,7 @@
                                                                     class="blog_highlight_peach td_underline fs_15px"
                                                                     href="https://happierme.app/adults/feel-better-now/stress">stressed
                                                                     frequently</a> can have many possible causes,
-                                                                including <b> ongoing responsibilities, work or academic
+                                                                including <b style="font-weight:600";> ongoing responsibilities, work or academic
                                                                     pressure, relationship difficulties, uncertainty,
                                                                     lack of recovery time, unhealthy habits, or
                                                                     repeatedly dwelling on problems.</b> Understanding
@@ -7455,7 +7455,7 @@
                                                                     class="blog_highlight_peach td_underline fs_15px"
                                                                     href="https://happierme.app/adults/audiopage/~podcasts~109.mp3/109/T/Why%20do%20I%20worry%20about%20what%20others%20think%20of%20me%3F/podcast">
                                                                     Worry</a> can become repetitive when the mind keeps
-                                                                trying to <b> predict, prevent, or control uncertain
+                                                                trying to <b style="font-weight:600";> predict, prevent, or control uncertain
                                                                     outcomes.</b> It may be influenced by fear, past
                                                                 experiences, current stress, uncertainty, or habitual
                                                                 thinking patterns. Learning to notice when worry is
@@ -7476,7 +7476,7 @@
                                                                 Everyday <a
                                                                     class="blog_highlight_peach td_underline fs_15px"
                                                                     href="https://happierme.app/adults/site-search/Reduce%20your%20stress%20live%20longer">stress</a>
-                                                                may be supported through healthy practices such as <b>
+                                                                may be supported through healthy practices such as <b style="font-weight:600";>
                                                                     regular physical activity, adequate sleep,
                                                                     mindfulness, breathing exercises, meditation,
                                                                     journaling, spending time with supportive people,
@@ -7498,7 +7498,7 @@
                                                             </h2>
 
                                                             <h6 class="hs_desc">
-                                                                When you feel overwhelmed, start by <b> <a
+                                                                When you feel overwhelmed, start by <b style="font-weight:600";> <a
                                                                         class="blog_highlight_peach td_underline fs_15px"
                                                                         href="https://happierme.app/adults/site-search/Calm%20your%20mind">slowing
                                                                         down</a> and bringing your attention to the
@@ -7521,7 +7521,7 @@
                                                             <h6 class="hs_desc"><a
                                                                     class="blog_highlight_peach td_underline fs_15px"
                                                                     href="https://happierme.app/adults/breathing">
-                                                                    Breathing exercises</a> can be a simple way to <b>
+                                                                    Breathing exercises</a> can be a simple way to <b style="font-weight:600";>
                                                                     slow down, focus attention on the present moment,
                                                                     and create a sense of calm.</b> They can be
                                                                 incorporated into a daily mindfulness routine or used
@@ -7541,7 +7541,7 @@
                                                                 </h2>
 
                                                                 <h6 class="hs_desc">
-                                                                    Meditation and mindfulness can help people <b>
+                                                                    Meditation and mindfulness can help people <b style="font-weight:600";>
                                                                         develop greater awareness of their thoughts,
                                                                         emotions, and present-moment experiences. </b>
                                                                     Regular practice may help some people develop
@@ -7562,7 +7562,7 @@
                                                                 </h2>
 
                                                                 <h6 class="hs_desc">
-                                                                    Overthinking can keep attention focused on <b> past
+                                                                    Overthinking can keep attention focused on <b style="font-weight:600";> past
                                                                         events, <a
                                                                             class="blog_highlight_peach td_underline fs_15px"
                                                                             href="https://happierme.app/adults/site-search/problems">possible
@@ -7588,7 +7588,7 @@
 
                                                                     <h6 class="hs_desc">
                                                                         A useful starting point is to separate what you
-                                                                        can control, <b> what you can influence, and
+                                                                        can control, <b style="font-weight:600";> what you can influence, and
                                                                             what you cannot control.</b> <a
                                                                             class="blog_highlight_peach td_underline fs_15px"
                                                                             href="https://happierme.app/adults/site-search/focus">Focus</a>
@@ -7610,7 +7610,7 @@
                                                                         anxiety?
                                                                     </h2>
 
-                                                                    <h6 class="hs_desc"><b>
+                                                                    <h6 class="hs_desc"><b style="font-weight:600";>
                                                                             HappierMe provides <a
                                                                                 class="blog_highlight_peach td_underline fs_15px"
                                                                                 href="https://happierme.app/adults/blog-article?sId=45">
@@ -7639,7 +7639,7 @@
 
                                                                     <h6 class="hs_desc">
                                                                         Consider seeking professional support when
-                                                                        stress or anxiety is <b> persistent, severe,
+                                                                        stress or anxiety is <b style="font-weight:600";> persistent, severe,
                                                                             difficult to manage, or interfering with
                                                                             everyday activities, relationships, work,
                                                                             school, or sleep.</b> A qualified mental
@@ -8341,7 +8341,7 @@
                                                             A healthy <a
                                                                 class="blog_highlight_peach td_underline fs_15px"
                                                                 href="https://happierme.app/adults/explore#relationships">relationship</a>
-                                                            is generally built on <b>mutual respect, trust,
+                                                            is generally built on <b style="font-weight:600";>mutual respect, trust,
                                                                 honest communication, empathy, emotional safety,
                                                                 appropriate boundaries, and a willingness to
                                                                 understand each other.</b> Healthy relationships
@@ -8357,7 +8357,7 @@
                                                             2. Why is communication important in relationships?
                                                         </h2>
 
-                                                        <h6 class="hs_desc"><b><a
+                                                        <h6 class="hs_desc"><b style="font-weight:600";><a
                                                                     class="blog_highlight_peach td_underline fs_15px"
                                                                     href="https://happierme.app/adults/communication">
                                                                     Communication</a> helps people understand
@@ -8384,7 +8384,7 @@
                                                                 class="blog_highlight_peach td_underline fs_15px"
                                                                 href="https://happierme.app/adults/communication">
                                                                 Better communication</a> starts with
-                                                            <b>listening carefully, expressing your feelings
+                                                            <b style="font-weight:600";>listening carefully, expressing your feelings
                                                                 clearly, avoiding assumptions, asking questions,
                                                                 and giving the other person space to speak.</b>
                                                             It can also help to discuss difficult topics when
@@ -8401,7 +8401,7 @@
                                                             4. What is active listening?
                                                         </h2>
 
-                                                        <h6 class="hs_desc"><b>
+                                                        <h6 class="hs_desc"><b style="font-weight:600";>
                                                                 Active <a
                                                                     class="blog_highlight_peach td_underline fs_15px"
                                                                     href="https://happierme.app/adults/site-search/Listening">listening</a>
@@ -8429,7 +8429,7 @@
                                                             To become a better <a
                                                                 class="blog_highlight_peach td_underline fs_15px"
                                                                 href="https://happierme.app/adults/site-search/Listening">listener</a>,
-                                                            try to <b>give the person your attention, avoid
+                                                            try to <b style="font-weight:600";>give the person your attention, avoid
                                                                 interrupting, reduce distractions, ask questions
                                                                 when something is unclear, and focus on
                                                                 understanding rather than immediately offering
@@ -8450,7 +8450,7 @@
                                                             Try to <a class="blog_highlight_peach td_underline fs_15px"
                                                                 href="https://happierme.app/adults/site-search/Argument">communicate</a>
                                                             your experience rather than blaming the other
-                                                            person. Explain <b>what happened, how you felt, and
+                                                            person. Explain <b style="font-weight:600";>what happened, how you felt, and
                                                                 what you need or would like to change.</b>
                                                             Choosing a calm moment and using respectful language
                                                             can make difficult conversations more productive.
@@ -8469,7 +8469,7 @@
                                                                 class="blog_highlight_peach td_underline fs_15px"
                                                                 href="https://happierme.app/adults/wisdom-shorts/1.107.mp4/T/4%20Ways%20Misunderstandings%20Occur">
                                                                 Misunderstandings</a> can happen when people
-                                                            <b>make assumptions, communicate indirectly,
+                                                            <b style="font-weight:600";>make assumptions, communicate indirectly,
                                                                 interpret words differently, fail to listen, or
                                                                 respond based on emotions rather than what was
                                                                 actually said.</b> Past experiences and personal
@@ -8489,7 +8489,7 @@
                                                         <h6 class="hs_desc">
                                                             Healthy <a class="blog_highlight_peach td_underline fs_15px"
                                                                 href="https://happierme.app/adults/curated/youtubelink/PDkVkpJlb6I%3Dvncbxdfchgvxd">conflict</a>
-                                                            resolution involves <b>listening to both
+                                                            resolution involves <b style="font-weight:600";>listening to both
                                                                 perspectives, staying focused on the issue
                                                                 rather than attacking the person, acknowledging
                                                                 emotions, communicating needs clearly, and
@@ -8514,7 +8514,7 @@
                                                             During an <a
                                                                 class="blog_highlight_peach td_underline fs_15px"
                                                                 href="https://happierme.app/adults/site-search/Argument">argument</a>,
-                                                            try to <b>slow down, listen before responding, avoid
+                                                            try to <b style="font-weight:600";>slow down, listen before responding, avoid
                                                                 insults or personal attacks, focus on the
                                                                 specific issue, and communicate how you feel
                                                                 rather than making broad accusations.</b> If the
@@ -8532,7 +8532,7 @@
                                                         </h2>
 
                                                         <h6 class="hs_desc">
-                                                            Healthy boundaries are <b>clear limits that <a
+                                                            Healthy boundaries are <b style="font-weight:600";>clear limits that <a
                                                                     class="blog_highlight_peach td_underline fs_15px"
                                                                     href="https://happierme.app/adults/site-search/Argument">communicate</a>
                                                                 what you are comfortable with and what you are
@@ -8557,7 +8557,7 @@
                                                                 rejecting someone. You can <a
                                                                     class="blog_highlight_peach td_underline fs_15px"
                                                                     href="https://happierme.app/adults/wisdom-shorts/1.188.mp4/T/Dr%20Manoj%20Krishna.%20Managing%20arguments.">communicate</a>
-                                                                it <b>clearly, calmly, and respectfully</b>,
+                                                                it <b style="font-weight:600";>clearly, calmly, and respectfully</b>,
                                                                 explain what you are comfortable with, and avoid
                                                                 unnecessary blame. Healthy boundaries help
                                                                 people understand each other's expectations and
@@ -8576,7 +8576,7 @@
                                                             <h6 class="hs_desc"><a
                                                                     class="blog_highlight_peach td_underline fs_15px"
                                                                     href="https://happierme.app/adults/audiopage/~podcasts~155.mp3/155/T/Learning%20to%20trust%20people%20again/podcast">
-                                                                    Trust</a> develops through <b>consistent
+                                                                    Trust</a> develops through <b style="font-weight:600";>consistent
                                                                     behavior, honesty, reliability, respect,
                                                                     open communication, and following through on
                                                                     commitments.</b> Rebuilding trust after it
@@ -8596,7 +8596,7 @@
 
                                                                 </h2>
 
-                                                                <h6 class="hs_desc"><b><a
+                                                                <h6 class="hs_desc"><b style="font-weight:600";><a
                                                                             class="blog_highlight_peach td_underline fs_15px"
                                                                             href="https://happierme.app/adults/audiopage/~podcasts~270.mp3/270/T/Why%20empathy%20matters%20and%20how%20we%20can%20develop%20this%20skill/podcast">
                                                                             Empathy</a> helps people understand
@@ -8623,7 +8623,7 @@
                                                                         class="blog_highlight_peach td_underline fs_15px"
                                                                         href="https://happierme.app/adults/site-search/Emotional%20Needs">
                                                                         Emotional needs</a> connection can grow
-                                                                    through <b>honest conversations, active
+                                                                    through <b style="font-weight:600";>honest conversations, active
                                                                         listening, empathy, appreciation, shared
                                                                         experiences, quality time,
                                                                         vulnerability, and showing genuine
@@ -8644,7 +8644,7 @@
                                                                     relationships and communication?
                                                                 </h2>
 
-                                                                <h6 class="hs_desc"><b>
+                                                                <h6 class="hs_desc"><b style="font-weight:600";>
                                                                         HappierMe provides educational and
                                                                         self-reflection resources designed to
                                                                         help users better understand emotions,
@@ -8686,7 +8686,7 @@
 
                                                         </h2>
 
-                                                        <h6 class="hs_desc"><b><a
+                                                        <h6 class="hs_desc"><b style="font-weight:600";><a
                                                                     class="blog_highlight_peach td_underline fs_15px"
                                                                     href="https://happierme.app/adults/explore#happiness">
                                                                     Happiness</a> is more than feeling positive
@@ -8710,7 +8710,7 @@
                                                                 class="blog_highlight_peach td_underline fs_15px"
                                                                 href="https://happierme.app/adults/audiopage/~podcasts~83.mp3/83/T/Being%20happier/podcast">
                                                                 Everyday wellbeing</a> can be supported by
-                                                            <b>building meaningful connections, taking care of
+                                                            <b style="font-weight:600";>building meaningful connections, taking care of
                                                                 your physical and emotional needs, practicing
                                                                 gratitude, spending time on activities that
                                                                 matter to you, developing healthy habits, and
@@ -8735,7 +8735,7 @@
                                                                 class="blog_highlight_peach td_underline fs_15px"
                                                                 href="https://happierme.app/adults/happiness">
                                                                 Happiness</a> is influenced by more than
-                                                            external circumstances. <b>Unresolved emotions,
+                                                            external circumstances. <b style="font-weight:600";>Unresolved emotions,
                                                                 stress, unrealistic expectations, lack of
                                                                 connection, comparison with others, lack of
                                                                 meaning, or being disconnected from your own
@@ -8757,7 +8757,7 @@
                                                                 class="blog_highlight_peach td_underline fs_15px"
                                                                 href="https://happierme.app/adults/happiness">
                                                                 Happiness</a> is not a single skill that can
-                                                            simply be learned, but <b>many habits and skills
+                                                            simply be learned, but <b style="font-weight:600";>many habits and skills
                                                                 associated with wellbeing can be developed.</b>
                                                             Self-awareness, mindfulness, gratitude, emotional
                                                             understanding, healthy relationships, meaningful
@@ -8776,7 +8776,7 @@
 
                                                         </h2>
 
-                                                        <h6 class="hs_desc"><b><a
+                                                        <h6 class="hs_desc"><b style="font-weight:600";><a
                                                                     class="blog_highlight_peach td_underline fs_15px"
                                                                     href="https://happierme.app/adults/explore#self-awareness">
                                                                     Self-awareness</a> is the ability to
@@ -8801,7 +8801,7 @@
                                                                 class="blog_highlight_peach td_underline fs_15px"
                                                                 href="https://happierme.app/adults/explore#self-awareness">
                                                                 Self-awareness</a> can help you understand
-                                                            what genuinely matters to you, <b>what affects
+                                                            what genuinely matters to you, <b style="font-weight:600";>what affects
                                                                 your emotional wellbeing, and which habits
                                                                 or patterns may be making life more
                                                                 difficult.</b> When you understand yourself
@@ -8823,7 +8823,7 @@
                                                             You can develop <a
                                                                 class="blog_highlight_peach td_underline fs_15px"
                                                                 href="https://happierme.app/adults/explore#self-awareness">self-awareness</a>
-                                                            by regularly <b>observing your thoughts and
+                                                            by regularly <b style="font-weight:600";>observing your thoughts and
                                                                 emotions, reflecting on your experiences,
                                                                 identifying recurring patterns, journaling,
                                                                 practicing mindfulness, and paying attention
@@ -8844,7 +8844,7 @@
                                                         </h2>
 
                                                         <h6 class="hs_desc">
-                                                            Start by paying attention to <b><a
+                                                            Start by paying attention to <b style="font-weight:600";><a
                                                                     class="blog_highlight_peach td_underline fs_15px"
                                                                     href="https://happierme.app/adults/explore#happiness">
                                                                     when you feel engaged</a>, peaceful,
@@ -8869,7 +8869,7 @@
 
                                                         </h2>
 
-                                                        <h6 class="hs_desc"><b>
+                                                        <h6 class="hs_desc"><b style="font-weight:600";>
                                                                 Pleasure is often a short-term positive
                                                                 experience, while <a
                                                                     class="blog_highlight_peach td_underline fs_15px"
@@ -8892,7 +8892,7 @@
                                                         </h2>
 
                                                         <h6 class="hs_desc">
-                                                            Self-awareness helps you recognize <b>your
+                                                            Self-awareness helps you recognize <b style="font-weight:600";>your
                                                                 emotions, assumptions, motivations, biases,
                                                                 habits, and personal values</b> before <a
                                                                 class="blog_highlight_peach td_underline fs_15px"
@@ -8919,7 +8919,7 @@
                                                             unhelpful when you use another person's life
                                                             as the standard for judging your own worth
                                                             or progress. Self-awareness can help you
-                                                            notice <b>when comparison happens, what you
+                                                            notice <b style="font-weight:600";>when comparison happens, what you
                                                                 are feeling, and what need or insecurity
                                                                 may be behind it.</b> Focusing on your
                                                             own values, progress, and goals can create a
@@ -8939,7 +8939,7 @@
                                                                 class="blog_highlight_peach td_underline fs_15px"
                                                                 href="https://happierme.app/adults/site-search/Confidence">
                                                                 Confidence</a> can grow through
-                                                            <b>self-awareness, developing skills, taking
+                                                            <b style="font-weight:600";>self-awareness, developing skills, taking
                                                                 manageable challenges, learning from
                                                                 mistakes, keeping realistic
                                                                 expectations, and recognizing your own
@@ -8961,7 +8961,7 @@
                                                         </h2>
 
                                                         <h6 class="hs_desc">
-                                                            Yes. <b><a class="blog_highlight_peach td_underline fs_15px"
+                                                            Yes. <b style="font-weight:600";><a class="blog_highlight_peach td_underline fs_15px"
                                                                     href="https://happierme.app/adults/explore#self-awareness">Mindfulness</a>
                                                                 helps you pay attention to your
                                                                 present thoughts, emotions,
@@ -8988,7 +8988,7 @@
                                                                 class="blog_highlight_peach td_underline fs_15px"
                                                                 href="https://happierme.app/adults/site-search/purpose%20in%20life">purpose</a>
                                                             can come from different sources,
-                                                            including <b>relationships,
+                                                            including <b style="font-weight:600";>relationships,
                                                                 contribution, personal values,
                                                                 learning, creativity, work, family,
                                                                 helping others, and pursuing goals
@@ -9009,7 +9009,7 @@
                                                             and self-awareness?
                                                         </h2>
 
-                                                        <h6 class="hs_desc"><b>
+                                                        <h6 class="hs_desc"><b style="font-weight:600";>
                                                                 HappierMe helps users develop
                                                                 greater self-awareness and build
                                                                 practical habits that support
@@ -10468,7 +10468,7 @@
                                                                                             HappierMe is designed as a
                                                                                             mental wellness and personal
                                                                                             growth resource and is
-                                                                                            <b>not a replacement for
+                                                                                            <b style="font-weight:600";>not a replacement for
                                                                                                 professional addiction
                                                                                                 treatment or medical
                                                                                                 care. </b> </h6>
@@ -10879,7 +10879,7 @@
                                                                                         microlearning can provide ways
                                                                                         to reflect on and manage
                                                                                         difficult emotions. HappierMe is
-                                                                                        a wellness resource and is<b>
+                                                                                        a wellness resource and is<b style="font-weight:600";>
                                                                                             not a replacement for
                                                                                             professional grief or mental
                                                                                             health support when that is
@@ -11599,9 +11599,9 @@
                                                                                 </div>
                                                                             </div>
                                                                             <h2 class="hs_title">
-                                                                                12. How can <b>emotional
+                                                                                12. How can <b style="font-weight:600";>emotional
                                                                                     intelligence</b> be used to address
-                                                                                and manage <b>health problems</b>?
+                                                                                and manage <b style="font-weight:600";>health problems</b>?
                                                                             </h2>
 
                                                                             <h6 class="hs_desc">
