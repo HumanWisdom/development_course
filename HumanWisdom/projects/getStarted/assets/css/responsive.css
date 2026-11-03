@@ -916,11 +916,13 @@
   .tab-content {
     padding: 20px 0 !important;
     text-align: center !important;
-    width: 104%;
+    width: 100%;
+    max-width: 100%;
   }
 
   .dfooter {
-    width: 104%;
+    width: 100%;
+    max-width: 100%;
   }
 
   .tab-content .row.center_flex {
@@ -1407,6 +1409,7 @@
 
   .hs_bg {
     padding: 20px;
+    margin-top: -15px;
   }
 
   #header-2 {
@@ -1614,9 +1617,9 @@
   #accordion_faq_about .accordion-button.collapsed::after,
   .tc_faqs .accordion-button.collapsed::after,
   #accordion_faq .accordion-button.collapsed::after {
-    content: "\f282" !important;
+    /* content: "\f282" !important; */
     font-family: "bootstrap-icons", sans-serif !important;
-    color: #834B66 !important;
+    /* color: #834B66 !important; */
     background-image: none !important;
     font-size: 16px !important;
     line-height: 1 !important;
@@ -2132,7 +2135,8 @@
 
   .div_subscriptionnew {
     text-align: center;
-    width: 104%;
+    width: 100%;
+    max-width: 100%;
   }
 
   .div_subscriptionnew .container-fluid {

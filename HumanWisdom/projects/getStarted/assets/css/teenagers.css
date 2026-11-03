@@ -32,6 +32,24 @@ body.page-teenagers .healthcare-hero-shell .teen-hero-cta-block {
   margin-top: 18px;
 }
 
+body.page-teenagers .healthcare-hero-shell .teen-hero-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  max-width: 100%;
+  gap: 8px;
+}
+
+body.page-teenagers .healthcare-hero-shell .teen-hero-no-card {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 140%;
+  color: #000000;
+  text-align: center;
+}
+
 body.page-teenagers .healthcare-hero-shell .teen-hero-cta-block .row {
   margin-top: 0 !important;
   margin-bottom: 0 !important;
@@ -1028,6 +1046,17 @@ body.page-teenagers main#main > section.mt40px {
   /* CTA — Figma mobile: 335 × 55, 12px gap to app-store line */
   body.page-teenagers .healthcare-hero-shell .absolute_desc_m .teen-hero-cta-block {
     gap: 12px !important;
+  }
+
+  body.page-teenagers .healthcare-hero-shell .absolute_desc_m .teen-hero-cta {
+    width: 100%;
+    max-width: 335px;
+    align-items: stretch;
+  }
+
+  body.page-teenagers .healthcare-hero-shell .absolute_desc_m .teen-hero-no-card {
+    width: 100%;
+    text-align: center !important;
   }
 
   body.page-teenagers .healthcare-hero-shell .absolute_desc_m .teen-hero-cta-block .row > .col-lg-6 {
