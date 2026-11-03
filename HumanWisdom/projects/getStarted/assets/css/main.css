@@ -3262,6 +3262,7 @@ body.page-newsletter .newsletter-subtitle:hover {
 .tab-content.tc_faqs {
   padding: 0;
   background: transparent;
+  margin-top: -9px;
 }
 
 /* Smooth transitions for tab content */
