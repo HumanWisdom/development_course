@@ -24,25 +24,32 @@ export class TeenagersService {
     {
       id: '10',
       name: 'Less stress and anxiety',
-      title: 'Understand stress. Feel calmer.',
-      Subtitle:'Find out how to navigate challenges with less stress and more confidence'
+      title: 'Manage stress.<br> Feel calmer.',
+      Subtitle:'Find out how to navigate challenges with less stress and more confidence.'
     },
     {
       id: '17',
       name: 'Flourish at school',
-      
+      title: 'Be happier and <br> more fulfilled at work',
+      Subtitle: 'Manage pressure, make better decisions and work well with others.'
     },
     {
       id: '11',
-      name: 'Stonger relationships'
+      name: 'Stonger relationships',
+      title: 'Understand yourself <br> and others better.',
+      Subtitle: 'Learn how to communicate effectively and build meaningful connections.'
     },
     {
       id: '13',
-      name: 'Feel happier'
+      name: 'Feel happier',
+      title: 'Discover a happier way to live.',
+      Subtitle: 'Find more happiness within yourself, whatever life brings.'
     },
     {
       id: '14',
-      name: 'Manage your emotions'
+      name: 'Manage emotions',
+      title: 'Understand and manage <br> your emotions',
+      Subtitle: 'Feel less lonely, manage anger, anxiety and sadness.'
     },
   /*   {
       id: '20',
@@ -54,7 +61,9 @@ export class TeenagersService {
     },*/
     {
       id: '15',
-      name: 'Change unwanted habits'
+      name: 'Change unwanted habits',
+      title: 'Break free from <br>habits holding you back.',
+      Subtitle: 'Understand why some habits are hard to change and discover how to take back control'
     }
   ]
 
