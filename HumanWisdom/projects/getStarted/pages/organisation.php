@@ -21,6 +21,7 @@ $social = hw_social_config();
 $copy = hw_org_copy($org);
 $freeDays = (int) $org['freeDays'];
 $email = isset($email) ? $email : '';
+$chooseUrl = (hw_org_base() === '' ? '' : hw_org_base()) . '/organisation-choose.php/' . rawurlencode($org['id']);
 
 $stepMeta = [
     'adv' => [
@@ -154,7 +155,7 @@ include __DIR__ . '/../includes/organisation_header.php';
         </div>
         <h1>Welcome to<br> HappierMe!</h1>
         <p class="org-hero-sub">Create your account to get started</p>
-        <a class="org-btn org-btn-sm org-btn-welcome" href="#" data-org-go="splash">Create account</a>
+        <a class="org-btn org-btn-sm org-btn-welcome" href="<?= hw_org_h($chooseUrl) ?>">Create account</a>
       </div>
     </div>
   </section>
@@ -204,7 +205,7 @@ include __DIR__ . '/../includes/organisation_header.php';
   </section>
 
   <div class="org-bottom-cta d-lg-none">
-    <a class="org-btn org-btn-welcome" href="#" data-org-go="splash">Create account</a>
+    <a class="org-btn org-btn-welcome" href="<?= hw_org_h($chooseUrl) ?>">Create account</a>
   </div>
 </main>
 
