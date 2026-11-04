@@ -12,8 +12,18 @@ import { SharedService } from "../../services/shared.service";
 })
 export class SignupSuccessPage implements OnInit {
   readonly freeDays = 10;
-  readonly artUrl = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/partset.svg";
-  readonly trialIconUrl = "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/calender.svg";
+
+  get artUrl(): string {
+    return this.isAdults
+      ? "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/partset.svg"
+      : "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/dotteen.svg";
+  }
+
+  get trialIconUrl(): string {
+    return this.isAdults
+      ? "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/calender.svg"
+      : "https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/caltten.svg";
+  }
 
   trialEndDate = "";
 
