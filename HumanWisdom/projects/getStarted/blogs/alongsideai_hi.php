@@ -211,7 +211,7 @@ This understanding also invites us to examine where we look for our happiness. R
 
                 <h4 class="mtb0px blog_desc">
 <span class="blog_highlight_black">
-                    <i>Dr Manoj Krishna is a former spine surgeon and the founder of HappierMe, a wellbeing and life-skills platform. Find out more at happierme.app.</i>
+                    <i>Dr Manoj Krishna is a former spine surgeon and the founder of HappierMe, a wellbeing and life-skills platform. Find out more at  <a class="blog_highlight_peach " href="https://happierme.app">happierme.app</a>.</i>
 </span> </h4>
 
               </div>
