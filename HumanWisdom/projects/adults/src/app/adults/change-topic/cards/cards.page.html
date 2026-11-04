@@ -82,7 +82,7 @@
             </div>
 
             <!-- Bottom Actions -->
-            <div class="bottom-actions" *ngIf="!isLoading">
+            <div class=" mdp_oli_traywell col_cw" *ngIf="!isLoading">
               <!-- Skip Button: displayed if NOT all cards are viewed -->
               <div class="skip-btn-container tcenter" *ngIf="!allViewed">
                 <a (click)="onContinue()" class="skip-link fs_15px fw_500 td_underline"
@@ -92,7 +92,7 @@
               </div>
 
               <!-- Continue Button: displayed if ALL cards are viewed -->
-              <div class="continue-btn-container tcenter" *ngIf="allViewed">
+              <div class="continue-btn-container  mdp_oli_traywell tcenter col_cw" *ngIf="allViewed">
                 <button (click)="onContinue()" class="continue-btn">
                   <span class="fs_15px fw_600 fc_ffffff">Continue</span>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
