@@ -60,8 +60,8 @@ By Dr Manoj Krishna
 
                 </h4>
 
-                <h4 class="mtb0px blog_desc">
-I was at a global HR event in Paris recently and was struck by how much of the conversation revolved around artificial intelligence.
+                <h4 class="mtb0px blog_desc">  <span class="blog_highlight_black">
+I was at a global HR event in Paris recently </span> and was struck by how much of the conversation revolved around artificial intelligence.
 
                 </h4>
 
@@ -97,7 +97,7 @@ One company told me its technology could screen 100,000 job applications. Anothe
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  The business implications are substantial. Gallup’s research links higher team engagement with stronger productivity and profitability, and lower absenteeism and turnover. Making processes more efficient matters. So does understanding and supporting the people working within them. Gallup estimates that low engagement cost the global economy approximately $10 trillion in lost productivity in 2025.
+                  The business implications are substantial. Gallup’s research links higher team engagement with stronger productivity and profitability, and lower absenteeism and turnover. Making processes more efficient matters. So does understanding and supporting the people working within them. Gallup estimates that low engagement    <span class="blog_highlight_black">cost the global economy approximately $10 trillion in lost productivity in 2025.</span>
 
 
                 </h4>
@@ -136,8 +136,8 @@ Where AI is used to monitor performance, there is another question: will employe
                     It includes self-awareness, emotional intelligence, empathy, resilience, communication and sound judgement.
                 </h4>
 
-                <h4 class="mtb0px blog_desc">
-                  At the heart of human intelligence is deeper self-awareness: understanding how our minds work, including the patterns operating outside our immediate awareness. Our minds often react automatically, drawing on past experiences, expectations and fears. A colleague’s brief email can feel like rejection. Someone else’s promotion can trigger comparison. An organisational change can become entangled with fears about our own worth.
+                <h4 class="mtb0px blog_desc">  <span class="blog_highlight_black">
+                  At the heart of human intelligence is deeper self-awareness: </span> understanding how our minds work, including the patterns operating outside our immediate awareness. Our minds often react automatically, drawing on past experiences, expectations and fears. A colleague’s brief email can feel like rejection. Someone else’s promotion can trigger comparison. An organisational change can become entangled with fears about our own worth.
 
 
                 </h4>
@@ -195,21 +195,24 @@ This understanding also invites us to examine where we look for our happiness. R
 
                 </h4>
 
-                <h4 class="mtb0px blog_desc">
-                   This is the focus of our work at HappierMe: helping people develop self-understanding and emotional skills through reflection and daily practice, so they can thrive in their personal and professional lives.
+                <h4 class="mtb0px blog_desc">  <span class="blog_highlight_black">
+                   This is the focus of our work at HappierMe: </span> helping people develop self-understanding and emotional skills through reflection and daily practice, so they can thrive in their personal and professional lives.
 
 
 
                 <h4 class="mtb0px blog_desc">
                     As organisations invest in AI, they should also invest in the human capabilities that help people navigate change, build trust and collaborate well.
-                    <span class="blog_highlight_black">
+</h4>
+                <h4 class="mtb0px blog_desc">
+
                         AI will change how we work. Developing our human intelligence can help us thrive alongside it.
-                    </span>
+                    
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
+<span class="blog_highlight_black">
                     <i>Dr Manoj Krishna is a former spine surgeon and the founder of HappierMe, a wellbeing and life-skills platform. Find out more at happierme.app.</i>
-                </h4>
+</span> </h4>
 
               </div>
             </div>
