@@ -56,24 +56,31 @@
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
 
                 <h4 class="mtb0px blog_sub_title">
-                    To thrive, we need to develop our human intelligence, alongside AI.
+By Dr Manoj Krishna
+
+                </h4>
+
+                <h4 class="mtb0px blog_desc">  <span class="blog_highlight_black">
+I was at a global HR event in Paris recently </span> and was struck by how much of the conversation revolved around artificial intelligence.
+
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                    I recently attended a global HR event in Paris, where AI dominated the conversation. One company said its technology could screen 100,000 job applications. Another said it could predict future leaders.
-                </h4>
+One company told me its technology could screen 100,000 job applications. Another said it could predict which employees would become future leaders. These conversations illustrate the scale of ambition. AI is reshaping how organisations recruit, manage and develop their people.
 
-                <h4 class="mtb0px blog_desc">
-                    These conversations showed the scale of AI's ambition in recruitment, management and development. What surprised me was how little was said about
-                    <span class="blog_highlight_black">
+                    <!-- <span class="blog_highlight_black">
                         why so many employees are disconnected from their work.
-                    </span>
+                    </span> -->
                 </h4>
 
                 <!-- Engagement -->
                 <h4 class="mtb0px blog_sub_title">
                     Poor engagement and its consequences
                 </h4>
+<h4 class="mtb0px blog_desc">
+
+                I was surprised that there was very little discussion about why so many employees are disconnected from their work.
+</h4>
 
                 <h4 class="mtb0px blog_desc">
                     Gallup's
@@ -90,12 +97,9 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                    Gallup's
-                    research
-                    links higher team engagement to stronger productivity and profitability, and to lower absenteeism and turnover. Efficient processes matter, but so does supporting the people who work within them. Gallup estimates that
-                    <span class="blog_highlight_black">
-                        low engagement cost the global economy around $10 trillion in lost productivity in 2025.
-                    </span>
+                  The business implications are substantial. Gallup’s research links higher team engagement with stronger productivity and profitability, and lower absenteeism and turnover. Making processes more efficient matters. So does understanding and supporting the people working within them. Gallup estimates that low engagement    <span class="blog_highlight_black">cost the global economy approximately $10 trillion in lost productivity in 2025.</span>
+
+
                 </h4>
 
                 <!-- Human experience -->
@@ -104,16 +108,19 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                    Many of the people I spoke with felt
-                    anxious
-                    about AI. They worried about losing their jobs, about how their roles would change, and about keeping up. Where AI is used to monitor performance, employees may experience it as support, or as surveillance.
-                </h4>
+                   Alongside the excitement, several people I spoke to expressed anxiety about AI. Would their jobs disappear? How would their roles change? Would they be able to keep up?
+
+</h4>
+
+ <h4 class="mtb0px blog_desc">
+Where AI is used to monitor performance, there is another question: will employees experience it as support, or surveillance?
+</h4>
 
                 <h4 class="mtb0px blog_desc">
                     AI can remove tedious tasks and free people for more meaningful work. But it can also contribute to job losses.
-                    <span class="blog_highlight_black">
+                  
                         These worries are real.
-                    </span>
+                   
                 </h4>
 
                 <!-- HI -->
@@ -123,34 +130,32 @@
 
                 <h4 class="mtb0px blog_desc">
                     By human intelligence (HI), I mean
-                    <span class="blog_highlight_black">
+                 
                         our capacity to understand ourselves and relate wisely to others.
-                    </span>
+                 
                     It includes self-awareness, emotional intelligence, empathy, resilience, communication and sound judgement.
                 </h4>
 
-                <h4 class="mtb0px blog_desc">
-                    At its core is a deeper
-                    self-awareness:
-                    noticing the automatic reactions shaped by our past experiences, expectations and fears. A brief email can feel like rejection. A colleague's promotion can trigger comparison. Change can become tangled up with fears about our own worth.
+                <h4 class="mtb0px blog_desc">  <span class="blog_highlight_black">
+                  At the heart of human intelligence is deeper self-awareness: </span> understanding how our minds work, including the patterns operating outside our immediate awareness. Our minds often react automatically, drawing on past experiences, expectations and fears. A colleague’s brief email can feel like rejection. Someone else’s promotion can trigger comparison. An organisational change can become entangled with fears about our own worth.
+
+
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                    An employee who hears that AI is coming may jump from "my role will change" to "I will lose my job and I won't be able to cope." Self-awareness helps us notice when a possibility starts to feel like a certainty, when we overestimate the threat and underestimate our ability to cope.
+Consider an employee hearing that AI is being introduced into their team. Their mind may leap from “my role will change” to “I will lose my job and won’t cope.” The uncertainty is real, but the worst-case outcome is not yet a fact. Deeper self-awareness helps us notice how our thinking can turn a possibility into an apparent certainty, overestimate the threat and underestimate our ability to cope. Recognising this can create space to ask questions, seek support and prepare for change with greater clarity.
+
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                    Recognising this creates space to ask questions, seek support and prepare for change with greater clarity.
-                    <span class="blog_highlight_black">
-                        Separating what actually happened from the meaning we attach to it
-                    </span>
-                    can reduce
-                    stress
-                    and anxiety, help us handle disagreement better, and stop everyday friction from turning into lasting conflict.
+                    When we notice these reactions and explore what is driving them, we create room for a more considered response. We can distinguish what has happened from the meaning we have attached to it. Alongside supportive working conditions, this may help reduce stress and anxiety, improve how we handle disagreement and prevent everyday friction from becoming lasting conflict.
+
+
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                    It is also worth examining where we look for happiness. Recognition and rewards bring satisfaction, but it fades. Noticing our tendency to focus on what we lack, overlook what we have, or depend heavily on the approval of others can support a steadier sense of wellbeing.
+This understanding also invites us to examine where we look for our happiness. Recognition, achievement and rewards matter, but the satisfaction they bring can fade. We can become absorbed in what we lack, overlook what we have, or depend heavily on others’ approval. Recognising those tendencies may help us build a steadier sense of wellbeing alongside our ambitions.
+
                 </h4>
 
                 <!-- Shared responsibility -->
@@ -159,10 +164,9 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                    Self-awareness cannot compensate for bullying, unfair pay, excessive workloads or poor leadership.
-                    <span class="blog_highlight_black">
-                        Employees should not be asked to become more resilient so that organisations can avoid changing harmful practices.
-                    </span>
+                   There is a crucial qualification: self-awareness cannot compensate for bullying, unfair pay, excessive workloads or poor leadership. Employees should not be asked to become more resilient so that organisations can avoid changing harmful practices.
+
+
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -175,38 +179,40 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                    <span class="blog_highlight_black">Develop human skills alongside AI:</span>
-                    Help everyone, especially managers, build self-awareness and emotional skills as AI is rolled out.
+                   For HR, this means helping everyone in the organisation, particularly managers, develop deeper self-awareness and emotional skills, alongside the AI rollout. This also means explaining what AI will change, involving employees in its introduction and providing practical opportunities to retrain.
+
+
+
+                <h4 class="mtb0px blog_desc">
+                  These capabilities need to become part of everyday work: managers practising listening and constructive feedback; teams reflecting on difficult interactions; employees having time and support to apply what they discover.
+
+
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                    <span class="blog_highlight_black">Be open about change:</span>
-                    Explain what AI will change, involve employees in its introduction, and provide practical retraining opportunities.
+                  A workshop can begin that process. Reflection, practice and reinforcement help carry it into daily life.
+
+
                 </h4>
 
-                <h4 class="mtb0px blog_desc">
-                    <span class="blog_highlight_black">Embed it in everyday work:</span>
-                    Managers practising listening and
-                    constructive feedback,
-                    teams reflecting on difficult interactions, and employees given the time and support to apply what they learn.
-                </h4>
+                <h4 class="mtb0px blog_desc">  <span class="blog_highlight_black">
+                   This is the focus of our work at HappierMe: </span> helping people develop self-understanding and emotional skills through reflection and daily practice, so they can thrive in their personal and professional lives.
 
-                <h4 class="mtb0px blog_desc">
-                    A workshop can start the process, but it is reflection, practice and reinforcement that sustain it. This is the focus of our work at
-                    HappierMe:
-                    building self-understanding and emotional skills through reflection and daily practice.
-                </h4>
+
 
                 <h4 class="mtb0px blog_desc">
                     As organisations invest in AI, they should also invest in the human capabilities that help people navigate change, build trust and collaborate well.
-                    <span class="blog_highlight_black">
+</h4>
+                <h4 class="mtb0px blog_desc">
+
                         AI will change how we work. Developing our human intelligence can help us thrive alongside it.
-                    </span>
+                    
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
+<span class="blog_highlight_black">
                     <i>Dr Manoj Krishna is a former spine surgeon and the founder of HappierMe, a wellbeing and life-skills platform. Find out more at happierme.app.</i>
-                </h4>
+</span> </h4>
 
               </div>
             </div>
