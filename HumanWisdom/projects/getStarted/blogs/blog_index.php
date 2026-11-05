@@ -1963,7 +1963,7 @@ Work</button>
 
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                    <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">10 proven tips for a healthy relationship in 2025
+                    <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">10 proven tips for a healthy relationship 
 
 
 
@@ -2130,7 +2130,7 @@ Work</button>
 
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                    <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">5 Tips to Be Happier in 2026
+                    <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">5 Tips to Be Happier 
 
 
 
@@ -2305,6 +2305,43 @@ Work</button>
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                     <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">Legal minds under pressure: The mental health crisis among lawyers
+
+
+
+
+
+
+
+
+
+
+</h4>
+                  </div>
+                </div>
+               
+              </a>
+            </div>
+
+              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="1100">
+
+            <a class="BlogCard" href="alongsideai_hi.php">
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/97.webp" class="img-responsive img_blogs" alt="Blog_img">
+                  </div>
+                </div>
+
+                <div class="row mt20px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp"> Work</button>
+
+
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                    <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">Alongside AI, are we investing enough in HI (Human Intelligence)?
 
 
 

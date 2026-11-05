@@ -290,7 +290,7 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
     }
     if (localStorage.getItem("Subscriber") != null) {
       let sub: any = localStorage.getItem("Subscriber");
-      if (sub === "1" || sub === 1) {
+      if ((sub === "1" || sub === 1) && this.subscriberType !== "Free Trial")  {
         this.subscriber = true;
       }
     }
@@ -315,7 +315,7 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
           this.isloggedIn = true;
         }
 
-        if (sub === "1" || sub === 1) {
+        if ((sub === "1" || sub === 1) && this.subscriberType !== "Free Trial")  {
           this.subscriber = true;
         }
       }
@@ -325,8 +325,14 @@ export class HamburgerComponent implements OnInit, AfterViewInit, OnChanges, OnD
 
   getSubscriber() {
     let sub: any = localStorage.getItem("Subscriber");
-    if (sub === "1" || sub === 1) {
-      this.subscriber = true;
+   
+
+    if ((sub === "1" || sub === 1) && this.subscriberType !== "Free Trial") {
+      this.subscriber = true;   
+    }
+    else
+    {
+      this.subscriber = false;
     }
     return this.subscriber;
   }
