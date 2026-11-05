@@ -60,6 +60,10 @@ export class OnboardingService {
     })
   }
 
+  checkFreeTrialUsed(): Observable<any> {
+    return this.http.get(this.path + `/CheckFreeTrialUsed`);
+  }
+
   // authenticateInstagram(instagramClientId: string, instagramRedirectUri: string): Promise<string> {
   //   return new Promise((resolve, reject) => {
   //     const popupWidth = 700;
