@@ -34,7 +34,7 @@ width: 100%;
 }
 
 .skip-btn {
-  color: rgba(235, 235, 235, 0.5) !important;
+  color: rgba(235, 235, 235, 0.75) !important;
   text-decoration: underline;
   cursor: pointer;
 }
@@ -42,4 +42,10 @@ width: 100%;
 .tn_title_back {
 
   z-index:auto;
+}
+
+.sc_01 {
+ 
+  min-height: auto;
+ 
 }
