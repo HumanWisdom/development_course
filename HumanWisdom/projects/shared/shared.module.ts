@@ -207,7 +207,6 @@ export class MyHammerConfig extends HammerGestureConfig {
     AdultsAudioMeditationComponent,
     SubscribeToPremiumBlockComponent,
     HwpSearchBarComponent,
-    SpinnerComponent,
     SignupPage,
     ForgetPasswordPage,
     ChangePasswordPage,
@@ -255,7 +254,8 @@ export class MyHammerConfig extends HammerGestureConfig {
       "imageWidth": 105,
       "showImage": true,
       "showBackground": false
-    })
+    }),
+    SpinnerComponent
   ],
   exports: [
     TnCrossComponent,
@@ -339,7 +339,6 @@ export class MyHammerConfig extends HammerGestureConfig {
     AdultsAudioMeditationComponent,
     SubscribeToPremiumBlockComponent,
     HwpSearchBarComponent,
-    SpinnerComponent,
     SignupPage,
     ForgetPasswordPage,
     ChangePasswordPage,

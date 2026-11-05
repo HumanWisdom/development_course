@@ -2,12 +2,17 @@
   <div class="cw100p">
     <div class="row center_flex">
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 col_cw success_col"
-        [class.sc_01_home]="!isFreeTrialUsed"
-        [class.trial_ended_active]="isFreeTrialUsed"
+        [class.sc_01_home]="isLoaded && !isFreeTrialUsed"
+        [class.trial_ended_active]="isLoaded && isFreeTrialUsed"
         [class.teens_theme]="!isAdults">
 
+        <!-- Loading state: wait for API before showing anything -->
+        <ng-container *ngIf="!isLoaded">
+          <app-spinner [show]="true"></app-spinner>
+        </ng-container>
+
         <!-- When free trial has already been used: Show "Your free trial has ended" -->
-        <ng-container *ngIf="isFreeTrialUsed">
+        <ng-container *ngIf="isLoaded && isFreeTrialUsed">
           <div class="trial_ended_card">
             <div class="trial_ended_banner">
               <img class="trial_ended_img" [src]="trialEndedImgUrl" alt="Free trial ended" />
@@ -32,7 +37,7 @@
         </ng-container>
 
         <!-- When free trial has NOT been used: Show 10 days of free access -->
-        <ng-container *ngIf="!isFreeTrialUsed">
+        <ng-container *ngIf="isLoaded && !isFreeTrialUsed">
           <div class="success_card">
             <img class="success_art" [src]="artUrl" alt="Account created" />
 
