@@ -3,13 +3,14 @@ import { CommonModule } from "@angular/common";
 import { ActivatedRoute, Router, RouterModule } from "@angular/router";
 import { SharedService } from "../../services/shared.service";
 import { OnboardingService } from "../../services/onboarding.service";
+import { SpinnerComponent } from "../spinner/spinner.component";
 
 @Component({
   selector: "app-signup-success",
   templateUrl: "./signup-success.page.html",
   styleUrls: ["./signup-success.page.scss"],
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, SpinnerComponent],
 })
 export class SignupSuccessPage implements OnInit {
   readonly freeDays = 10;
@@ -75,16 +76,21 @@ export class SignupSuccessPage implements OnInit {
 
   subscribeNow() {
     const program = SharedService.getprogramName();
-    this.router.navigate([`/${program}/subscription/try-free-and-subscribe`]);
+    this.router.navigate([`/${program}/subscription/try-free-and-subscribe`], {
+      state: { fromTrialEnded: true }
+    });
   }
 
   viewPlans() {
     const program = SharedService.getprogramName();
-    this.router.navigate([`/${program}/subscription/try-free-and-subscribe`]);
+    this.router.navigate([`/${program}/subscription/try-free-and-subscribe`], {
+      state: { fromTrialEnded: true }
+    });
   }
 
   notNow() {
-    this.continueToTopic();
+    const program = SharedService.getprogramName();
+    this.router.navigateByUrl(`/${program}/today`);
   }
 
   continueToTopic() {

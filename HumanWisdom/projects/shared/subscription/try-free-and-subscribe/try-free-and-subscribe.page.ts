@@ -304,6 +304,15 @@ export class TryFreeAndSubscribePage implements OnInit, OnDestroy {
   }
 
   routeToDashboard() {
+    // If user came from the free trial ended screen, go back there
+    if (history.state?.fromTrialEnded) {
+      const program = SharedService.getprogramName();
+      this.router.navigate([`/${program}/onboarding/all-set`], {
+        queryParams: { trialEnded: 'true' }
+      });
+      return;
+    }
+
     let redirectUrl = sessionStorage.getItem('subscriptionRedirectUrl');
     const redirectStateStr = sessionStorage.getItem('subscriptionRedirectState');
     if (redirectUrl && redirectUrl.includes('olly-landing')) {
