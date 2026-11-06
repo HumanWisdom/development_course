@@ -22658,6 +22658,7 @@ ul.dh_ul li:last-child {
   border: 0;
   border-radius: 12px;
   background: #0C2B5F;
+  border: 0.5px solid rgba(255, 255, 255, 0.5);
 }
 
 .login_signup_tab>li {
