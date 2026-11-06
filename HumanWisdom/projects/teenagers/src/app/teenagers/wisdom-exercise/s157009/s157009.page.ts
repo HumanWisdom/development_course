@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { TeenagersService } from '../../teenagers.service';
@@ -11,6 +11,8 @@ declare var $: any;
   styleUrls: ['./s157009.page.scss'],
 })
 export class S157009Page implements OnInit {
+  @ViewChild('videoPlayer') videoPlayer: ElementRef | undefined;
+
   dayclass = 'intro'
   isShowTranscript = false;
   isShowAudio = false;
@@ -362,6 +364,10 @@ export class S157009Page implements OnInit {
           this.isShowAudio=false;
       this.setHint();
     }, 700);
+
+        
+    const video = this.videoPlayer.nativeElement;
+    video.pause();
   }
   // getClass(day) {
   //   var dayclass = '';
