@@ -3,14 +3,13 @@ import { CommonModule } from "@angular/common";
 import { ActivatedRoute, Router, RouterModule } from "@angular/router";
 import { SharedService } from "../../services/shared.service";
 import { OnboardingService } from "../../services/onboarding.service";
-import { SpinnerComponent } from "../spinner/spinner.component";
 
 @Component({
   selector: "app-signup-success",
   templateUrl: "./signup-success.page.html",
   styleUrls: ["./signup-success.page.scss"],
   standalone: true,
-  imports: [CommonModule, RouterModule, SpinnerComponent],
+  imports: [CommonModule, RouterModule],
 })
 export class SignupSuccessPage implements OnInit {
   readonly freeDays = 10;
