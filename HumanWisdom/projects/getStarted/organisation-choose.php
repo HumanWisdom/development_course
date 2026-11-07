@@ -39,7 +39,7 @@ $homeUrl = (hw_org_base() === '' ? '' : hw_org_base()) . '/index.php';
 
       <div class="program-choice__cards">
         <a class="program-card" href="<?= hw_org_h($signupUrl) ?>" data-program="teenagers">
-          <img class="program-card__photo" src="https://d1tenzemoxuh75.cloudfront.net/website/yt-player.png" alt="Teenagers smiling together">
+          <img class="program-card__photo" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/webteen.svg" alt="Teenagers smiling together">
           <span class="program-card__copy">
             <span class="program-card__name">Teenagers (13+ yrs)</span>
             <span class="program-card__text">Understand your feelings, build confidence and navigate relationships.</span>
@@ -48,7 +48,7 @@ $homeUrl = (hw_org_base() === '' ? '' : hw_org_base()) . '/index.php';
         </a>
 
         <a class="program-card" href="<?= hw_org_h($signupUrl) ?>" data-program="adults">
-          <img class="program-card__photo" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/options_adults.png" alt="HappierMe for Adults">
+          <img class="program-card__photo" src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/webad.svg" alt="HappierMe for Adults">
           <span class="program-card__copy">
             <span class="program-card__name">Adults (18+ yrs)</span>
             <span class="program-card__text">Understand yourself, manage emotions and build happier relationships.</span>
