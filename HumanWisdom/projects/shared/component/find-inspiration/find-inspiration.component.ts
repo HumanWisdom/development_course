@@ -21,8 +21,15 @@ export class FindInspiration {
       this.isAdults = false;
     }
 
-    // Row 1: Podcasts, Video Library, Feel better now, Self-awareness, Guided journaling, Events
+    // Row 1: Feel better now, Podcasts, Video Library, Self-awareness, Guided journaling, Events
     this.inspirationItemsRow1 = [
+      {
+        title: 'Feel better now',
+        img: this.isAdults
+          ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/feel_better_nowaug.svg'
+          : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/feelteen.svg',
+        url: 'feel-better-now'
+      },
       {
         title: 'Podcasts',
         img: this.isAdults
@@ -36,13 +43,6 @@ export class FindInspiration {
           ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/video.svg'
           : 'https://d1tenzemoxuh75.cloudfront.net/assets/icons/short_video_without_bg.svg',
         url: 'wisdom-shorts'
-      },
-      {
-        title: 'Feel better now',
-        img: this.isAdults
-          ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/feel_better_nowaug.svg'
-          : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/feelteen.svg',
-        url: 'feel-better-now'
       },
       {
         title: 'Self-awareness',

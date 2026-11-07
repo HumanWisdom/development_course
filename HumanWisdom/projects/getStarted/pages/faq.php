@@ -63,7 +63,7 @@
                                                         <ul class="nav nav-tabs m0px tab_faqs">
 
                                                             <li class="active show">
-                                                                <a   style="text-transform:capitalize" class="active show" data-bs-toggle="tab"
+                                                                <a    class="active show" data-bs-toggle="tab"
                                                                     data-bs-target="#c11" aria-expanded="true"
                                                                     aria-controls="c11">
                                                                     About HappierMe
@@ -71,14 +71,14 @@
                                                             </li>
 
                                                             <li>
-                                                                <a   style="text-transform:capitalize" data-bs-toggle="tab" aria-expanded="false"
+                                                                <a   data-bs-toggle="tab" aria-expanded="false"
                                                                     data-bs-target="#c12" aria-controls="c12">
-                                                                    Understanding Your Mind
+                                                                   Understanding your mind
                                                                 </a>
                                                             </li>
 
                                                             <li>
-                                                                <a   style="text-transform:capitalize" href="#app_features" data-bs-toggle="tab"
+                                                                <a    href="#app_features" data-bs-toggle="tab"
                                                                     aria-expanded="false" data-bs-target="#c13"
                                                                     aria-controls="c13">
                                                                     Stress & Anxiety
@@ -86,87 +86,87 @@
                                                             </li>
 
                                                             <li>
-                                                                <a   style="text-transform:capitalize" href="#teenage_program" data-bs-toggle="tab"
+                                                                <a    href="#teenage_program" data-bs-toggle="tab"
                                                                     aria-expanded="false" data-bs-target="#c14"
                                                                     aria-controls="c14">
-                                                                    Overthinking & Negative Thoughts
+                                                                    Overthinking & negative thoughts
                                                                 </a>
                                                             </li>
 
                                                             <li>
-                                                                <a   style="text-transform:capitalize" href="#support" data-bs-toggle="tab"
+                                                                <a    href="#support" data-bs-toggle="tab"
                                                                     aria-expanded="false" data-bs-target="#c15"
                                                                     aria-controls="c15">
-                                                                    Feelings & Emotional Intelligence
+                                                                    Feelings & emotional Intelligence
                                                                 </a>
                                                             </li>
 
                                                             <li>
-                                                                <a   style="text-transform:capitalize" href="#support" data-bs-toggle="tab"
+                                                                <a    href="#support" data-bs-toggle="tab"
                                                                     aria-expanded="false" data-bs-target="#c16"
                                                                     aria-controls="c16">
-                                                                    Relationships & Communication
+                                                                    Relationships & communication
                                                                 </a>
                                                             </li>
 
                                                             <li>
-                                                                <a   style="text-transform:capitalize" href="#support" data-bs-toggle="tab"
+                                                                <a  href="#support" data-bs-toggle="tab"
                                                                     aria-expanded="false" data-bs-target="#c17"
                                                                     aria-controls="c17">
-                                                                    Happiness & Self-Awareness
+                                                                    Happiness & self-Awareness
                                                                 </a>
                                                             </li>
 
                                                             <li>
-                                                                <a  style="text-transform:capitalize" href="#support" data-bs-toggle="tab"
+                                                                <a   href="#support" data-bs-toggle="tab"
                                                                     aria-expanded="false" data-bs-target="#c18"
                                                                     aria-controls="c18">
-                                                                    Work, Stress & Resilience
+                                                                    Work, stress & resilience
                                                                 </a>
                                                             </li>
 
                                                             <li>
-                                                                <a   style="text-transform:capitalize"href="#support" data-bs-toggle="tab"
+                                                                <a   href="#support" data-bs-toggle="tab"
                                                                     aria-expanded="false" data-bs-target="#c19"
                                                                     aria-controls="c19">
-                                                                    Teenagers & Students
+                                                                    Teenagers & students
                                                                 </a>
                                                             </li>
 
                                                             <li>
-                                                                <a    style="text-transform:capitalize" href="#support" data-bs-toggle="tab"
+                                                                <a   href="#support" data-bs-toggle="tab"
                                                                     aria-expanded="false" data-bs-target="#c20"
                                                                     aria-controls="c20">
-                                                                    Parents & Families
+                                                                    Parents & families
                                                                 </a>
                                                             </li>
 
                                                             <li>
-                                                                <a   style="text-transform:capitalize" href="#support" data-bs-toggle="tab"
+                                                                <a    href="#support" data-bs-toggle="tab"
                                                                     aria-expanded="false" data-bs-target="#c21"
                                                                     aria-controls="c21">
-                                                                    Habits, Addiction & Behaviour
+                                                                    Habits, addiction & behaviour
                                                                 </a>
                                                             </li>
 
                                                             <li>
-                                                                <a  style="text-transform:capitalize" href="#support" data-bs-toggle="tab"
+                                                                <a   href="#support" data-bs-toggle="tab"
                                                                     aria-expanded="false" data-bs-target="#c22"
                                                                     aria-controls="c22">
-                                                                    Dealing with Loss
+                                                                    Dealing with loss
                                                                 </a>
                                                             </li>
 
                                                             <li>
-                                                                <a  style="text-transform:capitalize"  href="#support" data-bs-toggle="tab"
+                                                                <a    href="#support" data-bs-toggle="tab"
                                                                     aria-expanded="false" data-bs-target="#c23"
                                                                     aria-controls="c23">
-                                                                    Social Proof
+                                                                    Social proof
                                                                 </a>
                                                             </li>
 
                                                             <li>
-                                                                <a  style="text-transform:capitalize"href="#support" data-bs-toggle="tab"
+                                                                <a href="#support" data-bs-toggle="tab"
                                                                     aria-expanded="false" data-bs-target="#c24"
                                                                     aria-controls="c24">
                                                                     Blogs
@@ -606,12 +606,12 @@
                                                                         </div>
                                                                     </div>
 
-                                                                    <div class="row">
+                                                                    <!-- <div class="row">
                                                                         <div
                                                                             class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                                                                             <hr class="hr_style_web_01 hr-darker">
                                                                         </div>
-                                                                    </div>
+                                                                    </div> -->
 
 
                                                                     <div class="accordion-item">
@@ -6593,7 +6593,7 @@
                                 <div class="row " data-aos="fade-up" data-aos-delay="100">
                                     <div class="col-12 pl20px">
 
-                                        <h2 class="mtb20px fs_36px fw_400 lh_180p">
+                                        <h2 class="mt10px fs_36px fw_400 lh_180p">
                                             Frequently asked questions (FAQ)
                                         </h2>
                                     </div>
@@ -6936,12 +6936,12 @@
                                                                 concerns should seek appropriate support from a
                                                                 qualified healthcare or mental health professional.
                                                             </h6>
-                                                            <div class="row">
+                                                            <!-- <div class="row">
                                                                 <div
                                                                     class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                                                                     <hr class="hr_style_web_01">
                                                                 </div>
-                                                            </div>
+                                                            </div> -->
 
                                                         </div>
                                                     </div>
@@ -9025,11 +9025,11 @@
                                                             growth.
 
                                                         </h6>
-                                                        <div class="row">
+                                                        <!-- <div class="row">
                                                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
                                                                 <hr class="hr_style_web_01">
                                                             </div>
-                                                        </div>
+                                                        </div> -->
 
                                                     </div>
                                                 </div>
@@ -9326,11 +9326,11 @@
                                                               expert-curated resources.
 
                                                           </h6>
-                                                          <div class="row">
+                                                          <!-- <div class="row">
                                                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                                                   <hr class="hr_style_web_faq">
                                                               </div>
-                                                          </div>
+                                                          </div> -->
                                                       </div>
                                                   </div>
                                               </div>
@@ -9642,11 +9642,11 @@
                                                                     guide users toward relevant expert-curated
                                                                     resources.
                                                                </h6>
-                                                          <div class="row">
+                                                          <!-- <div class="row">
                                                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                                                   <hr class="hr_style_web_faq">
                                                               </div>
-                                                          </div>
+                                                          </div> -->
                                                       </div>
                                                   </div>
                                               </div>
@@ -10057,11 +10057,11 @@
                                                                                             their thoughts, emotions,
                                                                                             habits, relationships,
                                                                                         </h6>
-                                                          <div class="row">
+                                                          <!-- <div class="row">
                                                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                                                   <hr class="hr_style_web_faq">
                                                               </div>
-                                                          </div>
+                                                          </div> -->
                                                       </div>
                                                   </div>
                                               </div>
@@ -10472,11 +10472,11 @@
                                                                                                 professional addiction
                                                                                                 treatment or medical
                                                                                                 care. </b> </h6>
-                                                          <div class="row">
+                                                          <!-- <div class="row">
                                                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                                                   <hr class="hr_style_web_faq">
                                                               </div>
-                                                          </div>
+                                                          </div> -->
                                                       </div>
                                                   </div>
                                               </div>
@@ -10884,11 +10884,11 @@
                                                                                             professional grief or mental
                                                                                             health support when that is
                                                                                             needed.</b></h6>
-                                                          <div class="row">
+                                                          <!-- <div class="row">
                                                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                                                   <hr class="hr_style_web_faq">
                                                               </div>
-                                                          </div>
+                                                          </div> -->
                                                       </div>
                                                   </div>
                                               </div>
@@ -11266,11 +11266,11 @@
                                                                                             better and develop practical
                                                                                             skills for handling everyday
                                                                                             life more effectively. </h6>
-                                                          <div class="row">
+                                                          <!-- <div class="row">
                                                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                                                   <hr class="hr_style_web_faq">
                                                               </div>
-                                                          </div>
+                                                          </div> -->
                                                       </div>
                                                   </div>
                                               </div>
@@ -11695,11 +11695,11 @@
 
                                                                       
 
-                                                          <div class="row">
+                                                          <!-- <div class="row">
                                                               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                                                                   <hr class="hr_style_web_faq">
                                                               </div>
-                                                          </div>
+                                                          </div> -->
                                                       </div>
                                                   </div>
                                               </div>

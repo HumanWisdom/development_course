@@ -1,5 +1,5 @@
 .sc_01 {
-  min-height: 100vh !important;
+  min-height: 110vh !important;
   padding: 0px 20px 30px;
 }
 .fc_000000_0_5{
@@ -8,6 +8,7 @@
 }
 .tn_title_back{
    box-shadow: none;
+   z-index: auto;
 }
 .header-section {
   text-align: center;
@@ -16,6 +17,8 @@
   h1 {
     font-size: 21px;
     font-weight: 500;
+         display: inline-table;
+
   }
   
   p {
@@ -48,7 +51,7 @@
   cursor: pointer;
   display: inline-block;
   &:hover {
-    color: rgba(0, 0, 0, 0.5) !important;
+    color: rgba(0, 0, 0, 0.75) !important;
   }
 }
 .session_img_play{
@@ -60,12 +63,13 @@
   justify-content: center;
   background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
   box-shadow: 1px 1px 2px 0px #00000040;
-  height: 40px;
+  height: 50px;
   opacity: 1;
-  border-radius: 20px;
+  border-radius: 100px;
   padding-right: 15px;
   padding-left: 25px;
   border: none;
+  width: 100%;
 
   .arrow-icon {
     width: 24px;

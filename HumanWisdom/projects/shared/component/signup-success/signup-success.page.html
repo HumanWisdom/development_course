@@ -1,33 +1,72 @@
 <div class="right_col mc_03 success_shell">
   <div class="cw100p">
     <div class="row center_flex">
-      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01_home col_cw success_col"
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 col_cw success_col"
+        [class.sc_01_home]="isLoaded && !isFreeTrialUsed"
+        [class.trial_ended_active]="isLoaded && isFreeTrialUsed"
         [class.teens_theme]="!isAdults">
-        <div class="success_card">
-          <img class="success_art" [src]="artUrl" alt="Account created" />
 
-          <div class="success_heading">
-            <h1 class="success_title">You're all set!</h1>
-            <p class="success_sub">Your account has been created successfully</p>
+        <!-- Loading state: wait for API before showing anything -->
+        <ng-container *ngIf="!isLoaded">
+          <div class="signup_spinner_overlay">
+            <div class="signup_spinner"></div>
           </div>
+        </ng-container>
 
-          <div class="trial_card">
-            <div class="trial_top">
-              <img class="trial_icon" [src]="trialIconUrl" alt="Free trial" />
-
-              <p class="trial_copy">
-                <span>You have</span>
-                <span><strong>{{ freeDays }} days</strong> of</span>
-                <span>free access</span>
-              </p>
+        <!-- When free trial has already been used: Show "Your free trial has ended" -->
+        <ng-container *ngIf="isLoaded && isFreeTrialUsed">
+          <div class="trial_ended_card">
+            <div class="trial_ended_banner">
+              <img class="trial_ended_img" [src]="trialEndedImgUrl" alt="Free trial ended" />
+              <div class="trial_ended_overlay">
+                <h1 class="trial_ended_title">Your free trial<br />has ended</h1>
+                <p class="trial_ended_sub">Continue your journey<br />towards a calmer, happier you.</p>
+              </div>
             </div>
-            <p class="trial_ends">Trial ends on <span>{{ trialEndDate }}</span></p>
-          </div>
 
-          <div class="success_actions">
-            <button type="button" class="btn_primary" (click)="continueToTopic()">Continue</button>
+            <div class="trial_ended_content">
+              <button type="button" class="btn_subscribe" (click)="subscribeNow()">
+                <span>Subscribe now</span>
+                <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="btn_arrow">
+                  <path d="M1 1.5L6.5 7L1 12.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+
+              <button type="button" class="btn_link view_plans" (click)="viewPlans()">View plans</button>
+              <button type="button" class="btn_link not_now" (click)="notNow()">Not now</button>
+            </div>
           </div>
-        </div>
+        </ng-container>
+
+        <!-- When free trial has NOT been used: Show 10 days of free access -->
+        <ng-container *ngIf="isLoaded && !isFreeTrialUsed">
+          <div class="success_card">
+            <img class="success_art" [src]="artUrl" alt="Account created" />
+
+            <div class="success_heading">
+              <h1 class="success_title">You're all set!</h1>
+              <p class="success_sub">Your account has been created successfully</p>
+            </div>
+
+            <div class="trial_card">
+              <div class="trial_top">
+                <img class="trial_icon" [src]="trialIconUrl" alt="Free trial" />
+
+                <p class="trial_copy">
+                  <span>You have</span>
+                  <span><strong>{{ freeDays }} days</strong> of</span>
+                  <span>free access</span>
+                </p>
+              </div>
+              <p class="trial_ends">Trial ends on <span>{{ trialEndDate }}</span></p>
+            </div>
+
+            <div class="success_actions">
+              <button type="button" class="btn_primary" (click)="continueToTopic()">Continue</button>
+            </div>
+          </div>
+        </ng-container>
+
       </div>
     </div>
   </div>

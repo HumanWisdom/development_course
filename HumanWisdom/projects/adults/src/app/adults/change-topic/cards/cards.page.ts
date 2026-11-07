@@ -16,6 +16,8 @@ export class CardsPage implements OnInit {
   isAdults: boolean = true;
   isRoutedFromLogin: boolean = false;
   isLoading: boolean = true;
+  Title: string = "";
+  Subtitle: string = "";
 
   constructor(
     private route: ActivatedRoute,
@@ -24,11 +26,17 @@ export class CardsPage implements OnInit {
   ) {
     this.isAdults = SharedService.ProgramId === ProgramType.Adults;
     this.id = this.route.snapshot.paramMap.get('id');
+    const topic = this.service.personalisedforyoulist.find(item => item.id.toString() === this.id.toString());
+    this.Title = topic?.title?.toString()??'Feel better.<br> Live better.';
+    this.Subtitle = topic?.Subtitle?.toString() ?? '';
+
 
     // Retrieve state passed from routing navigation
     const navigation = this.router.getCurrentNavigation();
     if (navigation?.extras?.state) {
       this.isRoutedFromLogin = navigation.extras.state.routedFromLogin;
+      //   this.Title = navigation.extras.state.title;
+      // this.Subtitle = navigation.extras.state.subtitle;
     } else {
       // Fallback logic check
       let loginResponse = JSON.parse(localStorage.getItem("loginResponse") || sessionStorage.getItem("loginResponse") || "null");
