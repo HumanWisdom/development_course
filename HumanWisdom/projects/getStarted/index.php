@@ -104,7 +104,7 @@ if (!headers_sent()) {
               </div>
             </div>
             <div class="meetolly-cta">
-              <a class="meetolly-cta-btn" id="happiermeTryForFree" href="/organisation-signup.php/happierme">Try the app free for 10 days</a>
+              <a class="meetolly-cta-btn" id="happiermeTryForFree" href="/organisation-choose.php/happierme">Try the app free for 10 days</a>
               <p class="meetolly-cta-note">No credit card required</p>
             </div>
           </div>
@@ -155,7 +155,7 @@ if (!headers_sent()) {
                   </div>
                 </div>
                 <div class="hero-try-free-block">
-                  <a class="hero-try-free-link" id="happiermeTryForFree" href="/organisation-signup.php/happierme">
+                  <a class="hero-try-free-link" id="happiermeTryForFree" href="/organisation-choose.php/happierme">
                     <div class="start-your-free-wrapper">
                       <div class="text-wrapper-5">Try HappierMe for free</div>
                     </div>

@@ -133,7 +133,7 @@ if (!function_exists('hw_org_ensure_route_id')) {
     function hw_org_ensure_route_id()
     {
         $file = basename(str_replace('\\', '/', $_SERVER['SCRIPT_NAME'] ?? ''));
-        $entryFiles = ['free.php', 'organisation.php', 'organisation-signup.php'];
+        $entryFiles = ['free.php', 'organisation.php', 'organisation-signup.php', 'organisation-choose.php'];
         if (!in_array($file, $entryFiles, true)) {
             return;
         }

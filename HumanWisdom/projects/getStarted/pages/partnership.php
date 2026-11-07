@@ -60,6 +60,22 @@
         text-decoration: none !important;
       }
 
+      /* Global h5:hover turns body copy mauve. Keep partnership copy black. */
+      body.page-partnership h1.fc_000000,
+      body.page-partnership h1.fc_000000:hover,
+      body.page-partnership h2.fc_000000,
+      body.page-partnership h2.fc_000000:hover,
+      body.page-partnership h3.fc_000000,
+      body.page-partnership h3.fc_000000:hover,
+      body.page-partnership h4.fc_000000,
+      body.page-partnership h4.fc_000000:hover,
+      body.page-partnership h5.fc_000000,
+      body.page-partnership h5.fc_000000:hover {
+        color: #000000 !important;
+        -webkit-text-fill-color: #000000 !important;
+        text-decoration: none !important;
+      }
+
       @media (max-width: 767px) {
 
         /* Force White Plus/Minus Icons on Mobile Accordion - Override SVG from main.css */
@@ -127,7 +143,7 @@
     
   </head>
 
-  <body>
+  <body class="page-partnership">
 
     <!-- header -->
     <?php include('../includes/header.php'); ?>
@@ -300,7 +316,7 @@
               </div>
             </div>
 
-            <!-- <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12  col-12 p0" data-aos="fade-up" data-aos-delay="300">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12  col-12 p0" data-aos="fade-up" data-aos-delay="300">
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 p0">
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/pw_world_happier.svg" class="img-responsive" alt="Be happier">
@@ -319,30 +335,6 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 p0">
                   <h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
                     If you are happy and at peace, you can contribute to a more peaceful world.
-                  </h5>
-                </div>
-              </div>
-            </div> -->
-
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12  col-12 p0" data-aos="fade-up" data-aos-delay="500">
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 p0">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/pw_potential_income.svg" class="img-responsive" alt="Be more kind">
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 p0">
-                  <h3 class="mt20px mb5px fs_21px fw_500 lh_150p fc_000000">
-                    Earn an income
-                  </h3>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 p0">
-                  <h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
-                    Earn 20% from any subscription made using your partner link. No strings attached.
                   </h5>
                 </div>
               </div>
@@ -375,7 +367,7 @@
           </div>
         </div>
 
-        <!-- <div class="row center_flex">
+        <div class="row center_flex">
           <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10  col-10 p0 tcenter div_inspire">
 
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12  col-12 p0" data-aos="fade-up" data-aos-delay="500">
@@ -451,7 +443,7 @@
             </div>
             
           </div>
-        </div> -->
+        </div>
       </section>
       <!-- /inspiring -->
 
