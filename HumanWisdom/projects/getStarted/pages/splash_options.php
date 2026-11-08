@@ -55,18 +55,19 @@
     
         <div class="row mt80px">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 p0 tcenter">
-              <h4 class="mtb0px fs_24px fw_400 lh_140p fc_000000 tcenter">
-                Welcome to HappierMe!
+            <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12  tcenter">
+              <h4 class="mtb0px fs_24px fw_500 lh_140p fc_000000 ">
+                Your HappierMe journey starts here
               </h4>
       
-              <h4 class="mt0px mb20px fs_15px fw_400 lh_140p fc_000000_0_5 tcenter">
-              Your companion for a happier life
+              <h4 class="mt0px mtb20px fs_15px fw_400 lh_140p fc_000000_0_5 tcenter">
+             Choose the experience that's right for you. You can always change it later.
               </h4>
               
-              <h4 class="mt60px mb20px fs_15px fw_400 lh_140p fc_000000 tcenter">
+             
+              <!-- <h4 class="mt60px mb20px fs_15px fw_400 lh_140p fc_000000 tcenter">
               Pick a section to get started
-              </h4>
+              </h4> -->
 
             </div>
           </div>
@@ -76,10 +77,17 @@
           <div class="backcolor">
           <a>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-              <img  style="width:120px;"src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/options_teenagers.png" class="img-responsive">
-              <h4 class="mtb5px fs_18px fw_500 lh_140p fc_000000">
-                HappierMe for Teenagers
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/webteen.svg" class="img-responsive">
+              <h4 class="mtb5px fs_21px fw_600 lh_140p fc_000000">
+               Teenagers (13+ yrs)
               </h4>
+                <h4 class="mtb5px fs_12px fw_400 lh_140p fc_000000">
+              Understand your feelings, build confidence and navigate relationships.
+              </h4>
+
+                <a   style="color: #D7586B;" href="https://staging.happierme.app/teenagers/onboarding/login"class="mtb0px fs_12px fw_600 lh_140p  " > 
+                         Get started  
+                         </a> 
             </div>
           </a>
         </div>
@@ -89,10 +97,16 @@
         <div class="backcolor">
           <a>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
-              <img  style="width:120px;"src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/options_adults.png" class="img-responsive">
-              <h4 class="mtb5px fs_18px fw_500 lh_140p fc_000000">
-                HappierMe for Adults
+              <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/webad.svg" class="img-responsive">
+               <h4 class="mtb5px fs_21px fw_600 lh_140p fc_000000">
+              Adults (18+ yrs)
               </h4>
+                <h4 class="mtb5px fs_12px fw_400 lh_140p fc_000000">
+Understand yourself, manage emotions and build happier relationships.              
+</h4>
+ <a  style="color: #D7586B;" href="https://staging.happierme.app/adults/onboarding/login"class="mtb0px fs_12px fw_600 lh_140p  " > 
+                         Get started  
+                         </a> 
             </div>
           </a>
         </div>
