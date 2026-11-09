@@ -21,6 +21,7 @@ $social = hw_social_config();
 $copy = hw_org_copy($org);
 $freeDays = (int) $org['freeDays'];
 $email = isset($email) ? $email : '';
+$chooseUrl = (hw_org_base() === '' ? '' : hw_org_base()) . '/organisation-choose.php/' . rawurlencode($org['id']);
 
 $stepMeta = [
     'adv' => [
@@ -154,7 +155,7 @@ include __DIR__ . '/../includes/organisation_header.php';
         </div>
         <h1>Welcome to<br> HappierMe!</h1>
         <p class="org-hero-sub">Create your account to get started</p>
-        <a class="org-btn org-btn-sm org-btn-welcome" href="#" data-org-go="splash">Create account</a>
+        <a class="org-btn org-btn-sm org-btn-welcome" href="<?= hw_org_h($chooseUrl) ?>">Create account</a>
       </div>
     </div>
   </section>
@@ -204,7 +205,7 @@ include __DIR__ . '/../includes/organisation_header.php';
   </section>
 
   <div class="org-bottom-cta d-lg-none">
-    <a class="org-btn org-btn-welcome" href="#" data-org-go="splash">Create account</a>
+    <a class="org-btn org-btn-welcome" href="<?= hw_org_h($chooseUrl) ?>">Create account</a>
   </div>
 </main>
 
@@ -282,7 +283,7 @@ include __DIR__ . '/../includes/organisation_header.php';
       <p class="org-error" id="org-signup-error"></p>
       <button type="button" class="org-btn org-btn-block" id="org-continue-btn" disabled>Continue</button>
 
-      <p class="org-signup-login">Already have an account? <a href="<?= hw_org_h($assets['login']) ?>">Login</a></p>
+      <p class="org-signup-login">Already have an account? <a href="#" id="org-login-link">Login</a></p>
     </div>
   </div>
 </main>
@@ -324,7 +325,13 @@ include __DIR__ . '/../includes/organisation_header.php';
 </main>
 
 <main class="org-main" data-org-step="success"<?= $orgStep === 'success' ? '' : ' hidden' ?>>
-  <div class="org-flow-card org-success-card">
+  <div id="org-success-loading" class="org-success-loading" hidden>
+    <div class="org-success-spinner" aria-hidden="true"></div>
+    <p>Just a moment…</p>
+  </div>
+
+  <!-- CheckFreeTrialUsed === false: current You’re all set -->
+  <div id="org-success-default" class="org-flow-card org-success-card">
     <img class="org-success-art" src="<?= hw_org_h($assets['success_check']) ?>" alt="" width="171" height="100">
 
     <div class="org-success-heading">
@@ -345,6 +352,33 @@ include __DIR__ . '/../includes/organisation_header.php';
     </div>
 
     <a class="org-btn org-btn-block" href="#" data-org-go="continue">Continue</a>
+  </div>
+
+  <!-- CheckFreeTrialUsed === true: free trial already used -->
+  <div id="org-success-trial-ended" class="org-trial-ended" hidden>
+    <div class="org-trial-ended-card">
+      <div class="org-trial-ended-copy">
+        <h1 class="org-trial-ended-title">Your free trial has ended</h1>
+        <p class="org-trial-ended-sub">Continue your journey towards a calmer, happier you.</p>
+        <button type="button" class="org-trial-ended-subscribe" id="org-subscribe-now">
+          Subscribe now <span aria-hidden="true">&gt;</span>
+        </button>
+      </div>
+
+      <div class="org-trial-ended-media">
+        <img
+          class="org-trial-ended-img"
+          src="<?= hw_org_h($assets['freetrial_adult']) ?>"
+          alt="Continue your journey"
+          width="420"
+          height="240">
+      </div>
+
+      <div class="org-trial-ended-actions">
+        <a class="org-btn org-btn-block org-btn-outline" href="#" id="org-trial-continue-web">Continue to Web App</a>
+        <a class="org-btn org-btn-block" href="#" id="org-trial-download-app">Download the App</a>
+      </div>
+    </div>
   </div>
 </main>
 
