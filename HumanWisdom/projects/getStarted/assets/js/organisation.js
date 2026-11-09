@@ -681,6 +681,16 @@
     });
   }
 
+  /** Skip splash_options — program was already chosen on organisation-choose / splash. */
+  function setupLoginLink() {
+    var link = qs("org-login-link");
+    if (!link) return;
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      window.location.href = adultsUrl("/" + getProgram() + "/onboarding/login");
+    });
+  }
+
   var googleReady = false;
   var renderGoogleButton = function () {};
 
@@ -1373,6 +1383,7 @@
     setupSocialSignup();
     setupOtp();
     setupContinueToApp();
+    setupLoginLink();
     setupSuccessTrialCheck();
   });
 })();
