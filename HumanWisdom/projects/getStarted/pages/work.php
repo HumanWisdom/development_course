@@ -208,7 +208,7 @@
 
               <div class="row prelative" data-aos="fade-up" data-aos-delay="100">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 mt3rem">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/work_landing.webp" class="img-responsive w100p display_m_none h-800" alt="Build a happier, more capable workforce">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/workkk.webp" class="img-responsive w100p display_m_none h-800" alt="Build a happier, more capable workforce">
 
                   <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/work_mobile.webp" class="img-responsive w100p display_d_none" alt="Build a happier, more capable workforce">
 
@@ -266,6 +266,8 @@
                 <article class="work-pillar">
                   <span class="work-icon-slot" aria-hidden="true"></span>
                   <div class="work-pillar-copy">
+                                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/mentall.svg" width="79" height="60" alt="Working with Mind">
+
                     <h3 class="work-pillar-title">Proactive mental wellbeing</h3>
                     <p class="work-pillar-text">Build self-awareness and emotional skills to help prevent mental health problems and burnout before they escalate and affect performance.</p>
                   </div>
@@ -273,6 +275,8 @@
                 <article class="work-pillar">
                   <span class="work-icon-slot" aria-hidden="true"></span>
                   <div class="work-pillar-copy">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/relationnn.svg" width="79" height="60" alt="Working with Mind">
+
                     <h3 class="work-pillar-title">Stronger relationships</h3>
                     <p class="work-pillar-text">Develop self-awareness and empathy to improve communication, collaboration and conflict resolution, fostering a more positive workforce culture.</p>
                   </div>
@@ -280,6 +284,8 @@
                 <article class="work-pillar">
                   <span class="work-icon-slot" aria-hidden="true"></span>
                   <div class="work-pillar-copy">
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/makk.svg" width="79" height="60" alt="Working with Mind">
+
                     <h3 class="work-pillar-title">Better decision making</h3>
                     <p class="work-pillar-text">Understand how emotions, unconscious biases and personal values influence thinking, enabling clearer judgement.</p>
                   </div>
@@ -287,6 +293,8 @@
                 <article class="work-pillar">
                   <span class="work-icon-slot" aria-hidden="true"></span>
                   <div class="work-pillar-copy">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/prodddd.svg" width="79" height="60" alt="Working with Mind">
+
                     <h3 class="work-pillar-title">Improved productivity</h3>
                     <p class="work-pillar-text">Happier, more engaged employees tend to be more productive, take fewer sick days and experience less burnout, contributing to better business performance.</p>
                   </div>
@@ -295,22 +303,57 @@
             </div>
           </section>
 
-          <!-- Video -->
-          <section class="work-section work-video-section">
+          
+          <!-- <section class="work-section work-video-section">
             <div class="work-section-inner">
               <div class="work-section-head">
                 <h2 class="work-section-title">Boost human skills to thrive at work</h2>
               </div>
-              <div class="work-video-wrap">
-                <iframe
+              <div class="work-video-wrap"> -->
+                <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/ROP4llA74DA?si=6Zk3KCbtVKEohzVg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+                <!-- <iframe
                   loading="lazy"
                   title="How to Boost Wellbeing and Productivity Using Human Skills"
-                  src="https://www.youtube.com/embed/gQojMIhELvM?rel=0"
+                  src="https://www.youtube.com/embed/ROP4llA74DA?si=6Zk3KCbtVKEohzVg"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowfullscreen></iframe>
               </div>
             </div>
-          </section>
+          </section> -->
+
+           <!-- video -->
+   <section class="work-section work-video-section">
+      <div class="section-header-teen">
+        <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
+           <div class="work-section-head">
+                <h2 class="work-section-title">Boost human skills to thrive at work</h2>
+              </div>
+        </div>
+      </div>
+
+      <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
+        <div class="col-lg-6 col-md-6 col-sm-10 col-xs-10 col-10 p0 w-980px teen-video-wrap">
+          <div class="youtube-player teen-youtube-player">
+            <button
+              id="teenYoutubeCover"
+              type="button"
+              aria-label="Play HappierMe for Teens video">
+              <img
+                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/Youtube+player.webp"
+                alt="HappierMe for Teens video cover" />
+            </button>
+            <iframe
+                  loading="lazy"
+                  title="How to Boost Wellbeing and Productivity Using Human Skills"
+                  src="https://www.youtube.com/embed/ROP4llA74DA?si=6Zk3KCbtVKEohzVg"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /video -->
+
 
           <!-- Why different -->
           <section class="work-section work-diff-section">
@@ -369,7 +412,7 @@
             <div class="work-measure-band" aria-hidden="true"></div>
             <div class="work-measure-inner" data-aos="fade-up" data-aos-delay="100">
               <div class="work-measure-media">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/work_app.webp" class="img-responsive" alt="Organization Dashboard">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/measureee.webp" class="img-responsive" alt="Organization Dashboard">
               </div>
               <div class="work-measure-copy">
                 <h2>Measure well-being. Drive performance.</h2>
@@ -487,7 +530,7 @@
           </section>
 
           <!-- Human skills -->
-          <section class="work-section work-skills-section">
+          <section class="work-section work-skills-section11">
             <div class="work-section-inner">
               <div class="work-section-head">
                 <h2 class="work-section-title">Building human skills to thrive<br>in the age of AI</h2>

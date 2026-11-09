@@ -19,6 +19,19 @@ body.page-work .healthcare-hero-shell {
   max-height: 610px;
   overflow: hidden;
 }
+body.page-teenagers #teenYoutubeCover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+img {
+    max-width: 100%;
+    display: block;
+}
+img {
+    vertical-align: middle;
+}
 
 body.page-work .healthcare-hero-shell .prelative,
 body.page-work .healthcare-hero-shell .mt3rem {
