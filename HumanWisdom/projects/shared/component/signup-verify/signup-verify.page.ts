@@ -306,6 +306,7 @@ export class SignupVerifyPage implements OnInit, OnDestroy {
     localStorage.setItem("signupfirst", res.NoOfVisits === 1 ? "T" : "F");
     // Marks that this browser finished the signup with a real session
     localStorage.setItem("signupLoginOk", "T");
+    localStorage.setItem("justSignedUp", "true");
     localStorage.setItem("userID", res.UserId);
     localStorage.setItem("userName", JSON.stringify(res.Name));
     localStorage.setItem("userEmail", JSON.stringify(res.Email));
