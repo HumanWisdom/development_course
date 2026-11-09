@@ -203,7 +203,7 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
       }
     }
 
-    if (this.isloggedIn && !this.guest && !this.isSubscriber) {
+    if (this.isUserLoggedIn() && !this.isGuestUser() && !this.isPaidSubscriber()) {
       // Reserve popup slot while checking free days so background popups don't clash
       this.commonService.setPopupActive(true);
       this.checkFreeTrialDays();
@@ -244,6 +244,19 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
     }
   }
 
+  isUserLoggedIn(): boolean {
+    return this.isloggedIn || localStorage.getItem('isloggedin') === 'T' || (SharedService.getUserId() > 0);
+  }
+
+  isGuestUser(): boolean {
+    return this.guest || localStorage.getItem('guest') === 'T';
+  }
+
+  isPaidSubscriber(): boolean {
+    const subType = localStorage.getItem("SubscriberType");
+    return subType === "Monthly" || subType === "Annual";
+  }
+
   isFirstTimeSignup(): boolean {
     const justSignedUp = localStorage.getItem('justSignedUp') === 'true';
     const userIdKey = this.getNormalizedUserId();
@@ -259,7 +272,13 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
     this.commonService.checkFreedays().subscribe(
       (res: any) => {
         if (res !== null && res !== undefined) {
-          const days = typeof res === 'object' && res.days !== undefined ? Number(res.days) : Number(res);
+          let days: number = NaN;
+          if (typeof res === 'object') {
+            const raw = res.days ?? res.FreeDays ?? res.freedays ?? res.freeDays ?? res.FreeDaysRemaining;
+            days = Number(raw);
+          } else {
+            days = Number(res);
+          }
           if (!isNaN(days)) {
             this.freeDaysRemaining = days;
           }
@@ -279,7 +298,7 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
       return;
     }
 
-    if (!this.isOllyBubbleCompleted || !this.isloggedIn || this.guest) {
+    if (!this.isUserLoggedIn() || this.isGuestUser()) {
       return;
     }
 
@@ -297,11 +316,11 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
 
     const hasSeenTour = localStorage.getItem(tourKey) === 'true' || localStorage.getItem('hasSeenTourPopup') === 'true';
 
-    // Check trial popups eligibility (only for non-subscribers)
+    // Check trial popups eligibility (only for free trial users / non-paid subscribers)
     let eligibleTrialEnded = false;
     let eligibleSpread = false;
 
-    if (!this.isSubscriber && this.freeDaysRemaining !== null && this.freeDaysRemaining !== undefined && !isNaN(this.freeDaysRemaining)) {
+    if (!this.isPaidSubscriber() && this.freeDaysRemaining !== null && this.freeDaysRemaining !== undefined && !isNaN(this.freeDaysRemaining)) {
       if (this.freeDaysRemaining === 5) {
         // Condition: free days returns 5 -> Spread happiness popup
         const spreadKey = userIdKey ? `hasSeenSpreadHappinessPopup_${userIdKey}` : 'hasSeenSpreadHappinessPopup';
@@ -337,8 +356,8 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
       return;
     }
 
-    // Guide to HappierMe: only for first-time signups, only once
-    if (isSignup && !hasSeenTour) {
+    // Guide to HappierMe: only for first-time signups, only once (after greeting completes)
+    if (this.isOllyBubbleCompleted && isSignup && !hasSeenTour) {
       this.activePopup = 'tour';
       this.commonService.setPopupActive(true);
       this.showTourPopup = true;
