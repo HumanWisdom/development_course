@@ -27,6 +27,12 @@ export class CommonService {
   isFooterOwlVisible$ = this.isFooterOwlVisibleSubject.asObservable();
   setFooterOwlVisible(visible: boolean): void { this.isFooterOwlVisibleSubject.next(visible); }
 
+  // Global popup coordination — prevents multiple popups from stacking
+  private isPopupActiveSubject = new BehaviorSubject<boolean>(false);
+  isPopupActive$ = this.isPopupActiveSubject.asObservable();
+  setPopupActive(active: boolean): void { this.isPopupActiveSubject.next(active); }
+  get isPopupActive(): boolean { return this.isPopupActiveSubject.value; }
+
   /** Local calendar day key (YYYY-MM-DD) for once-a-day Olly bubble gating. */
   getOllyBubbleDayKey(): string {
     const d = new Date();
@@ -832,5 +838,9 @@ export class CommonService {
 
   GetLastScreen_GuidedJourney(userId: any, programId: any): Observable<any> {
     return this.http.get(this.path + `/GetLastScreen_GuidedJourney/${userId}/${programId}`);
+  }
+
+  checkFreedays(): Observable<any> {
+    return this.http.get(this.path + '/CheckFreedays');
   }
 }
