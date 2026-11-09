@@ -136,7 +136,7 @@
                   Try HappierMe for free
                 </button>
               </a>
-              <p class="teen-hero-no-card">No credit card needed</p>
+              <p class="teen-hero-no-card">No credit card required.</p>
             </div>
 
 

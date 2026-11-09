@@ -1,0 +1,965 @@
+/* HappierMe for Work — Figma 7841:12764
+   Section rhythm: ~100px between blocks; content max 1340 / 980 */
+
+/* ---------- 1. Hero banner — Figma 1440×610 ---------- */
+/* Keep hpt120px top clearance — fixed .header_site_stack is ~170px; padding:0 was clipping the headline under the nav */
+body.page-work section.hpt120px {
+  margin: 0;
+  padding: 0;
+  padding-top: 120px;
+}
+
+body.page-work .healthcare-hero-shell .mt3rem {
+  margin-top: 0 !important;
+}
+
+body.page-work .healthcare-hero-shell {
+  position: relative;
+  height: 610px;
+  max-height: 610px;
+  overflow: hidden;
+}
+
+body.page-work .healthcare-hero-shell .prelative,
+body.page-work .healthcare-hero-shell .mt3rem {
+  height: 610px;
+  max-height: 610px;
+  margin: 0 !important;
+  overflow: hidden;
+}
+
+body.page-work .healthcare-hero-shell .h-800,
+body.page-work .healthcare-hero-shell .wide-screen-only,
+body.page-work .healthcare-hero-shell img.img-responsive.w100p.display_m_none,
+body.page-work .healthcare-hero-shell img.img-responsive.w100p.h-800 {
+  width: 100% !important;
+  height: 610px !important;
+  max-height: 610px !important;
+  min-height: 610px !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block;
+}
+
+/* Figma 13161:7607 — copy at left 230 / top 135 (was top:-21px, clipping headline) */
+body.page-work .healthcare-hero-shell .absolute_desc,
+body.page-work .healthcare-hero-shell .absolute_desc_m {
+  position: absolute !important;
+  top: 135px !important;
+  left: 230px !important;
+  right: auto !important;
+  bottom: auto !important;
+  height: auto !important;
+  max-height: none !important;
+  width: 409px !important;
+  max-width: calc(100% - 250px) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  box-sizing: border-box !important;
+}
+
+body.page-work .healthcare-hero-shell .absolute_desc > .work-hero-stack,
+body.page-work .healthcare-hero-shell .absolute_desc_m > .work-hero-stack {
+  margin-left: 0 !important;
+  width: 409px !important;
+  max-width: 100% !important;
+}
+
+/* Beat index.css @media (min-width: 1400px) { height: 800px } */
+@media (min-width: 1400px) {
+  body.page-work .healthcare-hero-shell .wide-screen-only {
+    display: block !important;
+    height: 610px !important;
+    max-height: 610px !important;
+    min-height: 610px !important;
+  }
+
+  body.page-work .healthcare-hero-shell .h-800 {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 1599px) {
+  body.page-work .healthcare-hero-shell .h-800,
+  body.page-work .h-800 {
+    height: 610px !important;
+    max-height: 610px !important;
+  }
+}
+
+body.page-work .healthcare-hero-shell .work-hero-stack {
+  width: 409px !important;
+  max-width: 100%;
+}
+
+body.page-work .work-hero-stack h1 {
+  font-family: Poppins, sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #fff;
+  margin: 0;
+}
+
+body.page-work .work-hero-stack h5 {
+  font-family: Poppins, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #fff;
+  margin: 18px 0 0;
+}
+
+body.page-work .work-hero-ctas {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
+  width: auto !important;
+  max-width: 100%;
+}
+
+body.page-work .work-hero-ctas > a,
+body.page-work .healthcare-hero-shell .work-hero-ctas > a,
+body.page-work .healthcare-hero-shell .absolute_desc_m .work-hero-ctas > a,
+body.page-work .healthcare-hero-shell .absolute_desc_m a[href="#bring_happierme"] {
+  display: inline-flex !important;
+  width: auto !important;
+  max-width: none !important;
+  flex: 0 0 auto !important;
+  justify-content: center !important;
+  text-decoration: none;
+}
+
+body.page-work .work-hero-ctas .btn_tff,
+body.page-work .work-hero-ctas .req_button,
+body.page-work .healthcare-hero-shell .absolute_desc_m .work-hero-ctas .btn_tff,
+body.page-work .healthcare-hero-shell .absolute_desc_m .work-hero-ctas .req_button,
+body.page-work .req_button.work-hero-btn {
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  height: 47px !important;
+  margin: 0 !important;
+  padding: 13px 33px !important;
+  border-radius: 24px !important;
+  background: linear-gradient(180deg, #ed7d6f 0%, #d7586b 100%) !important;
+  border: 0 !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  box-sizing: border-box;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  line-height: 1.4 !important;
+}
+
+/* ---------- 2. Trust bar (1440×105) ---------- */
+body.page-work .work-trust {
+  background: #fff7e6;
+  height: 105px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+body.page-work .work-trust-inner {
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+}
+
+body.page-work .work-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+body.page-work .work-trust-item img {
+  display: block;
+  height: 45px;
+  width: auto;
+  object-fit: contain;
+}
+
+body.page-work .work-trust-item span {
+  font-family: Poppins, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #000;
+}
+
+/* ---------- Shared section shell (100px rhythm, 40px head→content) ---------- */
+body.page-work .work-section {
+  padding: 100px 50px 0;
+  box-sizing: border-box;
+}
+
+body.page-work .work-section-inner {
+  max-width: 1340px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+body.page-work .work-section-head {
+  max-width: 980px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+body.page-work .work-section-title {
+  margin: 0;
+  font-family: Poppins, sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #000;
+}
+
+body.page-work .work-section-sub {
+  margin: 0;
+  font-family: Poppins, sans-serif;
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #000;
+}
+
+/* ---------- 3. Improve performance (pillars) ---------- */
+body.page-work .work-pillars {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 266px));
+  justify-content: space-between;
+  column-gap: 72px;
+  row-gap: 40px;
+  padding: 0 30px;
+  box-sizing: border-box;
+}
+
+body.page-work .work-pillar {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  text-align: left;
+  width: 100%;
+  max-width: 266px;
+}
+
+body.page-work .work-icon-slot {
+  display: block;
+  width: 75px;
+  height: 60px;
+  flex-shrink: 0;
+  background: transparent;
+}
+
+body.page-work .work-pillar-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+body.page-work .work-pillar-title {
+  margin: 0;
+  font-family: Poppins, sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: #000;
+}
+
+body.page-work .work-pillar-text {
+  margin: 0;
+  font-family: Poppins, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #000;
+}
+
+/* ---------- 4. Video (title lh 1.2, gap 60, player 810×456) ---------- */
+body.page-work .work-video-section .work-section-inner {
+  gap: 60px;
+  max-width: 810px;
+}
+
+body.page-work .work-video-section .work-section-title {
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+body.page-work .work-video-wrap {
+  width: 100%;
+  max-width: 810px;
+  height: 455.625px;
+  aspect-ratio: auto;
+  border-radius: 0;
+  overflow: hidden;
+  background: #111;
+}
+
+body.page-work .work-video-wrap iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* ---------- 5. Why different (cards 320×414, top 150) ---------- */
+body.page-work .work-diff-section .work-section-title {
+  line-height: 1.2;
+}
+
+/* Keep why-different copy black on hover (global p/a/heading hover rules) */
+body.page-work .work-diff-section .work-section-title,
+body.page-work .work-diff-section .work-section-title:hover,
+body.page-work .work-diff-section .work-section-sub,
+body.page-work .work-diff-section .work-section-sub:hover,
+body.page-work .work-diff-card-title,
+body.page-work .work-diff-card-title:hover,
+body.page-work .work-diff-card-text,
+body.page-work .work-diff-card-text:hover,
+body.page-work .work-diff-card:hover .work-diff-card-title,
+body.page-work .work-diff-card:hover .work-diff-card-text {
+  color: #000 !important;
+  text-decoration: none !important;
+}
+
+body.page-work .work-diff-cards {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 320px));
+  justify-content: space-between;
+  gap: 20px;
+}
+
+body.page-work .work-diff-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 320px;
+  min-height: 414px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+body.page-work .work-diff-card-top {
+  height: 150px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body.page-work .work-diff-card-top--prevention { background: #eea170; }
+body.page-work .work-diff-card-top--root { background: #ed7d6f; }
+body.page-work .work-diff-card-top--skills { background: #d75b68; }
+body.page-work .work-diff-card-top--whole { background: #803358; }
+
+/* Same SVGs as index “Why HappierMe is different” */
+body.page-work .work-diff-card-top .work-diff-icon {
+  width: 66px;
+  height: 66px;
+  object-fit: contain;
+  display: block;
+}
+
+body.page-work .work-diff-card-body {
+  flex: 1;
+  background: #fff7e6;
+  padding: 36px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+body.page-work .work-diff-card-title {
+  margin: 0 0 9px;
+  font-family: Poppins, sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #000;
+}
+
+body.page-work .work-diff-card-text {
+  margin: 0;
+  font-family: Poppins, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #000;
+}
+
+/* ---------- 6. Measure well-being
+   Figma: cream banner 1440×400; image ~503×630 overflows top+bottom (~115 each) ---------- */
+body.page-work .work-measure {
+  margin-top: 100px;
+  padding: 0;
+  position: relative;
+  height: 630px;
+  overflow: visible;
+}
+
+/* Cream strip only — 400px, vertically centered in the 630px section */
+body.page-work .work-measure-band {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 115px; /* (630 - 400) / 2 */
+  height: 400px;
+  background: #fff7e6;
+  padding: 0;
+  z-index: 0;
+  box-sizing: border-box;
+}
+
+body.page-work .work-measure-inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 980px;
+  height: 630px;
+  margin: 0 auto;
+  padding: 0 50px;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  box-sizing: border-box;
+}
+
+body.page-work .work-measure-media {
+  flex: 0 0 503px;
+  max-width: 503px;
+  width: 503px;
+  height: 630px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body.page-work .work-measure-media img {
+  width: 463px;
+  max-width: 100%;
+  height: 600px;
+  display: block;
+  transform: rotate(-3.88deg);
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  object-fit: contain;
+}
+
+body.page-work .work-measure-copy {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  min-width: 0;
+  max-width: 417px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+body.page-work .work-measure-copy h2 {
+  margin: 0;
+  font-family: Poppins, sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #000;
+}
+
+body.page-work .work-measure-copy p {
+  margin: 0;
+  font-family: Poppins, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #000;
+}
+
+/* ---------- 7. Testimonials (cards ~433×351, gap 20, title 36) ---------- */
+body.page-work .work-testimonials-section {
+  margin-top: 100px;
+  padding: 0 50px;
+  box-sizing: border-box;
+}
+
+body.page-work .work-testimonials-section .work-testimonials-header,
+body.page-work main#main .section-header.work-testimonials-header {
+  margin: 0 0 40px !important;
+  padding: 0 !important;
+}
+
+body.page-work .work-testimonials-title,
+body.page-work main#main .work-testimonials-header .work-testimonials-title,
+body.page-work section.hpt120px ~ main#main .work-testimonials-header h2.work-testimonials-title {
+  font-family: Poppins, sans-serif !important;
+  font-size: 36px !important;
+  font-weight: 600 !important;
+  line-height: 1.4 !important;
+  color: #000 !important;
+  max-width: 548px !important; /* Figma 10068:1342 */
+  text-align: center !important;
+}
+
+body.page-work .owl_testimonials {
+  --work-testimonial-gap: 20px !important;
+}
+
+body.page-work .owl_testimonials .div_testimonials.work-testimonial-card,
+body.page-work section.hpt120px ~ main#main .owl_testimonials .div_testimonials.work-testimonial-card {
+  height: 351px !important;
+  min-height: 351px !important;
+  max-height: 351px !important;
+  padding: 36px !important;
+  border-radius: 20px !important;
+  gap: 15px !important;
+  box-sizing: border-box !important;
+}
+
+body.page-work .owl_testimonials .owl-carousel:not(.work-testimonials-native) .owl-item .item,
+body.page-work section.hpt120px ~ main#main .owl_testimonials .owl-carousel:not(.work-testimonials-native) .owl-item .item {
+  height: 351px !important;
+}
+
+body.page-work .owl_testimonials .work-testimonial-name,
+body.page-work .owl_testimonials .work-testimonial-role {
+  font-size: 15px !important;
+  line-height: 1.5 !important;
+}
+
+body.page-work .owl_testimonials .work-testimonial-quote {
+  font-size: 15px !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+}
+
+/* ---------- 8. Challenge cards (320×207) ---------- */
+body.page-work .work-challenge-cards {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 320px));
+  justify-content: space-between;
+  gap: 20px;
+}
+
+body.page-work .work-challenge-card {
+  width: 100%;
+  max-width: 320px;
+  height: 207px;
+  min-height: 207px;
+  border-radius: 20px;
+  padding: 36px;
+  text-align: center;
+  color: #fff7e6;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+body.page-work .work-challenge-card--1 { background: #eea170; }
+body.page-work .work-challenge-card--2 { background: #ed7d6f; }
+body.page-work .work-challenge-card--3 { background: #d75b68; }
+body.page-work .work-challenge-card--4 { background: #803358; }
+
+body.page-work .work-challenge-stat {
+  margin: 0;
+  font-family: Poppins, sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #fff7e6;
+}
+
+body.page-work .work-challenge-text {
+  margin: 0;
+  font-family: Poppins, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #fff7e6;
+}
+
+body.page-work .work-challenge-cite {
+  margin: 0;
+  font-family: Poppins, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #fff7e6;
+}
+
+/* ---------- 9. Human skills (cards 313×355 / 301, gap 20, pad 36) ---------- */
+body.page-work .work-skills-section {
+  padding-bottom: 100px;
+}
+
+body.page-work .work-skills-grid {
+  width: 100%;
+  max-width: 980px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 313px));
+  justify-content: space-between;
+  gap: 20px;
+}
+
+body.page-work .work-skill-card {
+  background: #fff7e6;
+  border-radius: 20px;
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 301px;
+}
+
+body.page-work .work-skills-grid > .work-skill-card:nth-child(-n+3) {
+  min-height: 355px;
+}
+
+body.page-work .work-skill-icon {
+  display: block;
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+body.page-work .work-skill-title {
+  margin: 0 0 9px;
+  font-family: Poppins, sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: #000;
+}
+
+body.page-work .work-skill-text {
+  margin: 0;
+  font-family: Poppins, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #000;
+}
+
+/* ---------- 10. Demo form (title 36/1.2, CTAs 47, gap 10) ---------- */
+body.page-work #bring_happierme {
+  margin-top: 0;
+}
+
+body.page-work #bring_happierme .work-demo-band,
+body.page-work #bring_happierme .div_subscription.work-demo-band {
+  padding: 80px 20px !important;
+}
+
+body.page-work #bring_happierme .work-demo-copy {
+  gap: 15px !important;
+}
+
+body.page-work #bring_happierme .work-demo-title {
+  font-size: 36px !important;
+  line-height: 1.2 !important;
+  max-width: none;
+}
+
+/* Figma 13058:7425 — CTAs side-by-side, gap 10px (not spread across form width) */
+body.page-work #bring_happierme .work-demo-cta {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  gap: 10px !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: auto !important;
+  max-width: 100%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+body.page-work #bring_happierme .work-demo-cta #Request-Demo,
+body.page-work #bring_happierme .work-demo-cta #Request-Demo:focus,
+body.page-work #bring_happierme .work-demo-cta .work-demo-btn,
+body.page-work #bring_happierme .work-demo-cta .work-demo-btn-secondary {
+  background: linear-gradient(180deg, #ed7d6f 0%, #d7586b 100%) !important;
+  border: 0 !important;
+  border-radius: 24px !important;
+  height: 47px !important;
+  padding: 13px 40px !important;
+  margin: 0 !important;
+  color: #fff !important;
+  font-family: Poppins, sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  line-height: 1.4 !important;
+  box-sizing: border-box !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 0 0 auto !important;
+  white-space: nowrap;
+}
+
+body.page-work #bring_happierme .work-demo-cta #Request-Demo,
+body.page-work #bring_happierme .work-demo-cta .work-demo-btn {
+  width: 205px !important;
+  max-width: 205px !important;
+}
+
+body.page-work #bring_happierme .work-demo-cta .work-demo-btn-secondary {
+  width: auto !important;
+  max-width: none !important;
+  text-decoration: none !important;
+}
+
+/* ---------- 11. Blog title 36 / gap 103-ish ---------- */
+body.page-work .work-blog-section {
+  margin-top: 100px;
+  padding: 0 50px 100px;
+  box-sizing: border-box;
+}
+
+body.page-work .work-blog-section .work-blog-header {
+  margin: 0 0 40px !important;
+  padding: 0 !important;
+}
+
+body.page-work .work-blog-title {
+  font-family: Poppins, sans-serif !important;
+  font-size: 36px !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1200px) {
+  body.page-work .work-pillars,
+  body.page-work .work-diff-cards,
+  body.page-work .work-challenge-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-content: stretch;
+    column-gap: 20px;
+  }
+
+  body.page-work .work-pillar,
+  body.page-work .work-diff-card,
+  body.page-work .work-challenge-card {
+    max-width: none;
+  }
+
+  body.page-work .work-skills-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-content: stretch;
+  }
+
+  body.page-work .work-measure {
+    height: auto;
+  }
+
+  body.page-work .work-measure-band {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: auto;
+  }
+
+  body.page-work .work-measure-inner {
+    flex-direction: column;
+    gap: 40px;
+    height: auto;
+    min-height: 0;
+    padding: 60px 20px;
+  }
+
+  body.page-work .work-measure-media {
+    flex: none;
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+  }
+
+  body.page-work .work-measure-media img {
+    width: 100%;
+    height: auto;
+  }
+
+  body.page-work .work-video-section .work-section-title {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 767px) {
+  body.page-work .healthcare-hero-shell,
+  body.page-work .healthcare-hero-shell .prelative,
+  body.page-work .healthcare-hero-shell .mt3rem {
+    height: auto;
+    max-height: none;
+    overflow: visible;
+  }
+
+  body.page-work .healthcare-hero-shell .h-800,
+  body.page-work .healthcare-hero-shell .wide-screen-only,
+  body.page-work .healthcare-hero-shell img.img-responsive.w100p.display_m_none,
+  body.page-work .healthcare-hero-shell img.img-responsive.w100p.h-800,
+  body.page-work .h-800 {
+    height: auto !important;
+    max-height: none !important;
+    min-height: 0 !important;
+  }
+
+  body.page-work .healthcare-hero-shell .absolute_desc,
+  body.page-work .healthcare-hero-shell .absolute_desc_m {
+    top: auto !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 24px 20px !important;
+  }
+
+  body.page-work .healthcare-hero-shell .absolute_desc > .work-hero-stack,
+  body.page-work .healthcare-hero-shell .absolute_desc_m > .work-hero-stack {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+
+  body.page-work .healthcare-hero-shell .work-hero-stack {
+    width: 100% !important;
+  }
+
+  body.page-work .work-hero-stack h1 {
+    font-size: 24px;
+  }
+
+  body.page-work .healthcare-hero-shell .absolute_desc_m .work-hero-ctas {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+    gap: 10px;
+    width: 100% !important;
+  }
+
+  body.page-work .healthcare-hero-shell .absolute_desc_m .work-hero-ctas > a,
+  body.page-work .healthcare-hero-shell .absolute_desc_m .work-hero-ctas a[href="#bring_happierme"] {
+    width: auto !important;
+    flex: 0 0 auto !important;
+  }
+
+  body.page-work .healthcare-hero-shell .absolute_desc_m .work-hero-ctas .btn_tff,
+  body.page-work .healthcare-hero-shell .absolute_desc_m .work-hero-ctas .req_button,
+  body.page-work .healthcare-hero-shell .absolute_desc_m .work-hero-ctas .req_button.work-hero-btn {
+    width: auto !important;
+    max-width: none !important;
+    height: 44px !important;
+    padding: 10px 16px !important;
+    font-size: 13px !important;
+  }
+
+  body.page-work .work-trust {
+    height: auto;
+    padding: 24px 20px;
+  }
+
+  body.page-work .work-trust-inner {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  body.page-work .work-section,
+  body.page-work .work-testimonials-section,
+  body.page-work .work-blog-section,
+  body.page-work .work-measure {
+    margin-top: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  body.page-work .work-section {
+    padding-top: 60px;
+  }
+
+  body.page-work .work-section-title,
+  body.page-work .work-measure-copy h2,
+  body.page-work .work-challenge-stat,
+  body.page-work .work-testimonials-title,
+  body.page-work .work-blog-title {
+    font-size: 24px !important;
+  }
+
+  body.page-work .work-section-sub {
+    font-size: 15px;
+  }
+
+  body.page-work .work-pillars,
+  body.page-work .work-diff-cards,
+  body.page-work .work-challenge-cards,
+  body.page-work .work-skills-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0;
+  }
+
+  body.page-work .work-diff-card,
+  body.page-work .work-challenge-card,
+  body.page-work .work-skill-card,
+  body.page-work .work-skills-grid > .work-skill-card:nth-child(-n+3) {
+    min-height: 0;
+    height: auto;
+    max-width: none;
+  }
+
+  body.page-work .work-video-wrap {
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  body.page-work .work-pillar-title,
+  body.page-work .work-diff-card-title,
+  body.page-work .work-skill-title {
+    font-size: 21px;
+  }
+
+  body.page-work .work-measure-band {
+    top: 0;
+    bottom: 0;
+    height: auto;
+  }
+
+  body.page-work .work-measure-media img {
+    transform: none;
+    height: auto;
+  }
+
+  body.page-work .owl_testimonials .div_testimonials.work-testimonial-card,
+  body.page-work .owl_testimonials .owl-carousel:not(.work-testimonials-native) .owl-item .item {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+  }
+}
