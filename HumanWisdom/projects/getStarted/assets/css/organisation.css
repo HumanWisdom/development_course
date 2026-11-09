@@ -2334,14 +2334,14 @@ body.org-flow-download .org-download-card {
   }
 
   body.org-flow-signup .org-social-btn {
-    width:87px;
+    width: 87px;
     height: 52px;
-    background: #fff0c9;
+    background: var(--org-peach); /* #ffe8bb — Figma mobile social */
   }
 
   body.org-flow-signup .org-social-btn:hover,
   body.org-flow-signup .org-social-btn:focus {
-    background: #ffe6b0;
+    background: #f5dba8;
   }
 
   body.org-flow-signup .org-signup-fields {
