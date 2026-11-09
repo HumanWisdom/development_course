@@ -9,6 +9,8 @@
   var currentStep = window.__HW_ORG_STEP__ || "landing";
   var apiBase = (window.__HW_API__ && window.__HW_API__.apiBase) || "https://www.humanwisdom.info/api";
   var onEnterOtp = null;
+  var onEnterSuccess = null;
+  var successCheckPending = false;
 
   function qs(id) {
     return document.getElementById(id);
@@ -54,6 +56,9 @@
 
     if (pageKey === "otp" && typeof onEnterOtp === "function") {
       onEnterOtp();
+    }
+    if (pageKey === "success" && typeof onEnterSuccess === "function") {
+      onEnterSuccess();
     }
     if (pageKey === "signup") {
       redirectIfLoggedIn();
@@ -418,10 +423,230 @@
       }
     } catch (e) {}
     if (isNewUser(res)) {
-      go("success");
+      goToSuccessAndCheckTrial();
       return;
     }
     navigateToApp(res, false);
+  }
+
+  function getProgramId() {
+    return getProgram() === "teenagers" ? "11" : "9";
+  }
+
+  function getAccessToken() {
+    var res = getRememberedLoginResponse();
+    if (res && res.access_token) {
+      return String(res.access_token).trim();
+    }
+    try {
+      var raw = localStorage.getItem("token");
+      if (!raw) return "";
+      try {
+        var parsed = JSON.parse(raw);
+        return String(parsed || "").trim();
+      } catch (e) {
+        return String(raw).replace(/^"|"$/g, "").trim();
+      }
+    } catch (e) {
+      return "";
+    }
+  }
+
+  function getStoredCredentials() {
+    var email = "";
+    var pwd = "";
+    try {
+      email = String(localStorage.getItem("email") || "").replace(/^"|"$/g, "").trim();
+      pwd = String(localStorage.getItem("pswd") || "").replace(/^"|"$/g, "");
+      var account = localStorage.getItem("hw_org_account");
+      if (account) {
+        var parsed = JSON.parse(account);
+        if (!email && parsed && parsed.Email) email = String(parsed.Email).trim();
+        if (!pwd && parsed && parsed.Pwd) pwd = String(parsed.Pwd);
+      }
+    } catch (e) {}
+    return { email: email, pwd: pwd };
+  }
+
+  function loginWithStoredCredentials() {
+    var creds = getStoredCredentials();
+    if (!creds.email || !creds.pwd) {
+      return Promise.resolve(null);
+    }
+    var url =
+      apiBase +
+      "/login?email=" +
+      encodeURIComponent(creds.email) +
+      "&pwd=" +
+      encodeURIComponent(creds.pwd) +
+      "&ProgID=" +
+      encodeURIComponent(getProgramId());
+
+    return fetch(url, { method: "GET", headers: { Accept: "application/json" } })
+      .then(function (res) {
+        return res
+          .json()
+          .catch(function () {
+            return null;
+          })
+          .then(function (data) {
+            return { ok: res.ok, data: data };
+          });
+      })
+      .then(function (result) {
+        var data = result.data;
+        if (!result.ok || !data || !hasAccessToken(data)) return null;
+        rememberLoginResponse(data);
+        try {
+          storeAdultsSession(data);
+        } catch (e) {}
+        return data;
+      })
+      .catch(function () {
+        return null;
+      });
+  }
+
+  function ensureAccessToken() {
+    var token = getAccessToken();
+    if (token) return Promise.resolve(token);
+    return loginWithStoredCredentials().then(function () {
+      return getAccessToken();
+    });
+  }
+
+  function parseFreeTrialUsed(res) {
+    if (res === true || res === "true" || res === 1 || res === "1") return true;
+    if (res && typeof res === "object") {
+      var value =
+        res.msg != null
+          ? res.msg
+          : res.Msg != null
+            ? res.Msg
+            : res.Message != null
+              ? res.Message
+              : res.message != null
+                ? res.message
+                : res.Result != null
+                  ? res.Result
+                  : res.result != null
+                    ? res.result
+                    : res.data;
+      return value === true || value === "true" || value === 1 || value === "1";
+    }
+    return false;
+  }
+
+  function setSuccessLoading(show) {
+    var loading = qs("org-success-loading");
+    var def = qs("org-success-default");
+    var ended = qs("org-success-trial-ended");
+    if (loading) loading.hidden = !show;
+    if (show) {
+      if (def) def.hidden = true;
+      if (ended) ended.hidden = true;
+    }
+  }
+
+  function showSuccessVariant(trialUsed) {
+    var def = qs("org-success-default");
+    var ended = qs("org-success-trial-ended");
+    var loading = qs("org-success-loading");
+    if (loading) loading.hidden = true;
+    if (def) def.hidden = !!trialUsed;
+    if (ended) ended.hidden = !trialUsed;
+    document.body.classList.toggle("org-flow-trial-ended", !!trialUsed);
+    if (trialUsed) {
+      document.title = "Your free trial has ended | HappierMe";
+      var img = document.querySelector(".org-trial-ended-img");
+      if (img && assets) {
+        img.src =
+          getProgram() === "teenagers" && assets.freetrial_teen
+            ? assets.freetrial_teen
+            : assets.freetrial_adult || img.src;
+      }
+    } else {
+      document.title = (stepMeta.success && stepMeta.success.title) || "You’re all set | HappierMe";
+    }
+  }
+
+  function checkFreeTrialUsed() {
+    if (successCheckPending) return;
+    successCheckPending = true;
+    setSuccessLoading(true);
+
+    ensureAccessToken()
+      .then(function (token) {
+        if (!token) {
+          showSuccessVariant(false);
+          successCheckPending = false;
+          return;
+        }
+        return fetch(apiBase + "/CheckFreeTrialUsed", {
+          method: "GET",
+          headers: {
+            Accept: "application/json",
+            Authorization: "Bearer " + token,
+          },
+        })
+          .then(function (res) {
+            return res
+              .json()
+              .catch(function () {
+                return null;
+              })
+              .then(function (data) {
+                return { ok: res.ok, data: data };
+              });
+          })
+          .then(function (result) {
+            showSuccessVariant(!!(result && result.ok && parseFreeTrialUsed(result.data)));
+            successCheckPending = false;
+          });
+      })
+      .catch(function () {
+        showSuccessVariant(false);
+        successCheckPending = false;
+      });
+  }
+
+  function goToSuccessAndCheckTrial() {
+    go("success");
+  }
+
+  function setupSuccessTrialCheck() {
+    onEnterSuccess = function () {
+      checkFreeTrialUsed();
+    };
+
+    var subscribeBtn = qs("org-subscribe-now");
+    if (subscribeBtn) {
+      subscribeBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        var program = getProgram();
+        window.location.href = adultsUrl("/" + program + "/subscription/try-free-and-subscribe");
+      });
+    }
+
+    var continueWeb = qs("org-trial-continue-web");
+    if (continueWeb) {
+      continueWeb.addEventListener("click", function (e) {
+        e.preventDefault();
+        navigateToApp(getRememberedLoginResponse(), true);
+      });
+    }
+
+    var downloadApp = qs("org-trial-download-app");
+    if (downloadApp) {
+      downloadApp.addEventListener("click", function (e) {
+        e.preventDefault();
+        go("download");
+      });
+    }
+
+    if (currentStep === "success") {
+      onEnterSuccess();
+    }
   }
 
   /** Same as LoginSignupPage's constructor: an active adults session skips the signup form. */
@@ -837,8 +1062,13 @@
             result.ok &&
             (data === true || data > 0 || parseInt(data, 10) > 0);
           if (ok) {
-            clearCreateAccountLocalStorage();
-            go("success");
+            // Keep email/pwd so we can login for CheckFreeTrialUsed, then clear create-account flags.
+            loginWithStoredCredentials().then(function () {
+              try {
+                localStorage.removeItem("hw_org_account");
+              } catch (e) {}
+              goToSuccessAndCheckTrial();
+            });
             return;
           }
           showError(err, "Invalid Code");
@@ -1143,5 +1373,6 @@
     setupSocialSignup();
     setupOtp();
     setupContinueToApp();
+    setupSuccessTrialCheck();
   });
 })();
