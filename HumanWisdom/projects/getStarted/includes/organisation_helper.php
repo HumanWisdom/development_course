@@ -281,6 +281,8 @@ if (!function_exists('hw_org_cdn_assets')) {
             'tick' => $s3 . '/assets/svgs/v1_3/tick_white.svg',
             'success_check' => $s3 . '/assets/svgs/v_1_4/welldone!adultss.svg',
             'calendar' => $s3 . '/website/svgs/calender.svg',
+            'freetrial_adult' => $cdn . '/assets/webp/freetrialadu.webp',
+            'freetrial_teen' => $cdn . '/assets/webp/freeteen.webp',
             'appstore' => hw_org_base() . '/assets/svgs/org_appstore_black.svg',
             'playstore' => hw_org_base() . '/assets/svgs/org_playstore_black.svg',
             'qr' => $s3 . '/website/webp/scan.webp',
