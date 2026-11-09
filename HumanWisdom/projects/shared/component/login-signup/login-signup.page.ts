@@ -84,7 +84,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
   scrId: any;
   hideSocial = false;
   x = [];
-  isSignUp = true;
+  isSignUp = false;
   value: number = 100;
   showWarning = false;
   showMessage = false;
@@ -1484,6 +1484,11 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
       } else {
         localStorage.setItem("signupfirst", 'F');
       }
+      localStorage.setItem("hasSeenTourPopup", "true");
+      if (res.UserId) {
+        localStorage.setItem("hasSeenTourPopup_" + res.UserId, "true");
+      }
+      localStorage.removeItem("justSignedUp");
       const timeSpent = Math.round((Date.now() - this.loginStartTime) / 1000);
       this.logeventservice.logEvent('Login_time_spent', true, timeSpent);
       // Clear home state on successful login so API's isExpanded values are used fresh

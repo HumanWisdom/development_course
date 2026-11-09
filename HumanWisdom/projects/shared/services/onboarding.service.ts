@@ -64,6 +64,10 @@ export class OnboardingService {
     return this.http.get(this.path + `/CheckFreeTrialUsed`);
   }
 
+  checkFreedays(): Observable<any> {
+    return this.http.get(this.path + '/CheckFreedays');
+  }
+
   // authenticateInstagram(instagramClientId: string, instagramRedirectUri: string): Promise<string> {
   //   return new Promise((resolve, reject) => {
   //     const popupWidth = 700;
