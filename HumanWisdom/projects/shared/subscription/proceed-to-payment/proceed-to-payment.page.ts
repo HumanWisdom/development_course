@@ -18,8 +18,8 @@ export class ProceedToPaymentPage implements OnInit {
   selectedSubscription: string;
   Monthly: string;
   Annual: string;
-  MonthPlanFreeTrial = 7;
-  AnnualPlanFreeTrial = 14;
+  MonthPlanFreeTrial = 10;
+  AnnualPlanFreeTrial = 10;
   couponCodeApplied = false;
   discountCode: any;
   couponCode: any = '';
@@ -55,6 +55,11 @@ export class ProceedToPaymentPage implements OnInit {
     localStorage.setItem('callAddtraction', "N");
     this.GetDataFromLocalStorage();
     this.trialStatus = SharedService.getDataFromLocalStorage('trialStatus');
+    if (this.trialStatus == "underway" && SharedService.getDataFromLocalStorage('SubscriberType')=="Free Trial") {
+      this.trialStatus = "ended";
+    }
+
+
     this.InitializePlanModel();
     if (SharedService.ProgramId == ProgramType.Adults) {
       this.isAdults = true;
