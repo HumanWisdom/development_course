@@ -333,7 +333,7 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
     let eligibleSpread = false;
 
     if (!this.isPaidSubscriber() && this.freeDaysRemaining !== null && this.freeDaysRemaining !== undefined && !isNaN(this.freeDaysRemaining)) {
-      if (this.freeDaysRemaining === 4) {
+      if (this.freeDaysRemaining === 5) {
         // Condition: free days returns 5 -> Spread happiness popup
         const spreadKey = userIdKey ? `hasSeenSpreadHappinessPopup_${userIdKey}` : 'hasSeenSpreadHappinessPopup';
         if (localStorage.getItem(spreadKey) !== 'true' && localStorage.getItem('hasSeenSpreadHappinessPopup') !== 'true') {
