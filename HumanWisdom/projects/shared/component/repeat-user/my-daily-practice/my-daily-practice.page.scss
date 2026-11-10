@@ -1562,6 +1562,7 @@
 
   &--teens {
     color: #FFFFFF;
+    font-weight: 500;
   }
 }
 
@@ -1599,16 +1600,15 @@
   width: 36px;
   height: 36px;
   min-width: 36px;
-  border-radius: 50%;
-  background-color: #FFE8BB;
-  color: #000000;
   display: flex;
   align-items: center;
   justify-content: center;
 
-  &--teens {
-    background-color: #0C2B5F;
-    color: #FFFFFF;
+  .spread-feature-img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    display: block;
   }
 }
 
