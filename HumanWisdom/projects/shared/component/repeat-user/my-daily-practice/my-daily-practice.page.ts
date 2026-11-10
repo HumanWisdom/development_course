@@ -84,6 +84,18 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
       : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/spreadteen.webp';
   }
 
+  get spreadCalendarIconUrl(): string {
+    return this.isAdults
+      ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/caladu.svg'
+      : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/callteenn.svg';
+  }
+
+  get spreadCreditCardIconUrl(): string {
+    return this.isAdults
+      ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/creditadu.svg'
+      : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/creditteenn.svg';
+  }
+
   get freeTrialEndedImgUrl(): string {
     return this.isAdults
       ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/freetrialadu.webp'
@@ -321,7 +333,7 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
     let eligibleSpread = false;
 
     if (!this.isPaidSubscriber() && this.freeDaysRemaining !== null && this.freeDaysRemaining !== undefined && !isNaN(this.freeDaysRemaining)) {
-      if (this.freeDaysRemaining === 5) {
+      if (this.freeDaysRemaining === 4) {
         // Condition: free days returns 5 -> Spread happiness popup
         const spreadKey = userIdKey ? `hasSeenSpreadHappinessPopup_${userIdKey}` : 'hasSeenSpreadHappinessPopup';
         if (localStorage.getItem(spreadKey) !== 'true' && localStorage.getItem('hasSeenSpreadHappinessPopup') !== 'true') {
