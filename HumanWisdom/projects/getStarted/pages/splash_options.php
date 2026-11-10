@@ -35,9 +35,9 @@
       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
       <link href="../assets/font/line_height.css" rel="stylesheet">
 
-      <!-- <link href="./assets/css/backgrounds.css" rel="stylesheet"> -->
+      <!-- <link href="../assets/css/index-inline.css" rel="stylesheet">  -->
        <style>
-        body
+       
         {
           /* font-family: verdana; */
           font-family:poppins !important;
@@ -46,6 +46,12 @@
         {
           display: none !important;
         }
+
+        /* chevron-pink {
+    font-size: 12px;
+    color: #d7586b;
+    padding-top: 3px;
+} */
         </style>
   </head>
 
@@ -57,12 +63,10 @@
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
             <div class="col-lg-11 col-md-11 col-sm-12 col-xs-12  tcenter">
               <h4 class="mtb0px fs_24px fw_500 lh_140p fc_000000 ">
-                Your HappierMe journey starts here
-              </h4>
+Welcome to HappierMe!              </h4>
       
               <h4 class="mt0px mtb20px fs_15px fw_400 lh_140p fc_000000_0_5 tcenter">
-             Choose the experience that's right for you. You can always change it later.
-              </h4>
+Understand yourself. Feel better. Build happier relationships.              </h4>
               
              
               <!-- <h4 class="mt60px mb20px fs_15px fw_400 lh_140p fc_000000 tcenter">
@@ -75,19 +79,33 @@
         
         <div class="row mb20px center_flex" id="teenagersClick">
           <div class="backcolor">
-          <a>
+          <a  style="text-decoration:none;" href="https://staging.happierme.app/teenagers/onboarding/login"> 
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/webteen.svg" class="img-responsive">
-              <h4 class="mtb5px fs_21px fw_600 lh_140p fc_000000">
+              <h4 class="mt20px mb10px fs_21px fw_600 lh_140p fc_000000">
                Teenagers (13+ yrs)
               </h4>
                 <h4 class="mtb5px fs_12px fw_400 lh_140p fc_000000">
               Understand your feelings, build confidence and navigate relationships.
               </h4>
 
-                <a   style="color: #D7586B;" href="https://staging.happierme.app/teenagers/onboarding/login"class="mtb0px fs_12px fw_600 lh_140p  " > 
-                         Get started  
-                         </a> 
+  <!-- <h4 class="mtb0px fs_18px fw_500 lh_150p td_underline">
+                    View all blogs
+                  </h4> -->
+<!-- <span class="chevron-pink"><span style="-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span> -->
+
+               <!-- <a class="sap edu-blog-more" href="https://happierme.app/adults/blogs">
+                  <h4 class="mtb0px fs_18px fw_500 lh_150p td_underline">
+                    View all blogs
+                  </h4>
+<span class="chevron-pink"><span style="-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span>
+
+                  <span class="chevron-pink"><span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span>
+                </a> -->
+                   <a style="color: #D7586B; text-decoration:none !important;" href="https://staging.happierme.app/teenagers/onboarding/login"class="mtb10px fs_12px fw_600 lh_140p" > 
+                         Get started   
+              <span class="chevron-pink"><span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span>  
+                        </a> 
             </div>
           </a>
         </div>
@@ -95,17 +113,17 @@
       
         <div class="row center_flex" id="adultsClick">
         <div class="backcolor">
-          <a>
+          <a href="https://staging.happierme.app/adults/onboarding/login">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/webad.svg" class="img-responsive">
-               <h4 class="mtb5px fs_21px fw_600 lh_140p fc_000000">
+               <h4 class="mt20px  mb10px fs_21px fw_600 lh_140p fc_000000">
               Adults (18+ yrs)
               </h4>
                 <h4 class="mtb5px fs_12px fw_400 lh_140p fc_000000">
 Understand yourself, manage emotions and build happier relationships.              
 </h4>
- <a  style="color: #D7586B;" href="https://staging.happierme.app/adults/onboarding/login"class="mtb0px fs_12px fw_600 lh_140p  " > 
-                         Get started  
+ <span><a  style="color: #D7586B;" href="https://staging.happierme.app/adults/onboarding/login"class="mtb0px fs_12px fw_600 lh_140p  " > 
+                         Get started   
                          </a> 
             </div>
           </a>
