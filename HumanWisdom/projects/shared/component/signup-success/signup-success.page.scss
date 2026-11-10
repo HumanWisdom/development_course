@@ -103,8 +103,6 @@
 
 .trial_icon {
   display: block;
-  width: 60px;
-  height: 60px;
   object-fit: contain;
   flex-shrink: 0;
 }
@@ -317,7 +315,7 @@
 
   .trial_copy,
   .trial_ends {
-    color: #FFFFFFBF;
+    color: #FFFFFF;
   }
 
   .trial_ended_card {
