@@ -36,6 +36,7 @@
 
           <p class="verify_error" *ngIf="errorMessage">{{ errorMessage }}</p>
           <p class="verify_info" *ngIf="!errorMessage && infoMessage">{{ infoMessage }}</p>
+          <p class="verify_error" *ngIf="isVerifying && !errorMessage">Verifying code...</p>
 
           <div class="verify_help">
             <p class="verify_help_copy">
