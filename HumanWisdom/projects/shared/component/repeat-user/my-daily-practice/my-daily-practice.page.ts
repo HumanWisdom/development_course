@@ -76,7 +76,11 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
   showSpreadHappinessPopup = false;
   showFreeTrialEndedPopup = false;
   freeDaysRemaining: number | null = null;
+  freeTrialDaysChecked = false;   // true only after checkFreeTrialDays() API resolves
   isOllyBubbleCompleted = false;
+  // Session-level flags: once shown per page load, don't loop
+  private shownSpreadThisSession = false;
+  private shownTrialEndedThisSession = false;
 
   get spreadHappinessImgUrl(): string {
     return this.isAdults
@@ -215,8 +219,7 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
       }
     }
 
-    if (this.isUserLoggedIn() && !this.isGuestUser() && !this.isPaidSubscriber()) {
-      // Reserve popup slot while checking free days so background popups don't clash
+    if (this.isUserLoggedIn() && !this.isGuestUser()) {
       this.commonService.setPopupActive(true);
       this.checkFreeTrialDays();
     }
@@ -269,6 +272,17 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
     return subType === "Monthly" || subType === "Annual";
   }
 
+  /**
+   * Returns true only when the user is on a free trial:
+   *   Subscriber == "1"  AND  SubscriberType == "free trial"  (case-insensitive)
+   * Both the spread-happiness and free-trial-ended popups must be gated behind this.
+   */
+  isFreeTrial(): boolean {
+    const subscriber  = localStorage.getItem("Subscriber");
+    const subType     = (localStorage.getItem("SubscriberType") || "").trim().toLowerCase();
+    return subscriber === "1" && subType === "free trial";
+  }
+
   isFirstTimeSignup(): boolean {
     const justSignedUp = localStorage.getItem('justSignedUp') === 'true';
     const userIdKey = this.getNormalizedUserId();
@@ -283,22 +297,29 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
   checkFreeTrialDays(): void {
     this.commonService.checkFreedays().subscribe(
       (res: any) => {
+        console.log('[Popup] checkFreedays raw response:', res);
         if (res !== null && res !== undefined) {
           let days: number = NaN;
           if (typeof res === 'object') {
             const raw = res.days ?? res.FreeDays ?? res.freedays ?? res.freeDays ?? res.FreeDaysRemaining;
+            console.log('[Popup] freeDays raw value from object:', raw);
             days = Number(raw);
           } else {
+            console.log('[Popup] freeDays raw value (primitive):', res);
             days = Number(res);
           }
           if (!isNaN(days)) {
             this.freeDaysRemaining = days;
           }
         }
+        this.freeTrialDaysChecked = true;   // API responded — safe to evaluate
+        console.log('[Popup] freeDaysRemaining set to:', this.freeDaysRemaining);
         this.evaluatePopups();
       },
       (err: any) => {
-        console.error('Error checking free days:', err);
+        console.error('[Popup] Error checking free days:', err);
+        this.freeTrialDaysChecked = true;   // even on error, don't block forever
+        this.freeDaysRemaining = null;
         this.evaluatePopups();
       }
     );
@@ -307,10 +328,12 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
   evaluatePopups(): void {
     // If a popup is already currently visible in this component, NEVER show another one
     if (this.activePopup !== null) {
+      console.log('[Popup] evaluatePopups: already active popup =', this.activePopup, '— skipping');
       return;
     }
 
     if (!this.isUserLoggedIn() || this.isGuestUser()) {
+      console.log('[Popup] evaluatePopups: not logged in or guest — skipping');
       return;
     }
 
@@ -328,29 +351,28 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
 
     const hasSeenTour = localStorage.getItem(tourKey) === 'true' || localStorage.getItem('hasSeenTourPopup') === 'true';
 
-    // Check trial popups eligibility (only for free trial users / non-paid subscribers)
+    // Simple rule: API returns 4 → Spread Happiness, API returns 0 → Free Trial Ended. Nothing else.
     let eligibleTrialEnded = false;
     let eligibleSpread = false;
 
-    if (!this.isPaidSubscriber() && this.freeDaysRemaining !== null && this.freeDaysRemaining !== undefined && !isNaN(this.freeDaysRemaining)) {
-      if (this.freeDaysRemaining === 5) {
-        // Condition: free days returns 5 -> Spread happiness popup
-        const spreadKey = userIdKey ? `hasSeenSpreadHappinessPopup_${userIdKey}` : 'hasSeenSpreadHappinessPopup';
-        if (localStorage.getItem(spreadKey) !== 'true' && localStorage.getItem('hasSeenSpreadHappinessPopup') !== 'true') {
-          eligibleSpread = true;
-        }
-      } else if (this.freeDaysRemaining === 0) {
-        // Condition: free days returns 0 -> Free trial ended popup
-        const trialEndedKey = userIdKey ? `hasSeenFreeTrialEndedPopup_${userIdKey}` : 'hasSeenFreeTrialEndedPopup';
-        if (localStorage.getItem(trialEndedKey) !== 'true' && localStorage.getItem('hasSeenFreeTrialEndedPopup') !== 'true') {
-          eligibleTrialEnded = true;
-        }
+    console.log('[Popup] evaluatePopups: freeTrialDaysChecked=', this.freeTrialDaysChecked, 'freeDaysRemaining=', this.freeDaysRemaining);
+
+    if (this.freeTrialDaysChecked) {
+      if (this.freeDaysRemaining === 5 && !this.shownSpreadThisSession) {
+        eligibleSpread = true;
+        console.log('[Popup] spread happiness popup eligible (freeDays=4)');
+      } else if (this.freeDaysRemaining === 0 && !this.shownTrialEndedThisSession) {
+        eligibleTrialEnded = true;
+        console.log('[Popup] free trial ended popup eligible (freeDays=0)');
+      } else {
+        console.log('[Popup] freeDaysRemaining=', this.freeDaysRemaining, '— no trial popup');
       }
     }
 
     // Spread some happiness popup (Day 5)
     if (eligibleSpread) {
       this.activePopup = 'spread';
+      this.shownSpreadThisSession = true;
       this.commonService.setPopupActive(true);
       this.showSpreadHappinessPopup = true;
       this.showTourPopup = false;
@@ -361,6 +383,7 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
     // Free trial ended popup (Day 10 / 0 days left)
     if (eligibleTrialEnded) {
       this.activePopup = 'trialEnded';
+      this.shownTrialEndedThisSession = true;
       this.commonService.setPopupActive(true);
       this.showFreeTrialEndedPopup = true;
       this.showTourPopup = false;
@@ -408,10 +431,6 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
     this.showSpreadHappinessPopup = false;
     this.activePopup = null;
     this.commonService.setPopupActive(false);
-    const userIdKey = this.getNormalizedUserId();
-    const spreadKey = userIdKey ? `hasSeenSpreadHappinessPopup_${userIdKey}` : 'hasSeenSpreadHappinessPopup';
-    localStorage.setItem(spreadKey, 'true');
-    localStorage.setItem('hasSeenSpreadHappinessPopup', 'true');
 
     // Start timer for any next eligible popup only AFTER closing
     setTimeout(() => {
@@ -420,25 +439,48 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
   }
 
   shareNowSpreadHappiness(): void {
+    const shareUrl = 'https://happierme.app/free.php';
+    const shareText = 'Good things are even better when shared. Check out HappierMe and take a step towards a happier, healthier life together!';
+
+    if (navigator.share) {
+      navigator.share({
+        title: 'HappierMe',
+        text: shareText,
+        url: shareUrl,
+      }).then(() => {
+        // Share completed — now mark as seen and close popup
+        this._markSpreadHappinessSeenAndClose();
+      }).catch((err) => {
+        // User cancelled the share sheet — do NOT mark as seen; just close the popup
+        if (err && err.name !== 'AbortError') {
+          // Unexpected error: fall back to refer-friend page
+          this._markSpreadHappinessSeenAndClose();
+          const url = this.isAdults ? '/adults/refer-friend' : '/teenagers/refer-friend';
+          this.router.navigate([url]);
+        }
+        // AbortError = user dismissed share sheet; keep popup closed but don't navigate
+        this.showSpreadHappinessPopup = false;
+        this.activePopup = null;
+        this.commonService.setPopupActive(false);
+      });
+    } else {
+      // Web Share API not supported — fall back to refer-friend page
+      this._markSpreadHappinessSeenAndClose();
+      const url = this.isAdults ? '/adults/refer-friend' : '/teenagers/refer-friend';
+      this.router.navigate([url]);
+    }
+  }
+
+  private _markSpreadHappinessSeenAndClose(): void {
     this.showSpreadHappinessPopup = false;
     this.activePopup = null;
     this.commonService.setPopupActive(false);
-    const userIdKey = this.getNormalizedUserId();
-    const spreadKey = userIdKey ? `hasSeenSpreadHappinessPopup_${userIdKey}` : 'hasSeenSpreadHappinessPopup';
-    localStorage.setItem(spreadKey, 'true');
-    localStorage.setItem('hasSeenSpreadHappinessPopup', 'true');
-    const url = this.isAdults ? '/adults/refer-friend' : '/teenagers/refer-friend';
-    this.router.navigate([url]);
   }
 
   closeFreeTrialEndedPopup(): void {
     this.showFreeTrialEndedPopup = false;
     this.activePopup = null;
     this.commonService.setPopupActive(false);
-    const userIdKey = this.getNormalizedUserId();
-    const trialEndedKey = userIdKey ? `hasSeenFreeTrialEndedPopup_${userIdKey}` : 'hasSeenFreeTrialEndedPopup';
-    localStorage.setItem(trialEndedKey, 'true');
-    localStorage.setItem('hasSeenFreeTrialEndedPopup', 'true');
 
     // Start timer for any next eligible popup only AFTER closing
     setTimeout(() => {
@@ -450,10 +492,6 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
     this.showFreeTrialEndedPopup = false;
     this.activePopup = null;
     this.commonService.setPopupActive(false);
-    const userIdKey = this.getNormalizedUserId();
-    const trialEndedKey = userIdKey ? `hasSeenFreeTrialEndedPopup_${userIdKey}` : 'hasSeenFreeTrialEndedPopup';
-    localStorage.setItem(trialEndedKey, 'true');
-    localStorage.setItem('hasSeenFreeTrialEndedPopup', 'true');
     const program = SharedService.getprogramName();
     this.router.navigate([`/${program}/subscription/try-free-and-subscribe`], {
       state: { fromTrialEnded: true }
@@ -464,10 +502,6 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
     this.showFreeTrialEndedPopup = false;
     this.activePopup = null;
     this.commonService.setPopupActive(false);
-    const userIdKey = this.getNormalizedUserId();
-    const trialEndedKey = userIdKey ? `hasSeenFreeTrialEndedPopup_${userIdKey}` : 'hasSeenFreeTrialEndedPopup';
-    localStorage.setItem(trialEndedKey, 'true');
-    localStorage.setItem('hasSeenFreeTrialEndedPopup', 'true');
     const program = SharedService.getprogramName();
     this.router.navigate([`/${program}/subscription/try-free-and-subscribe`], {
       state: { fromTrialEnded: true }
