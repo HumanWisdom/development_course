@@ -1696,23 +1696,17 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
                   }
                 } else {
                   localStorage.setItem("NoOfVisits", this.loginResponse?.NoOfVisits);
-                  if (this.loginResponse?.NoOfVisits === 1) {
+                  if (this.isSignUp || this.loginResponse?.NoOfVisits === 1) {
                     localStorage.setItem(
                       "signupfirst", 'T'
                     );
+                    localStorage.setItem("signupLoginOk", "T");
+                    localStorage.setItem("justSignedUp", "true");
                     if (SharedService.ProgramId === 9) {
-                      this.router.navigate(["/adults/change-topic"], {
-                        state: {
-                          routedFromLogin: true,
-                        }
-                      });
+                      this.router.navigate(["/adults/onboarding/all-set"]);
                     } else if (SharedService.ProgramId === 11) {
                       localStorage.setItem('isFromSignupFlow', 'T');
-                      this.router.navigate(["/teenagers/change-topic"], {
-                        state: {
-                          routedFromLogin: true,
-                        }
-                      });
+                      this.router.navigate(["/teenagers/onboarding/all-set"]);
                     }
 
                   } else {

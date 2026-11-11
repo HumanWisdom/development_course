@@ -268,7 +268,10 @@ export class SocialLoginPage implements OnInit {
 
 
       if(isRoutedFromLogin){
-        this.router.navigateByUrl(`${SharedService.getprogramName()}/change-topic`);
+        localStorage.setItem("signupfirst", 'T');
+        localStorage.setItem("signupLoginOk", "T");
+        localStorage.setItem("justSignedUp", "true");
+        this.router.navigateByUrl(`/${SharedService.getprogramName()}/onboarding/all-set`);
         // this.commonService.loginSubject(`${SharedService.getprogramName()}/change-topic`);
       }else{
         this.router.navigateByUrl(`${SharedService.getprogramName()}/today`);
