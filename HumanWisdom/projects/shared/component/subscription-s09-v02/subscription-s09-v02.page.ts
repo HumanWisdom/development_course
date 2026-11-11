@@ -20,6 +20,10 @@ import { filter } from 'rxjs/operators';
 })
 export class SubscriptionS09V02Page implements OnInit, OnDestroy {
   private routerSub: Subscription;
+  private pollTimeout: any = null;
+  private retryCount: number = 0;
+  private readonly maxRetries: number = 5;
+  private initialProgramCount: number | null = null;
   public myprograms = [];
   public notmyprograms = [];
   public notStarted = [];
@@ -50,6 +54,12 @@ export class SubscriptionS09V02Page implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.isActiveSubscription = SharedService.isSubscriber();
+    if (sessionStorage.getItem('justSubscribed') === 'true') {
+      this.service.updateUserDetails.next(true);
+      this.isActiveSubscription = true;
+    }
+    this.retryCount = 0;
+    this.initialProgramCount = null;
     this.getProgramData();
     this.routerSub = this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
@@ -57,7 +67,12 @@ export class SubscriptionS09V02Page implements OnInit, OnDestroy {
       if (event.urlAfterRedirects.includes('myprogram') &&
           !event.urlAfterRedirects.includes('manage-subscription') &&
           !event.urlAfterRedirects.includes('cancel-subscription')) {
+        if (sessionStorage.getItem('justSubscribed') === 'true') {
+          this.service.updateUserDetails.next(true);
+        }
         this.isActiveSubscription = SharedService.isSubscriber();
+        this.retryCount = 0;
+        this.initialProgramCount = null;
         this.getProgramData();
       }
     });
@@ -79,23 +94,88 @@ export class SubscriptionS09V02Page implements OnInit, OnDestroy {
 
   getProgramData() {
     this.userId = JSON.parse(localStorage.getItem("userId"))
+    if (!this.userId) {
+      return;
+    }
+
+    const isJustSubscribed = sessionStorage.getItem('justSubscribed') === 'true';
+
     this.service.myprogram(this.userId)
       .subscribe(res => {
+        if (!res || !Array.isArray(res)) {
+          res = [];
+        }
+
         if (this.platform.IOS) {
           this.myprograms = res.filter((d) => new Date(d['ExpDate']).getTime() > new Date().getTime() && !d['ExpDate']?.includes('1900'))
           this.notmyprograms = res.filter((d) => new Date(d['ExpDate']).getTime() < new Date().getTime() && !d['ExpDate']?.includes('1900'));
           this.notStarted = res.filter((d) => d['ExpDate']?.includes('1900'));
         }
         else {
-          this.myprograms = res.filter((d) => d['Active'] === 1 && d['IOS'] == 0 && new Date(d['ExpDate']).getTime() > new Date().getTime() && !d['ExpDate']?.includes('1900'))
-          this.notmyprograms = res.filter((d) => d['Active'] === 0 && d['IOS'] == 0 && new Date(d['ExpDate']).getTime() < new Date().getTime() && !d['ExpDate']?.includes('1900'))
+          this.myprograms = res.filter((d) => d['Active'] == 1 && (!d['IOS'] || d['IOS'] == 0) && new Date(d['ExpDate']).getTime() > new Date().getTime() && !d['ExpDate']?.includes('1900'))
+          this.notmyprograms = res.filter((d) => d['Active'] == 0 && (!d['IOS'] || d['IOS'] == 0) && new Date(d['ExpDate']).getTime() < new Date().getTime() && !d['ExpDate']?.includes('1900'))
           this.notStarted = res.filter((d) => d['ExpDate']?.includes('1900'));
+        }
+
+        if (this.initialProgramCount === null) {
+          this.initialProgramCount = this.myprograms.length;
+        }
+
+        const hasNewSubscription = this.initialProgramCount === 0
+          ? this.myprograms.length > 0
+          : this.myprograms.length > this.initialProgramCount;
+
+        if (hasNewSubscription || (this.myprograms.length > 0 && !isJustSubscribed)) {
+          this.isActiveSubscription = true;
+          localStorage.setItem('Subscriber', '1');
+          sessionStorage.removeItem('justSubscribed');
+          if (this.pollTimeout) {
+            clearTimeout(this.pollTimeout);
+            this.pollTimeout = null;
+          }
+          this.retryCount = 0;
+
+          if (isJustSubscribed) {
+            setTimeout(() => {
+              const apElement = document.getElementById('ap');
+              if (apElement && !apElement.classList.contains('show')) {
+                apElement.classList.add('show');
+              }
+            }, 100);
+          }
+        } else if (isJustSubscribed && this.retryCount < this.maxRetries) {
+          this.retryCount++;
+          if (this.pollTimeout) {
+            clearTimeout(this.pollTimeout);
+          }
+          this.pollTimeout = setTimeout(() => {
+            this.getProgramData();
+          }, 1500);
+        } else if (!isJustSubscribed && this.retryCount === 0 && this.myprograms.length === 0) {
+          this.retryCount++;
+          if (this.pollTimeout) {
+            clearTimeout(this.pollTimeout);
+          }
+          this.pollTimeout = setTimeout(() => {
+            this.getProgramData();
+          }, 2000);
+        } else {
+          sessionStorage.removeItem('justSubscribed');
+          this.retryCount = 0;
         }
 
         this.dc.detectChanges()
       },
         (error: HttpErrorResponse) => {
-
+          if (isJustSubscribed && this.retryCount < this.maxRetries) {
+            this.retryCount++;
+            if (this.pollTimeout) {
+              clearTimeout(this.pollTimeout);
+            }
+            this.pollTimeout = setTimeout(() => {
+              this.getProgramData();
+            }, 2000);
+          }
         },
         () => {
           // this.router.navigate(["/onboarding/assign-key"])
@@ -116,12 +196,12 @@ export class SubscriptionS09V02Page implements OnInit, OnDestroy {
 
         alert('Successfully Invited');
         if (this.platform.IOS) {
-          this.myprograms = res.filter((d) => d['Active'] === 1)
-          this.notmyprograms = res.filter((d) => d['Active'] === 0);
+          this.myprograms = res.filter((d) => d['Active'] == 1)
+          this.notmyprograms = res.filter((d) => d['Active'] == 0);
         }
         else {
-          this.myprograms = res.filter((d) => d['Active'] === 1 && d['IOS'] == 0)
-          this.notmyprograms = res.filter((d) => d['Active'] === 0 && d['IOS'] == 0)
+          this.myprograms = res.filter((d) => d['Active'] == 1 && (!d['IOS'] || d['IOS'] == 0))
+          this.notmyprograms = res.filter((d) => d['Active'] == 0 && (!d['IOS'] || d['IOS'] == 0))
         }
         this.dc.detectChanges()
       },
@@ -206,6 +286,10 @@ export class SubscriptionS09V02Page implements OnInit, OnDestroy {
   ngOnDestroy() {
     if (this.routerSub) {
       this.routerSub.unsubscribe();
+    }
+    if (this.pollTimeout) {
+      clearTimeout(this.pollTimeout);
+      this.pollTimeout = null;
     }
   }
 

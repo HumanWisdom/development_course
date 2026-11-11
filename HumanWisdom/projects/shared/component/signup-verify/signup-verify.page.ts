@@ -184,7 +184,7 @@ export class SignupVerifyPage implements OnInit, OnDestroy {
           this.loginAndContinue();
         } else {
           this.codeError = true;
-          this.errorMessage = "The code you entered is incorrect. Please try again.";
+          this.errorMessage = "Invalid code. Please try again.";
           this.clearDigits();
         }
       },
@@ -192,7 +192,7 @@ export class SignupVerifyPage implements OnInit, OnDestroy {
         this.isVerifying = false;
         // A wrong code comes back as HTTP 400 with the reason in the response body
         this.codeError = true;
-        this.errorMessage = this.getApiMessage(err, "The code you entered is incorrect. Please try again.");
+        this.errorMessage = this.getApiMessage(err, "Invalid code. Please try again.");
         this.clearDigits();
       }
     );

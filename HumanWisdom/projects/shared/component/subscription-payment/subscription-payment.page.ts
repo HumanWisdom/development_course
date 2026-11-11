@@ -311,6 +311,9 @@ export class SubscriptionPaymentPage implements AfterViewInit {
 
               this.getOrderId();
               localStorage.setItem('personalised', 'F');
+              localStorage.setItem('Subscriber', '1');
+              sessionStorage.setItem('justSubscribed', 'true');
+              this.service.updateUserDetails.next(true);
               this.isLoading = false;
               this.content = 'Payment Successful';
               this.enableAlert = true;
@@ -380,6 +383,9 @@ export class SubscriptionPaymentPage implements AfterViewInit {
     if (isSuccess) {
       // Clear the subscription flow flag after successful payment
       localStorage.removeItem('cameFromSubscription');
+      localStorage.setItem('Subscriber', '1');
+      sessionStorage.setItem('justSubscribed', 'true');
+      this.service.updateUserDetails.next(true);
       this.router.navigate([`/${SharedService.getprogramName()}/onboarding/myprogram`]);
     }
     const nameEl = document.getElementById('name') as HTMLInputElement;
@@ -406,6 +412,9 @@ export class SubscriptionPaymentPage implements AfterViewInit {
     localStorage.setItem('personalised', 'F');
     // Clear the subscription flow flag after successful payment
     localStorage.removeItem('cameFromSubscription');
+    localStorage.setItem('Subscriber', '1');
+    sessionStorage.setItem('justSubscribed', 'true');
+    this.service.updateUserDetails.next(true);
     this.content = 'Payment Successful';
     this.enableAlert = true;
   }
