@@ -303,7 +303,7 @@ export class SubscriptionS01V04Page implements OnInit, OnDestroy {
                 this.secondpage = false;
                 this.fourthpage = true;
                 if (this.yearormonth == 'Year' && this.service.isActivationFlow) {
-                  this.router.navigate([`/${SharedService.getprogramName()}/hwp-premium-congratulations`]);
+                  this.router.navigate([`/${SharedService.getprogramName()}/subscription/free-trial`]);
                 }
               } else {
                 this.secondpage = false;
