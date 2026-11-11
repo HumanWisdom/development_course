@@ -1,6 +1,6 @@
 .sc_01 {
   min-height: 110vh !important;
-  padding: 0px 20px 30px;
+  padding: 0px 20px 90px;
 }
 .fc_000000_0_5{
   color: rgba(0, 0, 0, 0.5);
@@ -8,7 +8,7 @@
 }
 .tn_title_back{
    box-shadow: none;
-   z-index: auto;
+   z-index: 99 !important;
 }
 .header-section {
   text-align: center;
@@ -41,8 +41,23 @@
 }
 
 .bottom-actions {
-  margin-top: 35px;
-  margin-bottom: 25px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  height: 70px;
+  background: #FFF7E6;
+  box-shadow: 0 -2px 2px #00000010;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  padding: 0 20px;
+}
+
+.continue-btn-container {
+  width: 100%;
 }
 
 .skip-link {
