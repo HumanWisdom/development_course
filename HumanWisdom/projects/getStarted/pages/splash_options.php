@@ -65,6 +65,14 @@
           color: #d7586b !important;
           text-decoration: none !important;
         }
+        .splash-get-started:hover,
+        .splash-get-started:hover .chevron-pink,
+        .splash-get-started:hover .chevron-pink .bi,
+        .backcolor:hover .splash-get-started,
+        .backcolor:hover .splash-get-started .chevron-pink,
+        .backcolor:hover .splash-get-started .chevron-pink .bi {
+          color: #803358 !important;
+        }
         </style>
   </head>
 

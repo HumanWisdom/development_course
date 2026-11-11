@@ -154,6 +154,12 @@
   color: inherit;
 }
 
+.program-card:hover .program-card__cta,
+.program-card:hover .program-card__cta .chevron-pink,
+.program-card:hover .program-card__cta .chevron-pink .bi {
+  color: #803358;
+}
+
 @media (max-width: 899px) {
   .program-choice {
     background: #fff7e6;
