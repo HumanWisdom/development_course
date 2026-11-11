@@ -88,6 +88,8 @@ export class FreeTrialPage implements OnInit {
 
   manageSubscription(){
     this.clearData();
+    sessionStorage.setItem('justSubscribed', 'true');
+    this.onboardingService.updateUserDetails.next(true);
     this.router.navigateByUrl(`/${SharedService.getprogramName()}/onboarding/myprogram`);
   }
 

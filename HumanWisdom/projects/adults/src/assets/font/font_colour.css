@@ -19,6 +19,11 @@
     color: #000000 !important;
 }
 
+.fc_000000_0_75
+{
+    color: rgba(0, 0, 0, 0.75) !important;
+}
+
 .fc_5d5d5d
 {
     color: #5D5D5D;

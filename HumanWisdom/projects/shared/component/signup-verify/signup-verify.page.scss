@@ -1,5 +1,5 @@
-// Error red already used by the app (.red / .border-red / .alert-danger in custom.css)
-$error-red: #e74c3c;
+// Error colour used for wrong-code messages and verifying state
+$error-red: #E58D82;
 
 :host {
   display: block;
@@ -197,6 +197,10 @@ a.verify_link.verify_link_disabled {
     color: #fff;
   }
   
+  .verify_error {
+    color: #E58D82;
+  }
+
   .verify_timer{
     color: #FFFFFF80;
   }
