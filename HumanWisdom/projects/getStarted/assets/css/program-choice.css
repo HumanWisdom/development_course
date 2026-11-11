@@ -126,10 +126,10 @@
 }
 
 .program-card__cta {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 9px;
+  gap: 6px;
   padding: 20px 0;
   color: #d7586b;
   font-family: Poppins, sans-serif;
@@ -138,9 +138,20 @@
   line-height: 1.4;
 }
 
-.program-card__cta .bi {
-  font-size: 14px;
+/* Chevron sized to sit with “Get started” label */
+.program-card__cta .chevron-pink {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  color: rgba(215, 88, 107, 1);
+  padding-top: 1px;
   line-height: 1;
+}
+
+.program-card__cta .chevron-pink .bi {
+  font-size: 11px;
+  line-height: 1;
+  color: inherit;
 }
 
 @media (max-width: 899px) {
@@ -217,7 +228,8 @@
     padding: 0;
   }
 
-  .program-card__cta .bi {
-    font-size: 10px;
+  .program-card__cta .chevron-pink,
+  .program-card__cta .chevron-pink .bi {
+    font-size: 8px;
   }
 }
