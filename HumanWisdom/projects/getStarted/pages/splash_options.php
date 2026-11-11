@@ -34,24 +34,45 @@
       <link href="../assets/font/font_weight.css" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
       <link href="../assets/font/line_height.css" rel="stylesheet">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 
-      <!-- <link href="../assets/css/index-inline.css" rel="stylesheet">  -->
        <style>
-       
-        {
-          /* font-family: verdana; */
-          font-family:poppins !important;
+        body {
+          font-family: Poppins, sans-serif !important;
         }
-        #scrollTopArrow
-        {
+        #scrollTopArrow {
           display: none !important;
         }
-
-        /* chevron-pink {
-    font-size: 12px;
-    color: #d7586b;
-    padding-top: 3px;
-} */
+        /* Chevron sized to match 12px “Get started” label */
+        .chevron-pink {
+          display: inline-flex;
+          align-items: center;
+          font-size: 9px;
+          color: rgba(215, 88, 107, 1);
+          padding-top: 1px;
+          line-height: 1;
+        }
+        .chevron-pink .bi {
+          font-size: 9px;
+          line-height: 1;
+          color: inherit;
+        }
+        .splash-get-started {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 4px;
+          color: #d7586b !important;
+          text-decoration: none !important;
+        }
+        .splash-get-started:hover,
+        .splash-get-started:hover .chevron-pink,
+        .splash-get-started:hover .chevron-pink .bi,
+        .backcolor:hover .splash-get-started,
+        .backcolor:hover .splash-get-started .chevron-pink,
+        .backcolor:hover .splash-get-started .chevron-pink .bi {
+          color: #803358 !important;
+        }
         </style>
   </head>
 
@@ -102,10 +123,10 @@ Understand yourself. Feel better. Build happier relationships.              </h4
 
                   <span class="chevron-pink"><span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span>
                 </a> -->
-                   <a style="color: #D7586B; text-decoration:none !important;" href="https://staging.happierme.app/teenagers/onboarding/login"class="mtb10px fs_12px fw_600 lh_140p" > 
-                         Get started   
-              <span class="chevron-pink"><span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span>  
-                        </a> 
+                   <a class="splash-get-started mtb10px fs_12px fw_600 lh_140p" href="https://staging.happierme.app/teenagers/onboarding/login">
+                         Get started
+              <span class="chevron-pink"><span style="-webkit-text-stroke: 1px;" class="bi bi-chevron-right" aria-hidden="true"></span></span>
+                        </a>
             </div>
           </a>
         </div>
@@ -122,9 +143,10 @@ Understand yourself. Feel better. Build happier relationships.              </h4
                 <h4 class="mtb5px fs_12px fw_400 lh_140p fc_000000">
 Understand yourself, manage emotions and build happier relationships.              
 </h4>
- <span><a  style="color: #D7586B;" href="https://staging.happierme.app/adults/onboarding/login"class="mtb0px fs_12px fw_600 lh_140p  " > 
-                         Get started   
-                         </a> 
+ <a class="splash-get-started mtb10px fs_12px fw_600 lh_140p" href="https://staging.happierme.app/adults/onboarding/login">
+                         Get started
+              <span class="chevron-pink"><span style="-webkit-text-stroke: 1px;" class="bi bi-chevron-right" aria-hidden="true"></span></span>
+                         </a>
             </div>
           </a>
         </div>
