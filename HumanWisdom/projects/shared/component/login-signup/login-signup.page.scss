@@ -67,7 +67,6 @@ background: none !important;
 #googleBtnSignupWrapper,
 #googleBtnLoginWrapper {
   padding: 0 !important;
-  border: none !important;
   outline: none !important;
   display: flex;
   align-items: center;
@@ -85,7 +84,6 @@ background: none !important;
   &:hover {
     outline: none !important;
     box-shadow: none !important;
-            border: none !important;
   }
   
   // Hide the actual Google button but keep it functional
