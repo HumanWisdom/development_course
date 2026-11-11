@@ -195,10 +195,7 @@ export class PaymentPage implements AfterViewInit {
 
               this.enableAlert = true;
               // alert('Your Payment Is Successfully Submitted');
-              if (localStorage.getItem('ispartnershipClick') == 'T') {
-                this.router.navigate(['/adults/hwp-premium-congratulations']);
-              }
-              this.router.navigate(['/onboarding/myprogram'])
+              this.router.navigate([`/${SharedService.getprogramName()}/subscription/free-trial`]);
               // Successful subscription payment
             }
 

@@ -258,11 +258,11 @@ describe('SubscriptionPaymentPage', () => {
       expect(component.enableAlert).toBe(false);
     });
 
-    it('should navigate to myprogram when content was Payment Successful', () => {
+    it('should navigate to subscription/free-trial when content was Payment Successful', () => {
       component.content = 'Payment Successful';
       component.enableAlert = true;
       component.getAlertcloseEvent('continue');
-      expect(mockRouter.navigate).toHaveBeenCalledWith(['/adults/onboarding/myprogram']);
+      expect(mockRouter.navigate).toHaveBeenCalledWith(['/adults/subscription/free-trial']);
     });
 
     it('should not navigate when content was not Payment Successful', () => {
