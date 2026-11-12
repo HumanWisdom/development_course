@@ -12,8 +12,8 @@
     <meta property="og:type" content="website" />
     <meta property="og:description" content="Improve employee wellbeing and build life skills with HappierMe. Develop emotional intelligence, communication and stronger workplace relationships.">
     
-    <meta property="og:image" content="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/imgs/website_share.jpg" />
-    <meta property="og:image:alt" content="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/imgs/website_share.jpg" />
+    <meta property="og:image" content="https://d1tenzemoxuh75.cloudfront.net/website/imgs/website_share.jpg" />
+    <meta property="og:image:alt" content="https://d1tenzemoxuh75.cloudfront.net/website/imgs/website_share.jpg" />
     <meta property="og:image:width" content="414" />
     <meta property="og:image:height" content="232" />
     <meta property="og:title" content="HappierMe:For Teens & Adults">
@@ -208,11 +208,11 @@
 
               <div class="row prelative" data-aos="fade-up" data-aos-delay="100">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 mt3rem">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/workkk.webp" class="img-responsive w100p display_m_none h-800" alt="Build a happier, more capable workforce">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/workkk.webp" class="img-responsive w100p display_m_none h-800" alt="Build a happier, more capable workforce">
 
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/work_mobile.webp" class="img-responsive w100p display_d_none" alt="Build a happier, more capable workforce">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/work_mobile.webp" class="img-responsive w100p display_d_none" alt="Build a happier, more capable workforce">
 
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/work_widescreen.webp" class="img-responsive w100p display_m_none wide-screen-only" loading="lazy" alt="Build a happier, more capable workforce">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/work_widescreen.webp" class="img-responsive w100p display_m_none wide-screen-only" loading="lazy" alt="Build a happier, more capable workforce">
                 </div>
               </div>
 
@@ -339,7 +339,7 @@
               type="button"
               aria-label="Play HappierMe for Teens video">
               <img
-                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/Youtube+player.webp"
+                src="https://d1tenzemoxuh75.cloudfront.net/website/webp/Youtube+player.webp"
                 alt="HappierMe for Teens video cover" />
             </button>
             <iframe
@@ -412,7 +412,7 @@
             <div class="work-measure-band" aria-hidden="true"></div>
             <div class="work-measure-inner" data-aos="fade-up" data-aos-delay="100">
               <div class="work-measure-media">
-                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/measureee.webp" class="img-responsive" alt="Organization Dashboard">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/measureee.webp" class="img-responsive" alt="Organization Dashboard">
               </div>
               <div class="work-measure-copy">
                 <h2>Measure well-being. Drive performance.</h2>
@@ -443,7 +443,7 @@
                     <div class="item" data-aos="fade-up" data-aos-delay="200">
                       <div class="div_testimonials work-testimonial-card">
                         <div class="work-testimonial-header">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_julie_goodfellow.webp" class="work-testimonial-avatar" alt="Julie Goodfellow" loading="lazy">
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_julie_goodfellow.webp" class="work-testimonial-avatar" alt="Julie Goodfellow" loading="lazy">
                           <div class="work-testimonial-meta">
                             <p class="work-testimonial-name">Julie Goodfellow</p>
                             <p class="work-testimonial-role">Headteacher, UK</p>
@@ -469,7 +469,7 @@
                     <div class="item" data-aos="fade-up" data-aos-delay="400">
                       <div class="div_testimonials work-testimonial-card">
                         <div class="work-testimonial-header">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_jondi_whitis.webp" class="work-testimonial-avatar" alt="Jondi Whitis" loading="lazy">
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_jondi_whitis.webp" class="work-testimonial-avatar" alt="Jondi Whitis" loading="lazy">
                           <div class="work-testimonial-meta">
                             <p class="work-testimonial-name">Jondi Whitis</p>
                             <p class="work-testimonial-role">EFT trainer and coach, USA</p>
@@ -538,42 +538,42 @@
               </div>
               <div class="work-skills-grid">
                 <article class="work-skill-card">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/inspire_well_being.svg" class="work-skill-icon" width="46" height="46" alt="">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/inspire_well_being.svg" class="work-skill-icon" width="46" height="46" alt="">
                   <div>
                     <h3 class="work-skill-title">Self-awareness</h3>
                     <p class="work-skill-text">Understand the thoughts, emotions and patterns behind your behaviour to think clearly and respond thoughtfully.</p>
                   </div>
                 </article>
                 <article class="work-skill-card">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/inspire_intelligence.svg" class="work-skill-icon" width="46" height="46" alt="">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/inspire_intelligence.svg" class="work-skill-icon" width="46" height="46" alt="">
                   <div>
                     <h3 class="work-skill-title">Emotional intelligence and resilience</h3>
                     <p class="work-skill-text">Understand and manage your emotions, navigate stress and uncertainty, and respond constructively to life's challenges.</p>
                   </div>
                 </article>
                 <article class="work-skill-card">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/inspire_dealing_criticism.svg" class="work-skill-icon" width="46" height="46" alt="">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/inspire_dealing_criticism.svg" class="work-skill-icon" width="46" height="46" alt="">
                   <div>
                     <h3 class="work-skill-title">Communication &amp; relationships</h3>
                     <p class="work-skill-text">Communicate with clarity and empathy, handle criticism, resolve conflict and build stronger working relationships.</p>
                   </div>
                 </article>
                 <article class="work-skill-card">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/inspire_critical_thinking.svg" class="work-skill-icon" width="46" height="46" alt="">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/inspire_critical_thinking.svg" class="work-skill-icon" width="46" height="46" alt="">
                   <div>
                     <h3 class="work-skill-title">Critical thinking &amp; decision-making</h3>
                     <p class="work-skill-text">Recognise biases, question assumptions and develop sound judgement to make better decisions.</p>
                   </div>
                 </article>
                 <article class="work-skill-card">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/inspire_productivity.svg" class="work-skill-icon" width="46" height="46" alt="">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/inspire_productivity.svg" class="work-skill-icon" width="46" height="46" alt="">
                   <div>
                     <h3 class="work-skill-title">Adaptability &amp; growth</h3>
                     <p class="work-skill-text">Embrace change, overcome fear of the unfamiliar and develop the confidence to learn and grow.</p>
                   </div>
                 </article>
                 <article class="work-skill-card">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/inspire_leadership.svg" class="work-skill-icon" width="46" height="46" alt="">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/inspire_leadership.svg" class="work-skill-icon" width="46" height="46" alt="">
                   <div>
                     <h3 class="work-skill-title">Leadership &amp; collaboration</h3>
                     <p class="work-skill-text">Learn to lead from within - with empathy, courage and good judgement, and work more effectively with others.</p>
