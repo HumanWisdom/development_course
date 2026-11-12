@@ -191,8 +191,8 @@
             <div class="work-section-inner">
               <div class="work-section-head">
                 <h2 class="work-section-title">
-                  <span class="work-copy-desktop">Improve performance and productivity<br>with HappierMe</span>
-                  <span class="work-copy-mobile">Inspiring fresh ways of thinking</span>
+                  <span class="work-copy-desktop display_m_none">Improve performance and productivity<br>with HappierMe</span>
+                  <span class="work-copy-mobile display_d_none">Inspiring fresh ways of thinking</span>
                 </h2>
               </div>
               <div class="work-pillars">
@@ -254,38 +254,40 @@
             </div>
           </section> -->
 
-           <!-- video -->
-   <section class="work-section work-video-section">
-      <div class="section-header-teen">
-        <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
-           <div class="work-section-head">
-                <h2 class="work-section-title">Boost human skills to thrive at work</h2>
+          <!-- video -->
+          <section class="work-section work-video-section">
+            <div class="section-header-teen">
+              <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
+                <div class="work-section-head">
+                  <h2 class="work-section-title">Boost human skills to thrive at work</h2>
+                </div>
               </div>
-        </div>
-      </div>
+            </div>
 
-      <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
-        <div class="col-lg-6 col-md-6 col-sm-10 col-xs-10 col-10 p0 w-980px teen-video-wrap">
-          <div class="youtube-player teen-youtube-player">
-            <button
-              id="teenYoutubeCover"
-              type="button"
-              aria-label="Play HappierMe for Teens video">
-              <img
-                src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/Youtube+player.webp"
-                alt="HappierMe for Teens video cover" />
-            </button>
-            <iframe
-                  loading="lazy"
-                  title="How to Boost Wellbeing and Productivity Using Human Skills"
-                  src="https://www.youtube.com/embed/ROP4llA74DA?si=6Zk3KCbtVKEohzVg"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- /video -->
+            <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
+              <div class="col-lg-12 col-md-12 col-sm-10 col-xs-10 col-10 p0 work-video-wrap">
+                <div class="youtube-player work-youtube-player">
+                  <button
+                    id="workYoutubeCover"
+                    type="button"
+                    aria-label="Play HappierMe for Work video">
+                    <img
+                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/Youtube+player.webp"
+                      alt="How to Boost Wellbeing and Productivity Using Human Skills" />
+                  </button>
+                  <iframe
+                    id="workYoutube"
+                    class="yt-embed"
+                    src="about:blank"
+                    data-src="https://www.youtube-nocookie.com/embed/ROP4llA74DA?autoplay=1&rel=0&modestbranding=1&playsinline=1"
+                    title="How to Boost Wellbeing and Productivity Using Human Skills"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+                    allowfullscreen></iframe>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- /video -->
 
 
           <!-- Why different -->
@@ -294,8 +296,8 @@
               <div class="work-section-head">
                 <h2 class="work-section-title">Why HappierMe is different</h2>
                 <p class="work-section-sub">
-                  <span class="work-copy-desktop">Most apps help you cope. HappierMe helps you understand yourself and change.</span>
-                  <span class="work-copy-mobile">Most apps help you cope.<br>We help you change.</span>
+                  <span class="work-copy-desktop display_m_none">Most apps help you cope. HappierMe helps you understand yourself and change.</span>
+                  <span class="work-copy-mobile display_d_none">Most apps help you cope.<br>We help you change.</span>
                 </p>
               </div>
               <div class="work-diff-cards">
@@ -351,7 +353,7 @@
                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/measureee.webp" class="img-responsive" alt="Organization Dashboard">
               </div>
               <div class="work-measure-copy">
-                <h2 class="work-section-title">Measure well-being. Drive performance.</h2>
+                <h2 class="work-section-title">Measure well-being.<br class="display_m_none"> Drive performance.</h2>
                 <p>Give HR teams a clear view of employee engagement and wellness with actionable insights that help build healthier, more productive workplaces.</p>
                 <p>All data is anonymised, so individuals cannot be identified.</p>
               </div>
@@ -364,8 +366,8 @@
               <div class="row center_flex tcenter" data-aos="fade-up" data-aos-delay="100">
                 <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
                   <h2 class="mtb0px fw_600 fc_000000 work-testimonials-title">
-                    <span class="work-copy-desktop">The HappierMe impact across<br>organisations</span>
-                    <span class="work-copy-mobile">The HappierMe impact across organisations</span>
+                    <span class="work-copy-desktop display_m_none">The HappierMe impact across<br>organisations</span>
+                    <span class="work-copy-mobile display_d_none">The HappierMe impact across organisations</span>
                   </h2>
                 </div>
               </div>
@@ -439,8 +441,8 @@
             <div class="work-section-inner">
               <div class="work-section-head">
                 <h2 class="work-section-title">
-                  <span class="work-copy-desktop">Multiple workplace challenges.<br>One proactive solution.</span>
-                  <span class="work-copy-mobile">Multiple workplace challenges. One proactive solution.</span>
+                  <span class="work-copy-desktop display_m_none">Multiple workplace challenges.<br>One proactive solution.</span>
+                  <span class="work-copy-mobile display_d_none">Multiple workplace challenges. One proactive solution.</span>
                 </h2>
                 <p class="work-section-sub">HappierMe helps address these challenges by building self-awareness<br class="display_m_none"> and emotional skills across the workforce</p>
               </div>
@@ -474,8 +476,8 @@
             <div class="work-section-inner">
               <div class="work-section-head">
                 <h2 class="work-section-title">
-                  <span class="work-copy-desktop">Building human skills to thrive<br>in the age of AI</span>
-                  <span class="work-copy-mobile">Building human skills to thrive in the age of AI</span>
+                  <span class="work-copy-desktop display_m_none">Building human skills to thrive<br>in the age of AI</span>
+                  <span class="work-copy-mobile display_d_none">Building human skills to thrive in the age of AI</span>
                 </h2>
                 <p class="work-section-sub">As AI transforms the workplace, human skills matter more than ever. HappierMe helps employees build these skills to thrive at work and beyond.</p>
               </div>
@@ -610,10 +612,10 @@
             <div class="work-blog-footer">
               <a class="sap work-blog-more" href="https://happierme.app/adults/blogs">
                 <h4 class="mtb0px fs_18px fw_500 lh_150p td_underline">
-                  <span class="work-copy-desktop">View all blogs</span>
-                  <span class="work-copy-mobile">Find out more</span>
+                  <span class="work-copy-desktop display_m_none">View all blogs</span>
+                  <span class="work-copy-mobile display_d_none">Find out more</span>
                 </h4>
-                <span class="chevron-pink work-copy-desktop"><span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span>
+                <span class="chevron-pink work-copy-desktop display_m_none"><span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span>
               </a>
               <div class="owl-theme mt10px work-blog-nav">
                 <div class="owl-controls">
@@ -643,7 +645,42 @@
     <link rel="stylesheet" href="<?= hw_asset_url('../assets/css/work.css'); ?>">
     <!-- Force Figma mobile title size (beats deferred index.css 18px hammer) -->
     <style id="work-mobile-title-figma">
+      /* Measure: kill desktop flex-basis height leak above the tablet image */
+      @media (max-width: 1200px) {
+        body.page-work .work-measure-copy {
+          flex: 0 0 auto !important;
+          flex-basis: auto !important;
+          min-width: 0 !important;
+          height: auto !important;
+        }
+      }
       @media (max-width: 767px) {
+        body.page-work .work-measure,
+        body.page-work .work-measure-inner {
+          height: auto !important;
+          min-height: 0 !important;
+        }
+        body.page-work .work-measure-inner {
+          flex-direction: column !important;
+          gap: 18px !important;
+          padding: 0 !important;
+        }
+        body.page-work .work-measure-copy {
+          order: -1 !important;
+          flex: 0 0 auto !important;
+          flex-basis: auto !important;
+          min-width: 0 !important;
+          width: 100% !important;
+          max-width: 335px !important;
+          height: auto !important;
+          margin: 0 !important;
+          padding: 0 !important;
+        }
+        body.page-work .work-measure-media {
+          flex: 0 0 auto !important;
+          margin: 0 !important;
+          padding: 0 !important;
+        }
         body.page-work main#main h2.work-testimonials-title,
         body.page-work main#main h2.work-section-title,
         body.page-work main#main h2.work-blog-title,
@@ -670,8 +707,23 @@
         body.page-work main#main .work-measure-copy h2 {
           line-height: 1.4 !important;
         }
-        body.page-work main#main h2.work-blog-title {
+        body.page-work main#main h2.work-blog-title,
+        body.page-work .work-blog-header h2.work-blog-title {
           line-height: 1.2 !important;
+          display: block !important;
+          width: 100% !important;
+          max-width: 335px !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+          text-align: center !important;
+        }
+        body.page-work .work-blog-header,
+        body.page-work .work-blog-header .row.center_flex,
+        body.page-work .work-blog-header [class*="col-"] {
+          width: 100% !important;
+          max-width: 100% !important;
+          text-align: center !important;
+          justify-content: center !important;
         }
         body.page-work #bring_happierme h2.work-demo-title {
           line-height: 1.5 !important;
@@ -680,13 +732,16 @@
         body.page-work main#main .work-diff-section h2.work-section-title {
           line-height: 1.2 !important;
         }
-        /* Beat responsive.css span { 12px } leak on mobile title copy */
+        /* One title only: hide desktop copy; size mobile copy (beat span { 12px } leak) */
+        body.page-work main#main h2 .work-copy-desktop,
+        body.page-work main#main .work-copy-desktop {
+          display: none !important;
+        }
         body.page-work main#main h2.work-section-title .work-copy-mobile,
         body.page-work main#main h2.work-testimonials-title .work-copy-mobile,
         body.page-work main#main h2.work-blog-title .work-copy-mobile,
-        body.page-work main#main h2.work-section-title span,
-        body.page-work main#main h2.work-testimonials-title span,
         body.page-work section.hpt120px ~ main#main section h2 .work-copy-mobile {
+          display: inline !important;
           font-family: Poppins, sans-serif !important;
           font-size: 24px !important;
           font-weight: 600 !important;
@@ -699,14 +754,14 @@
     <script>
       (function () {
         var workTestimonialsMode = null;
+        var workBlogMode = null;
 
-        function ensureTestimonialItems($tc) {
-          var $items = $tc.find('.item');
+        function flattenCarouselItems($carousel) {
+          var $items = $carousel.find('.item');
           if (!$items.length) return $();
-          // Flatten so .item are direct children (needed after Owl or native mode)
           $items.detach();
-          $tc.children().remove();
-          $tc.append($items);
+          $carousel.children().remove();
+          $carousel.append($items);
           return $items;
         }
 
@@ -717,7 +772,6 @@
           var isMobile = window.matchMedia('(max-width: 767px)').matches;
           var nextMode = isMobile ? 'mobile' : 'desktop';
 
-          // Avoid destroying/rebuilding on every resize pixel
           if (workTestimonialsMode === nextMode) {
             if (nextMode === 'desktop' && !$tc.hasClass('owl-loaded') && typeof $.fn.owlCarousel === 'function') {
               // fall through to (re)init
@@ -732,7 +786,7 @@
             } catch (e) {}
           }
 
-          ensureTestimonialItems($tc);
+          flattenCarouselItems($tc);
           $tc.removeClass('work-testimonials-native owl-loaded owl-drag owl-grab');
           $tc.css({ display: '', flexDirection: '', flexWrap: '', overflowX: '', overflowY: '' });
 
@@ -752,7 +806,6 @@
             loop: false,
             margin: 30,
             nav: false,
-            /* Fit 3 full cards — autoWidth caused the last card to clip */
             autoWidth: false,
             dots: false,
             touchDrag: true,
@@ -767,11 +820,82 @@
           workTestimonialsMode = 'desktop';
         }
 
+        /* Match index Explore our blog: native swipe strip with 306px cards + peek */
+        function initWorkBlogCarousel() {
+          var $blog = $('body.page-work .owl_blog .owl-carousel');
+          var $nav = $('body.page-work .work-blog-nav .owl-nav, body.page-work .owl_blog .owl-nav');
+          if (!$blog.length) return;
+
+          var isMobile = window.matchMedia('(max-width: 767px)').matches;
+          var nextMode = isMobile ? 'mobile' : 'desktop';
+
+          if (workBlogMode === nextMode) {
+            if (nextMode === 'desktop' && !$blog.hasClass('owl-loaded') && typeof $.fn.owlCarousel === 'function') {
+              // fall through
+            } else if (nextMode === 'mobile' && !$blog.hasClass('work-blog-native')) {
+              // fall through — convert leftover Owl
+            } else {
+              return;
+            }
+          }
+
+          if ($blog.hasClass('owl-loaded')) {
+            try {
+              $blog.trigger('destroy.owl.carousel');
+            } catch (e) {}
+          }
+
+          flattenCarouselItems($blog);
+          $blog.removeClass('work-blog-native owl-loaded owl-drag owl-grab');
+          $blog.css({ display: '', flexDirection: '', flexWrap: '', overflowX: '', overflowY: '', padding: '' });
+
+          if (isMobile) {
+            $blog.addClass('work-blog-native');
+            workBlogMode = 'mobile';
+            return;
+          }
+
+          if (typeof $.fn.owlCarousel !== 'function') {
+            workBlogMode = null;
+            return;
+          }
+
+          $blog.owlCarousel({
+            stagePadding: 50,
+            loop: false,
+            margin: 40,
+            nav: true,
+            autoWidth: true,
+            dots: false,
+            touchDrag: true,
+            mouseDrag: true,
+            pullDrag: true,
+            navText: [
+              '<span class="bi bi-chevron-left"></span>',
+              '<span class="bi bi-chevron-right"></span>'
+            ],
+            navContainer: $nav.length ? $nav : false,
+            responsive: {
+              0: { items: 1 },
+              600: { items: 3 },
+              1000: { items: 3 }
+            }
+          });
+          workBlogMode = 'desktop';
+        }
+
         function scheduleInit() {
           initWorkTestimonialsCarousel();
-          // Owl may load slightly after this inline script
-          setTimeout(initWorkTestimonialsCarousel, 100);
-          setTimeout(initWorkTestimonialsCarousel, 500);
+          initWorkBlogCarousel();
+          setTimeout(function () {
+            initWorkTestimonialsCarousel();
+            initWorkBlogCarousel();
+          }, 100);
+          setTimeout(function () {
+            initWorkTestimonialsCarousel();
+            initWorkBlogCarousel();
+          }, 500);
+          setTimeout(initWorkBlogCarousel, 900);
         }
 
         if (document.readyState === 'loading') {
@@ -782,8 +906,42 @@
         window.addEventListener('load', scheduleInit);
         window.addEventListener('resize', function () {
           initWorkTestimonialsCarousel();
+          initWorkBlogCarousel();
         });
       })();
+    </script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var workFrame = document.getElementById('workYoutube');
+        var workCover = document.getElementById('workYoutubeCover');
+        if (workFrame && workCover) {
+          workCover.addEventListener('click', function () {
+            if (!workFrame.src || workFrame.src === 'about:blank' || workFrame.src.indexOf('about:blank') !== -1) {
+              workFrame.src = workFrame.getAttribute('data-src');
+            }
+            workCover.style.display = 'none';
+          });
+        }
+
+        /* Hero “Request a demo” → Bring HappierMe to your organization (#bring_happierme) */
+        var demoBtn = document.getElementById('requestDemoForWork');
+        var demoSection = document.getElementById('bring_happierme');
+        if (demoBtn && demoSection) {
+          demoBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            var header = document.querySelector('.header_fixed');
+            var offset = header ? header.offsetHeight + 16 : 180;
+            var top = demoSection.getBoundingClientRect().top + window.pageYOffset - offset;
+            window.scrollTo({ top: top, behavior: 'smooth' });
+            if (history.replaceState) {
+              history.replaceState(null, '', '#bring_happierme');
+            } else {
+              window.location.hash = 'bring_happierme';
+            }
+          });
+        }
+      });
     </script>
 
   </body>

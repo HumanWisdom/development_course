@@ -170,6 +170,30 @@ body.page-work .req_button.work-hero-btn {
   font-size: 15px !important;
   font-weight: 600 !important;
   line-height: 1.4 !important;
+  color: #fff !important;
+  text-decoration: none !important;
+  transition: background 0.3s;
+}
+
+/* Match index .div-wrapper-4 / .btn_tff hover */
+body.page-work .work-hero-ctas .btn_tff:hover,
+body.page-work .work-hero-ctas .btn_tff:focus:hover,
+body.page-work .work-hero-ctas .btn_tff:active,
+body.page-work .work-hero-ctas .req_button:hover,
+body.page-work .work-hero-ctas .req_button:focus:hover,
+body.page-work .work-hero-ctas .req_button:active,
+body.page-work .work-hero-ctas a.work-hero-btn:hover,
+body.page-work .work-hero-ctas a.work-hero-btn:focus:hover,
+body.page-work .work-hero-ctas a.work-hero-btn:active,
+body.page-work .healthcare-hero-shell .absolute_desc_m .work-hero-ctas .btn_tff:hover,
+body.page-work .healthcare-hero-shell .absolute_desc_m .work-hero-ctas .btn_tff:active,
+body.page-work .healthcare-hero-shell .absolute_desc_m .work-hero-ctas .req_button:hover,
+body.page-work .healthcare-hero-shell .absolute_desc_m .work-hero-ctas .req_button:active,
+body.page-work .req_button.work-hero-btn:hover,
+body.page-work .req_button.work-hero-btn:active {
+  background: linear-gradient(180deg, #da7d71 0%, #bf5061 100%) !important;
+  color: #fff !important;
+  text-decoration: none !important;
 }
 
 /* ---------- 2. Trust bar (1440×105) ---------- */
@@ -309,18 +333,49 @@ body.page-work .work-pillar-text {
   color: #000;
 }
 
-/* ---------- 4. Video (title lh 1.2, gap 60, player 810×456) ---------- */
-body.page-work .work-video-section .work-section-inner {
+/* ---------- 4. Video (title lh 1.2, gap 60, player 810×456, centered) ---------- */
+body.page-work .work-video-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 60px;
+}
+
+body.page-work .work-video-section .work-section-inner,
+body.page-work .work-video-section .section-header-teen {
+  width: 100%;
   max-width: 810px;
 }
 
 body.page-work .work-video-section .work-section-title {
   line-height: 1.2;
   white-space: nowrap;
+  text-align: center;
+}
+
+body.page-work .work-video-section > .row.center_flex {
+  width: 100%;
+  justify-content: center !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
 body.page-work .work-video-wrap {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+  max-width: min(810px, calc(100% - 40px)) !important;
+  flex: 0 1 810px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  float: none !important;
+  padding: 0 !important;
+}
+
+body.page-work .work-video-wrap .work-youtube-player,
+body.page-work .work-video-wrap .youtube-player {
+  position: relative;
   width: 100%;
   max-width: 810px;
   height: 455.625px;
@@ -330,10 +385,32 @@ body.page-work .work-video-wrap {
   background: #111;
 }
 
+body.page-work .work-video-wrap .youtube-player .yt-embed,
 body.page-work .work-video-wrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  border: 0;
+  display: block;
+}
+
+body.page-work #workYoutubeCover {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
+  z-index: 2;
+}
+
+body.page-work #workYoutubeCover img {
   width: 100%;
   height: 100%;
-  border: 0;
+  object-fit: cover;
   display: block;
 }
 
@@ -445,6 +522,7 @@ body.page-work .work-measure-band {
   box-sizing: border-box;
 }
 
+/* Figma: image 503 + gap + copy 417 ≈ 980 — no side padding or copy collapses and title wraps to 3 lines */
 body.page-work .work-measure-inner {
   position: relative;
   z-index: 1;
@@ -452,7 +530,7 @@ body.page-work .work-measure-inner {
   max-width: 980px;
   height: 630px;
   margin: 0 auto;
-  padding: 0 50px;
+  padding: 0;
   display: flex;
   align-items: center;
   gap: 60px;
@@ -460,7 +538,7 @@ body.page-work .work-measure-inner {
 }
 
 body.page-work .work-measure-media {
-  flex: 0 0 503px;
+  flex: 0 0 auto;
   max-width: 503px;
   width: 503px;
   height: 630px;
@@ -475,28 +553,38 @@ body.page-work .work-measure-media img {
   height: 600px;
   display: block;
   transform: rotate(-3.88deg);
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: none;
   object-fit: contain;
 }
 
+/* Figma Frame 14265: Fill ~417 × Hug, gap 24 — title fits 2 lines at 36/600.
+   Use width (not flex-basis: 417px) so column breakpoints don't force 417px HEIGHT. */
 body.page-work .work-measure-copy {
   position: relative;
   z-index: 1;
-  flex: 1;
-  min-width: 0;
+  flex: 0 0 auto;
+  width: 417px;
   max-width: 417px;
+  min-width: 417px;
+  height: auto;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 24px;
+  box-sizing: border-box;
 }
 
-body.page-work .work-measure-copy h2 {
+body.page-work .work-measure-copy h2,
+body.page-work .work-measure-copy h2.work-section-title {
   margin: 0;
+  width: 100%;
+  max-width: 100%;
   font-family: Poppins, sans-serif;
   font-size: 36px;
   font-weight: 600;
   line-height: 1.3;
   color: #000;
+  text-align: left;
+  white-space: normal;
 }
 
 body.page-work .work-measure-copy p {
@@ -506,6 +594,29 @@ body.page-work .work-measure-copy p {
   font-weight: 400;
   line-height: 1.5;
   color: #000;
+}
+
+/* Mid desktop: keep 2-line title — shrink image before squeezing copy */
+@media (max-width: 1100px) and (min-width: 768px) {
+  body.page-work .work-measure-inner {
+    max-width: 100%;
+    padding: 0 40px;
+    gap: 40px;
+  }
+
+  body.page-work .work-measure-media {
+    flex: 0 1 420px;
+    width: auto;
+    max-width: 420px;
+  }
+
+  body.page-work .work-measure-copy {
+    flex: 1 1 auto;
+    width: auto;
+    min-width: min(417px, 100%);
+    max-width: 417px;
+    height: auto;
+  }
 }
 
 /* ---------- 7. Testimonials (cards ~433×351, gap 20, title 36) ---------- */
@@ -623,6 +734,20 @@ body.page-work .work-challenge-cite {
   color: #fff7e6;
 }
 
+/* Beat global p:hover { color: #000 } — keep cream text on hover */
+body.page-work .work-challenge-card p,
+body.page-work .work-challenge-card p:hover,
+body.page-work .work-challenge-card:hover p,
+body.page-work .work-challenge-stat,
+body.page-work .work-challenge-stat:hover,
+body.page-work .work-challenge-text,
+body.page-work .work-challenge-text:hover,
+body.page-work .work-challenge-cite,
+body.page-work .work-challenge-cite:hover {
+  color: #fff7e6 !important;
+  text-decoration: none !important;
+}
+
 /* ---------- 9. Human skills (cards 313×355 / 301, gap 20, pad 36) ---------- */
 body.page-work .work-skills-section {
   padding-bottom: 100px;
@@ -682,8 +807,16 @@ body.page-work .work-skill-text {
 }
 
 /* ---------- 10. Demo form (title 36/1.2, CTAs 47, gap 10) ---------- */
+/* Clear fixed header (logo + cream subnav) when hero “Request a demo” jumps here */
 body.page-work #bring_happierme {
   margin-top: 0;
+  scroll-margin-top: 180px;
+}
+
+@media (max-width: 767px) {
+  body.page-work #bring_happierme {
+    scroll-margin-top: 80px;
+  }
 }
 
 body.page-work #bring_happierme .work-demo-band,
@@ -736,6 +869,22 @@ body.page-work #bring_happierme .work-demo-cta .work-demo-btn-secondary {
   justify-content: center !important;
   flex: 0 0 auto !important;
   white-space: nowrap;
+  text-decoration: none !important;
+  transition: background 0.3s;
+}
+
+/* Match index pink CTA hover (.div-wrapper-4 / .btn_popup) */
+body.page-work #bring_happierme .work-demo-cta #Request-Demo:hover,
+body.page-work #bring_happierme .work-demo-cta #Request-Demo:focus:hover,
+body.page-work #bring_happierme .work-demo-cta #Request-Demo:active,
+body.page-work #bring_happierme .work-demo-cta .work-demo-btn:hover,
+body.page-work #bring_happierme .work-demo-cta .work-demo-btn:active,
+body.page-work #bring_happierme .work-demo-cta .work-demo-btn-secondary:hover,
+body.page-work #bring_happierme .work-demo-cta .work-demo-btn-secondary:focus:hover,
+body.page-work #bring_happierme .work-demo-cta .work-demo-btn-secondary:active {
+  background: linear-gradient(180deg, #da7d71 0%, #bf5061 100%) !important;
+  color: #fff !important;
+  text-decoration: none !important;
 }
 
 body.page-work #bring_happierme .work-demo-cta #Request-Demo,
@@ -769,13 +918,10 @@ body.page-work .work-blog-title {
   line-height: 1.2 !important;
 }
 
-/* Mobile-only copy variants (paired with @media max-width: 767px) */
-body.page-work .work-copy-mobile {
+/* Mobile/desktop copy variants — visibility owned by display_m_none / display_d_none.
+   Do not set display here; body.page-work .work-copy-* would beat .display_m_none. */
+body.page-work .work-copy-mobile:not(.display_d_none) {
   display: none !important;
-}
-
-body.page-work .work-copy-desktop {
-  display: inline !important;
 }
 
 /* ---------- Responsive ---------- */
@@ -812,10 +958,21 @@ body.page-work .work-copy-desktop {
 
   body.page-work .work-measure-inner {
     flex-direction: column;
-    gap: 40px;
+    align-items: center;
+    gap: 24px;
     height: auto;
     min-height: 0;
-    padding: 60px 20px;
+    padding: 40px 20px;
+  }
+
+  body.page-work .work-measure-copy {
+    flex: 0 0 auto;
+    min-width: 0;
+    width: 100%;
+    max-width: 417px;
+    height: auto;
+    order: -1;
+    text-align: center;
   }
 
   body.page-work .work-measure-media {
@@ -837,11 +994,16 @@ body.page-work .work-copy-desktop {
 
 /* ---------- Mobile — Figma 13309:7314 (375px). Desktop rules above stay untouched. ---------- */
 @media (max-width: 767px) {
-  body.page-work .work-copy-desktop {
+  /* Keep site utilities in charge; reinforce hide/show for title spans */
+  body.page-work .work-copy-desktop.display_m_none,
+  body.page-work main#main .work-copy-desktop.display_m_none {
     display: none !important;
   }
 
-  body.page-work .work-copy-mobile {
+  body.page-work .work-copy-mobile.display_d_none,
+  body.page-work main#main h2 .work-copy-mobile.display_d_none,
+  body.page-work main#main p .work-copy-mobile.display_d_none,
+  body.page-work main#main h4 .work-copy-mobile.display_d_none {
     display: inline !important;
   }
 
@@ -1100,17 +1262,23 @@ body.page-work .work-copy-desktop {
     hyphens: none !important;
   }
 
-  /* Ensure mobile title spans can wrap across full 335px.
-     Beat responsive.css About-Us leak: section.hpt120px ~ main#main section span { 12px } */
+  /* Hide desktop title copy on mobile (high specificity — avoid generic h2 span { display:inline } undoing this) */
+  body.page-work main#main h2 .work-copy-desktop,
+  body.page-work main#main .work-copy-desktop,
+  body.page-work section.hpt120px ~ main#main section h2 .work-copy-desktop,
+  body.page-work section.hpt120px ~ main#main .work-copy-desktop {
+    display: none !important;
+  }
+
+  /* Show + size only mobile title copy. Beat responsive.css span { 12px } leak. */
   body.page-work h2 .work-copy-mobile,
   body.page-work h2.work-section-title .work-copy-mobile,
   body.page-work h2.work-testimonials-title .work-copy-mobile,
   body.page-work h2.work-blog-title .work-copy-mobile,
-  body.page-work section.hpt120px ~ main#main section h2 .work-copy-mobile,
-  body.page-work section.hpt120px ~ main#main section h2.work-section-title span,
-  body.page-work section.hpt120px ~ main#main section h2.work-testimonials-title span,
-  body.page-work main#main h2.work-section-title span,
-  body.page-work main#main h2.work-testimonials-title span {
+  body.page-work main#main h2 .work-copy-mobile,
+  body.page-work main#main h2.work-section-title .work-copy-mobile,
+  body.page-work main#main h2.work-testimonials-title .work-copy-mobile,
+  body.page-work section.hpt120px ~ main#main section h2 .work-copy-mobile {
     display: inline !important;
     font-family: Poppins, sans-serif !important;
     font-size: 24px !important;
@@ -1241,8 +1409,8 @@ body.page-work .work-copy-desktop {
     width: 100% !important;
   }
 
-  body.page-work .work-video-section .teen-video-wrap,
-  body.page-work .work-video-section .col-lg-6.teen-video-wrap {
+  body.page-work .work-video-section .work-video-wrap,
+  body.page-work .work-video-section .col-lg-12.work-video-wrap {
     width: 335px !important;
     max-width: 335px !important;
     flex: 0 0 335px !important;
@@ -1251,7 +1419,7 @@ body.page-work .work-copy-desktop {
   }
 
   body.page-work .work-video-wrap,
-  body.page-work .work-video-section .teen-youtube-player,
+  body.page-work .work-video-section .work-youtube-player,
   body.page-work .work-video-section .youtube-player {
     width: 335px !important;
     height: 214px !important;
@@ -1262,6 +1430,7 @@ body.page-work .work-copy-desktop {
   }
 
   body.page-work .work-video-section .youtube-player iframe,
+  body.page-work .work-video-section .youtube-player .yt-embed,
   body.page-work .work-video-section .youtube-player img,
   body.page-work .work-video-section .youtube-player button {
     width: 100% !important;
@@ -1366,12 +1535,18 @@ body.page-work .work-copy-desktop {
 
   body.page-work .work-measure-copy {
     order: -1;
+    /* Beat desktop flex: 0 0 417px — in column layout that forced 417px HEIGHT */
+    flex: 0 0 auto !important;
+    min-width: 0 !important;
     max-width: 335px !important;
     width: 100% !important;
+    height: auto !important;
     text-align: center !important;
     gap: 15px !important;
     display: flex !important;
     flex-direction: column !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
   body.page-work .work-measure-copy h2 {
@@ -1389,9 +1564,13 @@ body.page-work .work-copy-desktop {
   }
 
   body.page-work .work-measure-media {
+    flex: 0 0 auto !important;
+    min-width: 0 !important;
     width: 320px !important;
     max-width: 320px !important;
     height: 401px !important;
+    margin: 0 !important;
+    padding: 0 !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -1403,7 +1582,7 @@ body.page-work .work-copy-desktop {
     max-width: none !important;
     object-fit: cover !important;
     transform: rotate(-3.88deg) !important;
-    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25) !important;
+    box-shadow: none !important;
   }
 
   /* ----- 7. Testimonials — 315 cards, pad 24, quote 12 ----- */
@@ -1708,55 +1887,128 @@ body.page-work .work-copy-desktop {
     display: none !important;
   }
 
-  /* ----- 11. Blog — title 24/1.2, cards 306, gap 14 ----- */
+  /* ----- 11. Blog — match index Explore our blog (306px cards + peek) ----- */
   body.page-work .work-blog-section,
   body.page-work section.work-blog-section {
     display: flex !important;
     flex-direction: column !important;
     gap: 24px !important;
-    padding: 0 !important; /* main gap owns 60px rhythm */
+    padding: 0 !important;
     margin: 0 !important;
+    overflow-x: hidden !important;
   }
 
   body.page-work .work-blog-section .work-blog-header,
   body.page-work main#main .section-header.work-blog-header {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
     margin: 0 !important;
     padding: 0 20px !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+  }
+
+  body.page-work .work-blog-header .row.center_flex,
+  body.page-work .work-blog-section .work-blog-header .row {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    text-align: center !important;
+  }
+
+  body.page-work .work-blog-header [class*="col-"],
+  body.page-work .work-blog-section .work-blog-header [class*="col-"] {
+    float: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: center !important;
   }
 
   body.page-work section.hpt120px ~ main#main .work-blog-header h2.work-blog-title,
   body.page-work main#main .work-blog-title,
+  body.page-work .work-blog-header h2.work-blog-title,
   body.page-work .work-blog-title {
+    display: block !important;
     font-family: Poppins, sans-serif !important;
     font-size: 24px !important;
     font-weight: 600 !important;
-    line-height: 1.2 !important; /* Figma 1.2 — beat index 140% */
+    line-height: 1.2 !important;
     color: #000 !important;
+    width: 100% !important;
+    max-width: 335px !important;
+    margin: 0 auto !important;
     text-align: center !important;
   }
 
-  body.page-work .work-blog-wrap {
+  body.page-work .work-blog-wrap,
+  body.page-work .work-blog-section .owl_blog {
     padding: 0 !important;
     width: 100% !important;
+    max-width: none !important;
+    overflow: visible !important;
   }
 
-  body.page-work .work-blog-section .owl_blog,
-  body.page-work .work-blog-section .owl_blog .owl-carousel {
-    padding-left: 20px !important;
-    padding-right: 20px !important;
+  /* Native horizontal strip (index-style): 20px left inset, right open so card 2 peeks */
+  body.page-work .owl_blog > .owl-carousel.work-blog-native,
+  body.page-work .owl_blog .owl-carousel.work-blog-native {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch !important;
+    gap: 14px !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 0 0 20px !important;
     box-sizing: border-box !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x pan-y;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
   }
 
-  /* Figma carousel gap 14 (index had 18) */
-  body.page-work .owl_blog .owl-carousel .owl-item,
-  body.page-work section.hpt120px ~ main#main .owl_blog .owl-carousel .owl-item {
+  body.page-work .owl_blog .owl-carousel.work-blog-native::-webkit-scrollbar {
+    display: none !important;
+    height: 0 !important;
+  }
+
+  body.page-work .owl_blog .owl-carousel.work-blog-native .owl-stage-outer,
+  body.page-work .owl_blog .owl-carousel.work-blog-native .owl-stage {
+    display: contents !important;
+    width: auto !important;
+    transform: none !important;
+  }
+
+  body.page-work .owl_blog .owl-carousel.work-blog-native > .item,
+  body.page-work .owl_blog .owl-carousel.work-blog-native .owl-item,
+  body.page-work .owl_blog .owl-carousel.work-blog-native .owl-item > .item {
+    flex: 0 0 306px !important;
     width: 306px !important;
     max-width: 306px !important;
-    margin: 0 14px 0 0 !important;
+    margin: 0 !important;
+    float: none !important;
+  }
+
+  /* Trailing peek space after last card */
+  body.page-work .owl_blog .owl-carousel.work-blog-native::after {
+    content: "";
+    flex: 0 0 20px;
   }
 
   body.page-work .owl_blog .div_blog,
-  body.page-work section.hpt120px ~ main#main .owl_blog .div_blog {
+  body.page-work section.hpt120px ~ main#main .owl_blog .div_blog,
+  body.page-work .owl_blog .owl-carousel.work-blog-native .div_blog {
     width: 306px !important;
     max-width: 306px !important;
     height: 242.54px !important;
@@ -1765,23 +2017,49 @@ body.page-work .work-copy-desktop {
     border-radius: 10px !important;
     background: #fff7e6 !important;
     overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
     padding: 0 !important;
     margin: 0 !important;
+    box-sizing: border-box !important;
   }
 
   body.page-work section.hpt120px ~ main#main .owl_blog .div_blog img,
-  body.page-work .owl_blog .div_blog img {
-    width: 306px !important;
+  body.page-work .owl_blog .div_blog img,
+  body.page-work .owl_blog .owl-carousel.work-blog-native .div_blog img {
+    width: 100% !important;
     max-width: 100% !important;
     height: 156.26px !important;
     min-height: 156.26px !important;
     max-height: 156.26px !important;
     object-fit: cover !important;
     border-radius: 10px 10px 0 0 !important;
+    display: block !important;
+  }
+
+  body.page-work .owl_blog .div_blog > .row:last-child,
+  body.page-work .owl_blog .owl-carousel.work-blog-native .div_blog > .row:last-child {
+    height: 86.28px !important;
+    min-height: 86.28px !important;
+    max-height: 86.28px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff7e6 !important;
+  }
+
+  body.page-work .owl_blog .div_blog > .row:last-child [class^="col-"],
+  body.page-work .owl_blog .owl-carousel.work-blog-native .div_blog > .row:last-child [class^="col-"] {
+    padding: 10px 20px 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: left !important;
   }
 
   body.page-work section.hpt120px ~ main#main .owl_blog .div_blog h4,
-  body.page-work .owl_blog .div_blog h4 {
+  body.page-work .owl_blog .div_blog h4,
+  body.page-work .owl_blog .owl-carousel.work-blog-native .div_blog h4 {
+    font-family: Poppins, sans-serif !important;
     font-size: 15px !important;
     font-weight: 500 !important;
     line-height: 1.4 !important;
@@ -1790,13 +2068,22 @@ body.page-work .work-copy-desktop {
     background: transparent !important;
     min-height: 0 !important;
     max-width: 265px !important;
+    color: #000 !important;
+    text-align: left !important;
+  }
+
+  /* Index Explore our blog: 24px between cards strip and “Find out more” */
+  body.page-work .owl_blog {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px !important;
   }
 
   body.page-work .work-blog-footer {
     display: flex !important;
     justify-content: center !important;
-    margin-top: 24px !important; /* Figma: 24px carousel → Find out more */
-    padding: 0 !important;
+    margin-top: 0 !important;
+    padding: 0 20px !important;
   }
 
   body.page-work .work-blog-footer .work-blog-more {
@@ -1811,8 +2098,10 @@ body.page-work .work-copy-desktop {
     text-decoration: underline !important;
   }
 
-  body.page-work .work-blog-nav {
+  body.page-work .work-blog-nav,
+  body.page-work .work-blog-footer .work-blog-nav {
     display: none !important;
+    margin: 0 !important;
   }
 
   /* Skills header title↔body already 15 via .work-section-head; ensure 24 to list */
