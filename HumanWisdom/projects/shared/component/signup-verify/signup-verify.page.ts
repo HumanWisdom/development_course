@@ -184,7 +184,8 @@ export class SignupVerifyPage implements OnInit, OnDestroy {
           this.loginAndContinue();
         } else {
           this.codeError = true;
-          this.errorMessage = "Invalid code. Please try again.";
+          const msg = typeof res === "string" ? res : (res?.Message || res?.message || res?.Error || res?.error || "");
+          this.errorMessage = this.normalizeVerificationMessage(msg, "Invalid code. Please try again.");
           this.clearDigits();
         }
       },
@@ -354,13 +355,27 @@ export class SignupVerifyPage implements OnInit, OnDestroy {
   // Error bodies come back either as plain text or as a JSON object
   private getApiMessage(err: any, fallback: string): string {
     const body = err?.error;
+    let message = "";
     if (typeof body === "string" && body.trim()) {
-      return body.trim().replace(/^"+|"+$/g, "");
+      message = body.trim().replace(/^"+|"+$/g, "");
+    } else if (body && typeof body === "object") {
+      message = body.Message || body.message || body.Error || body.error || "";
     }
-    if (body && typeof body === "object") {
-      return body.Message || body.message || body.Error || body.error || fallback;
+    if (!message && typeof err?.message === "string") {
+      message = err.message;
     }
-    return fallback;
+    return this.normalizeVerificationMessage(message, fallback);
+  }
+
+  private normalizeVerificationMessage(message: string, fallback: string): string {
+    if (!message) {
+      return fallback;
+    }
+    // When the backend returns "Wrong Verification Code" (or similar), show "Invalid code. Please try again."
+    if (/wrong\s*verification\s*code/i.test(message) || /wrong\s*code/i.test(message)) {
+      return "Invalid code. Please try again.";
+    }
+    return message;
   }
 
   private maybeVerify() {
