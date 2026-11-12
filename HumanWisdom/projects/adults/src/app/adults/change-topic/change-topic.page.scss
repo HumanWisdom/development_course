@@ -8,18 +8,19 @@
   overflow: auto !important;
 }
 
+.right_col.mc_02 {
+  padding: 0 !important;
+}
+
 .card-container {
   padding: 0;
 }
-
+.mt3px{
+  margin-top: 3px;
+}
 .topic-card-wrapper {
   width: 100%;
   margin-bottom: 10px;
-}
-
-.topic-card-wrapper:last-child {
-
-  margin-bottom: 40px;
 }
 
 .topic-card {
@@ -52,15 +53,22 @@
   cursor: pointer;
 }
 
-.tn_title_back {
-
-  z-index:auto;
+.sticky-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  height: 70px;
+  background: #FFF7E6;
+  box-shadow: 0 -2px 2px #00000010;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
 }
 
-
-
 .sc_01 {
- 
-  min-height: auto;
- 
+  min-height: 100vh;
+  padding: 0px 20px 90px;
 }

@@ -1,39 +1,3 @@
-<!-- top navigation -->
-<div class="row center_flex">
-  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back col_cw"  >
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0" (click)="goBack()">
-     <!--  <a class="">
-        <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/arrow_left.svg" alt="" class="p0">
-      </a> -->
-    </div>
-
-    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 p0">
-     <!--  <h1 class="fw_600 fs_18px lh_140p fc_ffffff mtb0px tcenter">
-        Change topic
-      </h1> -->
-    </div>
-
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0">
-    </div>
-  </div>
-
-  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_title_back_change_topic col_cw">
-    <div class="x_panel p0">
-          <div class="x_content p0">
-      <div class="header-section">
-        <h1 class="heading-title fw_500 fs_21px lh_160p fc_ffffff mt30px mb0 tcenter">
-          What are you looking for?
-        </h1>
-          <p class="fs_15px fw_400 lh_150p mt0 mb20px" [ngClass]="'fc_ffffff_0_5'">
-                Choose what matters most to you right now
-              </p>
-      </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- /top navigation -->
-
 <!-- page content -->
 <div class="right_col mc_02">
   <!-- class -->
@@ -42,6 +6,15 @@
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 sc_01 bg_183c79 col_cw">
         <div class="x_panel p0">
           <div class="x_content p0">
+
+            <div class="header-section">
+              <h1 class="heading-title fw_500 fs_21px lh_160p fc_ffffff mt40px mb0 tcenter">
+                What are you looking for?
+              </h1>
+              <p class="fs_15px fw_400 lh_150p mt3px tcenter mb30px" [ngClass]="'fc_ffffff_0_5'">
+                Choose what matters most to you right now
+              </p>
+            </div>
 
             <div class="div_ct">
               <div class="row">
@@ -58,12 +31,9 @@
               </div>
             </div>
 
-            <div class="row mt20px mb20px tcenter">
-              <div class="col-xs-12 mdp_oli_traywell col_cw">
-                <a (click)="skip()" class="skip-btn fs_15px fw_500 td_underline">Skip</a>
-              </div>
+            <div class="sticky-footer col-lg-4 col-md-6 col-sm-6 col-xs-12 col_cw">
+              <a (click)="skip()" class="skip-btn fs_15px fw_500 td_underline">Skip</a>
             </div>
-        
 
           </div>
         </div>

@@ -386,7 +386,7 @@ export class SubscriptionPaymentPage implements AfterViewInit {
       localStorage.setItem('Subscriber', '1');
       sessionStorage.setItem('justSubscribed', 'true');
       this.service.updateUserDetails.next(true);
-      this.router.navigate([`/${SharedService.getprogramName()}/onboarding/myprogram`]);
+      this.router.navigate([`/${SharedService.getprogramName()}/subscription/free-trial`]);
     }
     const nameEl = document.getElementById('name') as HTMLInputElement;
     const postalEl = document.getElementById('postal-code') as HTMLInputElement;

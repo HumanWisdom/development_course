@@ -304,6 +304,13 @@ export class TryFreeAndSubscribePage implements OnInit, OnDestroy {
   }
 
   routeToDashboard() {
+    // If user came from the free trial ended popup (e.g. from Today page), go back to today
+    if (history.state?.fromTrialEndedPopup) {
+      const program = SharedService.getprogramName();
+      this.router.navigateByUrl(`/${program}/today`);
+      return;
+    }
+
     // If user came from the free trial ended screen, go back there
     if (history.state?.fromTrialEnded) {
       const program = SharedService.getprogramName();
