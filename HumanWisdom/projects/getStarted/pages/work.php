@@ -262,31 +262,39 @@
                   <h2 class="work-section-title">Boost human skills to thrive at work</h2>
                 </div>
               </div>
-        </div>
-      </div>
+           </div>
 
-      <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
-        <div class="col-lg-6 col-md-6 col-sm-10 col-xs-10 col-10 p0 w-980px teen-video-wrap">
-          <div class="youtube-player teen-youtube-player">
-            <button
-              id="teenYoutubeCover"
-              type="button"
-              aria-label="Play HappierMe for Teens video">
-              <img
-                src="https://d1tenzemoxuh75.cloudfront.net/website/webp/Youtube+player.webp"
-                alt="HappierMe for Teens video cover" />
-            </button>
-            <iframe
-                  loading="lazy"
-                  title="How to Boost Wellbeing and Productivity Using Human Skills"
-                  src="https://www.youtube.com/embed/ROP4llA74DA?si=6Zk3KCbtVKEohzVg"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- /video -->
+            <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
+              <div class="col-lg-12 col-md-12 col-sm-10 col-xs-10 col-10 p0 work-video-wrap">
+                <div class="youtube-player work-youtube-player">
+                  <button
+                    id="workYoutubeCover"
+                    type="button"
+                    aria-label="Play HappierMe for Work video">
+                    <img
+                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/Youtube+player.webp"
+                      alt="How to Boost Wellbeing and Productivity Using Human Skills" />
+                       <span
+              aria-hidden="true"
+              style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;width:68px;height:48px;border-radius:12px;background:rgba(0,0,0,0.25);">
+              <svg width="18.37" height="19.18" viewBox="0 0 18.37 19.18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.37 9.59L0 0V19.18L18.37 9.59Z" fill="rgba(234,234,234,1)"/>
+              </svg>
+            </span>
+                  </button>
+                  <iframe
+                    id="workYoutube"
+                    class="yt-embed"
+                    src="about:blank"
+                    data-src="https://www.youtube-nocookie.com/embed/ROP4llA74DA?autoplay=1&rel=0&modestbranding=1&playsinline=1"
+                    title="How to Boost Wellbeing and Productivity Using Human Skills"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+                    allowfullscreen></iframe>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- /video -->
 
 
           <!-- Why different -->
