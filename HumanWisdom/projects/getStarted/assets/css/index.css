@@ -5440,23 +5440,24 @@ body.page-healthcare .healthcare-hero-shell .wide-screen-only {
     justify-content: center !important;
   }
 
-  /* All main headings 18px (override responsive.css 27px on hpt120px ~ main#main) */
+  /* All main headings 18px (override responsive.css 27px on hpt120px ~ main#main)
+     Work page section titles are Figma 24px — excluded via :not() below */
   body.page-work section.hpt120px ~ main#main h1,
-  body.page-work section.hpt120px ~ main#main h2,
+  body.page-work section.hpt120px ~ main#main h2:not(.work-testimonials-title):not(.work-section-title):not(.work-blog-title):not(.work-demo-title),
   body.page-work section.hpt120px ~ main#main h3,
   body.page-work section.hpt120px ~ main#main section h1,
-  body.page-work section.hpt120px ~ main#main section h2,
+  body.page-work section.hpt120px ~ main#main section h2:not(.work-testimonials-title):not(.work-section-title):not(.work-blog-title):not(.work-demo-title),
   body.page-work section.hpt120px ~ main#main section h3,
   body.page-work section.hpt120px ~ main#main h1.fs_36px,
   body.page-work section.hpt120px ~ main#main h1.fs_30px,
   body.page-work section.hpt120px ~ main#main h1.fs_24px,
-  body.page-work section.hpt120px ~ main#main h2.fs_36px,
-  body.page-work section.hpt120px ~ main#main h2.fs_30px,
-  body.page-work section.hpt120px ~ main#main h2.fs_24px,
+  body.page-work section.hpt120px ~ main#main h2.fs_36px:not(.work-testimonials-title):not(.work-section-title):not(.work-blog-title):not(.work-demo-title),
+  body.page-work section.hpt120px ~ main#main h2.fs_30px:not(.work-testimonials-title):not(.work-section-title):not(.work-blog-title):not(.work-demo-title),
+  body.page-work section.hpt120px ~ main#main h2.fs_24px:not(.work-testimonials-title):not(.work-section-title):not(.work-blog-title):not(.work-demo-title),
   body.page-work section.hpt120px ~ main#main h3.fs_36px,
   body.page-work section.hpt120px ~ main#main h3.fs_30px,
   body.page-work section.hpt120px ~ main#main h3.fs_24px,
-  body.page-work section.hpt120px ~ main#main .section-header h2,
+  body.page-work section.hpt120px ~ main#main .section-header h2:not(.work-testimonials-title):not(.work-blog-title),
   body.page-work section.hpt120px ~ main#main .flex_block h2,
   body.page-education section.hpt120px ~ main#main h1,
   body.page-education section.hpt120px ~ main#main h2,
