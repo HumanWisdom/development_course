@@ -272,7 +272,7 @@
                     type="button"
                     aria-label="Play HappierMe for Work video">
                     <img
-                      src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/Youtube+player.webp"
+                      src="https://d1tenzemoxuh75.cloudfront.net/website/webp/Youtube+player.webp"
                       alt="How to Boost Wellbeing and Productivity Using Human Skills" />
                        <span
               aria-hidden="true"
