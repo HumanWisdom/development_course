@@ -66,7 +66,7 @@ export class TryFreeAndSubscribePage implements OnInit, OnDestroy {
     document.documentElement.style.removeProperty('overflow');
     sessionStorage.setItem('openHamburger', 'false');
 
-    if (SharedService.isSubscriber()) {
+    if (SharedService.isSubscriber() && localStorage.getItem("SubscriberType") != 'Free Trial') {
       this.routeToDashboard();
       return;
     }
@@ -304,6 +304,22 @@ export class TryFreeAndSubscribePage implements OnInit, OnDestroy {
   }
 
   routeToDashboard() {
+    // If user came from the free trial ended popup (e.g. from Today page), go back to today
+    if (history.state?.fromTrialEndedPopup) {
+      const program = SharedService.getprogramName();
+      this.router.navigateByUrl(`/${program}/today`);
+      return;
+    }
+
+    // If user came from the free trial ended screen, go back there
+    if (history.state?.fromTrialEnded) {
+      const program = SharedService.getprogramName();
+      this.router.navigate([`/${program}/onboarding/all-set`], {
+        queryParams: { trialEnded: 'true' }
+      });
+      return;
+    }
+
     let redirectUrl = sessionStorage.getItem('subscriptionRedirectUrl');
     const redirectStateStr = sessionStorage.getItem('subscriptionRedirectState');
     if (redirectUrl && redirectUrl.includes('olly-landing')) {

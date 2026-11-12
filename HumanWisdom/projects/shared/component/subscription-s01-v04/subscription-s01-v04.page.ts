@@ -7,6 +7,7 @@ import { ForumService } from '../../forum/forum.service';
 import { SharedService } from '../../services/shared.service';
 import { CommonService } from '../../services/common.service';
 import { ProgramType } from '../../models/program-model';
+import { NavigationService } from '../../services/navigation.service';
 import { Platform } from '@angular/cdk/platform';
 @Component({
   selector: 'app-subscription-s01-v04',
@@ -85,6 +86,7 @@ export class SubscriptionS01V04Page implements OnInit, OnDestroy {
     private readonly cd: ChangeDetectorRef,
     private readonly forumservice: ForumService,
     public platform: Platform,
+    private readonly navigationService: NavigationService,
   ) {
     this.isAndroidDevice();
     let res = localStorage.getItem("isloggedin")
@@ -132,11 +134,7 @@ export class SubscriptionS01V04Page implements OnInit, OnDestroy {
     const popup = JSON.parse(localStorage.getItem("Subscriber"))
     if (popup === 1) this.enablepopup = true
     this.isSubscribe = popup !== 0;
-    console.log("save username", this.saveUsername)
-    if (!this.saveUsername)
-      this.userId = JSON.parse(sessionStorage.getItem("userId"))
-    else
-      this.userId = JSON.parse(localStorage.getItem("userId"))
+    this.userId = this.resolveUserId();
     console.log("userID", this.userId)
     this.getCountry();
     this.viewCart();
@@ -201,6 +199,7 @@ export class SubscriptionS01V04Page implements OnInit, OnDestroy {
   }
 
   viewCart() {
+    if (!this.userId) return;
     this.service.viewCart({ "Id": this.userId })
       .subscribe(res => {
         this.totalCount = 0
@@ -304,7 +303,7 @@ export class SubscriptionS01V04Page implements OnInit, OnDestroy {
                 this.secondpage = false;
                 this.fourthpage = true;
                 if (this.yearormonth == 'Year' && this.service.isActivationFlow) {
-                  this.router.navigate([`/${SharedService.getprogramName()}/hwp-premium-congratulations`]);
+                  this.router.navigate([`/${SharedService.getprogramName()}/subscription/free-trial`]);
                 }
               } else {
                 this.secondpage = false;
@@ -415,10 +414,39 @@ export class SubscriptionS01V04Page implements OnInit, OnDestroy {
 
   loggedUser() {
     if (!this.userId) {
+      // A login in another tab may have filled the stored id since ngOnInit
+      this.userId = this.resolveUserId();
+    }
+    if (!this.userId) {
       console.log("login first")
       this.router.navigate([`/${SharedService.getprogramName()}/onboarding/login`])
+      return false;
     }
+    return true;
+  }
 
+  /**
+   * This screen is opened straight from the nav bar, where the per tab
+   * sessionStorage login state can be empty even though the user is logged in
+   * (localStorage still holds the user), so every stored id is consulted before
+   * the cart calls are allowed to run with a blank UserId.
+   */
+  resolveUserId() {
+    const storedIds = this.saveUsername
+      ? [localStorage.getItem("userId"), sessionStorage.getItem("userId")]
+      : [sessionStorage.getItem("userId"), localStorage.getItem("userId")];
+
+    for (const storedId of storedIds) {
+      if (!storedId || storedId === 'null' || storedId === 'undefined') continue;
+      try {
+        const id = JSON.parse(storedId);
+        if (id) return id;
+      } catch (e) {
+        const id = Number.parseInt(storedId);
+        if (id) return id;
+      }
+    }
+    return SharedService.getUserId() || null;
   }
 
   getPricing() {
@@ -538,7 +566,7 @@ export class SubscriptionS01V04Page implements OnInit, OnDestroy {
       this.forumservice.toastrService.success('', 'Email address is invalid');
     } else if (this.selectedProgram) {
       this.logeventservice.logEvent('click_done');
-      this.loggedUser()
+      if (!this.loggedUser()) return;
       const pid = this.cartList.find((d) => d['Program'] === this.selectedProgram);
       if (this.selectedMonth == "Monthly") {
         pid.planId = 1
@@ -583,7 +611,7 @@ export class SubscriptionS01V04Page implements OnInit, OnDestroy {
       this.forumservice.toastrService.success('', 'Email address is invalid');
     } else {
       this.logeventservice.logEvent('click_done');
-      this.loggedUser()
+      if (!this.loggedUser()) return;
       const pid = this.cartList.find((d) => d['Program'] === program)
       let activeItem = null;
       for (const cartItem of this.cartList) {
@@ -776,7 +804,8 @@ export class SubscriptionS01V04Page implements OnInit, OnDestroy {
   }
 
   goBack() {
-    this.location.back();
+    // Leave the subscription funnel instead of bouncing back to viewcart/payment
+    this.navigationService.goBackThroughOnboardingFunnel(this.navigationService.getOnboardingEntryUrl());
   }
   
   iOS() {

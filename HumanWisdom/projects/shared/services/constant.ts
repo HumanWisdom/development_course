@@ -29,6 +29,8 @@ export class Constant {
     public static subscriber = 'Subscriber';
     public static SubscriberType = 'SubscriberType';
     public static NaviagtedFrom = 'NaviagtedFrom';
+    // URL of the Olly chat that opened the current content - back must return there
+    public static ChatBotReturnUrl = 'ChatBotReturnUrl';
     public static NullValue = null;
     public static ManageSubscriptionData = 'ManageSubscriptionData';
     public static ActivationKey = 'ActivationKey';

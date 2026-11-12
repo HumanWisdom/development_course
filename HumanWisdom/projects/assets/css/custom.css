@@ -19052,7 +19052,7 @@ ngx-circular-player svg {
 .cvideo {
   width: 100%;
   max-height: 100%;
-  border-radius: 0;
+  border-radius: 16px;
 }
 
 /* /video player */
@@ -22809,7 +22809,8 @@ ul.dh_ul li:last-child {
 .login_signup_tab {
   /* border-bottom: 1px solid #FFFFFF;
   margin: 0 -32px; */
-  border: 0;
+  /* border: 0; */
+  border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 12px;
   /* background: #FFE8BB; */
   background: #ffffff;
@@ -22853,7 +22854,9 @@ ul.dh_ul li:last-child {
   font-weight: 400;
   font-size: 15px;
   line-height: 140%;
-  color: #A0A3BD !important;
+  color: rgba(0, 0, 0, 0.75);
+
+  /* color: #A0A3BD !important; */
   text-align: center;
   border: 0;
 }
@@ -22969,8 +22972,11 @@ ul.dh_ul li:last-child {
   height: 50px;
   /* background: #FFE8BB; */
   background: #FFFFFF !important;
-  box-shadow: 1px 1px 2px #00000040;
+  /* box-shadow: 1px 1px 2px #00000040; */
   border-radius: 12px;
+  /* border: 0.5px solid rgba(0, 0, 0, 0.5) !important; */
+    border: 1px solid rgba(0, 0, 0, 0.2) !important;
+
   width: 101px;
   height: 52px;
 }
@@ -24735,7 +24741,7 @@ a {
   margin: 0;
   border: 0;
   height: 40px;
-  width: 92px;
+  width: 115px;
   background: linear-gradient(180deg, #ED7D6F 0%, #D7586B 100%);
 
   border-radius: 20px;
@@ -32880,8 +32886,8 @@ body * {
   justify-content: center;
   padding: 0 20px;
   z-index: 9;
-  position: fixed;
-  top: 0;
+  /* position: fixed; */
+  top: 80px;
   right: 0;
   left: 0;
   margin: 0 auto;
@@ -34714,8 +34720,10 @@ label.chkb_post_anonymously>input[type="checkbox"]:checked+* {
   width: 100%;
   border-radius: 16px;
   /* border: 1px solid rgba(204, 204, 204, 0.25); */
-  border: 1px solid rgba(50, 50, 50, 0.25);
+  /* border: 1px solid rgba(50, 50, 50, 0.25); */
+  border: 1px solid rgba(0, 0, 0, 0.2);
 
+  /* border: 0.5px solid rgba(0, 0, 0, 0.5); */
   background: #ffe8bb;
   box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.10) inset;
   font-size: 15px;
@@ -38041,6 +38049,7 @@ span {
   background: #FFE8BB;
   padding: 24px;
   margin: 30px 10px;
+  border-radius: 16px;
 }
 
 .partnership_income_div {
@@ -38720,3 +38729,99 @@ div.contentdiv p {
 }
 
 /* ===== /Video Library Search Bar ===== */
+
+/* Resource cards in Chatbot */
+.chat-thumbnails .resource-card,
+.resource-card {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  border-radius: 12px !important;
+  padding: 12px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+  text-decoration: none !important;
+}
+
+.chat-thumbnails .resource-card:hover,
+.resource-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+.chat-thumbnails .resource-card a,
+.resource-card a {
+  color: #000000 !important;
+  text-decoration: none !important;
+}
+
+.chat-thumbnails .resource-card a:visited,
+.resource-card a:visited {
+  color: #000000 !important;
+}
+
+.chat-thumbnails .resource-card img,
+.resource-card img {
+  width: 60px !important;
+  height: 60px !important;
+  object-fit: cover !important;
+  border-radius: 8px !important;
+  margin-right: 16px !important;
+  margin-top: 0 !important;
+  align-self: flex-start !important;
+  flex-shrink: 0 !important;
+  vertical-align: top !important;
+  display: block !important;
+}
+
+.chat-thumbnails .resource-card a:has(img),
+.resource-card a:has(img) {
+  display: flex !important;
+  align-self: flex-start !important;
+  margin-top: 0 !important;
+  line-height: 0 !important;
+  flex-shrink: 0 !important;
+}
+
+.chat-thumbnails .resource-card>div,
+.resource-card>div,
+.chat-thumbnails .resource-card .resource-card-info,
+.resource-card .resource-card-info {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  align-self: flex-start !important;
+}
+
+.chat-thumbnails .resource-card strong,
+.resource-card strong,
+.chat-thumbnails .resource-card b,
+.resource-card b,
+.chat-thumbnails .resource-card p,
+.resource-card p,
+.chat-thumbnails .resource-card .resource-card-title,
+.resource-card .resource-card-title {
+  font-size: 15px !important;
+  color: #000000 !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  line-height: 130% !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.chat-thumbnails .resource-card span,
+.resource-card span,
+.chat-thumbnails .resource-card small,
+.resource-card small,
+.chat-thumbnails .resource-card .resource-card-type,
+.resource-card .resource-card-type,
+.chat-thumbnails .resource-card a span,
+.resource-card a span {
+  font-size: 12px !important;
+  font-weight: normal !important;
+  color: #777777 !important;
+  text-decoration: none !important;
+  text-transform: uppercase !important;
+  margin-top: 4px !important;
+}

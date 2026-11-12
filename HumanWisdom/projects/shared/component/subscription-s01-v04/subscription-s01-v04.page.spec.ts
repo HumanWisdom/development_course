@@ -610,7 +610,7 @@ describe('SubscriptionS01V04Page', () => {
       expect(component.fourthpage).toBe(true);
     });
 
-    it('should navigate to hwp-premium-congratulations when yearormonth is Year and isActivationFlow', () => {
+    it('should navigate to subscription/free-trial when yearormonth is Year and isActivationFlow', () => {
       component.cartitemList = [{ MySelf: 'True', CartId: '123' }] as any;
       component.userId = 'user1';
       component.countryCode = 'USD';
@@ -619,7 +619,7 @@ describe('SubscriptionS01V04Page', () => {
       mockOnboardingService.verifyActivationKey.and.returnValue(of({}));
       mockOnboardingService.deleteItem.and.returnValue(of(true));
       component.submitcode();
-      expect(mockRouter.navigate).toHaveBeenCalledWith(['/adults/hwp-premium-congratulations']);
+      expect(mockRouter.navigate).toHaveBeenCalledWith(['/adults/subscription/free-trial']);
     });
   });
 

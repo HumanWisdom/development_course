@@ -1,5 +1,5 @@
-/** Temporarily off — was firing after successful login/SSO when early API calls returned 401. */
-export const SESSION_EXPIRED_ALERT_ENABLED = false;
+/** Re-enabled — the POST_LOGIN_GRACE_MS guard prevents false-positive alerts after login/SSO. */
+export const SESSION_EXPIRED_ALERT_ENABLED = true;
 
 /** Ignore session-expired handling briefly after login while token/state settles. */
 export const POST_LOGIN_GRACE_MS = 30000;

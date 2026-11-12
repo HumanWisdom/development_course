@@ -1349,6 +1349,8 @@
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   animation: tourOverlayFadeIn 0.3s ease forwards;
 }
 
@@ -1473,7 +1475,6 @@
   color: #000000;
   text-decoration: underline !important;
   cursor: pointer;
-  transition: opacity 0.2s ease;
 }
 
 /* ====== Teenagers theme overrides for Tour Popup ====== */
@@ -1504,3 +1505,337 @@
 }
 
 
+
+
+/* ====== Spread Some Happiness Popup ====== */
+.spread-popup-card {
+  background: #FFF8E7;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+  width: 100%;
+  max-width: 335px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  animation: tourPopupSlideUp 0.28s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+
+  &--teens {
+    background: #16366D;
+  }
+}
+
+.spread-popup-img-wrap {
+  width: 100%;
+  overflow: hidden;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.spread-popup-img {
+  width: 100%;
+  height: 238px;
+  object-fit: cover;
+  display: block;
+}
+
+.spread-popup-content {
+  padding: 30px;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.spread-popup-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 130%;
+  color: #000000;
+  margin: 0 0 9px 0;
+
+  &--teens {
+    color: #FFFFFF;
+    font-weight: 500;
+  }
+}
+
+.spread-popup-sub {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 150%;
+  color: #000000;
+  margin: 0 0 24px 0;
+
+  &--teens {
+    color: #ffffff;
+  }
+}
+
+.spread-popup-features {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+  margin-bottom: 24px;
+  box-sizing: border-box;
+}
+
+.spread-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: left;
+}
+
+.spread-feature-icon {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .spread-feature-img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    display: block;
+  }
+}
+
+.spread-feature-text {
+  display: flex;
+  flex-direction: column;
+  color: #000000;
+  font-family: 'Poppins', sans-serif;
+
+  &--teens {
+    color: #FFFFFF;
+  }
+}
+
+.spread-feature-bold {
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 130%;
+}
+
+.spread-feature-normal {
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 130%;
+  color: #000000;
+
+  .spread-popup-card--teens & {
+    color: #ffffff;
+  }
+}
+
+.spread-feature-divider {
+  width: 1px;
+  height: 36px;
+  background-color: #000000;
+
+  &--teens {
+    background-color: #ffffff;
+  }
+}
+
+.spread-popup-btn {
+  width: 100%;
+  max-width: 280px;
+  height: 50px;
+  border: none;
+  border-radius: 100px;
+  background: linear-gradient(180deg, #ed7d6f 0%, #d7586b 100%);
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 0 0 24px 0;
+
+
+  &--teens {
+    background: linear-gradient(180deg, #EE9596 0%, #F17071 100%);
+  }
+}
+
+.spread-popup-skip {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #000000;
+  text-decoration: underline !important;
+  cursor: pointer;
+
+  &--teens {
+    color: rgba(255, 255, 255, 0.85);
+  }
+}
+
+/* ====== Free Trial Ended Popup ====== */
+.trial-ended-popup-card {
+  background: #FFF8E7;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+  width: 100%;
+  max-width: 335px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  animation: tourPopupSlideUp 0.28s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+
+  &--teens {
+    background: #16366D;
+  }
+}
+
+.trial-ended-popup-banner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.8) 45%, rgba(255, 255, 255, 0) 100%);
+    pointer-events: none;
+    z-index: 1;
+  }
+}
+
+.trial-ended-popup-img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  display: block;
+}
+
+.trial-ended-popup-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 24px 20px 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+.trial-ended-popup-title {
+  margin: 0 0 8px 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 130%;
+  color: #000000;
+
+  &--teens {
+    color: #16366D;
+  }
+}
+
+.trial-ended-popup-sub {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 150%;
+  color: #000000;
+
+  &--teens {
+    color: #16366D;
+  }
+}
+
+.trial-ended-popup-content {
+  padding: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  background: #FFF8E7;
+
+  &--teens {
+    background: #16366D;
+  }
+}
+
+.trial-ended-popup-btn {
+  width: 100%;
+  max-width: 280px;
+  height: 50px;
+  border-radius: 100px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 0;
+  color: #fff;
+  background: linear-gradient(180deg, #ed7d6f 0%, #d7586b 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 24px;
+
+  &--teens {
+    background: linear-gradient(180deg, #EE9596 0%, #F17071 100%);
+  }
+}
+
+.trial-ended-link {
+  background: transparent;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  line-height: 150%;
+  cursor: pointer;
+
+  &.view_plans {
+    color: #d7586b;
+    font-weight: 600;
+    margin-bottom: 14px;
+    text-decoration: underline;
+
+    &--teens {
+      color: #e58d82;
+    }
+  }
+
+  &.not_now {
+    color: #000000;
+    font-weight: 400;
+    text-decoration: underline;
+    margin-bottom: 0;
+
+    &--teens {
+      color: #FFFFFF;
+    }
+  }
+}

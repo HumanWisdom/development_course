@@ -22658,6 +22658,7 @@ ul.dh_ul li:last-child {
   border: 0;
   border-radius: 12px;
   background: #0C2B5F;
+  border: 1px solid rgba(255,255,255,.25);
 }
 
 .login_signup_tab>li {
@@ -22809,11 +22810,12 @@ ul.dh_ul li:last-child {
 }
 
 .btn_login_signup {
-  border: 0;
+  /* border: 0; */
   margin: 0;
+  border: 1px solid rgba(0, 0, 0, 0.5) !important;
   height: 50px;
   background: #0C2B5F !important;
-  box-shadow: 1px 1px 2px #00000040;
+  /* box-shadow: 1px 1px 2px #00000040; */
   border-radius: 12px;
   width: 101px;
   height: 52px;
@@ -24335,7 +24337,7 @@ a {
   font-weight: 600;
   font-style: normal;
   line-height: 160%;
-  color: #EE9596;
+  color: #EE9596 !important;
   text-decoration: underline;
 }
 .read-text-label {
@@ -24349,6 +24351,7 @@ a {
 
  .blog_highlight_peach:hover{
   color: #f17071 !important;
+  
   
    text-decoration: underline; 
 } 
@@ -24572,7 +24575,7 @@ a {
   margin: 0;
   border: 0;
   height: 40px;
-  width: 92px;
+  width: 115px;
   background: #FFF;
   border-radius: 20px;
   font-weight: 600;
@@ -32436,7 +32439,7 @@ body * {
 }
 
 .hr_style_v3_02 {
-  border: 1px solid #FFFFFF;
+  border: 1px solid #000;
   opacity: 0.1;
   margin: 20px 0;
 }
@@ -32605,8 +32608,8 @@ body * {
   justify-content: center;
   padding: 0 20px;
   z-index: 9;
-  position: fixed;
-  top: 0;
+  /* position: fixed; */
+  top: 80px;
   right: 0;
   left: 0;
   margin: 0 auto;
@@ -35250,11 +35253,12 @@ background: linear-gradient(180deg, #F17071 0%, #DE6768 100%);
   width: 100%;
   border-radius: 100px;
   border: 1px solid rgba(255, 255, 255, 0.25);
-  background: #0C2B5F;
+  background: #ffF;
   font-size: 15px;
   font-weight: 400;
   line-height: 150%;
-  color: rgba(255, 255, 255, 0.50);
+  color:#000000;
+  /* color: rgba(255, 255, 255, 0.50); */
   text-align: left;
   padding: 10px 20px;
 }
@@ -35266,11 +35270,15 @@ background: linear-gradient(180deg, #F17071 0%, #DE6768 100%);
   width: 100%;
   height: 40px;
   border-radius: 100px;
-  background: #FFF !important;
+  color: #FFFFFF !important;
+
+  background: linear-gradient(180deg, #EE9596 0%, #F17071 100%);
+
+  /* background: #FFF !important; */
   font-size: 15px;
   font-weight: 600;
   line-height: 150%;
-  color: #ee9596 !important;
+  /* color: #ee9596 !important; */
   text-align: center;
 }
 
@@ -37861,6 +37869,83 @@ div.contentdiv p {
   max-height: 150px;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.chat-thumbnails .resource-card,
+.resource-card {
+  background: #A54265 !important;
+  background-color: #A54265 !important;
+  color: #ffffff !important;
+  display: flex !important;
+  align-items: flex-start !important;
+}
+
+.chat-thumbnails .resource-card:hover,
+.resource-card:hover {
+  background: #A54265 !important;
+  background-color: #A54265 !important;
+}
+
+.chat-thumbnails .resource-card a,
+.resource-card a {
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+
+.chat-thumbnails .resource-card a:visited,
+.resource-card a:visited {
+  color: #ffffff !important;
+}
+
+.chat-thumbnails .resource-card img,
+.resource-card img {
+  align-self: flex-start !important;
+  margin-top: 0 !important;
+  vertical-align: top !important;
+}
+
+.chat-thumbnails .resource-card > div,
+.resource-card > div,
+.chat-thumbnails .resource-card .resource-card-info,
+.resource-card .resource-card-info {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  align-self: flex-start !important;
+}
+
+.chat-thumbnails .resource-card strong,
+.resource-card strong,
+.chat-thumbnails .resource-card b,
+.resource-card b,
+.chat-thumbnails .resource-card p,
+.resource-card p,
+.chat-thumbnails .resource-card div,
+.resource-card div,
+.chat-thumbnails .resource-card .resource-card-title,
+.resource-card .resource-card-title {
+  font-size: 15px !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  line-height: 130%;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.chat-thumbnails .resource-card span,
+.resource-card span,
+.chat-thumbnails .resource-card small,
+.resource-card small,
+.chat-thumbnails .resource-card .resource-card-type,
+.resource-card .resource-card-type,
+.chat-thumbnails .resource-card a span,
+.resource-card a span {
+  font-size: 12px !important;
+  font-weight: normal !important;
+  color: rgba(255, 255, 255, 0.5) !important;
+  text-decoration: none !important;
+  margin-top: 4px;
 }
 
 

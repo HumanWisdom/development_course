@@ -106,6 +106,10 @@
     color: rgba(255, 255, 255, 0.7);
 }
 
+.fc_ffffff_0_75 {
+    color: rgba(255, 255, 255, 0.75) !important;
+}
+
 .fc_a0a3bd {
     color: #A0A3BD;
 }

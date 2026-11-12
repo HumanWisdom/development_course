@@ -29,11 +29,12 @@
           <div class="x_content p0">
 
             <div class="header-section">
-              <h1 class="fw_600 fs_24px lh_140p mt0px mb10px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
-                {{topicName}}
+              <h1 class="fw_600 fs_24px lh_140p mt0px mb10px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'"
+                [innerHTML]="Title">
+
               </h1>
-              <p class="fs_15px fw_400 lh_150p mt0px mb20px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff_0_5'">
-                Here are some quick things to try out
+              <p class="fs_15px fw_400 lh_150p mt0px mb30px" [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff_0_5'">
+                {{Subtitle}}
               </p>
             </div>
 
@@ -83,11 +84,11 @@
             </div>
 
             <!-- Bottom Actions -->
-            <div class="bottom-actions" *ngIf="!isLoading">
+            <div class="bottom-actions col-lg-4 col-md-6 col-sm-6 col-xs-12 col_cw" *ngIf="!isLoading">
               <!-- Skip Button: displayed if NOT all cards are viewed -->
               <div class="skip-btn-container tcenter" *ngIf="!allViewed">
                 <a (click)="onContinue()" class="skip-link fs_15px fw_500 td_underline"
-                  [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
+                  [ngClass]="isAdults ? 'fc_000000_0_7' : 'fc_ffffff_0_7'">
                   Skip
                 </a>
               </div>

@@ -39,7 +39,7 @@
 
     <div class="chat-messages" #messageContainer>
       <!-- Dynamic Messages -->
-      <div *ngFor="let message of messages; let isFirst = first; let isLast = last" class="message"
+      <div *ngFor="let message of messages; let isFirst = first; let isLast = last; trackBy: trackByMessageId" class="message"
         [ngClass]="[message.sender + '-message', message.hideAvatar ? 'bot-followup' : '', message.id === 'welcome-intro-2' ? 'welcome-followup' : '']">
         <!-- Bot Message -->
         <div *ngIf="message.sender === 'bot' && !message.hideAvatar" class="message-avatar">
@@ -55,7 +55,9 @@
           <div class="message-content" [ngClass]="{'typing-indicator': message.isTyping}">
             <!-- Regular message content -->
             <div *ngIf="!message.isTyping" class="bot-message-content" [innerHTML]="sanitizeHtml(message.content)"
-              (click)="onMessageContentClick($event)" (keydown.enter)="onMessageContentClick($event)" tabindex="0">
+              (click)="onMessageContentClick($event)" (pointerdown)="onMessageContentPointerDown($event)"
+              (pointerup)="onMessageContentPointerUp($event)"
+              (keydown.enter)="onMessageContentClick($event)" tabindex="0">
             </div>
 
             <!-- Resource cards — Angular-rendered cards for yes/no related content responses -->

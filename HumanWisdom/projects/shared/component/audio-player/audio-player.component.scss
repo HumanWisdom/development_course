@@ -102,9 +102,13 @@ transform: rotate(-360deg) scaleX(-1);
 //   filter: none !important;
 // }
 
-audio::-webkit-media-controls-play-button {
-  background-color: #ee9596;
-  border-radius: 15px;
+.teen-audio-controls::-webkit-media-controls-panel {
+  filter: invert(1) !important;
+}
+
+.teen-audio-controls::-webkit-media-controls-play-button {
+  background-color: #116a69 !important; /* Inverts to #ee9596 */
+  border-radius: 50% !important;
 }
 
 audio::-webkit-media-controls-current-time-display {

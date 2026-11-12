@@ -1,6 +1,8 @@
 <?php
 $hm_demo_subtitle = $hm_demo_subtitle ?? 'Connect with our specialists today and see how we can help you prioritize a happier workspace';
 $hm_demo_org_placeholder = $hm_demo_org_placeholder ?? 'Company name';
+$hm_demo_secondary_label = $hm_demo_secondary_label ?? '';
+$hm_demo_secondary_href = $hm_demo_secondary_href ?? '';
 ?>
      <section id="bring_happierme" class="work-demo-section">
         <div class="row center_flex div_subscription work-demo-band">
@@ -55,6 +57,11 @@ $hm_demo_org_placeholder = $hm_demo_org_placeholder ?? 'Company name';
                   <button id="Request-Demo" type="button" class="fs_15px fw_600 lh_140p fc_ffffff btn_tff work-demo-btn">
                     Request a demo
                   </button>
+                  <?php if ($hm_demo_secondary_label !== '' && $hm_demo_secondary_href !== '') : ?>
+                  <a href="<?= htmlspecialchars($hm_demo_secondary_href, ENT_QUOTES, 'UTF-8'); ?>" class="fs_15px fw_600 lh_140p fc_ffffff work-demo-btn-secondary">
+                    <?= htmlspecialchars($hm_demo_secondary_label, ENT_QUOTES, 'UTF-8'); ?>
+                  </a>
+                  <?php endif; ?>
                 </div>
               </form>
             </div>

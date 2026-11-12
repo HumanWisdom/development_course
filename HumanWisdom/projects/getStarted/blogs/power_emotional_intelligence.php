@@ -100,7 +100,7 @@
 
             <div class="row mtb20px rm80px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <img src="https://miro.medium.com/v2/resize:fit:1400/0*Hlaijtbr8fl2KJ2L" class="img-responsive" alt="Resilience and emotional intelligence" >
+                <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/86_new.webp" class="img-responsive" alt="Resilience and emotional intelligence" >
               </div>
             </div>
 

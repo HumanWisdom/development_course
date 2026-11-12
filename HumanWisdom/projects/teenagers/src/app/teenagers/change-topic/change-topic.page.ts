@@ -76,7 +76,7 @@ export class ChangeTopicPage implements OnInit {
     this.getIntroDashboardStatus();
     let loginResponse = JSON.parse(localStorage.getItem("loginResponse"))
 
-    let NoOfVisits = loginResponse.NoOfVisits
+    let NoOfVisits = loginResponse?.NoOfVisits ?? 0
     console.log("NoofVisits:" + NoOfVisits)
 
     const { routedFromLogin } = window.history.state;
@@ -132,9 +132,9 @@ export class ChangeTopicPage implements OnInit {
     console.log("update")
     this.service.AddUserPreference(this.selectedId).subscribe(res => {
       if (res) {
-        this.logeventservice.logEvent('click_pick_topic_' + this.selectedname);
-        this.router.navigate(['/teenagers/change-topic/cards', this.selectedId], {
-          state: { routedFromLogin: this.isRoutedFromLogin }
+        this.logeventservice.logEvent('click_pick_topic_' + name);
+        this.router.navigate(['/teenagers/change-topic/cards', id], {
+          state: { routedFromLogin: this.isRoutedFromLogin}
         });
       }
     });
@@ -164,14 +164,14 @@ export class ChangeTopicPage implements OnInit {
     }
   }
 
-  updateList(id, name) {
+  updateList(id,name) {
     this.selectedId = id;
     this.selectedname = name;
 
     if (parseInt(id) > 0) {
       this.isSelected = true;
     }
-    this.update(id, name);
+    this.update(id,name);
   }
 
   redirectToDashboard(name) {

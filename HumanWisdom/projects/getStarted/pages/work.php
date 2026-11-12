@@ -12,8 +12,8 @@
     <meta property="og:type" content="website" />
     <meta property="og:description" content="Improve employee wellbeing and build life skills with HappierMe. Develop emotional intelligence, communication and stronger workplace relationships.">
     
-    <meta property="og:image" content="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/imgs/website_share.jpg" />
-    <meta property="og:image:alt" content="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/imgs/website_share.jpg" />
+    <meta property="og:image" content="https://d1tenzemoxuh75.cloudfront.net/website/imgs/website_share.jpg" />
+    <meta property="og:image:alt" content="https://d1tenzemoxuh75.cloudfront.net/website/imgs/website_share.jpg" />
     <meta property="og:image:width" content="414" />
     <meta property="og:image:height" content="232" />
     <meta property="og:title" content="HappierMe:For Teens & Adults">
@@ -107,80 +107,10 @@
           padding: 10px;
         }
 
-        /* Work testimonials — Figma: pad 20, gap 20, cards 315×213 */
-        .owl_testimonials .owl-carousel.work-testimonials-native {
-          display: flex !important;
-          flex-direction: row !important;
-          flex-wrap: nowrap !important;
-          overflow-x: auto !important;
-          gap: 20px !important;
-          padding: 0 20px !important;
-          -webkit-overflow-scrolling: touch;
-        }
-
-        .owl_testimonials .owl-carousel.work-testimonials-native > .item,
-        .owl_testimonials .owl-carousel.work-testimonials-native .owl-item {
-          width: 315px !important;
-          min-width: 315px !important;
-          max-width: 315px !important;
-          flex: 0 0 315px !important;
-          height: 213px !important;
-          margin: 0 !important;
-        }
-
-        .owl_testimonials .div_testimonials.work-testimonial-card {
-          width: 315px !important;
-          min-width: 315px !important;
-          max-width: 315px !important;
-          height: 213px !important;
-          min-height: 213px !important;
-          max-height: 213px !important;
-        }
-
+        /* Testimonials native scroll — sizes owned by work.css (Figma 13309:7403) */
         .owl-carousel .owl-stage {
           width: auto !important;
         }
-
-      /* Reduce section padding on mobile to fix large gaps */
-      section {
-        padding-top: 20px !important;
-        padding-bottom: 20px !important;
-      }
-      
-      .section-header {
-        padding-bottom: 20px !important;
-      }
-
-      .section-header.work-dyk-header,
-      .section-header.work-inspire-header {
-        padding-bottom: 40px !important;
-      }
-
-      .section-header.work-testimonials-header {
-        padding-bottom: 24px !important;
-      }
-
-      section.work-testimonials-section {
-        padding-top: 60px !important;
-        padding-bottom: 60px !important;
-      }
-
-      section.work-dyk-section {
-        padding-top: 60px !important;
-        padding-bottom: 0 !important;
-      }
-
-      section.work-desc-section {
-        padding-bottom: 0 !important;
-      }
-
-      section.work-inspire-section {
-        padding-top: 0 !important;
-      }
-
-      .section-header.work-blog-header {
-        padding-bottom: 0 !important;
-      }
     }
     </style>
   </head>
@@ -208,46 +138,31 @@
 
               <div class="row prelative" data-aos="fade-up" data-aos-delay="100">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 mt3rem">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/work_landing.webp" class="img-responsive w100p display_m_none h-800" alt="Boost workplace wellbeing, performance and productivity">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/workkk.webp" class="img-responsive w100p display_m_none h-800" alt="Build a happier, more capable workforce">
 
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/work_mobile.webp" class="img-responsive w100p display_d_none" alt="Boost workplace wellbeing, performance and productivity">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/work_mobile.webp" class="img-responsive w100p display_d_none" alt="Build a happier, more capable workforce">
 
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/work_widescreen.webp" class="img-responsive w100p display_m_none wide-screen-only" loading="lazy" alt="Boost workplace wellbeing, performance and productivity">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/work_widescreen.webp" class="img-responsive w100p display_m_none wide-screen-only" loading="lazy" alt="Build a happier, more capable workforce">
                 </div>
               </div>
-        
+
               <div class="row center_flex absolute_desc absolute_desc_m" data-aos="fade-up" data-aos-delay="500">
                 <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10 col-10 p0 tleft work-hero-stack">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 mt20px">
-                    <h1 class="mtb0px fs_36px fw_600 lh_140p fc_ffffff">
-                      <span class="display_m_none">
-                        Boost workplace wellbeing, performance and productivity
-                      </span>
-                      <span class="display_d_none">
-                        HappierMe for the workplace
-                      </span>
-                    </h1>
-                  </div>
-        
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 ">
-                    <h5 class="mt20px mb35px fs_15px fw_400 lh_160p fc_ffffff">
-                      <span class="display_m_none">
-                        Upskill your staff to be happier, emotionally intelligent and make better decisions. An all-in-one app for mental health, relationships, better decision-making and soft skills.
-                      </span>
-                      <span class="display_d_none">
-                        Boost workplace wellbeing, performance and productivity, with HappierMe. Upskill your staff to be happier, emotionally intelligent and make better decisions. An all-in-one app for mental health, relationships, better decision-making and soft skills.
-                      </span>
-                    </h5>
-                  </div>
-        
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p0">
-                      <a href="#bring_happierme" class="">
-                        <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff req_button" id="requestDemoForWork"  >
-                          Request a demo
-                        </button>
-                      </a>
-                    </div>
+                  <h1>
+                    Build a happier, more capable workforce.
+                  </h1>
+
+                  <h5>
+                    Help your people develop self-awareness and emotional skills to reduce stress and prevent burnout, strengthen relationships and make better decisions.
+                  </h5>
+
+                  <div class="work-hero-ctas">
+                    <a href="#bring_happierme" class="fs_15px fw_600 lh_140p fc_ffffff btn_tff req_button work-hero-btn" id="requestDemoForWork">
+                      Request a demo
+                    </a>
+                    <a href="../organisation-choose.php/happierme" class="fs_15px fw_600 lh_140p fc_ffffff btn_tff work-hero-btn">
+                      Try free for 10 days
+                    </a>
                   </div>
                 </div>
               </div>
@@ -256,237 +171,210 @@
           </div>
         </section>
 
+        <section class="work-trust" aria-label="Trust badges">
+          <div class="work-trust-inner">
+            <div class="work-trust-item">
+              <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/orcha_certifie.svg" width="60" height="45" alt="ORCHA Certified">
+              <span>ORCHA approved for use in healthcare</span>
+            </div>
+            <div class="work-trust-item">
+              <img src="https://d1tenzemoxuh75.cloudfront.net/website/working_with_mind.svg" width="104" height="45" alt="Working with Mind">
+              <span>Featured in Mind’s app library</span>
+            </div>
+          </div>
+        </section>
+
         <main id="main">
 
+          <!-- Improve performance -->
+          <section class="work-section work-perf-section">
+            <div class="work-section-inner">
+              <div class="work-section-head">
+                <h2 class="work-section-title">
+                  <span class="work-copy-desktop display_m_none">Improve performance and productivity<br>with HappierMe</span>
+                  <span class="work-copy-mobile display_d_none">Inspiring fresh ways of thinking</span>
+                </h2>
+              </div>
+              <div class="work-pillars">
+                <article class="work-pillar">
+                  <span class="work-icon-slot" aria-hidden="true"></span>
+                  <div class="work-pillar-copy">
+                                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/mentall.svg" width="79" height="60" alt="Working with Mind">
 
-          <!-- description -->
-          <section class="work-desc-section">
-            <div class="row center_flex">
-              <div class="p0 flex_block w-1245px gap_40px gap_m24px">
-                <!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 pr0px tleft ta_lc mb20px display_d_none" data-aos="fade-up" data-aos-delay="200">
-                  <h2 class="mtb0px fs_24px fw_600 lh_150p fc_834b66">
-                    Feel calm, capable, and better everyday, with HappierMe!
-                  </h2>
-                </div> -->
+                    <h3 class="work-pillar-title">Proactive mental wellbeing</h3>
+                    <p class="work-pillar-text">Build self-awareness and emotional skills to help prevent mental health problems and burnout before they escalate and affect performance.</p>
+                  </div>
+                </article>
+                <article class="work-pillar">
+                  <span class="work-icon-slot" aria-hidden="true"></span>
+                  <div class="work-pillar-copy">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/relationnn.svg" width="79" height="60" alt="Working with Mind">
 
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 pl0px cpr_a" data-aos="fade-up" data-aos-delay="100">
-                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/work_app.webp" class="img-responsive work_app_img" alt="Feel calm, capable, and better everyday, with HappierMe!">
-                </div>
+                    <h3 class="work-pillar-title">Stronger relationships</h3>
+                    <p class="work-pillar-text">Develop self-awareness and empathy to improve communication, collaboration and conflict resolution, fostering a more positive workforce culture.</p>
+                  </div>
+                </article>
+                <article class="work-pillar">
+                  <span class="work-icon-slot" aria-hidden="true"></span>
+                  <div class="work-pillar-copy">
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/makk.svg" width="79" height="60" alt="Working with Mind">
 
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 pr0px tleft w-384px mt0px work-desc-copy" data-aos="fade-up" data-aos-delay="200">
-                  <h2 class="mtb0px fs_30px fw_600 lh_140p fc_000000 work-desc-title">
-                    <span class="display_m_none">
-                      Feel calm, capable,<br>
-                      and better everyday,<br>
-                      with HappierMe!
-                    </span>
-                    <span class="display_d_none">
-                      Feel calm, capable, and<br>
-                      better everyday, with<br>
-                      HappierMe.
-                    </span>
-                  </h2>
+                    <h3 class="work-pillar-title">Better decision making</h3>
+                    <p class="work-pillar-text">Understand how emotions, unconscious biases and personal values influence thinking, enabling clearer judgement.</p>
+                  </div>
+                </article>
+                <article class="work-pillar">
+                  <span class="work-icon-slot" aria-hidden="true"></span>
+                  <div class="work-pillar-copy">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/prodddd.svg" width="79" height="60" alt="Working with Mind">
 
-                  <h5 class="mtb0px fs_15px fw_400 lh_150p fc_000000 work-desc-subtitle">
-                    <span class="display_m_none">
-                      How you think matters! The app helps you feel better now, and then helps you to understand your own mind so you can be in charge of how you respond to challenges.
-                    </span>
-                    <span class="display_d_none">
-                      How you think matters! The app helps you feel better<br>
-                      now, and then helps you to understand your own mind<br>
-                      so you can be in charge of how you respond to<br>
-                      challenges.
-                    </span>
-                  </h5>
-                </div>
+                    <h3 class="work-pillar-title">Improved productivity</h3>
+                    <p class="work-pillar-text">Happier, more engaged employees tend to be more productive, take fewer sick days and experience less burnout, contributing to better business performance.</p>
+                  </div>
+                </article>
               </div>
             </div>
           </section>
-          <!-- /description -->
 
-          <!-- did you know -->
-          <section class="work-dyk-section">
-            <div class="section-header work-dyk-header">
+          
+          <!-- <section class="work-section work-video-section">
+            <div class="work-section-inner">
+              <div class="work-section-head">
+                <h2 class="work-section-title">Boost human skills to thrive at work</h2>
+              </div>
+              <div class="work-video-wrap"> -->
+                <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/ROP4llA74DA?si=6Zk3KCbtVKEohzVg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+                <!-- <iframe
+                  loading="lazy"
+                  title="How to Boost Wellbeing and Productivity Using Human Skills"
+                  src="https://www.youtube.com/embed/ROP4llA74DA?si=6Zk3KCbtVKEohzVg"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen></iframe>
+              </div>
+            </div>
+          </section> -->
+
+          <!-- video -->
+          <section class="work-section work-video-section">
+            <div class="section-header-teen">
               <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
-                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
-                  <h2 class="mtb0px fs_30px fw_600 lh_150p fc_000000 work-dyk-title">
-                    Did you know?
-                  </h2>
+                <div class="work-section-head">
+                  <h2 class="work-section-title">Boost human skills to thrive at work</h2>
                 </div>
               </div>
-            </div>
+           </div>
 
-            <div class="row center_flex div_dyk work-dyk-band">
-              <div class="p0 div_dyk_l1 w-980px">
-
-                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 col-12 p0" data-aos="fade-up" data-aos-delay="100">
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                      <h2 class="mt0px mb5px fs_24px fw_600 lh_120p fc_000000">
-                        75%
-                      </h2>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                      <h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
-                        of employers say staff lack soft skills
-                      </h5>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                      <h6 class="mtb0px fs_12px fw_400 lh_140p fc_000000">
-                        (shrm.org)
-                      </h6>
-                    </div>
-                  </div>
+            <div class="row center_flex" data-aos="fade-up" data-aos-delay="200">
+              <div class="col-lg-12 col-md-12 col-sm-10 col-xs-10 col-10 p0 work-video-wrap">
+                <div class="youtube-player work-youtube-player">
+                  <button
+                    id="workYoutubeCover"
+                    type="button"
+                    aria-label="Play HappierMe for Work video">
+                    <img
+                      src="https://d1tenzemoxuh75.cloudfront.net/website/webp/Youtube+player.webp"
+                      alt="How to Boost Wellbeing and Productivity Using Human Skills" />
+                       <span
+              aria-hidden="true"
+              style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;width:68px;height:48px;border-radius:12px;background:rgba(0,0,0,0.25);">
+              <svg width="18.37" height="19.18" viewBox="0 0 18.37 19.18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.37 9.59L0 0V19.18L18.37 9.59Z" fill="rgba(234,234,234,1)"/>
+              </svg>
+            </span>
+                  </button>
+                  <iframe
+                    id="workYoutube"
+                    class="yt-embed"
+                    src="about:blank"
+                    data-src="https://www.youtube-nocookie.com/embed/ROP4llA74DA?autoplay=1&rel=0&modestbranding=1&playsinline=1"
+                    title="How to Boost Wellbeing and Productivity Using Human Skills"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+                    allowfullscreen></iframe>
                 </div>
-
-                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 col-12 p0" data-aos="fade-up" data-aos-delay="200">
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                      <h2 class="mt0px mb5px fs_24px fw_600 lh_120p fc_000000">
-                        67%
-                      </h2>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                      <h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
-                        of employees are disengaged
-                      </h5>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                      <h6 class="mtb0px fs_12px fw_400 lh_140p fc_000000">
-                        (Gallup)
-                      </h6>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 col-12 p0" data-aos="fade-up" data-aos-delay="300">
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                      <h2 class="mt0px mb5px fs_24px fw_600 lh_120p fc_000000">
-                        76%
-                      </h2>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                      <h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
-                        of employees have a mental health problem
-                      </h5>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                      <h6 class="mtb0px fs_12px fw_400 lh_140p fc_000000">
-                        (US Surgeon General)
-                      </h6>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 col-12 p0" data-aos="fade-up" data-aos-delay="400">
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                      <h2 class="mt0px mb5px fs_24px fw_600 lh_120p fc_000000">
-                        50-70%
-                      </h2>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                      <h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
-                        of leaders fail within 18 months
-                      </h5>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                      <h6 class="mtb0px fs_12px fw_400 lh_140p fc_000000">
-                        (CEB)
-                      </h6>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 col-12 p0" data-aos="fade-up" data-aos-delay="500">
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                      <h2 class="mt0px mb5px fs_24px fw_600 lh_120p fc_000000">
-                        1 in 6
-                      </h2>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                      <h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
-                        people have a substance abuse disorder
-                      </h5>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                      <h6 class="mtb0px fs_12px fw_400 lh_140p fc_000000">
-                        (CDC)
-                      </h6>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 col-12 p0" data-aos="fade-up" data-aos-delay="600">
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                      <h2 class="mt0px mb5px fs_24px fw_600 lh_120p fc_000000">
-                        38%
-                      </h2>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                      <h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
-                        of UK employees experience interpersonal conflict at work
-                      </h5>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                      <h6 class="mtb0px fs_12px fw_400 lh_140p fc_000000">
-                        (CIPD)
-                      </h6>
-                    </div>
-                  </div>
-                </div>
-
               </div>
             </div>
           </section>
-          <!-- /did you know -->
+          <!-- /video -->
+
+
+          <!-- Why different -->
+          <section class="work-section work-diff-section">
+            <div class="work-section-inner">
+              <div class="work-section-head">
+                <h2 class="work-section-title">Why HappierMe is different</h2>
+                <p class="work-section-sub">
+                  <span class="work-copy-desktop display_m_none">Most apps help you cope. HappierMe helps you understand yourself and change.</span>
+                  <span class="work-copy-mobile display_d_none">Most apps help you cope.<br>We help you change.</span>
+                </p>
+              </div>
+              <div class="work-diff-cards">
+                <article class="work-diff-card">
+                  <div class="work-diff-card-top work-diff-card-top--prevention">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/Prevention.svg" alt="" width="66" height="66" class="work-diff-icon display_m_none">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/preventation_mob.svg" alt="" width="66" height="66" class="work-diff-icon display_d_none">
+                  </div>
+                  <div class="work-diff-card-body">
+                    <h3 class="work-diff-card-title">Prevention-first approach</h3>
+                    <p class="work-diff-card-text">Build skills to manage challenges early, before stress and mental health problems escalate.</p>
+                  </div>
+                </article>
+                <article class="work-diff-card">
+                  <div class="work-diff-card-top work-diff-card-top--root">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/root.svg" alt="" width="66" height="66" class="work-diff-icon display_m_none">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/route_mob.svg" alt="" width="66" height="66" class="work-diff-icon display_d_none">
+                  </div>
+                  <div class="work-diff-card-body">
+                    <h3 class="work-diff-card-title">Address the root causes</h3>
+                    <p class="work-diff-card-text">Understand hidden patterns of thinking and behaviour behind stress, conflict and poor decisions to create lasting change.</p>
+                  </div>
+                </article>
+                <article class="work-diff-card">
+                  <div class="work-diff-card-top work-diff-card-top--skills">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/build.svg" alt="" width="66" height="66" class="work-diff-icon display_m_none">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/skills_mob.svg" alt="" width="66" height="66" class="work-diff-icon display_d_none">
+                  </div>
+                  <div class="work-diff-card-body">
+                    <h3 class="work-diff-card-title">Build skills for life</h3>
+                    <p class="work-diff-card-text">Develop self-awareness, emotional intelligence and interpersonal skills to thrive at work and beyond.</p>
+                  </div>
+                </article>
+                <article class="work-diff-card">
+                  <div class="work-diff-card-top work-diff-card-top--whole">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/life.svg" alt="" width="66" height="66" class="work-diff-icon display_m_none">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/life_mob.svg" alt="" width="66" height="66" class="work-diff-icon display_d_none">
+                  </div>
+                  <div class="work-diff-card-body">
+                    <h3 class="work-diff-card-title">Whole person wellbeing</h3>
+                    <p class="work-diff-card-text">Dedicated sections for adults, parents and teenagers support the whole family with mental health, relationships, parenting and everyday challenges.</p>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </section>
+
+          <!-- Measure well-being: cream banner 400px; image taller and overflows -->
+          <section class="work-measure">
+            <div class="work-measure-band" aria-hidden="true"></div>
+            <div class="work-measure-inner" data-aos="fade-up" data-aos-delay="100">
+              <div class="work-measure-media">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/measureee.webp" class="img-responsive" alt="Organization Dashboard">
+              </div>
+              <div class="work-measure-copy">
+                <h2 class="work-section-title">Measure well-being.<br class="display_m_none"> Drive performance.</h2>
+                <p>Give HR teams a clear view of employee engagement and wellness with actionable insights that help build healthier, more productive workplaces.</p>
+                <p>All data is anonymised, so individuals cannot be identified.</p>
+              </div>
+            </div>
+          </section>
 
           <!-- testimonials -->
           <section class="work-testimonials-section">
             <div class="section-header work-testimonials-header">
               <div class="row center_flex tcenter" data-aos="fade-up" data-aos-delay="100">
                 <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
-                  <h2 class="mtb0px fs_30px fw_600 lh_120p fc_000000 work-testimonials-title">
-                    The HappierMe impact <br class="display_d_none">across organisations
+                  <h2 class="mtb0px fw_600 fc_000000 work-testimonials-title">
+                    <span class="work-copy-desktop display_m_none">The HappierMe impact across<br>organisations</span>
+                    <span class="work-copy-mobile display_d_none">The HappierMe impact across organisations</span>
                   </h2>
                 </div>
               </div>
@@ -501,104 +389,39 @@
                     <div class="item" data-aos="fade-up" data-aos-delay="200">
                       <div class="div_testimonials work-testimonial-card">
                         <div class="work-testimonial-header">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_julie_goodfellow.webp" class="work-testimonial-avatar" alt="Julie Goodfellow" loading="lazy">
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_julie_goodfellow.webp" class="work-testimonial-avatar" alt="Julie Goodfellow" loading="lazy">
                           <div class="work-testimonial-meta">
                             <p class="work-testimonial-name">Julie Goodfellow</p>
                             <p class="work-testimonial-role">Headteacher, UK</p>
                           </div>
                         </div>
-                        <p class="work-testimonial-quote">I subscribed to this app for all my staff because I have seen how transformative it is to understand my reactions to situations and my personal emotions such as anxiety and depression.</p>
+                        <p class="work-testimonial-quote">“I subscribed to The HappierMe app for all my staff because I have seen how transformative it is to understand my reactions to situations, and my personal emotions such as anxiety &amp; depression. To be able to help others understand, with wisdom, why they feel as they do, is my life-long gift to them.”</p>
                       </div>
                     </div>
 
                     <div class="item" data-aos="fade-up" data-aos-delay="300">
                       <div class="div_testimonials work-testimonial-card">
                         <div class="work-testimonial-header">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_tinamarie_rodriguez.webp" class="work-testimonial-avatar" alt="Tinamarie Rodriguez" loading="lazy">
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_dan_reidenberg.webp" class="work-testimonial-avatar" alt="Dr Dan Reidenberg" loading="lazy">
                           <div class="work-testimonial-meta">
-                            <p class="work-testimonial-name">Tinamarie Rodriguez</p>
-                            <p class="work-testimonial-role">Wisdom coach, USA</p>
+                            <p class="work-testimonial-name">Dr Dan Reidenberg</p>
+                            <p class="work-testimonial-role">Director, Mental Health Coalition, USA</p>
                           </div>
                         </div>
-                        <p class="work-testimonial-quote">This app is exactly what each and every person in the world needs every day. It gives each person the tools to lead a purposeful and fulfilling life.</p>
+                        <p class="work-testimonial-quote">“HappierMe is a well-designed intuitive app that provides many useful tools and resources for anyone wanting to improve their life resilience and well-being. Built upon the belief that the more you know the stronger you will be in moments of crisis HappierMe increases your knowledge awareness and internal strength in an easy to use format.”</p>
                       </div>
                     </div>
 
                     <div class="item" data-aos="fade-up" data-aos-delay="400">
                       <div class="div_testimonials work-testimonial-card">
                         <div class="work-testimonial-header">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_jondi_whitis.webp" class="work-testimonial-avatar" alt="Jondi Whitis" loading="lazy">
+                          <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_jondi_whitis.webp" class="work-testimonial-avatar" alt="Jondi Whitis" loading="lazy">
                           <div class="work-testimonial-meta">
                             <p class="work-testimonial-name">Jondi Whitis</p>
                             <p class="work-testimonial-role">EFT trainer and coach, USA</p>
                           </div>
                         </div>
-                        <p class="work-testimonial-quote">Having trouble figuring it all out? The HappierMe app is an awesome resource for everyday living. You'll find easy, soothing support here - modern tools for exploring your own inner wisdom, for every dilemma.</p>
-                      </div>
-                    </div>
-
-                    <div class="item" data-aos="fade-up" data-aos-delay="500">
-                      <div class="div_testimonials work-testimonial-card">
-                        <div class="work-testimonial-header">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_garry_prigg.webp" class="work-testimonial-avatar" alt="Garry Prigg" loading="lazy">
-                          <div class="work-testimonial-meta">
-                            <p class="work-testimonial-name">Garry Prigg</p>
-                            <p class="work-testimonial-role">CEO, Australia</p>
-                          </div>
-                        </div>
-                        <p class="work-testimonial-quote">The HappierMe app is a pre-eminent asset for people of all ages. It changes peoples lives by assisting them to better know themselves and live with peace, love, harmony, and fulfilment. It is a wonderful gift to humanity.</p>
-                      </div>
-                    </div>
-
-                    <div class="item">
-                      <div class="div_testimonials work-testimonial-card">
-                        <div class="work-testimonial-header">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_suzanne_oades.webp" class="work-testimonial-avatar" alt="Suzanne Oades" loading="lazy">
-                          <div class="work-testimonial-meta">
-                            <p class="work-testimonial-name">Suzanne Oades</p>
-                            <p class="work-testimonial-role">Psychotherapist, UK</p>
-                          </div>
-                        </div>
-                        <p class="work-testimonial-quote">By knowing more about how my mind works, I have learned to make better choices in how I think, behave and act. The HappierMe app is a space where I feel supported to grow into the person I want to be.</p>
-                      </div>
-                    </div>
-
-                    <div class="item">
-                      <div class="div_testimonials work-testimonial-card">
-                        <div class="work-testimonial-header">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_gopalan_nair.webp" class="work-testimonial-avatar" alt="Gopalan Nair" loading="lazy">
-                          <div class="work-testimonial-meta">
-                            <p class="work-testimonial-name">Gopalan Nair</p>
-                            <p class="work-testimonial-role">Life coach, Singapore</p>
-                          </div>
-                        </div>
-                        <p class="work-testimonial-quote">The HappierMe app supports an individual's exploration in seeking positive outcomes through a journey of self-discovery, by applying our intelligence with common sense and insight. I believe this is truly a gift for every single human being to embrace.</p>
-                      </div>
-                    </div>
-
-                    <div class="item">
-                      <div class="div_testimonials work-testimonial-card">
-                        <div class="work-testimonial-header">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/testimonial_lynne_staley.webp" class="work-testimonial-avatar" alt="Lynne Staley" loading="lazy">
-                          <div class="work-testimonial-meta">
-                            <p class="work-testimonial-name">Lynne Staley</p>
-                            <p class="work-testimonial-role">Life and loss coach, USA</p>
-                          </div>
-                        </div>
-                        <p class="work-testimonial-quote">I recommend The HappierMe app to my clients as a stand-out app among similar programmes. The design and content meets users where they are and reminds them that wisdom comes from inquiry and a deeper understanding of self.</p>
-                      </div>
-                    </div>
-
-                    <div class="item">
-                      <div class="div_testimonials work-testimonial-card">
-                        <div class="work-testimonial-header">
-                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/k1.webp" class="work-testimonial-avatar" alt="Carolyn King" loading="lazy">
-                          <div class="work-testimonial-meta">
-                            <p class="work-testimonial-name">Carolyn King</p>
-                            <p class="work-testimonial-role">Kinesiologist, Australia</p>
-                          </div>
-                        </div>
-                        <p class="work-testimonial-quote">I absolutely love the HappierMe app. It has enabled me to really go on a journey of self-exploration. It covers so many different aspects of how our mind works in the real world. I would highly recommend this app to anyone that wishes to improve their life.</p>
+                        <p class="work-testimonial-quote">“Having trouble figuring it all out? The HappierMe app is an awesome resource for everyday living. You'll find easy, soothing support here - modern tools for exploring your own inner wisdom, for every dilemma.”</p>
                       </div>
                     </div>
 
@@ -620,297 +443,103 @@
           </section>
           <!-- /testimonials -->
 
-
-          <!-- inspiring -->
-          <section class="work-inspire-section">
-            <div class="section-header work-inspire-header">
-              <div class="row center_flex tcenter" data-aos="fade-up" data-aos-delay="100">
-                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
-                  <h2 class="mtb0px fs_30px fw_600 lh_120p fc_000000 work-inspire-title">
-                    Inspiring fresh ways of thinking
-                  </h2>
-                </div>
+          <!-- Workplace challenges -->
+          <section class="work-section work-challenge-section">
+            <div class="work-section-inner">
+              <div class="work-section-head">
+                <h2 class="work-section-title">
+                  <span class="work-copy-desktop display_m_none">Multiple workplace challenges.<br>One proactive solution.</span>
+                  <span class="work-copy-mobile display_d_none">Multiple workplace challenges. One proactive solution.</span>
+                </h2>
+                <p class="work-section-sub">HappierMe helps address these challenges by building self-awareness<br class="display_m_none"> and emotional skills across the workforce</p>
               </div>
-            </div>
-
-            <div class="row center_flex">
-              <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0 tcenter div_inspire">
-
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 p0" data-aos="fade-up" data-aos-delay="200">
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/inspire_productivity.svg" class="img-responsive" alt="Improved productivity">
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                      <h3 class="mt20px mb5px fs_21px fw_500 lh_150p fc_000000">
-                        Improved productivity
-                      </h3>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                      <h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
-                        Boost productivity by helping staff feel 
-                        <a class="fc_cb6171" href="https://happierme.app/adults/happiness">
-                          happier
-                        </a>
-                        and less 
-                        <a class="fc_cb6171" href="https://happierme.app/adults/stress">
-                          stressed.
-                        </a>
-                        Reduce interpersonal friction and boost collaboration through healthier relationships.
-                      </h5>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 p0" data-aos="fade-up" data-aos-delay="300">
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/inspire_intelligence.svg" class="img-responsive" alt="Emotional intelligence">
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                      <h3 class="mt20px mb5px fs_21px fw_500 lh_150p fc_000000">
-                        Emotional intelligence
-                      </h3>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                      <h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
-                        Understanding your 
-                        <a class="fc_cb6171" href="https://happierme.app/adults/curated/manage-your-emotions">
-                          emotions 
-                        </a>
-                        boosts your EQ, and this can help staff manage their mental health and have happier relationships.
-                      </h5>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 p0" data-aos="fade-up" data-aos-delay="400">
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/inspire_well_being.svg" class="img-responsive" alt="Well-being">
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                      <h3 class="mt20px mb5px fs_21px fw_500 lh_150p fc_000000">
-                        Well-being
-                      </h3>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                      <h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
-                        Emotional intelligence can prevent problems before they arise, and supports staff to be happy and have a positive attitude. This is infectious.
-                      </h5>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-            <div class="row center_flex">
-              <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0 tcenter div_inspire">
-
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 p0" data-aos="fade-up" data-aos-delay="500">
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/inspire_leadership.svg" class="img-responsive" alt="Leadership skills">
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                      <h3 class="mt20px mb5px fs_21px fw_500 lh_150p fc_000000">
-                        Leadership skills
-                      </h3>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                      <h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
-                        Leadership skills are a by-product of self-awareness, and emotional intelligence. Our 
-                        <a class="fc_cb6171" href="https://happierme.app/adults/leadership">
-                          leadership 
-                        </a>
-                        section helps people learn these skills and flourish at work.
-                      </h5>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 p0" data-aos="fade-up" data-aos-delay="600">
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/inspire_critical_thinking.svg" class="img-responsive" alt="Critical thinking">
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                      <h3 class="mt20px mb5px fs_21px fw_500 lh_150p fc_000000">
-                        Critical thinking
-                      </h3>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                      <h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
-                        <a class="fc_cb6171" href="https://happierme.app/adults/awareness">
-                          Self-awareness 
-                        </a>
-                        helps you to think clearly, understand your emotions, and make better decisions.
-                      </h5>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 p0" data-aos="fade-up" data-aos-delay="700">
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/inspire_diversity.svg" class="img-responsive" alt="Diversity & inclusion">
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                      <h3 class="mt20px mb5px fs_21px fw_500 lh_150p fc_000000">
-                        Diversity & inclusion
-                      </h3>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                      <h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
-                        Our modules on 
-                        <a class="fc_cb6171" href="https://happierme.app/adults/conditioning">
-                          Conditioning,
-                        </a>
-                        and
-                        <a class="fc_cb6171" href="https://happierme.app/adults/diversity-and-inclusion">
-                          Diversity & Inclusion
-                        </a>
-                        help people explore and overcome their prejudices to enhance inclusion and reduce conflict.
-                      </h5>
-                    </div>
-                  </div>
-                </div>
-                
-              </div>
-            </div>
-
-            <div class="row center_flex">
-              <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0 tcenter div_inspire">
-
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 p0" data-aos="fade-up" data-aos-delay="800">
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/inspire_workplace.svg" class="img-responsive" alt="Workplace relationships">
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                      <h3 class="mt20px mb5px fs_21px fw_500 lh_150p fc_000000">
-                        Workplace relationships
-                      </h3>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                      <h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
-                        Less friction between people and departments improves collaboration. We have detailed modules on 
-                        <a class="fc_cb6171" href="https://happierme.app/adults/relationships">
-                          Relationships,
-                        </a>
-                        <a class="fc_cb6171" href="https://happierme.app/adults/work">
-                          Work,
-                        </a>
-                        and 
-                        <a class="fc_cb6171" href="https://happierme.app/adults/communication">
-                          Communication
-                        </a>
-                        to enable this.
-                      </h5>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 p0" data-aos="fade-up" data-aos-delay="900">
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/inspire_attract.svg" class="img-responsive" alt="Attract and retain talent">
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                      <h3 class="mt20px mb5px fs_21px fw_500 lh_150p fc_000000">
-                        Attract and retain talent
-                      </h3>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                      <h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
-                        The app enables everyone to live with a positive attitude. This can change the culture of an organisation making it an attractive place to work.
-                      </h5>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 p0" data-aos="fade-up" data-aos-delay="1000">
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                      <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/svgs/inspire_dealing_criticism.svg" class="img-responsive" alt="Dealing with criticism">
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                      <h3 class="mt20px mb5px fs_21px fw_500 lh_150p fc_000000">
-                        Dealing with criticism 
-                      </h3>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                      <h5 class="mtb0px fs_15px fw_400 lh_140p fc_000000">
-                        Our module on 
-                        <a class="fc_cb6171" href="https://happierme.app/adults/criticism">
-                          Criticism
-                        </a>
-                        helps employees accept feedback with a positive attitude, and can help managers offer it with care.
-                      </h5>
-                    </div>
-                  </div>
-                </div>
-                
+              <div class="work-challenge-cards">
+                <article class="work-challenge-card work-challenge-card--1">
+                  <p class="work-challenge-stat">76%</p>
+                  <p class="work-challenge-text">of US workers reported at least one symptom of a mental health condition.</p>
+                  <p class="work-challenge-cite">(US Surgeon General, 2022)</p>
+                </article>
+                <article class="work-challenge-card work-challenge-card--2">
+                  <p class="work-challenge-stat">88%</p>
+                  <p class="work-challenge-text">of European employees are not engaged or are actively disengaged.</p>
+                  <p class="work-challenge-cite">(Gallup, 2026)</p>
+                </article>
+                <article class="work-challenge-card work-challenge-card--3">
+                  <p class="work-challenge-stat">60%</p>
+                  <p class="work-challenge-text">of new managers fail within their first 24 months.</p>
+                  <p class="work-challenge-cite">(Gartner, cited by Wharton)</p>
+                </article>
+                <article class="work-challenge-card work-challenge-card--4">
+                  <p class="work-challenge-stat">44%</p>
+                  <p class="work-challenge-text">of working age adults in Great Britain experienced workplace conflict in the previous year.</p>
+                  <p class="work-challenge-cite">(Acas, 2025)</p>
+                </article>
               </div>
             </div>
           </section>
-          <!-- /inspiring -->
 
+          <!-- Human skills -->
+          <section class="work-section work-skills-section11">
+            <div class="work-section-inner">
+              <div class="work-section-head">
+                <h2 class="work-section-title">
+                  <span class="work-copy-desktop display_m_none">Building human skills to thrive<br>in the age of AI</span>
+                  <span class="work-copy-mobile display_d_none">Building human skills to thrive in the age of AI</span>
+                </h2>
+                <p class="work-section-sub">As AI transforms the workplace, human skills matter more than ever. HappierMe helps employees build these skills to thrive at work and beyond.</p>
+              </div>
+              <div class="work-skills-grid">
+                <article class="work-skill-card">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/inspire_well_being.svg" class="work-skill-icon" width="46" height="46" alt="">
+                  <div>
+                    <h3 class="work-skill-title">Self-awareness</h3>
+                    <p class="work-skill-text">Understand the thoughts, emotions and patterns behind your behaviour to think clearly and respond thoughtfully.</p>
+                  </div>
+                </article>
+                <article class="work-skill-card">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/inspire_intelligence.svg" class="work-skill-icon" width="46" height="46" alt="">
+                  <div>
+                    <h3 class="work-skill-title">Emotional intelligence and resilience</h3>
+                    <p class="work-skill-text">Understand and manage your emotions, navigate stress and uncertainty, and respond constructively to life's challenges.</p>
+                  </div>
+                </article>
+                <article class="work-skill-card">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/inspire_dealing_criticism.svg" class="work-skill-icon" width="46" height="46" alt="">
+                  <div>
+                    <h3 class="work-skill-title">Communication &amp; relationships</h3>
+                    <p class="work-skill-text">Communicate with clarity and empathy, handle criticism, resolve conflict and build stronger working relationships.</p>
+                  </div>
+                </article>
+                <article class="work-skill-card">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/inspire_critical_thinking.svg" class="work-skill-icon" width="46" height="46" alt="">
+                  <div>
+                    <h3 class="work-skill-title">Critical thinking &amp; decision-making</h3>
+                    <p class="work-skill-text">Recognise biases, question assumptions and develop sound judgement to make better decisions.</p>
+                  </div>
+                </article>
+                <article class="work-skill-card">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/inspire_productivity.svg" class="work-skill-icon" width="46" height="46" alt="">
+                  <div>
+                    <h3 class="work-skill-title">Adaptability &amp; growth</h3>
+                    <p class="work-skill-text">Embrace change, overcome fear of the unfamiliar and develop the confidence to learn and grow.</p>
+                  </div>
+                </article>
+                <article class="work-skill-card">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/inspire_leadership.svg" class="work-skill-icon" width="46" height="46" alt="">
+                  <div>
+                    <h3 class="work-skill-title">Leadership &amp; collaboration</h3>
+                    <p class="work-skill-text">Learn to lead from within - with empathy, courage and good judgement, and work more effectively with others.</p>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </section>
+
+          <?php
+            $hm_demo_subtitle = 'Connect with our specialists today and see how we can help you prioritize a happier workspace';
+            $hm_demo_secondary_label = 'Try HappierMe free for 10 days';
+            $hm_demo_secondary_href = '../organisation-choose.php/happierme';
+          ?>
           <!-- header -->
           <?php include('../includes/happierme-email.php'); ?>
           <!-- /header -->
@@ -920,7 +549,7 @@
             <div class="section-header work-blog-header">
               <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
                 <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
-                  <h2 class="mtb0px fs_30px fw_600 lh_120p fc_000000 work-blog-title">
+                  <h2 class="mtb0px fw_600 fc_000000 work-blog-title">
                     Explore our blog
                   </h2>
                 </div>
@@ -990,9 +619,10 @@
             <div class="work-blog-footer">
               <a class="sap work-blog-more" href="https://happierme.app/adults/blogs">
                 <h4 class="mtb0px fs_18px fw_500 lh_150p td_underline">
-                  View all blogs
+                  <span class="work-copy-desktop display_m_none">View all blogs</span>
+                  <span class="work-copy-mobile display_d_none">Find out more</span>
                 </h4>
-                <span class="chevron-pink"><span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span>
+                <span class="chevron-pink work-copy-desktop display_m_none"><span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span>
               </a>
               <div class="owl-theme mt10px work-blog-nav">
                 <div class="owl-controls">
@@ -1019,18 +649,126 @@
     <!-- vendor_footer -->
     <?php include('../includes/vendor_footer.php'); ?>
     <!-- /vendor_footer -->
+    <link rel="stylesheet" href="<?= hw_asset_url('../assets/css/work.css'); ?>">
+    <!-- Force Figma mobile title size (beats deferred index.css 18px hammer) -->
+    <style id="work-mobile-title-figma">
+      /* Measure: kill desktop flex-basis height leak above the tablet image */
+      @media (max-width: 1200px) {
+        body.page-work .work-measure-copy {
+          flex: 0 0 auto !important;
+          flex-basis: auto !important;
+          min-width: 0 !important;
+          height: auto !important;
+        }
+      }
+      @media (max-width: 767px) {
+        body.page-work .work-measure,
+        body.page-work .work-measure-inner {
+          height: auto !important;
+          min-height: 0 !important;
+        }
+        body.page-work .work-measure-inner {
+          flex-direction: column !important;
+          gap: 18px !important;
+          padding: 0 !important;
+        }
+        body.page-work .work-measure-copy {
+          order: -1 !important;
+          flex: 0 0 auto !important;
+          flex-basis: auto !important;
+          min-width: 0 !important;
+          width: 100% !important;
+          max-width: 335px !important;
+          height: auto !important;
+          margin: 0 !important;
+          padding: 0 !important;
+        }
+        body.page-work .work-measure-media {
+          flex: 0 0 auto !important;
+          margin: 0 !important;
+          padding: 0 !important;
+        }
+        body.page-work main#main h2.work-testimonials-title,
+        body.page-work main#main h2.work-section-title,
+        body.page-work main#main h2.work-blog-title,
+        body.page-work main#main .work-measure-copy h2.work-section-title,
+        body.page-work #bring_happierme h2.work-demo-title,
+        body.page-work section.hpt120px ~ main#main .work-testimonials-header h2.work-testimonials-title,
+        body.page-work section.hpt120px ~ main#main .section-header h2.work-testimonials-title,
+        body.page-work section.hpt120px ~ main#main .section-header h2.work-blog-title {
+          font-family: Poppins, sans-serif !important;
+          font-size: 24px !important;
+          font-weight: 600 !important;
+          letter-spacing: 0 !important;
+          width: 335px !important;
+          max-width: 335px !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+          text-align: center !important;
+          white-space: normal !important;
+        }
+        body.page-work main#main h2.work-testimonials-title {
+          line-height: 1.5 !important; /* Figma 150% → 2 lines at 335px */
+        }
+        body.page-work main#main h2.work-section-title,
+        body.page-work main#main .work-measure-copy h2 {
+          line-height: 1.4 !important;
+        }
+        body.page-work main#main h2.work-blog-title,
+        body.page-work .work-blog-header h2.work-blog-title {
+          line-height: 1.2 !important;
+          display: block !important;
+          width: 100% !important;
+          max-width: 335px !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+          text-align: center !important;
+        }
+        body.page-work .work-blog-header,
+        body.page-work .work-blog-header .row.center_flex,
+        body.page-work .work-blog-header [class*="col-"] {
+          width: 100% !important;
+          max-width: 100% !important;
+          text-align: center !important;
+          justify-content: center !important;
+        }
+        body.page-work #bring_happierme h2.work-demo-title {
+          line-height: 1.5 !important;
+          color: #fff !important;
+        }
+        body.page-work main#main .work-diff-section h2.work-section-title {
+          line-height: 1.2 !important;
+        }
+        /* One title only: hide desktop copy; size mobile copy (beat span { 12px } leak) */
+        body.page-work main#main h2 .work-copy-desktop,
+        body.page-work main#main .work-copy-desktop {
+          display: none !important;
+        }
+        body.page-work main#main h2.work-section-title .work-copy-mobile,
+        body.page-work main#main h2.work-testimonials-title .work-copy-mobile,
+        body.page-work main#main h2.work-blog-title .work-copy-mobile,
+        body.page-work section.hpt120px ~ main#main section h2 .work-copy-mobile {
+          display: inline !important;
+          font-family: Poppins, sans-serif !important;
+          font-size: 24px !important;
+          font-weight: 600 !important;
+          letter-spacing: 0 !important;
+          color: inherit !important;
+        }
+      }
+    </style>
 
     <script>
       (function () {
         var workTestimonialsMode = null;
+        var workBlogMode = null;
 
-        function ensureTestimonialItems($tc) {
-          var $items = $tc.find('.item');
+        function flattenCarouselItems($carousel) {
+          var $items = $carousel.find('.item');
           if (!$items.length) return $();
-          // Flatten so .item are direct children (needed after Owl or native mode)
           $items.detach();
-          $tc.children().remove();
-          $tc.append($items);
+          $carousel.children().remove();
+          $carousel.append($items);
           return $items;
         }
 
@@ -1041,7 +779,6 @@
           var isMobile = window.matchMedia('(max-width: 767px)').matches;
           var nextMode = isMobile ? 'mobile' : 'desktop';
 
-          // Avoid destroying/rebuilding on every resize pixel
           if (workTestimonialsMode === nextMode) {
             if (nextMode === 'desktop' && !$tc.hasClass('owl-loaded') && typeof $.fn.owlCarousel === 'function') {
               // fall through to (re)init
@@ -1056,7 +793,7 @@
             } catch (e) {}
           }
 
-          ensureTestimonialItems($tc);
+          flattenCarouselItems($tc);
           $tc.removeClass('work-testimonials-native owl-loaded owl-drag owl-grab');
           $tc.css({ display: '', flexDirection: '', flexWrap: '', overflowX: '', overflowY: '' });
 
@@ -1076,7 +813,6 @@
             loop: false,
             margin: 30,
             nav: false,
-            /* Fit 3 full cards — autoWidth caused the last card to clip */
             autoWidth: false,
             dots: false,
             touchDrag: true,
@@ -1091,11 +827,82 @@
           workTestimonialsMode = 'desktop';
         }
 
+        /* Match index Explore our blog: native swipe strip with 306px cards + peek */
+        function initWorkBlogCarousel() {
+          var $blog = $('body.page-work .owl_blog .owl-carousel');
+          var $nav = $('body.page-work .work-blog-nav .owl-nav, body.page-work .owl_blog .owl-nav');
+          if (!$blog.length) return;
+
+          var isMobile = window.matchMedia('(max-width: 767px)').matches;
+          var nextMode = isMobile ? 'mobile' : 'desktop';
+
+          if (workBlogMode === nextMode) {
+            if (nextMode === 'desktop' && !$blog.hasClass('owl-loaded') && typeof $.fn.owlCarousel === 'function') {
+              // fall through
+            } else if (nextMode === 'mobile' && !$blog.hasClass('work-blog-native')) {
+              // fall through — convert leftover Owl
+            } else {
+              return;
+            }
+          }
+
+          if ($blog.hasClass('owl-loaded')) {
+            try {
+              $blog.trigger('destroy.owl.carousel');
+            } catch (e) {}
+          }
+
+          flattenCarouselItems($blog);
+          $blog.removeClass('work-blog-native owl-loaded owl-drag owl-grab');
+          $blog.css({ display: '', flexDirection: '', flexWrap: '', overflowX: '', overflowY: '', padding: '' });
+
+          if (isMobile) {
+            $blog.addClass('work-blog-native');
+            workBlogMode = 'mobile';
+            return;
+          }
+
+          if (typeof $.fn.owlCarousel !== 'function') {
+            workBlogMode = null;
+            return;
+          }
+
+          $blog.owlCarousel({
+            stagePadding: 50,
+            loop: false,
+            margin: 40,
+            nav: true,
+            autoWidth: true,
+            dots: false,
+            touchDrag: true,
+            mouseDrag: true,
+            pullDrag: true,
+            navText: [
+              '<span class="bi bi-chevron-left"></span>',
+              '<span class="bi bi-chevron-right"></span>'
+            ],
+            navContainer: $nav.length ? $nav : false,
+            responsive: {
+              0: { items: 1 },
+              600: { items: 3 },
+              1000: { items: 3 }
+            }
+          });
+          workBlogMode = 'desktop';
+        }
+
         function scheduleInit() {
           initWorkTestimonialsCarousel();
-          // Owl may load slightly after this inline script
-          setTimeout(initWorkTestimonialsCarousel, 100);
-          setTimeout(initWorkTestimonialsCarousel, 500);
+          initWorkBlogCarousel();
+          setTimeout(function () {
+            initWorkTestimonialsCarousel();
+            initWorkBlogCarousel();
+          }, 100);
+          setTimeout(function () {
+            initWorkTestimonialsCarousel();
+            initWorkBlogCarousel();
+          }, 500);
+          setTimeout(initWorkBlogCarousel, 900);
         }
 
         if (document.readyState === 'loading') {
@@ -1106,8 +913,42 @@
         window.addEventListener('load', scheduleInit);
         window.addEventListener('resize', function () {
           initWorkTestimonialsCarousel();
+          initWorkBlogCarousel();
         });
       })();
+    </script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var workFrame = document.getElementById('workYoutube');
+        var workCover = document.getElementById('workYoutubeCover');
+        if (workFrame && workCover) {
+          workCover.addEventListener('click', function () {
+            if (!workFrame.src || workFrame.src === 'about:blank' || workFrame.src.indexOf('about:blank') !== -1) {
+              workFrame.src = workFrame.getAttribute('data-src');
+            }
+            workCover.style.display = 'none';
+          });
+        }
+
+        /* Hero “Request a demo” → Bring HappierMe to your organization (#bring_happierme) */
+        var demoBtn = document.getElementById('requestDemoForWork');
+        var demoSection = document.getElementById('bring_happierme');
+        if (demoBtn && demoSection) {
+          demoBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            var header = document.querySelector('.header_fixed');
+            var offset = header ? header.offsetHeight + 16 : 180;
+            var top = demoSection.getBoundingClientRect().top + window.pageYOffset - offset;
+            window.scrollTo({ top: top, behavior: 'smooth' });
+            if (history.replaceState) {
+              history.replaceState(null, '', '#bring_happierme');
+            } else {
+              window.location.hash = 'bring_happierme';
+            }
+          });
+        }
+      });
     </script>
 
   </body>

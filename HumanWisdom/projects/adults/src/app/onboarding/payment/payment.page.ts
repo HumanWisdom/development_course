@@ -168,15 +168,13 @@ export class PaymentPage implements AfterViewInit, OnDestroy {
               // this.payementSubmitBtnClick.nativeElement.click();
 
               this.enableAlert = true;
+              localStorage.setItem('Subscriber', '1');
+              sessionStorage.setItem('justSubscribed', 'true');
+              this.service.updateUserDetails.next(true);
               // alert('Your Payment Is Successfully Submitted');
-              if (localStorage.getItem('ispartnershipClick') == 'T') {
-                // Clear the subscription flow flag after successful payment
-                localStorage.removeItem('cameFromSubscription');
-                this.router.navigate(['/adults/hwp-premium-congratulations']);
-              }
               // Clear the subscription flow flag after successful payment
               localStorage.removeItem('cameFromSubscription');
-              this.router.navigate(['/onboarding/myprogram'])
+              this.router.navigate([`/${SharedService.getprogramName()}/subscription/free-trial`]);
               // Successful subscription payment
             }
           });

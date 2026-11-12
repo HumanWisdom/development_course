@@ -67,7 +67,6 @@ background: none !important;
 #googleBtnSignupWrapper,
 #googleBtnLoginWrapper {
   padding: 0 !important;
-  border: none !important;
   outline: none !important;
   display: flex;
   align-items: center;
@@ -85,7 +84,6 @@ background: none !important;
   &:hover {
     outline: none !important;
     box-shadow: none !important;
-            border: none !important;
   }
   
   // Hide the actual Google button but keep it functional
@@ -151,6 +149,7 @@ background: none !important;
       padding: 0 !important;
       margin: 0 !important;
       width: 100% !important;
+      // border: 0.5px solid rgba(255, 255, 255, 0.5);
       height: 100% !important;
       display: flex !important;
       align-items: center !important;
@@ -229,4 +228,8 @@ background: none !important;
 
 .org-sso-hint {
   margin-top: 4px;
+}
+.fc_000000_0_75, .fc_000000_0_7
+{
+    color: rgba(0, 0, 0, 0.75) !important;
 }

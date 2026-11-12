@@ -12,7 +12,7 @@ export class AudioPlayerComponent implements OnInit, OnDestroy  {
   yellow="#FFC455"
   @Input() audioLink: string;
   @ViewChild('audio') audio: ElementRef;
-  isAdults = true;
+  isAdults = SharedService.ProgramId == ProgramType.Adults;
   constructor() {}
 
   ngOnInit(): void {
@@ -26,23 +26,40 @@ export class AudioPlayerComponent implements OnInit, OnDestroy  {
   }
 
   setAudioControlsBackground() {
-    const backgroundColor = this.isAdults ? '#FFE8BB' : '#0C2B5F';
-    const playButtonColor = this.isAdults ? '#ED7D6F' : '#ee9596';
+    let style = document.getElementById('audio-controls-style') as HTMLStyleElement;
+    if (!style) {
+      style = document.createElement('style');
+      style.id = 'audio-controls-style';
+      document.head.appendChild(style);
+    }
 
-    // Create a new <style> element
-    const style = document.createElement('style');
-    style.textContent = `
-      audio::-webkit-media-controls-enclosure {
-        background: ${backgroundColor} !important;
-      }
-      audio::-webkit-media-controls-play-button {
-        background-color: ${playButtonColor} !important;
-        border-radius: 50% !important;
-      }
-    `;
-  
-    // Append the <style> element to the document head
-    document.head.appendChild(style);
+    if (this.isAdults) {
+      style.textContent = `
+        audio::-webkit-media-controls-enclosure {
+          background: #FFE8BB !important;
+        }
+        audio::-webkit-media-controls-play-button {
+          background-color: #ED7D6F !important;
+          border-radius: 50% !important;
+        }
+        audio::-webkit-media-controls-panel {
+          filter: none !important;
+        }
+      `;
+    } else {
+      style.textContent = `
+        audio::-webkit-media-controls-enclosure {
+          background: #0C2B5F !important;
+        }
+        audio::-webkit-media-controls-play-button {
+          background-color: #116a69 !important;
+          border-radius: 50% !important;
+        }
+        audio::-webkit-media-controls-panel {
+          filter: invert(1) !important;
+        }
+      `;
+    }
   }
 
   ngOnDestroy(): void {

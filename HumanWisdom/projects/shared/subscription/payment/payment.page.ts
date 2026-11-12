@@ -174,7 +174,6 @@ export class PaymentPage implements OnInit, AfterViewInit {
         var url  = `/${SharedService.getprogramName()}/subscription/free-trial`;
         if (localStorage.getItem('ispartnershipClick') == 'T' && localStorage.getItem('isMonthlySelectedForPayment') == 'T') {
           localStorage.setItem('ispartnershipClick', 'F');
-          url = `/${SharedService.getprogramName()}/hwp-premium-congratulations`;
         }
 
         let am = this.amountGBP;
@@ -214,7 +213,7 @@ export class PaymentPage implements OnInit, AfterViewInit {
                   messageContainer.textContent = error.message;
                   this.router.navigateByUrl(`/${SharedService.getprogramName()}/subscription/payment-failed`);
                 } else {
-                  this.router.navigateByUrl(`/${SharedService.getprogramName()}/subscription/free-trial`);
+                  this.router.navigateByUrl(url);
                 }
         },
         5000);

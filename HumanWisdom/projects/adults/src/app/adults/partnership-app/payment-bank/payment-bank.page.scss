@@ -6,6 +6,16 @@
   height: 20px;
   cursor: pointer;
 
+  .radio-unselected {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: 1.5px solid #ED7D6F;
+    border-radius: 50%;
+    box-sizing: border-box;
+    flex-shrink: 0;
+  }
+
   svg {
     display: block;
     width: 20px;

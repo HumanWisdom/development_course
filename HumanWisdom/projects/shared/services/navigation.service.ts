@@ -15,9 +15,20 @@ export class NavigationService {
   private hasInjectedFindAnswersHistory = false;
   private hasInjectedEventsHistory = false;
   private readonly FIND_ANSWERS_REGEX = /\/find-answers\/(?:[\w-]+\/)?[\w-]+-a\d+(-at)?$/;
+  // Subscription funnel order: add-to-cart (0) -> viewcart (1) -> payment (2)
+  private readonly ONBOARDING_FUNNEL_STEPS = [
+    '/onboarding/add-to-cart',
+    '/onboarding/viewcart',
+    '/onboarding/payment'
+  ];
+  private appNavigationCount = 0;
+  private backPending = false;
+  private funnelEntryUrl: string | null = null;
+  private lastNonOnboardingUrl: string | null = null;
 
   constructor(private router: Router, private location: Location) {
     this.lastSource = localStorage.getItem('lastNavSource');
+    this.funnelEntryUrl = sessionStorage.getItem('onboardingFunnelEntryUrl');
     this.setupFirstNavigationListener();
   }
   private setupFirstNavigationListener(): void {
@@ -35,6 +46,10 @@ export class NavigationService {
   }
 
   addToHistory(url: string, source: string | null = null) {
+    this.appNavigationCount++;
+    this.backPending = false;
+    this.trackOnboardingJourney(url);
+
     const navigation = this.router.getCurrentNavigation();
     const newSource = source || navigation?.extras?.state?.source;
 
@@ -55,6 +70,8 @@ export class NavigationService {
     }
 
     if (url.includes('/onboarding/add-to-cart') || this.dontPushToHistory(url)) {
+      // The navigation is complete, so a pending "back" flag must not leak into it
+      this.backClicked = false;
       return;
     }
 
@@ -312,6 +329,79 @@ export class NavigationService {
       return this.history[this.history.length - 2];
     }
     return null;
+  }
+
+  isOnboardingFunnelUrl(url: string): boolean {
+    return this.getOnboardingFunnelStep(url) !== -1;
+  }
+
+  /**
+   * Position of the url inside the subscription funnel
+   * (0 = add-to-cart, 1 = viewcart, 2 = payment), -1 when it is not a funnel page.
+   */
+  getOnboardingFunnelStep(url: string): number {
+    const cleanUrl = (url || '').split('?')[0];
+    return this.ONBOARDING_FUNNEL_STEPS.findIndex(step => cleanUrl.endsWith(step));
+  }
+
+  /**
+   * Page the subscription funnel was started from (e.g. Today, a subject page,
+   * the gift page). Used as the last resort target of the add-to-cart back arrow.
+   */
+  getOnboardingEntryUrl(): string {
+    return this.funnelEntryUrl || SharedService.getDashboardUrls();
+  }
+
+  private trackOnboardingJourney(url: string): void {
+    const cleanUrl = (url || '').split('?')[0];
+    if (this.isOnboardingFunnelUrl(cleanUrl)) {
+      if (!this.funnelEntryUrl && this.lastNonOnboardingUrl) {
+        this.funnelEntryUrl = this.lastNonOnboardingUrl;
+        sessionStorage.setItem('onboardingFunnelEntryUrl', this.funnelEntryUrl);
+      }
+      return;
+    }
+    // Login / verify screens belong to the journey, they are not a funnel entry point
+    if (cleanUrl.includes('/onboarding/')) {
+      return;
+    }
+    this.lastNonOnboardingUrl = cleanUrl;
+    this.funnelEntryUrl = null;
+    sessionStorage.removeItem('onboardingFunnelEntryUrl');
+  }
+
+  /**
+   * Back for any page that has browser history in front of it: consume an entry
+   * instead of pushing one, so the stack never grows and back never ping-pongs.
+   */
+  goBackInApp(fallbackUrl: string): void {
+    if (this.backPending) {
+      return;
+    }
+    this.backPending = true;
+    // The first navigation of a tab is the landing page, so anything above it
+    // means the previous browser entry is an in-app page we can return to.
+    if (this.appNavigationCount > 1 && this.lastNonOnboardingUrl) {
+      this.backClicked = true;
+      this.location.back();
+      return;
+    }
+    // Nothing behind this tab (deep link / refresh): land on the fallback
+    // without growing the history stack
+    this.router.navigateByUrl(fallbackUrl, { replaceUrl: true });
+  }
+
+  /**
+   * Single entry point for every back arrow inside the subscription funnel
+   * (add-to-cart -> viewcart -> payment). Funnel pages are pushed on the way
+   * forward but are never a valid back destination, so they are dropped from
+   * the internal stack and the browser entry behind the current page is consumed.
+   */
+  goBackThroughOnboardingFunnel(fallbackUrl: string): void {
+    while (this.history.length > 0 && this.isOnboardingFunnelUrl(this.history[this.history.length - 1])) {
+      this.history.pop();
+    }
+    this.goBackInApp(fallbackUrl);
   }
 
 

@@ -72,6 +72,39 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
   modalTitle = 'The best is yet to come';
   modalContent = 'Unlock the full experience and continue your journey to live your best life';
   showTourPopup = false;
+  activePopup: 'tour' | 'spread' | 'trialEnded' | null = null;
+  showSpreadHappinessPopup = false;
+  showFreeTrialEndedPopup = false;
+  freeDaysRemaining: number | null = null;
+  freeTrialDaysChecked = false;   // true only after checkFreeTrialDays() API resolves
+  isOllyBubbleCompleted = false;
+  // Session-level flags: once shown per page load, don't loop
+  private shownSpreadThisSession = false;
+  private shownTrialEndedThisSession = false;
+
+  get spreadHappinessImgUrl(): string {
+    return this.isAdults
+      ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/spreadadu.webp'
+      : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/spreadteen.webp';
+  }
+
+  get spreadCalendarIconUrl(): string {
+    return this.isAdults
+      ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/caladu.svg'
+      : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/callteenn.svg';
+  }
+
+  get spreadCreditCardIconUrl(): string {
+    return this.isAdults
+      ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/creditadu.svg'
+      : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/creditteenn.svg';
+  }
+
+  get freeTrialEndedImgUrl(): string {
+    return this.isAdults
+      ? 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/freetrialadu.webp'
+      : 'https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/webp/freeteen.webp';
+  }
 
   constructor(
     private commonService: CommonService,
@@ -172,12 +205,31 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
 
     this.journalHits = +(localStorage.getItem('journalHits') || 0);
 
-    const userIdKey = localStorage.getItem('userId') || localStorage.getItem('userID') || '';
-    const key = userIdKey ? `hasSeenTourPopup_${userIdKey}` : 'hasSeenTourPopup';
-    const hasSeen = localStorage.getItem(key) === 'true';
-    if (hasSeen) {
+    const userIdKey = this.getNormalizedUserId();
+    const tourKey = userIdKey ? `hasSeenTourPopup_${userIdKey}` : 'hasSeenTourPopup';
+    if (!this.isFirstTimeSignup()) {
+      // Regular login: never show tour popup, mark it permanently seen
+      localStorage.setItem(tourKey, 'true');
+      localStorage.setItem('signupfirst', 'F');
       this.showTourPopup = false;
+    } else {
+      const hasSeen = localStorage.getItem(tourKey) === 'true';
+      if (hasSeen) {
+        this.showTourPopup = false;
+      }
     }
+
+    if (this.isUserLoggedIn() && !this.isGuestUser()) {
+      this.commonService.setPopupActive(true);
+      this.checkFreeTrialDays();
+    }
+
+    setTimeout(() => {
+      if (!this.isOllyBubbleCompleted) {
+        this.isOllyBubbleCompleted = true;
+        this.evaluatePopups();
+      }
+    }, 2500);
     // showTourPopup is triggered via (bubbleComplete) on the olly-landing component in the template
   }
 
@@ -196,37 +248,273 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
     }
   }
 
-  onOllyBubbleComplete(): void {
-    // Only show the tour popup if user hasn't seen it before
-    const userIdKey = localStorage.getItem('userId') || localStorage.getItem('userID') || '';
-    const key = userIdKey ? `hasSeenTourPopup_${userIdKey}` : 'hasSeenTourPopup';
-    const hasSeen = localStorage.getItem(key) === 'true';
-    if (!hasSeen) {
-      this.showTourPopup = true;
+  getNormalizedUserId(): string {
+    const raw = localStorage.getItem('userID') || localStorage.getItem('userId') || '';
+    if (!raw) return '';
+    try {
+      const parsed = JSON.parse(raw);
+      return String(parsed).trim();
+    } catch {
+      return String(raw).replace(/['"]/g, '').trim();
     }
+  }
+
+  isUserLoggedIn(): boolean {
+    return this.isloggedIn || localStorage.getItem('isloggedin') === 'T' || (SharedService.getUserId() > 0);
+  }
+
+  isGuestUser(): boolean {
+    return this.guest || localStorage.getItem('guest') === 'T';
+  }
+
+  isPaidSubscriber(): boolean {
+    const subType = localStorage.getItem("SubscriberType");
+    return subType === "Monthly" || subType === "Annual";
+  }
+
+  /**
+   * Returns true only when the user is on a free trial:
+   *   Subscriber == "1"  AND  SubscriberType == "free trial"  (case-insensitive)
+   * Both the spread-happiness and free-trial-ended popups must be gated behind this.
+   */
+  isFreeTrial(): boolean {
+    const subscriber  = localStorage.getItem("Subscriber");
+    const subType     = (localStorage.getItem("SubscriberType") || "").trim().toLowerCase();
+    return subscriber === "1" && subType === "free trial";
+  }
+
+  isFirstTimeSignup(): boolean {
+    const justSignedUp = localStorage.getItem('justSignedUp') === 'true';
+    const userIdKey = this.getNormalizedUserId();
+    const tourKey = userIdKey ? `hasSeenTourPopup_${userIdKey}` : 'hasSeenTourPopup';
+    const hasSeen = localStorage.getItem(tourKey) === 'true' || localStorage.getItem('hasSeenTourPopup') === 'true';
+    if (hasSeen) {
+      return false;
+    }
+    return justSignedUp;
+  }
+
+  checkFreeTrialDays(): void {
+    this.commonService.checkFreedays().subscribe(
+      (res: any) => {
+        console.log('[Popup] checkFreedays raw response:', res);
+        if (res !== null && res !== undefined) {
+          let days: number = NaN;
+          if (typeof res === 'object') {
+            const raw = res.days ?? res.FreeDays ?? res.freedays ?? res.freeDays ?? res.FreeDaysRemaining;
+            console.log('[Popup] freeDays raw value from object:', raw);
+            days = Number(raw);
+          } else {
+            console.log('[Popup] freeDays raw value (primitive):', res);
+            days = Number(res);
+          }
+          if (!isNaN(days)) {
+            this.freeDaysRemaining = days;
+          }
+        }
+        this.freeTrialDaysChecked = true;   // API responded — safe to evaluate
+        console.log('[Popup] freeDaysRemaining set to:', this.freeDaysRemaining);
+        this.evaluatePopups();
+      },
+      (err: any) => {
+        console.error('[Popup] Error checking free days:', err);
+        this.freeTrialDaysChecked = true;   // even on error, don't block forever
+        this.freeDaysRemaining = null;
+        this.evaluatePopups();
+      }
+    );
+  }
+
+  evaluatePopups(): void {
+    // If a popup is already currently visible in this component, NEVER show another one
+    if (this.activePopup !== null) {
+      console.log('[Popup] evaluatePopups: already active popup =', this.activePopup, '— skipping');
+      return;
+    }
+
+    if (!this.isUserLoggedIn() || this.isGuestUser()) {
+      console.log('[Popup] evaluatePopups: not logged in or guest — skipping');
+      return;
+    }
+
+    const userIdKey = this.getNormalizedUserId();
+    const tourKey = userIdKey ? `hasSeenTourPopup_${userIdKey}` : 'hasSeenTourPopup';
+    const isSignup = this.isFirstTimeSignup();
+
+    if (!isSignup) {
+      // Regular login: tour popup should never show, silence it permanently
+      localStorage.setItem(tourKey, 'true');
+      localStorage.setItem('hasSeenTourPopup', 'true');
+      localStorage.setItem('signupfirst', 'F');
+      localStorage.removeItem('justSignedUp');
+    }
+
+    const hasSeenTour = localStorage.getItem(tourKey) === 'true' || localStorage.getItem('hasSeenTourPopup') === 'true';
+
+    // Simple rule: API returns 4 → Spread Happiness, API returns 0 → Free Trial Ended. Nothing else.
+    let eligibleTrialEnded = false;
+    let eligibleSpread = false;
+
+    console.log('[Popup] evaluatePopups: freeTrialDaysChecked=', this.freeTrialDaysChecked, 'freeDaysRemaining=', this.freeDaysRemaining);
+
+    if (this.freeTrialDaysChecked) {
+      if (this.freeDaysRemaining === 5 && !this.shownSpreadThisSession) {
+        eligibleSpread = true;
+        console.log('[Popup] spread happiness popup eligible (freeDays=4)');
+      } else if (this.freeDaysRemaining === 0 && !this.shownTrialEndedThisSession) {
+        eligibleTrialEnded = true;
+        console.log('[Popup] free trial ended popup eligible (freeDays=0)');
+      } else {
+        console.log('[Popup] freeDaysRemaining=', this.freeDaysRemaining, '— no trial popup');
+      }
+    }
+
+    // Spread some happiness popup (Day 5)
+    if (eligibleSpread) {
+      this.activePopup = 'spread';
+      this.shownSpreadThisSession = true;
+      this.commonService.setPopupActive(true);
+      this.showSpreadHappinessPopup = true;
+      this.showTourPopup = false;
+      this.showFreeTrialEndedPopup = false;
+      return;
+    }
+
+    // Free trial ended popup (Day 10 / 0 days left)
+    if (eligibleTrialEnded) {
+      this.activePopup = 'trialEnded';
+      this.shownTrialEndedThisSession = true;
+      this.commonService.setPopupActive(true);
+      this.showFreeTrialEndedPopup = true;
+      this.showTourPopup = false;
+      this.showSpreadHappinessPopup = false;
+      return;
+    }
+
+    // Guide to HappierMe: only for first-time signups, only once (after greeting completes)
+    if (this.isOllyBubbleCompleted && isSignup && !hasSeenTour) {
+      this.activePopup = 'tour';
+      this.commonService.setPopupActive(true);
+      this.showTourPopup = true;
+      this.showSpreadHappinessPopup = false;
+      this.showFreeTrialEndedPopup = false;
+      return;
+    }
+
+    // No popup eligible to show: release the global popup slot
+    this.commonService.setPopupActive(false);
+  }
+
+  onOllyBubbleComplete(): void {
+    this.isOllyBubbleCompleted = true;
+    this.evaluatePopups();
   }
 
   closeTourPopup(): void {
     this.showTourPopup = false;
-    const userId = localStorage.getItem('userId') || localStorage.getItem('userID') || '';
-    const key = userId ? `hasSeenTourPopup_${userId}` : 'hasSeenTourPopup';
-    localStorage.setItem(key, 'true');
+    this.activePopup = null;
+    this.commonService.setPopupActive(false);
+    const userIdKey = this.getNormalizedUserId();
+    const tourKey = userIdKey ? `hasSeenTourPopup_${userIdKey}` : 'hasSeenTourPopup';
+    localStorage.setItem(tourKey, 'true');
+    localStorage.setItem('hasSeenTourPopup', 'true');
+    localStorage.setItem('signupfirst', 'F');
+    localStorage.removeItem('justSignedUp');
+
+    // Start timer for any next eligible popup only AFTER closing
+    setTimeout(() => {
+      this.evaluatePopups();
+    }, 1500);
+  }
+
+  closeSpreadHappinessPopup(): void {
+    this.showSpreadHappinessPopup = false;
+    this.activePopup = null;
+    this.commonService.setPopupActive(false);
+
+    // Start timer for any next eligible popup only AFTER closing
+    setTimeout(() => {
+      this.evaluatePopups();
+    }, 1500);
+  }
+
+  shareNowSpreadHappiness(): void {
+    const shareUrl = 'https://happierme.app/free.php';
+    const shareText = 'Good things are even better when shared. Check out HappierMe and take a step towards a happier, healthier life together!';
+
+    if (navigator.share) {
+      navigator.share({
+        title: 'HappierMe',
+        text: shareText,
+        url: shareUrl,
+      }).then(() => {
+        // Share completed — now mark as seen and close popup
+        this._markSpreadHappinessSeenAndClose();
+      }).catch((err) => {
+        // User cancelled the share sheet — do NOT mark as seen; just close the popup
+        if (err && err.name !== 'AbortError') {
+          // Unexpected error: fall back to refer-friend page
+          this._markSpreadHappinessSeenAndClose();
+          const url = this.isAdults ? '/adults/refer-friend' : '/teenagers/refer-friend';
+          this.router.navigate([url]);
+        }
+        // AbortError = user dismissed share sheet; keep popup closed but don't navigate
+        this.showSpreadHappinessPopup = false;
+        this.activePopup = null;
+        this.commonService.setPopupActive(false);
+      });
+    } else {
+      // Web Share API not supported — fall back to refer-friend page
+      this._markSpreadHappinessSeenAndClose();
+      const url = this.isAdults ? '/adults/refer-friend' : '/teenagers/refer-friend';
+      this.router.navigate([url]);
+    }
+  }
+
+  private _markSpreadHappinessSeenAndClose(): void {
+    this.showSpreadHappinessPopup = false;
+    this.activePopup = null;
+    this.commonService.setPopupActive(false);
+  }
+
+  closeFreeTrialEndedPopup(): void {
+    this.showFreeTrialEndedPopup = false;
+    this.activePopup = null;
+    this.commonService.setPopupActive(false);
+
+    // Start timer for any next eligible popup only AFTER closing
+    setTimeout(() => {
+      this.evaluatePopups();
+    }, 1500);
+  }
+
+  subscribeNowFreeTrialEnded(): void {
+    this.showFreeTrialEndedPopup = false;
+    this.activePopup = null;
+    this.commonService.setPopupActive(false);
+    const program = SharedService.getprogramName();
+    this.router.navigate([`/${program}/subscription/try-free-and-subscribe`], {
+      state: { fromTrialEndedPopup: true }
+    });
+  }
+
+  viewPlansFreeTrialEnded(): void {
+    this.showFreeTrialEndedPopup = false;
+    this.activePopup = null;
+    this.commonService.setPopupActive(false);
+    const program = SharedService.getprogramName();
+    this.router.navigate([`/${program}/subscription/try-free-and-subscribe`], {
+      state: { fromTrialEndedPopup: true }
+    });
   }
 
   goToTour(): void {
     this.closeTourPopup();
-   /*  if (this.isAdults) {
-      this.router.navigate(['/adults/videopage', 'introduction_to_happierme-videos-video_tour.mp4', 'T', 'Video tour of the app']);
+    if (this.isAdults) {
+      this.router.navigate(['/adults/intro-happierme']);
     } else {
-      this.router.navigate(['/teenagers/videopage', 'introduction_to_happierme-videos-video_tour.mp4', 'T', 'Video tour of the app']);
-    } */
-   if (this.isAdults) {
-     this.router.navigate(['/adults/intro-happierme']);
-   }
-   else{
       this.router.navigate(['/teenagers/intro-happierme']);
-
-   }
+    }
   }
 
   resolveMediaUrl(url: string): string {

@@ -37,74 +37,32 @@
                     <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/tiles/backgrounds/topics_v3_01.svg"
                       class="img-responsive w100"> -->
                     <div class="row  p_rc p_rc_gradient ">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ">
-                        <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0">
-                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 mb10px">
+                      <div class="prc-body">
+                        <div class="prc-body__text">
+                          <div class="mb10px">
                             <h4 class="mtb0px fs_16px fw_600 lh_140p fc_ffffff">
                               Partnership Referral Code
                             </h4>
                           </div>
 
-                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ">
-                            <button type="button" class="btn_pr_code d-flex" title="{{getTittle()}}">
+                          <div>
+                            <button type="button" class="btn_pr_code d-flex" title="{{getTittle()}}"
+                              (click)="copyTextHeader(partnershipReport.AffRefCode,'code')">
                               {{this.partnershipReport.AffRefCode}}
-                              <a (click)="copyTextHeader(partnershipReport.AffRefCode,'code')" class="btn-copy-icon">
-                                <img *ngIf="isCopyHeader" style="height: 16px;"
-                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/copy_codead.svg"
-                                  alt="" class="img-responsive" />
-                                <img *ngIf="!isCopyHeader" style="height: 16px;"
-                                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/copied.svg"
-                                  alt="" class="img-responsive" />
-                              </a>
                             </button>
                           </div>
                         </div>
 
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 h-100 pr0px center_flex">
-                          <a class="" (click)="share(partnershipReport.AffRefCode,'code')">
-                            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/partshare.svg"
-                              class="img-responsive">
-                          </a>
-                        </div>
+                        <a class="prc-body__share" (click)="share(partnershipReport.AffRefCode,'code')">
+                          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/partshare.svg"
+                            class="img-responsive">
+                        </a>
                       </div>
                     </div>
                   </a>
                 </div>
               </div>
 
-
-              <div class="row mt20px">
-                <div class="mt10px mb5px fw_500 lh_150p fc_000000">
-                  <h4>Partnership referral link</h4>
-                </div>
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                  <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 p0 center_flex box_blue_01 referral-link-box">
-                    <div class="w100p">
-
-                      <h4 class="fw_500 fs_12px lh_150p fc_000000 mtb0px p_rc align-content-center">
-                        {{this.partnershipReport.ReferralLink}}
-                      </h4>
-                    </div>
-                    <div class="div_copy_rc">
-                      <a (click)="copyText(partnershipReport.ReferralLink,'link')">
-                        <img *ngIf="isReferraLinkCopy"
-                          src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/copy_codead.svg"
-                          alt="" class="img-responsive" />
-                        <img *ngIf="!isReferraLinkCopy"
-                          src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v1_3/copied.svg"
-                          alt="" class="img-responsive" />
-                      </a>
-                    </div>
-                  </div>
-                  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 p0 tright">
-                    <a>
-                      <img (click)="share(partnershipReport.ReferralLink,'link')"
-                        src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/share.svg" alt=""
-                        class="img-responsive" />
-                    </a>
-                  </div>
-                </div>
-              </div>
 
               <!-- /partnership referral code -->
 
@@ -400,7 +358,7 @@
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
                         <div class="row">
-                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter mb8px">
                             <div class="col-md-4 col-sm-4 col-xs-4">
                               <h4 class="mtb0px fs_14px fw_700 lh_120p fc_ffffff">
                                 {{totalSubscriber}}

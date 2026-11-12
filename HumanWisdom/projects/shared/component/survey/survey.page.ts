@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonService } from '../../services/common.service';
 import { Platform } from '@angular/cdk/platform';
 import { Subscription } from 'rxjs';
+import { filter, take } from 'rxjs/operators';
 import { ProgramType } from '../../models/program-model';
 
 import { SharedService } from '../../services/shared.service';
@@ -22,6 +23,9 @@ export class SurveyPage implements OnDestroy {
   showModal: boolean = false;
   isAdults = true;
   private subscription!: Subscription;
+  private pendingSurveyData: any = null;
+  private popupWaitSub: Subscription | null = null;
+
   constructor(private commonService: CommonService, private platform: Platform) {
     this.userName =localStorage.getItem('name');
     this.subscription = this.commonService.surveySubs.subscribe((data: any) => {
@@ -34,8 +38,13 @@ export class SurveyPage implements OnDestroy {
           }
           this.feedbackList = res;
           if (data != null) {
-            this.showModal = true;
-            document.getElementById('test1').click();
+            const isTodayPage = typeof window !== 'undefined' && window.location.pathname.includes('/today');
+            if (this.commonService.isPopupActive || isTodayPage) {
+              this.pendingSurveyData = data;
+              this.waitForPopupClear();
+            } else {
+              this.openSurveyModal();
+            }
           }
         }
       })
@@ -48,6 +57,29 @@ export class SurveyPage implements OnDestroy {
 
   }
 
+
+  private openSurveyModal(): void {
+    this.commonService.setPopupActive(true);
+    this.showModal = true;
+    document.getElementById('test1').click();
+  }
+
+  private waitForPopupClear(): void {
+    if (this.popupWaitSub) {
+      this.popupWaitSub.unsubscribe();
+    }
+    this.popupWaitSub = this.commonService.isPopupActive$.pipe(
+      filter(active => !active)
+    ).subscribe(() => {
+      // Delay 1.5s after the other popup closes before showing survey
+      setTimeout(() => {
+        if (!this.commonService.isPopupActive && this.pendingSurveyData != null) {
+          this.pendingSurveyData = null;
+          this.openSurveyModal();
+        }
+      }, 1500);
+    });
+  }
 
   closeModalevent() {
 
@@ -83,6 +115,10 @@ export class SurveyPage implements OnDestroy {
   closeModal(): void {
     this.showModal = false;
     this.isSubmitted = false;
+    this.pendingSurveyData = null;
+    this.commonService.updateSurveyData(null);
+    // Clear the global popup flag so other popups can show
+    this.commonService.setPopupActive(false);
     // Trigger the hidden dismiss button to close the modal
     const dismissBtn = document.getElementById('btnSurveyDismiss');
     if (dismissBtn) {
@@ -143,6 +179,9 @@ export class SurveyPage implements OnDestroy {
   ngOnDestroy(): void {
     if (this.subscription) {
       this.subscription.unsubscribe();
+    }
+    if (this.popupWaitSub) {
+      this.popupWaitSub.unsubscribe();
     }
   }
 

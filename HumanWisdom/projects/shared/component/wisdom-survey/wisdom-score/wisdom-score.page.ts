@@ -156,9 +156,9 @@ export class WisdomScorePage implements OnInit {
   }
 
   routeToDashboard() {
-        localStorage.setItem('isFromSignupFlow', 'F');
+    localStorage.setItem('isFromSignupFlow', 'F');
     SharedService.isRoutedFromLogin = false;
-    this.router.navigateByUrl(SharedService.getDashboardUrls());
+    this.router.navigateByUrl(`/${SharedService.getprogramName()}/today`);
   }
 
   goToSubscribe() {

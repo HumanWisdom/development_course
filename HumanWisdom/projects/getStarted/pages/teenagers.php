@@ -130,14 +130,13 @@
             </div>
 
             <div class="teen-hero-cta-block">
-            <div class="row">
-              <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12 p0">
-                <a id="teenagerCoverClick" class="">
-                  <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff1">
-                    Start your free trial now
-                  </button>
-                </a>
-              </div>
+            <div class="teen-hero-cta">
+              <a id="teenagerCoverClick" class="">
+                <button class="fs_15px fw_600 lh_140p fc_ffffff btn_tff1">
+                  Try HappierMe for free
+                </button>
+              </a>
+              <p class="teen-hero-no-card">No credit card required.</p>
             </div>
 
 

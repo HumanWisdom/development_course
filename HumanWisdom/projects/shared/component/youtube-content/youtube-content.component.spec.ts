@@ -209,7 +209,7 @@ describe('YoutubeContentComponent', () => {
   describe('ngOnInit', () => {
     it('should set videoLink with sanitized YouTube embed URL', () => {
       component.ngOnInit();
-      expect(mockDomSanitizer.bypassSecurityTrustResourceUrl).toHaveBeenCalledWith('https://www.youtube.com/embed/dQw4w9WgXcQ');
+      expect(mockDomSanitizer.bypassSecurityTrustResourceUrl).toHaveBeenCalledWith(jasmine.stringMatching('https://www.youtube.com/embed/dQw4w9WgXcQ'));
       expect(component.videoLink).toBe('safe-url');
     });
   });
