@@ -170,6 +170,30 @@ body.page-work .req_button.work-hero-btn {
   font-size: 15px !important;
   font-weight: 600 !important;
   line-height: 1.4 !important;
+  color: #fff !important;
+  text-decoration: none !important;
+  transition: background 0.3s;
+}
+
+/* Match index .div-wrapper-4 / .btn_tff hover */
+body.page-work .work-hero-ctas .btn_tff:hover,
+body.page-work .work-hero-ctas .btn_tff:focus:hover,
+body.page-work .work-hero-ctas .btn_tff:active,
+body.page-work .work-hero-ctas .req_button:hover,
+body.page-work .work-hero-ctas .req_button:focus:hover,
+body.page-work .work-hero-ctas .req_button:active,
+body.page-work .work-hero-ctas a.work-hero-btn:hover,
+body.page-work .work-hero-ctas a.work-hero-btn:focus:hover,
+body.page-work .work-hero-ctas a.work-hero-btn:active,
+body.page-work .healthcare-hero-shell .absolute_desc_m .work-hero-ctas .btn_tff:hover,
+body.page-work .healthcare-hero-shell .absolute_desc_m .work-hero-ctas .btn_tff:active,
+body.page-work .healthcare-hero-shell .absolute_desc_m .work-hero-ctas .req_button:hover,
+body.page-work .healthcare-hero-shell .absolute_desc_m .work-hero-ctas .req_button:active,
+body.page-work .req_button.work-hero-btn:hover,
+body.page-work .req_button.work-hero-btn:active {
+  background: linear-gradient(180deg, #da7d71 0%, #bf5061 100%) !important;
+  color: #fff !important;
+  text-decoration: none !important;
 }
 
 /* ---------- 2. Trust bar (1440×105) ---------- */
@@ -309,18 +333,49 @@ body.page-work .work-pillar-text {
   color: #000;
 }
 
-/* ---------- 4. Video (title lh 1.2, gap 60, player 810×456) ---------- */
-body.page-work .work-video-section .work-section-inner {
+/* ---------- 4. Video (title lh 1.2, gap 60, player 810×456, centered) ---------- */
+body.page-work .work-video-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 60px;
+}
+
+body.page-work .work-video-section .work-section-inner,
+body.page-work .work-video-section .section-header-teen {
+  width: 100%;
   max-width: 810px;
 }
 
 body.page-work .work-video-section .work-section-title {
   line-height: 1.2;
   white-space: nowrap;
+  text-align: center;
+}
+
+body.page-work .work-video-section > .row.center_flex {
+  width: 100%;
+  justify-content: center !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
 body.page-work .work-video-wrap {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+  max-width: min(810px, calc(100% - 40px)) !important;
+  flex: 0 1 810px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  float: none !important;
+  padding: 0 !important;
+}
+
+body.page-work .work-video-wrap .work-youtube-player,
+body.page-work .work-video-wrap .youtube-player {
+  position: relative;
   width: 100%;
   max-width: 810px;
   height: 455.625px;
@@ -330,10 +385,32 @@ body.page-work .work-video-wrap {
   background: #111;
 }
 
+body.page-work .work-video-wrap .youtube-player .yt-embed,
 body.page-work .work-video-wrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  border: 0;
+  display: block;
+}
+
+body.page-work #workYoutubeCover {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
+  z-index: 2;
+}
+
+body.page-work #workYoutubeCover img {
   width: 100%;
   height: 100%;
-  border: 0;
+  object-fit: cover;
   display: block;
 }
 
@@ -445,6 +522,7 @@ body.page-work .work-measure-band {
   box-sizing: border-box;
 }
 
+/* Figma: image 503 + gap + copy 417 ≈ 980 — no side padding or copy collapses and title wraps to 3 lines */
 body.page-work .work-measure-inner {
   position: relative;
   z-index: 1;
@@ -452,7 +530,7 @@ body.page-work .work-measure-inner {
   max-width: 980px;
   height: 630px;
   margin: 0 auto;
-  padding: 0 50px;
+  padding: 0;
   display: flex;
   align-items: center;
   gap: 60px;
@@ -460,7 +538,7 @@ body.page-work .work-measure-inner {
 }
 
 body.page-work .work-measure-media {
-  flex: 0 0 503px;
+  flex: 0 0 auto;
   max-width: 503px;
   width: 503px;
   height: 630px;
@@ -475,28 +553,38 @@ body.page-work .work-measure-media img {
   height: 600px;
   display: block;
   transform: rotate(-3.88deg);
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: none;
   object-fit: contain;
 }
 
+/* Figma Frame 14265: Fill ~417 × Hug, gap 24 — title fits 2 lines at 36/600.
+   Use width (not flex-basis: 417px) so column breakpoints don't force 417px HEIGHT. */
 body.page-work .work-measure-copy {
   position: relative;
   z-index: 1;
-  flex: 1;
-  min-width: 0;
+  flex: 0 0 auto;
+  width: 417px;
   max-width: 417px;
+  min-width: 417px;
+  height: auto;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 24px;
+  box-sizing: border-box;
 }
 
-body.page-work .work-measure-copy h2 {
+body.page-work .work-measure-copy h2,
+body.page-work .work-measure-copy h2.work-section-title {
   margin: 0;
+  width: 100%;
+  max-width: 100%;
   font-family: Poppins, sans-serif;
   font-size: 36px;
   font-weight: 600;
   line-height: 1.3;
   color: #000;
+  text-align: left;
+  white-space: normal;
 }
 
 body.page-work .work-measure-copy p {
@@ -506,6 +594,29 @@ body.page-work .work-measure-copy p {
   font-weight: 400;
   line-height: 1.5;
   color: #000;
+}
+
+/* Mid desktop: keep 2-line title — shrink image before squeezing copy */
+@media (max-width: 1100px) and (min-width: 768px) {
+  body.page-work .work-measure-inner {
+    max-width: 100%;
+    padding: 0 40px;
+    gap: 40px;
+  }
+
+  body.page-work .work-measure-media {
+    flex: 0 1 420px;
+    width: auto;
+    max-width: 420px;
+  }
+
+  body.page-work .work-measure-copy {
+    flex: 1 1 auto;
+    width: auto;
+    min-width: min(417px, 100%);
+    max-width: 417px;
+    height: auto;
+  }
 }
 
 /* ---------- 7. Testimonials (cards ~433×351, gap 20, title 36) ---------- */
@@ -623,6 +734,20 @@ body.page-work .work-challenge-cite {
   color: #fff7e6;
 }
 
+/* Beat global p:hover { color: #000 } — keep cream text on hover */
+body.page-work .work-challenge-card p,
+body.page-work .work-challenge-card p:hover,
+body.page-work .work-challenge-card:hover p,
+body.page-work .work-challenge-stat,
+body.page-work .work-challenge-stat:hover,
+body.page-work .work-challenge-text,
+body.page-work .work-challenge-text:hover,
+body.page-work .work-challenge-cite,
+body.page-work .work-challenge-cite:hover {
+  color: #fff7e6 !important;
+  text-decoration: none !important;
+}
+
 /* ---------- 9. Human skills (cards 313×355 / 301, gap 20, pad 36) ---------- */
 body.page-work .work-skills-section {
   padding-bottom: 100px;
@@ -682,8 +807,16 @@ body.page-work .work-skill-text {
 }
 
 /* ---------- 10. Demo form (title 36/1.2, CTAs 47, gap 10) ---------- */
+/* Clear fixed header (logo + cream subnav) when hero “Request a demo” jumps here */
 body.page-work #bring_happierme {
   margin-top: 0;
+  scroll-margin-top: 180px;
+}
+
+@media (max-width: 767px) {
+  body.page-work #bring_happierme {
+    scroll-margin-top: 80px;
+  }
 }
 
 body.page-work #bring_happierme .work-demo-band,
@@ -736,6 +869,22 @@ body.page-work #bring_happierme .work-demo-cta .work-demo-btn-secondary {
   justify-content: center !important;
   flex: 0 0 auto !important;
   white-space: nowrap;
+  text-decoration: none !important;
+  transition: background 0.3s;
+}
+
+/* Match index pink CTA hover (.div-wrapper-4 / .btn_popup) */
+body.page-work #bring_happierme .work-demo-cta #Request-Demo:hover,
+body.page-work #bring_happierme .work-demo-cta #Request-Demo:focus:hover,
+body.page-work #bring_happierme .work-demo-cta #Request-Demo:active,
+body.page-work #bring_happierme .work-demo-cta .work-demo-btn:hover,
+body.page-work #bring_happierme .work-demo-cta .work-demo-btn:active,
+body.page-work #bring_happierme .work-demo-cta .work-demo-btn-secondary:hover,
+body.page-work #bring_happierme .work-demo-cta .work-demo-btn-secondary:focus:hover,
+body.page-work #bring_happierme .work-demo-cta .work-demo-btn-secondary:active {
+  background: linear-gradient(180deg, #da7d71 0%, #bf5061 100%) !important;
+  color: #fff !important;
+  text-decoration: none !important;
 }
 
 body.page-work #bring_happierme .work-demo-cta #Request-Demo,
@@ -767,6 +916,12 @@ body.page-work .work-blog-title {
   font-size: 36px !important;
   font-weight: 600 !important;
   line-height: 1.2 !important;
+}
+
+/* Mobile/desktop copy variants — visibility owned by display_m_none / display_d_none.
+   Do not set display here; body.page-work .work-copy-* would beat .display_m_none. */
+body.page-work .work-copy-mobile:not(.display_d_none) {
+  display: none !important;
 }
 
 /* ---------- Responsive ---------- */
@@ -803,10 +958,21 @@ body.page-work .work-blog-title {
 
   body.page-work .work-measure-inner {
     flex-direction: column;
-    gap: 40px;
+    align-items: center;
+    gap: 24px;
     height: auto;
     min-height: 0;
-    padding: 60px 20px;
+    padding: 40px 20px;
+  }
+
+  body.page-work .work-measure-copy {
+    flex: 0 0 auto;
+    min-width: 0;
+    width: 100%;
+    max-width: 417px;
+    height: auto;
+    order: -1;
+    text-align: center;
   }
 
   body.page-work .work-measure-media {
@@ -826,13 +992,60 @@ body.page-work .work-blog-title {
   }
 }
 
+/* ---------- Mobile — Figma 13309:7314 (375px). Desktop rules above stay untouched. ---------- */
 @media (max-width: 767px) {
+  /* Keep site utilities in charge; reinforce hide/show for title spans */
+  body.page-work .work-copy-desktop.display_m_none,
+  body.page-work main#main .work-copy-desktop.display_m_none {
+    display: none !important;
+  }
+
+  body.page-work .work-copy-mobile.display_d_none,
+  body.page-work main#main h2 .work-copy-mobile.display_d_none,
+  body.page-work main#main p .work-copy-mobile.display_d_none,
+  body.page-work main#main h4 .work-copy-mobile.display_d_none {
+    display: inline !important;
+  }
+
+  /* Desktop keeps 120px; mobile header is ~64px (subnav hidden) — 120px left a white gap above the hero */
+  body.page-work section.hpt120px {
+    padding-top: 70px;
+  }
+
+  /* Page rhythm: 60px between major blocks (keep hpt120px for fixed header) */
+  body.page-work main#main {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    margin-top: 60px;
+  }
+
+  body.page-work main#main > section,
+  body.page-work main#main > .work-measure,
+  body.page-work #bring_happierme {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* ----- 1. Hero 375×700, pt 50 / px 20 ----- */
   body.page-work .healthcare-hero-shell,
   body.page-work .healthcare-hero-shell .prelative,
   body.page-work .healthcare-hero-shell .mt3rem {
-    height: auto;
-    max-height: none;
-    overflow: visible;
+    height: 700px !important;
+    max-height: 700px !important;
+    min-height: 700px !important;
+    overflow: hidden !important;
+  }
+
+  body.page-work .healthcare-hero-shell img.img-responsive.w100p.display_d_none,
+  body.page-work .healthcare-hero-shell img.display_d_none {
+    width: 100% !important;
+    height: 700px !important;
+    max-height: 700px !important;
+    min-height: 700px !important;
+    object-fit: cover !important;
+    object-position: center bottom !important;
+    display: block !important;
   }
 
   body.page-work .healthcare-hero-shell .h-800,
@@ -840,139 +1053,1070 @@ body.page-work .work-blog-title {
   body.page-work .healthcare-hero-shell img.img-responsive.w100p.display_m_none,
   body.page-work .healthcare-hero-shell img.img-responsive.w100p.h-800,
   body.page-work .h-800 {
-    height: auto !important;
-    max-height: none !important;
+    display: none !important;
+    height: 0 !important;
     min-height: 0 !important;
+    max-height: 0 !important;
   }
 
   body.page-work .healthcare-hero-shell .absolute_desc,
   body.page-work .healthcare-hero-shell .absolute_desc_m {
-    top: auto !important;
+    position: absolute !important;
+    top: 50px !important;
     left: 0 !important;
     right: 0 !important;
+    bottom: auto !important;
     width: 100% !important;
     max-width: 100% !important;
-    padding: 24px 20px !important;
+    height: auto !important;
+    padding: 0 20px !important;
+    margin: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    box-sizing: border-box !important;
   }
 
   body.page-work .healthcare-hero-shell .absolute_desc > .work-hero-stack,
-  body.page-work .healthcare-hero-shell .absolute_desc_m > .work-hero-stack {
-    margin-left: 0 !important;
-    width: 100% !important;
+  body.page-work .healthcare-hero-shell .absolute_desc_m > .work-hero-stack,
+  body.page-work .healthcare-hero-shell .work-hero-stack,
+  body.page-work .healthcare-hero-shell .work-hero-stack.tleft {
+    width: 335px !important;
+    max-width: 335px !important;
+    margin: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 15px !important; /* title ↔ subtitle */
+    box-sizing: border-box !important;
+    text-align: center !important;
   }
 
-  body.page-work .healthcare-hero-shell .work-hero-stack {
-    width: 100% !important;
+  body.page-work .work-hero-stack h1,
+  body.page-work .healthcare-hero-shell .absolute_desc_m h1 {
+    width: 335px !important;
+    max-width: 335px !important;
+    margin: 0 !important;
+    font-family: Poppins, sans-serif !important;
+    font-size: 30px !important;
+    font-weight: 600 !important;
+    line-height: 1.4 !important;
+    letter-spacing: 0 !important;
+    color: #fff !important;
+    text-align: center !important;
   }
 
-  body.page-work .work-hero-stack h1 {
-    font-size: 24px;
+  body.page-work .work-hero-stack h5,
+  body.page-work .healthcare-hero-shell .absolute_desc_m h5 {
+    width: 335px !important;
+    max-width: 335px !important;
+    margin: 0 !important;
+    font-family: Poppins, sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    line-height: 1.5 !important;
+    letter-spacing: 0 !important;
+    color: #fff !important;
+    text-align: center !important;
   }
 
+  /* Figma: 24px from subtitle block to first CTA (15px stack gap + 9px) */
+  body.page-work .work-hero-ctas,
   body.page-work .healthcare-hero-shell .absolute_desc_m .work-hero-ctas {
     display: flex !important;
-    flex-direction: row !important;
+    flex-direction: column !important;
     flex-wrap: nowrap !important;
-    justify-content: flex-start !important;
-    gap: 10px;
-    width: 100% !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 24px !important;
+    margin-top: 9px !important;
+    width: 335px !important;
+    max-width: 335px !important;
   }
 
   body.page-work .healthcare-hero-shell .absolute_desc_m .work-hero-ctas > a,
-  body.page-work .healthcare-hero-shell .absolute_desc_m .work-hero-ctas a[href="#bring_happierme"] {
-    width: auto !important;
+  body.page-work .healthcare-hero-shell .absolute_desc_m .work-hero-ctas a[href="#bring_happierme"],
+  body.page-work .work-hero-ctas > a {
+    width: 335px !important;
+    max-width: 335px !important;
     flex: 0 0 auto !important;
   }
 
   body.page-work .healthcare-hero-shell .absolute_desc_m .work-hero-ctas .btn_tff,
   body.page-work .healthcare-hero-shell .absolute_desc_m .work-hero-ctas .req_button,
-  body.page-work .healthcare-hero-shell .absolute_desc_m .work-hero-ctas .req_button.work-hero-btn {
-    width: auto !important;
-    max-width: none !important;
-    height: 44px !important;
-    padding: 10px 16px !important;
-    font-size: 13px !important;
+  body.page-work .healthcare-hero-shell .absolute_desc_m .work-hero-ctas .req_button.work-hero-btn,
+  body.page-work .work-hero-ctas .btn_tff,
+  body.page-work .work-hero-ctas .req_button,
+  body.page-work .req_button.work-hero-btn {
+    width: 335px !important;
+    max-width: 335px !important;
+    min-width: 0 !important;
+    height: 55px !important;
+    padding: 15px 30px !important;
+    border-radius: 30px !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    line-height: 1.4 !important;
+    background: linear-gradient(180deg, #ed7d6f 0%, #d7586b 100%) !important;
+    border: 0 !important;
+    box-sizing: border-box !important;
   }
 
+  /* ----- 2. Trust bar — #fff7e6, py 40, gap 30, stacked ----- */
   body.page-work .work-trust {
-    height: auto;
-    padding: 24px 20px;
+    height: auto !important;
+    padding: 40px 20px !important;
+    margin: 0 !important;
   }
 
   body.page-work .work-trust-inner {
-    flex-direction: column;
-    gap: 24px;
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    gap: 30px !important;
+    max-width: 335px;
   }
 
+  body.page-work .work-trust-item {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    width: 100%;
+    text-align: center;
+  }
+
+  body.page-work .work-trust-item:first-child img {
+    width: 80px !important;
+    height: 60px !important;
+  }
+
+  body.page-work .work-trust-item:last-child img {
+    width: 120px !important;
+    height: 51.736px !important;
+  }
+
+  body.page-work .work-trust-item span {
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    line-height: 1.5 !important;
+    text-align: center !important;
+  }
+
+  /* ----- Shared section shell ----- */
   body.page-work .work-section,
-  body.page-work .work-testimonials-section,
-  body.page-work .work-blog-section,
-  body.page-work .work-measure {
-    margin-top: 60px;
-    padding-left: 20px;
-    padding-right: 20px;
+  body.page-work .work-section.work-perf-section,
+  body.page-work .work-section.work-video-section,
+  body.page-work .work-section.work-diff-section,
+  body.page-work .work-section.work-challenge-section,
+  body.page-work .work-section.work-skills-section11,
+  body.page-work .work-skills-section {
+    padding: 0 20px !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
   }
 
-  body.page-work .work-section {
-    padding-top: 60px;
+  body.page-work .work-section-inner {
+    max-width: 335px !important;
+    width: 100% !important;
+    gap: 24px !important;
+    padding: 0 !important;
   }
 
+  body.page-work .work-section-head {
+    max-width: 335px !important;
+    width: 100% !important;
+    gap: 15px !important;
+  }
+
+  /* Figma mobile titles: Poppins 600 / 24px / width 335 — natural wrap (no forced <br>) */
   body.page-work .work-section-title,
   body.page-work .work-measure-copy h2,
-  body.page-work .work-challenge-stat,
   body.page-work .work-testimonials-title,
-  body.page-work .work-blog-title {
+  body.page-work .work-blog-title,
+  body.page-work #bring_happierme .work-demo-title,
+  body.page-work section.hpt120px ~ main#main h2.work-section-title,
+  body.page-work section.hpt120px ~ main#main h2.work-testimonials-title,
+  body.page-work section.hpt120px ~ main#main h2.work-blog-title,
+  body.page-work section.hpt120px ~ main#main .work-testimonials-header h2.work-testimonials-title,
+  body.page-work section.hpt120px ~ main#main .work-blog-header h2.work-blog-title,
+  body.page-work section.hpt120px ~ main#main h2.fs_30px.work-testimonials-title,
+  body.page-work section.hpt120px ~ main#main h2.fs_30px.work-blog-title,
+  body.page-work section.hpt120px ~ main#main .work-measure-copy h2,
+  body.page-work main#main .work-testimonials-title,
+  body.page-work main#main .work-blog-title {
+    font-family: Poppins, sans-serif !important;
+    font-size: 24px !important; /* beat index.css h2.fs_30px → 18px */
+    font-weight: 600 !important;
+    line-height: 1.4 !important;
+    letter-spacing: 0 !important;
+    color: #000 !important;
+    text-align: center !important;
+    width: 335px !important;
+    max-width: 335px !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+    white-space: normal !important;
+    hyphens: none !important;
+  }
+
+  /* Hide desktop title copy on mobile (high specificity — avoid generic h2 span { display:inline } undoing this) */
+  body.page-work main#main h2 .work-copy-desktop,
+  body.page-work main#main .work-copy-desktop,
+  body.page-work section.hpt120px ~ main#main section h2 .work-copy-desktop,
+  body.page-work section.hpt120px ~ main#main .work-copy-desktop {
+    display: none !important;
+  }
+
+  /* Show + size only mobile title copy. Beat responsive.css span { 12px } leak. */
+  body.page-work h2 .work-copy-mobile,
+  body.page-work h2.work-section-title .work-copy-mobile,
+  body.page-work h2.work-testimonials-title .work-copy-mobile,
+  body.page-work h2.work-blog-title .work-copy-mobile,
+  body.page-work main#main h2 .work-copy-mobile,
+  body.page-work main#main h2.work-section-title .work-copy-mobile,
+  body.page-work main#main h2.work-testimonials-title .work-copy-mobile,
+  body.page-work section.hpt120px ~ main#main section h2 .work-copy-mobile {
+    display: inline !important;
+    font-family: Poppins, sans-serif !important;
     font-size: 24px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0 !important;
+    color: inherit !important;
+  }
+
+  body.page-work .work-diff-section .work-section-title,
+  body.page-work section.hpt120px ~ main#main .work-diff-section .work-section-title {
+    line-height: 1.2 !important;
+  }
+
+  /* Figma 13309:7404 — 24/600/1.5 → exactly 2 lines at 335px */
+  body.page-work .work-testimonials-title,
+  body.page-work section.hpt120px ~ main#main .work-testimonials-header h2.work-testimonials-title,
+  body.page-work main#main .work-testimonials-title {
+    line-height: 1.5 !important;
+  }
+
+  body.page-work .work-blog-title,
+  body.page-work section.hpt120px ~ main#main .work-blog-header h2.work-blog-title {
+    line-height: 1.2 !important;
+  }
+
+  /* Demo title stays white; lh 1.5 (2 lines) */
+  body.page-work #bring_happierme .work-demo-title,
+  body.page-work section.hpt120px ~ main#main #bring_happierme .work-demo-title {
+    color: #fff !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Keep desktop <br> breaks; mobile uses work-copy-mobile (no br) */
+  body.page-work .work-section-title br,
+  body.page-work .work-testimonials-title br {
+    display: none !important;
   }
 
   body.page-work .work-section-sub {
-    font-size: 15px;
+    font-family: Poppins, sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    line-height: 1.5 !important;
+    color: #000 !important;
+    text-align: center !important;
+    max-width: 335px !important;
+    margin: 0 auto !important;
   }
 
-  body.page-work .work-pillars,
-  body.page-work .work-diff-cards,
-  body.page-work .work-challenge-cards,
-  body.page-work .work-skills-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 0;
+  body.page-work .work-diff-section .work-section-sub {
+    font-size: 15px !important;
   }
 
-  body.page-work .work-diff-card,
-  body.page-work .work-challenge-card,
-  body.page-work .work-skill-card,
-  body.page-work .work-skills-grid > .work-skill-card:nth-child(-n+3) {
-    min-height: 0;
-    height: auto;
-    max-width: none;
+  body.page-work .work-diff-section .work-section-head {
+    gap: 9px !important;
   }
 
-  body.page-work .work-video-wrap {
-    height: auto;
-    aspect-ratio: 16 / 9;
+  /* ----- 3. Pillars — centered stack, gap 30 ----- */
+  body.page-work .work-pillars {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: none !important;
+    gap: 30px !important;
+    padding: 0 !important;
+    width: 100% !important;
   }
 
-  body.page-work .work-pillar-title,
-  body.page-work .work-diff-card-title,
-  body.page-work .work-skill-title {
-    font-size: 21px;
+  body.page-work .work-pillar {
+    max-width: none !important;
+    width: 100% !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 12px !important;
+  }
+
+  body.page-work .work-icon-slot {
+    display: none !important;
+  }
+
+  body.page-work .work-pillar-copy {
+    align-items: center !important;
+    gap: 6px !important;
+    width: 100% !important;
+  }
+
+  body.page-work .work-pillar-copy > img {
+    width: auto !important;
+    height: 46px !important;
+    max-width: 60px !important;
+    object-fit: contain !important;
+    margin: 0 auto !important; /* gap handled by .work-pillar-copy gap: 6px */
+  }
+
+  body.page-work .work-pillar-title {
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    line-height: 1.5 !important;
+    text-align: center !important;
+  }
+
+  body.page-work .work-pillar-text {
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    line-height: 1.5 !important;
+    text-align: center !important;
+  }
+
+  /* ----- 4. Video — title→player 18px, 335×214 ----- */
+  body.page-work .work-video-section,
+  body.page-work section.work-video-section {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 18px !important;
+  }
+
+  body.page-work .work-video-section .work-section-inner,
+  body.page-work .work-video-section .section-header-teen {
+    gap: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 335px !important;
+    max-width: 335px !important;
+  }
+
+  body.page-work .work-video-section .row.center_flex {
+    margin: 0 !important;
+    width: 100% !important;
+  }
+
+  body.page-work .work-video-section .work-video-wrap,
+  body.page-work .work-video-section .col-lg-12.work-video-wrap {
+    width: 335px !important;
+    max-width: 335px !important;
+    flex: 0 0 335px !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+  }
+
+  body.page-work .work-video-wrap,
+  body.page-work .work-video-section .work-youtube-player,
+  body.page-work .work-video-section .youtube-player {
+    width: 335px !important;
+    height: 214px !important;
+    max-width: 335px !important;
+    aspect-ratio: auto !important;
+    overflow: hidden !important;
+    border-radius: 0 !important;
+  }
+
+  body.page-work .work-video-section .youtube-player iframe,
+  body.page-work .work-video-section .youtube-player .yt-embed,
+  body.page-work .work-video-section .youtube-player img,
+  body.page-work .work-video-section .youtube-player button {
+    width: 100% !important;
+    height: 214px !important;
+    object-fit: cover !important;
+  }
+
+  /* ----- 5. Why different — full-colour cards, gap 10 ----- */
+  body.page-work .work-diff-section .work-section-inner {
+    gap: 30px !important;
+  }
+
+  body.page-work .work-diff-cards {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: none !important;
+    gap: 10px !important;
+    width: 335px !important;
+    max-width: 335px !important;
+  }
+
+  body.page-work .work-diff-card {
+    max-width: none !important;
+    min-height: 0 !important;
+    height: auto !important;
+    width: 100% !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 6px !important;
+    padding: 15px 18px !important;
+    box-sizing: border-box !important;
+  }
+
+  body.page-work .work-diff-card:nth-child(1) { background: #eea170 !important; }
+  body.page-work .work-diff-card:nth-child(2) { background: #ed7d6f !important; }
+  body.page-work .work-diff-card:nth-child(3) { background: #d75b68 !important; }
+  body.page-work .work-diff-card:nth-child(4) { background: #803358 !important; }
+
+  body.page-work .work-diff-card-top {
+    height: auto !important;
+    background: transparent !important;
+    padding: 0 !important;
+  }
+
+  body.page-work .work-diff-card-top .work-diff-icon {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  body.page-work .work-diff-card-body {
+    background: transparent !important;
+    padding: 0 !important;
+    width: 299px !important;
+    max-width: 100% !important;
+  }
+
+  body.page-work .work-diff-card-title {
+    margin: 0 !important;
+    font-size: 21px !important;
+    font-weight: 500 !important;
+    line-height: 1.4 !important;
+    color: #fff !important;
+  }
+
+  body.page-work .work-diff-card-text {
+    margin: 0 !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    line-height: 1.5 !important;
+    color: #fff !important;
+  }
+
+  /* Figma: cards 3–4 body lh 1.4 */
+  body.page-work .work-diff-card:nth-child(n+3) .work-diff-card-text {
+    line-height: 1.4 !important;
+  }
+
+  /* ----- 6. Measure — no cream band, 12px copy, tilted image ----- */
+  body.page-work .work-measure {
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 20px !important;
+    overflow: visible !important;
   }
 
   body.page-work .work-measure-band {
-    top: 0;
-    bottom: 0;
-    height: auto;
+    display: none !important;
+  }
+
+  body.page-work .work-measure-inner {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 18px !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    max-width: 335px !important;
+    margin: 0 auto !important;
+  }
+
+  body.page-work .work-measure-copy {
+    order: -1;
+    /* Beat desktop flex: 0 0 417px — in column layout that forced 417px HEIGHT */
+    flex: 0 0 auto !important;
+    min-width: 0 !important;
+    max-width: 335px !important;
+    width: 100% !important;
+    height: auto !important;
+    text-align: center !important;
+    gap: 15px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  body.page-work .work-measure-copy h2 {
+    margin: 0 !important;
+  }
+
+  body.page-work .work-measure-copy p {
+    font-size: 12px !important;
+    line-height: 1.5 !important;
+    margin: 0 0 3px !important;
+  }
+
+  body.page-work .work-measure-copy p:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  body.page-work .work-measure-media {
+    flex: 0 0 auto !important;
+    min-width: 0 !important;
+    width: 320px !important;
+    max-width: 320px !important;
+    height: 401px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
 
   body.page-work .work-measure-media img {
-    transform: none;
-    height: auto;
+    width: 295px !important;
+    height: 382px !important;
+    max-width: none !important;
+    object-fit: cover !important;
+    transform: rotate(-3.88deg) !important;
+    box-shadow: none !important;
+  }
+
+  /* ----- 7. Testimonials — 315 cards, pad 24, quote 12 ----- */
+  /* Beat index.css padding-top/bottom: 60px */
+  body.page-work section.work-testimonials-section,
+  body.page-work .work-testimonials-section {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  body.page-work .work-testimonials-section .work-testimonials-header,
+  body.page-work main#main .section-header.work-testimonials-header {
+    margin: 0 0 24px !important;
+    padding: 0 !important; /* title itself is 335px centered — Figma x:20 via margin auto */
+  }
+
+  body.page-work .work-testimonials-header .row.center_flex,
+  body.page-work .work-blog-header .row.center_flex {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  body.page-work .work-testimonials-header [class*="col-"],
+  body.page-work .work-blog-header [class*="col-"] {
+    width: 335px !important;
+    max-width: 335px !important;
+    flex: 0 0 335px !important;
+    padding: 0 !important;
+    float: none !important;
+    margin: 0 auto !important;
+  }
+
+  body.page-work .owl_testimonials .work-testimonial-avatar {
+    width: 60px !important;
+    height: 60px !important;
+    min-width: 60px !important;
+  }
+
+  body.page-work .owl_testimonials .owl-carousel.work-testimonials-native {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    gap: 20px !important;
+    padding: 0 20px !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  body.page-work .owl_testimonials .owl-carousel.work-testimonials-native > .item,
+  body.page-work .owl_testimonials .owl-carousel.work-testimonials-native .owl-item {
+    width: 315px !important;
+    min-width: 315px !important;
+    max-width: 315px !important;
+    flex: 0 0 315px !important;
+    height: auto !important;
+    margin: 0 !important;
   }
 
   body.page-work .owl_testimonials .div_testimonials.work-testimonial-card,
-  body.page-work .owl_testimonials .owl-carousel:not(.work-testimonials-native) .owl-item .item {
+  body.page-work section.hpt120px ~ main#main .owl_testimonials .div_testimonials.work-testimonial-card {
+    width: 315px !important;
+    min-width: 315px !important;
+    max-width: 315px !important;
     height: auto !important;
     min-height: 0 !important;
     max-height: none !important;
+    padding: 24px !important;
+    border-radius: 20px !important;
+    background: #fff7e6 !important;
+    gap: 15px !important;
+  }
+
+  body.page-work .owl_testimonials .work-testimonial-name {
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    line-height: 1.3 !important;
+    margin-bottom: 3px !important;
+    opacity: 0.75;
+  }
+
+  body.page-work .owl_testimonials .work-testimonial-role {
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    line-height: 1.5 !important;
+    opacity: 0.75;
+  }
+
+  body.page-work .owl_testimonials .work-testimonial-quote {
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    font-style: italic !important;
+    line-height: 1.5 !important;
+    opacity: 0.75;
+  }
+
+  body.page-work .work-testimonials-footer {
+    display: none !important;
+  }
+
+  /* ----- 8. Challenge stats — horizontal scroll, 202×174 ----- */
+  body.page-work .work-challenge-section .work-section-inner {
+    max-width: none !important;
+    width: 100% !important;
+    align-items: stretch !important;
+    gap: 24px !important;
+  }
+
+  body.page-work .work-challenge-section .work-section-head {
+    padding: 0 !important;
+    margin: 0 auto !important;
+  }
+
+  body.page-work .work-challenge-cards {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    grid-template-columns: none !important;
+    gap: 10px !important;
+    overflow-x: auto !important;
+    width: calc(100% + 40px) !important;
+    margin-left: -20px !important;
+    padding: 0 20px !important;
+    justify-content: flex-start !important;
+    -webkit-overflow-scrolling: touch;
+    box-sizing: border-box !important;
+  }
+
+  body.page-work .work-challenge-card {
+    width: 202px !important;
+    min-width: 202px !important;
+    max-width: 202px !important;
+    height: 174px !important;
+    min-height: 174px !important;
+    padding: 24px !important;
+    border-radius: 20px !important;
+    gap: 9px !important;
+    flex: 0 0 202px !important;
+  }
+
+  body.page-work .work-challenge-stat {
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 1.2 !important;
+    /* Figma: 3px between stat and desc (card gap 9 − 6) */
+    margin-bottom: -6px !important;
+  }
+
+  body.page-work .work-challenge-text,
+  body.page-work .work-challenge-cite {
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    line-height: 1.4 !important;
+  }
+
+  body.page-work .work-challenge-cite {
+    width: 215px !important;
+    max-width: none !important;
+  }
+
+  /* ----- 9. Human skills — flat list (no cream cards) ----- */
+  body.page-work .work-skills-section11 .work-section-inner,
+  body.page-work .work-skills-section .work-section-inner {
+    gap: 24px !important;
+  }
+
+  body.page-work .work-skills-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: none !important;
+    gap: 30px !important;
+    max-width: 335px !important;
+    padding: 0 !important;
+  }
+
+  body.page-work .work-skill-card,
+  body.page-work .work-skills-grid > .work-skill-card:nth-child(-n+3) {
+    background: transparent !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    min-height: 0 !important;
+    height: auto !important;
+    max-width: none !important;
+    gap: 12px !important;
+    box-shadow: none !important;
+  }
+
+  body.page-work .work-skill-title {
+    margin: 0 0 6px !important;
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    line-height: 1.5 !important;
+  }
+
+  body.page-work .work-skill-text {
+    font-size: 12px !important;
+    line-height: 1.5 !important;
+  }
+
+  /* ----- 10. Demo form — py 40, gaps 40, single full-width CTA ----- */
+  body.page-work #bring_happierme .work-demo-band,
+  body.page-work #bring_happierme .div_subscription.work-demo-band,
+  body.page-work #bring_happierme .row.work-demo-band {
+    padding: 40px 20px !important;
+  }
+
+  body.page-work #bring_happierme .work-demo-inner,
+  body.page-work #bring_happierme .email-w980px.work-demo-inner,
+  body.page-work #bring_happierme .col-10.work-demo-inner {
+    max-width: 335px !important;
+    width: 335px !important;
+    flex: 0 0 335px !important;
+    gap: 40px !important; /* beat index.css 24px — header ↔ form */
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  body.page-work #bring_happierme .work-demo-copy {
+    gap: 15px !important;
+  }
+
+  body.page-work #bring_happierme .work-demo-title,
+  body.page-work section.hpt120px ~ main#main #bring_happierme .work-demo-title {
+    color: #fff !important;
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 1.5 !important;
+  }
+
+  body.page-work #bring_happierme .work-demo-subtitle {
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    line-height: 1.5 !important;
+    color: #fff !important;
+  }
+
+  body.page-work #bring_happierme .work-demo-fields {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 335px !important;
+    max-width: 100% !important;
+  }
+
+  body.page-work #bring_happierme .work-demo-col {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+
+  body.page-work #bring_happierme .div_input,
+  body.page-work #bring_happierme .form-control.fc_01,
+  body.page-work #bring_happierme .fc_select_01 {
+    width: 100% !important;
+    max-width: 335px !important;
+    height: 50px !important;
+    border-radius: 12px !important;
+    box-sizing: border-box !important;
+  }
+
+  body.page-work #bring_happierme .form-control.fc_01 {
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    line-height: 1.5 !important;
+    padding: 10px 16px !important;
+  }
+
+  body.page-work #bring_happierme .work-demo-form-wrap,
+  body.page-work #bring_happierme .work-demo-form-wrap form {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 40px !important; /* beat index.css 24px — fields ↔ CTA */
+    width: 100% !important;
+    max-width: 335px !important;
+    align-items: stretch !important;
+  }
+
+  body.page-work #bring_happierme .work-demo-cta {
+    flex-direction: column !important;
+    gap: 0 !important;
+    width: 335px !important;
+    max-width: 100% !important;
+  }
+
+  body.page-work #bring_happierme .work-demo-cta #Request-Demo,
+  body.page-work #bring_happierme .work-demo-cta .work-demo-btn {
+    width: 335px !important;
+    max-width: 100% !important;
+    height: 55px !important;
+    padding: 15px 30px !important;
+    border-radius: 30px !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    line-height: 1.4 !important;
+  }
+
+  body.page-work #bring_happierme .work-demo-cta .work-demo-btn-secondary {
+    display: none !important;
+  }
+
+  /* ----- 11. Blog — match index Explore our blog (306px cards + peek) ----- */
+  body.page-work .work-blog-section,
+  body.page-work section.work-blog-section {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow-x: hidden !important;
+  }
+
+  body.page-work .work-blog-section .work-blog-header,
+  body.page-work main#main .section-header.work-blog-header {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 20px !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+  }
+
+  body.page-work .work-blog-header .row.center_flex,
+  body.page-work .work-blog-section .work-blog-header .row {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    text-align: center !important;
+  }
+
+  body.page-work .work-blog-header [class*="col-"],
+  body.page-work .work-blog-section .work-blog-header [class*="col-"] {
+    float: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: center !important;
+  }
+
+  body.page-work section.hpt120px ~ main#main .work-blog-header h2.work-blog-title,
+  body.page-work main#main .work-blog-title,
+  body.page-work .work-blog-header h2.work-blog-title,
+  body.page-work .work-blog-title {
+    display: block !important;
+    font-family: Poppins, sans-serif !important;
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    line-height: 1.2 !important;
+    color: #000 !important;
+    width: 100% !important;
+    max-width: 335px !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+
+  body.page-work .work-blog-wrap,
+  body.page-work .work-blog-section .owl_blog {
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+    overflow: visible !important;
+  }
+
+  /* Native horizontal strip (index-style): 20px left inset, right open so card 2 peeks */
+  body.page-work .owl_blog > .owl-carousel.work-blog-native,
+  body.page-work .owl_blog .owl-carousel.work-blog-native {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch !important;
+    gap: 14px !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 0 0 20px !important;
+    box-sizing: border-box !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x pan-y;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+
+  body.page-work .owl_blog .owl-carousel.work-blog-native::-webkit-scrollbar {
+    display: none !important;
+    height: 0 !important;
+  }
+
+  body.page-work .owl_blog .owl-carousel.work-blog-native .owl-stage-outer,
+  body.page-work .owl_blog .owl-carousel.work-blog-native .owl-stage {
+    display: contents !important;
+    width: auto !important;
+    transform: none !important;
+  }
+
+  body.page-work .owl_blog .owl-carousel.work-blog-native > .item,
+  body.page-work .owl_blog .owl-carousel.work-blog-native .owl-item,
+  body.page-work .owl_blog .owl-carousel.work-blog-native .owl-item > .item {
+    flex: 0 0 306px !important;
+    width: 306px !important;
+    max-width: 306px !important;
+    margin: 0 !important;
+    float: none !important;
+  }
+
+  /* Trailing peek space after last card */
+  body.page-work .owl_blog .owl-carousel.work-blog-native::after {
+    content: "";
+    flex: 0 0 20px;
+  }
+
+  body.page-work .owl_blog .div_blog,
+  body.page-work section.hpt120px ~ main#main .owl_blog .div_blog,
+  body.page-work .owl_blog .owl-carousel.work-blog-native .div_blog {
+    width: 306px !important;
+    max-width: 306px !important;
+    height: 242.54px !important;
+    min-height: 242.54px !important;
+    max-height: 242.54px !important;
+    border-radius: 10px !important;
+    background: #fff7e6 !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  body.page-work section.hpt120px ~ main#main .owl_blog .div_blog img,
+  body.page-work .owl_blog .div_blog img,
+  body.page-work .owl_blog .owl-carousel.work-blog-native .div_blog img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 156.26px !important;
+    min-height: 156.26px !important;
+    max-height: 156.26px !important;
+    object-fit: cover !important;
+    border-radius: 10px 10px 0 0 !important;
+    display: block !important;
+  }
+
+  body.page-work .owl_blog .div_blog > .row:last-child,
+  body.page-work .owl_blog .owl-carousel.work-blog-native .div_blog > .row:last-child {
+    height: 86.28px !important;
+    min-height: 86.28px !important;
+    max-height: 86.28px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff7e6 !important;
+  }
+
+  body.page-work .owl_blog .div_blog > .row:last-child [class^="col-"],
+  body.page-work .owl_blog .owl-carousel.work-blog-native .div_blog > .row:last-child [class^="col-"] {
+    padding: 10px 20px 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: left !important;
+  }
+
+  body.page-work section.hpt120px ~ main#main .owl_blog .div_blog h4,
+  body.page-work .owl_blog .div_blog h4,
+  body.page-work .owl_blog .owl-carousel.work-blog-native .div_blog h4 {
+    font-family: Poppins, sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    line-height: 1.4 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    min-height: 0 !important;
+    max-width: 265px !important;
+    color: #000 !important;
+    text-align: left !important;
+  }
+
+  /* Index Explore our blog: 24px between cards strip and “Find out more” */
+  body.page-work .owl_blog {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px !important;
+  }
+
+  body.page-work .work-blog-footer {
+    display: flex !important;
+    justify-content: center !important;
+    margin-top: 0 !important;
+    padding: 0 20px !important;
+  }
+
+  body.page-work .work-blog-footer .work-blog-more {
+    justify-content: center !important;
+  }
+
+  body.page-work .work-blog-footer .work-blog-more h4 {
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    line-height: 1.5 !important;
+    color: #d7586b !important;
+    text-decoration: underline !important;
+  }
+
+  body.page-work .work-blog-nav,
+  body.page-work .work-blog-footer .work-blog-nav {
+    display: none !important;
+    margin: 0 !important;
+  }
+
+  /* Skills header title↔body already 15 via .work-section-head; ensure 24 to list */
+  body.page-work .work-skills-section11 .work-section-head,
+  body.page-work .work-challenge-section .work-section-head {
+    gap: 15px !important;
+  }
+
+  body.page-work .work-skill-icon {
+    width: 46px !important;
+    height: 46px !important;
+  }
+
+  /* Perf title wraps 2 lines at 24/1.4 → ~68px; keep lh 1.4 */
+  body.page-work .work-perf-section .work-section-inner {
+    gap: 24px !important;
   }
 }
