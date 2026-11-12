@@ -1,5 +1,6 @@
-// Error colour used for wrong-code messages and verifying state
-$error-red: #E58D82;
+// Resend code and error colors for adults and teens
+$resend-color-adults: #D7586B;
+$resend-color-teens: #E58D82;
 
 :host {
   display: block;
@@ -114,7 +115,7 @@ $error-red: #E58D82;
 }
 
 .verify_error {
-  color: $error-red;
+  color: $resend-color-adults;
 }
 
 .verify_info {
@@ -170,7 +171,7 @@ text-decoration: underline;
 text-decoration-style: solid;
 text-decoration-thickness: 0%;
 text-decoration-skip-ink: auto;
-color:#D7586B;
+color: $resend-color-adults;
 }
 
 .verify_link_disabled {
@@ -198,14 +199,14 @@ a.verify_link.verify_link_disabled {
   }
   
   .verify_error {
-    color: #E58D82;
+    color: $resend-color-teens;
   }
 
   .verify_timer{
     color: #FFFFFF80;
   }
   .verify_link{
-    color:#E58D82;
+    color: $resend-color-teens;
   }
   .verify_sub,
   .verify_help_copy {

@@ -494,7 +494,7 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
     this.commonService.setPopupActive(false);
     const program = SharedService.getprogramName();
     this.router.navigate([`/${program}/subscription/try-free-and-subscribe`], {
-      state: { fromTrialEnded: true }
+      state: { fromTrialEndedPopup: true }
     });
   }
 
@@ -504,7 +504,7 @@ export class MyDailyPracticePage implements OnInit, OnDestroy {
     this.commonService.setPopupActive(false);
     const program = SharedService.getprogramName();
     this.router.navigate([`/${program}/subscription/try-free-and-subscribe`], {
-      state: { fromTrialEnded: true }
+      state: { fromTrialEndedPopup: true }
     });
   }
 
