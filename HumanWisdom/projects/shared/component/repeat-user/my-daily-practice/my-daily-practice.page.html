@@ -583,7 +583,7 @@
           </div>
 
           <div class="trial-ended-popup-content" [class.trial-ended-popup-content--teens]="!isAdults">
-            <button type="button" class="trial-ended-popup-btn" [class.trial-ended-popup-btn--teens]="!isAdults"
+            <button type="button" id="liSubscribe"  class="trial-ended-popup-btn" [class.trial-ended-popup-btn--teens]="!isAdults"
               (click)="subscribeNowFreeTrialEnded()">
               <span>Subscribe now</span>
               <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg"
@@ -593,7 +593,7 @@
               </svg>
             </button>
 
-            <button type="button" class="trial-ended-link view_plans" [class.view_plans--teens]="!isAdults"
+            <button type="button" id="liSubscribe"  class="trial-ended-link view_plans" [class.view_plans--teens]="!isAdults"
               (click)="viewPlansFreeTrialEnded()">View plans</button>
             <button type="button" class="trial-ended-link not_now" [class.not_now--teens]="!isAdults"
               (click)="closeFreeTrialEndedPopup()">Not now</button>
