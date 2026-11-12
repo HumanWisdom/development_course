@@ -107,80 +107,10 @@
           padding: 10px;
         }
 
-        /* Work testimonials — Figma: pad 20, gap 20, cards 315×213 */
-        .owl_testimonials .owl-carousel.work-testimonials-native {
-          display: flex !important;
-          flex-direction: row !important;
-          flex-wrap: nowrap !important;
-          overflow-x: auto !important;
-          gap: 20px !important;
-          padding: 0 20px !important;
-          -webkit-overflow-scrolling: touch;
-        }
-
-        .owl_testimonials .owl-carousel.work-testimonials-native > .item,
-        .owl_testimonials .owl-carousel.work-testimonials-native .owl-item {
-          width: 315px !important;
-          min-width: 315px !important;
-          max-width: 315px !important;
-          flex: 0 0 315px !important;
-          height: 213px !important;
-          margin: 0 !important;
-        }
-
-        .owl_testimonials .div_testimonials.work-testimonial-card {
-          width: 315px !important;
-          min-width: 315px !important;
-          max-width: 315px !important;
-          height: 213px !important;
-          min-height: 213px !important;
-          max-height: 213px !important;
-        }
-
+        /* Testimonials native scroll — sizes owned by work.css (Figma 13309:7403) */
         .owl-carousel .owl-stage {
           width: auto !important;
         }
-
-      /* Reduce section padding on mobile to fix large gaps */
-      section {
-        padding-top: 20px !important;
-        padding-bottom: 20px !important;
-      }
-      
-      .section-header {
-        padding-bottom: 20px !important;
-      }
-
-      .section-header.work-dyk-header,
-      .section-header.work-inspire-header {
-        padding-bottom: 40px !important;
-      }
-
-      .section-header.work-testimonials-header {
-        padding-bottom: 24px !important;
-      }
-
-      section.work-testimonials-section {
-        padding-top: 60px !important;
-        padding-bottom: 60px !important;
-      }
-
-      section.work-dyk-section {
-        padding-top: 60px !important;
-        padding-bottom: 0 !important;
-      }
-
-      section.work-desc-section {
-        padding-bottom: 0 !important;
-      }
-
-      section.work-inspire-section {
-        padding-top: 0 !important;
-      }
-
-      .section-header.work-blog-header {
-        padding-bottom: 0 !important;
-      }
     }
     </style>
   </head>
@@ -260,7 +190,10 @@
           <section class="work-section work-perf-section">
             <div class="work-section-inner">
               <div class="work-section-head">
-                <h2 class="work-section-title">Improve performance and productivity<br>with HappierMe</h2>
+                <h2 class="work-section-title">
+                  <span class="work-copy-desktop">Improve performance and productivity<br>with HappierMe</span>
+                  <span class="work-copy-mobile">Inspiring fresh ways of thinking</span>
+                </h2>
               </div>
               <div class="work-pillars">
                 <article class="work-pillar">
@@ -360,7 +293,10 @@
             <div class="work-section-inner">
               <div class="work-section-head">
                 <h2 class="work-section-title">Why HappierMe is different</h2>
-                <p class="work-section-sub">Most apps help you cope. HappierMe helps you understand yourself and change.</p>
+                <p class="work-section-sub">
+                  <span class="work-copy-desktop">Most apps help you cope. HappierMe helps you understand yourself and change.</span>
+                  <span class="work-copy-mobile">Most apps help you cope.<br>We help you change.</span>
+                </p>
               </div>
               <div class="work-diff-cards">
                 <article class="work-diff-card">
@@ -415,7 +351,7 @@
                 <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/measureee.webp" class="img-responsive" alt="Organization Dashboard">
               </div>
               <div class="work-measure-copy">
-                <h2>Measure well-being. Drive performance.</h2>
+                <h2 class="work-section-title">Measure well-being. Drive performance.</h2>
                 <p>Give HR teams a clear view of employee engagement and wellness with actionable insights that help build healthier, more productive workplaces.</p>
                 <p>All data is anonymised, so individuals cannot be identified.</p>
               </div>
@@ -427,8 +363,9 @@
             <div class="section-header work-testimonials-header">
               <div class="row center_flex tcenter" data-aos="fade-up" data-aos-delay="100">
                 <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
-                  <h2 class="mtb0px fs_30px fw_600 lh_120p fc_000000 work-testimonials-title">
-                    The HappierMe impact across<br>organisations
+                  <h2 class="mtb0px fw_600 fc_000000 work-testimonials-title">
+                    <span class="work-copy-desktop">The HappierMe impact across<br>organisations</span>
+                    <span class="work-copy-mobile">The HappierMe impact across organisations</span>
                   </h2>
                 </div>
               </div>
@@ -501,7 +438,10 @@
           <section class="work-section work-challenge-section">
             <div class="work-section-inner">
               <div class="work-section-head">
-                <h2 class="work-section-title">Multiple workplace challenges.<br>One proactive solution.</h2>
+                <h2 class="work-section-title">
+                  <span class="work-copy-desktop">Multiple workplace challenges.<br>One proactive solution.</span>
+                  <span class="work-copy-mobile">Multiple workplace challenges. One proactive solution.</span>
+                </h2>
                 <p class="work-section-sub">HappierMe helps address these challenges by building self-awareness<br class="display_m_none"> and emotional skills across the workforce</p>
               </div>
               <div class="work-challenge-cards">
@@ -533,7 +473,10 @@
           <section class="work-section work-skills-section11">
             <div class="work-section-inner">
               <div class="work-section-head">
-                <h2 class="work-section-title">Building human skills to thrive<br>in the age of AI</h2>
+                <h2 class="work-section-title">
+                  <span class="work-copy-desktop">Building human skills to thrive<br>in the age of AI</span>
+                  <span class="work-copy-mobile">Building human skills to thrive in the age of AI</span>
+                </h2>
                 <p class="work-section-sub">As AI transforms the workplace, human skills matter more than ever. HappierMe helps employees build these skills to thrive at work and beyond.</p>
               </div>
               <div class="work-skills-grid">
@@ -584,7 +527,7 @@
           </section>
 
           <?php
-            $hm_demo_subtitle = 'Connect with our specialists today and see how we can help you build a happier, more engaged workforce.';
+            $hm_demo_subtitle = 'Connect with our specialists today and see how we can help you prioritize a happier workspace';
             $hm_demo_secondary_label = 'Try HappierMe free for 10 days';
             $hm_demo_secondary_href = '../organisation-choose.php/happierme';
           ?>
@@ -597,7 +540,7 @@
             <div class="section-header work-blog-header">
               <div class="row center_flex" data-aos="fade-up" data-aos-delay="100">
                 <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 col-10 p0">
-                  <h2 class="mtb0px fs_30px fw_600 lh_120p fc_000000 work-blog-title">
+                  <h2 class="mtb0px fw_600 fc_000000 work-blog-title">
                     Explore our blog
                   </h2>
                 </div>
@@ -667,9 +610,10 @@
             <div class="work-blog-footer">
               <a class="sap work-blog-more" href="https://happierme.app/adults/blogs">
                 <h4 class="mtb0px fs_18px fw_500 lh_150p td_underline">
-                  View all blogs
+                  <span class="work-copy-desktop">View all blogs</span>
+                  <span class="work-copy-mobile">Find out more</span>
                 </h4>
-                <span class="chevron-pink"><span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span>
+                <span class="chevron-pink work-copy-desktop"><span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span>
               </a>
               <div class="owl-theme mt10px work-blog-nav">
                 <div class="owl-controls">
@@ -697,6 +641,60 @@
     <?php include('../includes/vendor_footer.php'); ?>
     <!-- /vendor_footer -->
     <link rel="stylesheet" href="<?= hw_asset_url('../assets/css/work.css'); ?>">
+    <!-- Force Figma mobile title size (beats deferred index.css 18px hammer) -->
+    <style id="work-mobile-title-figma">
+      @media (max-width: 767px) {
+        body.page-work main#main h2.work-testimonials-title,
+        body.page-work main#main h2.work-section-title,
+        body.page-work main#main h2.work-blog-title,
+        body.page-work main#main .work-measure-copy h2.work-section-title,
+        body.page-work #bring_happierme h2.work-demo-title,
+        body.page-work section.hpt120px ~ main#main .work-testimonials-header h2.work-testimonials-title,
+        body.page-work section.hpt120px ~ main#main .section-header h2.work-testimonials-title,
+        body.page-work section.hpt120px ~ main#main .section-header h2.work-blog-title {
+          font-family: Poppins, sans-serif !important;
+          font-size: 24px !important;
+          font-weight: 600 !important;
+          letter-spacing: 0 !important;
+          width: 335px !important;
+          max-width: 335px !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+          text-align: center !important;
+          white-space: normal !important;
+        }
+        body.page-work main#main h2.work-testimonials-title {
+          line-height: 1.5 !important; /* Figma 150% → 2 lines at 335px */
+        }
+        body.page-work main#main h2.work-section-title,
+        body.page-work main#main .work-measure-copy h2 {
+          line-height: 1.4 !important;
+        }
+        body.page-work main#main h2.work-blog-title {
+          line-height: 1.2 !important;
+        }
+        body.page-work #bring_happierme h2.work-demo-title {
+          line-height: 1.5 !important;
+          color: #fff !important;
+        }
+        body.page-work main#main .work-diff-section h2.work-section-title {
+          line-height: 1.2 !important;
+        }
+        /* Beat responsive.css span { 12px } leak on mobile title copy */
+        body.page-work main#main h2.work-section-title .work-copy-mobile,
+        body.page-work main#main h2.work-testimonials-title .work-copy-mobile,
+        body.page-work main#main h2.work-blog-title .work-copy-mobile,
+        body.page-work main#main h2.work-section-title span,
+        body.page-work main#main h2.work-testimonials-title span,
+        body.page-work section.hpt120px ~ main#main section h2 .work-copy-mobile {
+          font-family: Poppins, sans-serif !important;
+          font-size: 24px !important;
+          font-weight: 600 !important;
+          letter-spacing: 0 !important;
+          color: inherit !important;
+        }
+      }
+    </style>
 
     <script>
       (function () {
