@@ -197,36 +197,32 @@
               </div>
               <div class="work-pillars">
                 <article class="work-pillar">
-                  <span class="work-icon-slot" aria-hidden="true"></span>
                   <div class="work-pillar-copy">
-                                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/mentall.svg" width="79" height="60" alt="Working with Mind">
+                                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/mentall.svg" width="79" height="60" alt="">
 
                     <h3 class="work-pillar-title">Proactive mental wellbeing</h3>
                     <p class="work-pillar-text">Build self-awareness and emotional skills to help prevent mental health problems and burnout before they escalate and affect performance.</p>
                   </div>
                 </article>
                 <article class="work-pillar">
-                  <span class="work-icon-slot" aria-hidden="true"></span>
                   <div class="work-pillar-copy">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/relationnn.svg" width="79" height="60" alt="Working with Mind">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/relationnn.svg" width="79" height="60" alt="">
 
                     <h3 class="work-pillar-title">Stronger relationships</h3>
                     <p class="work-pillar-text">Develop self-awareness and empathy to improve communication, collaboration and conflict resolution, fostering a more positive workforce culture.</p>
                   </div>
                 </article>
                 <article class="work-pillar">
-                  <span class="work-icon-slot" aria-hidden="true"></span>
                   <div class="work-pillar-copy">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/makk.svg" width="79" height="60" alt="Working with Mind">
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/makk.svg" width="79" height="60" alt="">
 
                     <h3 class="work-pillar-title">Better decision making</h3>
                     <p class="work-pillar-text">Understand how emotions, unconscious biases and personal values influence thinking, enabling clearer judgement.</p>
                   </div>
                 </article>
                 <article class="work-pillar">
-                  <span class="work-icon-slot" aria-hidden="true"></span>
                   <div class="work-pillar-copy">
-                    <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/prodddd.svg" width="79" height="60" alt="Working with Mind">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/prodddd.svg" width="79" height="60" alt="">
 
                     <h3 class="work-pillar-title">Improved productivity</h3>
                     <p class="work-pillar-text">Happier, more engaged employees tend to be more productive, take fewer sick days and experience less burnout, contributing to better business performance.</p>

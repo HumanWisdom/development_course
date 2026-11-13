@@ -253,6 +253,11 @@ body.page-work .work-section-inner {
   gap: 40px;
 }
 
+/* Figma 9661:6428 — 60px from section title to the cards */
+body.page-work .work-perf-section .work-section-inner {
+  gap: 60px;
+}
+
 body.page-work .work-section-head {
   max-width: 980px;
   width: 100%;
@@ -302,11 +307,7 @@ body.page-work .work-pillar {
 }
 
 body.page-work .work-icon-slot {
-  display: block;
-  width: 75px;
-  height: 60px;
-  flex-shrink: 0;
-  background: transparent;
+  display: none;
 }
 
 body.page-work .work-pillar-copy {
