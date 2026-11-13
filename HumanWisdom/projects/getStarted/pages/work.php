@@ -197,36 +197,32 @@
               </div>
               <div class="work-pillars">
                 <article class="work-pillar">
-                  <span class="work-icon-slot" aria-hidden="true"></span>
                   <div class="work-pillar-copy">
-                                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/mentall.svg" width="79" height="60" alt="Working with Mind">
+                                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/mentall.svg" width="79" height="60" alt="">
 
                     <h3 class="work-pillar-title">Proactive mental wellbeing</h3>
                     <p class="work-pillar-text">Build self-awareness and emotional skills to help prevent mental health problems and burnout before they escalate and affect performance.</p>
                   </div>
                 </article>
                 <article class="work-pillar">
-                  <span class="work-icon-slot" aria-hidden="true"></span>
                   <div class="work-pillar-copy">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/relationnn.svg" width="79" height="60" alt="Working with Mind">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/relationnn.svg" width="79" height="60" alt="">
 
                     <h3 class="work-pillar-title">Stronger relationships</h3>
                     <p class="work-pillar-text">Develop self-awareness and empathy to improve communication, collaboration and conflict resolution, fostering a more positive workforce culture.</p>
                   </div>
                 </article>
                 <article class="work-pillar">
-                  <span class="work-icon-slot" aria-hidden="true"></span>
                   <div class="work-pillar-copy">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/makk.svg" width="79" height="60" alt="Working with Mind">
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/makk.svg" width="79" height="60" alt="">
 
                     <h3 class="work-pillar-title">Better decision making</h3>
                     <p class="work-pillar-text">Understand how emotions, unconscious biases and personal values influence thinking, enabling clearer judgement.</p>
                   </div>
                 </article>
                 <article class="work-pillar">
-                  <span class="work-icon-slot" aria-hidden="true"></span>
                   <div class="work-pillar-copy">
-                    <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/prodddd.svg" width="79" height="60" alt="Working with Mind">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/prodddd.svg" width="79" height="60" alt="">
 
                     <h3 class="work-pillar-title">Improved productivity</h3>
                     <p class="work-pillar-text">Happier, more engaged employees tend to be more productive, take fewer sick days and experience less burnout, contributing to better business performance.</p>
@@ -361,8 +357,7 @@
               </div>
               <div class="work-measure-copy">
                 <h2 class="work-section-title">Measure well-being.<br class="display_m_none"> Drive performance.</h2>
-                <p>Give HR teams a clear view of employee engagement and wellness with actionable insights that help build healthier, more productive workplaces.</p>
-                <p>All data is anonymised, so individuals cannot be identified.</p>
+                <p>Give HR teams a clear view of employee engagement and wellness with actionable insights that help build healthier, more productive workplaces. All data is anonymised, so individuals cannot be identified.</p>
               </div>
             </div>
           </section>
@@ -386,7 +381,7 @@
                 <div class="owl_container owl_testimonials">
                   <div class="owl-carousel owl-theme">
 
-                    <div class="item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="item">
                       <div class="div_testimonials work-testimonial-card">
                         <div class="work-testimonial-header">
                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_julie_goodfellow.webp" class="work-testimonial-avatar" alt="Julie Goodfellow" loading="lazy">
@@ -399,7 +394,7 @@
                       </div>
                     </div>
 
-                    <div class="item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="item">
                       <div class="div_testimonials work-testimonial-card">
                         <div class="work-testimonial-header">
                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_dan_reidenberg.webp" class="work-testimonial-avatar" alt="Dr Dan Reidenberg" loading="lazy">
@@ -412,7 +407,7 @@
                       </div>
                     </div>
 
-                    <div class="item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="item">
                       <div class="div_testimonials work-testimonial-card">
                         <div class="work-testimonial-header">
                           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/webp/testimonial_jondi_whitis.webp" class="work-testimonial-avatar" alt="Jondi Whitis" loading="lazy">
@@ -762,8 +757,20 @@
       (function () {
         var workTestimonialsMode = null;
         var workBlogMode = null;
+        var owlWaitStarted = false;
+
+        function $jq() {
+          return window.jQuery || window.$;
+        }
+
+        function hasOwl() {
+          var $ = $jq();
+          return !!( $ && $.fn && typeof $.fn.owlCarousel === 'function');
+        }
 
         function flattenCarouselItems($carousel) {
+          var $ = $jq();
+          if (!$) return $carousel;
           var $items = $carousel.find('.item');
           if (!$items.length) return $();
           $items.detach();
@@ -773,17 +780,21 @@
         }
 
         function initWorkTestimonialsCarousel() {
+          var $ = $jq();
+          if (!$) return false;
           var $tc = $('body.page-work .owl_testimonials .owl-carousel');
-          if (!$tc.length) return;
+          if (!$tc.length) return true;
 
           var isMobile = window.matchMedia('(max-width: 767px)').matches;
           var nextMode = isMobile ? 'mobile' : 'desktop';
 
           if (workTestimonialsMode === nextMode) {
-            if (nextMode === 'desktop' && !$tc.hasClass('owl-loaded') && typeof $.fn.owlCarousel === 'function') {
+            if (nextMode === 'desktop' && !$tc.hasClass('owl-loaded') && hasOwl()) {
               // fall through to (re)init
+            } else if (nextMode === 'mobile' && !$tc.hasClass('work-testimonials-native')) {
+              // fall through
             } else {
-              return;
+              return true;
             }
           }
 
@@ -800,12 +811,12 @@
           if (isMobile) {
             $tc.addClass('work-testimonials-native');
             workTestimonialsMode = 'mobile';
-            return;
+            return true;
           }
 
-          if (typeof $.fn.owlCarousel !== 'function') {
+          if (!hasOwl()) {
             workTestimonialsMode = null;
-            return;
+            return false;
           }
 
           $tc.owlCarousel({
@@ -825,24 +836,27 @@
             }
           });
           workTestimonialsMode = 'desktop';
+          return true;
         }
 
         /* Match index Explore our blog: native swipe strip with 306px cards + peek */
         function initWorkBlogCarousel() {
+          var $ = $jq();
+          if (!$) return false;
           var $blog = $('body.page-work .owl_blog .owl-carousel');
           var $nav = $('body.page-work .work-blog-nav .owl-nav, body.page-work .owl_blog .owl-nav');
-          if (!$blog.length) return;
+          if (!$blog.length) return true;
 
           var isMobile = window.matchMedia('(max-width: 767px)').matches;
           var nextMode = isMobile ? 'mobile' : 'desktop';
 
           if (workBlogMode === nextMode) {
-            if (nextMode === 'desktop' && !$blog.hasClass('owl-loaded') && typeof $.fn.owlCarousel === 'function') {
+            if (nextMode === 'desktop' && !$blog.hasClass('owl-loaded') && hasOwl()) {
               // fall through
             } else if (nextMode === 'mobile' && !$blog.hasClass('work-blog-native')) {
               // fall through — convert leftover Owl
             } else {
-              return;
+              return true;
             }
           }
 
@@ -859,12 +873,12 @@
           if (isMobile) {
             $blog.addClass('work-blog-native');
             workBlogMode = 'mobile';
-            return;
+            return true;
           }
 
-          if (typeof $.fn.owlCarousel !== 'function') {
+          if (!hasOwl()) {
             workBlogMode = null;
-            return;
+            return false;
           }
 
           $blog.owlCarousel({
@@ -889,20 +903,43 @@
             }
           });
           workBlogMode = 'desktop';
+          return true;
+        }
+
+        function runInits() {
+          var testimonialsOk = initWorkTestimonialsCarousel();
+          var blogOk = initWorkBlogCarousel();
+          return testimonialsOk && blogOk;
+        }
+
+        /* Owl is deferred (idle after load). Keep retrying until it is ready. */
+        function waitForOwlAndInit() {
+          if (runInits()) return;
+          if (owlWaitStarted) return;
+          owlWaitStarted = true;
+
+          function tryAgain() {
+            if (runInits()) {
+              document.removeEventListener('hw:owl-ready', tryAgain);
+              owlWaitStarted = false;
+            }
+          }
+
+          document.addEventListener('hw:owl-ready', tryAgain);
+
+          var tries = 0;
+          var timer = setInterval(function () {
+            tries += 1;
+            if (runInits() || tries > 60) {
+              clearInterval(timer);
+              document.removeEventListener('hw:owl-ready', tryAgain);
+              owlWaitStarted = false;
+            }
+          }, 250);
         }
 
         function scheduleInit() {
-          initWorkTestimonialsCarousel();
-          initWorkBlogCarousel();
-          setTimeout(function () {
-            initWorkTestimonialsCarousel();
-            initWorkBlogCarousel();
-          }, 100);
-          setTimeout(function () {
-            initWorkTestimonialsCarousel();
-            initWorkBlogCarousel();
-          }, 500);
-          setTimeout(initWorkBlogCarousel, 900);
+          waitForOwlAndInit();
         }
 
         if (document.readyState === 'loading') {
@@ -912,8 +949,12 @@
         }
         window.addEventListener('load', scheduleInit);
         window.addEventListener('resize', function () {
-          initWorkTestimonialsCarousel();
-          initWorkBlogCarousel();
+          workTestimonialsMode = null;
+          workBlogMode = null;
+          if (!runInits()) {
+            owlWaitStarted = false;
+            waitForOwlAndInit();
+          }
         });
       })();
     </script>
