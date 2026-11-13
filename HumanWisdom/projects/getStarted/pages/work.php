@@ -357,7 +357,7 @@
             <div class="work-measure-band" aria-hidden="true"></div>
             <div class="work-measure-inner" data-aos="fade-up" data-aos-delay="100">
               <div class="work-measure-media">
-                <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/measureee.webp" class="img-responsive" alt="Organization Dashboard">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/meawell.svg" class="img-responsive" alt="Organization Dashboard">
               </div>
               <div class="work-measure-copy">
                 <h2 class="work-section-title">Measure well-being.<br class="display_m_none"> Drive performance.</h2>
