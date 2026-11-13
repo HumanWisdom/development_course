@@ -59,7 +59,9 @@
 The healthcare industry is facing a growing mental health crisis. According to recent statistics, 76% of employees in various industries report a mental health condition (HHS), 1 in 6 struggle with substance abuse (CDC), and 1 in 10 suffer from depression (WHO). For healthcare professionals, these numbers may be even higher due to the high pressure environment at work.                </h4>
 
                 <h4 class="mtb0px blog_desc">
-                 A 2024 report from the World Health Organization (WHO) revealed stark statistics about the mental health challenges healthcare workers face. Nearly 40% reported symptoms of anxiety or depression, and over 25% experienced burnout severe enough to affect their ability to perform their duties. The ongoing effects of the COVID-19 pandemic further exacerbated these struggles, leaving healthcare systems stretched thin and their workers emotionally drained.
+                 A 
+                  <a href="https://www.who.int/news/item/25-04-2024-202404_protecthw_mentalhealth" class="blog_highlight_peach td_underline" target="_blank">
+                     2024 report </a> from the World Health Organization (WHO) revealed stark statistics about the mental health challenges healthcare workers face. Nearly 40% reported symptoms of anxiety or depression, and over 25% experienced burnout severe enough to affect their ability to perform their duties. The ongoing effects of the COVID-19 pandemic further exacerbated these struggles, leaving healthcare systems stretched thin and their workers emotionally drained.
                 </h4>
 
                 <!-- <h4 class="mtb0px blog_desc">
@@ -75,7 +77,9 @@ Unique Stressors in Healthcare
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                 2 in 5 healthcare workers feel ill because of work stress according to this NHS survey. Healthcare professionals encounter unique challenges that contribute to their mental health struggles. These include emotionally taxing patient interactions, frequent exposure to suffering or death, and a persistent fear of making critical errors. Such conditions, coupled with inadequate staffing and organizational support, lead to burnout. In fact, a recent WHO report revealed that workplace stress and bullying are prevalent in healthcare, further exacerbating mental health issues.
+                 2 in 5 healthcare workers feel ill because of work stress according to this 
+                  <a href="https://www.nhsstaffsurveys.com/" class="blog_highlight_peach td_underline" target="_blank">
+                 NHS survey</a>. Healthcare professionals encounter unique challenges that contribute to their mental health struggles. These include emotionally taxing patient interactions, frequent exposure to suffering or death, and a persistent fear of making critical errors. Such conditions, coupled with inadequate staffing and organizational support, lead to burnout. In fact, a recent WHO report revealed that workplace stress and bullying are prevalent in healthcare, further exacerbating mental health issues.
 
 
                 </h4>
@@ -168,11 +172,11 @@ The separate section for teenagers allows workers to also ensure the wellbeing o
                 </h4>
                 <div class="row mtb20px rm80px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/86_new.webp" class="img-responsive" alt="Resilience and emotional intelligence" >
+                <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/90_new.webp" class="img-responsive" alt="Resilience and emotional intelligence" >
               </div>
             </div>
 
-                <h4 class="mtb0px blog_desc">
+                <!-- <h4 class="mtb0px blog_desc">
                   It helps healthcare workers feel better through guided
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/meditation">
                     meditations,
@@ -213,7 +217,7 @@ The separate section for teenagers allows workers to also ensure the wellbeing o
                     75+ modules
                   </span>
                   and a host of features including an online journal, a forum for peer support, an extensive library of podcasts, meditations and videos, it's a one-stop solution for a happier life.
-                </h4>
+                </h4> -->
 
                 <!-- Conclusion -->
                 <h4 class="mtb0px blog_sub_title">
