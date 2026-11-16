@@ -226,7 +226,7 @@ if (!hw_page_assets_flag('css', 'header_in_critical')) :
             <li class="header_nav_mobile_only">
               <a id="teenagersHeaderClick_mobile" class="nav" href="../pages/teenagers.php">For Teenagers</a>
             </li>
-            <li class="header_nav_mobile_only"><a id="work_mobile" class="nav" href="../pages/work.php">For Organisations</a></li>
+            <li class="header_nav_mobile_only"><a id="work_mobile" class="nav" href="../pages/work.php">For Work</a></li>
             <li class="header_nav_mobile_only"><a id="healthcare_mobile" class="nav" href="../pages/healthcare.php">For Healthcare</a></li>
             <li class="header_nav_mobile_only"><a id="education_mobile" class="nav" href="../pages/education.php">For Education</a></li>
           </ul>
