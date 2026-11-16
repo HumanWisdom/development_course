@@ -40,6 +40,10 @@
   bottom: 40px;
 }
 
+.card-featured .ws-read-icon {
+  bottom: 20px;
+}
+
 .bottom-actions {
   position: fixed;
   bottom: 0;
@@ -140,11 +144,15 @@
 
 .card-featured-body {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
-  padding: 10px 12px 0;
+  padding: 10px 0 0;
 }
 
 .card-featured-text {
   flex: 1;
+}
+.fc_000000_0_7{
+  background: #000000BF;
+
 }
