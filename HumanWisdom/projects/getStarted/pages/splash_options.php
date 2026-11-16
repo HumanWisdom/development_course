@@ -77,6 +77,18 @@
   </head>
 
   <body>
+    <?php
+      $hwHost = strtolower(preg_replace('/:\d+$/', '', $_SERVER['HTTP_HOST'] ?? ''));
+      if ($hwHost === 'localhost' || $hwHost === '127.0.0.1' || $hwHost === '[::1]') {
+        $hwAppBase = 'http://localhost:4200';
+      } elseif ($hwHost === 'staging.happierme.app' || strpos($hwHost, 'staging.') === 0) {
+        $hwAppBase = 'https://staging.happierme.app';
+      } else {
+        $hwAppBase = 'https://happierme.app';
+      }
+      $hwTeenLogin = $hwAppBase . '/teenagers/onboarding/login';
+      $hwAdultLogin = $hwAppBase . '/adults/onboarding/login';
+    ?>
     <div class="row center_flex">
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 v1_3_bg_splash col_cw">
     
@@ -100,7 +112,7 @@ Understand yourself. Feel better. Build happier relationships.              </h4
         
         <div class="row mb20px center_flex" id="teenagersClick">
           <div class="backcolor">
-          <a  style="text-decoration:none;" href="https://staging.happierme.app/teenagers/onboarding/login"> 
+          <a  style="text-decoration:none;" href="<?= htmlspecialchars($hwTeenLogin, ENT_QUOTES, 'UTF-8') ?>"> 
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/webteen.svg" class="img-responsive">
               <h4 class="mt20px mb10px fs_21px fw_600 lh_140p fc_000000">
@@ -123,7 +135,7 @@ Understand yourself. Feel better. Build happier relationships.              </h4
 
                   <span class="chevron-pink"><span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span>
                 </a> -->
-                   <a class="splash-get-started mtb10px fs_12px fw_600 lh_140p" href="https://staging.happierme.app/teenagers/onboarding/login">
+                   <a class="splash-get-started mtb10px fs_12px fw_600 lh_140p" href="<?= htmlspecialchars($hwTeenLogin, ENT_QUOTES, 'UTF-8') ?>">
                          Get started
               <span class="chevron-pink"><span style="-webkit-text-stroke: 1px;" class="bi bi-chevron-right" aria-hidden="true"></span></span>
                         </a>
@@ -134,7 +146,7 @@ Understand yourself. Feel better. Build happier relationships.              </h4
       
         <div class="row center_flex" id="adultsClick">
         <div class="backcolor">
-          <a href="https://staging.happierme.app/adults/onboarding/login">
+          <a href="<?= htmlspecialchars($hwAdultLogin, ENT_QUOTES, 'UTF-8') ?>">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 tcenter">
               <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/webad.svg" class="img-responsive">
                <h4 class="mt20px  mb10px fs_21px fw_600 lh_140p fc_000000">
@@ -143,7 +155,7 @@ Understand yourself. Feel better. Build happier relationships.              </h4
                 <h4 class="mtb5px fs_12px fw_400 lh_140p fc_000000">
 Understand yourself, manage emotions and build happier relationships.              
 </h4>
- <a class="splash-get-started mtb10px fs_12px fw_600 lh_140p" href="https://staging.happierme.app/adults/onboarding/login">
+ <a class="splash-get-started mtb10px fs_12px fw_600 lh_140p" href="<?= htmlspecialchars($hwAdultLogin, ENT_QUOTES, 'UTF-8') ?>">
                          Get started
               <span class="chevron-pink"><span style="-webkit-text-stroke: 1px;" class="bi bi-chevron-right" aria-hidden="true"></span></span>
                          </a>

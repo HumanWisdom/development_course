@@ -7198,12 +7198,21 @@ body.page-healthcare .healthcare-hero-shell .wide-screen-only {
     min-width: auto !important;
   }
 
-  .row.center_flex .fixed_w {
-    width: 100% !important;
-    max-width: 100% !important;
+  /* Keep content at 980px on wide screens (do not stretch to 100% inside .center_flex) */
+  .row.center_flex .fixed_w,
+  .faqqq .fixed_w,
+  .faqqq .col-12.fixed_w {
+    width: 980px !important;
+    max-width: 980px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
     padding-left: 0 !important;
     padding-right: 0 !important;
-    overflow: visible !important;
+    float: none !important;
+  }
+
+  .faqqq .tab_faqs {
+    padding-left: 0 !important;
   }
 
   /* Override main.css tool_tabs styles for mobile */

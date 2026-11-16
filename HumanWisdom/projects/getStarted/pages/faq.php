@@ -11765,6 +11765,28 @@
     <!-- vendor_footer -->
     <?php include('../includes/vendor_footer.php'); ?>
     <!-- /vendor_footer -->
+    <style id="faq-wide-980">
+      /* Wider screens: FAQ content column stays 980px centered */
+      @media screen and (min-width: 1600px) {
+        .faqqq .fixed_w,
+        .faqqq .row .fixed_w,
+        .row.center_flex .faqqq .fixed_w,
+        .row.center_flex .fixed_w {
+          width: 980px !important;
+          max-width: 980px !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+        }
+        .faqqq .tab_faqs {
+          padding-left: 0 !important;
+        }
+      }
+      @media (min-width: 2080px) {
+        .faqqq .tab_faqs {
+          padding-left: 0 !important;
+        }
+      }
+    </style>
 
 </body>
 

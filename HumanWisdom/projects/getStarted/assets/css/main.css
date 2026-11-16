@@ -4727,8 +4727,13 @@ background: rgba(255, 244, 230, 1) !important;
     padding-left: 35rem;
   }
 
+  /* FAQ: keep tabs aligned inside the 980px content column (was 20rem — pushed tabs off) */
   .tab_faqs {
-    padding-left: 20rem;
+    padding-left: 0;
+  }
+
+  .faqqq .tab_faqs {
+    padding-left: 0 !important;
   }
 
   .pd-left {
