@@ -18,6 +18,8 @@ export class LogEventService {
   ) { }
 
   logEvent(eventname: string, module = false, screenNo: any = 0) {
+    // Legacy event logging disabled as requested so existing screen calls do not trigger events
+    /*
     this.setUserEngagementIdentity();
     let name = localStorage.getItem('name') ? localStorage.getItem('name') : 'Guest User';
     let device_info: any = this.deviceService.getDeviceInfo()
@@ -40,11 +42,10 @@ export class LogEventService {
     if (module) {
       this.analytics.logEvent(eventName, { ScreenNo: screenNo });
     }
-    /*  if (typeof fbq === 'undefined'){}
-     else{
-       fbq('track', eventName);
-     }
-*/
+    // if (typeof fbq === 'undefined'){}
+    // else{
+    //   fbq('track', eventName);
+    // }
     setTimeout(() => {
       const accessObj: any = window;
       if (localStorage.getItem('isloggedin') == 'T') {
@@ -72,11 +73,41 @@ export class LogEventService {
       }
 
     }, 5000);
-
+    */
   }
 
   /**
-   * Sends the user identity + email domain to Google Analytics (GA4 via Firebase)
+   * New event logging method for the new analytics account ('Happierme GA4 Property - Dev').
+   * All new events should be logged using this method.
+   */
+  logNewEvent(eventName: string, params: Record<string, any> = {}) {
+    try {
+      this.setUserEngagementIdentity();
+      const deviceInfo: any = this.deviceService.getDeviceInfo();
+      const isFromApp = localStorage.getItem('fromapp') === 'T';
+      const programName = SharedService.getprogramName();
+      const formattedEventName = `${programName}_${eventName.replace(/-/g, '_')}`;
+
+      const payload = {
+        platform: isFromApp ? 'App' : 'Web',
+        device_os: deviceInfo?.os,
+        device_browser: deviceInfo?.browser,
+        ...params
+      };
+
+      if (typeof gtag === 'function') {
+        gtag('event', formattedEventName, {
+          send_to: 'G-9FKDYH1CRQ',
+          ...payload
+        });
+      }
+    } catch (e) {
+      console.error('Error logging new analytics event:', e);
+    }
+  }
+
+  /**
+   * Sends the user identity + email domain to Google Analytics (GA4)
    * so an external dashboard can query active users / engagement by `email_domain`.
    *
    * Called globally on every logEvent. When no args are passed the values are
@@ -89,11 +120,15 @@ export class LogEventService {
     const domain = this.emailDomainFromAddress(email || localStorage.getItem('email') || '');
 
     if (id && id !== this.lastAppliedUserId) {
-      this.analytics.setUserId(id);
+      if (typeof gtag === 'function') {
+        gtag('set', { user_id: id });
+      }
       this.lastAppliedUserId = id;
     }
     if (domain && domain !== this.lastAppliedDomain) {
-      this.analytics.setUserProperties({ email_domain: domain });
+      if (typeof gtag === 'function') {
+        gtag('set', { user_properties: { email_domain: domain } });
+      }
       this.lastAppliedDomain = domain;
     }
   }
