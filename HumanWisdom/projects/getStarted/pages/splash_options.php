@@ -65,13 +65,18 @@
           color: #d7586b !important;
           text-decoration: none !important;
         }
-        .splash-get-started:hover,
-        .splash-get-started:hover .chevron-pink,
-        .splash-get-started:hover .chevron-pink .bi,
-        .backcolor:hover .splash-get-started,
-        .backcolor:hover .splash-get-started .chevron-pink,
-        .backcolor:hover .splash-get-started .chevron-pink .bi {
-          color: #803358 !important;
+        /* Tile and link hover must not pick up the global a:hover colour */
+        a.splash-get-started,
+        a.splash-get-started:hover,
+        a.splash-get-started:focus,
+        a.splash-get-started:active,
+        .backcolor:hover a.splash-get-started,
+        .backcolor:hover a.splash-get-started .chevron-pink,
+        .backcolor:hover a.splash-get-started .chevron-pink .bi,
+        a.splash-get-started:hover .chevron-pink,
+        a.splash-get-started:hover .chevron-pink .bi {
+          color: #d7586b !important;
+          text-decoration: none !important;
         }
         </style>
   </head>

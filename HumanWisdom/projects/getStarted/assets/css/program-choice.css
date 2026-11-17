@@ -138,26 +138,18 @@
   line-height: 1.4;
 }
 
-/* Chevron sized to sit with “Get started” label */
-.program-card__cta .chevron-pink {
-  display: inline-flex;
-  align-items: center;
-  font-size: 11px;
-  color: rgba(215, 88, 107, 1);
-  padding-top: 1px;
-  line-height: 1;
-}
-
-.program-card__cta .chevron-pink .bi {
-  font-size: 11px;
-  line-height: 1;
-  color: inherit;
+/* Figma chevron: 14.73×9 rotated 90°, so it reads 9×14.73 and points right */
+.program-card__chevron {
+  display: block;
+  width: 9px;
+  height: 14.73px;
+  flex: 0 0 auto;
+  color: #d7586b;
 }
 
 .program-card:hover .program-card__cta,
-.program-card:hover .program-card__cta .chevron-pink,
-.program-card:hover .program-card__cta .chevron-pink .bi {
-  color: #803358;
+.program-card:hover .program-card__chevron {
+  color: #d7586b;
 }
 
 @media (max-width: 899px) {
@@ -234,8 +226,8 @@
     padding: 0;
   }
 
-  .program-card__cta .chevron-pink,
-  .program-card__cta .chevron-pink .bi {
-    font-size: 8px;
+  .program-card__chevron {
+    width: 6px;
+    height: 9.82px;
   }
 }

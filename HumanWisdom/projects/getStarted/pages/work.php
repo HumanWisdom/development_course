@@ -147,7 +147,7 @@
               </div>
 
               <div class="row center_flex absolute_desc absolute_desc_m" data-aos="fade-up" data-aos-delay="500">
-                <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10 col-10 p0 tleft work-hero-stack">
+                <div class="col-lg-4 col-md-4 col-sm-10 col-xs-10 col-10 p0 work-hero-stack">
                   <h1>
                     Build a happier, more capable workforce.
                   </h1>
@@ -158,7 +158,10 @@
 
                   <div class="work-hero-ctas">
                     <a href="#bring_happierme" class="fs_15px fw_600 lh_140p fc_ffffff btn_tff req_button work-hero-btn" id="requestDemoForWork">
-                      Request a demo
+                      <span class="work-hero-link-label">Request a demo</span>
+                      <svg class="work-hero-link-chevron" viewBox="0 0 9 14.73" width="8" height="13" aria-hidden="true" focusable="false">
+                        <path d="M1.15 1.2L7.6 7.365L1.15 13.53" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
                     </a>
                     <a href="../organisation-choose.php/happierme" class="fs_15px fw_600 lh_140p fc_ffffff btn_tff work-hero-btn">
                       Try free for 10 days
@@ -357,7 +360,7 @@
               </div>
               <div class="work-measure-copy">
                 <h2 class="work-section-title">Measure well-being.<br class="display_m_none"> Drive performance.</h2>
-                <p>Give HR teams a clear view of employee engagement and wellness with actionable insights that help build healthier, more productive workplaces. All data is anonymised, so individuals cannot be identified.</p>
+                <p>Give HR teams a clear view of employee engagement and wellness with actionable insights that help build healthier, more productive workplaces.<br>All data is anonymised, so individuals cannot be identified.</p>
               </div>
             </div>
           </section>
@@ -733,6 +736,21 @@
         }
         body.page-work main#main .work-diff-section h2.work-section-title {
           line-height: 1.2 !important;
+        }
+        body.page-work .healthcare-hero-shell .absolute_desc_m,
+        body.page-work .healthcare-hero-shell .work-hero-stack,
+        body.page-work .healthcare-hero-shell .work-hero-stack h1,
+        body.page-work .healthcare-hero-shell .work-hero-stack h5 {
+          text-align: center !important;
+        }
+        body.page-work .healthcare-hero-shell .absolute_desc_m {
+          justify-content: center !important;
+          align-items: center !important;
+        }
+        body.page-work .healthcare-hero-shell .work-hero-stack {
+          align-items: center !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
         }
         /* One title only: hide desktop copy; size mobile copy (beat span { 12px } leak) */
         body.page-work main#main h2 .work-copy-desktop,
