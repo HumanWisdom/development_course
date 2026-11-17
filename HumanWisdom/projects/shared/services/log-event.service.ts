@@ -17,7 +17,14 @@ export class LogEventService {
     private deviceService: DeviceDetectorService
   ) { }
 
+  /**
+   * DISABLED: Legacy event logging function.
+   * Inner code is commented out so NO existing events from any screen are pushed to the new GA4 property.
+   * Kept as a no-op to avoid breaking existing screen-level calls.
+   */
   logEvent(eventname: string, module = false, screenNo: any = 0) {
+    // Disabled: existing events will not be logged to the new property.
+    /*
     this.setUserEngagementIdentity();
     let name = localStorage.getItem('name') ? localStorage.getItem('name') : 'Guest User';
     let device_info: any = this.deviceService.getDeviceInfo()
@@ -40,11 +47,10 @@ export class LogEventService {
     if (module) {
       this.analytics.logEvent(eventName, { ScreenNo: screenNo });
     }
-    /*  if (typeof fbq === 'undefined'){}
-     else{
-       fbq('track', eventName);
-     }
-*/
+    // if (typeof fbq === 'undefined'){}
+    // else{
+    //   fbq('track', eventName);
+    // }
     setTimeout(() => {
       const accessObj: any = window;
       if (localStorage.getItem('isloggedin') == 'T') {
@@ -72,11 +78,41 @@ export class LogEventService {
       }
 
     }, 5000);
-
+    */
   }
 
   /**
-   * Sends the user identity + email domain to Google Analytics (GA4 via Firebase)
+   * ACTIVE: Dedicated function for the new GA4 analytics property ('Happierme GA4 Property - Dev').
+   * Use this function (logNewEvent) instead of logEvent for all new events.
+   */
+  logNewEvent(eventName: string, params: Record<string, any> = {}) {
+    try {
+      this.setUserEngagementIdentity();
+      const deviceInfo: any = this.deviceService.getDeviceInfo();
+      const isFromApp = localStorage.getItem('fromapp') === 'T';
+      const programName = SharedService.getprogramName();
+      const formattedEventName = `${programName}_${eventName.replace(/-/g, '_')}`;
+
+      const payload = {
+        platform: isFromApp ? 'App' : 'Web',
+        device_os: deviceInfo?.os,
+        device_browser: deviceInfo?.browser,
+        ...params
+      };
+
+      if (typeof gtag === 'function') {
+        gtag('event', formattedEventName, {
+          send_to: 'G-9FKDYH1CRQ',
+          ...payload
+        });
+      }
+    } catch (e) {
+      console.error('Error logging new analytics event:', e);
+    }
+  }
+
+  /**
+   * Sends the user identity + email domain to Google Analytics (GA4)
    * so an external dashboard can query active users / engagement by `email_domain`.
    *
    * Called globally on every logEvent. When no args are passed the values are
@@ -89,11 +125,15 @@ export class LogEventService {
     const domain = this.emailDomainFromAddress(email || localStorage.getItem('email') || '');
 
     if (id && id !== this.lastAppliedUserId) {
-      this.analytics.setUserId(id);
+      if (typeof gtag === 'function') {
+        gtag('set', { user_id: id });
+      }
       this.lastAppliedUserId = id;
     }
     if (domain && domain !== this.lastAppliedDomain) {
-      this.analytics.setUserProperties({ email_domain: domain });
+      if (typeof gtag === 'function') {
+        gtag('set', { user_properties: { email_domain: domain } });
+      }
       this.lastAppliedDomain = domain;
     }
   }
