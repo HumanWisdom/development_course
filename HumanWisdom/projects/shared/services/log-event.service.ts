@@ -17,8 +17,13 @@ export class LogEventService {
     private deviceService: DeviceDetectorService
   ) { }
 
+  /**
+   * DISABLED: Legacy event logging function.
+   * Inner code is commented out so NO existing events from any screen are pushed to the new GA4 property.
+   * Kept as a no-op to avoid breaking existing screen-level calls.
+   */
   logEvent(eventname: string, module = false, screenNo: any = 0) {
-    // Legacy event logging disabled as requested so existing screen calls do not trigger events
+    // Disabled: existing events will not be logged to the new property.
     /*
     this.setUserEngagementIdentity();
     let name = localStorage.getItem('name') ? localStorage.getItem('name') : 'Guest User';
@@ -77,8 +82,8 @@ export class LogEventService {
   }
 
   /**
-   * New event logging method for the new analytics account ('Happierme GA4 Property - Dev').
-   * All new events should be logged using this method.
+   * ACTIVE: Dedicated function for the new GA4 analytics property ('Happierme GA4 Property - Dev').
+   * Use this function (logNewEvent) instead of logEvent for all new events.
    */
   logNewEvent(eventName: string, params: Record<string, any> = {}) {
     try {
