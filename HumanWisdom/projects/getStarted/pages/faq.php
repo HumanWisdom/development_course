@@ -11780,6 +11780,26 @@
         .faqqq .tab_faqs {
           padding-left: 0 !important;
         }
+
+        /* Wide screens center .tab-content; keep FAQ questions and links left aligned */
+        .faqqq .tab-content.tc_faqs,
+        .faqqq .tc_faqs .accordion-body,
+        .faqqq .hs_title,
+        .faqqq .hs_desc {
+          text-align: left !important;
+        }
+
+        .faqqq .tab-content.tc_faqs a,
+        .faqqq .tc_faqs .blog_highlight_peach,
+        .faqqq .tc_faqs .td_underline {
+          display: inline !important;
+          width: auto !important;
+          margin-left: 0 !important;
+          margin-right: 0 !important;
+          text-align: left !important;
+          justify-content: flex-start !important;
+          align-items: flex-start !important;
+        }
       }
       @media (min-width: 2080px) {
         .faqqq .tab_faqs {
