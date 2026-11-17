@@ -253,6 +253,11 @@ body.page-work .work-section-inner {
   gap: 40px;
 }
 
+/* Figma 9661:6428 — 60px from section title to the cards */
+body.page-work .work-perf-section .work-section-inner {
+  gap: 60px;
+}
+
 body.page-work .work-section-head {
   max-width: 980px;
   width: 100%;
@@ -302,11 +307,7 @@ body.page-work .work-pillar {
 }
 
 body.page-work .work-icon-slot {
-  display: block;
-  width: 75px;
-  height: 60px;
-  flex-shrink: 0;
-  background: transparent;
+  display: none;
 }
 
 body.page-work .work-pillar-copy {
@@ -646,6 +647,24 @@ body.page-work section.hpt120px ~ main#main .work-testimonials-header h2.work-te
 
 body.page-work .owl_testimonials {
   --work-testimonial-gap: 20px !important;
+}
+
+/* Owl CSS hides .owl-carousel until .owl-loaded — show testimonials before deferred Owl inits */
+body.page-work .owl_testimonials > .owl-carousel:not(.owl-loaded):not(.work-testimonials-native) {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  gap: 30px;
+  overflow: hidden;
+  width: 100%;
+}
+
+body.page-work .owl_testimonials > .owl-carousel:not(.owl-loaded):not(.work-testimonials-native) > .item {
+  flex: 0 0 calc((100% - 60px) / 3);
+  max-width: calc((100% - 60px) / 3);
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
 }
 
 body.page-work .owl_testimonials .div_testimonials.work-testimonial-card,
@@ -1556,11 +1575,7 @@ body.page-work .work-copy-mobile:not(.display_d_none) {
   body.page-work .work-measure-copy p {
     font-size: 12px !important;
     line-height: 1.5 !important;
-    margin: 0 0 3px !important;
-  }
-
-  body.page-work .work-measure-copy p:last-child {
-    margin-bottom: 0 !important;
+    margin: 0 !important;
   }
 
   body.page-work .work-measure-media {
