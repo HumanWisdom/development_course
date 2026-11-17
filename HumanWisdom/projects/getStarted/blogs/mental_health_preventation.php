@@ -6,8 +6,7 @@
     <title>10 Ways to Succeed as a Coach
 
 </title>
-    <meta property="title" content="Three Steps to a Deeper Meditation Practice
-">
+    <meta property="title" content="Three Steps to a Deeper Meditation Practice">
     <meta property="description" content="Discover 10 powerful ways coaches can build mental fitness, stay calm under pressure, strengthen relationships, and lead with clarity and resilience. Learn how mindset, not just strategy, drives coaching success.">
     <meta property="keyword" content="stress, emotions">
 
