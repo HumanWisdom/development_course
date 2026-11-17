@@ -58,16 +58,16 @@
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 
                 <h4 class="mtb0px blog_desc">
-                  <strong>By developing their self-awareness and emotional intelligence</strong>
+                   <span class="blog_highlight_black">By developing their self-awareness and emotional intelligence</span>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/" target="_blank">HappierMe</a> is a personal development app with separate sections for teens, parents and adults. With 75+ modules and features like an online journal with guided questions, and a forum for peer support it can support students of all ages. It helps users deal with their challenges, develop their self-awareness and emotional intelligence and apply that to be happier and succeed in life. (The hyperlinks below lead to relevant sections of the app).
                 </h4>
 
-                <h4 class="mtb0px blog_sub_title">
+                <h4 class="mtb0px blog_desc"> <span class="blog_highlight_black">
                   It is different because it is focused on prevention and long term solutions, not just symptom relief, and covers multiple topics, not just mental wellbeing.
-                </h4>
+</span></h4>
 
                 <h4 class="mtb0px blog_sub_title">
                   1. Improve educational outcomes
@@ -78,7 +78,7 @@
                 </h4>
 
                 <h4 class="mtb0px blog_sub_title">
-                  <strong>2. Prevent </strong><a class="blog_highlight_peach td_underline" href="https://happierme.app/teenagers/curated/overcome-stress-anxiety" target="_blank"><strong>mental health</strong></a><strong> problems</strong>
+                   <span class="blog_highlight_black">2. Prevent </span><a class="blog_highlight_peach td_underline" href="https://happierme.app/teenagers/curated/overcome-stress-anxiety" target="_blank"> mental health</a> <span class="blog_highlight_black"> problems</span>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -86,7 +86,7 @@
                 </h4>
 
                 <h4 class="mtb0px blog_sub_title">
-                  <strong>3. Deal with </strong><a class="blog_highlight_peach td_underline" href="https://happierme.app/teenagers/feel-better-now/stress" target="_blank"><strong>stress</strong></a><strong> and </strong><a class="blog_highlight_peach td_underline" href="https://happierme.app/teenagers/feel-better-now/anxiety" target="_blank"><strong>anxiety</strong></a>
+                   <span class="blog_highlight_black">3. Deal with </span><a class="blog_highlight_peach td_underline" href="https://happierme.app/teenagers/feel-better-now/stress" target="_blank"> stress</a> <span class="blog_highlight_black"> and </span><a class="blog_highlight_peach td_underline" href="https://happierme.app/teenagers/feel-better-now/anxiety" target="_blank"> anxiety</a>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -94,7 +94,7 @@
                 </h4>
 
                 <h4 class="mtb0px blog_sub_title">
-                  <strong>4. Happier </strong><a class="blog_highlight_peach td_underline" href="https://happierme.app/teenagers/feel-better-now/relationship-problems" target="_blank"><strong>relationships</strong></a>
+                   <span class="blog_highlight_black">4. Happier </span><a class="blog_highlight_peach td_underline" href="https://happierme.app/teenagers/feel-better-now/relationship-problems" target="_blank"> relationships</a>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -108,7 +108,7 @@
                 </div>
 
                 <h4 class="mtb0px blog_sub_title">
-                  <strong>5. Understand and question their </strong><a class="blog_highlight_peach td_underline" href="https://happierme.app/teenagers/conditioning" target="_blank"><strong>conditioning</strong></a><strong> influences</strong>
+                   <span class="blog_highlight_black">5. Understand and question their </span><a class="blog_highlight_peach td_underline" href="https://happierme.app/teenagers/conditioning" target="_blank"> conditioning</a> <span class="blog_highlight_black"> influences</span>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -116,7 +116,9 @@
                 </h4>
 
                 <h4 class="mtb0px blog_sub_title">
-                  <strong>6. Live without </strong><a class="blog_highlight_peach td_underline" href="https://happierme.app/teenagers/comparison" target="_blank"><strong>Envy</strong></a><strong>/ Low </strong><a class="blog_highlight_peach td_underline" href="https://happierme.app/teenagers/self-esteem" target="_blank"><strong>self-esteem</strong></a>
+                   <!-- <span class="blog_highlight_black">6. Live without </span><a class="blog_highlight_peach td_underline" href="https://happierme.app/teenagers/comparison" target="_blank"> <span class="blog_highlight_black">Envy</span></a> / Low <a class="blog_highlight_peach td_underline" href="https://happierme.app/teenagers/self-esteem" target="_blank"> self-esteem</a></span> -->
+                <span class="blog_highlight_black">6. Live without </span><a class="blog_highlight_peach td_underline" href="https://happierme.app/teenagers/wisdom-exercise" target="_blank"> Envy</a>  <span class="blog_highlight_black">/ Low  <a class="blog_highlight_peach td_underline" href="https://happierme.app/teenagers/self-esteem" target="_blank">self-esteem</span></a>
+
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -124,7 +126,7 @@
                 </h4>
 
                 <h4 class="mtb0px blog_sub_title">
-                  <strong>7. Develop their </strong><a class="blog_highlight_peach td_underline" href="https://happierme.app/teenagers/wisdom-exercise" target="_blank"><strong>emotional intelligence</strong></a>
+                   <span class="blog_highlight_black">7. Develop their </span><a class="blog_highlight_peach td_underline" href="https://happierme.app/teenagers/wisdom-exercise" target="_blank"> emotional intelligence</a>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -132,7 +134,7 @@
                 </h4>
 
                 <h4 class="mtb0px blog_sub_title">
-                  <strong>8. </strong><a class="blog_highlight_peach td_underline" href="https://happierme.app/teenagers/communication" target="_blank"><strong>Communication</strong></a><strong> skills</strong>
+                   <span class="blog_highlight_black">8. </span><a class="blog_highlight_peach td_underline" href="https://happierme.app/teenagers/communication" target="_blank"> Communication</a> <span class="blog_highlight_black"> skills</span>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -140,7 +142,7 @@
                 </h4>
 
                 <h4 class="mtb0px blog_sub_title">
-                  <strong>9.</strong><a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/leadership" target="_blank"><strong> Leadership</strong></a><strong> skills</strong>
+                   <span class="blog_highlight_black">9.</span><a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/leadership" target="_blank">  Leadership</a> <span class="blog_highlight_black"> skills</span>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -148,7 +150,7 @@
                 </h4>
 
                 <h4 class="mtb0px blog_sub_title">
-                  <strong>10. Not be prisoners of their </strong><a class="blog_highlight_peach td_underline" href="https://happierme.app/teenagers/fear-anxiety" target="_blank"><strong>fear</strong></a>s
+                   <span class="blog_highlight_black">10. Not be prisoners of their </span><a class="blog_highlight_peach td_underline" href="https://happierme.app/teenagers/fear-anxiety" target="_blank"> fear</a>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -156,7 +158,7 @@
                 </h4>
 
                 <h4 class="mtb0px blog_sub_title">
-                  <strong>11. Prepare them to </strong><a class="blog_highlight_peach td_underline" href="https://happierme.app/teenagers/success-failure" target="_blank"><strong>deal with failure</strong></a>
+                   <span class="blog_highlight_black">11. Prepare them to </span><a class="blog_highlight_peach td_underline" href="https://happierme.app/teenagers/success-failure" target="_blank"> deal with failure</a>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -164,7 +166,7 @@
                 </h4>
 
                 <h4 class="mtb0px blog_sub_title">
-                  <strong>12. Pick the right </strong><a class="blog_highlight_peach td_underline" href="https://happierme.app/teenagers/career-success" target="_blank"><strong>career</strong></a>
+                   <span class="blog_highlight_black">12. Pick the right </span><a class="blog_highlight_peach td_underline" href="https://happierme.app/teenagers/career-success" target="_blank"> career</a>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -172,7 +174,7 @@
                 </h4>
 
                 <h4 class="mtb0px blog_sub_title">
-                  <strong>13. Develop empathy and </strong><a class="blog_highlight_peach td_underline" href="https://happierme.app/teenagers/kindness" target="_blank"><strong>kindness</strong></a>
+                   <span class="blog_highlight_black">13. Develop empathy and </span><a class="blog_highlight_peach td_underline" href="https://happierme.app/teenagers/kindness" target="_blank"> kindness</a>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -180,7 +182,7 @@
                 </h4>
 
                 <h4 class="mtb0px blog_sub_title">
-                  <strong>14. Avoid the perils of </strong><a class="blog_highlight_peach td_underline" href="https://happierme.app/teenagers/habit-addiction" target="_blank"><strong>addiction</strong></a>
+                   <span class="blog_highlight_black">14. Avoid the perils of </span><a class="blog_highlight_peach td_underline" href="https://happierme.app/teenagers/habit-addiction" target="_blank"> addiction</a>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -188,7 +190,7 @@
                 </h4>
 
                 <h4 class="mtb0px blog_sub_title">
-                  <strong>15. Develop a </strong><a class="blog_highlight_peach td_underline" href="https://happierme.app/teenagers/food-health" target="_blank"><strong>healthy relationship with food</strong></a>
+                   <span class="blog_highlight_black">15. Develop a </span><a class="blog_highlight_peach td_underline" href="https://happierme.app/teenagers/food-health" target="_blank"> healthy relationship with food</a>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -210,14 +212,14 @@
                 </div>
 
                 <h4 class="mtb0px blog_sub_title">
-                  <strong><em>Links to explore:</em></strong>
+                   <span class="blog_highlight_black"><em>Links to explore:</em></span>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app" target="_blank">HappierMe Website</a><br>
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/newsletter-signup" target="_blank">Sign up to our newsletter</a><br>
                   <a class="blog_highlight_peach td_underline" href="https://linktr.ee/happierme.app" target="_blank">Follow us on Social Media</a>
-                </h4>[cite: 7]
+                </h4>
                 
               </div>
             </div>
