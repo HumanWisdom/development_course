@@ -170,7 +170,7 @@ The separate section for teenagers allows workers to also ensure the wellbeing o
 
 
                 </h4>
-                <div class="row mtb20px rm80px">
+                <div class="row mt20px rm80px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/90_new.webp" class="img-responsive" alt="Resilience and emotional intelligence" >
               </div>
@@ -263,7 +263,7 @@ The separate section for teenagers allows workers to also ensure the wellbeing o
                   </a>
                   <br>
                   6. Subscribe to our
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/newsletter-signup">
+                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/pages/newsletter.php">
                     newsletter
                   </a>
                   <br>
