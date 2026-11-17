@@ -20,7 +20,6 @@ $homeUrl = (hw_org_base() === '' ? '' : hw_org_base()) . '/index.php';
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
   <link href="<?= hw_org_h(hw_org_base() . '/assets/css/program-choice.css') ?>" rel="stylesheet">
 </head>
 <body class="program-choice">
@@ -45,7 +44,9 @@ $homeUrl = (hw_org_base() === '' ? '' : hw_org_base()) . '/index.php';
             <span class="program-card__text">Understand your feelings, build confidence and navigate relationships.</span>
             <span class="program-card__cta">
               Get started
-              <span class="chevron-pink"><span style="-webkit-text-stroke: 1px;" class="bi bi-chevron-right" aria-hidden="true"></span></span>
+              <svg class="program-card__chevron" viewBox="0 0 9 14.73" width="9" height="14.73" aria-hidden="true" focusable="false">
+                <path d="M1.15 1.2L7.6 7.365L1.15 13.53" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
             </span>
           </span>
         </a>
@@ -57,7 +58,9 @@ $homeUrl = (hw_org_base() === '' ? '' : hw_org_base()) . '/index.php';
             <span class="program-card__text">Understand yourself, manage emotions and build happier relationships.</span>
             <span class="program-card__cta">
               Get started
-              <span class="chevron-pink"><span style="-webkit-text-stroke: 1px;" class="bi bi-chevron-right" aria-hidden="true"></span></span>
+              <svg class="program-card__chevron" viewBox="0 0 9 14.73" width="9" height="14.73" aria-hidden="true" focusable="false">
+                <path d="M1.15 1.2L7.6 7.365L1.15 13.53" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
             </span>
           </span>
         </a>
