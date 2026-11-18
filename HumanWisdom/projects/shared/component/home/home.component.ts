@@ -2192,7 +2192,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   getModuleList(): void {
     this.commonService.getModuleList().subscribe(res => {
       if (res) {
-        this.moduleList = res;
+        this.moduleList = (res || []).filter(x => x?.ModuleName?.trim().toLowerCase() !== 'guided audio meditation');
         this.moduleList.push({"ModuleName":"Events"},{"ModuleName":"Blogs"},{"ModuleName":"Life stories"},{"ModuleName":"Teen talk"},{"ModuleName":"Real stories"},{"ModuleName":"Life stories"},{"ModuleName":"Stories"},{"ModuleName":"Podcast"}, {"ModuleName":"Microlearning"}, {"ModuleName":"Guided journeys"}, {"ModuleName":"Short videos"}, {"ModuleName":"Videos"}, {"ModuleName":"Audio meditations"},{"ModuleName":"Soundscapes"},{"ModuleName":"Journal"},{"ModuleName":"Forum"}, {"ModuleName":"Exercises"},{"ModuleName":"Awareness Exercises"},{"ModuleName":"Self Awareness"},
                             {"ModuleName":"Develop a calm mind"},{"ModuleName":"Manage your emotions"},
                             {"ModuleName":"Understand yourself"},{"ModuleName":"Succeed in life"},
@@ -2210,12 +2210,13 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   getAutoCompleteList(value: string): void {
     if (this.moduleList.length > 0) {
       if (value == null || value == "") {
-        this.searchResult = this.moduleList;
+        this.searchResult = this.moduleList.filter(x => x?.ModuleName?.trim().toLowerCase() !== 'guided audio meditation');
       } else {
         this.isSearchActive = true;
         this.commonService.setSearchActive(true);
         this.updateHeaderDisplay();
         this.searchResult = this.moduleList.filter(x =>
+          x?.ModuleName?.trim().toLowerCase() !== 'guided audio meditation' &&
           (x.ModuleName?.toLocaleLowerCase() || '').includes(value?.toLocaleLowerCase() || '')
         );
       }
@@ -2249,9 +2250,10 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       this.getModuleList();
     }
     if (this.searchinp == '') {
-      this.searchResult = this.moduleList;
+      this.searchResult = this.moduleList.filter(x => x?.ModuleName?.trim().toLowerCase() !== 'guided audio meditation');
     } else {
       this.searchResult = this.moduleList.filter(x =>
+        x?.ModuleName?.trim().toLowerCase() !== 'guided audio meditation' &&
         (x.ModuleName?.toLocaleLowerCase() || '').includes(this.searchinp?.toLocaleLowerCase() || '')
       );
     }

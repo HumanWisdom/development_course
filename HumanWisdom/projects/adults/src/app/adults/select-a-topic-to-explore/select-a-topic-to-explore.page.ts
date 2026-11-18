@@ -120,12 +120,12 @@ export class SelectATopicToExplorePage implements OnInit {
 
   getModuleList(isLoad?) {
     this.aservice.getModuleList().subscribe(res => {
-      this.moduleList = res;
+      this.moduleList = (res || []).filter(x => x?.ModuleName?.trim().toLowerCase() !== 'guided audio meditation');
       if (isLoad) {
         if (this.searchinp == '') {
           this.searchResult = this.moduleList;
         } else {
-          this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).includes(this.searchinp?.toLocaleLowerCase()));
+          this.searchResult = this.moduleList.filter(x => x?.ModuleName?.trim().toLowerCase() !== 'guided audio meditation' && (x.ModuleName.toLocaleLowerCase()).includes(this.searchinp?.toLocaleLowerCase()));
         }
       }
     })
