@@ -190,6 +190,7 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     // Focus on input when component loads
     if (this.messageInput) {
       this.messageInput.nativeElement.focus();
+      this.adjustHeight();
     }
     this.styleAnchorTags();
   }
@@ -224,9 +225,12 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     this.currentMessage = '';
     
     // Reset height of textarea to single row
-    if (this.messageInput && this.messageInput.nativeElement) {
-      this.messageInput.nativeElement.style.height = 'auto';
+    if (this.messageInput?.nativeElement?.style) {
+      const textarea = this.messageInput.nativeElement as HTMLTextAreaElement;
+      textarea.style.height = 'auto';
+      textarea.style.overflowY = 'hidden';
     }
+    setTimeout(() => this.adjustHeight(), 0);
 
     this.errorMessage = '';
     this.isLoading = true;
@@ -347,9 +351,17 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
 
   adjustHeight(event?: Event): void {
     const textarea = event ? (event.target as HTMLTextAreaElement) : (this.messageInput?.nativeElement as HTMLTextAreaElement);
-    if (textarea) {
+    if (textarea && textarea.style) {
       textarea.style.height = 'auto';
-      textarea.style.height = textarea.scrollHeight + 'px';
+      const maxHeight = 130;
+      const scrollHeight = textarea.scrollHeight || 0;
+      const newHeight = Math.min(scrollHeight, maxHeight);
+      textarea.style.height = newHeight + 'px';
+      if (scrollHeight > maxHeight) {
+        textarea.style.overflowY = 'auto';
+      } else {
+        textarea.style.overflowY = 'hidden';
+      }
     }
   }
 
@@ -838,6 +850,7 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     this.chatStore.updateMessage({ id: message.id, updates: { related_answer_given: 'yes' } });
 
     this.currentMessage = '';
+    setTimeout(() => this.adjustHeight(), 0);
     this.errorMessage = '';
     this.isLoading = true;
 
@@ -894,6 +907,7 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     this.chatStore.updateMessage({ id: message.id, updates: { related_answer_given: 'no' } });
 
     this.currentMessage = '';
+    setTimeout(() => this.adjustHeight(), 0);
     this.errorMessage = '';
     this.isLoading = true;
 
