@@ -260,10 +260,8 @@ export class GuidedJourneyDaysPage implements OnInit {
             subTitle = subTitle.replace(timing, '').replace(/^[,\s•–-]+|[,\s•–-]+$/g, '').trim();
           }
 
-          const isQuoteSection = (item.Section || '').toUpperCase().includes('QUOTE') || 
-                                 (item.Section || '').toUpperCase().includes('QUOTATION') ||
-                                 (item.SectionID || item.SectionId || item.sectionID || item.sectionId) == 16 ||
-                                 (item.SectionID || item.SectionId || item.sectionID || item.sectionId) == '16';
+          const section = (item.Section || '').toUpperCase().trim();
+          const isQuoteSection = section === 'QUOTATION';
 
           const parsedQuote = isQuoteSection ? this.parseQuoteTitle(rawTitle) : { quoteText: '', quoteAuthor: '' };
 
@@ -423,41 +421,23 @@ export class GuidedJourneyDaysPage implements OnInit {
 
   isSection8(exercise: any): boolean {
     if (!exercise) return false;
-    const secId = exercise.SectionID || exercise.SectionId || exercise.sectionID || exercise.sectionId;
-    const isSec8 = secId == 8 || secId == '8';
-    
-    const sectionStr = (exercise.Section || '').toUpperCase();
-    const isModuleSession = sectionStr.includes('MODULE') || sectionStr.includes('SESSION') || 
-                            (exercise.DisplaySubtitle && (exercise.DisplaySubtitle.toUpperCase().includes('SESSION') || exercise.DisplaySubtitle.toUpperCase().includes('MODULE')));
-                            
-    return isSec8 && isModuleSession && !!exercise.sessionLabel && !!exercise.sessionName;
+    const section = (exercise.Section || '').toUpperCase().trim();
+    return section === 'MODULE SESSION' && !!exercise.sessionLabel && !!exercise.sessionName;
   }
 
   isGuidedJournaling(exercise: any): boolean {
     if (!exercise) return false;
-    const isGJ = (exercise.Section || '').toUpperCase() === 'GUIDED JOURNALING' || 
-                 (exercise.SectionID || exercise.SectionId || exercise.sectionID || exercise.sectionId) == 6;
-    return isGJ && !!exercise.QuestionCnt;
+    const section = (exercise.Section || '').toUpperCase().trim();
+    return section === 'GUIDED JOURNALING' && !!exercise.QuestionCnt;
   }
 
   getCardType(exercise: any): string {
     if (!exercise) return 'generic';
-    const section = (exercise.Section || exercise.HeaderTitle || exercise.Header || '').toUpperCase();
-    const title = (exercise.Title || exercise.DisplayTitle || '').toUpperCase();
-    const sectionId = String(exercise.SectionID || exercise.SectionId || exercise.sectionID || exercise.sectionId || '');
-    
-    if (sectionId === '18' || section.includes('FOOD FOR THOUGHT') || section.includes('FOOD') || title.includes('FOOD FOR THOUGHT')) {
-      return 'food_thought';
-    }
-    if (sectionId === '17' || section.includes('TRY THIS TODAY') || section.includes('TRY THIS') || section.includes('CHALLENGE') || title.includes('TRY THIS TODAY') || title.includes('TRY THIS')) {
-      return 'try_today';
-    }
-    if (sectionId === '16' || section.includes('QUOTE') || section.includes('QUOTATION') || title.includes('QUOTE') || title.includes('QUOTATION')) {
-      return 'quote';
-    }
-    if (exercise.Author || exercise.author) {
-      return 'quote';
-    }
+    const section = (exercise.Section || '').toUpperCase().trim();
+
+    if (section === 'QUOTATION') return 'quote';
+    if (section === 'TRY THIS TODAY') return 'try_today';
+    if (section === 'FOOD FOR THOUGHT') return 'food_thought';
     return 'generic';
   }
 
@@ -884,33 +864,39 @@ export class GuidedJourneyDaysPage implements OnInit {
 
     isBreathingExercise(exercise: any): boolean {
     if (!exercise) return false;
-    const section = (exercise.Section || '').toUpperCase();
-    return section.includes('BREATHING EXERCISE');
+    const section = (exercise.Section || '').toUpperCase().trim();
+    return section === 'BREATHING EXERCISE';
   }
 
   isSoundscape(exercise: any): boolean {
     if (!exercise) return false;
-    const section = (exercise.Section || '').toUpperCase();
-    return section.includes('SOUNDSCAPE');
+    const section = (exercise.Section || '').toUpperCase().trim();
+    return section === 'SOUNDSCAPE';
   }
   
-  getSectionIcon(section: string) {
-    if (!section) return null;
-    const s = section.toUpperCase();
-    
-    if (s.includes('MODULE') || s.includes('SESSION') || s.includes('PROGRAM') || s.includes('PATHWAY') || s.includes('GUIDED')) {
-      return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/pathway.svg';
+  getSectionIcon(exercise: any) {
+    if (!exercise) return null;
+    const section = (exercise.Section || '').toUpperCase().trim();
+
+    switch (section) {
+      case 'MODULE SESSION':
+      case 'MODULE':
+      case 'GUIDED JOURNALING':
+        return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/pathway.svg';
+
+      case 'BREATHING EXERCISE':
+      case 'SHORT VIDEO':
+      case 'VIDEO':
+        return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg';
+
+      case 'PODCAST':
+      case 'AUDIO MEDITATION':
+      case 'SOUNDSCAPE':
+        return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audio_play.svg';
+
+      default:
+        return null;
     }
-    
-    if (s.includes('VIDEO') || s.includes('SHORT') || s.includes('BREATHING')) {
-      return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/play.svg';
-    }
-    
-    if (s.includes('PODCAST') || s.includes('AUDIO') || s.includes('MEDITATION') || s.includes('SOUNDSCAPE')) {
-      return 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/audio_play.svg';
-    }
-    
-    return null;
   }
 
   onModalClose(event: string) {
