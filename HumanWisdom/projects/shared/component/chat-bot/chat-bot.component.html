@@ -92,11 +92,6 @@
             </div>
           </div>
 
-          <!-- Hyperlink outside the bubble, below the welcome message -->
-          <div *ngIf="message.id === 'welcome-intro-1'" class="welcome-questions-container">
-            <a class="questions-link" (click)="onQuestionsLinkClick($event)">Questions you can ask Olly</a>
-          </div>
-
           <!-- Feedback Buttons (Thumbs Up/Down) - OUTSIDE the message bubble -->
           <div *ngIf="!message.isTyping && message.allow_feedback && message.sender === 'bot' && !message.isStreaming"
             class="feedback-container">
@@ -194,6 +189,10 @@
 
     <!-- Input area -->
     <div class="chat-input-area">
+      <div class="welcome-questions-container">
+        <a class="questions-link" (click)="onQuestionsLinkClick($event)">Questions you can ask Olly</a>
+      </div>
+
       <div class="input-container">
         <div class="user-avatar">
           <img [src]="userAvatarUrl" class="avatar-img" alt="User avatar" (error)="onAvatarError($event)" />
@@ -206,7 +205,7 @@
           [disabled]="isLoading" #messageInput 
   (keydown)="onKeyPress($event)"
   (input)="adjustHeight($event)"
-  style="overflow:hidden; resize:none; width:100%; border:none"
+  style="resize:none; width:100%; border:none"
 ></textarea>
         <!-- <input type="text" placeholder="Reply ..." class="message-input" [(ngModel)]="currentMessage"
           (keypress)="onKeyPress($event)" [disabled]="isLoading" #messageInput /> -->
