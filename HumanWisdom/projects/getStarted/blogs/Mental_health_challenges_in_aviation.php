@@ -133,7 +133,7 @@
                 </h4>
                 
 
-                <div class="row mtb20px rm80px">
+                <div class="row mt20px rm80px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/86_new.webp" class="img-responsive" alt="Resilience and emotional intelligence" >
               </div>
@@ -156,7 +156,7 @@
                   3. <a class="blog_highlight_peach td_underline" href="https://happierme.app/blogs/how_can_organizations_reduce_workplace_conflict_and_boost_collaboration.php">Reducing Workplace Conflict and Boosting Collaboration</a><br>
                   4. <a class="blog_highlight_peach td_underline" href="https://happierme.app/blogs/to_succeed_as_a_leader_you_need_self_awareness.php">Self-Awareness Helps Leaders Succeed</a><br>
                   5. <a class="blog_highlight_peach td_underline" href="https://happierme.app/blogs/how_to_manage_your_own_mental_health.php">How to manage your own mental health</a><br>
-                  6. Subscribe to our <a class="blog_highlight_peach td_underline" href="https://staging.happierme.app/adults/newsletter-signup">newsletter</a><br>
+                  6. Subscribe to our <a class="blog_highlight_peach td_underline" href="https://happierme.app/pages/newsletter.php">newsletter</a><br>
                   7. Follow us on <a class="blog_highlight_peach td_underline" href="https://www.instagram.com/happierme_app/">social media</a><br>
                   8. Join our <a class="blog_highlight_peach td_underline" href="https://www.facebook.com/groups/humanwisdom.me/">Facebook group</a> and <a class="blog_highlight_peach td_underline" href="https://www.linkedin.com/groups/12541157/">LinkedIn Group</a>
                 </h4>
