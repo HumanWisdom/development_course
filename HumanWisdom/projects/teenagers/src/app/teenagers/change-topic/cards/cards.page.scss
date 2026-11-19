@@ -1,21 +1,11 @@
 .sc_01 {
   min-height: 110vh !important;
-  padding: 60px 20px 90px;
-}
-.right_col.mc_02 {
-  margin-top: 0 !important;
-  padding: 0 !important;
+  padding: 0px 20px 90px;
 }
 
 .tn_title_back{
-  background: transparent !important;
-  box-shadow: none !important;
-  z-index: 99 !important;
-  pointer-events: none;
-
-  a {
-    pointer-events: auto;
-  }
+   box-shadow: none;
+   z-index: 99 !important;
 }
 .header-section {
   text-align: center;
