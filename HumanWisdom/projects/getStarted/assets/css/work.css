@@ -248,7 +248,8 @@ body.page-work .work-section {
   box-sizing: border-box;
 }
 
-/* Success stories link → challenges heading was a full 100px; keep it tighter */
+/* Figma 10068:1341 → 7841:12804 is 100px from the testimonial cards to this heading.
+   The “View all success stories” footer (20px margin + 40px row) sits inside that 100px. */
 body.page-work .work-challenge-section {
   padding-top: 40px;
 }
@@ -262,9 +263,9 @@ body.page-work .work-section-inner {
   gap: 40px;
 }
 
-/* Figma 9661:6428 — 60px from section title to the cards */
+/* Figma 13038:7019 — title box ends at y=100, pillar row starts at y=140 */
 body.page-work .work-perf-section .work-section-inner {
-  gap: 60px;
+  gap: 40px;
 }
 
 body.page-work .work-section-head {
@@ -656,6 +657,11 @@ body.page-work section.hpt120px ~ main#main .work-testimonials-header h2.work-te
 
 body.page-work .owl_testimonials {
   --work-testimonial-gap: 20px !important;
+}
+
+/* Global .owl-carousel adds 20px under the cards; Figma cards sit flush, then 100px to the next heading */
+body.page-work .owl_testimonials > .owl-carousel {
+  padding-bottom: 0;
 }
 
 /* Owl CSS hides .owl-carousel until .owl-loaded — show testimonials before deferred Owl inits */
