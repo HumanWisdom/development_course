@@ -24367,7 +24367,7 @@ a {
   line-height: 130%;
   color: #000;
   margin-bottom: 10px;
-  padding-top: 20px;
+  /* padding-top: 20px; */
 }
 
 .btn_blog_tags {
