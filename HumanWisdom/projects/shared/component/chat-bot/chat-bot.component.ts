@@ -24,6 +24,17 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     }
   @ViewChild('messageContainer', { static: false }) messageContainer!: ElementRef;
   @ViewChild('messageInput', { static: false }) messageInput!: ElementRef;
+  @ViewChild('chatArea', { static: false }) chatArea?: ElementRef;
+  @ViewChild('chatInputArea', { static: false }) set chatInputAreaRef(element: ElementRef | undefined) {
+    this.chatInputArea = element;
+    if (element && typeof ResizeObserver !== 'undefined') {
+      this.setupInputResizeObserver(element.nativeElement);
+    }
+    this.updateBottomSpacing(false);
+  }
+  chatInputArea?: ElementRef;
+  private prevInputHeight: number = 0;
+  private inputResizeObserver?: ResizeObserver;
 
   messages: ChatMessage[] = [];
   currentMessage: string = '';
@@ -204,6 +215,9 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
      
     }
   ngOnDestroy(): void {
+    if (this.inputResizeObserver) {
+      this.inputResizeObserver.disconnect();
+    }
     this.messagesSubscription.unsubscribe();
     this.typingSubscription.unsubscribe();
     this.sessionSubscription.unsubscribe();
@@ -362,6 +376,58 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
       } else {
         textarea.style.overflowY = 'hidden';
       }
+      this.updateBottomSpacing(true);
+    }
+  }
+
+  private setupInputResizeObserver(element: HTMLElement): void {
+    if (this.inputResizeObserver) {
+      this.inputResizeObserver.disconnect();
+    }
+    this.inputResizeObserver = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        if (entry.target === element) {
+          this.updateBottomSpacing(true);
+        }
+      }
+    });
+    this.inputResizeObserver.observe(element);
+  }
+
+  private updateBottomSpacing(shouldScroll: boolean = true): void {
+    const inputEl = this.chatInputArea?.nativeElement;
+    if (!inputEl) {
+      return;
+    }
+    const currentHeight = inputEl.offsetHeight;
+    if (!currentHeight) {
+      return;
+    }
+
+    const bottomPadding = currentHeight + 16;
+    if (this.chatArea?.nativeElement) {
+      this.chatArea.nativeElement.style.setProperty('--chat-input-height', `${bottomPadding}px`);
+      this.chatArea.nativeElement.style.paddingBottom = `${bottomPadding}px`;
+    }
+
+    const heightDiff = this.prevInputHeight > 0 ? (currentHeight - this.prevInputHeight) : 0;
+    this.prevInputHeight = currentHeight;
+
+    if (shouldScroll && heightDiff > 0) {
+      setTimeout(() => {
+        const isNearBottom = (window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - heightDiff - 120);
+        if (isNearBottom) {
+          window.scrollTo({
+            top: document.documentElement.scrollHeight,
+            behavior: 'smooth'
+          });
+        } else {
+          window.scrollBy({
+            top: heightDiff,
+            behavior: 'smooth'
+          });
+        }
+      }, 0);
     }
   }
 

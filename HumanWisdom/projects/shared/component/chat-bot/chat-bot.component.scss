@@ -212,7 +212,7 @@
   height: auto;
   min-height: 100vh;
   padding-top: 120px;
-  padding-bottom: 130px;
+  padding-bottom: var(--chat-input-height, 130px);
 }
 
 .privacy-notice {
