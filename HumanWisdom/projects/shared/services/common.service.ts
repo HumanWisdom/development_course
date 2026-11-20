@@ -421,6 +421,9 @@ export class CommonService {
           localStorage.setItem("loginResponse", JSON.stringify(loginResponse))
           localStorage.setItem("token", JSON.stringify(res.access_token))
           localStorage.setItem("Subscriber", res.Subscriber)
+          if (res.SubscriberType) {
+            localStorage.setItem("SubscriberType", res.SubscriberType);
+          }
           localStorage.setItem("userId", JSON.stringify(userId))
           localStorage.setItem("email", email)
           localStorage.setItem("pswd", password)
@@ -651,6 +654,9 @@ export class CommonService {
           let namedata = localStorage.getItem('name').split(' ')
           this.userId = res['UserId']
           localStorage.setItem("Subscriber", res['Subscriber'])
+          if (res['SubscriberType']) {
+            localStorage.setItem("SubscriberType", res['SubscriberType']);
+          }
           this.name = res['Name'];
           this.loginadult(res)
           localStorage.setItem("FnName", namedata[0])
@@ -688,6 +694,9 @@ export class CommonService {
       localStorage.setItem("loginResponse", JSON.stringify(this.loginResponse))
       localStorage.setItem("token", JSON.stringify(res.access_token))
       localStorage.setItem("Subscriber", res.Subscriber)
+      if (res.SubscriberType) {
+        localStorage.setItem("SubscriberType", res.SubscriberType);
+      }
       localStorage.setItem("userId", JSON.stringify(this.userId))
       localStorage.setItem("email", res['Email'])
       localStorage.setItem("name", res.Name)

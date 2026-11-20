@@ -401,6 +401,9 @@ export class AppComponent implements OnDestroy {
       this.services.verifytoken(authtoken).subscribe(res => {
         if (res) {
           localStorage.setItem("Subscriber", res['Subscriber']);
+          if (res['SubscriberType']) {
+            localStorage.setItem("SubscriberType", res['SubscriberType']);
+          }
           localStorage.setItem("loginResponse", JSON.stringify(res));
         }
         this.onboardingService.getuser(loggedInUserId).subscribe(res => {
@@ -408,6 +411,9 @@ export class AppComponent implements OnDestroy {
             this.userdetail = res[0];
             let subscriber = res[0].IsSubscribed;
             localStorage.setItem('Subscriber', subscriber);
+            if (res[0].SubscriberType) {
+              localStorage.setItem('SubscriberType', res[0].SubscriberType);
+            }
             this.onboardingService.userDetails = this.userdetail;
             this.getFreeScreens();
           }
