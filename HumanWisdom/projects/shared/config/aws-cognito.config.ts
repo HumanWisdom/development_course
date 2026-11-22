@@ -9,7 +9,8 @@ export function isAwsSsoLoginVisible(): boolean {
   if (typeof window === 'undefined') {
     return false;
   }
-  return localStorage.getItem(AWS_SSO_LOGIN_STORAGE_KEY) === 'T';
+  // Shown by default; set enableAwsSsoLogin = 'F' to hide.
+  return localStorage.getItem(AWS_SSO_LOGIN_STORAGE_KEY) !== 'F';
 }
 
 function getHostedUiBaseUrl(): string {

@@ -443,6 +443,10 @@ export class GuidedJourneyDaysPage implements OnInit {
 
   getQuoteText(exercise: any): string {
     if (!exercise) return '';
+    const section = (exercise.Section || '').toUpperCase().trim();
+    if (section !== 'QUOTATION') {
+      return '';
+    }
     let text = exercise.QuoteText || '';
     if (!text) {
       let raw = exercise.DisplayTitle || exercise.Title || exercise.Description || exercise.text || '';
@@ -459,6 +463,10 @@ export class GuidedJourneyDaysPage implements OnInit {
 
   getQuoteAuthor(exercise: any): string {
     if (!exercise) return '';
+    const section = (exercise.Section || '').toUpperCase().trim();
+    if (section !== 'QUOTATION') {
+      return '';
+    }
     if (exercise.Author || exercise.author) {
       return (exercise.Author || exercise.author).replace(/^[.\s—–-]+|[.\s—–-]+$/g, '').trim();
     }
