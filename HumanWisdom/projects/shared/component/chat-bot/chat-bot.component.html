@@ -200,7 +200,7 @@
 
             <textarea id="autoResize" placeholder="Reply..." rows="1" class="message-input" [(ngModel)]="currentMessage"
               [disabled]="isLoading" #messageInput (keydown)="onKeyPress($event)" (input)="adjustHeight($event)"
-              style="resize:none; width:100%; border:none"></textarea>
+              maxlength="1000" style="resize:none; width:100%; border:none"></textarea>
             <!-- <input type="text" placeholder="Reply ..." class="message-input" [(ngModel)]="currentMessage"
           (keypress)="onKeyPress($event)" [disabled]="isLoading" #messageInput /> -->
             <button class="send-button" (click)="onSendMessage()" [disabled]="!currentMessage.trim() || isLoading">
