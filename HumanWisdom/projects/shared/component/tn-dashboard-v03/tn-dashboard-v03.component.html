@@ -67,7 +67,7 @@
   <!-- top navigation -->
   <div class="row center_flex" [ngClass]="[enableplaystore ? '' : 'mt0px']">
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 dtn_default flex_ai plr20px col_cw">
-      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0" >
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 header-logo" >
         <a (click)="routedashboard()">
           <!-- <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/logo/hwp_logo_v3.svg" class="img-responsive" alt="HumanWisdom"> -->
           <img src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/logo_orange.svg"
@@ -80,8 +80,8 @@
       
 
       <!-- unlogged -->
-      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 flex_ai" *ngIf="!getLoggedIn()">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 jc_flexend center_flex">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 flex_ai header-actions-col" *ngIf="!getLoggedIn()">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 jc_flexend center_flex header-actions">
           <div class="mr5px" *ngIf="!getIsSubscriber()">
             <!-- <a (click)="loginroute()"> -->
             <a  id="liSubscribe" (click)="Subscribe()" >
@@ -99,8 +99,8 @@
       <!-- /unlogged -->
 
       <!-- logged in  -->
-      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 flex_ai" *ngIf="getLoggedIn()">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 jc_flexend center_flex">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0 flex_ai header-actions-col" *ngIf="getLoggedIn()">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 jc_flexend center_flex header-actions">
           <div class="mr5px" *ngIf="!getIsSubscriber()">
             <a id="liSubscribe" (click)="Subscribe()" class="">
               <button type="button" class="btn_login center_flex">

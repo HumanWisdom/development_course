@@ -147,7 +147,7 @@ export class LoginSignupPage implements OnInit, AfterViewInit, OnDestroy {
   discoveredOrgName = '';
   discoveredIdpName = '';
 
-  /** Hidden only when localStorage enableAwsSsoLogin = 'F'. */
+  /** Shown only when localStorage enableAwsSsoLogin = 'T'. */
   get showAwsSsoLogin(): boolean {
     return isAwsSsoLoginVisible();
   }
