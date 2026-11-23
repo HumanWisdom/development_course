@@ -50,7 +50,7 @@
 
             <div class="row mt20px rmb80px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*15An3AfyhWu5i6XdvBG2NQ.png" class="img-responsive" alt="Mental health challenges in the aviation industry">
+                <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/blogs/100.webp" class="img-responsive" alt="Mental health challenges in the aviation industry">
               </div>
             </div>
 
@@ -66,16 +66,13 @@
 
                 <h4 class="mtb0px blog_desc">
                   A recent review found that up to 40% of cabin crew were at risk for depression, with 36.6% suffering from depression and/or anxiety
-                  <a class="blog_highlight_peach td_underline" href="https://safetystanddown.com/sites/ssd/files/2025-08/Richard_Gomez_Building_Mental_Health_Resilience_to_Prepare_for_the_Unexpected.pdf">
-                    (Safetystanddown)
-                  </a>.
+                  <a class="blog_highlight_peach td_underline" href="https://safetystanddown.com/sites/ssd/files/2025-08/Richard_Gomez_Building_Mental_Health_Resilience_to_Prepare_for_the_Unexpected.pdf">(Safetystanddown)</a>.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
                   40% of pilots experience burnout, according to
                   <a class="blog_highlight_peach td_underline" href="https://pubmed.ncbi.nlm.nih.gov/29648499/#:~:text=Job%20demands%20were%20detrimental%2C%20whereas,performance%20at%20pilots'%20simulator%20training">
-                    this article
-                  </a>. These figures highlight the urgent need to address the mental wellbeing of those tasked with ensuring our safety in the skies.
+                    this article</a>. These figures highlight the urgent need to address the mental wellbeing of those tasked with ensuring our safety in the skies.
                 </h4>
 
                 <h4 class="mtb0px blog_sub_title">
@@ -98,14 +95,17 @@
                   Poor mental health in aviation professionals doesn’t just affect the individual. It can have far-reaching consequences for safety and operational efficiency. The MedAire study found that impaired mental health among crew members has led to workplace conflicts and operational delays. Additionally, the stigma surrounding mental health in aviation often prevents open conversations, leaving colleagues unsure of how to support one another effectively. These challenges underline the need for systemic changes to create a supportive and understanding work environment.
                 </h4>
 
+
+                <iframe id="youtubeIntro" loading="lazy" title="youtubeIntro"
+            src="https://www.youtube.com/embed/y5hd9MHnUyM?si=YOFWYNpc4seBRw3U"
+            class="cvideo_b yt-embed" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen
+            onclick="return logevent('click_play_video_home', 'index.php')"></iframe>
                 <h4 class="mtb0px blog_sub_title">
                   Building Resilience: The HappierMe difference
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/">
-                    HappierMe
-                  </a>
+                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/">HappierMe</a>
                   recognizes the unique challenges faced by aviation professionals and offers tailored solutions to support their mental wellbeing.
                 </h4>
 
@@ -120,8 +120,7 @@
                 <h4 class="mtb0px blog_desc">
                   Just as we go to the gym to look after our physical health,
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/">
-                    HappierMe
-                  </a>
+                    HappierMe</a>
                   offers a daily routine of breathing exercises, self-reflection, and journaling to look after our mental health.
                 </h4>
 
@@ -133,6 +132,12 @@
                   With 75+ modules and a host of features including an online journal, a forum for peer support, an extensive library of podcasts, meditations and videos, it’s a one-stop solution for all the wellbeing needs of staff.
                 </h4>
                 
+
+                <div class="row mt20px rm80px">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/86_new.webp" class="img-responsive" alt="Resilience and emotional intelligence" >
+              </div>
+            </div>
                 <h4 class="mtb0px blog_sub_title">
                   Toward a More Supportive Future
                 </h4>
@@ -151,7 +156,7 @@
                   3. <a class="blog_highlight_peach td_underline" href="https://happierme.app/blogs/how_can_organizations_reduce_workplace_conflict_and_boost_collaboration.php">Reducing Workplace Conflict and Boosting Collaboration</a><br>
                   4. <a class="blog_highlight_peach td_underline" href="https://happierme.app/blogs/to_succeed_as_a_leader_you_need_self_awareness.php">Self-Awareness Helps Leaders Succeed</a><br>
                   5. <a class="blog_highlight_peach td_underline" href="https://happierme.app/blogs/how_to_manage_your_own_mental_health.php">How to manage your own mental health</a><br>
-                  6. Subscribe to our <a class="blog_highlight_peach td_underline" href="https://staging.happierme.app/adults/newsletter-signup">newsletter</a><br>
+                  6. Subscribe to our <a class="blog_highlight_peach td_underline" href="https://happierme.app/pages/newsletter.php">newsletter</a><br>
                   7. Follow us on <a class="blog_highlight_peach td_underline" href="https://www.instagram.com/happierme_app/">social media</a><br>
                   8. Join our <a class="blog_highlight_peach td_underline" href="https://www.facebook.com/groups/humanwisdom.me/">Facebook group</a> and <a class="blog_highlight_peach td_underline" href="https://www.linkedin.com/groups/12541157/">LinkedIn Group</a>
                 </h4>

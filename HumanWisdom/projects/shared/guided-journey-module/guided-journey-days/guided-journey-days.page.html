@@ -3,7 +3,8 @@
 <!-- top navigation -->
 <div class="row center_flex">
   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 tn_we col_cw" [ngClass]="isAdults ? '' : 'bg_stake'">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0" style="display: flex; align-items: center; min-height: 40px;">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0"
+      style="display: flex; align-items: center; min-height: 40px;">
       <a class="" (click)="goBack()" style="display: flex; align-items: center; flex-shrink: 0; cursor: pointer;">
         <img
           [src]="isAdults ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/back.svg' : 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v1_3/back_round.svg'"
@@ -63,7 +64,7 @@
                 <ng-container *ngIf="!showTranscript">
 
                   <!-- Breadcrumb -->
-                <!--   <div class="row mb10px">
+                  <!--   <div class="row mb10px">
                     <div class="col-md-12 p0">
                       <a (click)="goToListing()" class="center_flex_left guided-journeys-link"
                         style="cursor: pointer; display: flex; align-items: center;">
@@ -74,7 +75,7 @@
                     </div>
                   </div> -->
 
-              
+
 
                   <!-- Journey Title -->
                   <div class="row mt16px">
@@ -95,10 +96,10 @@
                     </div>
                   </div>
 
-    <!-- Audio Player -->
-       <div class="row mt20px tcenter ">
-                    <div class="col-12 fs_15px fw_600 p0"  [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
-                      Introduction 
+                  <!-- Audio Player -->
+                  <div class="row mt20px tcenter ">
+                    <div class="col-12 fs_15px fw_600 p0" [ngClass]="isAdults? 'fc_000000': 'fc_ffffff'">
+                      Introduction
                     </div>
                   </div>
                   <div class="row mb10px">
@@ -154,7 +155,8 @@
               <div *ngFor="let exercise of getExercisesForDay(dayNum); let i = index; let isLast = last">
 
                 <!-- Description above card (from API) -->
-                <p class="exercise_instruction" *ngIf="exercise.Type !== 4 && exercise.Type !== '4' && exercise.Type !== 3 && exercise.Type !== '3' && exercise.Description && exercise.Description.trim() !== ''"
+                <p class="exercise_instruction"
+                  *ngIf="exercise.Type !== 4 && exercise.Type !== '4' && exercise.Type !== 3 && exercise.Type !== '3' && exercise.Description && exercise.Description.trim() !== ''"
                   [ngClass]="isAdults ? 'fc_000000' : 'fc_ffffff'">
                   {{exercise.Description}}
                 </p>
@@ -163,23 +165,22 @@
                   (click)="onExerciseClick(exercise)">
                   <div class="card_type1_img_container">
                     <img [src]="exercise.imgPath.split(',')[0]" alt="">
-                    <div class="icon_overlay"
-                      *ngIf="getSectionIcon(exercise.Section) || (isSection8(exercise) ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/pathway.svg' : null)">
-                      <img
-                        [src]="getSectionIcon(exercise.Section) || (isSection8(exercise) ? 'https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/pathway.svg' : '')"
-                        alt="" class="overlay_icon">
+                    <div class="icon_overlay" *ngIf="getSectionIcon(exercise)">
+                      <img [src]="getSectionIcon(exercise)" alt="" class="overlay_icon">
                     </div>
                   </div>
                   <div class="card_type1_content">
                     <ng-container *ngIf="!isSection8(exercise) && !isGuidedJournaling(exercise)">
                       <h3 class="card_type1_title">{{exercise.DisplayTitle}}</h3>
                       <p class="card_type1_meta">
-                        {{exercise.DisplaySubtitle || exercise.Section}}<span *ngIf="shouldShowTiming(exercise)"> • {{exercise.Timing}}</span>
+                        {{exercise.DisplaySubtitle || exercise.Section}}<span *ngIf="shouldShowTiming(exercise)"> •
+                          {{exercise.Timing}}</span>
                       </p>
                     </ng-container>
                     <ng-container *ngIf="isSection8(exercise)">
                       <h3 class="card_type1_title_sec8">{{exercise.DisplayTitle}}</h3>
-                      <p class="card_type1_session_label">{{exercise.sessionLabel}}<span *ngIf="shouldShowTiming(exercise, exercise.sessionLabel)"> • {{exercise.Timing}}</span></p>
+                      <p class="card_type1_session_label">{{exercise.sessionLabel}}<span
+                          *ngIf="shouldShowTiming(exercise, exercise.sessionLabel)"> • {{exercise.Timing}}</span></p>
                       <h4 class="card_type1_session_name">{{exercise.sessionName}}</h4>
                     </ng-container>
                     <ng-container *ngIf="isGuidedJournaling(exercise)">
@@ -220,11 +221,12 @@
                 </div>
 
                 <!-- Type 2: Vertical Card (Large Image Top) -->
-                <div *ngIf="exercise.Type === 2" class="exercise_card" role="button" (click)="onExerciseClick(exercise)">
+                <div *ngIf="exercise.Type === 2" class="exercise_card" role="button"
+                  (click)="onExerciseClick(exercise)">
                   <div class="card_image_container">
                     <img [src]="exercise.imgPath.split(',')[0]" class="card_img" alt="">
-                    <div class="icon_overlay" *ngIf="getSectionIcon(exercise.Section)">
-                      <img [src]="getSectionIcon(exercise.Section)" alt="" class="overlay_icon">
+                    <div class="icon_overlay" *ngIf="getSectionIcon(exercise)">
+                      <img [src]="getSectionIcon(exercise)" alt="" class="overlay_icon">
                     </div>
                   </div>
                   <div class="card_content">
@@ -232,12 +234,15 @@
                       <ng-container *ngIf="!isSection8(exercise) && !isGuidedJournaling(exercise)">
                         <h3 class="exercise_title">{{exercise.DisplayTitle}}</h3>
                         <p class="exercise_meta">
-                          {{exercise.DisplaySubtitle || exercise.Section}}<span *ngIf="shouldShowTiming(exercise)"> • {{exercise.Timing}}</span>
+                          {{exercise.DisplaySubtitle || exercise.Section}}<span *ngIf="shouldShowTiming(exercise)"> •
+                            {{exercise.Timing}}</span>
                         </p>
                       </ng-container>
                       <ng-container *ngIf="isSection8(exercise)">
                         <h3 class="exercise_title_sec8">{{exercise.DisplayTitle}}</h3>
-                        <p class="card_type1_session_label">{{exercise.sessionLabel}}<span *ngIf="shouldShowTiming(exercise, exercise.sessionLabel)"> • {{exercise.Timing}}</span></p>
+                        <p class="card_type1_session_label">{{exercise.sessionLabel}}<span
+                            *ngIf="shouldShowTiming(exercise, exercise.sessionLabel)"> • {{exercise.Timing}}</span>
+                        </p>
                         <h4 class="card_type1_session_name">{{exercise.sessionName}}</h4>
                       </ng-container>
                       <ng-container *ngIf="isGuidedJournaling(exercise)">
@@ -275,8 +280,10 @@
                 <!-- Type 3: Journaling Box -->
                 <div *ngIf="exercise.Type === 3" class="journal_box">
                   <div class="journal_header">
-                    <h4 class="journal_header_title">{{ exercise.HeaderTitle || exercise.Header || (exercise.Section &&
-                      exercise.Section.toUpperCase() !== 'JOURNALING' && exercise.Section.toUpperCase() !== 'JOURNAL' ?
+                    <h4 class="journal_header_title">{{ exercise.HeaderTitle || exercise.Header || (exercise.Section
+                      &&
+                      exercise.Section.toUpperCase() !== 'JOURNALING' && exercise.Section.toUpperCase() !== 'JOURNAL'
+                      ?
                       exercise.Section : 'QUESTION OF THE DAY') }}</h4>
                     <div class="journal_header_divider"></div>
                   </div>
@@ -315,8 +322,11 @@
                     <div class="card_icon_wrap">
                       <img [src]="getType4Image(exercise)" alt="Try this today">
                     </div>
-                    <h4 class="card_header_label">{{ exercise.HeaderTitle || exercise.Section || 'TRY THIS TODAY' }}</h4>
-                    <div class="card_content_text" [innerHTML]="cleanCardContent(exercise.DisplayTitle || exercise.Title || exercise.Description)"></div>
+                    <h4 class="card_header_label">{{ exercise.HeaderTitle || exercise.Section || 'TRY THIS TODAY' }}
+                    </h4>
+                    <div class="card_content_text"
+                      [innerHTML]="cleanCardContent(exercise.DisplayTitle || exercise.Title || exercise.Description)">
+                    </div>
                   </div>
 
                   <!-- Food For Thought Card Variant -->
@@ -324,8 +334,11 @@
                     <div class="card_icon_wrap">
                       <img [src]="getType4Image(exercise)" alt="Food for thought">
                     </div>
-                    <h4 class="card_header_label">{{ exercise.HeaderTitle || exercise.Section || 'FOOD FOR THOUGHT' }}</h4>
-                    <div class="card_content_text" [innerHTML]="cleanCardContent(exercise.DisplayTitle || exercise.Title || exercise.Description)"></div>
+                    <h4 class="card_header_label">{{ exercise.HeaderTitle || exercise.Section || 'FOOD FOR THOUGHT' }}
+                    </h4>
+                    <div class="card_content_text"
+                      [innerHTML]="cleanCardContent(exercise.DisplayTitle || exercise.Title || exercise.Description)">
+                    </div>
                   </div>
 
                   <!-- Generic Type 4 Card Variant -->
@@ -339,9 +352,6 @@
                     <div class="generic_card_desc" *ngIf="exercise.Description || exercise.text || exercise.Response"
                       [innerHTML]="cleanCardContent(exercise.Description || exercise.text || exercise.Response)">
                     </div>
-                    <p class="generic_card_author" *ngIf="getQuoteAuthor(exercise)">
-                      {{ getQuoteAuthor(exercise) }}
-                    </p>
                   </div>
                 </ng-container>
 

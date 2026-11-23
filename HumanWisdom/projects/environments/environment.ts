@@ -33,7 +33,7 @@ export const environment = {
     storageBucket: "hwp-development-303708.appspot.com",
     messagingSenderId: "604395199513",
     appId: "1:604395199513:web:33865830c234bc7840de88",
-    measurementId: "G-1B7PE7GN89"
+    measurementId: "G-9FKDYH1CRQ"
   },
   awsCognito: {
     authority: 'https://cognito-idp.eu-west-2.amazonaws.com/eu-west-2_rnYMiKepu',

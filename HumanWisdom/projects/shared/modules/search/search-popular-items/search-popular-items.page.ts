@@ -289,6 +289,12 @@ export class SearchPopularItemsPage implements OnInit, OnDestroy {
     this.isLoading = true;
     this.commonService.getSearchDataForSearchSite(searchInpt).subscribe(res => {
       if (res) {
+        if (res.ModuleRes) {
+          res.ModuleRes = res.ModuleRes.filter(m => m.ModuleName?.trim().toLowerCase() !== 'guided audio meditation');
+        }
+        if (res.SessionRes) {
+          res.SessionRes = res.SessionRes.filter(s => s.ModuleName?.trim().toLowerCase() !== 'guided audio meditation');
+        }
         if (res.MLMRes) {
           res.MLMRes.forEach(m => {
             m.ImgUrl = m.ImageUrl;
@@ -845,11 +851,11 @@ export class SearchPopularItemsPage implements OnInit, OnDestroy {
   getAutoCompleteList(value) {
     if (this.moduleList.length > 0) {
       if (value == null || value == "") {
-        this.searchResult = this.moduleList;
+        this.searchResult = this.moduleList.filter(x => x?.ModuleName?.trim().toLowerCase() !== 'guided audio meditation');
       } else {
         this.isSearchActive = true;
         this.commonService.setSearchActive(true);
-        this.searchResult = this.moduleList.filter(x => (x.ModuleName?.toLocaleLowerCase() || '').includes(value?.toLocaleLowerCase() || ''));
+        this.searchResult = this.moduleList.filter(x => x?.ModuleName?.trim().toLowerCase() !== 'guided audio meditation' && (x.ModuleName?.toLocaleLowerCase() || '').includes(value?.toLocaleLowerCase() || ''));
       }
       if (this.isSearchActive) {
         this.toggleBodyScroll(true);
@@ -866,9 +872,9 @@ export class SearchPopularItemsPage implements OnInit, OnDestroy {
       this.getModuleList(true);
     }
     if (this.search == '') {
-      this.searchResult = this.moduleList;
+      this.searchResult = this.moduleList.filter(x => x?.ModuleName?.trim().toLowerCase() !== 'guided audio meditation');
     } else {
-      this.searchResult = this.moduleList.filter(x => (x.ModuleName?.toLocaleLowerCase() || '').includes(this.search?.toLocaleLowerCase() || ''));
+      this.searchResult = this.moduleList.filter(x => x?.ModuleName?.trim().toLowerCase() !== 'guided audio meditation' && (x.ModuleName?.toLocaleLowerCase() || '').includes(this.search?.toLocaleLowerCase() || ''));
     }
     if (this.isSearchActive) {
       this.toggleBodyScroll(true);
@@ -877,7 +883,7 @@ export class SearchPopularItemsPage implements OnInit, OnDestroy {
 
   getModuleList(isLoad?) {
     this.commonService.getModuleList().subscribe(res => {
-      this.moduleList = res;
+      this.moduleList = (res || []).filter(item => item?.ModuleName?.trim().toLowerCase() !== 'guided audio meditation');
       this.moduleList.push({"ModuleName":"Events"},{"ModuleName":"Blogs"},{"ModuleName":"Life stories"},{"ModuleName":"Stories"},{"ModuleName":"Podcast"}, {"ModuleName":"Microlearning"}, {"ModuleName":"Short videos"}, {"ModuleName":"Videos"}, {"ModuleName":"Audio meditations"},{"ModuleName":"Soundscapes"},{"ModuleName":"Journal"},{"ModuleName":"Forum"}, {"ModuleName":"Exercises"},{"ModuleName":"Awareness Exercises"},{"ModuleName":"Self Awareness"},
                           {"ModuleName":"Develop a calm mind"},{"ModuleName":"Manage your emotions"},
                           {"ModuleName":"Understand yourself"},{"ModuleName":"Succeed in life"},
@@ -887,7 +893,7 @@ export class SearchPopularItemsPage implements OnInit, OnDestroy {
         if (this.search == '') {
           this.searchResult = this.moduleList;
         } else {
-          this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).includes(this.search?.toLocaleLowerCase()));
+          this.searchResult = this.moduleList.filter(x => x?.ModuleName?.trim().toLowerCase() !== 'guided audio meditation' && (x.ModuleName.toLocaleLowerCase()).includes(this.search?.toLocaleLowerCase()));
         }
       }
     })

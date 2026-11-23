@@ -124,12 +124,18 @@ export class AppComponent implements OnDestroy {
       this.services.verifytoken(authtoken).subscribe(res => {
         if (res) {
           localStorage.setItem("Subscriber", res['Subscriber']);
+          if (res['SubscriberType']) {
+            localStorage.setItem("SubscriberType", res['SubscriberType']);
+          }
           localStorage.setItem("loginResponse", JSON.stringify(res));
         }
         this.onboardingService.getuser(loggedInUserId).subscribe(res => {
           if (res) {
             let subscriber = res[0].IsSubscribed;
             localStorage.setItem('Subscriber', subscriber);
+            if (res[0].SubscriberType) {
+              localStorage.setItem('SubscriberType', res[0].SubscriberType);
+            }
           }
         });
       });

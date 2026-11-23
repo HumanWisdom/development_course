@@ -4541,7 +4541,7 @@ getAlertcloseEvent($event) {
 
   getModuleList(isLoad?) {
     this.service.getModuleList().subscribe(res => {
-      this.moduleList = res;
+      this.moduleList = (res || []).filter(x => x?.ModuleName?.trim().toLowerCase() !== 'guided audio meditation');
       this.moduleList.push({"ModuleName":"Events"},{"ModuleName":"Blogs"},{"ModuleName":"Life stories"},{"ModuleName":"Stories"},{"ModuleName":"Podcast"}, {"ModuleName":"Short videos"}, {"ModuleName":"Videos"}, {"ModuleName":"Audio meditations"},{"ModuleName":"Journal"},{"ModuleName":"Forum"}, {"ModuleName":"Exercises"},{"ModuleName":"Awareness Exercises"},
                           {"ModuleName":"Develop a calm mind"},{"ModuleName":"Manage your emotions"},
                           {"ModuleName":"Understand yourself"},{"ModuleName":"Succeed in life"},
@@ -4551,7 +4551,7 @@ getAlertcloseEvent($event) {
         if (this.searchinp == '') {
           this.searchResult = this.moduleList;
         } else {
-          this.searchResult = this.moduleList.filter(x => (x.ModuleName.toLocaleLowerCase()).includes(this.searchinp?.toLocaleLowerCase()));
+          this.searchResult = this.moduleList.filter(x => x?.ModuleName?.trim().toLowerCase() !== 'guided audio meditation' && (x.ModuleName.toLocaleLowerCase()).includes(this.searchinp?.toLocaleLowerCase()));
         }
       }
     })

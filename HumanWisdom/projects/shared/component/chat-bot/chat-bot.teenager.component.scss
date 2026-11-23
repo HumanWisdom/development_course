@@ -205,7 +205,7 @@
   height: auto;
   min-height: 100vh;
   padding-top: 120px;
-  padding-bottom: 82px;
+  padding-bottom: var(--chat-input-height, 130px);
 }
 
 .privacy-notice {
@@ -440,7 +440,7 @@
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  background: #FFF7E6;
+  background: #183C79;
   z-index: 1001; // Same as header
   width: 405px;
   pointer-events: auto; // Enable clicks on input area
@@ -451,8 +451,10 @@
     align-items: center;
     background: #ffffff;
     // border-radius: 25px;
-    height: 80px;
-    padding: 20px;
+    min-height: 80px;
+    height: auto;
+    padding: 14px 20px;
+    box-sizing: border-box;
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
     pointer-events: auto; // Enable clicks in input container
     
@@ -470,13 +472,20 @@
 
     .message-input {
       flex: 1;
+      min-width: 0;
       border: none;
       outline: none;
-      padding: 12px 8px;
+      padding: 8px 10px;
       font-size: 14px;
+      color: #000000;
       background: transparent;
       text-align: left;
       pointer-events: auto; // Enable typing in input
+      resize: none;
+      overflow-y: hidden;
+      max-height: 200px;
+      line-height: 1.4;
+      box-sizing: border-box;
 
       &::placeholder {
         color: #999999;
@@ -484,6 +493,7 @@
     }
 
     .send-button {
+      flex-shrink: 0;
       width: 40px;
       height: 40px;
       border: none;
@@ -944,8 +954,9 @@
     }
 
     .welcome-questions-container {
-      margin-top: 10px;
-      margin-bottom: 4px;
+      padding: 6px 20px 8px 20px;
+      display: block;
+      text-align: center;
       
       .questions-link {
         color: #EE9596 !important;
