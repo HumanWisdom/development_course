@@ -48,7 +48,7 @@
               </div>
             </div>
 
-            <div class="row mt20px rmb80px">
+            <div class="row mt20px rm80px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*q1LOErQ2I6vyfk-JvcCbMQ.png" class="img-responsive" alt="15 ways to help students flourish">
               </div>
@@ -117,7 +117,7 @@
 
                 <h4 class="mtb0px blog_sub_title">
                    <!-- <span class="blog_highlight_black">6. Live without </span><a class="blog_highlight_peach td_underline" href="https://happierme.app/teenagers/comparison" target="_blank"> <span class="blog_highlight_black">Envy</span></a> / Low <a class="blog_highlight_peach td_underline" href="https://happierme.app/teenagers/self-esteem" target="_blank"> self-esteem</a></span> -->
-                <span class="blog_highlight_black">6. Live without </span><a class="blog_highlight_peach td_underline" href="https://happierme.app/teenagers/wisdom-exercise" target="_blank"> Envy</a>  <span class="blog_highlight_black">/ Low  <a class="blog_highlight_peach td_underline" href="https://happierme.app/teenagers/self-esteem" target="_blank">self-esteem</span></a>
+                <span class="blog_highlight_black">6. Live without </span><a class="blog_highlight_peach td_underline" href="https://happierme.app/teenagers/wisdom-exercise" target="_blank">Envy</a><span class="blog_highlight_black">/Low  <a class="blog_highlight_peach td_underline" href="https://happierme.app/teenagers/self-esteem" target="_blank">self-esteem</span></a>
 
                 </h4>
 
@@ -142,7 +142,7 @@
                 </h4>
 
                 <h4 class="mtb0px blog_sub_title">
-                   <span class="blog_highlight_black">9.</span><a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/leadership" target="_blank">  Leadership</a> <span class="blog_highlight_black"> skills</span>
+                   <span class="blog_highlight_black">9. </span><a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/leadership" target="_blank">Leadership</a> <span class="blog_highlight_black"> skills</span>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -150,7 +150,7 @@
                 </h4>
 
                 <h4 class="mtb0px blog_sub_title">
-                   <span class="blog_highlight_black">10. Not be prisoners of their </span><a class="blog_highlight_peach td_underline" href="https://happierme.app/teenagers/fear-anxiety" target="_blank"> fear</a>
+                   <span class="blog_highlight_black">10. Not be prisoners of their </span><a class="blog_highlight_peach td_underline" href="https://happierme.app/teenagers/fear-anxiety" target="_blank"> fears</a>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -205,19 +205,19 @@
                   To begin a conversation please email: team@happierme.app
                 </h4>
 
-                <div class="row mt20px rmb80px">
+                <div class="row mt20px rm80px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                     <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*5sK-H8gWi9_Gn10guurWgw.jpeg" class="img-responsive" alt="">
                   </div>
                 </div>
 
                 <h4 class="mtb0px blog_sub_title">
-                   <span class="blog_highlight_black"><em>Links to explore:</em></span>
+                   <span class="blog_highlight_black">Links to explore:</span>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app" target="_blank">HappierMe Website</a><br>
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/newsletter-signup" target="_blank">Sign up to our newsletter</a><br>
+                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/pages/newsletter.php" target="_blank">Sign up to our newsletter</a><br>
                   <a class="blog_highlight_peach td_underline" href="https://linktr.ee/happierme.app" target="_blank">Follow us on Social Media</a>
                 </h4>
                 
