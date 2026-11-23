@@ -1,0 +1,82 @@
+:host {
+  display: block;
+}
+
+// Stay above page content (streak badge, greeting) so the bar cannot be covered.
+.dtn {
+  z-index: 300;
+}
+
+// On narrow phones (OnePlus and similar, ~360–412px) a 50/50 split is too
+// tight for Subscribe Now + bell + menu. Let the logo shrink and keep the
+// actions on one line so they don't cover the button.
+@media (max-width: 520px) {
+  .dtn_default.flex_ai {
+    justify-content: space-between;
+    gap: 8px;
+    box-sizing: border-box;
+
+    > .header-logo,
+    > .header-actions-col {
+      width: auto !important;
+      max-width: none;
+      float: none;
+      min-width: 0;
+      padding: 0;
+    }
+
+    > .header-logo {
+      flex: 0 1 auto;
+
+      .img_logo {
+        max-width: 108px;
+        width: auto;
+        height: auto;
+      }
+    }
+
+    > .header-actions-col {
+      flex: 1 1 auto;
+      margin-left: auto;
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  .header-actions {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    width: 100% !important;
+    max-width: 100%;
+    min-width: 0;
+    float: none;
+
+    .mr5px,
+    .mlr10px {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+
+    .btn_login {
+      width: auto;
+      max-width: 124px;
+      height: 36px;
+      margin: 0;
+      padding: 0 12px;
+      box-sizing: border-box;
+      white-space: nowrap;
+      line-height: 36px;
+      flex: 0 1 auto;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .tour_notification,
+    .tour_hamburger {
+      flex: 0 0 auto;
+    }
+  }
+}

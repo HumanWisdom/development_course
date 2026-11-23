@@ -24,6 +24,17 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     }
   @ViewChild('messageContainer', { static: false }) messageContainer!: ElementRef;
   @ViewChild('messageInput', { static: false }) messageInput!: ElementRef;
+  @ViewChild('chatArea', { static: false }) chatArea?: ElementRef;
+  @ViewChild('chatInputArea', { static: false }) set chatInputAreaRef(element: ElementRef | undefined) {
+    this.chatInputArea = element;
+    if (element && typeof ResizeObserver !== 'undefined') {
+      this.setupInputResizeObserver(element.nativeElement);
+    }
+    this.updateBottomSpacing(false);
+  }
+  chatInputArea?: ElementRef;
+  private prevInputHeight: number = 0;
+  private inputResizeObserver?: ResizeObserver;
 
   messages: ChatMessage[] = [];
   currentMessage: string = '';
@@ -190,6 +201,7 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     // Focus on input when component loads
     if (this.messageInput) {
       this.messageInput.nativeElement.focus();
+      this.adjustHeight();
     }
     this.styleAnchorTags();
   }
@@ -203,6 +215,9 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
      
     }
   ngOnDestroy(): void {
+    if (this.inputResizeObserver) {
+      this.inputResizeObserver.disconnect();
+    }
     this.messagesSubscription.unsubscribe();
     this.typingSubscription.unsubscribe();
     this.sessionSubscription.unsubscribe();
@@ -224,9 +239,12 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     this.currentMessage = '';
     
     // Reset height of textarea to single row
-    if (this.messageInput && this.messageInput.nativeElement) {
-      this.messageInput.nativeElement.style.height = 'auto';
+    if (this.messageInput?.nativeElement?.style) {
+      const textarea = this.messageInput.nativeElement as HTMLTextAreaElement;
+      textarea.style.height = 'auto';
+      textarea.style.overflowY = 'hidden';
     }
+    setTimeout(() => this.adjustHeight(), 0);
 
     this.errorMessage = '';
     this.isLoading = true;
@@ -347,9 +365,69 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
 
   adjustHeight(event?: Event): void {
     const textarea = event ? (event.target as HTMLTextAreaElement) : (this.messageInput?.nativeElement as HTMLTextAreaElement);
-    if (textarea) {
+    if (textarea && textarea.style) {
       textarea.style.height = 'auto';
-      textarea.style.height = textarea.scrollHeight + 'px';
+      const maxHeight = 130;
+      const scrollHeight = textarea.scrollHeight || 0;
+      const newHeight = Math.min(scrollHeight, maxHeight);
+      textarea.style.height = newHeight + 'px';
+      if (scrollHeight > maxHeight) {
+        textarea.style.overflowY = 'auto';
+      } else {
+        textarea.style.overflowY = 'hidden';
+      }
+      this.updateBottomSpacing(true);
+    }
+  }
+
+  private setupInputResizeObserver(element: HTMLElement): void {
+    if (this.inputResizeObserver) {
+      this.inputResizeObserver.disconnect();
+    }
+    this.inputResizeObserver = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        if (entry.target === element) {
+          this.updateBottomSpacing(true);
+        }
+      }
+    });
+    this.inputResizeObserver.observe(element);
+  }
+
+  private updateBottomSpacing(shouldScroll: boolean = true): void {
+    const inputEl = this.chatInputArea?.nativeElement;
+    if (!inputEl) {
+      return;
+    }
+    const currentHeight = inputEl.offsetHeight;
+    if (!currentHeight) {
+      return;
+    }
+
+    const bottomPadding = currentHeight + 16;
+    if (this.chatArea?.nativeElement) {
+      this.chatArea.nativeElement.style.setProperty('--chat-input-height', `${bottomPadding}px`);
+      this.chatArea.nativeElement.style.paddingBottom = `${bottomPadding}px`;
+    }
+
+    const heightDiff = this.prevInputHeight > 0 ? (currentHeight - this.prevInputHeight) : 0;
+    this.prevInputHeight = currentHeight;
+
+    if (shouldScroll && heightDiff > 0) {
+      setTimeout(() => {
+        const isNearBottom = (window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - heightDiff - 120);
+        if (isNearBottom) {
+          window.scrollTo({
+            top: document.documentElement.scrollHeight,
+            behavior: 'smooth'
+          });
+        } else {
+          window.scrollBy({
+            top: heightDiff,
+            behavior: 'smooth'
+          });
+        }
+      }, 0);
     }
   }
 
@@ -838,6 +916,7 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     this.chatStore.updateMessage({ id: message.id, updates: { related_answer_given: 'yes' } });
 
     this.currentMessage = '';
+    setTimeout(() => this.adjustHeight(), 0);
     this.errorMessage = '';
     this.isLoading = true;
 
@@ -894,6 +973,7 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     this.chatStore.updateMessage({ id: message.id, updates: { related_answer_given: 'no' } });
 
     this.currentMessage = '';
+    setTimeout(() => this.adjustHeight(), 0);
     this.errorMessage = '';
     this.isLoading = true;
 

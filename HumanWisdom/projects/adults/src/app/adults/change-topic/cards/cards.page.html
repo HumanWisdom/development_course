@@ -47,18 +47,47 @@
               </div>
 
               <div *ngIf="!isLoading && cardsList.length > 0" [ngClass]="isAdults ? 'toc_adiv_03' : 'toc_adiv_02'">
-                <ng-container *ngFor="let card of cardsList">
-                  <a (click)="navigateToResource(card)" class="pointer-events-auto">
+                <ng-container *ngFor="let card of cardsList; let i = index">
+
+                  <!-- First card: featured layout (full-width image on top, text below) -->
+                  <a *ngIf="i === 0" (click)="navigateToResource(card)" class="pointer-events-auto">
+                    <div class="row card-featured" [ngClass]="isAdults ? 'bg_FFE8BB' : ''">
+                      <div class="col-xs-12 p0 prelative">
+                        <img [src]="card.ImgPath" alt="media suggestion" class="card-featured-img" />
+                        <div *ngIf="getMediaIcon(card)" class="card-featured-play">
+                          <img [src]="getMediaIcon(card)" alt="media type" class="card-featured-play-icon">
+                        </div>
+                      </div>
+                      <div class="col-xs-12 card-featured-body">
+                        <div class="card-featured-text">
+                          <h4 class="mt0px mb5px fs_15px fw_500 lh_130p"
+                            [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
+                            {{card.Title}}
+                          </h4>
+                          <p class="mtb0px fs_11px fw_500 lh_130p"
+                            [ngClass]="isAdults ? 'fc_000000_0_5' : 'fc_ffffff_0_5'">
+                            {{card.formattedSubTitle}}
+                          </p>
+                        </div>
+                        <div class="tright">
+                          <img *ngIf="card.isViewed"
+                            src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/isRead.svg"
+                            class="ws-read-icon" alt="read">
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+
+                  <!-- Cards 2+: standard horizontal layout -->
+                  <a *ngIf="i !== 0" (click)="navigateToResource(card)" class="pointer-events-auto">
                     <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                         <div class="col-md-4 col-sm-4 col-xs-4 p0 prelative">
                           <img [src]="card.ImgPath" alt="media suggestion" class="p0 session_img session_imgnew" />
-                          <!-- Media Icon Overlay -->
                           <div *ngIf="getMediaIcon(card)">
                             <img class="session_img_play" [src]="getMediaIcon(card)" alt="media type">
                           </div>
                         </div>
-
                         <div class="col-md-7 col-sm-7 col-xs-7 p0">
                           <h4 class="mt0px mb5px fs_15px fw_500 lh_130p"
                             [ngClass]="isAdults ? 'fc_000000' : 'fc_e58d82'">
@@ -69,7 +98,6 @@
                             {{card.formattedSubTitle}}
                           </p>
                         </div>
-
                         <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 p0 tright">
                           <img *ngIf="card.isViewed"
                             src="https://d1tenzemoxuh75.cloudfront.net/assets/svgs/v_1_4/isRead.svg"
@@ -78,6 +106,7 @@
                       </div>
                     </div>
                   </a>
+
                 </ng-container>
               </div>
             </div>

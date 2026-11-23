@@ -1,4 +1,5 @@
-<app-olly-landing *ngIf="showLanding" [startInQuestionsView]="startInQuestionsView" (startChat)="onStartChat($event)" (viewChanged)="onLandingViewChanged($event)"></app-olly-landing>
+<app-olly-landing *ngIf="showLanding" [startInQuestionsView]="startInQuestionsView" (startChat)="onStartChat($event)"
+  (viewChanged)="onLandingViewChanged($event)"></app-olly-landing>
 
 <div class="chat-bot-container" *ngIf="!showLanding">
   <!-- Header -->
@@ -23,231 +24,223 @@
   </div>
 
   <!-- Chat Area -->
-  <div class="chat-area">
+    <div class="chat-area" #chatArea>
 
-    <!-- Privacy Notice -->
-    <div class="privacy-notice">
-      <p>Your conversations with Olly are private and not shared with anyone.</p>
-    </div>
+      <!-- Privacy Notice -->
+      <div class="privacy-notice">
+        <p>Your conversations with Olly are private and not shared with anyone.</p>
+      </div>
 
-    <!-- Load History Link - Show when standard welcome plus any prior chat exist -->
-    <div *ngIf="hasHistoryAvailable && !isGuestUser()" class="load-history-container">
-      <a href="#" class="load-history-link" (click)="onLoadHistory($event)" [class.loading]="isLoadingHistory">
-        <span>{{ isLoadingHistory ? 'Loading...' : 'Load Older Conversation' }}</span>
-      </a>
-    </div>
+      <!-- Load History Link - Show when standard welcome plus any prior chat exist -->
+      <div *ngIf="hasHistoryAvailable && !isGuestUser()" class="load-history-container">
+        <a href="#" class="load-history-link" (click)="onLoadHistory($event)" [class.loading]="isLoadingHistory">
+          <span>{{ isLoadingHistory ? 'Loading...' : 'Load Older Conversation' }}</span>
+        </a>
+      </div>
 
-    <div class="chat-messages" #messageContainer>
-      <!-- Dynamic Messages -->
-      <div *ngFor="let message of messages; let isFirst = first; let isLast = last; trackBy: trackByMessageId" class="message"
-        [ngClass]="[message.sender + '-message', message.hideAvatar ? 'bot-followup' : '', message.id === 'welcome-intro-2' ? 'welcome-followup' : '']">
-        <!-- Bot Message -->
-        <div *ngIf="message.sender === 'bot' && !message.hideAvatar" class="message-avatar">
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/icons/owl-transparent.png"
-            *ngIf="isAdults" />
-          <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/owl_teens.svg"
-            *ngIf="!isAdults" />
-        </div>
-
-        <div class="message-content-wrapper">
-          <div *ngIf="message.sender === 'bot' && !message.hideSender" class="message-sender">Olly</div>
-
-          <div class="message-content" [ngClass]="{'typing-indicator': message.isTyping}">
-            <!-- Regular message content -->
-            <div *ngIf="!message.isTyping" class="bot-message-content" [innerHTML]="sanitizeHtml(message.content)"
-              (click)="onMessageContentClick($event)" (pointerdown)="onMessageContentPointerDown($event)"
-              (pointerup)="onMessageContentPointerUp($event)"
-              (keydown.enter)="onMessageContentClick($event)" tabindex="0">
-            </div>
-
-            <!-- Resource cards — Angular-rendered cards for yes/no related content responses -->
-            <div *ngIf="!message.isTyping && message.resourceCards && message.resourceCards.length > 0" class="resource-cards-container">
-              <div *ngFor="let card of message.resourceCards" class="resource-card-btn" (click)="navigateToCard(card.path)" role="button" tabindex="0" (keydown.enter)="navigateToCard(card.path)">
-                <img [src]="card.img" [alt]="card.title" class="resource-card-img" />
-                <div class="resource-card-info">
-                  <strong class="resource-card-title">{{ card.title }}</strong>
-                  <span class="resource-card-type">{{ card.type }}</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Suggestions -->
-            <div *ngIf="!message.isTyping && message.suggestions && message.suggestions.length > 0"
-              class="suggestions-container">
-              <div class="suggestions-instruction">Click on a suggestion or type the number:</div>
-              <div class="suggestions-list">
-                <button *ngFor="let suggestion of message.suggestions; let i = index" class="suggestion-button"
-                  (click)="onSuggestionClick(suggestion)">
-                  <span class="suggestion-number">{{ i + 1 }}.</span>
-                  <span class="suggestion-text">{{ suggestion }}</span>
-                </button>
-              </div>
-            </div>
-
-            <!-- Typing indicator -->
-            <div *ngIf="message.isTyping" class="typing-dots">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
+      <div class="chat-messages" #messageContainer>
+        <!-- Dynamic Messages -->
+        <div *ngFor="let message of messages; let isFirst = first; let isLast = last; trackBy: trackByMessageId"
+          class="message"
+          [ngClass]="[message.sender + '-message', message.hideAvatar ? 'bot-followup' : '', message.id === 'welcome-intro-2' ? 'welcome-followup' : '']">
+          <!-- Bot Message -->
+          <div *ngIf="message.sender === 'bot' && !message.hideAvatar" class="message-avatar">
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/icons/owl-transparent.png"
+              *ngIf="isAdults" />
+            <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/owl_teens.svg"
+              *ngIf="!isAdults" />
           </div>
 
-          <!-- Hyperlink outside the bubble, below the welcome message -->
-          <div *ngIf="message.id === 'welcome-intro-1'" class="welcome-questions-container">
+          <div class="message-content-wrapper">
+            <div *ngIf="message.sender === 'bot' && !message.hideSender" class="message-sender">Olly</div>
+
+            <div class="message-content" [ngClass]="{'typing-indicator': message.isTyping}">
+              <!-- Regular message content -->
+              <div *ngIf="!message.isTyping" class="bot-message-content" [innerHTML]="sanitizeHtml(message.content)"
+                (click)="onMessageContentClick($event)" (pointerdown)="onMessageContentPointerDown($event)"
+                (pointerup)="onMessageContentPointerUp($event)" (keydown.enter)="onMessageContentClick($event)"
+                tabindex="0">
+              </div>
+
+              <!-- Resource cards — Angular-rendered cards for yes/no related content responses -->
+              <div *ngIf="!message.isTyping && message.resourceCards && message.resourceCards.length > 0"
+                class="resource-cards-container">
+                <div *ngFor="let card of message.resourceCards" class="resource-card-btn"
+                  (click)="navigateToCard(card.path)" role="button" tabindex="0"
+                  (keydown.enter)="navigateToCard(card.path)">
+                  <img [src]="card.img" [alt]="card.title" class="resource-card-img" />
+                  <div class="resource-card-info">
+                    <strong class="resource-card-title">{{ card.title }}</strong>
+                    <span class="resource-card-type">{{ card.type }}</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Suggestions -->
+              <div *ngIf="!message.isTyping && message.suggestions && message.suggestions.length > 0"
+                class="suggestions-container">
+                <div class="suggestions-instruction">Click on a suggestion or type the number:</div>
+                <div class="suggestions-list">
+                  <button *ngFor="let suggestion of message.suggestions; let i = index" class="suggestion-button"
+                    (click)="onSuggestionClick(suggestion)">
+                    <span class="suggestion-number">{{ i + 1 }}.</span>
+                    <span class="suggestion-text">{{ suggestion }}</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Typing indicator -->
+              <div *ngIf="message.isTyping" class="typing-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <!-- Feedback Buttons (Thumbs Up/Down) - OUTSIDE the message bubble -->
+            <div *ngIf="!message.isTyping && message.allow_feedback && message.sender === 'bot' && !message.isStreaming"
+              class="feedback-container">
+              <button class="feedback-button thumbs-up" [class.active]="message.feedback_given === 'positive'"
+                [disabled]="message.feedback_given !== null" (click)="onThumbsUp(message)" title="Helpful">
+                <!-- Adults icons -->
+                <ng-container *ngIf="isAdults">
+                  <img *ngIf="message.feedback_given !== 'positive'"
+                    src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/thumb_upadults.svg"
+                    alt="Thumbs Up" />
+                  <img *ngIf="message.feedback_given === 'positive'"
+                    src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/thumb_upactive.svg"
+                    alt="Thumbs Up Active" />
+                </ng-container>
+                <!-- Teens icons -->
+                <ng-container *ngIf="!isAdults">
+                  <img *ngIf="message.feedback_given !== 'positive'"
+                    src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/thump_upteens.svg"
+                    alt="Thumbs Up" />
+                  <img *ngIf="message.feedback_given === 'positive'"
+                    src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/thumb_upteensactive.svg"
+                    alt="Thumbs Up Active" />
+                </ng-container>
+              </button>
+              <button class="feedback-button thumbs-down" [class.active]="message.feedback_given === 'negative'"
+                [disabled]="message.feedback_given !== null" (click)="onThumbsDownClick(message)" title="Not helpful">
+                <!-- Adults icons -->
+                <ng-container *ngIf="isAdults">
+                  <img *ngIf="message.feedback_given !== 'negative'"
+                    src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/thumb_downadults.svg"
+                    alt="Thumbs Down" />
+                  <img *ngIf="message.feedback_given === 'negative'"
+                    src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/thumb_downactive.svg"
+                    alt="Thumbs Down Active" />
+                </ng-container>
+                <!-- Teens icons -->
+                <ng-container *ngIf="!isAdults">
+                  <img *ngIf="message.feedback_given !== 'negative'"
+                    src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/thump_downteens.svg"
+                    alt="Thumbs Down" />
+                  <img *ngIf="message.feedback_given === 'negative'"
+                    src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/thumb_downteensactive.svg"
+                    alt="Thumbs Down Active" />
+                </ng-container>
+              </button>
+            </div>
+
+            <!-- Yes/No Buttons (shown when bot offers related content OR has more options) -->
+            <div *ngIf="message.sender === 'bot' && (message.offer_related || message.has_more) && !message.isStreaming"
+              class="yes-no-container" [class.answered]="!!message.related_answer_given">
+              <p class="yes-no-label">Would you like to see related content?</p>
+              <div class="yes-no-buttons">
+                <button class="action-button yes-button" [class.selected]="message.related_answer_given === 'yes'"
+                  [disabled]="!!message.related_answer_given || isLoading" (click)="onYesClick(message)">Yes</button>
+                <button class="action-button no-button" [class.selected]="message.related_answer_given === 'no'"
+                  [disabled]="!!message.related_answer_given || isLoading" (click)="onNoClick(message)">No</button>
+              </div>
+            </div>
+
+            <!-- <span class="timestamp" *ngIf="shouldShowTimestamp(message, isFirst)">{{ formatTimestamp(message.timestamp)
+            }}</span> -->
+
+          </div>
+        </div>
+        <!-- End *ngFor -->
+      </div>
+      <!-- End chat-messages -->
+
+      <!-- Error Message -->
+      <div *ngIf="errorMessage" class="error-message">
+        <div class="error-content">
+          <p>{{ errorMessage }}</p>
+          <div class="error-actions">
+            <ng-container *ngIf="isTokenExpired">
+              <button class="retry-button" (click)="redirectToLogin()">
+                Login
+              </button>
+            </ng-container>
+            <ng-container *ngIf="!isTokenExpired">
+              <button class="retry-button" (click)="retryLastMessage()" [disabled]="isLoading">
+                Retry
+              </button>
+              <button class="clear-error-button" (click)="clearError()">
+                Dismiss
+              </button>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+
+      <!-- Input area -->
+        <div class="chat-input-area" #chatInputArea>
+          <div class="welcome-questions-container">
             <a class="questions-link" (click)="onQuestionsLinkClick($event)">Questions you can ask Olly</a>
           </div>
 
-          <!-- Feedback Buttons (Thumbs Up/Down) - OUTSIDE the message bubble -->
-          <div *ngIf="!message.isTyping && message.allow_feedback && message.sender === 'bot' && !message.isStreaming"
-            class="feedback-container">
-            <button class="feedback-button thumbs-up" [class.active]="message.feedback_given === 'positive'"
-              [disabled]="message.feedback_given !== null" (click)="onThumbsUp(message)" title="Helpful">
-              <!-- Adults icons -->
-              <ng-container *ngIf="isAdults">
-                <img *ngIf="message.feedback_given !== 'positive'"
-                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/thumb_upadults.svg"
-                  alt="Thumbs Up" />
-                <img *ngIf="message.feedback_given === 'positive'"
-                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/thumb_upactive.svg"
-                  alt="Thumbs Up Active" />
-              </ng-container>
-              <!-- Teens icons -->
-              <ng-container *ngIf="!isAdults">
-                <img *ngIf="message.feedback_given !== 'positive'"
-                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/thump_upteens.svg"
-                  alt="Thumbs Up" />
-                <img *ngIf="message.feedback_given === 'positive'"
-                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/thumb_upteensactive.svg"
-                  alt="Thumbs Up Active" />
-              </ng-container>
-            </button>
-            <button class="feedback-button thumbs-down" [class.active]="message.feedback_given === 'negative'"
-              [disabled]="message.feedback_given !== null" (click)="onThumbsDownClick(message)" title="Not helpful">
-              <!-- Adults icons -->
-              <ng-container *ngIf="isAdults">
-                <img *ngIf="message.feedback_given !== 'negative'"
-                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/thumb_downadults.svg"
-                  alt="Thumbs Down" />
-                <img *ngIf="message.feedback_given === 'negative'"
-                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/thumb_downactive.svg"
-                  alt="Thumbs Down Active" />
-              </ng-container>
-              <!-- Teens icons -->
-              <ng-container *ngIf="!isAdults">
-                <img *ngIf="message.feedback_given !== 'negative'"
-                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/thump_downteens.svg"
-                  alt="Thumbs Down" />
-                <img *ngIf="message.feedback_given === 'negative'"
-                  src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/assets/svgs/v_1_4/thumb_downteensactive.svg"
-                  alt="Thumbs Down Active" />
-              </ng-container>
-            </button>
-          </div>
-
-          <!-- Yes/No Buttons (shown when bot offers related content OR has more options) -->
-          <div *ngIf="message.sender === 'bot' && (message.offer_related || message.has_more) && !message.isStreaming"
-            class="yes-no-container"
-            [class.answered]="!!message.related_answer_given">
-            <p class="yes-no-label">Would you like to see related content?</p>
-            <div class="yes-no-buttons">
-              <button class="action-button yes-button"
-                [class.selected]="message.related_answer_given === 'yes'"
-                [disabled]="!!message.related_answer_given || isLoading"
-                (click)="onYesClick(message)">Yes</button>
-              <button class="action-button no-button"
-                [class.selected]="message.related_answer_given === 'no'"
-                [disabled]="!!message.related_answer_given || isLoading"
-                (click)="onNoClick(message)">No</button>
+          <div class="input-container">
+            <div class="user-avatar">
+              <img [src]="userAvatarUrl" class="avatar-img" alt="User avatar" (error)="onAvatarError($event)" />
             </div>
-          </div>
 
-          <!-- <span class="timestamp" *ngIf="shouldShowTimestamp(message, isFirst)">{{ formatTimestamp(message.timestamp)
-            }}</span> -->
-
-        </div>
-      </div>
-      <!-- End *ngFor -->
-    </div>
-    <!-- End chat-messages -->
-
-    <!-- Error Message -->
-    <div *ngIf="errorMessage" class="error-message">
-      <div class="error-content">
-        <p>{{ errorMessage }}</p>
-        <div class="error-actions">
-          <ng-container *ngIf="isTokenExpired">
-            <button class="retry-button" (click)="redirectToLogin()">
-              Login
-            </button>
-          </ng-container>
-          <ng-container *ngIf="!isTokenExpired">
-            <button class="retry-button" (click)="retryLastMessage()" [disabled]="isLoading">
-              Retry
-            </button>
-            <button class="clear-error-button" (click)="clearError()">
-              Dismiss
-            </button>
-          </ng-container>
-        </div>
-      </div>
-    </div>
-
-    <!-- Input area -->
-    <div class="chat-input-area">
-      <div class="input-container">
-        <div class="user-avatar">
-          <img [src]="userAvatarUrl" class="avatar-img" alt="User avatar" (error)="onAvatarError($event)" />
-        </div>
-
-        <textarea 
-  id="autoResize" 
-  placeholder="Reply..." 
-  rows="1" class="message-input" [(ngModel)]="currentMessage"
-          [disabled]="isLoading" #messageInput 
-  (keydown)="onKeyPress($event)"
-  (input)="adjustHeight($event)"
-  style="overflow:hidden; resize:none; width:100%; border:none"
-></textarea>
-        <!-- <input type="text" placeholder="Reply ..." class="message-input" [(ngModel)]="currentMessage"
+            <textarea id="autoResize" placeholder="Reply..." rows="1" class="message-input" [(ngModel)]="currentMessage"
+              [disabled]="isLoading" #messageInput (keydown)="onKeyPress($event)" (input)="adjustHeight($event)"
+              style="resize:none; width:100%; border:none"></textarea>
+            <!-- <input type="text" placeholder="Reply ..." class="message-input" [(ngModel)]="currentMessage"
           (keypress)="onKeyPress($event)" [disabled]="isLoading" #messageInput /> -->
-        <button class="send-button" (click)="onSendMessage()" [disabled]="!currentMessage.trim() || isLoading">
-          <svg *ngIf="!isLoading" width="16" height="16" viewBox="0 0 24 24" fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <path d="M2 21L23 12L2 3V10L17 12L2 14V21Z" fill="currentColor" />
-          </svg>
-          <div *ngIf="isLoading" class="loading-spinner"></div>
-        </button>
+            <button class="send-button" (click)="onSendMessage()" [disabled]="!currentMessage.trim() || isLoading">
+              <svg *ngIf="!isLoading" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 21L23 12L2 3V10L17 12L2 14V21Z" fill="currentColor" />
+              </svg>
+              <div *ngIf="isLoading" class="loading-spinner"></div>
+            </button>
+          </div>
+        </div>
+
+      </div>
+      <!-- End chat-area -->
+
+    </div>
+    <!-- End chat-bot-container -->
+
+    <!-- Dislike Popup Modal (outside main container so it overlays everything) -->
+    <div class="dislike-popup-overlay" *ngIf="showDislikePopup" (click)="onCloseDislikePopup()"
+      (keydown.enter)="onCloseDislikePopup()" tabindex="0" role="button" aria-label="Close popup">
+      <div class="dislike-popup" [class.teens-popup]="!isAdults" (click)="$event.stopPropagation()"
+        (keydown)="$event.stopPropagation()" tabindex="0">
+        <div class="dislike-popup-body">
+          <h3 class="dislike-popup-title">We're sorry this wasn't helpful.</h3>
+          <p class="dislike-popup-text">
+            Thank you for your feedback. For more personalized support, please post your question on our
+            <span class="dislike-forum-link" (click)="onGoToForum()" (keydown.enter)="onGoToForum()" tabindex="0"
+              role="link">Community Forum</span>
+            where one of our coaches will answer it.
+          </p>
+          <p class="dislike-popup-footnote">Your feedback helps us improve our responses.</p>
+        </div>
+        <div class="dislike-popup-footer">
+          <button class="dislike-go-forum-btn" (click)="onGoToForum()">
+            Go to Forum
+          </button>
+          <button class="dislike-close-btn" (click)="onCloseDislikePopup()">
+            Close
+          </button>
+        </div>
       </div>
     </div>
-
-  </div>
-  <!-- End chat-area -->
-
-</div>
-<!-- End chat-bot-container -->
-
-<!-- Dislike Popup Modal (outside main container so it overlays everything) -->
-<div class="dislike-popup-overlay" *ngIf="showDislikePopup" (click)="onCloseDislikePopup()"
-  (keydown.enter)="onCloseDislikePopup()" tabindex="0" role="button" aria-label="Close popup">
-  <div class="dislike-popup" [class.teens-popup]="!isAdults" (click)="$event.stopPropagation()"
-    (keydown)="$event.stopPropagation()" tabindex="0">
-    <div class="dislike-popup-body">
-      <h3 class="dislike-popup-title">We're sorry this wasn't helpful.</h3>
-      <p class="dislike-popup-text">
-        Thank you for your feedback. For more personalized support, please post your question on our
-        <span class="dislike-forum-link" (click)="onGoToForum()" (keydown.enter)="onGoToForum()" tabindex="0"
-          role="link">Community Forum</span>
-        where one of our coaches will answer it.
-      </p>
-      <p class="dislike-popup-footnote">Your feedback helps us improve our responses.</p>
-    </div>
-    <div class="dislike-popup-footer">
-      <button class="dislike-go-forum-btn" (click)="onGoToForum()">
-        Go to Forum
-      </button>
-      <button class="dislike-close-btn" (click)="onCloseDislikePopup()">
-        Close
-      </button>
-    </div>
-  </div>
-</div>

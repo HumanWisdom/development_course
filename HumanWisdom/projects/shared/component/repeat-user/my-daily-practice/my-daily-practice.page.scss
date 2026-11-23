@@ -1,6 +1,22 @@
 /* Core Page Structure */
 .right_col.mc_03 {
   overflow: visible;
+
+  /* Keep the page pinned to the top of the column. align-items: center on
+     .center_flex pulls a tall page upward on some Android WebViews (OnePlus)
+     until the streak badge sits on the fixed Subscribe Now button. */
+  > .cw100p > .row.center_flex {
+    align-items: flex-start;
+    align-content: flex-start;
+  }
+}
+
+.mdp-page-top {
+  margin-top: 104px !important;
+
+  &--banner {
+    margin-top: 168px !important;
+  }
 }
 
 .sc_01 {
@@ -1292,7 +1308,11 @@
 .mdp-streak-row {
   display: flex;
   justify-content: flex-end;
+  margin-top: 4px;
   margin-bottom: 6px;
+  position: relative;
+  z-index: 1;
+  clear: both;
 }
 
 .mdp-streak-badge {

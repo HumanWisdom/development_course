@@ -40,6 +40,10 @@
   bottom: 40px;
 }
 
+.card-featured .ws-read-icon {
+  bottom: 20px;
+}
+
 .bottom-actions {
   position: fixed;
   bottom: 0;
@@ -102,4 +106,52 @@
     transform: scale(1);
     opacity: 1;
   }
+}
+
+// First card: featured (large image on top, text below)
+.card-featured {
+  border-radius: 12px;
+  background: #FFE8BB;
+  margin-bottom: 10px;
+  overflow: hidden;
+  padding: 0;
+}
+
+.card-featured-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  object-position: 50% 25%;
+  border-radius: 6px;
+  display: block;
+}
+
+.card-featured-play {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .card-featured-play-icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.card-featured-body {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 10px 0 0;
+}
+
+.card-featured-text {
+  flex: 1;
+}
+.fc_000000_0_7{
+  color: #000000BF;
 }

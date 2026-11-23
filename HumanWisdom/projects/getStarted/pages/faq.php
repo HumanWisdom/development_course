@@ -11765,6 +11765,48 @@
     <!-- vendor_footer -->
     <?php include('../includes/vendor_footer.php'); ?>
     <!-- /vendor_footer -->
+    <style id="faq-wide-980">
+      /* Wider screens: FAQ content column stays 980px centered */
+      @media screen and (min-width: 1600px) {
+        .faqqq .fixed_w,
+        .faqqq .row .fixed_w,
+        .row.center_flex .faqqq .fixed_w,
+        .row.center_flex .fixed_w {
+          width: 980px !important;
+          max-width: 980px !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+        }
+        .faqqq .tab_faqs {
+          padding-left: 0 !important;
+        }
+
+        /* Wide screens center .tab-content; keep FAQ questions and links left aligned */
+        .faqqq .tab-content.tc_faqs,
+        .faqqq .tc_faqs .accordion-body,
+        .faqqq .hs_title,
+        .faqqq .hs_desc {
+          text-align: left !important;
+        }
+
+        .faqqq .tab-content.tc_faqs a,
+        .faqqq .tc_faqs .blog_highlight_peach,
+        .faqqq .tc_faqs .td_underline {
+          display: inline !important;
+          width: auto !important;
+          margin-left: 0 !important;
+          margin-right: 0 !important;
+          text-align: left !important;
+          justify-content: flex-start !important;
+          align-items: flex-start !important;
+        }
+      }
+      @media (min-width: 2080px) {
+        .faqqq .tab_faqs {
+          padding-left: 0 !important;
+        }
+      }
+    </style>
 
 </body>
 

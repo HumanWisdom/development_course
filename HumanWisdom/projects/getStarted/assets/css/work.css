@@ -125,6 +125,10 @@ body.page-work .work-hero-stack h5 {
   margin: 18px 0 0;
 }
 
+body.page-work .work-hero-link-chevron {
+  display: none;
+}
+
 body.page-work .work-hero-ctas {
   display: flex !important;
   flex-direction: row !important;
@@ -244,12 +248,23 @@ body.page-work .work-section {
   box-sizing: border-box;
 }
 
+/* Figma 10068:1341 → 7841:12804 is 100px from the testimonial cards to this heading.
+   The “View all success stories” footer (20px margin + 40px row) sits inside that 100px. */
+body.page-work .work-challenge-section {
+  padding-top: 40px;
+}
+
 body.page-work .work-section-inner {
   max-width: 1340px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 40px;
+}
+
+/* Figma 13038:7019 — title box ends at y=100, pillar row starts at y=140 */
+body.page-work .work-perf-section .work-section-inner {
   gap: 40px;
 }
 
@@ -302,11 +317,7 @@ body.page-work .work-pillar {
 }
 
 body.page-work .work-icon-slot {
-  display: block;
-  width: 75px;
-  height: 60px;
-  flex-shrink: 0;
-  background: transparent;
+  display: none;
 }
 
 body.page-work .work-pillar-copy {
@@ -646,6 +657,29 @@ body.page-work section.hpt120px ~ main#main .work-testimonials-header h2.work-te
 
 body.page-work .owl_testimonials {
   --work-testimonial-gap: 20px !important;
+}
+
+/* Global .owl-carousel adds 20px under the cards; Figma cards sit flush, then 100px to the next heading */
+body.page-work .owl_testimonials > .owl-carousel {
+  padding-bottom: 0;
+}
+
+/* Owl CSS hides .owl-carousel until .owl-loaded — show testimonials before deferred Owl inits */
+body.page-work .owl_testimonials > .owl-carousel:not(.owl-loaded):not(.work-testimonials-native) {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  gap: 30px;
+  overflow: hidden;
+  width: 100%;
+}
+
+body.page-work .owl_testimonials > .owl-carousel:not(.owl-loaded):not(.work-testimonials-native) > .item {
+  flex: 0 0 calc((100% - 60px) / 3);
+  max-width: calc((100% - 60px) / 3);
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
 }
 
 body.page-work .owl_testimonials .div_testimonials.work-testimonial-card,
@@ -1086,9 +1120,11 @@ body.page-work .work-copy-mobile:not(.display_d_none) {
     margin: 0 !important;
     display: flex !important;
     flex-direction: column !important;
-    align-items: stretch !important;
+    align-items: center !important;
     gap: 15px !important; /* title ↔ subtitle */
     box-sizing: border-box !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
     text-align: center !important;
   }
 
@@ -1160,6 +1196,66 @@ body.page-work .work-copy-mobile:not(.display_d_none) {
     background: linear-gradient(180deg, #ed7d6f 0%, #d7586b 100%) !important;
     border: 0 !important;
     box-sizing: border-box !important;
+  }
+
+  /* Mobile hero: one button (Try free), then Request a demo as a text link */
+  body.page-work .work-hero-ctas > a.btn_tff:not(#requestDemoForWork) {
+    order: 1;
+  }
+
+  body.page-work .healthcare-hero-shell .absolute_desc_m .work-hero-ctas #requestDemoForWork,
+  body.page-work .healthcare-hero-shell .absolute_desc_m a#requestDemoForWork.req_button,
+  body.page-work .work-hero-ctas #requestDemoForWork,
+  body.page-work .work-hero-ctas #requestDemoForWork.req_button,
+  body.page-work .work-hero-ctas #requestDemoForWork.btn_tff,
+  body.page-work .work-hero-ctas #requestDemoForWork.work-hero-btn {
+    order: 2;
+    width: auto !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: none !important;
+    background-image: none !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    font-family: Poppins, sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    line-height: 1.4 !important;
+    color: #fff !important;
+    text-decoration: none !important;
+  }
+
+  body.page-work .work-hero-ctas #requestDemoForWork .work-hero-link-label {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  body.page-work .work-hero-ctas #requestDemoForWork:hover,
+  body.page-work .work-hero-ctas #requestDemoForWork:focus,
+  body.page-work .work-hero-ctas #requestDemoForWork:active,
+  body.page-work .healthcare-hero-shell .absolute_desc_m .work-hero-ctas #requestDemoForWork:hover,
+  body.page-work .healthcare-hero-shell .absolute_desc_m .work-hero-ctas #requestDemoForWork:focus,
+  body.page-work .healthcare-hero-shell .absolute_desc_m .work-hero-ctas #requestDemoForWork:active {
+    background: none !important;
+    background-image: none !important;
+    color: #fff !important;
+    text-decoration: none !important;
+  }
+
+  body.page-work .work-hero-ctas #requestDemoForWork .work-hero-link-chevron {
+    display: block;
+    width: 8px;
+    height: 13px;
+    flex: 0 0 auto;
+    color: #fff;
   }
 
   /* ----- 2. Trust bar — #fff7e6, py 40, gap 30, stacked ----- */
@@ -1556,11 +1652,7 @@ body.page-work .work-copy-mobile:not(.display_d_none) {
   body.page-work .work-measure-copy p {
     font-size: 12px !important;
     line-height: 1.5 !important;
-    margin: 0 0 3px !important;
-  }
-
-  body.page-work .work-measure-copy p:last-child {
-    margin-bottom: 0 !important;
+    margin: 0 !important;
   }
 
   body.page-work .work-measure-media {

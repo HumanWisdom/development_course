@@ -2360,6 +2360,126 @@ Work</button>
             </div>
 
 
+
+             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="1100">
+
+            <a class="BlogCard" href="healing_the_healers.php">
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/98.webp" class="img-responsive img_blogs" alt="Blog_img">
+                  </div>
+                </div>
+
+                <div class="row mt20px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp"> Work</button>
+
+
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                    <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">Healing the healers: Addressing the mental health crisis in healthcare
+
+
+
+
+
+
+
+
+
+
+
+</h4>
+                  </div>
+                </div>
+               
+              </a>
+            </div>
+
+
+              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="1100">
+
+            <a class="BlogCard" href="Mental_health_challenges_in_aviation.php">
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/100.webp" class="img-responsive img_blogs" alt="Blog_img">
+                  </div>
+                </div>
+
+                <div class="row mt20px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp"> Work</button>
+
+
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                    <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">Mental health challenges in the aviation industry
+
+
+
+
+
+
+
+
+
+
+
+
+</h4>
+                  </div>
+                </div>
+               
+              </a>
+            </div>
+
+
+            
+              <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="1100">
+
+            <a class="BlogCard" href="students_flourish.php">
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/99.webp" class="img-responsive img_blogs" alt="Blog_img">
+                  </div>
+                </div>
+
+                <div class="row mt20px">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
+                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp"> Work</button>
+
+
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
+                    <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">15 ways to help students flourish
+
+
+
+
+
+
+
+
+
+
+
+
+
+</h4>
+                  </div>
+                </div>
+               
+              </a>
+            </div>
             
 </div>
           <div class="blog-empty is-hidden" id="blog-empty">No articles match your search.</div>
