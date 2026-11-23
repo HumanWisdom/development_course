@@ -12,7 +12,7 @@ jobs:
       - uses: trstringer/manual-approval@v1
         with:
           secret: ${{ github.TOKEN }}
-          approvers: HumanWisdomInfo
+          approvers: HumanWisdomInfo, PavishJain21
 
       - name: Checkout code
         uses: actions/checkout@v3
