@@ -1,6 +1,6 @@
 <?php
 /**
- * Legacy entry — redirects to /free.php/{id} (or /free.php).
+ * Legacy entry — redirects to /free/{id}.
  */
 require_once __DIR__ . '/includes/organisation_helper.php';
 
@@ -8,7 +8,7 @@ $id = hw_org_query_id();
 if ($id === '') {
     $id = hw_org_default_id();
 }
-$target = hw_org_base() === '' ? '/free.php' : (hw_org_base() . '/free.php');
+$target = hw_org_base() === '' ? '/free' : (hw_org_base() . '/free');
 $target .= '/' . rawurlencode($id);
 
 $query = $_GET;
