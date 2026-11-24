@@ -319,40 +319,43 @@
 
                   <!-- Try This Today Card Variant -->
                   <div *ngIf="getCardType(exercise) === 'try_today'" class="type4_card try_today_card_gj">
-                    <div class="card_icon_wrap">
-                      <img [src]="getType4Image(exercise)" alt="Try this today">
+                      <div class="card_icon_wrap">
+                        <img [src]="getType4Image(exercise)" alt="Try this today">
+                      </div>
+                      <h4 class="card_header_label">{{ exercise.HeaderTitle || exercise.Section || 'TRY THIS TODAY' }}
+                      </h4>
+                      <div class="card_content_text"
+                        [innerHTML]="cleanCardContent(exercise.DisplayTitle || exercise.Title || exercise.Description)">
+                      </div>
                     </div>
-                    <h4 class="card_header_label">{{ exercise.HeaderTitle || exercise.Section || 'TRY THIS TODAY' }}
-                    </h4>
-                    <div class="card_content_text"
-                      [innerHTML]="cleanCardContent(exercise.DisplayTitle || exercise.Title || exercise.Description)">
-                    </div>
-                  </div>
 
-                  <!-- Food For Thought Card Variant -->
-                  <div *ngIf="getCardType(exercise) === 'food_thought'" class="type4_card food_thought_card_gj">
-                    <div class="card_icon_wrap">
-                      <img [src]="getType4Image(exercise)" alt="Food for thought">
+                    <!-- Food For Thought Card Variant -->
+                    <div *ngIf="getCardType(exercise) === 'food_thought'" class="type4_card food_thought_card_gj">
+                      <div class="card_header_row">
+                        <div class="card_icon_wrap">
+                          <img [src]="getType4Image(exercise)" alt="Food for thought">
+                        </div>
+                        <h4 class="card_header_label">{{ exercise.HeaderTitle || exercise.Section || 'FOOD FOR THOUGHT'
+                          }}
+                        </h4>
+                      </div>
+                      <div class="card_content_text"
+                        [innerHTML]="cleanCardContent(exercise.DisplayTitle || exercise.Title || exercise.Description)">
+                      </div>
                     </div>
-                    <h4 class="card_header_label">{{ exercise.HeaderTitle || exercise.Section || 'FOOD FOR THOUGHT' }}
-                    </h4>
-                    <div class="card_content_text"
-                      [innerHTML]="cleanCardContent(exercise.DisplayTitle || exercise.Title || exercise.Description)">
-                    </div>
-                  </div>
 
-                  <!-- Generic Type 4 Card Variant -->
-                  <div *ngIf="getCardType(exercise) === 'generic'" class="type4_card generic_card_gj">
-                    <div class="card_icon_wrap" *ngIf="getType4Image(exercise)">
-                      <img [src]="getType4Image(exercise)" alt="Icon">
+                    <!-- Generic Type 4 Card Variant -->
+                    <div *ngIf="getCardType(exercise) === 'generic'" class="type4_card generic_card_gj">
+                      <div class="card_icon_wrap" *ngIf="getType4Image(exercise)">
+                        <img [src]="getType4Image(exercise)" alt="Icon">
+                      </div>
+                      <h3 class="generic_card_title" *ngIf="exercise.DisplayTitle || exercise.Title">
+                        {{ exercise.DisplayTitle || exercise.Title }}
+                      </h3>
+                      <div class="generic_card_desc" *ngIf="exercise.Description || exercise.text || exercise.Response"
+                        [innerHTML]="cleanCardContent(exercise.Description || exercise.text || exercise.Response)">
+                      </div>
                     </div>
-                    <h3 class="generic_card_title" *ngIf="exercise.DisplayTitle || exercise.Title">
-                      {{ exercise.DisplayTitle || exercise.Title }}
-                    </h3>
-                    <div class="generic_card_desc" *ngIf="exercise.Description || exercise.text || exercise.Response"
-                      [innerHTML]="cleanCardContent(exercise.Description || exercise.text || exercise.Response)">
-                    </div>
-                  </div>
                 </ng-container>
 
                 <!-- Separator -->
