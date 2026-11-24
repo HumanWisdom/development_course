@@ -48,9 +48,9 @@
               </div>
             </div>
 
-            <div class="row mt20px rm80px">
+            <div class="row mt20px rmb80px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*q1LOErQ2I6vyfk-JvcCbMQ.png" class="img-responsive" alt="15 ways to help students flourish">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/102.webp" class="img-responsive" alt="15 ways to help students flourish">
               </div>
             </div>
 
@@ -101,7 +101,7 @@
                   A deeper understanding of ourselves allows us to understand others better — this is invaluable for healthy relationships — now and in the future — at home and at work.
                 </h4>
 
-                <div class="row mt20px rmb80px">
+                <div class="row mt20px rm80px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                     <iframe width="854" height="480" src="https://www.youtube.com/embed/wrLXICd6Zuw" title="Helping students to manage their own mental health" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                   </div>
