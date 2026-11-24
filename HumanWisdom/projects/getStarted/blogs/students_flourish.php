@@ -207,7 +207,7 @@
 
                 <div class="row mt20px rm80px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                    <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*5sK-H8gWi9_Gn10guurWgw.jpeg" class="img-responsive" alt="">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/102_new.webp" class="img-responsive" alt="">
                   </div>
                 </div>
 
