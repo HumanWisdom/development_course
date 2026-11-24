@@ -483,8 +483,8 @@
         }
     }
 
-    /* Try This Today & Food For Thought Cards */
-    &.try_today_card_gj, &.food_thought_card_gj {
+    /* Try This Today Card */
+    &.try_today_card_gj {
         .card_header_label {
             font-family: 'Poppins', sans-serif;
             font-size: 12px;
@@ -504,6 +504,103 @@
             color: #000000;
             margin: 0;
             text-align: center;
+        }
+    }
+
+    /* Food For Thought Card */
+    &.food_thought_card_gj {
+        align-items: flex-start;
+        text-align: left;
+        padding: 24px 20px;
+
+        .card_header_row {
+            display: flex;
+            align-items: end;
+            gap: 10px;
+            margin-bottom: 12px;
+            width: 100%;
+
+            .card_icon_wrap {
+                width: 26px;
+                height: 26px;
+                margin-bottom: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+
+                img {
+                    width: 26px;
+                    height: 26px;
+                    object-fit: contain;
+                }
+            }
+
+            .card_header_label {
+                font-family: 'Poppins', sans-serif;
+                font-size: 12px;
+                font-weight: 500;
+                text-transform: uppercase;
+                letter-spacing: 0.8px;
+                color: rgba(0, 0, 0, 0.5);
+                margin: 0;
+                line-height: 140%;
+                text-align: left;
+            }
+        }
+
+        .card_icon_wrap {
+            width: 26px;
+            height: 26px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            width: auto;
+
+            img {
+                width: 26px;
+                height: 26px;
+                object-fit: contain;
+            }
+        }
+
+        .card_header_label {
+            font-family: 'Poppins', sans-serif;
+            font-size: 12px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: rgba(0, 0, 0, 0.5);
+            margin: 0 0 12px 0;
+            line-height: 140%;
+            text-align: left;
+            width: 100%;
+        }
+
+        .card_content_text {
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 150%;
+            color: #000000;
+            margin: 0;
+            text-align: left;
+            width: 100%;
+
+            p {
+                font-family: 'Poppins', sans-serif;
+                font-size: 15px;
+                font-weight: 400;
+                line-height: 150%;
+                color: #000000;
+                margin: 0 0 10px 0;
+                text-align: left;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
         }
     }
 
@@ -739,12 +836,30 @@
             }
         }
 
-        &.try_today_card_gj, &.food_thought_card_gj {
+        &.try_today_card_gj {
             .card_header_label {
                 color: rgba(255, 255, 255, 0.5);
             }
             .card_content_text {
                 color: #ffffff;
+            }
+        }
+
+        &.food_thought_card_gj {
+            .card_header_row {
+                .card_header_label {
+                    color: rgba(255, 255, 255, 0.5);
+                }
+            }
+            .card_header_label {
+                color: rgba(255, 255, 255, 0.5);
+            }
+            .card_content_text {
+                color: #ffffff;
+
+                p {
+                    color: #ffffff;
+                }
             }
         }
 
