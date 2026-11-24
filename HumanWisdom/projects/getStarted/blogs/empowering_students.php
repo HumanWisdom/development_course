@@ -4,7 +4,7 @@
 
   <head>
     <title>Empowering students to manage their own mental health</title>
-    <meta property="title" content="Empowering students to manage their own mental health | HappierMe">
+    <meta property="title" content="Empowering students students to manage their own mental health | HappierMe">
     <meta property="description" content="Happier students learn better. There is a mental health crisis affecting teenagers the world over. 29% have poor mental health, 22% think of suicide, 19% report being bullied and 40% are persistently sad (CDC).">
     <meta property="keyword" content="Student Mental Health,Teens,Suicide Prevention,Bullying,Wisdom">
 
@@ -12,6 +12,8 @@
     <?php Template::vendorHeader(); ?>
     <!-- /vendor_header -->
   </head>
+
+
 
   <body>
 
@@ -38,7 +40,7 @@
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
                   <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
-                    Student Mental Health
+                     Mental Health
                   </button>
 
                
@@ -50,7 +52,7 @@
 
             <div class="row mt20px rmb80px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*q40Mq0W4xG2-raCMIC1AJQ.png" class="img-responsive" alt="Empowering students to manage their own mental health">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/101.webp" class="img-responsive" alt="Empowering students to manage their own mental health">
               </div>
             </div>
 
@@ -62,13 +64,8 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  There is a mental health crisis affecting teenagers the world over. 29% have poor mental health, 22% think of suicide, 19% report being bullied and 40% are persistently sad 
-                  <a class="blog_highlight_peach td_underline" href="https://www.cdc.gov/yrbs/dstr/pdf/YRBS-2023-Data-Summary-Trend-Report.pdf" target="_blank">
-                    (CDC)
-                  </a>. 26% of secondary students are persistently absent 
-                  <a class="blog_highlight_peach td_underline" href="https://explore-education-statistics.service.gov.uk/find-statistics/pupil-attendance-in-schools/2024-week-29" target="_blank">
-                    (DOE)
-                  </a>.
+                  There is a mental health crisis affecting teenagers the world over. 29% have poor mental health, 22% think of suicide, 19% report being bullied and 40% are persistently sad <a class="blog_highlight_peach td_underline" href="https://www.cdc.gov/yrbs/dstr/pdf/YRBS-2023-Data-Summary-Trend-Report.pdf" target="_blank">(CDC)</a>.26% of secondary students are persistently absent 
+                  <a class="blog_highlight_peach td_underline" href="https://explore-education-statistics.service.gov.uk/find-statistics/pupil-attendance-in-schools/2024-week-29">(DOE)</a>.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -121,7 +118,7 @@
 
                 <h4 class="mtb0px blog_desc">
                   Conversations like this inspired us to set up the 
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/" target="_blank">HappierMe Project</a> 
+                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/" target="_blank">HappierMe </a> Project
                   to share this understanding more widely. 
                   <a class="blog_highlight_peach td_underline" href="https://bit.ly/3uf25jV" target="_blank">Our mission</a> 
                   is to help young people lead happier and more successful lives, and make the world a better place.
