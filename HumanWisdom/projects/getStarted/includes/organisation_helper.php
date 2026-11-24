@@ -66,7 +66,7 @@ if (!function_exists('hw_org_normalize_id')) {
 if (!function_exists('hw_org_path_id')) {
     /**
      * OrganizationId from PATH_INFO / pretty URL, e.g.
-     * /free.php/happierme → happierme
+     * /free/happierme or /free.php/happierme → happierme
      */
     function hw_org_path_id()
     {
@@ -82,7 +82,7 @@ if (!function_exists('hw_org_path_id')) {
         if (!is_string($uriPath) || $uriPath === '') {
             return '';
         }
-        if (preg_match('#/(?:free|organisation(?:-[A-Za-z]+)?)\.php/([a-zA-Z0-9_-]+)(?:/|$)#', $uriPath, $m)) {
+        if (preg_match('#/(?:free|organisation(?:-[A-Za-z]+)?)(?:\.php)?/([a-zA-Z0-9_-]+)(?:/|$)#', $uriPath, $m)) {
             return hw_org_normalize_id($m[1]);
         }
         return '';
@@ -127,8 +127,8 @@ if (!function_exists('hw_org_id')) {
 
 if (!function_exists('hw_org_ensure_route_id')) {
     /**
-     * On /free.php and /organisation.php, put the org id in the path.
-     * Missing id → happierme, e.g. /free.php → /free.php/happierme
+     * On /free and /organisation, put the org id in the path.
+     * Missing id → happierme, e.g. /free → /free/happierme
      */
     function hw_org_ensure_route_id()
     {
@@ -150,7 +150,8 @@ if (!function_exists('hw_org_ensure_route_id')) {
         }
 
         $base = hw_org_base();
-        $target = ($base === '' ? '' : $base) . '/' . $file . '/' . rawurlencode($id);
+        $publicFile = preg_replace('/\.php$/', '', $file);
+        $target = ($base === '' ? '' : $base) . '/' . $publicFile . '/' . rawurlencode($id);
         $query = $_GET;
         unset($query['id']);
         if (!empty($query)) {
@@ -238,8 +239,8 @@ if (!function_exists('hw_org_page')) {
     function hw_org_page($name, $extra = [], $withId = false)
     {
         $base = hw_org_base();
-        $file = $name . '.php' . hw_org_qs($extra, $withId);
-        // Always root-relative so /free.php/{id} does not break links.
+        $file = $name . hw_org_qs($extra, $withId);
+        // Always root-relative so /free/{id} does not break links.
         if ($base === '') {
             return '/' . $file;
         }
