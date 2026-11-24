@@ -64,13 +64,8 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  There is a mental health crisis affecting teenagers the world over. 29% have poor mental health, 22% think of suicide, 19% report being bullied and 40% are persistently sad 
-                  <a class="blog_highlight_peach td_underline" href="https://www.cdc.gov/yrbs/dstr/pdf/YRBS-2023-Data-Summary-Trend-Report.pdf" target="_blank">
-                    (CDC)
-                  </a>. 26% of secondary students are persistently absent 
-                  <a class="blog_highlight_peach td_underline" href="https://explore-education-statistics.service.gov.uk/find-statistics/pupil-attendance-in-schools/2024-week-29" target="_blank">
-                    (DOE)
-                  </a>.
+                  There is a mental health crisis affecting teenagers the world over. 29% have poor mental health, 22% think of suicide, 19% report being bullied and 40% are persistently sad <a class="blog_highlight_peach td_underline" href="https://www.cdc.gov/yrbs/dstr/pdf/YRBS-2023-Data-Summary-Trend-Report.pdf" target="_blank">(CDC)</a>.26% of secondary students are persistently absent 
+                  <a class="blog_highlight_peach td_underline" href="https://explore-education-statistics.service.gov.uk/find-statistics/pupil-attendance-in-schools/2024-week-29">(DOE)</a>.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -123,7 +118,7 @@
 
                 <h4 class="mtb0px blog_desc">
                   Conversations like this inspired us to set up the 
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/" target="_blank">HappierMe Project</a> 
+                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/" target="_blank">HappierMe </a> Project
                   to share this understanding more widely. 
                   <a class="blog_highlight_peach td_underline" href="https://bit.ly/3uf25jV" target="_blank">Our mission</a> 
                   is to help young people lead happier and more successful lives, and make the world a better place.
