@@ -1,6 +1,3 @@
-Here is the updated PHP page. Only the four main section headings (`<h2>` in the original Medium article) use `blog_sub_title`, while smaller bold headings like **Summary**, **Also read:**, and **We can address stress in 4 ways:** use `blog_desc blog_highlight_black`. The list items, nested link highlights, `https` links, and responsive video embeds are also cleaned up.
-
-```php
 <?php require_once __DIR__ . '/../includes/Template.php'; use GetStarted\Includes\Template; ?>
 <!DOCTYPE html>
 <html lang="en">
