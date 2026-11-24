@@ -101,11 +101,17 @@
                   A deeper understanding of ourselves allows us to understand others better — this is invaluable for healthy relationships — now and in the future — at home and at work.
                 </h4>
 
-                <div class="row mt20px rm80px">
+                <!-- <div class="row mt20px rm80px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                     <iframe width="854" height="480" src="https://www.youtube.com/embed/wrLXICd6Zuw" title="Helping students to manage their own mental health" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                   </div>
-                </div>
+                </div> -->
+
+                  <iframe id="youtubeIntro" loading="lazy" title="youtubeIntro"
+            src="https://www.youtube.com/embed/wrLXICd6Zuw"
+            class="cvideo_b yt-embed" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen
+            onclick="return logevent('click_play_video_home', 'index.php')"></iframe>
+
 
                 <h4 class="mtb0px blog_sub_title">
                    <span class="blog_highlight_black">5. Understand and question their </span><a class="blog_highlight_peach td_underline" href="https://happierme.app/teenagers/conditioning" target="_blank"> conditioning</a> <span class="blog_highlight_black"> influences</span>
@@ -207,7 +213,7 @@
 
                 <div class="row mt20px rm80px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                    <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*5sK-H8gWi9_Gn10guurWgw.jpeg" class="img-responsive" alt="">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/102_new.webp" class="img-responsive" alt="">
                   </div>
                 </div>
 
