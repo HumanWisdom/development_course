@@ -30,14 +30,14 @@ export class TeenagersService {
     {
       id: '17',
       name: 'Flourish at school',
-      title: 'Be happier and <br> more fulfilled at work',
-      Subtitle: 'Manage pressure, make better decisions and work well with others.'
+      title: 'Feel happier and <br> more confident at school',
+      Subtitle: 'Handle school pressure, build stronger friendships and feel better about yourself.'
     },
     {
       id: '11',
       name: 'Stonger relationships',
       title: 'Understand yourself <br> and others better.',
-      Subtitle: 'Learn how to communicate effectively and build meaningful connections.'
+      Subtitle: 'Reduce conflict, communicate better and build closer relationships.'
     },
     {
       id: '13',
@@ -63,7 +63,7 @@ export class TeenagersService {
       id: '15',
       name: 'Change unwanted habits',
       title: 'Break free from <br>habits holding you back.',
-      Subtitle: 'Understand why some habits are hard to change and discover how to take back control'
+      Subtitle: 'Understand why some habits are hard to change and discover how to take back control.'
     }
   ]
 
