@@ -1,3 +1,6 @@
+Here is the updated PHP page. Only the four main section headings (`<h2>` in the original Medium article) use `blog_sub_title`, while smaller bold headings like **Summary**, **Also read:**, and **We can address stress in 4 ways:** use `blog_desc blog_highlight_black`. The list items, nested link highlights, `https` links, and responsive video embeds are also cleaned up.
+
+```php
 <?php require_once __DIR__ . '/../includes/Template.php'; use GetStarted\Includes\Template; ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,10 +56,10 @@
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <h4 class="mtb0px blog_desc">
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Stress" target="_blank">Stress</a> is everywhere. Many feel it at work. Deadlines loom, expectations rise, and tasks multiply. <span class="blog_highlight_black">In a recent LinkedIn poll of 2057 professionals conducted by HappierMe, 77% of professionals said stress directly impacts their performance at work.</span> But stress doesn’t stop at missed deadlines. It seeps into relationships, both at work and home, and can affect our overall success. Long term stress also impacts our health and is linked to more than 50% of diseases.
+                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Stress">Stress</a> is everywhere. Many feel it at work. Deadlines loom, expectations rise, and tasks multiply. <span class="blog_highlight_black">In a recent LinkedIn poll of 2057 professionals conducted by HappierMe, 77% of professionals said stress directly impacts their performance at work.</span> But stress doesn’t stop at missed deadlines. It seeps into relationships, both at work and home, and can affect our overall success. Long term stress also impacts our health and is linked to more than 50% of diseases.
                 </h4>
 
-                <h4 class="mtb0px blog_desc blog_highlight_black">
+                <h4 class="mtb0px blog_sub_title">
                   How Stress Crushes Work Performance
                 </h4>
 
@@ -65,11 +68,26 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  • <span class="blog_highlight_black">You feel busy but accomplish little</span>: You’re working nonstop, yet at the end of the day, there’s little to show for it. Stress slows your pace and clouds your focus.<br><br>
-                  • <span class="blog_highlight_black">Mistakes happen more often</span>: Under stress, your brain struggles to process details, leading to errors that would otherwise be avoidable.<br><br>
-                  • <span class="blog_highlight_black">Concentration becomes a luxury</span>: Even simple tasks feel monumental when your focus is scattered. <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Stress" target="_blank">Stress</a> transforms routine work into overwhelming challenges.<br><br>
-                  • <span class="blog_highlight_black">Poor decision-making</span>: Snapping under pressure can lead to impulsive decisions that don’t serve your goals.<br><br>
-                  • <span class="blog_highlight_black">Teamwork takes a hit</span>: Stress can push your patience to its limit, causing friction and conflict with colleagues.<br><br>
+                  • <span class="blog_highlight_black">You feel busy but accomplish little</span>: You’re working nonstop, yet at the end of the day, there’s little to show for it. Stress slows your pace and clouds your focus.
+                </h4>
+
+                <h4 class="mtb0px blog_desc">
+                  • <span class="blog_highlight_black">Mistakes happen more often</span>: Under stress, your brain struggles to process details, leading to errors that would otherwise be avoidable.
+                </h4>
+
+                <h4 class="mtb0px blog_desc">
+                  • <span class="blog_highlight_black">Concentration becomes a luxury</span>: Even simple tasks feel monumental when your focus is scattered. <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Stress">Stress</a> transforms routine work into overwhelming challenges.
+                </h4>
+
+                <h4 class="mtb0px blog_desc">
+                  • <span class="blog_highlight_black">Poor decision-making</span>: Snapping under pressure can lead to impulsive decisions that don’t serve your goals.
+                </h4>
+
+                <h4 class="mtb0px blog_desc">
+                  • <span class="blog_highlight_black">Teamwork takes a hit</span>: Stress can push your patience to its limit, causing friction and conflict with colleagues.
+                </h4>
+
+                <h4 class="mtb0px blog_desc">
                   • <span class="blog_highlight_black">You’re physically present but mentally checked out</span>: Stress manifests in absenteeism and presenteeism, where you either avoid work or show up without contributing meaningfully.
                 </h4>
 
@@ -77,32 +95,44 @@
                   Stress doesn’t just impact your tasks; it affects how you interact with your team and manage your responsibilities.
                 </h4>
 
-                <h4 class="mtb0px blog_desc blog_highlight_black">
+                <h4 class="mtb0px blog_sub_title">
                   How Stress Strains Relationships
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Stress" target="_blank">Stress</a> impacts personal and professional <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/relationships" target="_blank">relationships</a> in subtle but damaging ways:
+                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Stress">Stress</a> impacts personal and professional <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/relationships">relationships</a> in subtle but damaging ways:
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  • <span class="blog_highlight_black">Irritability and impatience increase</span>: The smallest issues can trigger frustration.<br><br>
-                  • <span class="blog_highlight_black"><a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/communication" target="_blank">Communication</a> breaks down</span>: Misunderstandings and ineffective conversations become more common.<br><br>
-                  • <span class="blog_highlight_black">Empathy fades</span>: It’s harder to connect with others when you’re focused on your own stress.<br><br>
-                  • <span class="blog_highlight_black">Conflicts escalate</span>: Stress magnifies minor disagreements, leading to unnecessary arguments.<br><br>
+                  • <span class="blog_highlight_black">Irritability and impatience increase</span>: The smallest issues can trigger frustration.
+                </h4>
+
+                <h4 class="mtb0px blog_desc">
+                  • <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/communication">Communication</a> <span class="blog_highlight_black">breaks down</span>: Misunderstandings and ineffective conversations become more common.
+                </h4>
+
+                <h4 class="mtb0px blog_desc">
+                  • <span class="blog_highlight_black">Empathy fades</span>: It’s harder to connect with others when you’re focused on your own stress.
+                </h4>
+
+                <h4 class="mtb0px blog_desc">
+                  • <span class="blog_highlight_black">Conflicts escalate</span>: Stress magnifies minor disagreements, leading to unnecessary arguments.
+                </h4>
+
+                <h4 class="mtb0px blog_desc">
                   • <span class="blog_highlight_black">Social withdrawal</span>: Instead of seeking support, stress often leads to isolation.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  Whether at home or in the workplace, stress can undermine impact your relationships, creating a divide between you and those around you.
+                  Whether at home or in the workplace, stress can undermine your relationships, creating a divide between you and those around you.
                 </h4>
 
-                <h4 class="mtb0px blog_desc blog_highlight_black">
+                <h4 class="mtb0px blog_sub_title">
                   The impact on organisations
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  It is difficult to quantify the impact on productivity due to chronic stress, but a well know <span class="blog_highlight_black"><a class="blog_highlight_peach td_underline" href="https://www.hrpolicy.org/insight-and-research/resources/2024/hr_workforce/public/01/gallup-survey-reveals-declining-employee-engagemen/" target="_blank">Gallup poll</a> found that 67% of people in organisations were not engaged and this resulted in a productivity loss of $8.8 trillion</span>. Stress may well be a contributing factor.
+                  It is difficult to quantify the impact on productivity due to chronic stress, but a well known <a class="blog_highlight_peach td_underline" href="https://www.hrpolicy.org/insight-and-research/resources/2024/hr_workforce/public/01/gallup-survey-reveals-declining-employee-engagemen/" target="_blank">Gallup poll</a> <span class="blog_highlight_black">found that 67% of people in organisations were not engaged and this resulted in a productivity loss of $8.8 trillion</span>. Stress may well be a contributing factor.
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
@@ -119,11 +149,11 @@
 
                 <div class="row mt20px rmb80px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                    <iframe width="854" height="480" src="https://www.youtube.com/embed/MgsYk1SZh-w" title="Introduction to the HappierMe app" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe style="width: 100%; max-width: 854px; aspect-ratio: 16 / 9;" src="https://www.youtube.com/embed/MgsYk1SZh-w" title="Introduction to the HappierMe app" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                   </div>
                 </div>
 
-                <h4 class="mtb0px blog_desc blog_highlight_black">
+                <h4 class="mtb0px blog_sub_title">
                   Fighting Stress — the HappierMe difference
                 </h4>
 
@@ -136,15 +166,24 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  1. <span class="blog_highlight_black">Deal with the acute event</span>: The <a class="blog_highlight_peach td_underline" href="http://happierme.app" target="_blank">HappierMe</a> app offers <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/breathing" target="_blank">breathing</a> exercises, audio <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/guided-meditation" target="_blank">meditations</a>, <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/journal" target="_blank">journaling</a>, tapping, and <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Nature" target="_blank">nature</a> mediations to help you calm your mind when you feel stressed. Find one that works for you and practice it regularly. You can call on this when you are feeling stressed.<br><br>
-                  2. <span class="blog_highlight_black">Change how you react:</span> Our <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Reactive%20Mind" target="_blank">mind reacts</a> automatically to its challenges, and it is this reaction that creates the feeling of <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Stress" target="_blank">stress</a>. We assume its the event that is causing our stress, but in fact its our reaction that creates the stress. Often, we cannot change the events around us, but we can change the way we react to them. To do that, we need to develop our <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Awareness" target="_blank">self-awareness</a> and emotional intelligence and understand where our reactions come from. The more we learn, the more we can be in charge of our own reactions and learn to deal with challenges with calm. The <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Stress" target="_blank">Stress</a> module offers practical tips on how to do so — for lasting change. The <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Awareness" target="_blank">Awareness</a> exercise module offers bit-sized exercises to learn about yourself and apply that to be in charge of your own emotions.<br><br>
-                  3. <span class="blog_highlight_black">Lifestyle changes:</span> These are well known and include regular exercise, sleeping 8 hours at night, eating a balanced diet, and time management.<br><br>
-                  4. <span class="blog_highlight_black">EQ + Relationships:</span> Managers who are emotionally intelligent can be <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/leadership" target="_blank">better leaders</a> and can understand and support staff better. Staff who are emotionally intelligent can have have healthier relationships with each other, with much less conflict. This can create a less stressful work environment for everyone.
+                  1. <span class="blog_highlight_black">Deal with the acute event</span>: The <a class="blog_highlight_peach td_underline" href="https://happierme.app">HappierMe</a> app offers <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/breathing">breathing</a> exercises, audio <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/guided-meditation">meditations</a>, <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/journal">journaling</a>, tapping, and <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Nature">nature</a> mediations to help you calm your mind when you feel stressed. Find one that works for you and practice it regularly. You can call on this when you are feeling stressed.
+                </h4>
+
+                <h4 class="mtb0px blog_desc">
+                  2. <span class="blog_highlight_black">Change how you react:</span> Our <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Reactive%20Mind">mind reacts</a> automatically to its challenges, and it is this reaction that creates the feeling of <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Stress">stress</a>. We assume its the event that is causing our stress, but in fact its our reaction that creates the stress. Often, we cannot change the events around us, but we can change the way we react to them. To do that, we need to develop our <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Awareness">self-awareness</a> and emotional intelligence and understand where our reactions come from. The more we learn, the more we can be in charge of our own reactions and learn to deal with challenges with calm. The <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Stress">Stress</a> module offers practical tips on how to do so — for lasting change. The <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Awareness">Awareness</a> exercise module offers bit-sized exercises to learn about yourself and apply that to be in charge of your own emotions.
+                </h4>
+
+                <h4 class="mtb0px blog_desc">
+                  3. <span class="blog_highlight_black">Lifestyle changes:</span> These are well known and include regular exercise, sleeping 8 hours at night, eating a balanced diet, and time management.
+                </h4>
+
+                <h4 class="mtb0px blog_desc">
+                  4. <span class="blog_highlight_black">EQ + Relationships:</span> Managers who are emotionally intelligent can be <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/leadership">better leaders</a> and can understand and support staff better. Staff who are emotionally intelligent can have healthier relationships with each other, with much less conflict. This can create a less stressful work environment for everyone.
                 </h4>
 
                 <div class="row mt20px rmb80px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
-                    <iframe width="854" height="480" src="https://www.youtube.com/embed/9xMbiLx7y1g" title="How can we avoid and overcome stress?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe style="width: 100%; max-width: 854px; aspect-ratio: 16 / 9;" src="https://www.youtube.com/embed/9xMbiLx7y1g" title="How can we avoid and overcome stress?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                   </div>
                 </div>
 
@@ -153,7 +192,7 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  The challenges of life will keep coming, but we can learn how to deal with them in a more effective way, without getting stressed. <a class="blog_highlight_peach td_underline" href="http://happierme.app" target="_blank">HappierMe</a> offers many resources to help you deal with the immediate challenge and then to develop your <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Awareness" target="_blank">self-awareness</a> and emotional intelligence so you can avoid <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Stress" target="_blank">stress</a> and deal with circumstances without getting stressed.
+                  The challenges of life will keep coming, but we can learn how to deal with them in a more effective way, without getting stressed. <a class="blog_highlight_peach td_underline" href="https://happierme.app">HappierMe</a> offers many resources to help you deal with the immediate challenge and then to develop your <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Awareness">self-awareness</a> and emotional intelligence so you can avoid <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Stress">stress</a> and deal with circumstances without getting stressed.
                 </h4>
                 
                 <h4 class="mtb0px blog_desc blog_highlight_black">
@@ -161,14 +200,28 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <a class="blog_highlight_peach td_underline" href="https://medium.com/@happierme/6-barriers-to-overcome-stress-53e97baef6c8" target="_blank">#6 barriers to overcome stress</a><br>
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/blogs/how_to_manage_your_own_mental_health.php" target="_blank">How to manage your own mental health</a><br>
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/blogs/6_ways_to_transform_organisations.php" target="_blank">#6 ways to transform organisations</a><br>
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/pages/work.php" target="_blank">HappierMe for work</a><br>
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/newsletter-signup" target="_blank">Sign up to our newsletter</a><br>
-                  <a class="blog_highlight_peach td_underline" href="https://linktr.ee/happierme.app" target="_blank">Follow us on Social Media</a>
+                  <a class="blog_highlight_peach td_underline" href="https://medium.com/@happierme/6-barriers-to-overcome-stress-53e97baef6c8" target="_blank">#6 barriers to overcome stress</a>
                 </h4>
 
+                <h4 class="mtb0px blog_desc">
+                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/blogs/how_to_manage_your_own_mental_health.php">How to manage your own mental health</a>
+                </h4>
+
+                <h4 class="mtb0px blog_desc">
+                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/blogs/6_ways_to_transform_organisations.php">#6 ways to transform organisations</a>
+                </h4>
+
+                <h4 class="mtb0px blog_desc">
+                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/pages/work.php">HappierMe for work</a>
+                </h4>
+
+                <h4 class="mtb0px blog_desc">
+                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/newsletter-signup">Sign up to our newsletter</a>
+                </h4>
+
+                <h4 class="mtb0px blog_desc">
+                  <a class="blog_highlight_peach td_underline" href="https://linktr.ee/happierme.app" target="_blank">Follow us on Social Media</a>
+                </h4>
               </div>
             </div>
 
