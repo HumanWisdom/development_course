@@ -121,7 +121,8 @@ body.page-work .work-hero-stack h5 {
   font-size: 15px;
   font-weight: 400;
   line-height: 1.6;
-  color: #fff;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff;
   margin: 18px 0 0;
 }
 
@@ -133,11 +134,30 @@ body.page-work .work-hero-ctas {
   display: flex !important;
   flex-direction: row !important;
   flex-wrap: nowrap !important;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
   margin-top: 30px;
   width: auto !important;
   max-width: 100%;
+}
+
+body.page-work .work-hero-try {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 auto;
+}
+
+body.page-work .work-hero-note {
+  margin: 0;
+  font-family: Poppins, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
 }
 
 body.page-work .work-hero-ctas > a,
@@ -471,10 +491,10 @@ body.page-work .work-diff-card-top {
   justify-content: center;
 }
 
-body.page-work .work-diff-card-top--prevention { background: #eea170; }
-body.page-work .work-diff-card-top--root { background: #ed7d6f; }
-body.page-work .work-diff-card-top--skills { background: #d75b68; }
-body.page-work .work-diff-card-top--whole { background: #803358; }
+body.page-work .work-diff-card-top--prevention { background: #eea170 !important; }
+body.page-work .work-diff-card-top--root { background: #ed7d6f !important; }
+body.page-work .work-diff-card-top--skills { background: #d75b68 !important; }
+body.page-work .work-diff-card-top--whole { background: #803358 !important; }
 
 /* Same SVGs as index “Why HappierMe is different” */
 body.page-work .work-diff-card-top .work-diff-icon {
@@ -486,7 +506,7 @@ body.page-work .work-diff-card-top .work-diff-icon {
 
 body.page-work .work-diff-card-body {
   flex: 1;
-  background: #fff7e6;
+  background: #fff7e6 !important;
   padding: 36px;
   text-align: center;
   box-sizing: border-box;
@@ -727,7 +747,7 @@ body.page-work .work-challenge-card {
   border-radius: 20px;
   padding: 36px;
   text-align: center;
-  color: #fff7e6;
+  color: #ffffff;
   display: flex;
   flex-direction: column;
   gap: 9px;
@@ -747,7 +767,7 @@ body.page-work .work-challenge-stat {
   font-size: 36px;
   font-weight: 600;
   line-height: 1.2;
-  color: #fff7e6;
+  color: #ffffff;
 }
 
 body.page-work .work-challenge-text {
@@ -756,7 +776,7 @@ body.page-work .work-challenge-text {
   font-size: 15px;
   font-weight: 500;
   line-height: 1.4;
-  color: #fff7e6;
+  color: #ffffff;
 }
 
 body.page-work .work-challenge-cite {
@@ -765,10 +785,10 @@ body.page-work .work-challenge-cite {
   font-size: 12px;
   font-weight: 500;
   line-height: 1.4;
-  color: #fff7e6;
+  color: #ffffff;
 }
 
-/* Beat global p:hover { color: #000 } — keep cream text on hover */
+/* Beat global p:hover { color: #000 } — keep white text on hover */
 body.page-work .work-challenge-card p,
 body.page-work .work-challenge-card p:hover,
 body.page-work .work-challenge-card:hover p,
@@ -778,7 +798,8 @@ body.page-work .work-challenge-text,
 body.page-work .work-challenge-text:hover,
 body.page-work .work-challenge-cite,
 body.page-work .work-challenge-cite:hover {
-  color: #fff7e6 !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff;
   text-decoration: none !important;
 }
 
@@ -1152,7 +1173,8 @@ body.page-work .work-copy-mobile:not(.display_d_none) {
     font-weight: 400 !important;
     line-height: 1.5 !important;
     letter-spacing: 0 !important;
-    color: #fff !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff;
     text-align: center !important;
   }
 
@@ -1170,9 +1192,23 @@ body.page-work .work-copy-mobile:not(.display_d_none) {
     max-width: 335px !important;
   }
 
+  body.page-work .work-hero-try {
+    width: 335px !important;
+    max-width: 335px !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+
+  body.page-work .work-hero-note {
+    color: #ffffff !important;
+    font-size: 12px !important;
+    white-space: normal !important;
+  }
+
   body.page-work .healthcare-hero-shell .absolute_desc_m .work-hero-ctas > a,
   body.page-work .healthcare-hero-shell .absolute_desc_m .work-hero-ctas a[href="#bring_happierme"],
-  body.page-work .work-hero-ctas > a {
+  body.page-work .work-hero-ctas > a,
+  body.page-work .work-hero-try > a {
     width: 335px !important;
     max-width: 335px !important;
     flex: 0 0 auto !important;
@@ -1198,7 +1234,8 @@ body.page-work .work-copy-mobile:not(.display_d_none) {
     box-sizing: border-box !important;
   }
 
-  /* Mobile hero: one button (Try free), then Request a demo as a text link */
+  /* Mobile hero: Try free button + note, then Request a demo as a text link */
+  body.page-work .work-hero-try,
   body.page-work .work-hero-ctas > a.btn_tff:not(#requestDemoForWork) {
     order: 1;
   }

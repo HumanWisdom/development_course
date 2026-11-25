@@ -152,19 +152,22 @@
                     Build a happier, more capable workforce.
                   </h1>
 
-                  <h5>
+                  <h5 class="fc_ffffff">
                     Help your people develop self-awareness and emotional skills to reduce stress and prevent burnout, strengthen relationships and make better decisions.
                   </h5>
 
                   <div class="work-hero-ctas">
+                    <div class="work-hero-try">
+                      <a href="../organisation-choose.php/happierme" class="fs_15px fw_600 lh_140p fc_ffffff btn_tff work-hero-btn">
+                        Try free for 10 days
+                      </a>
+                      <p class="work-hero-note">No credit card required</p>
+                    </div>
                     <a href="#bring_happierme" class="fs_15px fw_600 lh_140p fc_ffffff btn_tff req_button work-hero-btn" id="requestDemoForWork">
                       <span class="work-hero-link-label">Request a demo</span>
                       <svg class="work-hero-link-chevron" viewBox="0 0 9 14.73" width="8" height="13" aria-hidden="true" focusable="false">
                         <path d="M1.15 1.2L7.6 7.365L1.15 13.53" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
                       </svg>
-                    </a>
-                    <a href="../organisation-choose.php/happierme" class="fs_15px fw_600 lh_140p fc_ffffff btn_tff work-hero-btn">
-                      Try free for 10 days
                     </a>
                   </div>
                 </div>
@@ -189,47 +192,36 @@
 
         <main id="main">
 
-          <!-- Improve performance -->
-          <section class="work-section work-perf-section">
+          <!-- Workplace challenges -->
+          <section class="work-section work-challenge-section">
             <div class="work-section-inner">
               <div class="work-section-head">
                 <h2 class="work-section-title">
-                  <span class="work-copy-desktop display_m_none">Improve performance and productivity<br>with HappierMe</span>
-                  <span class="work-copy-mobile display_d_none">Inspiring fresh ways of thinking</span>
+                  <span class="work-copy-desktop display_m_none">Multiple workplace challenges.<br>One proactive solution.</span>
+                  <span class="work-copy-mobile display_d_none">Multiple workplace challenges. One proactive solution.</span>
                 </h2>
+                <p class="work-section-sub">HappierMe helps address these challenges by building self-awareness<br class="display_m_none"> and emotional skills across the workforce</p>
               </div>
-              <div class="work-pillars">
-                <article class="work-pillar">
-                  <div class="work-pillar-copy">
-                                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/mentall.svg" width="79" height="60" alt="">
-
-                    <h3 class="work-pillar-title">Proactive mental wellbeing</h3>
-                    <p class="work-pillar-text">Build self-awareness and emotional skills to help prevent mental health problems and burnout before they escalate and affect performance.</p>
-                  </div>
+              <div class="work-challenge-cards">
+                <article class="work-challenge-card work-challenge-card--1">
+                  <p class="work-challenge-stat">76%</p>
+                  <p class="work-challenge-text">of US workers reported at least one symptom of a mental health condition.</p>
+                  <p class="work-challenge-cite">(US Surgeon General, 2022)</p>
                 </article>
-                <article class="work-pillar">
-                  <div class="work-pillar-copy">
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/relationnn.svg" width="79" height="60" alt="">
-
-                    <h3 class="work-pillar-title">Stronger relationships</h3>
-                    <p class="work-pillar-text">Develop self-awareness and empathy to improve communication, collaboration and conflict resolution, fostering a more positive workforce culture.</p>
-                  </div>
+                <article class="work-challenge-card work-challenge-card--2">
+                  <p class="work-challenge-stat">88%</p>
+                  <p class="work-challenge-text">of European employees are not engaged or are actively disengaged.</p>
+                  <p class="work-challenge-cite">(Gallup, 2026)</p>
                 </article>
-                <article class="work-pillar">
-                  <div class="work-pillar-copy">
-                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/makk.svg" width="79" height="60" alt="">
-
-                    <h3 class="work-pillar-title">Better decision making</h3>
-                    <p class="work-pillar-text">Understand how emotions, unconscious biases and personal values influence thinking, enabling clearer judgement.</p>
-                  </div>
+                <article class="work-challenge-card work-challenge-card--3">
+                  <p class="work-challenge-stat">60%</p>
+                  <p class="work-challenge-text">of new managers fail within their first 24 months.</p>
+                  <p class="work-challenge-cite">(Gartner, cited by Wharton)</p>
                 </article>
-                <article class="work-pillar">
-                  <div class="work-pillar-copy">
-                    <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/prodddd.svg" width="79" height="60" alt="">
-
-                    <h3 class="work-pillar-title">Improved productivity</h3>
-                    <p class="work-pillar-text">Happier, more engaged employees tend to be more productive, take fewer sick days and experience less burnout, contributing to better business performance.</p>
-                  </div>
+                <article class="work-challenge-card work-challenge-card--4">
+                  <p class="work-challenge-stat">44%</p>
+                  <p class="work-challenge-text">of working age adults in Great Britain experienced workplace conflict in the previous year.</p>
+                  <p class="work-challenge-cite">(Acas, 2025)</p>
                 </article>
               </div>
             </div>
@@ -295,6 +287,52 @@
           </section>
           <!-- /video -->
 
+
+          <!-- Improve performance -->
+          <section class="work-section work-perf-section">
+            <div class="work-section-inner">
+              <div class="work-section-head">
+                <h2 class="work-section-title">
+                  <span class="work-copy-desktop display_m_none">Improve performance and productivity<br>with HappierMe</span>
+                  <span class="work-copy-mobile display_d_none">Inspiring fresh ways of thinking</span>
+                </h2>
+              </div>
+              <div class="work-pillars">
+                <article class="work-pillar">
+                  <div class="work-pillar-copy">
+                                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/mentall.svg" width="79" height="60" alt="">
+
+                    <h3 class="work-pillar-title">Proactive mental wellbeing</h3>
+                    <p class="work-pillar-text">Build self-awareness and emotional skills to help prevent mental health problems and burnout before they escalate and affect performance.</p>
+                  </div>
+                </article>
+                <article class="work-pillar">
+                  <div class="work-pillar-copy">
+                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/relationnn.svg" width="79" height="60" alt="">
+
+                    <h3 class="work-pillar-title">Stronger relationships</h3>
+                    <p class="work-pillar-text">Develop self-awareness and empathy to improve communication, collaboration and conflict resolution, fostering a more positive workforce culture.</p>
+                  </div>
+                </article>
+                <article class="work-pillar">
+                  <div class="work-pillar-copy">
+                      <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/makk.svg" width="79" height="60" alt="">
+
+                    <h3 class="work-pillar-title">Better decision making</h3>
+                    <p class="work-pillar-text">Understand how emotions, unconscious biases and personal values influence thinking, enabling clearer judgement.</p>
+                  </div>
+                </article>
+                <article class="work-pillar">
+                  <div class="work-pillar-copy">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/prodddd.svg" width="79" height="60" alt="">
+
+                    <h3 class="work-pillar-title">Improved productivity</h3>
+                    <p class="work-pillar-text">Happier, more engaged employees tend to be more productive, take fewer sick days and experience less burnout, contributing to better business performance.</p>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </section>
 
           <!-- Why different -->
           <section class="work-section work-diff-section">
@@ -440,41 +478,6 @@
             </div>
           </section>
           <!-- /testimonials -->
-
-          <!-- Workplace challenges -->
-          <section class="work-section work-challenge-section">
-            <div class="work-section-inner">
-              <div class="work-section-head">
-                <h2 class="work-section-title">
-                  <span class="work-copy-desktop display_m_none">Multiple workplace challenges.<br>One proactive solution.</span>
-                  <span class="work-copy-mobile display_d_none">Multiple workplace challenges. One proactive solution.</span>
-                </h2>
-                <p class="work-section-sub">HappierMe helps address these challenges by building self-awareness<br class="display_m_none"> and emotional skills across the workforce</p>
-              </div>
-              <div class="work-challenge-cards">
-                <article class="work-challenge-card work-challenge-card--1">
-                  <p class="work-challenge-stat">76%</p>
-                  <p class="work-challenge-text">of US workers reported at least one symptom of a mental health condition.</p>
-                  <p class="work-challenge-cite">(US Surgeon General, 2022)</p>
-                </article>
-                <article class="work-challenge-card work-challenge-card--2">
-                  <p class="work-challenge-stat">88%</p>
-                  <p class="work-challenge-text">of European employees are not engaged or are actively disengaged.</p>
-                  <p class="work-challenge-cite">(Gallup, 2026)</p>
-                </article>
-                <article class="work-challenge-card work-challenge-card--3">
-                  <p class="work-challenge-stat">60%</p>
-                  <p class="work-challenge-text">of new managers fail within their first 24 months.</p>
-                  <p class="work-challenge-cite">(Gartner, cited by Wharton)</p>
-                </article>
-                <article class="work-challenge-card work-challenge-card--4">
-                  <p class="work-challenge-stat">44%</p>
-                  <p class="work-challenge-text">of working age adults in Great Britain experienced workplace conflict in the previous year.</p>
-                  <p class="work-challenge-cite">(Acas, 2025)</p>
-                </article>
-              </div>
-            </div>
-          </section>
 
           <!-- Human skills -->
           <section class="work-section work-skills-section11">
