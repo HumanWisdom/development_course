@@ -2085,7 +2085,7 @@ closeCookies() {
       case "self awareness":
       case "self-awareness":
         {
-          this.router.navigate(['/teenagers/explore'], { fragment: 'self-awareness' });
+          this.router.navigate(['/teenagers/explore/self-awareness']);
           return;
         }
       case "forum": {
