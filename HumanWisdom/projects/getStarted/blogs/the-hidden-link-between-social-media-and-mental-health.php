@@ -40,19 +40,19 @@
                   <button class="mtb0px fs_12px fw_400 lh_150p fc_803358 btn_blogp">
                     Social Media
                   </button>
-                  <button class="mtb0px fs_12px fw_400 lh_150p fc_803358 btn_blogp">
+                  <!-- <button class="mtb0px fs_12px fw_400 lh_150p fc_803358 btn_blogp">
                     Mental Health
                   </button>
                   <button class="mtb0px fs_12px fw_400 lh_150p fc_803358 btn_blogp">
                     Social Media Addiction
-                  </button>
+                  </button> -->
                 </div>
               </div>
             </div>
 
             <div class="row mt20px rmb80px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*vCIlnn93RXHXEkqj08qeUA.png" class="img-responsive" alt="The hidden link between social media and mental health">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/104.webp" class="img-responsive" alt="The hidden link between social media and mental health">
               </div>
             </div>
 
@@ -66,11 +66,11 @@
                   The Impact of Social Media on Mental Health
                 </h4>
 
-                <div class="row mt20px rmb80px">
+                <!-- <div class="row mt20px rmb80px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                     <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/0*hQkF-ga2DY9oepHV" class="img-responsive" alt="The Impact of Social Media on Mental Health">
                   </div>
-                </div>
+                </div> -->
 
                 <h4 class="mtb0px blog_desc">
                   Social media influences mental health in multiple ways. Positive interactions online can enhance self-esteem and provide a sense of community, especially for those who feel isolated.
@@ -108,11 +108,11 @@
                   Apps like HappierMe extend this positivity by offering community forums where users can share experiences, seek advice, and build meaningful connections.
                 </h4>
 
-                <div class="row mt20px rmb80px">
+                <!-- <div class="row mt20px rmb80px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                     <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/0*iJZxrUVPnNJ9y__j" class="img-responsive" alt="Positive Contributions of Social Media">
                   </div>
-                </div>
+                </div> -->
 
                 <h4 class="mtb0px blog_sub_title">
                   Strategies for Healthy Social Media Use
