@@ -64,7 +64,7 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  There is a mental health crisis affecting teenagers the world over. 29% have poor mental health, 22% think of suicide, 19% report being bullied and 40% are persistently sad <a class="blog_highlight_peach td_underline" href="https://www.cdc.gov/yrbs/dstr/pdf/YRBS-2023-Data-Summary-Trend-Report.pdf" target="_blank">(CDC)</a>.26% of secondary students are persistently absent 
+                  There is a mental health crisis affecting teenagers the world over. 29% have poor mental health, 22% think of suicide, 19% report being bullied and 40% are persistently sad <a class="blog_highlight_peach td_underline" href="https://www.cdc.gov/yrbs/dstr/pdf/YRBS-2023-Data-Summary-Trend-Report.pdf" target="_blank">(CDC)</a>. 26% of secondary students are persistently absent 
                   <a class="blog_highlight_peach td_underline" href="https://explore-education-statistics.service.gov.uk/find-statistics/pupil-attendance-in-schools/2024-week-29">(DOE)</a>.
                 </h4>
 
