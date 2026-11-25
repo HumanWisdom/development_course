@@ -352,6 +352,7 @@
                       <h3 class="generic_card_title" *ngIf="exercise.DisplayTitle || exercise.Title">
                         {{ exercise.DisplayTitle || exercise.Title }}
                       </h3>
+                      <div class="generic_card_divider" *ngIf="exercise.DisplayTitle || exercise.Title"></div>
                       <div class="generic_card_desc" *ngIf="exercise.Description || exercise.text || exercise.Response"
                         [innerHTML]="cleanCardContent(exercise.Description || exercise.text || exercise.Response)">
                       </div>
