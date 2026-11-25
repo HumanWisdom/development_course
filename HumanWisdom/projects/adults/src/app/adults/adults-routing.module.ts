@@ -30,6 +30,11 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'explore/:topic',
+    canActivate: [AuthGuard],
+    component: HomeComponent
+  },
+  {
     path: 'explore',
     canActivate: [AuthGuard],
     component: HomeComponent

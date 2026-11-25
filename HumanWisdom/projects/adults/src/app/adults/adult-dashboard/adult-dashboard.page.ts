@@ -4454,7 +4454,7 @@ getAlertcloseEvent($event) {
       case "self awareness":
       case "self-awareness":
         {
-        this.router.navigate(['/adults/explore'], { fragment: 'self-awareness' });
+        this.router.navigate(['/adults/explore/self-awareness']);
         return;
       }
       case "journal":{
