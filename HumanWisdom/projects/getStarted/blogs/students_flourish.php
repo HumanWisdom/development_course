@@ -176,7 +176,7 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  There are so many pressures on students these days — from parents, society, social media etc. and it can be very confusing for them to decide what they want to do with their life. A deeper self-understanding can help them find out what they love to do and discover their true calling in life. Listen to this podcast on the subject: <a class="blog_highlight_peach td_underline" href="https://humanwisdom.podbean.com/e/finding-our-true-purpose-in-life/" target="_blank">https://humanwisdom.podbean.com/e/finding-our-true-purpose-in-life/</a>
+                  There are so many pressures on students these days — from parents, society, social media etc. and it can be very confusing for them to decide what they want to do with their life. A deeper self-understanding can help them find out what they love to do and discover their true calling in life. Listen to this podcast on the subject: <a class="blog_highlight_peach td_underline" href="https://staging.happierme.app/adults/audiopage/~podcasts~26.mp3/26/F/Find%20your%20purpose/podcast" target="_blank">find-your-purpose</a>
                 </h4>
 
                 <h4 class="mtb0px blog_sub_title">
@@ -192,7 +192,12 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  About 1 in 6 people in the US have a substance abuse problem — it is a global problem. A deeper understanding of the hidden drivers in our thinking that drive us to addiction can help us avoid it, and more easily overcome it — these include our conditioning, our inability to cope with and need to escape from emotional pain, and our need for pleasure and stimulation. Listen to this podcast on the subject: <a class="blog_highlight_peach td_underline" href="https://humanwisdom.podbean.com/e/avoiding-and-overcoming-addiction/" target="_blank">https://humanwisdom.podbean.com/e/avoiding-and-overcoming-addiction/</a>
+                  About 1 in 6 people in the US have a substance abuse problem — it is a global problem. 
+                  A deeper understanding of the hidden drivers in our thinking that drive us to addiction 
+                  can help us avoid it, and more easily overcome it — these include our conditioning, 
+                  our inability to cope with and need to escape from emotional pain, and our need for
+                   pleasure and stimulation. Listen to this podcast on the subject: <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/audiopage/~podcasts~21.mp3/21/F/Avoiding%20addiction/podcast" target="_blank">Avoiding addiction
+</a>
                 </h4>
 
                 <h4 class="mtb0px blog_sub_title">
