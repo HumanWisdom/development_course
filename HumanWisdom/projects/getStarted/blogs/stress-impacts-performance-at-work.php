@@ -46,7 +46,7 @@
 
             <div class="row mt20px rmb80px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*jzXVYTsRAb27hknzhHRh3Q.png" class="img-responsive" alt="77% say stress impacts performance at work — new survey.">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/103.webp" class="img-responsive" alt="77% say stress impacts performance at work — new survey.">
               </div>
             </div>
 
@@ -144,7 +144,7 @@
                   The second thing we can do is build the resilience and inner strength of staff so they can manage their challenges, at home and at work with much less stress.
                 </h4>
 
-                <div class="row mt20px rmb80px">
+                <div class="row mt20px rm80px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                     <iframe style="width: 100%; max-width: 854px; aspect-ratio: 16 / 9;" src="https://www.youtube.com/embed/MgsYk1SZh-w" title="Introduction to the HappierMe app" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                   </div>
@@ -178,7 +178,7 @@
                   4. <span class="blog_highlight_black">EQ + Relationships:</span> Managers who are emotionally intelligent can be <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/leadership">better leaders</a> and can understand and support staff better. Staff who are emotionally intelligent can have healthier relationships with each other, with much less conflict. This can create a less stressful work environment for everyone.
                 </h4>
 
-                <div class="row mt20px rmb80px">
+                <div class="row mtb20px rm80px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                     <iframe style="width: 100%; max-width: 854px; aspect-ratio: 16 / 9;" src="https://www.youtube.com/embed/9xMbiLx7y1g" title="How can we avoid and overcome stress?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                   </div>
@@ -213,7 +213,7 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/newsletter-signup">Sign up to our newsletter</a>
+                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/pages/newsletter.php">Sign up to our newsletter</a>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
