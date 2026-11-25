@@ -160,7 +160,7 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  2. <a class="blog_highlight_peach td_underline" href="https://happierme.app/blogs/how_to_manage_your_own_mental_health.php">How to manage your own mental health</a>
+                  2. <a class="blog_highlight_peach td_underline" href="https://happierme.app/blogs/how-to-manage-your-own-mental-health.php">How to manage your own mental health</a>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">

@@ -201,11 +201,11 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/blogs/how_to_manage_your_own_mental_health.php">How to manage your own mental health</a>
+                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/blogs/how-to-manage-your-own-mental-health.php">How to manage your own mental health</a>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/blogs/6_ways_to_transform_organisations.php">#6 ways to transform organisations</a>
+                  <a class="blog_highlight_peach td_underline" href="https://happierme.app/blogs/6-ways-to-transform-organisations.php">#6 ways to transform organisations</a>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">

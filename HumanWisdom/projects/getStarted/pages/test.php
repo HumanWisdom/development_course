@@ -17,7 +17,7 @@
     <!--Canonical Tag-->
     <link rel="canonical" href="https://happierme.app" />
     <!-- vendor_header -->
-    <?php include('../includes/vendor_header.php'); ?>
+    <?php include('../includes/vendor-header.php'); ?>
     <!-- /vendor_header -->
 
     <!-- Google Tag Manager -->
@@ -368,7 +368,7 @@
       <!-- <nav id="navbar" class="navbar m0pxi">
         <ul>
 
-          <li><a href="../pages/about_us.php"  id="AboutUs" >About us</a></li>
+          <li><a href="../pages/about-us.php"  id="AboutUs" >About us</a></li>
           <li class="prelative">
             <a id="teenagersHeaderClick">       
               Teenagers
@@ -380,10 +380,10 @@
             </a> -->
             <!--
           </li>
-          <li><a href="../blogs/blog_index.php" class="blog_main">Blog</a></li>
+          <li><a href="../blogs/blog-index.php" class="blog_main">Blog</a></li>
           <li class="dropdown"><a><span>For organisations</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
           </li> -->
-          <!-- <li><a href="../blogs/blog_index.php" id="blogs" class="">Blog</a></li>
+          <!-- <li><a href="../blogs/blog-index.php" id="blogs" class="">Blog</a></li>
           <li class="dropdown"><a id="organisation"><span>For organisations</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
               <li><a  id="work">HappierMe for Work</a></li>
@@ -810,7 +810,7 @@
     </main>
 
     <!-- vendor_footer -->
-    <?php include('../includes/vendor_footer.php'); ?>
+    <?php include('../includes/vendor-footer.php'); ?>
     <!-- /vendor_footer -->
 
   </body>

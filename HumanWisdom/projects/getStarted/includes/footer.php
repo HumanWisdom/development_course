@@ -139,19 +139,19 @@
               </h4>
             </a>
 
-            <a href="../pages/terms_conditions.php">
+            <a href="../pages/terms-conditions.php">
               <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                 User Agreement
               </h4>
             </a>
 
-            <a href="../pages/privacy_policy.php">
+            <a href="../pages/privacy-policy.php">
               <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                 Privacy policy
               </h4>
             </a>
 
-            <a href="../pages/cookie_policy.php">
+            <a href="../pages/cookie-policy.php">
               <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                 Cookie policy
               </h4>
@@ -228,7 +228,7 @@
               <!-- links -->
               <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0  dfooter_links">
-                  <a href="../pages/about_us.php">
+                  <a href="../pages/about-us.php">
                     <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                       Our story
                     </h4>
@@ -363,19 +363,19 @@
                     </h4>
                   </a>
 
-                  <a href="../pages/terms_conditions.php">
+                  <a href="../pages/terms-conditions.php">
                     <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                        User Agreement
                     </h4>
                   </a>
 
-                  <a href="../pages/privacy_policy.php">
+                  <a href="../pages/privacy-policy.php">
                     <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                       Privacy policy
                     </h4>
                   </a>
 
-                  <a href="../pages/cookie_policy.php">
+                  <a href="../pages/cookie-policy.php">
                     <h4 class="mtb0px fs_12px fw_400 lh_150p fc_ffffff">
                       Cookie policy
                     </h4>

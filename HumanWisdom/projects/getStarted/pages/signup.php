@@ -27,7 +27,7 @@
         "url": "https://happierme.app/"
       }]
     </script>
-    <!-- vendor_header --> <?php include('../includes/vendor_header.php'); ?>
+    <!-- vendor_header --> <?php include('../includes/vendor-header.php'); ?>
     <!-- /vendor_header -->
     <link rel="stylesheet" href="../assets/css/mind.css" />
      <style>
@@ -132,7 +132,7 @@
       <!-- <nav id="navbar" class="navbar m0pxi">
         <ul>
 
-          <li><a href="../pages/about_us.php"  id="AboutUs" >About us</a></li>
+          <li><a href="../pages/about-us.php"  id="AboutUs" >About us</a></li>
           <li class="prelative">
             <a id="teenagersHeaderClick">       
               Teenagers
@@ -144,10 +144,10 @@
             </a> -->
             <!--
           </li>
-          <li><a href="../blogs/blog_index.php" class="blog_main">Blog</a></li>
+          <li><a href="../blogs/blog-index.php" class="blog_main">Blog</a></li>
           <li class="dropdown"><a><span>For organisations</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
           </li> -->
-          <!-- <li><a href="../blogs/blog_index.php" id="blogs" class="">Blog</a></li>
+          <!-- <li><a href="../blogs/blog-index.php" id="blogs" class="">Blog</a></li>
           <li class="dropdown"><a id="organisation"><span>For organisations</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
               <li><a  id="work">HappierMe for Work</a></li>
@@ -452,7 +452,7 @@
                             <input id="privacy_checkbox" formControlName="privacychk" type="checkbox">
                             <span class="signup-agree-checkbox-ui" aria-hidden="true"></span>
                             <span class="signup-agree-copy fs_12px fw_500 lh_150p fc_000000_0_5">I agree to the
-                            <a class="blog_highlight_peach fs_12px fw_600" href="https://happierme.app/pages/terms_conditions.php">Terms of use</a></span>
+                            <a class="blog_highlight_peach fs_12px fw_600" href="https://happierme.app/pages/terms-conditions.php">Terms of use</a></span>
                           </label>
                       </div>
                     </div>
@@ -463,7 +463,7 @@
                             <input id="marketing_checkbox" formControlName="privacychk" type="checkbox">
                             <span class="signup-agree-checkbox-ui" aria-hidden="true"></span>
                             <span class="signup-agree-copy fs_12px fw_500 lh_150p fc_000000_0_5">I agree to the
-                            <a class="blog_highlight_peach fs_12px fw_600" href="https://happierme.app/pages/privacy_policy.php">Privacy policy</a></span>
+                            <a class="blog_highlight_peach fs_12px fw_600" href="https://happierme.app/pages/privacy-policy.php">Privacy policy</a></span>
                           </label>
                       </div>
                     </div>
@@ -589,14 +589,14 @@
       </div> 
    
     <!-- </div></div> -->
-    <?php include('../includes/footer_copyright_sticky_mind.php'); ?>
+    <?php include('../includes/footer-copyright-sticky-mind.php'); ?>
     <!-- vendor_footer -->
-    <?php include('../includes/vendor_footer.php'); ?>
+    <?php include('../includes/vendor-footer.php'); ?>
     <!-- /vendor_footer -->
   </body>
 </html>
 <script>
-// API base: includes/api_config.php → window.__HW_API__.apiBase (vendor_footer loads before this script)
+// API base: includes/api-config.php → window.__HW_API__.apiBase (vendor_footer loads before this script)
 const API_BASE_URL = (typeof window !== "undefined" && window.__HW_API__ && window.__HW_API__.apiBase) || "https://www.humanwisdom.info/api";
 const ProgramId = '9';
 
@@ -708,7 +708,7 @@ document.getElementById('download-app-btn').addEventListener('click', function()
       if(isNaN(id)) {
          alert(data);
       }else{
-           window.location.href = "../pages/download_qr.php";
+           window.location.href = "../pages/download-qr.php";
       }
       // Hide info message on success or error
    
