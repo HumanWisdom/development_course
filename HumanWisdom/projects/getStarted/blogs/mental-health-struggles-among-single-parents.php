@@ -49,7 +49,7 @@
 
             <div class="row mt20px rmb80px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*I_2OQn3c1Tfo5Uo7lO1-HA.png" class="img-responsive" alt="The overlooked crisis: mental health struggles among single parents">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/99.webp" class="img-responsive" alt="The overlooked crisis: mental health struggles among single parents">
               </div>
             </div>
 
@@ -83,11 +83,16 @@
                   Moreover, the financial strain faced by single parents can limit access to resources like quality childcare, education, and extracurricular activities. These limitations often exacerbate feelings of guilt and inadequacy, further contributing to mental health struggles. It’s a vicious cycle: the mental health challenges of parents affect their children, and the resulting strain on children adds to the stress of single parenthood.
                 </h4>
 
-                <div class="row mt20px rmb80px">
+                <!-- <div class="row mt20px rmb80px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                     <iframe style="width: 100%; max-width: 854px; aspect-ratio: 16 / 9;" src="https://www.youtube.com/embed/MgsYk1SZh-w" title="Introduction to the HappierMe app" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                   </div>
-                </div>
+                </div> -->
+
+                <iframe id="youtubeIntro" loading="lazy" title="youtubeIntro"
+            src="https://www.youtube.com/embed/MgsYk1SZh-w"
+            class="cvideo_b yt-embed" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen
+            onclick="return logevent('click_play_video_home', 'index.php')"></iframe>
 
                 <h4 class="mtb0px blog_sub_title">
                   Fighting back — The HappierMe difference
@@ -145,13 +150,18 @@
                   It’s essential to recognize that the well-being of single parents directly impacts the future of their children and communities. By investing in their mental health, we not only improve their quality of life but also ensure brighter prospects for their families. Single parents deserve the support and resources needed to navigate their challenges and embrace the joys of parenting without the constant weight of mental health struggles.
                 </h4>
 
-                <div class="row mt20px rmb80px">
+                <!-- <div class="row mt20px rmb80px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                     <iframe style="width: 100%; max-width: 640px; aspect-ratio: 4 / 3;" src="https://www.youtube.com/embed/y5hd9MHnUyM" title="Mia - how I look after my mental health" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                   </div>
-                </div>
+                </div> -->
 
-                <h4 class="mtb0px blog_desc blog_highlight_black">
+                 <iframe id="youtubeIntro" loading="lazy" title="youtubeIntro"
+            src="https://www.youtube.com/embed/y5hd9MHnUyM"
+            class="cvideo_b yt-embed" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen
+            onclick="return logevent('click_play_video_home', 'index.php')"></iframe>
+
+                <h4 class="mtb20px blog_desc blog_highlight_black">
                   Also read:
                 </h4>
 
@@ -164,7 +174,7 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  3. <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/newsletter-signup">Subscribe to our newsletter</a>
+                  3. <a class="blog_highlight_peach td_underline" href="https://happierme.app/pages/newsletter.php">Subscribe to our newsletter</a>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
