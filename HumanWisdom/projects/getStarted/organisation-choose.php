@@ -6,8 +6,8 @@ $orgId = hw_org_path_id();
 if ($orgId === '') {
     $orgId = hw_org_default_id();
 }
-$signupUrl = hw_org_base() . '/organisation-signup.php/' . rawurlencode($orgId);
-$homeUrl = (hw_org_base() === '' ? '' : hw_org_base()) . '/index.php';
+$signupUrl = hw_org_base() . '/organisation-signup/' . rawurlencode($orgId);
+$homeUrl = (hw_org_base() === '' ? '' : hw_org_base()) . '/';
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -21,7 +21,7 @@ $social = hw_social_config();
 $copy = hw_org_copy($org);
 $freeDays = (int) $org['freeDays'];
 $email = isset($email) ? $email : '';
-$chooseUrl = (hw_org_base() === '' ? '' : hw_org_base()) . '/organisation-choose.php/' . rawurlencode($org['id']);
+$chooseUrl = (hw_org_base() === '' ? '' : hw_org_base()) . '/organisation-choose/' . rawurlencode($org['id']);
 
 $stepMeta = [
     'adv' => [

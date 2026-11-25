@@ -1,0 +1,35 @@
+# Hide .php in the browser, and still serve the same pages without the extension.
+# /pages/work.php  -> 301 -> /pages/work  -> internally pages/work.php
+# /organisation-choose.php/happierme -> /organisation-choose/happierme
+RewriteEngine On
+AcceptPathInfo On
+DirectoryIndex index.php
+
+# Drop a trailing slash on pages (real directories such as /assets/ stay as they are).
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)/$ $1 [R=301,L,QSA]
+
+# Homepage: /index and /index.php both land on /
+RewriteCond %{REQUEST_METHOD} ^(GET|HEAD)$
+RewriteCond %{THE_REQUEST} \s[^\s?]*/index(?:\.php)?(?:[\s?]|$) [NC]
+RewriteRule ^index(?:\.php)?/?$ / [R=301,L,QSA]
+
+# Browser asked for a .php URL. Send it to the same path without .php.
+# THE_REQUEST is the original client line, so the internal rewrite below does not loop.
+# POST is left on the .php file so form bodies are not dropped by a redirect.
+RewriteCond %{REQUEST_METHOD} ^(GET|HEAD)$
+RewriteCond %{THE_REQUEST} \s/+([^\s?]+)\.php(/[^\s?]*)?(?:[\s?]|$) [NC]
+RewriteRule ^ /%1%2 [R=301,L,NE,QSA]
+
+# Real files and directories (css, js, images) are served as-is.
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# /free/{id} and /organisation-choose/{id} -> script.php/{id} (PATH_INFO)
+RewriteRule ^(free|organisation(?:-[A-Za-z]+)?)/([^/]+)/?$ $1.php/$2 [L,QSA]
+
+# /pages/work -> pages/work.php when that file exists
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.+?)/?$ $1.php [L,QSA]
