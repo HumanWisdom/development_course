@@ -2446,7 +2446,7 @@ Work</button>
             <a class="BlogCard" href="students_flourish.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/99.webp" class="img-responsive img_blogs" alt="Blog_img">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/102.webp" class="img-responsive img_blogs" alt="Blog_img">
                   </div>
                 </div>
 
