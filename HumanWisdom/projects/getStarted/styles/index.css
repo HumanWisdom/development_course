@@ -47824,16 +47824,16 @@ nav a:hover {
 }
 /* Header CTA may come from included markup without btn_tff class.
    Login is a nav label, not that button, so it keeps the same color as the other labels. */
-.header a[href*="splash_options.php"]:not(#loginClick),
-.header a[href*="splash_options.php"]:not(#loginClick):hover,
-.header a[href*="splash_options.php"]:not(#loginClick):focus,
-.header a[href*="splash_options.php"]:not(#loginClick):active,
-.header a[href*="splash_options.php"]:not(#loginClick):visited {
+.header a[href*="splash-options.php"]:not(#loginClick),
+.header a[href*="splash-options.php"]:not(#loginClick):hover,
+.header a[href*="splash-options.php"]:not(#loginClick):focus,
+.header a[href*="splash-options.php"]:not(#loginClick):active,
+.header a[href*="splash-options.php"]:not(#loginClick):visited {
   color: #fff !important;
   -webkit-text-fill-color: #fff !important;
   text-decoration: none !important;
 }
-.header a[href*="splash_options.php"]:not(#loginClick) * {
+.header a[href*="splash-options.php"]:not(#loginClick) * {
   color: #fff !important;
   -webkit-text-fill-color: #fff !important;
 }

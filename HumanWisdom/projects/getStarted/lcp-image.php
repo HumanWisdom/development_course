@@ -2,7 +2,7 @@
 /**
  * Legacy redirect — LCP images are served as static WebP (faster than PHP readfile).
  */
-require_once __DIR__ . '/includes/media_config.php';
+require_once __DIR__ . '/includes/media-config.php';
 
 $key = isset($_GET['k']) ? (string) $_GET['k'] : '';
 $density = isset($_GET['d']) ? (string) $_GET['d'] : '1x';

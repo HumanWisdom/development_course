@@ -13,7 +13,7 @@
     <meta property="og:image:height" content="232" />
 
     <!-- vendor_header -->
-    <?php include('../includes/vendor_header.php'); ?>
+    <?php include('../includes/vendor-header.php'); ?>
     <!-- /vendor_header -->
 </head>
 
@@ -11763,7 +11763,7 @@
     </div>
 
     <!-- vendor_footer -->
-    <?php include('../includes/vendor_footer.php'); ?>
+    <?php include('../includes/vendor-footer.php'); ?>
     <!-- /vendor_footer -->
     <style id="faq-wide-980">
       /* Wider screens: FAQ content column stays 980px centered */

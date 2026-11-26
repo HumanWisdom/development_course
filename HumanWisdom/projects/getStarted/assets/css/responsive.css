@@ -1742,7 +1742,7 @@
   }
 
   /* About Us page ONLY - All text except headings (h1, h2, h3) to 12px on mobile */
-  /* Scope to about_us.php page using unique classes: hpt120px, section-headernew, div_inspire, div_subscription */
+  /* Scope to about-us.php page using unique classes: hpt120px, section-headernew, div_inspire, div_subscription */
   /* Target sections outside main#main (like Welcome section) - only on about_us page */
   section.hpt120px h4,
   section.hpt120px h5,
@@ -3128,7 +3128,7 @@
     flex: 0 0 100% !important;
   }
 
-  /* Force White Plus/Minus Icons on Mobile Accordion Footer - Exact match from about_us.php */
+  /* Force White Plus/Minus Icons on Mobile Accordion Footer - Exact match from about-us.php */
   /* CRITICAL: Override ALL SVG image rules from main.css with highest specificity */
   /* This must override: #accordion_footer .panel-title>a:after { content: url(...svg...) } */
   #accordion_footer .panel-title > a::after,
@@ -3166,7 +3166,7 @@
     background-image: none !important;
   }
 
-  /* New override for Bootstrap 5 .accordion-button if present - from about_us.php */
+  /* New override for Bootstrap 5 .accordion-button if present - from about-us.php */
   #accordion_footer .accordion-button::after,
   #accordion_footer button.accordion-button::after,
   .dfooter #accordion_footer .accordion-button::after,
