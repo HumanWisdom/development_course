@@ -6007,7 +6007,8 @@ body.page-healthcare .healthcare-hero-shell .wide-screen-only {
     font-weight: 400 !important;
     line-height: 140% !important;
     letter-spacing: 0 !important;
-    color: rgba(255, 255, 255, 1) !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff;
     text-align: center !important;
   }
 

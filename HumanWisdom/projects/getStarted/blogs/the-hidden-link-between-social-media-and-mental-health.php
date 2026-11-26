@@ -52,7 +52,7 @@
 
             <div class="row mt20px rmb80px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/104.webp" class="img-responsive" alt="The hidden link between social media and mental health">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/67.webp" class="img-responsive" alt="The hidden link between social media and mental health">
               </div>
             </div>
 
