@@ -2,11 +2,11 @@
    Section rhythm: ~100px between blocks; content max 1340 / 980 */
 
 /* ---------- 1. Hero banner — Figma 1440×610 ---------- */
-/* Keep hpt120px top clearance — fixed .header_site_stack is ~170px; padding:0 was clipping the headline under the nav */
+/* Fixed header is 120px + 50px audience bar = 170px. Banner starts under it so Figma’s 94.5px gap stays visible. */
 body.page-work section.hpt120px {
   margin: 0;
   padding: 0;
-  padding-top: 120px;
+  padding-top: 170px;
 }
 
 body.page-work .healthcare-hero-shell .mt3rem {
@@ -54,17 +54,17 @@ body.page-work .healthcare-hero-shell img.img-responsive.w100p.h-800 {
   display: block;
 }
 
-/* Figma 13161:7607 — copy at left 230 / top 135 (was top:-21px, clipping headline) */
+/* Figma 13522:13429 — copy at left 230 / top 94.5 */
 body.page-work .healthcare-hero-shell .absolute_desc,
 body.page-work .healthcare-hero-shell .absolute_desc_m {
   position: absolute !important;
-  top: 135px !important;
+  top: 94.5px !important;
   left: 230px !important;
   right: auto !important;
   bottom: auto !important;
   height: auto !important;
   max-height: none !important;
-  width: 409px !important;
+  width: 480px !important;
   max-width: calc(100% - 250px) !important;
   margin: 0 !important;
   padding: 0 !important;
@@ -76,7 +76,7 @@ body.page-work .healthcare-hero-shell .absolute_desc_m {
 body.page-work .healthcare-hero-shell .absolute_desc > .work-hero-stack,
 body.page-work .healthcare-hero-shell .absolute_desc_m > .work-hero-stack {
   margin-left: 0 !important;
-  width: 409px !important;
+  width: 480px !important;
   max-width: 100% !important;
 }
 
@@ -103,7 +103,7 @@ body.page-work .healthcare-hero-shell .absolute_desc_m > .work-hero-stack {
 }
 
 body.page-work .healthcare-hero-shell .work-hero-stack {
-  width: 409px !important;
+  width: 480px !important;
   max-width: 100%;
 }
 
@@ -118,11 +118,11 @@ body.page-work .work-hero-stack h1 {
 
 body.page-work .work-hero-stack h5 {
   font-family: Poppins, sans-serif;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 400;
   line-height: 1.6;
-  color: #ffffff !important;
-  -webkit-text-fill-color: #ffffff;
+  color: rgba(255, 255, 255, 0.75) !important;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.75);
   margin: 18px 0 0;
 }
 
@@ -135,7 +135,7 @@ body.page-work .work-hero-ctas {
   flex-direction: row !important;
   flex-wrap: nowrap !important;
   align-items: flex-start;
-  gap: 10px;
+  gap: 12px;
   margin-top: 30px;
   width: auto !important;
   max-width: 100%;
@@ -145,17 +145,21 @@ body.page-work .work-hero-try {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 9px;
   flex: 0 0 auto;
 }
 
-body.page-work .work-hero-note {
+body.page-work .work-hero-note,
+body.page-work .work-hero-note:hover,
+body.page-work .work-hero-try:hover .work-hero-note {
   margin: 0;
   font-family: Poppins, sans-serif;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 400;
-  line-height: 1.4;
-  color: #ffffff;
+  line-height: 1.6;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff;
+  text-decoration: none !important;
   text-align: center;
   white-space: nowrap;
 }
@@ -172,11 +176,11 @@ body.page-work .healthcare-hero-shell .absolute_desc_m a[href="#bring_happierme"
   text-decoration: none;
 }
 
-body.page-work .work-hero-ctas .btn_tff,
-body.page-work .work-hero-ctas .req_button,
-body.page-work .healthcare-hero-shell .absolute_desc_m .work-hero-ctas .btn_tff,
-body.page-work .healthcare-hero-shell .absolute_desc_m .work-hero-ctas .req_button,
-body.page-work .req_button.work-hero-btn {
+body.page-work .work-hero-ctas .btn_tff:not(.work-hero-btn--outline),
+body.page-work .work-hero-ctas .req_button:not(.work-hero-btn--outline),
+body.page-work .healthcare-hero-shell .absolute_desc_m .work-hero-ctas .btn_tff:not(.work-hero-btn--outline),
+body.page-work .healthcare-hero-shell .absolute_desc_m .work-hero-ctas .req_button:not(.work-hero-btn--outline),
+body.page-work .req_button.work-hero-btn:not(.work-hero-btn--outline) {
   width: auto !important;
   min-width: 0 !important;
   max-width: none !important;
@@ -188,8 +192,9 @@ body.page-work .req_button.work-hero-btn {
   background: linear-gradient(180deg, #ed7d6f 0%, #d7586b 100%) !important;
   border: 0 !important;
   display: inline-flex !important;
-  align-items: center;
-  justify-content: center;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
   white-space: nowrap;
   box-sizing: border-box;
   font-size: 18px !important;
@@ -200,42 +205,41 @@ body.page-work .req_button.work-hero-btn {
   transition: background 0.3s, color 0.3s, border-color 0.3s;
 }
 
-body.page-work .work-hero-cta-primary {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 9px;
-}
-
-body.page-work .work-hero-note {
-  margin: 0;
-  font-family: Poppins, sans-serif;
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 1.6;
-  color: #fff;
-  text-align: center;
-  white-space: nowrap;
-}
-
 body.page-work .work-hero-ctas a.work-hero-btn--outline,
 body.page-work .work-hero-ctas #requestDemoForWork.work-hero-btn--outline {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  width: auto !important;
+  height: auto !important;
+  min-height: 51px;
+  padding: 13px 24px !important;
+  box-sizing: border-box !important;
+  line-height: 1.4 !important;
   background: #fff !important;
   background-image: none !important;
   border: 1px solid #d7586b !important;
   color: #d7586b !important;
+  -webkit-text-fill-color: #d7586b;
+}
+
+body.page-work .work-hero-ctas #requestDemoForWork .work-hero-link-label {
+  display: block;
+  height: auto;
+  line-height: 1.4;
 }
 
 /* Match index .div-wrapper-4 / .btn_tff hover */
-body.page-work .work-hero-ctas .btn_tff:hover,
-body.page-work .work-hero-ctas .btn_tff:focus:hover,
-body.page-work .work-hero-ctas .btn_tff:active,
-body.page-work .work-hero-ctas .req_button:hover,
-body.page-work .work-hero-ctas .req_button:focus:hover,
-body.page-work .work-hero-ctas .req_button:active,
-body.page-work .work-hero-ctas a.work-hero-btn:hover,
-body.page-work .work-hero-ctas a.work-hero-btn:focus:hover,
-body.page-work .work-hero-ctas a.work-hero-btn:active,
+body.page-work .work-hero-ctas .btn_tff:not(.work-hero-btn--outline):hover,
+body.page-work .work-hero-ctas .btn_tff:not(.work-hero-btn--outline):focus:hover,
+body.page-work .work-hero-ctas .btn_tff:not(.work-hero-btn--outline):active,
+body.page-work .work-hero-ctas .req_button:not(.work-hero-btn--outline):hover,
+body.page-work .work-hero-ctas .req_button:not(.work-hero-btn--outline):focus:hover,
+body.page-work .work-hero-ctas .req_button:not(.work-hero-btn--outline):active,
+body.page-work .work-hero-ctas a.work-hero-btn:not(.work-hero-btn--outline):hover,
+body.page-work .work-hero-ctas a.work-hero-btn:not(.work-hero-btn--outline):focus:hover,
+body.page-work .work-hero-ctas a.work-hero-btn:not(.work-hero-btn--outline):active,
 body.page-work .healthcare-hero-shell .absolute_desc_m .work-hero-ctas .btn_tff:hover,
 body.page-work .healthcare-hero-shell .absolute_desc_m .work-hero-ctas .btn_tff:active,
 body.page-work .healthcare-hero-shell .absolute_desc_m .work-hero-ctas .req_button:hover,
@@ -256,6 +260,7 @@ body.page-work .work-hero-ctas #requestDemoForWork.work-hero-btn--outline:active
   background-image: none !important;
   border-color: #bf5061 !important;
   color: #bf5061 !important;
+  -webkit-text-fill-color: #bf5061;
 }
 
 /* ---------- 2. Trust bar (1440×105) ---------- */
@@ -544,30 +549,30 @@ body.page-work .work-diff-card-top .work-diff-icon {
 
 body.page-work .work-diff-card-body {
   flex: 1;
-  background: #fff7e6 !important;
+  background: #fff7e6;
   padding: 36px;
   text-align: center;
   box-sizing: border-box;
 }
 
-body.page-work .work-diff-card-top--prevention + .work-diff-card-body { background: rgba(238, 161, 112, 0.1); }
-body.page-work .work-diff-card-top--root + .work-diff-card-body { background: rgba(237, 125, 111, 0.1); }
-body.page-work .work-diff-card-top--skills + .work-diff-card-body { background: rgba(215, 91, 104, 0.1); }
-body.page-work .work-diff-card-top--whole + .work-diff-card-body { background: rgba(128, 51, 88, 0.1); }
+body.page-work .work-diff-card-top--prevention + .work-diff-card-body { background: rgba(238, 161, 112, 0.1) !important; }
+body.page-work .work-diff-card-top--root + .work-diff-card-body { background: rgba(237, 125, 111, 0.1) !important; }
+body.page-work .work-diff-card-top--skills + .work-diff-card-body { background: rgba(215, 91, 104, 0.1) !important; }
+body.page-work .work-diff-card-top--whole + .work-diff-card-body { background: rgba(128, 51, 88, 0.1) !important; }
 
 body.page-work .work-diff-card-title {
   margin: 0 0 9px;
   font-family: Poppins, sans-serif;
   font-size: 24px;
   font-weight: 500;
-  line-height: 1.4;
+  line-height: 1.3;
   color: #000;
 }
 
 body.page-work .work-diff-card-text {
   margin: 0;
   font-family: Poppins, sans-serif;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 400;
   line-height: 1.5;
   color: #000;
@@ -1242,8 +1247,12 @@ body.page-work .work-copy-mobile:not(.display_d_none) {
     gap: 8px !important;
   }
 
-  body.page-work .work-hero-note {
+  body.page-work .work-hero-note,
+  body.page-work .work-hero-note:hover,
+  body.page-work .work-hero-try:hover .work-hero-note {
     color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff;
+    text-decoration: none !important;
     font-size: 12px !important;
     white-space: normal !important;
   }
@@ -1257,12 +1266,12 @@ body.page-work .work-copy-mobile:not(.display_d_none) {
     flex: 0 0 auto !important;
   }
 
-  body.page-work .healthcare-hero-shell .absolute_desc_m .work-hero-ctas .btn_tff,
-  body.page-work .healthcare-hero-shell .absolute_desc_m .work-hero-ctas .req_button,
-  body.page-work .healthcare-hero-shell .absolute_desc_m .work-hero-ctas .req_button.work-hero-btn,
-  body.page-work .work-hero-ctas .btn_tff,
-  body.page-work .work-hero-ctas .req_button,
-  body.page-work .req_button.work-hero-btn {
+  body.page-work .healthcare-hero-shell .absolute_desc_m .work-hero-ctas .btn_tff:not(.work-hero-btn--outline),
+  body.page-work .healthcare-hero-shell .absolute_desc_m .work-hero-ctas .req_button:not(.work-hero-btn--outline),
+  body.page-work .healthcare-hero-shell .absolute_desc_m .work-hero-ctas .req_button.work-hero-btn:not(.work-hero-btn--outline),
+  body.page-work .work-hero-ctas .btn_tff:not(.work-hero-btn--outline),
+  body.page-work .work-hero-ctas .req_button:not(.work-hero-btn--outline),
+  body.page-work .req_button.work-hero-btn:not(.work-hero-btn--outline) {
     width: 335px !important;
     max-width: 335px !important;
     min-width: 0 !important;
@@ -1294,6 +1303,7 @@ body.page-work .work-copy-mobile:not(.display_d_none) {
     max-width: none !important;
     min-width: 0 !important;
     height: auto !important;
+    min-height: 0 !important;
     margin: 0 !important;
     padding: 0 !important;
     background: none !important;
@@ -1658,7 +1668,11 @@ body.page-work .work-copy-mobile:not(.display_d_none) {
     height: 40px !important;
   }
 
-  body.page-work .work-diff-card-body {
+  body.page-work .work-diff-card-body,
+  body.page-work .work-diff-card-top--prevention + .work-diff-card-body,
+  body.page-work .work-diff-card-top--root + .work-diff-card-body,
+  body.page-work .work-diff-card-top--skills + .work-diff-card-body,
+  body.page-work .work-diff-card-top--whole + .work-diff-card-body {
     background: transparent !important;
     padding: 0 !important;
     width: 299px !important;

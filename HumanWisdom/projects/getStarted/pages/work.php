@@ -163,7 +163,7 @@
                       </a>
                       <p class="work-hero-note">No credit card required</p>
                     </div>
-                    <a href="#bring_happierme" class="fs_15px fw_600 lh_140p fc_ffffff btn_tff req_button work-hero-btn" id="requestDemoForWork">
+                    <a href="#bring_happierme" class="fs_18px fw_600 lh_140p btn_tff req_button work-hero-btn work-hero-btn--outline" id="requestDemoForWork">
                       <span class="work-hero-link-label">Request a demo</span>
                       <svg class="work-hero-link-chevron" viewBox="0 0 9 14.73" width="8" height="13" aria-hidden="true" focusable="false">
                         <path d="M1.15 1.2L7.6 7.365L1.15 13.53" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
