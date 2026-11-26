@@ -2,7 +2,7 @@
 /**
  * Legacy entry — redirects to /free/{id}.
  */
-require_once __DIR__ . '/includes/organisation_helper.php';
+require_once __DIR__ . '/includes/organisation-helper.php';
 
 $id = hw_org_query_id();
 if ($id === '') {

@@ -82,7 +82,7 @@
               <div class="row mt10px">
                 <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 p0">
                   <div>
-                    <a href="https://happierme.app/pages/splash_options.php" class="btn tryhappiermeClick btn_try_happierme fs_15px fw_600 lh_140p fc_ffffff center_flex p-2rem">Try HappierMe for free</a>
+                    <a href="https://happierme.app/pages/splash-options.php" class="btn tryhappiermeClick btn_try_happierme fs_15px fw_600 lh_140p fc_ffffff center_flex p-2rem">Try HappierMe for free</a>
                   </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 display_m_none downloadApp_slider ">

@@ -4,7 +4,7 @@
 (function () {
     "use strict";
 
-    var CHUNK_URL = "index_chunk.php";
+    var CHUNK_URL = "index-chunk.php";
     var loading = Object.create(null);
     var loaded = Object.create(null);
 

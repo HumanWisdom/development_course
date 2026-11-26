@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/includes/organisation_helper.php';
+require_once __DIR__ . '/includes/organisation-helper.php';
 hw_org_ensure_route_id();
 
 $orgId = hw_org_path_id();

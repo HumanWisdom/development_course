@@ -15,7 +15,7 @@
     <meta property="og:image:height" content="232" />
 
     <!-- vendor_header -->
-    <?php include('../includes/vendor_header.php'); ?>
+    <?php include('../includes/vendor-header.php'); ?>
     <!-- /vendor_header -->
 
     <!-- Google tag (gtag.js) -->
@@ -113,7 +113,7 @@
           background-image: none !important;
         }
         
-        /* New override for Bootstrap 5 .accordion-button if present - Exact match from about_us.php */
+        /* New override for Bootstrap 5 .accordion-button if present - Exact match from about-us.php */
         .accordion-button::after {
           background-image: none !important;
           content: "+" !important;
@@ -464,7 +464,7 @@
     </main>
 
     <!-- vendor_footer -->
-    <?php include('../includes/vendor_footer.php'); ?>
+    <?php include('../includes/vendor-footer.php'); ?>
     <!-- /vendor_footer -->
 
   </body>

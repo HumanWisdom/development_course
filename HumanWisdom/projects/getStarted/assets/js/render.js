@@ -37,7 +37,7 @@ $(".owl_container:not(.owl_testimonials) .owl-carousel").owlCarousel({
         responsive: { 0: { items: 1 }, 600: { items: 3 }, 1e3: { items: 3 } },
     }),
     $(window).resize(function () {
-        window.matchMedia("(max-width: 768px)").matches, $(".btn_tff").attr("href", "../pages/splash_options.php");
+        window.matchMedia("(max-width: 768px)").matches, $(".btn_tff").attr("href", "../pages/splash-options.php");
     }),
     $(window).resize(),
     $(window).resize(function () {
@@ -45,7 +45,7 @@ $(".owl_container:not(.owl_testimonials) .owl-carousel").owlCarousel({
        //  (logevent("click_free_trial_menu_web", "index.php") 
           $(".btn_tff_tn").attr("href", "https://onelink.to/hsnt8b")   :  
           // (logevent("click_free_trial_menu_web", "index.php") 
-           $(".btn_tff_tn").attr("href", "../pages/splash_options.php");
+           $(".btn_tff_tn").attr("href", "../pages/splash-options.php");
     }),
     $(window).resize(),
     $(window).resize(function () {
@@ -53,7 +53,7 @@ $(".owl_container:not(.owl_testimonials) .owl-carousel").owlCarousel({
         var storeUrl = "https://onelink.to/hsnt8b";
         var host = window.location.hostname;
         var isLocal = host === "localhost" || host === "127.0.0.1" || host === "[::1]";
-        var splashUrl = isLocal ? "/pages/splash_options.php" : "https://happierme.app/pages/splash_options.php";
+        var splashUrl = isLocal ? "/pages/splash-options.php" : "https://happierme.app/pages/splash-options.php";
         var ollyChatUrl = "https://happierme.app/adults/chat-bot";
         $("#transformDownloadApp").attr("href", isMobile ? storeUrl : splashUrl);
         $("#OllyChatBtn").attr("href", ollyChatUrl);

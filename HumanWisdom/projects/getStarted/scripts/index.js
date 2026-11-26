@@ -1204,7 +1204,7 @@ if (loginClick) {
         localStorage.setItem('pricing',false);
         logevent("click_login", "index.php");
         afterLogNavigate(function () {
-            window.location.href = "../pages/splash_options.php";
+            window.location.href = "../pages/splash-options.php";
         });
     });
 }
@@ -1219,7 +1219,7 @@ if (happiermeTryForFree) {
         localStorage.setItem('pricing',false);
         logevent("click_try_happierme_for_free", "index.php");
         afterLogNavigate(function () {
-            window.location.href = happiermeTryForFree.getAttribute("href") || "../pages/splash_options.php";
+            window.location.href = happiermeTryForFree.getAttribute("href") || "../pages/splash-options.php";
         });
     });
 }
@@ -1232,7 +1232,7 @@ if (tryhappiermeClick[0]) {
         if (a) e.preventDefault();
         localStorage.setItem('login',true);
         localStorage.setItem('pricing',false);
-        var href = (a && a.getAttribute("href")) || "../pages/splash_options.php";
+        var href = (a && a.getAttribute("href")) || "../pages/splash-options.php";
         afterLogNavigate(function () {
             window.location.href = href;
         });
@@ -1251,7 +1251,7 @@ document.addEventListener("click", function (e) {
     localStorage.setItem("login", false);
     logevent("click_start_free_trial", "index.php");
     var href = sameOriginHref(
-        (innerA && innerA.getAttribute("href")) || "/pages/splash_options.php"
+        (innerA && innerA.getAttribute("href")) || "/pages/splash-options.php"
     );
     afterLogNavigate(function () {
         window.location.href = href;
@@ -1282,7 +1282,7 @@ if (PricingSelectBtnHomePage) {
         localStorage.setItem('pricing',true);
         localStorage.setItem('login',false);
         logevent("click_start_free_trial", "home.php");
-        var href = (innerA && innerA.getAttribute("href")) || "../pages/splash_options.php";
+        var href = (innerA && innerA.getAttribute("href")) || "../pages/splash-options.php";
         afterLogNavigate(function () {
             window.location.href = href;
         });
@@ -1294,7 +1294,7 @@ if (discoverSectionPricingClick) {
     discoverSectionPricingClick.addEventListener('click', function () {
         localStorage.setItem('pricing',true);
         localStorage.setItem('login',false);
-        window.location.href = "../pages/splash_options.php";
+        window.location.href = "../pages/splash-options.php";
     });
 }
 
@@ -1338,7 +1338,7 @@ if (teenagersClick) {
 
 const teenagerCoverClick = document.getElementById('teenagerCoverClick');
 if (teenagerCoverClick) {
-    logevent("click_teenagers", "splash_options.php");
+    logevent("click_teenagers", "splash-options.php");
     teenagerCoverClick.addEventListener('click', function () {
         //    window.location.href = url+"/teenagers/onboarding/login/";
         window.location.href = url+"/teenagers/intro-carousel";
@@ -1347,7 +1347,7 @@ if (teenagerCoverClick) {
 
 const adultsClick = document.getElementById('adultsClick');
 if (adultsClick) {
-    logevent("click_adults", "splash_options.php");
+    logevent("click_adults", "splash-options.php");
 
     adultsClick.addEventListener('click', function () {
         if(localStorage.getItem('pricing')=='true'){
@@ -1386,7 +1386,7 @@ requestDemoForWork &&
                 function (e) {
                     logevent("click_aboutus", "index.php");
                     setActiveNav("AboutUs");
-                    localStorage.setItem("activeTab", "aboutUs"), (window.location.href = "../pages/about_us.php");
+                    localStorage.setItem("activeTab", "aboutUs"), (window.location.href = "../pages/about-us.php");
                 },
                 !1
             );
@@ -1407,7 +1407,7 @@ requestDemoForWork &&
                 function (e) {
                     logevent("click_blog", "index.php");
                     setActiveNav("blogs");
-                    localStorage.setItem("activeTab", "blogs"), (window.location.href = "../blogs/blog_index.php");
+                    localStorage.setItem("activeTab", "blogs"), (window.location.href = "../blogs/blog-index.php");
                 },
                 !1
             );
@@ -1788,7 +1788,7 @@ nfsnContactForm &&
                         : "openInApp2_1" == e || "openInApp2_2" == e ? (logevent("click_open_in_app_web", "index.php") , afterLogNavigate(function(){window.location.href="https://happierme.app/adults/curated/have-fulfilling-relationships"}))
                         : "openInApp3_1" == e  || "openInApp3_2" == e ? (logevent("click_open_in_app_web", "index.php") , afterLogNavigate(function(){window.location.href="https://happierme.app/adults/curated/wisdom-for-workplace"}))
                         : "exploreAppWeb" == e ? (logevent("click_explore_on_app_web", "index.php") , afterLogNavigate(function(){ window.location.href="https://happierme.app/adults/feel-better-now"}))
-                        : "ourStory" == e ? (logevent("click_footer_link", "index.php", { link_name: "our_story" }) ,   afterLogNavigate(function(){window.location.href = "../pages/about_us.php"}))
+                        : "ourStory" == e ? (logevent("click_footer_link", "index.php", { link_name: "our_story" }) ,   afterLogNavigate(function(){window.location.href = "../pages/about-us.php"}))
                         : "testimonialFooter" == e ? (logevent("click_footer_link", "index.php", { link_name: "success_stories" }) , afterLogNavigate(function(){window.location.href = "https://happierme.app/adults/testimonials"}))
                         : "contactUsFooter" == e ? (logevent("click_footer_link", "index.php", { link_name: "contact_us" }) , afterLogNavigate(function(){window.location.href="https://happierme.app/adults/contact-us"})) : ''
                         

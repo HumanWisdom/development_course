@@ -42,7 +42,7 @@
 </script>
 
     <!-- vendor_header -->
-    <?php include('../includes/vendor_header.php'); ?>
+    <?php include('../includes/vendor-header.php'); ?>
     <!-- /vendor_header -->
 
     <link rel="stylesheet" href="<?= hw_asset_url('../assets/css/healthcare.css'); ?>">
@@ -88,7 +88,7 @@
           width: auto !important;
         }
 
-        /* New override for Bootstrap 5 .accordion-button if present - Exact match from about_us.php */
+        /* New override for Bootstrap 5 .accordion-button if present - Exact match from about-us.php */
         .accordion-button::after {
           background-image: none !important;
           content: "+" !important;
@@ -767,7 +767,7 @@
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 work-blog-wrap">
             <div class="owl_blog">
               <div class="owl-carousel owl-theme">
-                <a class="item" href="../blogs/avoid_and_overcome_burnout_with_self_awareness.php">
+                <a class="item" href="../blogs/avoid-and-overcome-burnout-with-self-awareness.php">
                   <div class="div_blog">
                     <div class="row">
                       <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-12 p0">
@@ -784,7 +784,7 @@
                   </div>
                 </a>
 
-                <a class="item" href="../blogs/how_to_manage_your_own_mental_health.php">
+                <a class="item" href="../blogs/how-to-manage-your-own-mental-health.php">
                   <div class="div_blog">
                     <div class="row">
                       <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-12 p0">
@@ -801,7 +801,7 @@
                   </div>
                 </a>
 
-                <a class="item" href="../blogs/difficult_emotions.php">
+                <a class="item" href="../blogs/difficult-emotions.php">
                   <div class="div_blog">
                     <div class="row">
                       <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-12 p0">
@@ -845,7 +845,7 @@
     </main>
 
     <!-- vendor_footer -->
-    <?php include('../includes/vendor_footer.php'); ?>
+    <?php include('../includes/vendor-footer.php'); ?>
     <!-- /vendor_footer -->
 
     <script>

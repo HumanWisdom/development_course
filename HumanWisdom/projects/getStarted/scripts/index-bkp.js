@@ -37,7 +37,7 @@ setTimeout(() => {
             "click",
             function (e) {
                 localStorage.setItem("activeTab", "aboutUs");
-                window.location.href = "../pages/about_us.php";
+                window.location.href = "../pages/about-us.php";
             },
             !1
         );
@@ -48,7 +48,7 @@ setTimeout(() => {
             "click",
             function (e) {
                 localStorage.setItem("activeTab", "blogs");
-                window.location.href = "../blogs/blog_index.php";
+                window.location.href = "../blogs/blog-index.php";
             },
             !1
         );
