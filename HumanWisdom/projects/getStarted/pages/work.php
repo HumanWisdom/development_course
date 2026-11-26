@@ -41,7 +41,7 @@
 </script>
 
     <!-- vendor_header -->
-    <?php include('../includes/vendor_header.php'); ?>
+    <?php include('../includes/vendor-header.php'); ?>
     <!-- /vendor_header -->
 
     <style>
@@ -82,7 +82,7 @@
           background-image: none !important;
         }
         
-        /* New override for Bootstrap 5 .accordion-button if present - Exact match from about_us.php */
+        /* New override for Bootstrap 5 .accordion-button if present - Exact match from about-us.php */
         .accordion-button::after {
           background-image: none !important;
           content: "+" !important;
@@ -389,20 +389,6 @@
             </div>
           </section>
 
-          <!-- Measure well-being: cream banner 400px; image taller and overflows -->
-          <section class="work-measure">
-            <div class="work-measure-band" aria-hidden="true"></div>
-            <div class="work-measure-inner" data-aos="fade-up" data-aos-delay="100">
-              <div class="work-measure-media">
-                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/meawell.svg" class="img-responsive" alt="Organization Dashboard">
-              </div>
-              <div class="work-measure-copy">
-                <h2 class="work-section-title">Measure well-being.<br class="display_m_none"> Drive performance.</h2>
-                <p>Give HR teams a clear view of employee engagement and wellness with actionable insights that help build healthier, more productive workplaces.<br>All data is anonymised, so individuals cannot be identified.</p>
-              </div>
-            </div>
-          </section>
-
           <!-- testimonials -->
           <section class="work-testimonials-section">
             <div class="section-header work-testimonials-header">
@@ -536,6 +522,20 @@
             </div>
           </section>
 
+          <!-- Measure well-being: cream banner 400px; image taller and overflows -->
+          <section class="work-measure">
+            <div class="work-measure-band" aria-hidden="true"></div>
+            <div class="work-measure-inner" data-aos="fade-up" data-aos-delay="100">
+              <div class="work-measure-media">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/website/svgs/meawell.svg" class="img-responsive" alt="Organization Dashboard">
+              </div>
+              <div class="work-measure-copy">
+                <h2 class="work-section-title">Measure well-being.<br class="display_m_none"> Drive performance.</h2>
+                <p>Give HR teams a clear view of employee engagement and wellness with actionable insights that help build healthier, more productive workplaces.<br>All data is anonymised, so individuals cannot be identified.</p>
+              </div>
+            </div>
+          </section>
+
           <?php
             $hm_demo_subtitle = 'Connect with our specialists today and see how we can help you prioritize a happier workspace';
             $hm_demo_secondary_label = 'Try HappierMe free for 10 days';
@@ -562,7 +562,7 @@
 
                 <div class="owl_blog">
                   <div class="owl-carousel owl-theme">
-                    <a class="item" data-aos="fade-up" data-aos-delay="200"href="../blogs/to_succeed_as_a_leader_you_need_self_awareness.php">
+                    <a class="item" data-aos="fade-up" data-aos-delay="200"href="../blogs/to-succeed-as-a-leader-you-need-self-awareness.php">
                       <div class="div_blog">
                         <div class="row">
                           <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
@@ -580,7 +580,7 @@
                       </div>
                     </a>
 
-                    <a class="item" data-aos="fade-up" data-aos-delay="300" href="../blogs/6_ways_to_transform_organisations.php">
+                    <a class="item" data-aos="fade-up" data-aos-delay="300" href="../blogs/6-ways-to-transform-organisations.php">
                       <div class="div_blog">
                         <div class="row">
                           <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
@@ -598,7 +598,7 @@
                       </div>
                     </a>
 
-                    <a class="item" data-aos="fade-up" data-aos-delay="400"href="../blogs/how_can_organizations_reduce_workplace_conflict_and_boost_collaboration.php">
+                    <a class="item" data-aos="fade-up" data-aos-delay="400"href="../blogs/how-can-organizations-reduce-workplace-conflict-and-boost-collaboration.php">
                       <div class="div_blog">
                         <div class="row">
                           <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
@@ -648,7 +648,7 @@
     </div> -->
 
     <!-- vendor_footer -->
-    <?php include('../includes/vendor_footer.php'); ?>
+    <?php include('../includes/vendor-footer.php'); ?>
     <!-- /vendor_footer -->
     <link rel="stylesheet" href="<?= hw_asset_url('../assets/css/work.css'); ?>">
     <!-- Force Figma mobile title size (beats deferred index.css 18px hammer) -->

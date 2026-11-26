@@ -1,8 +1,8 @@
 <?php
 // Include security configuration
-require_once('./includes/security_config.php');
-require_once('./includes/page_assets.php');
-require_once('./includes/media_config.php');
+require_once('./includes/security-config.php');
+require_once('./includes/page-assets.php');
+require_once('./includes/media-config.php');
 hw_page_assets_configure('landing');
 
 $hw_lcp_banner_desktop = hw_lcp_image_url('banner_desktop', '1x');
@@ -61,7 +61,7 @@ if (!headers_sent()) {
   
 
     <!-- vendor_header -->
-    <?php include('./includes/vendor_header.php'); ?>
+    <?php include('./includes/vendor-header.php'); ?>
     <!-- /vendor_header -->
   </head>
 <body id="body" style="padding:0px !important">
@@ -169,7 +169,7 @@ if (!headers_sent()) {
         <?php endif; ?>
       </div>
 
-      <?php include __DIR__ . '/includes/index/orcha_strip.php'; ?>
+      <?php include __DIR__ . '/includes/index/orcha-strip.php'; ?>
 
       <!-- Progressive HTML: sections load when scrolled into view (see index-html-chunks.js) -->
       <div class="index-html-chunk" data-hw-chunk="1" aria-busy="true"></div>
@@ -460,18 +460,18 @@ if (!headers_sent()) {
     <?php
     // App Store / Play Store sticky banner must load with the page (not chunk 4),
     // otherwise it is missing on mobile until the footer chunk is scrolled into view.
-    include __DIR__ . '/includes/sticky_store_banner.php';
+    include __DIR__ . '/includes/sticky-store-banner.php';
     ?>
 
     <?php
-    $chunkVer = (int) @filemtime(__DIR__ . '/includes/index/chunks/chunk_1.php');
+    $chunkVer = (int) @filemtime(__DIR__ . '/includes/index/chunks/chunk-1.php');
     ?>
     <script>window.__HW_INDEX_CHUNK_V__=<?= $chunkVer ?>;</script>
     <script defer src="<?= hw_asset_url('../assets/js/index-html-chunks.js'); ?>"></script>
     <script defer src="<?= hw_asset_url('../assets/js/index-lazy-media-prep.js'); ?>"></script>
 
     <!-- vendor_footer -->
-    <?php include('./includes/vendor_footer.php'); ?>
+    <?php include('./includes/vendor-footer.php'); ?>
     <!-- /vendor_footer -->
 
     <script>

@@ -150,6 +150,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   private routerSubscription: Subscription;
   private userDetailsSubscription: Subscription;
   private hashChangeHandler: () => void;
+  private popStateHandler: () => void;
   private lastScrollTop: number = 0;
   private playstoreBannerObserver: MutationObserver | null = null;
   preference = '';  
@@ -197,11 +198,15 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   ) {
  
     this.navigationItems = SharedService.getPreferenceDataForHome();
-    // Listen to hash changes dynamically
+    // Listen to hash and popstate changes dynamically
     this.hashChangeHandler = () => {
       this.handleHashChange();
     };
     window.addEventListener('hashchange', this.hashChangeHandler);
+    this.popStateHandler = () => {
+      this.handleHashChange();
+    };
+    window.addEventListener('popstate', this.popStateHandler);
     this.isloggedIn = SharedService.isLoggedIn();
     // Also listen to Angular router navigation events
     this.routerSubscription = this.router.events
@@ -1918,42 +1923,63 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   /**
-   * Get navigation item from URL hash
-   * Returns the matching navigation item if hash is found and matches a displayName
-   * Returns null if no hash or no match found
+   * Get navigation item from route topic parameter, explore URL path, or URL hash
+   * Supports:
+   * 1. Route param :topic (e.g., /adults/explore/relationships)
+   * 2. Path parsing /explore/:topic
+   * 3. Backward compatible legacy hash (e.g., /adults/explore#relationships)
    */
   private getNavigationItemFromHash(): NavigationItem | null {
-    // Get hash from URL (e.g., "#Mental-health" or "Mental-health")
-    const hash = window.location.hash;
-    if (!hash || hash.length <= 1) {
-      return null;
-    }
-
-    // Remove the # symbol and normalize
-    const hashValue = hash.substring(1).trim();
-    if (!hashValue) {
-      return null;
-    }
-
-    // Normalize hash: convert hyphens to spaces, handle case
-    const normalizedHash = this.normalizeHash(hashValue);
-    console.log('Hash detected:', hashValue, 'Normalized:', normalizedHash);
-
-    // Get all navigation items
     const allNavItems = SharedService.getPreferenceDataForHome();
 
-    // Find matching navigation item by displayName (case-insensitive, space/hyphen agnostic)
-    const matchingItem = allNavItems.find(item => {
-      const normalizedDisplayName = this.normalizeHash(item.displayName);
-      return normalizedDisplayName === normalizedHash;
-    });
-
-    if (matchingItem) {
-      console.log('Found matching navigation item:', matchingItem);
-      return matchingItem;
+    // 1. Check Angular route param :topic
+    const routeTopic = this.route.snapshot.paramMap?.get('topic');
+    if (routeTopic) {
+      const normalizedRouteTopic = this.normalizeHash(routeTopic);
+      const matchingItem = allNavItems.find(item => {
+        return this.normalizeHash(item.displayName) === normalizedRouteTopic;
+      });
+      if (matchingItem) {
+        console.log('Topic detected from route param:', routeTopic, 'Matching item:', matchingItem);
+        return matchingItem;
+      }
     }
 
-    console.log('No matching navigation item found for hash:', hashValue);
+    // 2. Check window.location.pathname for /explore/:topic
+    const pathname = window.location.pathname;
+    const exploreIndex = pathname.indexOf('/explore/');
+    if (exploreIndex !== -1) {
+      const pathTopic = pathname.substring(exploreIndex + '/explore/'.length).split('/')[0];
+      if (pathTopic) {
+        const normalizedPathTopic = this.normalizeHash(pathTopic);
+        const matchingItem = allNavItems.find(item => {
+          return this.normalizeHash(item.displayName) === normalizedPathTopic;
+        });
+        if (matchingItem) {
+          console.log('Topic detected from pathname:', pathTopic, 'Matching item:', matchingItem);
+          return matchingItem;
+        }
+      }
+    }
+
+    // 3. Fallback: Check hash for backward compatibility (e.g., "#Mental-health" or "#relationships")
+    const hash = window.location.hash;
+    if (hash && hash.length > 1) {
+      const hashValue = hash.substring(1).trim();
+      if (hashValue) {
+        const normalizedHash = this.normalizeHash(hashValue);
+        console.log('Hash detected:', hashValue, 'Normalized:', normalizedHash);
+        const matchingItem = allNavItems.find(item => {
+          return this.normalizeHash(item.displayName) === normalizedHash;
+        });
+        if (matchingItem) {
+          console.log('Found matching navigation item from hash:', matchingItem);
+          return matchingItem;
+        }
+      }
+    }
+
+    console.log('No matching navigation item found for URL/hash');
     return null;
   }
 
@@ -2015,6 +2041,9 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     // Clean up event listeners
     if (this.hashChangeHandler) {
       window.removeEventListener('hashchange', this.hashChangeHandler);
+    }
+    if (this.popStateHandler) {
+      window.removeEventListener('popstate', this.popStateHandler);
     }
     if (this.routerSubscription) {
       this.routerSubscription.unsubscribe();
@@ -2100,20 +2129,35 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   /**
-   * Update the URL fragment (hash) using window.history.replaceState
-   * Keeps browser URL bar in sync with active tab without triggering page reload
+   * Update the URL using window.history.replaceState
+   * If on explore page, updates URL path to /explore/:topic (e.g., /adults/explore/relationships)
+   * Removes any legacy '#' hash fragment from the URL for clean SEO
    */
   private updateUrlFragment(item: NavigationItem): void {
     if (!item || !item.displayName) return;
 
-    const fragment = item.displayName.toLowerCase().trim().replace(/\s+/g, '-');
-    const targetHash = '#' + fragment;
+    const slug = item.displayName.toLowerCase().trim().replace(/\s+/g, '-');
+    const pathname = window.location.pathname;
 
-    if (window.location.hash.toLowerCase() !== targetHash.toLowerCase()) {
-      const newUrl = window.location.pathname + window.location.search + targetHash;
-      window.history.replaceState(null, '', newUrl);
-      this.navigationService.replaceLastHistory(newUrl);
-      console.log('URL Fragment updated to:', targetHash);
+    if (pathname.includes('/explore')) {
+      const program = SharedService.getprogramName() || (this.isAdults ? 'adults' : 'teenagers');
+      const targetPath = `/${program}/explore/${slug}`;
+      const search = window.location.search || '';
+      const fullTargetUrl = targetPath + search;
+
+      if (pathname !== targetPath || window.location.hash) {
+        window.history.replaceState(null, '', fullTargetUrl);
+        this.navigationService.replaceLastHistory(fullTargetUrl);
+        console.log('Explore URL updated to:', fullTargetUrl);
+      }
+    } else {
+      const targetHash = '#' + slug;
+      if (window.location.hash.toLowerCase() !== targetHash.toLowerCase()) {
+        const newUrl = window.location.pathname + window.location.search + targetHash;
+        window.history.replaceState(null, '', newUrl);
+        this.navigationService.replaceLastHistory(newUrl);
+        console.log('URL Fragment updated to:', targetHash);
+      }
     }
   }
 
@@ -2359,7 +2403,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
           const currentUrl = this.router.url.split('#')[0].split('?')[0];
           const exploreUrl = `/${SharedService.getprogramName()}/explore`;
           const homeUrl = `/${SharedService.getprogramName()}/home`;
-          if (currentUrl === exploreUrl || currentUrl === homeUrl) {
+          if (currentUrl === exploreUrl || currentUrl.startsWith(exploreUrl) || currentUrl === homeUrl) {
             // Find the Self Awareness item from the UI-bound personalisedList
             // so that onNavigationClick updates the correct active state in the template
             const selfAwarenessItem = this.personalisedList.find(item => 
@@ -2379,8 +2423,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
             }
           }
           // Fallback: navigate via router (when on a different page)
-          url = `/${SharedService.getprogramName()}/explore`
-          fragment = "self-awareness"
+          url = `/${SharedService.getprogramName()}/explore/self-awareness`
           break;
         }
         case "journal":{

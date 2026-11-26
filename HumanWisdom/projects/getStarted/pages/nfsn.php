@@ -17,7 +17,7 @@
     <!--Canonical Tag-->
     <link rel="canonical" href="https://happierme.app" />
     <!-- vendor_header -->
-    <?php include('../includes/vendor_header.php'); ?>
+    <?php include('../includes/vendor-header.php'); ?>
     <!-- /vendor_header -->
 
     <!-- Google Tag Manager -->
@@ -767,7 +767,7 @@
     </main>
 
     <!-- vendor_footer -->
-    <?php include('../includes/vendor_footer.php'); ?>
+    <?php include('../includes/vendor-footer.php'); ?>
     <!-- /vendor_footer -->
 
   </body>

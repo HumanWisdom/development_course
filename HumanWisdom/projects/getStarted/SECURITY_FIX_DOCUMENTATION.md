@@ -9,7 +9,7 @@ The application was setting session cookies without the `HttpOnly` and `Secure` 
 ## Fix Implementation
 
 ### 1. Secure Session Configuration
-The `security_config.php` file has been updated to configure secure session cookies before starting the session:
+The `security-config.php` file has been updated to configure secure session cookies before starting the session:
 
 ```php
 function configureSecureSession() {
@@ -81,7 +81,7 @@ deleteSecureCookie('remember_me');
 ### 1. Run the Test Script
 ```bash
 # Access the test script in your browser
-http://your-domain/test_secure_cookies.php
+http://your-domain/test-secure-cookies.php
 ```
 
 ### 2. Check Browser Developer Tools
@@ -156,7 +156,7 @@ This fix addresses:
 
 ### Debug Steps
 
-1. Run the test script: `test_secure_cookies.php`
+1. Run the test script: `test-secure-cookies.php`
 2. Check browser developer tools for cookie flags
 3. Verify HTTPS is working properly
 4. Test session functionality

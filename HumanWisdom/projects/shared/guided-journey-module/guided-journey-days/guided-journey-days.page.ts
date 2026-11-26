@@ -522,7 +522,7 @@ export class GuidedJourneyDaysPage implements OnInit {
         .map(l => l.replace(/^[\s\u00A0\u200B]+/, '').replace(/[\s\u00A0\u200B]+$/, ''))
         .filter(l => l.length > 0);
       if (lines.length > 1) {
-        html = lines.map(line => `<p style="margin-bottom: 8px;">${line}</p>`).join('');
+        html = lines.map((line, idx) => `<p style="${idx === lines.length - 1 ? 'margin-bottom: 0;' : 'margin-bottom: 14px;'}">${line}</p>`).join('');
       } else if (lines.length === 1) {
         html = `<p style="margin: 0;">${lines[0]}</p>`;
       }

@@ -34,7 +34,7 @@
 </script>
 
     <!-- vendor_header -->
-    <?php include('../includes/vendor_header.php'); ?>
+    <?php include('../includes/vendor-header.php'); ?>
     <!-- /vendor_header -->
   </head>
 

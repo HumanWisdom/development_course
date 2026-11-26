@@ -13,7 +13,7 @@
     <meta property="og:url" content="https://happierme.app/">
 
     <!-- vendor_header -->
-    <?php include('../includes/vendor_header.php'); ?>
+    <?php include('../includes/vendor-header.php'); ?>
     <!-- /vendor_header -->
   </head>
 
@@ -132,7 +132,7 @@ Last updated: July 2025                </h6>
     </div>
 
     <!-- vendor_footer -->
-    <?php include('../includes/vendor_footer.php'); ?>
+    <?php include('../includes/vendor-footer.php'); ?>
     <!-- /vendor_footer -->
 
   </body>

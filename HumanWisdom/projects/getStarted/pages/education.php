@@ -42,7 +42,7 @@
 
 
     <!-- vendor_header -->
-    <?php include('../includes/vendor_header.php'); ?>
+    <?php include('../includes/vendor-header.php'); ?>
     <!-- /vendor_header -->
 
     <style>
@@ -83,7 +83,7 @@
           background-image: none !important;
         }
         
-        /* New override for Bootstrap 5 .accordion-button if present - Exact match from about_us.php */
+        /* New override for Bootstrap 5 .accordion-button if present - Exact match from about-us.php */
         .accordion-button::after {
           background-image: none !important;
           content: "+" !important;
@@ -834,7 +834,7 @@
 
             <div class="owl_blog">
               <div class="owl-carousel owl-theme">
-                <a class="item" data-aos="fade-up" data-aos-delay="200"href="../blogs/15_ways_self_awareness_can_help_students.php">
+                <a class="item" data-aos="fade-up" data-aos-delay="200"href="../blogs/15-ways-self-awareness-can-help-students.php">
                   <div class="div_blog">
                     <div class="row">
                       <div class="col-xs-12  col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 p0">
@@ -852,7 +852,7 @@
                   </div>
                 </a>
 
-                <a class="item" data-aos="fade-up" data-aos-delay="300"href="../blogs/the_purpose_of_education.php">
+                <a class="item" data-aos="fade-up" data-aos-delay="300"href="../blogs/the-purpose-of-education.php">
                   <div class="div_blog">
                     <div class="row">
                       <div class="col-xs-12  col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 p0">
@@ -870,7 +870,7 @@
                   </div>
                 </a>
 
-                <a class="item" data-aos="fade-up" data-aos-delay="400"href="../blogs/responding_to_criticism.php">
+                <a class="item" data-aos="fade-up" data-aos-delay="400"href="../blogs/responding-to-criticism.php">
                   <div class="div_blog">
                     <div class="row">
                       <div class="col-xs-12  col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12  col-12 p0">
@@ -916,7 +916,7 @@
     </main>
 
     <!-- vendor_footer -->
-    <?php include('../includes/vendor_footer.php'); ?>
+    <?php include('../includes/vendor-footer.php'); ?>
     <!-- /vendor_footer -->
 
     <script>
