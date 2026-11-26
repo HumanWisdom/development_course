@@ -152,18 +152,18 @@
                     Build a happier, more capable workforce.
                   </h1>
 
-                  <h5>
+                  <h5 class="fc_ffffff">
                     Help your people develop self-awareness and emotional skills to reduce stress and prevent burnout, strengthen relationships and make better decisions.
                   </h5>
 
                   <div class="work-hero-ctas">
-                    <div class="work-hero-cta-primary">
+                    <div class="work-hero-try">
                       <a href="../organisation-choose.php/happierme" class="fs_15px fw_600 lh_140p fc_ffffff btn_tff work-hero-btn">
                         Try free for 10 days
                       </a>
                       <p class="work-hero-note">No credit card required</p>
                     </div>
-                    <a href="#bring_happierme" class="fs_15px fw_600 lh_140p btn_tff req_button work-hero-btn work-hero-btn--outline" id="requestDemoForWork">
+                    <a href="#bring_happierme" class="fs_18px fw_600 lh_140p btn_tff req_button work-hero-btn work-hero-btn--outline" id="requestDemoForWork">
                       <span class="work-hero-link-label">Request a demo</span>
                       <svg class="work-hero-link-chevron" viewBox="0 0 9 14.73" width="8" height="13" aria-hidden="true" focusable="false">
                         <path d="M1.15 1.2L7.6 7.365L1.15 13.53" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
@@ -226,6 +226,24 @@
               </div>
             </div>
           </section>
+
+          
+          <!-- <section class="work-section work-video-section">
+            <div class="work-section-inner">
+              <div class="work-section-head">
+                <h2 class="work-section-title">Boost human skills to thrive at work</h2>
+              </div>
+              <div class="work-video-wrap"> -->
+                <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/ROP4llA74DA?si=6Zk3KCbtVKEohzVg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+                <!-- <iframe
+                  loading="lazy"
+                  title="How to Boost Wellbeing and Productivity Using Human Skills"
+                  src="https://www.youtube.com/embed/ROP4llA74DA?si=6Zk3KCbtVKEohzVg"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen></iframe>
+              </div>
+            </div>
+          </section> -->
 
           <!-- video -->
           <section class="work-section work-video-section">
@@ -315,24 +333,6 @@
               </div>
             </div>
           </section>
-
-          
-          <!-- <section class="work-section work-video-section">
-            <div class="work-section-inner">
-              <div class="work-section-head">
-                <h2 class="work-section-title">Boost human skills to thrive at work</h2>
-              </div>
-              <div class="work-video-wrap"> -->
-                <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/ROP4llA74DA?si=6Zk3KCbtVKEohzVg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
-                <!-- <iframe
-                  loading="lazy"
-                  title="How to Boost Wellbeing and Productivity Using Human Skills"
-                  src="https://www.youtube.com/embed/ROP4llA74DA?si=6Zk3KCbtVKEohzVg"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen></iframe>
-              </div>
-            </div>
-          </section> -->
 
           <!-- Why different -->
           <section class="work-section work-diff-section">
