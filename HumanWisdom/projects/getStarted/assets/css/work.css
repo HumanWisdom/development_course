@@ -59,7 +59,8 @@ body.page-work .healthcare-hero-shell .absolute_desc,
 body.page-work .healthcare-hero-shell .absolute_desc_m {
   position: absolute !important;
   top: 94.5px !important;
-  left: 230px !important;
+  /* 230px inside a centered 1440 frame: 50% - 720 + 230 */
+  left: max(20px, calc(50% - 490px)) !important;
   right: auto !important;
   bottom: auto !important;
   height: auto !important;
@@ -71,6 +72,7 @@ body.page-work .healthcare-hero-shell .absolute_desc_m {
   align-items: flex-start !important;
   justify-content: flex-start !important;
   box-sizing: border-box !important;
+  z-index: 2 !important;
 }
 
 body.page-work .healthcare-hero-shell .absolute_desc > .work-hero-stack,
@@ -80,17 +82,84 @@ body.page-work .healthcare-hero-shell .absolute_desc_m > .work-hero-stack {
   max-width: 100% !important;
 }
 
-/* Beat index.css @media (min-width: 1400px) { height: 800px } */
-@media (min-width: 1400px) {
-  body.page-work .healthcare-hero-shell .wide-screen-only {
-    display: block !important;
+/* Same idea as the home hero: the artwork stays the 1440×610 frame and extra width is the purple field, not a stretched phone. */
+@media (min-width: 768px) {
+  body.page-work .healthcare-hero-shell,
+  body.page-work .healthcare-hero-shell .prelative,
+  body.page-work .healthcare-hero-shell .mt3rem {
     height: 610px !important;
     max-height: 610px !important;
     min-height: 610px !important;
+    overflow: hidden;
+    background: #711554;
   }
 
-  body.page-work .healthcare-hero-shell .h-800 {
+  body.page-work .healthcare-hero-shell img.img-responsive.w100p.display_m_none.h-800 {
+    display: block !important;
+    width: min(1440px, 100%) !important;
+    max-width: 1440px !important;
+    height: 610px !important;
+    max-height: 610px !important;
+    min-height: 610px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    aspect-ratio: auto !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+  }
+
+  body.page-work .healthcare-hero-shell img.img-responsive.w100p.display_m_none.wide-screen-only {
     display: none !important;
+  }
+
+  body.page-work .healthcare-hero-shell .absolute_desc,
+  body.page-work .healthcare-hero-shell .absolute_desc_m {
+    top: 94.5px !important;
+    left: max(20px, calc(50% - 490px)) !important;
+    width: 480px !important;
+    max-width: calc(100% - 40px) !important;
+    transform: none !important;
+    z-index: 2 !important;
+  }
+}
+
+/* Wide screens: continue each edge of the artwork so the side shade matches the picture. */
+@media (min-width: 1441px) {
+  body.page-work .healthcare-hero-shell .mt3rem {
+    position: relative;
+  }
+
+  body.page-work .healthcare-hero-shell .mt3rem::before,
+  body.page-work .healthcare-hero-shell .mt3rem::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    z-index: 0;
+    width: 2px;
+    height: 610px;
+    background-image: url("https://d1tenzemoxuh75.cloudfront.net/website/webp/workkk.webp");
+    background-repeat: no-repeat;
+    background-size: 1440px 610px;
+    pointer-events: none;
+  }
+
+  body.page-work .healthcare-hero-shell .mt3rem::before {
+    left: 0;
+    background-position: left center;
+    transform-origin: left center;
+    transform: scaleX(calc((100vw - 1440px) / 4px));
+  }
+
+  body.page-work .healthcare-hero-shell .mt3rem::after {
+    right: 0;
+    background-position: right center;
+    transform-origin: right center;
+    transform: scaleX(calc((100vw - 1440px) / 4px));
+  }
+
+  body.page-work .healthcare-hero-shell img.img-responsive.w100p.display_m_none.h-800 {
+    position: relative;
+    z-index: 1;
   }
 }
 
@@ -151,14 +220,15 @@ body.page-work .work-hero-try {
 
 body.page-work .work-hero-note,
 body.page-work .work-hero-note:hover,
-body.page-work .work-hero-try:hover .work-hero-note {
+body.page-work .work-hero-try:hover .work-hero-note,
+body.page-work .work-hero-try a:hover + .work-hero-note {
   margin: 0;
   font-family: Poppins, sans-serif;
   font-size: 15px;
   font-weight: 400;
   line-height: 1.6;
   color: #ffffff !important;
-  -webkit-text-fill-color: #ffffff;
+  -webkit-text-fill-color: #ffffff !important;
   text-decoration: none !important;
   text-align: center;
   white-space: nowrap;
@@ -1217,12 +1287,12 @@ body.page-work .work-copy-mobile:not(.display_d_none) {
     max-width: 335px !important;
     margin: 0 !important;
     font-family: Poppins, sans-serif !important;
-    font-size: 12px !important;
+    font-size: 15px !important;
     font-weight: 400 !important;
-    line-height: 1.5 !important;
+    line-height: 1.6 !important;
     letter-spacing: 0 !important;
-    color: #ffffff !important;
-    -webkit-text-fill-color: #ffffff;
+    color: rgba(255, 255, 255, 0.75) !important;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0.75);
     text-align: center !important;
   }
 
@@ -1244,16 +1314,21 @@ body.page-work .work-copy-mobile:not(.display_d_none) {
     width: 335px !important;
     max-width: 335px !important;
     align-items: center !important;
-    gap: 8px !important;
+    gap: 9px !important;
   }
 
   body.page-work .work-hero-note,
   body.page-work .work-hero-note:hover,
-  body.page-work .work-hero-try:hover .work-hero-note {
+  body.page-work .work-hero-try:hover .work-hero-note,
+  body.page-work .work-hero-try a:hover + .work-hero-note {
+    display: block !important;
     color: #ffffff !important;
-    -webkit-text-fill-color: #ffffff;
+    -webkit-text-fill-color: #ffffff !important;
     text-decoration: none !important;
-    font-size: 12px !important;
+    font-size: 15px !important;
+    font-weight: 400 !important;
+    line-height: 1.6 !important;
+    text-align: center !important;
     white-space: normal !important;
   }
 
@@ -1316,10 +1391,11 @@ body.page-work .work-copy-mobile:not(.display_d_none) {
     justify-content: center !important;
     gap: 6px !important;
     font-family: Poppins, sans-serif !important;
-    font-size: 15px !important;
+    font-size: 18px !important;
     font-weight: 600 !important;
     line-height: 1.4 !important;
     color: #fff !important;
+    -webkit-text-fill-color: #fff;
     text-decoration: none !important;
   }
 

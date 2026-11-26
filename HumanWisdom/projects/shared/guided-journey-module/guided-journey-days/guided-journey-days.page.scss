@@ -664,7 +664,7 @@
                 list-style-type: decimal;
 
                 li {
-                    margin-bottom: 6px;
+                    margin-bottom: 9px;
                     line-height: 150%;
                     color: #000000;
                     &:last-child {
@@ -679,7 +679,7 @@
                 list-style-type: disc;
 
                 li {
-                    margin-bottom: 6px;
+                    margin-bottom: 9px;
                     line-height: 150%;
                     color: #000000;
                     &:last-child {
@@ -1408,6 +1408,46 @@
   }
 
   ol {
-    padding-left: 15px !important;
+    padding-left: 20px !important;
+    margin: 8px 0 !important;
+
+    li {
+      margin-bottom: 9px !important;
+      line-height: 150%;
+      &:last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+  }
+
+  ul {
+    padding-left: 20px !important;
+    margin: 8px 0 !important;
+
+    li {
+      margin-bottom: 9px !important;
+      line-height: 150%;
+      &:last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+  }
+
+  li {
+    margin-bottom: 9px !important;
+    &:last-child {
+      margin-bottom: 0 !important;
+    }
+  }
+}
+
+:host ::ng-deep .card_content_text {
+  ol, ul {
+    li {
+      margin-bottom: 9px !important;
+      &:last-child {
+        margin-bottom: 0 !important;
+      }
+    }
   }
 }
