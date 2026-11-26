@@ -53,7 +53,7 @@
 
             <div class="row mt20px rmb80px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                <img src="https://miro.medium.com/v2/resize:fit:1200/1*TNPBDXlswe8HVPbaEsjAow.png" class="img-responsive" alt="Mental health crisis in the hospitality industry">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/104.webp" class="img-responsive" alt="Mental health crisis in the hospitality industry">
               </div>
             </div>
 
@@ -116,11 +116,11 @@
                 Stigma remains one of the biggest barriers to addressing mental health in hospitality. Workers often stay quiet out of fear of judgment, losing their job, or being seen as weak. Building workplaces where people feel safe talking about their mental health, without fear of consequences, is essential.
                 </h4>
 
-                <div class="row mt20px rmb80px">
-                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
-                    <img src="https://miro.medium.com/v2/resize:fit:1358/format:webp/1*QGX1fnyYx6ojrmETGSgthw.jpeg" class="img-responsive" alt="Prevention-first mental health support">
-                  </div>
-                </div>
+                <div class="row mt20px rm80px">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/86_new.webp" class="img-responsive" alt="Resilience and emotional intelligence" >
+              </div>
+            </div>
 
                 <h4 class="mtb0px blog_sub_title">
                 Fighting Back — The HappierMe Difference
@@ -141,6 +141,12 @@
                 <h4 class="mtb0px blog_desc">
                 Just like going to the gym looks after physical health, HappierMe offers a daily routine of breathing exercises, self-reflection and journaling to look after mental health. A separate section for teenagers means workers can also support their family's wellbeing. With over 75 modules plus an online journal, a peer-support forum, and a library of podcasts, meditations and videos, it's built to be a one-stop solution for a happier life.
                 </h4>
+
+
+                 <iframe id="youtubeIntro" loading="lazy" title="youtubeIntro"
+            src="https://www.youtube.com/embed/y5hd9MHnUyM?si=YOFWYNpc4seBRw3U"
+            class="cvideo_b yt-embed" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen
+            onclick="return logevent('click_play_video_home', 'index.php')"></iframe>
 
                 <h4 class="mtb0px blog_sub_title">
                 Prevention is So Much Easier
