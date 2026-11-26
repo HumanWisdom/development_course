@@ -5,7 +5,7 @@ class Template
 {
     public static function vendorHeader(): void
     {
-        require_once __DIR__ . '/vendor_header.php';
+        require_once __DIR__ . '/vendor-header.php';
     }
 
     public static function header(): void
@@ -20,7 +20,7 @@ class Template
 
     public static function vendorFooter(): void
     {
-        require_once __DIR__ . '/vendor_footer.php';
+        require_once __DIR__ . '/vendor-footer.php';
     }
 }
 

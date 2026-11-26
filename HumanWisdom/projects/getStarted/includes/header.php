@@ -1,7 +1,7 @@
 <!-- header -->
 <?php
 if (!function_exists('hw_page_assets_flag')) {
-    require_once __DIR__ . '/page_assets.php';
+    require_once __DIR__ . '/page-assets.php';
 }
 if (!hw_page_assets_flag('css', 'header_in_critical')) :
 ?>
@@ -218,11 +218,11 @@ if (!hw_page_assets_flag('css', 'header_in_critical')) :
             <svg class="hw-ui-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/></svg>
           </button>
           <ul class="mobile-nav-list">
-            <li><a href="../pages/about_us.php" id="AboutUs" class="nav">About us</a></li>
-            <li><a href="../blogs/blog_index.php" id="blogs" class="nav">Blog</a></li>
+            <li><a href="../pages/about-us.php" id="AboutUs" class="nav">About us</a></li>
+            <li><a href="../blogs/blog-index.php" id="blogs" class="nav">Blog</a></li>
             <li><a id="pricing" class="nav" href="../index.php#div_subscription">Pricing</a></li>
             <li><a id="events" class="nav" href="https://happierme.app/adults/events" target="_self" rel="noopener noreferrer">Events</a></li>
-            <li><a id="loginClick" class="nav" href="../pages/splash_options.php">Login</a></li>
+            <li><a id="loginClick" class="nav" href="../pages/splash-options.php">Login</a></li>
             <li class="header_nav_mobile_only">
               <a id="teenagersHeaderClick_mobile" class="nav" href="../pages/teenagers.php">For Teenagers</a>
             </li>

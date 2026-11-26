@@ -19,7 +19,7 @@
   <!--Canonical Tag-->
   <link rel="canonical" href="https://happierme.app" />
   <!-- vendor_header -->
-  <?php include('../includes/vendor_header.php'); ?>
+  <?php include('../includes/vendor-header.php'); ?>
 
   <?php hw_defer_stylesheet('../assets/css/index-inline.css'); ?>
   <?php /* Load last so mobile title/video overrides beat deferred index/responsive */ ?>
@@ -958,31 +958,31 @@
         <div class="blog-outer">
           <div class="blog-track-wrap">
             <div class="blog-scroll" id="blog-scroll">
-              <a href="../blogs/transforming_the_lives_of_children_through_self-knowledge.php" class="blog-card">
+              <a href="../blogs/transforming-the-lives-of-children-through-self-knowledge.php" class="blog-card">
                 <img class="blog-img" src="https://d1tenzemoxuh75.cloudfront.net/blogs/62.webp" alt="Transforming the lives of children through self-knowledge" loading="lazy" />
                 <div class="blog-caption">
                   <p class="blog-title">Transforming the lives of children through self-knowledge</p>
                 </div>
               </a>
-              <a href="../blogs/the_future_of_education_a_happierme_survey.php" class="blog-card">
+              <a href="../blogs/the-future-of-education-a-happierme-survey.php" class="blog-card">
                 <img class="blog-img" src="https://d1tenzemoxuh75.cloudfront.net/blogs/63.webp" alt="The Future of Education: A HappierMe Survey" loading="lazy" />
                 <div class="blog-caption">
                   <p class="blog-title">The Future of Education: A HappierMe Survey</p>
                 </div>
               </a>
-              <a href="../blogs/transforming_education_to_meet_the_needs_of_students_and_society.php" class="blog-card">
+              <a href="../blogs/transforming-education-to-meet-the-needs-of-students-and-society.php" class="blog-card">
                 <img class="blog-img" src="https://d1tenzemoxuh75.cloudfront.net/blogs/64.webp" alt="Transforming education to meet the needs of students and society" loading="lazy" />
                 <div class="blog-caption">
                   <p class="blog-title">Transforming education to meet the needs of students and society.</p>
                 </div>
               </a>
-              <a href="../blogs/does_education_make_us_intelligent.php" class="blog-card">
+              <a href="../blogs/does-education-make-us-intelligent.php" class="blog-card">
                 <img class="blog-img" src="https://d1tenzemoxuh75.cloudfront.net/blogs/60.webp" alt="Does education make us intelligent?" loading="lazy" />
                 <div class="blog-caption">
                   <p class="blog-title">Does education make us intelligent?</p>
                 </div>
               </a>
-              <a href="../blogs/how_to_manage_your_own_mental_health.php" class="blog-card">
+              <a href="../blogs/how-to-manage-your-own-mental-health.php" class="blog-card">
                 <img class="blog-img" src="https://d1tenzemoxuh75.cloudfront.net/blogs/54.webp" alt="How to manage your own mental health" loading="lazy" />
                 <div class="blog-caption">
                   <p class="blog-title">How to manage your own mental health</p>
@@ -991,7 +991,7 @@
             </div>
           </div>
           <div class="blog-footer">
-            <a href="https://happierme.app/blogs/blog_index.php" class="blog-more teen-blog-more">
+            <a href="https://happierme.app/blogs/blog-index.php" class="blog-more teen-blog-more">
               <span>View all blogs</span>
               <span class="chevron-pink"><span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span></span>
             </a>
@@ -1075,7 +1075,7 @@
   </script>
 
   <!-- vendor_footer -->
-  <?php include('../includes/vendor_footer.php'); ?>
+  <?php include('../includes/vendor-footer.php'); ?>
   <!-- /vendor_footer -->
 
   <script>
