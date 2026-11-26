@@ -2645,7 +2645,7 @@ Work</button>
 
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">                     Single Parents
+                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">  Mental Health
 </button>
 
 
@@ -2711,7 +2711,7 @@ Work</button>
 
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">                     Single Parents
+                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp"> Mental Health
 </button>
 
 
@@ -2733,12 +2733,12 @@ Work</button>
                
               </a>
             </div>
-             <!-- <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="1100">
+             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="1100">
 
-            <a class="BlogCard" href="mental_health_crisis_hospitality_industry.php">
+            <a class="BlogCard" href="understand-our-hidden-prejudices.php">
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/104.webp" class="img-responsive img_blogs" alt="Blog_img">
+                    <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/106.webp" class="img-responsive img_blogs" alt="Blog_img">
                   </div>
                 </div>
 
@@ -2753,7 +2753,8 @@ Work</button>
 
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
-                    <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">The mental health crisis in the hospitality industry: Addressing an overlooked issue
+                    <h4 class="mt20px mb10px fs_18px fw_500 lh_140p fc_000000">To be more inclusive, we need to understand our hidden prejudices
+
 
 
 
@@ -2796,7 +2797,7 @@ Work</button>
                 </div>
                
               </a>
-            </div>  -->
+            </div>  
             
 </div>
           <div class="blog-empty is-hidden" id="blog-empty">No articles match your search.</div>
