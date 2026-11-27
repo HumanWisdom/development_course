@@ -228,12 +228,12 @@
 }
 
 .overview_card_img {
-  width: 100% !important;
-  max-width: 100% !important;
+  width: calc(100% - 20px) !important;
+  max-width: calc(100% - 20px) !important;
   display: block !important;
   height: auto !important;
-  margin: 0 !important;
-  border-radius: 0 !important;
+  margin: 10px auto !important;
+  border-radius: 8px !important;
 }
 
 .overview_card_content {
