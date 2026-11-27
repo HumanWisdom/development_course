@@ -27,7 +27,7 @@
         "url": "https://happierme.app/"
       }]
     </script>
-    <!-- vendor_header --> <?php include('../includes/vendor_header.php'); ?>
+    <!-- vendor_header --> <?php include('../includes/vendor-header.php'); ?>
     <!-- /vendor_header -->
   </head>
   <body class="page-newsletter">
@@ -230,7 +230,7 @@
           </div>
         </div>
       </section>
- <?php include('../includes/vendor_footer.php'); ?>
+ <?php include('../includes/vendor-footer.php'); ?>
       <!-- <script></script> -->
     </main>
     <!-- </div></div> -->

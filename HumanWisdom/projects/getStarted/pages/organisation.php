@@ -3,7 +3,7 @@
  * Organisation campaign — all steps in one file (in-page navigation, URL stays put).
  * Entry wrappers set $orgStep (adv|landing|signup|otp|success|continue|download).
  */
-require_once __DIR__ . '/../includes/organisation_helper.php';
+require_once __DIR__ . '/../includes/organisation-helper.php';
 hw_org_ensure_route_id();
 
 if (!isset($orgStep) || $orgStep === '') {
@@ -21,7 +21,7 @@ $social = hw_social_config();
 $copy = hw_org_copy($org);
 $freeDays = (int) $org['freeDays'];
 $email = isset($email) ? $email : '';
-$chooseUrl = (hw_org_base() === '' ? '' : hw_org_base()) . '/organisation-choose.php/' . rawurlencode($org['id']);
+$chooseUrl = (hw_org_base() === '' ? '' : hw_org_base()) . '/organisation-choose/' . rawurlencode($org['id']);
 
 $stepMeta = [
     'adv' => [
@@ -86,8 +86,8 @@ $benefits = [
     ['icon' => $assets['icon_target'], 'n' => 3],
 ];
 
-include __DIR__ . '/../includes/organisation_head.php';
-include __DIR__ . '/../includes/organisation_header.php';
+include __DIR__ . '/../includes/organisation-head.php';
+include __DIR__ . '/../includes/organisation-header.php';
 ?>
 <main class="org-main" data-org-step="adv"<?= $orgStep === 'adv' ? '' : ' hidden' ?>>
   <section class="org-hero-offer">
@@ -412,4 +412,4 @@ include __DIR__ . '/../includes/organisation_header.php';
     </div>
   </div>
 </main>
-<?php include __DIR__ . '/../includes/organisation_foot.php'; ?>
+<?php include __DIR__ . '/../includes/organisation-foot.php'; ?>

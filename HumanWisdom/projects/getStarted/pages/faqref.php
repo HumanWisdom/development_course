@@ -11,7 +11,7 @@
     <meta property="og:image:height" content="232" />
 
     <!-- vendor_header -->
-    <?php include('../includes/vendor_header.php'); ?>
+    <?php include('../includes/vendor-header.php'); ?>
     <!-- /vendor_header -->
   </head>
 
@@ -3271,7 +3271,7 @@ HappierMe is an all-in-one emotional wellness app combining mindfulness, journal
     </div>
 
     <!-- vendor_footer -->
-    <?php include('../includes/vendor_footer.php'); ?>
+    <?php include('../includes/vendor-footer.php'); ?>
     <!-- /vendor_footer -->
 
   </body>

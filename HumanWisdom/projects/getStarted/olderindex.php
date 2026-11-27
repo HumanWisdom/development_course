@@ -1,6 +1,6 @@
 <?php
 // Include security configuration
-require_once('./includes/security_config.php');
+require_once('./includes/security-config.php');
 ?>
 
 
@@ -45,7 +45,7 @@ require_once('./includes/security_config.php');
   <!--Canonical Tag-->
   <link rel="canonical" href="https://happierme.app" />
   <!-- vendor_header -->
-  <?php include('./includes/vendor_header.php'); ?>
+  <?php include('./includes/vendor-header.php'); ?>
   <!-- /vendor_header -->
 
   <script>
@@ -298,7 +298,7 @@ Now with Olly AI              </h2>
           <div class="row mt20px">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 ddflex_mblock_a">
               <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12 p0 mb15px  btn-res card_center">
-                <a href="https://happierme.app/pages/splash_options.php" class="">
+                <a href="https://happierme.app/pages/splash-options.php" class="">
                   <button class="fs_21px fw_500 lh_140p fc_ffffff btn_landing mbtn_landing">
                     Try HappierMe for free
                   </button>
@@ -715,7 +715,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
 
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 dflex_jc_lc">
                 <div  id="OllyChatBtn" class="col-lg-9 col-md-9 col-sm-12 col-xs-12 col-12 ">
-                  <!-- <a  href="https://happierme.app/pages/splash_options.php" class="tryhappiermeClick"> -->
+                  <!-- <a  href="https://happierme.app/pages/splash-options.php" class="tryhappiermeClick"> -->
                     <button class="fs_21px fw_600 lh_140p fc_ffffff btn_tff btn_tff_widthnew h_48px btn_popup">
                       Chat with Olly now
                     </button>
@@ -1033,7 +1033,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
 
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 dflex_jc_lc">
                 <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 col-12 ">
-                  <a href="https://happierme.app/pages/splash_options.php" class="tryhappiermeClick">
+                  <a href="https://happierme.app/pages/splash-options.php" class="tryhappiermeClick">
                     <button class="fs_21px fw_500 lh_140p fc_ffffff btn_tff btn_tff_width h_48px btn_popup">
                       Try HappierMe for free
                     </button>
@@ -2255,7 +2255,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 tcenter">
             <div class="mtb0px fs_12px fw_400 lh_130p fc_ffffff">
               <span id="totalAnnualPricingModelHeading">After your free trial, the yearly subscription is INR and automatically renews each year until cancelled.Cancel anytime.
-                <a href="https://happierme.app/pages/terms_conditions.php"><span
+                <a href="https://happierme.app/pages/terms-conditions.php"><span
                   class="fs_12px fw_400 lh_130p fc_ffffff td_underline">Terms & Conditions</span></a>
               </span>
               
@@ -2611,7 +2611,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
     <!-- /tools -->
     <div class="row center_flex mt40px card_center" data-aos="fade-up" data-aos-delay="300" id="AnnualType">
       <div id="PricingSelectBtn" class="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-12 p0 mtb20px fixed_w t_align" >
-        <a href="https://happierme.app/pages/splash_options.php">
+        <a href="https://happierme.app/pages/splash-options.php">
           <button class="fs_21px fw_500 lh_140p fc_ffffff btn_tff btn_tff_width btn_popup" id="startyourfreetrial">
             Try HappierMe for free
           </button>
@@ -2637,7 +2637,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
           <div class="owl_blog">
             <div class="owl-carousel owl-theme">
               <a class="item" data-aos="fade-up" data-aos-delay="200"
-                href="./blogs/10_ways_understanding_your_mind_could_transform_your_life.php">
+                href="./blogs/10-ways-understanding-your-mind-could-transform-your-life.php">
                 <div class="div_blog">
                   <div class="row">
                     <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
@@ -2656,7 +2656,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                 </div>
               </a>
               <a class="item" data-aos="fade-up" data-aos-delay="500"
-                href="./blogs/self_Awareness_can_help_relationships_flourish.php">
+                href="./blogs/self-Awareness-can-help-relationships-flourish.php">
                 <div class="div_blog">
                   <div class="row">
                     <div class=" col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
@@ -2676,7 +2676,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
               </a>
 
 
-              <a class="item" data-aos="fade-up" data-aos-delay="400" href="./blogs/real_success.php">
+              <a class="item" data-aos="fade-up" data-aos-delay="400" href="./blogs/real-success.php">
                 <div class="div_blog">
                   <div class="row">
                     <div class=" col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
@@ -2695,7 +2695,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                 </div>
               </a>
 
-              <a class="item" data-aos="fade-up" data-aos-delay="300" href="./blogs/difficult_emotions.php">
+              <a class="item" data-aos="fade-up" data-aos-delay="300" href="./blogs/difficult-emotions.php">
                 <div class="div_blog">
                   <div class="row">
                     <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
@@ -2715,7 +2715,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
               </a>
 
               <a class="item" data-aos="fade-up" data-aos-delay="600"
-                href="./blogs/why_are_we_critical_of_ourselves.php">
+                href="./blogs/why-are-we-critical-of-ourselves.php">
                 <div class="div_blog">
                   <div class="row">
                     <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
@@ -2735,7 +2735,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
               </a>
 
               <a class="item" data-aos="fade-up" data-aos-delay="700"
-                href="./blogs/how_to_calm_anxiety_with_the_help_of_the_happierme_app.php">
+                href="./blogs/how-to-calm-anxiety-with-the-help-of-the-happierme-app.php">
                 <div class="div_blog">
                   <div class="row">
                     <div class="col-xs-12 col-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12">
@@ -2764,7 +2764,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
               </div>
             </div>
 
-             <a class="sap" mb id="viewAllBlogs" href="https://happierme.app/blogs/blog_index.php">
+             <a class="sap" mb id="viewAllBlogs" href="https://happierme.app/blogs/blog-index.php">
                     <h5 class="mt20px fs_18px fw_500 lh_150p fc_D7586B flex_ai dflex_jc_lc td_underline">
                       See all posts
                       <span style="margin-left:6px;-webkit-text-stroke: 1px;" class="bi bi-chevron-right"></span>
@@ -3834,7 +3834,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
   </main>
 
   <!-- vendor_footer -->
-  <?php include('./includes/vendor_footer.php'); ?>
+  <?php include('./includes/vendor-footer.php'); ?>
   <!-- /vendor_footer -->
 
   <!-- Fallback tab functionality -->
@@ -4021,7 +4021,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
             
                                     </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                        <a href="https://happierme.app/pages/splash_options.php"  class="">
+                        <a href="https://happierme.app/pages/splash-options.php"  class="">
                           <button class="fs_15px fw_500 lh_140p fc_ffffff btn_popup" >
                           Try HappierMe for free
                           </button>
@@ -4040,7 +4040,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
             </div> -->
         <div class="row justify-content-center align-items-center mb-4" style="/* min-height: 150px; */">
           <div class="col-lg-11 d-flex justify-content-center">
-            <a href="https://happierme.app/pages/splash_options.php" class="text-decoration-none">
+            <a href="https://happierme.app/pages/splash-options.php" class="text-decoration-none">
               <button class="btn_popup fs_15px fw_600 lh_140p fc_ffffff btn_tff btn_tff_width btn_wh">
                 Try HappierMe for free
               </button>
@@ -4207,7 +4207,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
         </div>
         <div class="row justify-content-center align-items-center mb-4" style="/* min-height: 150px; */">
           <div class="col-lg-11 d-flex justify-content-center">
-            <a href="https://happierme.app/pages/splash_options.php" class="text-decoration-none">
+            <a href="https://happierme.app/pages/splash-options.php" class="text-decoration-none">
               <button class="btn_popup fs_15px fw_600 lh_140p fc_ffffff btn_tff btn_tff_width btn_wh">
                 Try HappierMe for free
               </button>
@@ -4221,7 +4221,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
               </div>
               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
-                <a href="https://happierme.app/pages/splash_options.php" class="">
+                <a href="https://happierme.app/pages/splash-options.php" class="">
                 <button class="fs_15px fw_600 lh_140p fc_ffffff btn_popup">
                 Try HappierMe for free
                 </button>
@@ -4328,7 +4328,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
         </div>
         <div class="row justify-content-center align-items-center mt20px mb-4">
           <div class="col-lg-11 d-flex justify-content-center">
-            <a href="https://happierme.app/pages/splash_options.php" class="text-decoration-none">
+            <a href="https://happierme.app/pages/splash-options.php" class="text-decoration-none">
               <button class="btn_popup fs_15px fw_600 lh_140p fc_ffffff btn_tff btn_tff_width btn_wh">
                 Try HappierMe for free
               </button>
@@ -4479,7 +4479,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
         </div>
         <div class="row justify-content-center align-items-center mb-4">
           <div class="col-lg-11 d-flex justify-content-center">
-            <a href="https://happierme.app/pages/splash_options.php" class="text-decoration-none">
+            <a href="https://happierme.app/pages/splash-options.php" class="text-decoration-none">
               <button class="btn_popup fs_15px fw_600 lh_140p fc_ffffff btn_tff btn_tff_width btn_wh">
                 Try HappierMe for free
               </button>
@@ -4493,7 +4493,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               </div>
               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-                <a href="https://happierme.app/pages/splash_options.php"  class="">
+                <a href="https://happierme.app/pages/splash-options.php"  class="">
                   <button class="fs_15px fw_600 lh_140p fc_ffffff btn_popup" >
                   Try HappierMe for free
                   </button>
@@ -4636,7 +4636,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
         </div>
         <div class="row justify-content-center align-items-center mb-4">
           <div class="col-lg-11 d-flex justify-content-center">
-            <a href="https://happierme.app/pages/splash_options.php" class="text-decoration-none">
+            <a href="https://happierme.app/pages/splash-options.php" class="text-decoration-none">
               <button class="btn_popup fs_15px fw_600 lh_140p fc_ffffff btn_tff btn_tff_width btn_wh">
                 Try HappierMe for free
               </button>
@@ -4650,7 +4650,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               </div>
               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-                <a href="https://happierme.app/pages/splash_options.php"  class="">
+                <a href="https://happierme.app/pages/splash-options.php"  class="">
                 <button class="fs_15px fw_600 lh_140p fc_ffffff btn_popup" >
                 Try HappierMe for free
                 </button>
@@ -4793,7 +4793,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
         </div>
         <div class="row justify-content-center align-items-center mb-4">
           <div class="col-lg-11 d-flex justify-content-center">
-            <a href="https://happierme.app/pages/splash_options.php" class="text-decoration-none">
+            <a href="https://happierme.app/pages/splash-options.php" class="text-decoration-none">
               <button class="btn_popup fs_15px fw_600 lh_140p fc_ffffff btn_tff btn_tff_width btn_wh">
                 Try HappierMe for free
               </button>
@@ -4807,7 +4807,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-               <a href="https://happierme.app/pages/splash_options.php"  class="">
+               <a href="https://happierme.app/pages/splash-options.php"  class="">
                <button class="fs_15px fw_600 lh_140p fc_ffffff btn_popup" >
                Try HappierMe for free
                </button>
@@ -4951,7 +4951,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
         </div>
         <div class="row justify-content-center align-items-center mb-4">
           <div class="col-lg-11 d-flex justify-content-center">
-            <a href="https://happierme.app/pages/splash_options.php" class="text-decoration-none">
+            <a href="https://happierme.app/pages/splash-options.php" class="text-decoration-none">
               <button class="btn_popup fs_15px fw_600 lh_140p fc_ffffff btn_tff btn_tff_width btn_wh">
                 Try HappierMe for free
               </button>
@@ -4965,7 +4965,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               </div>
               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-                <a href="https://happierme.app/pages/splash_options.php"  class="">
+                <a href="https://happierme.app/pages/splash-options.php"  class="">
                 <button class="fs_15px fw_600 lh_140p fc_ffffff btn_popup" >
                 Try HappierMe for free
                 </button>
@@ -5112,7 +5112,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
         </div>
         <div class="row justify-content-center align-items-center mb-4">
           <div class="col-lg-11 d-flex justify-content-center">
-            <a href="https://happierme.app/pages/splash_options.php" class="text-decoration-none">
+            <a href="https://happierme.app/pages/splash-options.php" class="text-decoration-none">
               <button class="btn_popup fs_15px fw_600 lh_140p fc_ffffff btn_tff btn_tff_width btn_wh">
                 Try HappierMe for free
               </button>
@@ -5126,7 +5126,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
               </div>
               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-                <a href="https://happierme.app/pages/splash_options.php"  class="">
+                <a href="https://happierme.app/pages/splash-options.php"  class="">
                 <button class="fs_15px fw_600 lh_140p fc_ffffff btn_popup" >
                 Try HappierMe for free
                 </button>
@@ -5276,7 +5276,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
         </div>
         <div class="row justify-content-center align-items-center mb-4">
           <div class="col-lg-11 d-flex justify-content-center">
-            <a href="https://happierme.app/pages/splash_options.php" class="text-decoration-none">
+            <a href="https://happierme.app/pages/splash-options.php" class="text-decoration-none">
               <button class="btn_popup fs_15px fw_600 lh_140p fc_ffffff btn_tff btn_tff_width ">
                 Try HappierMe for free
               </button>
@@ -5290,7 +5290,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 p0" data-aos="fade-up" data-aos-delay="200">
-               <a href="https://happierme.app/pages/splash_options.php"  class="">
+               <a href="https://happierme.app/pages/splash-options.php"  class="">
                <button class="fs_15px fw_600 lh_140p fc_ffffff btn_popup" >
                Try HappierMe for free
                </button>
@@ -5388,7 +5388,7 @@ Talk to Olly about what’s on your mind — stress, anxiety, relationships, tri
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0 div_input">
                               <div class="row mt20px">
                                 <button id="modal-news-contact-form" class="fs_15px fw_600 lh_140p fc_ffffff btn_tff"
-                                  href="../pages/splash_options.php"> Subscribe </button>
+                                  href="../pages/splash-options.php"> Subscribe </button>
                               </div>
                             </div>
                           </div>

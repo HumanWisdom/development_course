@@ -367,7 +367,7 @@ export class ChatBotComponent implements OnInit, AfterViewInit, OnDestroy {
     const textarea = event ? (event.target as HTMLTextAreaElement) : (this.messageInput?.nativeElement as HTMLTextAreaElement);
     if (textarea && textarea.style) {
       textarea.style.height = 'auto';
-      const maxHeight = 130;
+      const maxHeight = 200;
       const scrollHeight = textarea.scrollHeight || 0;
       const newHeight = Math.min(scrollHeight, maxHeight);
       textarea.style.height = newHeight + 'px';

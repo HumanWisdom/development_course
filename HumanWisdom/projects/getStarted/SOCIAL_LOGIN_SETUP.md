@@ -42,7 +42,7 @@ Apple always goes through `/adults/social-login` because the API performs the re
 
 ### Where the keys come from
 
-`includes/social_config.php` reads each key in this order and uses the first non-empty value:
+`includes/social-config.php` reads each key in this order and uses the first non-empty value:
 
 1. Process environment variable (`getenv`)
 2. Apache `SetEnv` value (`$_SERVER`)
@@ -73,10 +73,10 @@ The values are sent to the browser as `window.__HW_SOCIAL__`. A provider whose k
 
 | File | Purpose |
 |---|---|
-| `includes/social_config.php` | Reads the keys (env → SetEnv → env file) |
-| `includes/organisation_helper.php` | Loads `social_config.php` |
-| `includes/organisation_foot.php` | Outputs `window.__HW_SOCIAL__` |
-| `includes/security_config.php` | CSP allows `accounts.google.com`, `connect.facebook.net`, `graph.facebook.com`, `facebook.com` |
+| `includes/social-config.php` | Reads the keys (env → SetEnv → env file) |
+| `includes/organisation-helper.php` | Loads `social-config.php` |
+| `includes/organisation-foot.php` | Outputs `window.__HW_SOCIAL__` |
+| `includes/security-config.php` | CSP allows `accounts.google.com`, `connect.facebook.net`, `graph.facebook.com`, `facebook.com` |
 | `pages/organisation-signup.php` | "Or continue with" Google / Facebook / Apple buttons |
 | `assets/js/organisation.js` | `setupSocialSignup()` — SDK loading, backend calls, adults login handoff |
 | `assets/css/organisation.css` | `.org-social*` button styles |
@@ -189,7 +189,7 @@ curl -s "https://happierme.app/pages/organisation-signup.php?t=$(date +%s)" \
 | Google popup: "origin not allowed" / `idpiframe_initialization_failed` | Domain not authorized for the client ID | Add the site origin to Authorized JavaScript origins (Step 1) |
 | Facebook: "URL blocked" / "domain not included" | Domain not in App Domains | Add domain in Facebook app settings (Step 1) |
 | Facebook: "Please use a Facebook account with an email address…" | Facebook account has no email | User must use another method |
-| Browser console shows CSP "Refused to load…" | CSP blocks the SDK | Confirm `includes/security_config.php` contains the Google/Facebook domains |
+| Browser console shows CSP "Refused to load…" | CSP blocks the SDK | Confirm `includes/security-config.php` contains the Google/Facebook domains |
 | After sign-in, user lands back as guest in adults | Different domains and token not accepted by `/adults/social-login` | Set `HW_ADULTS_APP_URL` to the same domain as the website if both are served from one domain |
 | Apple returns an error page | Redirect URI not registered for `humanwisdom.web.service` | Check Apple Developer → Services ID → Return URLs |
 

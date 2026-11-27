@@ -5995,7 +5995,7 @@ body.page-healthcare .healthcare-hero-shell .wide-screen-only {
     max-width: 335px !important;
   }
 
-  /* 12px / 140% fits Figma's 5-line wrap at 335px; 15px wraps to 6–7 lines */
+  /* Mobile hero subtitle — 15px / 1.6, 75% white */
   body.page-work .healthcare-hero-shell .absolute_desc_m h5,
   body.page-work .healthcare-hero-shell .absolute_desc_m h5.fs_15px,
   body.page-work .healthcare-hero-shell .absolute_desc_m h5 .display_d_none {
@@ -6003,11 +6003,12 @@ body.page-healthcare .healthcare-hero-shell .wide-screen-only {
     width: 335px !important;
     max-width: 335px !important;
     font-family: 'Poppins', sans-serif !important;
-    font-size: 12px !important;
+    font-size: 15px !important;
     font-weight: 400 !important;
-    line-height: 140% !important;
+    line-height: 1.6 !important;
     letter-spacing: 0 !important;
-    color: rgba(255, 255, 255, 1) !important;
+    color: rgba(255, 255, 255, 0.75) !important;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0.75);
     text-align: center !important;
   }
 

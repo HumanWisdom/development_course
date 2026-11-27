@@ -6,9 +6,9 @@ Analysis of SonarQube code quality issues in `HumanWisdom/projects/getStarted/bl
 ## ✅ FIXES COMPLETED
 
 All high-priority and most medium-priority issues have been fixed:
-- ✅ **Fixed JavaScript issues** in `blog_index.php` - Removed immediate click() trigger and improved event handling
+- ✅ **Fixed JavaScript issues** in `blog-index.php` - Removed immediate click() trigger and improved event handling
 - ✅ **Removed all commented-out code blocks** - Cleaned up 30+ files with commented sections
-- ✅ **Added missing alt attributes** - Fixed images in `blog_index.php`, `blog_index_search.php`, and individual blog files
+- ✅ **Added missing alt attributes** - Fixed images in `blog-index.php`, `blog-index-search.php`, and individual blog files
 - ⏳ **Code duplication** - Noted for future refactoring (would require significant architectural changes)
 - ⏳ **Hard-coded URLs** - Noted for future configuration improvements
 
@@ -22,9 +22,9 @@ All high-priority and most medium-priority issues have been fixed:
 Multiple `<img>` tags are missing `alt` attributes, which is an accessibility violation (WCAG 2.1 Level A requirement).
 
 **Examples:**
-- `blog_index.php`: Lines 86, 121, 156, 192, 227, 262, 299, 338, 377, 418, 453, 492, 528, 565, 603, 641, 676, 711, 748, 785, 820, 855, 892, 927, 962, 997, 1032, 1067, 1105
+- `blog-index.php`: Lines 86, 121, 156, 192, 227, 262, 299, 338, 377, 418, 453, 492, 528, 565, 603, 641, 676, 711, 748, 785, 820, 855, 892, 927, 962, 997, 1032, 1067, 1105
 - `10-ways-to-thrive-as-a-parent.php`: Line 75
-- `blog_index_search.php`: Multiple instances
+- `blog-index-search.php`: Multiple instances
 - Many individual blog post files
 
 **Impact:**
@@ -53,8 +53,8 @@ Large sections of commented-out HTML code that should be removed or properly doc
 
 **Examples:**
 - `10-ways-to-thrive-as-a-parent.php`: Lines 22-40 (entire section commented)
-- `blog_index_search.php`: Lines 42-94 (multiple commented header sections)
-- `happierme_survey_into_causes_of_work_stress.php`: Lines 21-39
+- `blog-index-search.php`: Lines 42-94 (multiple commented header sections)
+- `happierme-survey-into-causes-of-work-stress.php`: Lines 21-39
 
 **Impact:**
 - Increases code complexity
@@ -70,8 +70,8 @@ Remove commented-out code. If needed for reference, document why in comments or 
 ### 3. **Very Long Files** (Maintainability - Major)
 **Severity:** Major  
 **Files Affected:**
-- `blog_index.php`: **1,247 lines**
-- `blog_index_search.php`: **677 lines**
+- `blog-index.php`: **1,247 lines**
+- `blog-index-search.php`: **677 lines**
 - Several individual blog files: 400-500+ lines
 
 **Description:**
@@ -95,7 +95,7 @@ Files exceed recommended maximum length (typically 500-1000 lines). Large files 
 **Pattern:** Repeated blog card HTML structures
 
 **Description:**
-Nearly identical HTML structures are repeated dozens of times across files, particularly in `blog_index.php` and individual blog post files.
+Nearly identical HTML structures are repeated dozens of times across files, particularly in `blog-index.php` and individual blog post files.
 
 **Example Pattern:**
 Each blog card follows the same structure:
@@ -167,7 +167,7 @@ define('HAPPIERME_APP_URL', 'https://happierme.app/adults/');
 
 ### 6. **JavaScript Issues** (Code Smell - Minor)
 **Severity:** Minor  
-**File:** `blog_index.php` (Lines 1230-1243)
+**File:** `blog-index.php` (Lines 1230-1243)
 
 **Issues:**
 1. Inline JavaScript mixed with HTML
@@ -238,11 +238,11 @@ Ensure all HTML files have proper `lang` attribute.
 ### High Priority (Fix Immediately)
 1. ✅ Add `alt` attributes to all images (Accessibility requirement)
 2. ✅ Remove commented-out code blocks
-3. ✅ Fix JavaScript logic in `blog_index.php`
+3. ✅ Fix JavaScript logic in `blog-index.php`
 
 ### Medium Priority
 4. Refactor code duplication using reusable components
-5. Break down large files (`blog_index.php`) into smaller modules
+5. Break down large files (`blog-index.php`) into smaller modules
 
 ### Low Priority
 6. Extract hard-coded URLs to configuration
@@ -267,8 +267,8 @@ Ensure all HTML files have proper `lang` attribute.
 
 ## Files Requiring Immediate Attention
 
-1. `blog_index.php` - 1,247 lines, many missing alt attributes, code duplication
-2. `blog_index_search.php` - 677 lines, commented code, missing alt attributes
+1. `blog-index.php` - 1,247 lines, many missing alt attributes, code duplication
+2. `blog-index-search.php` - 677 lines, commented code, missing alt attributes
 3. Individual blog post files - Missing alt attributes, commented sections
 
 ---
