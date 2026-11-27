@@ -37,15 +37,15 @@ $(".owl_container:not(.owl_testimonials) .owl-carousel").owlCarousel({
         responsive: { 0: { items: 1 }, 600: { items: 3 }, 1e3: { items: 3 } },
     }),
     $(window).resize(function () {
-        window.matchMedia("(max-width: 768px)").matches, $(".btn_tff").attr("href", "../pages/splash-options.php");
+        window.matchMedia("(max-width: 768px)").matches, $(".btn_tff").not("#headerTryForFree").attr("href", "../pages/splash-options.php");
     }),
     $(window).resize(),
     $(window).resize(function () {
         window.matchMedia("(max-width: 768px)").matches ? 
        //  (logevent("click_free_trial_menu_web", "index.php") 
-          $(".btn_tff_tn").attr("href", "https://onelink.to/hsnt8b")   :  
+          $(".btn_tff_tn").not("#headerTryForFree").attr("href", "https://onelink.to/hsnt8b")   :  
           // (logevent("click_free_trial_menu_web", "index.php") 
-           $(".btn_tff_tn").attr("href", "../pages/splash-options.php");
+           $(".btn_tff_tn").not("#headerTryForFree").attr("href", "../pages/splash-options.php");
     }),
     $(window).resize(),
     $(window).resize(function () {
