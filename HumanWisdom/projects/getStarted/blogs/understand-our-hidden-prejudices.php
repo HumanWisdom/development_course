@@ -38,18 +38,24 @@
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
                   <button class="mtb0px fs_12px fw_400 lh_150p fc_803358 btn_blogp">
-                    Self
+                   Relationship
                   </button>
-                  <button class="mtb0px fs_12px fw_400 lh_150p fc_803358 btn_blogp">
+                  <!-- <button class="mtb0px fs_12px fw_400 lh_150p fc_803358 btn_blogp">
                     Equality
-                  </button>
+                  </button> -->
                 </div>
               </div>
             </div>
 
-            <div class="row mt20px rmb80px">
+            <!-- <div class="row mt20px rmb80px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*eVh2Myg9tEGJXoAxflOI7A.png" class="img-responsive" alt="To be more inclusive, we need to understand our hidden prejudices">
+              </div>
+            </div>  -->
+
+             <div class="row mt20px rmb80px">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/106.webp" class="img-responsive" alt="Healing the healers: addressing the mental health crisis in healthcare"  >
               </div>
             </div>
 
@@ -79,9 +85,11 @@
                   What can we do to live in freedom from our own prejudices and make the world a better place?
                 </h4>
 
-                <h4 class="mtb0px blog_sub_title">
+                <h4 class="mtb0px blog_desc">
+                                    <span class="blog_highlight_black">
+
                   Why should we bother? After all, aren’t most of us blissfully unaware we have any prejudices, and even if we do, regard them as facts?
-                </h4>
+</span></h4>
 
                 <h4 class="mtb0px blog_desc">
                   1. To free ourselves from the burden of prejudice, which contributes to our stress in life
@@ -119,11 +127,16 @@
                   But we are all much more than our beliefs. And we have the ability and capacity to make room for different beliefs and identities. The world is varied, pulsing with people of different genders, race, professions, caste, socio-economic classes, and so on. If we cling to our singular identity and belief, we cannot have meaningful connections with others who are different, and we cannot be at peace with ourselves. We need to remind ourselves that deep down we are the same human being. Our hearts beats in the same way, and the range of emotions we feel is the same.
                 </h4>
 
-                <div class="row mt20px rmb80px">
+                <!-- <div class="row mt20px rmb80px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                     <iframe style="width: 100%; max-width: 854px; aspect-ratio: 16 / 9;" src="https://www.youtube.com/embed/MgsYk1SZh-w" title="Introduction to the HappierMe app" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                   </div>
-                </div>
+                </div> -->
+
+                <iframe id="youtubeIntro" loading="lazy" title="youtubeIntro"
+            src="https://www.youtube.com/embed/MgsYk1SZh-w"
+            class="cvideo_b yt-embed" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen
+            onclick="return logevent('click_play_video_home', 'index.php')"></iframe>
 
                 <h4 class="mtb0px blog_sub_title">
                   How do your Prejudices Affect You?
@@ -137,8 +150,11 @@
                   This prejudice within us makes us fearful and uneasy. We feel uncomfortable around anyone who is different and just want to be with people like us. Our prejudices put us in a prison of our own making, and we are unconscious of its effects on us.
                 </h4>
 
-                <h4 class="mtb0px blog_sub_title">
+                <h4 class="mtb0px blog_desc">
+                                    <span class="blog_highlight_black">
+
                   It is our inner suffering that drives us to hurt others. We push these negative feelings out of us and onto others. This can lead to discrimination and violence.
+                    </span>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">

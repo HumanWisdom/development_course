@@ -131,7 +131,8 @@
           </video>
           <div class="div-12">
             <div class="div-5">
-              <p class="introducing-olly-AI">Meet Olly AI,<br />your personal guide.</p>
+              <p class="introducing-olly-AI display_m_none">Meet Olly AI,<br />your personal guide.</p>
+              <p class="introducing-olly-AI display_d_none">Introducing Olly AI, your<br />personal guide inside<br />HappierMe.</p>
               <p class="text-wrapper-8">
                Talk to Olly about what's on your mind. Stress, anxiety, relationships, habits, parenting, or work. Olly listens without judgment and guides you to trusted, expert-backed resources.
               </p>

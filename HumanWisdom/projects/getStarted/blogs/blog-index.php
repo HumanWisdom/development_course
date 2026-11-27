@@ -2452,7 +2452,9 @@ Work</button>
 
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp"> Work</button>
+                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp"> 
+                      Teenagers
+                    </button>
 
 
                   </div>
@@ -2494,7 +2496,9 @@ Work</button>
 
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp"> Mental Health</button>
+                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp"> 
+                      Teenagers
+                    </button>
 
 
                   </div>
@@ -2580,9 +2584,11 @@ Work</button>
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
                     <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp"> 
-                    Social Media
+                    Mental Health
                   </button>
-
+                  <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">
+                      Teenagers
+                    </button>
 
                   </div>
                 </div>
@@ -2612,7 +2618,7 @@ Work</button>
 
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">                     Single Parents
+                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">                      Parenting
 </button>
 
 
@@ -2744,7 +2750,7 @@ Work</button>
 
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">                     Single Parents
+                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">                      Relationship
 </button>
 
 
@@ -2766,7 +2772,7 @@ Work</button>
                
               </a>
             </div>
-             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="1100">
+             <!-- <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-12 rp0 aos-init aos-animate" data-aos="fade-up" data-aos-delay="1100">
 
             <a class="BlogCard" href="mental_health_crisis_hospitality_industry.php">
                 <div class="row">
@@ -2777,7 +2783,7 @@ Work</button>
 
                 <div class="row mt20px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 col-12 p0">
-                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">                     Single Parents
+                    <button class="mtb0px fs_12px fw_400 lh_150p fc_834b66 btn_blogp">                      Parenting
 </button>
 
 
@@ -2797,7 +2803,7 @@ Work</button>
                 </div>
                
               </a>
-            </div>  
+            </div>   -->
             
 </div>
           <div class="blog-empty is-hidden" id="blog-empty">No articles match your search.</div>

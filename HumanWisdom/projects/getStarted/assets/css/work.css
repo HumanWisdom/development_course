@@ -1189,24 +1189,31 @@ body.page-work .work-copy-mobile:not(.display_d_none) {
     margin-bottom: 0 !important;
   }
 
-  /* ----- 1. Hero 375×700, pt 50 / px 20 ----- */
-  body.page-work .healthcare-hero-shell,
+  /* ----- 1. Hero. Keep the artwork’s own ratio so wider phones don’t crop the purple and pull the phone up over “Request a demo”. ----- */
+  body.page-work .healthcare-hero-shell {
+    height: auto !important;
+    max-height: none !important;
+    min-height: 750px !important;
+    aspect-ratio: 1944 / 3629;
+    overflow: hidden !important;
+  }
+
   body.page-work .healthcare-hero-shell .prelative,
   body.page-work .healthcare-hero-shell .mt3rem {
-    height: 700px !important;
-    max-height: 700px !important;
-    min-height: 700px !important;
+    height: 100% !important;
+    max-height: none !important;
+    min-height: 100% !important;
     overflow: hidden !important;
   }
 
   body.page-work .healthcare-hero-shell img.img-responsive.w100p.display_d_none,
   body.page-work .healthcare-hero-shell img.display_d_none {
     width: 100% !important;
-    height: 700px !important;
-    max-height: 700px !important;
-    min-height: 700px !important;
+    height: 100% !important;
+    max-height: none !important;
+    min-height: 100% !important;
     object-fit: cover !important;
-    object-position: center bottom !important;
+    object-position: center center !important;
     display: block !important;
   }
 
