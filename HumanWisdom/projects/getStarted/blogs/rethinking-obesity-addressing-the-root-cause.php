@@ -38,7 +38,7 @@
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
                   <button class="mtb0px fs_12px fw_400 lh_150p fc_803358 btn_blogp">
-                    Health
+                    Mental Health
                   </button>
                 </div>
               </div>
@@ -93,13 +93,17 @@
                   <span class="blog_highlight_black">Our mind is constantly searching for</span> <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Pleasure">pleasure</a><span class="blog_highlight_black">.</span> This search for pleasure comes from inner boredom or restlessness which we are usually not aware of. Food is a convenient way for us to get this pleasure. Dining out is all about pleasure and is considered a treat for most of us. A lot of emphasis goes into the presentation and taste of the food. <em>The problem with eating for pleasure is that we tend to overeat because our appetite for pleasure is much more than our appetite for food. Pleasure is not ‘wrong’, but operates at the moment without our oversight, so often times does not serve us, as in this instance.</em>
                 </h4>
 
-                <div class="row mt20px rmb80px">
+                <!-- <div class="row mt20px rmb80px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                     <iframe style="width: 100%; max-width: 854px; aspect-ratio: 16 / 9;" src="https://www.youtube.com/embed/MgsYk1SZh-w" title="Introduction to the HappierMe app" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                   </div>
-                </div>
+                </div> -->
+                 <iframe id="youtubeIntro" loading="lazy" title="youtubeIntro"
+            src="https://www.youtube.com/embed/MgsYk1SZh-w"
+            class="cvideo_b yt-embed" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen
+            onclick="return logevent('click_play_video_home', 'index.php')"></iframe>
 
-                <h4 class="mtb0px blog_desc">
+                <h4 class="mtb20px blog_desc">
                   <span class="blog_highlight_black">We also eat in response to</span> <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/site-search/Stress">stress</a>, to make us feel good. 80% of people report feeling moderate to severely stressed so eating in response to stress is quite common. The food we eat in response to stress is comfort food. You are more likely to eat a pudding, rather than a banana when stressed. When we are stressed we also make bad decisions, around what we eat and how much, or what we drink, and how much.
                 </h4>
 

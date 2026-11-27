@@ -172,7 +172,7 @@
                 For workers, taking self-care seriously and reaching out for help when needed can change everything. Together, these efforts can help build an industry that truly looks after its most valuable asset: its people.
                 <br><br>
                 To find out more, visit
-                <a class="blog_highlight_peach" href="https://happierme.app"> https://happierme.app, </a>or download HappierMe from the app stores. There is a free trial.
+                <a class="blog_highlight_peach" href="https://happierme.app">https://happierme.app</a>, or download HappierMe from the app stores. There is a free trial.
                 </h4>
 
               </div>
