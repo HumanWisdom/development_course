@@ -190,7 +190,7 @@
     <!-- Input area -->
     <div class="chat-input-area" #chatInputArea>
       <div class="welcome-questions-container">
-        <a class="questions-link" (click)="onQuestionsLinkClick($event)">Questions you can ask Olly</a>
+        <a class="questions-link" (click)="onQuestionsLinkClick($event)">Common questions people ask Olly</a>
       </div>
 
       <div class="input-container">
@@ -198,10 +198,10 @@
           <img [src]="userAvatarUrl" class="avatar-img" alt="User avatar" (error)="onAvatarError($event)" />
         </div>
 
-        <textarea id="autoResize" placeholder="Reply..." rows="1" class="message-input" [(ngModel)]="currentMessage"
-          [disabled]="isLoading" #messageInput (keydown)="onKeyPress($event)" (input)="adjustHeight($event)"
-        maxlength="1000" style="resize:none; width:100%; border:none"></textarea>
-        <!-- <input type="text" placeholder="Reply ..." class="message-input" [(ngModel)]="currentMessage"
+          <textarea id="autoResize" placeholder="Ask Olly a question" rows="1" class="message-input"
+          [(ngModel)]="currentMessage" [disabled]="isLoading" #messageInput (keydown)="onKeyPress($event)"
+          (input)="adjustHeight($event)" maxlength="1000" style="resize:none; width:100%; border:none"></textarea>
+        <!-- <input type="text" placeholder="Ask Olly a question" class="message-input" [(ngModel)]="currentMessage"
           (keypress)="onKeyPress($event)" [disabled]="isLoading" #messageInput /> -->
         <button class="send-button" (click)="onSendMessage()" [disabled]="!currentMessage.trim() || isLoading">
           <svg *ngIf="!isLoading" width="16" height="16" viewBox="0 0 24 24" fill="none"
