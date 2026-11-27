@@ -120,7 +120,7 @@
                   Many mental health professionals encourage mood tracking as part of therapy or counseling. Keeping a record of one’s moods can serve as a valuable reference in sessions, helping professionals understand the client’s emotional landscape and suggest tailored treatment strategies. By using the Daily Check-in feature on the <a class="blog_highlight_peach td_underline" href="https://happierme.app/">HappierMe</a> app, users can share these insights with their therapists or counsellors, facilitating open and data-informed discussions.
                 </h4>
 
-                <div class="row mt20px rmb80px">
+                <div class="row mt20px rm80px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                     <img src="https://miro.medium.com/v2/resize:fit:1264/format:webp/1*1NAX2R7kZeox0ma_CnNzPg.png" class="img-responsive" alt="The Benefits of Mood Tracking for Mental Health with HappierMe">
                   </div>
@@ -158,11 +158,16 @@
                   <a class="blog_highlight_peach td_underline" href="https://happierme.app/">HappierMe’s</a> Daily Check-in allows you to rate your mood and jot down any emotions or triggers. Over time, these entries become a rich source of data to understand emotional patterns, whether it's noticing a positive shift after a weekend outing or identifying stress spikes before deadlines.
                 </h4>
 
-                <div class="row mt20px rmb80px">
+                <!-- <div class="row mt20px rm80px">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0 center_flex">
                     <iframe style="width: 100%; max-width: 854px; aspect-ratio: 16 / 9;" src="https://www.youtube.com/embed/MgsYk1SZh-w" title="Introduction to the HappierMe app" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                   </div>
-                </div>
+                </div> -->
+
+                <iframe id="youtubeIntro" loading="lazy" title="youtubeIntro"
+            src="https://www.youtube.com/embed/MgsYk1SZh-w"
+            class="cvideo_b yt-embed" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen
+            onclick="return logevent('click_play_video_home', 'index.php')"></iframe>
 
                 <h4 class="mtb0px blog_sub_title">
                   Long-Term Benefits of Mood Tracking and the Daily Check-in Habit
@@ -189,7 +194,7 @@
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
-                  • Subscribe to our <a class="blog_highlight_peach td_underline" href="https://happierme.app/adults/newsletter-signup">newsletter</a>
+                  • Subscribe to our <a class="blog_highlight_peach td_underline" href="https://happierme.app/pages/newsletter.php">newsletter</a>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
