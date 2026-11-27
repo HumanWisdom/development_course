@@ -142,7 +142,7 @@
 
                   <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/work_mobile.webp" class="img-responsive w100p display_d_none" alt="Build a happier, more capable workforce">
 
-                  <img src="https://d1tenzemoxuh75.cloudfront.net/website/webp/work_widescreen.webp" class="img-responsive w100p display_m_none wide-screen-only" alt="Build a happier, more capable workforce">
+                  <img src="https://humanwisdoms3.s3.eu-west-2.amazonaws.com/website/webp/work_widescreen.webp" class="img-responsive w100p display_m_none wide-screen-only" alt="Build a happier, more capable workforce">
                 </div>
               </div>
 

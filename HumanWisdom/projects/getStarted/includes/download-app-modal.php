@@ -26,6 +26,7 @@ define('HW_DOWNLOAD_APP_MODAL', true);
 </div>
 <style>
   #downloadAppModal {
+    display: none;
     position: fixed;
     inset: 0;
     z-index: 10050;
@@ -34,6 +35,9 @@ define('HW_DOWNLOAD_APP_MODAL', true);
     overflow-x: hidden;
     overflow-y: auto;
     outline: 0;
+  }
+  #downloadAppModal.show {
+    display: block;
   }
   body.modal-open .modal-backdrop {
     z-index: 10040;
