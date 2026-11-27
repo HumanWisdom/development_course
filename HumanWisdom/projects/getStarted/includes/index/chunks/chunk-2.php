@@ -110,7 +110,7 @@
             <a href="/organisation-choose.php/happierme" id="happiermeTryForFree_teens">
               <div class="div-wrapper-4"><div class="text-wrapper-5">Try HappierMe for free</div></div>
             </a>
-            <p class="try-free-no-card">(No credit card needed)</p>
+            <p class="try-free-no-card">No credit card required</p>
           </div>
         </div>
       </div>
