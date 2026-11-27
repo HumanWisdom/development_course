@@ -38,12 +38,12 @@
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 p0">
                   <button class="mtb0px fs_12px fw_400 lh_150p fc_803358 btn_blogp">
-                    Social Media
-                  </button>
-                  <!-- <button class="mtb0px fs_12px fw_400 lh_150p fc_803358 btn_blogp">
                     Mental Health
                   </button>
                   <button class="mtb0px fs_12px fw_400 lh_150p fc_803358 btn_blogp">
+                    Teenagers
+                  </button>
+                  <!-- <button class="mtb0px fs_12px fw_400 lh_150p fc_803358 btn_blogp">
                     Social Media Addiction
                   </button> -->
                 </div>
