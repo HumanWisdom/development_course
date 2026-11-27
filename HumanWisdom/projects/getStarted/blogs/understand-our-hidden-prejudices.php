@@ -47,9 +47,15 @@
               </div>
             </div>
 
-            <div class="row mt20px rmb80px">
+            <!-- <div class="row mt20px rmb80px">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
                 <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*eVh2Myg9tEGJXoAxflOI7A.png" class="img-responsive" alt="To be more inclusive, we need to understand our hidden prejudices">
+              </div>
+            </div>  -->
+
+             <div class="row mt20px rmb80px">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p0">
+                <img src="https://d1tenzemoxuh75.cloudfront.net/blogs/106.webp" class="img-responsive" alt="Healing the healers: addressing the mental health crisis in healthcare"  >
               </div>
             </div>
 
@@ -144,8 +150,11 @@
                   This prejudice within us makes us fearful and uneasy. We feel uncomfortable around anyone who is different and just want to be with people like us. Our prejudices put us in a prison of our own making, and we are unconscious of its effects on us.
                 </h4>
 
-                <h4 class="mtb0px blog_sub_title">
+                <h4 class="mtb0px blog_desc">
+                                    <span class="blog_highlight_black">
+
                   It is our inner suffering that drives us to hurt others. We push these negative feelings out of us and onto others. This can lead to discrimination and violence.
+                    </span>
                 </h4>
 
                 <h4 class="mtb0px blog_desc">
