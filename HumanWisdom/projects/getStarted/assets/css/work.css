@@ -123,43 +123,32 @@ body.page-work .healthcare-hero-shell .absolute_desc_m > .work-hero-stack {
   }
 }
 
-/* Wide screens: continue each edge of the artwork so the side shade matches the picture. */
+/* Wide screens: work_widescreen.webp is 6000×1906, i.e. 1920×610 at the hero height.
+   Fill the viewport with that artwork. Below 1920 it covers at 610px (the crop stays in the purple margin).
+   Above 1920 the banner grows with the image so the phone is not cropped. */
 @media (min-width: 1441px) {
+  body.page-work .healthcare-hero-shell,
+  body.page-work .healthcare-hero-shell .prelative,
   body.page-work .healthcare-hero-shell .mt3rem {
-    position: relative;
-  }
-
-  body.page-work .healthcare-hero-shell .mt3rem::before,
-  body.page-work .healthcare-hero-shell .mt3rem::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    z-index: 0;
-    width: 2px;
-    height: 610px;
-    background-image: url("https://d1tenzemoxuh75.cloudfront.net/website/webp/workkk.webp");
-    background-repeat: no-repeat;
-    background-size: 1440px 610px;
-    pointer-events: none;
-  }
-
-  body.page-work .healthcare-hero-shell .mt3rem::before {
-    left: 0;
-    background-position: left center;
-    transform-origin: left center;
-    transform: scaleX(calc((100vw - 1440px) / 4px));
-  }
-
-  body.page-work .healthcare-hero-shell .mt3rem::after {
-    right: 0;
-    background-position: right center;
-    transform-origin: right center;
-    transform: scaleX(calc((100vw - 1440px) / 4px));
+    height: max(610px, calc(100vw * 1906 / 6000)) !important;
+    max-height: none !important;
+    min-height: 610px !important;
   }
 
   body.page-work .healthcare-hero-shell img.img-responsive.w100p.display_m_none.h-800 {
-    position: relative;
-    z-index: 1;
+    display: none !important;
+  }
+
+  body.page-work .healthcare-hero-shell img.img-responsive.w100p.display_m_none.wide-screen-only {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: 100% !important;
+    max-height: none !important;
+    min-height: 610px !important;
+    margin: 0 !important;
+    object-fit: cover !important;
+    object-position: center center !important;
   }
 }
 
